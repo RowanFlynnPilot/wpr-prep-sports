@@ -1,0 +1,12 @@
+requests>=2.32.0
+beautifulsoup4>=4.12.0
+lxml>=5.2.0
+httpx>=0.27.0
+python-dateutil>=2.9.0
+pytz>=2024.1
+pydantic>=2.7.0
+tenacity>=8.3.0
+rich>=13.7.0
+
+# Optional — uncomment if a source requires JS rendering (mirrors wpr-gas-prices)
+# playwright>=1.44.0

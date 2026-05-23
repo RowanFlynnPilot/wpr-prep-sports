@@ -1,0 +1,64 @@
+name: Scrape
+
+on:
+  schedule:
+    # Every 15 minutes Fri 6pm–11pm CT (Sat 00:00–05:00 UTC) during football season
+    # Adjust as seasons change. Use cron sparingly outside game windows.
+    - cron: "*/15 0-5 * * 6"  # Fri evenings/Sat early UTC
+    # Hourly at all other times during the week
+    - cron: "5 * * * *"
+  workflow_dispatch:
+    inputs:
+      sport:
+        description: "Sport to scrape (or 'all')"
+        required: false
+        default: "all"
+      season:
+        description: "Season identifier"
+        required: false
+        default: "2025-26"
+
+permissions:
+  contents: write
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+          cache-dependency-path: scraper/requirements.txt
+
+      - name: Install deps
+        working-directory: scraper
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run scraper
+        working-directory: scraper
+        env:
+          SPORT: ${{ github.event.inputs.sport || 'all' }}
+          SEASON: ${{ github.event.inputs.season || '2025-26' }}
+        run: |
+          if [ "$SPORT" = "all" ]; then
+            python main.py --all-sports --season "$SEASON"
+          else
+            python main.py --sport "$SPORT" --season "$SEASON"
+          fi
+
+      - name: Commit updated data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/
+          if git diff --cached --quiet; then
+            echo "No data changes."
+          else
+            git commit -m "data: scrape $(date -u +%Y-%m-%dT%H:%MZ)"
+            git push
+          fi
