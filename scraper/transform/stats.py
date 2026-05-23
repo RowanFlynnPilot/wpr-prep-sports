@@ -1,0 +1,158 @@
+"""
+Merge Bound-sourced player stats into the WIAA-derived game records.
+
+The WIAA scrape gives us authoritative schedule + score data. Bound
+augments that with stat-leader lines per game when its coverage is
+available (mostly larger schools; smaller schools may have empty
+panels). This step:
+
+1. Groups our finalized games by date.
+2. For each date, fetches Bound's scores index and builds a
+   (away_name_norm, home_name_norm) → comp_id lookup.
+3. For each finalized game we have, finds the matching Bound comp_id
+   and pulls stat-leader lines.
+4. Attaches the stats to the Game and marks "bound" in `sources`.
+
+Games without a Bound match are left untouched — the rest of the
+widget still works, the recap just falls back to the score-only
+template.
+"""
+
+from __future__ import annotations
+
+import re
+import time
+from typing import Iterable
+
+from rich.console import Console
+
+from models.schema import Dataset, Game, GameStatus, StatLine
+from sources import bound
+
+POLITE_DELAY_SECONDS = 0.4
+
+
+def merge_bound_stats(
+    dataset: Dataset,
+    *,
+    name_to_id: dict[str, str],
+    console: Console | None = None,
+) -> Dataset:
+    """Mutate-and-return the dataset with stat_leaders populated where possible."""
+    finals = [g for g in dataset.games if g.status == GameStatus.FINAL]
+    if not finals:
+        return dataset
+
+    # Only chase Bound for games where at least one side is in our manifest.
+    targeted = [g for g in finals if g.home.school_id or g.away.school_id]
+    if not targeted:
+        return dataset
+
+    if console:
+        console.print(f"[bold]Fetching Bound stats[/bold] for {len(targeted)} finalized games")
+
+    dates = sorted({g.date.strftime("%Y-%m-%d") for g in targeted})
+    bound_index: dict[tuple[str, str], bound.BoundGame] = {}
+
+    for date in dates:
+        try:
+            games_on_date = bound.find_game_ids(date)
+        except Exception as e:  # noqa: BLE001
+            if console:
+                console.print(f"[yellow]  ! Bound scores index failed for {date}: {e}[/yellow]")
+            continue
+        for bg in games_on_date:
+            key = (_norm(bg.away_team), _norm(bg.home_team))
+            bound_index[key] = bg
+        if console:
+            console.print(f"  · {date}: {len(games_on_date)} Bound games indexed")
+        time.sleep(POLITE_DELAY_SECONDS)
+
+    if console:
+        console.print(f"  [dim]{len(bound_index)} unique Bound games available across {len(dates)} dates[/dim]")
+
+    matched = 0
+    stat_lines_total = 0
+    for game in targeted:
+        bg = _find_match(game, bound_index)
+        if not bg:
+            continue
+        try:
+            lines = bound.fetch_game_stats(bg.comp_id)
+        except Exception as e:  # noqa: BLE001
+            if console:
+                console.print(f"[yellow]  ! stats fetch failed for {bg.comp_id}: {e}[/yellow]")
+            continue
+
+        attached = _attach_stats(game, lines, name_to_id)
+        if attached:
+            matched += 1
+            stat_lines_total += attached
+            if "bound" not in game.sources:
+                game.sources.append("bound")
+        time.sleep(POLITE_DELAY_SECONDS)
+
+    if console:
+        console.print(
+            f"[green]Stats merged:[/green] {matched}/{len(targeted)} games · "
+            f"{stat_lines_total} stat lines"
+        )
+
+    if matched > 0 and "bound" not in dataset.meta.sources_used:
+        dataset.meta.sources_used.append("bound")
+
+    return dataset
+
+
+def _norm(name: str) -> str:
+    """Collapse whitespace + case for name matching between sources."""
+    return re.sub(r"\s+", " ", (name or "").strip().casefold())
+
+
+def _find_match(
+    game: Game,
+    index: dict[tuple[str, str], bound.BoundGame],
+) -> bound.BoundGame | None:
+    """Match a WIAA game to a Bound game by (away, home) team names."""
+    candidates = [
+        (_norm(game.away.name), _norm(game.home.name)),
+        # Defensive: if home/away got swapped during data entry on either
+        # side, try the reverse too.
+        (_norm(game.home.name), _norm(game.away.name)),
+    ]
+    for key in candidates:
+        bg = index.get(key)
+        if bg is not None:
+            return bg
+    return None
+
+
+def _attach_stats(
+    game: Game,
+    lines: Iterable[bound.StatLine],
+    name_to_id: dict[str, str],
+) -> int:
+    """
+    Resolve Bound team names to our manifest school_ids and attach.
+    Returns the count of lines attached.
+    """
+    attached: list[StatLine] = []
+    for line in lines:
+        school_id = name_to_id.get(_norm(line.team_name), "")
+        # Only keep stat lines for our tracked schools — opposing-team
+        # players from unmatched schools are noise in our context.
+        if not school_id:
+            continue
+        attached.append(
+            StatLine(
+                team_school_id=school_id,
+                team_name=line.team_name,
+                category=line.category,
+                player_name=line.player_name,
+                player_year=line.player_year,
+                stats=dict(line.stats),
+            )
+        )
+    if attached:
+        game.stat_leaders = attached
+    return len(attached)

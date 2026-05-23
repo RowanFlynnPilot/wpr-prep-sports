@@ -115,7 +115,97 @@ export function recapForGame(game, { schoolsById, teamGames = null, perspectiveS
   // when possible because it reads more sportsly than "Wausau East…"
   const subject = ownSchool?.mascot ? `The ${ownSchool.mascot}` : ownSchool?.name ?? ownLabel;
 
-  return `${subject} ${resultPhrase}${recordPhrase}${conferencePhrase} on ${dateLabel}.`;
+  const opener = `${subject} ${resultPhrase}${recordPhrase}${conferencePhrase} on ${dateLabel}.`;
+  const statSentence = headlineStatSentence(game, perspective);
+  return statSentence ? `${opener} ${statSentence}` : opener;
+}
+
+/**
+ * Pick the most narrative-worthy stat line for the perspective team and
+ * format it as a short follow-up sentence. Returns null when no line
+ * crosses the threshold for being interesting (low-output day or no
+ * Bound coverage).
+ *
+ * Thresholds are conservative so we never tout a forgettable line —
+ * better silent than embarrassing.
+ */
+function headlineStatSentence(game, schoolId) {
+  const leaders = (game.stat_leaders ?? []).filter(
+    (l) => l.team_school_id === schoolId,
+  );
+  if (leaders.length === 0) return null;
+
+  // Categories ordered by narrative weight. The first leader that meets
+  // its threshold wins.
+  const order = ["Passing Yards", "Rushing Yards", "Receiving Yards", "Total Tackles"];
+  for (const cat of order) {
+    const line = leaders.find((l) => l.category === cat);
+    if (!line) continue;
+    const sentence = formatStatLine(line);
+    if (sentence) return sentence;
+  }
+  return null;
+}
+
+function formatStatLine(line) {
+  const stats = line.stats ?? {};
+  const yds = parseFloat(stats.YDS);
+  const tds = parseInt(stats.TDS, 10);
+  const tkl = parseFloat(stats.TKL);
+
+  const player = playerNameWithClass(line);
+
+  switch (line.category) {
+    case "Passing Yards": {
+      if (!isFiniteNum(yds) || (yds < 150 && (!isFiniteNum(tds) || tds < 2))) {
+        return null;
+      }
+      const ca = stats["C/A"];
+      const completionsClause = ca ? ` (${ca})` : "";
+      const tdClause = tdsToClause(tds);
+      return `QB ${player} threw for ${yds.toFixed(0)} yards${completionsClause}${tdClause}.`;
+    }
+    case "Rushing Yards": {
+      if (!isFiniteNum(yds) || (yds < 75 && (!isFiniteNum(tds) || tds < 2))) {
+        return null;
+      }
+      const attClause = stats.ATT ? ` on ${stats.ATT} carries` : "";
+      const tdClause = tdsToClause(tds);
+      return `RB ${player} rushed for ${yds.toFixed(0)} yards${attClause}${tdClause}.`;
+    }
+    case "Receiving Yards": {
+      if (!isFiniteNum(yds) || (yds < 75 && (!isFiniteNum(tds) || tds < 2))) {
+        return null;
+      }
+      const recClause = stats.REC ? ` on ${stats.REC} catches` : "";
+      const tdClause = tdsToClause(tds);
+      return `WR ${player} caught ${yds.toFixed(0)} yards${recClause}${tdClause}.`;
+    }
+    case "Total Tackles": {
+      if (!isFiniteNum(tkl) || tkl < 10) return null;
+      const sks = parseFloat(stats.SKS);
+      const sksClause = isFiniteNum(sks) && sks >= 1 ? ` and ${sks.toFixed(1)} sacks` : "";
+      return `LB ${player} led the defense with ${tkl.toFixed(1)} tackles${sksClause}.`;
+    }
+    default:
+      return null;
+  }
+}
+
+function tdsToClause(tds) {
+  if (!isFiniteNum(tds) || tds <= 0) return "";
+  if (tds === 1) return " and a TD";
+  return ` and ${tds} TDs`;
+}
+
+function playerNameWithClass(line) {
+  const name = (line.player_name || "").replace(/\s+/g, " ").trim();
+  if (!line.player_year) return name;
+  return `${name} (${line.player_year})`;
+}
+
+function isFiniteNum(n) {
+  return typeof n === "number" && Number.isFinite(n);
 }
 
 function recordThrough(games, schoolId, includeGameId) {

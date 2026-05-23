@@ -65,6 +65,16 @@ class TeamScore(BaseModel):
     logo_url: Optional[str] = None  # WIAA-hosted logo when available
 
 
+class StatLine(BaseModel):
+    """One stat-leader line for a finalized game (Bound-sourced)."""
+    team_school_id: str           # resolved into our manifest, "" if opponent we don't track
+    team_name: str                # raw display name as Bound rendered it
+    category: str                 # "Passing Yards" | "Rushing Yards" | "Receiving Yards" | "Total Tackles"
+    player_name: str
+    player_year: Optional[str] = None  # "SR", "JR", "SO", "FR", or null
+    stats: dict[str, str] = Field(default_factory=dict)  # raw labels → values, e.g. {"YDS": "197"}
+
+
 class Game(BaseModel):
     id: str  # synthetic, e.g. "{sport}-{date}-{home_id}-{away_id}"
     sport: Sport
@@ -76,6 +86,7 @@ class Game(BaseModel):
     conference: Optional[str] = None  # if conference game
     venue: Optional[str] = None
     sources: list[str] = Field(default_factory=list)  # ["bound", "wiaa"]
+    stat_leaders: list[StatLine] = Field(default_factory=list)  # populated by Bound
 
 
 class StandingRow(BaseModel):

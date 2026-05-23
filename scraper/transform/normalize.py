@@ -161,6 +161,12 @@ def _build_name_index(manifest: Manifest) -> dict[str, str]:
     return idx
 
 
+def build_name_index_for_manifest(manifest: Manifest) -> dict[str, str]:
+    """Public alias of _build_name_index — used by the stats merger to
+    resolve Bound's team names against our manifest."""
+    return _build_name_index(manifest)
+
+
 def _resolve_school_id(wiaa_name: str, name_to_id: dict[str, str]) -> str:
     return name_to_id.get(_normalize_name(wiaa_name), "")
 
