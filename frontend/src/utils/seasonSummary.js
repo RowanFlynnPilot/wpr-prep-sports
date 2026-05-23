@@ -190,13 +190,13 @@ function roundDisplay(round) {
 }
 
 /**
- * Pick the most narratively notable player on this team. Score weights TDs
- * and big defensive plays so a 1,200-yard / 15-TD RB outranks a higher-
- * yardage but lower-impact passer. Returns null when nobody clears the
- * "worth mentioning" threshold for their category.
+ * Pick the most narratively notable player on this team using the
+ * sport's standout-weights config. Returns the row + score or null
+ * when no one clears the "worth mentioning" threshold.
  */
-function pickStandout(rows, seasonComplete, gamesPlayed) {
-  if (!rows || rows.length === 0) return null;
+function pickStandout(rows, sportConfig, seasonComplete, gamesPlayed) {
+  const standout = sportConfig?.stats?.standout;
+  if (!standout || !rows || rows.length === 0) return null;
   const players = rows.filter(
     (r) => r.player_name && r.player_name !== "Team",
   );
@@ -204,117 +204,33 @@ function pickStandout(rows, seasonComplete, gamesPlayed) {
 
   let best = null;
   for (const row of players) {
-    const cat = row.category;
-    const s = row.stats ?? {};
-    const yds = toNum(s.YDS);
-    const tds = toNum(s.TDS);
-    const tot = toNum(s.TOT);
-    const tfl = toNum(s.TFL);
-    const sacks = toNum(s.SACKS);
-
-    let score = 0;
-    if (cat === "Passing") {
-      score = (Number.isFinite(yds) ? yds : 0) + (Number.isFinite(tds) ? tds * 30 : 0);
-    } else if (cat === "Rushing" || cat === "Receiving") {
-      score = (Number.isFinite(yds) ? yds * 1.5 : 0) + (Number.isFinite(tds) ? tds * 30 : 0);
-    } else if (cat === "Defense") {
-      score =
-        (Number.isFinite(tot) ? tot * 5 : 0) +
-        (Number.isFinite(tfl) ? tfl * 8 : 0) +
-        (Number.isFinite(sacks) ? sacks * 15 : 0);
-    } else {
-      continue;
-    }
-
+    const weightFn = standout.weights?.[row.category];
+    if (!weightFn) continue;
+    const score = weightFn(row.stats || {});
+    if (!Number.isFinite(score)) continue;
     if (!best || score > best.score) {
-      best = { row, score, yds, tds, tot, tfl, sacks };
+      best = { row, score };
     }
   }
   if (!best) return null;
 
-  // Threshold: skip if nothing notable. Scale by games played so mid-season
-  // doesn't require end-of-season totals.
-  const scale = Math.max(1, gamesPlayed) / 9; // 9-game regular season baseline
-  const cat = best.row.category;
-  const minScore =
-    cat === "Defense"
-      ? 350 * scale
-      : cat === "Passing"
-        ? 900 * scale
-        : 700 * scale; // Rushing/Receiving
-  if (best.score < minScore) return null;
-
+  const nominal = standout.nominalSeasonGames || 1;
+  const scale = Math.max(1, gamesPlayed) / nominal;
+  const min = standout.minScore?.(scale, best.row.category) ?? 0;
+  if (best.score < min) return null;
   return best;
 }
 
-/** Format the standout's line of prose. */
-function standoutClause(standout, seasonComplete) {
+/** Format the standout's line of prose via the sport's standout.format. */
+function standoutClause(standout, sportConfig, seasonComplete) {
   if (!standout) return null;
-  const { row, yds, tds, tot, sacks, tfl } = standout;
-  const name = (row.player_name || "").replace(/\s+/g, " ").trim();
-  const yearTag = row.player_year ? ` (${row.player_year})` : "";
-  const player = `${name}${yearTag}`;
-
-  if (row.category === "Defense") {
-    const tdsFloor = Math.round(tot);
-    if (!Number.isFinite(tot) || tot <= 0) return null;
-    const sackClause =
-      Number.isFinite(sacks) && sacks >= 3
-        ? ` and ${sacks % 1 === 0 ? sacks.toFixed(0) : sacks.toFixed(1)} sacks`
-        : Number.isFinite(tfl) && tfl >= 8
-          ? ` and ${Math.round(tfl)} tackles for loss`
-          : "";
-    if (seasonComplete) {
-      return `${player} anchored the defense with ${tdsFloor} tackles${sackClause} on the season.`;
-    }
-    return `${player} has been a force on defense, racking up ${tdsFloor} tackles${sackClause} so far.`;
+  const fn = sportConfig?.stats?.standout?.format;
+  if (!fn) return null;
+  try {
+    return fn(standout.row, { seasonComplete }) ?? null;
+  } catch {
+    return null;
   }
-
-  if (!Number.isFinite(yds) || yds <= 0) return null;
-
-  // Verb already names the category for Passing/Rushing — noun is just "yards"
-  // there to avoid "rushing for X rushing yards". Receiving's verb is
-  // category-neutral, so the noun carries the category.
-  const CAT_PHRASING = {
-    Passing: {
-      doneVerb: "finished the season throwing for",
-      doneNoun: "yards",
-      goingVerb: "has thrown for",
-      goingNoun: "yards",
-    },
-    Rushing: {
-      doneVerb: "finished the season rushing for",
-      doneNoun: "yards",
-      goingVerb: "has rushed for",
-      goingNoun: "yards",
-    },
-    Receiving: {
-      doneVerb: "finished the season with",
-      doneNoun: "receiving yards",
-      goingVerb: "has piled up",
-      goingNoun: "receiving yards",
-    },
-  };
-  const phrasing = CAT_PHRASING[row.category];
-  if (!phrasing) return null;
-
-  const verb = seasonComplete ? phrasing.doneVerb : phrasing.goingVerb;
-  const yardsWord = seasonComplete ? phrasing.doneNoun : phrasing.goingNoun;
-  const yardsFloor = roundDownToHundred(yds);
-  const yardsPhrase =
-    yds >= 200 && yardsFloor != null
-      ? `over ${withCommas(yardsFloor)} ${yardsWord}`
-      : `${withCommas(yds)} ${yardsWord}`;
-
-  const tdsClause =
-    Number.isFinite(tds) && tds > 0
-      ? ` and ${Math.round(tds)} ${tds === 1 ? "touchdown" : "touchdowns"}`
-      : "";
-
-  if (seasonComplete) {
-    return `${player} ${verb} ${yardsPhrase}${tdsClause}.`;
-  }
-  return `${player} has been the bright spot, ${verb.replace(/^has /, "")} ${yardsPhrase}${tdsClause} so far this season.`;
 }
 
 /**
@@ -326,6 +242,7 @@ export function seasonSummary({
   school,
   schoolsById,
   seasonStatsForSchool,
+  sportConfig,
 }) {
   if (!teamGames || teamGames.length === 0) return null;
 
@@ -389,8 +306,13 @@ export function seasonSummary({
     opener = tail ? `${schoolName} ${arcAdjusted} ${tail}.` : `${schoolName} ${arcAdjusted}.`;
   }
 
-  const standout = pickStandout(seasonStatsForSchool ?? [], seasonComplete, played);
-  const player = standoutClause(standout, seasonComplete);
+  const standout = pickStandout(
+    seasonStatsForSchool ?? [],
+    sportConfig,
+    seasonComplete,
+    played,
+  );
+  const player = standoutClause(standout, sportConfig, seasonComplete);
 
   return player ? `${opener} ${player}` : opener;
 }

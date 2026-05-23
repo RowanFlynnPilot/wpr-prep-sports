@@ -79,6 +79,7 @@ export default function Hero({
     seasonStatsForSchool: seasonStatsForPerspective,
     enrichWithSeasonTotals: true,
     contextGames: perspectiveTeamGames,
+    sportConfig,
   });
 
   return (
@@ -160,6 +161,7 @@ function OffSeasonHero({
         contextGames: games,
         perspectiveSchoolId:
           lastGame.home.school_id || lastGame.away.school_id,
+        sportConfig,
       })
     : null;
 

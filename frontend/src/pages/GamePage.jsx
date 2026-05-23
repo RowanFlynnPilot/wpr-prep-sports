@@ -65,6 +65,7 @@ export default function GamePage({ dataset, schoolIndex, sportConfig }) {
     schoolsById: schoolIndex,
     teamGames,
     perspectiveSchoolId,
+    sportConfig,
   });
 
   const keyForSide = (side) =>

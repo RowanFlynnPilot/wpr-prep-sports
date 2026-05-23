@@ -18,7 +18,7 @@ import { useSportPrefix } from "../utils/links.js";
  *   disable themselves at the ends
  * - scroll-snap-type: x mandatory makes the snap feel crisp on touch
  */
-export default function ScoreTicker({ games, schoolIndex, allGames = [] }) {
+export default function ScoreTicker({ games, schoolIndex, allGames = [], sportConfig = null }) {
   const trackRef = useRef(null);
   const [atStart, setAtStart] = useState(true);
   const [atEnd, setAtEnd] = useState(false);
@@ -93,7 +93,7 @@ export default function ScoreTicker({ games, schoolIndex, allGames = [] }) {
       <div className="ticker__viewport">
         <div className="ticker__track" ref={trackRef}>
           {games.map((g) => (
-            <GameCard key={g.id} game={g} schoolIndex={schoolIndex} allGames={allGames} />
+            <GameCard key={g.id} game={g} schoolIndex={schoolIndex} allGames={allGames} sportConfig={sportConfig} />
           ))}
         </div>
       </div>
@@ -119,7 +119,7 @@ export default function ScoreTicker({ games, schoolIndex, allGames = [] }) {
   );
 }
 
-function GameCard({ game, schoolIndex, allGames }) {
+function GameCard({ game, schoolIndex, allGames, sportConfig }) {
   const sportPrefix = useSportPrefix();
   const homeSchool = schoolFor(game.home, schoolIndex);
   const awaySchool = schoolFor(game.away, schoolIndex);
@@ -129,7 +129,7 @@ function GameCard({ game, schoolIndex, allGames }) {
   const awayScore = game.away.score;
   const homeWon = isFinal && (homeScore ?? -1) > (awayScore ?? -1);
   const awayWon = isFinal && (awayScore ?? -1) > (homeScore ?? -1);
-  const playerLine = playerLineForGame(game, { contextGames: allGames });
+  const playerLine = playerLineForGame(game, { contextGames: allGames, sportConfig });
 
   return (
     <article className="card">

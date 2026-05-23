@@ -12,7 +12,7 @@ import { useSportPrefix } from "../utils/links.js";
  * Thursday/Friday/Saturday, so a vertical "day → games" layout reads
  * naturally. Each game row is dense: logos, names, time, score/result.
  */
-export default function ThisWeekGrid({ week, schoolIndex, allGames = [] }) {
+export default function ThisWeekGrid({ week, schoolIndex, allGames = [], sportConfig = null }) {
   if (!week || week.games.length === 0) {
     return (
       <div className="week week--empty">
@@ -42,6 +42,7 @@ export default function ThisWeekGrid({ week, schoolIndex, allGames = [] }) {
                 game={g}
                 schoolIndex={schoolIndex}
                 allGames={allGames}
+                sportConfig={sportConfig}
               />
             ))}
           </ul>
@@ -51,7 +52,7 @@ export default function ThisWeekGrid({ week, schoolIndex, allGames = [] }) {
   );
 }
 
-function GameRow({ game, schoolIndex, allGames }) {
+function GameRow({ game, schoolIndex, allGames, sportConfig }) {
   const sportPrefix = useSportPrefix();
   const homeSchool = schoolFor(game.home, schoolIndex);
   const awaySchool = schoolFor(game.away, schoolIndex);
@@ -59,7 +60,7 @@ function GameRow({ game, schoolIndex, allGames }) {
 
   const homeWon = isFinal && (game.home.score ?? -1) > (game.away.score ?? -1);
   const awayWon = isFinal && (game.away.score ?? -1) > (game.home.score ?? -1);
-  const playerLine = playerLineForGame(game, { contextGames: allGames });
+  const playerLine = playerLineForGame(game, { contextGames: allGames, sportConfig });
 
   return (
     <li className="game-row">

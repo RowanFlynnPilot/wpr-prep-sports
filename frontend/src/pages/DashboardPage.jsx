@@ -13,6 +13,11 @@ import { pickFeaturedWeek } from "../utils/weeks.js";
 import { pickMarqueeGame } from "../utils/marquee.js";
 import { SPORT_IDS } from "../config/sports.js";
 
+/** True if any season-stats row is for an actual player (not a "Team" total). */
+function hasPlayerRows(rows) {
+  return (rows ?? []).some((r) => r.player_name && r.player_name !== "Team");
+}
+
 export default function DashboardPage({ dataset, schoolIndex, sponsors, sportConfig }) {
   const { meta, schools, games, standings, seasonStats } = dataset;
 
@@ -113,7 +118,7 @@ export default function DashboardPage({ dataset, schoolIndex, sponsors, sportCon
             {week ? `${week.games.length} games · grouped by day` : ""}
           </span>
         </div>
-        <ThisWeekGrid week={week} schoolIndex={schoolIndex} allGames={games} />
+        <ThisWeekGrid week={week} schoolIndex={schoolIndex} allGames={games} sportConfig={sportConfig} />
       </section>
 
       <section>
@@ -121,7 +126,7 @@ export default function DashboardPage({ dataset, schoolIndex, sponsors, sportCon
           <h2>Recent Scores</h2>
           <Sponsor slot="ticker" sponsors={sponsors} variant="inline" />
         </div>
-        <ScoreTicker games={recent} schoolIndex={schoolIndex} allGames={games} />
+        <ScoreTicker games={recent} schoolIndex={schoolIndex} allGames={games} sportConfig={sportConfig} />
       </section>
 
       <section>
@@ -146,13 +151,18 @@ export default function DashboardPage({ dataset, schoolIndex, sponsors, sportCon
         </div>
       </section>
 
-      {seasonStats && seasonStats.length > 0 && (
+      {seasonStats && seasonStats.length > 0 && hasPlayerRows(seasonStats) && (
         <section>
           <div className="section-header">
             <h2>Top Performers</h2>
             <span className="section-header__hint">Season leaders across all tracked schools</span>
           </div>
-          <TopPerformers rows={seasonStats} schoolIndex={schoolIndex} n={5} />
+          <TopPerformers
+            rows={seasonStats}
+            schoolIndex={schoolIndex}
+            sportConfig={sportConfig}
+            n={5}
+          />
         </section>
       )}
     </Layout>

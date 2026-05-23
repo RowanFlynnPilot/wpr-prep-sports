@@ -46,8 +46,9 @@ export default function TeamPage({ dataset, schoolIndex, sponsors, sportConfig }
         school,
         schoolsById: schoolIndex,
         seasonStatsForSchool,
+        sportConfig,
       }),
-    [teamGames, schoolId, school, schoolIndex, seasonStatsForSchool],
+    [teamGames, schoolId, school, schoolIndex, seasonStatsForSchool, sportConfig],
   );
 
   // Try to find this school's logo from any of their home games (where the
@@ -160,13 +161,14 @@ export default function TeamPage({ dataset, schoolIndex, sponsors, sportConfig }
                 schoolIndex={schoolIndex}
                 allTeamGames={teamGames}
                 sportPrefix={sportPrefix}
+                sportConfig={sportConfig}
               />
             ))}
           </ol>
         )}
       </section>
 
-      <SeasonLeaders rows={seasonStatsForSchool} />
+      <SeasonLeaders rows={seasonStatsForSchool} sportConfig={sportConfig} />
 
       <Sponsor slot={`school:${schoolId}`} sponsors={sponsors} variant="card" />
     </Layout>
@@ -210,7 +212,7 @@ function computeRecord(games, schoolId) {
   };
 }
 
-function ScheduleRow({ game, index, schoolId, schoolIndex, allTeamGames, sportPrefix }) {
+function ScheduleRow({ game, index, schoolId, schoolIndex, allTeamGames, sportPrefix, sportConfig }) {
   const isHome = game.home.school_id === schoolId;
   const opponent = isHome ? game.away : game.home;
   const opponentSchool = schoolIndex.get(opponent.school_id);
@@ -224,6 +226,7 @@ function ScheduleRow({ game, index, schoolId, schoolIndex, allTeamGames, sportPr
     teamGames: allTeamGames,
     perspectiveSchoolId: schoolId,
     contextGames: allTeamGames,
+    sportConfig,
   });
 
   return (
