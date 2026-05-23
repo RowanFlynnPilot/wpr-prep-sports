@@ -108,6 +108,17 @@ class Standing(BaseModel):
     rows: list[StandingRow]
 
 
+class SeasonStat(BaseModel):
+    """One athlete's season totals in one category for one team (Bound-sourced)."""
+    school_id: str
+    sport: Sport
+    category: str                       # "Passing" | "Rushing" | "Receiving" | "Defense"
+    player_name: str
+    player_year: Optional[str] = None   # "SR" | "JR" | "SO" | "FR"
+    jersey: Optional[str] = None
+    stats: dict[str, str] = Field(default_factory=dict)  # column header → value
+
+
 class Meta(BaseModel):
     last_updated: datetime
     season: str
@@ -120,3 +131,4 @@ class Dataset(BaseModel):
     schools: list[School]
     games: list[Game]
     standings: list[Standing]
+    season_stats: list[SeasonStat] = Field(default_factory=list)

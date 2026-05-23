@@ -221,6 +221,120 @@ def fetch_game_stats(comp_id: str, season: str = "2025-26", sport_abbr: str = "f
 
 
 # ---------------------------------------------------------------------------
+# Season stats: per-team aggregate tables
+# ---------------------------------------------------------------------------
+
+
+@dataclass(frozen=True)
+class SeasonStatRow:
+    """One athlete's season totals in one category (Bound team stats page)."""
+    category: str                 # "Passing" | "Rushing" | "Receiving" | "Defense"
+    player_name: str
+    player_year: str | None
+    jersey: str | None
+    stats: dict[str, str]         # column header → cell value, e.g. {"YDS": "1247", "TDS": "12"}
+
+
+# Map the category title on Bound's stats page → our canonical category key.
+# Bound also shows Kicking and Punting on some pages but football v1 cares
+# about offense + tackles; we silently ignore unknown categories.
+_CATEGORY_BY_TITLE = {
+    "Passing": "Passing",
+    "Rushing": "Rushing",
+    "Receiving": "Receiving",
+    "Tackles": "Defense",
+    "Defense": "Defense",
+}
+
+
+def fetch_team_season_stats(
+    slug: str,
+    *,
+    season: str = "2025-26",
+    sport_abbr: str = "fb",
+    level: str = "v",
+) -> list[SeasonStatRow]:
+    """
+    Fetch one team's full season stats from Bound.
+
+    Each "card" on the page wraps a stat category — Passing, Rushing,
+    Receiving, Defense — with a table whose header row defines the
+    column keys (YDS, TDS, INT, etc.) and whose body rows are athletes.
+    First cell is "{jersey}, {player name}, {YR}".
+
+    Returns flattened SeasonStatRow records. The caller is responsible
+    for resolving these into our manifest school (the slug itself is
+    already mapped one level up).
+    """
+    url = f"{BASE_URL}/wi/wiaa/{sport_abbr}/{season}/{slug}/{level}/stats"
+    html = _get(url)
+    soup = BeautifulSoup(html, "lxml")
+
+    out: list[SeasonStatRow] = []
+    for card in soup.select("div.card-table"):
+        title_el = card.select_one(".card-title")
+        if not title_el:
+            continue
+        title = title_el.get_text(strip=True)
+        category = _CATEGORY_BY_TITLE.get(title)
+        if category is None:
+            continue
+
+        table = card.find("table")
+        if table is None:
+            continue
+        # Column headers — sortable header anchors hold the canonical short
+        # label (YDS, TDS, etc.); fall back to the th's title attribute.
+        col_keys: list[str] = []
+        for th in table.select("thead th"):
+            label_anchor = th.find("a")
+            if label_anchor and label_anchor.get_text(strip=True):
+                col_keys.append(label_anchor.get_text(strip=True))
+            else:
+                col_keys.append(th.get_text(strip=True))
+
+        for tr in table.select("tbody tr"):
+            cells = tr.find_all("td")
+            if not cells:
+                continue
+            athlete_text = cells[0].get_text(" ", strip=True)
+            jersey, player_name, player_year = _parse_athlete_cell(athlete_text)
+            stats: dict[str, str] = {}
+            # cells[0] is the Athlete column; the rest line up with col_keys[1:]
+            for key, td in zip(col_keys[1:], cells[1:]):
+                value = td.get_text(" ", strip=True)
+                if value:
+                    stats[key] = value
+            out.append(
+                SeasonStatRow(
+                    category=category,
+                    player_name=player_name,
+                    player_year=player_year,
+                    jersey=jersey,
+                    stats=stats,
+                )
+            )
+    return out
+
+
+_ATHLETE_RE = re.compile(
+    r"^\s*(?:(\d+),\s*)?(.+?)(?:,\s*([A-Z]{2}))?\s*$",
+)
+
+
+def _parse_athlete_cell(text: str) -> tuple[str | None, str, str | None]:
+    """
+    Bound formats the athlete cell as "{jersey}, {Player Name}, {YR}".
+    Jersey and year are optional; the name itself can contain spaces.
+    """
+    m = _ATHLETE_RE.match(text)
+    if not m:
+        return None, text.strip(), None
+    jersey, name, year = m.group(1), m.group(2).strip(), m.group(3)
+    return jersey, name, year
+
+
+# ---------------------------------------------------------------------------
 # Legacy entry point
 # ---------------------------------------------------------------------------
 

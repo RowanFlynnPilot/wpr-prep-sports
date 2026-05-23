@@ -46,6 +46,7 @@ class SchoolManifestEntry:
     colors: list[str] = field(default_factory=list)
     conferences: list[ConferenceMembership] = field(default_factory=list)
     wiaa_org_id: int | None = None
+    bound_slug: str | None = None
     athletics_url: str | None = None
 
     def conference_for(self, sport: str) -> str | None:
@@ -64,6 +65,7 @@ class SchoolManifestEntry:
             "colors": list(self.colors),
             "conferences": [c.to_dict() for c in self.conferences],
             "wiaa_org_id": self.wiaa_org_id,
+            "bound_slug": self.bound_slug,
             "athletics_url": self.athletics_url,
         }
 
@@ -92,6 +94,7 @@ def load_manifest(path: Path = MANIFEST_PATH) -> Manifest:
                 for c in s.get("conferences") or []
             ],
             wiaa_org_id=s.get("wiaa_org_id"),
+            bound_slug=s.get("bound_slug"),
             athletics_url=s.get("athletics_url"),
         )
         for s in raw["schools"]

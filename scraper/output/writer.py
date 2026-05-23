@@ -32,6 +32,10 @@ def write_dataset(dataset: Dataset, out_dir: Path) -> None:
         out_dir / "standings.json",
         [s.model_dump(mode="json") for s in dataset.standings],
     )
+    _write_json(
+        out_dir / "season_stats.json",
+        [s.model_dump(mode="json") for s in dataset.season_stats],
+    )
 
 
 def _write_json(path: Path, data: object) -> None:

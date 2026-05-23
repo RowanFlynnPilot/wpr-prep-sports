@@ -26,7 +26,8 @@ from typing import Iterable
 
 from rich.console import Console
 
-from models.schema import Dataset, Game, GameStatus, StatLine
+from config.loader import Manifest
+from models.schema import Dataset, Game, GameStatus, SeasonStat, Sport, StatLine
 from sources import bound
 
 POLITE_DELAY_SECONDS = 0.4
@@ -101,6 +102,65 @@ def merge_bound_stats(
     if matched > 0 and "bound" not in dataset.meta.sources_used:
         dataset.meta.sources_used.append("bound")
 
+    return dataset
+
+
+def merge_team_season_stats(
+    dataset: Dataset,
+    *,
+    manifest: Manifest,
+    sport: str,
+    console: Console | None = None,
+) -> Dataset:
+    """
+    Fetch Bound's per-team season-stats page for each manifest school with
+    a `bound_slug` set, parse the four category tables, and attach the rows
+    to dataset.season_stats keyed by school_id.
+
+    Skips schools without a bound_slug (e.g., if discovery hasn't run for
+    them yet) and silently skips category fetch errors so one broken team
+    doesn't blank the whole leaderboard.
+    """
+    targets = [s for s in manifest.schools if s.bound_slug]
+    if not targets:
+        if console:
+            console.print("[yellow]No bound_slug values in manifest — skipping season stats[/yellow]")
+        return dataset
+
+    if console:
+        console.print(f"[bold]Fetching season stats[/bold] for {len(targets)} teams")
+
+    sport_enum = Sport(sport)
+    out: list[SeasonStat] = []
+    for school in targets:
+        try:
+            rows = bound.fetch_team_season_stats(school.bound_slug)
+        except Exception as e:  # noqa: BLE001
+            if console:
+                console.print(f"[yellow]  ! season stats failed for {school.id}: {e}[/yellow]")
+            time.sleep(POLITE_DELAY_SECONDS)
+            continue
+        for r in rows:
+            out.append(
+                SeasonStat(
+                    school_id=school.id,
+                    sport=sport_enum,
+                    category=r.category,
+                    player_name=r.player_name,
+                    player_year=r.player_year,
+                    jersey=r.jersey,
+                    stats=dict(r.stats),
+                )
+            )
+        if console:
+            console.print(f"  · {school.id} ({school.bound_slug}): {len(rows)} rows")
+        time.sleep(POLITE_DELAY_SECONDS)
+
+    dataset.season_stats = out
+    if out and "bound" not in dataset.meta.sources_used:
+        dataset.meta.sources_used.append("bound")
+    if console:
+        console.print(f"[green]Season stats:[/green] {len(out)} athlete-rows across {len(targets)} teams")
     return dataset
 
 

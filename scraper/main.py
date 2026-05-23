@@ -23,7 +23,7 @@ from config.loader import ensure_org_ids, load_manifest, save_manifest
 from output.writer import write_dataset
 from sources import wiaa
 from transform.normalize import build_dataset, build_name_index_for_manifest
-from transform.stats import merge_bound_stats
+from transform.stats import merge_bound_stats, merge_team_season_stats
 
 console = Console()
 
@@ -120,6 +120,9 @@ def main() -> int:
     if not args.no_stats and args.sport == "football":
         name_to_id = build_name_index_for_manifest(manifest)
         dataset = merge_bound_stats(dataset, name_to_id=name_to_id, console=console)
+        dataset = merge_team_season_stats(
+            dataset, manifest=manifest, sport=args.sport, console=console,
+        )
 
     if args.dry_run:
         console.print("[yellow]Dry run — not writing files[/yellow]")

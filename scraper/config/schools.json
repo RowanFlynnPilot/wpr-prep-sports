@@ -1,5 +1,5 @@
 {
-  "_comment": "Hand-curated manifest of the ~14 schools wpr-prep-sports tracks. The scraper reads this to know which schools to fetch. `wiaa_org_id` is stable across seasons; per-sport TeamIDs are minted yearly and re-discovered at scrape time. Run `python -m scraper.discover` to backfill nulls.",
+  "_comment": "Hand-curated manifest of the ~14 schools wpr-prep-sports tracks. The scraper reads this to know which schools to fetch. `wiaa_org_id` is stable across seasons; per-sport TeamIDs are minted yearly and re-discovered at scrape time. Run `python -m scraper.discover` to backfill nulls. Bound team slugs added 2026-05-23 for season-stats fetches.",
   "schools": [
     {
       "id": "wausau-east",
@@ -30,7 +30,8 @@
         }
       ],
       "wiaa_org_id": 454,
-      "athletics_url": null
+      "athletics_url": null,
+      "bound_slug": "wausaueast"
     },
     {
       "id": "wausau-west",
@@ -61,7 +62,8 @@
         }
       ],
       "wiaa_org_id": 455,
-      "athletics_url": null
+      "athletics_url": null,
+      "bound_slug": "wausauwest"
     },
     {
       "id": "dc-everest",
@@ -92,7 +94,8 @@
         }
       ],
       "wiaa_org_id": 93,
-      "athletics_url": null
+      "athletics_url": null,
+      "bound_slug": "dceverest"
     },
     {
       "id": "marshfield",
@@ -123,7 +126,8 @@
         }
       ],
       "wiaa_org_id": 234,
-      "athletics_url": null
+      "athletics_url": null,
+      "bound_slug": "marshfield"
     },
     {
       "id": "spash",
@@ -154,7 +158,8 @@
         }
       ],
       "wiaa_org_id": 412,
-      "athletics_url": null
+      "athletics_url": null,
+      "bound_slug": "stevenspoi"
     },
     {
       "id": "wisconsin-rapids",
@@ -185,7 +190,8 @@
         }
       ],
       "wiaa_org_id": 487,
-      "athletics_url": null
+      "athletics_url": null,
+      "bound_slug": "wisconsinr"
     },
     {
       "id": "athens",
@@ -216,7 +222,8 @@
         }
       ],
       "wiaa_org_id": 22,
-      "athletics_url": null
+      "athletics_url": null,
+      "bound_slug": "athens"
     },
     {
       "id": "edgar",
@@ -247,7 +254,8 @@
         }
       ],
       "wiaa_org_id": 112,
-      "athletics_url": null
+      "athletics_url": null,
+      "bound_slug": "edgar"
     },
     {
       "id": "marathon",
@@ -278,7 +286,8 @@
         }
       ],
       "wiaa_org_id": 227,
-      "athletics_url": null
+      "athletics_url": null,
+      "bound_slug": "marathon"
     },
     {
       "id": "newman-catholic",
@@ -309,7 +318,8 @@
         }
       ],
       "wiaa_org_id": 296,
-      "athletics_url": null
+      "athletics_url": null,
+      "bound_slug": "newmancath"
     },
     {
       "id": "stratford",
@@ -340,7 +350,8 @@
         }
       ],
       "wiaa_org_id": 415,
-      "athletics_url": null
+      "athletics_url": null,
+      "bound_slug": "stratford"
     },
     {
       "id": "spencer",
@@ -371,7 +382,8 @@
         }
       ],
       "wiaa_org_id": 408,
-      "athletics_url": null
+      "athletics_url": null,
+      "bound_slug": "spencer"
     },
     {
       "id": "mosinee",
@@ -402,7 +414,8 @@
         }
       ],
       "wiaa_org_id": 280,
-      "athletics_url": null
+      "athletics_url": null,
+      "bound_slug": "mosinee"
     },
     {
       "id": "colby",
@@ -433,7 +446,8 @@
         }
       ],
       "wiaa_org_id": 79,
-      "athletics_url": null
+      "athletics_url": null,
+      "bound_slug": "colby"
     },
     {
       "id": "abbotsford",
@@ -464,7 +478,8 @@
         }
       ],
       "wiaa_org_id": 1,
-      "athletics_url": null
+      "athletics_url": null,
+      "bound_slug": "abbotsford"
     }
   ]
 }
