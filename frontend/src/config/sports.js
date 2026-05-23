@@ -538,6 +538,11 @@ const HOCKEY_GAME_LINE = {
   format: (line) => {
     const s = line.stats ?? {};
     const player = playerNameWithYear(line);
+    // Skater position prefix when known ("F" / "D") — mirrors football's
+    // QB/RB/WR/LB pattern. Goalie lines already start with "Goalie", so
+    // skip prefixing on saves.
+    const skaterPrefix = (line.position && /^[FD]$/.test(line.position))
+      ? `${line.position} ` : "";
     switch (line.category) {
       case "Hockey Points": {
         const pts = asNum(s.PTS);
@@ -547,14 +552,14 @@ const HOCKEY_GAME_LINE = {
         const breakdown = (Number.isFinite(g) && Number.isFinite(a))
           ? ` (${Math.round(g)}G, ${Math.round(a)}A)`
           : "";
-        return `${player} racked up ${Math.round(pts)} points${breakdown}.`;
+        return `${skaterPrefix}${player} racked up ${Math.round(pts)} points${breakdown}.`;
       }
       case "Hockey Goals": {
         const g = asNum(s.G);
         const sog = asNum(s.SOG);
         if (!Number.isFinite(g) || g < 2) return null;
         const sogClause = Number.isFinite(sog) && sog > g ? ` on ${Math.round(sog)} shots` : "";
-        return `${player} scored ${Math.round(g)} goals${sogClause}.`;
+        return `${skaterPrefix}${player} scored ${Math.round(g)} goals${sogClause}.`;
       }
       case "Hockey Saves": {
         const sv = asNum(s.SV);

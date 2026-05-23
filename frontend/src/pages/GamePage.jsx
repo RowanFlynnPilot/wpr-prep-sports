@@ -281,7 +281,9 @@ const CATEGORY_POS = {
 
 function StatRow({ line }) {
   const stats = line.stats ?? {};
-  const pos = CATEGORY_POS[line.category];
+  // line.position (source-supplied, e.g. hockey "F"/"D"/"G") wins over the
+  // category-based fallback, which only fits football today.
+  const pos = line.position || CATEGORY_POS[line.category] || null;
   return (
     <li className={`stat-row${pos ? "" : " stat-row--no-pos"}`}>
       {pos && <span className="stat-row__pos">{pos}</span>}
