@@ -20,14 +20,22 @@ export async function fetchDataset() {
   // dataset is picked up immediately without manual cache clears.
   const meta = await fetchJson(`${DATA_BASE}/meta.json`);
   const v = encodeURIComponent(meta.last_updated ?? Date.now());
-  const [schools, games, standings, sponsors] = await Promise.all([
+  const [schools, games, standings, sponsors, seasonStats] = await Promise.all([
     fetchJson(`${DATA_BASE}/schools.json?v=${v}`),
     fetchJson(`${DATA_BASE}/games.json?v=${v}`),
     fetchJson(`${DATA_BASE}/standings.json?v=${v}`),
-    // Sponsors are optional — the widget renders fine without any.
+    // Sponsors and season_stats are optional — the widget renders fine without them.
     fetchJsonOptional(`${DATA_BASE}/sponsors.json?v=${v}`),
+    fetchJsonOptional(`${DATA_BASE}/season_stats.json?v=${v}`),
   ]);
-  return { meta, schools, games, standings, sponsors };
+  return {
+    meta,
+    schools,
+    games,
+    standings,
+    sponsors,
+    seasonStats: seasonStats ?? [],
+  };
 }
 
 async function fetchJson(url) {

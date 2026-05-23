@@ -21,7 +21,16 @@ const BLOWOUT_MARGIN = 21;
 const CLOSE_MARGIN = 7;
 
 /** Returns a single sentence describing the game's result, or null if not final. */
-export function recapForGame(game, { schoolsById, teamGames = null, perspectiveSchoolId = null } = {}) {
+export function recapForGame(
+  game,
+  {
+    schoolsById,
+    teamGames = null,
+    perspectiveSchoolId = null,
+    seasonStatsForSchool = null,
+    enrichWithSeasonTotals = false,
+  } = {},
+) {
   if (!game || game.status !== "final") return null;
   if (game.home.score == null || game.away.score == null) return null;
 
@@ -116,8 +125,23 @@ export function recapForGame(game, { schoolsById, teamGames = null, perspectiveS
   const subject = ownSchool?.mascot ? `The ${ownSchool.mascot}` : ownSchool?.name ?? ownLabel;
 
   const opener = `${subject} ${resultPhrase}${recordPhrase}${conferencePhrase} on ${dateLabel}.`;
-  const statSentence = headlineStatSentence(game, perspective);
-  return statSentence ? `${opener} ${statSentence}` : opener;
+  const headline = headlineStatLine(game, perspective);
+  if (!headline) return opener;
+
+  const statSentence = formatStatLine(headline);
+  // Season-totals enrichment is opt-in (Hero only) because Bound's
+  // season-stats reflect the moment of the scrape, not the moment of
+  // each historical game — applying them to a Week 2 recap would
+  // misrepresent the running record.
+  const seasonClause =
+    enrichWithSeasonTotals && seasonStatsForSchool
+      ? seasonClauseFor(headline, seasonStatsForSchool)
+      : null;
+  return statSentence
+    ? seasonClause
+      ? `${opener} ${statSentence} ${seasonClause}`
+      : `${opener} ${statSentence}`
+    : opener;
 }
 
 /**
@@ -150,19 +174,85 @@ export function playerLineForGame(game) {
  * better silent than embarrassing.
  */
 function headlineStatSentence(game, schoolId) {
+  const headline = headlineStatLine(game, schoolId);
+  return headline ? formatStatLine(headline) : null;
+}
+
+/**
+ * Return the StatLine object (not the formatted string) that wins the
+ * narrative-weight contest. Callers needing both the raw player record
+ * and the formatted sentence use this.
+ */
+function headlineStatLine(game, schoolId) {
   const leaders = (game.stat_leaders ?? []).filter(
     (l) => l.team_school_id === schoolId,
   );
   if (leaders.length === 0) return null;
-
-  // Categories ordered by narrative weight. The first leader that meets
-  // its threshold wins.
   const order = ["Passing Yards", "Rushing Yards", "Receiving Yards", "Total Tackles"];
   for (const cat of order) {
     const line = leaders.find((l) => l.category === cat);
-    if (!line) continue;
-    const sentence = formatStatLine(line);
-    if (sentence) return sentence;
+    if (line && formatStatLine(line)) return line;
+  }
+  return null;
+}
+
+/**
+ * Match the headline player to their season-stats row, then format a
+ * short follow-up clause. Mapping is by case-insensitive player name
+ * (Bound is the source for both, so names line up modulo whitespace).
+ */
+function seasonClauseFor(statLine, seasonStatsForSchool) {
+  if (!seasonStatsForSchool || seasonStatsForSchool.length === 0) return null;
+  const normLineName = (statLine.player_name || "").replace(/\s+/g, " ").trim().toLowerCase();
+  if (!normLineName) return null;
+
+  const matchCat = {
+    "Passing Yards": "Passing",
+    "Rushing Yards": "Rushing",
+    "Receiving Yards": "Receiving",
+    "Total Tackles": "Defense",
+  }[statLine.category];
+  if (!matchCat) return null;
+
+  const seasonRow = seasonStatsForSchool.find(
+    (r) =>
+      r.category === matchCat &&
+      (r.player_name || "").replace(/\s+/g, " ").trim().toLowerCase() === normLineName,
+  );
+  if (!seasonRow) return null;
+
+  const s = seasonRow.stats ?? {};
+  if (matchCat === "Passing") {
+    const yds = parseInt(s.YDS, 10);
+    const tds = parseInt(s.TDS, 10);
+    if (!Number.isFinite(yds)) return null;
+    const tdClause = Number.isFinite(tds) && tds > 0
+      ? ` and ${tds} TD${tds === 1 ? "" : "s"}`
+      : "";
+    return `He now has ${yds.toLocaleString()} passing yards${tdClause} on the season.`;
+  }
+  if (matchCat === "Rushing") {
+    const yds = parseInt(s.YDS, 10);
+    const tds = parseInt(s.TDS, 10);
+    if (!Number.isFinite(yds)) return null;
+    const tdClause = Number.isFinite(tds) && tds > 0
+      ? ` and ${tds} rushing TD${tds === 1 ? "" : "s"}`
+      : "";
+    return `He's up to ${yds.toLocaleString()} rushing yards${tdClause} on the season.`;
+  }
+  if (matchCat === "Receiving") {
+    const yds = parseInt(s.YDS, 10);
+    const tds = parseInt(s.TDS, 10);
+    if (!Number.isFinite(yds)) return null;
+    const tdClause = Number.isFinite(tds) && tds > 0
+      ? ` and ${tds} TD${tds === 1 ? "" : "s"}`
+      : "";
+    return `He's at ${yds.toLocaleString()} receiving yards${tdClause} on the season.`;
+  }
+  if (matchCat === "Defense") {
+    const tkl = parseFloat(s.TOT);
+    if (!Number.isFinite(tkl)) return null;
+    return `He's racked up ${tkl.toFixed(0)} tackles on the season.`;
   }
   return null;
 }

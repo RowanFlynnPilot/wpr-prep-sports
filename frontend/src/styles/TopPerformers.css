@@ -1,0 +1,113 @@
+.top-performers {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+  gap: 1.25rem;
+}
+
+.top-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.top-card__header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.7rem 1rem;
+  background: var(--ink);
+  color: #fff;
+  border-bottom: 3px solid var(--accent);
+}
+.top-card__position {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: rgba(245, 158, 11, 0.12);
+  padding: 0.18rem 0.4rem;
+  border-radius: var(--radius-sm);
+}
+.top-card__title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.top-card__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.top-card__row {
+  display: grid;
+  grid-template-columns: 1.5rem minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.55rem 1rem;
+  border-top: 1px solid var(--paper-2);
+  transition: background var(--t-fast) var(--ease);
+}
+.top-card__row:first-child { border-top: none; }
+.top-card__row:hover { background: rgba(243, 240, 232, 0.4); }
+.top-card__row:first-child .top-card__rank { color: var(--accent-700); }
+
+.top-card__rank {
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-align: center;
+  color: var(--muted-2);
+}
+
+.top-card__player {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.top-card__name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.top-card__year {
+  font-weight: 400;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+.top-card__team {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 0.78rem;
+  color: var(--muted);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color var(--t-fast) var(--ease), border-color var(--t-fast) var(--ease);
+  align-self: flex-start;
+}
+.top-card__team:hover,
+.top-card__team:focus-visible {
+  color: var(--wpr-link);
+  border-bottom-color: currentColor;
+  outline: none;
+}
+
+.top-card__stats {
+  font-family: var(--font-numeric);
+  font-weight: 600;
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
+  text-align: right;
+  white-space: nowrap;
+}

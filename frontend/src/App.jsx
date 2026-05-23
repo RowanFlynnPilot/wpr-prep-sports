@@ -15,6 +15,8 @@ import "./styles/StandingsTable.css";
 import "./styles/ThisWeekGrid.css";
 import "./styles/TeamPage.css";
 import "./styles/Sponsor.css";
+import "./styles/SeasonLeaders.css";
+import "./styles/TopPerformers.css";
 
 export default function App() {
   const [dataset, setDataset] = useState(null);

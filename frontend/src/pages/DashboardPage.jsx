@@ -6,11 +6,12 @@ import ThisWeekGrid from "../components/ThisWeekGrid.jsx";
 import StandingsTable from "../components/StandingsTable.jsx";
 import StaleBanner from "../components/StaleBanner.jsx";
 import Sponsor from "../components/Sponsor.jsx";
+import TopPerformers from "../components/TopPerformers.jsx";
 import { pickFeaturedGame, tickerGames } from "../utils/games.js";
 import { pickFeaturedWeek } from "../utils/weeks.js";
 
 export default function DashboardPage({ dataset, schoolIndex, sponsors }) {
-  const { meta, schools, games, standings } = dataset;
+  const { meta, schools, games, standings, seasonStats } = dataset;
 
   // Off-season trick: until the 2026 season starts producing live games,
   // anchor "now" to just after the most recent scraped game so Hero/Ticker
@@ -52,7 +53,12 @@ export default function DashboardPage({ dataset, schoolIndex, sponsors }) {
     >
       <StaleBanner lastUpdatedIso={meta?.last_updated} />
 
-      <Hero game={featured} schoolIndex={schoolIndex} games={games} />
+      <Hero
+        game={featured}
+        schoolIndex={schoolIndex}
+        games={games}
+        seasonStats={seasonStats}
+      />
 
       <section>
         <div className="section-header">
@@ -88,6 +94,16 @@ export default function DashboardPage({ dataset, schoolIndex, sponsors }) {
           ))}
         </div>
       </section>
+
+      {seasonStats && seasonStats.length > 0 && (
+        <section>
+          <div className="section-header">
+            <h2>Top Performers</h2>
+            <span className="section-header__hint">Season leaders across all tracked schools</span>
+          </div>
+          <TopPerformers rows={seasonStats} schoolIndex={schoolIndex} n={5} />
+        </section>
+      )}
     </Layout>
   );
 }

@@ -1,0 +1,110 @@
+.season-leaders {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-top: 1.5rem;
+}
+
+.season-leaders__header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 0.85rem 1rem;
+  background: var(--ink);
+  color: #fff;
+  border-bottom: 3px solid var(--accent);
+}
+.season-leaders__header h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  font-size: 1.05rem;
+  text-transform: uppercase;
+}
+.season-leaders__hint {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.season-leaders__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.season-leaders__row {
+  display: grid;
+  grid-template-columns: 3rem minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.7rem 1rem;
+  border-top: 1px solid var(--paper-2);
+}
+.season-leaders__row:first-child { border-top: none; }
+.season-leaders__row:hover { background: rgba(243, 240, 232, 0.4); }
+
+.season-leaders__position {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-align: center;
+  color: var(--accent-700);
+  background: rgba(245, 158, 11, 0.1);
+  padding: 0.25rem 0.4rem;
+  border-radius: var(--radius-sm);
+}
+
+.season-leaders__player {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.season-leaders__name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.season-leaders__year {
+  font-weight: 400;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+.season-leaders__category {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted-2);
+}
+
+.season-leaders__stats {
+  font-family: var(--font-numeric);
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
+  text-align: right;
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .season-leaders__row {
+    grid-template-columns: 2.5rem minmax(0, 1fr);
+    grid-template-areas:
+      "pos player"
+      "pos stats";
+    row-gap: 0.15rem;
+  }
+  .season-leaders__position { grid-area: pos; align-self: center; }
+  .season-leaders__player { grid-area: player; }
+  .season-leaders__stats { grid-area: stats; text-align: left; font-size: 0.8rem; }
+}

@@ -8,7 +8,7 @@ import { recapForGame } from "../utils/recap.js";
  * Featured-game hero. Shows the most "important" recent or upcoming game
  * picked by utils/games.pickFeaturedGame. Renders dark, premium, score-first.
  */
-export default function Hero({ game, schoolIndex, games = [] }) {
+export default function Hero({ game, schoolIndex, games = [], seasonStats = [] }) {
   if (!game) {
     return (
       <section className="hero hero--empty">
@@ -41,10 +41,15 @@ export default function Hero({ game, schoolIndex, games = [] }) {
           g.away.school_id === perspectiveSchoolId,
       )
     : null;
+  const seasonStatsForPerspective = perspectiveSchoolId
+    ? seasonStats.filter((r) => r.school_id === perspectiveSchoolId)
+    : null;
   const recap = recapForGame(game, {
     schoolsById: schoolIndex,
     teamGames: perspectiveTeamGames,
     perspectiveSchoolId,
+    seasonStatsForSchool: seasonStatsForPerspective,
+    enrichWithSeasonTotals: true,
   });
 
   return (

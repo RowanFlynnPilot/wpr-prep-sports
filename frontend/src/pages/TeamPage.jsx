@@ -4,6 +4,7 @@ import Layout from "../components/Layout.jsx";
 import TeamLogo from "../components/TeamLogo.jsx";
 import TeamLink from "../components/TeamLink.jsx";
 import Sponsor from "../components/Sponsor.jsx";
+import SeasonLeaders from "../components/SeasonLeaders.jsx";
 import { formatGameDay, formatGameDate, formatGameTime } from "../utils/dates.js";
 import { recapForGame } from "../utils/recap.js";
 
@@ -27,6 +28,11 @@ export default function TeamPage({ dataset, schoolIndex, sponsors }) {
   );
 
   const record = useMemo(() => computeRecord(teamGames, schoolId), [teamGames, schoolId]);
+
+  const seasonStatsForSchool = useMemo(
+    () => (dataset.seasonStats ?? []).filter((r) => r.school_id === schoolId),
+    [dataset.seasonStats, schoolId],
+  );
 
   // Try to find this school's logo from any of their home games (where the
   // home team's logo is theirs). Falls back to the colored monogram.
@@ -109,6 +115,8 @@ export default function TeamPage({ dataset, schoolIndex, sponsors }) {
           </ol>
         )}
       </section>
+
+      <SeasonLeaders rows={seasonStatsForSchool} />
 
       <Sponsor slot={`school:${schoolId}`} sponsors={sponsors} variant="card" />
     </Layout>
