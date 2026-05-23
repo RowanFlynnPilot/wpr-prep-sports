@@ -432,6 +432,112 @@ const BASKETBALL_GAME_LINE = {
   },
 };
 
+/* ---------------- hockey ---------------- */
+
+const HOCKEY_STAT_CATEGORIES = [
+  {
+    id: "scoring",
+    rawCategory: "Hockey Skater",
+    displayLabel: "Scoring",
+    position: "C",
+    sortKey: "PTS",
+    formatLine: (s) => joinLine([
+      s.PTS && `${s.PTS} PTS`,
+      s.G && `${s.G} G`,
+      s.A && `${s.A} A`,
+    ]),
+  },
+  {
+    id: "goals",
+    rawCategory: "Hockey Skater",
+    displayLabel: "Goals",
+    position: "W",
+    sortKey: "G",
+    formatLine: (s) => joinLine([
+      s.G && `${s.G} G`,
+      s.SOG && `${s.SOG} SOG`,
+      s["SOG %"] && `${s["SOG %"]} SOG%`,
+    ]),
+  },
+  {
+    id: "assists",
+    rawCategory: "Hockey Skater",
+    displayLabel: "Assists",
+    position: "D",
+    sortKey: "A",
+    formatLine: (s) => joinLine([
+      s.A && `${s.A} A`,
+      s.PPA && parseFloat(s.PPA) > 0 && `${s.PPA} PPA`,
+    ]),
+  },
+  {
+    id: "goaltending",
+    rawCategory: "Hockey Goalie",
+    displayLabel: "Goaltending",
+    position: "G",
+    sortKey: "SV",
+    formatLine: (s) => joinLine([
+      s["SV %"] && `${s["SV %"]} SV%`,
+      s.GAA && `${s.GAA} GAA`,
+      s.SV && `${s.SV} SV`,
+    ]),
+  },
+];
+
+const HOCKEY_STANDOUT = {
+  weights: {
+    "Hockey Skater": (s) =>
+      (asNum(s.PTS) || 0) * 2
+      + (asNum(s.G) || 0) * 3,
+    // Goalies weighted on save volume × save percentage — keeps backup
+    // goalies with one perfect game from outranking the real starter.
+    "Hockey Goalie": (s) => {
+      const sv = asNum(s.SV) || 0;
+      const pct = asNum(s["SV %"]) || 0; // ".891" parses as 0.891
+      return sv * 0.6 + pct * 100;
+    },
+  },
+  minScore: (scale, category) =>
+    category === "Hockey Goalie" ? 100 * scale : 60 * scale,
+  format: (row, { seasonComplete }) => {
+    const s = row.stats || {};
+    const name = (row.player_name || "").trim();
+    if (row.category === "Hockey Skater") {
+      const pts = asNum(s.PTS);
+      const g = asNum(s.G);
+      const a = asNum(s.A);
+      if (!Number.isFinite(pts) || pts <= 0) return null;
+      const breakdown = (Number.isFinite(g) && Number.isFinite(a))
+        ? ` (${Math.round(g)} G, ${Math.round(a)} A)`
+        : "";
+      return seasonComplete
+        ? `${name} led the team with ${Math.round(pts)} points${breakdown} on the season.`
+        : `${name} is leading the team with ${Math.round(pts)} points${breakdown}.`;
+    }
+    if (row.category === "Hockey Goalie") {
+      const svPct = s["SV %"];
+      const gaa = s.GAA;
+      const w = asNum(s.W);
+      if (!svPct) return null;
+      const wins = Number.isFinite(w) && w > 0 ? ` and won ${Math.round(w)} games` : "";
+      return seasonComplete
+        ? `Goalie ${name} posted a ${svPct} save percentage${gaa ? ` and ${gaa} GAA` : ""}${wins} on the season.`
+        : `Goalie ${name} is posting a ${svPct} save percentage${gaa ? ` and ${gaa} GAA` : ""}${wins} so far.`;
+    }
+    return null;
+  },
+  nominalSeasonGames: 24,
+};
+
+// Hockey per-game line — no Bound stat_leaders for hockey games, so this
+// formatter has nothing to act on today. Kept as a stub so the gameLine
+// contract is honored across all sports; left empty so any future
+// per-game source can plug in without API churn.
+const HOCKEY_GAME_LINE = {
+  order: [],
+  format: () => null,
+};
+
 const VOLLEYBALL_GAME_LINE = {
   order: ["Kills", "Assists", "Digs", "Total Blocks"],
   format: (line) => {
@@ -621,10 +727,15 @@ export const SPORTS = {
     shortLabel: "Boys Hockey",
     season: "2025–26",
     activeMonths: [10, 11, 0, 1, 2], // Nov–Mar
-    hasSeasonStats: false,
+    hasSeasonStats: true,
     accentColor: "#0284c7", // ice blue
     accentDarkColor: "#075985",
     nextSeasonStart: "2026-11-14",
+    stats: {
+      categories: HOCKEY_STAT_CATEGORIES,
+      standout: HOCKEY_STANDOUT,
+      gameLine: HOCKEY_GAME_LINE,
+    },
   },
   girls_hockey: {
     id: "girls_hockey",
@@ -632,10 +743,17 @@ export const SPORTS = {
     shortLabel: "Girls Hockey",
     season: "2025–26",
     activeMonths: [10, 11, 0, 1, 2], // Nov–Mar
+    // Girls hockey on WPH is heavily co-op'd into entities that don't map
+    // 1:1 to our manifest schools — stats not wired yet.
     hasSeasonStats: false,
     accentColor: "#0284c7", // ice blue
     accentDarkColor: "#075985",
     nextSeasonStart: "2026-11-14",
+    stats: {
+      categories: HOCKEY_STAT_CATEGORIES,
+      standout: HOCKEY_STANDOUT,
+      gameLine: HOCKEY_GAME_LINE,
+    },
   },
   volleyball: {
     id: "volleyball",
