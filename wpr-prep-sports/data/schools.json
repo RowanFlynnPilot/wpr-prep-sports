@@ -1,0 +1,467 @@
+[
+  {
+    "id": "wausau-east",
+    "name": "Wausau East",
+    "full_name": "Wausau East High School",
+    "mascot": "Lumberjacks",
+    "city": "Wausau",
+    "colors": [
+      "#003DA5",
+      "#FFC72C"
+    ],
+    "conferences": [
+      {
+        "sport": "football",
+        "conference": "VFA West"
+      },
+      {
+        "sport": "boys_basketball",
+        "conference": "Wisconsin Valley"
+      },
+      {
+        "sport": "girls_basketball",
+        "conference": "Wisconsin Valley"
+      },
+      {
+        "sport": "volleyball",
+        "conference": "Wisconsin Valley"
+      }
+    ],
+    "wiaa_division": {},
+    "athletics_url": null
+  },
+  {
+    "id": "wausau-west",
+    "name": "Wausau West",
+    "full_name": "Wausau West High School",
+    "mascot": "Warriors",
+    "city": "Wausau",
+    "colors": [
+      "#B91C1C",
+      "#1F2937"
+    ],
+    "conferences": [
+      {
+        "sport": "football",
+        "conference": "VFA West"
+      },
+      {
+        "sport": "boys_basketball",
+        "conference": "Wisconsin Valley"
+      },
+      {
+        "sport": "girls_basketball",
+        "conference": "Wisconsin Valley"
+      },
+      {
+        "sport": "volleyball",
+        "conference": "Wisconsin Valley"
+      }
+    ],
+    "wiaa_division": {},
+    "athletics_url": null
+  },
+  {
+    "id": "dc-everest",
+    "name": "D.C. Everest",
+    "full_name": "D.C. Everest Senior High School",
+    "mascot": "Evergreens",
+    "city": "Schofield",
+    "colors": [
+      "#15803D",
+      "#FFFFFF"
+    ],
+    "conferences": [
+      {
+        "sport": "football",
+        "conference": "VFA West"
+      },
+      {
+        "sport": "boys_basketball",
+        "conference": "Wisconsin Valley"
+      },
+      {
+        "sport": "girls_basketball",
+        "conference": "Wisconsin Valley"
+      },
+      {
+        "sport": "volleyball",
+        "conference": "Wisconsin Valley"
+      }
+    ],
+    "wiaa_division": {},
+    "athletics_url": null
+  },
+  {
+    "id": "marshfield",
+    "name": "Marshfield",
+    "full_name": "Marshfield High School",
+    "mascot": "Tigers",
+    "city": "Marshfield",
+    "colors": [
+      "#EA580C",
+      "#000000"
+    ],
+    "conferences": [
+      {
+        "sport": "football",
+        "conference": "VFA West"
+      },
+      {
+        "sport": "boys_basketball",
+        "conference": "Wisconsin Valley"
+      },
+      {
+        "sport": "girls_basketball",
+        "conference": "Wisconsin Valley"
+      },
+      {
+        "sport": "volleyball",
+        "conference": "Wisconsin Valley"
+      }
+    ],
+    "wiaa_division": {},
+    "athletics_url": null
+  },
+  {
+    "id": "spash",
+    "name": "SPASH",
+    "full_name": "Stevens Point Area Senior High",
+    "mascot": "Panthers",
+    "city": "Stevens Point",
+    "colors": [
+      "#7C3AED",
+      "#FBBF24"
+    ],
+    "conferences": [
+      {
+        "sport": "football",
+        "conference": "VFA West"
+      },
+      {
+        "sport": "boys_basketball",
+        "conference": "Wisconsin Valley"
+      },
+      {
+        "sport": "girls_basketball",
+        "conference": "Wisconsin Valley"
+      },
+      {
+        "sport": "volleyball",
+        "conference": "Wisconsin Valley"
+      }
+    ],
+    "wiaa_division": {},
+    "athletics_url": null
+  },
+  {
+    "id": "wisconsin-rapids",
+    "name": "Wisconsin Rapids Lincoln",
+    "full_name": "Wisconsin Rapids Lincoln High School",
+    "mascot": "Red Raiders",
+    "city": "Wisconsin Rapids",
+    "colors": [
+      "#B91C1C",
+      "#FFFFFF"
+    ],
+    "conferences": [
+      {
+        "sport": "football",
+        "conference": "VFA West"
+      },
+      {
+        "sport": "boys_basketball",
+        "conference": "Wisconsin Valley"
+      },
+      {
+        "sport": "girls_basketball",
+        "conference": "Wisconsin Valley"
+      },
+      {
+        "sport": "volleyball",
+        "conference": "Wisconsin Valley"
+      }
+    ],
+    "wiaa_division": {},
+    "athletics_url": null
+  },
+  {
+    "id": "athens",
+    "name": "Athens",
+    "full_name": "Athens High School",
+    "mascot": "Bluejays",
+    "city": "Athens",
+    "colors": [
+      "#1D4ED8",
+      "#FFFFFF"
+    ],
+    "conferences": [
+      {
+        "sport": "football",
+        "conference": "Marawood"
+      },
+      {
+        "sport": "boys_basketball",
+        "conference": "Marawood"
+      },
+      {
+        "sport": "girls_basketball",
+        "conference": "Marawood"
+      },
+      {
+        "sport": "volleyball",
+        "conference": "Marawood"
+      }
+    ],
+    "wiaa_division": {},
+    "athletics_url": null
+  },
+  {
+    "id": "edgar",
+    "name": "Edgar",
+    "full_name": "Edgar High School",
+    "mascot": "Wildcats",
+    "city": "Edgar",
+    "colors": [
+      "#7F1D1D",
+      "#FFFFFF"
+    ],
+    "conferences": [
+      {
+        "sport": "football",
+        "conference": "Marawood"
+      },
+      {
+        "sport": "boys_basketball",
+        "conference": "Marawood"
+      },
+      {
+        "sport": "girls_basketball",
+        "conference": "Marawood"
+      },
+      {
+        "sport": "volleyball",
+        "conference": "Marawood"
+      }
+    ],
+    "wiaa_division": {},
+    "athletics_url": null
+  },
+  {
+    "id": "marathon",
+    "name": "Marathon",
+    "full_name": "Marathon High School",
+    "mascot": "Raiders",
+    "city": "Marathon City",
+    "colors": [
+      "#1E3A8A",
+      "#FDE047"
+    ],
+    "conferences": [
+      {
+        "sport": "football",
+        "conference": "Marawood"
+      },
+      {
+        "sport": "boys_basketball",
+        "conference": "Marawood"
+      },
+      {
+        "sport": "girls_basketball",
+        "conference": "Marawood"
+      },
+      {
+        "sport": "volleyball",
+        "conference": "Marawood"
+      }
+    ],
+    "wiaa_division": {},
+    "athletics_url": null
+  },
+  {
+    "id": "newman-catholic",
+    "name": "Newman Catholic",
+    "full_name": "Newman Catholic High School",
+    "mascot": "Cardinals",
+    "city": "Wausau",
+    "colors": [
+      "#B91C1C",
+      "#FFFFFF"
+    ],
+    "conferences": [
+      {
+        "sport": "football",
+        "conference": "Marawood"
+      },
+      {
+        "sport": "boys_basketball",
+        "conference": "Marawood"
+      },
+      {
+        "sport": "girls_basketball",
+        "conference": "Marawood"
+      },
+      {
+        "sport": "volleyball",
+        "conference": "Marawood"
+      }
+    ],
+    "wiaa_division": {},
+    "athletics_url": null
+  },
+  {
+    "id": "stratford",
+    "name": "Stratford",
+    "full_name": "Stratford High School",
+    "mascot": "Tigers",
+    "city": "Stratford",
+    "colors": [
+      "#000000",
+      "#FB923C"
+    ],
+    "conferences": [
+      {
+        "sport": "football",
+        "conference": "Marawood"
+      },
+      {
+        "sport": "boys_basketball",
+        "conference": "Marawood"
+      },
+      {
+        "sport": "girls_basketball",
+        "conference": "Marawood"
+      },
+      {
+        "sport": "volleyball",
+        "conference": "Marawood"
+      }
+    ],
+    "wiaa_division": {},
+    "athletics_url": null
+  },
+  {
+    "id": "spencer",
+    "name": "Spencer",
+    "full_name": "Spencer High School",
+    "mascot": "Rockets",
+    "city": "Spencer",
+    "colors": [
+      "#1E40AF",
+      "#FFFFFF"
+    ],
+    "conferences": [
+      {
+        "sport": "football",
+        "conference": "Marawood"
+      },
+      {
+        "sport": "boys_basketball",
+        "conference": "Marawood"
+      },
+      {
+        "sport": "girls_basketball",
+        "conference": "Marawood"
+      },
+      {
+        "sport": "volleyball",
+        "conference": "Marawood"
+      }
+    ],
+    "wiaa_division": {},
+    "athletics_url": null
+  },
+  {
+    "id": "mosinee",
+    "name": "Mosinee",
+    "full_name": "Mosinee High School",
+    "mascot": "Indians",
+    "city": "Mosinee",
+    "colors": [
+      "#15803D",
+      "#FBBF24"
+    ],
+    "conferences": [
+      {
+        "sport": "football",
+        "conference": "Great Northern"
+      },
+      {
+        "sport": "boys_basketball",
+        "conference": "Great Northern"
+      },
+      {
+        "sport": "girls_basketball",
+        "conference": "Great Northern"
+      },
+      {
+        "sport": "volleyball",
+        "conference": "Great Northern"
+      }
+    ],
+    "wiaa_division": {},
+    "athletics_url": null
+  },
+  {
+    "id": "colby",
+    "name": "Colby",
+    "full_name": "Colby High School",
+    "mascot": "Hornets",
+    "city": "Colby",
+    "colors": [
+      "#FBBF24",
+      "#000000"
+    ],
+    "conferences": [
+      {
+        "sport": "football",
+        "conference": "Cloverbelt"
+      },
+      {
+        "sport": "boys_basketball",
+        "conference": "Cloverbelt"
+      },
+      {
+        "sport": "girls_basketball",
+        "conference": "Cloverbelt"
+      },
+      {
+        "sport": "volleyball",
+        "conference": "Cloverbelt"
+      }
+    ],
+    "wiaa_division": {},
+    "athletics_url": null
+  },
+  {
+    "id": "abbotsford",
+    "name": "Abbotsford",
+    "full_name": "Abbotsford High School",
+    "mascot": "Falcons",
+    "city": "Abbotsford",
+    "colors": [
+      "#1E40AF",
+      "#FFFFFF"
+    ],
+    "conferences": [
+      {
+        "sport": "football",
+        "conference": "Cloverbelt"
+      },
+      {
+        "sport": "boys_basketball",
+        "conference": "Cloverbelt"
+      },
+      {
+        "sport": "girls_basketball",
+        "conference": "Cloverbelt"
+      },
+      {
+        "sport": "volleyball",
+        "conference": "Cloverbelt"
+      }
+    ],
+    "wiaa_division": {},
+    "athletics_url": null
+  }
+]
