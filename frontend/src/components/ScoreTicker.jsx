@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState, useCallback } from "react";
 import TeamLogo from "./TeamLogo.jsx";
 import TeamLink from "./TeamLink.jsx";
 import { schoolFor } from "../utils/schools.js";
@@ -7,8 +8,58 @@ import { playerLineForGame } from "../utils/recap.js";
 /**
  * Horizontal scrollable ticker of recent + tonight games. Each card surfaces
  * the most important info: date, both team logos+names, scores, status.
+ *
+ * Scroll polish:
+ * - native scrollbar hidden (track still drag-scrolls)
+ * - gradient mask fades cards at the edges, hinting "more here"
+ * - circular left/right arrow buttons paginate by ~one card width and
+ *   disable themselves at the ends
+ * - scroll-snap-type: x mandatory makes the snap feel crisp on touch
  */
 export default function ScoreTicker({ games, schoolIndex }) {
+  const trackRef = useRef(null);
+  const [atStart, setAtStart] = useState(true);
+  const [atEnd, setAtEnd] = useState(false);
+
+  const updateEdges = useCallback(() => {
+    const el = trackRef.current;
+    if (!el) return;
+    const max = el.scrollWidth - el.clientWidth;
+    // 4px tolerance — scroll positions sometimes settle ±1px off the end.
+    setAtStart(el.scrollLeft <= 4);
+    setAtEnd(el.scrollLeft >= max - 4);
+  }, []);
+
+  useEffect(() => {
+    updateEdges();
+    const el = trackRef.current;
+    if (!el) return;
+    el.addEventListener("scroll", updateEdges, { passive: true });
+    const ro = new ResizeObserver(updateEdges);
+    ro.observe(el);
+    return () => {
+      el.removeEventListener("scroll", updateEdges);
+      ro.disconnect();
+    };
+  }, [updateEdges, games]);
+
+  const scrollBy = useCallback((direction) => {
+    const el = trackRef.current;
+    if (!el) return;
+    // Step = one card + gap (read off the first card's actual width).
+    const firstCard = el.querySelector(".card");
+    const step = firstCard
+      ? firstCard.getBoundingClientRect().width + 14
+      : el.clientWidth * 0.8;
+    const prefersReduced =
+      typeof window !== "undefined" &&
+      window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+    el.scrollBy({
+      left: step * direction,
+      behavior: prefersReduced ? "instant" : "smooth",
+    });
+  }, []);
+
   if (!games || games.length === 0) {
     return (
       <div className="ticker ticker--empty">
@@ -19,11 +70,49 @@ export default function ScoreTicker({ games, schoolIndex }) {
 
   return (
     <div className="ticker">
-      <div className="ticker__track">
-        {games.map((g) => (
-          <GameCard key={g.id} game={g} schoolIndex={schoolIndex} />
-        ))}
+      <button
+        type="button"
+        className="ticker__arrow ticker__arrow--left"
+        onClick={() => scrollBy(-1)}
+        disabled={atStart}
+        aria-label="Scroll scores left"
+      >
+        <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            d="M15 6l-6 6 6 6"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      </button>
+      <div className="ticker__viewport">
+        <div className="ticker__track" ref={trackRef}>
+          {games.map((g) => (
+            <GameCard key={g.id} game={g} schoolIndex={schoolIndex} />
+          ))}
+        </div>
       </div>
+      <button
+        type="button"
+        className="ticker__arrow ticker__arrow--right"
+        onClick={() => scrollBy(1)}
+        disabled={atEnd}
+        aria-label="Scroll scores right"
+      >
+        <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            d="M9 6l6 6-6 6"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      </button>
     </div>
   );
 }

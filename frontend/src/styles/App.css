@@ -21,16 +21,17 @@
   align-items: center;
   flex: 0 0 auto;
   border-bottom: none !important;
-  transition: opacity var(--t-fast) var(--ease);
+  transition: transform var(--t-fast) var(--ease);
 }
-.masthead__brand:hover { opacity: 0.8; }
+.masthead__brand:hover { transform: scale(1.04); }
 .masthead__brand-logo {
   display: block;
-  height: 38px;
-  width: auto;
-  max-width: 180px;
-  /* WPR's logo is dark on transparent — invert to render on the navy bar. */
-  filter: brightness(0) invert(1);
+  height: 44px;
+  width: 44px;
+  border-radius: 50%;
+  /* Subtle ring keeps the circular badge readable against the navy bar
+     without a hard white halo. */
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.15);
 }
 
 .masthead__divider {
@@ -129,7 +130,7 @@
     padding: 0.65rem 0.85rem;
     flex-wrap: wrap;
   }
-  .masthead__brand-logo { height: 30px; }
+  .masthead__brand-logo { height: 36px; width: 36px; }
   .masthead__title { font-size: 0.85rem; }
   .masthead__attribution {
     width: 100%;

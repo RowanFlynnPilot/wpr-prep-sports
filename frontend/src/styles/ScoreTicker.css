@@ -1,20 +1,91 @@
 .ticker {
   position: relative;
 }
+
+/* Viewport applies the edge-fade mask. The track itself is the scroller
+   so the mask doesn't move with the cards. */
+.ticker__viewport {
+  position: relative;
+  /* Soft fade on left + right hints "more here" without a hard cutoff. */
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    #000 28px,
+    #000 calc(100% - 28px),
+    transparent 100%
+  );
+          mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    #000 28px,
+    #000 calc(100% - 28px),
+    transparent 100%
+  );
+}
+
 .ticker__track {
   display: flex;
   gap: 0.85rem;
   overflow-x: auto;
   scroll-snap-type: x proximity;
+  scroll-behavior: smooth;
+  scroll-padding-inline: 0.25rem;
   padding: 0.25rem 0.25rem 1rem;
   margin: 0 -0.25rem;
-  scrollbar-width: thin;
-  scrollbar-color: var(--line) transparent;
+  /* Hide native scrollbar — arrow buttons are the affordance. */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
-.ticker__track::-webkit-scrollbar { height: 6px; }
-.ticker__track::-webkit-scrollbar-thumb {
-  background: var(--line);
-  border-radius: 999px;
+.ticker__track::-webkit-scrollbar { display: none; }
+
+/* Floating circular arrow buttons paginate by one card width. They sit
+   slightly inset from the ticker's edges so they don't overlap content. */
+.ticker__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(14, 15, 18, 0.08), 0 0 0 1px rgba(14, 15, 18, 0.02);
+  transition:
+    background var(--t-fast) var(--ease),
+    color var(--t-fast) var(--ease),
+    opacity var(--t-med) var(--ease),
+    transform var(--t-fast) var(--ease);
+}
+.ticker__arrow:hover {
+  background: var(--ink);
+  color: var(--accent);
+}
+.ticker__arrow:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+.ticker__arrow:disabled {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-50%) scale(0.85);
+}
+.ticker__arrow--left  { left:  -6px; }
+.ticker__arrow--right { right: -6px; }
+
+/* Touch devices: hide the arrows entirely (drag is the natural affordance)
+   and drop the mask in case it interferes with momentum-scroll visuals. */
+@media (hover: none) and (pointer: coarse) {
+  .ticker__arrow { display: none; }
+  .ticker__viewport {
+    -webkit-mask-image: none;
+            mask-image: none;
+  }
 }
 
 .card {

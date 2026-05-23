@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
 import Sponsor from "./Sponsor.jsx";
 
-const WPR_LOGO =
-  "https://wausaupilotandreview.com/wp-content/uploads/2024/04/WausauPilotandReviewLogo.png";
+// Self-hosted under frontend/public so we don't depend on the WPR CDN
+// (which previously rendered blank in some browsers / iframe contexts).
+// BASE_URL resolves to "/wpr-prep-sports/" on GitHub Pages or whatever
+// VITE_BASE is set to.
+const WPR_LOGO = `${import.meta.env.BASE_URL}wpr-logo.png`;
 
 /**
  * Shared shell: navy WPR masthead + freshness footer slot. All pages render
