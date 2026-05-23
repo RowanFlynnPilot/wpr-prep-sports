@@ -144,6 +144,12 @@ _NAME_ALIASES: dict[str, str] = {
     "spencer": "spencer",
     "spencer/columbus catholic": "spencer",
     "mosinee": "mosinee",
+    "chequamegon": "chequamegon",
+    "chequamegon/butternut/mercer": "chequamegon",
+    "bowler": "bowler",
+    "bowler/gresham": "bowler",
+    "marion": "marion",
+    "marion/tigerton": "marion",
     "colby": "colby",
     "abbotsford": "abbotsford",
 }

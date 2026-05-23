@@ -180,6 +180,76 @@
         "overall_losses": 1,
         "points_for": 367,
         "points_against": 128
+      },
+      {
+        "school_id": "prentice",
+        "name": "Prentice",
+        "conference_wins": 6,
+        "conference_losses": 1,
+        "overall_wins": 7,
+        "overall_losses": 1,
+        "points_for": 220,
+        "points_against": 131
+      },
+      {
+        "school_id": "bruce",
+        "name": "Bruce",
+        "conference_wins": 6,
+        "conference_losses": 1,
+        "overall_wins": 7,
+        "overall_losses": 3,
+        "points_for": 264,
+        "points_against": 224
+      },
+      {
+        "school_id": "flambeau",
+        "name": "Flambeau",
+        "conference_wins": 5,
+        "conference_losses": 2,
+        "overall_wins": 9,
+        "overall_losses": 3,
+        "points_for": 453,
+        "points_against": 202
+      },
+      {
+        "school_id": "hurley",
+        "name": "Hurley",
+        "conference_wins": 4,
+        "conference_losses": 3,
+        "overall_wins": 6,
+        "overall_losses": 4,
+        "points_for": 225,
+        "points_against": 242
+      },
+      {
+        "school_id": "chequamegon",
+        "name": "Chequamegon",
+        "conference_wins": 3,
+        "conference_losses": 4,
+        "overall_wins": 4,
+        "overall_losses": 4,
+        "points_for": 211,
+        "points_against": 224
+      },
+      {
+        "school_id": "phillips",
+        "name": "Phillips",
+        "conference_wins": 2,
+        "conference_losses": 5,
+        "overall_wins": 4,
+        "overall_losses": 5,
+        "points_for": 208,
+        "points_against": 295
+      },
+      {
+        "school_id": "rib-lake",
+        "name": "Rib Lake",
+        "conference_wins": 1,
+        "conference_losses": 6,
+        "overall_wins": 2,
+        "overall_losses": 6,
+        "points_for": 185,
+        "points_against": 149
       }
     ]
   },
@@ -265,9 +335,9 @@
         "conference_wins": 0,
         "conference_losses": 7,
         "overall_wins": 0,
-        "overall_losses": 7,
-        "points_for": 0,
-        "points_against": 7
+        "overall_losses": 11,
+        "points_for": 96,
+        "points_against": 181
       }
     ]
   },
@@ -364,6 +434,76 @@
         "overall_losses": 1,
         "points_for": 257,
         "points_against": 156
+      },
+      {
+        "school_id": "wild-rose",
+        "name": "Wild Rose",
+        "conference_wins": 6,
+        "conference_losses": 1,
+        "overall_wins": 8,
+        "overall_losses": 1,
+        "points_for": 343,
+        "points_against": 146
+      },
+      {
+        "school_id": "almond-bancroft",
+        "name": "Almond-Bancroft",
+        "conference_wins": 5,
+        "conference_losses": 2,
+        "overall_wins": 7,
+        "overall_losses": 4,
+        "points_for": 286,
+        "points_against": 236
+      },
+      {
+        "school_id": "bowler",
+        "name": "Bowler",
+        "conference_wins": 4,
+        "conference_losses": 3,
+        "overall_wins": 4,
+        "overall_losses": 3,
+        "points_for": 4,
+        "points_against": 3
+      },
+      {
+        "school_id": "marion",
+        "name": "Marion",
+        "conference_wins": 3,
+        "conference_losses": 4,
+        "overall_wins": 6,
+        "overall_losses": 5,
+        "points_for": 282,
+        "points_against": 269
+      },
+      {
+        "school_id": "menominee-nation",
+        "name": "Menominee Nation",
+        "conference_wins": 2,
+        "conference_losses": 5,
+        "overall_wins": 3,
+        "overall_losses": 5,
+        "points_for": 167,
+        "points_against": 5
+      },
+      {
+        "school_id": "port-edwards",
+        "name": "Port Edwards",
+        "conference_wins": 1,
+        "conference_losses": 6,
+        "overall_wins": 3,
+        "overall_losses": 6,
+        "points_for": 203,
+        "points_against": 239
+      },
+      {
+        "school_id": "tri-county",
+        "name": "Tri-County",
+        "conference_wins": 0,
+        "conference_losses": 7,
+        "overall_wins": 2,
+        "overall_losses": 8,
+        "points_for": 186,
+        "points_against": 392
       }
     ]
   },

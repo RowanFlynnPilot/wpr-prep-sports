@@ -1,5 +1,80 @@
 [
   {
+    "id": "football-2025-08-21-tri-county-at-elcho-white-lake",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-08-21T17:00:00-05:00",
+    "home": {
+      "school_id": "",
+      "name": "Elcho/White Lake",
+      "score": 0,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_e632b223-c5dd-4752-a36e-22a9a3c41912.jpg"
+    },
+    "away": {
+      "school_id": "tri-county",
+      "name": "Tri-County",
+      "score": 62,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_f1be37fb-8cc3-4aa8-9aff-59ecfff66bce.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": false,
+    "venue": "@Elcho/White Lake",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "tri-county",
+        "team_name": "Tri-County",
+        "category": "Passing Yards",
+        "player_name": "Aidan Brewer",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "1/2",
+          "YDS": "20",
+          "TDS": "2",
+          "RUS": "61"
+        }
+      },
+      {
+        "team_school_id": "tri-county",
+        "team_name": "Tri-County",
+        "category": "Rushing Yards",
+        "player_name": "Jake Makaryk",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "15",
+          "YDS": "180",
+          "TDS": "3"
+        }
+      },
+      {
+        "team_school_id": "tri-county",
+        "team_name": "Tri-County",
+        "category": "Receiving Yards",
+        "player_name": "Gage Beggs",
+        "player_year": "JR",
+        "stats": {
+          "REC": "1",
+          "YDS": "20",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "tri-county",
+        "team_name": "Tri-County",
+        "category": "Total Tackles",
+        "player_name": "Dominique Friebel",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "7.0"
+        }
+      }
+    ]
+  },
+  {
     "id": "football-2025-08-21-superior-at-wausau-west",
     "sport": "football",
     "season": "2025-26",
@@ -475,7 +550,7 @@
     "season": "2025-26",
     "date": "2025-08-21T19:00:00-05:00",
     "home": {
-      "school_id": "",
+      "school_id": "prentice",
       "name": "Prentice",
       "score": 6,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_32350b25-0e25-4c39-ab7f-248cf3d3c50f.jpg"
@@ -894,6 +969,293 @@
         "stats": {
           "TKL": "8.0",
           "TFL": "1.0"
+        }
+      }
+    ]
+  },
+  {
+    "id": "football-2025-08-21-hurley-at-rib-lake",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-08-21T19:00:00-05:00",
+    "home": {
+      "school_id": "rib-lake",
+      "name": "Rib Lake",
+      "score": 0,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_7e7a8cc5-89bc-4cf1-8ad6-e057f46d5aa7.jpg"
+    },
+    "away": {
+      "school_id": "hurley",
+      "name": "Hurley",
+      "score": 1,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_61a85d42-bed2-4ab9-9c83-51b63d021832.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@Rib Lake",
+    "sources": [
+      "wiaa"
+    ],
+    "stat_leaders": []
+  },
+  {
+    "id": "football-2025-08-21-chequamegon-at-phillips",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-08-21T19:00:00-05:00",
+    "home": {
+      "school_id": "phillips",
+      "name": "Phillips",
+      "score": 8,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_c254fbf5-239d-4754-b90b-89888cd71d92.jpg"
+    },
+    "away": {
+      "school_id": "chequamegon",
+      "name": "Chequamegon/Butternut/Mercer",
+      "score": 52,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_8a762f16-f752-446d-954d-5b2377aac421.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@Phillips",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "chequamegon",
+        "team_name": "Chequamegon/Butternut/Mercer",
+        "category": "Passing Yards",
+        "player_name": "Antonio Poetzl",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "4/8",
+          "YDS": "34",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "chequamegon",
+        "team_name": "Chequamegon/Butternut/Mercer",
+        "category": "Rushing Yards",
+        "player_name": "Antonio Poetzl",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "8",
+          "YDS": "28",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "chequamegon",
+        "team_name": "Chequamegon/Butternut/Mercer",
+        "category": "Receiving Yards",
+        "player_name": "Mason Paholke",
+        "player_year": "SR",
+        "stats": {
+          "REC": "2",
+          "YDS": "22",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "chequamegon",
+        "team_name": "Chequamegon/Butternut/Mercer",
+        "category": "Total Tackles",
+        "player_name": "Mason Paholke",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "7.0",
+          "TFL": "2.0"
+        }
+      },
+      {
+        "team_school_id": "phillips",
+        "team_name": "Phillips",
+        "category": "Passing Yards",
+        "player_name": "Sawyer Kucaba",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "1/1",
+          "YDS": "26",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "phillips",
+        "team_name": "Phillips",
+        "category": "Rushing Yards",
+        "player_name": "Ayron DeLeasky",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "13",
+          "YDS": "135",
+          "TDS": "3"
+        }
+      },
+      {
+        "team_school_id": "phillips",
+        "team_name": "Phillips",
+        "category": "Receiving Yards",
+        "player_name": "JJ Heikkinen",
+        "player_year": "SR",
+        "stats": {
+          "REC": "1",
+          "YDS": "26",
+          "TDS": "3",
+          "RUS": "126"
+        }
+      },
+      {
+        "team_school_id": "phillips",
+        "team_name": "Phillips",
+        "category": "Total Tackles",
+        "player_name": "Sawyer Kucaba",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "7.0",
+          "TFL": "1.0"
+        }
+      }
+    ]
+  },
+  {
+    "id": "football-2025-08-21-sevastopol-at-wild-rose",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-08-21T19:00:00-05:00",
+    "home": {
+      "school_id": "wild-rose",
+      "name": "Wild Rose",
+      "score": 66,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_afc6dd34-d8be-4dad-bb02-f667d3849196.jpg"
+    },
+    "away": {
+      "school_id": "",
+      "name": "Sevastopol",
+      "score": 8,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_8d3d8a7d-507b-4ecd-8a57-8cd65d8db455.JPG"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": false,
+    "venue": "@Wild Rose",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "wild-rose",
+        "team_name": "Wild Rose",
+        "category": "Passing Yards",
+        "player_name": "Braxton Landwehr",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "7/19",
+          "YDS": "61",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "wild-rose",
+        "team_name": "Wild Rose",
+        "category": "Rushing Yards",
+        "player_name": "Wyatt Bowen",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "7",
+          "YDS": "19",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "wild-rose",
+        "team_name": "Wild Rose",
+        "category": "Receiving Yards",
+        "player_name": "Wyatt Bowen",
+        "player_year": "SR",
+        "stats": {
+          "REC": "2",
+          "YDS": "32",
+          "TDS": "0"
+        }
+      }
+    ]
+  },
+  {
+    "id": "football-2025-08-21-port-edwards-at-siren",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-08-21T19:00:00-05:00",
+    "home": {
+      "school_id": "",
+      "name": "Siren",
+      "score": 6,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_a9576dd6-0175-4847-ba38-622394b610a2.jpg"
+    },
+    "away": {
+      "school_id": "port-edwards",
+      "name": "Port Edwards",
+      "score": 44,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_d8f22e2b-26cd-4a22-88ba-2093b68a85a3.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": false,
+    "venue": "@Replacement Game for Siren - PQS Points Applied",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "port-edwards",
+        "team_name": "Port Edwards",
+        "category": "Passing Yards",
+        "player_name": "Kelson Casey",
+        "player_year": "SO",
+        "stats": {
+          "C/A": "12/27",
+          "YDS": "125",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "port-edwards",
+        "team_name": "Port Edwards",
+        "category": "Rushing Yards",
+        "player_name": "Kelson Casey",
+        "player_year": "SO",
+        "stats": {
+          "ATT": "10",
+          "YDS": "48",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "port-edwards",
+        "team_name": "Port Edwards",
+        "category": "Receiving Yards",
+        "player_name": "Bentley Teske",
+        "player_year": "FR",
+        "stats": {
+          "REC": "7",
+          "YDS": "100",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "port-edwards",
+        "team_name": "Port Edwards",
+        "category": "Total Tackles",
+        "player_name": "Ethan Boerner",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "9.0"
         }
       }
     ]
@@ -2326,6 +2688,422 @@
     ]
   },
   {
+    "id": "football-2025-08-22-northwood-solon-springs-at-flambeau",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-08-22T19:00:00-05:00",
+    "home": {
+      "school_id": "flambeau",
+      "name": "Flambeau",
+      "score": 36,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_6c3721d9-03f4-4c1a-8120-21f7133f181f.png"
+    },
+    "away": {
+      "school_id": "",
+      "name": "Northwood/Solon Springs",
+      "score": 0,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_07b92e6e-86b8-475d-afd0-afe5dfae7899.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@Flambeau",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "flambeau",
+        "team_name": "Flambeau",
+        "category": "Passing Yards",
+        "player_name": "Cole Schley",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "3/7",
+          "YDS": "34",
+          "TDS": "2",
+          "RUS": "179"
+        }
+      },
+      {
+        "team_school_id": "flambeau",
+        "team_name": "Flambeau",
+        "category": "Rushing Yards",
+        "player_name": "Cole Schley",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "13",
+          "YDS": "179",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "flambeau",
+        "team_name": "Flambeau",
+        "category": "Receiving Yards",
+        "player_name": "Oliver Taylor",
+        "player_year": "SR",
+        "stats": {
+          "REC": "3",
+          "YDS": "34",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "flambeau",
+        "team_name": "Flambeau",
+        "category": "Total Tackles",
+        "player_name": "Cole Schley",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "18.0",
+          "TFL": "3.0"
+        }
+      }
+    ]
+  },
+  {
+    "id": "football-2025-08-22-bruce-at-shell-lake",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-08-22T19:00:00-05:00",
+    "home": {
+      "school_id": "",
+      "name": "Shell Lake",
+      "score": 20,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_82eee0b6-ef6b-45a9-9190-14c55732bdcc.jpg"
+    },
+    "away": {
+      "school_id": "bruce",
+      "name": "Bruce",
+      "score": 60,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_2213fe88-8922-4598-bcc4-fefe538f89f8.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@Shell Lake",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "bruce",
+        "team_name": "Bruce",
+        "category": "Passing Yards",
+        "player_name": "Blake Nyhagen",
+        "player_year": "FR",
+        "stats": {
+          "C/A": "1/2",
+          "YDS": "19",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "bruce",
+        "team_name": "Bruce",
+        "category": "Rushing Yards",
+        "player_name": "Ryder Rodewald",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "16",
+          "YDS": "134",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "bruce",
+        "team_name": "Bruce",
+        "category": "Receiving Yards",
+        "player_name": "Ryder Rodewald",
+        "player_year": "SR",
+        "stats": {
+          "REC": "1",
+          "YDS": "19",
+          "TDS": "1",
+          "RUS": "134"
+        }
+      },
+      {
+        "team_school_id": "bruce",
+        "team_name": "Bruce",
+        "category": "Total Tackles",
+        "player_name": "Tyler Stevens",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "16.0"
+        }
+      }
+    ]
+  },
+  {
+    "id": "football-2025-08-22-abundant-life-christian-saint-ambrose-at-almond-bancroft",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-08-22T19:00:00-05:00",
+    "home": {
+      "school_id": "almond-bancroft",
+      "name": "Almond-Bancroft",
+      "score": 43,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_1e44e53a-b8d0-4890-9b36-49ec6a09d640.png"
+    },
+    "away": {
+      "school_id": "",
+      "name": "Abundant Life Christian/Saint Ambrose",
+      "score": 8,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_9cd1d913-8364-40bb-8bd5-f909f196d794.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": false,
+    "venue": "@Almond-Bancroft",
+    "sources": [
+      "wiaa"
+    ],
+    "stat_leaders": []
+  },
+  {
+    "id": "football-2025-08-22-rosholt-at-marion",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-08-22T19:00:00-05:00",
+    "home": {
+      "school_id": "marion",
+      "name": "Marion/Tigerton",
+      "score": 34,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_d5fc99f4-f588-446f-964e-0f032a209576.jpg"
+    },
+    "away": {
+      "school_id": "rosholt",
+      "name": "Rosholt",
+      "score": 28,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_f5ed9557-3c24-48ce-b465-7e3c50d33b5a.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": false,
+    "venue": "@Marion/Tigerton",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "rosholt",
+        "team_name": "Rosholt",
+        "category": "Passing Yards",
+        "player_name": "Dylan DeLaet",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "13/17",
+          "YDS": "209",
+          "TDS": "1",
+          "RUS": "21"
+        }
+      },
+      {
+        "team_school_id": "rosholt",
+        "team_name": "Rosholt",
+        "category": "Rushing Yards",
+        "player_name": "Caleb Zick",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "20",
+          "YDS": "186",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "rosholt",
+        "team_name": "Rosholt",
+        "category": "Receiving Yards",
+        "player_name": "Nolin Betker",
+        "player_year": "SO",
+        "stats": {
+          "REC": "7",
+          "YDS": "144",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "marion",
+        "team_name": "Marion/Tigerton",
+        "category": "Passing Yards",
+        "player_name": "Shane Blum",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "2/7",
+          "YDS": "20",
+          "TDS": "1",
+          "RUS": "31"
+        }
+      },
+      {
+        "team_school_id": "marion",
+        "team_name": "Marion/Tigerton",
+        "category": "Rushing Yards",
+        "player_name": "Braylon  Mielke",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "30",
+          "YDS": "190",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "marion",
+        "team_name": "Marion/Tigerton",
+        "category": "Receiving Yards",
+        "player_name": "Anthony Pagan",
+        "player_year": "SO",
+        "stats": {
+          "REC": "1",
+          "YDS": "12",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "marion",
+        "team_name": "Marion/Tigerton",
+        "category": "Total Tackles",
+        "player_name": "Sam Anhueser",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "10.0"
+        }
+      }
+    ]
+  },
+  {
+    "id": "football-2025-08-28-wabeno-laona-at-menominee-nation",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-08-28T15:30:00-05:00",
+    "home": {
+      "school_id": "menominee-nation",
+      "name": "Menominee Nation",
+      "score": 72,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_89ad3d70-aba7-4aea-99eb-bcf33ac9056d.png"
+    },
+    "away": {
+      "school_id": "",
+      "name": "Wabeno/Laona",
+      "score": 0,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_c2016b7c-25c5-441b-bb5b-de684fa47daa.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": false,
+    "venue": "@Replacement Game - PQS points applied",
+    "sources": [
+      "wiaa"
+    ],
+    "stat_leaders": []
+  },
+  {
+    "id": "football-2025-08-28-hurley-at-ironwood-mi",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-08-28T18:00:00-05:00",
+    "home": {
+      "school_id": "",
+      "name": "Ironwood, MI",
+      "score": 14,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/no_logo.jpg"
+    },
+    "away": {
+      "school_id": "hurley",
+      "name": "Hurley",
+      "score": 28,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_61a85d42-bed2-4ab9-9c83-51b63d021832.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": false,
+    "venue": "@Ironwood High School",
+    "sources": [
+      "wiaa"
+    ],
+    "stat_leaders": []
+  },
+  {
+    "id": "football-2025-08-28-phillips-at-oakfield",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-08-28T18:00:00-05:00",
+    "home": {
+      "school_id": "",
+      "name": "Oakfield",
+      "score": 26,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_8a2c6cb2-8a13-459a-98c7-2cc71d3ab78b.jpg"
+    },
+    "away": {
+      "school_id": "phillips",
+      "name": "Phillips",
+      "score": 47,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_c254fbf5-239d-4754-b90b-89888cd71d92.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": false,
+    "venue": "@Replacement Game - PQS points applied",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "phillips",
+        "team_name": "Phillips",
+        "category": "Passing Yards",
+        "player_name": "Ayron DeLeasky",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "1/1",
+          "YDS": "27",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "phillips",
+        "team_name": "Phillips",
+        "category": "Rushing Yards",
+        "player_name": "Wade Vetter",
+        "player_year": "SO",
+        "stats": {
+          "ATT": "9",
+          "YDS": "133",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "phillips",
+        "team_name": "Phillips",
+        "category": "Receiving Yards",
+        "player_name": "Ben Virnig",
+        "player_year": "SR",
+        "stats": {
+          "REC": "1",
+          "YDS": "27",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "phillips",
+        "team_name": "Phillips",
+        "category": "Total Tackles",
+        "player_name": "Ben Virnig",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "10.0",
+          "INT": "1"
+        }
+      }
+    ]
+  },
+  {
     "id": "football-2025-08-28-la-crosse-logan-at-wausau-east",
     "sport": "football",
     "season": "2025-26",
@@ -3176,6 +3954,282 @@
     ]
   },
   {
+    "id": "football-2025-08-28-flambeau-at-bruce",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-08-28T19:00:00-05:00",
+    "home": {
+      "school_id": "bruce",
+      "name": "Bruce",
+      "score": 8,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_2213fe88-8922-4598-bcc4-fefe538f89f8.jpg"
+    },
+    "away": {
+      "school_id": "flambeau",
+      "name": "Flambeau",
+      "score": 52,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_6c3721d9-03f4-4c1a-8120-21f7133f181f.png"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": false,
+    "venue": "@Replacement Game - PQS points applied",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "flambeau",
+        "team_name": "Flambeau",
+        "category": "Passing Yards",
+        "player_name": "Cole Schley",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "10/13",
+          "YDS": "189",
+          "TDS": "1",
+          "RUS": "81"
+        }
+      },
+      {
+        "team_school_id": "flambeau",
+        "team_name": "Flambeau",
+        "category": "Rushing Yards",
+        "player_name": "Cole Schley",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "17",
+          "YDS": "81",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "flambeau",
+        "team_name": "Flambeau",
+        "category": "Receiving Yards",
+        "player_name": "Chanse Ludescher",
+        "player_year": "SR",
+        "stats": {
+          "REC": "7",
+          "YDS": "154",
+          "TDS": "3"
+        }
+      },
+      {
+        "team_school_id": "flambeau",
+        "team_name": "Flambeau",
+        "category": "Total Tackles",
+        "player_name": "Chanse Ludescher",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "14.0",
+          "TFL": "2.0",
+          "FR": "1"
+        }
+      },
+      {
+        "team_school_id": "bruce",
+        "team_name": "Bruce",
+        "category": "Passing Yards",
+        "player_name": "Blake Nyhagen",
+        "player_year": "FR",
+        "stats": {
+          "C/A": "1/1",
+          "YDS": "12",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "bruce",
+        "team_name": "Bruce",
+        "category": "Rushing Yards",
+        "player_name": "Ryder Rodewald",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "8",
+          "YDS": "72",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "bruce",
+        "team_name": "Bruce",
+        "category": "Receiving Yards",
+        "player_name": "Caleb Johnson",
+        "player_year": "SR",
+        "stats": {
+          "REC": "1",
+          "YDS": "12",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "bruce",
+        "team_name": "Bruce",
+        "category": "Total Tackles",
+        "player_name": "Blake Nyhagen",
+        "player_year": "FR",
+        "stats": {
+          "TKL": "10.0",
+          "FR": "1"
+        }
+      }
+    ]
+  },
+  {
+    "id": "football-2025-08-29-prentice-at-south-shore",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-08-29T16:00:00-05:00",
+    "home": {
+      "school_id": "",
+      "name": "South Shore",
+      "score": 7,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_76c215b3-83b3-4b4e-a0ba-ddc90eddf23f.jpg"
+    },
+    "away": {
+      "school_id": "prentice",
+      "name": "Prentice",
+      "score": 44,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_32350b25-0e25-4c39-ab7f-248cf3d3c50f.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": false,
+    "venue": "@South Shore",
+    "sources": [
+      "wiaa"
+    ],
+    "stat_leaders": []
+  },
+  {
+    "id": "football-2025-08-29-tri-county-at-port-edwards",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-08-29T16:00:00-05:00",
+    "home": {
+      "school_id": "port-edwards",
+      "name": "Port Edwards",
+      "score": 58,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_d8f22e2b-26cd-4a22-88ba-2093b68a85a3.jpg"
+    },
+    "away": {
+      "school_id": "tri-county",
+      "name": "Tri-County",
+      "score": 14,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_f1be37fb-8cc3-4aa8-9aff-59ecfff66bce.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@Port Edwards",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "tri-county",
+        "team_name": "Tri-County",
+        "category": "Passing Yards",
+        "player_name": "Aidan Brewer",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "4/4",
+          "YDS": "148",
+          "TDS": "2",
+          "RUS": "15"
+        }
+      },
+      {
+        "team_school_id": "tri-county",
+        "team_name": "Tri-County",
+        "category": "Rushing Yards",
+        "player_name": "Jake Makaryk",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "20",
+          "YDS": "198",
+          "TDS": "1",
+          "REC": "100"
+        }
+      },
+      {
+        "team_school_id": "tri-county",
+        "team_name": "Tri-County",
+        "category": "Receiving Yards",
+        "player_name": "Jake Makaryk",
+        "player_year": "SR",
+        "stats": {
+          "REC": "2",
+          "YDS": "100",
+          "TDS": "3",
+          "RUS": "198"
+        }
+      },
+      {
+        "team_school_id": "tri-county",
+        "team_name": "Tri-County",
+        "category": "Total Tackles",
+        "player_name": "Isaak Mills",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "7.0",
+          "TFL": "2.0"
+        }
+      },
+      {
+        "team_school_id": "port-edwards",
+        "team_name": "Port Edwards",
+        "category": "Passing Yards",
+        "player_name": "Kelson Casey",
+        "player_year": "SO",
+        "stats": {
+          "C/A": "11/22",
+          "YDS": "157",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "port-edwards",
+        "team_name": "Port Edwards",
+        "category": "Rushing Yards",
+        "player_name": "Kelson Casey",
+        "player_year": "SO",
+        "stats": {
+          "ATT": "19",
+          "YDS": "95",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "port-edwards",
+        "team_name": "Port Edwards",
+        "category": "Receiving Yards",
+        "player_name": "Bentley Teske",
+        "player_year": "FR",
+        "stats": {
+          "REC": "3",
+          "YDS": "87",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "port-edwards",
+        "team_name": "Port Edwards",
+        "category": "Total Tackles",
+        "player_name": "Griffin Tranel",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "14.0",
+          "TFL": "2.0",
+          "SKS": "1.0"
+        }
+      }
+    ]
+  },
+  {
     "id": "football-2025-08-29-assumption-at-pepin-alma",
     "sport": "football",
     "season": "2025-26",
@@ -3646,7 +4700,7 @@
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_17ae3c02-235c-4b92-b1b2-699075c98ccd.jpg"
     },
     "away": {
-      "school_id": "",
+      "school_id": "wild-rose",
       "name": "Wild Rose",
       "score": 8,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_afc6dd34-d8be-4dad-bb02-f667d3849196.jpg"
@@ -3660,6 +4714,42 @@
       "bound"
     ],
     "stat_leaders": [
+      {
+        "team_school_id": "wild-rose",
+        "team_name": "Wild Rose",
+        "category": "Passing Yards",
+        "player_name": "Braxton Landwehr",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "6/17",
+          "YDS": "43",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "wild-rose",
+        "team_name": "Wild Rose",
+        "category": "Rushing Yards",
+        "player_name": "Braxton Landwehr",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "1",
+          "YDS": "3",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "wild-rose",
+        "team_name": "Wild Rose",
+        "category": "Receiving Yards",
+        "player_name": "Landon Anderson",
+        "player_year": "JR",
+        "stats": {
+          "REC": "3",
+          "YDS": "37",
+          "TDS": "1"
+        }
+      },
       {
         "team_school_id": "newman-catholic",
         "team_name": "Newman Catholic",
@@ -4478,6 +5568,535 @@
     ]
   },
   {
+    "id": "football-2025-08-29-chequamegon-at-winter-birchwood",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-08-29T19:00:00-05:00",
+    "home": {
+      "school_id": "",
+      "name": "Winter/Birchwood",
+      "score": 0,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_25d11829-ab6a-4bb9-8c8f-bc32b3587c71.png"
+    },
+    "away": {
+      "school_id": "chequamegon",
+      "name": "Chequamegon/Butternut/Mercer",
+      "score": 50,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_8a762f16-f752-446d-954d-5b2377aac421.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": false,
+    "venue": "@Winter/Birchwood",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "chequamegon",
+        "team_name": "Chequamegon/Butternut/Mercer",
+        "category": "Passing Yards",
+        "player_name": "Antonio Poetzl",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "2/7",
+          "YDS": "18",
+          "TDS": "1",
+          "RUS": "48"
+        }
+      },
+      {
+        "team_school_id": "chequamegon",
+        "team_name": "Chequamegon/Butternut/Mercer",
+        "category": "Rushing Yards",
+        "player_name": "Will Krause",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "3",
+          "YDS": "98",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "chequamegon",
+        "team_name": "Chequamegon/Butternut/Mercer",
+        "category": "Receiving Yards",
+        "player_name": "Dylan Eith",
+        "player_year": "SR",
+        "stats": {
+          "REC": "1",
+          "YDS": "11",
+          "TDS": "1",
+          "RUS": "41"
+        }
+      },
+      {
+        "team_school_id": "chequamegon",
+        "team_name": "Chequamegon/Butternut/Mercer",
+        "category": "Total Tackles",
+        "player_name": "Mason Paholke",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "11.0",
+          "TFL": "1.0",
+          "INT": "1"
+        }
+      }
+    ]
+  },
+  {
+    "id": "football-2025-08-29-rib-lake-at-gilman",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-08-29T19:00:00-05:00",
+    "home": {
+      "school_id": "",
+      "name": "Gilman",
+      "score": 0,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_1859a659-e43a-4b25-b9f5-a0e8eee03201.jpg"
+    },
+    "away": {
+      "school_id": "rib-lake",
+      "name": "Rib Lake",
+      "score": 49,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_7e7a8cc5-89bc-4cf1-8ad6-e057f46d5aa7.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": false,
+    "venue": "@Gilman",
+    "sources": [
+      "wiaa"
+    ],
+    "stat_leaders": []
+  },
+  {
+    "id": "football-2025-08-29-almond-bancroft-at-marion",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-08-29T19:00:00-05:00",
+    "home": {
+      "school_id": "marion",
+      "name": "Marion/Tigerton",
+      "score": 18,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_d5fc99f4-f588-446f-964e-0f032a209576.jpg"
+    },
+    "away": {
+      "school_id": "almond-bancroft",
+      "name": "Almond-Bancroft",
+      "score": 31,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_1e44e53a-b8d0-4890-9b36-49ec6a09d640.png"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@Marion/Tigerton",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "almond-bancroft",
+        "team_name": "Almond-Bancroft",
+        "category": "Passing Yards",
+        "player_name": "Emmitt Stiles",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "10/24",
+          "YDS": "116",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "almond-bancroft",
+        "team_name": "Almond-Bancroft",
+        "category": "Rushing Yards",
+        "player_name": "Emmitt Stiles",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "28",
+          "YDS": "118",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "almond-bancroft",
+        "team_name": "Almond-Bancroft",
+        "category": "Receiving Yards",
+        "player_name": "Davis Dernbach",
+        "player_year": "SR",
+        "stats": {
+          "REC": "5",
+          "YDS": "89",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "almond-bancroft",
+        "team_name": "Almond-Bancroft",
+        "category": "Total Tackles",
+        "player_name": "Kayden Hagness",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "14.0",
+          "TFL": "4.0"
+        }
+      },
+      {
+        "team_school_id": "marion",
+        "team_name": "Marion/Tigerton",
+        "category": "Rushing Yards",
+        "player_name": "Braylon  Mielke",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "24",
+          "YDS": "272",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "marion",
+        "team_name": "Marion/Tigerton",
+        "category": "Total Tackles",
+        "player_name": "Sam Anhueser",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "15.0",
+          "TFL": "2.0"
+        }
+      }
+    ]
+  },
+  {
+    "id": "football-2025-08-29-menominee-nation-at-bowler",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-08-29T19:00:00-05:00",
+    "home": {
+      "school_id": "bowler",
+      "name": "Bowler/Gresham",
+      "score": 1,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_a3c24bd6-bd0f-4ce1-82b7-1f355a8267c2.jpg"
+    },
+    "away": {
+      "school_id": "menominee-nation",
+      "name": "Menominee Nation",
+      "score": 0,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_89ad3d70-aba7-4aea-99eb-bcf33ac9056d.png"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@Bowler/Gresham",
+    "sources": [
+      "wiaa"
+    ],
+    "stat_leaders": []
+  },
+  {
+    "id": "football-2025-09-04-prentice-at-hurley",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-09-04T19:00:00-05:00",
+    "home": {
+      "school_id": "hurley",
+      "name": "Hurley",
+      "score": 8,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_61a85d42-bed2-4ab9-9c83-51b63d021832.jpg"
+    },
+    "away": {
+      "school_id": "prentice",
+      "name": "Prentice",
+      "score": 44,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_32350b25-0e25-4c39-ab7f-248cf3d3c50f.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@Hurley",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "hurley",
+        "team_name": "Hurley",
+        "category": "Passing Yards",
+        "player_name": "Everett Laurin",
+        "player_year": "SO",
+        "stats": {
+          "C/A": "1/3",
+          "YDS": "25",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "hurley",
+        "team_name": "Hurley",
+        "category": "Rushing Yards",
+        "player_name": "Charlie Haanen",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "7",
+          "YDS": "276",
+          "TDS": "4"
+        }
+      },
+      {
+        "team_school_id": "hurley",
+        "team_name": "Hurley",
+        "category": "Receiving Yards",
+        "player_name": "Nolan Sain",
+        "player_year": "JR",
+        "stats": {
+          "REC": "1",
+          "YDS": "25",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "hurley",
+        "team_name": "Hurley",
+        "category": "Total Tackles",
+        "player_name": "Landon Pusakulich",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "10.0"
+        }
+      }
+    ]
+  },
+  {
+    "id": "football-2025-09-04-rib-lake-at-chequamegon",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-09-04T19:00:00-05:00",
+    "home": {
+      "school_id": "chequamegon",
+      "name": "Chequamegon/Butternut/Mercer",
+      "score": 44,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_8a762f16-f752-446d-954d-5b2377aac421.jpg"
+    },
+    "away": {
+      "school_id": "rib-lake",
+      "name": "Rib Lake",
+      "score": 6,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_7e7a8cc5-89bc-4cf1-8ad6-e057f46d5aa7.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@Chequamegon/Butternut/Mercer",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "chequamegon",
+        "team_name": "Chequamegon/Butternut/Mercer",
+        "category": "Passing Yards",
+        "player_name": "Antonio Poetzl",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "3/10",
+          "YDS": "6",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "chequamegon",
+        "team_name": "Chequamegon/Butternut/Mercer",
+        "category": "Rushing Yards",
+        "player_name": "Dominic Cebery",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "8",
+          "YDS": "80",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "chequamegon",
+        "team_name": "Chequamegon/Butternut/Mercer",
+        "category": "Receiving Yards",
+        "player_name": "Dylan Eith",
+        "player_year": "SR",
+        "stats": {
+          "REC": "2",
+          "YDS": "5",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "chequamegon",
+        "team_name": "Chequamegon/Butternut/Mercer",
+        "category": "Total Tackles",
+        "player_name": "Dominic Cebery",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "15.0",
+          "TFL": "1.0"
+        }
+      }
+    ]
+  },
+  {
+    "id": "football-2025-09-04-mellen-at-phillips",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-09-04T19:00:00-05:00",
+    "home": {
+      "school_id": "phillips",
+      "name": "Phillips",
+      "score": 1,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_c254fbf5-239d-4754-b90b-89888cd71d92.jpg"
+    },
+    "away": {
+      "school_id": "",
+      "name": "Mellen",
+      "score": 0,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_bfa93cf6-a5f9-4b30-bddb-78dfd3233087.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@Phillips",
+    "sources": [
+      "wiaa"
+    ],
+    "stat_leaders": []
+  },
+  {
+    "id": "football-2025-09-04-marion-at-three-lakes-phelps",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-09-04T19:00:00-05:00",
+    "home": {
+      "school_id": "",
+      "name": "Three Lakes/Phelps",
+      "score": 0,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_c0d2e08e-fed6-4482-aabd-60908bce6afd.jpg"
+    },
+    "away": {
+      "school_id": "marion",
+      "name": "Marion/Tigerton",
+      "score": 26,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_d5fc99f4-f588-446f-964e-0f032a209576.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": false,
+    "venue": "@Replacement Game - PQS points received",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "marion",
+        "team_name": "Marion/Tigerton",
+        "category": "Passing Yards",
+        "player_name": "Shane Blum",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "4/9",
+          "YDS": "86",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "marion",
+        "team_name": "Marion/Tigerton",
+        "category": "Rushing Yards",
+        "player_name": "Braylon  Mielke",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "28",
+          "YDS": "228",
+          "TDS": "4"
+        }
+      },
+      {
+        "team_school_id": "marion",
+        "team_name": "Marion/Tigerton",
+        "category": "Receiving Yards",
+        "player_name": "Anthony Pagan",
+        "player_year": "SO",
+        "stats": {
+          "REC": "2",
+          "YDS": "70",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "marion",
+        "team_name": "Marion/Tigerton",
+        "category": "Total Tackles",
+        "player_name": "Caleb Stern",
+        "player_year": "SO",
+        "stats": {
+          "TKL": "10.0",
+          "TFL": "3.0"
+        }
+      }
+    ]
+  },
+  {
+    "id": "football-2025-09-05-tri-county-at-menominee-nation",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-09-05T16:30:00-05:00",
+    "home": {
+      "school_id": "menominee-nation",
+      "name": "Menominee Nation",
+      "score": 94,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_89ad3d70-aba7-4aea-99eb-bcf33ac9056d.png"
+    },
+    "away": {
+      "school_id": "tri-county",
+      "name": "Tri-County",
+      "score": 0,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_f1be37fb-8cc3-4aa8-9aff-59ecfff66bce.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@Menominee Nation",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "tri-county",
+        "team_name": "Tri-County",
+        "category": "Rushing Yards",
+        "player_name": "Gage Beggs",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "8",
+          "YDS": "172",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "tri-county",
+        "team_name": "Tri-County",
+        "category": "Total Tackles",
+        "player_name": "Breckin Urban",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "6.0",
+          "TFL": "2.0"
+        }
+      }
+    ]
+  },
+  {
     "id": "football-2025-09-05-wausau-east-at-tomahawk",
     "sport": "football",
     "season": "2025-26",
@@ -4983,7 +6602,7 @@
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_9de064b0-6623-41d4-b94e-6a900bfb5674.PNG"
     },
     "away": {
-      "school_id": "",
+      "school_id": "flambeau",
       "name": "Flambeau",
       "score": 12,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_6c3721d9-03f4-4c1a-8120-21f7133f181f.png"
@@ -4997,6 +6616,55 @@
       "bound"
     ],
     "stat_leaders": [
+      {
+        "team_school_id": "flambeau",
+        "team_name": "Flambeau",
+        "category": "Passing Yards",
+        "player_name": "Cole Schley",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "4/7",
+          "YDS": "32",
+          "TDS": "3",
+          "RUS": "190"
+        }
+      },
+      {
+        "team_school_id": "flambeau",
+        "team_name": "Flambeau",
+        "category": "Rushing Yards",
+        "player_name": "Cole Schley",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "19",
+          "YDS": "190",
+          "TDS": "3"
+        }
+      },
+      {
+        "team_school_id": "flambeau",
+        "team_name": "Flambeau",
+        "category": "Receiving Yards",
+        "player_name": "Chanse Ludescher",
+        "player_year": "SR",
+        "stats": {
+          "REC": "3",
+          "YDS": "21",
+          "TDS": "3",
+          "RUS": "186"
+        }
+      },
+      {
+        "team_school_id": "flambeau",
+        "team_name": "Flambeau",
+        "category": "Total Tackles",
+        "player_name": "Chanse Ludescher",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "16.0",
+          "FR": "1"
+        }
+      },
       {
         "team_school_id": "athens",
         "team_name": "Athens",
@@ -5251,7 +6919,7 @@
     "season": "2025-26",
     "date": "2025-09-05T19:00:00-05:00",
     "home": {
-      "school_id": "",
+      "school_id": "almond-bancroft",
       "name": "Almond-Bancroft",
       "score": 13,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_1e44e53a-b8d0-4890-9b36-49ec6a09d640.png"
@@ -5316,6 +6984,55 @@
         "stats": {
           "TKL": "13.0",
           "TFL": "2.0"
+        }
+      },
+      {
+        "team_school_id": "almond-bancroft",
+        "team_name": "Almond-Bancroft",
+        "category": "Passing Yards",
+        "player_name": "Emmitt Stiles",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "2/5",
+          "YDS": "14",
+          "TDS": "2",
+          "RUS": "212"
+        }
+      },
+      {
+        "team_school_id": "almond-bancroft",
+        "team_name": "Almond-Bancroft",
+        "category": "Rushing Yards",
+        "player_name": "Emmitt Stiles",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "39",
+          "YDS": "212",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "almond-bancroft",
+        "team_name": "Almond-Bancroft",
+        "category": "Receiving Yards",
+        "player_name": "Kayden Hagness",
+        "player_year": "SR",
+        "stats": {
+          "REC": "2",
+          "YDS": "14",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "almond-bancroft",
+        "team_name": "Almond-Bancroft",
+        "category": "Total Tackles",
+        "player_name": "Kayden Hagness",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "11.0",
+          "TFL": "3.0",
+          "INT": "1"
         }
       }
     ]
@@ -6533,12 +8250,216 @@
     ]
   },
   {
+    "id": "football-2025-09-05-northwood-solon-springs-at-bruce",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-09-05T19:00:00-05:00",
+    "home": {
+      "school_id": "bruce",
+      "name": "Bruce",
+      "score": 16,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_2213fe88-8922-4598-bcc4-fefe538f89f8.jpg"
+    },
+    "away": {
+      "school_id": "",
+      "name": "Northwood/Solon Springs",
+      "score": 6,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_07b92e6e-86b8-475d-afd0-afe5dfae7899.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@Bruce",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "bruce",
+        "team_name": "Bruce",
+        "category": "Passing Yards",
+        "player_name": "Blake Nyhagen",
+        "player_year": "FR",
+        "stats": {
+          "C/A": "3/6",
+          "YDS": "96",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "bruce",
+        "team_name": "Bruce",
+        "category": "Rushing Yards",
+        "player_name": "Tyler Stevens",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "35",
+          "YDS": "193",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "bruce",
+        "team_name": "Bruce",
+        "category": "Total Tackles",
+        "player_name": "Blake Nyhagen",
+        "player_year": "FR",
+        "stats": {
+          "TKL": "12.0"
+        }
+      }
+    ]
+  },
+  {
+    "id": "football-2025-09-05-port-edwards-at-wild-rose",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-09-05T19:00:00-05:00",
+    "home": {
+      "school_id": "wild-rose",
+      "name": "Wild Rose",
+      "score": 42,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_afc6dd34-d8be-4dad-bb02-f667d3849196.jpg"
+    },
+    "away": {
+      "school_id": "port-edwards",
+      "name": "Port Edwards",
+      "score": 20,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_d8f22e2b-26cd-4a22-88ba-2093b68a85a3.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@Wild Rose",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "port-edwards",
+        "team_name": "Port Edwards",
+        "category": "Passing Yards",
+        "player_name": "Kelson Casey",
+        "player_year": "SO",
+        "stats": {
+          "C/A": "5/12",
+          "YDS": "93",
+          "TDS": "1",
+          "RUS": "14"
+        }
+      },
+      {
+        "team_school_id": "port-edwards",
+        "team_name": "Port Edwards",
+        "category": "Rushing Yards",
+        "player_name": "Ayden Schumer",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "15",
+          "YDS": "120",
+          "TDS": "1",
+          "REC": "6"
+        }
+      },
+      {
+        "team_school_id": "port-edwards",
+        "team_name": "Port Edwards",
+        "category": "Receiving Yards",
+        "player_name": "Griffin Tranel",
+        "player_year": "JR",
+        "stats": {
+          "REC": "2",
+          "YDS": "69",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "port-edwards",
+        "team_name": "Port Edwards",
+        "category": "Total Tackles",
+        "player_name": "Griffin Tranel",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "14.0",
+          "TFL": "2.0",
+          "SKS": "1.0"
+        }
+      },
+      {
+        "team_school_id": "wild-rose",
+        "team_name": "Wild Rose",
+        "category": "Passing Yards",
+        "player_name": "Braxton Landwehr",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "11/20",
+          "YDS": "126",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "wild-rose",
+        "team_name": "Wild Rose",
+        "category": "Rushing Yards",
+        "player_name": "Wyatt Bowen",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "15",
+          "YDS": "82",
+          "TDS": "2",
+          "REC": "83"
+        }
+      },
+      {
+        "team_school_id": "wild-rose",
+        "team_name": "Wild Rose",
+        "category": "Receiving Yards",
+        "player_name": "Wyatt Bowen",
+        "player_year": "SR",
+        "stats": {
+          "REC": "4",
+          "YDS": "83",
+          "TDS": "1",
+          "RUS": "82"
+        }
+      }
+    ]
+  },
+  {
+    "id": "football-2025-09-05-marion-at-bowler",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-09-05T19:00:00-05:00",
+    "home": {
+      "school_id": "bowler",
+      "name": "Bowler/Gresham",
+      "score": 1,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_a3c24bd6-bd0f-4ce1-82b7-1f355a8267c2.jpg"
+    },
+    "away": {
+      "school_id": "marion",
+      "name": "Marion/Tigerton",
+      "score": 0,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_d5fc99f4-f588-446f-964e-0f032a209576.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@Bowler/Gresham",
+    "sources": [
+      "wiaa"
+    ],
+    "stat_leaders": []
+  },
+  {
     "id": "football-2025-09-11-athens-at-bruce",
     "sport": "football",
     "season": "2025-26",
     "date": "2025-09-11T19:00:00-05:00",
     "home": {
-      "school_id": "",
+      "school_id": "bruce",
       "name": "Bruce",
       "score": 16,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_2213fe88-8922-4598-bcc4-fefe538f89f8.jpg"
@@ -6605,6 +8526,243 @@
         "stats": {
           "TKL": "17.0",
           "INT": "1"
+        }
+      },
+      {
+        "team_school_id": "bruce",
+        "team_name": "Bruce",
+        "category": "Passing Yards",
+        "player_name": "Blake Nyhagen",
+        "player_year": "FR",
+        "stats": {
+          "C/A": "3/5",
+          "YDS": "92",
+          "TDS": "1",
+          "RUS": "92"
+        }
+      },
+      {
+        "team_school_id": "bruce",
+        "team_name": "Bruce",
+        "category": "Rushing Yards",
+        "player_name": "Tyler Stevens",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "19",
+          "YDS": "93",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "bruce",
+        "team_name": "Bruce",
+        "category": "Total Tackles",
+        "player_name": "Tyler Stevens",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "16.0"
+        }
+      }
+    ]
+  },
+  {
+    "id": "football-2025-09-11-phillips-at-rib-lake",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-09-11T19:00:00-05:00",
+    "home": {
+      "school_id": "rib-lake",
+      "name": "Rib Lake",
+      "score": 18,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_7e7a8cc5-89bc-4cf1-8ad6-e057f46d5aa7.jpg"
+    },
+    "away": {
+      "school_id": "phillips",
+      "name": "Phillips",
+      "score": 42,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_c254fbf5-239d-4754-b90b-89888cd71d92.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@Rib Lake",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "phillips",
+        "team_name": "Phillips",
+        "category": "Passing Yards",
+        "player_name": "JJ Heikkinen",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "1/2",
+          "YDS": "31",
+          "TDS": "3",
+          "RUS": "94"
+        }
+      },
+      {
+        "team_school_id": "phillips",
+        "team_name": "Phillips",
+        "category": "Rushing Yards",
+        "player_name": "Ayron DeLeasky",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "9",
+          "YDS": "137",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "phillips",
+        "team_name": "Phillips",
+        "category": "Receiving Yards",
+        "player_name": "Ben Virnig",
+        "player_year": "SR",
+        "stats": {
+          "REC": "1",
+          "YDS": "31",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "phillips",
+        "team_name": "Phillips",
+        "category": "Total Tackles",
+        "player_name": "Sawyer Kucaba",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "7.0",
+          "TFL": "1.0",
+          "FR": "1"
+        }
+      }
+    ]
+  },
+  {
+    "id": "football-2025-09-12-almond-bancroft-at-port-edwards",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-09-12T16:00:00-05:00",
+    "home": {
+      "school_id": "port-edwards",
+      "name": "Port Edwards",
+      "score": 6,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_d8f22e2b-26cd-4a22-88ba-2093b68a85a3.jpg"
+    },
+    "away": {
+      "school_id": "almond-bancroft",
+      "name": "Almond-Bancroft",
+      "score": 59,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_1e44e53a-b8d0-4890-9b36-49ec6a09d640.png"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@Port Edwards",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "almond-bancroft",
+        "team_name": "Almond-Bancroft",
+        "category": "Passing Yards",
+        "player_name": "Emmitt Stiles",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "10/14",
+          "YDS": "140",
+          "TDS": "3",
+          "RUS": "132"
+        }
+      },
+      {
+        "team_school_id": "almond-bancroft",
+        "team_name": "Almond-Bancroft",
+        "category": "Rushing Yards",
+        "player_name": "Emmitt Stiles",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "8",
+          "YDS": "132",
+          "TDS": "3"
+        }
+      },
+      {
+        "team_school_id": "almond-bancroft",
+        "team_name": "Almond-Bancroft",
+        "category": "Receiving Yards",
+        "player_name": "Kayden Hagness",
+        "player_year": "SR",
+        "stats": {
+          "REC": "5",
+          "YDS": "72",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "almond-bancroft",
+        "team_name": "Almond-Bancroft",
+        "category": "Total Tackles",
+        "player_name": "Emmitt Stiles",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "12.0",
+          "TFL": "4.0",
+          "SKS": "3.5",
+          "FR": "1"
+        }
+      },
+      {
+        "team_school_id": "port-edwards",
+        "team_name": "Port Edwards",
+        "category": "Passing Yards",
+        "player_name": "Kelson Casey",
+        "player_year": "SO",
+        "stats": {
+          "C/A": "6/18",
+          "YDS": "33",
+          "TDS": "1",
+          "RUS": "135"
+        }
+      },
+      {
+        "team_school_id": "port-edwards",
+        "team_name": "Port Edwards",
+        "category": "Rushing Yards",
+        "player_name": "Kelson Casey",
+        "player_year": "SO",
+        "stats": {
+          "ATT": "15",
+          "YDS": "135",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "port-edwards",
+        "team_name": "Port Edwards",
+        "category": "Receiving Yards",
+        "player_name": "Bentley Teske",
+        "player_year": "FR",
+        "stats": {
+          "REC": "2",
+          "YDS": "18",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "port-edwards",
+        "team_name": "Port Edwards",
+        "category": "Total Tackles",
+        "player_name": "Price Hanson",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "7.0"
         }
       }
     ]
@@ -8662,7 +10820,321 @@
     ]
   },
   {
-    "id": "football-2025-09-13-bowler-gresham-at-newman-catholic",
+    "id": "football-2025-09-12-chequamegon-at-prentice",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-09-12T19:00:00-05:00",
+    "home": {
+      "school_id": "prentice",
+      "name": "Prentice",
+      "score": 54,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_32350b25-0e25-4c39-ab7f-248cf3d3c50f.jpg"
+    },
+    "away": {
+      "school_id": "chequamegon",
+      "name": "Chequamegon/Butternut/Mercer",
+      "score": 30,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_8a762f16-f752-446d-954d-5b2377aac421.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@Prentice",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "chequamegon",
+        "team_name": "Chequamegon/Butternut/Mercer",
+        "category": "Passing Yards",
+        "player_name": "Antonio Poetzl",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "6/13",
+          "YDS": "233",
+          "TDS": "3"
+        }
+      },
+      {
+        "team_school_id": "chequamegon",
+        "team_name": "Chequamegon/Butternut/Mercer",
+        "category": "Rushing Yards",
+        "player_name": "Mason Paholke",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "9",
+          "YDS": "120",
+          "TDS": "1",
+          "REC": "67"
+        }
+      },
+      {
+        "team_school_id": "chequamegon",
+        "team_name": "Chequamegon/Butternut/Mercer",
+        "category": "Receiving Yards",
+        "player_name": "Marcus Purdy",
+        "player_year": "SR",
+        "stats": {
+          "REC": "4",
+          "YDS": "148",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "chequamegon",
+        "team_name": "Chequamegon/Butternut/Mercer",
+        "category": "Total Tackles",
+        "player_name": "Dominic Cebery",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "21.0"
+        }
+      }
+    ]
+  },
+  {
+    "id": "football-2025-09-12-hurley-at-flambeau",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-09-12T19:00:00-05:00",
+    "home": {
+      "school_id": "flambeau",
+      "name": "Flambeau",
+      "score": 42,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_6c3721d9-03f4-4c1a-8120-21f7133f181f.png"
+    },
+    "away": {
+      "school_id": "hurley",
+      "name": "Hurley",
+      "score": 8,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_61a85d42-bed2-4ab9-9c83-51b63d021832.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@Flambeau",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "hurley",
+        "team_name": "Hurley",
+        "category": "Passing Yards",
+        "player_name": "Jack Rowe",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "9/21",
+          "YDS": "155",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "hurley",
+        "team_name": "Hurley",
+        "category": "Rushing Yards",
+        "player_name": "Charlie Haanen",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "10",
+          "YDS": "30",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "hurley",
+        "team_name": "Hurley",
+        "category": "Receiving Yards",
+        "player_name": "Ty Hall",
+        "player_year": "SR",
+        "stats": {
+          "REC": "4",
+          "YDS": "80",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "hurley",
+        "team_name": "Hurley",
+        "category": "Total Tackles",
+        "player_name": "Gavyn Koski",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "8.0",
+          "TFL": "1.0"
+        }
+      },
+      {
+        "team_school_id": "flambeau",
+        "team_name": "Flambeau",
+        "category": "Passing Yards",
+        "player_name": "Cole Schley",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "2/4",
+          "YDS": "3",
+          "TDS": "2",
+          "RUS": "124"
+        }
+      },
+      {
+        "team_school_id": "flambeau",
+        "team_name": "Flambeau",
+        "category": "Rushing Yards",
+        "player_name": "Chanse Ludescher",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "17",
+          "YDS": "155",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "flambeau",
+        "team_name": "Flambeau",
+        "category": "Receiving Yards",
+        "player_name": "Dominic Kopacz",
+        "player_year": "SR",
+        "stats": {
+          "REC": "1",
+          "YDS": "2",
+          "TDS": "1",
+          "RUS": "79"
+        }
+      },
+      {
+        "team_school_id": "flambeau",
+        "team_name": "Flambeau",
+        "category": "Total Tackles",
+        "player_name": "Cole Schley",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "11.0",
+          "TFL": "3.0"
+        }
+      }
+    ]
+  },
+  {
+    "id": "football-2025-09-12-wild-rose-at-tri-county",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-09-12T19:00:00-05:00",
+    "home": {
+      "school_id": "tri-county",
+      "name": "Tri-County",
+      "score": 12,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_f1be37fb-8cc3-4aa8-9aff-59ecfff66bce.jpg"
+    },
+    "away": {
+      "school_id": "wild-rose",
+      "name": "Wild Rose",
+      "score": 70,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_afc6dd34-d8be-4dad-bb02-f667d3849196.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@Tri-County",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "wild-rose",
+        "team_name": "Wild Rose",
+        "category": "Passing Yards",
+        "player_name": "Wyatt Bowen",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "4/10",
+          "YDS": "116",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "wild-rose",
+        "team_name": "Wild Rose",
+        "category": "Rushing Yards",
+        "player_name": "Tucker Durham",
+        "player_year": "SO",
+        "stats": {
+          "ATT": "12",
+          "YDS": "120",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "wild-rose",
+        "team_name": "Wild Rose",
+        "category": "Receiving Yards",
+        "player_name": "Mason Olsen",
+        "player_year": "SR",
+        "stats": {
+          "REC": "2",
+          "YDS": "110",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "tri-county",
+        "team_name": "Tri-County",
+        "category": "Rushing Yards",
+        "player_name": "Aidan Brewer",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "9",
+          "YDS": "263",
+          "TDS": "4"
+        }
+      },
+      {
+        "team_school_id": "tri-county",
+        "team_name": "Tri-County",
+        "category": "Total Tackles",
+        "player_name": "Jake Makaryk",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "10.0",
+          "TFL": "3.0",
+          "SKS": "1.0",
+          "INT": "1"
+        }
+      }
+    ]
+  },
+  {
+    "id": "football-2025-09-12-menominee-nation-at-marion",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-09-12T19:00:00-05:00",
+    "home": {
+      "school_id": "marion",
+      "name": "Marion/Tigerton",
+      "score": 1,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_d5fc99f4-f588-446f-964e-0f032a209576.jpg"
+    },
+    "away": {
+      "school_id": "menominee-nation",
+      "name": "Menominee Nation",
+      "score": 0,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_89ad3d70-aba7-4aea-99eb-bcf33ac9056d.png"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@Marion/Tigerton",
+    "sources": [
+      "wiaa"
+    ],
+    "stat_leaders": []
+  },
+  {
+    "id": "football-2025-09-13-bowler-at-newman-catholic",
     "sport": "football",
     "season": "2025-26",
     "date": "2025-09-13T19:00:00-05:00",
@@ -8673,7 +11145,7 @@
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_17ae3c02-235c-4b92-b1b2-699075c98ccd.jpg"
     },
     "away": {
-      "school_id": "",
+      "school_id": "bowler",
       "name": "Bowler/Gresham",
       "score": 0,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_a3c24bd6-bd0f-4ce1-82b7-1f355a8267c2.jpg"
@@ -9057,6 +11529,133 @@
     ]
   },
   {
+    "id": "football-2025-09-18-port-edwards-at-bowler",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-09-18T19:00:00-05:00",
+    "home": {
+      "school_id": "bowler",
+      "name": "Bowler/Gresham",
+      "score": 1,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_a3c24bd6-bd0f-4ce1-82b7-1f355a8267c2.jpg"
+    },
+    "away": {
+      "school_id": "port-edwards",
+      "name": "Port Edwards",
+      "score": 0,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_d8f22e2b-26cd-4a22-88ba-2093b68a85a3.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@Bowler/Gresham",
+    "sources": [
+      "wiaa"
+    ],
+    "stat_leaders": []
+  },
+  {
+    "id": "football-2025-09-19-wild-rose-at-menominee-nation",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-09-19T16:00:00-05:00",
+    "home": {
+      "school_id": "menominee-nation",
+      "name": "Menominee Nation",
+      "score": 0,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_89ad3d70-aba7-4aea-99eb-bcf33ac9056d.png"
+    },
+    "away": {
+      "school_id": "wild-rose",
+      "name": "Wild Rose",
+      "score": 1,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_afc6dd34-d8be-4dad-bb02-f667d3849196.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@Menominee Nation",
+    "sources": [
+      "wiaa"
+    ],
+    "stat_leaders": []
+  },
+  {
+    "id": "football-2025-09-19-wausaukee-at-port-edwards",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-09-19T16:00:00-05:00",
+    "home": {
+      "school_id": "port-edwards",
+      "name": "Port Edwards",
+      "score": 49,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_d8f22e2b-26cd-4a22-88ba-2093b68a85a3.jpg"
+    },
+    "away": {
+      "school_id": "",
+      "name": "Wausaukee",
+      "score": 12,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_c0cb1197-8629-47c8-b63f-3bdf00b4b7e8.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": false,
+    "venue": "@Replacement Game - PQS points applied",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "port-edwards",
+        "team_name": "Port Edwards",
+        "category": "Passing Yards",
+        "player_name": "Kelson Casey",
+        "player_year": "SO",
+        "stats": {
+          "C/A": "5/11",
+          "YDS": "33",
+          "TDS": "1",
+          "RUS": "134"
+        }
+      },
+      {
+        "team_school_id": "port-edwards",
+        "team_name": "Port Edwards",
+        "category": "Rushing Yards",
+        "player_name": "Kelson Casey",
+        "player_year": "SO",
+        "stats": {
+          "ATT": "14",
+          "YDS": "134",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "port-edwards",
+        "team_name": "Port Edwards",
+        "category": "Receiving Yards",
+        "player_name": "Colin O'Connor",
+        "player_year": "SO",
+        "stats": {
+          "REC": "4",
+          "YDS": "22",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "port-edwards",
+        "team_name": "Port Edwards",
+        "category": "Total Tackles",
+        "player_name": "Griffin Tranel",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "6.0"
+        }
+      }
+    ]
+  },
+  {
     "id": "football-2025-09-19-wisconsin-rapids-at-wausau-west",
     "sport": "football",
     "season": "2025-26",
@@ -9335,7 +11934,7 @@
     "season": "2025-26",
     "date": "2025-09-19T19:00:00-05:00",
     "home": {
-      "school_id": "",
+      "school_id": "hurley",
       "name": "Hurley",
       "score": 0,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_61a85d42-bed2-4ab9-9c83-51b63d021832.jpg"
@@ -9401,6 +12000,52 @@
         "stats": {
           "TKL": "9.0",
           "TFL": "2.0"
+        }
+      },
+      {
+        "team_school_id": "hurley",
+        "team_name": "Hurley",
+        "category": "Passing Yards",
+        "player_name": "Jack Rowe",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "5/15",
+          "YDS": "40",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "hurley",
+        "team_name": "Hurley",
+        "category": "Rushing Yards",
+        "player_name": "Jack Rowe",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "17",
+          "YDS": "43",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "hurley",
+        "team_name": "Hurley",
+        "category": "Receiving Yards",
+        "player_name": "Ty Hall",
+        "player_year": "SR",
+        "stats": {
+          "REC": "3",
+          "YDS": "27",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "hurley",
+        "team_name": "Hurley",
+        "category": "Total Tackles",
+        "player_name": "Jack Rowe",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "12.0"
         }
       }
     ]
@@ -9527,12 +12172,12 @@
     ]
   },
   {
-    "id": "football-2025-09-19-newman-catholic-at-marion-tigerton",
+    "id": "football-2025-09-19-newman-catholic-at-marion",
     "sport": "football",
     "season": "2025-26",
     "date": "2025-09-19T19:00:00-05:00",
     "home": {
-      "school_id": "",
+      "school_id": "marion",
       "name": "Marion/Tigerton",
       "score": 38,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_d5fc99f4-f588-446f-964e-0f032a209576.jpg"
@@ -9597,6 +12242,29 @@
         "player_year": "SR",
         "stats": {
           "TKL": "15.0",
+          "TFL": "2.0"
+        }
+      },
+      {
+        "team_school_id": "marion",
+        "team_name": "Marion/Tigerton",
+        "category": "Rushing Yards",
+        "player_name": "Braylon  Mielke",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "26",
+          "YDS": "340",
+          "TDS": "5"
+        }
+      },
+      {
+        "team_school_id": "marion",
+        "team_name": "Marion/Tigerton",
+        "category": "Total Tackles",
+        "player_name": "Sam Anhueser",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "7.0",
           "TFL": "2.0"
         }
       }
@@ -10633,6 +13301,472 @@
     ]
   },
   {
+    "id": "football-2025-09-19-prentice-at-phillips",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-09-19T19:00:00-05:00",
+    "home": {
+      "school_id": "phillips",
+      "name": "Phillips",
+      "score": 0,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_c254fbf5-239d-4754-b90b-89888cd71d92.jpg"
+    },
+    "away": {
+      "school_id": "prentice",
+      "name": "Prentice",
+      "score": 1,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_32350b25-0e25-4c39-ab7f-248cf3d3c50f.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@Phillips",
+    "sources": [
+      "wiaa"
+    ],
+    "stat_leaders": []
+  },
+  {
+    "id": "football-2025-09-19-flambeau-at-chequamegon",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-09-19T19:00:00-05:00",
+    "home": {
+      "school_id": "chequamegon",
+      "name": "Chequamegon/Butternut/Mercer",
+      "score": 0,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_8a762f16-f752-446d-954d-5b2377aac421.jpg"
+    },
+    "away": {
+      "school_id": "flambeau",
+      "name": "Flambeau",
+      "score": 72,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_6c3721d9-03f4-4c1a-8120-21f7133f181f.png"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@Chequamegon/Butternut/Mercer",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "flambeau",
+        "team_name": "Flambeau",
+        "category": "Passing Yards",
+        "player_name": "Cole Schley",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "2/5",
+          "YDS": "28",
+          "TDS": "5",
+          "RUS": "249"
+        }
+      },
+      {
+        "team_school_id": "flambeau",
+        "team_name": "Flambeau",
+        "category": "Rushing Yards",
+        "player_name": "Cole Schley",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "14",
+          "YDS": "249",
+          "TDS": "5"
+        }
+      },
+      {
+        "team_school_id": "flambeau",
+        "team_name": "Flambeau",
+        "category": "Receiving Yards",
+        "player_name": "Oliver Taylor",
+        "player_year": "SR",
+        "stats": {
+          "REC": "2",
+          "YDS": "28",
+          "TDS": "1",
+          "RUS": "53"
+        }
+      },
+      {
+        "team_school_id": "flambeau",
+        "team_name": "Flambeau",
+        "category": "Total Tackles",
+        "player_name": "Chanse Ludescher",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "8.0",
+          "TFL": "1.0",
+          "INT": "1"
+        }
+      },
+      {
+        "team_school_id": "chequamegon",
+        "team_name": "Chequamegon/Butternut/Mercer",
+        "category": "Passing Yards",
+        "player_name": "Antonio Poetzl",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "4/20",
+          "YDS": "18",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "chequamegon",
+        "team_name": "Chequamegon/Butternut/Mercer",
+        "category": "Rushing Yards",
+        "player_name": "Mason Paholke",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "2",
+          "YDS": "25",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "chequamegon",
+        "team_name": "Chequamegon/Butternut/Mercer",
+        "category": "Receiving Yards",
+        "player_name": "Will Krause",
+        "player_year": "SR",
+        "stats": {
+          "REC": "2",
+          "YDS": "8",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "chequamegon",
+        "team_name": "Chequamegon/Butternut/Mercer",
+        "category": "Total Tackles",
+        "player_name": "Dominic Cebery",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "9.0",
+          "TFL": "1.0"
+        }
+      }
+    ]
+  },
+  {
+    "id": "football-2025-09-19-bruce-at-washburn",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-09-19T19:00:00-05:00",
+    "home": {
+      "school_id": "",
+      "name": "Washburn",
+      "score": 20,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_bd34b4d3-ce88-40f9-a743-53bd8b1bd3b9.jpg"
+    },
+    "away": {
+      "school_id": "bruce",
+      "name": "Bruce",
+      "score": 50,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_2213fe88-8922-4598-bcc4-fefe538f89f8.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@Washburn",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "bruce",
+        "team_name": "Bruce",
+        "category": "Rushing Yards",
+        "player_name": "Tyler Stevens",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "23",
+          "YDS": "245",
+          "TDS": "4"
+        }
+      },
+      {
+        "team_school_id": "bruce",
+        "team_name": "Bruce",
+        "category": "Total Tackles",
+        "player_name": "Blake Nyhagen",
+        "player_year": "FR",
+        "stats": {
+          "TKL": "13.0"
+        }
+      }
+    ]
+  },
+  {
+    "id": "football-2025-09-19-rosholt-at-phillips",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-09-19T19:00:00-05:00",
+    "home": {
+      "school_id": "phillips",
+      "name": "Phillips",
+      "score": 48,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_c254fbf5-239d-4754-b90b-89888cd71d92.jpg"
+    },
+    "away": {
+      "school_id": "rosholt",
+      "name": "Rosholt",
+      "score": 34,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_f5ed9557-3c24-48ce-b465-7e3c50d33b5a.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": false,
+    "venue": "@Replacement Game - PQS points applied",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "rosholt",
+        "team_name": "Rosholt",
+        "category": "Passing Yards",
+        "player_name": "Dylan DeLaet",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "20/38",
+          "YDS": "322",
+          "TDS": "4"
+        }
+      },
+      {
+        "team_school_id": "rosholt",
+        "team_name": "Rosholt",
+        "category": "Rushing Yards",
+        "player_name": "Caleb Zick",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "13",
+          "YDS": "74",
+          "TDS": "1",
+          "REC": "86"
+        }
+      },
+      {
+        "team_school_id": "rosholt",
+        "team_name": "Rosholt",
+        "category": "Receiving Yards",
+        "player_name": "Alex Wierzba",
+        "player_year": "SR",
+        "stats": {
+          "REC": "8",
+          "YDS": "190",
+          "TDS": "3"
+        }
+      },
+      {
+        "team_school_id": "phillips",
+        "team_name": "Phillips",
+        "category": "Passing Yards",
+        "player_name": "Sawyer Kucaba",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "1/1",
+          "YDS": "44",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "phillips",
+        "team_name": "Phillips",
+        "category": "Rushing Yards",
+        "player_name": "Ayron DeLeasky",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "23",
+          "YDS": "245",
+          "TDS": "3"
+        }
+      },
+      {
+        "team_school_id": "phillips",
+        "team_name": "Phillips",
+        "category": "Receiving Yards",
+        "player_name": "Ben Virnig",
+        "player_year": "SR",
+        "stats": {
+          "REC": "1",
+          "YDS": "44",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "phillips",
+        "team_name": "Phillips",
+        "category": "Total Tackles",
+        "player_name": "Sawyer Kucaba",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "9.0",
+          "TFL": "1.0"
+        }
+      }
+    ]
+  },
+  {
+    "id": "football-2025-09-19-winter-birchwood-at-rib-lake",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-09-19T19:00:00-05:00",
+    "home": {
+      "school_id": "rib-lake",
+      "name": "Rib Lake",
+      "score": 80,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_7e7a8cc5-89bc-4cf1-8ad6-e057f46d5aa7.jpg"
+    },
+    "away": {
+      "school_id": "",
+      "name": "Winter/Birchwood",
+      "score": 14,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_25d11829-ab6a-4bb9-8c8f-bc32b3587c71.png"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@Rib Lake",
+    "sources": [
+      "wiaa"
+    ],
+    "stat_leaders": []
+  },
+  {
+    "id": "football-2025-09-19-tri-county-at-almond-bancroft",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-09-19T19:00:00-05:00",
+    "home": {
+      "school_id": "almond-bancroft",
+      "name": "Almond-Bancroft",
+      "score": 22,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_1e44e53a-b8d0-4890-9b36-49ec6a09d640.png"
+    },
+    "away": {
+      "school_id": "tri-county",
+      "name": "Tri-County",
+      "score": 14,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_f1be37fb-8cc3-4aa8-9aff-59ecfff66bce.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@Almond-Bancroft",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "tri-county",
+        "team_name": "Tri-County",
+        "category": "Passing Yards",
+        "player_name": "Aidan Brewer",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "2/12",
+          "YDS": "43",
+          "TDS": "1",
+          "RUS": "94"
+        }
+      },
+      {
+        "team_school_id": "tri-county",
+        "team_name": "Tri-County",
+        "category": "Rushing Yards",
+        "player_name": "Jake Makaryk",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "17",
+          "YDS": "126",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "tri-county",
+        "team_name": "Tri-County",
+        "category": "Receiving Yards",
+        "player_name": "Jake Makaryk",
+        "player_year": "SR",
+        "stats": {
+          "REC": "1",
+          "YDS": "25",
+          "TDS": "2",
+          "RUS": "126"
+        }
+      },
+      {
+        "team_school_id": "tri-county",
+        "team_name": "Tri-County",
+        "category": "Total Tackles",
+        "player_name": "Dominique Friebel",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "13.0",
+          "TFL": "2.0",
+          "SKS": "1.0"
+        }
+      },
+      {
+        "team_school_id": "almond-bancroft",
+        "team_name": "Almond-Bancroft",
+        "category": "Passing Yards",
+        "player_name": "Emmitt Stiles",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "7/30",
+          "YDS": "115",
+          "TDS": "1",
+          "RUS": "91"
+        }
+      },
+      {
+        "team_school_id": "almond-bancroft",
+        "team_name": "Almond-Bancroft",
+        "category": "Rushing Yards",
+        "player_name": "Emmitt Stiles",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "25",
+          "YDS": "91",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "almond-bancroft",
+        "team_name": "Almond-Bancroft",
+        "category": "Receiving Yards",
+        "player_name": "Davis Dernbach",
+        "player_year": "SR",
+        "stats": {
+          "REC": "2",
+          "YDS": "60",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "almond-bancroft",
+        "team_name": "Almond-Bancroft",
+        "category": "Total Tackles",
+        "player_name": "Tucker Stiles",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "17.0",
+          "TFL": "5.0",
+          "SKS": "1.5"
+        }
+      }
+    ]
+  },
+  {
     "id": "football-2025-09-20-edgar-at-pittsville",
     "sport": "football",
     "season": "2025-26",
@@ -10728,6 +13862,253 @@
         "player_year": "JR",
         "stats": {
           "TKL": "8.0"
+        }
+      }
+    ]
+  },
+  {
+    "id": "football-2025-09-25-phillips-at-flambeau",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-09-25T19:00:00-05:00",
+    "home": {
+      "school_id": "flambeau",
+      "name": "Flambeau",
+      "score": 58,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_6c3721d9-03f4-4c1a-8120-21f7133f181f.png"
+    },
+    "away": {
+      "school_id": "phillips",
+      "name": "Phillips",
+      "score": 8,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_c254fbf5-239d-4754-b90b-89888cd71d92.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@Flambeau",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "phillips",
+        "team_name": "Phillips",
+        "category": "Passing Yards",
+        "player_name": "Sawyer Kucaba",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "2/5",
+          "YDS": "17",
+          "TDS": "1",
+          "RUS": "67"
+        }
+      },
+      {
+        "team_school_id": "phillips",
+        "team_name": "Phillips",
+        "category": "Rushing Yards",
+        "player_name": "Sawyer Kucaba",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "12",
+          "YDS": "67",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "phillips",
+        "team_name": "Phillips",
+        "category": "Receiving Yards",
+        "player_name": "Wade Vetter",
+        "player_year": "SO",
+        "stats": {
+          "REC": "1",
+          "YDS": "10",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "phillips",
+        "team_name": "Phillips",
+        "category": "Total Tackles",
+        "player_name": "Ben Virnig",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "15.0"
+        }
+      },
+      {
+        "team_school_id": "flambeau",
+        "team_name": "Flambeau",
+        "category": "Passing Yards",
+        "player_name": "Cole Schley",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "1/2",
+          "YDS": "8",
+          "TDS": "4",
+          "RUS": "186"
+        }
+      },
+      {
+        "team_school_id": "flambeau",
+        "team_name": "Flambeau",
+        "category": "Rushing Yards",
+        "player_name": "Chanse Ludescher",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "14",
+          "YDS": "231",
+          "TDS": "3"
+        }
+      },
+      {
+        "team_school_id": "flambeau",
+        "team_name": "Flambeau",
+        "category": "Receiving Yards",
+        "player_name": "Oliver Taylor",
+        "player_year": "SR",
+        "stats": {
+          "REC": "1",
+          "YDS": "8",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "flambeau",
+        "team_name": "Flambeau",
+        "category": "Total Tackles",
+        "player_name": "Carter Carillon",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "14.0"
+        }
+      }
+    ]
+  },
+  {
+    "id": "football-2025-09-26-marion-at-port-edwards",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-09-26T16:00:00-05:00",
+    "home": {
+      "school_id": "port-edwards",
+      "name": "Port Edwards",
+      "score": 20,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_d8f22e2b-26cd-4a22-88ba-2093b68a85a3.jpg"
+    },
+    "away": {
+      "school_id": "marion",
+      "name": "Marion/Tigerton",
+      "score": 56,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_d5fc99f4-f588-446f-964e-0f032a209576.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@Port Edwards",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "marion",
+        "team_name": "Marion/Tigerton",
+        "category": "Passing Yards",
+        "player_name": "Shane Blum",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "2/2",
+          "YDS": "50",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "marion",
+        "team_name": "Marion/Tigerton",
+        "category": "Rushing Yards",
+        "player_name": "Braylon  Mielke",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "10",
+          "YDS": "137",
+          "TDS": "1",
+          "REC": "30"
+        }
+      },
+      {
+        "team_school_id": "marion",
+        "team_name": "Marion/Tigerton",
+        "category": "Receiving Yards",
+        "player_name": "Braylon  Mielke",
+        "player_year": "JR",
+        "stats": {
+          "REC": "1",
+          "YDS": "30",
+          "TDS": "3",
+          "RUS": "137"
+        }
+      },
+      {
+        "team_school_id": "marion",
+        "team_name": "Marion/Tigerton",
+        "category": "Total Tackles",
+        "player_name": "Kole Johnson",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "15.0",
+          "TFL": "1.0"
+        }
+      },
+      {
+        "team_school_id": "port-edwards",
+        "team_name": "Port Edwards",
+        "category": "Passing Yards",
+        "player_name": "Kelson Casey",
+        "player_year": "SO",
+        "stats": {
+          "C/A": "15/28",
+          "YDS": "169",
+          "TDS": "1",
+          "RUS": "119"
+        }
+      },
+      {
+        "team_school_id": "port-edwards",
+        "team_name": "Port Edwards",
+        "category": "Rushing Yards",
+        "player_name": "Kelson Casey",
+        "player_year": "SO",
+        "stats": {
+          "ATT": "22",
+          "YDS": "119",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "port-edwards",
+        "team_name": "Port Edwards",
+        "category": "Receiving Yards",
+        "player_name": "Bentley Teske",
+        "player_year": "FR",
+        "stats": {
+          "REC": "6",
+          "YDS": "57",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "port-edwards",
+        "team_name": "Port Edwards",
+        "category": "Total Tackles",
+        "player_name": "Sam Martinson",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "5.0",
+          "TFL": "2.0"
         }
       }
     ]
@@ -10981,7 +14362,7 @@
     "stat_leaders": []
   },
   {
-    "id": "football-2025-09-26-chequamegon-butternut-mercer-at-athens",
+    "id": "football-2025-09-26-chequamegon-at-athens",
     "sport": "football",
     "season": "2025-26",
     "date": "2025-09-26T19:00:00-05:00",
@@ -10992,7 +14373,7 @@
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_9de064b0-6623-41d4-b94e-6a900bfb5674.PNG"
     },
     "away": {
-      "school_id": "",
+      "school_id": "chequamegon",
       "name": "Chequamegon/Butternut/Mercer",
       "score": 20,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_8a762f16-f752-446d-954d-5b2377aac421.jpg"
@@ -11006,6 +14387,53 @@
       "bound"
     ],
     "stat_leaders": [
+      {
+        "team_school_id": "chequamegon",
+        "team_name": "Chequamegon/Butternut/Mercer",
+        "category": "Passing Yards",
+        "player_name": "Antonio Poetzl",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "3/18",
+          "YDS": "39",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "chequamegon",
+        "team_name": "Chequamegon/Butternut/Mercer",
+        "category": "Rushing Yards",
+        "player_name": "Mason Paholke",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "10",
+          "YDS": "161",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "chequamegon",
+        "team_name": "Chequamegon/Butternut/Mercer",
+        "category": "Receiving Yards",
+        "player_name": "Will Krause",
+        "player_year": "SR",
+        "stats": {
+          "REC": "2",
+          "YDS": "24",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "chequamegon",
+        "team_name": "Chequamegon/Butternut/Mercer",
+        "category": "Total Tackles",
+        "player_name": "Dawson Minnema",
+        "player_year": "SO",
+        "stats": {
+          "TKL": "11.0",
+          "TFL": "2.0"
+        }
+      },
       {
         "team_school_id": "athens",
         "team_name": "Athens",
@@ -11288,7 +14716,7 @@
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_17ae3c02-235c-4b92-b1b2-699075c98ccd.jpg"
     },
     "away": {
-      "school_id": "",
+      "school_id": "menominee-nation",
       "name": "Menominee Nation",
       "score": 0,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_89ad3d70-aba7-4aea-99eb-bcf33ac9056d.png"
@@ -12468,6 +15896,386 @@
     ]
   },
   {
+    "id": "football-2025-09-26-rib-lake-at-prentice",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-09-26T19:00:00-05:00",
+    "home": {
+      "school_id": "prentice",
+      "name": "Prentice",
+      "score": 46,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_32350b25-0e25-4c39-ab7f-248cf3d3c50f.jpg"
+    },
+    "away": {
+      "school_id": "rib-lake",
+      "name": "Rib Lake",
+      "score": 32,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_7e7a8cc5-89bc-4cf1-8ad6-e057f46d5aa7.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@Prentice",
+    "sources": [
+      "wiaa"
+    ],
+    "stat_leaders": []
+  },
+  {
+    "id": "football-2025-09-26-south-shore-at-bruce",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-09-26T19:00:00-05:00",
+    "home": {
+      "school_id": "bruce",
+      "name": "Bruce",
+      "score": 1,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_2213fe88-8922-4598-bcc4-fefe538f89f8.jpg"
+    },
+    "away": {
+      "school_id": "",
+      "name": "South Shore",
+      "score": 0,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_76c215b3-83b3-4b4e-a0ba-ddc90eddf23f.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@PQS points applied",
+    "sources": [
+      "wiaa"
+    ],
+    "stat_leaders": []
+  },
+  {
+    "id": "football-2025-09-26-hurley-at-washburn",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-09-26T19:00:00-05:00",
+    "home": {
+      "school_id": "",
+      "name": "Washburn",
+      "score": 32,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_bd34b4d3-ce88-40f9-a743-53bd8b1bd3b9.jpg"
+    },
+    "away": {
+      "school_id": "hurley",
+      "name": "Hurley",
+      "score": 58,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_61a85d42-bed2-4ab9-9c83-51b63d021832.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@Washburn",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "hurley",
+        "team_name": "Hurley",
+        "category": "Passing Yards",
+        "player_name": "Jack Rowe",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "2/5",
+          "YDS": "14",
+          "TDS": "2",
+          "RUS": "80"
+        }
+      },
+      {
+        "team_school_id": "hurley",
+        "team_name": "Hurley",
+        "category": "Rushing Yards",
+        "player_name": "Charlie Haanen",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "11",
+          "YDS": "142",
+          "TDS": "3"
+        }
+      },
+      {
+        "team_school_id": "hurley",
+        "team_name": "Hurley",
+        "category": "Receiving Yards",
+        "player_name": "Charlie Haanen",
+        "player_year": "JR",
+        "stats": {
+          "REC": "2",
+          "YDS": "14",
+          "TDS": "3",
+          "RUS": "142"
+        }
+      },
+      {
+        "team_school_id": "hurley",
+        "team_name": "Hurley",
+        "category": "Total Tackles",
+        "player_name": "Charlie Haanen",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "10.0"
+        }
+      }
+    ]
+  },
+  {
+    "id": "football-2025-09-26-almond-bancroft-at-wild-rose",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-09-26T19:00:00-05:00",
+    "home": {
+      "school_id": "wild-rose",
+      "name": "Wild Rose",
+      "score": 60,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_afc6dd34-d8be-4dad-bb02-f667d3849196.jpg"
+    },
+    "away": {
+      "school_id": "almond-bancroft",
+      "name": "Almond-Bancroft",
+      "score": 40,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_1e44e53a-b8d0-4890-9b36-49ec6a09d640.png"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@Wild Rose",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "almond-bancroft",
+        "team_name": "Almond-Bancroft",
+        "category": "Passing Yards",
+        "player_name": "Emmitt Stiles",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "8/17",
+          "YDS": "179",
+          "TDS": "3",
+          "RUS": "95"
+        }
+      },
+      {
+        "team_school_id": "almond-bancroft",
+        "team_name": "Almond-Bancroft",
+        "category": "Rushing Yards",
+        "player_name": "Karson Garner",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "10",
+          "YDS": "121",
+          "TDS": "3"
+        }
+      },
+      {
+        "team_school_id": "almond-bancroft",
+        "team_name": "Almond-Bancroft",
+        "category": "Receiving Yards",
+        "player_name": "Karson Garner",
+        "player_year": "JR",
+        "stats": {
+          "REC": "4",
+          "YDS": "88",
+          "TDS": "3",
+          "RUS": "121"
+        }
+      },
+      {
+        "team_school_id": "almond-bancroft",
+        "team_name": "Almond-Bancroft",
+        "category": "Total Tackles",
+        "player_name": "Emmitt Stiles",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "23.0",
+          "TFL": "6.0",
+          "SKS": "2.0",
+          "FR": "1"
+        }
+      },
+      {
+        "team_school_id": "wild-rose",
+        "team_name": "Wild Rose",
+        "category": "Passing Yards",
+        "player_name": "Braxton Landwehr",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "20/39",
+          "YDS": "324",
+          "TDS": "6"
+        }
+      },
+      {
+        "team_school_id": "wild-rose",
+        "team_name": "Wild Rose",
+        "category": "Rushing Yards",
+        "player_name": "Tucker Durham",
+        "player_year": "SO",
+        "stats": {
+          "ATT": "5",
+          "YDS": "33",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "wild-rose",
+        "team_name": "Wild Rose",
+        "category": "Receiving Yards",
+        "player_name": "Landon Anderson",
+        "player_year": "JR",
+        "stats": {
+          "REC": "10",
+          "YDS": "213",
+          "TDS": "4"
+        }
+      }
+    ]
+  },
+  {
+    "id": "football-2025-09-26-bowler-at-tri-county",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-09-26T19:00:00-05:00",
+    "home": {
+      "school_id": "tri-county",
+      "name": "Tri-County",
+      "score": 0,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_f1be37fb-8cc3-4aa8-9aff-59ecfff66bce.jpg"
+    },
+    "away": {
+      "school_id": "bowler",
+      "name": "Bowler/Gresham",
+      "score": 1,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_a3c24bd6-bd0f-4ce1-82b7-1f355a8267c2.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@Tri-County",
+    "sources": [
+      "wiaa"
+    ],
+    "stat_leaders": []
+  },
+  {
+    "id": "football-2025-09-26-tri-county-at-rosholt",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-09-26T19:00:00-05:00",
+    "home": {
+      "school_id": "rosholt",
+      "name": "Rosholt",
+      "score": 34,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_f5ed9557-3c24-48ce-b465-7e3c50d33b5a.jpg"
+    },
+    "away": {
+      "school_id": "tri-county",
+      "name": "Tri-County",
+      "score": 48,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_f1be37fb-8cc3-4aa8-9aff-59ecfff66bce.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": false,
+    "venue": "@Rosholt",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "tri-county",
+        "team_name": "Tri-County",
+        "category": "Passing Yards",
+        "player_name": "Aidan Brewer",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "1/6",
+          "YDS": "19",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "tri-county",
+        "team_name": "Tri-County",
+        "category": "Rushing Yards",
+        "player_name": "Jake Makaryk",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "36",
+          "YDS": "210",
+          "TDS": "4"
+        }
+      },
+      {
+        "team_school_id": "tri-county",
+        "team_name": "Tri-County",
+        "category": "Receiving Yards",
+        "player_name": "Gage Beggs",
+        "player_year": "JR",
+        "stats": {
+          "REC": "1",
+          "YDS": "19",
+          "TDS": "1",
+          "RUS": "21"
+        }
+      },
+      {
+        "team_school_id": "tri-county",
+        "team_name": "Tri-County",
+        "category": "Total Tackles",
+        "player_name": "Gage Beggs",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "5.0"
+        }
+      },
+      {
+        "team_school_id": "rosholt",
+        "team_name": "Rosholt",
+        "category": "Passing Yards",
+        "player_name": "Dylan DeLaet",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "13/18",
+          "YDS": "186",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "rosholt",
+        "team_name": "Rosholt",
+        "category": "Rushing Yards",
+        "player_name": "Caleb Zick",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "15",
+          "YDS": "164",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "rosholt",
+        "team_name": "Rosholt",
+        "category": "Receiving Yards",
+        "player_name": "Nolin Betker",
+        "player_year": "SO",
+        "stats": {
+          "REC": "4",
+          "YDS": "63",
+          "TDS": "2"
+        }
+      }
+    ]
+  },
+  {
     "id": "football-2025-09-27-spash-at-wausau-west",
     "sport": "football",
     "season": "2025-26",
@@ -12708,6 +16516,95 @@
         "stats": {
           "TKL": "4.0",
           "TFL": "1.0"
+        }
+      }
+    ]
+  },
+  {
+    "id": "football-2025-10-02-shell-lake-at-prentice",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-10-02T19:00:00-05:00",
+    "home": {
+      "school_id": "prentice",
+      "name": "Prentice",
+      "score": 1,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_32350b25-0e25-4c39-ab7f-248cf3d3c50f.jpg"
+    },
+    "away": {
+      "school_id": "",
+      "name": "Shell Lake",
+      "score": 0,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_82eee0b6-ef6b-45a9-9190-14c55732bdcc.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@Prentice",
+    "sources": [
+      "wiaa"
+    ],
+    "stat_leaders": []
+  },
+  {
+    "id": "football-2025-10-02-bruce-at-clayton",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-10-02T19:00:00-05:00",
+    "home": {
+      "school_id": "",
+      "name": "Clayton",
+      "score": 40,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_cd5f95d9-1ba8-4ff6-a3f1-0c7d4324c519.jpg"
+    },
+    "away": {
+      "school_id": "bruce",
+      "name": "Bruce",
+      "score": 62,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_2213fe88-8922-4598-bcc4-fefe538f89f8.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": false,
+    "venue": "@Replacement Game",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "bruce",
+        "team_name": "Bruce",
+        "category": "Passing Yards",
+        "player_name": "Blake Nyhagen",
+        "player_year": "FR",
+        "stats": {
+          "C/A": "6/8",
+          "YDS": "160",
+          "TDS": "2",
+          "RUS": "142"
+        }
+      },
+      {
+        "team_school_id": "bruce",
+        "team_name": "Bruce",
+        "category": "Rushing Yards",
+        "player_name": "Tyler Stevens",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "19",
+          "YDS": "162",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "bruce",
+        "team_name": "Bruce",
+        "category": "Total Tackles",
+        "player_name": "Tyler Stevens",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "12.0"
         }
       }
     ]
@@ -13115,7 +17012,7 @@
     "season": "2025-26",
     "date": "2025-10-03T19:00:00-05:00",
     "home": {
-      "school_id": "",
+      "school_id": "phillips",
       "name": "Phillips",
       "score": 48,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_c254fbf5-239d-4754-b90b-89888cd71d92.jpg"
@@ -13182,6 +17079,54 @@
         "stats": {
           "TKL": "7.0",
           "TFL": "2.0"
+        }
+      },
+      {
+        "team_school_id": "phillips",
+        "team_name": "Phillips",
+        "category": "Passing Yards",
+        "player_name": "JJ Heikkinen",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "3/4",
+          "YDS": "83",
+          "TDS": "4",
+          "RUS": "183"
+        }
+      },
+      {
+        "team_school_id": "phillips",
+        "team_name": "Phillips",
+        "category": "Rushing Yards",
+        "player_name": "JJ Heikkinen",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "21",
+          "YDS": "183",
+          "TDS": "4"
+        }
+      },
+      {
+        "team_school_id": "phillips",
+        "team_name": "Phillips",
+        "category": "Receiving Yards",
+        "player_name": "Ben Virnig",
+        "player_year": "SR",
+        "stats": {
+          "REC": "3",
+          "YDS": "83",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "phillips",
+        "team_name": "Phillips",
+        "category": "Total Tackles",
+        "player_name": "Ben Virnig",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "22.0",
+          "TFL": "3.0"
         }
       }
     ]
@@ -13443,7 +17388,7 @@
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_17ae3c02-235c-4b92-b1b2-699075c98ccd.jpg"
     },
     "away": {
-      "school_id": "",
+      "school_id": "port-edwards",
       "name": "Port Edwards",
       "score": 6,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_d8f22e2b-26cd-4a22-88ba-2093b68a85a3.jpg"
@@ -13457,6 +17402,42 @@
       "bound"
     ],
     "stat_leaders": [
+      {
+        "team_school_id": "port-edwards",
+        "team_name": "Port Edwards",
+        "category": "Passing Yards",
+        "player_name": "Kelson Casey",
+        "player_year": "SO",
+        "stats": {
+          "C/A": "8/25",
+          "YDS": "107",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "port-edwards",
+        "team_name": "Port Edwards",
+        "category": "Rushing Yards",
+        "player_name": "Colin O'Connor",
+        "player_year": "SO",
+        "stats": {
+          "ATT": "1",
+          "YDS": "19",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "port-edwards",
+        "team_name": "Port Edwards",
+        "category": "Receiving Yards",
+        "player_name": "Bentley Teske",
+        "player_year": "FR",
+        "stats": {
+          "REC": "3",
+          "YDS": "90",
+          "TDS": "1"
+        }
+      },
       {
         "team_school_id": "newman-catholic",
         "team_name": "Newman Catholic",
@@ -14695,6 +18676,584 @@
     ]
   },
   {
+    "id": "football-2025-10-03-flambeau-at-rib-lake",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-10-03T19:00:00-05:00",
+    "home": {
+      "school_id": "rib-lake",
+      "name": "Rib Lake",
+      "score": 0,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_7e7a8cc5-89bc-4cf1-8ad6-e057f46d5aa7.jpg"
+    },
+    "away": {
+      "school_id": "flambeau",
+      "name": "Flambeau",
+      "score": 1,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_6c3721d9-03f4-4c1a-8120-21f7133f181f.png"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@Rib Lake",
+    "sources": [
+      "wiaa"
+    ],
+    "stat_leaders": []
+  },
+  {
+    "id": "football-2025-10-03-flambeau-at-almond-bancroft",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-10-03T19:00:00-05:00",
+    "home": {
+      "school_id": "almond-bancroft",
+      "name": "Almond-Bancroft",
+      "score": 20,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_1e44e53a-b8d0-4890-9b36-49ec6a09d640.png"
+    },
+    "away": {
+      "school_id": "flambeau",
+      "name": "Flambeau",
+      "score": 66,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_6c3721d9-03f4-4c1a-8120-21f7133f181f.png"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": false,
+    "venue": "@Almond-Bancroft",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "flambeau",
+        "team_name": "Flambeau",
+        "category": "Passing Yards",
+        "player_name": "Cole Schley",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "2/3",
+          "YDS": "50",
+          "TDS": "4",
+          "RUS": "168"
+        }
+      },
+      {
+        "team_school_id": "flambeau",
+        "team_name": "Flambeau",
+        "category": "Rushing Yards",
+        "player_name": "Cole Schley",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "14",
+          "YDS": "168",
+          "TDS": "4"
+        }
+      },
+      {
+        "team_school_id": "flambeau",
+        "team_name": "Flambeau",
+        "category": "Receiving Yards",
+        "player_name": "Dominic Kopacz",
+        "player_year": "SR",
+        "stats": {
+          "REC": "1",
+          "YDS": "31",
+          "TDS": "2",
+          "RUS": "139"
+        }
+      },
+      {
+        "team_school_id": "flambeau",
+        "team_name": "Flambeau",
+        "category": "Total Tackles",
+        "player_name": "Cole Schley",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "7.0",
+          "TFL": "2.0"
+        }
+      },
+      {
+        "team_school_id": "almond-bancroft",
+        "team_name": "Almond-Bancroft",
+        "category": "Passing Yards",
+        "player_name": "Emmitt Stiles",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "8/25",
+          "YDS": "60",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "almond-bancroft",
+        "team_name": "Almond-Bancroft",
+        "category": "Rushing Yards",
+        "player_name": "Emmitt Stiles",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "10",
+          "YDS": "34",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "almond-bancroft",
+        "team_name": "Almond-Bancroft",
+        "category": "Receiving Yards",
+        "player_name": "Davis Dernbach",
+        "player_year": "SR",
+        "stats": {
+          "REC": "8",
+          "YDS": "97",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "almond-bancroft",
+        "team_name": "Almond-Bancroft",
+        "category": "Total Tackles",
+        "player_name": "Kayden Hagness",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "18.0",
+          "TFL": "5.0"
+        }
+      }
+    ]
+  },
+  {
+    "id": "football-2025-10-03-bruce-at-mellen",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-10-03T19:00:00-05:00",
+    "home": {
+      "school_id": "",
+      "name": "Mellen",
+      "score": 0,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_bfa93cf6-a5f9-4b30-bddb-78dfd3233087.jpg"
+    },
+    "away": {
+      "school_id": "bruce",
+      "name": "Bruce",
+      "score": 1,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_2213fe88-8922-4598-bcc4-fefe538f89f8.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@Mellen",
+    "sources": [
+      "wiaa"
+    ],
+    "stat_leaders": []
+  },
+  {
+    "id": "football-2025-10-03-hurley-at-chequamegon",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-10-03T19:00:00-05:00",
+    "home": {
+      "school_id": "chequamegon",
+      "name": "Chequamegon/Butternut/Mercer",
+      "score": 14,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_8a762f16-f752-446d-954d-5b2377aac421.jpg"
+    },
+    "away": {
+      "school_id": "hurley",
+      "name": "Hurley",
+      "score": 34,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_61a85d42-bed2-4ab9-9c83-51b63d021832.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@Chequamegon/Butternut/Mercer",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "hurley",
+        "team_name": "Hurley",
+        "category": "Passing Yards",
+        "player_name": "Jack Rowe",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "3/10",
+          "YDS": "43",
+          "TDS": "2",
+          "RUS": "117"
+        }
+      },
+      {
+        "team_school_id": "hurley",
+        "team_name": "Hurley",
+        "category": "Rushing Yards",
+        "player_name": "Jack Rowe",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "15",
+          "YDS": "117",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "hurley",
+        "team_name": "Hurley",
+        "category": "Receiving Yards",
+        "player_name": "Charlie Haanen",
+        "player_year": "JR",
+        "stats": {
+          "REC": "2",
+          "YDS": "37",
+          "TDS": "2",
+          "RUS": "81"
+        }
+      },
+      {
+        "team_school_id": "hurley",
+        "team_name": "Hurley",
+        "category": "Total Tackles",
+        "player_name": "Trent Tijan",
+        "player_year": "SO",
+        "stats": {
+          "TKL": "3.0",
+          "TFL": "1.0",
+          "SKS": "1.0"
+        }
+      },
+      {
+        "team_school_id": "chequamegon",
+        "team_name": "Chequamegon/Butternut/Mercer",
+        "category": "Passing Yards",
+        "player_name": "Antonio Poetzl",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "11/27",
+          "YDS": "105",
+          "TDS": "1",
+          "RUS": "39"
+        }
+      },
+      {
+        "team_school_id": "chequamegon",
+        "team_name": "Chequamegon/Butternut/Mercer",
+        "category": "Rushing Yards",
+        "player_name": "Mason Paholke",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "7",
+          "YDS": "42",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "chequamegon",
+        "team_name": "Chequamegon/Butternut/Mercer",
+        "category": "Receiving Yards",
+        "player_name": "Dylan Eith",
+        "player_year": "SR",
+        "stats": {
+          "REC": "4",
+          "YDS": "42",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "chequamegon",
+        "team_name": "Chequamegon/Butternut/Mercer",
+        "category": "Total Tackles",
+        "player_name": "Mason Paholke",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "13.0",
+          "TFL": "3.0"
+        }
+      }
+    ]
+  },
+  {
+    "id": "football-2025-10-03-wild-rose-at-bowler",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-10-03T19:00:00-05:00",
+    "home": {
+      "school_id": "bowler",
+      "name": "Bowler/Gresham",
+      "score": 0,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_a3c24bd6-bd0f-4ce1-82b7-1f355a8267c2.jpg"
+    },
+    "away": {
+      "school_id": "wild-rose",
+      "name": "Wild Rose",
+      "score": 1,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_afc6dd34-d8be-4dad-bb02-f667d3849196.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@Bowler/Gresham",
+    "sources": [
+      "wiaa"
+    ],
+    "stat_leaders": []
+  },
+  {
+    "id": "football-2025-10-03-wild-rose-at-rosholt",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-10-03T19:00:00-05:00",
+    "home": {
+      "school_id": "rosholt",
+      "name": "Rosholt",
+      "score": 0,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_f5ed9557-3c24-48ce-b465-7e3c50d33b5a.jpg"
+    },
+    "away": {
+      "school_id": "wild-rose",
+      "name": "Wild Rose",
+      "score": 44,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_afc6dd34-d8be-4dad-bb02-f667d3849196.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": false,
+    "venue": "@Rosholt",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "wild-rose",
+        "team_name": "Wild Rose",
+        "category": "Passing Yards",
+        "player_name": "Wyatt Bowen",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "5/8",
+          "YDS": "60",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "wild-rose",
+        "team_name": "Wild Rose",
+        "category": "Rushing Yards",
+        "player_name": "Wyatt Bowen",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "7",
+          "YDS": "33",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "wild-rose",
+        "team_name": "Wild Rose",
+        "category": "Receiving Yards",
+        "player_name": "Landon Anderson",
+        "player_year": "JR",
+        "stats": {
+          "REC": "6",
+          "YDS": "83",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "rosholt",
+        "team_name": "Rosholt",
+        "category": "Passing Yards",
+        "player_name": "Dylan DeLaet",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "14/25",
+          "YDS": "184",
+          "TDS": "3"
+        }
+      },
+      {
+        "team_school_id": "rosholt",
+        "team_name": "Rosholt",
+        "category": "Rushing Yards",
+        "player_name": "Caleb Zick",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "17",
+          "YDS": "235",
+          "TDS": "1",
+          "REC": "56"
+        }
+      },
+      {
+        "team_school_id": "rosholt",
+        "team_name": "Rosholt",
+        "category": "Receiving Yards",
+        "player_name": "Alex Wierzba",
+        "player_year": "SR",
+        "stats": {
+          "REC": "3",
+          "YDS": "71",
+          "TDS": "1"
+        }
+      }
+    ]
+  },
+  {
+    "id": "football-2025-10-03-menominee-nation-at-almond-bancroft",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-10-03T19:00:00-05:00",
+    "home": {
+      "school_id": "almond-bancroft",
+      "name": "Almond-Bancroft",
+      "score": 1,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_1e44e53a-b8d0-4890-9b36-49ec6a09d640.png"
+    },
+    "away": {
+      "school_id": "menominee-nation",
+      "name": "Menominee Nation",
+      "score": 0,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_89ad3d70-aba7-4aea-99eb-bcf33ac9056d.png"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@Almond-Bancroft",
+    "sources": [
+      "wiaa"
+    ],
+    "stat_leaders": []
+  },
+  {
+    "id": "football-2025-10-03-tri-county-at-marion",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-10-03T19:00:00-05:00",
+    "home": {
+      "school_id": "marion",
+      "name": "Marion/Tigerton",
+      "score": 57,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_d5fc99f4-f588-446f-964e-0f032a209576.jpg"
+    },
+    "away": {
+      "school_id": "tri-county",
+      "name": "Tri-County",
+      "score": 24,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_f1be37fb-8cc3-4aa8-9aff-59ecfff66bce.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@Marion/Tigerton",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "tri-county",
+        "team_name": "Tri-County",
+        "category": "Passing Yards",
+        "player_name": "Aidan Brewer",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "5/13",
+          "YDS": "68",
+          "TDS": "2",
+          "RUS": "190"
+        }
+      },
+      {
+        "team_school_id": "tri-county",
+        "team_name": "Tri-County",
+        "category": "Rushing Yards",
+        "player_name": "Aidan Brewer",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "21",
+          "YDS": "190",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "tri-county",
+        "team_name": "Tri-County",
+        "category": "Receiving Yards",
+        "player_name": "Gage Beggs",
+        "player_year": "JR",
+        "stats": {
+          "REC": "2",
+          "YDS": "41",
+          "TDS": "2",
+          "RUS": "120"
+        }
+      },
+      {
+        "team_school_id": "tri-county",
+        "team_name": "Tri-County",
+        "category": "Total Tackles",
+        "player_name": "Damien Friebel",
+        "player_year": "SO",
+        "stats": {
+          "TKL": "9.0",
+          "TFL": "2.0"
+        }
+      },
+      {
+        "team_school_id": "marion",
+        "team_name": "Marion/Tigerton",
+        "category": "Passing Yards",
+        "player_name": "Sam Anhueser",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "1/1",
+          "YDS": "12",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "marion",
+        "team_name": "Marion/Tigerton",
+        "category": "Rushing Yards",
+        "player_name": "Braylon  Mielke",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "23",
+          "YDS": "188",
+          "TDS": "4"
+        }
+      },
+      {
+        "team_school_id": "marion",
+        "team_name": "Marion/Tigerton",
+        "category": "Receiving Yards",
+        "player_name": "Collin Grogan",
+        "player_year": "JR",
+        "stats": {
+          "REC": "1",
+          "YDS": "12",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "marion",
+        "team_name": "Marion/Tigerton",
+        "category": "Total Tackles",
+        "player_name": "Sam Anhueser",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "13.0"
+        }
+      }
+    ]
+  },
+  {
     "id": "football-2025-10-04-wausau-east-at-merrill",
     "sport": "football",
     "season": "2025-26",
@@ -15014,6 +19573,58 @@
         }
       }
     ]
+  },
+  {
+    "id": "football-2025-10-10-chequamegon-at-south-shore",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-10-10T16:00:00-05:00",
+    "home": {
+      "school_id": "",
+      "name": "South Shore",
+      "score": 0,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_76c215b3-83b3-4b4e-a0ba-ddc90eddf23f.jpg"
+    },
+    "away": {
+      "school_id": "chequamegon",
+      "name": "Chequamegon/Butternut/Mercer",
+      "score": 1,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_8a762f16-f752-446d-954d-5b2377aac421.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@South Shore",
+    "sources": [
+      "wiaa"
+    ],
+    "stat_leaders": []
+  },
+  {
+    "id": "football-2025-10-10-port-edwards-at-menominee-nation",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-10-10T16:00:00-05:00",
+    "home": {
+      "school_id": "menominee-nation",
+      "name": "Menominee Nation",
+      "score": 1,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_89ad3d70-aba7-4aea-99eb-bcf33ac9056d.png"
+    },
+    "away": {
+      "school_id": "port-edwards",
+      "name": "Port Edwards",
+      "score": 0,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_d8f22e2b-26cd-4a22-88ba-2093b68a85a3.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@Menominee Nation",
+    "sources": [
+      "wiaa"
+    ],
+    "stat_leaders": []
   },
   {
     "id": "football-2025-10-10-eau-claire-memorial-at-wausau-west",
@@ -15423,7 +20034,7 @@
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_9de064b0-6623-41d4-b94e-6a900bfb5674.PNG"
     },
     "away": {
-      "school_id": "",
+      "school_id": "rib-lake",
       "name": "Rib Lake",
       "score": 0,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_7e7a8cc5-89bc-4cf1-8ad6-e057f46d5aa7.jpg"
@@ -15565,7 +20176,7 @@
     "season": "2025-26",
     "date": "2025-10-10T19:00:00-05:00",
     "home": {
-      "school_id": "",
+      "school_id": "tri-county",
       "name": "Tri-County",
       "score": 12,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_f1be37fb-8cc3-4aa8-9aff-59ecfff66bce.jpg"
@@ -15631,6 +20242,54 @@
           "TKL": "13.0",
           "TFL": "1.0",
           "FR": "2"
+        }
+      },
+      {
+        "team_school_id": "tri-county",
+        "team_name": "Tri-County",
+        "category": "Passing Yards",
+        "player_name": "Aidan Brewer",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "1/3",
+          "YDS": "35",
+          "TDS": "2",
+          "RUS": "106"
+        }
+      },
+      {
+        "team_school_id": "tri-county",
+        "team_name": "Tri-County",
+        "category": "Rushing Yards",
+        "player_name": "Jake Makaryk",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "18",
+          "YDS": "231",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "tri-county",
+        "team_name": "Tri-County",
+        "category": "Receiving Yards",
+        "player_name": "Julian Vega",
+        "player_year": "SO",
+        "stats": {
+          "REC": "1",
+          "YDS": "35",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "tri-county",
+        "team_name": "Tri-County",
+        "category": "Total Tackles",
+        "player_name": "Dominique Friebel",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "11.0",
+          "INT": "1"
         }
       }
     ]
@@ -16761,6 +21420,482 @@
         }
       }
     ]
+  },
+  {
+    "id": "football-2025-10-10-prentice-at-flambeau",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-10-10T19:00:00-05:00",
+    "home": {
+      "school_id": "flambeau",
+      "name": "Flambeau",
+      "score": 0,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_6c3721d9-03f4-4c1a-8120-21f7133f181f.png"
+    },
+    "away": {
+      "school_id": "prentice",
+      "name": "Prentice",
+      "score": 24,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_32350b25-0e25-4c39-ab7f-248cf3d3c50f.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@Flambeau",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "flambeau",
+        "team_name": "Flambeau",
+        "category": "Passing Yards",
+        "player_name": "Cole Schley",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "2/2",
+          "YDS": "70",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "flambeau",
+        "team_name": "Flambeau",
+        "category": "Rushing Yards",
+        "player_name": "Chanse Ludescher",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "4",
+          "YDS": "60",
+          "TDS": "1",
+          "REC": "51"
+        }
+      },
+      {
+        "team_school_id": "flambeau",
+        "team_name": "Flambeau",
+        "category": "Receiving Yards",
+        "player_name": "Chanse Ludescher",
+        "player_year": "SR",
+        "stats": {
+          "REC": "1",
+          "YDS": "51",
+          "TDS": "2",
+          "RUS": "60"
+        }
+      },
+      {
+        "team_school_id": "flambeau",
+        "team_name": "Flambeau",
+        "category": "Total Tackles",
+        "player_name": "Chanse Ludescher",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "8.0",
+          "TFL": "1.0"
+        }
+      }
+    ]
+  },
+  {
+    "id": "football-2025-10-10-winter-birchwood-at-bruce",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-10-10T19:00:00-05:00",
+    "home": {
+      "school_id": "bruce",
+      "name": "Bruce",
+      "score": 50,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_2213fe88-8922-4598-bcc4-fefe538f89f8.jpg"
+    },
+    "away": {
+      "school_id": "",
+      "name": "Winter/Birchwood",
+      "score": 14,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_25d11829-ab6a-4bb9-8c8f-bc32b3587c71.png"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@Bruce",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "bruce",
+        "team_name": "Bruce",
+        "category": "Passing Yards",
+        "player_name": "Blake Nyhagen",
+        "player_year": "FR",
+        "stats": {
+          "C/A": "1/1",
+          "YDS": "20",
+          "TDS": "2",
+          "RUS": "173"
+        }
+      },
+      {
+        "team_school_id": "bruce",
+        "team_name": "Bruce",
+        "category": "Rushing Yards",
+        "player_name": "Blake Nyhagen",
+        "player_year": "FR",
+        "stats": {
+          "ATT": "6",
+          "YDS": "173",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "bruce",
+        "team_name": "Bruce",
+        "category": "Total Tackles",
+        "player_name": "Tyler Stevens",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "13.0",
+          "INT": "1"
+        }
+      }
+    ]
+  },
+  {
+    "id": "football-2025-10-10-phillips-at-hurley",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-10-10T19:00:00-05:00",
+    "home": {
+      "school_id": "hurley",
+      "name": "Hurley",
+      "score": 54,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_61a85d42-bed2-4ab9-9c83-51b63d021832.jpg"
+    },
+    "away": {
+      "school_id": "phillips",
+      "name": "Phillips",
+      "score": 6,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_c254fbf5-239d-4754-b90b-89888cd71d92.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@Hurley",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "phillips",
+        "team_name": "Phillips",
+        "category": "Passing Yards",
+        "player_name": "JJ Heikkinen",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "2/2",
+          "YDS": "49",
+          "TDS": "4",
+          "RUS": "313"
+        }
+      },
+      {
+        "team_school_id": "phillips",
+        "team_name": "Phillips",
+        "category": "Rushing Yards",
+        "player_name": "JJ Heikkinen",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "20",
+          "YDS": "313",
+          "TDS": "4"
+        }
+      },
+      {
+        "team_school_id": "phillips",
+        "team_name": "Phillips",
+        "category": "Receiving Yards",
+        "player_name": "Ben Virnig",
+        "player_year": "SR",
+        "stats": {
+          "REC": "2",
+          "YDS": "49",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "phillips",
+        "team_name": "Phillips",
+        "category": "Total Tackles",
+        "player_name": "Kyle Sidenbender",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "12.0"
+        }
+      },
+      {
+        "team_school_id": "hurley",
+        "team_name": "Hurley",
+        "category": "Passing Yards",
+        "player_name": "Jack Rowe",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "7/15",
+          "YDS": "50",
+          "TDS": "1",
+          "RUS": "14"
+        }
+      },
+      {
+        "team_school_id": "hurley",
+        "team_name": "Hurley",
+        "category": "Rushing Yards",
+        "player_name": "Charlie Haanen",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "15",
+          "YDS": "116",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "hurley",
+        "team_name": "Hurley",
+        "category": "Receiving Yards",
+        "player_name": "Landon Christoferson",
+        "player_year": "FR",
+        "stats": {
+          "REC": "3",
+          "YDS": "32",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "hurley",
+        "team_name": "Hurley",
+        "category": "Total Tackles",
+        "player_name": "Landon Pusakulich",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "9.0",
+          "TFL": "1.0"
+        }
+      }
+    ]
+  },
+  {
+    "id": "football-2025-10-10-marion-at-wild-rose",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-10-10T19:00:00-05:00",
+    "home": {
+      "school_id": "wild-rose",
+      "name": "Wild Rose",
+      "score": 51,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_afc6dd34-d8be-4dad-bb02-f667d3849196.jpg"
+    },
+    "away": {
+      "school_id": "marion",
+      "name": "Marion/Tigerton",
+      "score": 16,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_d5fc99f4-f588-446f-964e-0f032a209576.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@Wild Rose",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "marion",
+        "team_name": "Marion/Tigerton",
+        "category": "Passing Yards",
+        "player_name": "Shane Blum",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "3/3",
+          "YDS": "35",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "marion",
+        "team_name": "Marion/Tigerton",
+        "category": "Rushing Yards",
+        "player_name": "Braylon  Mielke",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "19",
+          "YDS": "323",
+          "TDS": "3"
+        }
+      },
+      {
+        "team_school_id": "marion",
+        "team_name": "Marion/Tigerton",
+        "category": "Receiving Yards",
+        "player_name": "Anthony Pagan",
+        "player_year": "SO",
+        "stats": {
+          "REC": "1",
+          "YDS": "23",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "marion",
+        "team_name": "Marion/Tigerton",
+        "category": "Total Tackles",
+        "player_name": "Jolanzo Perez-LeRoy",
+        "player_year": "SO",
+        "stats": {
+          "TKL": "8.0",
+          "INT": "1"
+        }
+      },
+      {
+        "team_school_id": "wild-rose",
+        "team_name": "Wild Rose",
+        "category": "Passing Yards",
+        "player_name": "Braxton Landwehr",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "17/31",
+          "YDS": "231",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "wild-rose",
+        "team_name": "Wild Rose",
+        "category": "Rushing Yards",
+        "player_name": "Wyatt Bowen",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "4",
+          "YDS": "38",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "wild-rose",
+        "team_name": "Wild Rose",
+        "category": "Receiving Yards",
+        "player_name": "Landon Anderson",
+        "player_year": "JR",
+        "stats": {
+          "REC": "8",
+          "YDS": "148",
+          "TDS": "2"
+        }
+      }
+    ]
+  },
+  {
+    "id": "football-2025-10-10-almond-bancroft-at-wabeno-laona",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-10-10T19:00:00-05:00",
+    "home": {
+      "school_id": "",
+      "name": "Wabeno/Laona",
+      "score": 6,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_c2016b7c-25c5-441b-bb5b-de684fa47daa.jpg"
+    },
+    "away": {
+      "school_id": "almond-bancroft",
+      "name": "Almond-Bancroft",
+      "score": 56,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_1e44e53a-b8d0-4890-9b36-49ec6a09d640.png"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": false,
+    "venue": "@Replacement Game",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "almond-bancroft",
+        "team_name": "Almond-Bancroft",
+        "category": "Passing Yards",
+        "player_name": "Emmitt Stiles",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "15/26",
+          "YDS": "85",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "almond-bancroft",
+        "team_name": "Almond-Bancroft",
+        "category": "Rushing Yards",
+        "player_name": "Davis Dernbach",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "3",
+          "YDS": "52",
+          "TDS": "1",
+          "REC": "70"
+        }
+      },
+      {
+        "team_school_id": "almond-bancroft",
+        "team_name": "Almond-Bancroft",
+        "category": "Receiving Yards",
+        "player_name": "Davis Dernbach",
+        "player_year": "SR",
+        "stats": {
+          "REC": "9",
+          "YDS": "70",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "almond-bancroft",
+        "team_name": "Almond-Bancroft",
+        "category": "Total Tackles",
+        "player_name": "Emmitt Stiles",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "12.0"
+        }
+      }
+    ]
+  },
+  {
+    "id": "football-2025-10-10-bowler-at-almond-bancroft",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-10-10T19:00:00-05:00",
+    "home": {
+      "school_id": "almond-bancroft",
+      "name": "Almond-Bancroft",
+      "score": 1,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_1e44e53a-b8d0-4890-9b36-49ec6a09d640.png"
+    },
+    "away": {
+      "school_id": "bowler",
+      "name": "Bowler/Gresham",
+      "score": 0,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_a3c24bd6-bd0f-4ce1-82b7-1f355a8267c2.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@Almond-Bancroft",
+    "sources": [
+      "wiaa"
+    ],
+    "stat_leaders": []
   },
   {
     "id": "football-2025-10-11-lakeland-at-wausau-east",
@@ -18977,6 +24112,354 @@
     ]
   },
   {
+    "id": "football-2025-10-18-bruce-at-flambeau",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-10-18T13:00:00-05:00",
+    "home": {
+      "school_id": "flambeau",
+      "name": "Flambeau",
+      "score": 46,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_6c3721d9-03f4-4c1a-8120-21f7133f181f.png"
+    },
+    "away": {
+      "school_id": "bruce",
+      "name": "Bruce",
+      "score": 0,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_2213fe88-8922-4598-bcc4-fefe538f89f8.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": false,
+    "venue": "@Flambeau",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "flambeau",
+        "team_name": "Flambeau",
+        "category": "Passing Yards",
+        "player_name": "Cole Schley",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "6/6",
+          "YDS": "86",
+          "TDS": "3",
+          "RUS": "173"
+        }
+      },
+      {
+        "team_school_id": "flambeau",
+        "team_name": "Flambeau",
+        "category": "Rushing Yards",
+        "player_name": "Cole Schley",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "20",
+          "YDS": "173",
+          "TDS": "3"
+        }
+      },
+      {
+        "team_school_id": "flambeau",
+        "team_name": "Flambeau",
+        "category": "Receiving Yards",
+        "player_name": "Dominic Kopacz",
+        "player_year": "SR",
+        "stats": {
+          "REC": "3",
+          "YDS": "32",
+          "TDS": "1",
+          "RUS": "32"
+        }
+      },
+      {
+        "team_school_id": "flambeau",
+        "team_name": "Flambeau",
+        "category": "Total Tackles",
+        "player_name": "Cole Schley",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "13.0"
+        }
+      }
+    ]
+  },
+  {
+    "id": "football-2025-10-18-hurley-at-tri-county",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-10-18T13:00:00-05:00",
+    "home": {
+      "school_id": "tri-county",
+      "name": "Tri-County",
+      "score": 0,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_f1be37fb-8cc3-4aa8-9aff-59ecfff66bce.jpg"
+    },
+    "away": {
+      "school_id": "hurley",
+      "name": "Hurley",
+      "score": 22,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_61a85d42-bed2-4ab9-9c83-51b63d021832.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": false,
+    "venue": "@Tri-County",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "hurley",
+        "team_name": "Hurley",
+        "category": "Passing Yards",
+        "player_name": "Jack Rowe",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "2/10",
+          "YDS": "33",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "hurley",
+        "team_name": "Hurley",
+        "category": "Rushing Yards",
+        "player_name": "Charlie Haanen",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "25",
+          "YDS": "187",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "hurley",
+        "team_name": "Hurley",
+        "category": "Receiving Yards",
+        "player_name": "Charlie Haanen",
+        "player_year": "JR",
+        "stats": {
+          "REC": "2",
+          "YDS": "33",
+          "TDS": "2",
+          "RUS": "187"
+        }
+      },
+      {
+        "team_school_id": "hurley",
+        "team_name": "Hurley",
+        "category": "Total Tackles",
+        "player_name": "Landon Pusakulich",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "14.0",
+          "INT": "1"
+        }
+      },
+      {
+        "team_school_id": "tri-county",
+        "team_name": "Tri-County",
+        "category": "Passing Yards",
+        "player_name": "Aidan Brewer",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "3/9",
+          "YDS": "38",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "tri-county",
+        "team_name": "Tri-County",
+        "category": "Rushing Yards",
+        "player_name": "Aidan Brewer",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "19",
+          "YDS": "79",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "tri-county",
+        "team_name": "Tri-County",
+        "category": "Receiving Yards",
+        "player_name": "Jake Makaryk",
+        "player_year": "SR",
+        "stats": {
+          "REC": "1",
+          "YDS": "25",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "tri-county",
+        "team_name": "Tri-County",
+        "category": "Total Tackles",
+        "player_name": "Jake Makaryk",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "11.0",
+          "FR": "1"
+        }
+      }
+    ]
+  },
+  {
+    "id": "football-2025-10-18-almond-bancroft-at-owen-withee",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-10-18T13:00:00-05:00",
+    "home": {
+      "school_id": "",
+      "name": "Owen-Withee",
+      "score": 38,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_6f57ed49-9da4-4f3e-a887-b227bb6f0859.jpg"
+    },
+    "away": {
+      "school_id": "almond-bancroft",
+      "name": "Almond-Bancroft",
+      "score": 0,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_1e44e53a-b8d0-4890-9b36-49ec6a09d640.png"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": false,
+    "venue": "@Owen-Withee",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "almond-bancroft",
+        "team_name": "Almond-Bancroft",
+        "category": "Passing Yards",
+        "player_name": "Emmitt Stiles",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "5/21",
+          "YDS": "36",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "almond-bancroft",
+        "team_name": "Almond-Bancroft",
+        "category": "Rushing Yards",
+        "player_name": "Emmitt Stiles",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "17",
+          "YDS": "30",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "almond-bancroft",
+        "team_name": "Almond-Bancroft",
+        "category": "Receiving Yards",
+        "player_name": "Davis Dernbach",
+        "player_year": "SR",
+        "stats": {
+          "REC": "1",
+          "YDS": "15",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "almond-bancroft",
+        "team_name": "Almond-Bancroft",
+        "category": "Total Tackles",
+        "player_name": "Emmitt Stiles",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "18.0",
+          "TFL": "1.0"
+        }
+      }
+    ]
+  },
+  {
+    "id": "football-2025-10-18-alma-center-lincoln-at-marion",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-10-18T13:00:00-05:00",
+    "home": {
+      "school_id": "marion",
+      "name": "Marion/Tigerton",
+      "score": 20,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_d5fc99f4-f588-446f-964e-0f032a209576.jpg"
+    },
+    "away": {
+      "school_id": "",
+      "name": "Alma Center Lincoln",
+      "score": 16,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_a4961c78-7d80-43e9-9b17-a80bcf68faf8.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": false,
+    "venue": "@Marion/Tigerton",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "marion",
+        "team_name": "Marion/Tigerton",
+        "category": "Passing Yards",
+        "player_name": "Elijah Scheef",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "1/1",
+          "YDS": "7",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "marion",
+        "team_name": "Marion/Tigerton",
+        "category": "Rushing Yards",
+        "player_name": "Braylon  Mielke",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "36",
+          "YDS": "289",
+          "TDS": "3"
+        }
+      },
+      {
+        "team_school_id": "marion",
+        "team_name": "Marion/Tigerton",
+        "category": "Receiving Yards",
+        "player_name": "Logan Zietlow",
+        "player_year": "SR",
+        "stats": {
+          "REC": "1",
+          "YDS": "7",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "marion",
+        "team_name": "Marion/Tigerton",
+        "category": "Total Tackles",
+        "player_name": "Sam Anhueser",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "8.0"
+        }
+      }
+    ]
+  },
+  {
     "id": "football-2025-10-24-marshfield-at-oshkosh-north",
     "sport": "football",
     "season": "2025-26",
@@ -19048,6 +24531,81 @@
           "TKL": "16.0",
           "TFL": "1.0",
           "SKS": "1.0"
+        }
+      }
+    ]
+  },
+  {
+    "id": "football-2025-10-24-hurley-at-north-crawford",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-10-24T17:30:00-05:00",
+    "home": {
+      "school_id": "",
+      "name": "North Crawford",
+      "score": 60,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_e2d7a325-8e86-4281-a413-afb357356f75.jpg"
+    },
+    "away": {
+      "school_id": "hurley",
+      "name": "Hurley",
+      "score": 12,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_61a85d42-bed2-4ab9-9c83-51b63d021832.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": false,
+    "venue": "@North Crawford",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "hurley",
+        "team_name": "Hurley",
+        "category": "Passing Yards",
+        "player_name": "Jack Rowe",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "4/14",
+          "YDS": "48",
+          "TDS": "1",
+          "RUS": "3"
+        }
+      },
+      {
+        "team_school_id": "hurley",
+        "team_name": "Hurley",
+        "category": "Rushing Yards",
+        "player_name": "Nolan Sain",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "4",
+          "YDS": "21",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "hurley",
+        "team_name": "Hurley",
+        "category": "Receiving Yards",
+        "player_name": "Charlie Haanen",
+        "player_year": "JR",
+        "stats": {
+          "REC": "2",
+          "YDS": "43",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "hurley",
+        "team_name": "Hurley",
+        "category": "Total Tackles",
+        "player_name": "Landon Pusakulich",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "8.0"
         }
       }
     ]
@@ -20811,6 +26369,131 @@
     ]
   },
   {
+    "id": "football-2025-10-24-frederic-at-flambeau",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-10-24T19:00:00-05:00",
+    "home": {
+      "school_id": "flambeau",
+      "name": "Flambeau",
+      "score": 38,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_6c3721d9-03f4-4c1a-8120-21f7133f181f.png"
+    },
+    "away": {
+      "school_id": "",
+      "name": "Frederic",
+      "score": 20,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_74193b26-0ef5-4a3a-bc93-7b708cc4e291.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": false,
+    "venue": "@Flambeau",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "flambeau",
+        "team_name": "Flambeau",
+        "category": "Rushing Yards",
+        "player_name": "Cole Schley",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "26",
+          "YDS": "278",
+          "TDS": "3"
+        }
+      },
+      {
+        "team_school_id": "flambeau",
+        "team_name": "Flambeau",
+        "category": "Total Tackles",
+        "player_name": "Chanse Ludescher",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "18.0"
+        }
+      }
+    ]
+  },
+  {
+    "id": "football-2025-10-24-sevastopol-at-marion",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-10-24T19:00:00-05:00",
+    "home": {
+      "school_id": "marion",
+      "name": "Marion/Tigerton",
+      "score": 16,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_d5fc99f4-f588-446f-964e-0f032a209576.jpg"
+    },
+    "away": {
+      "school_id": "",
+      "name": "Sevastopol",
+      "score": 50,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_8d3d8a7d-507b-4ecd-8a57-8cd65d8db455.JPG"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": false,
+    "venue": "@Marion/Tigerton",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "marion",
+        "team_name": "Marion/Tigerton",
+        "category": "Passing Yards",
+        "player_name": "Shane Blum",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "8/11",
+          "YDS": "33",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "marion",
+        "team_name": "Marion/Tigerton",
+        "category": "Rushing Yards",
+        "player_name": "Braylon  Mielke",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "26",
+          "YDS": "101",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "marion",
+        "team_name": "Marion/Tigerton",
+        "category": "Receiving Yards",
+        "player_name": "Logan Zietlow",
+        "player_year": "SR",
+        "stats": {
+          "REC": "6",
+          "YDS": "29",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "marion",
+        "team_name": "Marion/Tigerton",
+        "category": "Total Tackles",
+        "player_name": "Jolanzo Perez-LeRoy",
+        "player_year": "SO",
+        "stats": {
+          "TKL": "13.0",
+          "TFL": "2.0"
+        }
+      }
+    ]
+  },
+  {
     "id": "football-2025-10-31-oshkosh-north-at-new-richmond",
     "sport": "football",
     "season": "2025-26",
@@ -21533,6 +27216,32 @@
     "conference": null,
     "conference_game": false,
     "venue": "@Lake Country Lutheran",
+    "sources": [
+      "wiaa"
+    ],
+    "stat_leaders": []
+  },
+  {
+    "id": "football-2025-11-01-mcdonell-central-catholic-at-flambeau",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-11-01T19:00:00-05:00",
+    "home": {
+      "school_id": "flambeau",
+      "name": "Flambeau",
+      "score": 30,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_6c3721d9-03f4-4c1a-8120-21f7133f181f.png"
+    },
+    "away": {
+      "school_id": "",
+      "name": "McDonell Central Catholic",
+      "score": 66,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_e97a0d92-4d25-48d6-8659-76af7687c602.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": false,
+    "venue": "@Flambeau",
     "sources": [
       "wiaa"
     ],
