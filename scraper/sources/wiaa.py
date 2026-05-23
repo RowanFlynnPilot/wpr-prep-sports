@@ -164,14 +164,26 @@ def discover_team_ids(org_id: int) -> list[TeamEntry]:
     return entries
 
 
+# Fallback chain — when a school doesn't field a team for a sport's primary
+# SSID, try alternates. The clearest case is small-school football: WIAA
+# splits 11-player (1499) from 8-player (1500) and a given school only
+# plays one format. We try 1499 first, then 1500.
+_SSID_FALLBACKS: dict[str, list[int]] = {
+    "football": [SSID_BY_SPORT["football"], SSID_BY_SPORT["football_8p"]],
+}
+
+
 def discover_team_id_for_sport(org_id: int, sport: str) -> int | None:
     """Convenience: find one school's TeamID for a single sport key."""
-    target_ssid = SSID_BY_SPORT.get(sport)
-    if target_ssid is None:
+    primary = SSID_BY_SPORT.get(sport)
+    if primary is None:
         raise ValueError(f"Unknown sport key '{sport}'. Add it to SSID_BY_SPORT.")
-    for team in discover_team_ids(org_id):
-        if team.ssid == target_ssid:
-            return team.team_id
+    candidates = _SSID_FALLBACKS.get(sport, [primary])
+    teams = discover_team_ids(org_id)
+    for ssid in candidates:
+        for team in teams:
+            if team.ssid == ssid:
+                return team.team_id
     return None
 
 

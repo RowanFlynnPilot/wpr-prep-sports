@@ -470,6 +470,158 @@
     "stat_leaders": []
   },
   {
+    "id": "football-2025-08-21-athens-at-prentice",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-08-21T19:00:00-05:00",
+    "home": {
+      "school_id": "",
+      "name": "Prentice",
+      "score": 6,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_32350b25-0e25-4c39-ab7f-248cf3d3c50f.jpg"
+    },
+    "away": {
+      "school_id": "athens",
+      "name": "Athens",
+      "score": 54,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_9de064b0-6623-41d4-b94e-6a900bfb5674.PNG"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@Prentice",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "athens",
+        "team_name": "Athens",
+        "category": "Passing Yards",
+        "player_name": "Kamden Zarnke",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "1/3",
+          "YDS": "13",
+          "TDS": "1",
+          "RUS": "65"
+        }
+      },
+      {
+        "team_school_id": "athens",
+        "team_name": "Athens",
+        "category": "Rushing Yards",
+        "player_name": "Evin Passehl",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "13",
+          "YDS": "103",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "athens",
+        "team_name": "Athens",
+        "category": "Receiving Yards",
+        "player_name": "Daxton Diethelm",
+        "player_year": "JR",
+        "stats": {
+          "REC": "1",
+          "YDS": "13",
+          "TDS": "1",
+          "RUS": "40"
+        }
+      },
+      {
+        "team_school_id": "athens",
+        "team_name": "Athens",
+        "category": "Total Tackles",
+        "player_name": "Evin Passehl",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "7.0"
+        }
+      }
+    ]
+  },
+  {
+    "id": "football-2025-08-21-newman-catholic-at-florence",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-08-21T19:00:00-05:00",
+    "home": {
+      "school_id": "",
+      "name": "Florence",
+      "score": 0,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_999031cb-0e9a-4564-89f1-283fe75ae392.jpg"
+    },
+    "away": {
+      "school_id": "newman-catholic",
+      "name": "Newman Catholic",
+      "score": 33,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_17ae3c02-235c-4b92-b1b2-699075c98ccd.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": false,
+    "venue": "@Florence",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "newman-catholic",
+        "team_name": "Newman Catholic",
+        "category": "Passing Yards",
+        "player_name": "Quincy Pfender",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "12/17",
+          "YDS": "159",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "newman-catholic",
+        "team_name": "Newman Catholic",
+        "category": "Rushing Yards",
+        "player_name": "Triston Fisher",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "15",
+          "YDS": "89",
+          "TDS": "3"
+        }
+      },
+      {
+        "team_school_id": "newman-catholic",
+        "team_name": "Newman Catholic",
+        "category": "Receiving Yards",
+        "player_name": "Cooper Guld",
+        "player_year": "SR",
+        "stats": {
+          "REC": "5",
+          "YDS": "75",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "newman-catholic",
+        "team_name": "Newman Catholic",
+        "category": "Total Tackles",
+        "player_name": "Damien Puent",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "9.0",
+          "TFL": "4.0",
+          "SKS": "2.0"
+        }
+      }
+    ]
+  },
+  {
     "id": "football-2025-08-21-eau-claire-north-at-menomonie",
     "sport": "football",
     "season": "2025-26",
@@ -3172,6 +3324,83 @@
     ]
   },
   {
+    "id": "football-2025-08-29-thorp-at-athens",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-08-29T19:00:00-05:00",
+    "home": {
+      "school_id": "athens",
+      "name": "Athens",
+      "score": 54,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_9de064b0-6623-41d4-b94e-6a900bfb5674.PNG"
+    },
+    "away": {
+      "school_id": "",
+      "name": "Thorp",
+      "score": 12,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_193592fa-3edf-4a4e-882c-ae1b42fcadfa.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": false,
+    "venue": "@Athens",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "athens",
+        "team_name": "Athens",
+        "category": "Passing Yards",
+        "player_name": "Kamden Zarnke",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "7/8",
+          "YDS": "62",
+          "TDS": "1",
+          "RUS": "70"
+        }
+      },
+      {
+        "team_school_id": "athens",
+        "team_name": "Athens",
+        "category": "Rushing Yards",
+        "player_name": "Evin Passehl",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "21",
+          "YDS": "187",
+          "TDS": "3"
+        }
+      },
+      {
+        "team_school_id": "athens",
+        "team_name": "Athens",
+        "category": "Receiving Yards",
+        "player_name": "Evin Passehl",
+        "player_year": "SR",
+        "stats": {
+          "REC": "4",
+          "YDS": "31",
+          "TDS": "3",
+          "RUS": "187"
+        }
+      },
+      {
+        "team_school_id": "athens",
+        "team_name": "Athens",
+        "category": "Total Tackles",
+        "player_name": "Shaylon Blake",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "9.0",
+          "TFL": "2.0"
+        }
+      }
+    ]
+  },
+  {
     "id": "football-2025-08-29-edgar-at-stratford",
     "sport": "football",
     "season": "2025-26",
@@ -3401,6 +3630,82 @@
           "REC": "7",
           "YDS": "98",
           "TDS": "0"
+        }
+      }
+    ]
+  },
+  {
+    "id": "football-2025-08-29-wild-rose-at-newman-catholic",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-08-29T19:00:00-05:00",
+    "home": {
+      "school_id": "newman-catholic",
+      "name": "Newman Catholic",
+      "score": 50,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_17ae3c02-235c-4b92-b1b2-699075c98ccd.jpg"
+    },
+    "away": {
+      "school_id": "",
+      "name": "Wild Rose",
+      "score": 8,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_afc6dd34-d8be-4dad-bb02-f667d3849196.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@Newman Catholic",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "newman-catholic",
+        "team_name": "Newman Catholic",
+        "category": "Passing Yards",
+        "player_name": "Quincy Pfender",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "11/13",
+          "YDS": "161",
+          "TDS": "2",
+          "RUS": "96"
+        }
+      },
+      {
+        "team_school_id": "newman-catholic",
+        "team_name": "Newman Catholic",
+        "category": "Rushing Yards",
+        "player_name": "Quincy Pfender",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "11",
+          "YDS": "96",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "newman-catholic",
+        "team_name": "Newman Catholic",
+        "category": "Receiving Yards",
+        "player_name": "Michael Fox",
+        "player_year": "JR",
+        "stats": {
+          "REC": "3",
+          "YDS": "65",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "newman-catholic",
+        "team_name": "Newman Catholic",
+        "category": "Total Tackles",
+        "player_name": "Damien Puent",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "6.0",
+          "TFL": "4.0"
         }
       }
     ]
@@ -4667,6 +4972,82 @@
     ]
   },
   {
+    "id": "football-2025-09-05-flambeau-at-athens",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-09-05T19:00:00-05:00",
+    "home": {
+      "school_id": "athens",
+      "name": "Athens",
+      "score": 48,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_9de064b0-6623-41d4-b94e-6a900bfb5674.PNG"
+    },
+    "away": {
+      "school_id": "",
+      "name": "Flambeau",
+      "score": 12,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_6c3721d9-03f4-4c1a-8120-21f7133f181f.png"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@Athens",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "athens",
+        "team_name": "Athens",
+        "category": "Passing Yards",
+        "player_name": "Kamden Zarnke",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "2/6",
+          "YDS": "54",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "athens",
+        "team_name": "Athens",
+        "category": "Rushing Yards",
+        "player_name": "Evin Passehl",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "9",
+          "YDS": "42",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "athens",
+        "team_name": "Athens",
+        "category": "Receiving Yards",
+        "player_name": "Daxton Diethelm",
+        "player_year": "JR",
+        "stats": {
+          "REC": "1",
+          "YDS": "51",
+          "TDS": "1",
+          "RUS": "13"
+        }
+      },
+      {
+        "team_school_id": "athens",
+        "team_name": "Athens",
+        "category": "Total Tackles",
+        "player_name": "Shaylon Blake",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "7.0",
+          "TFL": "1.0"
+        }
+      }
+    ]
+  },
+  {
     "id": "football-2025-09-05-auburndale-at-edgar",
     "sport": "football",
     "season": "2025-26",
@@ -4860,6 +5241,81 @@
         "stats": {
           "TKL": "12.0",
           "TFL": "1.0"
+        }
+      }
+    ]
+  },
+  {
+    "id": "football-2025-09-05-newman-catholic-at-almond-bancroft",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-09-05T19:00:00-05:00",
+    "home": {
+      "school_id": "",
+      "name": "Almond-Bancroft",
+      "score": 13,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_1e44e53a-b8d0-4890-9b36-49ec6a09d640.png"
+    },
+    "away": {
+      "school_id": "newman-catholic",
+      "name": "Newman Catholic",
+      "score": 20,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_17ae3c02-235c-4b92-b1b2-699075c98ccd.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@Almond-Bancroft",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "newman-catholic",
+        "team_name": "Newman Catholic",
+        "category": "Passing Yards",
+        "player_name": "Quincy Pfender",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "6/17",
+          "YDS": "102",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "newman-catholic",
+        "team_name": "Newman Catholic",
+        "category": "Rushing Yards",
+        "player_name": "Quincy Pfender",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "14",
+          "YDS": "44",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "newman-catholic",
+        "team_name": "Newman Catholic",
+        "category": "Receiving Yards",
+        "player_name": "Everett Puent",
+        "player_year": "SR",
+        "stats": {
+          "REC": "1",
+          "YDS": "36",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "newman-catholic",
+        "team_name": "Newman Catholic",
+        "category": "Total Tackles",
+        "player_name": "Everett Puent",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "13.0",
+          "TFL": "2.0"
         }
       }
     ]
@@ -6077,6 +6533,83 @@
     ]
   },
   {
+    "id": "football-2025-09-11-athens-at-bruce",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-09-11T19:00:00-05:00",
+    "home": {
+      "school_id": "",
+      "name": "Bruce",
+      "score": 16,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_2213fe88-8922-4598-bcc4-fefe538f89f8.jpg"
+    },
+    "away": {
+      "school_id": "athens",
+      "name": "Athens",
+      "score": 26,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_9de064b0-6623-41d4-b94e-6a900bfb5674.PNG"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@Bruce",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "athens",
+        "team_name": "Athens",
+        "category": "Passing Yards",
+        "player_name": "Kamden Zarnke",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "2/6",
+          "YDS": "24",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "athens",
+        "team_name": "Athens",
+        "category": "Rushing Yards",
+        "player_name": "Evin Passehl",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "30",
+          "YDS": "155",
+          "TDS": "1",
+          "REC": "18"
+        }
+      },
+      {
+        "team_school_id": "athens",
+        "team_name": "Athens",
+        "category": "Receiving Yards",
+        "player_name": "Evin Passehl",
+        "player_year": "SR",
+        "stats": {
+          "REC": "1",
+          "YDS": "18",
+          "TDS": "3",
+          "RUS": "155"
+        }
+      },
+      {
+        "team_school_id": "athens",
+        "team_name": "Athens",
+        "category": "Total Tackles",
+        "player_name": "Evin Passehl",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "17.0",
+          "INT": "1"
+        }
+      }
+    ]
+  },
+  {
     "id": "football-2025-09-12-rhinelander-at-wausau-east",
     "sport": "football",
     "season": "2025-26",
@@ -6639,6 +7172,82 @@
         "player_year": "JR",
         "stats": {
           "TKL": "7.0"
+        }
+      }
+    ]
+  },
+  {
+    "id": "football-2025-09-12-niagara-at-newman-catholic",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-09-12T19:00:00-05:00",
+    "home": {
+      "school_id": "newman-catholic",
+      "name": "Newman Catholic",
+      "score": 22,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_17ae3c02-235c-4b92-b1b2-699075c98ccd.jpg"
+    },
+    "away": {
+      "school_id": "",
+      "name": "Niagara",
+      "score": 14,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_a2c55c54-932d-4eac-b1d1-2067048058c1.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": false,
+    "venue": "@Replacement Game - PQS points applied",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "newman-catholic",
+        "team_name": "Newman Catholic",
+        "category": "Passing Yards",
+        "player_name": "Quincy Pfender",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "4/5",
+          "YDS": "13",
+          "TDS": "2",
+          "RUS": "132"
+        }
+      },
+      {
+        "team_school_id": "newman-catholic",
+        "team_name": "Newman Catholic",
+        "category": "Rushing Yards",
+        "player_name": "Quincy Pfender",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "18",
+          "YDS": "132",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "newman-catholic",
+        "team_name": "Newman Catholic",
+        "category": "Receiving Yards",
+        "player_name": "Triston Fisher",
+        "player_year": "SR",
+        "stats": {
+          "REC": "1",
+          "YDS": "9",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "newman-catholic",
+        "team_name": "Newman Catholic",
+        "category": "Total Tackles",
+        "player_name": "Everett Puent",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "15.0",
+          "TFL": "6.0"
         }
       }
     ]
@@ -8053,6 +8662,32 @@
     ]
   },
   {
+    "id": "football-2025-09-13-bowler-gresham-at-newman-catholic",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-09-13T19:00:00-05:00",
+    "home": {
+      "school_id": "newman-catholic",
+      "name": "Newman Catholic",
+      "score": 1,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_17ae3c02-235c-4b92-b1b2-699075c98ccd.jpg"
+    },
+    "away": {
+      "school_id": "",
+      "name": "Bowler/Gresham",
+      "score": 0,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_a3c24bd6-bd0f-4ce1-82b7-1f355a8267c2.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@Newman Catholic",
+    "sources": [
+      "wiaa"
+    ],
+    "stat_leaders": []
+  },
+  {
     "id": "football-2025-09-18-wausau-east-at-mosinee",
     "sport": "football",
     "season": "2025-26",
@@ -8695,6 +9330,82 @@
     ]
   },
   {
+    "id": "football-2025-09-19-athens-at-hurley",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-09-19T19:00:00-05:00",
+    "home": {
+      "school_id": "",
+      "name": "Hurley",
+      "score": 0,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_61a85d42-bed2-4ab9-9c83-51b63d021832.jpg"
+    },
+    "away": {
+      "school_id": "athens",
+      "name": "Athens",
+      "score": 30,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_9de064b0-6623-41d4-b94e-6a900bfb5674.PNG"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@Hurley",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "athens",
+        "team_name": "Athens",
+        "category": "Passing Yards",
+        "player_name": "Kamden Zarnke",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "7/11",
+          "YDS": "64",
+          "TDS": "1",
+          "RUS": "78"
+        }
+      },
+      {
+        "team_school_id": "athens",
+        "team_name": "Athens",
+        "category": "Rushing Yards",
+        "player_name": "Evin Passehl",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "18",
+          "YDS": "143",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "athens",
+        "team_name": "Athens",
+        "category": "Receiving Yards",
+        "player_name": "Brock Beaty",
+        "player_year": "JR",
+        "stats": {
+          "REC": "3",
+          "YDS": "38",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "athens",
+        "team_name": "Athens",
+        "category": "Total Tackles",
+        "player_name": "Shaylon Blake",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "9.0",
+          "TFL": "2.0"
+        }
+      }
+    ]
+  },
+  {
     "id": "football-2025-09-19-marathon-at-colby",
     "sport": "football",
     "season": "2025-26",
@@ -8811,6 +9522,82 @@
         "player_year": "SO",
         "stats": {
           "TKL": "6.0"
+        }
+      }
+    ]
+  },
+  {
+    "id": "football-2025-09-19-newman-catholic-at-marion-tigerton",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-09-19T19:00:00-05:00",
+    "home": {
+      "school_id": "",
+      "name": "Marion/Tigerton",
+      "score": 38,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_d5fc99f4-f588-446f-964e-0f032a209576.jpg"
+    },
+    "away": {
+      "school_id": "newman-catholic",
+      "name": "Newman Catholic",
+      "score": 48,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_17ae3c02-235c-4b92-b1b2-699075c98ccd.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@Marion/Tigerton",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "newman-catholic",
+        "team_name": "Newman Catholic",
+        "category": "Passing Yards",
+        "player_name": "Michael Fox",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "7/9",
+          "YDS": "95",
+          "TDS": "1",
+          "RUS": "78"
+        }
+      },
+      {
+        "team_school_id": "newman-catholic",
+        "team_name": "Newman Catholic",
+        "category": "Rushing Yards",
+        "player_name": "Michael Fox",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "12",
+          "YDS": "78",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "newman-catholic",
+        "team_name": "Newman Catholic",
+        "category": "Receiving Yards",
+        "player_name": "Griffin Puent",
+        "player_year": "SR",
+        "stats": {
+          "REC": "7",
+          "YDS": "107",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "newman-catholic",
+        "team_name": "Newman Catholic",
+        "category": "Total Tackles",
+        "player_name": "Everett Puent",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "15.0",
+          "TFL": "2.0"
         }
       }
     ]
@@ -10194,6 +10981,82 @@
     "stat_leaders": []
   },
   {
+    "id": "football-2025-09-26-chequamegon-butternut-mercer-at-athens",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-09-26T19:00:00-05:00",
+    "home": {
+      "school_id": "athens",
+      "name": "Athens",
+      "score": 50,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_9de064b0-6623-41d4-b94e-6a900bfb5674.PNG"
+    },
+    "away": {
+      "school_id": "",
+      "name": "Chequamegon/Butternut/Mercer",
+      "score": 20,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_8a762f16-f752-446d-954d-5b2377aac421.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@Athens",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "athens",
+        "team_name": "Athens",
+        "category": "Passing Yards",
+        "player_name": "Kamden Zarnke",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "3/4",
+          "YDS": "93",
+          "TDS": "2",
+          "RUS": "23"
+        }
+      },
+      {
+        "team_school_id": "athens",
+        "team_name": "Athens",
+        "category": "Rushing Yards",
+        "player_name": "Evin Passehl",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "8",
+          "YDS": "105",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "athens",
+        "team_name": "Athens",
+        "category": "Receiving Yards",
+        "player_name": "Kaleb Cracraft",
+        "player_year": "JR",
+        "stats": {
+          "REC": "1",
+          "YDS": "48",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "athens",
+        "team_name": "Athens",
+        "category": "Total Tackles",
+        "player_name": "Shaylon Blake",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "7.0",
+          "TFL": "2.0"
+        }
+      }
+    ]
+  },
+  {
     "id": "football-2025-09-26-assumption-at-edgar",
     "sport": "football",
     "season": "2025-26",
@@ -10412,6 +11275,32 @@
         }
       }
     ]
+  },
+  {
+    "id": "football-2025-09-26-menominee-nation-at-newman-catholic",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-09-26T19:00:00-05:00",
+    "home": {
+      "school_id": "newman-catholic",
+      "name": "Newman Catholic",
+      "score": 1,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_17ae3c02-235c-4b92-b1b2-699075c98ccd.jpg"
+    },
+    "away": {
+      "school_id": "",
+      "name": "Menominee Nation",
+      "score": 0,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_89ad3d70-aba7-4aea-99eb-bcf33ac9056d.png"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@PQS points applied",
+    "sources": [
+      "wiaa"
+    ],
+    "stat_leaders": []
   },
   {
     "id": "football-2025-09-26-spencer-at-amherst",
@@ -12221,6 +13110,83 @@
     "stat_leaders": []
   },
   {
+    "id": "football-2025-10-03-athens-at-phillips",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-10-03T19:00:00-05:00",
+    "home": {
+      "school_id": "",
+      "name": "Phillips",
+      "score": 48,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_c254fbf5-239d-4754-b90b-89888cd71d92.jpg"
+    },
+    "away": {
+      "school_id": "athens",
+      "name": "Athens",
+      "score": 52,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_9de064b0-6623-41d4-b94e-6a900bfb5674.PNG"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@Phillips",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "athens",
+        "team_name": "Athens",
+        "category": "Passing Yards",
+        "player_name": "Kamden Zarnke",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "5/12",
+          "YDS": "66",
+          "TDS": "1",
+          "RUS": "50"
+        }
+      },
+      {
+        "team_school_id": "athens",
+        "team_name": "Athens",
+        "category": "Rushing Yards",
+        "player_name": "Evin Passehl",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "35",
+          "YDS": "204",
+          "TDS": "4"
+        }
+      },
+      {
+        "team_school_id": "athens",
+        "team_name": "Athens",
+        "category": "Receiving Yards",
+        "player_name": "Evin Passehl",
+        "player_year": "SR",
+        "stats": {
+          "REC": "5",
+          "YDS": "66",
+          "TDS": "4",
+          "RUS": "204"
+        }
+      },
+      {
+        "team_school_id": "athens",
+        "team_name": "Athens",
+        "category": "Total Tackles",
+        "player_name": "Evin Passehl",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "7.0",
+          "TFL": "2.0"
+        }
+      }
+    ]
+  },
+  {
     "id": "football-2025-10-03-edgar-at-iola-scandinavia",
     "sport": "football",
     "season": "2025-26",
@@ -12461,6 +13427,84 @@
           "TKL": "8.0",
           "TFL": "1.0",
           "SKS": "1.0"
+        }
+      }
+    ]
+  },
+  {
+    "id": "football-2025-10-03-port-edwards-at-newman-catholic",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-10-03T19:00:00-05:00",
+    "home": {
+      "school_id": "newman-catholic",
+      "name": "Newman Catholic",
+      "score": 48,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_17ae3c02-235c-4b92-b1b2-699075c98ccd.jpg"
+    },
+    "away": {
+      "school_id": "",
+      "name": "Port Edwards",
+      "score": 6,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_d8f22e2b-26cd-4a22-88ba-2093b68a85a3.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@Newman Catholic",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "newman-catholic",
+        "team_name": "Newman Catholic",
+        "category": "Passing Yards",
+        "player_name": "Michael Fox",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "10/11",
+          "YDS": "225",
+          "TDS": "1",
+          "RUS": "35"
+        }
+      },
+      {
+        "team_school_id": "newman-catholic",
+        "team_name": "Newman Catholic",
+        "category": "Rushing Yards",
+        "player_name": "Eli Feit",
+        "player_year": "FR",
+        "stats": {
+          "ATT": "6",
+          "YDS": "185",
+          "TDS": "1",
+          "REC": "54"
+        }
+      },
+      {
+        "team_school_id": "newman-catholic",
+        "team_name": "Newman Catholic",
+        "category": "Receiving Yards",
+        "player_name": "Triston Fisher",
+        "player_year": "SR",
+        "stats": {
+          "REC": "3",
+          "YDS": "90",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "newman-catholic",
+        "team_name": "Newman Catholic",
+        "category": "Total Tackles",
+        "player_name": "Griffin Puent",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "6.0",
+          "TFL": "1.0",
+          "INT": "1"
         }
       }
     ]
@@ -14368,6 +15412,32 @@
     "stat_leaders": []
   },
   {
+    "id": "football-2025-10-10-rib-lake-at-athens",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-10-10T19:00:00-05:00",
+    "home": {
+      "school_id": "athens",
+      "name": "Athens",
+      "score": 1,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_9de064b0-6623-41d4-b94e-6a900bfb5674.PNG"
+    },
+    "away": {
+      "school_id": "",
+      "name": "Rib Lake",
+      "score": 0,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_7e7a8cc5-89bc-4cf1-8ad6-e057f46d5aa7.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@Athens",
+    "sources": [
+      "wiaa"
+    ],
+    "stat_leaders": []
+  },
+  {
     "id": "football-2025-10-10-wittenberg-birnamwood-at-marathon",
     "sport": "football",
     "season": "2025-26",
@@ -14485,6 +15555,82 @@
         "stats": {
           "TKL": "7.0",
           "INT": "1"
+        }
+      }
+    ]
+  },
+  {
+    "id": "football-2025-10-10-newman-catholic-at-tri-county",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-10-10T19:00:00-05:00",
+    "home": {
+      "school_id": "",
+      "name": "Tri-County",
+      "score": 12,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_f1be37fb-8cc3-4aa8-9aff-59ecfff66bce.jpg"
+    },
+    "away": {
+      "school_id": "newman-catholic",
+      "name": "Newman Catholic",
+      "score": 34,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_17ae3c02-235c-4b92-b1b2-699075c98ccd.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@Tri-County",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "newman-catholic",
+        "team_name": "Newman Catholic",
+        "category": "Passing Yards",
+        "player_name": "Michael Fox",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "6/15",
+          "YDS": "101",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "newman-catholic",
+        "team_name": "Newman Catholic",
+        "category": "Rushing Yards",
+        "player_name": "Eli Feit",
+        "player_year": "FR",
+        "stats": {
+          "ATT": "12",
+          "YDS": "63",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "newman-catholic",
+        "team_name": "Newman Catholic",
+        "category": "Receiving Yards",
+        "player_name": "Griffin Puent",
+        "player_year": "SR",
+        "stats": {
+          "REC": "2",
+          "YDS": "75",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "newman-catholic",
+        "team_name": "Newman Catholic",
+        "category": "Total Tackles",
+        "player_name": "Everett Puent",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "13.0",
+          "TFL": "1.0",
+          "FR": "2"
         }
       }
     ]
@@ -17680,6 +18826,157 @@
     ]
   },
   {
+    "id": "football-2025-10-18-niagara-at-athens",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-10-18T13:00:00-05:00",
+    "home": {
+      "school_id": "athens",
+      "name": "Athens",
+      "score": 46,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_9de064b0-6623-41d4-b94e-6a900bfb5674.PNG"
+    },
+    "away": {
+      "school_id": "",
+      "name": "Niagara",
+      "score": 0,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_a2c55c54-932d-4eac-b1d1-2067048058c1.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": false,
+    "venue": "@Athens",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "athens",
+        "team_name": "Athens",
+        "category": "Passing Yards",
+        "player_name": "Kamden Zarnke",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "3/4",
+          "YDS": "85",
+          "TDS": "2",
+          "RUS": "85"
+        }
+      },
+      {
+        "team_school_id": "athens",
+        "team_name": "Athens",
+        "category": "Rushing Yards",
+        "player_name": "Evin Passehl",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "14",
+          "YDS": "177",
+          "TDS": "1",
+          "REC": "3"
+        }
+      },
+      {
+        "team_school_id": "athens",
+        "team_name": "Athens",
+        "category": "Receiving Yards",
+        "player_name": "Brock Beaty",
+        "player_year": "JR",
+        "stats": {
+          "REC": "2",
+          "YDS": "82",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "athens",
+        "team_name": "Athens",
+        "category": "Total Tackles",
+        "player_name": "Daxton Diethelm",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "7.0"
+        }
+      }
+    ]
+  },
+  {
+    "id": "football-2025-10-18-newman-catholic-at-frederic",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-10-18T13:00:00-05:00",
+    "home": {
+      "school_id": "",
+      "name": "Frederic",
+      "score": 65,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_74193b26-0ef5-4a3a-bc93-7b708cc4e291.jpg"
+    },
+    "away": {
+      "school_id": "newman-catholic",
+      "name": "Newman Catholic",
+      "score": 0,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_17ae3c02-235c-4b92-b1b2-699075c98ccd.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": false,
+    "venue": "@Frederic",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "newman-catholic",
+        "team_name": "Newman Catholic",
+        "category": "Passing Yards",
+        "player_name": "Michael Fox",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "7/25",
+          "YDS": "114",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "newman-catholic",
+        "team_name": "Newman Catholic",
+        "category": "Rushing Yards",
+        "player_name": "Michael Fox",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "16",
+          "YDS": "6",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "newman-catholic",
+        "team_name": "Newman Catholic",
+        "category": "Receiving Yards",
+        "player_name": "Triston Fisher",
+        "player_year": "SR",
+        "stats": {
+          "REC": "7",
+          "YDS": "114",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "newman-catholic",
+        "team_name": "Newman Catholic",
+        "category": "Total Tackles",
+        "player_name": "Triston Fisher",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "7.0",
+          "INT": "1"
+        }
+      }
+    ]
+  },
+  {
     "id": "football-2025-10-24-marshfield-at-oshkosh-north",
     "sport": "football",
     "season": "2025-26",
@@ -18057,6 +19354,32 @@
         }
       }
     ]
+  },
+  {
+    "id": "football-2025-10-24-athens-at-lena-saint-thomas-aquinas",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-10-24T19:00:00-05:00",
+    "home": {
+      "school_id": "",
+      "name": "Lena/Saint Thomas Aquinas",
+      "score": 14,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_578b14e2-722f-4d70-9a86-b4716a8086cf.jpg"
+    },
+    "away": {
+      "school_id": "athens",
+      "name": "Athens",
+      "score": 6,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_9de064b0-6623-41d4-b94e-6a900bfb5674.PNG"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": false,
+    "venue": "@Lena/Saint Thomas Aquinas",
+    "sources": [
+      "wiaa"
+    ],
+    "stat_leaders": []
   },
   {
     "id": "football-2025-10-24-loyal-greenwood-at-edgar",

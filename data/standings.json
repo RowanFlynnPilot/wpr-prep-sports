@@ -168,6 +168,24 @@
   {
     "sport": "football",
     "season": "2025-26",
+    "conference": "Northwoods-East 8",
+    "division": null,
+    "rows": [
+      {
+        "school_id": "athens",
+        "name": "Athens",
+        "conference_wins": 7,
+        "conference_losses": 0,
+        "overall_wins": 9,
+        "overall_losses": 1,
+        "points_for": 367,
+        "points_against": 128
+      }
+    ]
+  },
+  {
+    "sport": "football",
+    "season": "2025-26",
     "conference": "Marawood/CWC",
     "division": null,
     "rows": [
@@ -240,6 +258,16 @@
         "overall_losses": 6,
         "points_for": 152,
         "points_against": 289
+      },
+      {
+        "school_id": "rosholt",
+        "name": "Rosholt",
+        "conference_wins": 0,
+        "conference_losses": 7,
+        "overall_wins": 0,
+        "overall_losses": 7,
+        "points_for": 0,
+        "points_against": 7
       }
     ]
   },
@@ -324,6 +352,24 @@
   {
     "sport": "football",
     "season": "2025-26",
+    "conference": "Central Wisconsin-8",
+    "division": null,
+    "rows": [
+      {
+        "school_id": "newman-catholic",
+        "name": "Newman Catholic",
+        "conference_wins": 7,
+        "conference_losses": 0,
+        "overall_wins": 9,
+        "overall_losses": 1,
+        "points_for": 257,
+        "points_against": 156
+      }
+    ]
+  },
+  {
+    "sport": "football",
+    "season": "2025-26",
     "conference": "Big Rivers",
     "division": null,
     "rows": [
@@ -366,24 +412,6 @@
         "overall_losses": 7,
         "points_for": 350,
         "points_against": 352
-      }
-    ]
-  },
-  {
-    "sport": "football",
-    "season": "2025-26",
-    "conference": "8-Player Marawood/CWC",
-    "division": null,
-    "rows": [
-      {
-        "school_id": "rosholt",
-        "name": "Rosholt",
-        "conference_wins": 0,
-        "conference_losses": 7,
-        "overall_wins": 0,
-        "overall_losses": 7,
-        "points_for": 0,
-        "points_against": 7
       }
     ]
   }
