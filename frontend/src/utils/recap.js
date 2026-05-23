@@ -157,9 +157,18 @@ export function playerLineForGame(game) {
   if (home.score == null || away.score == null) return null;
   const homeWon = home.score > away.score;
   const awayWon = away.score > home.score;
-  // For ties we can't pick a "winner perspective" — skip.
-  if (!homeWon && !awayWon) return null;
-  const perspective = homeWon ? home.school_id : away.school_id;
+  // For ties we can't pick a winner — try home then away.
+  // For decided games, prefer the winner's perspective; fall back to the
+  // loser if the winner isn't a school we track (e.g., out-of-area
+  // opponent), so a tracked team in a loss still gets its headline shown.
+  let perspective = null;
+  if (homeWon) {
+    perspective = home.school_id || away.school_id;
+  } else if (awayWon) {
+    perspective = away.school_id || home.school_id;
+  } else {
+    perspective = home.school_id || away.school_id;
+  }
   if (!perspective) return null;
   return headlineStatSentence(game, perspective);
 }
