@@ -151,12 +151,10 @@ def main() -> int:
             console=console,
         )
     elif not args.no_stats and args.sport in WPH_SPORTS:
-        name_to_id = build_name_index_for_manifest(manifest)
         dataset = merge_wph_per_game_stats(
             dataset,
             manifest=manifest,
             sport=args.sport,
-            name_to_id=name_to_id,
             console=console,
         )
         dataset = merge_wph_season_stats(

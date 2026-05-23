@@ -216,34 +216,6 @@ def _wph_date_to_iso(date_text: str, season_start_year: int) -> str | None:
     return f"{year:04d}-{month:02d}-{day:02d}"
 
 
-def _resolve_wph_team_school_id(
-    wph_team_name: str,
-    game: Game,
-    name_to_id: dict[str, str],
-) -> str:
-    """
-    Map a WPH-rendered team name (e.g. "Wausau West Warriors") to a
-    school_id. First tries the manifest's normalized-name index; if that
-    misses, falls back to substring matching against the game's two team
-    names — WPH's "<Name> <Mascot>" usually contains the WIAA name.
-    """
-    norm = _norm(wph_team_name)
-    if norm in name_to_id:
-        return name_to_id[norm]
-    # Try progressively shorter prefixes (drop trailing tokens — usually
-    # the mascot like "Warriors" / "Tritons").
-    tokens = norm.split()
-    for k in range(len(tokens) - 1, 0, -1):
-        candidate = " ".join(tokens[:k])
-        if candidate in name_to_id:
-            return name_to_id[candidate]
-    # Last resort: pick whichever side's WIAA name appears inside the WPH name.
-    for side in (game.home, game.away):
-        if side.school_id and _norm(side.name) and _norm(side.name) in norm:
-            return side.school_id
-    return ""
-
-
 def _wph_num(value: str | None) -> float:
     """Parse a WPH stat string to float, treating missing/'-' as 0."""
     if not value or value == "-":
@@ -272,7 +244,6 @@ def merge_wph_per_game_stats(
     *,
     manifest: Manifest,
     sport: str,
-    name_to_id: dict[str, str],
     console: Console | None = None,
 ) -> Dataset:
     """
@@ -364,7 +335,7 @@ def merge_wph_per_game_stats(
             stats_cache[game_id] = rows
             time.sleep(POLITE_DELAY_SECONDS)
 
-        attached = _attach_wph_per_game(game, rows, name_to_id)
+        attached = _attach_wph_per_game(game, rows)
         if attached:
             matched_games += 1
             stat_lines_total += attached
@@ -383,29 +354,81 @@ def merge_wph_per_game_stats(
     return dataset
 
 
+def _match_wph_team_to_side(wph_team_name: str, game: Game):
+    """
+    Pick which side (game.home / game.away) a WPH team_name corresponds
+    to. Matching is prefix-style on _opp_key so WPH's mascot-laden
+    "Notre Dame Academy Tritons" lines up with WIAA's "Notre Dame", and
+    WIAA's co-op "Marshfield/Columbus Catholic" lines up with WPH's
+    "Marshfield". Returns None on no confident match.
+    """
+    wph_key = _opp_key(wph_team_name)
+    if not wph_key:
+        return None
+    best = None
+    best_overlap = 0
+    for side in (game.home, game.away):
+        side_key = _opp_key(side.name)
+        if not side_key:
+            continue
+        if side_key == wph_key:
+            return side
+        if wph_key.startswith(side_key + " "):
+            overlap = len(side_key)
+        elif side_key.startswith(wph_key + " "):
+            overlap = len(wph_key)
+        else:
+            continue
+        if overlap > best_overlap:
+            best_overlap = overlap
+            best = side
+    return best
+
+
 def _attach_wph_per_game(
     game: Game,
     rows: list[wph.WPHGameStatRow],
-    name_to_id: dict[str, str],
 ) -> int:
     """
     Reduce a game's raw athlete rows to up to 3 stat-leader lines per
     team and attach them to game.stat_leaders. Returns the number of
     lines attached.
+
+    Each WPH team_name is matched to one of the game's two sides so the
+    StatLine carries the WIAA-rendered team_name even for untracked
+    opponents — that lets the frontend's GamePage group stats by team
+    when team_school_id is empty.
     """
     if not rows:
         return 0
 
-    # Group by (resolved_team_id, raw_team_name) so two teams that fail
-    # to resolve still get separated by their WPH display name.
-    by_team: dict[tuple[str, str], dict[str, list[wph.WPHGameStatRow]]] = {}
+    # Resolve each unique WPH team_name → game side once.
+    side_for_team: dict[str, object] = {}
     for r in rows:
-        team_school_id = _resolve_wph_team_school_id(r.team_name, game, name_to_id)
-        bucket = by_team.setdefault((team_school_id, r.team_name), {})
+        if r.team_name in side_for_team:
+            continue
+        side = _match_wph_team_to_side(r.team_name, game)
+        if side is None:
+            continue
+        side_for_team[r.team_name] = side
+
+    # Group by the matched side. Keying by id(side) deduplicates without
+    # caring whether school_id is set.
+    by_side: dict[int, dict[str, list[wph.WPHGameStatRow]]] = {}
+    side_objs: dict[int, object] = {}
+    for r in rows:
+        side = side_for_team.get(r.team_name)
+        if side is None:
+            continue
+        bucket = by_side.setdefault(id(side), {})
         bucket.setdefault(r.kind, []).append(r)
+        side_objs[id(side)] = side
 
     out: list[StatLine] = []
-    for (team_school_id, team_name), kinds in by_team.items():
+    for side_id, kinds in by_side.items():
+        side = side_objs[side_id]
+        team_school_id = side.school_id
+        team_name = side.name
         skaters = kinds.get("skater", [])
         points_leader = None
         if skaters:
