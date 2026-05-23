@@ -5,6 +5,7 @@ import { schoolFor } from "../utils/schools.js";
 import { groupByDay } from "../utils/weeks.js";
 import { formatGameDay, formatGameDate, formatGameTime } from "../utils/dates.js";
 import { playerLineForGame } from "../utils/recap.js";
+import { useSportPrefix } from "../utils/links.js";
 
 /**
  * A day-by-day schedule for the featured week. Football clusters
@@ -51,6 +52,7 @@ export default function ThisWeekGrid({ week, schoolIndex, allGames = [] }) {
 }
 
 function GameRow({ game, schoolIndex, allGames }) {
+  const sportPrefix = useSportPrefix();
   const homeSchool = schoolFor(game.home, schoolIndex);
   const awaySchool = schoolFor(game.away, schoolIndex);
   const isFinal = game.status === "final";
@@ -76,7 +78,7 @@ function GameRow({ game, schoolIndex, allGames }) {
         won={homeWon}
         showScore={isFinal}
       />
-      <Link to={`/game/${game.id}`} className="game-row__status game-row__details">
+      <Link to={`${sportPrefix}/game/${game.id}`} className="game-row__status game-row__details">
         {isFinal ? "Final" : formatGameTime(game.date)}
         <span aria-hidden="true"> ›</span>
       </Link>

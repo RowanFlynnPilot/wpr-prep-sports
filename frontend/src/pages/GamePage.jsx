@@ -6,20 +6,22 @@ import TeamLink from "../components/TeamLink.jsx";
 import { schoolFor } from "../utils/schools.js";
 import { formatGameDay, formatGameDate, formatGameTime } from "../utils/dates.js";
 import { recapForGame } from "../utils/recap.js";
+import { useSportPrefix } from "../utils/links.js";
 
 /**
  * Full game detail. Shows the matchup header, the recap line, and every
- * Bound-sourced stat leader split by team. Lives at /game/:gameId.
+ * Bound-sourced stat leader split by team. Lives at /<sport>/game/:gameId.
  */
 export default function GamePage({ dataset, schoolIndex }) {
   const { gameId } = useParams();
+  const sportPrefix = useSportPrefix();
   const game = useMemo(
     () => (dataset.games ?? []).find((g) => g.id === gameId),
     [dataset.games, gameId],
   );
 
   if (!game) {
-    return <Navigate to="/" replace />;
+    return <Navigate to={sportPrefix} replace />;
   }
 
   const isFinal = game.status === "final";
@@ -71,7 +73,7 @@ export default function GamePage({ dataset, schoolIndex }) {
 
   const breadcrumb = (
     <>
-      <Link to="/">All Games</Link>
+      <Link to={sportPrefix}>All Games</Link>
       <span aria-hidden="true"> › </span>
       <span>
         {game.away.name} {isFinal ? `${awayScore}-${homeScore}` : "vs"} {game.home.name}

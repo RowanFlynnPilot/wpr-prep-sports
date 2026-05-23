@@ -1,16 +1,26 @@
 /**
- * If data hasn't refreshed in a while AND we're in the active football
- * window (mid-August through late November), warn the reader the scores
- * may be lagging. Off-season we stay quiet — stale data is expected.
+ * If data hasn't refreshed in a while AND we're in the current sport's
+ * active calendar window, warn the reader the scores may be lagging.
+ * Off-season we stay quiet — stale data is expected.
+ *
+ * `activeMonths` is a sport-config-driven list of 0-indexed months
+ * (e.g. football = [7, 8, 9, 10] for Aug–Nov). Defaults to the
+ * football window so existing callers keep working during the
+ * phase-1 refactor.
  */
-export default function StaleBanner({ lastUpdatedIso, now = new Date() }) {
+const FOOTBALL_FALLBACK_MONTHS = [7, 8, 9, 10];
+
+export default function StaleBanner({
+  lastUpdatedIso,
+  activeMonths = FOOTBALL_FALLBACK_MONTHS,
+  now = new Date(),
+}) {
   if (!lastUpdatedIso) return null;
   const last = new Date(lastUpdatedIso);
   const ageHours = (now.getTime() - last.getTime()) / 3_600_000;
 
-  // Active season window — month is 0-indexed: Aug=7, Nov=10.
   const month = now.getMonth();
-  const inSeason = month >= 7 && month <= 10;
+  const inSeason = activeMonths.includes(month);
 
   // 4-hour grace in-season, 48-hour grace off-season.
   const threshold = inSeason ? 4 : 48;

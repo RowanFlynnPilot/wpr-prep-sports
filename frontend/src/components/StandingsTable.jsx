@@ -21,6 +21,7 @@ export default function StandingsTable({
   schoolIndex,
   sponsors,
   seasonStats = [],
+  sportConfig,
 }) {
   const [hovered, setHovered] = useState(null);
 
@@ -53,7 +54,11 @@ export default function StandingsTable({
     >
       <header className="standings__header">
         <h3>{standing.conference}</h3>
-        <span className="standings__hint">2025–26 · Football</span>
+        <span className="standings__hint">
+          {sportConfig?.season ?? ""}
+          {sportConfig?.season && sportConfig?.label ? " · " : ""}
+          {sportConfig?.label ?? ""}
+        </span>
       </header>
       <Sponsor
         slot={`standings:${standing.conference}`}

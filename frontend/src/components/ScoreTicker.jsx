@@ -5,6 +5,7 @@ import TeamLink from "./TeamLink.jsx";
 import { schoolFor } from "../utils/schools.js";
 import { formatGameShortDay, formatGameDate } from "../utils/dates.js";
 import { playerLineForGame } from "../utils/recap.js";
+import { useSportPrefix } from "../utils/links.js";
 
 /**
  * Horizontal scrollable ticker of recent + tonight games. Each card surfaces
@@ -119,6 +120,7 @@ export default function ScoreTicker({ games, schoolIndex, allGames = [] }) {
 }
 
 function GameCard({ game, schoolIndex, allGames }) {
+  const sportPrefix = useSportPrefix();
   const homeSchool = schoolFor(game.home, schoolIndex);
   const awaySchool = schoolFor(game.away, schoolIndex);
   const isFinal = game.status === "final";
@@ -150,7 +152,7 @@ function GameCard({ game, schoolIndex, allGames }) {
         </p>
       )}
 
-      <Link to={`/game/${game.id}`} className="card__details">
+      <Link to={`${sportPrefix}/game/${game.id}`} className="card__details">
         Game details
         <span aria-hidden="true"> ›</span>
       </Link>

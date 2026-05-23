@@ -4,6 +4,7 @@ import {
   positionFor,
   topPerformers,
 } from "../utils/seasonStats.js";
+import { useSportPrefix } from "../utils/links.js";
 
 const CATEGORIES = [
   { key: "Passing", title: "Passing" },
@@ -18,6 +19,7 @@ const CATEGORIES = [
  * tackles (defense). Each row links to the player's team page.
  */
 export default function TopPerformers({ rows, schoolIndex, n = 5 }) {
+  const sportPrefix = useSportPrefix();
   if (!rows || rows.length === 0) return null;
 
   return (
@@ -45,7 +47,7 @@ export default function TopPerformers({ rows, schoolIndex, n = 5 }) {
                         )}
                       </span>
                       <Link
-                        to={`/team/${r.school_id}`}
+                        to={`${sportPrefix}/team/${r.school_id}`}
                         className="top-card__team"
                       >
                         {school?.name ?? r.school_id}

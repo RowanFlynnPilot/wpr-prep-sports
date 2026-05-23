@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { useParams, Link, Navigate, NavLink } from "react-router-dom";
+import { useParams, Link, Navigate } from "react-router-dom";
 import Layout from "../components/Layout.jsx";
 import TeamLogo from "../components/TeamLogo.jsx";
 import TeamLink from "../components/TeamLink.jsx";
@@ -8,13 +8,15 @@ import SeasonLeaders from "../components/SeasonLeaders.jsx";
 import { formatGameDay, formatGameDate, formatGameTime } from "../utils/dates.js";
 import { recapForGame } from "../utils/recap.js";
 import { seasonSummary } from "../utils/seasonSummary.js";
+import { useSportPrefix } from "../utils/links.js";
 
-export default function TeamPage({ dataset, schoolIndex, sponsors }) {
+export default function TeamPage({ dataset, schoolIndex, sponsors, sportConfig }) {
   const { schoolId } = useParams();
+  const sportPrefix = useSportPrefix();
   const school = schoolIndex.get(schoolId);
 
   if (!school) {
-    return <Navigate to="/" replace />;
+    return <Navigate to={sportPrefix} replace />;
   }
 
   const teamGames = useMemo(
@@ -68,7 +70,7 @@ export default function TeamPage({ dataset, schoolIndex, sponsors }) {
 
   const breadcrumb = (
     <>
-      <Link to="/">All Teams</Link>
+      <Link to={sportPrefix}>All Teams</Link>
       <span aria-hidden="true"> › </span>
       <span>{school.name}</span>
     </>
@@ -126,8 +128,10 @@ export default function TeamPage({ dataset, schoolIndex, sponsors }) {
 
       <section>
         <div className="section-header">
-          <h2>2025–26 Schedule</h2>
-          <span className="section-header__hint">Football · {teamGames.length} games</span>
+          <h2>{sportConfig.season} Schedule</h2>
+          <span className="section-header__hint">
+            {sportConfig.label} · {teamGames.length} games
+          </span>
         </div>
 
         {teamGames.length === 0 ? (
@@ -142,6 +146,7 @@ export default function TeamPage({ dataset, schoolIndex, sponsors }) {
                 schoolId={schoolId}
                 schoolIndex={schoolIndex}
                 allTeamGames={teamGames}
+                sportPrefix={sportPrefix}
               />
             ))}
           </ol>
@@ -192,7 +197,7 @@ function computeRecord(games, schoolId) {
   };
 }
 
-function ScheduleRow({ game, index, schoolId, schoolIndex, allTeamGames }) {
+function ScheduleRow({ game, index, schoolId, schoolIndex, allTeamGames, sportPrefix }) {
   const isHome = game.home.school_id === schoolId;
   const opponent = isHome ? game.away : game.home;
   const opponentSchool = schoolIndex.get(opponent.school_id);
@@ -223,7 +228,7 @@ function ScheduleRow({ game, index, schoolId, schoolIndex, allTeamGames }) {
         </TeamLink>
       </div>
       <Link
-        to={`/game/${game.id}`}
+        to={`${sportPrefix}/game/${game.id}`}
         className={
           "schedule-row__result schedule-row__result--link " +
           (won ? "schedule-row__result--win" : lost ? "schedule-row__result--loss" : "")

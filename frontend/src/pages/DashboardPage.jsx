@@ -10,7 +10,7 @@ import TopPerformers from "../components/TopPerformers.jsx";
 import { pickFeaturedGame, tickerGames } from "../utils/games.js";
 import { pickFeaturedWeek } from "../utils/weeks.js";
 
-export default function DashboardPage({ dataset, schoolIndex, sponsors }) {
+export default function DashboardPage({ dataset, schoolIndex, sponsors, sportConfig }) {
   const { meta, schools, games, standings, seasonStats } = dataset;
 
   // Off-season trick: until the 2026 season starts producing live games,
@@ -51,7 +51,10 @@ export default function DashboardPage({ dataset, schoolIndex, sponsors }) {
       sponsors={sponsors}
       footer={`Data via WIAA · ${games.length} games tracked · ${schools.length} schools`}
     >
-      <StaleBanner lastUpdatedIso={meta?.last_updated} />
+      <StaleBanner
+        lastUpdatedIso={meta?.last_updated}
+        activeMonths={sportConfig?.activeMonths}
+      />
 
       <Hero
         game={featured}
@@ -81,7 +84,9 @@ export default function DashboardPage({ dataset, schoolIndex, sponsors }) {
       <section>
         <div className="section-header">
           <h2>Conference Standings</h2>
-          <span className="section-header__hint">Football · 2025–26</span>
+          <span className="section-header__hint">
+            {sportConfig.label} · {sportConfig.season}
+          </span>
         </div>
         <div className="standings-grid">
           {standings.map((s) => (
@@ -91,6 +96,7 @@ export default function DashboardPage({ dataset, schoolIndex, sponsors }) {
               schoolIndex={schoolIndex}
               sponsors={sponsors}
               seasonStats={seasonStats}
+              sportConfig={sportConfig}
             />
           ))}
         </div>

@@ -1,5 +1,11 @@
 import { useEffect, useState } from "react";
-import { Routes, Route } from "react-router-dom";
+import {
+  Routes,
+  Route,
+  Navigate,
+  useParams,
+  useLocation,
+} from "react-router-dom";
 import { fetchDataset } from "./data/fetchDataset.js";
 import DashboardPage from "./pages/DashboardPage.jsx";
 import TeamPage from "./pages/TeamPage.jsx";
@@ -7,6 +13,7 @@ import GamePage from "./pages/GamePage.jsx";
 import Skeleton from "./components/Skeleton.jsx";
 import { indexSchools } from "./utils/schools.js";
 import { useIframeHeightReporter } from "./utils/iframe.js";
+import { DEFAULT_SPORT, configFor, isKnownSport } from "./config/sports.js";
 
 import "./styles/App.css";
 import "./styles/TeamLogo.css";
@@ -21,20 +28,77 @@ import "./styles/TopPerformers.css";
 import "./styles/GamePage.css";
 
 export default function App() {
+  useIframeHeightReporter();
+
+  return (
+    <Routes>
+      {/* Default landing → DEFAULT_SPORT's dashboard. */}
+      <Route path="/" element={<Navigate to={`/${DEFAULT_SPORT}`} replace />} />
+
+      {/* Legacy URLs (pre-phase-1, no sport prefix) → DEFAULT_SPORT prefix. */}
+      <Route
+        path="/team/:schoolId"
+        element={<LegacyRedirect kind="team" />}
+      />
+      <Route
+        path="/game/:gameId"
+        element={<LegacyRedirect kind="game" />}
+      />
+
+      {/* Sport-scoped routes. SportShell fetches that sport's dataset and
+          renders nested routes once it's loaded. */}
+      <Route path="/:sport/*" element={<SportShell />} />
+
+      {/* Fallback for unknown URLs. */}
+      <Route path="*" element={<Navigate to={`/${DEFAULT_SPORT}`} replace />} />
+    </Routes>
+  );
+}
+
+/**
+ * Redirect a pre-phase-1 URL like `/team/auburndale` to its sport-scoped
+ * equivalent `/football/team/auburndale`. Kept so the existing WPR
+ * iframe and any bookmarks survive the path change indefinitely.
+ */
+function LegacyRedirect({ kind }) {
+  const params = useParams();
+  const id = kind === "team" ? params.schoolId : params.gameId;
+  return <Navigate to={`/${DEFAULT_SPORT}/${kind}/${id}`} replace />;
+}
+
+/**
+ * Mounts under `/:sport/*`. Reads the current sport from the URL,
+ * fetches that sport's dataset, and renders the sport's pages.
+ *
+ * Remounting on sport change is intentional — each sport's dataset is
+ * a separate fetch, so we re-skeleton during the switch rather than
+ * trying to interpolate stale state across sports.
+ */
+function SportShell() {
+  const { sport } = useParams();
+  const location = useLocation();
+  const valid = isKnownSport(sport);
   const [dataset, setDataset] = useState(null);
   const [error, setError] = useState(null);
 
-  useIframeHeightReporter();
-
   useEffect(() => {
+    if (!valid) return;
     let cancelled = false;
-    fetchDataset()
+    setDataset(null);
+    setError(null);
+    fetchDataset(sport)
       .then((d) => !cancelled && setDataset(d))
       .catch((e) => !cancelled && setError(e.message));
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [sport, valid]);
+
+  // Unknown sport → bounce to default after hooks have run, so hook order
+  // stays stable on subsequent renders.
+  if (!valid) {
+    return <Navigate to={`/${DEFAULT_SPORT}`} replace />;
+  }
 
   if (error) {
     return (
@@ -48,8 +112,9 @@ export default function App() {
           <div className="boundary">
             <h2>Scores temporarily unavailable.</h2>
             <p>
-              We couldn't load the latest scores. The scraper or GitHub Pages
-              may be having a moment — please check back shortly.
+              We couldn't load the latest {configFor(sport).label} data. The
+              scraper or GitHub Pages may be having a moment — please check
+              back shortly.
             </p>
             <p style={{ fontSize: "0.8rem", color: "var(--muted-2)" }}>
               <code>{error}</code>
@@ -70,6 +135,10 @@ export default function App() {
   if (!dataset) return <Skeleton />;
 
   const schoolIndex = indexSchools(dataset.schools, dataset.games);
+  const sportConfig = configFor(sport);
+  // Sanity: avoid stale dataset mismatching the URL during the brief
+  // window between sport-id change and dataset arrival.
+  void location;
 
   return (
     <Routes>
@@ -80,6 +149,7 @@ export default function App() {
             dataset={dataset}
             schoolIndex={schoolIndex}
             sponsors={dataset.sponsors}
+            sportConfig={sportConfig}
           />
         }
       />
@@ -90,13 +160,18 @@ export default function App() {
             dataset={dataset}
             schoolIndex={schoolIndex}
             sponsors={dataset.sponsors}
+            sportConfig={sportConfig}
           />
         }
       />
       <Route
         path="/game/:gameId"
         element={
-          <GamePage dataset={dataset} schoolIndex={schoolIndex} />
+          <GamePage
+            dataset={dataset}
+            schoolIndex={schoolIndex}
+            sportConfig={sportConfig}
+          />
         }
       />
     </Routes>
