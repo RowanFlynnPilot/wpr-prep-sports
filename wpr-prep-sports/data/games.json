@@ -216,6 +216,30 @@
     ]
   },
   {
+    "id": "football-2025-08-22-spencer-at-auburndale",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-08-22T19:00:00-05:00",
+    "home": {
+      "school_id": "",
+      "name": "Auburndale",
+      "score": 27,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_f8e095b1-38af-494e-8c1f-895948e340bf.jpg"
+    },
+    "away": {
+      "school_id": "spencer",
+      "name": "Spencer/Columbus Catholic",
+      "score": 35,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_0b29e7c6-5aa2-4acd-a96e-8d476a8b9d50.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "venue": "@Auburndale",
+    "sources": [
+      "wiaa"
+    ]
+  },
+  {
     "id": "football-2025-08-22-colby-at-stanley-boyd",
     "sport": "football",
     "season": "2025-26",
@@ -456,6 +480,30 @@
     ]
   },
   {
+    "id": "football-2025-08-29-pittsville-at-spencer",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-08-29T19:00:00-05:00",
+    "home": {
+      "school_id": "spencer",
+      "name": "Spencer/Columbus Catholic",
+      "score": 49,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_0b29e7c6-5aa2-4acd-a96e-8d476a8b9d50.jpg"
+    },
+    "away": {
+      "school_id": "",
+      "name": "Pittsville",
+      "score": 34,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_d56c5490-ed3e-471e-86f7-a5d96b8b690b.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "venue": "@Spencer/Columbus Catholic",
+    "sources": [
+      "wiaa"
+    ]
+  },
+  {
     "id": "football-2025-08-29-mosinee-at-menasha",
     "sport": "football",
     "season": "2025-26",
@@ -672,7 +720,7 @@
     ]
   },
   {
-    "id": "football-2025-09-05-spencer-columbus-catholic-at-stratford",
+    "id": "football-2025-09-05-spencer-at-stratford",
     "sport": "football",
     "season": "2025-26",
     "date": "2025-09-05T19:00:00-05:00",
@@ -683,7 +731,7 @@
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_8aa5a37b-e404-41b0-83f2-799684d68afa.jpg"
     },
     "away": {
-      "school_id": "",
+      "school_id": "spencer",
       "name": "Spencer/Columbus Catholic",
       "score": 15,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_0b29e7c6-5aa2-4acd-a96e-8d476a8b9d50.jpg"
@@ -960,6 +1008,30 @@
     ]
   },
   {
+    "id": "football-2025-09-12-weyauwega-fremont-at-spencer",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-09-12T19:00:00-05:00",
+    "home": {
+      "school_id": "spencer",
+      "name": "Spencer/Columbus Catholic",
+      "score": 29,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_0b29e7c6-5aa2-4acd-a96e-8d476a8b9d50.jpg"
+    },
+    "away": {
+      "school_id": "",
+      "name": "Weyauwega-Fremont",
+      "score": 15,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_853613a0-9914-41d4-ace4-c1987426ce34.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "venue": "@Spencer/Columbus Catholic",
+    "sources": [
+      "wiaa"
+    ]
+  },
+  {
     "id": "football-2025-09-12-mosinee-at-lakeland",
     "sport": "football",
     "season": "2025-26",
@@ -1176,6 +1248,30 @@
     ]
   },
   {
+    "id": "football-2025-09-19-wittenberg-birnamwood-at-spencer",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-09-19T19:00:00-05:00",
+    "home": {
+      "school_id": "spencer",
+      "name": "Spencer/Columbus Catholic",
+      "score": 27,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_0b29e7c6-5aa2-4acd-a96e-8d476a8b9d50.jpg"
+    },
+    "away": {
+      "school_id": "",
+      "name": "Wittenberg-Birnamwood",
+      "score": 8,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_08fbc74b-f839-4f21-9ba0-d72f3ac10a2f.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "venue": "@Spencer High School",
+    "sources": [
+      "wiaa"
+    ]
+  },
+  {
     "id": "football-2025-09-19-abbotsford-at-assumption",
     "sport": "football",
     "season": "2025-26",
@@ -1339,6 +1435,30 @@
     "status": "final",
     "conference": null,
     "venue": "@Marathon",
+    "sources": [
+      "wiaa"
+    ]
+  },
+  {
+    "id": "football-2025-09-26-spencer-at-amherst",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-09-26T19:00:00-05:00",
+    "home": {
+      "school_id": "",
+      "name": "Amherst",
+      "score": 22,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_8c17d9d9-12f6-469d-873c-c2a8fc11e2dc.jpg"
+    },
+    "away": {
+      "school_id": "spencer",
+      "name": "Spencer/Columbus Catholic",
+      "score": 35,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_0b29e7c6-5aa2-4acd-a96e-8d476a8b9d50.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "venue": "@Amherst",
     "sources": [
       "wiaa"
     ]
@@ -1579,6 +1699,30 @@
     "status": "final",
     "conference": null,
     "venue": "@Stratford",
+    "sources": [
+      "wiaa"
+    ]
+  },
+  {
+    "id": "football-2025-10-03-spencer-at-loyal-greenwood",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-10-03T19:00:00-05:00",
+    "home": {
+      "school_id": "",
+      "name": "Loyal/Greenwood",
+      "score": 16,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_b2538b53-6986-4227-9a41-1fafb30dbd71.png"
+    },
+    "away": {
+      "school_id": "spencer",
+      "name": "Spencer/Columbus Catholic",
+      "score": 26,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_0b29e7c6-5aa2-4acd-a96e-8d476a8b9d50.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "venue": "@Loyal High School",
     "sources": [
       "wiaa"
     ]
@@ -1848,20 +1992,20 @@
     ]
   },
   {
-    "id": "football-2025-10-10-colby-at-spencer-columbus-catholic",
+    "id": "football-2025-10-10-colby-at-spencer",
     "sport": "football",
     "season": "2025-26",
     "date": "2025-10-10T19:00:00-05:00",
     "home": {
-      "school_id": "",
+      "school_id": "spencer",
       "name": "Spencer/Columbus Catholic",
-      "score": null,
+      "score": 43,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_0b29e7c6-5aa2-4acd-a96e-8d476a8b9d50.jpg"
     },
     "away": {
       "school_id": "colby",
       "name": "Colby",
-      "score": null,
+      "score": 12,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_341b5868-d166-406a-90e1-7bd5d0ca6cd2.jpg"
     },
     "status": "final",
@@ -2088,7 +2232,7 @@
     ]
   },
   {
-    "id": "football-2025-10-17-spencer-columbus-catholic-at-marathon",
+    "id": "football-2025-10-17-spencer-at-marathon",
     "sport": "football",
     "season": "2025-26",
     "date": "2025-10-17T19:00:00-05:00",
@@ -2099,7 +2243,7 @@
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_21893c9d-172b-4f3b-a52c-187062f259f9.jpg"
     },
     "away": {
-      "school_id": "",
+      "school_id": "spencer",
       "name": "Spencer/Columbus Catholic",
       "score": 6,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_0b29e7c6-5aa2-4acd-a96e-8d476a8b9d50.jpg"
@@ -2352,6 +2496,30 @@
     ]
   },
   {
+    "id": "football-2025-10-24-spencer-at-new-holstein",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-10-24T19:00:00-05:00",
+    "home": {
+      "school_id": "",
+      "name": "New Holstein",
+      "score": 12,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_0e4c36f0-d7ec-4c08-b976-32b456dd7e7a.jpg"
+    },
+    "away": {
+      "school_id": "spencer",
+      "name": "Spencer/Columbus Catholic",
+      "score": 31,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_0b29e7c6-5aa2-4acd-a96e-8d476a8b9d50.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "venue": "@New Holstein",
+    "sources": [
+      "wiaa"
+    ]
+  },
+  {
     "id": "football-2025-10-24-turner-at-mosinee",
     "sport": "football",
     "season": "2025-26",
@@ -2443,6 +2611,30 @@
     "status": "final",
     "conference": null,
     "venue": "@Stratford",
+    "sources": [
+      "wiaa"
+    ]
+  },
+  {
+    "id": "football-2025-10-31-spencer-at-tomahawk",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-10-31T19:00:00-05:00",
+    "home": {
+      "school_id": "",
+      "name": "Tomahawk",
+      "score": 34,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_b455cbb7-3a4d-49ad-b7c5-e9935c3d78dc.jpg"
+    },
+    "away": {
+      "school_id": "spencer",
+      "name": "Spencer/Columbus Catholic",
+      "score": 12,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_0b29e7c6-5aa2-4acd-a96e-8d476a8b9d50.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "venue": "@Tomahawk",
     "sources": [
       "wiaa"
     ]

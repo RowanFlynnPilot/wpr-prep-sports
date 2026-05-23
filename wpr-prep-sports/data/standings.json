@@ -2,6 +2,34 @@
   {
     "sport": "football",
     "season": "2025-26",
+    "conference": "Great Northern",
+    "division": null,
+    "rows": [
+      {
+        "school_id": "wausau-east",
+        "name": "Wausau East",
+        "conference_wins": 1,
+        "conference_losses": 0,
+        "overall_wins": 9,
+        "overall_losses": 1,
+        "points_for": 268,
+        "points_against": 121
+      },
+      {
+        "school_id": "mosinee",
+        "name": "Mosinee",
+        "conference_wins": 0,
+        "conference_losses": 1,
+        "overall_wins": 9,
+        "overall_losses": 3,
+        "points_for": 342,
+        "points_against": 210
+      }
+    ]
+  },
+  {
+    "sport": "football",
+    "season": "2025-26",
     "conference": "VFA West",
     "division": null,
     "rows": [
@@ -46,16 +74,6 @@
         "points_against": 179
       },
       {
-        "school_id": "wausau-east",
-        "name": "Wausau East",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "overall_wins": 9,
-        "overall_losses": 1,
-        "points_for": 268,
-        "points_against": 121
-      },
-      {
         "school_id": "wisconsin-rapids",
         "name": "Wisconsin Rapids Lincoln",
         "conference_wins": 0,
@@ -74,6 +92,16 @@
     "division": null,
     "rows": [
       {
+        "school_id": "marathon",
+        "name": "Marathon",
+        "conference_wins": 2,
+        "conference_losses": 0,
+        "overall_wins": 9,
+        "overall_losses": 1,
+        "points_for": 282,
+        "points_against": 128
+      },
+      {
         "school_id": "edgar",
         "name": "Edgar",
         "conference_wins": 1,
@@ -84,14 +112,14 @@
         "points_against": 48
       },
       {
-        "school_id": "marathon",
-        "name": "Marathon",
+        "school_id": "stratford",
+        "name": "Stratford",
         "conference_wins": 1,
-        "conference_losses": 0,
-        "overall_wins": 9,
-        "overall_losses": 1,
-        "points_for": 282,
-        "points_against": 128
+        "conference_losses": 2,
+        "overall_wins": 10,
+        "overall_losses": 3,
+        "points_for": 370,
+        "points_against": 183
       },
       {
         "school_id": "athens",
@@ -117,39 +145,11 @@
         "school_id": "spencer",
         "name": "Spencer",
         "conference_wins": 0,
-        "conference_losses": 0,
-        "overall_wins": 0,
-        "overall_losses": 0,
-        "points_for": 0,
-        "points_against": 0
-      },
-      {
-        "school_id": "stratford",
-        "name": "Stratford",
-        "conference_wins": 0,
         "conference_losses": 2,
-        "overall_wins": 10,
+        "overall_wins": 8,
         "overall_losses": 3,
-        "points_for": 370,
-        "points_against": 183
-      }
-    ]
-  },
-  {
-    "sport": "football",
-    "season": "2025-26",
-    "conference": "Great Northern",
-    "division": null,
-    "rows": [
-      {
-        "school_id": "mosinee",
-        "name": "Mosinee",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "overall_wins": 9,
-        "overall_losses": 3,
-        "points_for": 342,
-        "points_against": 210
+        "points_for": 308,
+        "points_against": 221
       }
     ]
   },
@@ -165,9 +165,9 @@
         "conference_wins": 1,
         "conference_losses": 0,
         "overall_wins": 6,
-        "overall_losses": 2,
-        "points_for": 200,
-        "points_against": 184
+        "overall_losses": 3,
+        "points_for": 212,
+        "points_against": 227
       },
       {
         "school_id": "abbotsford",
