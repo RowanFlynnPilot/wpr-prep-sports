@@ -1,12 +1,13 @@
 name: Scrape
 
 on:
-  schedule:
-    # Every 15 minutes Fri 6pm–11pm CT (Sat 00:00–05:00 UTC) during football season
-    # Adjust as seasons change. Use cron sparingly outside game windows.
-    - cron: "*/15 0-5 * * 6"  # Fri evenings/Sat early UTC
-    # Hourly at all other times during the week
-    - cron: "5 * * * *"
+  # Cron paused for the off-season (no live games to refresh until football
+  # preseason in mid-August 2026). Re-enable by uncommenting the schedule
+  # block below; both crons were the in-season cadence (hourly base +
+  # Fri-evening 15-min windows) used during the 2025-26 football season.
+  # schedule:
+  #   - cron: "*/15 0-5 * * 6"  # Fri evenings/Sat early UTC (15-min cadence)
+  #   - cron: "5 * * * *"        # hourly otherwise
   workflow_dispatch:
     inputs:
       sport:
