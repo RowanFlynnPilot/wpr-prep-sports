@@ -1,0 +1,176 @@
+[
+  {
+    "sport": "boys_hockey",
+    "season": "2025-26",
+    "conference": "Wisconsin Valley",
+    "division": null,
+    "rows": [
+      {
+        "school_id": "wausau-west",
+        "name": "Wausau West",
+        "conference_wins": 10,
+        "conference_losses": 0,
+        "overall_wins": 25,
+        "overall_losses": 1,
+        "points_for": 165,
+        "points_against": 44
+      },
+      {
+        "school_id": "dc-everest",
+        "name": "D.C. Everest",
+        "conference_wins": 8,
+        "conference_losses": 2,
+        "overall_wins": 21,
+        "overall_losses": 3,
+        "points_for": 109,
+        "points_against": 42
+      },
+      {
+        "school_id": "spash",
+        "name": "SPASH",
+        "conference_wins": 4,
+        "conference_losses": 6,
+        "overall_wins": 21,
+        "overall_losses": 6,
+        "points_for": 162,
+        "points_against": 61
+      },
+      {
+        "school_id": "wisconsin-rapids",
+        "name": "Wisconsin Rapids Lincoln",
+        "conference_wins": 2,
+        "conference_losses": 8,
+        "overall_wins": 15,
+        "overall_losses": 9,
+        "points_for": 104,
+        "points_against": 94
+      }
+    ]
+  },
+  {
+    "sport": "boys_hockey",
+    "season": "2025-26",
+    "conference": "Great Northern",
+    "division": null,
+    "rows": [
+      {
+        "school_id": "mosinee",
+        "name": "Mosinee",
+        "conference_wins": 10,
+        "conference_losses": 0,
+        "overall_wins": 22,
+        "overall_losses": 4,
+        "points_for": 132,
+        "points_against": 72
+      },
+      {
+        "school_id": "tomahawk",
+        "name": "Tomahawk",
+        "conference_wins": 8,
+        "conference_losses": 2,
+        "overall_wins": 20,
+        "overall_losses": 6,
+        "points_for": 149,
+        "points_against": 71
+      },
+      {
+        "school_id": "lakeland",
+        "name": "Lakeland",
+        "conference_wins": 4,
+        "conference_losses": 5,
+        "overall_wins": 11,
+        "overall_losses": 6,
+        "points_for": 43,
+        "points_against": 43
+      }
+    ]
+  },
+  {
+    "sport": "boys_hockey",
+    "season": "2025-26",
+    "conference": "Big Rivers",
+    "division": null,
+    "rows": [
+      {
+        "school_id": "eau-claire-north",
+        "name": "Eau Claire North",
+        "conference_wins": 13,
+        "conference_losses": 0,
+        "overall_wins": 20,
+        "overall_losses": 4,
+        "points_for": 100,
+        "points_against": 62
+      },
+      {
+        "school_id": "chippewa-falls",
+        "name": "Chippewa Falls",
+        "conference_wins": 10,
+        "conference_losses": 4,
+        "overall_wins": 19,
+        "overall_losses": 7,
+        "points_for": 91,
+        "points_against": 53
+      },
+      {
+        "school_id": "eau-claire-memorial",
+        "name": "Eau Claire Memorial",
+        "conference_wins": 9,
+        "conference_losses": 1,
+        "overall_wins": 15,
+        "overall_losses": 5,
+        "points_for": 71,
+        "points_against": 40
+      },
+      {
+        "school_id": "hudson",
+        "name": "Hudson",
+        "conference_wins": 6,
+        "conference_losses": 6,
+        "overall_wins": 17,
+        "overall_losses": 8,
+        "points_for": 109,
+        "points_against": 70
+      },
+      {
+        "school_id": "new-richmond",
+        "name": "New Richmond",
+        "conference_wins": 5,
+        "conference_losses": 6,
+        "overall_wins": 13,
+        "overall_losses": 9,
+        "points_for": 93,
+        "points_against": 58
+      },
+      {
+        "school_id": "rice-lake",
+        "name": "Rice Lake",
+        "conference_wins": 4,
+        "conference_losses": 7,
+        "overall_wins": 13,
+        "overall_losses": 9,
+        "points_for": 49,
+        "points_against": 71
+      },
+      {
+        "school_id": "river-falls",
+        "name": "River Falls",
+        "conference_wins": 2,
+        "conference_losses": 12,
+        "overall_wins": 13,
+        "overall_losses": 14,
+        "points_for": 130,
+        "points_against": 114
+      },
+      {
+        "school_id": "menomonie",
+        "name": "Menomonie",
+        "conference_wins": 0,
+        "conference_losses": 13,
+        "overall_wins": 11,
+        "overall_losses": 14,
+        "points_for": 89,
+        "points_against": 92
+      }
+    ]
+  }
+]

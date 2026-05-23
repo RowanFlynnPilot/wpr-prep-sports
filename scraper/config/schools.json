@@ -30,8 +30,8 @@
         }
       ],
       "wiaa_org_id": 454,
-      "athletics_url": null,
-      "bound_slug": "wausaueast"
+      "bound_slug": "wausaueast",
+      "athletics_url": null
     },
     {
       "id": "wausau-west",
@@ -59,11 +59,15 @@
         {
           "sport": "volleyball",
           "conference": "Wisconsin Valley"
+        },
+        {
+          "sport": "boys_hockey",
+          "conference": "Wisconsin Valley"
         }
       ],
       "wiaa_org_id": 455,
-      "athletics_url": null,
-      "bound_slug": "wausauwest"
+      "bound_slug": "wausauwest",
+      "athletics_url": null
     },
     {
       "id": "dc-everest",
@@ -91,11 +95,15 @@
         {
           "sport": "volleyball",
           "conference": "Wisconsin Valley"
+        },
+        {
+          "sport": "boys_hockey",
+          "conference": "Wisconsin Valley"
         }
       ],
       "wiaa_org_id": 93,
-      "athletics_url": null,
-      "bound_slug": "dceverest"
+      "bound_slug": "dceverest",
+      "athletics_url": null
     },
     {
       "id": "marshfield",
@@ -126,8 +134,8 @@
         }
       ],
       "wiaa_org_id": 234,
-      "athletics_url": null,
-      "bound_slug": "marshfield"
+      "bound_slug": "marshfield",
+      "athletics_url": null
     },
     {
       "id": "spash",
@@ -155,11 +163,15 @@
         {
           "sport": "volleyball",
           "conference": "Wisconsin Valley"
+        },
+        {
+          "sport": "boys_hockey",
+          "conference": "Wisconsin Valley"
         }
       ],
       "wiaa_org_id": 412,
-      "athletics_url": null,
-      "bound_slug": "stevenspoi"
+      "bound_slug": "stevenspoi",
+      "athletics_url": null
     },
     {
       "id": "wisconsin-rapids",
@@ -187,11 +199,15 @@
         {
           "sport": "volleyball",
           "conference": "Wisconsin Valley"
+        },
+        {
+          "sport": "boys_hockey",
+          "conference": "Wisconsin Valley"
         }
       ],
       "wiaa_org_id": 487,
-      "athletics_url": null,
-      "bound_slug": "wisconsinr"
+      "bound_slug": "wisconsinr",
+      "athletics_url": null
     },
     {
       "id": "athens",
@@ -222,8 +238,8 @@
         }
       ],
       "wiaa_org_id": 22,
-      "athletics_url": null,
-      "bound_slug": "athens"
+      "bound_slug": "athens",
+      "athletics_url": null
     },
     {
       "id": "edgar",
@@ -254,8 +270,8 @@
         }
       ],
       "wiaa_org_id": 112,
-      "athletics_url": null,
-      "bound_slug": "edgar"
+      "bound_slug": "edgar",
+      "athletics_url": null
     },
     {
       "id": "marathon",
@@ -286,8 +302,8 @@
         }
       ],
       "wiaa_org_id": 227,
-      "athletics_url": null,
-      "bound_slug": "marathon"
+      "bound_slug": "marathon",
+      "athletics_url": null
     },
     {
       "id": "newman-catholic",
@@ -318,8 +334,8 @@
         }
       ],
       "wiaa_org_id": 296,
-      "athletics_url": null,
-      "bound_slug": "newmancath"
+      "bound_slug": "newmancath",
+      "athletics_url": null
     },
     {
       "id": "stratford",
@@ -350,8 +366,8 @@
         }
       ],
       "wiaa_org_id": 415,
-      "athletics_url": null,
-      "bound_slug": "stratford"
+      "bound_slug": "stratford",
+      "athletics_url": null
     },
     {
       "id": "spencer",
@@ -382,8 +398,8 @@
         }
       ],
       "wiaa_org_id": 408,
-      "athletics_url": null,
-      "bound_slug": "spencer"
+      "bound_slug": "spencer",
+      "athletics_url": null
     },
     {
       "id": "mosinee",
@@ -411,11 +427,15 @@
         {
           "sport": "volleyball",
           "conference": "Great Northern"
+        },
+        {
+          "sport": "boys_hockey",
+          "conference": "Great Northern"
         }
       ],
       "wiaa_org_id": 280,
-      "athletics_url": null,
-      "bound_slug": "mosinee"
+      "bound_slug": "mosinee",
+      "athletics_url": null
     },
     {
       "id": "colby",
@@ -446,8 +466,8 @@
         }
       ],
       "wiaa_org_id": 79,
-      "athletics_url": null,
-      "bound_slug": "colby"
+      "bound_slug": "colby",
+      "athletics_url": null
     },
     {
       "id": "abbotsford",
@@ -478,8 +498,8 @@
         }
       ],
       "wiaa_org_id": 1,
-      "athletics_url": null,
-      "bound_slug": "abbotsford"
+      "bound_slug": "abbotsford",
+      "athletics_url": null
     },
     {
       "id": "tomahawk",
@@ -506,6 +526,10 @@
         },
         {
           "sport": "volleyball",
+          "conference": "Great Northern"
+        },
+        {
+          "sport": "boys_hockey",
           "conference": "Great Northern"
         }
       ],
@@ -635,6 +659,10 @@
         {
           "sport": "volleyball",
           "conference": "Great Northern"
+        },
+        {
+          "sport": "boys_hockey",
+          "conference": "Great Northern"
         }
       ],
       "wiaa_org_id": 203,
@@ -687,6 +715,10 @@
         {
           "sport": "football",
           "conference": "Wisconsin Valley"
+        },
+        {
+          "sport": "boys_hockey",
+          "conference": "Big Rivers"
         }
       ],
       "wiaa_org_id": 111,
@@ -707,6 +739,10 @@
         {
           "sport": "football",
           "conference": "Wisconsin Valley"
+        },
+        {
+          "sport": "boys_hockey",
+          "conference": "Big Rivers"
         }
       ],
       "wiaa_org_id": 110,
@@ -726,6 +762,10 @@
       "conferences": [
         {
           "sport": "football",
+          "conference": "Big Rivers"
+        },
+        {
+          "sport": "boys_hockey",
           "conference": "Big Rivers"
         }
       ],
@@ -747,6 +787,10 @@
         {
           "sport": "football",
           "conference": "Big Rivers"
+        },
+        {
+          "sport": "boys_hockey",
+          "conference": "Big Rivers"
         }
       ],
       "wiaa_org_id": 168,
@@ -767,6 +811,10 @@
         {
           "sport": "football",
           "conference": "Big Rivers"
+        },
+        {
+          "sport": "boys_hockey",
+          "conference": "Big Rivers"
         }
       ],
       "wiaa_org_id": 295,
@@ -786,6 +834,10 @@
       "conferences": [
         {
           "sport": "football",
+          "conference": "Big Rivers"
+        },
+        {
+          "sport": "boys_hockey",
           "conference": "Big Rivers"
         }
       ],
@@ -1267,6 +1319,10 @@
         {
           "sport": "football",
           "conference": "Big Rivers"
+        },
+        {
+          "sport": "boys_hockey",
+          "conference": "Big Rivers"
         }
       ],
       "wiaa_org_id": 369,
@@ -1306,6 +1362,10 @@
       "conferences": [
         {
           "sport": "football",
+          "conference": "Big Rivers"
+        },
+        {
+          "sport": "boys_hockey",
           "conference": "Big Rivers"
         }
       ],
