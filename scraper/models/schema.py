@@ -72,6 +72,7 @@ class StatLine(BaseModel):
     category: str                 # "Passing Yards" | "Rushing Yards" | "Receiving Yards" | "Total Tackles"
     player_name: str
     player_year: Optional[str] = None  # "SR", "JR", "SO", "FR", or null
+    position: Optional[str] = None     # source-supplied position, e.g. hockey "F"/"D"/"G"
     stats: dict[str, str] = Field(default_factory=dict)  # raw labels → values, e.g. {"YDS": "197"}
 
 
@@ -118,6 +119,7 @@ class SeasonStat(BaseModel):
     category: str                       # "Passing" | "Rushing" | "Receiving" | "Defense"
     player_name: str
     player_year: Optional[str] = None   # "SR" | "JR" | "SO" | "FR"
+    position: Optional[str] = None      # source-supplied position, e.g. hockey "F"/"D"/"G"
     jersey: Optional[str] = None
     stats: dict[str, str] = Field(default_factory=dict)  # column header → value
 

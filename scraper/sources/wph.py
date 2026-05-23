@@ -278,6 +278,61 @@ def fetch_game_stats(game_id: int) -> list[WPHGameStatRow]:
     return out
 
 
+@dataclass(frozen=True)
+class WPHRosterRow:
+    jersey: str | None
+    player_name: str
+    position: str | None       # "F" (forward) | "D" (defense) | "G" (goalie)
+    grad_year: int | None      # graduating class — convert to class letter at use site
+
+
+def fetch_team_roster(team_page_id: int, *, subseason: int) -> list[WPHRosterRow]:
+    """
+    Pull a team's varsity roster — used to enrich stat lines with
+    position + grad year, which the per-game and per-team-stats pages
+    don't expose. Returns one row per athlete; ignores empty rows.
+    """
+    url = f"{BASE_URL}/roster/show/{team_page_id}?subseason={subseason}"
+    html = _get(url)
+    soup = BeautifulSoup(html, "lxml")
+
+    out: list[WPHRosterRow] = []
+    for table in soup.find_all("table"):
+        thead = table.find("thead")
+        if thead is None:
+            continue
+        cols = [th.get_text(strip=True) for th in thead.find_all("th")]
+        try:
+            j_i = cols.index("Number")
+            n_i = cols.index("Name")
+            p_i = cols.index("Pos.")
+            g_i = cols.index("Grad Year")
+        except ValueError:
+            continue
+        for tr in table.find_all("tr"):
+            cells = tr.find_all("td")
+            if not cells:
+                continue
+            values = [td.get_text(" ", strip=True) for td in cells]
+            if max(j_i, n_i, p_i, g_i) >= len(values):
+                continue
+            jersey = values[j_i].strip() or None
+            name = values[n_i].strip()
+            if not name:
+                continue
+            position = (values[p_i].strip() or None)
+            grad_text = values[g_i].strip()
+            try:
+                grad_year = int(grad_text) if grad_text else None
+            except ValueError:
+                grad_year = None
+            out.append(WPHRosterRow(
+                jersey=jersey, player_name=name,
+                position=position, grad_year=grad_year,
+            ))
+    return out
+
+
 def fetch_team_schedule(
     team_instance_id: int,
     *,

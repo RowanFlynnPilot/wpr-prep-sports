@@ -21,9 +21,10 @@ from rich.console import Console
 
 from config.loader import ensure_org_ids, load_manifest, save_manifest
 from output.writer import write_dataset
-from sources import wiaa
+from sources import wiaa, wph
 from transform.normalize import build_dataset, build_name_index_for_manifest
 from transform.stats import (
+    build_wph_roster_index,
     merge_bound_stats,
     merge_team_season_stats,
     merge_wph_per_game_stats,
@@ -151,16 +152,26 @@ def main() -> int:
             console=console,
         )
     elif not args.no_stats and args.sport in WPH_SPORTS:
+        subseason = wph.SUBSEASONS.get((args.sport, args.season))
+        roster_index = (
+            build_wph_roster_index(
+                manifest, subseason=subseason, season=args.season, console=console,
+            )
+            if subseason is not None
+            else None
+        )
         dataset = merge_wph_per_game_stats(
             dataset,
             manifest=manifest,
             sport=args.sport,
+            roster_index=roster_index,
             console=console,
         )
         dataset = merge_wph_season_stats(
             dataset,
             manifest=manifest,
             sport=args.sport,
+            roster_index=roster_index,
             console=console,
         )
 

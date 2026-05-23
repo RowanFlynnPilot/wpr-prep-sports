@@ -169,6 +169,81 @@ def merge_team_season_stats(
 _COOP_SUFFIX_RE = re.compile(r"\s+co[\-\s]?op\b", re.IGNORECASE)
 
 
+def _class_letter(grad_year: int | None, season: str) -> str | None:
+    """
+    Convert a graduation year to SR/JR/SO/FR for the given season label.
+    Season "2025-26" → SR for class of 2026, JR for 2027, and so on.
+    Returns None for missing or out-of-range grad years.
+    """
+    if grad_year is None:
+        return None
+    try:
+        end_year = int(season.split("-")[0]) + 1
+    except (ValueError, IndexError):
+        return None
+    diff = grad_year - end_year
+    return {0: "SR", 1: "JR", 2: "SO", 3: "FR"}.get(diff)
+
+
+def build_wph_roster_index(
+    manifest: Manifest,
+    *,
+    subseason: int,
+    season: str,
+    console: Console | None = None,
+) -> dict[str, dict[tuple[str, str], tuple[str | None, str | None]]]:
+    """
+    For each manifest school with a wph_team_id, fetch the WPH roster and
+    return school.id → {(jersey, name_norm): (position, player_year)}.
+    Also stores a name-only fallback under jersey="". Schools without a
+    roster (e.g. team didn't field this season) are simply missing from
+    the map.
+    """
+    index: dict[str, dict[tuple[str, str], tuple[str | None, str | None]]] = {}
+    for school in manifest.schools:
+        if not school.wph_team_id:
+            continue
+        try:
+            rows = wph.fetch_team_roster(school.wph_team_id, subseason=subseason)
+        except Exception as e:  # noqa: BLE001
+            if console:
+                console.print(f"[yellow]  ! {school.id}: WPH roster failed ({e})[/yellow]")
+            time.sleep(POLITE_DELAY_SECONDS)
+            continue
+        time.sleep(POLITE_DELAY_SECONDS)
+        bucket: dict[tuple[str, str], tuple[str | None, str | None]] = {}
+        for r in rows:
+            year = _class_letter(r.grad_year, season)
+            name_norm = _norm(r.player_name)
+            jersey = (r.jersey or "").strip()
+            bucket[(jersey, name_norm)] = (r.position, year)
+            # Name-only fallback for stat rows whose jersey diverges
+            # (mid-season number change, etc.). First win keeps original.
+            bucket.setdefault(("", name_norm), (r.position, year))
+        if bucket:
+            index[school.id] = bucket
+    return index
+
+
+def _lookup_roster(
+    roster_index: dict[str, dict[tuple[str, str], tuple[str | None, str | None]]],
+    school_id: str,
+    jersey: str | None,
+    player_name: str,
+) -> tuple[str | None, str | None]:
+    """Return (position, player_year) for an athlete; falls back to name-only
+    when the jersey doesn't match. Returns (None, None) when unmapped."""
+    if not school_id or school_id not in roster_index:
+        return (None, None)
+    bucket = roster_index[school_id]
+    name_norm = _norm(player_name)
+    j = (jersey or "").strip()
+    hit = bucket.get((j, name_norm))
+    if hit is not None:
+        return hit
+    return bucket.get(("", name_norm), (None, None))
+
+
 def _opp_key(name: str) -> str:
     """
     Reduce an opponent name to a token that lines up between WIAA's
@@ -244,6 +319,7 @@ def merge_wph_per_game_stats(
     *,
     manifest: Manifest,
     sport: str,
+    roster_index: dict[str, dict[tuple[str, str], tuple[str | None, str | None]]] | None = None,
     console: Console | None = None,
 ) -> Dataset:
     """
@@ -271,6 +347,13 @@ def merge_wph_per_game_stats(
             f"[bold]Indexing WPH schedules[/bold] for {len(targets)} teams "
             f"(per-game stats; subseason={subseason})"
         )
+
+    if roster_index is None:
+        roster_index = build_wph_roster_index(
+            manifest, subseason=subseason, season=dataset.meta.season, console=console,
+        )
+    if console:
+        console.print(f"  [dim]rosters loaded: {len(roster_index)} teams[/dim]")
 
     season_start_year = int(dataset.meta.season.split("-")[0])
     # (iso_date, tracked_school_id, opp_key) → wph_game_id. Keying off the
@@ -335,7 +418,7 @@ def merge_wph_per_game_stats(
             stats_cache[game_id] = rows
             time.sleep(POLITE_DELAY_SECONDS)
 
-        attached = _attach_wph_per_game(game, rows)
+        attached = _attach_wph_per_game(game, rows, roster_index)
         if attached:
             matched_games += 1
             stat_lines_total += attached
@@ -388,6 +471,7 @@ def _match_wph_team_to_side(wph_team_name: str, game: Game):
 def _attach_wph_per_game(
     game: Game,
     rows: list[wph.WPHGameStatRow],
+    roster_index: dict[str, dict[tuple[str, str], tuple[str | None, str | None]]],
 ) -> int:
     """
     Reduce a game's raw athlete rows to up to 3 stat-leader lines per
@@ -424,49 +508,40 @@ def _attach_wph_per_game(
         bucket.setdefault(r.kind, []).append(r)
         side_objs[id(side)] = side
 
+    def _line(side, category, athlete):
+        position, year = _lookup_roster(
+            roster_index, side.school_id, athlete.jersey, athlete.player_name,
+        )
+        return StatLine(
+            team_school_id=side.school_id,
+            team_name=side.name,
+            category=category,
+            player_name=athlete.player_name,
+            player_year=year,
+            position=position,
+            stats=dict(athlete.stats),
+        )
+
     out: list[StatLine] = []
     for side_id, kinds in by_side.items():
         side = side_objs[side_id]
-        team_school_id = side.school_id
-        team_name = side.name
         skaters = kinds.get("skater", [])
         points_leader = None
         if skaters:
             top_pts = max(skaters, key=lambda r: _wph_num(r.stats.get("PTS")))
             if _wph_num(top_pts.stats.get("PTS")) > 0:
                 points_leader = top_pts
-                out.append(StatLine(
-                    team_school_id=team_school_id,
-                    team_name=team_name,
-                    category="Hockey Points",
-                    player_name=top_pts.player_name,
-                    player_year=None,
-                    stats=dict(top_pts.stats),
-                ))
+                out.append(_line(side, "Hockey Points", top_pts))
             top_g = max(skaters, key=lambda r: _wph_num(r.stats.get("G")))
             if (
                 _wph_num(top_g.stats.get("G")) >= 2
                 and (points_leader is None or top_g.player_name != points_leader.player_name)
             ):
-                out.append(StatLine(
-                    team_school_id=team_school_id,
-                    team_name=team_name,
-                    category="Hockey Goals",
-                    player_name=top_g.player_name,
-                    player_year=None,
-                    stats=dict(top_g.stats),
-                ))
+                out.append(_line(side, "Hockey Goals", top_g))
         goalies = [g for g in kinds.get("goalie", []) if _wph_minutes(g.stats.get("MIN")) > 0]
         if goalies:
             top_sv = max(goalies, key=lambda r: _wph_num(r.stats.get("SV")))
-            out.append(StatLine(
-                team_school_id=team_school_id,
-                team_name=team_name,
-                category="Hockey Saves",
-                player_name=top_sv.player_name,
-                player_year=None,
-                stats=dict(top_sv.stats),
-            ))
+            out.append(_line(side, "Hockey Saves", top_sv))
 
     if out:
         game.stat_leaders = out
@@ -478,6 +553,7 @@ def merge_wph_season_stats(
     *,
     manifest: Manifest,
     sport: str,
+    roster_index: dict[str, dict[tuple[str, str], tuple[str | None, str | None]]] | None = None,
     console: Console | None = None,
 ) -> Dataset:
     """
@@ -510,6 +586,11 @@ def merge_wph_season_stats(
             f"[bold]Fetching WPH season stats[/bold] for {len(targets)} teams (subseason={subseason})"
         )
 
+    if roster_index is None:
+        roster_index = build_wph_roster_index(
+            manifest, subseason=subseason, season=dataset.meta.season, console=console,
+        )
+
     sport_enum = Sport(sport)
     out: list[SeasonStat] = []
 
@@ -530,30 +611,25 @@ def merge_wph_season_stats(
             time.sleep(POLITE_DELAY_SECONDS)
             continue
 
+        def _season_stat(category: str, athlete) -> SeasonStat:
+            position, year = _lookup_roster(
+                roster_index, school.id, athlete.jersey, athlete.player_name,
+            )
+            return SeasonStat(
+                school_id=school.id,
+                sport=sport_enum,
+                category=category,
+                player_name=athlete.player_name,
+                player_year=year,
+                position=position,
+                jersey=athlete.jersey,
+                stats=dict(athlete.stats),
+            )
+
         for sk in skaters:
-            out.append(
-                SeasonStat(
-                    school_id=school.id,
-                    sport=sport_enum,
-                    category="Hockey Skater",
-                    player_name=sk.player_name,
-                    player_year=None,
-                    jersey=sk.jersey,
-                    stats=dict(sk.stats),
-                )
-            )
+            out.append(_season_stat("Hockey Skater", sk))
         for gl in goalies:
-            out.append(
-                SeasonStat(
-                    school_id=school.id,
-                    sport=sport_enum,
-                    category="Hockey Goalie",
-                    player_name=gl.player_name,
-                    player_year=None,
-                    jersey=gl.jersey,
-                    stats=dict(gl.stats),
-                )
-            )
+            out.append(_season_stat("Hockey Goalie", gl))
         if console:
             console.print(
                 f"  · {school.id} (team_instance={tid}): {len(skaters)} skaters · {len(goalies)} goalies"
