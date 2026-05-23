@@ -529,13 +529,53 @@ const HOCKEY_STANDOUT = {
   nominalSeasonGames: 24,
 };
 
-// Hockey per-game line — no Bound stat_leaders for hockey games, so this
-// formatter has nothing to act on today. Kept as a stub so the gameLine
-// contract is honored across all sports; left empty so any future
-// per-game source can plug in without API churn.
+// Hockey per-game line — fed by transform/stats.py merge_wph_per_game_stats.
+// Categories emitted by the scraper: "Hockey Points", "Hockey Goals",
+// "Hockey Saves". Per team the scraper attaches at most one of each, so
+// the order list below determines which line wins the recap headline.
 const HOCKEY_GAME_LINE = {
-  order: [],
-  format: () => null,
+  order: ["Hockey Saves", "Hockey Points", "Hockey Goals"],
+  format: (line) => {
+    const s = line.stats ?? {};
+    const player = playerNameWithYear(line);
+    switch (line.category) {
+      case "Hockey Points": {
+        const pts = asNum(s.PTS);
+        const g = asNum(s.G);
+        const a = asNum(s.A);
+        if (!Number.isFinite(pts) || pts < 2) return null;
+        const breakdown = (Number.isFinite(g) && Number.isFinite(a))
+          ? ` (${Math.round(g)}G, ${Math.round(a)}A)`
+          : "";
+        return `${player} racked up ${Math.round(pts)} points${breakdown}.`;
+      }
+      case "Hockey Goals": {
+        const g = asNum(s.G);
+        const sog = asNum(s.SOG);
+        if (!Number.isFinite(g) || g < 2) return null;
+        const sogClause = Number.isFinite(sog) && sog > g ? ` on ${Math.round(sog)} shots` : "";
+        return `${player} scored ${Math.round(g)} goals${sogClause}.`;
+      }
+      case "Hockey Saves": {
+        const sv = asNum(s.SV);
+        const sog = asNum(s.SOG);
+        const ga = asNum(s.GA);
+        const svPct = s["SV %"];
+        if (!Number.isFinite(sv) || sv < 20) return null;
+        // Shutout reads better than "saved 28 of 28."
+        if (Number.isFinite(ga) && ga === 0 && Number.isFinite(sog) && sog >= 15) {
+          return `Goalie ${player} stopped all ${Math.round(sog)} shots for the shutout.`;
+        }
+        if (Number.isFinite(sog) && sog > sv) {
+          const pctClause = svPct ? ` (${svPct})` : "";
+          return `Goalie ${player} stopped ${Math.round(sv)} of ${Math.round(sog)} shots${pctClause}.`;
+        }
+        return `Goalie ${player} made ${Math.round(sv)} saves.`;
+      }
+      default:
+        return null;
+    }
+  },
 };
 
 const VOLLEYBALL_GAME_LINE = {
