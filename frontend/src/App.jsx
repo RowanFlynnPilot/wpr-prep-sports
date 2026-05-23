@@ -140,7 +140,16 @@ function SportShell() {
   // window between sport-id change and dataset arrival.
   void location;
 
+  // Per-sport accent: re-emit --accent / --accent-700 from sportConfig so
+  // every existing `var(--accent)` consumer recolors automatically when the
+  // user switches sports — no per-component plumbing needed.
+  const accentStyle = {
+    "--accent": sportConfig.accentColor,
+    "--accent-700": sportConfig.accentDarkColor,
+  };
+
   return (
+    <div className="sport-shell" data-sport={sport} style={accentStyle}>
     <Routes>
       <Route
         path="/"
@@ -175,5 +184,6 @@ function SportShell() {
         }
       />
     </Routes>
+    </div>
   );
 }

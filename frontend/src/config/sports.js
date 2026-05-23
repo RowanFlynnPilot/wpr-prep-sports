@@ -34,6 +34,11 @@ export const SPORTS = {
     activeMonths: [7, 8, 9, 10], // Aug–Nov
     /** Whether scraper writes a season_stats.json for this sport. */
     hasSeasonStats: true,
+    /** Accent color emitted as --accent on the SportShell wrapper. */
+    accentColor: "#f59e0b", // amber — Friday night lights
+    accentDarkColor: "#b45309",
+    /** Approximate next-season opener — used for off-season countdowns. */
+    nextSeasonStart: "2026-08-21",
   },
   boys_basketball: {
     id: "boys_basketball",
@@ -42,6 +47,9 @@ export const SPORTS = {
     season: "2025–26",
     activeMonths: [10, 11, 0, 1, 2], // Nov–Mar
     hasSeasonStats: false,
+    accentColor: "#dc2626", // basketball red
+    accentDarkColor: "#991b1b",
+    nextSeasonStart: "2026-11-17",
   },
   girls_basketball: {
     id: "girls_basketball",
@@ -50,6 +58,9 @@ export const SPORTS = {
     season: "2025–26",
     activeMonths: [10, 11, 0, 1, 2], // Nov–Mar
     hasSeasonStats: false,
+    accentColor: "#dc2626", // basketball red (shared with boys — same sport family)
+    accentDarkColor: "#991b1b",
+    nextSeasonStart: "2026-11-10",
   },
   boys_hockey: {
     id: "boys_hockey",
@@ -58,6 +69,9 @@ export const SPORTS = {
     season: "2025–26",
     activeMonths: [10, 11, 0, 1, 2], // Nov–Mar
     hasSeasonStats: false,
+    accentColor: "#0284c7", // ice blue
+    accentDarkColor: "#075985",
+    nextSeasonStart: "2026-11-14",
   },
   girls_hockey: {
     id: "girls_hockey",
@@ -66,6 +80,9 @@ export const SPORTS = {
     season: "2025–26",
     activeMonths: [10, 11, 0, 1, 2], // Nov–Mar
     hasSeasonStats: false,
+    accentColor: "#0284c7", // ice blue
+    accentDarkColor: "#075985",
+    nextSeasonStart: "2026-11-14",
   },
   volleyball: {
     id: "volleyball",
@@ -78,6 +95,9 @@ export const SPORTS = {
     // Scores are sets won/lost, not points — note this in the team page hero
     // so PF/PA don't read as points. See TeamPage record block.
     scoreLabel: "set",
+    accentColor: "#c026d3", // vivid magenta
+    accentDarkColor: "#86198f",
+    nextSeasonStart: "2026-08-19",
   },
 };
 

@@ -7,8 +7,36 @@ import { recapForGame } from "../utils/recap.js";
 /**
  * Featured-game hero. Shows the most "important" recent or upcoming game
  * picked by utils/games.pickFeaturedGame. Renders dark, premium, score-first.
+ *
+ * Off-season variant (offSeason=true): swaps to a countdown card with
+ * the next season's opener date + a small "Last game played" tile that
+ * surfaces the most recent result. Gives the masthead something
+ * intentional to show during the multi-month gap between seasons.
  */
-export default function Hero({ game, schoolIndex, games = [], seasonStats = [] }) {
+export default function Hero({
+  game,
+  schoolIndex,
+  games = [],
+  seasonStats = [],
+  offSeason = false,
+  sportConfig = null,
+  nextSeasonStart = null,
+  daysToNext = null,
+}) {
+  if (offSeason) {
+    return (
+      <OffSeasonHero
+        sportConfig={sportConfig}
+        nextSeasonStart={nextSeasonStart}
+        daysToNext={daysToNext}
+        lastGame={game}
+        schoolIndex={schoolIndex}
+        games={games}
+        seasonStats={seasonStats}
+      />
+    );
+  }
+
   if (!game) {
     return (
       <section className="hero hero--empty">
@@ -87,6 +115,104 @@ export default function Hero({ game, schoolIndex, games = [], seasonStats = [] }
   );
 }
 
+const NEXT_START_FMT = new Intl.DateTimeFormat("en-US", {
+  weekday: "long",
+  month: "long",
+  day: "numeric",
+  year: "numeric",
+});
+
+function OffSeasonHero({
+  sportConfig,
+  nextSeasonStart,
+  daysToNext,
+  lastGame,
+  schoolIndex,
+  games,
+  seasonStats,
+}) {
+  const sportLabel = sportConfig?.label ?? "The season";
+  const countdownLabel = daysToNext == null
+    ? null
+    : daysToNext === 0
+      ? "Today"
+      : daysToNext === 1
+        ? "1 day"
+        : daysToNext < 30
+          ? `${daysToNext} days`
+          : `${Math.round(daysToNext / 7)} weeks`;
+
+  const headline = nextSeasonStart
+    ? `${sportLabel} returns ${NEXT_START_FMT.format(nextSeasonStart)}`
+    : `${sportLabel} season has wrapped`;
+
+  // Last-game recap for the small retro card.
+  const lastGameSchool = lastGame
+    ? schoolFor(
+        lastGame.home.score >= (lastGame.away.score ?? -1) ? lastGame.home : lastGame.away,
+        schoolIndex,
+      )
+    : null;
+  const lastRecap = lastGame
+    ? recapForGame(lastGame, {
+        schoolsById: schoolIndex,
+        teamGames: games,
+        contextGames: games,
+        perspectiveSchoolId:
+          lastGame.home.school_id || lastGame.away.school_id,
+      })
+    : null;
+
+  return (
+    <section className="hero hero--offseason" aria-label="Off-season hero">
+      <div className="hero-off">
+        <div className="hero-off__primary">
+          <span className="eyebrow eyebrow--accent">Off-season</span>
+          <h2 className="hero-off__headline">{headline}</h2>
+          {countdownLabel && (
+            <div className="hero-off__countdown" aria-label="Time until next season">
+              <span className="hero-off__count">{countdownLabel}</span>
+              <span className="hero-off__count-label">
+                until first whistle
+              </span>
+            </div>
+          )}
+          <p className="hero-off__sub">
+            Catch up on the {sportConfig?.season ?? "2025–26"} season below —
+            standings, full schedules, and game-by-game recaps.
+          </p>
+        </div>
+
+        {lastGame && (
+          <div className="hero-off__last">
+            <span className="hero-off__last-label">Last game played</span>
+            <p className="hero-off__last-matchup">
+              <strong>{lastGame.away.name}</strong>
+              {lastGame.away.score != null && (
+                <span className="hero-off__last-score">
+                  {" "}{lastGame.away.score}
+                </span>
+              )}
+              <span className="hero-off__last-at"> at </span>
+              <strong>{lastGame.home.name}</strong>
+              {lastGame.home.score != null && (
+                <span className="hero-off__last-score">
+                  {" "}{lastGame.home.score}
+                </span>
+              )}
+            </p>
+            <p className="hero-off__last-date">
+              {formatGameDay(lastGame.date)} · {formatGameDate(lastGame.date)}
+            </p>
+            {lastRecap && (
+              <p className="hero-off__last-recap">{lastRecap}</p>
+            )}
+          </div>
+        )}
+      </div>
+    </section>
+  );
+}
 function TeamRow({ team, school, won, showScore }) {
   const ribbon = team.school_id ? "" : "Visitor";
   return (

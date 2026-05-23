@@ -147,3 +147,122 @@
   .hero__team-name { font-size: 1.2rem; }
   .hero__score { font-size: var(--fs-score-sm); }
 }
+
+/* Off-season hero — countdown card + small "last game played" retro tile.
+   Two-column on desktop, stacked on mobile. Inherits .hero's dark
+   background so the masthead transition feels continuous. */
+.hero--offseason {
+  padding: 1.75rem;
+}
+.hero-off {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: 1.75rem;
+  align-items: stretch;
+}
+.hero-off__primary { min-width: 0; }
+.hero-off__headline {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 2.1rem;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  line-height: 1.05;
+  margin: 0.5rem 0 0;
+  color: #fff;
+}
+.hero-off__countdown {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  margin: 1.1rem 0 0;
+  padding: 0.55rem 0.9rem;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.07);
+  border-left: 3px solid var(--accent);
+}
+.hero-off__count {
+  font-family: var(--font-numeric, var(--font-display));
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+.hero-off__count-label {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+}
+.hero-off__sub {
+  margin: 1.1rem 0 0;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.78);
+  max-width: 36rem;
+}
+
+.hero-off__last {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-sm);
+  padding: 1rem 1.1rem;
+  align-self: center;
+}
+.hero-off__last-label {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+  margin-bottom: 0.45rem;
+}
+.hero-off__last-matchup {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  letter-spacing: 0.01em;
+  color: #fff;
+  margin: 0;
+}
+.hero-off__last-matchup strong {
+  font-weight: 600;
+}
+.hero-off__last-score {
+  color: var(--accent);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+.hero-off__last-at {
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 400;
+  font-size: 0.85rem;
+}
+.hero-off__last-date {
+  margin: 0.35rem 0 0;
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+}
+.hero-off__last-recap {
+  margin: 0.6rem 0 0;
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+@media (max-width: 720px) {
+  .hero-off {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .hero-off__headline { font-size: 1.55rem; }
+  .hero-off__count { font-size: 1.3rem; }
+}

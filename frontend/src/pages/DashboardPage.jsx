@@ -13,21 +13,44 @@ import { pickFeaturedWeek } from "../utils/weeks.js";
 export default function DashboardPage({ dataset, schoolIndex, sponsors, sportConfig }) {
   const { meta, schools, games, standings, seasonStats } = dataset;
 
-  // Off-season trick: until the 2026 season starts producing live games,
-  // anchor "now" to just after the most recent scraped game so Hero/Ticker
-  // surface real content rather than collapsing to empty states. Drop this
-  // shim once the scraper is hitting the 2026-27 season.
-  const now = useMemo(() => {
-    const last = games.reduce(
-      (acc, g) => Math.max(acc, new Date(g.date).getTime()),
-      0,
-    );
-    return last ? new Date(last + 60_000) : new Date();
-  }, [games]);
+  // "anchor now" is the off-season content shim: pick games / ticker /
+  // featured-week relative to just after the most-recent scraped game so
+  // every section has real content even when today's real calendar date
+  // is months past the last game. The off-season Hero treatment below
+  // uses TODAY's real date for its countdown, not this anchor.
+  const lastGameTs = useMemo(
+    () => games.reduce((acc, g) => Math.max(acc, new Date(g.date).getTime()), 0),
+    [games],
+  );
+  const anchorNow = useMemo(
+    () => (lastGameTs ? new Date(lastGameTs + 60_000) : new Date()),
+    [lastGameTs],
+  );
 
-  const featured = useMemo(() => pickFeaturedGame(games, now), [games, now]);
-  const recent = useMemo(() => tickerGames(games, now, 21), [games, now]);
-  const week = useMemo(() => pickFeaturedWeek(games, now), [games, now]);
+  const featured = useMemo(() => pickFeaturedGame(games, anchorNow), [games, anchorNow]);
+  const recent = useMemo(() => tickerGames(games, anchorNow, 21), [games, anchorNow]);
+  const week = useMemo(() => pickFeaturedWeek(games, anchorNow), [games, anchorNow]);
+
+  // Real today, for the off-season detection. We treat the sport as
+  // off-season when the last game was > 14 days ago — short enough that
+  // a Friday game still feels current on Tuesday, long enough that the
+  // 4-month summer gap reliably triggers it.
+  const offSeason = useMemo(() => {
+    if (!lastGameTs) return false;
+    const daysSinceLast = (Date.now() - lastGameTs) / 86_400_000;
+    return daysSinceLast > 14;
+  }, [lastGameTs]);
+
+  const nextSeasonStart = useMemo(() => {
+    if (!offSeason || !sportConfig?.nextSeasonStart) return null;
+    const d = new Date(`${sportConfig.nextSeasonStart}T00:00:00-05:00`);
+    return Number.isNaN(d.getTime()) ? null : d;
+  }, [offSeason, sportConfig]);
+
+  const daysToNext = useMemo(() => {
+    if (!nextSeasonStart) return null;
+    return Math.max(0, Math.ceil((nextSeasonStart - Date.now()) / 86_400_000));
+  }, [nextSeasonStart]);
 
   const lastUpdated = meta?.last_updated
     ? new Date(meta.last_updated).toLocaleString(undefined, {
@@ -61,6 +84,10 @@ export default function DashboardPage({ dataset, schoolIndex, sponsors, sportCon
         schoolIndex={schoolIndex}
         games={games}
         seasonStats={seasonStats}
+        offSeason={offSeason}
+        sportConfig={sportConfig}
+        nextSeasonStart={nextSeasonStart}
+        daysToNext={daysToNext}
       />
 
       <section>
