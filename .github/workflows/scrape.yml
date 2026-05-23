@@ -10,9 +10,9 @@ on:
   workflow_dispatch:
     inputs:
       sport:
-        description: "Sport to scrape (e.g. football)"
+        description: "Space-separated sport id(s) to scrape. Defaults to all live sports."
         required: false
-        default: "football"
+        default: "football boys_basketball girls_basketball"
       season:
         description: "Season identifier"
         required: false
@@ -39,12 +39,25 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run scraper
+      - name: Run scrapers
         working-directory: scraper
         env:
-          SPORT: ${{ github.event.inputs.sport || 'football' }}
+          # On cron runs `inputs.sport` is empty, so we scrape every live sport.
+          # On manual dispatch the user can pass a single id (or several
+          # space-separated) to target a subset.
+          SPORTS: ${{ github.event.inputs.sport || 'football boys_basketball girls_basketball' }}
           SEASON: ${{ github.event.inputs.season || '2025-26' }}
-        run: python main.py --sport "$SPORT" --season "$SEASON"
+        run: |
+          for sport in $SPORTS; do
+            echo "::group::scraping $sport"
+            if python main.py --sport "$sport" --season "$SEASON"; then
+              echo "ok: $sport"
+            else
+              # Don't kill the run — let the other sports' data still commit.
+              echo "::warning::scrape failed for $sport — continuing with remaining sports"
+            fi
+            echo "::endgroup::"
+          done
 
       - name: Commit updated data
         run: |
