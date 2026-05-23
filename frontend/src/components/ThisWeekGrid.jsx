@@ -3,6 +3,7 @@ import TeamLink from "./TeamLink.jsx";
 import { schoolFor } from "../utils/schools.js";
 import { groupByDay } from "../utils/weeks.js";
 import { formatGameDay, formatGameDate, formatGameTime } from "../utils/dates.js";
+import { playerLineForGame } from "../utils/recap.js";
 
 /**
  * A day-by-day schedule for the featured week. Football clusters
@@ -50,6 +51,7 @@ function GameRow({ game, schoolIndex }) {
 
   const homeWon = isFinal && (game.home.score ?? -1) > (game.away.score ?? -1);
   const awayWon = isFinal && (game.away.score ?? -1) > (game.home.score ?? -1);
+  const playerLine = playerLineForGame(game);
 
   return (
     <li className="game-row">
@@ -71,6 +73,7 @@ function GameRow({ game, schoolIndex }) {
       <span className="game-row__status">
         {isFinal ? "Final" : formatGameTime(game.date)}
       </span>
+      {playerLine && <p className="game-row__recap">{playerLine}</p>}
     </li>
   );
 }

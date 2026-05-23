@@ -115,6 +115,23 @@
 .card__team--won .card__team-name {
   font-weight: 700;
 }
+
+.card__recap {
+  margin: 0.6rem 0 0;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--paper-2);
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 0.78rem;
+  line-height: 1.4;
+  color: var(--muted);
+  /* Clamp to 3 lines so cards stay scannable; full text on hover via title attr. */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .card__team-score {
   font-family: var(--font-numeric);
   font-weight: 700;

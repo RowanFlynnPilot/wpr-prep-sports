@@ -121,6 +121,26 @@ export function recapForGame(game, { schoolsById, teamGames = null, perspectiveS
 }
 
 /**
+ * Standalone player line: returns just the headline stat sentence for
+ * whoever won the game, with no score-summary prefix. Used by the
+ * dashboard ticker cards and the This Week grid where the score is
+ * already visible elsewhere in the row.
+ */
+export function playerLineForGame(game) {
+  if (!game || game.status !== "final") return null;
+  const home = game.home;
+  const away = game.away;
+  if (home.score == null || away.score == null) return null;
+  const homeWon = home.score > away.score;
+  const awayWon = away.score > home.score;
+  // For ties we can't pick a "winner perspective" — skip.
+  if (!homeWon && !awayWon) return null;
+  const perspective = homeWon ? home.school_id : away.school_id;
+  if (!perspective) return null;
+  return headlineStatSentence(game, perspective);
+}
+
+/**
  * Pick the most narrative-worthy stat line for the perspective team and
  * format it as a short follow-up sentence. Returns null when no line
  * crosses the threshold for being interesting (low-output day or no

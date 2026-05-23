@@ -2,6 +2,7 @@ import TeamLogo from "./TeamLogo.jsx";
 import TeamLink from "./TeamLink.jsx";
 import { schoolFor } from "../utils/schools.js";
 import { formatGameShortDay, formatGameDate } from "../utils/dates.js";
+import { playerLineForGame } from "../utils/recap.js";
 
 /**
  * Horizontal scrollable ticker of recent + tonight games. Each card surfaces
@@ -36,6 +37,7 @@ function GameCard({ game, schoolIndex }) {
   const awayScore = game.away.score;
   const homeWon = isFinal && (homeScore ?? -1) > (awayScore ?? -1);
   const awayWon = isFinal && (awayScore ?? -1) > (homeScore ?? -1);
+  const playerLine = playerLineForGame(game);
 
   return (
     <article className="card">
@@ -51,6 +53,12 @@ function GameCard({ game, schoolIndex }) {
         <Row team={game.away} school={awaySchool} score={awayScore} won={awayWon} showScore={isFinal} />
         <Row team={game.home} school={homeSchool} score={homeScore} won={homeWon} showScore={isFinal} />
       </ul>
+
+      {playerLine && (
+        <p className="card__recap" title={playerLine}>
+          {playerLine}
+        </p>
+      )}
     </article>
   );
 }
