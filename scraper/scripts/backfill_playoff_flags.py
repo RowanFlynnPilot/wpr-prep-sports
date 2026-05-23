@@ -60,29 +60,44 @@ def classify(game_date: date, sport: str, season: str) -> tuple[bool, str | None
 
 def main() -> int:
     repo_root = Path(__file__).resolve().parent.parent.parent
-    games_path = repo_root / "data" / "games.json"
-    games = json.loads(games_path.read_text(encoding="utf-8"))
+    # Sport-partitioned data layout: data/<sport>/games.json. Loop over the
+    # sports in WIAA_PLAYOFF_CALENDAR so the backfill works for any sport we
+    # already know the calendar for.
+    sport_dirs = {sport for (sport, _season) in WIAA_PLAYOFF_CALENDAR}
+    games_paths = [repo_root / "data" / sport / "games.json" for sport in sport_dirs]
+    games_paths = [p for p in games_paths if p.exists()]
+    if not games_paths:
+        print("No sport-partitioned games.json found; nothing to backfill.")
+        return 0
 
-    updated = 0
-    for g in games:
-        try:
-            gd = datetime.fromisoformat(g["date"]).date()
-        except (KeyError, ValueError):
-            continue
-        playoff, round_label = classify(gd, g.get("sport", ""), g.get("season", ""))
-        # Only write keys when meaningful; keep regular-season games small.
-        if g.get("playoff") != playoff:
-            g["playoff"] = playoff
-            updated += 1
-        if g.get("playoff_round") != round_label:
-            g["playoff_round"] = round_label
-            updated += 1
+    total_updated = 0
+    total_games = 0
+    for games_path in games_paths:
+        games = json.loads(games_path.read_text(encoding="utf-8"))
 
-    games_path.write_text(
-        json.dumps(games, indent=2, ensure_ascii=False) + "\n",
-        encoding="utf-8",
-    )
-    print(f"Backfilled {updated} field(s) across {len(games)} games -> {games_path}")
+        updated = 0
+        for g in games:
+            try:
+                gd = datetime.fromisoformat(g["date"]).date()
+            except (KeyError, ValueError):
+                continue
+            playoff, round_label = classify(gd, g.get("sport", ""), g.get("season", ""))
+            if g.get("playoff") != playoff:
+                g["playoff"] = playoff
+                updated += 1
+            if g.get("playoff_round") != round_label:
+                g["playoff_round"] = round_label
+                updated += 1
+
+        games_path.write_text(
+            json.dumps(games, indent=2, ensure_ascii=False) + "\n",
+            encoding="utf-8",
+        )
+        print(f"{games_path.relative_to(repo_root)}: backfilled {updated} field(s) across {len(games)} games")
+        total_updated += updated
+        total_games += len(games)
+
+    print(f"Total: {total_updated} field(s) across {total_games} games in {len(games_paths)} file(s)")
     return 0
 
 

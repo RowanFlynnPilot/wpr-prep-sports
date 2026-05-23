@@ -1,11 +1,15 @@
 """
 Write the canonical Dataset to JSON files in the data/ directory.
 
-Produces one file per top-level resource for cleaner frontend fetching:
-- schools.json
-- games.json
-- standings.json
-- meta.json
+Layout (since the sport-switcher refactor):
+- schools.json            (top level, cross-sport)
+- <sport>/meta.json
+- <sport>/games.json
+- <sport>/standings.json
+- <sport>/season_stats.json
+
+schools.json stays at the root because the same school appears across
+sports — frontend loads it once regardless of which sport is selected.
 """
 
 from __future__ import annotations
@@ -17,23 +21,43 @@ from models.schema import Dataset
 
 
 def write_dataset(dataset: Dataset, out_dir: Path) -> None:
+    """
+    Write a sport-scoped dataset.
+
+    `dataset.meta.sports_included` must contain exactly one sport — the
+    scraper pipeline is per-sport, so the writer expects per-sport
+    Datasets. Schools are written at the root; everything else lands in
+    `data/<sport>/`.
+    """
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    _write_json(out_dir / "meta.json", dataset.meta.model_dump(mode="json"))
+    sports = dataset.meta.sports_included
+    if len(sports) != 1:
+        raise ValueError(
+            f"write_dataset expects exactly one sport in meta.sports_included, got {sports}"
+        )
+    sport_dir = out_dir / sports[0].value
+    sport_dir.mkdir(parents=True, exist_ok=True)
+
+    # Cross-sport — written once at the root, overwritten by every sport
+    # run with the same payload (the manifest is shared).
     _write_json(
         out_dir / "schools.json",
         [s.model_dump(mode="json") for s in dataset.schools],
     )
+
+    # Per-sport — isolated under data/<sport>/ so multiple sports coexist.
+    _write_json(sport_dir / "meta.json", dataset.meta.model_dump(mode="json"))
     _write_json(
-        out_dir / "games.json",
+        sport_dir / "games.json",
         [g.model_dump(mode="json") for g in dataset.games],
     )
     _write_json(
-        out_dir / "standings.json",
+        sport_dir / "standings.json",
         [s.model_dump(mode="json") for s in dataset.standings],
     )
     _write_json(
-        out_dir / "season_stats.json",
+        sport_dir / "season_stats.json",
         [s.model_dump(mode="json") for s in dataset.season_stats],
     )
 
