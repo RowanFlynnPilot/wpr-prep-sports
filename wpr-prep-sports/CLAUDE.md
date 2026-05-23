@@ -33,16 +33,21 @@ Python scraper → GitHub Actions cron → GitHub Pages static JSON → React/Vi
 
 ## Data sources
 
-**Primary: Bound (gobound.com)**
-Wisconsin-specific HS sports aggregator. Per-conference, per-sport, per-season
-pages with structured tables. Likely server-rendered HTML; basic `requests` +
-`beautifulsoup4` should be sufficient. Conference index:
-`https://www.gobound.com/wi/conferences`.
+**Primary: WIAA (schools.wiaawi.org)** — official source, server-rendered
+ASP.NET data grids. Endpoints in use:
+- `Directory/School/SearchOrg?query=...&levelT=0&classT=0&memberT=20` — search → OrganizationID
+- `Directory/School/GetDirectorySchool?OrgID=X&showPub=False` (POST) — school profile, lists per-sport TeamIDs
+- `Directory/Schedule/Index?TeamID=X` — full-season schedule + results for one team
+- `ScoreCenter/Results/FBScoreboard` — statewide football scoreboard (cross-check)
 
-**Fallback / verification: WIAA ScoreCenter**
-Official source at `https://schools.wiaawi.org/ScoreCenter/`. Per-sport
-scoreboards (e.g. `/Results/FBScoreboard`). Use for cross-checking when Bound
-data looks wrong, and as the source of truth when Bound is unavailable.
+TeamIDs are minted per-season — re-discover at the start of every scrape
+from cached OrganizationIDs. See [docs/data-sources.md](docs/data-sources.md)
+for full endpoint and SSID details.
+
+**Deferred: Bound (gobound.com)** — inspected 2026-05-22, found to be a
+jQuery shell that loads scores via AJAX. Unparseable by `requests + bs4`.
+Would need Playwright to revive. v1 ships without Bound; revisit post-launch
+if conference metadata becomes onerous to maintain by hand.
 
 **Per-school athletics sites** (last-resort fallback for stats and rosters):
 - Wausau East, Wausau West, D.C. Everest: rSchoolToday

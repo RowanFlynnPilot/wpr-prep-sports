@@ -62,6 +62,7 @@ class TeamScore(BaseModel):
     school_id: str
     name: str  # display name as scraped, in case of unmatched school
     score: Optional[int] = None
+    logo_url: Optional[str] = None  # WIAA-hosted logo when available
 
 
 class Game(BaseModel):

@@ -10,9 +10,9 @@ on:
   workflow_dispatch:
     inputs:
       sport:
-        description: "Sport to scrape (or 'all')"
+        description: "Sport to scrape (e.g. football)"
         required: false
-        default: "all"
+        default: "football"
       season:
         description: "Season identifier"
         required: false
@@ -42,14 +42,9 @@ jobs:
       - name: Run scraper
         working-directory: scraper
         env:
-          SPORT: ${{ github.event.inputs.sport || 'all' }}
+          SPORT: ${{ github.event.inputs.sport || 'football' }}
           SEASON: ${{ github.event.inputs.season || '2025-26' }}
-        run: |
-          if [ "$SPORT" = "all" ]; then
-            python main.py --all-sports --season "$SEASON"
-          else
-            python main.py --sport "$SPORT" --season "$SEASON"
-          fi
+        run: python main.py --sport "$SPORT" --season "$SEASON"
 
       - name: Commit updated data
         run: |
