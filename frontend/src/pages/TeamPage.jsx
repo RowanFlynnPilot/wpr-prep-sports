@@ -80,11 +80,11 @@ export default function TeamPage({ dataset, schoolIndex, sponsors }) {
           {record.pointsFor > 0 && (
             <>
               <div className="record-stat">
-                <span className="record-stat__num">{record.pointsFor}</span>
+                <span className="record-stat__num">{record.pointsFor.toLocaleString("en-US")}</span>
                 <span className="record-stat__label">PF</span>
               </div>
               <div className="record-stat">
-                <span className="record-stat__num">{record.pointsAgainst}</span>
+                <span className="record-stat__num">{record.pointsAgainst.toLocaleString("en-US")}</span>
                 <span className="record-stat__label">PA</span>
               </div>
             </>

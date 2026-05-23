@@ -94,8 +94,8 @@ export default function StandingsTable({
                   </td>
                   <td className="num">{row.conference_wins}-{row.conference_losses}</td>
                   <td className="num">{row.overall_wins}-{row.overall_losses}</td>
-                  <td className="num">{row.points_for ?? "—"}</td>
-                  <td className="num">{row.points_against ?? "—"}</td>
+                  <td className="num">{fmtInt(row.points_for)}</td>
+                  <td className="num">{fmtInt(row.points_against)}</td>
                 </tr>
               );
             })}
@@ -111,6 +111,11 @@ export default function StandingsTable({
       />
     </section>
   );
+}
+
+function fmtInt(n) {
+  if (n == null) return "—";
+  return Number(n).toLocaleString("en-US");
 }
 
 function HoverCard({ row, school, conference, leaders }) {
@@ -143,8 +148,8 @@ function HoverCard({ row, school, conference, leaders }) {
           <dt>Point diff.</dt>
           <dd className={diff > 0 ? "pos" : diff < 0 ? "neg" : ""}>
             {diff > 0 ? "+" : ""}
-            {diff}
-            <span className="standings__hover-pct"> ({pf}/{pa})</span>
+            {diff.toLocaleString("en-US")}
+            <span className="standings__hover-pct"> ({fmtInt(pf)}/{fmtInt(pa)})</span>
           </dd>
         </div>
       </dl>

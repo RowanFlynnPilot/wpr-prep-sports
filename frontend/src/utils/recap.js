@@ -273,7 +273,7 @@ function formatStatLine(line) {
       const ca = stats["C/A"];
       const completionsClause = ca ? ` (${ca})` : "";
       const tdClause = tdsToClause(tds);
-      return `QB ${player} threw for ${yds.toFixed(0)} yards${completionsClause}${tdClause}.`;
+      return `QB ${player} threw for ${Math.round(yds).toLocaleString("en-US")} yards${completionsClause}${tdClause}.`;
     }
     case "Rushing Yards": {
       if (!isFiniteNum(yds) || (yds < 75 && (!isFiniteNum(tds) || tds < 2))) {
@@ -281,7 +281,7 @@ function formatStatLine(line) {
       }
       const attClause = stats.ATT ? ` on ${stats.ATT} carries` : "";
       const tdClause = tdsToClause(tds);
-      return `RB ${player} rushed for ${yds.toFixed(0)} yards${attClause}${tdClause}.`;
+      return `RB ${player} rushed for ${Math.round(yds).toLocaleString("en-US")} yards${attClause}${tdClause}.`;
     }
     case "Receiving Yards": {
       if (!isFiniteNum(yds) || (yds < 75 && (!isFiniteNum(tds) || tds < 2))) {
@@ -289,7 +289,7 @@ function formatStatLine(line) {
       }
       const recClause = stats.REC ? ` on ${stats.REC} catches` : "";
       const tdClause = tdsToClause(tds);
-      return `WR ${player} caught ${yds.toFixed(0)} yards${recClause}${tdClause}.`;
+      return `WR ${player} caught ${Math.round(yds).toLocaleString("en-US")} yards${recClause}${tdClause}.`;
     }
     case "Total Tackles": {
       if (!isFiniteNum(tkl) || tkl < 10) return null;

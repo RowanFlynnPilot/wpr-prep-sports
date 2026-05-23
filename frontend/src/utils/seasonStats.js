@@ -21,6 +21,27 @@ function toNum(value) {
   return Number.isFinite(n) ? n : NaN;
 }
 
+/**
+ * Format a raw stat string with thousands separators when it parses as
+ * a number. Leaves non-numeric values (like "59.7%" or "141/211") as-is.
+ * Strips any commas already present so we don't double-encode.
+ */
+function withCommas(value) {
+  if (value == null || value === "") return value;
+  const str = String(value);
+  // Already-fractional or already-percent values pass through untouched.
+  if (str.includes("/") || str.includes("%")) return str;
+  const cleaned = str.replace(/,/g, "");
+  const n = parseFloat(cleaned);
+  if (!Number.isFinite(n)) return str;
+  // Preserve "1.5" decimals (tackles, sacks) — only format the integer part.
+  if (cleaned.includes(".")) {
+    const [whole, frac] = cleaned.split(".");
+    return `${parseInt(whole, 10).toLocaleString("en-US")}.${frac}`;
+  }
+  return parseInt(cleaned, 10).toLocaleString("en-US");
+}
+
 const CATEGORY_SORT_KEY = {
   Passing: "YDS",
   Rushing: "YDS",
@@ -77,28 +98,28 @@ const STAT_LINE_FORMAT = {
     const tds = s.TDS;
     const ca = s["C/ATT"];
     return [
-      yds && `${yds} YDS`,
-      tds && `${tds} TD`,
+      yds && `${withCommas(yds)} YDS`,
+      tds && `${withCommas(tds)} TD`,
       ca && `${ca}`,
     ].filter(Boolean).join(" · ");
   },
   Rushing: (s) =>
     [
-      s.YDS && `${s.YDS} YDS`,
-      s.TDS && `${s.TDS} TD`,
-      s.CAR && `${s.CAR} CAR`,
+      s.YDS && `${withCommas(s.YDS)} YDS`,
+      s.TDS && `${withCommas(s.TDS)} TD`,
+      s.CAR && `${withCommas(s.CAR)} CAR`,
     ].filter(Boolean).join(" · "),
   Receiving: (s) =>
     [
-      s.YDS && `${s.YDS} YDS`,
-      s.TDS && `${s.TDS} TD`,
-      s.REC && `${s.REC} REC`,
+      s.YDS && `${withCommas(s.YDS)} YDS`,
+      s.TDS && `${withCommas(s.TDS)} TD`,
+      s.REC && `${withCommas(s.REC)} REC`,
     ].filter(Boolean).join(" · "),
   Defense: (s) =>
     [
-      s.TOT && `${s.TOT} TKL`,
-      s.SACKS && parseFloat(s.SACKS) > 0 && `${s.SACKS} SK`,
-      s.TFL && parseFloat(s.TFL) > 0 && `${s.TFL} TFL`,
+      s.TOT && `${withCommas(s.TOT)} TKL`,
+      s.SACKS && parseFloat(s.SACKS) > 0 && `${withCommas(s.SACKS)} SK`,
+      s.TFL && parseFloat(s.TFL) > 0 && `${withCommas(s.TFL)} TFL`,
     ].filter(Boolean).join(" · "),
 };
 
