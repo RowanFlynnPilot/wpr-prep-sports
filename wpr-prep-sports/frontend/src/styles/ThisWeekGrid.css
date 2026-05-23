@@ -1,0 +1,140 @@
+.week {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.week--empty {
+  padding: 1.5rem;
+  border: 1px dashed var(--line);
+  border-radius: var(--radius);
+  color: var(--muted);
+  font-style: italic;
+  text-align: center;
+}
+
+.week-day {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.week-day__header {
+  display: flex;
+  align-items: baseline;
+  gap: 0.85rem;
+  padding: 0.65rem 1rem;
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+}
+.week-day__name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.week-day__date {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.week-day__count {
+  margin-left: auto;
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted-2);
+}
+
+.week-day__games {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.game-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.5rem 1rem;
+  padding: 0.7rem 1rem;
+  border-top: 1px solid var(--paper-2);
+}
+.game-row:first-child { border-top: none; }
+.game-row:hover { background: rgba(243, 240, 232, 0.4); }
+
+.game-row__at {
+  font-family: var(--font-body);
+  font-style: italic;
+  color: var(--muted-2);
+  font-size: 0.8rem;
+}
+
+.game-row__status {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-align: right;
+  min-width: 4.5rem;
+}
+
+.game-side {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  min-width: 0;
+}
+.game-side__name {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.game-side--won .game-side__name { font-weight: 700; }
+
+.game-side__score {
+  font-family: var(--font-numeric);
+  font-weight: 700;
+  font-size: 1.15rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+  margin-left: auto;
+}
+.game-side--won .game-side__score { color: var(--accent-700); }
+
+/* TeamLink hover/focus styling */
+.team-link {
+  color: inherit;
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--t-fast) var(--ease), color var(--t-fast) var(--ease);
+}
+.team-link:hover,
+.team-link:focus-visible {
+  color: var(--wpr-link);
+  border-bottom-color: currentColor;
+  outline: none;
+}
+
+@media (max-width: 600px) {
+  .game-row {
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    grid-template-areas:
+      "away at home"
+      "status status status";
+    gap: 0.35rem 0.75rem;
+  }
+  .game-row__status {
+    grid-area: status;
+    text-align: left;
+    min-width: 0;
+    color: var(--muted-2);
+    font-size: 0.7rem;
+  }
+}

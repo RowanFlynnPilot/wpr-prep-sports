@@ -1,58 +1,96 @@
 .app {
-  max-width: 1100px;
+  max-width: 1120px;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 1.25rem 1.25rem 4rem;
 }
 
-.app-header {
-  border-bottom: 2px solid var(--accent);
-  margin-bottom: 1rem;
-  padding-bottom: 0.5rem;
-}
-.app-header h1 {
-  font-size: 1.5rem;
-  margin: 0;
-}
-.tagline {
-  margin: 0.25rem 0 0;
-  color: var(--muted);
-  font-size: 0.9rem;
-}
-
-.score-ticker {
-  display: flex;
-  gap: 1rem;
-  overflow-x: auto;
-  padding: 0.75rem 0;
-  border-bottom: 1px solid var(--border);
-}
-.score-ticker__game {
-  flex: 0 0 auto;
+/* Masthead — sits flush with the WPR navy brand bar. */
+.masthead {
   display: flex;
   align-items: center;
-  gap: 0.4rem;
-  padding: 0.5rem 0.75rem;
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  font-size: 0.9rem;
-  white-space: nowrap;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.85rem 1rem;
+  margin: -1.25rem -1.25rem 1.5rem;
+  background: var(--wpr-navy);
+  color: #fff;
 }
-.score-ticker__game .at { color: var(--muted); }
-.score-ticker__game .status {
-  color: var(--muted);
-  font-size: 0.75rem;
+
+.masthead__title {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  margin-left: 0.4rem;
+  color: #fff;
+  border-bottom: none;
 }
-.score-ticker--empty {
+.masthead__title:hover { color: var(--accent); border-bottom: none; }
+.masthead__title em {
+  font-style: normal;
+  color: var(--accent);
+}
+
+.masthead__attribution {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.85);
+  text-align: right;
+  line-height: 1.3;
+}
+.masthead__attribution a {
+  color: #fff;
+  border-bottom-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Main column rhythm — minmax(0,1fr) keeps a wide nowrap child (e.g. the
+   hero score row) from blowing out the layout. */
+.app-main {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 2.5rem;
+}
+
+.section-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.85rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--ink);
+}
+.section-header h2 {
+  font-size: var(--fs-h2);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.section-header__hint {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
   color: var(--muted);
   font-style: italic;
 }
 
-.app-main {
-  padding-top: 1rem;
+.freshness {
+  text-align: center;
+  margin-top: 2rem;
+  color: var(--muted-2);
+  font-size: 0.75rem;
+  font-family: var(--font-display);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
-@media (max-width: 600px) {
-  .app-header h1 { font-size: 1.2rem; }
+.standings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(480px, 100%), 1fr));
+  gap: 1.25rem;
+}
+
+@media (max-width: 640px) {
+  .app { padding: 1rem 0.75rem 3rem; }
+  .masthead { margin: -1rem -0.75rem 1.25rem; }
+  .masthead__title { font-size: 0.85rem; }
+  .section-header h2 { font-size: 1.25rem; }
 }

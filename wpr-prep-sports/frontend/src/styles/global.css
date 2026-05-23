@@ -1,11 +1,61 @@
+/* =========================================================================
+   Design tokens — WPR-adjacent, sport-distinctive.
+   Pulls Oswald + Merriweather from WPR's own type system, with a navy-teal
+   base derived from the WPR brand and an amber accent unique to the widget.
+   ========================================================================= */
+
 :root {
-  --bg: #ffffff;
-  --fg: #1a1a1a;
-  --muted: #666666;
-  --accent: #b22234;       /* WPR red */
-  --border: #e0e0e0;
-  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
-          sans-serif;
+  /* Brand chrome (inherited from wausaupilotandreview.com) */
+  --wpr-navy:        #004a59;
+  --wpr-navy-700:    #005a87;
+  --wpr-blue:        #006ba1;
+  --wpr-link:        #007cba;
+
+  /* Our distinctive layer */
+  --ink:             #0e0f12;          /* primary text */
+  --ink-hero:        #0a1a1f;          /* even darker for hero scoreboards */
+  --paper:           #fafaf7;          /* warm off-white, newsprint-ish */
+  --paper-2:         #f3f0e8;          /* card lift */
+  --line:            #e7e2d6;          /* warm divider line */
+  --muted:           #6b7280;
+  --muted-2:         #9ca3af;
+
+  /* Sport accent — swap per sport in v2. Football = warm amber. */
+  --accent:          #f59e0b;
+  --accent-700:      #b45309;
+
+  /* Result colors */
+  --win:             #15803d;
+  --win-bg:          #dcfce7;
+  --loss:            #b91c1c;
+  --loss-bg:         #fee2e2;
+  --tie:             #6b7280;
+
+  /* Typography */
+  --font-display:    'Oswald', 'Arial Narrow', 'Helvetica Neue', sans-serif;
+  --font-body:       'Merriweather', Georgia, 'Times New Roman', serif;
+  --font-numeric:    'Oswald', 'Roboto Mono', ui-monospace, monospace;
+
+  /* Scale */
+  --fs-eyebrow:      0.75rem;
+  --fs-body:         1rem;
+  --fs-lead:         1.125rem;
+  --fs-h3:           1.25rem;
+  --fs-h2:           1.75rem;
+  --fs-h1:           2.25rem;
+  --fs-score:        clamp(2.5rem, 7vw, 4.25rem);
+  --fs-score-sm:     1.75rem;
+
+  /* Layout */
+  --radius:          10px;
+  --radius-sm:       6px;
+  --shadow-lift:     0 1px 2px rgba(14, 15, 18, 0.06), 0 4px 16px rgba(14, 15, 18, 0.05);
+  --shadow-hero:     0 2px 4px rgba(0, 0, 0, 0.15), 0 12px 36px rgba(0, 74, 89, 0.2);
+
+  /* Motion */
+  --ease:            cubic-bezier(0.2, 0.7, 0.2, 1);
+  --t-fast:          120ms;
+  --t-med:           220ms;
 }
 
 * { box-sizing: border-box; }
@@ -13,19 +63,56 @@
 html, body {
   margin: 0;
   padding: 0;
-  background: var(--bg);
-  color: var(--fg);
-  font-family: var(--font);
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
   font-size: 16px;
-  line-height: 1.5;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
-a { color: var(--accent); text-decoration: none; }
-a:hover { text-decoration: underline; }
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  margin: 0;
+  line-height: 1.15;
+}
 
-.loading, .error {
-  padding: 2rem;
-  text-align: center;
+a {
+  color: var(--wpr-link);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--t-fast) var(--ease);
+}
+a:hover { border-bottom-color: currentColor; }
+
+/* Utility: SCREAMING newspaper-y eyebrow text */
+.eyebrow {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: var(--fs-eyebrow);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
   color: var(--muted);
 }
-.error { color: var(--accent); }
+.eyebrow--accent { color: var(--accent-700); }
+
+/* Loading / error states */
+.loading, .error {
+  padding: 3rem 1.5rem;
+  text-align: center;
+  color: var(--muted);
+  font-family: var(--font-display);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+.error { color: var(--loss); }
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+}
