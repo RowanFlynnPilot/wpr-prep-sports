@@ -20,7 +20,58 @@
     "conference": null,
     "venue": "@Wausau West",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "wausau-west",
+        "team_name": "Wausau West",
+        "category": "Passing Yards",
+        "player_name": "Joe  Graveen",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "11/14",
+          "YDS": "139",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "wausau-west",
+        "team_name": "Wausau West",
+        "category": "Rushing Yards",
+        "player_name": "Miles Waldvogel",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "11",
+          "YDS": "125",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "wausau-west",
+        "team_name": "Wausau West",
+        "category": "Receiving Yards",
+        "player_name": "Shea Jones",
+        "player_year": "SR",
+        "stats": {
+          "REC": "3",
+          "YDS": "56",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "wausau-west",
+        "team_name": "Wausau West",
+        "category": "Total Tackles",
+        "player_name": "Teigan Rasmus",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "10.0",
+          "TFL": "3.0",
+          "SKS": "1.5"
+        }
+      }
     ]
   },
   {
@@ -44,7 +95,57 @@
     "conference": null,
     "venue": "@Rice Lake High School",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "dc-everest",
+        "team_name": "D.C. Everest",
+        "category": "Passing Yards",
+        "player_name": "Jake Staysniak",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "11/17",
+          "YDS": "155",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "dc-everest",
+        "team_name": "D.C. Everest",
+        "category": "Rushing Yards",
+        "player_name": "Corbin Enzenroth",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "16",
+          "YDS": "97",
+          "TDS": "1",
+          "REC": "14"
+        }
+      },
+      {
+        "team_school_id": "dc-everest",
+        "team_name": "D.C. Everest",
+        "category": "Receiving Yards",
+        "player_name": "Xavier Edwards",
+        "player_year": "SR",
+        "stats": {
+          "REC": "4",
+          "YDS": "86",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "dc-everest",
+        "team_name": "D.C. Everest",
+        "category": "Total Tackles",
+        "player_name": "Aiden Schmitz",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "19.0"
+        }
+      }
     ]
   },
   {
@@ -68,7 +169,56 @@
     "conference": null,
     "venue": "@New Richmond HIgh School Stadium",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "marshfield",
+        "team_name": "Marshfield",
+        "category": "Passing Yards",
+        "player_name": "Ethan Foemmel",
+        "player_year": "FR",
+        "stats": {
+          "C/A": "5/10",
+          "YDS": "94",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "marshfield",
+        "team_name": "Marshfield",
+        "category": "Rushing Yards",
+        "player_name": "Haiden Carlson",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "15",
+          "YDS": "93",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "marshfield",
+        "team_name": "Marshfield",
+        "category": "Receiving Yards",
+        "player_name": "Gavin Larson",
+        "player_year": "SO",
+        "stats": {
+          "REC": "2",
+          "YDS": "41",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "marshfield",
+        "team_name": "Marshfield",
+        "category": "Total Tackles",
+        "player_name": "Wes Novitzke",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "9.0"
+        }
+      }
     ]
   },
   {
@@ -92,7 +242,58 @@
     "conference": null,
     "venue": "@Stevens Point",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "spash",
+        "team_name": "Stevens Point",
+        "category": "Passing Yards",
+        "player_name": "Trent Breitbach",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "8/16",
+          "YDS": "180",
+          "TDS": "3",
+          "RUS": "110"
+        }
+      },
+      {
+        "team_school_id": "spash",
+        "team_name": "Stevens Point",
+        "category": "Rushing Yards",
+        "player_name": "Trent Breitbach",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "15",
+          "YDS": "110",
+          "TDS": "3"
+        }
+      },
+      {
+        "team_school_id": "spash",
+        "team_name": "Stevens Point",
+        "category": "Receiving Yards",
+        "player_name": "Isaac Yang",
+        "player_year": "SR",
+        "stats": {
+          "REC": "6",
+          "YDS": "159",
+          "TDS": "3"
+        }
+      },
+      {
+        "team_school_id": "spash",
+        "team_name": "Stevens Point",
+        "category": "Total Tackles",
+        "player_name": "Tony Raczek",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "10.0",
+          "TFL": "1.0"
+        }
+      }
     ]
   },
   {
@@ -117,7 +318,8 @@
     "venue": "@River Falls",
     "sources": [
       "wiaa"
-    ]
+    ],
+    "stat_leaders": []
   },
   {
     "id": "football-2025-08-22-wausau-east-at-westby",
@@ -140,7 +342,58 @@
     "conference": null,
     "venue": "@Westby",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "wausau-east",
+        "team_name": "Wausau East",
+        "category": "Passing Yards",
+        "player_name": "Xander Klein",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "10/15",
+          "YDS": "241",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "wausau-east",
+        "team_name": "Wausau East",
+        "category": "Rushing Yards",
+        "player_name": "Iain Stahel",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "18",
+          "YDS": "103",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "wausau-east",
+        "team_name": "Wausau East",
+        "category": "Receiving Yards",
+        "player_name": "Henry Maahs",
+        "player_year": "JR",
+        "stats": {
+          "REC": "3",
+          "YDS": "135",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "wausau-east",
+        "team_name": "Wausau East",
+        "category": "Total Tackles",
+        "player_name": "Peyton Nest",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "14.0",
+          "TFL": "7.0",
+          "SKS": "2.5"
+        }
+      }
     ]
   },
   {
@@ -164,7 +417,58 @@
     "conference": null,
     "venue": "@Edgar",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "edgar",
+        "team_name": "Edgar",
+        "category": "Passing Yards",
+        "player_name": "Tucker Streit",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "3/8",
+          "YDS": "27",
+          "TDS": "1",
+          "RUS": "49"
+        }
+      },
+      {
+        "team_school_id": "edgar",
+        "team_name": "Edgar",
+        "category": "Rushing Yards",
+        "player_name": "Maverick Butt",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "16",
+          "YDS": "111",
+          "TDS": "3"
+        }
+      },
+      {
+        "team_school_id": "edgar",
+        "team_name": "Edgar",
+        "category": "Receiving Yards",
+        "player_name": "Maverick Butt",
+        "player_year": "SR",
+        "stats": {
+          "REC": "1",
+          "YDS": "14",
+          "TDS": "3",
+          "RUS": "111"
+        }
+      },
+      {
+        "team_school_id": "edgar",
+        "team_name": "Edgar",
+        "category": "Total Tackles",
+        "player_name": "Maverick Butt",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "8.0"
+        }
+      }
     ]
   },
   {
@@ -188,7 +492,57 @@
     "conference": null,
     "venue": "@Pittsville",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "marathon",
+        "team_name": "Marathon",
+        "category": "Passing Yards",
+        "player_name": "True Thurs",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "15/18",
+          "YDS": "256",
+          "TDS": "2",
+          "RUS": "23"
+        }
+      },
+      {
+        "team_school_id": "marathon",
+        "team_name": "Marathon",
+        "category": "Rushing Yards",
+        "player_name": "Javier Pintor",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "9",
+          "YDS": "77",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "marathon",
+        "team_name": "Marathon",
+        "category": "Receiving Yards",
+        "player_name": "Fred Tylinski",
+        "player_year": "JR",
+        "stats": {
+          "REC": "4",
+          "YDS": "125",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "marathon",
+        "team_name": "Marathon",
+        "category": "Total Tackles",
+        "player_name": "Grant Salber",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "11.0"
+        }
+      }
     ]
   },
   {
@@ -212,7 +566,107 @@
     "conference": null,
     "venue": "@Mosinee",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "stratford",
+        "team_name": "Stratford",
+        "category": "Passing Yards",
+        "player_name": "Brady Berg",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "4/20",
+          "YDS": "39",
+          "TDS": "1",
+          "RUS": "19"
+        }
+      },
+      {
+        "team_school_id": "stratford",
+        "team_name": "Stratford",
+        "category": "Rushing Yards",
+        "player_name": "Aaron Knetter",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "8",
+          "YDS": "46",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "stratford",
+        "team_name": "Stratford",
+        "category": "Receiving Yards",
+        "player_name": "Zander Zawislan",
+        "player_year": "SR",
+        "stats": {
+          "REC": "2",
+          "YDS": "25",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "stratford",
+        "team_name": "Stratford",
+        "category": "Total Tackles",
+        "player_name": "Jaegar Ormond",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "7.0",
+          "TFL": "2.0"
+        }
+      },
+      {
+        "team_school_id": "mosinee",
+        "team_name": "Mosinee",
+        "category": "Passing Yards",
+        "player_name": "Treve Stoffel",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "13/18",
+          "YDS": "150",
+          "TDS": "1",
+          "RUS": "52"
+        }
+      },
+      {
+        "team_school_id": "mosinee",
+        "team_name": "Mosinee",
+        "category": "Rushing Yards",
+        "player_name": "Treve Stoffel",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "18",
+          "YDS": "52",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "mosinee",
+        "team_name": "Mosinee",
+        "category": "Receiving Yards",
+        "player_name": "Mitchell Michlig",
+        "player_year": "SR",
+        "stats": {
+          "REC": "3",
+          "YDS": "67",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "mosinee",
+        "team_name": "Mosinee",
+        "category": "Total Tackles",
+        "player_name": "Treve Stoffel",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "12.0",
+          "TFL": "1.0",
+          "INT": "2"
+        }
+      }
     ]
   },
   {
@@ -236,7 +690,57 @@
     "conference": null,
     "venue": "@Auburndale",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "spencer",
+        "team_name": "Spencer/Columbus Catholic",
+        "category": "Passing Yards",
+        "player_name": "Mac Konieczny",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "15/23",
+          "YDS": "111",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "spencer",
+        "team_name": "Spencer/Columbus Catholic",
+        "category": "Rushing Yards",
+        "player_name": "Jack Hoeper",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "28",
+          "YDS": "167",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "spencer",
+        "team_name": "Spencer/Columbus Catholic",
+        "category": "Receiving Yards",
+        "player_name": "Kaleb Hilgemann",
+        "player_year": "SR",
+        "stats": {
+          "REC": "3",
+          "YDS": "47",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "spencer",
+        "team_name": "Spencer/Columbus Catholic",
+        "category": "Total Tackles",
+        "player_name": "Jakob Soback",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "10.0",
+          "TFL": "3.0"
+        }
+      }
     ]
   },
   {
@@ -260,7 +764,58 @@
     "conference": null,
     "venue": "@Stanley-Boyd",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "colby",
+        "team_name": "Colby",
+        "category": "Passing Yards",
+        "player_name": "Luke Hannula",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "1/10",
+          "YDS": "36",
+          "TDS": "2",
+          "RUS": "228"
+        }
+      },
+      {
+        "team_school_id": "colby",
+        "team_name": "Colby",
+        "category": "Rushing Yards",
+        "player_name": "Luke Hannula",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "28",
+          "YDS": "228",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "colby",
+        "team_name": "Colby",
+        "category": "Receiving Yards",
+        "player_name": "Brennan Geiger",
+        "player_year": "SR",
+        "stats": {
+          "REC": "1",
+          "YDS": "36",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "colby",
+        "team_name": "Colby",
+        "category": "Total Tackles",
+        "player_name": "Brennan Geiger",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "11.0",
+          "TFL": "3.0"
+        }
+      }
     ]
   },
   {
@@ -284,7 +839,56 @@
     "conference": null,
     "venue": "@Abbotsford",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "abbotsford",
+        "team_name": "Abbotsford",
+        "category": "Passing Yards",
+        "player_name": "Christian Fuentes Rivera",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "2/4",
+          "YDS": "38",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "abbotsford",
+        "team_name": "Abbotsford",
+        "category": "Rushing Yards",
+        "player_name": "Chase Boller",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "10",
+          "YDS": "97",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "abbotsford",
+        "team_name": "Abbotsford",
+        "category": "Receiving Yards",
+        "player_name": "Carter Cihlar",
+        "player_year": "JR",
+        "stats": {
+          "REC": "2",
+          "YDS": "38",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "abbotsford",
+        "team_name": "Abbotsford",
+        "category": "Total Tackles",
+        "player_name": "Christian Fuentes Rivera",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "10.0"
+        }
+      }
     ]
   },
   {
@@ -308,7 +912,57 @@
     "conference": null,
     "venue": "@Wausau East",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "wausau-east",
+        "team_name": "Wausau East",
+        "category": "Passing Yards",
+        "player_name": "Xander Klein",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "11/17",
+          "YDS": "132",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "wausau-east",
+        "team_name": "Wausau East",
+        "category": "Rushing Yards",
+        "player_name": "Iain Stahel",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "14",
+          "YDS": "94",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "wausau-east",
+        "team_name": "Wausau East",
+        "category": "Receiving Yards",
+        "player_name": "Henry Maahs",
+        "player_year": "JR",
+        "stats": {
+          "REC": "4",
+          "YDS": "64",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "wausau-east",
+        "team_name": "Wausau East",
+        "category": "Total Tackles",
+        "player_name": "Aiden Kilde",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "11.0",
+          "TFL": "3.0"
+        }
+      }
     ]
   },
   {
@@ -332,7 +986,57 @@
     "conference": null,
     "venue": "@Hudson",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "wausau-west",
+        "team_name": "Wausau West",
+        "category": "Passing Yards",
+        "player_name": "Joe  Graveen",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "11/14",
+          "YDS": "131",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "wausau-west",
+        "team_name": "Wausau West",
+        "category": "Rushing Yards",
+        "player_name": "Miles Waldvogel",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "12",
+          "YDS": "37",
+          "TDS": "1",
+          "REC": "9"
+        }
+      },
+      {
+        "team_school_id": "wausau-west",
+        "team_name": "Wausau West",
+        "category": "Receiving Yards",
+        "player_name": "Finn  Richardt",
+        "player_year": "JR",
+        "stats": {
+          "REC": "3",
+          "YDS": "56",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "wausau-west",
+        "team_name": "Wausau West",
+        "category": "Total Tackles",
+        "player_name": "Miles Waldvogel",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "9.0"
+        }
+      }
     ]
   },
   {
@@ -356,7 +1060,56 @@
     "conference": null,
     "venue": "@Stiehm Stadium, D.C. Everest",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "dc-everest",
+        "team_name": "D.C. Everest",
+        "category": "Passing Yards",
+        "player_name": "Jake Staysniak",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "16/32",
+          "YDS": "209",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "dc-everest",
+        "team_name": "D.C. Everest",
+        "category": "Rushing Yards",
+        "player_name": "Corbin Enzenroth",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "22",
+          "YDS": "74",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "dc-everest",
+        "team_name": "D.C. Everest",
+        "category": "Receiving Yards",
+        "player_name": "Xavier Edwards",
+        "player_year": "SR",
+        "stats": {
+          "REC": "7",
+          "YDS": "107",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "dc-everest",
+        "team_name": "D.C. Everest",
+        "category": "Total Tackles",
+        "player_name": "Aiden Schmitz",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "12.0"
+        }
+      }
     ]
   },
   {
@@ -380,7 +1133,56 @@
     "conference": null,
     "venue": "@Marshfield High School-- Kenneth & Ardyce Heiting Community Stadium",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "marshfield",
+        "team_name": "Marshfield",
+        "category": "Passing Yards",
+        "player_name": "Ethan Foemmel",
+        "player_year": "FR",
+        "stats": {
+          "C/A": "1/7",
+          "YDS": "43",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "marshfield",
+        "team_name": "Marshfield",
+        "category": "Rushing Yards",
+        "player_name": "Haiden Carlson",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "15",
+          "YDS": "163",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "marshfield",
+        "team_name": "Marshfield",
+        "category": "Receiving Yards",
+        "player_name": "Gavin Larson",
+        "player_year": "SO",
+        "stats": {
+          "REC": "1",
+          "YDS": "43",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "marshfield",
+        "team_name": "Marshfield",
+        "category": "Total Tackles",
+        "player_name": "Beckett McFarlane",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "15.0"
+        }
+      }
     ]
   },
   {
@@ -404,7 +1206,60 @@
     "conference": null,
     "venue": "@Superior",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "spash",
+        "team_name": "Stevens Point",
+        "category": "Passing Yards",
+        "player_name": "Trent Breitbach",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "17/28",
+          "YDS": "246",
+          "TDS": "2",
+          "RUS": "68"
+        }
+      },
+      {
+        "team_school_id": "spash",
+        "team_name": "Stevens Point",
+        "category": "Rushing Yards",
+        "player_name": "Tucker Phillips",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "10",
+          "YDS": "75",
+          "TDS": "1",
+          "REC": "19"
+        }
+      },
+      {
+        "team_school_id": "spash",
+        "team_name": "Stevens Point",
+        "category": "Receiving Yards",
+        "player_name": "Jonny Ananiadis",
+        "player_year": "SR",
+        "stats": {
+          "REC": "6",
+          "YDS": "139",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "spash",
+        "team_name": "Stevens Point",
+        "category": "Total Tackles",
+        "player_name": "Tony Raczek",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "12.0",
+          "TFL": "2.0",
+          "SKS": "1.0"
+        }
+      }
     ]
   },
   {
@@ -429,7 +1284,8 @@
     "venue": "@Wisconsin Rapids Lincoln High School",
     "sources": [
       "wiaa"
-    ]
+    ],
+    "stat_leaders": []
   },
   {
     "id": "football-2025-08-29-edgar-at-stratford",
@@ -452,7 +1308,104 @@
     "conference": null,
     "venue": "@Stratford",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "edgar",
+        "team_name": "Edgar",
+        "category": "Passing Yards",
+        "player_name": "Tucker Streit",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "4/10",
+          "YDS": "89",
+          "TDS": "1",
+          "RUS": "-1"
+        }
+      },
+      {
+        "team_school_id": "edgar",
+        "team_name": "Edgar",
+        "category": "Rushing Yards",
+        "player_name": "Maverick Butt",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "18",
+          "YDS": "126",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "edgar",
+        "team_name": "Edgar",
+        "category": "Receiving Yards",
+        "player_name": "Graham Streit",
+        "player_year": "FR",
+        "stats": {
+          "REC": "2",
+          "YDS": "80",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "edgar",
+        "team_name": "Edgar",
+        "category": "Total Tackles",
+        "player_name": "Alex Schneider",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "11.0"
+        }
+      },
+      {
+        "team_school_id": "stratford",
+        "team_name": "Stratford",
+        "category": "Passing Yards",
+        "player_name": "Brady Berg",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "3/10",
+          "YDS": "14",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "stratford",
+        "team_name": "Stratford",
+        "category": "Rushing Yards",
+        "player_name": "Koltan Haupt",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "10",
+          "YDS": "50",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "stratford",
+        "team_name": "Stratford",
+        "category": "Receiving Yards",
+        "player_name": "Mason Miller",
+        "player_year": "SR",
+        "stats": {
+          "REC": "1",
+          "YDS": "7",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "stratford",
+        "team_name": "Stratford",
+        "category": "Total Tackles",
+        "player_name": "Tyler Budtke",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "8.0",
+          "TFL": "1.0"
+        }
+      }
     ]
   },
   {
@@ -476,7 +1429,46 @@
     "conference": null,
     "venue": "@Marathon",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "marathon",
+        "team_name": "Marathon",
+        "category": "Passing Yards",
+        "player_name": "True Thurs",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "10/16",
+          "YDS": "117",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "marathon",
+        "team_name": "Marathon",
+        "category": "Rushing Yards",
+        "player_name": "Javier Pintor",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "12",
+          "YDS": "39",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "marathon",
+        "team_name": "Marathon",
+        "category": "Receiving Yards",
+        "player_name": "Garrett Bracewell",
+        "player_year": "JR",
+        "stats": {
+          "REC": "7",
+          "YDS": "98",
+          "TDS": "0"
+        }
+      }
     ]
   },
   {
@@ -500,7 +1492,56 @@
     "conference": null,
     "venue": "@Spencer/Columbus Catholic",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "spencer",
+        "team_name": "Spencer/Columbus Catholic",
+        "category": "Passing Yards",
+        "player_name": "Mac Konieczny",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "2/4",
+          "YDS": "20",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "spencer",
+        "team_name": "Spencer/Columbus Catholic",
+        "category": "Rushing Yards",
+        "player_name": "Jack Hoeper",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "33",
+          "YDS": "441",
+          "TDS": "7"
+        }
+      },
+      {
+        "team_school_id": "spencer",
+        "team_name": "Spencer/Columbus Catholic",
+        "category": "Receiving Yards",
+        "player_name": "Wes Nieman",
+        "player_year": "JR",
+        "stats": {
+          "REC": "2",
+          "YDS": "20",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "spencer",
+        "team_name": "Spencer/Columbus Catholic",
+        "category": "Total Tackles",
+        "player_name": "Devlin Timmler",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "7.0"
+        }
+      }
     ]
   },
   {
@@ -524,7 +1565,58 @@
     "conference": null,
     "venue": "@Menasha",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "mosinee",
+        "team_name": "Mosinee",
+        "category": "Passing Yards",
+        "player_name": "Treve Stoffel",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "14/22",
+          "YDS": "128",
+          "TDS": "1",
+          "RUS": "48"
+        }
+      },
+      {
+        "team_school_id": "mosinee",
+        "team_name": "Mosinee",
+        "category": "Rushing Yards",
+        "player_name": "Treve Stoffel",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "12",
+          "YDS": "48",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "mosinee",
+        "team_name": "Mosinee",
+        "category": "Receiving Yards",
+        "player_name": "Jerrick Seeger",
+        "player_year": "SR",
+        "stats": {
+          "REC": "5",
+          "YDS": "39",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "mosinee",
+        "team_name": "Mosinee",
+        "category": "Total Tackles",
+        "player_name": "Braeden Mocadlo",
+        "player_year": "SO",
+        "stats": {
+          "TKL": "10.0",
+          "TFL": "1.0"
+        }
+      }
     ]
   },
   {
@@ -548,7 +1640,80 @@
     "conference": null,
     "venue": "@Abbotsford",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "colby",
+        "team_name": "Colby",
+        "category": "Passing Yards",
+        "player_name": "Luke Hannula",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "4/7",
+          "YDS": "47",
+          "TDS": "1",
+          "RUS": "185"
+        }
+      },
+      {
+        "team_school_id": "colby",
+        "team_name": "Colby",
+        "category": "Rushing Yards",
+        "player_name": "Luke Hannula",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "29",
+          "YDS": "185",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "colby",
+        "team_name": "Colby",
+        "category": "Receiving Yards",
+        "player_name": "Dany Nunez Jr.",
+        "player_year": "SO",
+        "stats": {
+          "REC": "2",
+          "YDS": "29",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "colby",
+        "team_name": "Colby",
+        "category": "Total Tackles",
+        "player_name": "Ezryn Lieders",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "11.0"
+        }
+      },
+      {
+        "team_school_id": "abbotsford",
+        "team_name": "Abbotsford",
+        "category": "Rushing Yards",
+        "player_name": "Chase Boller",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "12",
+          "YDS": "220",
+          "TDS": "3"
+        }
+      },
+      {
+        "team_school_id": "abbotsford",
+        "team_name": "Abbotsford",
+        "category": "Total Tackles",
+        "player_name": "Jaxon Ploeckleman",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "13.0",
+          "FR": "1"
+        }
+      }
     ]
   },
   {
@@ -572,7 +1737,58 @@
     "conference": null,
     "venue": "@Tomahawk",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "wausau-east",
+        "team_name": "Wausau East",
+        "category": "Passing Yards",
+        "player_name": "Xander Klein",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "14/18",
+          "YDS": "139",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "wausau-east",
+        "team_name": "Wausau East",
+        "category": "Rushing Yards",
+        "player_name": "Iain Stahel",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "16",
+          "YDS": "50",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "wausau-east",
+        "team_name": "Wausau East",
+        "category": "Receiving Yards",
+        "player_name": "Iain Stahel",
+        "player_year": "SR",
+        "stats": {
+          "REC": "4",
+          "YDS": "44",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "wausau-east",
+        "team_name": "Wausau East",
+        "category": "Total Tackles",
+        "player_name": "Peyton Nest",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "11.0",
+          "TFL": "1.0",
+          "FR": "1"
+        }
+      }
     ]
   },
   {
@@ -596,7 +1812,59 @@
     "conference": null,
     "venue": "@Wausau West",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "wausau-west",
+        "team_name": "Wausau West",
+        "category": "Passing Yards",
+        "player_name": "Joe  Graveen",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "8/11",
+          "YDS": "163",
+          "TDS": "3"
+        }
+      },
+      {
+        "team_school_id": "wausau-west",
+        "team_name": "Wausau West",
+        "category": "Rushing Yards",
+        "player_name": "Miles Waldvogel",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "19",
+          "YDS": "116",
+          "TDS": "1",
+          "REC": "70"
+        }
+      },
+      {
+        "team_school_id": "wausau-west",
+        "team_name": "Wausau West",
+        "category": "Receiving Yards",
+        "player_name": "Miles Waldvogel",
+        "player_year": "JR",
+        "stats": {
+          "REC": "3",
+          "YDS": "70",
+          "TDS": "1",
+          "RUS": "116"
+        }
+      },
+      {
+        "team_school_id": "wausau-west",
+        "team_name": "Wausau West",
+        "category": "Total Tackles",
+        "player_name": "Jacob  Scherer",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "11.0",
+          "TFL": "2.0"
+        }
+      }
     ]
   },
   {
@@ -621,7 +1889,8 @@
     "venue": "@Wisconsin Rapids Lincoln High School",
     "sources": [
       "wiaa"
-    ]
+    ],
+    "stat_leaders": []
   },
   {
     "id": "football-2025-09-05-marshfield-at-rice-lake",
@@ -644,7 +1913,57 @@
     "conference": null,
     "venue": "@Rice Lake",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "marshfield",
+        "team_name": "Marshfield",
+        "category": "Passing Yards",
+        "player_name": "Ethan Foemmel",
+        "player_year": "FR",
+        "stats": {
+          "C/A": "8/15",
+          "YDS": "89",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "marshfield",
+        "team_name": "Marshfield",
+        "category": "Rushing Yards",
+        "player_name": "Haiden Carlson",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "12",
+          "YDS": "73",
+          "TDS": "1",
+          "REC": "34"
+        }
+      },
+      {
+        "team_school_id": "marshfield",
+        "team_name": "Marshfield",
+        "category": "Receiving Yards",
+        "player_name": "Camden Kolstad",
+        "player_year": "JR",
+        "stats": {
+          "REC": "5",
+          "YDS": "63",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "marshfield",
+        "team_name": "Marshfield",
+        "category": "Total Tackles",
+        "player_name": "Lukas Halan",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "12.0"
+        }
+      }
     ]
   },
   {
@@ -668,7 +1987,59 @@
     "conference": null,
     "venue": "@Eau Claire Memorial",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "spash",
+        "team_name": "Stevens Point",
+        "category": "Passing Yards",
+        "player_name": "Trent Breitbach",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "12/21",
+          "YDS": "263",
+          "TDS": "4",
+          "RUS": "141"
+        }
+      },
+      {
+        "team_school_id": "spash",
+        "team_name": "Stevens Point",
+        "category": "Rushing Yards",
+        "player_name": "Trent Breitbach",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "17",
+          "YDS": "141",
+          "TDS": "4"
+        }
+      },
+      {
+        "team_school_id": "spash",
+        "team_name": "Stevens Point",
+        "category": "Receiving Yards",
+        "player_name": "Jonny Ananiadis",
+        "player_year": "SR",
+        "stats": {
+          "REC": "4",
+          "YDS": "177",
+          "TDS": "3"
+        }
+      },
+      {
+        "team_school_id": "spash",
+        "team_name": "Stevens Point",
+        "category": "Total Tackles",
+        "player_name": "Calvin Roth",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "10.0",
+          "TFL": "1.0",
+          "SKS": "1.0"
+        }
+      }
     ]
   },
   {
@@ -692,7 +2063,58 @@
     "conference": null,
     "venue": "@Edgar",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "edgar",
+        "team_name": "Edgar",
+        "category": "Passing Yards",
+        "player_name": "Tucker Streit",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "6/12",
+          "YDS": "126",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "edgar",
+        "team_name": "Edgar",
+        "category": "Rushing Yards",
+        "player_name": "Gavin Mauer",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "11",
+          "YDS": "49",
+          "TDS": "2",
+          "REC": "71"
+        }
+      },
+      {
+        "team_school_id": "edgar",
+        "team_name": "Edgar",
+        "category": "Receiving Yards",
+        "player_name": "Gavin Mauer",
+        "player_year": "SR",
+        "stats": {
+          "REC": "4",
+          "YDS": "71",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "edgar",
+        "team_name": "Edgar",
+        "category": "Total Tackles",
+        "player_name": "Alex Schneider",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "9.0",
+          "TFL": "1.0"
+        }
+      }
     ]
   },
   {
@@ -716,7 +2138,58 @@
     "conference": null,
     "venue": "@Marathon",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "marathon",
+        "team_name": "Marathon",
+        "category": "Passing Yards",
+        "player_name": "True Thurs",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "12/23",
+          "YDS": "139",
+          "TDS": "2",
+          "RUS": "66"
+        }
+      },
+      {
+        "team_school_id": "marathon",
+        "team_name": "Marathon",
+        "category": "Rushing Yards",
+        "player_name": "True Thurs",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "13",
+          "YDS": "66",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "marathon",
+        "team_name": "Marathon",
+        "category": "Receiving Yards",
+        "player_name": "Garrett Bracewell",
+        "player_year": "JR",
+        "stats": {
+          "REC": "6",
+          "YDS": "82",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "marathon",
+        "team_name": "Marathon",
+        "category": "Total Tackles",
+        "player_name": "Landon Hilgart",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "12.0",
+          "TFL": "1.0"
+        }
+      }
     ]
   },
   {
@@ -740,7 +2213,106 @@
     "conference": null,
     "venue": "@Stratford",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "spencer",
+        "team_name": "Spencer/Columbus Catholic",
+        "category": "Passing Yards",
+        "player_name": "Devlin Timmler",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "6/18",
+          "YDS": "63",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "spencer",
+        "team_name": "Spencer/Columbus Catholic",
+        "category": "Rushing Yards",
+        "player_name": "Jack Hoeper",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "22",
+          "YDS": "97",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "spencer",
+        "team_name": "Spencer/Columbus Catholic",
+        "category": "Receiving Yards",
+        "player_name": "Jack Hoeper",
+        "player_year": "JR",
+        "stats": {
+          "REC": "3",
+          "YDS": "31",
+          "TDS": "1",
+          "RUS": "97"
+        }
+      },
+      {
+        "team_school_id": "spencer",
+        "team_name": "Spencer/Columbus Catholic",
+        "category": "Total Tackles",
+        "player_name": "Devlin Timmler",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "12.0"
+        }
+      },
+      {
+        "team_school_id": "stratford",
+        "team_name": "Stratford",
+        "category": "Passing Yards",
+        "player_name": "Brady Berg",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "12/16",
+          "YDS": "141",
+          "TDS": "1",
+          "RUS": "-2"
+        }
+      },
+      {
+        "team_school_id": "stratford",
+        "team_name": "Stratford",
+        "category": "Rushing Yards",
+        "player_name": "Aaron Knetter",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "15",
+          "YDS": "89",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "stratford",
+        "team_name": "Stratford",
+        "category": "Receiving Yards",
+        "player_name": "Coltan Breit",
+        "player_year": "SR",
+        "stats": {
+          "REC": "4",
+          "YDS": "74",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "stratford",
+        "team_name": "Stratford",
+        "category": "Total Tackles",
+        "player_name": "Jaegar Ormond",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "11.0",
+          "TFL": "2.0",
+          "SKS": "0.5"
+        }
+      }
     ]
   },
   {
@@ -764,7 +2336,58 @@
     "conference": null,
     "venue": "@Mosinee",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "mosinee",
+        "team_name": "Mosinee",
+        "category": "Passing Yards",
+        "player_name": "Treve Stoffel",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "12/19",
+          "YDS": "116",
+          "TDS": "2",
+          "RUS": "101"
+        }
+      },
+      {
+        "team_school_id": "mosinee",
+        "team_name": "Mosinee",
+        "category": "Rushing Yards",
+        "player_name": "Treve Stoffel",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "12",
+          "YDS": "101",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "mosinee",
+        "team_name": "Mosinee",
+        "category": "Receiving Yards",
+        "player_name": "Mitchell Michlig",
+        "player_year": "SR",
+        "stats": {
+          "REC": "4",
+          "YDS": "66",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "mosinee",
+        "team_name": "Mosinee",
+        "category": "Total Tackles",
+        "player_name": "Treve Stoffel",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "12.0",
+          "INT": "1"
+        }
+      }
     ]
   },
   {
@@ -788,7 +2411,56 @@
     "conference": null,
     "venue": "@Colby",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "colby",
+        "team_name": "Colby",
+        "category": "Passing Yards",
+        "player_name": "Luke Hannula",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "1/3",
+          "YDS": "13",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "colby",
+        "team_name": "Colby",
+        "category": "Rushing Yards",
+        "player_name": "Luke Hannula",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "16",
+          "YDS": "50",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "colby",
+        "team_name": "Colby",
+        "category": "Receiving Yards",
+        "player_name": "Brennan Geiger",
+        "player_year": "SR",
+        "stats": {
+          "REC": "1",
+          "YDS": "13",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "colby",
+        "team_name": "Colby",
+        "category": "Total Tackles",
+        "player_name": "Tristen Smazal",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "9.0"
+        }
+      }
     ]
   },
   {
@@ -812,7 +2484,58 @@
     "conference": null,
     "venue": "@Iola-Scandinavia",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "abbotsford",
+        "team_name": "Abbotsford",
+        "category": "Passing Yards",
+        "player_name": "Irvin Aguilera",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "1/3",
+          "YDS": "8",
+          "TDS": "2",
+          "RUS": "128"
+        }
+      },
+      {
+        "team_school_id": "abbotsford",
+        "team_name": "Abbotsford",
+        "category": "Rushing Yards",
+        "player_name": "Irvin Aguilera",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "13",
+          "YDS": "128",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "abbotsford",
+        "team_name": "Abbotsford",
+        "category": "Receiving Yards",
+        "player_name": "Chase Boller",
+        "player_year": "SR",
+        "stats": {
+          "REC": "1",
+          "YDS": "8",
+          "TDS": "1",
+          "RUS": "72"
+        }
+      },
+      {
+        "team_school_id": "abbotsford",
+        "team_name": "Abbotsford",
+        "category": "Total Tackles",
+        "player_name": "Nathan Dukelow",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "6.0"
+        }
+      }
     ]
   },
   {
@@ -836,7 +2559,58 @@
     "conference": null,
     "venue": "@Wausau East",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "wausau-east",
+        "team_name": "Wausau East",
+        "category": "Passing Yards",
+        "player_name": "Xander Klein",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "13/29",
+          "YDS": "195",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "wausau-east",
+        "team_name": "Wausau East",
+        "category": "Rushing Yards",
+        "player_name": "Iain Stahel",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "15",
+          "YDS": "42",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "wausau-east",
+        "team_name": "Wausau East",
+        "category": "Receiving Yards",
+        "player_name": "Kayden Meverden",
+        "player_year": "SR",
+        "stats": {
+          "REC": "4",
+          "YDS": "121",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "wausau-east",
+        "team_name": "Wausau East",
+        "category": "Total Tackles",
+        "player_name": "Aiden Kilde",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "17.0",
+          "TFL": "2.0",
+          "FR": "1"
+        }
+      }
     ]
   },
   {
@@ -860,7 +2634,103 @@
     "conference": null,
     "venue": "@D.C. Everest",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "wausau-west",
+        "team_name": "Wausau West",
+        "category": "Passing Yards",
+        "player_name": "Joe  Graveen",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "6/14",
+          "YDS": "66",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "wausau-west",
+        "team_name": "Wausau West",
+        "category": "Rushing Yards",
+        "player_name": "Miles Waldvogel",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "9",
+          "YDS": "74",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "wausau-west",
+        "team_name": "Wausau West",
+        "category": "Receiving Yards",
+        "player_name": "Miles Waldvogel",
+        "player_year": "JR",
+        "stats": {
+          "REC": "3",
+          "YDS": "38",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "wausau-west",
+        "team_name": "Wausau West",
+        "category": "Total Tackles",
+        "player_name": "Ty Teske",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "12.0"
+        }
+      },
+      {
+        "team_school_id": "dc-everest",
+        "team_name": "D.C. Everest",
+        "category": "Passing Yards",
+        "player_name": "Ty Rohde",
+        "player_year": "SO",
+        "stats": {
+          "C/A": "7/14",
+          "YDS": "78",
+          "TDS": "1",
+          "RUS": "6"
+        }
+      },
+      {
+        "team_school_id": "dc-everest",
+        "team_name": "D.C. Everest",
+        "category": "Rushing Yards",
+        "player_name": "Corbin Enzenroth",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "37",
+          "YDS": "236",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "dc-everest",
+        "team_name": "D.C. Everest",
+        "category": "Receiving Yards",
+        "player_name": "Mason Hein",
+        "player_year": "SR",
+        "stats": {
+          "REC": "2",
+          "YDS": "54",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "dc-everest",
+        "team_name": "D.C. Everest",
+        "category": "Total Tackles",
+        "player_name": "Silas Weber",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "8.0"
+        }
+      }
     ]
   },
   {
@@ -884,7 +2754,56 @@
     "conference": null,
     "venue": "@Marshfield High School-- Kenneth & Ardyce Heiting Community Stadium",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "marshfield",
+        "team_name": "Marshfield",
+        "category": "Passing Yards",
+        "player_name": "Ethan Foemmel",
+        "player_year": "FR",
+        "stats": {
+          "C/A": "6/13",
+          "YDS": "76",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "marshfield",
+        "team_name": "Marshfield",
+        "category": "Rushing Yards",
+        "player_name": "Haiden Carlson",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "22",
+          "YDS": "207",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "marshfield",
+        "team_name": "Marshfield",
+        "category": "Receiving Yards",
+        "player_name": "Ben Jordan",
+        "player_year": "SR",
+        "stats": {
+          "REC": "4",
+          "YDS": "57",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "marshfield",
+        "team_name": "Marshfield",
+        "category": "Total Tackles",
+        "player_name": "Mason Anderson",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "12.0"
+        }
+      }
     ]
   },
   {
@@ -909,7 +2828,8 @@
     "venue": "@Stevens Point",
     "sources": [
       "wiaa"
-    ]
+    ],
+    "stat_leaders": []
   },
   {
     "id": "football-2025-09-12-ottawa-marquette-il-at-edgar",
@@ -933,7 +2853,8 @@
     "venue": "@Replacement Game - QPS points applied",
     "sources": [
       "wiaa"
-    ]
+    ],
+    "stat_leaders": []
   },
   {
     "id": "football-2025-09-12-edgar-at-rosholt",
@@ -957,7 +2878,8 @@
     "venue": "@Rosholt",
     "sources": [
       "wiaa"
-    ]
+    ],
+    "stat_leaders": []
   },
   {
     "id": "football-2025-09-12-marathon-at-amherst",
@@ -980,7 +2902,58 @@
     "conference": null,
     "venue": "@Amherst",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "marathon",
+        "team_name": "Marathon",
+        "category": "Passing Yards",
+        "player_name": "True Thurs",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "11/21",
+          "YDS": "137",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "marathon",
+        "team_name": "Marathon",
+        "category": "Rushing Yards",
+        "player_name": "True Thurs",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "13",
+          "YDS": "86",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "marathon",
+        "team_name": "Marathon",
+        "category": "Receiving Yards",
+        "player_name": "Sawyer Berens",
+        "player_year": "JR",
+        "stats": {
+          "REC": "4",
+          "YDS": "55",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "marathon",
+        "team_name": "Marathon",
+        "category": "Total Tackles",
+        "player_name": "Swayne Stencil",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "9.0",
+          "TFL": "1.0",
+          "SKS": "1.0"
+        }
+      }
     ]
   },
   {
@@ -1004,7 +2977,56 @@
     "conference": null,
     "venue": "@Wittenberg-Birnamwood High School",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "stratford",
+        "team_name": "Stratford",
+        "category": "Passing Yards",
+        "player_name": "Brady Berg",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "6/23",
+          "YDS": "60",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "stratford",
+        "team_name": "Stratford",
+        "category": "Rushing Yards",
+        "player_name": "Koltan Haupt",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "10",
+          "YDS": "66",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "stratford",
+        "team_name": "Stratford",
+        "category": "Receiving Yards",
+        "player_name": "John Mews",
+        "player_year": "JR",
+        "stats": {
+          "REC": "1",
+          "YDS": "23",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "stratford",
+        "team_name": "Stratford",
+        "category": "Total Tackles",
+        "player_name": "Jaegar Ormond",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "12.0"
+        }
+      }
     ]
   },
   {
@@ -1028,7 +3050,58 @@
     "conference": null,
     "venue": "@Spencer/Columbus Catholic",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "spencer",
+        "team_name": "Spencer/Columbus Catholic",
+        "category": "Passing Yards",
+        "player_name": "Mac Konieczny",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "2/3",
+          "YDS": "48",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "spencer",
+        "team_name": "Spencer/Columbus Catholic",
+        "category": "Rushing Yards",
+        "player_name": "Sam Helgestad",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "11",
+          "YDS": "76",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "spencer",
+        "team_name": "Spencer/Columbus Catholic",
+        "category": "Receiving Yards",
+        "player_name": "Sam Helgestad",
+        "player_year": "SR",
+        "stats": {
+          "REC": "1",
+          "YDS": "40",
+          "TDS": "1",
+          "RUS": "76"
+        }
+      },
+      {
+        "team_school_id": "spencer",
+        "team_name": "Spencer/Columbus Catholic",
+        "category": "Total Tackles",
+        "player_name": "Jakob Soback",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "17.0",
+          "TFL": "3.0"
+        }
+      }
     ]
   },
   {
@@ -1052,7 +3125,59 @@
     "conference": null,
     "venue": "@Lakeland",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "mosinee",
+        "team_name": "Mosinee",
+        "category": "Passing Yards",
+        "player_name": "Treve Stoffel",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "20/33",
+          "YDS": "233",
+          "TDS": "1",
+          "RUS": "98"
+        }
+      },
+      {
+        "team_school_id": "mosinee",
+        "team_name": "Mosinee",
+        "category": "Rushing Yards",
+        "player_name": "Treve Stoffel",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "9",
+          "YDS": "98",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "mosinee",
+        "team_name": "Mosinee",
+        "category": "Receiving Yards",
+        "player_name": "Mitchell Michlig",
+        "player_year": "SR",
+        "stats": {
+          "REC": "3",
+          "YDS": "77",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "mosinee",
+        "team_name": "Mosinee",
+        "category": "Total Tackles",
+        "player_name": "Braeden Mocadlo",
+        "player_year": "SO",
+        "stats": {
+          "TKL": "1.0",
+          "TFL": "1.0",
+          "SKS": "1.0"
+        }
+      }
     ]
   },
   {
@@ -1076,7 +3201,58 @@
     "conference": null,
     "venue": "@Greenwood High School",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "colby",
+        "team_name": "Colby",
+        "category": "Passing Yards",
+        "player_name": "Luke Hannula",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "1/4",
+          "YDS": "6",
+          "TDS": "1",
+          "RUS": "95"
+        }
+      },
+      {
+        "team_school_id": "colby",
+        "team_name": "Colby",
+        "category": "Rushing Yards",
+        "player_name": "Luke Hannula",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "21",
+          "YDS": "95",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "colby",
+        "team_name": "Colby",
+        "category": "Receiving Yards",
+        "player_name": "Brennan Geiger",
+        "player_year": "SR",
+        "stats": {
+          "REC": "1",
+          "YDS": "6",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "colby",
+        "team_name": "Colby",
+        "category": "Total Tackles",
+        "player_name": "Arturo Lopez",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "1.0",
+          "TFL": "1.0"
+        }
+      }
     ]
   },
   {
@@ -1100,7 +3276,58 @@
     "conference": null,
     "venue": "@Abbotsford",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "abbotsford",
+        "team_name": "Abbotsford",
+        "category": "Passing Yards",
+        "player_name": "Carter Cihlar",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "1/1",
+          "YDS": "8",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "abbotsford",
+        "team_name": "Abbotsford",
+        "category": "Rushing Yards",
+        "player_name": "Irvin Aguilera",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "5",
+          "YDS": "98",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "abbotsford",
+        "team_name": "Abbotsford",
+        "category": "Receiving Yards",
+        "player_name": "Irvin Davila",
+        "player_year": "SR",
+        "stats": {
+          "REC": "1",
+          "YDS": "8",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "abbotsford",
+        "team_name": "Abbotsford",
+        "category": "Total Tackles",
+        "player_name": "Irvin Davila",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "8.0",
+          "TFL": "1.0",
+          "SKS": "1.0"
+        }
+      }
     ]
   },
   {
@@ -1124,7 +3351,106 @@
     "conference": null,
     "venue": "@Mosinee",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "wausau-east",
+        "team_name": "Wausau East",
+        "category": "Passing Yards",
+        "player_name": "Xander Klein",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "11/20",
+          "YDS": "86",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "wausau-east",
+        "team_name": "Wausau East",
+        "category": "Rushing Yards",
+        "player_name": "Iain Stahel",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "18",
+          "YDS": "86",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "wausau-east",
+        "team_name": "Wausau East",
+        "category": "Receiving Yards",
+        "player_name": "Iain Stahel",
+        "player_year": "SR",
+        "stats": {
+          "REC": "3",
+          "YDS": "27",
+          "TDS": "1",
+          "RUS": "86"
+        }
+      },
+      {
+        "team_school_id": "wausau-east",
+        "team_name": "Wausau East",
+        "category": "Total Tackles",
+        "player_name": "Peyton Nest",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "9.0",
+          "TFL": "2.0"
+        }
+      },
+      {
+        "team_school_id": "mosinee",
+        "team_name": "Mosinee",
+        "category": "Passing Yards",
+        "player_name": "Treve Stoffel",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "7/15",
+          "YDS": "93",
+          "TDS": "1",
+          "RUS": "143"
+        }
+      },
+      {
+        "team_school_id": "mosinee",
+        "team_name": "Mosinee",
+        "category": "Rushing Yards",
+        "player_name": "Treve Stoffel",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "17",
+          "YDS": "143",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "mosinee",
+        "team_name": "Mosinee",
+        "category": "Receiving Yards",
+        "player_name": "Jerrick Seeger",
+        "player_year": "SR",
+        "stats": {
+          "REC": "3",
+          "YDS": "44",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "mosinee",
+        "team_name": "Mosinee",
+        "category": "Total Tackles",
+        "player_name": "Treve Stoffel",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "7.0",
+          "INT": "1"
+        }
+      }
     ]
   },
   {
@@ -1149,7 +3475,8 @@
     "venue": "@Wausau West",
     "sources": [
       "wiaa"
-    ]
+    ],
+    "stat_leaders": []
   },
   {
     "id": "football-2025-09-19-marshfield-at-dc-everest",
@@ -1172,7 +3499,105 @@
     "conference": null,
     "venue": "@D.C. Everest",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "marshfield",
+        "team_name": "Marshfield",
+        "category": "Passing Yards",
+        "player_name": "Ethan Foemmel",
+        "player_year": "FR",
+        "stats": {
+          "C/A": "6/7",
+          "YDS": "61",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "marshfield",
+        "team_name": "Marshfield",
+        "category": "Rushing Yards",
+        "player_name": "Haiden Carlson",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "12",
+          "YDS": "137",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "marshfield",
+        "team_name": "Marshfield",
+        "category": "Receiving Yards",
+        "player_name": "Ben Jordan",
+        "player_year": "SR",
+        "stats": {
+          "REC": "1",
+          "YDS": "36",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "marshfield",
+        "team_name": "Marshfield",
+        "category": "Total Tackles",
+        "player_name": "Jon Sternweis",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "13.0",
+          "TFL": "1.0"
+        }
+      },
+      {
+        "team_school_id": "dc-everest",
+        "team_name": "D.C. Everest",
+        "category": "Passing Yards",
+        "player_name": "Ty Rohde",
+        "player_year": "SO",
+        "stats": {
+          "C/A": "7/15",
+          "YDS": "105",
+          "TDS": "3"
+        }
+      },
+      {
+        "team_school_id": "dc-everest",
+        "team_name": "D.C. Everest",
+        "category": "Rushing Yards",
+        "player_name": "Corbin Enzenroth",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "30",
+          "YDS": "157",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "dc-everest",
+        "team_name": "D.C. Everest",
+        "category": "Receiving Yards",
+        "player_name": "Xavier Edwards",
+        "player_year": "SR",
+        "stats": {
+          "REC": "2",
+          "YDS": "65",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "dc-everest",
+        "team_name": "D.C. Everest",
+        "category": "Total Tackles",
+        "player_name": "Carson Kempf",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "8.0",
+          "TFL": "3.0",
+          "FR": "1"
+        }
+      }
     ]
   },
   {
@@ -1196,7 +3621,57 @@
     "conference": null,
     "venue": "@Stevens Point",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "spash",
+        "team_name": "Stevens Point",
+        "category": "Passing Yards",
+        "player_name": "Trent Breitbach",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "14/29",
+          "YDS": "169",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "spash",
+        "team_name": "Stevens Point",
+        "category": "Rushing Yards",
+        "player_name": "Trent Breitbach",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "15",
+          "YDS": "36",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "spash",
+        "team_name": "Stevens Point",
+        "category": "Receiving Yards",
+        "player_name": "Jonny Ananiadis",
+        "player_year": "SR",
+        "stats": {
+          "REC": "3",
+          "YDS": "64",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "spash",
+        "team_name": "Stevens Point",
+        "category": "Total Tackles",
+        "player_name": "Zach Ehlinger",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "11.0",
+          "INT": "1"
+        }
+      }
     ]
   },
   {
@@ -1220,7 +3695,103 @@
     "conference": null,
     "venue": "@Colby",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "marathon",
+        "team_name": "Marathon",
+        "category": "Passing Yards",
+        "player_name": "True Thurs",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "7/9",
+          "YDS": "212",
+          "TDS": "2",
+          "RUS": "52"
+        }
+      },
+      {
+        "team_school_id": "marathon",
+        "team_name": "Marathon",
+        "category": "Rushing Yards",
+        "player_name": "True Thurs",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "9",
+          "YDS": "52",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "marathon",
+        "team_name": "Marathon",
+        "category": "Receiving Yards",
+        "player_name": "Garrett Bracewell",
+        "player_year": "JR",
+        "stats": {
+          "REC": "3",
+          "YDS": "87",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "marathon",
+        "team_name": "Marathon",
+        "category": "Total Tackles",
+        "player_name": "Swayne Stencil",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "10.0"
+        }
+      },
+      {
+        "team_school_id": "colby",
+        "team_name": "Colby",
+        "category": "Passing Yards",
+        "player_name": "Logan Reynolds",
+        "player_year": "SO",
+        "stats": {
+          "C/A": "2/3",
+          "YDS": "12",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "colby",
+        "team_name": "Colby",
+        "category": "Rushing Yards",
+        "player_name": "Emilo Nunez",
+        "player_year": "FR",
+        "stats": {
+          "ATT": "12",
+          "YDS": "47",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "colby",
+        "team_name": "Colby",
+        "category": "Receiving Yards",
+        "player_name": "Emilo Nunez",
+        "player_year": "FR",
+        "stats": {
+          "REC": "1",
+          "YDS": "10",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "colby",
+        "team_name": "Colby",
+        "category": "Total Tackles",
+        "player_name": "Collin Rau",
+        "player_year": "SO",
+        "stats": {
+          "TKL": "6.0"
+        }
+      }
     ]
   },
   {
@@ -1244,7 +3815,56 @@
     "conference": null,
     "venue": "@Weyauwega-Fremont",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "stratford",
+        "team_name": "Stratford",
+        "category": "Passing Yards",
+        "player_name": "Brady Berg",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "4/4",
+          "YDS": "129",
+          "TDS": "3"
+        }
+      },
+      {
+        "team_school_id": "stratford",
+        "team_name": "Stratford",
+        "category": "Rushing Yards",
+        "player_name": "Brooks Vanderhoof",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "15",
+          "YDS": "101",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "stratford",
+        "team_name": "Stratford",
+        "category": "Receiving Yards",
+        "player_name": "Zander Zawislan",
+        "player_year": "SR",
+        "stats": {
+          "REC": "3",
+          "YDS": "94",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "stratford",
+        "team_name": "Stratford",
+        "category": "Total Tackles",
+        "player_name": "Aaron Knetter",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "6.0"
+        }
+      }
     ]
   },
   {
@@ -1268,7 +3888,58 @@
     "conference": null,
     "venue": "@Spencer High School",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "spencer",
+        "team_name": "Spencer/Columbus Catholic",
+        "category": "Passing Yards",
+        "player_name": "Devlin Timmler",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "4/11",
+          "YDS": "44",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "spencer",
+        "team_name": "Spencer/Columbus Catholic",
+        "category": "Rushing Yards",
+        "player_name": "Jack Hoeper",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "29",
+          "YDS": "169",
+          "TDS": "3"
+        }
+      },
+      {
+        "team_school_id": "spencer",
+        "team_name": "Spencer/Columbus Catholic",
+        "category": "Receiving Yards",
+        "player_name": "Mac Konieczny",
+        "player_year": "SR",
+        "stats": {
+          "REC": "3",
+          "YDS": "30",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "spencer",
+        "team_name": "Spencer/Columbus Catholic",
+        "category": "Total Tackles",
+        "player_name": "Jakob Soback",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "11.0",
+          "TFL": "2.0",
+          "INT": "1"
+        }
+      }
     ]
   },
   {
@@ -1292,7 +3963,58 @@
     "conference": null,
     "venue": "@Assumption",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "abbotsford",
+        "team_name": "Abbotsford",
+        "category": "Passing Yards",
+        "player_name": "Carter Cihlar",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "1/1",
+          "YDS": "23",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "abbotsford",
+        "team_name": "Abbotsford",
+        "category": "Rushing Yards",
+        "player_name": "Chase Boller",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "7",
+          "YDS": "113",
+          "TDS": "3"
+        }
+      },
+      {
+        "team_school_id": "abbotsford",
+        "team_name": "Abbotsford",
+        "category": "Receiving Yards",
+        "player_name": "Chase Boller",
+        "player_year": "SR",
+        "stats": {
+          "REC": "1",
+          "YDS": "23",
+          "TDS": "3",
+          "RUS": "113"
+        }
+      },
+      {
+        "team_school_id": "abbotsford",
+        "team_name": "Abbotsford",
+        "category": "Total Tackles",
+        "player_name": "Irvin Aguilera",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "8.0",
+          "TFL": "1.0"
+        }
+      }
     ]
   },
   {
@@ -1316,7 +4038,60 @@
     "conference": null,
     "venue": "@Pittsville",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "edgar",
+        "team_name": "Edgar",
+        "category": "Passing Yards",
+        "player_name": "Tucker Streit",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "6/11",
+          "YDS": "113",
+          "TDS": "1",
+          "RUS": "0"
+        }
+      },
+      {
+        "team_school_id": "edgar",
+        "team_name": "Edgar",
+        "category": "Rushing Yards",
+        "player_name": "Landon Lukasko",
+        "player_year": "SO",
+        "stats": {
+          "ATT": "4",
+          "YDS": "111",
+          "TDS": "1",
+          "REC": "29"
+        }
+      },
+      {
+        "team_school_id": "edgar",
+        "team_name": "Edgar",
+        "category": "Receiving Yards",
+        "player_name": "Dom Contreras",
+        "player_year": "SR",
+        "stats": {
+          "REC": "2",
+          "YDS": "45",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "edgar",
+        "team_name": "Edgar",
+        "category": "Total Tackles",
+        "player_name": "Tucker Streit",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "11.0",
+          "TFL": "2.0",
+          "INT": "1"
+        }
+      }
     ]
   },
   {
@@ -1340,7 +4115,57 @@
     "conference": null,
     "venue": "@Wausau East",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "wausau-east",
+        "team_name": "Wausau East",
+        "category": "Passing Yards",
+        "player_name": "Camdyn Rye",
+        "player_year": "SO",
+        "stats": {
+          "C/A": "6/12",
+          "YDS": "144",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "wausau-east",
+        "team_name": "Wausau East",
+        "category": "Rushing Yards",
+        "player_name": "Iain Stahel",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "20",
+          "YDS": "161",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "wausau-east",
+        "team_name": "Wausau East",
+        "category": "Receiving Yards",
+        "player_name": "Tanner Kostroski",
+        "player_year": "JR",
+        "stats": {
+          "REC": "1",
+          "YDS": "90",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "wausau-east",
+        "team_name": "Wausau East",
+        "category": "Total Tackles",
+        "player_name": "Malcom McEachin",
+        "player_year": "SO",
+        "stats": {
+          "TKL": "12.0",
+          "TFL": "3.0"
+        }
+      }
     ]
   },
   {
@@ -1364,7 +4189,57 @@
     "conference": null,
     "venue": "@Eau Claire North",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "dc-everest",
+        "team_name": "D.C. Everest",
+        "category": "Passing Yards",
+        "player_name": "Ty Rohde",
+        "player_year": "SO",
+        "stats": {
+          "C/A": "12/16",
+          "YDS": "108",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "dc-everest",
+        "team_name": "D.C. Everest",
+        "category": "Rushing Yards",
+        "player_name": "Corbin Enzenroth",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "15",
+          "YDS": "133",
+          "TDS": "3"
+        }
+      },
+      {
+        "team_school_id": "dc-everest",
+        "team_name": "D.C. Everest",
+        "category": "Receiving Yards",
+        "player_name": "Xavier Edwards",
+        "player_year": "SR",
+        "stats": {
+          "REC": "5",
+          "YDS": "44",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "dc-everest",
+        "team_name": "D.C. Everest",
+        "category": "Total Tackles",
+        "player_name": "Silas Weber",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "10.0",
+          "TFL": "1.0"
+        }
+      }
     ]
   },
   {
@@ -1389,7 +4264,8 @@
     "venue": "@Wisconsin Rapids Lincoln High School",
     "sources": [
       "wiaa"
-    ]
+    ],
+    "stat_leaders": []
   },
   {
     "id": "football-2025-09-26-assumption-at-edgar",
@@ -1412,7 +4288,58 @@
     "conference": null,
     "venue": "@Edgar",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "edgar",
+        "team_name": "Edgar",
+        "category": "Passing Yards",
+        "player_name": "Tucker Streit",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "4/7",
+          "YDS": "66",
+          "TDS": "1",
+          "RUS": "2"
+        }
+      },
+      {
+        "team_school_id": "edgar",
+        "team_name": "Edgar",
+        "category": "Rushing Yards",
+        "player_name": "Maverick Butt",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "6",
+          "YDS": "57",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "edgar",
+        "team_name": "Edgar",
+        "category": "Receiving Yards",
+        "player_name": "Landon Lukasko",
+        "player_year": "SO",
+        "stats": {
+          "REC": "2",
+          "YDS": "34",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "edgar",
+        "team_name": "Edgar",
+        "category": "Total Tackles",
+        "player_name": "Lucas Stahnke",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "11.0",
+          "TFL": "1.0"
+        }
+      }
     ]
   },
   {
@@ -1436,7 +4363,58 @@
     "conference": null,
     "venue": "@Marathon",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "marathon",
+        "team_name": "Marathon",
+        "category": "Passing Yards",
+        "player_name": "True Thurs",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "16/21",
+          "YDS": "248",
+          "TDS": "1",
+          "RUS": "99"
+        }
+      },
+      {
+        "team_school_id": "marathon",
+        "team_name": "Marathon",
+        "category": "Rushing Yards",
+        "player_name": "True Thurs",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "19",
+          "YDS": "99",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "marathon",
+        "team_name": "Marathon",
+        "category": "Receiving Yards",
+        "player_name": "Garrett Bracewell",
+        "player_year": "JR",
+        "stats": {
+          "REC": "11",
+          "YDS": "205",
+          "TDS": "5"
+        }
+      },
+      {
+        "team_school_id": "marathon",
+        "team_name": "Marathon",
+        "category": "Total Tackles",
+        "player_name": "Landon Hilgart",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "6.0",
+          "TFL": "1.0"
+        }
+      }
     ]
   },
   {
@@ -1460,7 +4438,56 @@
     "conference": null,
     "venue": "@Amherst",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "spencer",
+        "team_name": "Spencer/Columbus Catholic",
+        "category": "Passing Yards",
+        "player_name": "Devlin Timmler",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "14/21",
+          "YDS": "254",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "spencer",
+        "team_name": "Spencer/Columbus Catholic",
+        "category": "Rushing Yards",
+        "player_name": "Jack Hoeper",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "17",
+          "YDS": "52",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "spencer",
+        "team_name": "Spencer/Columbus Catholic",
+        "category": "Receiving Yards",
+        "player_name": "Wes Nieman",
+        "player_year": "JR",
+        "stats": {
+          "REC": "5",
+          "YDS": "116",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "spencer",
+        "team_name": "Spencer/Columbus Catholic",
+        "category": "Total Tackles",
+        "player_name": "Devlin Timmler",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "8.0"
+        }
+      }
     ]
   },
   {
@@ -1484,7 +4511,58 @@
     "conference": null,
     "venue": "@Tomahawk",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "mosinee",
+        "team_name": "Mosinee",
+        "category": "Passing Yards",
+        "player_name": "Treve Stoffel",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "13/17",
+          "YDS": "236",
+          "TDS": "1",
+          "RUS": "14"
+        }
+      },
+      {
+        "team_school_id": "mosinee",
+        "team_name": "Mosinee",
+        "category": "Rushing Yards",
+        "player_name": "Carter Fandrey",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "12",
+          "YDS": "46",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "mosinee",
+        "team_name": "Mosinee",
+        "category": "Receiving Yards",
+        "player_name": "Mitchell Michlig",
+        "player_year": "SR",
+        "stats": {
+          "REC": "4",
+          "YDS": "116",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "mosinee",
+        "team_name": "Mosinee",
+        "category": "Total Tackles",
+        "player_name": "Treve Stoffel",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "18.0",
+          "FR": "1"
+        }
+      }
     ]
   },
   {
@@ -1508,7 +4586,60 @@
     "conference": null,
     "venue": "@Abbotsford High School",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "abbotsford",
+        "team_name": "Abbotsford",
+        "category": "Passing Yards",
+        "player_name": "Carter Cihlar",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "8/12",
+          "YDS": "111",
+          "TDS": "3",
+          "RUS": "84"
+        }
+      },
+      {
+        "team_school_id": "abbotsford",
+        "team_name": "Abbotsford",
+        "category": "Rushing Yards",
+        "player_name": "Chase Boller",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "10",
+          "YDS": "132",
+          "TDS": "1",
+          "REC": "36"
+        }
+      },
+      {
+        "team_school_id": "abbotsford",
+        "team_name": "Abbotsford",
+        "category": "Receiving Yards",
+        "player_name": "Irvin Davila",
+        "player_year": "SR",
+        "stats": {
+          "REC": "3",
+          "YDS": "54",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "abbotsford",
+        "team_name": "Abbotsford",
+        "category": "Total Tackles",
+        "player_name": "Irvin Davila",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "16.0",
+          "TFL": "1.0",
+          "INT": "1"
+        }
+      }
     ]
   },
   {
@@ -1532,7 +4663,105 @@
     "conference": null,
     "venue": "@Wausau West",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "spash",
+        "team_name": "Stevens Point",
+        "category": "Passing Yards",
+        "player_name": "Trent Breitbach",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "17/28",
+          "YDS": "172",
+          "TDS": "3",
+          "RUS": "182"
+        }
+      },
+      {
+        "team_school_id": "spash",
+        "team_name": "Stevens Point",
+        "category": "Rushing Yards",
+        "player_name": "Trent Breitbach",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "24",
+          "YDS": "182",
+          "TDS": "3"
+        }
+      },
+      {
+        "team_school_id": "spash",
+        "team_name": "Stevens Point",
+        "category": "Receiving Yards",
+        "player_name": "Isaac Yang",
+        "player_year": "SR",
+        "stats": {
+          "REC": "6",
+          "YDS": "63",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "spash",
+        "team_name": "Stevens Point",
+        "category": "Total Tackles",
+        "player_name": "Riley Trylick",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "8.0"
+        }
+      },
+      {
+        "team_school_id": "wausau-west",
+        "team_name": "Wausau West",
+        "category": "Passing Yards",
+        "player_name": "Joe  Graveen",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "7/10",
+          "YDS": "112",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "wausau-west",
+        "team_name": "Wausau West",
+        "category": "Rushing Yards",
+        "player_name": "Miles Waldvogel",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "11",
+          "YDS": "39",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "wausau-west",
+        "team_name": "Wausau West",
+        "category": "Receiving Yards",
+        "player_name": "Shea Jones",
+        "player_year": "SR",
+        "stats": {
+          "REC": "4",
+          "YDS": "133",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "wausau-west",
+        "team_name": "Wausau West",
+        "category": "Total Tackles",
+        "player_name": "Teigan Rasmus",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "10.0",
+          "TFL": "5.0",
+          "SKS": "3.0"
+        }
+      }
     ]
   },
   {
@@ -1556,7 +4785,104 @@
     "conference": null,
     "venue": "@Stratford",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "colby",
+        "team_name": "Colby",
+        "category": "Passing Yards",
+        "player_name": "Logan Reynolds",
+        "player_year": "SO",
+        "stats": {
+          "C/A": "1/3",
+          "YDS": "6",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "colby",
+        "team_name": "Colby",
+        "category": "Rushing Yards",
+        "player_name": "Logan Reynolds",
+        "player_year": "SO",
+        "stats": {
+          "ATT": "10",
+          "YDS": "18",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "colby",
+        "team_name": "Colby",
+        "category": "Receiving Yards",
+        "player_name": "Adrian Weix",
+        "player_year": "SO",
+        "stats": {
+          "REC": "1",
+          "YDS": "6",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "colby",
+        "team_name": "Colby",
+        "category": "Total Tackles",
+        "player_name": "Tristen Smazal",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "7.0",
+          "TFL": "1.0"
+        }
+      },
+      {
+        "team_school_id": "stratford",
+        "team_name": "Stratford",
+        "category": "Passing Yards",
+        "player_name": "Brady Berg",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "8/10",
+          "YDS": "156",
+          "TDS": "3"
+        }
+      },
+      {
+        "team_school_id": "stratford",
+        "team_name": "Stratford",
+        "category": "Rushing Yards",
+        "player_name": "Koltan Haupt",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "7",
+          "YDS": "79",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "stratford",
+        "team_name": "Stratford",
+        "category": "Receiving Yards",
+        "player_name": "Coltan Breit",
+        "player_year": "SR",
+        "stats": {
+          "REC": "6",
+          "YDS": "131",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "stratford",
+        "team_name": "Stratford",
+        "category": "Total Tackles",
+        "player_name": "Mathias Kaiser",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "4.0",
+          "TFL": "1.0"
+        }
+      }
     ]
   },
   {
@@ -1580,7 +4906,105 @@
     "conference": null,
     "venue": "@Marshfield",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "wausau-west",
+        "team_name": "Wausau West",
+        "category": "Passing Yards",
+        "player_name": "Joe  Graveen",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "2/9",
+          "YDS": "28",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "wausau-west",
+        "team_name": "Wausau West",
+        "category": "Rushing Yards",
+        "player_name": "Copper Depuydt",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "19",
+          "YDS": "119",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "wausau-west",
+        "team_name": "Wausau West",
+        "category": "Receiving Yards",
+        "player_name": "Miles Waldvogel",
+        "player_year": "JR",
+        "stats": {
+          "REC": "1",
+          "YDS": "25",
+          "TDS": "1",
+          "RUS": "33"
+        }
+      },
+      {
+        "team_school_id": "wausau-west",
+        "team_name": "Wausau West",
+        "category": "Total Tackles",
+        "player_name": "Miles Waldvogel",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "8.0"
+        }
+      },
+      {
+        "team_school_id": "marshfield",
+        "team_name": "Marshfield",
+        "category": "Passing Yards",
+        "player_name": "Ethan Foemmel",
+        "player_year": "FR",
+        "stats": {
+          "C/A": "5/9",
+          "YDS": "53",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "marshfield",
+        "team_name": "Marshfield",
+        "category": "Rushing Yards",
+        "player_name": "Haiden Carlson",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "19",
+          "YDS": "174",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "marshfield",
+        "team_name": "Marshfield",
+        "category": "Receiving Yards",
+        "player_name": "Ben Jordan",
+        "player_year": "SR",
+        "stats": {
+          "REC": "2",
+          "YDS": "35",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "marshfield",
+        "team_name": "Marshfield",
+        "category": "Total Tackles",
+        "player_name": "Wes Novitzke",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "11.0",
+          "TFL": "1.0",
+          "SKS": "1.0"
+        }
+      }
     ]
   },
   {
@@ -1604,7 +5028,57 @@
     "conference": null,
     "venue": "@D.C. Everest",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "dc-everest",
+        "team_name": "D.C. Everest",
+        "category": "Passing Yards",
+        "player_name": "Ty Rohde",
+        "player_year": "SO",
+        "stats": {
+          "C/A": "13/24",
+          "YDS": "127",
+          "TDS": "1",
+          "RUS": "-2"
+        }
+      },
+      {
+        "team_school_id": "dc-everest",
+        "team_name": "D.C. Everest",
+        "category": "Rushing Yards",
+        "player_name": "Corbin Enzenroth",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "30",
+          "YDS": "156",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "dc-everest",
+        "team_name": "D.C. Everest",
+        "category": "Receiving Yards",
+        "player_name": "Mason Hein",
+        "player_year": "SR",
+        "stats": {
+          "REC": "4",
+          "YDS": "40",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "dc-everest",
+        "team_name": "D.C. Everest",
+        "category": "Total Tackles",
+        "player_name": "Silas Weber",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "10.0"
+        }
+      }
     ]
   },
   {
@@ -1628,7 +5102,59 @@
     "conference": null,
     "venue": "@Stevens Point",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "spash",
+        "team_name": "Stevens Point",
+        "category": "Passing Yards",
+        "player_name": "Trent Breitbach",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "20/26",
+          "YDS": "375",
+          "TDS": "1",
+          "RUS": "1"
+        }
+      },
+      {
+        "team_school_id": "spash",
+        "team_name": "Stevens Point",
+        "category": "Rushing Yards",
+        "player_name": "Tucker Phillips",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "17",
+          "YDS": "169",
+          "TDS": "3"
+        }
+      },
+      {
+        "team_school_id": "spash",
+        "team_name": "Stevens Point",
+        "category": "Receiving Yards",
+        "player_name": "Calvin Roth",
+        "player_year": "SR",
+        "stats": {
+          "REC": "5",
+          "YDS": "127",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "spash",
+        "team_name": "Stevens Point",
+        "category": "Total Tackles",
+        "player_name": "Riley Trylick",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "8.0",
+          "TFL": "1.0",
+          "SKS": "1.0"
+        }
+      }
     ]
   },
   {
@@ -1653,7 +5179,8 @@
     "venue": "@Eau Claire Memorial",
     "sources": [
       "wiaa"
-    ]
+    ],
+    "stat_leaders": []
   },
   {
     "id": "football-2025-10-03-edgar-at-iola-scandinavia",
@@ -1676,7 +5203,58 @@
     "conference": null,
     "venue": "@Iola-Scandinavia",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "edgar",
+        "team_name": "Edgar",
+        "category": "Passing Yards",
+        "player_name": "Tucker Streit",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "1/2",
+          "YDS": "45",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "edgar",
+        "team_name": "Edgar",
+        "category": "Rushing Yards",
+        "player_name": "Maverick Butt",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "7",
+          "YDS": "124",
+          "TDS": "4"
+        }
+      },
+      {
+        "team_school_id": "edgar",
+        "team_name": "Edgar",
+        "category": "Receiving Yards",
+        "player_name": "Gavin Mauer",
+        "player_year": "SR",
+        "stats": {
+          "REC": "1",
+          "YDS": "45",
+          "TDS": "1",
+          "RUS": "53"
+        }
+      },
+      {
+        "team_school_id": "edgar",
+        "team_name": "Edgar",
+        "category": "Total Tackles",
+        "player_name": "Alex Schneider",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "6.0",
+          "INT": "1"
+        }
+      }
     ]
   },
   {
@@ -1700,7 +5278,105 @@
     "conference": null,
     "venue": "@Stratford",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "marathon",
+        "team_name": "Marathon",
+        "category": "Passing Yards",
+        "player_name": "True Thurs",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "18/32",
+          "YDS": "208",
+          "TDS": "1",
+          "RUS": "36"
+        }
+      },
+      {
+        "team_school_id": "marathon",
+        "team_name": "Marathon",
+        "category": "Rushing Yards",
+        "player_name": "True Thurs",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "8",
+          "YDS": "36",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "marathon",
+        "team_name": "Marathon",
+        "category": "Receiving Yards",
+        "player_name": "Garrett Bracewell",
+        "player_year": "JR",
+        "stats": {
+          "REC": "8",
+          "YDS": "122",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "marathon",
+        "team_name": "Marathon",
+        "category": "Total Tackles",
+        "player_name": "True Thurs",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "10.0"
+        }
+      },
+      {
+        "team_school_id": "stratford",
+        "team_name": "Stratford",
+        "category": "Passing Yards",
+        "player_name": "Brady Berg",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "8/11",
+          "YDS": "216",
+          "TDS": "3"
+        }
+      },
+      {
+        "team_school_id": "stratford",
+        "team_name": "Stratford",
+        "category": "Rushing Yards",
+        "player_name": "Brooks Vanderhoof",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "16",
+          "YDS": "88",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "stratford",
+        "team_name": "Stratford",
+        "category": "Receiving Yards",
+        "player_name": "Coltan Breit",
+        "player_year": "SR",
+        "stats": {
+          "REC": "3",
+          "YDS": "124",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "stratford",
+        "team_name": "Stratford",
+        "category": "Total Tackles",
+        "player_name": "Jaegar Ormond",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "8.0",
+          "TFL": "1.0",
+          "SKS": "1.0"
+        }
+      }
     ]
   },
   {
@@ -1724,7 +5400,56 @@
     "conference": null,
     "venue": "@Loyal High School",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "spencer",
+        "team_name": "Spencer/Columbus Catholic",
+        "category": "Passing Yards",
+        "player_name": "Devlin Timmler",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "7/9",
+          "YDS": "159",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "spencer",
+        "team_name": "Spencer/Columbus Catholic",
+        "category": "Rushing Yards",
+        "player_name": "Jack Hoeper",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "32",
+          "YDS": "190",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "spencer",
+        "team_name": "Spencer/Columbus Catholic",
+        "category": "Receiving Yards",
+        "player_name": "Kaleb Hilgemann",
+        "player_year": "SR",
+        "stats": {
+          "REC": "3",
+          "YDS": "121",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "spencer",
+        "team_name": "Spencer/Columbus Catholic",
+        "category": "Total Tackles",
+        "player_name": "Clay Nieman",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "13.0"
+        }
+      }
     ]
   },
   {
@@ -1748,7 +5473,58 @@
     "conference": null,
     "venue": "@Mosinee",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "mosinee",
+        "team_name": "Mosinee",
+        "category": "Passing Yards",
+        "player_name": "Treve Stoffel",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "11/15",
+          "YDS": "138",
+          "TDS": "2",
+          "RUS": "168"
+        }
+      },
+      {
+        "team_school_id": "mosinee",
+        "team_name": "Mosinee",
+        "category": "Rushing Yards",
+        "player_name": "Treve Stoffel",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "12",
+          "YDS": "168",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "mosinee",
+        "team_name": "Mosinee",
+        "category": "Receiving Yards",
+        "player_name": "Tavion Ingram",
+        "player_year": "SR",
+        "stats": {
+          "REC": "3",
+          "YDS": "45",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "mosinee",
+        "team_name": "Mosinee",
+        "category": "Total Tackles",
+        "player_name": "Zander Deininger",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "12.0",
+          "TFL": "1.0"
+        }
+      }
     ]
   },
   {
@@ -1772,7 +5548,58 @@
     "conference": null,
     "venue": "@Colby High School",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "colby",
+        "team_name": "Colby",
+        "category": "Passing Yards",
+        "player_name": "Logan Reynolds",
+        "player_year": "SO",
+        "stats": {
+          "C/A": "8/13",
+          "YDS": "197",
+          "TDS": "3"
+        }
+      },
+      {
+        "team_school_id": "colby",
+        "team_name": "Colby",
+        "category": "Rushing Yards",
+        "player_name": "Luke Hannula",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "23",
+          "YDS": "179",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "colby",
+        "team_name": "Colby",
+        "category": "Receiving Yards",
+        "player_name": "Chase Heeg",
+        "player_year": "SO",
+        "stats": {
+          "REC": "4",
+          "YDS": "103",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "colby",
+        "team_name": "Colby",
+        "category": "Total Tackles",
+        "player_name": "Ezryn Lieders",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "10.0",
+          "TFL": "2.0",
+          "FR": "1"
+        }
+      }
     ]
   },
   {
@@ -1796,7 +5623,56 @@
     "conference": null,
     "venue": "@Auburndale",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "abbotsford",
+        "team_name": "Abbotsford",
+        "category": "Passing Yards",
+        "player_name": "Carter Cihlar",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "3/6",
+          "YDS": "39",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "abbotsford",
+        "team_name": "Abbotsford",
+        "category": "Rushing Yards",
+        "player_name": "Chase Boller",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "9",
+          "YDS": "55",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "abbotsford",
+        "team_name": "Abbotsford",
+        "category": "Receiving Yards",
+        "player_name": "Irvin Davila",
+        "player_year": "SR",
+        "stats": {
+          "REC": "2",
+          "YDS": "34",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "abbotsford",
+        "team_name": "Abbotsford",
+        "category": "Total Tackles",
+        "player_name": "Guillermo Garcia",
+        "player_year": "SO",
+        "stats": {
+          "TKL": "8.0"
+        }
+      }
     ]
   },
   {
@@ -1820,7 +5696,57 @@
     "conference": null,
     "venue": "@Merrill",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "wausau-east",
+        "team_name": "Wausau East",
+        "category": "Passing Yards",
+        "player_name": "Camdyn Rye",
+        "player_year": "SO",
+        "stats": {
+          "C/A": "5/15",
+          "YDS": "93",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "wausau-east",
+        "team_name": "Wausau East",
+        "category": "Rushing Yards",
+        "player_name": "Iain Stahel",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "15",
+          "YDS": "119",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "wausau-east",
+        "team_name": "Wausau East",
+        "category": "Receiving Yards",
+        "player_name": "Henry Maahs",
+        "player_year": "JR",
+        "stats": {
+          "REC": "4",
+          "YDS": "85",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "wausau-east",
+        "team_name": "Wausau East",
+        "category": "Total Tackles",
+        "player_name": "Aiden Kilde",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "12.0",
+          "TFL": "2.0"
+        }
+      }
     ]
   },
   {
@@ -1844,7 +5770,57 @@
     "conference": null,
     "venue": "@Pacelli",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "edgar",
+        "team_name": "Edgar",
+        "category": "Passing Yards",
+        "player_name": "Tucker Streit",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "3/3",
+          "YDS": "52",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "edgar",
+        "team_name": "Edgar",
+        "category": "Rushing Yards",
+        "player_name": "Maverick Butt",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "6",
+          "YDS": "94",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "edgar",
+        "team_name": "Edgar",
+        "category": "Receiving Yards",
+        "player_name": "Landon Lukasko",
+        "player_year": "SO",
+        "stats": {
+          "REC": "1",
+          "YDS": "21",
+          "TDS": "1",
+          "RUS": "35"
+        }
+      },
+      {
+        "team_school_id": "edgar",
+        "team_name": "Edgar",
+        "category": "Total Tackles",
+        "player_name": "Maverick Butt",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "9.0"
+        }
+      }
     ]
   },
   {
@@ -1868,7 +5844,58 @@
     "conference": null,
     "venue": "@Wausau West",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "wausau-west",
+        "team_name": "Wausau West",
+        "category": "Passing Yards",
+        "player_name": "Joe  Graveen",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "3/7",
+          "YDS": "98",
+          "TDS": "1",
+          "RUS": "10"
+        }
+      },
+      {
+        "team_school_id": "wausau-west",
+        "team_name": "Wausau West",
+        "category": "Rushing Yards",
+        "player_name": "Copper Depuydt",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "26",
+          "YDS": "264",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "wausau-west",
+        "team_name": "Wausau West",
+        "category": "Receiving Yards",
+        "player_name": "Shea Jones",
+        "player_year": "SR",
+        "stats": {
+          "REC": "2",
+          "YDS": "73",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "wausau-west",
+        "team_name": "Wausau West",
+        "category": "Total Tackles",
+        "player_name": "Jackson Hetzer",
+        "player_year": "SO",
+        "stats": {
+          "TKL": "11.0",
+          "TFL": "1.0"
+        }
+      }
     ]
   },
   {
@@ -1892,7 +5919,105 @@
     "conference": null,
     "venue": "@Stevens Point",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "dc-everest",
+        "team_name": "D.C. Everest",
+        "category": "Passing Yards",
+        "player_name": "Ty Rohde",
+        "player_year": "SO",
+        "stats": {
+          "C/A": "11/16",
+          "YDS": "206",
+          "TDS": "1",
+          "RUS": "4"
+        }
+      },
+      {
+        "team_school_id": "dc-everest",
+        "team_name": "D.C. Everest",
+        "category": "Rushing Yards",
+        "player_name": "Andrew Bangtson",
+        "player_year": "SO",
+        "stats": {
+          "ATT": "13",
+          "YDS": "54",
+          "TDS": "1",
+          "REC": "53"
+        }
+      },
+      {
+        "team_school_id": "dc-everest",
+        "team_name": "D.C. Everest",
+        "category": "Receiving Yards",
+        "player_name": "Xavier Edwards",
+        "player_year": "SR",
+        "stats": {
+          "REC": "5",
+          "YDS": "104",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "dc-everest",
+        "team_name": "D.C. Everest",
+        "category": "Total Tackles",
+        "player_name": "Vander Truax",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "8.0"
+        }
+      },
+      {
+        "team_school_id": "spash",
+        "team_name": "Stevens Point",
+        "category": "Passing Yards",
+        "player_name": "Trent Breitbach",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "15/22",
+          "YDS": "183",
+          "TDS": "1",
+          "RUS": "89"
+        }
+      },
+      {
+        "team_school_id": "spash",
+        "team_name": "Stevens Point",
+        "category": "Rushing Yards",
+        "player_name": "Trent Breitbach",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "11",
+          "YDS": "89",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "spash",
+        "team_name": "Stevens Point",
+        "category": "Receiving Yards",
+        "player_name": "Kasen Saeger",
+        "player_year": "SR",
+        "stats": {
+          "REC": "4",
+          "YDS": "89",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "spash",
+        "team_name": "Stevens Point",
+        "category": "Total Tackles",
+        "player_name": "Henry Roth",
+        "player_year": "SO",
+        "stats": {
+          "TKL": "10.0"
+        }
+      }
     ]
   },
   {
@@ -1916,7 +6041,56 @@
     "conference": null,
     "venue": "@Eau Claire North",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "marshfield",
+        "team_name": "Marshfield",
+        "category": "Passing Yards",
+        "player_name": "Ethan Foemmel",
+        "player_year": "FR",
+        "stats": {
+          "C/A": "6/13",
+          "YDS": "110",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "marshfield",
+        "team_name": "Marshfield",
+        "category": "Rushing Yards",
+        "player_name": "Haiden Carlson",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "27",
+          "YDS": "257",
+          "TDS": "4"
+        }
+      },
+      {
+        "team_school_id": "marshfield",
+        "team_name": "Marshfield",
+        "category": "Receiving Yards",
+        "player_name": "Ben Jordan",
+        "player_year": "SR",
+        "stats": {
+          "REC": "4",
+          "YDS": "84",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "marshfield",
+        "team_name": "Marshfield",
+        "category": "Total Tackles",
+        "player_name": "Jon Sternweis",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "14.0"
+        }
+      }
     ]
   },
   {
@@ -1941,7 +6115,8 @@
     "venue": "@Wisconsin Rapids Lincoln High School",
     "sources": [
       "wiaa"
-    ]
+    ],
+    "stat_leaders": []
   },
   {
     "id": "football-2025-10-10-wittenberg-birnamwood-at-marathon",
@@ -1964,7 +6139,58 @@
     "conference": null,
     "venue": "@Marathon High School",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "marathon",
+        "team_name": "Marathon",
+        "category": "Passing Yards",
+        "player_name": "True Thurs",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "10/19",
+          "YDS": "84",
+          "TDS": "2",
+          "RUS": "62"
+        }
+      },
+      {
+        "team_school_id": "marathon",
+        "team_name": "Marathon",
+        "category": "Rushing Yards",
+        "player_name": "True Thurs",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "20",
+          "YDS": "62",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "marathon",
+        "team_name": "Marathon",
+        "category": "Receiving Yards",
+        "player_name": "Garrett Bracewell",
+        "player_year": "JR",
+        "stats": {
+          "REC": "6",
+          "YDS": "42",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "marathon",
+        "team_name": "Marathon",
+        "category": "Total Tackles",
+        "player_name": "True Thurs",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "7.0",
+          "INT": "1"
+        }
+      }
     ]
   },
   {
@@ -1988,7 +6214,57 @@
     "conference": null,
     "venue": "@Amherst",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "stratford",
+        "team_name": "Stratford",
+        "category": "Passing Yards",
+        "player_name": "Brady Berg",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "5/7",
+          "YDS": "96",
+          "TDS": "1",
+          "RUS": "9"
+        }
+      },
+      {
+        "team_school_id": "stratford",
+        "team_name": "Stratford",
+        "category": "Rushing Yards",
+        "player_name": "Brooks Vanderhoof",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "35",
+          "YDS": "259",
+          "TDS": "3"
+        }
+      },
+      {
+        "team_school_id": "stratford",
+        "team_name": "Stratford",
+        "category": "Receiving Yards",
+        "player_name": "Coltan Breit",
+        "player_year": "SR",
+        "stats": {
+          "REC": "2",
+          "YDS": "42",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "stratford",
+        "team_name": "Stratford",
+        "category": "Total Tackles",
+        "player_name": "Brooks Vanderhoof",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "8.0"
+        }
+      }
     ]
   },
   {
@@ -2012,7 +6288,95 @@
     "conference": null,
     "venue": "@Spencer/Columbus Catholic",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "colby",
+        "team_name": "Colby",
+        "category": "Passing Yards",
+        "player_name": "Luke Hannula",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "4/7",
+          "YDS": "81",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "colby",
+        "team_name": "Colby",
+        "category": "Rushing Yards",
+        "player_name": "Chase Heeg",
+        "player_year": "SO",
+        "stats": {
+          "ATT": "9",
+          "YDS": "81",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "colby",
+        "team_name": "Colby",
+        "category": "Receiving Yards",
+        "player_name": "Emilo Nunez",
+        "player_year": "FR",
+        "stats": {
+          "REC": "1",
+          "YDS": "32",
+          "TDS": "1",
+          "RUS": "27"
+        }
+      },
+      {
+        "team_school_id": "spencer",
+        "team_name": "Spencer/Columbus Catholic",
+        "category": "Passing Yards",
+        "player_name": "Devlin Timmler",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "7/13",
+          "YDS": "134",
+          "TDS": "3"
+        }
+      },
+      {
+        "team_school_id": "spencer",
+        "team_name": "Spencer/Columbus Catholic",
+        "category": "Rushing Yards",
+        "player_name": "Jack Hoeper",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "29",
+          "YDS": "257",
+          "TDS": "1",
+          "REC": "26"
+        }
+      },
+      {
+        "team_school_id": "spencer",
+        "team_name": "Spencer/Columbus Catholic",
+        "category": "Receiving Yards",
+        "player_name": "Kaleb Hilgemann",
+        "player_year": "SR",
+        "stats": {
+          "REC": "2",
+          "YDS": "61",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "spencer",
+        "team_name": "Spencer/Columbus Catholic",
+        "category": "Total Tackles",
+        "player_name": "Jakob Soback",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "5.0",
+          "TFL": "1.0"
+        }
+      }
     ]
   },
   {
@@ -2036,7 +6400,58 @@
     "conference": null,
     "venue": "@Antigo",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "mosinee",
+        "team_name": "Mosinee",
+        "category": "Passing Yards",
+        "player_name": "Treve Stoffel",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "10/11",
+          "YDS": "134",
+          "TDS": "3",
+          "RUS": "137"
+        }
+      },
+      {
+        "team_school_id": "mosinee",
+        "team_name": "Mosinee",
+        "category": "Rushing Yards",
+        "player_name": "Treve Stoffel",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "10",
+          "YDS": "137",
+          "TDS": "3"
+        }
+      },
+      {
+        "team_school_id": "mosinee",
+        "team_name": "Mosinee",
+        "category": "Receiving Yards",
+        "player_name": "Carson Balgord",
+        "player_year": "SR",
+        "stats": {
+          "REC": "2",
+          "YDS": "38",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "mosinee",
+        "team_name": "Mosinee",
+        "category": "Total Tackles",
+        "player_name": "Treve Stoffel",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "6.0",
+          "FR": "1"
+        }
+      }
     ]
   },
   {
@@ -2061,7 +6476,8 @@
     "venue": "@Abbotsford",
     "sources": [
       "wiaa"
-    ]
+    ],
+    "stat_leaders": []
   },
   {
     "id": "football-2025-10-11-lakeland-at-wausau-east",
@@ -2084,7 +6500,58 @@
     "conference": null,
     "venue": "@Wausau East",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "wausau-east",
+        "team_name": "Wausau East",
+        "category": "Passing Yards",
+        "player_name": "Camdyn Rye",
+        "player_year": "SO",
+        "stats": {
+          "C/A": "5/12",
+          "YDS": "55",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "wausau-east",
+        "team_name": "Wausau East",
+        "category": "Rushing Yards",
+        "player_name": "Iain Stahel",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "25",
+          "YDS": "150",
+          "TDS": "1",
+          "REC": "9"
+        }
+      },
+      {
+        "team_school_id": "wausau-east",
+        "team_name": "Wausau East",
+        "category": "Receiving Yards",
+        "player_name": "Henry Maahs",
+        "player_year": "JR",
+        "stats": {
+          "REC": "1",
+          "YDS": "31",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "wausau-east",
+        "team_name": "Wausau East",
+        "category": "Total Tackles",
+        "player_name": "Xander Klein",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "12.0",
+          "TFL": "1.0"
+        }
+      }
     ]
   },
   {
@@ -2108,7 +6575,58 @@
     "conference": null,
     "venue": "@Wausau East",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "wausau-east",
+        "team_name": "Wausau East",
+        "category": "Passing Yards",
+        "player_name": "Camdyn Rye",
+        "player_year": "SO",
+        "stats": {
+          "C/A": "3/6",
+          "YDS": "65",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "wausau-east",
+        "team_name": "Wausau East",
+        "category": "Rushing Yards",
+        "player_name": "Iain Stahel",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "14",
+          "YDS": "286",
+          "TDS": "4"
+        }
+      },
+      {
+        "team_school_id": "wausau-east",
+        "team_name": "Wausau East",
+        "category": "Receiving Yards",
+        "player_name": "Henry Maahs",
+        "player_year": "JR",
+        "stats": {
+          "REC": "1",
+          "YDS": "29",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "wausau-east",
+        "team_name": "Wausau East",
+        "category": "Total Tackles",
+        "player_name": "Peyton Nest",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "15.0",
+          "TFL": "1.0",
+          "FR": "1"
+        }
+      }
     ]
   },
   {
@@ -2132,7 +6650,56 @@
     "conference": null,
     "venue": "@River Falls",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "wausau-west",
+        "team_name": "Wausau West",
+        "category": "Passing Yards",
+        "player_name": "Joe  Graveen",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "7/15",
+          "YDS": "105",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "wausau-west",
+        "team_name": "Wausau West",
+        "category": "Rushing Yards",
+        "player_name": "Copper Depuydt",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "16",
+          "YDS": "107",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "wausau-west",
+        "team_name": "Wausau West",
+        "category": "Receiving Yards",
+        "player_name": "Shea Jones",
+        "player_year": "SR",
+        "stats": {
+          "REC": "4",
+          "YDS": "85",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "wausau-west",
+        "team_name": "Wausau West",
+        "category": "Total Tackles",
+        "player_name": "Miles Waldvogel",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "11.0"
+        }
+      }
     ]
   },
   {
@@ -2156,7 +6723,60 @@
     "conference": null,
     "venue": "@D.C. Everest",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "dc-everest",
+        "team_name": "D.C. Everest",
+        "category": "Passing Yards",
+        "player_name": "Ty Rohde",
+        "player_year": "SO",
+        "stats": {
+          "C/A": "8/19",
+          "YDS": "126",
+          "TDS": "1",
+          "RUS": "16"
+        }
+      },
+      {
+        "team_school_id": "dc-everest",
+        "team_name": "D.C. Everest",
+        "category": "Rushing Yards",
+        "player_name": "Judiah McCrary",
+        "player_year": "SO",
+        "stats": {
+          "ATT": "11",
+          "YDS": "137",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "dc-everest",
+        "team_name": "D.C. Everest",
+        "category": "Receiving Yards",
+        "player_name": "Andrew Bangtson",
+        "player_year": "SO",
+        "stats": {
+          "REC": "2",
+          "YDS": "67",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "dc-everest",
+        "team_name": "D.C. Everest",
+        "category": "Total Tackles",
+        "player_name": "Logan Lessmiller",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "7.0",
+          "TFL": "6.0",
+          "SKS": "2.0",
+          "FR": "1"
+        }
+      }
     ]
   },
   {
@@ -2180,7 +6800,106 @@
     "conference": null,
     "venue": "@Marshfield",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "spash",
+        "team_name": "Stevens Point",
+        "category": "Passing Yards",
+        "player_name": "Trent Breitbach",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "4/8",
+          "YDS": "32",
+          "TDS": "3",
+          "RUS": "170"
+        }
+      },
+      {
+        "team_school_id": "spash",
+        "team_name": "Stevens Point",
+        "category": "Rushing Yards",
+        "player_name": "Tucker Phillips",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "28",
+          "YDS": "197",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "spash",
+        "team_name": "Stevens Point",
+        "category": "Receiving Yards",
+        "player_name": "Tucker Phillips",
+        "player_year": "SR",
+        "stats": {
+          "REC": "1",
+          "YDS": "12",
+          "TDS": "1",
+          "RUS": "197"
+        }
+      },
+      {
+        "team_school_id": "spash",
+        "team_name": "Stevens Point",
+        "category": "Total Tackles",
+        "player_name": "Riley Trylick",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "12.0",
+          "TFL": "1.0"
+        }
+      },
+      {
+        "team_school_id": "marshfield",
+        "team_name": "Marshfield",
+        "category": "Passing Yards",
+        "player_name": "Ethan Foemmel",
+        "player_year": "FR",
+        "stats": {
+          "C/A": "6/12",
+          "YDS": "62",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "marshfield",
+        "team_name": "Marshfield",
+        "category": "Rushing Yards",
+        "player_name": "Haiden Carlson",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "30",
+          "YDS": "297",
+          "TDS": "3"
+        }
+      },
+      {
+        "team_school_id": "marshfield",
+        "team_name": "Marshfield",
+        "category": "Receiving Yards",
+        "player_name": "Jakob Sadowska",
+        "player_year": "SR",
+        "stats": {
+          "REC": "3",
+          "YDS": "46",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "marshfield",
+        "team_name": "Marshfield",
+        "category": "Total Tackles",
+        "player_name": "Wes Novitzke",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "18.0",
+          "TFL": "1.0"
+        }
+      }
     ]
   },
   {
@@ -2205,7 +6924,8 @@
     "venue": "@Eau Claire North",
     "sources": [
       "wiaa"
-    ]
+    ],
+    "stat_leaders": []
   },
   {
     "id": "football-2025-10-17-abbotsford-at-edgar",
@@ -2228,7 +6948,94 @@
     "conference": null,
     "venue": "@Edgar",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "abbotsford",
+        "team_name": "Abbotsford",
+        "category": "Passing Yards",
+        "player_name": "Irvin Aguilera",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "1/1",
+          "YDS": "8",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "abbotsford",
+        "team_name": "Abbotsford",
+        "category": "Rushing Yards",
+        "player_name": "Jesus Reyes",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "10",
+          "YDS": "35",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "abbotsford",
+        "team_name": "Abbotsford",
+        "category": "Receiving Yards",
+        "player_name": "Jesus Reyes",
+        "player_year": "JR",
+        "stats": {
+          "REC": "1",
+          "YDS": "8",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "edgar",
+        "team_name": "Edgar",
+        "category": "Passing Yards",
+        "player_name": "Tucker Streit",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "4/10",
+          "YDS": "53",
+          "TDS": "1",
+          "RUS": "7"
+        }
+      },
+      {
+        "team_school_id": "edgar",
+        "team_name": "Edgar",
+        "category": "Rushing Yards",
+        "player_name": "Maverick Butt",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "19",
+          "YDS": "190",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "edgar",
+        "team_name": "Edgar",
+        "category": "Receiving Yards",
+        "player_name": "Isaiah Kraft",
+        "player_year": "JR",
+        "stats": {
+          "REC": "1",
+          "YDS": "19",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "edgar",
+        "team_name": "Edgar",
+        "category": "Total Tackles",
+        "player_name": "Maverick Butt",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "8.0",
+          "TFL": "1.0"
+        }
+      }
     ]
   },
   {
@@ -2252,7 +7059,105 @@
     "conference": null,
     "venue": "@Marathon",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "spencer",
+        "team_name": "Spencer/Columbus Catholic",
+        "category": "Passing Yards",
+        "player_name": "Devlin Timmler",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "6/14",
+          "YDS": "92",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "spencer",
+        "team_name": "Spencer/Columbus Catholic",
+        "category": "Rushing Yards",
+        "player_name": "Jack Hoeper",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "12",
+          "YDS": "45",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "spencer",
+        "team_name": "Spencer/Columbus Catholic",
+        "category": "Receiving Yards",
+        "player_name": "Mac Konieczny",
+        "player_year": "SR",
+        "stats": {
+          "REC": "2",
+          "YDS": "34",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "spencer",
+        "team_name": "Spencer/Columbus Catholic",
+        "category": "Total Tackles",
+        "player_name": "Ryan Bernick",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "12.0",
+          "TFL": "4.0",
+          "SKS": "1.0"
+        }
+      },
+      {
+        "team_school_id": "marathon",
+        "team_name": "Marathon",
+        "category": "Passing Yards",
+        "player_name": "True Thurs",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "14/26",
+          "YDS": "130",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "marathon",
+        "team_name": "Marathon",
+        "category": "Rushing Yards",
+        "player_name": "True Thurs",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "15",
+          "YDS": "109",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "marathon",
+        "team_name": "Marathon",
+        "category": "Receiving Yards",
+        "player_name": "Sawyer Berens",
+        "player_year": "JR",
+        "stats": {
+          "REC": "4",
+          "YDS": "48",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "marathon",
+        "team_name": "Marathon",
+        "category": "Total Tackles",
+        "player_name": "True Thurs",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "8.0",
+          "TFL": "1.0"
+        }
+      }
     ]
   },
   {
@@ -2276,7 +7181,56 @@
     "conference": null,
     "venue": "@Stratford",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "stratford",
+        "team_name": "Stratford",
+        "category": "Passing Yards",
+        "player_name": "Brady Berg",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "12/14",
+          "YDS": "232",
+          "TDS": "6"
+        }
+      },
+      {
+        "team_school_id": "stratford",
+        "team_name": "Stratford",
+        "category": "Rushing Yards",
+        "player_name": "Brooks Vanderhoof",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "7",
+          "YDS": "82",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "stratford",
+        "team_name": "Stratford",
+        "category": "Receiving Yards",
+        "player_name": "Zander Zawislan",
+        "player_year": "SR",
+        "stats": {
+          "REC": "5",
+          "YDS": "98",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "stratford",
+        "team_name": "Stratford",
+        "category": "Total Tackles",
+        "player_name": "Matthew Schoenfuss",
+        "player_year": "SO",
+        "stats": {
+          "TKL": "6.0"
+        }
+      }
     ]
   },
   {
@@ -2300,7 +7254,57 @@
     "conference": null,
     "venue": "@Medford",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "mosinee",
+        "team_name": "Mosinee",
+        "category": "Passing Yards",
+        "player_name": "Treve Stoffel",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "5/6",
+          "YDS": "114",
+          "TDS": "3",
+          "RUS": "114"
+        }
+      },
+      {
+        "team_school_id": "mosinee",
+        "team_name": "Mosinee",
+        "category": "Rushing Yards",
+        "player_name": "Treve Stoffel",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "9",
+          "YDS": "114",
+          "TDS": "3"
+        }
+      },
+      {
+        "team_school_id": "mosinee",
+        "team_name": "Mosinee",
+        "category": "Receiving Yards",
+        "player_name": "Brayden Reinke",
+        "player_year": "JR",
+        "stats": {
+          "REC": "1",
+          "YDS": "55",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "mosinee",
+        "team_name": "Mosinee",
+        "category": "Total Tackles",
+        "player_name": "Braeden Mocadlo",
+        "player_year": "SO",
+        "stats": {
+          "TKL": "6.0"
+        }
+      }
     ]
   },
   {
@@ -2324,7 +7328,57 @@
     "conference": null,
     "venue": "@Colby",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "colby",
+        "team_name": "Colby",
+        "category": "Passing Yards",
+        "player_name": "Logan Reynolds",
+        "player_year": "SO",
+        "stats": {
+          "C/A": "7/12",
+          "YDS": "108",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "colby",
+        "team_name": "Colby",
+        "category": "Rushing Yards",
+        "player_name": "Chase Heeg",
+        "player_year": "SO",
+        "stats": {
+          "ATT": "24",
+          "YDS": "98",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "colby",
+        "team_name": "Colby",
+        "category": "Receiving Yards",
+        "player_name": "Carsen Thomsen",
+        "player_year": "SO",
+        "stats": {
+          "REC": "4",
+          "YDS": "59",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "colby",
+        "team_name": "Colby",
+        "category": "Total Tackles",
+        "player_name": "Ezryn Lieders",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "13.0",
+          "TFL": "2.0"
+        }
+      }
     ]
   },
   {
@@ -2348,7 +7402,58 @@
     "conference": null,
     "venue": "UW-Oshkosh",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "marshfield",
+        "team_name": "Marshfield",
+        "category": "Passing Yards",
+        "player_name": "Ethan Foemmel",
+        "player_year": "FR",
+        "stats": {
+          "C/A": "8/11",
+          "YDS": "72",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "marshfield",
+        "team_name": "Marshfield",
+        "category": "Rushing Yards",
+        "player_name": "Haiden Carlson",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "13",
+          "YDS": "13",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "marshfield",
+        "team_name": "Marshfield",
+        "category": "Receiving Yards",
+        "player_name": "Jakob Sadowska",
+        "player_year": "SR",
+        "stats": {
+          "REC": "3",
+          "YDS": "51",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "marshfield",
+        "team_name": "Marshfield",
+        "category": "Total Tackles",
+        "player_name": "Wes Novitzke",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "16.0",
+          "TFL": "1.0",
+          "SKS": "1.0"
+        }
+      }
     ]
   },
   {
@@ -2372,7 +7477,59 @@
     "conference": null,
     "venue": "@Mount Horeb/Barneveld",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "wausau-east",
+        "team_name": "Wausau East",
+        "category": "Passing Yards",
+        "player_name": "Camdyn Rye",
+        "player_year": "SO",
+        "stats": {
+          "C/A": "3/15",
+          "YDS": "22",
+          "TDS": "1",
+          "RUS": "-5"
+        }
+      },
+      {
+        "team_school_id": "wausau-east",
+        "team_name": "Wausau East",
+        "category": "Rushing Yards",
+        "player_name": "Iain Stahel",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "20",
+          "YDS": "85",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "wausau-east",
+        "team_name": "Wausau East",
+        "category": "Receiving Yards",
+        "player_name": "Aiden Kilde",
+        "player_year": "JR",
+        "stats": {
+          "REC": "2",
+          "YDS": "16",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "wausau-east",
+        "team_name": "Wausau East",
+        "category": "Total Tackles",
+        "player_name": "Peyton Nest",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "13.0",
+          "TFL": "2.0",
+          "SKS": "1.0"
+        }
+      }
     ]
   },
   {
@@ -2396,7 +7553,56 @@
     "conference": null,
     "venue": "@Arrowhead",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "wausau-west",
+        "team_name": "Wausau West",
+        "category": "Passing Yards",
+        "player_name": "Joe  Graveen",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "8/14",
+          "YDS": "72",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "wausau-west",
+        "team_name": "Wausau West",
+        "category": "Rushing Yards",
+        "player_name": "Copper Depuydt",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "17",
+          "YDS": "74",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "wausau-west",
+        "team_name": "Wausau West",
+        "category": "Receiving Yards",
+        "player_name": "Shea Jones",
+        "player_year": "SR",
+        "stats": {
+          "REC": "5",
+          "YDS": "50",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "wausau-west",
+        "team_name": "Wausau West",
+        "category": "Total Tackles",
+        "player_name": "Miles Waldvogel",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "11.0"
+        }
+      }
     ]
   },
   {
@@ -2420,7 +7626,57 @@
     "conference": null,
     "venue": "@Brookfield East",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "dc-everest",
+        "team_name": "D.C. Everest",
+        "category": "Passing Yards",
+        "player_name": "Ty Rohde",
+        "player_year": "SO",
+        "stats": {
+          "C/A": "10/22",
+          "YDS": "199",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "dc-everest",
+        "team_name": "D.C. Everest",
+        "category": "Rushing Yards",
+        "player_name": "Andrew Bangtson",
+        "player_year": "SO",
+        "stats": {
+          "ATT": "4",
+          "YDS": "17",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "dc-everest",
+        "team_name": "D.C. Everest",
+        "category": "Receiving Yards",
+        "player_name": "Xavier Edwards",
+        "player_year": "SR",
+        "stats": {
+          "REC": "2",
+          "YDS": "82",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "dc-everest",
+        "team_name": "D.C. Everest",
+        "category": "Total Tackles",
+        "player_name": "Nathaniel Briggs",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "10.0",
+          "TFL": "2.0"
+        }
+      }
     ]
   },
   {
@@ -2444,7 +7700,58 @@
     "conference": null,
     "venue": "@Edgar",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "edgar",
+        "team_name": "Edgar",
+        "category": "Passing Yards",
+        "player_name": "Tucker Streit",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "1/7",
+          "YDS": "40",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "edgar",
+        "team_name": "Edgar",
+        "category": "Rushing Yards",
+        "player_name": "Gavin Mauer",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "6",
+          "YDS": "145",
+          "TDS": "1",
+          "REC": "40"
+        }
+      },
+      {
+        "team_school_id": "edgar",
+        "team_name": "Edgar",
+        "category": "Receiving Yards",
+        "player_name": "Gavin Mauer",
+        "player_year": "SR",
+        "stats": {
+          "REC": "1",
+          "YDS": "40",
+          "TDS": "2",
+          "RUS": "145"
+        }
+      },
+      {
+        "team_school_id": "edgar",
+        "team_name": "Edgar",
+        "category": "Total Tackles",
+        "player_name": "Tyler Schmidt",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "14.0"
+        }
+      }
     ]
   },
   {
@@ -2469,7 +7776,8 @@
     "venue": "@Kewaunee",
     "sources": [
       "wiaa"
-    ]
+    ],
+    "stat_leaders": []
   },
   {
     "id": "football-2025-10-24-richland-center-at-stratford",
@@ -2492,7 +7800,58 @@
     "conference": null,
     "venue": "@Stratford",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "stratford",
+        "team_name": "Stratford",
+        "category": "Passing Yards",
+        "player_name": "Brady Berg",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "5/10",
+          "YDS": "147",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "stratford",
+        "team_name": "Stratford",
+        "category": "Rushing Yards",
+        "player_name": "Brooks Vanderhoof",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "18",
+          "YDS": "161",
+          "TDS": "3"
+        }
+      },
+      {
+        "team_school_id": "stratford",
+        "team_name": "Stratford",
+        "category": "Receiving Yards",
+        "player_name": "Coltan Breit",
+        "player_year": "SR",
+        "stats": {
+          "REC": "3",
+          "YDS": "103",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "stratford",
+        "team_name": "Stratford",
+        "category": "Total Tackles",
+        "player_name": "Jaegar Ormond",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "7.0",
+          "TFL": "1.0",
+          "SKS": "1.0"
+        }
+      }
     ]
   },
   {
@@ -2516,7 +7875,56 @@
     "conference": null,
     "venue": "@New Holstein",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "spencer",
+        "team_name": "Spencer/Columbus Catholic",
+        "category": "Passing Yards",
+        "player_name": "Devlin Timmler",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "12/17",
+          "YDS": "130",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "spencer",
+        "team_name": "Spencer/Columbus Catholic",
+        "category": "Rushing Yards",
+        "player_name": "Jack Hoeper",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "36",
+          "YDS": "242",
+          "TDS": "3"
+        }
+      },
+      {
+        "team_school_id": "spencer",
+        "team_name": "Spencer/Columbus Catholic",
+        "category": "Receiving Yards",
+        "player_name": "Mac Konieczny",
+        "player_year": "SR",
+        "stats": {
+          "REC": "8",
+          "YDS": "58",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "spencer",
+        "team_name": "Spencer/Columbus Catholic",
+        "category": "Total Tackles",
+        "player_name": "Jakob Soback",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "12.0"
+        }
+      }
     ]
   },
   {
@@ -2540,7 +7948,56 @@
     "conference": null,
     "venue": "@Mosinee",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "mosinee",
+        "team_name": "Mosinee",
+        "category": "Passing Yards",
+        "player_name": "Treve Stoffel",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "13/17",
+          "YDS": "276",
+          "TDS": "4"
+        }
+      },
+      {
+        "team_school_id": "mosinee",
+        "team_name": "Mosinee",
+        "category": "Rushing Yards",
+        "player_name": "Carter Fandrey",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "11",
+          "YDS": "69",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "mosinee",
+        "team_name": "Mosinee",
+        "category": "Receiving Yards",
+        "player_name": "Mitchell Michlig",
+        "player_year": "SR",
+        "stats": {
+          "REC": "3",
+          "YDS": "111",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "mosinee",
+        "team_name": "Mosinee",
+        "category": "Total Tackles",
+        "player_name": "Treve Stoffel",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "6.0"
+        }
+      }
     ]
   },
   {
@@ -2564,7 +8021,56 @@
     "conference": null,
     "venue": "@Mondovi",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "abbotsford",
+        "team_name": "Abbotsford",
+        "category": "Passing Yards",
+        "player_name": "Irvin Aguilera",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "4/13",
+          "YDS": "37",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "abbotsford",
+        "team_name": "Abbotsford",
+        "category": "Rushing Yards",
+        "player_name": "Irvin Aguilera",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "11",
+          "YDS": "82",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "abbotsford",
+        "team_name": "Abbotsford",
+        "category": "Receiving Yards",
+        "player_name": "Chase Boller",
+        "player_year": "SR",
+        "stats": {
+          "REC": "4",
+          "YDS": "31",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "abbotsford",
+        "team_name": "Abbotsford",
+        "category": "Total Tackles",
+        "player_name": "Marcus VanLuven",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "5.0"
+        }
+      }
     ]
   },
   {
@@ -2588,7 +8094,58 @@
     "conference": null,
     "venue": "@Edgar",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "edgar",
+        "team_name": "Edgar",
+        "category": "Passing Yards",
+        "player_name": "Tucker Streit",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "1/6",
+          "YDS": "20",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "edgar",
+        "team_name": "Edgar",
+        "category": "Rushing Yards",
+        "player_name": "Maverick Butt",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "14",
+          "YDS": "90",
+          "TDS": "3"
+        }
+      },
+      {
+        "team_school_id": "edgar",
+        "team_name": "Edgar",
+        "category": "Receiving Yards",
+        "player_name": "Gavin Mauer",
+        "player_year": "SR",
+        "stats": {
+          "REC": "1",
+          "YDS": "20",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "edgar",
+        "team_name": "Edgar",
+        "category": "Total Tackles",
+        "player_name": "Tyler Schmidt",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "8.0",
+          "TFL": "1.0",
+          "INT": "1"
+        }
+      }
     ]
   },
   {
@@ -2612,7 +8169,56 @@
     "conference": null,
     "venue": "@Stratford",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "stratford",
+        "team_name": "Stratford",
+        "category": "Passing Yards",
+        "player_name": "Brady Berg",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "8/15",
+          "YDS": "134",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "stratford",
+        "team_name": "Stratford",
+        "category": "Rushing Yards",
+        "player_name": "Brooks Vanderhoof",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "31",
+          "YDS": "175",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "stratford",
+        "team_name": "Stratford",
+        "category": "Receiving Yards",
+        "player_name": "Connor Kreft",
+        "player_year": "JR",
+        "stats": {
+          "REC": "2",
+          "YDS": "67",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "stratford",
+        "team_name": "Stratford",
+        "category": "Total Tackles",
+        "player_name": "Jaegar Ormond",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "8.0"
+        }
+      }
     ]
   },
   {
@@ -2637,7 +8243,8 @@
     "venue": "@Tomahawk",
     "sources": [
       "wiaa"
-    ]
+    ],
+    "stat_leaders": []
   },
   {
     "id": "football-2025-10-31-evansville-at-mosinee",
@@ -2660,7 +8267,58 @@
     "conference": null,
     "venue": "@Mosinee",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "mosinee",
+        "team_name": "Mosinee",
+        "category": "Passing Yards",
+        "player_name": "Treve Stoffel",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "8/10",
+          "YDS": "131",
+          "TDS": "2",
+          "RUS": "79"
+        }
+      },
+      {
+        "team_school_id": "mosinee",
+        "team_name": "Mosinee",
+        "category": "Rushing Yards",
+        "player_name": "Treve Stoffel",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "20",
+          "YDS": "79",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "mosinee",
+        "team_name": "Mosinee",
+        "category": "Receiving Yards",
+        "player_name": "Tavion Ingram",
+        "player_year": "SR",
+        "stats": {
+          "REC": "2",
+          "YDS": "57",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "mosinee",
+        "team_name": "Mosinee",
+        "category": "Total Tackles",
+        "player_name": "Treve Stoffel",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "10.0",
+          "INT": "1"
+        }
+      }
     ]
   },
   {
@@ -2684,7 +8342,56 @@
     "conference": null,
     "venue": "@Edgar",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "edgar",
+        "team_name": "Edgar",
+        "category": "Passing Yards",
+        "player_name": "Tucker Streit",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "3/7",
+          "YDS": "40",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "edgar",
+        "team_name": "Edgar",
+        "category": "Rushing Yards",
+        "player_name": "Maverick Butt",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "17",
+          "YDS": "67",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "edgar",
+        "team_name": "Edgar",
+        "category": "Receiving Yards",
+        "player_name": "Isaiah Kraft",
+        "player_year": "JR",
+        "stats": {
+          "REC": "1",
+          "YDS": "25",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "edgar",
+        "team_name": "Edgar",
+        "category": "Total Tackles",
+        "player_name": "Alex Schneider",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "14.0"
+        }
+      }
     ]
   },
   {
@@ -2708,7 +8415,56 @@
     "conference": null,
     "venue": "@Tomahawk",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "stratford",
+        "team_name": "Stratford",
+        "category": "Passing Yards",
+        "player_name": "Brady Berg",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "12/19",
+          "YDS": "185",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "stratford",
+        "team_name": "Stratford",
+        "category": "Rushing Yards",
+        "player_name": "Brooks Vanderhoof",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "22",
+          "YDS": "100",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "stratford",
+        "team_name": "Stratford",
+        "category": "Receiving Yards",
+        "player_name": "Coltan Breit",
+        "player_year": "SR",
+        "stats": {
+          "REC": "5",
+          "YDS": "125",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "stratford",
+        "team_name": "Stratford",
+        "category": "Total Tackles",
+        "player_name": "Jack Remus",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "11.0"
+        }
+      }
     ]
   },
   {
@@ -2732,7 +8488,57 @@
     "conference": null,
     "venue": "@Columbus",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "mosinee",
+        "team_name": "Mosinee",
+        "category": "Passing Yards",
+        "player_name": "Treve Stoffel",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "15/28",
+          "YDS": "220",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "mosinee",
+        "team_name": "Mosinee",
+        "category": "Rushing Yards",
+        "player_name": "Carter Fandrey",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "7",
+          "YDS": "32",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "mosinee",
+        "team_name": "Mosinee",
+        "category": "Receiving Yards",
+        "player_name": "Mitchell Michlig",
+        "player_year": "SR",
+        "stats": {
+          "REC": "4",
+          "YDS": "106",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "mosinee",
+        "team_name": "Mosinee",
+        "category": "Total Tackles",
+        "player_name": "Treve Stoffel",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "14.0",
+          "TFL": "1.0"
+        }
+      }
     ]
   },
   {
@@ -2756,7 +8562,57 @@
     "conference": null,
     "venue": "Stanley/Boyd",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "edgar",
+        "team_name": "Edgar",
+        "category": "Passing Yards",
+        "player_name": "Tucker Streit",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "2/5",
+          "YDS": "31",
+          "TDS": "1",
+          "RUS": "79"
+        }
+      },
+      {
+        "team_school_id": "edgar",
+        "team_name": "Edgar",
+        "category": "Rushing Yards",
+        "player_name": "Maverick Butt",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "18",
+          "YDS": "93",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "edgar",
+        "team_name": "Edgar",
+        "category": "Receiving Yards",
+        "player_name": "Lucas Stahnke",
+        "player_year": "SR",
+        "stats": {
+          "REC": "1",
+          "YDS": "25",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "edgar",
+        "team_name": "Edgar",
+        "category": "Total Tackles",
+        "player_name": "Tucker Streit",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "12.0"
+        }
+      }
     ]
   },
   {
@@ -2780,7 +8636,58 @@
     "conference": null,
     "venue": "@Chippewa Falls High School - Dorais Field",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "stratford",
+        "team_name": "Stratford",
+        "category": "Passing Yards",
+        "player_name": "Brady Berg",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "6/13",
+          "YDS": "90",
+          "TDS": "1",
+          "RUS": "34"
+        }
+      },
+      {
+        "team_school_id": "stratford",
+        "team_name": "Stratford",
+        "category": "Rushing Yards",
+        "player_name": "Brooks Vanderhoof",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "31",
+          "YDS": "163",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "stratford",
+        "team_name": "Stratford",
+        "category": "Receiving Yards",
+        "player_name": "Coltan Breit",
+        "player_year": "SR",
+        "stats": {
+          "REC": "3",
+          "YDS": "55",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "stratford",
+        "team_name": "Stratford",
+        "category": "Total Tackles",
+        "player_name": "Jaegar Ormond",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "10.0",
+          "TFL": "1.0"
+        }
+      }
     ]
   }
 ]
