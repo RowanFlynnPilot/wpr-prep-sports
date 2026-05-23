@@ -86,7 +86,7 @@
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_08096aa8-b6b7-4492-8151-27d1822a8fa9.png"
     },
     "away": {
-      "school_id": "",
+      "school_id": "superior",
       "name": "Superior",
       "score": 21,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_43272079-e763-4d07-9373-dc599252cf34.jpg"
@@ -100,6 +100,53 @@
       "bound"
     ],
     "stat_leaders": [
+      {
+        "team_school_id": "superior",
+        "team_name": "Superior",
+        "category": "Passing Yards",
+        "player_name": "Carson Smith",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "15/30",
+          "YDS": "202",
+          "TDS": "1",
+          "RUS": "-20"
+        }
+      },
+      {
+        "team_school_id": "superior",
+        "team_name": "Superior",
+        "category": "Rushing Yards",
+        "player_name": "Maxton Luzaich",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "24",
+          "YDS": "104",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "superior",
+        "team_name": "Superior",
+        "category": "Receiving Yards",
+        "player_name": "Taynum Clark",
+        "player_year": "SR",
+        "stats": {
+          "REC": "5",
+          "YDS": "78",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "superior",
+        "team_name": "Superior",
+        "category": "Total Tackles",
+        "player_name": "Miles Morris",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "10.0"
+        }
+      },
       {
         "team_school_id": "wausau-west",
         "team_name": "Wausau West",
@@ -524,7 +571,7 @@
     "season": "2025-26",
     "date": "2025-08-21T19:00:00-05:00",
     "home": {
-      "school_id": "",
+      "school_id": "river-falls",
       "name": "River Falls",
       "score": 0,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_d4fe0fc0-e338-47af-a664-b53012197324.jpg"
@@ -702,7 +749,7 @@
     "season": "2025-26",
     "date": "2025-08-21T19:00:00-05:00",
     "home": {
-      "school_id": "",
+      "school_id": "menomonie",
       "name": "Menomonie",
       "score": 32,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_0d184c10-2571-463a-ad04-2aac88094ce7.jpg"
@@ -768,6 +815,53 @@
         "stats": {
           "TKL": "23.0",
           "TFL": "1.0"
+        }
+      },
+      {
+        "team_school_id": "menomonie",
+        "team_name": "Menomonie",
+        "category": "Passing Yards",
+        "player_name": "Taylor Mars",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "2/3",
+          "YDS": "56",
+          "TDS": "2",
+          "RUS": "15"
+        }
+      },
+      {
+        "team_school_id": "menomonie",
+        "team_name": "Menomonie",
+        "category": "Rushing Yards",
+        "player_name": "DJ Butler",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "19",
+          "YDS": "188",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "menomonie",
+        "team_name": "Menomonie",
+        "category": "Receiving Yards",
+        "player_name": "Liam Asher",
+        "player_year": "JR",
+        "stats": {
+          "REC": "1",
+          "YDS": "47",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "menomonie",
+        "team_name": "Menomonie",
+        "category": "Total Tackles",
+        "player_name": "Wren Swaenepoel",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "8.0"
         }
       }
     ]
@@ -3315,7 +3409,7 @@
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_90bf6c6c-964c-48da-9f99-0df569675bce.jpg"
     },
     "away": {
-      "school_id": "",
+      "school_id": "river-falls",
       "name": "River Falls",
       "score": 21,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_d4fe0fc0-e338-47af-a664-b53012197324.jpg"
@@ -3329,6 +3423,54 @@
       "bound"
     ],
     "stat_leaders": [
+      {
+        "team_school_id": "river-falls",
+        "team_name": "River Falls",
+        "category": "Passing Yards",
+        "player_name": "Tino Massa",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "20/25",
+          "YDS": "287",
+          "TDS": "1",
+          "RUS": "1"
+        }
+      },
+      {
+        "team_school_id": "river-falls",
+        "team_name": "River Falls",
+        "category": "Rushing Yards",
+        "player_name": "Joseph Tarasewicz",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "25",
+          "YDS": "210",
+          "TDS": "4"
+        }
+      },
+      {
+        "team_school_id": "river-falls",
+        "team_name": "River Falls",
+        "category": "Receiving Yards",
+        "player_name": "Mason Novak",
+        "player_year": "SR",
+        "stats": {
+          "REC": "5",
+          "YDS": "88",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "river-falls",
+        "team_name": "River Falls",
+        "category": "Total Tackles",
+        "player_name": "Nolan Hoepfl",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "12.0",
+          "TFL": "1.0"
+        }
+      },
       {
         "team_school_id": "dc-everest",
         "team_name": "D.C. Everest",
@@ -3389,7 +3531,7 @@
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_deadd1c8-aaca-4c5f-b1f8-6e7fced8f9b6.jpg"
     },
     "away": {
-      "school_id": "",
+      "school_id": "menomonie",
       "name": "Menomonie",
       "score": 16,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_0d184c10-2571-463a-ad04-2aac88094ce7.jpg"
@@ -3403,6 +3545,56 @@
       "bound"
     ],
     "stat_leaders": [
+      {
+        "team_school_id": "menomonie",
+        "team_name": "Menomonie",
+        "category": "Passing Yards",
+        "player_name": "Taylor Mars",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "7/10",
+          "YDS": "63",
+          "TDS": "1",
+          "RUS": "77"
+        }
+      },
+      {
+        "team_school_id": "menomonie",
+        "team_name": "Menomonie",
+        "category": "Rushing Yards",
+        "player_name": "Easton Anderson",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "9",
+          "YDS": "115",
+          "TDS": "1",
+          "REC": "7"
+        }
+      },
+      {
+        "team_school_id": "menomonie",
+        "team_name": "Menomonie",
+        "category": "Receiving Yards",
+        "player_name": "Liam Asher",
+        "player_year": "JR",
+        "stats": {
+          "REC": "2",
+          "YDS": "36",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "menomonie",
+        "team_name": "Menomonie",
+        "category": "Total Tackles",
+        "player_name": "Wren Swaenepoel",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "11.0",
+          "TFL": "1.0",
+          "SKS": "1.0"
+        }
+      },
       {
         "team_school_id": "marshfield",
         "team_name": "Marshfield",
@@ -3457,7 +3649,7 @@
     "season": "2025-26",
     "date": "2025-08-28T19:00:00-05:00",
     "home": {
-      "school_id": "",
+      "school_id": "superior",
       "name": "Superior",
       "score": 20,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_43272079-e763-4d07-9373-dc599252cf34.jpg"
@@ -3525,6 +3717,52 @@
           "TKL": "12.0",
           "TFL": "2.0",
           "SKS": "1.0"
+        }
+      },
+      {
+        "team_school_id": "superior",
+        "team_name": "Superior",
+        "category": "Passing Yards",
+        "player_name": "Carson Smith",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "7/19",
+          "YDS": "82",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "superior",
+        "team_name": "Superior",
+        "category": "Rushing Yards",
+        "player_name": "Maxton Luzaich",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "21",
+          "YDS": "83",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "superior",
+        "team_name": "Superior",
+        "category": "Receiving Yards",
+        "player_name": "Landon Anrig",
+        "player_year": "SR",
+        "stats": {
+          "REC": "3",
+          "YDS": "48",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "superior",
+        "team_name": "Superior",
+        "category": "Total Tackles",
+        "player_name": "Taynum Clark",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "13.0"
         }
       }
     ]
@@ -7907,7 +8145,7 @@
     "season": "2025-26",
     "date": "2025-09-05T19:00:00-05:00",
     "home": {
-      "school_id": "",
+      "school_id": "menomonie",
       "name": "Menomonie",
       "score": 8,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_0d184c10-2571-463a-ad04-2aac88094ce7.jpg"
@@ -7973,6 +8211,54 @@
         "stats": {
           "TKL": "10.0",
           "TFL": "1.0"
+        }
+      },
+      {
+        "team_school_id": "menomonie",
+        "team_name": "Menomonie",
+        "category": "Passing Yards",
+        "player_name": "Aaron Howard",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "7/9",
+          "YDS": "68",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "menomonie",
+        "team_name": "Menomonie",
+        "category": "Rushing Yards",
+        "player_name": "Charlie Mikesell",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "3",
+          "YDS": "35",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "menomonie",
+        "team_name": "Menomonie",
+        "category": "Receiving Yards",
+        "player_name": "Luke Pember",
+        "player_year": "SR",
+        "stats": {
+          "REC": "1",
+          "YDS": "35",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "menomonie",
+        "team_name": "Menomonie",
+        "category": "Total Tackles",
+        "player_name": "Wren Swaenepoel",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "17.0",
+          "TFL": "2.0",
+          "SKS": "0.5"
         }
       }
     ]
@@ -8452,6 +8738,129 @@
       "wiaa"
     ],
     "stat_leaders": []
+  },
+  {
+    "id": "football-2025-09-05-superior-at-river-falls",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-09-05T19:00:00-05:00",
+    "home": {
+      "school_id": "river-falls",
+      "name": "River Falls",
+      "score": 48,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_d4fe0fc0-e338-47af-a664-b53012197324.jpg"
+    },
+    "away": {
+      "school_id": "superior",
+      "name": "Superior",
+      "score": 20,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_43272079-e763-4d07-9373-dc599252cf34.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@River Falls",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "superior",
+        "team_name": "Superior",
+        "category": "Passing Yards",
+        "player_name": "Carson Smith",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "7/16",
+          "YDS": "82",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "superior",
+        "team_name": "Superior",
+        "category": "Rushing Yards",
+        "player_name": "Maxton Luzaich",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "14",
+          "YDS": "62",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "superior",
+        "team_name": "Superior",
+        "category": "Receiving Yards",
+        "player_name": "Aiden Parks",
+        "player_year": "SR",
+        "stats": {
+          "REC": "1",
+          "YDS": "45",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "superior",
+        "team_name": "Superior",
+        "category": "Total Tackles",
+        "player_name": "Ayden Atchison",
+        "player_year": "SO",
+        "stats": {
+          "TKL": "8.0"
+        }
+      },
+      {
+        "team_school_id": "river-falls",
+        "team_name": "River Falls",
+        "category": "Passing Yards",
+        "player_name": "Tino Massa",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "5/6",
+          "YDS": "184",
+          "TDS": "3"
+        }
+      },
+      {
+        "team_school_id": "river-falls",
+        "team_name": "River Falls",
+        "category": "Rushing Yards",
+        "player_name": "Joseph Tarasewicz",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "8",
+          "YDS": "90",
+          "TDS": "1",
+          "REC": "26"
+        }
+      },
+      {
+        "team_school_id": "river-falls",
+        "team_name": "River Falls",
+        "category": "Receiving Yards",
+        "player_name": "Ryker O'Keefe",
+        "player_year": "JR",
+        "stats": {
+          "REC": "3",
+          "YDS": "94",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "river-falls",
+        "team_name": "River Falls",
+        "category": "Total Tackles",
+        "player_name": "Thade Drier",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "12.0",
+          "TFL": "3.0",
+          "SKS": "2.0"
+        }
+      }
+    ]
   },
   {
     "id": "football-2025-09-11-athens-at-bruce",
@@ -10236,7 +10645,7 @@
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_99891af1-ebd7-4c0c-baf7-d29f52e48e43.jpg"
     },
     "away": {
-      "school_id": "",
+      "school_id": "superior",
       "name": "Superior",
       "score": 21,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_43272079-e763-4d07-9373-dc599252cf34.jpg"
@@ -10250,6 +10659,53 @@
       "bound"
     ],
     "stat_leaders": [
+      {
+        "team_school_id": "superior",
+        "team_name": "Superior",
+        "category": "Passing Yards",
+        "player_name": "Carson Smith",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "8/14",
+          "YDS": "149",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "superior",
+        "team_name": "Superior",
+        "category": "Rushing Yards",
+        "player_name": "Carson Smith",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "10",
+          "YDS": "64",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "superior",
+        "team_name": "Superior",
+        "category": "Receiving Yards",
+        "player_name": "Liam Flores",
+        "player_year": "SR",
+        "stats": {
+          "REC": "5",
+          "YDS": "121",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "superior",
+        "team_name": "Superior",
+        "category": "Total Tackles",
+        "player_name": "Kaden Covill",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "11.0",
+          "FR": "1"
+        }
+      },
       {
         "team_school_id": "eau-claire-north",
         "team_name": "Eau Claire North",
@@ -10310,7 +10766,7 @@
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_a37c0e1b-af75-43da-ac8f-109620fc4b30.jpg"
     },
     "away": {
-      "school_id": "",
+      "school_id": "river-falls",
       "name": "River Falls",
       "score": 12,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_d4fe0fc0-e338-47af-a664-b53012197324.jpg"
@@ -10324,6 +10780,54 @@
       "bound"
     ],
     "stat_leaders": [
+      {
+        "team_school_id": "river-falls",
+        "team_name": "River Falls",
+        "category": "Passing Yards",
+        "player_name": "Tino Massa",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "18/29",
+          "YDS": "179",
+          "TDS": "1",
+          "RUS": "1"
+        }
+      },
+      {
+        "team_school_id": "river-falls",
+        "team_name": "River Falls",
+        "category": "Rushing Yards",
+        "player_name": "Joseph Tarasewicz",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "35",
+          "YDS": "165",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "river-falls",
+        "team_name": "River Falls",
+        "category": "Receiving Yards",
+        "player_name": "Mason Novak",
+        "player_year": "SR",
+        "stats": {
+          "REC": "8",
+          "YDS": "112",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "river-falls",
+        "team_name": "River Falls",
+        "category": "Total Tackles",
+        "player_name": "Anthony McPherson",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "10.0",
+          "INT": "1"
+        }
+      },
       {
         "team_school_id": "chippewa-falls",
         "team_name": "Chippewa Falls",
@@ -10509,7 +11013,7 @@
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_c8efa1ca-c48f-42d4-bc7c-6918f400a3a9.jpg"
     },
     "away": {
-      "school_id": "",
+      "school_id": "menomonie",
       "name": "Menomonie",
       "score": 24,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_0d184c10-2571-463a-ad04-2aac88094ce7.jpg"
@@ -10523,6 +11027,53 @@
       "bound"
     ],
     "stat_leaders": [
+      {
+        "team_school_id": "menomonie",
+        "team_name": "Menomonie",
+        "category": "Passing Yards",
+        "player_name": "Aaron Howard",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "5/12",
+          "YDS": "41",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "menomonie",
+        "team_name": "Menomonie",
+        "category": "Rushing Yards",
+        "player_name": "DJ Butler",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "21",
+          "YDS": "160",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "menomonie",
+        "team_name": "Menomonie",
+        "category": "Receiving Yards",
+        "player_name": "Liam Asher",
+        "player_year": "JR",
+        "stats": {
+          "REC": "2",
+          "YDS": "31",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "menomonie",
+        "team_name": "Menomonie",
+        "category": "Total Tackles",
+        "player_name": "Wren Swaenepoel",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "14.0",
+          "TFL": "1.0"
+        }
+      },
       {
         "team_school_id": "rice-lake",
         "team_name": "Rice Lake",
@@ -13008,7 +13559,7 @@
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_8d7a6b7e-4675-4b6b-a563-87adccf6cf1a.jpg"
     },
     "away": {
-      "school_id": "",
+      "school_id": "river-falls",
       "name": "River Falls",
       "score": 6,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_d4fe0fc0-e338-47af-a664-b53012197324.jpg"
@@ -13022,6 +13573,53 @@
       "bound"
     ],
     "stat_leaders": [
+      {
+        "team_school_id": "river-falls",
+        "team_name": "River Falls",
+        "category": "Passing Yards",
+        "player_name": "Tino Massa",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "10/20",
+          "YDS": "138",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "river-falls",
+        "team_name": "River Falls",
+        "category": "Rushing Yards",
+        "player_name": "Joseph Tarasewicz",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "17",
+          "YDS": "56",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "river-falls",
+        "team_name": "River Falls",
+        "category": "Receiving Yards",
+        "player_name": "Todd Benedict",
+        "player_year": "SR",
+        "stats": {
+          "REC": "5",
+          "YDS": "93",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "river-falls",
+        "team_name": "River Falls",
+        "category": "Total Tackles",
+        "player_name": "Oliver Simmons",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "8.0",
+          "INT": "1"
+        }
+      },
       {
         "team_school_id": "new-richmond",
         "team_name": "New Richmond",
@@ -13762,6 +14360,127 @@
           "TKL": "17.0",
           "TFL": "5.0",
           "SKS": "1.5"
+        }
+      }
+    ]
+  },
+  {
+    "id": "football-2025-09-19-menomonie-at-superior",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-09-19T19:00:00-05:00",
+    "home": {
+      "school_id": "superior",
+      "name": "Superior",
+      "score": 42,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_43272079-e763-4d07-9373-dc599252cf34.jpg"
+    },
+    "away": {
+      "school_id": "menomonie",
+      "name": "Menomonie",
+      "score": 6,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_0d184c10-2571-463a-ad04-2aac88094ce7.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@Superior",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "menomonie",
+        "team_name": "Menomonie",
+        "category": "Passing Yards",
+        "player_name": "Aaron Howard",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "2/2",
+          "YDS": "27",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "menomonie",
+        "team_name": "Menomonie",
+        "category": "Rushing Yards",
+        "player_name": "DJ Butler",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "13",
+          "YDS": "101",
+          "TDS": "3"
+        }
+      },
+      {
+        "team_school_id": "menomonie",
+        "team_name": "Menomonie",
+        "category": "Receiving Yards",
+        "player_name": "Luke Bystol",
+        "player_year": "SR",
+        "stats": {
+          "REC": "1",
+          "YDS": "17",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "menomonie",
+        "team_name": "Menomonie",
+        "category": "Total Tackles",
+        "player_name": "Luke Pember",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "7.0",
+          "TFL": "2.0"
+        }
+      },
+      {
+        "team_school_id": "superior",
+        "team_name": "Superior",
+        "category": "Passing Yards",
+        "player_name": "Luke Lundgren",
+        "player_year": "SO",
+        "stats": {
+          "C/A": "2/3",
+          "YDS": "11",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "superior",
+        "team_name": "Superior",
+        "category": "Rushing Yards",
+        "player_name": "Maxton Luzaich",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "8",
+          "YDS": "28",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "superior",
+        "team_name": "Superior",
+        "category": "Receiving Yards",
+        "player_name": "Liam Flores",
+        "player_year": "SR",
+        "stats": {
+          "REC": "1",
+          "YDS": "12",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "superior",
+        "team_name": "Superior",
+        "category": "Total Tackles",
+        "player_name": "Luke Lundgren",
+        "player_year": "SO",
+        "stats": {
+          "TKL": "12.0"
         }
       }
     ]
@@ -15351,7 +16070,7 @@
     "season": "2025-26",
     "date": "2025-09-26T19:00:00-05:00",
     "home": {
-      "school_id": "",
+      "school_id": "menomonie",
       "name": "Menomonie",
       "score": 7,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_0d184c10-2571-463a-ad04-2aac88094ce7.jpg"
@@ -15417,6 +16136,54 @@
           "TKL": "17.0",
           "TFL": "1.0"
         }
+      },
+      {
+        "team_school_id": "menomonie",
+        "team_name": "Menomonie",
+        "category": "Passing Yards",
+        "player_name": "Aaron Howard",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "4/5",
+          "YDS": "60",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "menomonie",
+        "team_name": "Menomonie",
+        "category": "Rushing Yards",
+        "player_name": "DJ Butler",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "21",
+          "YDS": "139",
+          "TDS": "3"
+        }
+      },
+      {
+        "team_school_id": "menomonie",
+        "team_name": "Menomonie",
+        "category": "Receiving Yards",
+        "player_name": "Luke Bystol",
+        "player_year": "SR",
+        "stats": {
+          "REC": "2",
+          "YDS": "31",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "menomonie",
+        "team_name": "Menomonie",
+        "category": "Total Tackles",
+        "player_name": "Kellen Turner",
+        "player_year": "SO",
+        "stats": {
+          "TKL": "7.0",
+          "TFL": "2.0",
+          "SKS": "1.0"
+        }
       }
     ]
   },
@@ -15426,7 +16193,7 @@
     "season": "2025-26",
     "date": "2025-09-26T19:00:00-05:00",
     "home": {
-      "school_id": "",
+      "school_id": "superior",
       "name": "Superior",
       "score": 0,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_43272079-e763-4d07-9373-dc599252cf34.jpg"
@@ -15494,6 +16261,52 @@
           "TKL": "21.0",
           "TFL": "3.0"
         }
+      },
+      {
+        "team_school_id": "superior",
+        "team_name": "Superior",
+        "category": "Passing Yards",
+        "player_name": "Carson Smith",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "2/5",
+          "YDS": "11",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "superior",
+        "team_name": "Superior",
+        "category": "Rushing Yards",
+        "player_name": "Maxton Luzaich",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "18",
+          "YDS": "62",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "superior",
+        "team_name": "Superior",
+        "category": "Receiving Yards",
+        "player_name": "Tripp Row",
+        "player_year": "SO",
+        "stats": {
+          "REC": "1",
+          "YDS": "11",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "superior",
+        "team_name": "Superior",
+        "category": "Total Tackles",
+        "player_name": "Taynum Clark",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "10.0"
+        }
       }
     ]
   },
@@ -15503,7 +16316,7 @@
     "season": "2025-26",
     "date": "2025-09-26T19:00:00-05:00",
     "home": {
-      "school_id": "",
+      "school_id": "river-falls",
       "name": "River Falls",
       "score": 21,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_d4fe0fc0-e338-47af-a664-b53012197324.jpg"
@@ -15568,6 +16381,52 @@
         "stats": {
           "TKL": "18.0",
           "INT": "1"
+        }
+      },
+      {
+        "team_school_id": "river-falls",
+        "team_name": "River Falls",
+        "category": "Passing Yards",
+        "player_name": "Tino Massa",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "15/20",
+          "YDS": "206",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "river-falls",
+        "team_name": "River Falls",
+        "category": "Rushing Yards",
+        "player_name": "Joseph Tarasewicz",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "38",
+          "YDS": "218",
+          "TDS": "3"
+        }
+      },
+      {
+        "team_school_id": "river-falls",
+        "team_name": "River Falls",
+        "category": "Receiving Yards",
+        "player_name": "Todd Benedict",
+        "player_year": "SR",
+        "stats": {
+          "REC": "5",
+          "YDS": "97",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "river-falls",
+        "team_name": "River Falls",
+        "category": "Total Tackles",
+        "player_name": "Nolan Hoepfl",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "17.0"
         }
       }
     ]
@@ -18188,7 +19047,7 @@
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_b5429a0f-ab7b-4a72-bcde-bb8a04b1d448.jpg"
     },
     "away": {
-      "school_id": "",
+      "school_id": "superior",
       "name": "Superior",
       "score": 10,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_43272079-e763-4d07-9373-dc599252cf34.jpg"
@@ -18202,6 +19061,53 @@
       "bound"
     ],
     "stat_leaders": [
+      {
+        "team_school_id": "superior",
+        "team_name": "Superior",
+        "category": "Passing Yards",
+        "player_name": "Carson Smith",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "4/9",
+          "YDS": "40",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "superior",
+        "team_name": "Superior",
+        "category": "Rushing Yards",
+        "player_name": "Maxton Luzaich",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "21",
+          "YDS": "117",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "superior",
+        "team_name": "Superior",
+        "category": "Receiving Yards",
+        "player_name": "Beckett Selden",
+        "player_year": "SR",
+        "stats": {
+          "REC": "3",
+          "YDS": "37",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "superior",
+        "team_name": "Superior",
+        "category": "Total Tackles",
+        "player_name": "Kaden Covill",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "9.0",
+          "TFL": "1.0"
+        }
+      },
       {
         "team_school_id": "hudson",
         "team_name": "Hudson",
@@ -18257,7 +19163,7 @@
     "season": "2025-26",
     "date": "2025-10-03T19:00:00-05:00",
     "home": {
-      "school_id": "",
+      "school_id": "menomonie",
       "name": "Menomonie",
       "score": 0,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_0d184c10-2571-463a-ad04-2aac88094ce7.jpg"
@@ -18323,6 +19229,52 @@
         "stats": {
           "TKL": "10.0"
         }
+      },
+      {
+        "team_school_id": "menomonie",
+        "team_name": "Menomonie",
+        "category": "Passing Yards",
+        "player_name": "Aaron Howard",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "1/6",
+          "YDS": "16",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "menomonie",
+        "team_name": "Menomonie",
+        "category": "Rushing Yards",
+        "player_name": "DJ Butler",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "16",
+          "YDS": "82",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "menomonie",
+        "team_name": "Menomonie",
+        "category": "Receiving Yards",
+        "player_name": "Luke Pember",
+        "player_year": "SR",
+        "stats": {
+          "REC": "1",
+          "YDS": "16",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "menomonie",
+        "team_name": "Menomonie",
+        "category": "Total Tackles",
+        "player_name": "Bailey Casey",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "12.0"
+        }
       }
     ]
   },
@@ -18338,7 +19290,7 @@
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_c8efa1ca-c48f-42d4-bc7c-6918f400a3a9.jpg"
     },
     "away": {
-      "school_id": "",
+      "school_id": "river-falls",
       "name": "River Falls",
       "score": 28,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_d4fe0fc0-e338-47af-a664-b53012197324.jpg"
@@ -18352,6 +19304,54 @@
       "bound"
     ],
     "stat_leaders": [
+      {
+        "team_school_id": "river-falls",
+        "team_name": "River Falls",
+        "category": "Passing Yards",
+        "player_name": "Tino Massa",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "15/20",
+          "YDS": "222",
+          "TDS": "1",
+          "RUS": "1"
+        }
+      },
+      {
+        "team_school_id": "river-falls",
+        "team_name": "River Falls",
+        "category": "Rushing Yards",
+        "player_name": "Joseph Tarasewicz",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "30",
+          "YDS": "197",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "river-falls",
+        "team_name": "River Falls",
+        "category": "Receiving Yards",
+        "player_name": "Mason Novak",
+        "player_year": "SR",
+        "stats": {
+          "REC": "7",
+          "YDS": "134",
+          "TDS": "3"
+        }
+      },
+      {
+        "team_school_id": "river-falls",
+        "team_name": "River Falls",
+        "category": "Total Tackles",
+        "player_name": "Thade Drier",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "11.0",
+          "TFL": "1.0"
+        }
+      },
       {
         "team_school_id": "rice-lake",
         "team_name": "Rice Lake",
@@ -21053,7 +22053,7 @@
     "season": "2025-26",
     "date": "2025-10-10T19:00:00-05:00",
     "home": {
-      "school_id": "",
+      "school_id": "superior",
       "name": "Superior",
       "score": 42,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_43272079-e763-4d07-9373-dc599252cf34.jpg"
@@ -21120,6 +22120,53 @@
           "TKL": "12.0",
           "TFL": "1.0",
           "SKS": "1.0"
+        }
+      },
+      {
+        "team_school_id": "superior",
+        "team_name": "Superior",
+        "category": "Passing Yards",
+        "player_name": "Carson Smith",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "13/21",
+          "YDS": "192",
+          "TDS": "1",
+          "RUS": "29"
+        }
+      },
+      {
+        "team_school_id": "superior",
+        "team_name": "Superior",
+        "category": "Rushing Yards",
+        "player_name": "Maxton Luzaich",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "25",
+          "YDS": "112",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "superior",
+        "team_name": "Superior",
+        "category": "Receiving Yards",
+        "player_name": "Beckett Selden",
+        "player_year": "SR",
+        "stats": {
+          "REC": "6",
+          "YDS": "95",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "superior",
+        "team_name": "Superior",
+        "category": "Total Tackles",
+        "player_name": "Zander McDonald",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "10.0"
         }
       }
     ]
@@ -21898,6 +22945,127 @@
     "stat_leaders": []
   },
   {
+    "id": "football-2025-10-10-menomonie-at-river-falls",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-10-10T19:00:00-05:00",
+    "home": {
+      "school_id": "river-falls",
+      "name": "River Falls",
+      "score": 42,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_d4fe0fc0-e338-47af-a664-b53012197324.jpg"
+    },
+    "away": {
+      "school_id": "menomonie",
+      "name": "Menomonie",
+      "score": 14,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_0d184c10-2571-463a-ad04-2aac88094ce7.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@UW River Falls",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "menomonie",
+        "team_name": "Menomonie",
+        "category": "Passing Yards",
+        "player_name": "Aaron Howard",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "5/10",
+          "YDS": "36",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "menomonie",
+        "team_name": "Menomonie",
+        "category": "Rushing Yards",
+        "player_name": "Renner Stoll",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "14",
+          "YDS": "99",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "menomonie",
+        "team_name": "Menomonie",
+        "category": "Receiving Yards",
+        "player_name": "Liam Asher",
+        "player_year": "JR",
+        "stats": {
+          "REC": "2",
+          "YDS": "21",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "menomonie",
+        "team_name": "Menomonie",
+        "category": "Total Tackles",
+        "player_name": "Luke Pember",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "7.0"
+        }
+      },
+      {
+        "team_school_id": "river-falls",
+        "team_name": "River Falls",
+        "category": "Passing Yards",
+        "player_name": "Tino Massa",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "11/15",
+          "YDS": "124",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "river-falls",
+        "team_name": "River Falls",
+        "category": "Rushing Yards",
+        "player_name": "Joseph Tarasewicz",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "23",
+          "YDS": "119",
+          "TDS": "3"
+        }
+      },
+      {
+        "team_school_id": "river-falls",
+        "team_name": "River Falls",
+        "category": "Receiving Yards",
+        "player_name": "Todd Benedict",
+        "player_year": "SR",
+        "stats": {
+          "REC": "2",
+          "YDS": "34",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "river-falls",
+        "team_name": "River Falls",
+        "category": "Total Tackles",
+        "player_name": "Thade Drier",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "14.0",
+          "TFL": "2.0"
+        }
+      }
+    ]
+  },
+  {
     "id": "football-2025-10-11-lakeland-at-wausau-east",
     "sport": "football",
     "season": "2025-26",
@@ -22147,7 +23315,7 @@
     "season": "2025-26",
     "date": "2025-10-17T19:00:00-05:00",
     "home": {
-      "school_id": "",
+      "school_id": "river-falls",
       "name": "River Falls",
       "score": 19,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_d4fe0fc0-e338-47af-a664-b53012197324.jpg"
@@ -22211,6 +23379,53 @@
         "player_year": "JR",
         "stats": {
           "TKL": "11.0"
+        }
+      },
+      {
+        "team_school_id": "river-falls",
+        "team_name": "River Falls",
+        "category": "Passing Yards",
+        "player_name": "Tino Massa",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "26/31",
+          "YDS": "266",
+          "TDS": "6"
+        }
+      },
+      {
+        "team_school_id": "river-falls",
+        "team_name": "River Falls",
+        "category": "Rushing Yards",
+        "player_name": "Joseph Tarasewicz",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "19",
+          "YDS": "107",
+          "TDS": "1",
+          "REC": "24"
+        }
+      },
+      {
+        "team_school_id": "river-falls",
+        "team_name": "River Falls",
+        "category": "Receiving Yards",
+        "player_name": "Todd Benedict",
+        "player_year": "SR",
+        "stats": {
+          "REC": "10",
+          "YDS": "137",
+          "TDS": "4"
+        }
+      },
+      {
+        "team_school_id": "river-falls",
+        "team_name": "River Falls",
+        "category": "Total Tackles",
+        "player_name": "Thade Drier",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "9.0"
         }
       }
     ]
@@ -23299,7 +24514,7 @@
     "season": "2025-26",
     "date": "2025-10-17T19:00:00-05:00",
     "home": {
-      "school_id": "",
+      "school_id": "menomonie",
       "name": "Menomonie",
       "score": 6,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_0d184c10-2571-463a-ad04-2aac88094ce7.jpg"
@@ -23364,6 +24579,53 @@
         "player_year": "SO",
         "stats": {
           "TKL": "18.0"
+        }
+      },
+      {
+        "team_school_id": "menomonie",
+        "team_name": "Menomonie",
+        "category": "Passing Yards",
+        "player_name": "Aaron Howard",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "3/6",
+          "YDS": "54",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "menomonie",
+        "team_name": "Menomonie",
+        "category": "Rushing Yards",
+        "player_name": "Oliver Lugo",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "6",
+          "YDS": "42",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "menomonie",
+        "team_name": "Menomonie",
+        "category": "Receiving Yards",
+        "player_name": "Max Erickson",
+        "player_year": "SR",
+        "stats": {
+          "REC": "1",
+          "YDS": "28",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "menomonie",
+        "team_name": "Menomonie",
+        "category": "Total Tackles",
+        "player_name": "Bailey Casey",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "12.0",
+          "TFL": "1.0"
         }
       }
     ]
@@ -23502,7 +24764,7 @@
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_8d7a6b7e-4675-4b6b-a563-87adccf6cf1a.jpg"
     },
     "away": {
-      "school_id": "",
+      "school_id": "superior",
       "name": "Superior",
       "score": 14,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_43272079-e763-4d07-9373-dc599252cf34.jpg"
@@ -23516,6 +24778,54 @@
       "bound"
     ],
     "stat_leaders": [
+      {
+        "team_school_id": "superior",
+        "team_name": "Superior",
+        "category": "Passing Yards",
+        "player_name": "Carson Smith",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "9/20",
+          "YDS": "196",
+          "TDS": "1",
+          "RUS": "52"
+        }
+      },
+      {
+        "team_school_id": "superior",
+        "team_name": "Superior",
+        "category": "Rushing Yards",
+        "player_name": "Carson Smith",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "22",
+          "YDS": "52",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "superior",
+        "team_name": "Superior",
+        "category": "Receiving Yards",
+        "player_name": "Liam Flores",
+        "player_year": "SR",
+        "stats": {
+          "REC": "2",
+          "YDS": "80",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "superior",
+        "team_name": "Superior",
+        "category": "Total Tackles",
+        "player_name": "Luke Lundgren",
+        "player_year": "SO",
+        "stats": {
+          "TKL": "12.0",
+          "INT": "1"
+        }
+      },
       {
         "team_school_id": "new-richmond",
         "team_name": "New Richmond",
@@ -26494,6 +27804,106 @@
     ]
   },
   {
+    "id": "football-2025-10-24-beaver-dam-at-river-falls",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-10-24T19:00:00-05:00",
+    "home": {
+      "school_id": "river-falls",
+      "name": "River Falls",
+      "score": 48,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_d4fe0fc0-e338-47af-a664-b53012197324.jpg"
+    },
+    "away": {
+      "school_id": "",
+      "name": "Beaver Dam",
+      "score": 21,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_bb0a1088-0be5-426e-a80b-30d752e50d34.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": false,
+    "venue": "@River Falls",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "river-falls",
+        "team_name": "River Falls",
+        "category": "Passing Yards",
+        "player_name": "Tino Massa",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "15/23",
+          "YDS": "204",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "river-falls",
+        "team_name": "River Falls",
+        "category": "Rushing Yards",
+        "player_name": "Joseph Tarasewicz",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "34",
+          "YDS": "169",
+          "TDS": "6"
+        }
+      },
+      {
+        "team_school_id": "river-falls",
+        "team_name": "River Falls",
+        "category": "Receiving Yards",
+        "player_name": "Mason Novak",
+        "player_year": "SR",
+        "stats": {
+          "REC": "9",
+          "YDS": "139",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "river-falls",
+        "team_name": "River Falls",
+        "category": "Total Tackles",
+        "player_name": "Thade Drier",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "17.0"
+        }
+      }
+    ]
+  },
+  {
+    "id": "football-2025-10-24-menomonie-at-onalaska",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-10-24T19:00:00-05:00",
+    "home": {
+      "school_id": "",
+      "name": "Onalaska",
+      "score": 34,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_2f880ffb-dc0f-4f4c-860f-9453cd2fed51.jpg"
+    },
+    "away": {
+      "school_id": "menomonie",
+      "name": "Menomonie",
+      "score": 31,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_0d184c10-2571-463a-ad04-2aac88094ce7.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": false,
+    "venue": "@Onalaska",
+    "sources": [
+      "wiaa"
+    ],
+    "stat_leaders": []
+  },
+  {
     "id": "football-2025-10-31-oshkosh-north-at-new-richmond",
     "sport": "football",
     "season": "2025-26",
@@ -27222,6 +28632,82 @@
     "stat_leaders": []
   },
   {
+    "id": "football-2025-10-31-la-crosse-central-at-river-falls",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-10-31T19:00:00-05:00",
+    "home": {
+      "school_id": "river-falls",
+      "name": "River Falls",
+      "score": 50,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_d4fe0fc0-e338-47af-a664-b53012197324.jpg"
+    },
+    "away": {
+      "school_id": "",
+      "name": "La Crosse Central",
+      "score": 24,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_905e00c4-49d5-444e-b335-33832033f647.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": false,
+    "venue": "@River Falls",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "river-falls",
+        "team_name": "River Falls",
+        "category": "Passing Yards",
+        "player_name": "Tino Massa",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "9/12",
+          "YDS": "252",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "river-falls",
+        "team_name": "River Falls",
+        "category": "Rushing Yards",
+        "player_name": "Joseph Tarasewicz",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "18",
+          "YDS": "267",
+          "TDS": "5"
+        }
+      },
+      {
+        "team_school_id": "river-falls",
+        "team_name": "River Falls",
+        "category": "Receiving Yards",
+        "player_name": "Joseph Tarasewicz",
+        "player_year": "SR",
+        "stats": {
+          "REC": "2",
+          "YDS": "74",
+          "TDS": "5",
+          "RUS": "267"
+        }
+      },
+      {
+        "team_school_id": "river-falls",
+        "team_name": "River Falls",
+        "category": "Total Tackles",
+        "player_name": "Blake Schneider",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "13.0",
+          "FR": "1"
+        }
+      }
+    ]
+  },
+  {
     "id": "football-2025-11-01-mcdonell-central-catholic-at-flambeau",
     "sport": "football",
     "season": "2025-26",
@@ -27246,6 +28732,82 @@
       "wiaa"
     ],
     "stat_leaders": []
+  },
+  {
+    "id": "football-2025-11-07-oshkosh-north-at-river-falls",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-11-07T18:00:00-06:00",
+    "home": {
+      "school_id": "river-falls",
+      "name": "River Falls",
+      "score": 52,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_d4fe0fc0-e338-47af-a664-b53012197324.jpg"
+    },
+    "away": {
+      "school_id": "",
+      "name": "Oshkosh North",
+      "score": 38,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_703ece4f-2c73-4709-b37f-8940122dde3d.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": false,
+    "venue": "@River Falls",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "river-falls",
+        "team_name": "River Falls",
+        "category": "Passing Yards",
+        "player_name": "Tino Massa",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "14/25",
+          "YDS": "324",
+          "TDS": "4"
+        }
+      },
+      {
+        "team_school_id": "river-falls",
+        "team_name": "River Falls",
+        "category": "Rushing Yards",
+        "player_name": "Joseph Tarasewicz",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "34",
+          "YDS": "210",
+          "TDS": "1",
+          "REC": "106"
+        }
+      },
+      {
+        "team_school_id": "river-falls",
+        "team_name": "River Falls",
+        "category": "Receiving Yards",
+        "player_name": "Joseph Tarasewicz",
+        "player_year": "SR",
+        "stats": {
+          "REC": "2",
+          "YDS": "106",
+          "TDS": "2",
+          "RUS": "210"
+        }
+      },
+      {
+        "team_school_id": "river-falls",
+        "team_name": "River Falls",
+        "category": "Total Tackles",
+        "player_name": "Anthony McPherson",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "11.0"
+        }
+      }
+    ]
   },
   {
     "id": "football-2025-11-07-bonduel-at-edgar",
@@ -27716,6 +29278,81 @@
         "player_year": "SR",
         "stats": {
           "TKL": "10.0",
+          "TFL": "1.0"
+        }
+      }
+    ]
+  },
+  {
+    "id": "football-2025-11-14-notre-dame-at-river-falls",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-11-14T19:00:00-06:00",
+    "home": {
+      "school_id": "river-falls",
+      "name": "River Falls",
+      "score": 6,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_d4fe0fc0-e338-47af-a664-b53012197324.jpg"
+    },
+    "away": {
+      "school_id": "",
+      "name": "Notre Dame",
+      "score": 42,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_a1fb0289-5f6d-4abc-bb90-bde6353c2d74.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": false,
+    "venue": "D.C. Everest",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "river-falls",
+        "team_name": "River Falls",
+        "category": "Passing Yards",
+        "player_name": "Tino Massa",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "14/28",
+          "YDS": "144",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "river-falls",
+        "team_name": "River Falls",
+        "category": "Rushing Yards",
+        "player_name": "Joseph Tarasewicz",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "13",
+          "YDS": "66",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "river-falls",
+        "team_name": "River Falls",
+        "category": "Receiving Yards",
+        "player_name": "Charlie Burke",
+        "player_year": "JR",
+        "stats": {
+          "REC": "5",
+          "YDS": "64",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "river-falls",
+        "team_name": "River Falls",
+        "category": "Total Tackles",
+        "player_name": "Nolan Hoepfl",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "14.0",
           "TFL": "1.0"
         }
       }

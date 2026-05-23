@@ -1200,5 +1200,62 @@
     ],
     "wiaa_division": {},
     "athletics_url": null
+  },
+  {
+    "id": "river-falls",
+    "name": "River Falls",
+    "full_name": "River Falls High School",
+    "mascot": "Wildcats",
+    "city": "River Falls",
+    "colors": [
+      "#475569",
+      "#FFFFFF"
+    ],
+    "conferences": [
+      {
+        "sport": "football",
+        "conference": "Big Rivers"
+      }
+    ],
+    "wiaa_division": {},
+    "athletics_url": null
+  },
+  {
+    "id": "superior",
+    "name": "Superior",
+    "full_name": "Superior High School",
+    "mascot": "Spartans",
+    "city": "Superior",
+    "colors": [
+      "#475569",
+      "#FFFFFF"
+    ],
+    "conferences": [
+      {
+        "sport": "football",
+        "conference": "Big Rivers"
+      }
+    ],
+    "wiaa_division": {},
+    "athletics_url": null
+  },
+  {
+    "id": "menomonie",
+    "name": "Menomonie",
+    "full_name": "Menomonie High School",
+    "mascot": "Mustangs",
+    "city": "Menomonie",
+    "colors": [
+      "#475569",
+      "#FFFFFF"
+    ],
+    "conferences": [
+      {
+        "sport": "football",
+        "conference": "Big Rivers"
+      }
+    ],
+    "wiaa_division": {},
+    "athletics_url": null
   }
 ]
