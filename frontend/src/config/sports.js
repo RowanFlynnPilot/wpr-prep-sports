@@ -67,6 +67,18 @@ export const SPORTS = {
     activeMonths: [10, 11, 0, 1, 2], // Nov–Mar
     hasSeasonStats: false,
   },
+  volleyball: {
+    id: "volleyball",
+    label: "Volleyball",
+    shortLabel: "Volleyball",
+    season: "2025–26",
+    // Aug–Nov: regular season ends mid-Oct, state tournament early Nov.
+    activeMonths: [7, 8, 9, 10],
+    hasSeasonStats: false,
+    // Scores are sets won/lost, not points — note this in the team page hero
+    // so PF/PA don't read as points. See TeamPage record block.
+    scoreLabel: "set",
+  },
 };
 
 /** All sport ids the registry knows about, in display order. */
@@ -80,4 +92,17 @@ export function configFor(sportId) {
 /** True if `id` is a known sport. */
 export function isKnownSport(id) {
   return Object.prototype.hasOwnProperty.call(SPORTS, id);
+}
+
+/**
+ * Labels for the for/against columns in records and standings. Defaults
+ * to "Points For" / "Points Against" (abbreviated PF/PA) for sports
+ * scored in points; volleyball's `scoreLabel: "set"` swaps it to
+ * Sets W / Sets L since the numbers are set counts, not points.
+ */
+export function recordLabels(sportConfig) {
+  if (sportConfig?.scoreLabel === "set") {
+    return { for: "Sets W", against: "Sets L", diff: "Set diff." };
+  }
+  return { for: "PF", against: "PA", diff: "Point diff." };
 }

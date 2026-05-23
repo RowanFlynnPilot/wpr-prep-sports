@@ -7,6 +7,7 @@ import {
   positionFor,
   teamSeasonLeaders,
 } from "../utils/seasonStats.js";
+import { recordLabels } from "../config/sports.js";
 
 /**
  * One conference's standings. Editorial-table look — bold rank column,
@@ -47,6 +48,8 @@ export default function StandingsTable({
     ? teamSeasonLeaders(seasonByTeam.get(hoveredRow.school_id) ?? [])
     : [];
 
+  const labels = recordLabels(sportConfig);
+
   return (
     <section
       className="standings"
@@ -75,8 +78,8 @@ export default function StandingsTable({
               <th>Team</th>
               <th className="num">Conf</th>
               <th className="num">Overall</th>
-              <th className="num">PF</th>
-              <th className="num">PA</th>
+              <th className="num">{labels.for}</th>
+              <th className="num">{labels.against}</th>
             </tr>
           </thead>
           <tbody>
@@ -113,6 +116,7 @@ export default function StandingsTable({
         school={hoveredSchool}
         conference={standing.conference}
         leaders={hoveredLeaders}
+        labels={labels}
       />
     </section>
   );
@@ -123,11 +127,12 @@ function fmtInt(n) {
   return Number(n).toLocaleString("en-US");
 }
 
-function HoverCard({ row, school, conference, leaders }) {
+function HoverCard({ row, school, conference, leaders, labels }) {
   if (!row) return null;
   const pf = row.points_for ?? 0;
   const pa = row.points_against ?? 0;
   const diff = pf - pa;
+  const diffLabel = labels?.diff ?? "Point diff.";
   const totalGames = row.overall_wins + row.overall_losses;
   const winPct =
     totalGames > 0 ? Math.round((row.overall_wins / totalGames) * 100) : null;
@@ -150,7 +155,7 @@ function HoverCard({ row, school, conference, leaders }) {
           <dd>{row.conference_wins}-{row.conference_losses}</dd>
         </div>
         <div>
-          <dt>Point diff.</dt>
+          <dt>{diffLabel}</dt>
           <dd className={diff > 0 ? "pos" : diff < 0 ? "neg" : ""}>
             {diff > 0 ? "+" : ""}
             {diff.toLocaleString("en-US")}

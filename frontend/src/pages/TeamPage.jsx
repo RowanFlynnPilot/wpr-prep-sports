@@ -9,6 +9,7 @@ import { formatGameDay, formatGameDate, formatGameTime } from "../utils/dates.js
 import { recapForGame } from "../utils/recap.js";
 import { seasonSummary } from "../utils/seasonSummary.js";
 import { useSportPrefix } from "../utils/links.js";
+import { recordLabels } from "../config/sports.js";
 
 export default function TeamPage({ dataset, schoolIndex, sponsors, sportConfig }) {
   const { schoolId } = useParams();
@@ -104,18 +105,21 @@ export default function TeamPage({ dataset, schoolIndex, sponsors, sportConfig }
               <span className="record-stat__label">Playoffs</span>
             </div>
           )}
-          {record.pointsFor > 0 && (
-            <>
-              <div className="record-stat">
-                <span className="record-stat__num">{record.pointsFor.toLocaleString("en-US")}</span>
-                <span className="record-stat__label">PF</span>
-              </div>
-              <div className="record-stat">
-                <span className="record-stat__num">{record.pointsAgainst.toLocaleString("en-US")}</span>
-                <span className="record-stat__label">PA</span>
-              </div>
-            </>
-          )}
+          {record.pointsFor > 0 && (() => {
+            const labels = recordLabels(sportConfig);
+            return (
+              <>
+                <div className="record-stat">
+                  <span className="record-stat__num">{record.pointsFor.toLocaleString("en-US")}</span>
+                  <span className="record-stat__label">{labels.for}</span>
+                </div>
+                <div className="record-stat">
+                  <span className="record-stat__num">{record.pointsAgainst.toLocaleString("en-US")}</span>
+                  <span className="record-stat__label">{labels.against}</span>
+                </div>
+              </>
+            );
+          })()}
         </div>
       </section>
 
