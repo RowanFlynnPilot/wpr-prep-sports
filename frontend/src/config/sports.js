@@ -707,6 +707,8 @@ export const SPORTS = {
     label: "Football",
     /** Short label for tight UI like the mobile sport switcher. */
     shortLabel: "Football",
+    /** Emoji rendered to the left of the label in SportSwitcher. */
+    icon: "🏈",
     /** Season string used in headers — kept editable in case WIAA changes format. */
     season: "2025–26",
     /**
@@ -732,6 +734,7 @@ export const SPORTS = {
     id: "boys_basketball",
     label: "Boys Basketball",
     shortLabel: "Boys Hoops",
+    icon: "🏀",
     season: "2025–26",
     activeMonths: [10, 11, 0, 1, 2], // Nov–Mar
     hasSeasonStats: true,
@@ -750,6 +753,7 @@ export const SPORTS = {
     id: "girls_basketball",
     label: "Girls Basketball",
     shortLabel: "Girls Hoops",
+    icon: "🏀",
     season: "2025–26",
     activeMonths: [10, 11, 0, 1, 2], // Nov–Mar
     hasSeasonStats: true,
@@ -770,6 +774,7 @@ export const SPORTS = {
     id: "boys_hockey",
     label: "Boys Hockey",
     shortLabel: "Boys Hockey",
+    icon: "🏒",
     season: "2025–26",
     activeMonths: [10, 11, 0, 1, 2], // Nov–Mar
     hasSeasonStats: true,
@@ -786,6 +791,7 @@ export const SPORTS = {
     id: "girls_hockey",
     label: "Girls Hockey",
     shortLabel: "Girls Hockey",
+    icon: "🏒",
     season: "2025–26",
     activeMonths: [10, 11, 0, 1, 2], // Nov–Mar
     // Girls hockey on WPH is heavily co-op'd into entities that don't map
@@ -804,6 +810,7 @@ export const SPORTS = {
     id: "volleyball",
     label: "Volleyball",
     shortLabel: "Volleyball",
+    icon: "🏐",
     season: "2025–26",
     // Aug–Nov: regular season ends mid-Oct, state tournament early Nov.
     activeMonths: [7, 8, 9, 10],

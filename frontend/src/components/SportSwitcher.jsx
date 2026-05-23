@@ -52,6 +52,11 @@ export default function SportSwitcher() {
                   (isActive ? " sport-switcher__tab--active" : "")
                 }
               >
+                {cfg.icon && (
+                  <span className="sport-switcher__icon" aria-hidden="true">
+                    {cfg.icon}
+                  </span>
+                )}
                 <span className="sport-switcher__label">{cfg.label}</span>
                 <span className="sport-switcher__label sport-switcher__label--short">
                   {cfg.shortLabel ?? cfg.label}
