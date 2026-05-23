@@ -47,6 +47,31 @@ CENTRAL = ZoneInfo("America/Chicago")
 
 _RESULT_RE = re.compile(r"^([WL])\s+(\d+)\s*-\s*(\d+)", re.IGNORECASE)
 _TIME_RE = re.compile(r"^(\d{1,2}):(\d{2})\s*([APap][Mm])$")
+_PLAYOFF_LEVEL_RE = re.compile(r"level\s*([1-4])", re.IGNORECASE)
+
+
+def _parse_playoff_label(label: str | None) -> tuple[bool, str | None]:
+    """
+    Map WIAA's sub-label (e.g. "WIAA Tournament - Level1") to (playoff, round).
+
+    Returns (False, None) for non-tournament rows. WIAA's label conventions
+    are consistent year-to-year; new wording (e.g. "State Final") gets
+    swept into the "State Championship" bucket via the catch-all match.
+    """
+    if not label:
+        return False, None
+    text = label.strip()
+    lower = text.lower()
+    if "tournament" not in lower and "playoff" not in lower and "championship" not in lower:
+        return False, None
+    m = _PLAYOFF_LEVEL_RE.search(text)
+    if m:
+        return True, f"Level {m.group(1)}"
+    if "semifinal" in lower:
+        return True, "State Semifinal"
+    if "championship" in lower or "final" in lower or "state" in lower:
+        return True, "State Championship"
+    return True, None
 
 
 def build_dataset(
@@ -210,6 +235,8 @@ def _raw_to_game(
     away_anchor = away_id or _slugify(raw["away"]["name"])
     game_id = f"{sport.value}-{date_iso}-{away_anchor}-at-{home_anchor}"
 
+    playoff, playoff_round = _parse_playoff_label(raw.get("label"))
+
     return Game(
         id=game_id,
         sport=sport,
@@ -232,6 +259,8 @@ def _raw_to_game(
         conference_game=bool(raw.get("conference_game")),
         venue=raw.get("venue"),
         sources=["wiaa"],
+        playoff=playoff,
+        playoff_round=playoff_round,
     )
 
 

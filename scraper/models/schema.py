@@ -87,6 +87,8 @@ class Game(BaseModel):
     conference_game: bool = False  # True if WIAA marked the row with "(C)"
     venue: Optional[str] = None
     sources: list[str] = Field(default_factory=list)  # ["bound", "wiaa"]
+    playoff: bool = False                     # True if this is a WIAA tournament game
+    playoff_round: Optional[str] = None       # "Level 1" | "Level 2" | "Level 3" | "Level 4" | "State Semifinal" | "State Championship"
     stat_leaders: list[StatLine] = Field(default_factory=list)  # populated by Bound
 
 
