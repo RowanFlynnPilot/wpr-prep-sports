@@ -1,0 +1,244 @@
+[
+  {
+    "sport": "boys_basketball",
+    "season": "2025-26",
+    "conference": "Wisconsin Valley",
+    "division": null,
+    "rows": [
+      {
+        "school_id": "wausau-east",
+        "name": "Wausau East",
+        "conference_wins": 10,
+        "conference_losses": 0,
+        "overall_wins": 25,
+        "overall_losses": 1,
+        "points_for": 1987,
+        "points_against": 1461
+      },
+      {
+        "school_id": "wausau-west",
+        "name": "Wausau West",
+        "conference_wins": 8,
+        "conference_losses": 2,
+        "overall_wins": 23,
+        "overall_losses": 3,
+        "points_for": 1556,
+        "points_against": 1298
+      },
+      {
+        "school_id": "dc-everest",
+        "name": "D.C. Everest",
+        "conference_wins": 6,
+        "conference_losses": 4,
+        "overall_wins": 21,
+        "overall_losses": 5,
+        "points_for": 2002,
+        "points_against": 1668
+      },
+      {
+        "school_id": "marshfield",
+        "name": "Marshfield",
+        "conference_wins": 4,
+        "conference_losses": 6,
+        "overall_wins": 20,
+        "overall_losses": 7,
+        "points_for": 1766,
+        "points_against": 1469
+      },
+      {
+        "school_id": "spash",
+        "name": "SPASH",
+        "conference_wins": 2,
+        "conference_losses": 8,
+        "overall_wins": 17,
+        "overall_losses": 9,
+        "points_for": 1523,
+        "points_against": 1418
+      },
+      {
+        "school_id": "wisconsin-rapids",
+        "name": "Wisconsin Rapids Lincoln",
+        "conference_wins": 0,
+        "conference_losses": 10,
+        "overall_wins": 15,
+        "overall_losses": 11,
+        "points_for": 1591,
+        "points_against": 1575
+      }
+    ]
+  },
+  {
+    "sport": "boys_basketball",
+    "season": "2025-26",
+    "conference": "Marawood",
+    "division": null,
+    "rows": [
+      {
+        "school_id": "athens",
+        "name": "Athens",
+        "conference_wins": 16,
+        "conference_losses": 0,
+        "overall_wins": 25,
+        "overall_losses": 1,
+        "points_for": 1803,
+        "points_against": 1363
+      },
+      {
+        "school_id": "edgar",
+        "name": "Edgar",
+        "conference_wins": 15,
+        "conference_losses": 1,
+        "overall_wins": 24,
+        "overall_losses": 2,
+        "points_for": 1702,
+        "points_against": 1387
+      },
+      {
+        "school_id": "spencer",
+        "name": "Spencer",
+        "conference_wins": 14,
+        "conference_losses": 0,
+        "overall_wins": 25,
+        "overall_losses": 1,
+        "points_for": 1852,
+        "points_against": 1316
+      },
+      {
+        "school_id": "marathon",
+        "name": "Marathon",
+        "conference_wins": 13,
+        "conference_losses": 3,
+        "overall_wins": 23,
+        "overall_losses": 5,
+        "points_for": 1965,
+        "points_against": 1421
+      },
+      {
+        "school_id": "newman-catholic",
+        "name": "Newman Catholic",
+        "conference_wins": 11,
+        "conference_losses": 5,
+        "overall_wins": 21,
+        "overall_losses": 6,
+        "points_for": 1638,
+        "points_against": 1410
+      },
+      {
+        "school_id": "stratford",
+        "name": "Stratford",
+        "conference_wins": 9,
+        "conference_losses": 7,
+        "overall_wins": 17,
+        "overall_losses": 8,
+        "points_for": 1335,
+        "points_against": 1286
+      }
+    ]
+  },
+  {
+    "sport": "boys_basketball",
+    "season": "2025-26",
+    "conference": "Great Northern",
+    "division": null,
+    "rows": [
+      {
+        "school_id": "mosinee",
+        "name": "Mosinee",
+        "conference_wins": 14,
+        "conference_losses": 0,
+        "overall_wins": 23,
+        "overall_losses": 3,
+        "points_for": 1963,
+        "points_against": 1463
+      },
+      {
+        "school_id": "tomahawk",
+        "name": "Tomahawk",
+        "conference_wins": 12,
+        "conference_losses": 2,
+        "overall_wins": 21,
+        "overall_losses": 4,
+        "points_for": 1699,
+        "points_against": 985
+      },
+      {
+        "school_id": "rhinelander",
+        "name": "Rhinelander",
+        "conference_wins": 10,
+        "conference_losses": 4,
+        "overall_wins": 18,
+        "overall_losses": 8,
+        "points_for": 1588,
+        "points_against": 1426
+      },
+      {
+        "school_id": "medford",
+        "name": "Medford",
+        "conference_wins": 8,
+        "conference_losses": 6,
+        "overall_wins": 15,
+        "overall_losses": 10,
+        "points_for": 1576,
+        "points_against": 1602
+      },
+      {
+        "school_id": "merrill",
+        "name": "Merrill",
+        "conference_wins": 5,
+        "conference_losses": 8,
+        "overall_wins": 10,
+        "overall_losses": 14,
+        "points_for": 1288,
+        "points_against": 1443
+      },
+      {
+        "school_id": "lakeland",
+        "name": "Lakeland",
+        "conference_wins": 4,
+        "conference_losses": 9,
+        "overall_wins": 9,
+        "overall_losses": 15,
+        "points_for": 1362,
+        "points_against": 1472
+      },
+      {
+        "school_id": "antigo",
+        "name": "Antigo",
+        "conference_wins": 2,
+        "conference_losses": 12,
+        "overall_wins": 9,
+        "overall_losses": 15,
+        "points_for": 1273,
+        "points_against": 1533
+      }
+    ]
+  },
+  {
+    "sport": "boys_basketball",
+    "season": "2025-26",
+    "conference": "Cloverbelt",
+    "division": null,
+    "rows": [
+      {
+        "school_id": "colby",
+        "name": "Colby",
+        "conference_wins": 12,
+        "conference_losses": 2,
+        "overall_wins": 18,
+        "overall_losses": 6,
+        "points_for": 1655,
+        "points_against": 1391
+      },
+      {
+        "school_id": "abbotsford",
+        "name": "Abbotsford",
+        "conference_wins": 10,
+        "conference_losses": 6,
+        "overall_wins": 16,
+        "overall_losses": 9,
+        "points_for": 1917,
+        "points_against": 1692
+      }
+    ]
+  }
+]
