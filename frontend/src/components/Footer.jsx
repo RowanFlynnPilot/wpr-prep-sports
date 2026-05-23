@@ -1,3 +1,7 @@
+// Self-hosted under frontend/public; BASE_URL resolves to
+// "/wpr-prep-sports/" on GitHub Pages or whatever VITE_BASE is set to.
+const WPR_LOGO = `${import.meta.env.BASE_URL}wpr-logo.png`;
+
 /**
  * Footer block — newsroom-style credit + data attribution + stats.
  * Rendered by Layout under every page so the chrome stays consistent.
@@ -16,7 +20,15 @@ export default function Footer({ stats, lastUpdated }) {
           rel="noopener noreferrer"
           target="_top"
         >
-          Wausau Pilot &amp; Review
+          <img
+            src={WPR_LOGO}
+            alt=""
+            aria-hidden="true"
+            className="site-footer__brand-logo"
+            loading="lazy"
+            decoding="async"
+          />
+          <span>Wausau Pilot &amp; Review</span>
         </a>
         <span className="site-footer__sep" aria-hidden="true">·</span>
         <span className="site-footer__tag">Central Wisconsin Prep Sports</span>
