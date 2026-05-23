@@ -75,6 +75,32 @@
   color: var(--muted);
 }
 
+.season-summary {
+  margin-top: 1.25rem;
+  padding: 1rem 1.25rem 1rem 1.5rem;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lift);
+}
+.season-summary__label {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.4rem;
+}
+.season-summary__body {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.55;
+  color: var(--ink);
+  margin: 0;
+}
+
 .team-empty {
   padding: 1.5rem;
   border: 1px dashed var(--line);

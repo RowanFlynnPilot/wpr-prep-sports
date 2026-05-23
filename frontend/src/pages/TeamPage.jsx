@@ -7,6 +7,7 @@ import Sponsor from "../components/Sponsor.jsx";
 import SeasonLeaders from "../components/SeasonLeaders.jsx";
 import { formatGameDay, formatGameDate, formatGameTime } from "../utils/dates.js";
 import { recapForGame } from "../utils/recap.js";
+import { seasonSummary } from "../utils/seasonSummary.js";
 
 export default function TeamPage({ dataset, schoolIndex, sponsors }) {
   const { schoolId } = useParams();
@@ -32,6 +33,18 @@ export default function TeamPage({ dataset, schoolIndex, sponsors }) {
   const seasonStatsForSchool = useMemo(
     () => (dataset.seasonStats ?? []).filter((r) => r.school_id === schoolId),
     [dataset.seasonStats, schoolId],
+  );
+
+  const summary = useMemo(
+    () =>
+      seasonSummary({
+        teamGames,
+        schoolId,
+        school,
+        schoolsById: schoolIndex,
+        seasonStatsForSchool,
+      }),
+    [teamGames, schoolId, school, schoolIndex, seasonStatsForSchool],
   );
 
   // Try to find this school's logo from any of their home games (where the
@@ -74,9 +87,21 @@ export default function TeamPage({ dataset, schoolIndex, sponsors }) {
         </div>
         <div className="team-hero__record">
           <div className="record-stat">
-            <span className="record-stat__num">{record.wins}-{record.losses}</span>
-            <span className="record-stat__label">Overall</span>
+            <span className="record-stat__num">
+              {record.regWins}-{record.regLosses}
+            </span>
+            <span className="record-stat__label">
+              {record.playedPlayoffs ? "Regular" : "Overall"}
+            </span>
           </div>
+          {record.playedPlayoffs && (
+            <div className="record-stat">
+              <span className="record-stat__num">
+                {record.postWins}-{record.postLosses}
+              </span>
+              <span className="record-stat__label">Playoffs</span>
+            </div>
+          )}
           {record.pointsFor > 0 && (
             <>
               <div className="record-stat">
@@ -91,6 +116,13 @@ export default function TeamPage({ dataset, schoolIndex, sponsors }) {
           )}
         </div>
       </section>
+
+      {summary && (
+        <section className="season-summary" aria-label="Season summary">
+          <span className="season-summary__label">Season Summary</span>
+          <p className="season-summary__body">{summary}</p>
+        </section>
+      )}
 
       <section>
         <div className="section-header">
@@ -125,6 +157,8 @@ export default function TeamPage({ dataset, schoolIndex, sponsors }) {
 
 function computeRecord(games, schoolId) {
   let wins = 0, losses = 0, pf = 0, pa = 0;
+  let regWins = 0, regLosses = 0;
+  let postWins = 0, postLosses = 0;
   for (const g of games) {
     if (g.status !== "final") continue;
     const isHome = g.home.school_id === schoolId;
@@ -133,10 +167,29 @@ function computeRecord(games, schoolId) {
     if (own == null || opp == null) continue;
     pf += own;
     pa += opp;
-    if (own > opp) wins++;
+    const won = own > opp;
+    if (won) wins++;
     else losses++;
+    if (g.playoff) {
+      if (won) postWins++;
+      else postLosses++;
+    } else {
+      if (won) regWins++;
+      else regLosses++;
+    }
   }
-  return { wins, losses, pointsFor: pf, pointsAgainst: pa };
+  const playedPlayoffs = postWins + postLosses > 0;
+  return {
+    wins,
+    losses,
+    regWins,
+    regLosses,
+    postWins,
+    postLosses,
+    playedPlayoffs,
+    pointsFor: pf,
+    pointsAgainst: pa,
+  };
 }
 
 function ScheduleRow({ game, index, schoolId, schoolIndex, allTeamGames }) {
