@@ -66,6 +66,8 @@
 }
 .standings__table tbody tr:nth-child(odd) td { background: rgba(243, 240, 232, 0.4); }
 .standings__table tbody tr:last-child td { border-bottom: none; }
+.standings__table tbody tr { transition: background var(--t-fast) var(--ease); }
+.standings__table tbody tr:hover td { background: rgba(245, 158, 11, 0.1); cursor: pointer; }
 
 .standings__table td.rank {
   text-align: center;

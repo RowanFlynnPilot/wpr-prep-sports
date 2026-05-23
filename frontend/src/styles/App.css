@@ -4,16 +4,40 @@
   padding: 1.25rem 1.25rem 4rem;
 }
 
-/* Masthead — sits flush with the WPR navy brand bar. */
+/* Masthead — sits flush with the WPR navy brand bar.
+   Layout: [WPR logo] | [widget title] ........... [sponsor + updated]      */
 .masthead {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: 1rem;
-  padding: 0.85rem 1rem;
+  padding: 0.85rem 1.1rem;
   margin: -1.25rem -1.25rem 1.5rem;
   background: var(--wpr-navy);
   color: #fff;
+}
+
+.masthead__brand {
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
+  border-bottom: none !important;
+  transition: opacity var(--t-fast) var(--ease);
+}
+.masthead__brand:hover { opacity: 0.8; }
+.masthead__brand-logo {
+  display: block;
+  height: 38px;
+  width: auto;
+  max-width: 180px;
+  /* WPR's logo is dark on transparent — invert to render on the navy bar. */
+  filter: brightness(0) invert(1);
+}
+
+.masthead__divider {
+  width: 1px;
+  align-self: stretch;
+  margin: 0 0.25rem;
+  background: rgba(255, 255, 255, 0.25);
 }
 
 .masthead__title {
@@ -24,6 +48,7 @@
   text-transform: uppercase;
   color: #fff;
   border-bottom: none;
+  white-space: nowrap;
 }
 .masthead__title:hover { color: var(--accent); border-bottom: none; }
 .masthead__title em {
@@ -32,15 +57,23 @@
 }
 
 .masthead__attribution {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.2rem;
+  margin-left: auto;
   font-family: var(--font-body);
   font-size: 0.8rem;
   color: rgba(255, 255, 255, 0.85);
-  text-align: right;
   line-height: 1.3;
+  text-align: right;
 }
-.masthead__attribution a {
-  color: #fff;
-  border-bottom-color: rgba(255, 255, 255, 0.4);
+.masthead__updated {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
 }
 
 /* Main column rhythm — minmax(0,1fr) keeps a wide nowrap child (e.g. the
@@ -90,7 +123,18 @@
 
 @media (max-width: 640px) {
   .app { padding: 1rem 0.75rem 3rem; }
-  .masthead { margin: -1rem -0.75rem 1.25rem; }
+  .masthead {
+    margin: -1rem -0.75rem 1.25rem;
+    gap: 0.6rem;
+    padding: 0.65rem 0.85rem;
+    flex-wrap: wrap;
+  }
+  .masthead__brand-logo { height: 30px; }
   .masthead__title { font-size: 0.85rem; }
+  .masthead__attribution {
+    width: 100%;
+    align-items: flex-start;
+    text-align: left;
+  }
   .section-header h2 { font-size: 1.25rem; }
 }
