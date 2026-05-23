@@ -35,6 +35,23 @@
   font-size: 0.85rem;
   color: rgba(255, 255, 255, 0.55);
 }
+.game-page__context {
+  margin-left: auto;
+  padding: 0.2rem 0.55rem;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+}
+.game-page__sponsor {
+  display: flex;
+  justify-content: center;
+  padding: 0.4rem 0;
+  margin-top: -0.5rem; /* tuck up under the hero card */
+}
 
 .game-page__matchup {
   display: grid;
@@ -51,6 +68,10 @@
   padding: 0.85rem 1rem;
   border-radius: var(--radius-sm);
   background: rgba(255, 255, 255, 0.04);
+  /* School-color left rail when manifest has a color — sits behind the
+     won-team inset shadow so the wash from --school-color is the always-on
+     identity cue and the accent gold marks the winner on top. */
+  box-shadow: inset 3px 0 0 var(--school-color, transparent);
 }
 .game-page__team--won {
   background: rgba(245, 158, 11, 0.12);
@@ -129,6 +150,10 @@
   border: 1px solid var(--line);
   border-radius: var(--radius);
   overflow: hidden;
+  /* School-color left rail. The won team additionally gets the sport
+     accent on top, so winners read as "school + accent" while losers
+     read as just "school." */
+  border-left: 4px solid var(--school-color, var(--line));
 }
 .team-stats--won { border-top: 3px solid var(--accent); }
 .team-stats--empty { opacity: 0.7; }

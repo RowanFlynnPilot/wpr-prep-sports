@@ -3,6 +3,7 @@ import { useParams, Navigate, Link } from "react-router-dom";
 import Layout from "../components/Layout.jsx";
 import TeamLogo from "../components/TeamLogo.jsx";
 import TeamLink from "../components/TeamLink.jsx";
+import Sponsor from "../components/Sponsor.jsx";
 import { schoolFor } from "../utils/schools.js";
 import { formatGameDay, formatGameDate, formatGameTime } from "../utils/dates.js";
 import { recapForGame } from "../utils/recap.js";
@@ -12,13 +13,25 @@ import { useSportPrefix } from "../utils/links.js";
  * Full game detail. Shows the matchup header, the recap line, and every
  * Bound-sourced stat leader split by team. Lives at /<sport>/game/:gameId.
  */
-export default function GamePage({ dataset, schoolIndex }) {
+export default function GamePage({ dataset, schoolIndex, sportConfig }) {
   const { gameId } = useParams();
   const sportPrefix = useSportPrefix();
   const game = useMemo(
     () => (dataset.games ?? []).find((g) => g.id === gameId),
     [dataset.games, gameId],
   );
+
+  // Stat-line grouping memo must run on every render (hooks rule), so we
+  // compute it before the not-found guard and tolerate game === undefined.
+  const statsByKey = useMemo(() => {
+    const m = new Map();
+    for (const line of game?.stat_leaders ?? []) {
+      const key = line.team_school_id || `name:${normalizeName(line.team_name)}`;
+      if (!m.has(key)) m.set(key, []);
+      m.get(key).push(line);
+    }
+    return m;
+  }, [game]);
 
   if (!game) {
     return <Navigate to={sportPrefix} replace />;
@@ -54,20 +67,6 @@ export default function GamePage({ dataset, schoolIndex }) {
     perspectiveSchoolId,
   });
 
-  // Group stat lines by team. Tracked schools key by their school_id;
-  // untracked opponents key by a normalized version of their team name
-  // so a side lookup like `game.away.school_id || normalize(game.away.name)`
-  // still finds them.
-  const statsByKey = useMemo(() => {
-    const m = new Map();
-    for (const line of game.stat_leaders ?? []) {
-      const key = line.team_school_id || `name:${normalizeName(line.team_name)}`;
-      if (!m.has(key)) m.set(key, []);
-      m.get(key).push(line);
-    }
-    return m;
-  }, [game.stat_leaders]);
-
   const keyForSide = (side) =>
     side.school_id || `name:${normalizeName(side.name)}`;
 
@@ -81,8 +80,22 @@ export default function GamePage({ dataset, schoolIndex }) {
     </>
   );
 
+  // Context chip text for the eyebrow row — sport label + conference / playoff hint.
+  const contextLabel = [
+    sportConfig?.label,
+    game.playoff
+      ? game.playoff_round
+        ? `WIAA Tournament · ${game.playoff_round}`
+        : "WIAA Tournament"
+      : game.conference_game
+        ? "Conference matchup"
+        : null,
+  ]
+    .filter(Boolean)
+    .join(" · ");
+
   return (
-    <Layout breadcrumb={breadcrumb}>
+    <Layout breadcrumb={breadcrumb} sponsors={dataset.sponsors}>
       <section className="game-page__hero">
         <div className="game-page__meta">
           <span className="eyebrow eyebrow--accent">
@@ -93,6 +106,9 @@ export default function GamePage({ dataset, schoolIndex }) {
             {!isFinal && <> · {formatGameTime(game.date)}</>}
           </span>
           {game.venue && <span className="game-page__venue">{game.venue}</span>}
+          {contextLabel && (
+            <span className="game-page__context">{contextLabel}</span>
+          )}
         </div>
 
         <div className="game-page__matchup">
@@ -117,6 +133,13 @@ export default function GamePage({ dataset, schoolIndex }) {
 
         {recap && <p className="game-page__recap">{recap}</p>}
       </section>
+
+      <Sponsor
+        slot="game-detail"
+        sponsors={dataset.sponsors}
+        variant="inline"
+        className="game-page__sponsor"
+      />
 
       <section>
         <div className="section-header">
@@ -164,8 +187,12 @@ export default function GamePage({ dataset, schoolIndex }) {
 }
 
 function Side({ team, school, score, won, showScore }) {
+  const schoolColor = school?.colors?.[0] ?? null;
   return (
-    <div className={`game-page__team ${won ? "game-page__team--won" : ""}`}>
+    <div
+      className={`game-page__team ${won ? "game-page__team--won" : ""}`}
+      style={schoolColor ? { "--school-color": schoolColor } : undefined}
+    >
       <TeamLogo team={team} school={school} size="xl" />
       <div className="game-page__team-text">
         <h3 className="game-page__team-name">
@@ -203,8 +230,12 @@ function TeamStatsCard({ label, team, school, won, lines, score, showScore }) {
     );
   }
 
+  const schoolColor = school?.colors?.[0] ?? null;
   return (
-    <article className={`team-stats ${won ? "team-stats--won" : ""}`}>
+    <article
+      className={`team-stats ${won ? "team-stats--won" : ""}`}
+      style={schoolColor ? { "--school-color": schoolColor } : undefined}
+    >
       <header className="team-stats__header">
         <TeamLogo team={team} school={school} size="md" />
         <div className="team-stats__title">
