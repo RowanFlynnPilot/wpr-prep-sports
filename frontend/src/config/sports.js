@@ -51,6 +51,22 @@ export const SPORTS = {
     activeMonths: [10, 11, 0, 1, 2], // Nov–Mar
     hasSeasonStats: false,
   },
+  boys_hockey: {
+    id: "boys_hockey",
+    label: "Boys Hockey",
+    shortLabel: "Boys Hockey",
+    season: "2025–26",
+    activeMonths: [10, 11, 0, 1, 2], // Nov–Mar
+    hasSeasonStats: false,
+  },
+  girls_hockey: {
+    id: "girls_hockey",
+    label: "Girls Hockey",
+    shortLabel: "Girls Hockey",
+    season: "2025–26",
+    activeMonths: [10, 11, 0, 1, 2], // Nov–Mar
+    hasSeasonStats: false,
+  },
 };
 
 /** All sport ids the registry knows about, in display order. */
