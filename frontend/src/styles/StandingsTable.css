@@ -36,6 +36,10 @@
 }
 
 .standings__table-wrap {
+  /* Used to need overflow-x: auto for narrow viewports — now the table
+     itself fits inside the 480px minmax floor on .standings-grid via
+     tighter padding + smaller form chips. Keep `auto` as a safety net
+     for the smallest mobile widths only. */
   overflow-x: auto;
 }
 
@@ -43,29 +47,31 @@
   width: 100%;
   border-collapse: collapse;
   font-family: var(--font-body);
-  font-size: 0.92rem;
+  font-size: 0.9rem;
+  table-layout: auto;
 }
 .standings__table thead th {
   font-family: var(--font-display);
   font-weight: 500;
-  font-size: 0.7rem;
-  letter-spacing: 0.12em;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--muted);
   text-align: left;
-  padding: 0.55rem 0.85rem;
+  padding: 0.5rem 0.5rem;
   border-bottom: 1px solid var(--line);
   background: var(--paper);
 }
 .standings__table thead th.num { text-align: right; }
-.standings__table thead th.rank { width: 2.5rem; text-align: center; }
-.standings__table thead th.form { width: 5rem; text-align: right; }
+.standings__table thead th.rank { width: 2.1rem; text-align: center; padding-left: 0.4rem; padding-right: 0.3rem; }
+.standings__table thead th.form { width: 4.2rem; text-align: right; padding-right: 0.5rem; }
 
 .standings__table tbody td {
-  padding: 0.6rem 0.85rem;
+  padding: 0.55rem 0.5rem;
   border-bottom: 1px solid var(--paper-2);
   font-variant-numeric: tabular-nums;
 }
+.standings__table tbody td.rank { padding-left: 0.4rem; padding-right: 0.3rem; }
 .standings__table tbody tr:nth-child(odd) td { background: rgba(243, 240, 232, 0.4); }
 .standings__table tbody tr:last-child td { border-bottom: none; }
 .standings__table tbody tr { transition: background var(--t-fast) var(--ease); }
@@ -141,12 +147,12 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   border-radius: 3px;
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 0.65rem;
+  font-size: 0.6rem;
   line-height: 1;
   letter-spacing: 0;
   color: #fff;
@@ -158,7 +164,7 @@
   color: var(--muted-2);
   font-size: 0.85rem;
 }
-.standings__table td.form { text-align: right; padding-right: 0.85rem; }
+.standings__table td.form { text-align: right; padding-right: 0.5rem; }
 
 /* Hover preview overlay — slides up from the bottom of the standings card,
    showing fuller season detail for whichever row the user is hovering. */
