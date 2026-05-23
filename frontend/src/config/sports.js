@@ -20,8 +20,10 @@ export const DEFAULT_SPORT = "football";
 export const SPORTS = {
   football: {
     id: "football",
-    /** Display label used in section headers and the (future) sport switcher. */
+    /** Display label used in section headers and the sport switcher. */
     label: "Football",
+    /** Short label for tight UI like the mobile sport switcher. */
+    shortLabel: "Football",
     /** Season string used in headers — kept editable in case WIAA changes format. */
     season: "2025–26",
     /**
@@ -30,8 +32,24 @@ export const SPORTS = {
      * whether a "data is N hours old" warning is appropriate.
      */
     activeMonths: [7, 8, 9, 10], // Aug–Nov
-    /** Whether scraper writes a season_stats.json for this sport (currently football only). */
+    /** Whether scraper writes a season_stats.json for this sport. */
     hasSeasonStats: true,
+  },
+  boys_basketball: {
+    id: "boys_basketball",
+    label: "Boys Basketball",
+    shortLabel: "Boys Hoops",
+    season: "2025–26",
+    activeMonths: [10, 11, 0, 1, 2], // Nov–Mar
+    hasSeasonStats: false,
+  },
+  girls_basketball: {
+    id: "girls_basketball",
+    label: "Girls Basketball",
+    shortLabel: "Girls Hoops",
+    season: "2025–26",
+    activeMonths: [10, 11, 0, 1, 2], // Nov–Mar
+    hasSeasonStats: false,
   },
 };
 

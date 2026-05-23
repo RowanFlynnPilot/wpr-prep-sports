@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import Sponsor from "./Sponsor.jsx";
+import SportSwitcher from "./SportSwitcher.jsx";
+import { useSportPrefix } from "../utils/links.js";
 
 // Self-hosted under frontend/public so we don't depend on the WPR CDN
 // (which previously rendered blank in some browsers / iframe contexts).
@@ -13,6 +15,7 @@ const WPR_LOGO = `${import.meta.env.BASE_URL}wpr-logo.png`;
  * the user is on.
  */
 export default function Layout({ children, footer, lastUpdated, breadcrumb, sponsors }) {
+  const sportPrefix = useSportPrefix();
   return (
     <div className="app">
       <header className="masthead">
@@ -30,7 +33,7 @@ export default function Layout({ children, footer, lastUpdated, breadcrumb, spon
           />
         </a>
         <span className="masthead__divider" aria-hidden="true" />
-        <Link to="/" className="masthead__title">
+        <Link to={sportPrefix} className="masthead__title">
           Central Wisconsin <em>Prep Sports</em>
         </Link>
         <div className="masthead__attribution">
@@ -40,6 +43,8 @@ export default function Layout({ children, footer, lastUpdated, breadcrumb, spon
           )}
         </div>
       </header>
+
+      <SportSwitcher />
 
       {breadcrumb && (
         <nav aria-label="Breadcrumb" className="breadcrumb">
