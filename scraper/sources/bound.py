@@ -235,16 +235,34 @@ class SeasonStatRow:
     stats: dict[str, str]         # column header → cell value, e.g. {"YDS": "1247", "TDS": "12"}
 
 
-# Map the category title on Bound's stats page → our canonical category key.
-# Bound also shows Kicking and Punting on some pages but football v1 cares
-# about offense + tackles; we silently ignore unknown categories.
-_CATEGORY_BY_TITLE = {
-    "Passing": "Passing",
-    "Rushing": "Rushing",
-    "Receiving": "Receiving",
-    "Tackles": "Defense",
-    "Defense": "Defense",
+# Map the category title on Bound's stats page → our canonical category key,
+# per sport. Bound's titles vary by sport: football has Passing/Rushing/
+# Receiving/Defense; basketball collapses everything into a single "Player
+# Stats" card; volleyball splits into Offense/Defense/Serving. Anything not
+# in this map is silently ignored.
+_CATEGORY_BY_TITLE_BY_SPORT: dict[str, dict[str, str]] = {
+    "fb": {
+        "Passing": "Passing",
+        "Rushing": "Rushing",
+        "Receiving": "Receiving",
+        "Tackles": "Defense",
+        "Defense": "Defense",
+    },
+    "boysbasketball": {
+        "Player Stats": "Basketball",
+    },
+    "girlsbasketball": {
+        "Player Stats": "Basketball",
+    },
+    "vb": {
+        "Offense": "Volleyball Offense",
+        "Defense": "Volleyball Defense",
+        "Serving": "Volleyball Serving",
+    },
 }
+
+# Backwards-compatible alias — old callers reading the football map directly.
+_CATEGORY_BY_TITLE = _CATEGORY_BY_TITLE_BY_SPORT["fb"]
 
 
 def fetch_team_season_stats(
@@ -257,10 +275,12 @@ def fetch_team_season_stats(
     """
     Fetch one team's full season stats from Bound.
 
-    Each "card" on the page wraps a stat category — Passing, Rushing,
-    Receiving, Defense — with a table whose header row defines the
-    column keys (YDS, TDS, INT, etc.) and whose body rows are athletes.
-    First cell is "{jersey}, {player name}, {YR}".
+    Each "card" on the page wraps a stat category — for football
+    Passing/Rushing/Receiving/Defense, for basketball a single "Player
+    Stats" card, for volleyball Offense/Defense/Serving — with a table
+    whose header row defines the column keys (YDS, TDS, INT, etc.) and
+    whose body rows are athletes. First cell is "{jersey}, {player
+    name}, {YR}".
 
     Returns flattened SeasonStatRow records. The caller is responsible
     for resolving these into our manifest school (the slug itself is
@@ -270,13 +290,15 @@ def fetch_team_season_stats(
     html = _get(url)
     soup = BeautifulSoup(html, "lxml")
 
+    category_map = _CATEGORY_BY_TITLE_BY_SPORT.get(sport_abbr, {})
+
     out: list[SeasonStatRow] = []
     for card in soup.select("div.card-table"):
         title_el = card.select_one(".card-title")
         if not title_el:
             continue
         title = title_el.get_text(strip=True)
-        category = _CATEGORY_BY_TITLE.get(title)
+        category = category_map.get(title)
         if category is None:
             continue
 

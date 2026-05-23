@@ -117,11 +117,32 @@ def main() -> int:
         f"{len(dataset.standings)} conference standings"
     )
 
-    if not args.no_stats and args.sport == "football":
+    # Map our internal sport ids to Bound's URL identifiers. Sports not in
+    # this map have no Bound integration; stats merge is skipped for them.
+    # Hockey is intentionally absent — Bound publishes WI hockey scores but
+    # not per-team stats pages (404s on every team).
+    BOUND_SPORT_ABBRS = {
+        "football": "fb",
+        "boys_basketball": "boysbasketball",
+        "girls_basketball": "girlsbasketball",
+        "volleyball": "vb",
+    }
+
+    sport_abbr = BOUND_SPORT_ABBRS.get(args.sport)
+    if not args.no_stats and sport_abbr:
         name_to_id = build_name_index_for_manifest(manifest)
-        dataset = merge_bound_stats(dataset, name_to_id=name_to_id, console=console)
+        dataset = merge_bound_stats(
+            dataset,
+            name_to_id=name_to_id,
+            sport_abbr=sport_abbr,
+            console=console,
+        )
         dataset = merge_team_season_stats(
-            dataset, manifest=manifest, sport=args.sport, console=console,
+            dataset,
+            manifest=manifest,
+            sport=args.sport,
+            sport_abbr=sport_abbr,
+            console=console,
         )
 
     if args.dry_run:

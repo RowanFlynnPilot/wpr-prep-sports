@@ -37,6 +37,7 @@ def merge_bound_stats(
     dataset: Dataset,
     *,
     name_to_id: dict[str, str],
+    sport_abbr: str = "fb",
     console: Console | None = None,
 ) -> Dataset:
     """Mutate-and-return the dataset with stat_leaders populated where possible."""
@@ -50,14 +51,14 @@ def merge_bound_stats(
         return dataset
 
     if console:
-        console.print(f"[bold]Fetching Bound stats[/bold] for {len(targeted)} finalized games")
+        console.print(f"[bold]Fetching Bound stats[/bold] for {len(targeted)} finalized games (sport_abbr={sport_abbr})")
 
     dates = sorted({g.date.strftime("%Y-%m-%d") for g in targeted})
     bound_index: dict[tuple[str, str], bound.BoundGame] = {}
 
     for date in dates:
         try:
-            games_on_date = bound.find_game_ids(date)
+            games_on_date = bound.find_game_ids(date, sport_abbr=sport_abbr)
         except Exception as e:  # noqa: BLE001
             if console:
                 console.print(f"[yellow]  ! Bound scores index failed for {date}: {e}[/yellow]")
@@ -79,7 +80,7 @@ def merge_bound_stats(
         if not bg:
             continue
         try:
-            lines = bound.fetch_game_stats(bg.comp_id)
+            lines = bound.fetch_game_stats(bg.comp_id, sport_abbr=sport_abbr)
         except Exception as e:  # noqa: BLE001
             if console:
                 console.print(f"[yellow]  ! stats fetch failed for {bg.comp_id}: {e}[/yellow]")
@@ -110,6 +111,7 @@ def merge_team_season_stats(
     *,
     manifest: Manifest,
     sport: str,
+    sport_abbr: str = "fb",
     console: Console | None = None,
 ) -> Dataset:
     """
@@ -134,7 +136,7 @@ def merge_team_season_stats(
     out: list[SeasonStat] = []
     for school in targets:
         try:
-            rows = bound.fetch_team_season_stats(school.bound_slug)
+            rows = bound.fetch_team_season_stats(school.bound_slug, sport_abbr=sport_abbr)
         except Exception as e:  # noqa: BLE001
             if console:
                 console.print(f"[yellow]  ! season stats failed for {school.id}: {e}[/yellow]")
