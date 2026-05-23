@@ -81,12 +81,27 @@
    the same negative-margin band as the masthead so it stretches edge-to-edge
    on the navy field. */
 .sport-switcher {
+  position: relative;
   margin: -1.5rem -1.25rem 1.5rem;
   background: var(--wpr-navy);
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   overflow-x: auto;
   /* hide native scrollbar — overflow-x stays usable via touch/trackpad */
   scrollbar-width: none;
+  /* Right-edge fade hints "scroll for more" on narrow viewports. Uses a
+     gradient mask so it doesn't dim the active tab content itself. */
+  mask-image: linear-gradient(
+    to right,
+    #000 0,
+    #000 calc(100% - 1.5rem),
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    #000 0,
+    #000 calc(100% - 1.5rem),
+    transparent 100%
+  );
 }
 .sport-switcher::-webkit-scrollbar { display: none; }
 .sport-switcher__list {
