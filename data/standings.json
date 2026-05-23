@@ -90,7 +90,7 @@
   {
     "sport": "football",
     "season": "2025-26",
-    "conference": "VFA West",
+    "conference": "Wisconsin Valley",
     "division": null,
     "rows": [
       {
@@ -142,13 +142,33 @@
         "overall_losses": 4,
         "points_for": 219,
         "points_against": 211
+      },
+      {
+        "school_id": "eau-claire-north",
+        "name": "Eau Claire North",
+        "conference_wins": 2,
+        "conference_losses": 5,
+        "overall_wins": 4,
+        "overall_losses": 5,
+        "points_for": 268,
+        "points_against": 285
+      },
+      {
+        "school_id": "eau-claire-memorial",
+        "name": "Eau Claire Memorial",
+        "conference_wins": 1,
+        "conference_losses": 6,
+        "overall_wins": 3,
+        "overall_losses": 6,
+        "points_for": 213,
+        "points_against": 262
       }
     ]
   },
   {
     "sport": "football",
     "season": "2025-26",
-    "conference": "Marawood",
+    "conference": "Marawood/CWC",
     "division": null,
     "rows": [
       {
@@ -161,6 +181,74 @@
         "points_for": 387,
         "points_against": 48
       },
+      {
+        "school_id": "abbotsford",
+        "name": "Abbotsford",
+        "conference_wins": 6,
+        "conference_losses": 1,
+        "overall_wins": 7,
+        "overall_losses": 3,
+        "points_for": 254,
+        "points_against": 174
+      },
+      {
+        "school_id": "auburndale",
+        "name": "Auburndale",
+        "conference_wins": 5,
+        "conference_losses": 2,
+        "overall_wins": 5,
+        "overall_losses": 5,
+        "points_for": 260,
+        "points_against": 171
+      },
+      {
+        "school_id": "assumption",
+        "name": "Assumption",
+        "conference_wins": 4,
+        "conference_losses": 3,
+        "overall_wins": 6,
+        "overall_losses": 4,
+        "points_for": 182,
+        "points_against": 218
+      },
+      {
+        "school_id": "pacelli",
+        "name": "Pacelli",
+        "conference_wins": 3,
+        "conference_losses": 4,
+        "overall_wins": 6,
+        "overall_losses": 4,
+        "points_for": 173,
+        "points_against": 205
+      },
+      {
+        "school_id": "pittsville",
+        "name": "Pittsville",
+        "conference_wins": 2,
+        "conference_losses": 5,
+        "overall_wins": 2,
+        "overall_losses": 8,
+        "points_for": 163,
+        "points_against": 340
+      },
+      {
+        "school_id": "iola-scandinavia",
+        "name": "Iola-Scandinavia",
+        "conference_wins": 1,
+        "conference_losses": 6,
+        "overall_wins": 3,
+        "overall_losses": 6,
+        "points_for": 152,
+        "points_against": 289
+      }
+    ]
+  },
+  {
+    "sport": "football",
+    "season": "2025-26",
+    "conference": "CWC-Large",
+    "division": null,
+    "rows": [
       {
         "school_id": "marathon",
         "name": "Marathon",
@@ -190,24 +278,6 @@
         "overall_losses": 3,
         "points_for": 308,
         "points_against": 221
-      }
-    ]
-  },
-  {
-    "sport": "football",
-    "season": "2025-26",
-    "conference": "Cloverbelt",
-    "division": null,
-    "rows": [
-      {
-        "school_id": "abbotsford",
-        "name": "Abbotsford",
-        "conference_wins": 6,
-        "conference_losses": 1,
-        "overall_wins": 7,
-        "overall_losses": 3,
-        "points_for": 254,
-        "points_against": 174
       },
       {
         "school_id": "colby",
@@ -218,6 +288,102 @@
         "overall_losses": 3,
         "points_for": 212,
         "points_against": 227
+      },
+      {
+        "school_id": "amherst",
+        "name": "Amherst",
+        "conference_wins": 3,
+        "conference_losses": 4,
+        "overall_wins": 7,
+        "overall_losses": 5,
+        "points_for": 360,
+        "points_against": 287
+      },
+      {
+        "school_id": "weyauwega-fremont",
+        "name": "Weyauwega-Fremont",
+        "conference_wins": 2,
+        "conference_losses": 5,
+        "overall_wins": 4,
+        "overall_losses": 7,
+        "points_for": 258,
+        "points_against": 318
+      },
+      {
+        "school_id": "wittenberg-birnamwood",
+        "name": "Wittenberg-Birnamwood",
+        "conference_wins": 1,
+        "conference_losses": 6,
+        "overall_wins": 3,
+        "overall_losses": 8,
+        "points_for": 233,
+        "points_against": 309
+      }
+    ]
+  },
+  {
+    "sport": "football",
+    "season": "2025-26",
+    "conference": "Big Rivers",
+    "division": null,
+    "rows": [
+      {
+        "school_id": "chippewa-falls",
+        "name": "Chippewa Falls",
+        "conference_wins": 6,
+        "conference_losses": 1,
+        "overall_wins": 6,
+        "overall_losses": 4,
+        "points_for": 263,
+        "points_against": 208
+      },
+      {
+        "school_id": "hudson",
+        "name": "Hudson",
+        "conference_wins": 5,
+        "conference_losses": 2,
+        "overall_wins": 6,
+        "overall_losses": 5,
+        "points_for": 271,
+        "points_against": 236
+      },
+      {
+        "school_id": "new-richmond",
+        "name": "New Richmond",
+        "conference_wins": 4,
+        "conference_losses": 3,
+        "overall_wins": 5,
+        "overall_losses": 6,
+        "points_for": 291,
+        "points_against": 311
+      },
+      {
+        "school_id": "rice-lake",
+        "name": "Rice Lake",
+        "conference_wins": 3,
+        "conference_losses": 4,
+        "overall_wins": 5,
+        "overall_losses": 7,
+        "points_for": 350,
+        "points_against": 352
+      }
+    ]
+  },
+  {
+    "sport": "football",
+    "season": "2025-26",
+    "conference": "8-Player Marawood/CWC",
+    "division": null,
+    "rows": [
+      {
+        "school_id": "rosholt",
+        "name": "Rosholt",
+        "conference_wins": 0,
+        "conference_losses": 7,
+        "overall_wins": 0,
+        "overall_losses": 7,
+        "points_for": 0,
+        "points_against": 7
       }
     ]
   }

@@ -43,7 +43,7 @@
     "conferences": [
       {
         "sport": "football",
-        "conference": "VFA West"
+        "conference": "Wisconsin Valley"
       },
       {
         "sport": "boys_basketball",
@@ -74,7 +74,7 @@
     "conferences": [
       {
         "sport": "football",
-        "conference": "VFA West"
+        "conference": "Wisconsin Valley"
       },
       {
         "sport": "boys_basketball",
@@ -105,7 +105,7 @@
     "conferences": [
       {
         "sport": "football",
-        "conference": "VFA West"
+        "conference": "Wisconsin Valley"
       },
       {
         "sport": "boys_basketball",
@@ -136,7 +136,7 @@
     "conferences": [
       {
         "sport": "football",
-        "conference": "VFA West"
+        "conference": "Wisconsin Valley"
       },
       {
         "sport": "boys_basketball",
@@ -167,7 +167,7 @@
     "conferences": [
       {
         "sport": "football",
-        "conference": "VFA West"
+        "conference": "Wisconsin Valley"
       },
       {
         "sport": "boys_basketball",
@@ -198,7 +198,7 @@
     "conferences": [
       {
         "sport": "football",
-        "conference": "Marawood"
+        "conference": "Northwoods-East 8"
       },
       {
         "sport": "boys_basketball",
@@ -229,7 +229,7 @@
     "conferences": [
       {
         "sport": "football",
-        "conference": "Marawood"
+        "conference": "Marawood/CWC"
       },
       {
         "sport": "boys_basketball",
@@ -260,7 +260,7 @@
     "conferences": [
       {
         "sport": "football",
-        "conference": "Marawood"
+        "conference": "CWC-Large"
       },
       {
         "sport": "boys_basketball",
@@ -291,7 +291,7 @@
     "conferences": [
       {
         "sport": "football",
-        "conference": "Marawood"
+        "conference": "Central Wisconsin-8"
       },
       {
         "sport": "boys_basketball",
@@ -322,7 +322,7 @@
     "conferences": [
       {
         "sport": "football",
-        "conference": "Marawood"
+        "conference": "CWC-Large"
       },
       {
         "sport": "boys_basketball",
@@ -353,7 +353,7 @@
     "conferences": [
       {
         "sport": "football",
-        "conference": "Marawood"
+        "conference": "CWC-Large"
       },
       {
         "sport": "boys_basketball",
@@ -415,7 +415,7 @@
     "conferences": [
       {
         "sport": "football",
-        "conference": "Cloverbelt"
+        "conference": "CWC-Large"
       },
       {
         "sport": "boys_basketball",
@@ -446,7 +446,7 @@
     "conferences": [
       {
         "sport": "football",
-        "conference": "Cloverbelt"
+        "conference": "Marawood/CWC"
       },
       {
         "sport": "boys_basketball",
@@ -645,6 +645,291 @@
       {
         "sport": "volleyball",
         "conference": "Great Northern"
+      }
+    ],
+    "wiaa_division": {},
+    "athletics_url": null
+  },
+  {
+    "id": "eau-claire-north",
+    "name": "Eau Claire North",
+    "full_name": "Eau Claire North High School",
+    "mascot": "Huskies",
+    "city": "Eau Claire",
+    "colors": [
+      "#1E40AF",
+      "#FFFFFF"
+    ],
+    "conferences": [
+      {
+        "sport": "football",
+        "conference": "Wisconsin Valley"
+      }
+    ],
+    "wiaa_division": {},
+    "athletics_url": null
+  },
+  {
+    "id": "eau-claire-memorial",
+    "name": "Eau Claire Memorial",
+    "full_name": "Eau Claire Memorial High School",
+    "mascot": "Old Abes",
+    "city": "Eau Claire",
+    "colors": [
+      "#7F1D1D",
+      "#FFFFFF"
+    ],
+    "conferences": [
+      {
+        "sport": "football",
+        "conference": "Wisconsin Valley"
+      }
+    ],
+    "wiaa_division": {},
+    "athletics_url": null
+  },
+  {
+    "id": "chippewa-falls",
+    "name": "Chippewa Falls",
+    "full_name": "Chippewa Falls Senior High School",
+    "mascot": "Cardinals",
+    "city": "Chippewa Falls",
+    "colors": [
+      "#B91C1C",
+      "#FFFFFF"
+    ],
+    "conferences": [
+      {
+        "sport": "football",
+        "conference": "Big Rivers"
+      }
+    ],
+    "wiaa_division": {},
+    "athletics_url": null
+  },
+  {
+    "id": "hudson",
+    "name": "Hudson",
+    "full_name": "Hudson High School",
+    "mascot": "Raiders",
+    "city": "Hudson",
+    "colors": [
+      "#000000",
+      "#FBBF24"
+    ],
+    "conferences": [
+      {
+        "sport": "football",
+        "conference": "Big Rivers"
+      }
+    ],
+    "wiaa_division": {},
+    "athletics_url": null
+  },
+  {
+    "id": "new-richmond",
+    "name": "New Richmond",
+    "full_name": "New Richmond High School",
+    "mascot": "Tigers",
+    "city": "New Richmond",
+    "colors": [
+      "#EA580C",
+      "#000000"
+    ],
+    "conferences": [
+      {
+        "sport": "football",
+        "conference": "Big Rivers"
+      }
+    ],
+    "wiaa_division": {},
+    "athletics_url": null
+  },
+  {
+    "id": "rice-lake",
+    "name": "Rice Lake",
+    "full_name": "Rice Lake High School",
+    "mascot": "Warriors",
+    "city": "Rice Lake",
+    "colors": [
+      "#B91C1C",
+      "#000000"
+    ],
+    "conferences": [
+      {
+        "sport": "football",
+        "conference": "Big Rivers"
+      }
+    ],
+    "wiaa_division": {},
+    "athletics_url": null
+  },
+  {
+    "id": "auburndale",
+    "name": "Auburndale",
+    "full_name": "Auburndale High School",
+    "mascot": "Eagles",
+    "city": "Auburndale",
+    "colors": [
+      "#1D4ED8",
+      "#FBBF24"
+    ],
+    "conferences": [
+      {
+        "sport": "football",
+        "conference": "Marawood/CWC"
+      }
+    ],
+    "wiaa_division": {},
+    "athletics_url": null
+  },
+  {
+    "id": "assumption",
+    "name": "Assumption",
+    "full_name": "Wisconsin Rapids Assumption High School",
+    "mascot": "Wolves",
+    "city": "Wisconsin Rapids",
+    "colors": [
+      "#1E40AF",
+      "#FBBF24"
+    ],
+    "conferences": [
+      {
+        "sport": "football",
+        "conference": "Marawood/CWC"
+      }
+    ],
+    "wiaa_division": {},
+    "athletics_url": null
+  },
+  {
+    "id": "pacelli",
+    "name": "Pacelli",
+    "full_name": "Stevens Point Pacelli High School",
+    "mascot": "Cardinals",
+    "city": "Stevens Point",
+    "colors": [
+      "#B91C1C",
+      "#FBBF24"
+    ],
+    "conferences": [
+      {
+        "sport": "football",
+        "conference": "Marawood/CWC"
+      }
+    ],
+    "wiaa_division": {},
+    "athletics_url": null
+  },
+  {
+    "id": "pittsville",
+    "name": "Pittsville",
+    "full_name": "Pittsville High School",
+    "mascot": "Panthers",
+    "city": "Pittsville",
+    "colors": [
+      "#7C3AED",
+      "#FBBF24"
+    ],
+    "conferences": [
+      {
+        "sport": "football",
+        "conference": "Marawood/CWC"
+      }
+    ],
+    "wiaa_division": {},
+    "athletics_url": null
+  },
+  {
+    "id": "iola-scandinavia",
+    "name": "Iola-Scandinavia",
+    "full_name": "Iola-Scandinavia High School",
+    "mascot": "Thunderbirds",
+    "city": "Iola",
+    "colors": [
+      "#1E3A8A",
+      "#FBBF24"
+    ],
+    "conferences": [
+      {
+        "sport": "football",
+        "conference": "Marawood/CWC"
+      }
+    ],
+    "wiaa_division": {},
+    "athletics_url": null
+  },
+  {
+    "id": "amherst",
+    "name": "Amherst",
+    "full_name": "Amherst High School",
+    "mascot": "Falcons",
+    "city": "Amherst",
+    "colors": [
+      "#15803D",
+      "#FFFFFF"
+    ],
+    "conferences": [
+      {
+        "sport": "football",
+        "conference": "CWC-Large"
+      }
+    ],
+    "wiaa_division": {},
+    "athletics_url": null
+  },
+  {
+    "id": "weyauwega-fremont",
+    "name": "Weyauwega-Fremont",
+    "full_name": "Weyauwega-Fremont High School",
+    "mascot": "Warhawks",
+    "city": "Weyauwega",
+    "colors": [
+      "#1E40AF",
+      "#FBBF24"
+    ],
+    "conferences": [
+      {
+        "sport": "football",
+        "conference": "CWC-Large"
+      }
+    ],
+    "wiaa_division": {},
+    "athletics_url": null
+  },
+  {
+    "id": "wittenberg-birnamwood",
+    "name": "Wittenberg-Birnamwood",
+    "full_name": "Wittenberg-Birnamwood High School",
+    "mascot": "Chargers",
+    "city": "Wittenberg",
+    "colors": [
+      "#7C2D12",
+      "#FBBF24"
+    ],
+    "conferences": [
+      {
+        "sport": "football",
+        "conference": "CWC-Large"
+      }
+    ],
+    "wiaa_division": {},
+    "athletics_url": null
+  },
+  {
+    "id": "rosholt",
+    "name": "Rosholt",
+    "full_name": "Rosholt High School",
+    "mascot": "Hornets",
+    "city": "Rosholt",
+    "colors": [
+      "#FBBF24",
+      "#000000"
+    ],
+    "conferences": [
+      {
+        "sport": "football",
+        "conference": "8-Player Marawood/CWC"
       }
     ],
     "wiaa_division": {},
