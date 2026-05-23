@@ -216,6 +216,16 @@
 .stat-row:first-child { border-top: none; }
 .stat-row:hover { background: rgba(243, 240, 232, 0.4); }
 
+/* When the sport doesn't expose position (basketball, volleyball,
+   hockey skaters) drop the pos column so the player block isn't
+   indented under empty space. */
+.stat-row--no-pos {
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas:
+    "player"
+    "stats";
+}
+
 .stat-row__pos {
   grid-area: pos;
   align-self: center;

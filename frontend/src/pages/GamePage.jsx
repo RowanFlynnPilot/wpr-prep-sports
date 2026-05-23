@@ -266,18 +266,25 @@ function normalizeName(name) {
   return (name || "").replace(/\s+/g, " ").trim().toLowerCase();
 }
 
+// Only categories whose position is fully determined by the category
+// itself get a pos badge. Basketball + volleyball can't be inferred this
+// way (every player can score/rebound/assist), and hockey skater
+// categories vary by player — so those render without a pill rather
+// than a meaningless dash.
 const CATEGORY_POS = {
   "Passing Yards": "QB",
   "Rushing Yards": "RB",
   "Receiving Yards": "WR",
   "Total Tackles": "DEF",
+  "Hockey Saves": "G",
 };
 
 function StatRow({ line }) {
   const stats = line.stats ?? {};
+  const pos = CATEGORY_POS[line.category];
   return (
-    <li className="stat-row">
-      <span className="stat-row__pos">{CATEGORY_POS[line.category] ?? "—"}</span>
+    <li className={`stat-row${pos ? "" : " stat-row--no-pos"}`}>
+      {pos && <span className="stat-row__pos">{pos}</span>}
       <div className="stat-row__player">
         <span className="stat-row__name">
           {line.player_name}
