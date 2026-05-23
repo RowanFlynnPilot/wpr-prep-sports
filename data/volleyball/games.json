@@ -7105,11 +7105,70 @@
     "conference_game": false,
     "venue": "@Stevens Point",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
     ],
     "playoff": false,
     "playoff_round": null,
-    "stat_leaders": []
+    "stat_leaders": [
+      {
+        "team_school_id": "",
+        "team_name": "New Berlin West",
+        "category": "Assists",
+        "player_name": "Mikayla Martin",
+        "player_year": "SO",
+        "stats": {
+          "AST": "13",
+          "PER": "4.3"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "New Berlin West",
+        "category": "Kills",
+        "player_name": "Willow Kumprey",
+        "player_year": "SO",
+        "stats": {
+          "KLS": "2.0",
+          "PCT": "3.8%",
+          "PTS": "2.7"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "New Berlin West",
+        "category": "Total Blocks",
+        "player_name": "Kayla Grahn",
+        "player_year": "SR",
+        "stats": {
+          "BLK": "4",
+          "PER": "1.3"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "New Berlin West",
+        "category": "Digs",
+        "player_name": "Morgan Kopischke",
+        "player_year": "JR",
+        "stats": {
+          "DIG": "13",
+          "PER": "4.3"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "New Berlin West",
+        "category": "Serve Aces",
+        "player_name": "Mikayla Martin",
+        "player_year": "SO",
+        "stats": {
+          "ACE": "1.3",
+          "ATT": "4.7",
+          "PCT": "0.8"
+        }
+      }
+    ]
   },
   {
     "id": "volleyball-2025-08-30-northland-pines-at-wisconsin-rapids",
@@ -7721,11 +7780,70 @@
     "conference_game": false,
     "venue": "@Champion Center, Grand Chute, WI",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
     ],
     "playoff": false,
     "playoff_round": null,
-    "stat_leaders": []
+    "stat_leaders": [
+      {
+        "team_school_id": "",
+        "team_name": "New Berlin West",
+        "category": "Assists",
+        "player_name": "Mikayla Martin",
+        "player_year": "SO",
+        "stats": {
+          "AST": "9",
+          "PER": "3.0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "New Berlin West",
+        "category": "Kills",
+        "player_name": "Willow Kumprey",
+        "player_year": "SO",
+        "stats": {
+          "KLS": "3.0",
+          "PCT": "23.3%",
+          "PTS": "4.7"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "New Berlin West",
+        "category": "Total Blocks",
+        "player_name": "Mikayla Martin",
+        "player_year": "SO",
+        "stats": {
+          "BLK": "5",
+          "PER": "1.7"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "New Berlin West",
+        "category": "Digs",
+        "player_name": "Morgan Kopischke",
+        "player_year": "JR",
+        "stats": {
+          "DIG": "15",
+          "PER": "5.0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "New Berlin West",
+        "category": "Serve Aces",
+        "player_name": "Jaydon Golsteyn",
+        "player_year": "SR",
+        "stats": {
+          "ACE": "0.7",
+          "ATT": "4.0",
+          "PCT": "0.8"
+        }
+      }
+    ]
   },
   {
     "id": "volleyball-2025-08-30-colby-at-northland-pines",
