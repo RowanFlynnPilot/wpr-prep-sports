@@ -196,6 +196,14 @@ _NAME_ALIASES: dict[str, str] = {
     "marion/tigerton": "marion",
     "colby": "colby",
     "abbotsford": "abbotsford",
+    # Hockey co-op display names (WIAA records co-op programs under the
+    # lead school's slug for boys hockey when a single school is listed).
+    "marshfield/columbus catholic": "marshfield",
+    "medford co-op": "medford",
+    "merrill co-op": "merrill",
+    "antigo/wittenberg-birnamwood": "antigo",
+    "rhinelander co-op": "rhinelander",
+    "pacelli co-op": "pacelli",
 }
 
 

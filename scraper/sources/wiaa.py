@@ -34,6 +34,8 @@ SSID_BY_SPORT: dict[str, int] = {
     "football_8p": 1500,        # Boys Football 8-Player
     "boys_basketball": 1502,
     "girls_basketball": 1512,
+    "boys_hockey": 1505,
+    "girls_hockey": 1517,
     "volleyball": 1523,         # Girls Volleyball
     "boys_volleyball": 1510,
     "boys_soccer": 1506,
