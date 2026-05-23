@@ -3,9 +3,10 @@ import { useParams, Link, Navigate } from "react-router-dom";
 import Layout from "../components/Layout.jsx";
 import TeamLogo from "../components/TeamLogo.jsx";
 import TeamLink from "../components/TeamLink.jsx";
+import Sponsor from "../components/Sponsor.jsx";
 import { formatGameDay, formatGameDate, formatGameTime } from "../utils/dates.js";
 
-export default function TeamPage({ dataset, schoolIndex }) {
+export default function TeamPage({ dataset, schoolIndex, sponsors }) {
   const { schoolId } = useParams();
   const school = schoolIndex.get(schoolId);
 
@@ -54,7 +55,7 @@ export default function TeamPage({ dataset, schoolIndex }) {
   );
 
   return (
-    <Layout breadcrumb={breadcrumb}>
+    <Layout breadcrumb={breadcrumb} sponsors={sponsors}>
       <section className="team-hero">
         <TeamLogo team={heroTeam} school={school} size="xl" />
         <div className="team-hero__meta">
@@ -106,6 +107,8 @@ export default function TeamPage({ dataset, schoolIndex }) {
           </ol>
         )}
       </section>
+
+      <Sponsor slot={`school:${schoolId}`} sponsors={sponsors} variant="card" />
     </Layout>
   );
 }

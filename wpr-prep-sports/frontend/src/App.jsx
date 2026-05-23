@@ -14,6 +14,7 @@ import "./styles/ScoreTicker.css";
 import "./styles/StandingsTable.css";
 import "./styles/ThisWeekGrid.css";
 import "./styles/TeamPage.css";
+import "./styles/Sponsor.css";
 
 export default function App() {
   const [dataset, setDataset] = useState(null);
@@ -70,11 +71,23 @@ export default function App() {
     <Routes>
       <Route
         path="/"
-        element={<DashboardPage dataset={dataset} schoolIndex={schoolIndex} />}
+        element={
+          <DashboardPage
+            dataset={dataset}
+            schoolIndex={schoolIndex}
+            sponsors={dataset.sponsors}
+          />
+        }
       />
       <Route
         path="/team/:schoolId"
-        element={<TeamPage dataset={dataset} schoolIndex={schoolIndex} />}
+        element={
+          <TeamPage
+            dataset={dataset}
+            schoolIndex={schoolIndex}
+            sponsors={dataset.sponsors}
+          />
+        }
       />
     </Routes>
   );

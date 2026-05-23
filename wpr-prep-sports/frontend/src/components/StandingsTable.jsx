@@ -1,11 +1,12 @@
 import TeamLogo from "./TeamLogo.jsx";
 import TeamLink from "./TeamLink.jsx";
+import Sponsor from "./Sponsor.jsx";
 
 /**
  * One conference's standings. Editorial-table look — bold rank column,
  * tabular figures, alternating row tint.
  */
-export default function StandingsTable({ standing, schoolIndex }) {
+export default function StandingsTable({ standing, schoolIndex, sponsors }) {
   if (!standing || !standing.rows || standing.rows.length === 0) return null;
 
   return (
@@ -14,6 +15,12 @@ export default function StandingsTable({ standing, schoolIndex }) {
         <h3>{standing.conference}</h3>
         <span className="standings__hint">2025–26 · Football</span>
       </header>
+      <Sponsor
+        slot={`standings:${standing.conference}`}
+        sponsors={sponsors}
+        variant="inline"
+        className="standings__sponsor"
+      />
 
       <div className="standings__table-wrap">
         <table className="standings__table">

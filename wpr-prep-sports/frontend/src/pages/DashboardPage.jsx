@@ -5,10 +5,11 @@ import ScoreTicker from "../components/ScoreTicker.jsx";
 import ThisWeekGrid from "../components/ThisWeekGrid.jsx";
 import StandingsTable from "../components/StandingsTable.jsx";
 import StaleBanner from "../components/StaleBanner.jsx";
+import Sponsor from "../components/Sponsor.jsx";
 import { pickFeaturedGame, tickerGames } from "../utils/games.js";
 import { pickFeaturedWeek } from "../utils/weeks.js";
 
-export default function DashboardPage({ dataset, schoolIndex }) {
+export default function DashboardPage({ dataset, schoolIndex, sponsors }) {
   const { meta, schools, games, standings } = dataset;
 
   // Off-season trick: until the 2026 season starts producing live games,
@@ -46,6 +47,7 @@ export default function DashboardPage({ dataset, schoolIndex }) {
   return (
     <Layout
       lastUpdated={lastUpdated}
+      sponsors={sponsors}
       footer={`Data via WIAA · ${games.length} games tracked · ${schools.length} schools`}
     >
       <StaleBanner lastUpdatedIso={meta?.last_updated} />
@@ -65,7 +67,7 @@ export default function DashboardPage({ dataset, schoolIndex }) {
       <section>
         <div className="section-header">
           <h2>Recent Scores</h2>
-          <span className="section-header__hint">Last three weeks · scroll →</span>
+          <Sponsor slot="ticker" sponsors={sponsors} variant="inline" />
         </div>
         <ScoreTicker games={recent} schoolIndex={schoolIndex} />
       </section>
@@ -81,6 +83,7 @@ export default function DashboardPage({ dataset, schoolIndex }) {
               key={`${s.conference}-${s.sport}`}
               standing={s}
               schoolIndex={schoolIndex}
+              sponsors={sponsors}
             />
           ))}
         </div>

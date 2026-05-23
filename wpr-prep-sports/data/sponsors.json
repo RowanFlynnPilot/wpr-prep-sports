@@ -1,0 +1,41 @@
+{
+  "_comment": "Sponsor inventory. WPR ad ops fills these without code changes — the frontend hides any slot that doesn't have a `name`. Slot keys: 'title' (masthead), 'ticker' (above recent scores), 'standings:<conference>' (per conference, e.g. 'standings:VFA West'), 'school:<school_id>' (per team page, e.g. 'school:wausau-east'). Each slot is { label?: string (default 'Presented by'), name: string, logo_url?: string, link_url?: string }. To enable a slot, set `name`. Leave name empty/null to hide it.",
+  "slots": {
+    "title": {
+      "label": "Presented by",
+      "name": null,
+      "logo_url": null,
+      "link_url": null
+    },
+    "ticker": {
+      "label": "Scoreboard presented by",
+      "name": null,
+      "logo_url": null,
+      "link_url": null
+    },
+    "standings:VFA West": {
+      "label": "VFA West standings presented by",
+      "name": null,
+      "logo_url": null,
+      "link_url": null
+    },
+    "standings:Marawood": {
+      "label": "Marawood standings presented by",
+      "name": null,
+      "logo_url": null,
+      "link_url": null
+    },
+    "standings:Great Northern": {
+      "label": "Great Northern standings presented by",
+      "name": null,
+      "logo_url": null,
+      "link_url": null
+    },
+    "standings:Cloverbelt": {
+      "label": "Cloverbelt standings presented by",
+      "name": null,
+      "logo_url": null,
+      "link_url": null
+    }
+  }
+}

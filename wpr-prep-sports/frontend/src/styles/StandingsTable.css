@@ -28,6 +28,12 @@
   color: rgba(255, 255, 255, 0.7);
 }
 
+.standings__sponsor {
+  padding: 0.4rem 1rem;
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+}
+
 .standings__table-wrap {
   overflow-x: auto;
 }

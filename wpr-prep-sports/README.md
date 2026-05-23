@@ -80,6 +80,40 @@ npm install
 npm run dev
 ```
 
+## Managing sponsors
+
+Sponsorship slots are data-driven from [`data/sponsors.json`](data/sponsors.json).
+Slots that don't have a `name` field render nothing — there's no "Your ad
+here" filler that breaks the visual rhythm when a slot is unsold.
+
+Active slot keys:
+
+| Key | Where it appears |
+|---|---|
+| `title` | Masthead, next to the WPR attribution |
+| `ticker` | Section header above "Recent Scores" |
+| `standings:VFA West` (etc.) | Band under each conference's standings header |
+| `school:wausau-east` (etc.) | Card at the bottom of each team page |
+
+Per-school keys are dynamic: add `school:<slug>` for any school slug in
+[`scraper/config/schools.json`](scraper/config/schools.json) and the widget
+picks it up on the next deploy.
+
+To enable a slot, edit `data/sponsors.json` and set `name` (and optionally
+`label`, `logo_url`, `link_url`):
+
+```jsonc
+"title": {
+  "label": "Presented by",                     // optional override
+  "name": "Aspirus Sports Medicine",
+  "logo_url": "https://wpr.cdn/sponsor.png",   // optional; falls back to text
+  "link_url": "https://aspirus.org/sports"     // optional; opens new tab
+}
+```
+
+Commit the change to main; the deploy workflow ships the update within
+a couple of minutes.
+
 ## License
 
 See `LICENSE`.
