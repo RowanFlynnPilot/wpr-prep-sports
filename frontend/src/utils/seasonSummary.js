@@ -153,7 +153,8 @@ function playoffClause({ playoffGames, schoolId, schoolsById }) {
 
   // Unbeaten in playoffs but didn't reach championship (data gap / state run still in progress).
   if (losses === 0 && wins > 0) {
-    return `and ran through ${wins} WIAA playoff game${wins === 1 ? "" : "s"} unbeaten, last beating ${oppName} ${last.own}-${last.opp} in ${lastRound}`;
+    const roundPhrase = roundDisplay(lastRound);
+    return `and ran through ${wins} WIAA playoff game${wins === 1 ? "" : "s"} unbeaten, last beating ${oppName} ${last.own}-${last.opp} in ${roundPhrase}`;
   }
 
   // Played at least one playoff game and lost the last one.
@@ -331,7 +332,15 @@ export function seasonSummary({
   const finals = teamGames.filter((g) => g.status === "final");
   if (finals.length === 0) return null;
 
-  const seasonComplete = finals.length === teamGames.length;
+  // The season is "complete" when no scheduled games remain in the future.
+  // We can't require `finals.length === teamGames.length` because WIAA
+  // sometimes leaves cancelled/postponed games on the schedule with
+  // status="scheduled" forever, which would otherwise pin the prose into
+  // mid-season tone months after the actual season ended.
+  const now = Date.now();
+  const seasonComplete = !teamGames.some(
+    (g) => g.status !== "final" && new Date(g.date).getTime() > now,
+  );
   const { regular: regularFinals, playoff: playoffFinals } = splitByPhase(finals);
 
   // Tone is driven by the regular-season arc — that's how a coach or beat
