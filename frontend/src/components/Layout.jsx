@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Sponsor from "./Sponsor.jsx";
 import SportSwitcher from "./SportSwitcher.jsx";
+import Footer from "./Footer.jsx";
 import { useSportPrefix } from "../utils/links.js";
 
 // Self-hosted under frontend/public so we don't depend on the WPR CDN
@@ -14,7 +15,7 @@ const WPR_LOGO = `${import.meta.env.BASE_URL}wpr-logo.png`;
  * inside this so the iframe feels like one widget regardless of which view
  * the user is on.
  */
-export default function Layout({ children, footer, lastUpdated, breadcrumb, sponsors }) {
+export default function Layout({ children, footerStats, lastUpdated, breadcrumb, sponsors }) {
   const sportPrefix = useSportPrefix();
   return (
     <div className="app">
@@ -54,7 +55,9 @@ export default function Layout({ children, footer, lastUpdated, breadcrumb, spon
 
       <main className="app-main">{children}</main>
 
-      {footer && <div className="freshness">{footer}</div>}
+      {/* Don't pass lastUpdated — already shown in the masthead, no point
+          duplicating it at the bottom of the page. */}
+      <Footer stats={footerStats} />
     </div>
   );
 }

@@ -7,8 +7,11 @@ import StandingsTable from "../components/StandingsTable.jsx";
 import StaleBanner from "../components/StaleBanner.jsx";
 import Sponsor from "../components/Sponsor.jsx";
 import TopPerformers from "../components/TopPerformers.jsx";
+import Marquee from "../components/Marquee.jsx";
 import { pickFeaturedGame, tickerGames } from "../utils/games.js";
 import { pickFeaturedWeek } from "../utils/weeks.js";
+import { pickMarqueeGame } from "../utils/marquee.js";
+import { SPORT_IDS } from "../config/sports.js";
 
 export default function DashboardPage({ dataset, schoolIndex, sponsors, sportConfig }) {
   const { meta, schools, games, standings, seasonStats } = dataset;
@@ -52,6 +55,13 @@ export default function DashboardPage({ dataset, schoolIndex, sponsors, sportCon
     return Math.max(0, Math.ceil((nextSeasonStart - Date.now()) / 86_400_000));
   }, [nextSeasonStart]);
 
+  // Marquee pick — single high-stakes game above the hero. In-season:
+  // upcoming Game of the Week. Off-season: Match of the Season callout.
+  const marquee = useMemo(
+    () => pickMarqueeGame({ games, schoolsById: schoolIndex, offSeason }),
+    [games, schoolIndex, offSeason],
+  );
+
   const lastUpdated = meta?.last_updated
     ? new Date(meta.last_updated).toLocaleString(undefined, {
         weekday: "short",
@@ -72,12 +82,18 @@ export default function DashboardPage({ dataset, schoolIndex, sponsors, sportCon
     <Layout
       lastUpdated={lastUpdated}
       sponsors={sponsors}
-      footer={`Data via WIAA · ${games.length} games tracked · ${schools.length} schools`}
+      footerStats={{
+        sports: SPORT_IDS.length,
+        games: games.length,
+        schools: schools.length,
+      }}
     >
       <StaleBanner
         lastUpdatedIso={meta?.last_updated}
         activeMonths={sportConfig?.activeMonths}
       />
+
+      <Marquee pick={marquee} sportConfig={sportConfig} sponsors={sponsors} />
 
       <Hero
         game={featured}
@@ -124,6 +140,7 @@ export default function DashboardPage({ dataset, schoolIndex, sponsors, sportCon
               sponsors={sponsors}
               seasonStats={seasonStats}
               sportConfig={sportConfig}
+              games={games}
             />
           ))}
         </div>

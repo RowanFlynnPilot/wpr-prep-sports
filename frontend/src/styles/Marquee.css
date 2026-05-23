@@ -1,0 +1,107 @@
+/* Marquee banner — slim editorial strip above the dashboard hero.
+   Single high-stakes game with an optional sponsor slot to the right.
+   Inherits --accent so each sport's marquee carries its own accent color. */
+
+.marquee {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border-bottom: none !important;
+  border-radius: var(--radius);
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--accent) 18%, var(--ink-hero)) 0%,
+    var(--ink-hero) 50%
+  );
+  border-left: 4px solid var(--accent);
+  padding: 0.7rem 1rem;
+  box-shadow: var(--shadow-lift);
+  transition: transform var(--t-fast) var(--ease),
+              box-shadow var(--t-fast) var(--ease);
+}
+.marquee:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-hero);
+}
+
+.marquee__inner {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: #fff;
+}
+
+.marquee__primary {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.marquee__eyebrow {
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.marquee__headline {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+  line-height: 1.2;
+  color: #fff;
+  letter-spacing: 0.01em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.marquee__meta {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.65);
+  font-style: italic;
+}
+.marquee__round {
+  font-style: normal;
+  color: rgba(255, 255, 255, 0.85);
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.marquee__sponsor {
+  flex: 0 0 auto;
+  /* The sponsor component's text uses --muted by default; override for
+     the dark marquee background. */
+  --sponsor-fg: #fff;
+}
+.marquee__sponsor .sponsor__label { color: rgba(255, 255, 255, 0.6); }
+.marquee__sponsor .sponsor__name { color: #fff; }
+
+.marquee__chevron {
+  flex: 0 0 auto;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--accent);
+  opacity: 0.7;
+  transition: transform var(--t-fast) var(--ease), opacity var(--t-fast) var(--ease);
+}
+.marquee:hover .marquee__chevron {
+  transform: translateX(3px);
+  opacity: 1;
+}
+
+@media (max-width: 640px) {
+  .marquee { padding: 0.6rem 0.85rem; }
+  .marquee__inner { gap: 0.5rem; }
+  .marquee__headline { font-size: 0.95rem; }
+  .marquee__sponsor { display: none; } /* keep mobile tight; sponsor still
+                                          rendered elsewhere (ticker slot). */
+}
