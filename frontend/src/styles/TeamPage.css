@@ -25,6 +25,13 @@
   border-top: 4px solid var(--accent);
 }
 
+/* When a school color is available, layer it as a left rail on top of the
+   existing top accent — gives the team page a touch of school identity
+   without overriding the sport accent. */
+.team-hero--colored {
+  border-left: 4px solid var(--school-color);
+}
+
 .team-hero__meta { min-width: 0; }
 .team-hero__meta .eyebrow {
   display: block;

@@ -91,6 +91,17 @@
   font-size: 1rem;
 }
 
+/* Small school-color bar next to the team name. Inline-block so it sits
+   between the logo and the link without disturbing alignment. */
+.standings__school-bar {
+  display: inline-block;
+  width: 3px;
+  height: 18px;
+  border-radius: 2px;
+  background: var(--school-color, var(--muted-2));
+  flex: 0 0 auto;
+}
+
 /* Leader row — small accent pip next to the rank number and a faint
    accent wash on the row. The existing rule already colors the rank
    number with --accent-700, so this layers on top. */

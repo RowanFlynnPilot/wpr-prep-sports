@@ -125,11 +125,13 @@ export default function StandingsTable({
               };
               const isLeader = idx === 0;
               const form = recentFormByTeam.get(row.school_id) ?? [];
+              const schoolColor = school?.colors?.[0] ?? null;
               return (
                 <tr
                   key={row.school_id || row.name}
                   className={isLeader ? "standings__row standings__row--leader" : "standings__row"}
                   onMouseEnter={() => setHovered(row.school_id || row.name)}
+                  style={schoolColor ? { "--school-color": schoolColor } : undefined}
                 >
                   <td className="rank">
                     {isLeader && (
@@ -138,6 +140,12 @@ export default function StandingsTable({
                     {idx + 1}
                   </td>
                   <td className="team">
+                    {schoolColor && (
+                      <span
+                        className="standings__school-bar"
+                        aria-hidden="true"
+                      />
+                    )}
                     <TeamLogo team={stub} school={school} size="sm" />
                     <TeamLink team={stub}>{row.name}</TeamLink>
                   </td>

@@ -77,9 +77,18 @@ export default function TeamPage({ dataset, schoolIndex, sponsors, sportConfig }
     </>
   );
 
+  // School color emitted as a CSS variable so the hero rail picks up
+  // each team's primary color, falling back gracefully to muted gray
+  // when the manifest doesn't have one.
+  const schoolColor = school?.colors?.[0] ?? null;
+  const heroStyle = schoolColor ? { "--school-color": schoolColor } : undefined;
+
   return (
     <Layout breadcrumb={breadcrumb} sponsors={sponsors}>
-      <section className="team-hero">
+      <section
+        className={"team-hero" + (schoolColor ? " team-hero--colored" : "")}
+        style={heroStyle}
+      >
         <TeamLogo team={heroTeam} school={school} size="xl" />
         <div className="team-hero__meta">
           <span className="eyebrow">{school.full_name}</span>
