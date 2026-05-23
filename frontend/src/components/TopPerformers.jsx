@@ -1,9 +1,5 @@
 import { Link } from "react-router-dom";
-import {
-  formatStatsLine,
-  positionFor,
-  topPerformers,
-} from "../utils/seasonStats.js";
+import { formatStatsLine, topPerformers } from "../utils/seasonStats.js";
 import { useSportPrefix } from "../utils/links.js";
 
 /**
@@ -30,7 +26,6 @@ export default function TopPerformers({ rows, schoolIndex, sportConfig, n = 5 })
         return (
           <article key={category.id} className="top-card">
             <header className="top-card__header">
-              <span className="top-card__position">{positionFor(category)}</span>
               <h3 className="top-card__title">{category.displayLabel} Leaders</h3>
             </header>
             <ol className="top-card__list">
