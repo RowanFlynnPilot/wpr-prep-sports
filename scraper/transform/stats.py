@@ -166,6 +166,290 @@ def merge_team_season_stats(
     return dataset
 
 
+_COOP_SUFFIX_RE = re.compile(r"\s+co[\-\s]?op\b", re.IGNORECASE)
+
+
+def _opp_key(name: str) -> str:
+    """
+    Reduce an opponent name to a token that lines up between WIAA's
+    full co-op rendering ("Hayward/Lac Courte Oreilles", "Pacelli Co-op",
+    "Marshfield/Columbus Catholic") and WPH's short form ("Hayward",
+    "Pacelli", "Marshfield"). Keeps the lead school's full multi-word
+    name so "Eau Claire North" stays distinct from "Eau Claire Memorial".
+    """
+    if not name:
+        return ""
+    head = name.split("/")[0]
+    head = _COOP_SUFFIX_RE.sub("", head)
+    return _norm(head)
+
+
+_WPH_MONTHS = {
+    "Jan": 1, "Feb": 2, "Mar": 3, "Apr": 4, "May": 5, "Jun": 6,
+    "Jul": 7, "Aug": 8, "Sep": 9, "Oct": 10, "Nov": 11, "Dec": 12,
+}
+
+
+def _wph_date_to_iso(date_text: str, season_start_year: int) -> str | None:
+    """
+    Convert WPH schedule date text (e.g. "Fri Nov 28", "Tue Dec  2") to
+    an ISO date string. WPH never includes the year — we infer it from
+    the month: Aug-Dec belong to season_start_year, Jan-Jul to the
+    following calendar year.
+    """
+    parts = (date_text or "").split()
+    # Discard the weekday prefix when present.
+    if len(parts) >= 3:
+        month_str, day_str = parts[1], parts[2]
+    elif len(parts) == 2:
+        month_str, day_str = parts
+    else:
+        return None
+    month = _WPH_MONTHS.get(month_str[:3])
+    if month is None:
+        return None
+    try:
+        day = int(day_str)
+    except ValueError:
+        return None
+    year = season_start_year if month >= 8 else season_start_year + 1
+    return f"{year:04d}-{month:02d}-{day:02d}"
+
+
+def _resolve_wph_team_school_id(
+    wph_team_name: str,
+    game: Game,
+    name_to_id: dict[str, str],
+) -> str:
+    """
+    Map a WPH-rendered team name (e.g. "Wausau West Warriors") to a
+    school_id. First tries the manifest's normalized-name index; if that
+    misses, falls back to substring matching against the game's two team
+    names — WPH's "<Name> <Mascot>" usually contains the WIAA name.
+    """
+    norm = _norm(wph_team_name)
+    if norm in name_to_id:
+        return name_to_id[norm]
+    # Try progressively shorter prefixes (drop trailing tokens — usually
+    # the mascot like "Warriors" / "Tritons").
+    tokens = norm.split()
+    for k in range(len(tokens) - 1, 0, -1):
+        candidate = " ".join(tokens[:k])
+        if candidate in name_to_id:
+            return name_to_id[candidate]
+    # Last resort: pick whichever side's WIAA name appears inside the WPH name.
+    for side in (game.home, game.away):
+        if side.school_id and _norm(side.name) and _norm(side.name) in norm:
+            return side.school_id
+    return ""
+
+
+def _wph_num(value: str | None) -> float:
+    """Parse a WPH stat string to float, treating missing/'-' as 0."""
+    if not value or value == "-":
+        return 0.0
+    try:
+        return float(value.replace(",", ""))
+    except ValueError:
+        return 0.0
+
+
+def _wph_minutes(value: str | None) -> float:
+    """Parse MIN like '51:00' → 51.0; '0:00' → 0.0; '-' → 0.0."""
+    if not value or value == "-":
+        return 0.0
+    if ":" in value:
+        try:
+            m, s = value.split(":", 1)
+            return int(m) + int(s) / 60.0
+        except ValueError:
+            return 0.0
+    return _wph_num(value)
+
+
+def merge_wph_per_game_stats(
+    dataset: Dataset,
+    *,
+    manifest: Manifest,
+    sport: str,
+    name_to_id: dict[str, str],
+    console: Console | None = None,
+) -> Dataset:
+    """
+    Per-game hockey stats: index each tracked school's WPH schedule,
+    match (date, team-pair) against finalized games in our dataset, and
+    attach a small set of stat_leaders per matched game.
+
+    Categories emitted per team (frontend HOCKEY_GAME_LINE.order picks one):
+      "Hockey Points" — top skater by PTS (must be > 0)
+      "Hockey Goals"  — top skater by G (must be >= 2; suppressed when the
+                        same player already leads in points)
+      "Hockey Saves"  — top goalie by SV (only counts goalies who played)
+    """
+    subseason = wph.SUBSEASONS.get((sport, dataset.meta.season))
+    if subseason is None:
+        return dataset
+
+    finals = [g for g in dataset.games if g.status == GameStatus.FINAL]
+    targets = [s for s in manifest.schools if s.wph_team_id]
+    if not finals or not targets:
+        return dataset
+
+    if console:
+        console.print(
+            f"[bold]Indexing WPH schedules[/bold] for {len(targets)} teams "
+            f"(per-game stats; subseason={subseason})"
+        )
+
+    season_start_year = int(dataset.meta.season.split("-")[0])
+    # (iso_date, tracked_school_id, opp_key) → wph_game_id. Keying off the
+    # tracked side's school_id (not its display name) means co-op /
+    # mascot-suffix mismatches between WIAA and WPH don't break the match.
+    pair_index: dict[tuple[str, str, str], int] = {}
+
+    for school in targets:
+        tid = wph.find_team_instance_id(school.wph_team_id, subseason)
+        if tid is None:
+            time.sleep(POLITE_DELAY_SECONDS)
+            continue
+        try:
+            sched = wph.fetch_team_schedule(tid, subseason=subseason)
+        except Exception as e:  # noqa: BLE001
+            if console:
+                console.print(f"[yellow]  ! {school.id}: WPH schedule failed ({e})[/yellow]")
+            time.sleep(POLITE_DELAY_SECONDS)
+            continue
+        for sg in sched:
+            iso = _wph_date_to_iso(sg.date_text, season_start_year)
+            if not iso:
+                continue
+            opp_clean = (sg.opponent or "").lstrip("@").strip()
+            if not opp_clean:
+                continue
+            pair_index.setdefault((iso, school.id, _opp_key(opp_clean)), sg.game_id)
+        time.sleep(POLITE_DELAY_SECONDS)
+
+    if console:
+        console.print(f"  [dim]{len(pair_index)} WPH game keys indexed[/dim]")
+
+    matched_games = 0
+    stat_lines_total = 0
+    stats_cache: dict[int, list[wph.WPHGameStatRow]] = {}
+
+    for game in finals:
+        date_iso = game.date.strftime("%Y-%m-%d")
+        # Try both sides as the tracked anchor — at least one side has a
+        # wph_team_id for any game that ended up in our index.
+        game_id = None
+        for tracked, other in ((game.home, game.away), (game.away, game.home)):
+            if not tracked.school_id:
+                continue
+            game_id = pair_index.get((date_iso, tracked.school_id, _opp_key(other.name)))
+            if game_id is not None:
+                break
+        if game_id is None:
+            continue
+
+        if game_id in stats_cache:
+            rows = stats_cache[game_id]
+        else:
+            try:
+                rows = wph.fetch_game_stats(game_id)
+            except Exception as e:  # noqa: BLE001
+                if console:
+                    console.print(f"[yellow]  ! game {game_id}: stats fetch failed ({e})[/yellow]")
+                stats_cache[game_id] = []
+                time.sleep(POLITE_DELAY_SECONDS)
+                continue
+            stats_cache[game_id] = rows
+            time.sleep(POLITE_DELAY_SECONDS)
+
+        attached = _attach_wph_per_game(game, rows, name_to_id)
+        if attached:
+            matched_games += 1
+            stat_lines_total += attached
+            if "wisconsinprephockey" not in game.sources:
+                game.sources.append("wisconsinprephockey")
+
+    if console:
+        console.print(
+            f"[green]WPH per-game stats:[/green] {matched_games}/{len(finals)} games · "
+            f"{stat_lines_total} stat lines"
+        )
+
+    if matched_games > 0 and "wisconsinprephockey" not in dataset.meta.sources_used:
+        dataset.meta.sources_used.append("wisconsinprephockey")
+
+    return dataset
+
+
+def _attach_wph_per_game(
+    game: Game,
+    rows: list[wph.WPHGameStatRow],
+    name_to_id: dict[str, str],
+) -> int:
+    """
+    Reduce a game's raw athlete rows to up to 3 stat-leader lines per
+    team and attach them to game.stat_leaders. Returns the number of
+    lines attached.
+    """
+    if not rows:
+        return 0
+
+    # Group by (resolved_team_id, raw_team_name) so two teams that fail
+    # to resolve still get separated by their WPH display name.
+    by_team: dict[tuple[str, str], dict[str, list[wph.WPHGameStatRow]]] = {}
+    for r in rows:
+        team_school_id = _resolve_wph_team_school_id(r.team_name, game, name_to_id)
+        bucket = by_team.setdefault((team_school_id, r.team_name), {})
+        bucket.setdefault(r.kind, []).append(r)
+
+    out: list[StatLine] = []
+    for (team_school_id, team_name), kinds in by_team.items():
+        skaters = kinds.get("skater", [])
+        points_leader = None
+        if skaters:
+            top_pts = max(skaters, key=lambda r: _wph_num(r.stats.get("PTS")))
+            if _wph_num(top_pts.stats.get("PTS")) > 0:
+                points_leader = top_pts
+                out.append(StatLine(
+                    team_school_id=team_school_id,
+                    team_name=team_name,
+                    category="Hockey Points",
+                    player_name=top_pts.player_name,
+                    player_year=None,
+                    stats=dict(top_pts.stats),
+                ))
+            top_g = max(skaters, key=lambda r: _wph_num(r.stats.get("G")))
+            if (
+                _wph_num(top_g.stats.get("G")) >= 2
+                and (points_leader is None or top_g.player_name != points_leader.player_name)
+            ):
+                out.append(StatLine(
+                    team_school_id=team_school_id,
+                    team_name=team_name,
+                    category="Hockey Goals",
+                    player_name=top_g.player_name,
+                    player_year=None,
+                    stats=dict(top_g.stats),
+                ))
+        goalies = [g for g in kinds.get("goalie", []) if _wph_minutes(g.stats.get("MIN")) > 0]
+        if goalies:
+            top_sv = max(goalies, key=lambda r: _wph_num(r.stats.get("SV")))
+            out.append(StatLine(
+                team_school_id=team_school_id,
+                team_name=team_name,
+                category="Hockey Saves",
+                player_name=top_sv.player_name,
+                player_year=None,
+                stats=dict(top_sv.stats),
+            ))
+
+    if out:
+        game.stat_leaders = out
+    return len(out)
+
+
 def merge_wph_season_stats(
     dataset: Dataset,
     *,

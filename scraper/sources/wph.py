@@ -210,6 +210,74 @@ class WPHGame:
     location: str | None
 
 
+@dataclass(frozen=True)
+class WPHGameStatRow:
+    """One athlete's per-game line from a /game/show/<id> page."""
+    team_name: str         # e.g. "Wausau West Warriors" — full display name as WPH renders it
+    kind: str              # "skater" | "goalie"
+    jersey: str | None
+    player_name: str
+    stats: dict[str, str]  # column header → cell value
+
+
+def _parse_stat_table(table, kind: str, team_name: str) -> list[WPHGameStatRow]:
+    """Parse a single skater or goalie table — shared between season and
+    per-game pages. Filters footer/Totals rows by requiring a numeric
+    jersey in the first cell."""
+    thead = table.find("thead")
+    cols = [th.get_text(strip=True) for th in (thead.find_all("th") if thead else table.find_all("th"))]
+    if not cols or cols[0] != "#":
+        return []
+    out: list[WPHGameStatRow] = []
+    for tr in table.find_all("tr"):
+        cells = tr.find_all("td")
+        if not cells:
+            continue
+        values = [td.get_text(" ", strip=True) for td in cells]
+        if len(values) < len(cols):
+            continue
+        if not _ATHLETE_NUM_RE.match(values[0]):
+            continue
+        jersey = values[0].strip()
+        player_name = values[1].strip()
+        if not player_name:
+            continue
+        stats = {cols[i]: values[i] for i in range(2, len(cols))}
+        out.append(WPHGameStatRow(
+            team_name=team_name, kind=kind, jersey=jersey,
+            player_name=player_name, stats=stats,
+        ))
+    return out
+
+
+def fetch_game_stats(game_id: int) -> list[WPHGameStatRow]:
+    """
+    Pull one game's per-player stats. The /game/show/<id> page lays out
+    four tables under <h3> headings shaped "<Team Name> Skaters" /
+    "<Team Name> Goalies" — one pair per team. Returns flattened rows
+    tagged with their team_name and kind ('skater' | 'goalie').
+    """
+    url = f"{BASE_URL}/game/show/{game_id}"
+    html = _get(url)
+    soup = BeautifulSoup(html, "lxml")
+    out: list[WPHGameStatRow] = []
+    for h3 in soup.find_all("h3"):
+        text = h3.get_text(" ", strip=True)
+        if text.endswith(" Skaters"):
+            kind = "skater"
+            team_name = text[: -len(" Skaters")].strip()
+        elif text.endswith(" Goalies"):
+            kind = "goalie"
+            team_name = text[: -len(" Goalies")].strip()
+        else:
+            continue
+        table = h3.find_next("table")
+        if table is None:
+            continue
+        out.extend(_parse_stat_table(table, kind, team_name))
+    return out
+
+
 def fetch_team_schedule(
     team_instance_id: int,
     *,
