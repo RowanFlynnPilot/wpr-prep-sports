@@ -1,0 +1,117 @@
+/* =========================================================================
+   Production hardening — skeleton, error boundary, stale banner, a11y.
+   ========================================================================= */
+
+/* Loading skeleton ------------------------------------------------------- */
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--paper-2) 0%,
+    rgba(231, 226, 214, 0.4) 50%,
+    var(--paper-2) 100%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.4s linear infinite;
+  border-radius: var(--radius-sm);
+  margin-bottom: 0.65rem;
+}
+
+.skeleton--hero { height: 200px; border-radius: var(--radius); margin-bottom: 0; }
+.skeleton--header { height: 28px; max-width: 200px; }
+.skeleton--row { height: 56px; }
+.skeleton--card { height: 140px; }
+
+.skeleton-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.85rem;
+}
+
+@keyframes skeleton-shimmer {
+  0% { background-position: 100% 0; }
+  100% { background-position: -100% 0; }
+}
+
+/* Screen-reader-only utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Error boundary --------------------------------------------------------- */
+
+.boundary {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--loss);
+  border-radius: var(--radius);
+  padding: 2rem 1.5rem;
+  max-width: 540px;
+  margin: 1rem auto;
+  text-align: center;
+}
+.boundary h2 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.75rem;
+}
+.boundary p {
+  color: var(--muted);
+  margin-bottom: 1.25rem;
+}
+.boundary__reload {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: var(--wpr-navy);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 0.7rem 1.5rem;
+  cursor: pointer;
+  transition: background var(--t-fast) var(--ease);
+}
+.boundary__reload:hover { background: var(--wpr-navy-700); }
+.boundary__reload:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Stale-data banner ------------------------------------------------------ */
+
+.stale-banner {
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius-sm);
+  padding: 0.7rem 1rem;
+  font-size: 0.9rem;
+  color: var(--accent-700);
+  margin-bottom: 1.25rem;
+}
+.stale-banner strong {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-right: 0.4rem;
+}
+
+/* Focus rings — keyboard nav polish across the app */
+*:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}

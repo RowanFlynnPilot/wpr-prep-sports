@@ -4,6 +4,7 @@ import Hero from "../components/Hero.jsx";
 import ScoreTicker from "../components/ScoreTicker.jsx";
 import ThisWeekGrid from "../components/ThisWeekGrid.jsx";
 import StandingsTable from "../components/StandingsTable.jsx";
+import StaleBanner from "../components/StaleBanner.jsx";
 import { pickFeaturedGame, tickerGames } from "../utils/games.js";
 import { pickFeaturedWeek } from "../utils/weeks.js";
 
@@ -47,6 +48,8 @@ export default function DashboardPage({ dataset, schoolIndex }) {
       lastUpdated={lastUpdated}
       footer={`Data via WIAA · ${games.length} games tracked · ${schools.length} schools`}
     >
+      <StaleBanner lastUpdatedIso={meta?.last_updated} />
+
       <Hero game={featured} schoolIndex={schoolIndex} />
 
       <section>
