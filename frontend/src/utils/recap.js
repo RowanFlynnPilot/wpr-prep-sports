@@ -29,6 +29,7 @@ export function recapForGame(
     perspectiveSchoolId = null,
     seasonStatsForSchool = null,
     enrichWithSeasonTotals = false,
+    contextGames = null,
   } = {},
 ) {
   if (!game || game.status !== "final") return null;
@@ -128,7 +129,10 @@ export function recapForGame(
   const headline = headlineStatLine(game, perspective);
   if (!headline) return opener;
 
-  const statSentence = formatStatLine(headline);
+  const priorAppearance = contextGames
+    ? findPriorAppearance(contextGames ?? teamGames, headline, perspective, game)
+    : null;
+  const statSentence = formatStatLine(headline, priorAppearance);
   // Season-totals enrichment is opt-in (Hero only) because Bound's
   // season-stats reflect the moment of the scrape, not the moment of
   // each historical game — applying them to a Week 2 recap would
@@ -150,7 +154,7 @@ export function recapForGame(
  * dashboard ticker cards and the This Week grid where the score is
  * already visible elsewhere in the row.
  */
-export function playerLineForGame(game) {
+export function playerLineForGame(game, { contextGames = null } = {}) {
   if (!game || game.status !== "final") return null;
   const home = game.home;
   const away = game.away;
@@ -170,7 +174,12 @@ export function playerLineForGame(game) {
     perspective = home.school_id || away.school_id;
   }
   if (!perspective) return null;
-  return headlineStatSentence(game, perspective);
+  const headline = headlineStatLine(game, perspective);
+  if (!headline) return null;
+  const prior = contextGames
+    ? findPriorAppearance(contextGames, headline, perspective, game)
+    : null;
+  return formatStatLine(headline, prior);
 }
 
 /**
@@ -266,13 +275,14 @@ function seasonClauseFor(statLine, seasonStatsForSchool) {
   return null;
 }
 
-function formatStatLine(line) {
+function formatStatLine(line, prior = null) {
   const stats = line.stats ?? {};
   const yds = parseFloat(stats.YDS);
   const tds = parseInt(stats.TDS, 10);
   const tkl = parseFloat(stats.TKL);
 
   const player = playerNameWithClass(line);
+  const tone = priorTone(line, prior);
 
   switch (line.category) {
     case "Passing Yards": {
@@ -282,7 +292,9 @@ function formatStatLine(line) {
       const ca = stats["C/A"];
       const completionsClause = ca ? ` (${ca})` : "";
       const tdClause = tdsToClause(tds);
-      return `QB ${player} threw for ${Math.round(yds).toLocaleString("en-US")} yards${completionsClause}${tdClause}.`;
+      const yardsStr = Math.round(yds).toLocaleString("en-US");
+      const verb = tonePhrase(tone, "passing");
+      return `QB ${player} ${verb} ${yardsStr} yards${completionsClause}${tdClause}.`;
     }
     case "Rushing Yards": {
       if (!isFiniteNum(yds) || (yds < 75 && (!isFiniteNum(tds) || tds < 2))) {
@@ -290,7 +302,9 @@ function formatStatLine(line) {
       }
       const attClause = stats.ATT ? ` on ${stats.ATT} carries` : "";
       const tdClause = tdsToClause(tds);
-      return `RB ${player} rushed for ${Math.round(yds).toLocaleString("en-US")} yards${attClause}${tdClause}.`;
+      const yardsStr = Math.round(yds).toLocaleString("en-US");
+      const verb = tonePhrase(tone, "rushing");
+      return `RB ${player} ${verb} ${yardsStr} yards${attClause}${tdClause}.`;
     }
     case "Receiving Yards": {
       if (!isFiniteNum(yds) || (yds < 75 && (!isFiniteNum(tds) || tds < 2))) {
@@ -298,17 +312,123 @@ function formatStatLine(line) {
       }
       const recClause = stats.REC ? ` on ${stats.REC} catches` : "";
       const tdClause = tdsToClause(tds);
-      return `WR ${player} caught ${Math.round(yds).toLocaleString("en-US")} yards${recClause}${tdClause}.`;
+      const yardsStr = Math.round(yds).toLocaleString("en-US");
+      const verb = tonePhrase(tone, "receiving");
+      return `WR ${player} ${verb} ${yardsStr} yards${recClause}${tdClause}.`;
     }
     case "Total Tackles": {
       if (!isFiniteNum(tkl) || tkl < 10) return null;
       const sks = parseFloat(stats.SKS);
       const sksClause = isFiniteNum(sks) && sks >= 1 ? ` and ${sks.toFixed(1)} sacks` : "";
-      return `LB ${player} led the defense with ${tkl.toFixed(1)} tackles${sksClause}.`;
+      const verb = tonePhrase(tone, "tackles");
+      return `LB ${player} ${verb} ${tkl.toFixed(1)} tackles${sksClause}.`;
     }
     default:
       return null;
   }
+}
+
+/**
+ * Walk back through the team's prior games to find the most recent one
+ * where the same player was the leader in the same category. Returns
+ * the prior StatLine + game date, or null if this is their first
+ * appearance in our data (or contextGames isn't provided).
+ */
+function findPriorAppearance(contextGames, headline, schoolId, currentGame) {
+  if (!contextGames || !headline) return null;
+  const playerKey = (headline.player_name || "").replace(/\s+/g, " ").trim().toLowerCase();
+  if (!playerKey) return null;
+  const currentTs = new Date(currentGame.date).getTime();
+
+  // Sort prior games descending by date — most recent first
+  const candidates = contextGames
+    .filter(
+      (g) =>
+        g.status === "final" &&
+        new Date(g.date).getTime() < currentTs &&
+        (g.home.school_id === schoolId || g.away.school_id === schoolId),
+    )
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
+  for (const g of candidates) {
+    const match = (g.stat_leaders ?? []).find(
+      (l) =>
+        l.team_school_id === schoolId &&
+        l.category === headline.category &&
+        (l.player_name || "").replace(/\s+/g, " ").trim().toLowerCase() === playerKey,
+    );
+    if (match) return { line: match, date: g.date };
+  }
+  return null;
+}
+
+/**
+ * Classify the relationship between this game's stat line and the
+ * player's previous appearance in the same category. Used to pick a
+ * verb that gives the recap a little narrative texture without
+ * overstating what the data supports.
+ *
+ *   "rebound"    — current strong AND prior was forgettable
+ *   "streak"     — current strong AND prior was strong too
+ *   "quiet"      — current modest AND prior was clearly bigger
+ *   "default"    — flat, or no prior appearance to compare against
+ */
+function priorTone(line, prior) {
+  if (!prior) return "default";
+  const stats = line.stats ?? {};
+  const priorStats = prior.line.stats ?? {};
+  const currentYds = parseFloat(stats.YDS);
+  const priorYds = parseFloat(priorStats.YDS);
+  const currentTkl = parseFloat(stats.TKL);
+  const priorTkl = parseFloat(priorStats.TKL);
+
+  if (line.category === "Total Tackles") {
+    if (!isFiniteNum(currentTkl) || !isFiniteNum(priorTkl)) return "default";
+    if (currentTkl >= 12 && priorTkl >= 12) return "streak";
+    if (currentTkl >= 12 && priorTkl < 8) return "rebound";
+    if (currentTkl < 10 && priorTkl >= 14) return "quiet";
+    return "default";
+  }
+
+  if (!isFiniteNum(currentYds) || !isFiniteNum(priorYds)) return "default";
+  const strongThreshold = line.category === "Passing Yards" ? 200 : 100;
+  const weakThreshold = line.category === "Passing Yards" ? 100 : 50;
+
+  if (currentYds >= strongThreshold && priorYds >= strongThreshold) return "streak";
+  if (currentYds >= strongThreshold && priorYds <= weakThreshold) return "rebound";
+  if (currentYds < weakThreshold && priorYds >= strongThreshold) return "quiet";
+  return "default";
+}
+
+/** Pick the verb phrase for a tone × stat-family combination. */
+function tonePhrase(tone, family) {
+  const phrases = {
+    passing: {
+      default: "threw for",
+      rebound: "bounced back to throw for",
+      streak: "stayed hot with",
+      quiet: "managed",
+    },
+    rushing: {
+      default: "rushed for",
+      rebound: "bounced back with",
+      streak: "kept rolling with",
+      quiet: "scratched out",
+    },
+    receiving: {
+      default: "caught",
+      rebound: "bounced back with",
+      streak: "stayed productive with",
+      quiet: "added",
+    },
+    tackles: {
+      default: "led the defense with",
+      rebound: "anchored the defense again with",
+      streak: "kept disrupting with",
+      quiet: "still chipped in",
+    },
+  };
+  return phrases[family]?.[tone] ?? phrases[family]?.default ?? "had";
 }
 
 function tdsToClause(tds) {

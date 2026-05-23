@@ -187,6 +187,27 @@
   font-weight: 700;
 }
 
+.card__details {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  margin-top: 0.6rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-700);
+  border-bottom: 1px solid transparent;
+  transition: color var(--t-fast) var(--ease), border-color var(--t-fast) var(--ease);
+}
+.card__details:hover,
+.card__details:focus-visible {
+  color: var(--ink);
+  border-bottom-color: currentColor;
+  outline: none;
+}
+
 .card__recap {
   margin: 0.6rem 0 0;
   padding-top: 0.5rem;

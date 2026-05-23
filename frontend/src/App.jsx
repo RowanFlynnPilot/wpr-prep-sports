@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import { fetchDataset } from "./data/fetchDataset.js";
 import DashboardPage from "./pages/DashboardPage.jsx";
 import TeamPage from "./pages/TeamPage.jsx";
+import GamePage from "./pages/GamePage.jsx";
 import Skeleton from "./components/Skeleton.jsx";
 import { indexSchools } from "./utils/schools.js";
 import { useIframeHeightReporter } from "./utils/iframe.js";
@@ -17,6 +18,7 @@ import "./styles/TeamPage.css";
 import "./styles/Sponsor.css";
 import "./styles/SeasonLeaders.css";
 import "./styles/TopPerformers.css";
+import "./styles/GamePage.css";
 
 export default function App() {
   const [dataset, setDataset] = useState(null);
@@ -89,6 +91,12 @@ export default function App() {
             schoolIndex={schoolIndex}
             sponsors={dataset.sponsors}
           />
+        }
+      />
+      <Route
+        path="/game/:gameId"
+        element={
+          <GamePage dataset={dataset} schoolIndex={schoolIndex} />
         }
       />
     </Routes>

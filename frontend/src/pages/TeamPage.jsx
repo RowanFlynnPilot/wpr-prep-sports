@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { useParams, Link, Navigate } from "react-router-dom";
+import { useParams, Link, Navigate, NavLink } from "react-router-dom";
 import Layout from "../components/Layout.jsx";
 import TeamLogo from "../components/TeamLogo.jsx";
 import TeamLink from "../components/TeamLink.jsx";
@@ -152,6 +152,7 @@ function ScheduleRow({ game, index, schoolId, schoolIndex, allTeamGames }) {
     schoolsById: schoolIndex,
     teamGames: allTeamGames,
     perspectiveSchoolId: schoolId,
+    contextGames: allTeamGames,
   });
 
   return (
@@ -168,11 +169,13 @@ function ScheduleRow({ game, index, schoolId, schoolIndex, allTeamGames }) {
           {opponent.name}
         </TeamLink>
       </div>
-      <div
+      <Link
+        to={`/game/${game.id}`}
         className={
-          "schedule-row__result " +
+          "schedule-row__result schedule-row__result--link " +
           (won ? "schedule-row__result--win" : lost ? "schedule-row__result--loss" : "")
         }
+        aria-label={`Game details${isFinal ? `, final ${own}-${opp}` : ""}`}
       >
         {isFinal ? (
           <>
@@ -186,7 +189,7 @@ function ScheduleRow({ game, index, schoolId, schoolIndex, allTeamGames }) {
         ) : (
           <span className="schedule-row__time">{formatGameTime(game.date)}</span>
         )}
-      </div>
+      </Link>
       {recap && <p className="schedule-row__recap">{recap}</p>}
     </li>
   );

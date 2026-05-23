@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import TeamLogo from "./TeamLogo.jsx";
 import TeamLink from "./TeamLink.jsx";
 import { schoolFor } from "../utils/schools.js";
@@ -10,7 +11,7 @@ import { playerLineForGame } from "../utils/recap.js";
  * Thursday/Friday/Saturday, so a vertical "day → games" layout reads
  * naturally. Each game row is dense: logos, names, time, score/result.
  */
-export default function ThisWeekGrid({ week, schoolIndex }) {
+export default function ThisWeekGrid({ week, schoolIndex, allGames = [] }) {
   if (!week || week.games.length === 0) {
     return (
       <div className="week week--empty">
@@ -35,7 +36,12 @@ export default function ThisWeekGrid({ week, schoolIndex }) {
 
           <ul className="week-day__games">
             {games.map((g) => (
-              <GameRow key={g.id} game={g} schoolIndex={schoolIndex} />
+              <GameRow
+                key={g.id}
+                game={g}
+                schoolIndex={schoolIndex}
+                allGames={allGames}
+              />
             ))}
           </ul>
         </section>
@@ -44,14 +50,14 @@ export default function ThisWeekGrid({ week, schoolIndex }) {
   );
 }
 
-function GameRow({ game, schoolIndex }) {
+function GameRow({ game, schoolIndex, allGames }) {
   const homeSchool = schoolFor(game.home, schoolIndex);
   const awaySchool = schoolFor(game.away, schoolIndex);
   const isFinal = game.status === "final";
 
   const homeWon = isFinal && (game.home.score ?? -1) > (game.away.score ?? -1);
   const awayWon = isFinal && (game.away.score ?? -1) > (game.home.score ?? -1);
-  const playerLine = playerLineForGame(game);
+  const playerLine = playerLineForGame(game, { contextGames: allGames });
 
   return (
     <li className="game-row">
@@ -70,9 +76,10 @@ function GameRow({ game, schoolIndex }) {
         won={homeWon}
         showScore={isFinal}
       />
-      <span className="game-row__status">
+      <Link to={`/game/${game.id}`} className="game-row__status game-row__details">
         {isFinal ? "Final" : formatGameTime(game.date)}
-      </span>
+        <span aria-hidden="true"> ›</span>
+      </Link>
       {playerLine && <p className="game-row__recap">{playerLine}</p>}
     </li>
   );

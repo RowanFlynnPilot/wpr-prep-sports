@@ -50,6 +50,7 @@ export default function Hero({ game, schoolIndex, games = [], seasonStats = [] }
     perspectiveSchoolId,
     seasonStatsForSchool: seasonStatsForPerspective,
     enrichWithSeasonTotals: true,
+    contextGames: perspectiveTeamGames,
   });
 
   return (

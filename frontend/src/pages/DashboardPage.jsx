@@ -67,7 +67,7 @@ export default function DashboardPage({ dataset, schoolIndex, sponsors }) {
             {week ? `${week.games.length} games · grouped by day` : ""}
           </span>
         </div>
-        <ThisWeekGrid week={week} schoolIndex={schoolIndex} />
+        <ThisWeekGrid week={week} schoolIndex={schoolIndex} allGames={games} />
       </section>
 
       <section>
@@ -75,7 +75,7 @@ export default function DashboardPage({ dataset, schoolIndex, sponsors }) {
           <h2>Recent Scores</h2>
           <Sponsor slot="ticker" sponsors={sponsors} variant="inline" />
         </div>
-        <ScoreTicker games={recent} schoolIndex={schoolIndex} />
+        <ScoreTicker games={recent} schoolIndex={schoolIndex} allGames={games} />
       </section>
 
       <section>

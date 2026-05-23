@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState, useCallback } from "react";
+import { Link } from "react-router-dom";
 import TeamLogo from "./TeamLogo.jsx";
 import TeamLink from "./TeamLink.jsx";
 import { schoolFor } from "../utils/schools.js";
@@ -16,7 +17,7 @@ import { playerLineForGame } from "../utils/recap.js";
  *   disable themselves at the ends
  * - scroll-snap-type: x mandatory makes the snap feel crisp on touch
  */
-export default function ScoreTicker({ games, schoolIndex }) {
+export default function ScoreTicker({ games, schoolIndex, allGames = [] }) {
   const trackRef = useRef(null);
   const [atStart, setAtStart] = useState(true);
   const [atEnd, setAtEnd] = useState(false);
@@ -91,7 +92,7 @@ export default function ScoreTicker({ games, schoolIndex }) {
       <div className="ticker__viewport">
         <div className="ticker__track" ref={trackRef}>
           {games.map((g) => (
-            <GameCard key={g.id} game={g} schoolIndex={schoolIndex} />
+            <GameCard key={g.id} game={g} schoolIndex={schoolIndex} allGames={allGames} />
           ))}
         </div>
       </div>
@@ -117,7 +118,7 @@ export default function ScoreTicker({ games, schoolIndex }) {
   );
 }
 
-function GameCard({ game, schoolIndex }) {
+function GameCard({ game, schoolIndex, allGames }) {
   const homeSchool = schoolFor(game.home, schoolIndex);
   const awaySchool = schoolFor(game.away, schoolIndex);
   const isFinal = game.status === "final";
@@ -126,7 +127,7 @@ function GameCard({ game, schoolIndex }) {
   const awayScore = game.away.score;
   const homeWon = isFinal && (homeScore ?? -1) > (awayScore ?? -1);
   const awayWon = isFinal && (awayScore ?? -1) > (homeScore ?? -1);
-  const playerLine = playerLineForGame(game);
+  const playerLine = playerLineForGame(game, { contextGames: allGames });
 
   return (
     <article className="card">
@@ -148,6 +149,11 @@ function GameCard({ game, schoolIndex }) {
           {playerLine}
         </p>
       )}
+
+      <Link to={`/game/${game.id}`} className="card__details">
+        Game details
+        <span aria-hidden="true"> ›</span>
+      </Link>
     </article>
   );
 }
