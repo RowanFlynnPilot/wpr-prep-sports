@@ -209,9 +209,8 @@
   font-size: 0.8rem;
   letter-spacing: 0.01em;
   color: #fff;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
 }
 .standings__hover-leader-year {
   font-family: var(--font-body);

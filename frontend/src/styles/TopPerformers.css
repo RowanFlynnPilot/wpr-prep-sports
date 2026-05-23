@@ -75,9 +75,10 @@
   font-weight: 600;
   font-size: 0.95rem;
   color: var(--ink);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  line-height: 1.2;
+  /* Allow long names ("Brooks Vanderhoof", "Owen Richardson") to wrap
+     rather than ellipsis-truncate; keep "(SR)" attached to the name. */
+  overflow-wrap: anywhere;
 }
 .top-card__year {
   font-weight: 400;

@@ -68,9 +68,8 @@
   font-weight: 600;
   font-size: 1rem;
   color: var(--ink);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
 }
 .season-leaders__year {
   font-weight: 400;
