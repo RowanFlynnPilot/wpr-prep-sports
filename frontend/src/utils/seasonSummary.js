@@ -170,13 +170,21 @@ function playoffClause({ playoffGames, schoolId, schoolsById }) {
   return `and went ${wins}-${losses} in the WIAA playoffs, last beating ${oppName} ${last.own}-${last.opp} in ${lastRound}`;
 }
 
-/** Format a round label for prose. "Level 1" → "the Level 1 playoffs". */
+/** Format a round label for prose. Tuned for both football and basketball round names. */
 function roundDisplay(round) {
   if (!round) return "the playoffs";
+  // Football: "Level 1" reads more naturally with "the … playoffs" article.
   if (/^level\s*1$/i.test(round)) return "the Level 1 playoffs";
   if (/^level/i.test(round)) return round; // "Level 2", "Level 3", "Level 4"
-  if (/semifinal/i.test(round)) return "the state semifinal";
-  if (/championship/i.test(round)) return "the WIAA state championship";
+  // State rounds (football's final week, basketball's Kohl Center weekend).
+  if (/^state\s+championship/i.test(round)) return "the WIAA state championship";
+  if (/^state\s+semifinal/i.test(round)) return "the WIAA state semifinal";
+  if (/^state\s+final/i.test(round)) return "the WIAA state final";
+  // Basketball: "Regional" alone is WIAA's term for the regional quarterfinal /
+  // first round; treat it as such so the prose reads naturally.
+  if (/^regional$/i.test(round)) return "the regional opener";
+  // Everything else (Regional Semifinal, Regional Final, Sectional Semifinal,
+  // Sectional Final, etc.) reads cleanly as "the <round>".
   return `the ${round}`;
 }
 

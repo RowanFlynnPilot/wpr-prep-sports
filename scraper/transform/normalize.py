@@ -47,31 +47,50 @@ CENTRAL = ZoneInfo("America/Chicago")
 
 _RESULT_RE = re.compile(r"^([WL])\s+(\d+)\s*-\s*(\d+)", re.IGNORECASE)
 _TIME_RE = re.compile(r"^(\d{1,2}):(\d{2})\s*([APap][Mm])$")
-_PLAYOFF_LEVEL_RE = re.compile(r"level\s*([1-4])", re.IGNORECASE)
+_PLAYOFF_LEVEL_RE = re.compile(r"^level\s*([1-4])\b", re.IGNORECASE)
+_WIAA_TOURNEY_PREFIX_RE = re.compile(
+    r"^\s*WIAA\s+(?:Tournament|Playoffs?|Championship[s]?)\s*[-–:]?\s*",
+    re.IGNORECASE,
+)
 
 
 def _parse_playoff_label(label: str | None) -> tuple[bool, str | None]:
     """
-    Map WIAA's sub-label (e.g. "WIAA Tournament - Level1") to (playoff, round).
+    Map WIAA's sub-label (e.g. "WIAA Tournament - Level1",
+    "WIAA Tournament - Regional Semifinal") to (playoff, round).
 
-    Returns (False, None) for non-tournament rows. WIAA's label conventions
-    are consistent year-to-year; new wording (e.g. "State Final") gets
-    swept into the "State Championship" bucket via the catch-all match.
+    Returns (False, None) for non-tournament rows. The round string is
+    whatever WIAA wrote after the "WIAA Tournament - " prefix, with a
+    single cosmetic normalization: football's "Level1" → "Level 1".
+
+    Past mistake: an earlier version coerced anything with "semifinal" or
+    "final" to "State Semifinal"/"State Championship". That worked for
+    football's L1–L4 → State pipeline but mis-labeled basketball's
+    Regional/Sectional rounds. Pass-through is safer — the frontend
+    roundDisplay() handles per-sport prettification.
     """
     if not label:
         return False, None
     text = label.strip()
     lower = text.lower()
-    if "tournament" not in lower and "playoff" not in lower and "championship" not in lower:
+    if (
+        "tournament" not in lower
+        and "playoff" not in lower
+        and "championship" not in lower
+    ):
         return False, None
-    m = _PLAYOFF_LEVEL_RE.search(text)
+
+    # Strip the WIAA Tournament prefix if present.
+    round_text = _WIAA_TOURNEY_PREFIX_RE.sub("", text).strip()
+    if not round_text:
+        return True, None
+
+    # Football "Level1" → "Level 1" (kept as legacy cosmetic fix).
+    m = _PLAYOFF_LEVEL_RE.match(round_text)
     if m:
         return True, f"Level {m.group(1)}"
-    if "semifinal" in lower:
-        return True, "State Semifinal"
-    if "championship" in lower or "final" in lower or "state" in lower:
-        return True, "State Championship"
-    return True, None
+
+    return True, round_text
 
 
 def build_dataset(
