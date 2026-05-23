@@ -8,7 +8,7 @@
       {
         "school_id": "wausau-east",
         "name": "Wausau East",
-        "conference_wins": 1,
+        "conference_wins": 7,
         "conference_losses": 0,
         "overall_wins": 9,
         "overall_losses": 1,
@@ -18,7 +18,7 @@
       {
         "school_id": "mosinee",
         "name": "Mosinee",
-        "conference_wins": 0,
+        "conference_wins": 6,
         "conference_losses": 1,
         "overall_wins": 9,
         "overall_losses": 3,
@@ -36,7 +36,7 @@
       {
         "school_id": "wausau-west",
         "name": "Wausau West",
-        "conference_wins": 4,
+        "conference_wins": 6,
         "conference_losses": 0,
         "overall_wins": 9,
         "overall_losses": 1,
@@ -46,7 +46,7 @@
       {
         "school_id": "dc-everest",
         "name": "D.C. Everest",
-        "conference_wins": 3,
+        "conference_wins": 6,
         "conference_losses": 1,
         "overall_wins": 8,
         "overall_losses": 2,
@@ -56,7 +56,7 @@
       {
         "school_id": "marshfield",
         "name": "Marshfield",
-        "conference_wins": 2,
+        "conference_wins": 5,
         "conference_losses": 2,
         "overall_wins": 7,
         "overall_losses": 3,
@@ -66,7 +66,7 @@
       {
         "school_id": "spash",
         "name": "SPASH",
-        "conference_wins": 1,
+        "conference_wins": 4,
         "conference_losses": 3,
         "overall_wins": 6,
         "overall_losses": 3,
@@ -76,7 +76,7 @@
       {
         "school_id": "wisconsin-rapids",
         "name": "Wisconsin Rapids Lincoln",
-        "conference_wins": 0,
+        "conference_wins": 3,
         "conference_losses": 4,
         "overall_wins": 5,
         "overall_losses": 4,
@@ -92,19 +92,9 @@
     "division": null,
     "rows": [
       {
-        "school_id": "marathon",
-        "name": "Marathon",
-        "conference_wins": 2,
-        "conference_losses": 0,
-        "overall_wins": 9,
-        "overall_losses": 1,
-        "points_for": 282,
-        "points_against": 128
-      },
-      {
         "school_id": "edgar",
         "name": "Edgar",
-        "conference_wins": 1,
+        "conference_wins": 7,
         "conference_losses": 0,
         "overall_wins": 14,
         "overall_losses": 0,
@@ -112,39 +102,29 @@
         "points_against": 48
       },
       {
+        "school_id": "marathon",
+        "name": "Marathon",
+        "conference_wins": 7,
+        "conference_losses": 0,
+        "overall_wins": 9,
+        "overall_losses": 1,
+        "points_for": 282,
+        "points_against": 128
+      },
+      {
         "school_id": "stratford",
         "name": "Stratford",
-        "conference_wins": 1,
-        "conference_losses": 2,
+        "conference_wins": 6,
+        "conference_losses": 1,
         "overall_wins": 10,
         "overall_losses": 3,
         "points_for": 370,
         "points_against": 183
       },
       {
-        "school_id": "athens",
-        "name": "Athens",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "overall_wins": 0,
-        "overall_losses": 0,
-        "points_for": 0,
-        "points_against": 0
-      },
-      {
-        "school_id": "newman-catholic",
-        "name": "Newman Catholic",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "overall_wins": 0,
-        "overall_losses": 0,
-        "points_for": 0,
-        "points_against": 0
-      },
-      {
         "school_id": "spencer",
         "name": "Spencer",
-        "conference_wins": 0,
+        "conference_wins": 5,
         "conference_losses": 2,
         "overall_wins": 8,
         "overall_losses": 3,
@@ -160,24 +140,24 @@
     "division": null,
     "rows": [
       {
-        "school_id": "colby",
-        "name": "Colby",
-        "conference_wins": 1,
-        "conference_losses": 0,
-        "overall_wins": 6,
-        "overall_losses": 3,
-        "points_for": 212,
-        "points_against": 227
-      },
-      {
         "school_id": "abbotsford",
         "name": "Abbotsford",
-        "conference_wins": 0,
+        "conference_wins": 6,
         "conference_losses": 1,
         "overall_wins": 7,
         "overall_losses": 3,
         "points_for": 254,
         "points_against": 174
+      },
+      {
+        "school_id": "colby",
+        "name": "Colby",
+        "conference_wins": 4,
+        "conference_losses": 3,
+        "overall_wins": 6,
+        "overall_losses": 3,
+        "points_for": 212,
+        "points_against": 227
       }
     ]
   }

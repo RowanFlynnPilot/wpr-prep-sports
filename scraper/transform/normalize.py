@@ -223,6 +223,7 @@ def _raw_to_game(
         ),
         status=status,
         conference=None,
+        conference_game=bool(raw.get("conference_game")),
         venue=raw.get("venue"),
         sources=["wiaa"],
     )
@@ -310,6 +311,11 @@ def _build_standings(
             points_against=0,
         )
 
+    # Track which schools actually have any finalized games — we drop the
+    # rest before returning so teams that didn't field a roster (e.g.,
+    # Athens / Newman Catholic in football) don't sit at 0-0 in standings.
+    schools_with_games: set[str] = set()
+
     for game in games:
         if game.status != GameStatus.FINAL:
             continue
@@ -320,7 +326,11 @@ def _build_standings(
         away_school = by_school.get(game.away.school_id)
         home_conf = home_school.conference_for(sport_key) if home_school else None
         away_conf = away_school.conference_for(sport_key) if away_school else None
-        same_conference = home_conf is not None and home_conf == away_conf
+        # Trust WIAA's "(C)" marker as the source of truth: if a tracked
+        # school played a conference game, count it — regardless of whether
+        # the opponent is in our 15-school manifest. (Real conferences have
+        # more than 15 schools.)
+        is_conf_game = bool(game.conference_game)
 
         for school_id, conf, scored, allowed, won in (
             (
@@ -343,13 +353,14 @@ def _build_standings(
             row = buckets.get(conf, {}).get(school_id)
             if row is None:
                 continue
+            schools_with_games.add(school_id)
             row.points_for = (row.points_for or 0) + scored
             row.points_against = (row.points_against or 0) + allowed
             if won:
                 row.overall_wins += 1
             else:
                 row.overall_losses += 1
-            if same_conference:
+            if is_conf_game:
                 if won:
                     row.conference_wins += 1
                 else:
@@ -357,8 +368,12 @@ def _build_standings(
 
     standings: list[Standing] = []
     for conf, rows_by_school in buckets.items():
-        rows = sorted(
-            rows_by_school.values(),
+        # Drop schools that didn't field a roster for this sport — they
+        # shouldn't sit at 0-0 cluttering the standings.
+        rows = [r for r in rows_by_school.values() if r.school_id in schools_with_games]
+        if not rows:
+            continue
+        rows.sort(
             key=lambda r: (-r.conference_wins, r.conference_losses, -r.overall_wins),
         )
         standings.append(
