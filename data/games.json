@@ -740,6 +740,28 @@
           "TFL": "4.0",
           "SKS": "2.0"
         }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Florence",
+        "category": "Rushing Yards",
+        "player_name": "Luke Deterville",
+        "player_year": "SO",
+        "stats": {
+          "ATT": "3",
+          "YDS": "10",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Florence",
+        "category": "Total Tackles",
+        "player_name": "Nick Nevil",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "11.0"
+        }
       }
     ]
   },
@@ -1064,6 +1086,53 @@
           "TKL": "8.0",
           "TFL": "1.0"
         }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Manawa",
+        "category": "Passing Yards",
+        "player_name": "Carson Stroud",
+        "player_year": "SO",
+        "stats": {
+          "C/A": "6/15",
+          "YDS": "50",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Manawa",
+        "category": "Rushing Yards",
+        "player_name": "Jack Jaeckle",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "1",
+          "YDS": "25",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Manawa",
+        "category": "Receiving Yards",
+        "player_name": "Logan Zirbel",
+        "player_year": "JR",
+        "stats": {
+          "REC": "2",
+          "YDS": "20",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Manawa",
+        "category": "Total Tackles",
+        "player_name": "Wyatt Drath",
+        "player_year": "SO",
+        "stats": {
+          "TKL": "9.0",
+          "TFL": "1.0"
+        }
       }
     ]
   },
@@ -1243,6 +1312,54 @@
     ],
     "stat_leaders": [
       {
+        "team_school_id": "",
+        "team_name": "Sevastopol",
+        "category": "Passing Yards",
+        "player_name": "Logan Schuh",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "5/11",
+          "YDS": "93",
+          "TDS": "3",
+          "RUS": "94"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Sevastopol",
+        "category": "Rushing Yards",
+        "player_name": "Roman LeClair",
+        "player_year": "SO",
+        "stats": {
+          "ATT": "7",
+          "YDS": "105",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Sevastopol",
+        "category": "Receiving Yards",
+        "player_name": "Cash Kuehn",
+        "player_year": "SO",
+        "stats": {
+          "REC": "1",
+          "YDS": "52",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Sevastopol",
+        "category": "Total Tackles",
+        "player_name": "Reid LeClair",
+        "player_year": "FR",
+        "stats": {
+          "TKL": "11.0",
+          "TFL": "2.0"
+        }
+      },
+      {
         "team_school_id": "wild-rose",
         "team_name": "Wild Rose",
         "category": "Passing Yards",
@@ -1351,6 +1468,54 @@
         "stats": {
           "TKL": "9.0"
         }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Siren",
+        "category": "Passing Yards",
+        "player_name": "Parker Fingerson",
+        "player_year": "SO",
+        "stats": {
+          "C/A": "18/31",
+          "YDS": "172",
+          "TDS": "1",
+          "RUS": "77"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Siren",
+        "category": "Rushing Yards",
+        "player_name": "Joe D’Jock",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "10",
+          "YDS": "179",
+          "TDS": "3"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Siren",
+        "category": "Receiving Yards",
+        "player_name": "Josh Taylor",
+        "player_year": "JR",
+        "stats": {
+          "REC": "7",
+          "YDS": "97",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Siren",
+        "category": "Total Tackles",
+        "player_name": "Nick Swanson",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "11.0",
+          "TFL": "1.0"
+        }
       }
     ]
   },
@@ -1427,6 +1592,53 @@
           "TFL": "7.0",
           "SKS": "2.5"
         }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Westby",
+        "category": "Passing Yards",
+        "player_name": "Maddox Torkelson",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "8/13",
+          "YDS": "63",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Westby",
+        "category": "Rushing Yards",
+        "player_name": "Archer Carl",
+        "player_year": "SO",
+        "stats": {
+          "ATT": "12",
+          "YDS": "64",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Westby",
+        "category": "Receiving Yards",
+        "player_name": "Griffin Nelson",
+        "player_year": "JR",
+        "stats": {
+          "REC": "3",
+          "YDS": "24",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Westby",
+        "category": "Total Tackles",
+        "player_name": "Evan Berklund",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "13.0",
+          "TFL": "1.0"
+        }
       }
     ]
   },
@@ -1456,6 +1668,53 @@
       "bound"
     ],
     "stat_leaders": [
+      {
+        "team_school_id": "",
+        "team_name": "Ladysmith",
+        "category": "Passing Yards",
+        "player_name": "Axle Smith",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "1/2",
+          "YDS": "28",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Ladysmith",
+        "category": "Rushing Yards",
+        "player_name": "Carter Soltis",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "7",
+          "YDS": "42",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Ladysmith",
+        "category": "Receiving Yards",
+        "player_name": "Ashton Clark",
+        "player_year": "SR",
+        "stats": {
+          "REC": "2",
+          "YDS": "43",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Ladysmith",
+        "category": "Total Tackles",
+        "player_name": "Carter Soltis",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "12.0",
+          "TFL": "2.0"
+        }
+      },
       {
         "team_school_id": "edgar",
         "team_name": "Edgar",
@@ -1948,6 +2207,53 @@
           "TKL": "11.0",
           "TFL": "3.0"
         }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Stanley-Boyd",
+        "category": "Passing Yards",
+        "player_name": "Josiah Demske",
+        "player_year": "SO",
+        "stats": {
+          "C/A": "4/18",
+          "YDS": "74",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Stanley-Boyd",
+        "category": "Rushing Yards",
+        "player_name": "Gunnar Goettl",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "15",
+          "YDS": "51",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Stanley-Boyd",
+        "category": "Receiving Yards",
+        "player_name": "Oliver Hatfield",
+        "player_year": "JR",
+        "stats": {
+          "REC": "1",
+          "YDS": "29",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Stanley-Boyd",
+        "category": "Total Tackles",
+        "player_name": "Oliver Hatfield",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "11.0",
+          "TFL": "3.0"
+        }
       }
     ]
   },
@@ -1977,6 +2283,54 @@
       "bound"
     ],
     "stat_leaders": [
+      {
+        "team_school_id": "",
+        "team_name": "Loyal/Greenwood",
+        "category": "Passing Yards",
+        "player_name": "Jake Lindner",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "3/9",
+          "YDS": "21",
+          "TDS": "1",
+          "RUS": "15"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Loyal/Greenwood",
+        "category": "Rushing Yards",
+        "player_name": "Colten Sandelier",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "12",
+          "YDS": "81",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Loyal/Greenwood",
+        "category": "Receiving Yards",
+        "player_name": "Cain Toufar",
+        "player_year": "SR",
+        "stats": {
+          "REC": "1",
+          "YDS": "13",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Loyal/Greenwood",
+        "category": "Total Tackles",
+        "player_name": "Jake Lindner",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "11.0",
+          "FR": "1"
+        }
+      },
       {
         "team_school_id": "abbotsford",
         "team_name": "Abbotsford",
@@ -2051,6 +2405,52 @@
       "bound"
     ],
     "stat_leaders": [
+      {
+        "team_school_id": "",
+        "team_name": "Crandon",
+        "category": "Passing Yards",
+        "player_name": "Nolan Bradley",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "3/6",
+          "YDS": "33",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Crandon",
+        "category": "Rushing Yards",
+        "player_name": "Cruz Palubicki",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "16",
+          "YDS": "83",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Crandon",
+        "category": "Receiving Yards",
+        "player_name": "Trent Palubicki",
+        "player_year": "SR",
+        "stats": {
+          "REC": "1",
+          "YDS": "24",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Crandon",
+        "category": "Total Tackles",
+        "player_name": "Cruz Palubicki",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "12.0"
+        }
+      },
       {
         "team_school_id": "tomahawk",
         "team_name": "Tomahawk",
@@ -2173,6 +2573,53 @@
           "TKL": "9.0",
           "TFL": "1.0"
         }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Ashland",
+        "category": "Passing Yards",
+        "player_name": "Aiden  Jolma",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "1/4",
+          "YDS": "3",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Ashland",
+        "category": "Rushing Yards",
+        "player_name": "Wyatt Lund",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "24",
+          "YDS": "125",
+          "TDS": "4"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Ashland",
+        "category": "Receiving Yards",
+        "player_name": "Isaac  Eliason",
+        "player_year": "SR",
+        "stats": {
+          "REC": "1",
+          "YDS": "3",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Ashland",
+        "category": "Total Tackles",
+        "player_name": "Wyatt Lund",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "17.0",
+          "TFL": "4.0"
+        }
       }
     ]
   },
@@ -2202,6 +2649,54 @@
       "bound"
     ],
     "stat_leaders": [
+      {
+        "team_school_id": "",
+        "team_name": "Holmen",
+        "category": "Passing Yards",
+        "player_name": "Colin Williams",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "2/3",
+          "YDS": "34",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Holmen",
+        "category": "Rushing Yards",
+        "player_name": "Jack Barth",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "6",
+          "YDS": "180",
+          "TDS": "1",
+          "REC": "34"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Holmen",
+        "category": "Receiving Yards",
+        "player_name": "Jack Barth",
+        "player_year": "SR",
+        "stats": {
+          "REC": "2",
+          "YDS": "34",
+          "TDS": "3",
+          "RUS": "180"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Holmen",
+        "category": "Total Tackles",
+        "player_name": "Parker Spah",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "7.0"
+        }
+      },
       {
         "team_school_id": "medford",
         "team_name": "Medford",
@@ -2276,6 +2771,53 @@
       "bound"
     ],
     "stat_leaders": [
+      {
+        "team_school_id": "",
+        "team_name": "Osceola",
+        "category": "Passing Yards",
+        "player_name": "Conner Luehmann",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "5/7",
+          "YDS": "51",
+          "TDS": "1",
+          "RUS": "-2"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Osceola",
+        "category": "Rushing Yards",
+        "player_name": "Elliot Havlish",
+        "player_year": "SO",
+        "stats": {
+          "ATT": "10",
+          "YDS": "115",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Osceola",
+        "category": "Receiving Yards",
+        "player_name": "Reid Ohman",
+        "player_year": "SO",
+        "stats": {
+          "REC": "1",
+          "YDS": "22",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Osceola",
+        "category": "Total Tackles",
+        "player_name": "Caleb Irlbeck",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "6.0"
+        }
+      },
       {
         "team_school_id": "merrill",
         "team_name": "Merrill",
@@ -2424,6 +2966,55 @@
           "TKL": "7.0",
           "FR": "1"
         }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Northland Pines",
+        "category": "Passing Yards",
+        "player_name": "Aiden Minx",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "3/10",
+          "YDS": "40",
+          "TDS": "1",
+          "RUS": "25"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Northland Pines",
+        "category": "Rushing Yards",
+        "player_name": "Tucker Brock",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "14",
+          "YDS": "55",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Northland Pines",
+        "category": "Receiving Yards",
+        "player_name": "Jacob Beer",
+        "player_year": "SR",
+        "stats": {
+          "REC": "3",
+          "YDS": "40",
+          "TDS": "1",
+          "RUS": "46"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Northland Pines",
+        "category": "Total Tackles",
+        "player_name": "Tucker Brock",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "8.0",
+          "TFL": "2.0"
+        }
       }
     ]
   },
@@ -2453,6 +3044,55 @@
       "bound"
     ],
     "stat_leaders": [
+      {
+        "team_school_id": "",
+        "team_name": "Markesan",
+        "category": "Passing Yards",
+        "player_name": "Grayden Vredeveld",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "2/6",
+          "YDS": "22",
+          "TDS": "1",
+          "RUS": "94"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Markesan",
+        "category": "Rushing Yards",
+        "player_name": "Treston Eckstein",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "15",
+          "YDS": "133",
+          "TDS": "3"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Markesan",
+        "category": "Receiving Yards",
+        "player_name": "Aiden Goehring",
+        "player_year": "JR",
+        "stats": {
+          "REC": "1",
+          "YDS": "20",
+          "TDS": "1",
+          "RUS": "63"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Markesan",
+        "category": "Total Tackles",
+        "player_name": "Kayden Vannatta",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "12.0",
+          "TFL": "1.0"
+        }
+      },
       {
         "team_school_id": "assumption",
         "team_name": "Assumption",
@@ -2578,6 +3218,55 @@
           "TKL": "15.0",
           "TFL": "1.0"
         }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Shiocton",
+        "category": "Passing Yards",
+        "player_name": "Kyle Bergsbaken",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "15/28",
+          "YDS": "179",
+          "TDS": "1",
+          "RUS": "55"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Shiocton",
+        "category": "Rushing Yards",
+        "player_name": "Kyle Bergsbaken",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "15",
+          "YDS": "55",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Shiocton",
+        "category": "Receiving Yards",
+        "player_name": "Wyatt Hess",
+        "player_year": "JR",
+        "stats": {
+          "REC": "6",
+          "YDS": "81",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Shiocton",
+        "category": "Total Tackles",
+        "player_name": "Brett Singler",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "11.0",
+          "TFL": "5.0",
+          "SKS": "3.0"
+        }
       }
     ]
   },
@@ -2607,6 +3296,53 @@
       "bound"
     ],
     "stat_leaders": [
+      {
+        "team_school_id": "",
+        "team_name": "Saint Mary Catholic",
+        "category": "Passing Yards",
+        "player_name": "Maddox Dwyer",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "7/16",
+          "YDS": "69",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Saint Mary Catholic",
+        "category": "Rushing Yards",
+        "player_name": "Jacob Ernsting",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "10",
+          "YDS": "60",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Saint Mary Catholic",
+        "category": "Receiving Yards",
+        "player_name": "Mason Wagner",
+        "player_year": "SR",
+        "stats": {
+          "REC": "3",
+          "YDS": "27",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Saint Mary Catholic",
+        "category": "Total Tackles",
+        "player_name": "George Voss",
+        "player_year": "SO",
+        "stats": {
+          "TKL": "14.0",
+          "TFL": "4.0"
+        }
+      },
       {
         "team_school_id": "amherst",
         "team_name": "Amherst",
@@ -2682,6 +3418,53 @@
     ],
     "stat_leaders": [
       {
+        "team_school_id": "",
+        "team_name": "Berlin",
+        "category": "Passing Yards",
+        "player_name": "Carter Hess",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "5/12",
+          "YDS": "83",
+          "TDS": "1",
+          "RUS": "111"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Berlin",
+        "category": "Rushing Yards",
+        "player_name": "Jakob Martin",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "30",
+          "YDS": "212",
+          "TDS": "5"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Berlin",
+        "category": "Receiving Yards",
+        "player_name": "Hayden Redington",
+        "player_year": "SR",
+        "stats": {
+          "REC": "5",
+          "YDS": "83",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Berlin",
+        "category": "Total Tackles",
+        "player_name": "Hayden Redington",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "7.0"
+        }
+      },
+      {
         "team_school_id": "weyauwega-fremont",
         "team_name": "Weyauwega-Fremont",
         "category": "Passing Yards",
@@ -2755,6 +3538,54 @@
       "bound"
     ],
     "stat_leaders": [
+      {
+        "team_school_id": "",
+        "team_name": "Bonduel",
+        "category": "Passing Yards",
+        "player_name": "Quinn Wesenberg",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "8/20",
+          "YDS": "99",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Bonduel",
+        "category": "Rushing Yards",
+        "player_name": "Carter Moesch",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "12",
+          "YDS": "41",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Bonduel",
+        "category": "Receiving Yards",
+        "player_name": "Carter Moesch",
+        "player_year": "JR",
+        "stats": {
+          "REC": "2",
+          "YDS": "40",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Bonduel",
+        "category": "Total Tackles",
+        "player_name": "Carter Moesch",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "11.0",
+          "TFL": "1.0",
+          "FR": "1"
+        }
+      },
       {
         "team_school_id": "wittenberg-birnamwood",
         "team_name": "Wittenberg-Birnamwood",
@@ -2929,6 +3760,54 @@
         "stats": {
           "TKL": "16.0"
         }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Shell Lake",
+        "category": "Passing Yards",
+        "player_name": "David Marcoux",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "5/8",
+          "YDS": "107",
+          "TDS": "3",
+          "RUS": "85"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Shell Lake",
+        "category": "Rushing Yards",
+        "player_name": "Trey Bos",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "14",
+          "YDS": "151",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Shell Lake",
+        "category": "Receiving Yards",
+        "player_name": "Liam Russell",
+        "player_year": "SO",
+        "stats": {
+          "REC": "2",
+          "YDS": "69",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Shell Lake",
+        "category": "Total Tackles",
+        "player_name": "Adam Fritz",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "16.0",
+          "TFL": "1.0"
+        }
       }
     ]
   },
@@ -3092,9 +3971,57 @@
     "conference_game": false,
     "venue": "@Replacement Game - PQS points applied",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
     ],
-    "stat_leaders": []
+    "stat_leaders": [
+      {
+        "team_school_id": "",
+        "team_name": "Wabeno/Laona",
+        "category": "Passing Yards",
+        "player_name": "Cooper Albrecht",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "4/5",
+          "YDS": "116",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Wabeno/Laona",
+        "category": "Rushing Yards",
+        "player_name": "Walker Winkelman",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "5",
+          "YDS": "99",
+          "TDS": "4"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Wabeno/Laona",
+        "category": "Receiving Yards",
+        "player_name": "Marshal Smith",
+        "player_year": "SR",
+        "stats": {
+          "REC": "1",
+          "YDS": "47",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Wabeno/Laona",
+        "category": "Total Tackles",
+        "player_name": "Walker Winkelman",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "8.0"
+        }
+      }
+    ]
   },
   {
     "id": "football-2025-08-28-hurley-at-ironwood-mi",
@@ -3194,6 +4121,54 @@
           "TKL": "10.0",
           "INT": "1"
         }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Oakfield",
+        "category": "Passing Yards",
+        "player_name": "Austin Harmsen",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "12/17",
+          "YDS": "253",
+          "TDS": "1",
+          "RUS": "37"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Oakfield",
+        "category": "Rushing Yards",
+        "player_name": "Lennon Rauls",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "14",
+          "YDS": "62",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Oakfield",
+        "category": "Receiving Yards",
+        "player_name": "Brayden Glugla",
+        "player_year": "SR",
+        "stats": {
+          "REC": "5",
+          "YDS": "150",
+          "TDS": "3"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Oakfield",
+        "category": "Total Tackles",
+        "player_name": "James Kautzer",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "12.0",
+          "TFL": "2.0"
+        }
       }
     ]
   },
@@ -3223,6 +4198,55 @@
       "bound"
     ],
     "stat_leaders": [
+      {
+        "team_school_id": "",
+        "team_name": "La Crosse Logan",
+        "category": "Passing Yards",
+        "player_name": "Thomas Check",
+        "player_year": "SO",
+        "stats": {
+          "C/A": "1/4",
+          "YDS": "2",
+          "TDS": "2",
+          "RUS": "106"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "La Crosse Logan",
+        "category": "Rushing Yards",
+        "player_name": "Thomas Check",
+        "player_year": "SO",
+        "stats": {
+          "ATT": "21",
+          "YDS": "106",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "La Crosse Logan",
+        "category": "Receiving Yards",
+        "player_name": "Hudson Davis",
+        "player_year": "SR",
+        "stats": {
+          "REC": "1",
+          "YDS": "2",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "La Crosse Logan",
+        "category": "Total Tackles",
+        "player_name": "Preston Elston",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "9.0",
+          "TFL": "1.0",
+          "FR": "1"
+        }
+      },
       {
         "team_school_id": "wausau-east",
         "team_name": "Wausau East",
@@ -3866,6 +4890,55 @@
           "TKL": "18.0",
           "TFL": "1.0"
         }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Crandon",
+        "category": "Passing Yards",
+        "player_name": "Nolan Bradley",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "2/5",
+          "YDS": "84",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Crandon",
+        "category": "Rushing Yards",
+        "player_name": "Cruz Palubicki",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "18",
+          "YDS": "209",
+          "TDS": "1",
+          "REC": "82"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Crandon",
+        "category": "Receiving Yards",
+        "player_name": "Cruz Palubicki",
+        "player_year": "SR",
+        "stats": {
+          "REC": "1",
+          "YDS": "82",
+          "TDS": "2",
+          "RUS": "209"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Crandon",
+        "category": "Total Tackles",
+        "player_name": "Brexden Kane",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "16.0",
+          "TFL": "4.0"
+        }
       }
     ]
   },
@@ -3895,6 +4968,52 @@
       "bound"
     ],
     "stat_leaders": [
+      {
+        "team_school_id": "",
+        "team_name": "Sturgeon Bay",
+        "category": "Passing Yards",
+        "player_name": "Trygg Stuth",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "10/22",
+          "YDS": "93",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Sturgeon Bay",
+        "category": "Rushing Yards",
+        "player_name": "Shaun Estrada",
+        "player_year": "FR",
+        "stats": {
+          "ATT": "10",
+          "YDS": "20",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Sturgeon Bay",
+        "category": "Receiving Yards",
+        "player_name": "Alex Boden",
+        "player_year": "SO",
+        "stats": {
+          "REC": "6",
+          "YDS": "68",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Sturgeon Bay",
+        "category": "Total Tackles",
+        "player_name": "Alex Boden",
+        "player_year": "SO",
+        "stats": {
+          "TKL": "5.0"
+        }
+      },
       {
         "team_school_id": "antigo",
         "team_name": "Antigo",
@@ -4538,6 +5657,53 @@
         "stats": {
           "TKL": "12.0"
         }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Pepin/Alma",
+        "category": "Passing Yards",
+        "player_name": "Trenton Krzoska",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "2/5",
+          "YDS": "50",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Pepin/Alma",
+        "category": "Rushing Yards",
+        "player_name": "Justin Bergmann",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "8",
+          "YDS": "92",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Pepin/Alma",
+        "category": "Receiving Yards",
+        "player_name": "Jacob Komisar",
+        "player_year": "SR",
+        "stats": {
+          "REC": "1",
+          "YDS": "29",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Pepin/Alma",
+        "category": "Total Tackles",
+        "player_name": "Anders Seifert",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "9.0",
+          "TFL": "1.0"
+        }
       }
     ]
   },
@@ -4611,6 +5777,53 @@
         "player_year": "SO",
         "stats": {
           "TKL": "6.0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Winnebago Lutheran",
+        "category": "Passing Yards",
+        "player_name": "Gannan Schwartz",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "7/11",
+          "YDS": "89",
+          "TDS": "1",
+          "RUS": "86"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Winnebago Lutheran",
+        "category": "Rushing Yards",
+        "player_name": "Gannan Schwartz",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "12",
+          "YDS": "86",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Winnebago Lutheran",
+        "category": "Receiving Yards",
+        "player_name": "Sam Pollesch",
+        "player_year": "SR",
+        "stats": {
+          "REC": "1",
+          "YDS": "55",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Winnebago Lutheran",
+        "category": "Total Tackles",
+        "player_name": "Frankie Wiedmeyer",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "7.0"
         }
       }
     ]
@@ -5232,6 +6445,53 @@
           "TKL": "10.0",
           "TFL": "1.0"
         }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Menasha",
+        "category": "Passing Yards",
+        "player_name": "Paul Schmolinske",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "8/9",
+          "YDS": "80",
+          "TDS": "4",
+          "RUS": "122"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Menasha",
+        "category": "Rushing Yards",
+        "player_name": "Paul Schmolinske",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "21",
+          "YDS": "122",
+          "TDS": "4"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Menasha",
+        "category": "Receiving Yards",
+        "player_name": "Tayden Wilke",
+        "player_year": "JR",
+        "stats": {
+          "REC": "2",
+          "YDS": "51",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Menasha",
+        "category": "Total Tackles",
+        "player_name": "Keonte Thigpen",
+        "player_year": "SO",
+        "stats": {
+          "TKL": "10.0"
+        }
       }
     ]
   },
@@ -5529,6 +6789,52 @@
         "stats": {
           "TKL": "4.0"
         }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Onalaska",
+        "category": "Passing Yards",
+        "player_name": "Ian Kowal",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "6/8",
+          "YDS": "106",
+          "TDS": "3"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Onalaska",
+        "category": "Rushing Yards",
+        "player_name": "Kaeson Stettler",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "12",
+          "YDS": "86",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Onalaska",
+        "category": "Receiving Yards",
+        "player_name": "Luke Siegel",
+        "player_year": "SR",
+        "stats": {
+          "REC": "3",
+          "YDS": "64",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Onalaska",
+        "category": "Total Tackles",
+        "player_name": "Maximus Todd",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "11.0"
+        }
       }
     ]
   },
@@ -5558,6 +6864,54 @@
       "bound"
     ],
     "stat_leaders": [
+      {
+        "team_school_id": "",
+        "team_name": "Ashland",
+        "category": "Passing Yards",
+        "player_name": "Xander Gibbon",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "1/1",
+          "YDS": "34",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Ashland",
+        "category": "Rushing Yards",
+        "player_name": "Wyatt Lund",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "10",
+          "YDS": "30",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Ashland",
+        "category": "Receiving Yards",
+        "player_name": "Victor Brandis",
+        "player_year": "JR",
+        "stats": {
+          "REC": "1",
+          "YDS": "34",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Ashland",
+        "category": "Total Tackles",
+        "player_name": "Wyatt Lund",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "17.0",
+          "TFL": "2.0",
+          "SKS": "2.0"
+        }
+      },
       {
         "team_school_id": "lakeland",
         "team_name": "Lakeland",
@@ -5680,6 +7034,52 @@
           "TKL": "18.0",
           "TFL": "1.0",
           "INT": "1"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Parkview/Albany",
+        "category": "Passing Yards",
+        "player_name": "Aiden Crane",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "17/26",
+          "YDS": "205",
+          "TDS": "3"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Parkview/Albany",
+        "category": "Rushing Yards",
+        "player_name": "Elijah Gunn",
+        "player_year": "SO",
+        "stats": {
+          "ATT": "4",
+          "YDS": "42",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Parkview/Albany",
+        "category": "Receiving Yards",
+        "player_name": "Oliver Friedrich",
+        "player_year": "SR",
+        "stats": {
+          "REC": "4",
+          "YDS": "82",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Parkview/Albany",
+        "category": "Total Tackles",
+        "player_name": "Peter Roth",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "7.0"
         }
       }
     ]
@@ -5905,9 +7305,58 @@
     "conference_game": false,
     "venue": "@Gilman",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
     ],
-    "stat_leaders": []
+    "stat_leaders": [
+      {
+        "team_school_id": "",
+        "team_name": "Gilman",
+        "category": "Passing Yards",
+        "player_name": "Logan Halida",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "1/1",
+          "YDS": "15",
+          "TDS": "2",
+          "RUS": "103"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Gilman",
+        "category": "Rushing Yards",
+        "player_name": "Tony Syryczuk",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "11",
+          "YDS": "126",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Gilman",
+        "category": "Receiving Yards",
+        "player_name": "Cooper Krug",
+        "player_year": "SR",
+        "stats": {
+          "REC": "1",
+          "YDS": "15",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Gilman",
+        "category": "Total Tackles",
+        "player_name": "Henry  Syryczuk",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "15.0"
+        }
+      }
+    ]
   },
   {
     "id": "football-2025-08-29-almond-bancroft-at-marion",
@@ -6279,6 +7728,53 @@
         "stats": {
           "TKL": "10.0",
           "TFL": "3.0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Three Lakes/Phelps",
+        "category": "Passing Yards",
+        "player_name": "Sam Koshuta",
+        "player_year": "SO",
+        "stats": {
+          "C/A": "2/12",
+          "YDS": "20",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Three Lakes/Phelps",
+        "category": "Rushing Yards",
+        "player_name": "Owen Liebscher",
+        "player_year": "FR",
+        "stats": {
+          "ATT": "12",
+          "YDS": "53",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Three Lakes/Phelps",
+        "category": "Receiving Yards",
+        "player_name": "Owen Liebscher",
+        "player_year": "FR",
+        "stats": {
+          "REC": "2",
+          "YDS": "20",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Three Lakes/Phelps",
+        "category": "Total Tackles",
+        "player_name": "Sawyer Szews",
+        "player_year": "SO",
+        "stats": {
+          "TKL": "17.0",
+          "TFL": "1.0"
         }
       }
     ]
@@ -7101,6 +8597,54 @@
       "bound"
     ],
     "stat_leaders": [
+      {
+        "team_school_id": "",
+        "team_name": "Loyal/Greenwood",
+        "category": "Passing Yards",
+        "player_name": "Jake Lindner",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "4/6",
+          "YDS": "79",
+          "TDS": "1",
+          "RUS": "29"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Loyal/Greenwood",
+        "category": "Rushing Yards",
+        "player_name": "Reed Stieglitz",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "11",
+          "YDS": "106",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Loyal/Greenwood",
+        "category": "Receiving Yards",
+        "player_name": "Isaac Zabel",
+        "player_year": "JR",
+        "stats": {
+          "REC": "2",
+          "YDS": "43",
+          "TDS": "1",
+          "RUS": "39"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Loyal/Greenwood",
+        "category": "Total Tackles",
+        "player_name": "Adam Kautzer",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "12.0"
+        }
+      },
       {
         "team_school_id": "marathon",
         "team_name": "Marathon",
@@ -9770,6 +11314,52 @@
     ],
     "stat_leaders": [
       {
+        "team_school_id": "",
+        "team_name": "Niagara",
+        "category": "Passing Yards",
+        "player_name": "Brayden Bartels",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "15/22",
+          "YDS": "133",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Niagara",
+        "category": "Rushing Yards",
+        "player_name": "Brayden Bartels",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "24",
+          "YDS": "64",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Niagara",
+        "category": "Receiving Yards",
+        "player_name": "Owen Dunkes",
+        "player_year": "JR",
+        "stats": {
+          "REC": "2",
+          "YDS": "48",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Niagara",
+        "category": "Total Tackles",
+        "player_name": "Connor Guardiola",
+        "player_year": "SO",
+        "stats": {
+          "TKL": "9.0"
+        }
+      },
+      {
         "team_school_id": "newman-catholic",
         "team_name": "Newman Catholic",
         "category": "Passing Yards",
@@ -10259,6 +11849,55 @@
         "stats": {
           "TKL": "1.0",
           "TFL": "1.0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Loyal/Greenwood",
+        "category": "Passing Yards",
+        "player_name": "Jake Lindner",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "1/7",
+          "YDS": "2",
+          "TDS": "3",
+          "RUS": "146"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Loyal/Greenwood",
+        "category": "Rushing Yards",
+        "player_name": "Jake Lindner",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "12",
+          "YDS": "146",
+          "TDS": "3"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Loyal/Greenwood",
+        "category": "Receiving Yards",
+        "player_name": "Adam Kautzer",
+        "player_year": "JR",
+        "stats": {
+          "REC": "1",
+          "YDS": "2",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Loyal/Greenwood",
+        "category": "Total Tackles",
+        "player_name": "Jake  Luchterhand",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "10.0",
+          "TFL": "4.0",
+          "SKS": "3.0"
         }
       }
     ]
@@ -13895,6 +15534,52 @@
           "TKL": "7.0",
           "TFL": "1.0"
         }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Loyal/Greenwood",
+        "category": "Passing Yards",
+        "player_name": "Reed Stieglitz",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "1/1",
+          "YDS": "40",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Loyal/Greenwood",
+        "category": "Rushing Yards",
+        "player_name": "Colten Sandelier",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "14",
+          "YDS": "63",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Loyal/Greenwood",
+        "category": "Receiving Yards",
+        "player_name": "Cain Toufar",
+        "player_year": "SR",
+        "stats": {
+          "REC": "1",
+          "YDS": "40",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Loyal/Greenwood",
+        "category": "Total Tackles",
+        "player_name": "Adam Kautzer",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "9.0"
+        }
       }
     ]
   },
@@ -14095,6 +15780,52 @@
         "player_year": "FR",
         "stats": {
           "TKL": "13.0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Washburn",
+        "category": "Passing Yards",
+        "player_name": "Max Phillips",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "11/15",
+          "YDS": "116",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Washburn",
+        "category": "Rushing Yards",
+        "player_name": "Anthony Chatterton",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "16",
+          "YDS": "91",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Washburn",
+        "category": "Receiving Yards",
+        "player_name": "Brodi Anderson",
+        "player_year": "SR",
+        "stats": {
+          "REC": "6",
+          "YDS": "88",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Washburn",
+        "category": "Total Tackles",
+        "player_name": "Flynn Heinzerling",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "7.0"
         }
       }
     ]
@@ -16730,6 +18461,54 @@
     ],
     "stat_leaders": [
       {
+        "team_school_id": "",
+        "team_name": "Loyal/Greenwood",
+        "category": "Passing Yards",
+        "player_name": "Jake Lindner",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "6/13",
+          "YDS": "117",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Loyal/Greenwood",
+        "category": "Rushing Yards",
+        "player_name": "Colten Sandelier",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "22",
+          "YDS": "95",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Loyal/Greenwood",
+        "category": "Receiving Yards",
+        "player_name": "Reed Stieglitz",
+        "player_year": "SR",
+        "stats": {
+          "REC": "2",
+          "YDS": "75",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Loyal/Greenwood",
+        "category": "Total Tackles",
+        "player_name": "Adam Kautzer",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "10.0",
+          "TFL": "2.0",
+          "FR": "1"
+        }
+      },
+      {
         "team_school_id": "wittenberg-birnamwood",
         "team_name": "Wittenberg-Birnamwood",
         "category": "Rushing Yards",
@@ -16878,6 +18657,54 @@
         "player_year": "JR",
         "stats": {
           "TKL": "10.0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Washburn",
+        "category": "Passing Yards",
+        "player_name": "Max Phillips",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "20/34",
+          "YDS": "336",
+          "TDS": "4"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Washburn",
+        "category": "Rushing Yards",
+        "player_name": "Anthony Chatterton",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "18",
+          "YDS": "156",
+          "TDS": "1",
+          "REC": "54"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Washburn",
+        "category": "Receiving Yards",
+        "player_name": "Charley Lussenhop",
+        "player_year": "SR",
+        "stats": {
+          "REC": "6",
+          "YDS": "150",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Washburn",
+        "category": "Total Tackles",
+        "player_name": "Waylon Witt",
+        "player_year": "SO",
+        "stats": {
+          "TKL": "12.0",
+          "TFL": "2.0"
         }
       }
     ]
@@ -17464,6 +19291,54 @@
         "player_year": "SR",
         "stats": {
           "TKL": "12.0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Clayton",
+        "category": "Passing Yards",
+        "player_name": "Dayne Mumm",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "1/2",
+          "YDS": "6",
+          "TDS": "4",
+          "RUS": "175"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Clayton",
+        "category": "Rushing Yards",
+        "player_name": "Cain Casarez",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "19",
+          "YDS": "203",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Clayton",
+        "category": "Receiving Yards",
+        "player_name": "Alex Young",
+        "player_year": "SO",
+        "stats": {
+          "REC": "1",
+          "YDS": "6",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Clayton",
+        "category": "Total Tackles",
+        "player_name": "Brody Curtis",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "12.0",
+          "TFL": "2.0"
         }
       }
     ]
@@ -18419,6 +20294,52 @@
         "player_year": "SR",
         "stats": {
           "TKL": "13.0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Loyal/Greenwood",
+        "category": "Passing Yards",
+        "player_name": "Jake Lindner",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "10/18",
+          "YDS": "174",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Loyal/Greenwood",
+        "category": "Rushing Yards",
+        "player_name": "Colten Sandelier",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "10",
+          "YDS": "56",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Loyal/Greenwood",
+        "category": "Receiving Yards",
+        "player_name": "Cain Toufar",
+        "player_year": "SR",
+        "stats": {
+          "REC": "5",
+          "YDS": "103",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Loyal/Greenwood",
+        "category": "Total Tackles",
+        "player_name": "Adam Kautzer",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "11.0"
         }
       }
     ]
@@ -22419,6 +24340,54 @@
     ],
     "stat_leaders": [
       {
+        "team_school_id": "",
+        "team_name": "Loyal/Greenwood",
+        "category": "Passing Yards",
+        "player_name": "Jake Lindner",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "5/13",
+          "YDS": "86",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Loyal/Greenwood",
+        "category": "Rushing Yards",
+        "player_name": "Colten Sandelier",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "22",
+          "YDS": "111",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Loyal/Greenwood",
+        "category": "Receiving Yards",
+        "player_name": "Cain Toufar",
+        "player_year": "SR",
+        "stats": {
+          "REC": "2",
+          "YDS": "73",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Loyal/Greenwood",
+        "category": "Total Tackles",
+        "player_name": "Jake  Luchterhand",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "12.0",
+          "TFL": "7.0",
+          "SKS": "1.0"
+        }
+      },
+      {
         "team_school_id": "weyauwega-fremont",
         "team_name": "Weyauwega-Fremont",
         "category": "Passing Yards",
@@ -22914,6 +24883,55 @@
         "player_year": "SR",
         "stats": {
           "TKL": "12.0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Wabeno/Laona",
+        "category": "Passing Yards",
+        "player_name": "Cooper Albrecht",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "7/10",
+          "YDS": "65",
+          "TDS": "4",
+          "RUS": "229"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Wabeno/Laona",
+        "category": "Rushing Yards",
+        "player_name": "Cooper Albrecht",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "11",
+          "YDS": "229",
+          "TDS": "4"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Wabeno/Laona",
+        "category": "Receiving Yards",
+        "player_name": "Walker Winkelman",
+        "player_year": "SR",
+        "stats": {
+          "REC": "2",
+          "YDS": "35",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Wabeno/Laona",
+        "category": "Total Tackles",
+        "player_name": "Cooper Albrecht",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "12.0",
+          "TFL": "3.0",
+          "INT": "1"
         }
       }
     ]
@@ -23965,6 +25983,53 @@
       "bound"
     ],
     "stat_leaders": [
+      {
+        "team_school_id": "",
+        "team_name": "Loyal/Greenwood",
+        "category": "Passing Yards",
+        "player_name": "Jake Lindner",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "4/3",
+          "YDS": "9",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Loyal/Greenwood",
+        "category": "Rushing Yards",
+        "player_name": "Colten Sandelier",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "9",
+          "YDS": "45",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Loyal/Greenwood",
+        "category": "Receiving Yards",
+        "player_name": "Rory Hanson",
+        "player_year": "SR",
+        "stats": {
+          "REC": "1",
+          "YDS": "9",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Loyal/Greenwood",
+        "category": "Total Tackles",
+        "player_name": "Adam Kautzer",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "8.0",
+          "TFL": "1.0"
+        }
+      },
       {
         "team_school_id": "stratford",
         "team_name": "Stratford",
@@ -25297,6 +27362,52 @@
     ],
     "stat_leaders": [
       {
+        "team_school_id": "",
+        "team_name": "Niagara",
+        "category": "Passing Yards",
+        "player_name": "Brayden Bartels",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "13/25",
+          "YDS": "65",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Niagara",
+        "category": "Rushing Yards",
+        "player_name": "Brayden Bartels",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "22",
+          "YDS": "120",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Niagara",
+        "category": "Receiving Yards",
+        "player_name": "Connor Guardiola",
+        "player_year": "SO",
+        "stats": {
+          "REC": "2",
+          "YDS": "36",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Niagara",
+        "category": "Total Tackles",
+        "player_name": "Owen Dunkes",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "5.0"
+        }
+      },
+      {
         "team_school_id": "athens",
         "team_name": "Athens",
         "category": "Passing Yards",
@@ -25416,6 +27527,55 @@
         "player_year": "SR",
         "stats": {
           "TKL": "7.0",
+          "INT": "1"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Frederic",
+        "category": "Passing Yards",
+        "player_name": "Royce Anderson",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "7/10",
+          "YDS": "147",
+          "TDS": "1",
+          "RUS": "99"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Frederic",
+        "category": "Rushing Yards",
+        "player_name": "Royce Anderson",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "5",
+          "YDS": "99",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Frederic",
+        "category": "Receiving Yards",
+        "player_name": "Alex  Chenal",
+        "player_year": "SR",
+        "stats": {
+          "REC": "2",
+          "YDS": "90",
+          "TDS": "1",
+          "RUS": "55"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Frederic",
+        "category": "Total Tackles",
+        "player_name": "Riley Cummings",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "9.0",
           "INT": "1"
         }
       }
@@ -25692,6 +27852,55 @@
           "TKL": "18.0",
           "TFL": "1.0"
         }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Owen-Withee",
+        "category": "Passing Yards",
+        "player_name": "Isaiah Pyrchalla",
+        "player_year": "FR",
+        "stats": {
+          "C/A": "3/6",
+          "YDS": "33",
+          "TDS": "1",
+          "RUS": "44"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Owen-Withee",
+        "category": "Rushing Yards",
+        "player_name": "Talon Mueller",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "33",
+          "YDS": "122",
+          "TDS": "3"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Owen-Withee",
+        "category": "Receiving Yards",
+        "player_name": "Tegan Treankler",
+        "player_year": "FR",
+        "stats": {
+          "REC": "1",
+          "YDS": "22",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Owen-Withee",
+        "category": "Total Tackles",
+        "player_name": "Winston Poehler",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "7.0",
+          "TFL": "2.0",
+          "SKS": "2.0"
+        }
       }
     ]
   },
@@ -25842,6 +28051,54 @@
           "TFL": "1.0",
           "SKS": "1.0"
         }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Oshkosh North",
+        "category": "Passing Yards",
+        "player_name": "Bryce Ott",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "12/18",
+          "YDS": "86",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Oshkosh North",
+        "category": "Rushing Yards",
+        "player_name": "Jamond Thompson-Schreck",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "23",
+          "YDS": "188",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Oshkosh North",
+        "category": "Receiving Yards",
+        "player_name": "Dalton Clark",
+        "player_year": "SR",
+        "stats": {
+          "REC": "9",
+          "YDS": "67",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Oshkosh North",
+        "category": "Total Tackles",
+        "player_name": "Andrew Oehler",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "8.0",
+          "TFL": "1.0",
+          "SKS": "1.0"
+        }
       }
     ]
   },
@@ -25917,6 +28174,55 @@
         "stats": {
           "TKL": "8.0"
         }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "North Crawford",
+        "category": "Passing Yards",
+        "player_name": "Cullen Jacobus",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "7/13",
+          "YDS": "181",
+          "TDS": "3"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "North Crawford",
+        "category": "Rushing Yards",
+        "player_name": "Landry Stluka",
+        "player_year": "SO",
+        "stats": {
+          "ATT": "8",
+          "YDS": "137",
+          "TDS": "1",
+          "REC": "111"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "North Crawford",
+        "category": "Receiving Yards",
+        "player_name": "Landry Stluka",
+        "player_year": "SO",
+        "stats": {
+          "REC": "3",
+          "YDS": "111",
+          "TDS": "3",
+          "RUS": "137"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "North Crawford",
+        "category": "Total Tackles",
+        "player_name": "Gavin Tamling",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "5.0",
+          "TFL": "2.0"
+        }
       }
     ]
   },
@@ -25946,6 +28252,52 @@
       "bound"
     ],
     "stat_leaders": [
+      {
+        "team_school_id": "",
+        "team_name": "Kaukauna",
+        "category": "Passing Yards",
+        "player_name": "Ryan Carrel",
+        "player_year": "SO",
+        "stats": {
+          "C/A": "22/37",
+          "YDS": "270",
+          "TDS": "3"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Kaukauna",
+        "category": "Rushing Yards",
+        "player_name": "Ryan Carrel",
+        "player_year": "SO",
+        "stats": {
+          "ATT": "7",
+          "YDS": "43",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Kaukauna",
+        "category": "Receiving Yards",
+        "player_name": "Kavanaugh Weyenberg",
+        "player_year": "SR",
+        "stats": {
+          "REC": "10",
+          "YDS": "125",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Kaukauna",
+        "category": "Total Tackles",
+        "player_name": "Wyatt Romenesko",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "19.0"
+        }
+      },
       {
         "team_school_id": "rice-lake",
         "team_name": "Rice Lake",
@@ -26071,6 +28423,52 @@
           "TFL": "2.0",
           "SKS": "1.0"
         }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Mount Horeb/Barneveld",
+        "category": "Passing Yards",
+        "player_name": "Brooks Hendrickson",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "10/18",
+          "YDS": "115",
+          "TDS": "3"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Mount Horeb/Barneveld",
+        "category": "Rushing Yards",
+        "player_name": "Jack Wilson",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "15",
+          "YDS": "108",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Mount Horeb/Barneveld",
+        "category": "Receiving Yards",
+        "player_name": "Henry DeRosier",
+        "player_year": "JR",
+        "stats": {
+          "REC": "3",
+          "YDS": "50",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Mount Horeb/Barneveld",
+        "category": "Total Tackles",
+        "player_name": "Henry DeRosier",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "12.0"
+        }
       }
     ]
   },
@@ -26144,6 +28542,54 @@
         "player_year": "JR",
         "stats": {
           "TKL": "11.0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Arrowhead",
+        "category": "Passing Yards",
+        "player_name": "Nolan Hanson",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "8/8",
+          "YDS": "115",
+          "TDS": "3"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Arrowhead",
+        "category": "Rushing Yards",
+        "player_name": "Devin Nettles",
+        "player_year": "SO",
+        "stats": {
+          "ATT": "8",
+          "YDS": "91",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Arrowhead",
+        "category": "Receiving Yards",
+        "player_name": "Logan Crowley",
+        "player_year": "JR",
+        "stats": {
+          "REC": "2",
+          "YDS": "38",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Arrowhead",
+        "category": "Total Tackles",
+        "player_name": "Brendan Foley",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "7.0",
+          "TFL": "1.0",
+          "FR": "1"
         }
       }
     ]
@@ -26220,6 +28666,53 @@
           "TKL": "10.0",
           "TFL": "2.0"
         }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Brookfield East",
+        "category": "Passing Yards",
+        "player_name": "Zeke Sawall",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "13/26",
+          "YDS": "161",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Brookfield East",
+        "category": "Rushing Yards",
+        "player_name": "Max Matter",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "21",
+          "YDS": "137",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Brookfield East",
+        "category": "Receiving Yards",
+        "player_name": "Jack Murray",
+        "player_year": "SR",
+        "stats": {
+          "REC": "5",
+          "YDS": "91",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Brookfield East",
+        "category": "Total Tackles",
+        "player_name": "Jack Murray",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "10.0",
+          "TFL": "1.0"
+        }
       }
     ]
   },
@@ -26275,6 +28768,55 @@
       "bound"
     ],
     "stat_leaders": [
+      {
+        "team_school_id": "",
+        "team_name": "Loyal/Greenwood",
+        "category": "Passing Yards",
+        "player_name": "Jake Lindner",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "7/14",
+          "YDS": "78",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Loyal/Greenwood",
+        "category": "Rushing Yards",
+        "player_name": "Colten Sandelier",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "32",
+          "YDS": "103",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Loyal/Greenwood",
+        "category": "Receiving Yards",
+        "player_name": "Cain Toufar",
+        "player_year": "SR",
+        "stats": {
+          "REC": "5",
+          "YDS": "48",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Loyal/Greenwood",
+        "category": "Total Tackles",
+        "player_name": "Colten Sandelier",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "9.0",
+          "TFL": "3.0",
+          "SKS": "2.0",
+          "FR": "1"
+        }
+      },
       {
         "team_school_id": "edgar",
         "team_name": "Edgar",
@@ -26347,9 +28889,60 @@
     "conference_game": false,
     "venue": "@Kewaunee",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
     ],
-    "stat_leaders": []
+    "stat_leaders": [
+      {
+        "team_school_id": "",
+        "team_name": "Kewaunee",
+        "category": "Passing Yards",
+        "player_name": "Brett Paulsen",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "15/21",
+          "YDS": "242",
+          "TDS": "3",
+          "RUS": "90"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Kewaunee",
+        "category": "Rushing Yards",
+        "player_name": "Waylon Delain",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "16",
+          "YDS": "109",
+          "TDS": "1",
+          "REC": "89"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Kewaunee",
+        "category": "Receiving Yards",
+        "player_name": "Waylon Delain",
+        "player_year": "SR",
+        "stats": {
+          "REC": "3",
+          "YDS": "89",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Kewaunee",
+        "category": "Total Tackles",
+        "player_name": "Bryce Tulachka",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "6.0",
+          "TFL": "2.0"
+        }
+      }
+    ]
   },
   {
     "id": "football-2025-10-24-richland-center-at-stratford",
@@ -26377,6 +28970,42 @@
       "bound"
     ],
     "stat_leaders": [
+      {
+        "team_school_id": "",
+        "team_name": "Richland Center",
+        "category": "Passing Yards",
+        "player_name": "Jayden Schoepp",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "2/5",
+          "YDS": "31",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Richland Center",
+        "category": "Rushing Yards",
+        "player_name": "Brady Dosch",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "17",
+          "YDS": "40",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Richland Center",
+        "category": "Receiving Yards",
+        "player_name": "Brady Dosch",
+        "player_year": "SR",
+        "stats": {
+          "REC": "1",
+          "YDS": "23",
+          "TDS": "0"
+        }
+      },
       {
         "team_school_id": "stratford",
         "team_name": "Stratford",
@@ -26498,6 +29127,54 @@
         "stats": {
           "TKL": "12.0"
         }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "New Holstein",
+        "category": "Passing Yards",
+        "player_name": "Landon FLoyd",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "4/10",
+          "YDS": "63",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "New Holstein",
+        "category": "Rushing Yards",
+        "player_name": "James Conrad",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "11",
+          "YDS": "85",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "New Holstein",
+        "category": "Receiving Yards",
+        "player_name": "James Conrad",
+        "player_year": "JR",
+        "stats": {
+          "REC": "2",
+          "YDS": "33",
+          "TDS": "1",
+          "RUS": "85"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "New Holstein",
+        "category": "Total Tackles",
+        "player_name": "Jacob Schneider",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "10.0",
+          "TFL": "3.0"
+        }
       }
     ]
   },
@@ -26527,6 +29204,53 @@
       "bound"
     ],
     "stat_leaders": [
+      {
+        "team_school_id": "",
+        "team_name": "Turner",
+        "category": "Passing Yards",
+        "player_name": "Jaxon Walenga",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "4/17",
+          "YDS": "46",
+          "TDS": "1",
+          "RUS": "22"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Turner",
+        "category": "Rushing Yards",
+        "player_name": "Alejandro Rodriguez",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "11",
+          "YDS": "94",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Turner",
+        "category": "Receiving Yards",
+        "player_name": "Peyton Tucker",
+        "player_year": "JR",
+        "stats": {
+          "REC": "1",
+          "YDS": "26",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Turner",
+        "category": "Total Tackles",
+        "player_name": "Chris Spencer",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "7.0"
+        }
+      },
       {
         "team_school_id": "mosinee",
         "team_name": "Mosinee",
@@ -26646,6 +29370,53 @@
         "stats": {
           "TKL": "5.0"
         }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Mondovi",
+        "category": "Passing Yards",
+        "player_name": "Bode Falkner",
+        "player_year": "SO",
+        "stats": {
+          "C/A": "11/20",
+          "YDS": "143",
+          "TDS": "2",
+          "RUS": "126"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Mondovi",
+        "category": "Rushing Yards",
+        "player_name": "Bode Falkner",
+        "player_year": "SO",
+        "stats": {
+          "ATT": "7",
+          "YDS": "126",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Mondovi",
+        "category": "Receiving Yards",
+        "player_name": "Griffin Rud",
+        "player_year": "SO",
+        "stats": {
+          "REC": "3",
+          "YDS": "31",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Mondovi",
+        "category": "Total Tackles",
+        "player_name": "Carter Heike",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "7.0"
+        }
       }
     ]
   },
@@ -26675,6 +29446,52 @@
       "bound"
     ],
     "stat_leaders": [
+      {
+        "team_school_id": "",
+        "team_name": "Omro",
+        "category": "Passing Yards",
+        "player_name": "Lucas Kasuboski",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "8/15",
+          "YDS": "142",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Omro",
+        "category": "Rushing Yards",
+        "player_name": "Logan Carley",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "8",
+          "YDS": "27",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Omro",
+        "category": "Receiving Yards",
+        "player_name": "Keagan Miller",
+        "player_year": "SR",
+        "stats": {
+          "REC": "3",
+          "YDS": "47",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Omro",
+        "category": "Total Tackles",
+        "player_name": "Nicholas Steffen",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "16.0"
+        }
+      },
       {
         "team_school_id": "tomahawk",
         "team_name": "Tomahawk",
@@ -26797,6 +29614,55 @@
           "TKL": "15.0",
           "TFL": "1.0"
         }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Edgewood",
+        "category": "Passing Yards",
+        "player_name": "Gannon Bagstad",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "8/10",
+          "YDS": "77",
+          "TDS": "2",
+          "RUS": "151"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Edgewood",
+        "category": "Rushing Yards",
+        "player_name": "Gannon Bagstad",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "20",
+          "YDS": "151",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Edgewood",
+        "category": "Receiving Yards",
+        "player_name": "Will Kelly",
+        "player_year": "SR",
+        "stats": {
+          "REC": "2",
+          "YDS": "34",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Edgewood",
+        "category": "Total Tackles",
+        "player_name": "Mikey Hackworthy",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "13.0",
+          "TFL": "3.0",
+          "SKS": "1.0"
+        }
       }
     ]
   },
@@ -26871,6 +29737,53 @@
         "stats": {
           "TKL": "6.0",
           "FR": "1"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Grafton",
+        "category": "Passing Yards",
+        "player_name": "Nicholas Schiller",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "9/16",
+          "YDS": "176",
+          "TDS": "3"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Grafton",
+        "category": "Rushing Yards",
+        "player_name": "Jack Nelson",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "12",
+          "YDS": "84",
+          "TDS": "3"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Grafton",
+        "category": "Receiving Yards",
+        "player_name": "Tyler Deer",
+        "player_year": "SR",
+        "stats": {
+          "REC": "6",
+          "YDS": "132",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Grafton",
+        "category": "Total Tackles",
+        "player_name": "Miles Muilenburg",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "11.0",
+          "TFL": "1.0"
         }
       }
     ]
@@ -27069,6 +29982,52 @@
         "stats": {
           "TKL": "29.0"
         }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Waunakee",
+        "category": "Passing Yards",
+        "player_name": "Cole Krause",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "9/17",
+          "YDS": "108",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Waunakee",
+        "category": "Rushing Yards",
+        "player_name": "Eli Drangstveit",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "25",
+          "YDS": "109",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Waunakee",
+        "category": "Receiving Yards",
+        "player_name": "Cooper Johanns",
+        "player_year": "SR",
+        "stats": {
+          "REC": "1",
+          "YDS": "50",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Waunakee",
+        "category": "Total Tackles",
+        "player_name": "Kyan Newman",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "12.0"
+        }
       }
     ]
   },
@@ -27098,6 +30057,52 @@
       "bound"
     ],
     "stat_leaders": [
+      {
+        "team_school_id": "",
+        "team_name": "Sun Prairie East",
+        "category": "Passing Yards",
+        "player_name": "Braylon Peterson",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "16/23",
+          "YDS": "132",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Sun Prairie East",
+        "category": "Rushing Yards",
+        "player_name": "Tyler Mitchell",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "22",
+          "YDS": "100",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Sun Prairie East",
+        "category": "Receiving Yards",
+        "player_name": "Van Vogler",
+        "player_year": "SR",
+        "stats": {
+          "REC": "6",
+          "YDS": "51",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Sun Prairie East",
+        "category": "Total Tackles",
+        "player_name": "Beckam Mcnary",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "11.0"
+        }
+      },
       {
         "team_school_id": "hudson",
         "team_name": "Hudson",
@@ -27253,6 +30258,52 @@
     ],
     "stat_leaders": [
       {
+        "team_school_id": "",
+        "team_name": "Crandon",
+        "category": "Passing Yards",
+        "player_name": "Nolan Bradley",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "4/6",
+          "YDS": "50",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Crandon",
+        "category": "Rushing Yards",
+        "player_name": "Cruz Palubicki",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "32",
+          "YDS": "149",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Crandon",
+        "category": "Receiving Yards",
+        "player_name": "Trent Palubicki",
+        "player_year": "SR",
+        "stats": {
+          "REC": "4",
+          "YDS": "35",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Crandon",
+        "category": "Total Tackles",
+        "player_name": "Cruz Palubicki",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "12.0"
+        }
+      },
+      {
         "team_school_id": "auburndale",
         "team_name": "Auburndale",
         "category": "Passing Yards",
@@ -27373,6 +30424,52 @@
           "TFL": "2.0",
           "SKS": "1.0"
         }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Cochrane-Fountain City",
+        "category": "Passing Yards",
+        "player_name": "Parker  Kujak",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "7/7",
+          "YDS": "87",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Cochrane-Fountain City",
+        "category": "Rushing Yards",
+        "player_name": "Ethan Smith",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "13",
+          "YDS": "123",
+          "TDS": "3"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Cochrane-Fountain City",
+        "category": "Receiving Yards",
+        "player_name": "Tucker Bambenek",
+        "player_year": "SR",
+        "stats": {
+          "REC": "2",
+          "YDS": "44",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Cochrane-Fountain City",
+        "category": "Total Tackles",
+        "player_name": "Tucker Bambenek",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "7.0"
+        }
       }
     ]
   },
@@ -27447,6 +30544,53 @@
         "stats": {
           "TKL": "7.0"
         }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Hilbert",
+        "category": "Passing Yards",
+        "player_name": "Ari Sevela",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "1/2",
+          "YDS": "26",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Hilbert",
+        "category": "Rushing Yards",
+        "player_name": "Ezra Sevela",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "7",
+          "YDS": "107",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Hilbert",
+        "category": "Receiving Yards",
+        "player_name": "Ezra Sevela",
+        "player_year": "JR",
+        "stats": {
+          "REC": "1",
+          "YDS": "26",
+          "TDS": "2",
+          "RUS": "107"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Hilbert",
+        "category": "Total Tackles",
+        "player_name": "Nate Huettl",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "4.0"
+        }
       }
     ]
   },
@@ -27476,6 +30620,54 @@
       "bound"
     ],
     "stat_leaders": [
+      {
+        "team_school_id": "",
+        "team_name": "Lancaster",
+        "category": "Passing Yards",
+        "player_name": "Toay Ragatz",
+        "player_year": "SO",
+        "stats": {
+          "C/A": "9/21",
+          "YDS": "114",
+          "TDS": "1",
+          "RUS": "22"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Lancaster",
+        "category": "Rushing Yards",
+        "player_name": "Nolan Hanke",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "12",
+          "YDS": "110",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Lancaster",
+        "category": "Receiving Yards",
+        "player_name": "Dayne Kauffman",
+        "player_year": "SR",
+        "stats": {
+          "REC": "6",
+          "YDS": "52",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Lancaster",
+        "category": "Total Tackles",
+        "player_name": "Toay Ragatz",
+        "player_year": "SO",
+        "stats": {
+          "TKL": "9.0",
+          "TFL": "1.0"
+        }
+      },
       {
         "team_school_id": "amherst",
         "team_name": "Amherst",
@@ -27597,6 +30789,17 @@
           "TKL": "9.0",
           "TFL": "2.0"
         }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Cambridge",
+        "category": "Total Tackles",
+        "player_name": "Owain Nelles",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "13.0",
+          "TFL": "3.0"
+        }
       }
     ]
   },
@@ -27675,6 +30878,52 @@
           "TFL": "2.0",
           "SKS": "1.0"
         }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Brookfield Academy",
+        "category": "Passing Yards",
+        "player_name": "Garrett Priebe",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "5/12",
+          "YDS": "56",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Brookfield Academy",
+        "category": "Rushing Yards",
+        "player_name": "Beau Libbey",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "17",
+          "YDS": "181",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Brookfield Academy",
+        "category": "Receiving Yards",
+        "player_name": "Samarth Singh",
+        "player_year": "JR",
+        "stats": {
+          "REC": "1",
+          "YDS": "32",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Brookfield Academy",
+        "category": "Total Tackles",
+        "player_name": "Garrett Priebe",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "11.0"
+        }
       }
     ]
   },
@@ -27704,6 +30953,52 @@
       "bound"
     ],
     "stat_leaders": [
+      {
+        "team_school_id": "",
+        "team_name": "Frederic",
+        "category": "Passing Yards",
+        "player_name": "Royce Anderson",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "9/16",
+          "YDS": "120",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Frederic",
+        "category": "Rushing Yards",
+        "player_name": "Leif Lahti",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "15",
+          "YDS": "62",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Frederic",
+        "category": "Receiving Yards",
+        "player_name": "Riley Cummings",
+        "player_year": "JR",
+        "stats": {
+          "REC": "5",
+          "YDS": "95",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Frederic",
+        "category": "Total Tackles",
+        "player_name": "Riley Cummings",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "12.0"
+        }
+      },
       {
         "team_school_id": "flambeau",
         "team_name": "Flambeau",
@@ -27754,6 +31049,53 @@
       "bound"
     ],
     "stat_leaders": [
+      {
+        "team_school_id": "",
+        "team_name": "Sevastopol",
+        "category": "Passing Yards",
+        "player_name": "Logan Schuh",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "13/16",
+          "YDS": "154",
+          "TDS": "3",
+          "RUS": "102"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Sevastopol",
+        "category": "Rushing Yards",
+        "player_name": "Logan Schuh",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "16",
+          "YDS": "102",
+          "TDS": "3"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Sevastopol",
+        "category": "Receiving Yards",
+        "player_name": "Cash Kuehn",
+        "player_year": "SO",
+        "stats": {
+          "REC": "4",
+          "YDS": "58",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Sevastopol",
+        "category": "Total Tackles",
+        "player_name": "Ray Johnson",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "14.0"
+        }
+      },
       {
         "team_school_id": "marion",
         "team_name": "Marion/Tigerton",
@@ -27830,6 +31172,53 @@
     ],
     "stat_leaders": [
       {
+        "team_school_id": "",
+        "team_name": "Beaver Dam",
+        "category": "Passing Yards",
+        "player_name": "Jaxon Ladron",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "11/17",
+          "YDS": "135",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Beaver Dam",
+        "category": "Rushing Yards",
+        "player_name": "Parker Blank",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "20",
+          "YDS": "80",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Beaver Dam",
+        "category": "Receiving Yards",
+        "player_name": "Ashtyn Seifert",
+        "player_year": "JR",
+        "stats": {
+          "REC": "4",
+          "YDS": "63",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Beaver Dam",
+        "category": "Total Tackles",
+        "player_name": "Jayse Barstow",
+        "player_year": "SO",
+        "stats": {
+          "TKL": "20.0",
+          "TFL": "4.0"
+        }
+      },
+      {
         "team_school_id": "river-falls",
         "team_name": "River Falls",
         "category": "Passing Yards",
@@ -27899,9 +31288,48 @@
     "conference_game": false,
     "venue": "@Onalaska",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
     ],
-    "stat_leaders": []
+    "stat_leaders": [
+      {
+        "team_school_id": "",
+        "team_name": "Onalaska",
+        "category": "Passing Yards",
+        "player_name": "Ian Kowal",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "15/23",
+          "YDS": "146",
+          "TDS": "1",
+          "RUS": "28"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Onalaska",
+        "category": "Rushing Yards",
+        "player_name": "Carson Zinnecker",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "14",
+          "YDS": "69",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Onalaska",
+        "category": "Receiving Yards",
+        "player_name": "Jackson Egan",
+        "player_year": "SR",
+        "stats": {
+          "REC": "5",
+          "YDS": "66",
+          "TDS": "1"
+        }
+      }
+    ]
   },
   {
     "id": "football-2025-10-31-oshkosh-north-at-new-richmond",
@@ -27929,6 +31357,53 @@
       "bound"
     ],
     "stat_leaders": [
+      {
+        "team_school_id": "",
+        "team_name": "Oshkosh North",
+        "category": "Passing Yards",
+        "player_name": "Bryce Ott",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "14/19",
+          "YDS": "257",
+          "TDS": "4"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Oshkosh North",
+        "category": "Rushing Yards",
+        "player_name": "Jamond Thompson-Schreck",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "14",
+          "YDS": "81",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Oshkosh North",
+        "category": "Receiving Yards",
+        "player_name": "Dalton Clark",
+        "player_year": "SR",
+        "stats": {
+          "REC": "7",
+          "YDS": "105",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Oshkosh North",
+        "category": "Total Tackles",
+        "player_name": "Dalton Clark",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "12.0",
+          "TFL": "1.0"
+        }
+      },
       {
         "team_school_id": "new-richmond",
         "team_name": "New Richmond",
@@ -28005,6 +31480,53 @@
     ],
     "stat_leaders": [
       {
+        "team_school_id": "",
+        "team_name": "Poynette",
+        "category": "Passing Yards",
+        "player_name": "Mason Freimuth",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "7/16",
+          "YDS": "62",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Poynette",
+        "category": "Rushing Yards",
+        "player_name": "Vance Hathaway",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "8",
+          "YDS": "12",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Poynette",
+        "category": "Receiving Yards",
+        "player_name": "Justin Wells",
+        "player_year": "SR",
+        "stats": {
+          "REC": "4",
+          "YDS": "67",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Poynette",
+        "category": "Total Tackles",
+        "player_name": "Cayden Manke",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "7.0",
+          "TFL": "1.0"
+        }
+      },
+      {
         "team_school_id": "edgar",
         "team_name": "Edgar",
         "category": "Passing Yards",
@@ -28080,6 +31602,54 @@
       "bound"
     ],
     "stat_leaders": [
+      {
+        "team_school_id": "",
+        "team_name": "Prairie du Chien",
+        "category": "Passing Yards",
+        "player_name": "Cayden Sutter",
+        "player_year": "SO",
+        "stats": {
+          "C/A": "7/12",
+          "YDS": "126",
+          "TDS": "1",
+          "RUS": "18"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Prairie du Chien",
+        "category": "Rushing Yards",
+        "player_name": "Darian Jackson",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "15",
+          "YDS": "60",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Prairie du Chien",
+        "category": "Receiving Yards",
+        "player_name": "Mason Hird",
+        "player_year": "SR",
+        "stats": {
+          "REC": "4",
+          "YDS": "80",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Prairie du Chien",
+        "category": "Total Tackles",
+        "player_name": "Brock Radloff",
+        "player_year": "SO",
+        "stats": {
+          "TKL": "11.0",
+          "TFL": "1.0"
+        }
+      },
       {
         "team_school_id": "stratford",
         "team_name": "Stratford",
@@ -28230,6 +31800,52 @@
     ],
     "stat_leaders": [
       {
+        "team_school_id": "",
+        "team_name": "Evansville",
+        "category": "Passing Yards",
+        "player_name": "Matthew Wickersham",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "5/18",
+          "YDS": "39",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Evansville",
+        "category": "Rushing Yards",
+        "player_name": "Lincoln Keller",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "18",
+          "YDS": "90",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Evansville",
+        "category": "Receiving Yards",
+        "player_name": "Landon Litsheim",
+        "player_year": "SR",
+        "stats": {
+          "REC": "1",
+          "YDS": "24",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Evansville",
+        "category": "Total Tackles",
+        "player_name": "Cordell Harris",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "8.0"
+        }
+      },
+      {
         "team_school_id": "mosinee",
         "team_name": "Mosinee",
         "category": "Passing Yards",
@@ -28301,9 +31917,58 @@
     "conference_game": false,
     "venue": "@Grafton",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
     ],
-    "stat_leaders": []
+    "stat_leaders": [
+      {
+        "team_school_id": "",
+        "team_name": "Grafton",
+        "category": "Passing Yards",
+        "player_name": "Nicholas Schiller",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "6/7",
+          "YDS": "107",
+          "TDS": "3"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Grafton",
+        "category": "Rushing Yards",
+        "player_name": "Jack Nelson",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "10",
+          "YDS": "227",
+          "TDS": "3"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Grafton",
+        "category": "Receiving Yards",
+        "player_name": "Tyler Deer",
+        "player_year": "SR",
+        "stats": {
+          "REC": "3",
+          "YDS": "59",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Grafton",
+        "category": "Total Tackles",
+        "player_name": "Miles Muilenburg",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "9.0",
+          "TFL": "5.0"
+        }
+      }
+    ]
   },
   {
     "id": "football-2025-10-31-de-pere-at-hudson",
@@ -28331,6 +31996,54 @@
       "bound"
     ],
     "stat_leaders": [
+      {
+        "team_school_id": "",
+        "team_name": "De Pere",
+        "category": "Passing Yards",
+        "player_name": "Holden Woodfill",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "14/27",
+          "YDS": "235",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "De Pere",
+        "category": "Rushing Yards",
+        "player_name": "Dante Matta",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "12",
+          "YDS": "59",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "De Pere",
+        "category": "Receiving Yards",
+        "player_name": "Sam Robb",
+        "player_year": "SR",
+        "stats": {
+          "REC": "2",
+          "YDS": "108",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "De Pere",
+        "category": "Total Tackles",
+        "player_name": "Cayden Cavanaugh",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "21.0",
+          "TFL": "1.0",
+          "SKS": "1.0"
+        }
+      },
       {
         "team_school_id": "hudson",
         "team_name": "Hudson",
@@ -28407,6 +32120,42 @@
     ],
     "stat_leaders": [
       {
+        "team_school_id": "",
+        "team_name": "Wauwatosa East",
+        "category": "Passing Yards",
+        "player_name": "Louie Fox",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "12/16",
+          "YDS": "210",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Wauwatosa East",
+        "category": "Rushing Yards",
+        "player_name": "Zyon White",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "23",
+          "YDS": "112",
+          "TDS": "3"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Wauwatosa East",
+        "category": "Receiving Yards",
+        "player_name": "Jack Boomsma",
+        "player_year": "SR",
+        "stats": {
+          "REC": "8",
+          "YDS": "171",
+          "TDS": "1"
+        }
+      },
+      {
         "team_school_id": "rice-lake",
         "team_name": "Rice Lake",
         "category": "Passing Yards",
@@ -28480,6 +32229,54 @@
       "bound"
     ],
     "stat_leaders": [
+      {
+        "team_school_id": "",
+        "team_name": "Brillion",
+        "category": "Passing Yards",
+        "player_name": "Joseph  Shimek",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "4/12",
+          "YDS": "38",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Brillion",
+        "category": "Rushing Yards",
+        "player_name": "Hayden  Cousin",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "4",
+          "YDS": "46",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Brillion",
+        "category": "Receiving Yards",
+        "player_name": "Heath Cousin",
+        "player_year": "SR",
+        "stats": {
+          "REC": "3",
+          "YDS": "20",
+          "TDS": "1",
+          "RUS": "11"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Brillion",
+        "category": "Total Tackles",
+        "player_name": "Landon Mathes",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "6.0",
+          "TFL": "1.0"
+        }
+      },
       {
         "team_school_id": "amherst",
         "team_name": "Amherst",
@@ -28602,6 +32399,54 @@
         "stats": {
           "TKL": "7.0"
         }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Manitowoc Lutheran",
+        "category": "Passing Yards",
+        "player_name": "Jaymen Ott",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "8/13",
+          "YDS": "127",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Manitowoc Lutheran",
+        "category": "Rushing Yards",
+        "player_name": "Isaac Wagner",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "16",
+          "YDS": "164",
+          "TDS": "1",
+          "REC": "52"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Manitowoc Lutheran",
+        "category": "Receiving Yards",
+        "player_name": "Isaac Wagner",
+        "player_year": "SR",
+        "stats": {
+          "REC": "1",
+          "YDS": "52",
+          "TDS": "2",
+          "RUS": "164"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Manitowoc Lutheran",
+        "category": "Total Tackles",
+        "player_name": "Josiah Martin",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "9.0"
+        }
       }
     ]
   },
@@ -28627,9 +32472,60 @@
     "conference_game": false,
     "venue": "@Lake Country Lutheran",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
     ],
-    "stat_leaders": []
+    "stat_leaders": [
+      {
+        "team_school_id": "",
+        "team_name": "Lake Country Lutheran",
+        "category": "Passing Yards",
+        "player_name": "Connor Lubbers",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "14/19",
+          "YDS": "124",
+          "TDS": "3"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Lake Country Lutheran",
+        "category": "Rushing Yards",
+        "player_name": "Nathan Graf",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "17",
+          "YDS": "104",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Lake Country Lutheran",
+        "category": "Receiving Yards",
+        "player_name": "Gavin Mosier",
+        "player_year": "SR",
+        "stats": {
+          "REC": "5",
+          "YDS": "70",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Lake Country Lutheran",
+        "category": "Total Tackles",
+        "player_name": "Teddy Kogutkiewicz",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "8.0",
+          "TFL": "3.0",
+          "SKS": "1.0",
+          "FR": "1"
+        }
+      }
+    ]
   },
   {
     "id": "football-2025-10-31-la-crosse-central-at-river-falls",
@@ -28657,6 +32553,43 @@
       "bound"
     ],
     "stat_leaders": [
+      {
+        "team_school_id": "",
+        "team_name": "La Crosse Central",
+        "category": "Passing Yards",
+        "player_name": "Gabe Servais",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "5/8",
+          "YDS": "69",
+          "TDS": "1",
+          "RUS": "144"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "La Crosse Central",
+        "category": "Rushing Yards",
+        "player_name": "Gabe Servais",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "15",
+          "YDS": "144",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "La Crosse Central",
+        "category": "Receiving Yards",
+        "player_name": "Avant Williams",
+        "player_year": "JR",
+        "stats": {
+          "REC": "4",
+          "YDS": "70",
+          "TDS": "1"
+        }
+      },
       {
         "team_school_id": "river-falls",
         "team_name": "River Falls",
@@ -28760,6 +32693,52 @@
     ],
     "stat_leaders": [
       {
+        "team_school_id": "",
+        "team_name": "Oshkosh North",
+        "category": "Passing Yards",
+        "player_name": "Bryce Ott",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "25/41",
+          "YDS": "265",
+          "TDS": "4"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Oshkosh North",
+        "category": "Rushing Yards",
+        "player_name": "Jamond Thompson-Schreck",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "10",
+          "YDS": "51",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Oshkosh North",
+        "category": "Receiving Yards",
+        "player_name": "Dalton Clark",
+        "player_year": "SR",
+        "stats": {
+          "REC": "15",
+          "YDS": "226",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Oshkosh North",
+        "category": "Total Tackles",
+        "player_name": "Tyler Farnsworth",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "16.0"
+        }
+      },
+      {
         "team_school_id": "river-falls",
         "team_name": "River Falls",
         "category": "Passing Yards",
@@ -28835,6 +32814,52 @@
       "bound"
     ],
     "stat_leaders": [
+      {
+        "team_school_id": "",
+        "team_name": "Bonduel",
+        "category": "Passing Yards",
+        "player_name": "Quinn Wesenberg",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "11/21",
+          "YDS": "66",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Bonduel",
+        "category": "Rushing Yards",
+        "player_name": "Carter Moesch",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "21",
+          "YDS": "92",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Bonduel",
+        "category": "Receiving Yards",
+        "player_name": "Beckett Hartlaben",
+        "player_year": "SR",
+        "stats": {
+          "REC": "4",
+          "YDS": "31",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Bonduel",
+        "category": "Total Tackles",
+        "player_name": "Jayden Popp",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "12.0"
+        }
+      },
       {
         "team_school_id": "edgar",
         "team_name": "Edgar",
@@ -29029,6 +33054,55 @@
           "TKL": "14.0",
           "TFL": "1.0"
         }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Columbus",
+        "category": "Passing Yards",
+        "player_name": "Peyton Powers",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "8/13",
+          "YDS": "139",
+          "TDS": "2",
+          "RUS": "120"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Columbus",
+        "category": "Rushing Yards",
+        "player_name": "Peyton Powers",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "6",
+          "YDS": "120",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Columbus",
+        "category": "Receiving Yards",
+        "player_name": "Jordan Mobry",
+        "player_year": "SR",
+        "stats": {
+          "REC": "3",
+          "YDS": "71",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Columbus",
+        "category": "Total Tackles",
+        "player_name": "Wyatt Graffin",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "5.0",
+          "TFL": "2.0",
+          "SKS": "1.0"
+        }
       }
     ]
   },
@@ -29103,6 +33177,29 @@
         "stats": {
           "TKL": "10.0"
         }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Notre Dame",
+        "category": "Rushing Yards",
+        "player_name": "Kingston Allen",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "32",
+          "YDS": "286",
+          "TDS": "4"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Notre Dame",
+        "category": "Total Tackles",
+        "player_name": "Jackson Whitehouse",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "10.0",
+          "FR": "1"
+        }
       }
     ]
   },
@@ -29128,9 +33225,60 @@
     "conference_game": false,
     "venue": "@Mayville",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
     ],
-    "stat_leaders": []
+    "stat_leaders": [
+      {
+        "team_school_id": "",
+        "team_name": "Mayville",
+        "category": "Passing Yards",
+        "player_name": "Emerson Mittelstadt",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "2/3",
+          "YDS": "54",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Mayville",
+        "category": "Rushing Yards",
+        "player_name": "Landen Baker",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "32",
+          "YDS": "168",
+          "TDS": "1",
+          "REC": "54"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Mayville",
+        "category": "Receiving Yards",
+        "player_name": "Landen Baker",
+        "player_year": "SR",
+        "stats": {
+          "REC": "2",
+          "YDS": "54",
+          "TDS": "3",
+          "RUS": "168"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Mayville",
+        "category": "Total Tackles",
+        "player_name": "Owen Steger",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "7.0",
+          "TFL": "2.0"
+        }
+      }
+    ]
   },
   {
     "id": "football-2025-11-14-mondovi-at-edgar",
@@ -29158,6 +33306,53 @@
       "bound"
     ],
     "stat_leaders": [
+      {
+        "team_school_id": "",
+        "team_name": "Mondovi",
+        "category": "Passing Yards",
+        "player_name": "Bode Falkner",
+        "player_year": "SO",
+        "stats": {
+          "C/A": "8/17",
+          "YDS": "105",
+          "TDS": "1",
+          "RUS": "59"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Mondovi",
+        "category": "Rushing Yards",
+        "player_name": "Bode Falkner",
+        "player_year": "SO",
+        "stats": {
+          "ATT": "16",
+          "YDS": "59",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Mondovi",
+        "category": "Receiving Yards",
+        "player_name": "Issaiah Hill",
+        "player_year": "JR",
+        "stats": {
+          "REC": "2",
+          "YDS": "35",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Mondovi",
+        "category": "Total Tackles",
+        "player_name": "Griffin Rud",
+        "player_year": "SO",
+        "stats": {
+          "TKL": "8.0"
+        }
+      },
       {
         "team_school_id": "edgar",
         "team_name": "Edgar",
@@ -29280,6 +33475,53 @@
           "TKL": "10.0",
           "TFL": "1.0"
         }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Northwestern",
+        "category": "Passing Yards",
+        "player_name": "Kamden Kroll",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "3/4",
+          "YDS": "147",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Northwestern",
+        "category": "Rushing Yards",
+        "player_name": "Ethan Harms",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "6",
+          "YDS": "79",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Northwestern",
+        "category": "Receiving Yards",
+        "player_name": "Tysen Teal",
+        "player_year": "JR",
+        "stats": {
+          "REC": "3",
+          "YDS": "147",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Northwestern",
+        "category": "Total Tackles",
+        "player_name": "Gage Nollet",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "11.0",
+          "TFL": "3.0"
+        }
       }
     ]
   },
@@ -29353,6 +33595,53 @@
         "player_year": "JR",
         "stats": {
           "TKL": "14.0",
+          "TFL": "1.0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Notre Dame",
+        "category": "Passing Yards",
+        "player_name": "Max Peirce",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "3/5",
+          "YDS": "73",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Notre Dame",
+        "category": "Rushing Yards",
+        "player_name": "Kingston Allen",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "32",
+          "YDS": "238",
+          "TDS": "6"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Notre Dame",
+        "category": "Receiving Yards",
+        "player_name": "Alex Ciak",
+        "player_year": "SR",
+        "stats": {
+          "REC": "1",
+          "YDS": "37",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Notre Dame",
+        "category": "Total Tackles",
+        "player_name": "Jackson Whitehouse",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "7.0",
           "TFL": "1.0"
         }
       }

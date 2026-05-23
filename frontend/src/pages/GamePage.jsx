@@ -52,16 +52,22 @@ export default function GamePage({ dataset, schoolIndex }) {
     perspectiveSchoolId,
   });
 
-  // Group stat lines by team
-  const statsByTeamId = useMemo(() => {
+  // Group stat lines by team. Tracked schools key by their school_id;
+  // untracked opponents key by a normalized version of their team name
+  // so a side lookup like `game.away.school_id || normalize(game.away.name)`
+  // still finds them.
+  const statsByKey = useMemo(() => {
     const m = new Map();
     for (const line of game.stat_leaders ?? []) {
-      const key = line.team_school_id || `__raw:${line.team_name}`;
+      const key = line.team_school_id || `name:${normalizeName(line.team_name)}`;
       if (!m.has(key)) m.set(key, []);
       m.get(key).push(line);
     }
     return m;
   }, [game.stat_leaders]);
+
+  const keyForSide = (side) =>
+    side.school_id || `name:${normalizeName(side.name)}`;
 
   const breadcrumb = (
     <>
@@ -127,7 +133,7 @@ export default function GamePage({ dataset, schoolIndex }) {
               team={game.away}
               school={awaySchool}
               won={awayWon}
-              lines={statsByTeamId.get(game.away.school_id) ?? []}
+              lines={statsByKey.get(keyForSide(game.away)) ?? []}
               score={awayScore}
               showScore={isFinal}
             />
@@ -136,7 +142,7 @@ export default function GamePage({ dataset, schoolIndex }) {
               team={game.home}
               school={homeSchool}
               won={homeWon}
-              lines={statsByTeamId.get(game.home.school_id) ?? []}
+              lines={statsByKey.get(keyForSide(game.home)) ?? []}
               score={homeScore}
               showScore={isFinal}
             />
@@ -220,6 +226,10 @@ function TeamStatsCard({ label, team, school, won, lines, score, showScore }) {
       )}
     </article>
   );
+}
+
+function normalizeName(name) {
+  return (name || "").replace(/\s+/g, " ").trim().toLowerCase();
 }
 
 const CATEGORY_POS = {

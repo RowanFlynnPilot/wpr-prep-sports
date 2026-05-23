@@ -193,16 +193,14 @@ def _attach_stats(
     name_to_id: dict[str, str],
 ) -> int:
     """
-    Resolve Bound team names to our manifest school_ids and attach.
-    Returns the count of lines attached.
+    Attach Bound stat lines for both teams in the game. Tracked schools
+    get a resolved team_school_id; untracked opponents keep an empty
+    school_id but their team_name still lines up with game.home/away.name
+    so the frontend can group by name when there's no slug to match on.
     """
     attached: list[StatLine] = []
     for line in lines:
         school_id = name_to_id.get(_norm(line.team_name), "")
-        # Only keep stat lines for our tracked schools — opposing-team
-        # players from unmatched schools are noise in our context.
-        if not school_id:
-            continue
         attached.append(
             StatLine(
                 team_school_id=school_id,
