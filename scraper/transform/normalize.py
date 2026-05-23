@@ -109,6 +109,14 @@ def build_dataset(
     games: dict[str, Game] = {}
     for sched in raw_team_schedules:
         owner_school_id = sched.get("_school_id")
+        # Per-source counter for game-id collisions WITHIN one school's
+        # schedule. Volleyball tournament days occasionally have the same
+        # two teams play twice (consolation rounds, etc.). WIAA doesn't
+        # give a time on those rows, so the default `<sport>-<date>-...`
+        # id collides; we suffix the second/third occurrences with -2/-3
+        # so both rows are kept. Cross-schedule dedup still works because
+        # the opponent's schedule applies the same suffix scheme.
+        seen_in_source: dict[str, int] = {}
         for raw in sched["games"]:
             game = _raw_to_game(
                 raw,
@@ -119,6 +127,11 @@ def build_dataset(
             )
             if game is None:
                 continue
+            base_id = game.id
+            count = seen_in_source.get(base_id, 0) + 1
+            seen_in_source[base_id] = count
+            if count > 1:
+                game = game.model_copy(update={"id": f"{base_id}-{count}"})
             games.setdefault(game.id, game)
 
     games_list = sorted(games.values(), key=lambda g: g.date)
