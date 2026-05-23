@@ -5,6 +5,7 @@ import TeamLogo from "../components/TeamLogo.jsx";
 import TeamLink from "../components/TeamLink.jsx";
 import Sponsor from "../components/Sponsor.jsx";
 import { formatGameDay, formatGameDate, formatGameTime } from "../utils/dates.js";
+import { recapForGame } from "../utils/recap.js";
 
 export default function TeamPage({ dataset, schoolIndex, sponsors }) {
   const { schoolId } = useParams();
@@ -102,6 +103,7 @@ export default function TeamPage({ dataset, schoolIndex, sponsors }) {
                 index={idx + 1}
                 schoolId={schoolId}
                 schoolIndex={schoolIndex}
+                allTeamGames={teamGames}
               />
             ))}
           </ol>
@@ -129,7 +131,7 @@ function computeRecord(games, schoolId) {
   return { wins, losses, pointsFor: pf, pointsAgainst: pa };
 }
 
-function ScheduleRow({ game, index, schoolId, schoolIndex }) {
+function ScheduleRow({ game, index, schoolId, schoolIndex, allTeamGames }) {
   const isHome = game.home.school_id === schoolId;
   const opponent = isHome ? game.away : game.home;
   const opponentSchool = schoolIndex.get(opponent.school_id);
@@ -138,6 +140,11 @@ function ScheduleRow({ game, index, schoolId, schoolIndex }) {
   const isFinal = game.status === "final";
   const won = isFinal && own != null && opp != null && own > opp;
   const lost = isFinal && own != null && opp != null && own < opp;
+  const recap = recapForGame(game, {
+    schoolsById: schoolIndex,
+    teamGames: allTeamGames,
+    perspectiveSchoolId: schoolId,
+  });
 
   return (
     <li className="schedule-row">
@@ -172,6 +179,7 @@ function ScheduleRow({ game, index, schoolId, schoolIndex }) {
           <span className="schedule-row__time">{formatGameTime(game.date)}</span>
         )}
       </div>
+      {recap && <p className="schedule-row__recap">{recap}</p>}
     </li>
   );
 }

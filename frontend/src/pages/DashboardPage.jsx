@@ -52,7 +52,7 @@ export default function DashboardPage({ dataset, schoolIndex, sponsors }) {
     >
       <StaleBanner lastUpdatedIso={meta?.last_updated} />
 
-      <Hero game={featured} schoolIndex={schoolIndex} />
+      <Hero game={featured} schoolIndex={schoolIndex} games={games} />
 
       <section>
         <div className="section-header">

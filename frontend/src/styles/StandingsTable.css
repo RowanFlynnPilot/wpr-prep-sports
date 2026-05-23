@@ -1,4 +1,5 @@
 .standings {
+  position: relative;
   background: #fff;
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -87,4 +88,95 @@
   font-family: var(--font-display);
   font-weight: 500;
   font-size: 1rem;
+}
+
+/* Hover preview overlay — slides up from the bottom of the standings card,
+   showing fuller season detail for whichever row the user is hovering. */
+.standings__hover {
+  position: absolute;
+  bottom: 0.6rem;
+  right: 0.6rem;
+  z-index: 5;
+  min-width: 220px;
+  max-width: calc(100% - 1.2rem);
+  background: var(--ink);
+  color: #fff;
+  border-radius: var(--radius-sm);
+  padding: 0.7rem 0.85rem 0.75rem;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(0, 0, 0, 0.05);
+  font-family: var(--font-body);
+  animation: standings-hover-in 140ms var(--ease);
+  pointer-events: none;
+}
+@keyframes standings-hover-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.standings__hover-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  line-height: 1.1;
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.standings__hover-mascot {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.55);
+  text-transform: none;
+  letter-spacing: 0;
+}
+.standings__hover-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.25rem 0.65rem;
+  margin: 0;
+}
+.standings__hover-stats > div {
+  display: flex;
+  flex-direction: column;
+}
+.standings__hover-stats dt {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+  margin: 0;
+}
+.standings__hover-stats dd {
+  font-family: var(--font-numeric);
+  font-weight: 700;
+  font-size: 0.95rem;
+  font-variant-numeric: tabular-nums;
+  color: #fff;
+  margin: 0;
+  line-height: 1.2;
+}
+.standings__hover-stats dd.pos { color: #4ade80; }
+.standings__hover-stats dd.neg { color: #f87171; }
+.standings__hover-pct {
+  font-weight: 400;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.55);
+  margin-left: 0.15rem;
+}
+
+/* On narrow screens, anchor the hover full-width so it doesn't truncate. */
+@media (max-width: 480px) {
+  .standings__hover {
+    left: 0.6rem;
+    right: 0.6rem;
+    max-width: none;
+  }
 }

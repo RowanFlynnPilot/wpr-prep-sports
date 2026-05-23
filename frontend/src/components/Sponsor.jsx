@@ -16,7 +16,25 @@
  */
 export default function Sponsor({ slot, sponsors, variant = "inline", className = "" }) {
   const data = sponsors?.slots?.[slot];
-  if (!data || !data.name) return null;
+
+  // Empty in production = render nothing (no "Your ad here" filler).
+  // In dev, surface a faint placeholder so WPR ad ops can SEE the slot
+  // exists and what its key is — makes the inventory map self-documenting.
+  if (!data || !data.name) {
+    if (import.meta.env.DEV) {
+      return (
+        <div
+          className={`sponsor sponsor--placeholder sponsor--${variant} ${className}`.trim()}
+          data-slot={slot}
+          title={`Sponsor slot: ${slot}${data?.label ? ` (${data.label})` : ""}`}
+        >
+          <span className="sponsor__placeholder-label">slot</span>
+          <code className="sponsor__placeholder-key">{slot}</code>
+        </div>
+      );
+    }
+    return null;
+  }
 
   const label = data.label ?? "Presented by";
   const content = (

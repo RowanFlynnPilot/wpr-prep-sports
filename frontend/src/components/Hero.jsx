@@ -2,12 +2,13 @@ import TeamLogo from "./TeamLogo.jsx";
 import TeamLink from "./TeamLink.jsx";
 import { schoolFor } from "../utils/schools.js";
 import { formatGameDay, formatGameDate, formatGameTime } from "../utils/dates.js";
+import { recapForGame } from "../utils/recap.js";
 
 /**
  * Featured-game hero. Shows the most "important" recent or upcoming game
  * picked by utils/games.pickFeaturedGame. Renders dark, premium, score-first.
  */
-export default function Hero({ game, schoolIndex }) {
+export default function Hero({ game, schoolIndex, games = [] }) {
   if (!game) {
     return (
       <section className="hero hero--empty">
@@ -25,6 +26,26 @@ export default function Hero({ game, schoolIndex }) {
 
   const homeWon = isFinal && (game.home.score ?? 0) > (game.away.score ?? 0);
   const awayWon = isFinal && (game.away.score ?? 0) > (game.home.score ?? 0);
+
+  // Recap is written from the winning side's perspective (or home if tied
+  // and both tracked, or whichever side is in our manifest).
+  const perspectiveSchoolId = homeWon
+    ? game.home.school_id
+    : awayWon
+    ? game.away.school_id
+    : game.home.school_id || game.away.school_id;
+  const perspectiveTeamGames = isFinal && perspectiveSchoolId
+    ? games.filter(
+        (g) =>
+          g.home.school_id === perspectiveSchoolId ||
+          g.away.school_id === perspectiveSchoolId,
+      )
+    : null;
+  const recap = recapForGame(game, {
+    schoolsById: schoolIndex,
+    teamGames: perspectiveTeamGames,
+    perspectiveSchoolId,
+  });
 
   return (
     <section className="hero" aria-label="Featured game">
@@ -54,6 +75,8 @@ export default function Hero({ game, schoolIndex }) {
           showScore={isFinal}
         />
       </div>
+
+      {recap && <p className="hero__recap">{recap}</p>}
     </section>
   );
 }

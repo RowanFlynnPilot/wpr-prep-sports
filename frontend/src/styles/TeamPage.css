@@ -98,12 +98,22 @@
   display: grid;
   grid-template-columns: 2.5rem 7rem minmax(0, 1fr) auto;
   align-items: center;
-  gap: 1rem;
+  gap: 0.25rem 1rem;
   padding: 0.85rem 1.1rem;
   border-top: 1px solid var(--paper-2);
 }
 .schedule-row:first-child { border-top: none; }
 .schedule-row:hover { background: rgba(243, 240, 232, 0.4); }
+
+.schedule-row__recap {
+  grid-column: 2 / -1;
+  margin: 0.25rem 0 0;
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 0.82rem;
+  color: var(--muted);
+  line-height: 1.45;
+}
 
 .schedule-row__index {
   font-family: var(--font-display);

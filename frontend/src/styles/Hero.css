@@ -111,6 +111,17 @@
 }
 .hero__team--won .hero__score { color: var(--accent); }
 
+.hero__recap {
+  margin: 1.25rem 0 0;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.85);
+}
+
 .hero__divider {
   display: flex;
   align-items: center;
