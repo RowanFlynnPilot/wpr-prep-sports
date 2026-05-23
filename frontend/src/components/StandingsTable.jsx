@@ -37,7 +37,11 @@ export default function StandingsTable({ standing, schoolIndex, sponsors }) {
           <tbody>
             {standing.rows.map((row, idx) => {
               const school = schoolIndex.get(row.school_id);
-              const stub = { name: row.name, school_id: row.school_id, logo_url: null };
+              const stub = {
+                name: row.name,
+                school_id: row.school_id,
+                logo_url: school?.logo_url ?? null,
+              };
               return (
                 <tr key={row.school_id || row.name}>
                   <td className="rank">{idx + 1}</td>

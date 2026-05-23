@@ -65,7 +65,7 @@ export default function App() {
 
   if (!dataset) return <Skeleton />;
 
-  const schoolIndex = indexSchools(dataset.schools);
+  const schoolIndex = indexSchools(dataset.schools, dataset.games);
 
   return (
     <Routes>
