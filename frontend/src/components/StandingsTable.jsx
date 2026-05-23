@@ -46,7 +46,7 @@ export default function StandingsTable({
     : null;
   const hoveredSchool = hoveredRow ? schoolIndex.get(hoveredRow.school_id) : null;
   const hoveredLeaders = hoveredRow
-    ? teamSeasonLeaders(seasonByTeam.get(hoveredRow.school_id) ?? [])
+    ? teamSeasonLeaders(seasonByTeam.get(hoveredRow.school_id) ?? [], sportConfig)
     : [];
 
   const labels = recordLabels(sportConfig);
@@ -235,7 +235,7 @@ function HoverCard({ row, school, conference, leaders, labels }) {
       {leaders && leaders.length > 0 && (
         <ul className="standings__hover-leaders">
           {leaders.map(({ category, row: leader }) => (
-            <li key={category}>
+            <li key={category.id}>
               <span className="standings__hover-leader-pos">
                 {positionFor(category)}
               </span>

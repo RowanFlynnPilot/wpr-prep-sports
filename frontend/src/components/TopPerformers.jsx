@@ -6,32 +6,32 @@ import {
 } from "../utils/seasonStats.js";
 import { useSportPrefix } from "../utils/links.js";
 
-const CATEGORIES = [
-  { key: "Passing", title: "Passing" },
-  { key: "Rushing", title: "Rushing" },
-  { key: "Receiving", title: "Receiving" },
-  { key: "Defense", title: "Defense" },
-];
-
 /**
- * Top Performers — cross-team leaderboards. One small card per category
- * showing the top 5 players by yardage (passing/rushing/receiving) or
- * tackles (defense). Each row links to the player's team page.
+ * Top Performers — cross-team leaderboards. One small card per display
+ * category from sportConfig.stats.categories, showing the top N players
+ * by that category's sortKey. Each row links to the player's team page.
  */
-export default function TopPerformers({ rows, schoolIndex, n = 5 }) {
+export default function TopPerformers({ rows, schoolIndex, sportConfig, n = 5 }) {
   const sportPrefix = useSportPrefix();
-  if (!rows || rows.length === 0) return null;
+  const categories = sportConfig?.stats?.categories ?? [];
+  if (!rows || rows.length === 0 || categories.length === 0) return null;
+
+  // Pre-compute leaders per category so we can short-circuit when every
+  // category is empty (e.g., Bound returns only "Team" rows with no
+  // per-player breakdown — current state of volleyball coverage).
+  const cards = categories
+    .map((category) => ({ category, leaders: topPerformers(rows, category, n) }))
+    .filter(({ leaders }) => leaders.length > 0);
+  if (cards.length === 0) return null;
 
   return (
     <div className="top-performers">
-      {CATEGORIES.map(({ key, title }) => {
-        const leaders = topPerformers(rows, key, n);
-        if (leaders.length === 0) return null;
+      {cards.map(({ category, leaders }) => {
         return (
-          <article key={key} className="top-card">
+          <article key={category.id} className="top-card">
             <header className="top-card__header">
-              <span className="top-card__position">{positionFor(key)}</span>
-              <h3 className="top-card__title">{title} Leaders</h3>
+              <span className="top-card__position">{positionFor(category)}</span>
+              <h3 className="top-card__title">{category.displayLabel} Leaders</h3>
             </header>
             <ol className="top-card__list">
               {leaders.map((r, idx) => {
@@ -54,7 +54,7 @@ export default function TopPerformers({ rows, schoolIndex, n = 5 }) {
                       </Link>
                     </div>
                     <span className="top-card__stats">
-                      {formatStatsLine(key, r.stats)}
+                      {formatStatsLine(category, r.stats)}
                     </span>
                   </li>
                 );
