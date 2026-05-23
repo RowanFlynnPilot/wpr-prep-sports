@@ -90,6 +90,7 @@ export default function DashboardPage({ dataset, schoolIndex, sponsors }) {
               standing={s}
               schoolIndex={schoolIndex}
               sponsors={sponsors}
+              seasonStats={seasonStats}
             />
           ))}
         </div>

@@ -172,6 +172,63 @@
   margin-left: 0.15rem;
 }
 
+/* Season-leader list inside the hover overlay — one row per category,
+   compact line: [POS] Player (YR) ........... 1,037 YDS · 15 TD */
+.standings__hover-leaders {
+  list-style: none;
+  margin: 0.65rem 0 0;
+  padding: 0.55rem 0 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: grid;
+  gap: 0.3rem;
+  min-width: 280px;
+}
+.standings__hover-leaders li {
+  display: grid;
+  grid-template-columns: 1.75rem minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 0.55rem;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+.standings__hover-leader-pos {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-align: center;
+  color: var(--accent);
+  background: rgba(245, 158, 11, 0.14);
+  padding: 0.12rem 0.25rem;
+  border-radius: var(--radius-sm);
+}
+.standings__hover-leader-name {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 0.8rem;
+  letter-spacing: 0.01em;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.standings__hover-leader-year {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.72rem;
+}
+.standings__hover-leader-stats {
+  font-family: var(--font-numeric);
+  font-weight: 600;
+  font-size: 0.72rem;
+  font-variant-numeric: tabular-nums;
+  color: rgba(255, 255, 255, 0.85);
+  white-space: nowrap;
+}
+
 /* On narrow screens, anchor the hover full-width so it doesn't truncate. */
 @media (max-width: 480px) {
   .standings__hover {

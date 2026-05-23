@@ -1,7 +1,12 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import TeamLogo from "./TeamLogo.jsx";
 import TeamLink from "./TeamLink.jsx";
 import Sponsor from "./Sponsor.jsx";
+import {
+  formatStatsLine,
+  positionFor,
+  teamSeasonLeaders,
+} from "../utils/seasonStats.js";
 
 /**
  * One conference's standings. Editorial-table look — bold rank column,
@@ -11,8 +16,25 @@ import Sponsor from "./Sponsor.jsx";
  * fuller picture of the team's season — point differential, big-margin
  * counts, etc. Pure data, no interpretation.
  */
-export default function StandingsTable({ standing, schoolIndex, sponsors }) {
+export default function StandingsTable({
+  standing,
+  schoolIndex,
+  sponsors,
+  seasonStats = [],
+}) {
   const [hovered, setHovered] = useState(null);
+
+  // Pre-bucket season stats by school_id once per render, so each hover
+  // is just a Map lookup rather than a re-filter of the full list.
+  const seasonByTeam = useMemo(() => {
+    const map = new Map();
+    for (const row of seasonStats ?? []) {
+      if (!row.school_id) continue;
+      if (!map.has(row.school_id)) map.set(row.school_id, []);
+      map.get(row.school_id).push(row);
+    }
+    return map;
+  }, [seasonStats]);
 
   if (!standing || !standing.rows || standing.rows.length === 0) return null;
 
@@ -20,6 +42,9 @@ export default function StandingsTable({ standing, schoolIndex, sponsors }) {
     ? standing.rows.find((r) => r.school_id === hovered)
     : null;
   const hoveredSchool = hoveredRow ? schoolIndex.get(hoveredRow.school_id) : null;
+  const hoveredLeaders = hoveredRow
+    ? teamSeasonLeaders(seasonByTeam.get(hoveredRow.school_id) ?? [])
+    : [];
 
   return (
     <section
@@ -82,12 +107,13 @@ export default function StandingsTable({ standing, schoolIndex, sponsors }) {
         row={hoveredRow}
         school={hoveredSchool}
         conference={standing.conference}
+        leaders={hoveredLeaders}
       />
     </section>
   );
 }
 
-function HoverCard({ row, school, conference }) {
+function HoverCard({ row, school, conference, leaders }) {
   if (!row) return null;
   const pf = row.points_for ?? 0;
   const pa = row.points_against ?? 0;
@@ -122,6 +148,30 @@ function HoverCard({ row, school, conference }) {
           </dd>
         </div>
       </dl>
+
+      {leaders && leaders.length > 0 && (
+        <ul className="standings__hover-leaders">
+          {leaders.map(({ category, row: leader }) => (
+            <li key={category}>
+              <span className="standings__hover-leader-pos">
+                {positionFor(category)}
+              </span>
+              <span className="standings__hover-leader-name">
+                {leader.player_name}
+                {leader.player_year && (
+                  <span className="standings__hover-leader-year">
+                    {" "}
+                    ({leader.player_year})
+                  </span>
+                )}
+              </span>
+              <span className="standings__hover-leader-stats">
+                {formatStatsLine(category, leader.stats)}
+              </span>
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 }
