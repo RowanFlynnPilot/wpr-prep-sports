@@ -904,6 +904,408 @@
     ]
   },
   {
+    "id": "football-2025-08-22-crandon-at-tomahawk",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-08-22T19:00:00-05:00",
+    "home": {
+      "school_id": "tomahawk",
+      "name": "Tomahawk",
+      "score": 42,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_b455cbb7-3a4d-49ad-b7c5-e9935c3d78dc.jpg"
+    },
+    "away": {
+      "school_id": "",
+      "name": "Crandon",
+      "score": 6,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_d7249385-b862-4085-86a5-62d65d7000dc.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": false,
+    "venue": "@Tomahawk",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "tomahawk",
+        "team_name": "Tomahawk",
+        "category": "Passing Yards",
+        "player_name": "Cash Olsen",
+        "player_year": "SO",
+        "stats": {
+          "C/A": "3/3",
+          "YDS": "51",
+          "TDS": "1",
+          "RUS": "7"
+        }
+      },
+      {
+        "team_school_id": "tomahawk",
+        "team_name": "Tomahawk",
+        "category": "Rushing Yards",
+        "player_name": "Max Larson",
+        "player_year": "SO",
+        "stats": {
+          "ATT": "5",
+          "YDS": "123",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "tomahawk",
+        "team_name": "Tomahawk",
+        "category": "Receiving Yards",
+        "player_name": "Jett Reilly",
+        "player_year": "SO",
+        "stats": {
+          "REC": "2",
+          "YDS": "26",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "tomahawk",
+        "team_name": "Tomahawk",
+        "category": "Total Tackles",
+        "player_name": "Rex Reilly",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "18.0",
+          "TFL": "1.0"
+        }
+      }
+    ]
+  },
+  {
+    "id": "football-2025-08-22-rhinelander-at-ashland",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-08-22T19:00:00-05:00",
+    "home": {
+      "school_id": "",
+      "name": "Ashland",
+      "score": 20,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_cde2e90c-cae0-42cd-a1da-f514034c71d6.jpg"
+    },
+    "away": {
+      "school_id": "rhinelander",
+      "name": "Rhinelander",
+      "score": 26,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_c5f56096-0700-4c2f-8a53-d51999885149.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": false,
+    "venue": "@Ashland",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "rhinelander",
+        "team_name": "Rhinelander",
+        "category": "Passing Yards",
+        "player_name": "Abe Gretzinger",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "4/7",
+          "YDS": "39",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "rhinelander",
+        "team_name": "Rhinelander",
+        "category": "Rushing Yards",
+        "player_name": "Myles Eagleson",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "19",
+          "YDS": "110",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "rhinelander",
+        "team_name": "Rhinelander",
+        "category": "Receiving Yards",
+        "player_name": "Evan Shoeder",
+        "player_year": "SR",
+        "stats": {
+          "REC": "2",
+          "YDS": "27",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "rhinelander",
+        "team_name": "Rhinelander",
+        "category": "Total Tackles",
+        "player_name": "Rowan Wiczek",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "9.0",
+          "TFL": "1.0"
+        }
+      }
+    ]
+  },
+  {
+    "id": "football-2025-08-22-holmen-at-medford",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-08-22T19:00:00-05:00",
+    "home": {
+      "school_id": "medford",
+      "name": "Medford",
+      "score": 55,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_3c8f6cae-06c4-465f-838a-2151c0cd0d7a.jpg"
+    },
+    "away": {
+      "school_id": "",
+      "name": "Holmen",
+      "score": 16,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_6adcc9d8-e68f-40a9-a856-f78c57dc075b.png"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": false,
+    "venue": "@Medford",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "medford",
+        "team_name": "Medford",
+        "category": "Passing Yards",
+        "player_name": "Nick Krause",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "1/7",
+          "YDS": "3",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "medford",
+        "team_name": "Medford",
+        "category": "Rushing Yards",
+        "player_name": "Sawyer Elsner",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "13",
+          "YDS": "78",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "medford",
+        "team_name": "Medford",
+        "category": "Receiving Yards",
+        "player_name": "Conor Anderson",
+        "player_year": "SR",
+        "stats": {
+          "REC": "1",
+          "YDS": "3",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "medford",
+        "team_name": "Medford",
+        "category": "Total Tackles",
+        "player_name": "Sawyer Elsner",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "8.0"
+        }
+      }
+    ]
+  },
+  {
+    "id": "football-2025-08-22-osceola-at-merrill",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-08-22T19:00:00-05:00",
+    "home": {
+      "school_id": "merrill",
+      "name": "Merrill",
+      "score": 35,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_20e5e107-d060-4d58-9cbe-58312f389ed8.jpg"
+    },
+    "away": {
+      "school_id": "",
+      "name": "Osceola",
+      "score": 13,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_2b04d132-d3ef-4b8c-b53c-7fcfd4b25995.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": false,
+    "venue": "@Merrill",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "merrill",
+        "team_name": "Merrill",
+        "category": "Passing Yards",
+        "player_name": "Cole Rudie",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "9/22",
+          "YDS": "45",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "merrill",
+        "team_name": "Merrill",
+        "category": "Rushing Yards",
+        "player_name": "Aiden Drake",
+        "player_year": "SO",
+        "stats": {
+          "ATT": "3",
+          "YDS": "55",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "merrill",
+        "team_name": "Merrill",
+        "category": "Receiving Yards",
+        "player_name": "Hunter Opper",
+        "player_year": "SR",
+        "stats": {
+          "REC": "2",
+          "YDS": "32",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "merrill",
+        "team_name": "Merrill",
+        "category": "Total Tackles",
+        "player_name": "Keylin Allen",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "10.0",
+          "INT": "1"
+        }
+      }
+    ]
+  },
+  {
+    "id": "football-2025-08-22-lakeland-at-hayward-l-c-o",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-08-22T19:00:00-05:00",
+    "home": {
+      "school_id": "",
+      "name": "Hayward/L.C.O.",
+      "score": 23,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_c29ca9af-ce2f-405e-8fbd-19d807b7e75f.jpg"
+    },
+    "away": {
+      "school_id": "lakeland",
+      "name": "Lakeland",
+      "score": 50,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_ffbadc1d-650a-4518-b67e-7fa8589a9808.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": false,
+    "venue": "@Hayward/L.C.O.",
+    "sources": [
+      "wiaa"
+    ],
+    "stat_leaders": []
+  },
+  {
+    "id": "football-2025-08-22-antigo-at-northland-pines",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-08-22T19:00:00-05:00",
+    "home": {
+      "school_id": "",
+      "name": "Northland Pines",
+      "score": 14,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_79c22a6c-afec-4ff7-91b5-4dc390886030.jpg"
+    },
+    "away": {
+      "school_id": "antigo",
+      "name": "Antigo",
+      "score": 21,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_6e5a8a7d-b90e-4975-9bea-15777d6e626e.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": false,
+    "venue": "@Northland Pines",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "antigo",
+        "team_name": "Antigo",
+        "category": "Passing Yards",
+        "player_name": "Max Kneeland",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "7/22",
+          "YDS": "67",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "antigo",
+        "team_name": "Antigo",
+        "category": "Rushing Yards",
+        "player_name": "Brad Spencer",
+        "player_year": "SO",
+        "stats": {
+          "ATT": "10",
+          "YDS": "81",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "antigo",
+        "team_name": "Antigo",
+        "category": "Receiving Yards",
+        "player_name": "Randy Quevedo",
+        "player_year": "JR",
+        "stats": {
+          "REC": "3",
+          "YDS": "47",
+          "TDS": "1",
+          "RUS": "27"
+        }
+      },
+      {
+        "team_school_id": "antigo",
+        "team_name": "Antigo",
+        "category": "Total Tackles",
+        "player_name": "Max Kneeland",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "7.0",
+          "FR": "1"
+        }
+      }
+    ]
+  },
+  {
     "id": "football-2025-08-28-la-crosse-logan-at-wausau-east",
     "sport": "football",
     "season": "2025-26",
@@ -1304,6 +1706,159 @@
       "wiaa"
     ],
     "stat_leaders": []
+  },
+  {
+    "id": "football-2025-08-28-merrill-at-crandon",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-08-28T19:00:00-05:00",
+    "home": {
+      "school_id": "",
+      "name": "Crandon",
+      "score": 20,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_d7249385-b862-4085-86a5-62d65d7000dc.jpg"
+    },
+    "away": {
+      "school_id": "merrill",
+      "name": "Merrill",
+      "score": 30,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_20e5e107-d060-4d58-9cbe-58312f389ed8.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": false,
+    "venue": "@Crandon",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "merrill",
+        "team_name": "Merrill",
+        "category": "Passing Yards",
+        "player_name": "Cole Rudie",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "10/21",
+          "YDS": "190",
+          "TDS": "2",
+          "RUS": "72"
+        }
+      },
+      {
+        "team_school_id": "merrill",
+        "team_name": "Merrill",
+        "category": "Rushing Yards",
+        "player_name": "Cole Rudie",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "17",
+          "YDS": "72",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "merrill",
+        "team_name": "Merrill",
+        "category": "Receiving Yards",
+        "player_name": "Keylin Allen",
+        "player_year": "SR",
+        "stats": {
+          "REC": "6",
+          "YDS": "153",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "merrill",
+        "team_name": "Merrill",
+        "category": "Total Tackles",
+        "player_name": "Noah Klug",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "18.0",
+          "TFL": "1.0"
+        }
+      }
+    ]
+  },
+  {
+    "id": "football-2025-08-28-sturgeon-bay-at-antigo",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-08-28T19:00:00-05:00",
+    "home": {
+      "school_id": "antigo",
+      "name": "Antigo",
+      "score": 56,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_6e5a8a7d-b90e-4975-9bea-15777d6e626e.jpg"
+    },
+    "away": {
+      "school_id": "",
+      "name": "Sturgeon Bay",
+      "score": 6,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_9068b340-acf2-4ce8-a285-ec2062bf8379.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": false,
+    "venue": "@Antigo",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "antigo",
+        "team_name": "Antigo",
+        "category": "Passing Yards",
+        "player_name": "Max Kneeland",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "1/3",
+          "YDS": "9",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "antigo",
+        "team_name": "Antigo",
+        "category": "Rushing Yards",
+        "player_name": "Levi Binversie",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "16",
+          "YDS": "179",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "antigo",
+        "team_name": "Antigo",
+        "category": "Receiving Yards",
+        "player_name": "Randy Quevedo",
+        "player_year": "JR",
+        "stats": {
+          "REC": "1",
+          "YDS": "9",
+          "TDS": "3",
+          "RUS": "93"
+        }
+      },
+      {
+        "team_school_id": "antigo",
+        "team_name": "Antigo",
+        "category": "Total Tackles",
+        "player_name": "Bubba  Malone",
+        "player_year": "SO",
+        "stats": {
+          "TKL": "10.0",
+          "TFL": "1.0",
+          "SKS": "1.0"
+        }
+      }
+    ]
   },
   {
     "id": "football-2025-08-29-edgar-at-stratford",
@@ -1740,12 +2295,240 @@
     ]
   },
   {
+    "id": "football-2025-08-29-wittenberg-birnamwood-at-tomahawk",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-08-29T19:00:00-05:00",
+    "home": {
+      "school_id": "tomahawk",
+      "name": "Tomahawk",
+      "score": 28,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_b455cbb7-3a4d-49ad-b7c5-e9935c3d78dc.jpg"
+    },
+    "away": {
+      "school_id": "",
+      "name": "Wittenberg-Birnamwood",
+      "score": 22,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_08fbc74b-f839-4f21-9ba0-d72f3ac10a2f.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": false,
+    "venue": "@Tomahawk High School",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "tomahawk",
+        "team_name": "Tomahawk",
+        "category": "Passing Yards",
+        "player_name": "Cash Olsen",
+        "player_year": "SO",
+        "stats": {
+          "C/A": "3/9",
+          "YDS": "37",
+          "TDS": "1",
+          "RUS": "20"
+        }
+      },
+      {
+        "team_school_id": "tomahawk",
+        "team_name": "Tomahawk",
+        "category": "Rushing Yards",
+        "player_name": "Max Larson",
+        "player_year": "SO",
+        "stats": {
+          "ATT": "21",
+          "YDS": "90",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "tomahawk",
+        "team_name": "Tomahawk",
+        "category": "Receiving Yards",
+        "player_name": "Jonah Dickens",
+        "player_year": "SR",
+        "stats": {
+          "REC": "2",
+          "YDS": "30",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "tomahawk",
+        "team_name": "Tomahawk",
+        "category": "Total Tackles",
+        "player_name": "Rex Reilly",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "10.0",
+          "TFL": "1.0"
+        }
+      }
+    ]
+  },
+  {
+    "id": "football-2025-08-29-hayward-l-c-o-at-rhinelander",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-08-29T19:00:00-05:00",
+    "home": {
+      "school_id": "rhinelander",
+      "name": "Rhinelander",
+      "score": 34,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_c5f56096-0700-4c2f-8a53-d51999885149.jpg"
+    },
+    "away": {
+      "school_id": "",
+      "name": "Hayward/L.C.O.",
+      "score": 22,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_c29ca9af-ce2f-405e-8fbd-19d807b7e75f.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": false,
+    "venue": "@Rhinelander",
+    "sources": [
+      "wiaa"
+    ],
+    "stat_leaders": []
+  },
+  {
+    "id": "football-2025-08-29-medford-at-onalaska",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-08-29T19:00:00-05:00",
+    "home": {
+      "school_id": "",
+      "name": "Onalaska",
+      "score": 0,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_2f880ffb-dc0f-4f4c-860f-9453cd2fed51.jpg"
+    },
+    "away": {
+      "school_id": "medford",
+      "name": "Medford",
+      "score": 36,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_3c8f6cae-06c4-465f-838a-2151c0cd0d7a.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": false,
+    "venue": "@Onalaska",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "medford",
+        "team_name": "Medford",
+        "category": "Rushing Yards",
+        "player_name": "Will Wojcik",
+        "player_year": "SO",
+        "stats": {
+          "ATT": "7",
+          "YDS": "56",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "medford",
+        "team_name": "Medford",
+        "category": "Total Tackles",
+        "player_name": "Luke Klapatauskas",
+        "player_year": "SO",
+        "stats": {
+          "TKL": "4.0"
+        }
+      }
+    ]
+  },
+  {
+    "id": "football-2025-08-29-ashland-at-lakeland",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-08-29T19:00:00-05:00",
+    "home": {
+      "school_id": "lakeland",
+      "name": "Lakeland",
+      "score": 14,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_ffbadc1d-650a-4518-b67e-7fa8589a9808.jpg"
+    },
+    "away": {
+      "school_id": "",
+      "name": "Ashland",
+      "score": 0,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_cde2e90c-cae0-42cd-a1da-f514034c71d6.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": false,
+    "venue": "@Lakeland",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "lakeland",
+        "team_name": "Lakeland",
+        "category": "Passing Yards",
+        "player_name": "Deklan McQuade",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "10/14",
+          "YDS": "124",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "lakeland",
+        "team_name": "Lakeland",
+        "category": "Rushing Yards",
+        "player_name": "Logan Burrows",
+        "player_year": "SO",
+        "stats": {
+          "ATT": "20",
+          "YDS": "87",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "lakeland",
+        "team_name": "Lakeland",
+        "category": "Receiving Yards",
+        "player_name": "Evan Zoch",
+        "player_year": "SR",
+        "stats": {
+          "REC": "3",
+          "YDS": "59",
+          "TDS": "1",
+          "RUS": "23"
+        }
+      },
+      {
+        "team_school_id": "lakeland",
+        "team_name": "Lakeland",
+        "category": "Total Tackles",
+        "player_name": "Justin Doud-Sero",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "6.0",
+          "TFL": "1.0"
+        }
+      }
+    ]
+  },
+  {
     "id": "football-2025-09-05-wausau-east-at-tomahawk",
     "sport": "football",
     "season": "2025-26",
     "date": "2025-09-05T19:00:00-05:00",
     "home": {
-      "school_id": "",
+      "school_id": "tomahawk",
       "name": "Tomahawk",
       "score": 10,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_b455cbb7-3a4d-49ad-b7c5-e9935c3d78dc.jpg"
@@ -1811,6 +2594,28 @@
           "TKL": "11.0",
           "TFL": "1.0",
           "FR": "1"
+        }
+      },
+      {
+        "team_school_id": "tomahawk",
+        "team_name": "Tomahawk",
+        "category": "Rushing Yards",
+        "player_name": "Max Larson",
+        "player_year": "SO",
+        "stats": {
+          "ATT": "19",
+          "YDS": "138",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "tomahawk",
+        "team_name": "Tomahawk",
+        "category": "Total Tackles",
+        "player_name": "Tiegan Sarazin",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "15.0"
         }
       }
     ]
@@ -2358,7 +3163,7 @@
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_931e8899-5525-40e0-b778-26d19bb94511.jpg"
     },
     "away": {
-      "school_id": "",
+      "school_id": "merrill",
       "name": "Merrill",
       "score": 14,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_20e5e107-d060-4d58-9cbe-58312f389ed8.jpg"
@@ -2372,6 +3177,54 @@
       "bound"
     ],
     "stat_leaders": [
+      {
+        "team_school_id": "merrill",
+        "team_name": "Merrill",
+        "category": "Passing Yards",
+        "player_name": "Cole Rudie",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "4/10",
+          "YDS": "29",
+          "TDS": "1",
+          "RUS": "34"
+        }
+      },
+      {
+        "team_school_id": "merrill",
+        "team_name": "Merrill",
+        "category": "Rushing Yards",
+        "player_name": "Kanin Jahnke",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "19",
+          "YDS": "124",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "merrill",
+        "team_name": "Merrill",
+        "category": "Receiving Yards",
+        "player_name": "Payton Zimmerman",
+        "player_year": "SO",
+        "stats": {
+          "REC": "1",
+          "YDS": "24",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "merrill",
+        "team_name": "Merrill",
+        "category": "Total Tackles",
+        "player_name": "Noah Klug",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "9.0",
+          "FR": "1"
+        }
+      },
       {
         "team_school_id": "mosinee",
         "team_name": "Mosinee",
@@ -2573,6 +3426,252 @@
     ]
   },
   {
+    "id": "football-2025-09-05-lakeland-at-rhinelander",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-09-05T19:00:00-05:00",
+    "home": {
+      "school_id": "rhinelander",
+      "name": "Rhinelander",
+      "score": 43,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_c5f56096-0700-4c2f-8a53-d51999885149.jpg"
+    },
+    "away": {
+      "school_id": "lakeland",
+      "name": "Lakeland",
+      "score": 32,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_ffbadc1d-650a-4518-b67e-7fa8589a9808.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@Rhinelander",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "lakeland",
+        "team_name": "Lakeland",
+        "category": "Passing Yards",
+        "player_name": "Deklan McQuade",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "16/25",
+          "YDS": "184",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "lakeland",
+        "team_name": "Lakeland",
+        "category": "Rushing Yards",
+        "player_name": "Deklan McQuade",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "3",
+          "YDS": "47",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "lakeland",
+        "team_name": "Lakeland",
+        "category": "Receiving Yards",
+        "player_name": "Evan Zoch",
+        "player_year": "SR",
+        "stats": {
+          "REC": "9",
+          "YDS": "136",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "lakeland",
+        "team_name": "Lakeland",
+        "category": "Total Tackles",
+        "player_name": "Justin Doud-Sero",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "10.0",
+          "TFL": "1.0"
+        }
+      },
+      {
+        "team_school_id": "rhinelander",
+        "team_name": "Rhinelander",
+        "category": "Passing Yards",
+        "player_name": "Abe Gretzinger",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "14/23",
+          "YDS": "220",
+          "TDS": "4"
+        }
+      },
+      {
+        "team_school_id": "rhinelander",
+        "team_name": "Rhinelander",
+        "category": "Rushing Yards",
+        "player_name": "Cyrus Leisure",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "8",
+          "YDS": "79",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "rhinelander",
+        "team_name": "Rhinelander",
+        "category": "Receiving Yards",
+        "player_name": "Rowan Wiczek",
+        "player_year": "JR",
+        "stats": {
+          "REC": "7",
+          "YDS": "101",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "rhinelander",
+        "team_name": "Rhinelander",
+        "category": "Total Tackles",
+        "player_name": "Rowan Wiczek",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "10.0",
+          "INT": "1"
+        }
+      }
+    ]
+  },
+  {
+    "id": "football-2025-09-05-medford-at-antigo",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-09-05T19:00:00-05:00",
+    "home": {
+      "school_id": "antigo",
+      "name": "Antigo",
+      "score": 18,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_6e5a8a7d-b90e-4975-9bea-15777d6e626e.jpg"
+    },
+    "away": {
+      "school_id": "medford",
+      "name": "Medford",
+      "score": 51,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_3c8f6cae-06c4-465f-838a-2151c0cd0d7a.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@Antigo",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "medford",
+        "team_name": "Medford",
+        "category": "Passing Yards",
+        "player_name": "Nick Krause",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "1/5",
+          "YDS": "54",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "medford",
+        "team_name": "Medford",
+        "category": "Rushing Yards",
+        "player_name": "Sawyer Elsner",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "17",
+          "YDS": "115",
+          "TDS": "4"
+        }
+      },
+      {
+        "team_school_id": "medford",
+        "team_name": "Medford",
+        "category": "Receiving Yards",
+        "player_name": "Will Wojcik",
+        "player_year": "SO",
+        "stats": {
+          "REC": "1",
+          "YDS": "54",
+          "TDS": "1",
+          "RUS": "42"
+        }
+      },
+      {
+        "team_school_id": "medford",
+        "team_name": "Medford",
+        "category": "Total Tackles",
+        "player_name": "Luke Klapatauskas",
+        "player_year": "SO",
+        "stats": {
+          "TKL": "6.0",
+          "TFL": "1.0",
+          "FR": "1"
+        }
+      },
+      {
+        "team_school_id": "antigo",
+        "team_name": "Antigo",
+        "category": "Passing Yards",
+        "player_name": "Max Kneeland",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "8/15",
+          "YDS": "75",
+          "TDS": "1",
+          "RUS": "-8"
+        }
+      },
+      {
+        "team_school_id": "antigo",
+        "team_name": "Antigo",
+        "category": "Rushing Yards",
+        "player_name": "Levi Binversie",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "14",
+          "YDS": "125",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "antigo",
+        "team_name": "Antigo",
+        "category": "Receiving Yards",
+        "player_name": "Seth Krueger",
+        "player_year": "JR",
+        "stats": {
+          "REC": "3",
+          "YDS": "41",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "antigo",
+        "team_name": "Antigo",
+        "category": "Total Tackles",
+        "player_name": "Levi Binversie",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "12.0"
+        }
+      }
+    ]
+  },
+  {
     "id": "football-2025-09-12-rhinelander-at-wausau-east",
     "sport": "football",
     "season": "2025-26",
@@ -2584,7 +3683,7 @@
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_4e9a3bfe-acd7-47b2-94e9-a9b580bdc029.jpg"
     },
     "away": {
-      "school_id": "",
+      "school_id": "rhinelander",
       "name": "Rhinelander",
       "score": 14,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_c5f56096-0700-4c2f-8a53-d51999885149.jpg"
@@ -2598,6 +3697,54 @@
       "bound"
     ],
     "stat_leaders": [
+      {
+        "team_school_id": "rhinelander",
+        "team_name": "Rhinelander",
+        "category": "Passing Yards",
+        "player_name": "Abe Gretzinger",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "5/16",
+          "YDS": "79",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "rhinelander",
+        "team_name": "Rhinelander",
+        "category": "Rushing Yards",
+        "player_name": "Cyrus Leisure",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "15",
+          "YDS": "116",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "rhinelander",
+        "team_name": "Rhinelander",
+        "category": "Receiving Yards",
+        "player_name": "Ben Olson",
+        "player_year": "SR",
+        "stats": {
+          "REC": "3",
+          "YDS": "63",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "rhinelander",
+        "team_name": "Rhinelander",
+        "category": "Total Tackles",
+        "player_name": "Caden Sieker",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "6.0",
+          "TFL": "2.0",
+          "SKS": "1.5"
+        }
+      },
       {
         "team_school_id": "wausau-east",
         "team_name": "Wausau East",
@@ -3153,7 +4300,7 @@
     "season": "2025-26",
     "date": "2025-09-12T19:00:00-05:00",
     "home": {
-      "school_id": "",
+      "school_id": "lakeland",
       "name": "Lakeland",
       "score": 20,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_ffbadc1d-650a-4518-b67e-7fa8589a9808.jpg"
@@ -3220,6 +4367,52 @@
           "TKL": "1.0",
           "TFL": "1.0",
           "SKS": "1.0"
+        }
+      },
+      {
+        "team_school_id": "lakeland",
+        "team_name": "Lakeland",
+        "category": "Passing Yards",
+        "player_name": "Deklan McQuade",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "9/16",
+          "YDS": "101",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "lakeland",
+        "team_name": "Lakeland",
+        "category": "Rushing Yards",
+        "player_name": "Justin Doud-Sero",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "19",
+          "YDS": "74",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "lakeland",
+        "team_name": "Lakeland",
+        "category": "Receiving Yards",
+        "player_name": "Tyson Redman",
+        "player_year": "SR",
+        "stats": {
+          "REC": "3",
+          "YDS": "57",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "lakeland",
+        "team_name": "Lakeland",
+        "category": "Total Tackles",
+        "player_name": "Blake Redman",
+        "player_year": "SO",
+        "stats": {
+          "TKL": "6.0"
         }
       }
     ]
@@ -3377,6 +4570,253 @@
     ]
   },
   {
+    "id": "football-2025-09-12-tomahawk-at-antigo",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-09-12T19:00:00-05:00",
+    "home": {
+      "school_id": "antigo",
+      "name": "Antigo",
+      "score": 0,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_6e5a8a7d-b90e-4975-9bea-15777d6e626e.jpg"
+    },
+    "away": {
+      "school_id": "tomahawk",
+      "name": "Tomahawk",
+      "score": 49,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_b455cbb7-3a4d-49ad-b7c5-e9935c3d78dc.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@Antigo",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "tomahawk",
+        "team_name": "Tomahawk",
+        "category": "Passing Yards",
+        "player_name": "Jett Reilly",
+        "player_year": "SO",
+        "stats": {
+          "C/A": "3/5",
+          "YDS": "77",
+          "TDS": "2",
+          "RUS": "28"
+        }
+      },
+      {
+        "team_school_id": "tomahawk",
+        "team_name": "Tomahawk",
+        "category": "Rushing Yards",
+        "player_name": "Rex Reilly",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "10",
+          "YDS": "61",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "tomahawk",
+        "team_name": "Tomahawk",
+        "category": "Receiving Yards",
+        "player_name": "Jonah Dickens",
+        "player_year": "SR",
+        "stats": {
+          "REC": "3",
+          "YDS": "77",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "tomahawk",
+        "team_name": "Tomahawk",
+        "category": "Total Tackles",
+        "player_name": "Rex Reilly",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "10.0",
+          "TFL": "1.0"
+        }
+      },
+      {
+        "team_school_id": "antigo",
+        "team_name": "Antigo",
+        "category": "Passing Yards",
+        "player_name": "Max Kneeland",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "5/15",
+          "YDS": "34",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "antigo",
+        "team_name": "Antigo",
+        "category": "Rushing Yards",
+        "player_name": "Levi Binversie",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "13",
+          "YDS": "57",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "antigo",
+        "team_name": "Antigo",
+        "category": "Receiving Yards",
+        "player_name": "Seth Krueger",
+        "player_year": "JR",
+        "stats": {
+          "REC": "2",
+          "YDS": "12",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "antigo",
+        "team_name": "Antigo",
+        "category": "Total Tackles",
+        "player_name": "Seth Medo",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "12.0",
+          "TFL": "1.0"
+        }
+      }
+    ]
+  },
+  {
+    "id": "football-2025-09-12-medford-at-merrill",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-09-12T19:00:00-05:00",
+    "home": {
+      "school_id": "merrill",
+      "name": "Merrill",
+      "score": 16,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_20e5e107-d060-4d58-9cbe-58312f389ed8.jpg"
+    },
+    "away": {
+      "school_id": "medford",
+      "name": "Medford",
+      "score": 20,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_3c8f6cae-06c4-465f-838a-2151c0cd0d7a.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@Merrill",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "medford",
+        "team_name": "Medford",
+        "category": "Passing Yards",
+        "player_name": "Nick Krause",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "5/14",
+          "YDS": "136",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "medford",
+        "team_name": "Medford",
+        "category": "Rushing Yards",
+        "player_name": "Carson Ingersoll",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "11",
+          "YDS": "49",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "medford",
+        "team_name": "Medford",
+        "category": "Receiving Yards",
+        "player_name": "Will Wojcik",
+        "player_year": "SO",
+        "stats": {
+          "REC": "4",
+          "YDS": "81",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "medford",
+        "team_name": "Medford",
+        "category": "Total Tackles",
+        "player_name": "Luke Klapatauskas",
+        "player_year": "SO",
+        "stats": {
+          "TKL": "17.0",
+          "TFL": "3.0"
+        }
+      },
+      {
+        "team_school_id": "merrill",
+        "team_name": "Merrill",
+        "category": "Passing Yards",
+        "player_name": "Cole Rudie",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "11/18",
+          "YDS": "182",
+          "TDS": "3"
+        }
+      },
+      {
+        "team_school_id": "merrill",
+        "team_name": "Merrill",
+        "category": "Rushing Yards",
+        "player_name": "Kanin Jahnke",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "21",
+          "YDS": "89",
+          "TDS": "1",
+          "REC": "22"
+        }
+      },
+      {
+        "team_school_id": "merrill",
+        "team_name": "Merrill",
+        "category": "Receiving Yards",
+        "player_name": "Keylin Allen",
+        "player_year": "SR",
+        "stats": {
+          "REC": "4",
+          "YDS": "79",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "merrill",
+        "team_name": "Merrill",
+        "category": "Total Tackles",
+        "player_name": "Noah Klug",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "11.0",
+          "TFL": "1.0",
+          "FR": "1"
+        }
+      }
+    ]
+  },
+  {
     "id": "football-2025-09-18-wausau-east-at-mosinee",
     "sport": "football",
     "season": "2025-26",
@@ -3496,6 +4936,251 @@
         "stats": {
           "TKL": "7.0",
           "INT": "1"
+        }
+      }
+    ]
+  },
+  {
+    "id": "football-2025-09-18-lakeland-at-medford",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-09-18T19:00:00-05:00",
+    "home": {
+      "school_id": "medford",
+      "name": "Medford",
+      "score": 20,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_3c8f6cae-06c4-465f-838a-2151c0cd0d7a.jpg"
+    },
+    "away": {
+      "school_id": "lakeland",
+      "name": "Lakeland",
+      "score": 18,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_ffbadc1d-650a-4518-b67e-7fa8589a9808.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@Medford",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "lakeland",
+        "team_name": "Lakeland",
+        "category": "Passing Yards",
+        "player_name": "Deklan McQuade",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "16/30",
+          "YDS": "143",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "lakeland",
+        "team_name": "Lakeland",
+        "category": "Rushing Yards",
+        "player_name": "Evan Zoch",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "10",
+          "YDS": "110",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "lakeland",
+        "team_name": "Lakeland",
+        "category": "Receiving Yards",
+        "player_name": "Tyson Redman",
+        "player_year": "SR",
+        "stats": {
+          "REC": "5",
+          "YDS": "56",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "lakeland",
+        "team_name": "Lakeland",
+        "category": "Total Tackles",
+        "player_name": "Tyson Redman",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "15.0"
+        }
+      },
+      {
+        "team_school_id": "medford",
+        "team_name": "Medford",
+        "category": "Passing Yards",
+        "player_name": "Nick Krause",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "1/4",
+          "YDS": "22",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "medford",
+        "team_name": "Medford",
+        "category": "Rushing Yards",
+        "player_name": "Will Wojcik",
+        "player_year": "SO",
+        "stats": {
+          "ATT": "19",
+          "YDS": "124",
+          "TDS": "1",
+          "REC": "22"
+        }
+      },
+      {
+        "team_school_id": "medford",
+        "team_name": "Medford",
+        "category": "Receiving Yards",
+        "player_name": "Will Wojcik",
+        "player_year": "SO",
+        "stats": {
+          "REC": "1",
+          "YDS": "22",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "medford",
+        "team_name": "Medford",
+        "category": "Total Tackles",
+        "player_name": "Luke Klapatauskas",
+        "player_year": "SO",
+        "stats": {
+          "TKL": "14.0",
+          "TFL": "1.0"
+        }
+      }
+    ]
+  },
+  {
+    "id": "football-2025-09-18-antigo-at-merrill",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-09-18T19:00:00-05:00",
+    "home": {
+      "school_id": "merrill",
+      "name": "Merrill",
+      "score": 35,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_20e5e107-d060-4d58-9cbe-58312f389ed8.jpg"
+    },
+    "away": {
+      "school_id": "antigo",
+      "name": "Antigo",
+      "score": 0,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_6e5a8a7d-b90e-4975-9bea-15777d6e626e.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@Merrill",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "antigo",
+        "team_name": "Antigo",
+        "category": "Passing Yards",
+        "player_name": "Max Kneeland",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "5/14",
+          "YDS": "47",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "antigo",
+        "team_name": "Antigo",
+        "category": "Rushing Yards",
+        "player_name": "Levi Binversie",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "14",
+          "YDS": "65",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "antigo",
+        "team_name": "Antigo",
+        "category": "Receiving Yards",
+        "player_name": "Levi Binversie",
+        "player_year": "SR",
+        "stats": {
+          "REC": "3",
+          "YDS": "34",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "antigo",
+        "team_name": "Antigo",
+        "category": "Total Tackles",
+        "player_name": "Levi Binversie",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "8.0",
+          "FR": "1"
+        }
+      },
+      {
+        "team_school_id": "merrill",
+        "team_name": "Merrill",
+        "category": "Passing Yards",
+        "player_name": "Cole Rudie",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "1/2",
+          "YDS": "37",
+          "TDS": "3",
+          "RUS": "138"
+        }
+      },
+      {
+        "team_school_id": "merrill",
+        "team_name": "Merrill",
+        "category": "Rushing Yards",
+        "player_name": "Cole Rudie",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "16",
+          "YDS": "138",
+          "TDS": "3"
+        }
+      },
+      {
+        "team_school_id": "merrill",
+        "team_name": "Merrill",
+        "category": "Receiving Yards",
+        "player_name": "Ben Gruett",
+        "player_year": "SR",
+        "stats": {
+          "REC": "1",
+          "YDS": "37",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "merrill",
+        "team_name": "Merrill",
+        "category": "Total Tackles",
+        "player_name": "Mason Bloch",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "11.0",
+          "TFL": "3.0"
         }
       }
     ]
@@ -4072,6 +5757,118 @@
     ]
   },
   {
+    "id": "football-2025-09-19-tomahawk-at-rhinelander",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-09-19T19:00:00-05:00",
+    "home": {
+      "school_id": "rhinelander",
+      "name": "Rhinelander",
+      "score": 7,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_c5f56096-0700-4c2f-8a53-d51999885149.jpg"
+    },
+    "away": {
+      "school_id": "tomahawk",
+      "name": "Tomahawk",
+      "score": 49,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_b455cbb7-3a4d-49ad-b7c5-e9935c3d78dc.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@Rhinelander",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "tomahawk",
+        "team_name": "Tomahawk",
+        "category": "Passing Yards",
+        "player_name": "Cash Olsen",
+        "player_year": "SO",
+        "stats": {
+          "C/A": "4/6",
+          "YDS": "143",
+          "TDS": "2",
+          "RUS": "68"
+        }
+      },
+      {
+        "team_school_id": "tomahawk",
+        "team_name": "Tomahawk",
+        "category": "Rushing Yards",
+        "player_name": "Tiegan Sarazin",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "5",
+          "YDS": "131",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "tomahawk",
+        "team_name": "Tomahawk",
+        "category": "Receiving Yards",
+        "player_name": "Jett Reilly",
+        "player_year": "SO",
+        "stats": {
+          "REC": "2",
+          "YDS": "75",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "tomahawk",
+        "team_name": "Tomahawk",
+        "category": "Total Tackles",
+        "player_name": "Rex Reilly",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "12.0",
+          "TFL": "1.0",
+          "SKS": "1.0"
+        }
+      },
+      {
+        "team_school_id": "rhinelander",
+        "team_name": "Rhinelander",
+        "category": "Rushing Yards",
+        "player_name": "Cyrus Leisure",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "6",
+          "YDS": "65",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "rhinelander",
+        "team_name": "Rhinelander",
+        "category": "Receiving Yards",
+        "player_name": "Evan Shoeder",
+        "player_year": "SR",
+        "stats": {
+          "REC": "7",
+          "YDS": "48",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "rhinelander",
+        "team_name": "Rhinelander",
+        "category": "Total Tackles",
+        "player_name": "Ben Olson",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "5.0",
+          "TFL": "1.0"
+        }
+      }
+    ]
+  },
+  {
     "id": "football-2025-09-20-edgar-at-pittsville",
     "sport": "football",
     "season": "2025-26",
@@ -4161,7 +5958,7 @@
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_4e9a3bfe-acd7-47b2-94e9-a9b580bdc029.jpg"
     },
     "away": {
-      "school_id": "",
+      "school_id": "medford",
       "name": "Medford",
       "score": 8,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_3c8f6cae-06c4-465f-838a-2151c0cd0d7a.jpg"
@@ -4175,6 +5972,30 @@
       "bound"
     ],
     "stat_leaders": [
+      {
+        "team_school_id": "medford",
+        "team_name": "Medford",
+        "category": "Rushing Yards",
+        "player_name": "Will Wojcik",
+        "player_year": "SO",
+        "stats": {
+          "ATT": "16",
+          "YDS": "148",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "medford",
+        "team_name": "Medford",
+        "category": "Total Tackles",
+        "player_name": "Sawyer Elsner",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "10.0",
+          "TFL": "1.0",
+          "SKS": "0.5"
+        }
+      },
       {
         "team_school_id": "wausau-east",
         "team_name": "Wausau East",
@@ -4557,7 +6378,7 @@
     "season": "2025-26",
     "date": "2025-09-26T19:00:00-05:00",
     "home": {
-      "school_id": "",
+      "school_id": "tomahawk",
       "name": "Tomahawk",
       "score": 14,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_b455cbb7-3a4d-49ad-b7c5-e9935c3d78dc.jpg"
@@ -4623,6 +6444,52 @@
         "stats": {
           "TKL": "18.0",
           "FR": "1"
+        }
+      },
+      {
+        "team_school_id": "tomahawk",
+        "team_name": "Tomahawk",
+        "category": "Passing Yards",
+        "player_name": "Jonah Dickens",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "1/2",
+          "YDS": "16",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "tomahawk",
+        "team_name": "Tomahawk",
+        "category": "Rushing Yards",
+        "player_name": "Rex Reilly",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "13",
+          "YDS": "78",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "tomahawk",
+        "team_name": "Tomahawk",
+        "category": "Receiving Yards",
+        "player_name": "Jett Reilly",
+        "player_year": "SO",
+        "stats": {
+          "REC": "1",
+          "YDS": "16",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "tomahawk",
+        "team_name": "Tomahawk",
+        "category": "Total Tackles",
+        "player_name": "Rex Reilly",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "10.0"
         }
       }
     ]
@@ -4701,6 +6568,252 @@
           "TKL": "16.0",
           "TFL": "1.0",
           "INT": "1"
+        }
+      }
+    ]
+  },
+  {
+    "id": "football-2025-09-26-antigo-at-rhinelander",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-09-26T19:00:00-05:00",
+    "home": {
+      "school_id": "rhinelander",
+      "name": "Rhinelander",
+      "score": 54,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_c5f56096-0700-4c2f-8a53-d51999885149.jpg"
+    },
+    "away": {
+      "school_id": "antigo",
+      "name": "Antigo",
+      "score": 8,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_6e5a8a7d-b90e-4975-9bea-15777d6e626e.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@Rhinelander",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "antigo",
+        "team_name": "Antigo",
+        "category": "Passing Yards",
+        "player_name": "Max Kneeland",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "7/13",
+          "YDS": "120",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "antigo",
+        "team_name": "Antigo",
+        "category": "Rushing Yards",
+        "player_name": "Brad Spencer",
+        "player_year": "SO",
+        "stats": {
+          "ATT": "5",
+          "YDS": "12",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "antigo",
+        "team_name": "Antigo",
+        "category": "Receiving Yards",
+        "player_name": "Seth Krueger",
+        "player_year": "JR",
+        "stats": {
+          "REC": "2",
+          "YDS": "50",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "antigo",
+        "team_name": "Antigo",
+        "category": "Total Tackles",
+        "player_name": "Jordy Pregler",
+        "player_year": "SO",
+        "stats": {
+          "TKL": "9.0"
+        }
+      },
+      {
+        "team_school_id": "rhinelander",
+        "team_name": "Rhinelander",
+        "category": "Passing Yards",
+        "player_name": "Abe Gretzinger",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "2/5",
+          "YDS": "27",
+          "TDS": "1",
+          "RUS": "2"
+        }
+      },
+      {
+        "team_school_id": "rhinelander",
+        "team_name": "Rhinelander",
+        "category": "Rushing Yards",
+        "player_name": "Cyrus Leisure",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "12",
+          "YDS": "102",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "rhinelander",
+        "team_name": "Rhinelander",
+        "category": "Receiving Yards",
+        "player_name": "Rowan Wiczek",
+        "player_year": "JR",
+        "stats": {
+          "REC": "1",
+          "YDS": "23",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "rhinelander",
+        "team_name": "Rhinelander",
+        "category": "Total Tackles",
+        "player_name": "Rowan Wiczek",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "8.0",
+          "TFL": "1.0",
+          "INT": "1"
+        }
+      }
+    ]
+  },
+  {
+    "id": "football-2025-09-26-merrill-at-lakeland",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-09-26T19:00:00-05:00",
+    "home": {
+      "school_id": "lakeland",
+      "name": "Lakeland",
+      "score": 14,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_ffbadc1d-650a-4518-b67e-7fa8589a9808.jpg"
+    },
+    "away": {
+      "school_id": "merrill",
+      "name": "Merrill",
+      "score": 34,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_20e5e107-d060-4d58-9cbe-58312f389ed8.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@Lakeland",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "merrill",
+        "team_name": "Merrill",
+        "category": "Passing Yards",
+        "player_name": "Cole Rudie",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "3/5",
+          "YDS": "108",
+          "TDS": "1",
+          "RUS": "61"
+        }
+      },
+      {
+        "team_school_id": "merrill",
+        "team_name": "Merrill",
+        "category": "Rushing Yards",
+        "player_name": "Kanin Jahnke",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "19",
+          "YDS": "155",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "merrill",
+        "team_name": "Merrill",
+        "category": "Receiving Yards",
+        "player_name": "Aiden Drake",
+        "player_year": "SO",
+        "stats": {
+          "REC": "1",
+          "YDS": "61",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "merrill",
+        "team_name": "Merrill",
+        "category": "Total Tackles",
+        "player_name": "Noah Klug",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "9.0",
+          "TFL": "2.0",
+          "SKS": "1.0"
+        }
+      },
+      {
+        "team_school_id": "lakeland",
+        "team_name": "Lakeland",
+        "category": "Passing Yards",
+        "player_name": "Deklan McQuade",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "12/22",
+          "YDS": "110",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "lakeland",
+        "team_name": "Lakeland",
+        "category": "Rushing Yards",
+        "player_name": "Evan Zoch",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "3",
+          "YDS": "47",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "lakeland",
+        "team_name": "Lakeland",
+        "category": "Receiving Yards",
+        "player_name": "Tyson Redman",
+        "player_year": "SR",
+        "stats": {
+          "REC": "5",
+          "YDS": "79",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "lakeland",
+        "team_name": "Lakeland",
+        "category": "Total Tackles",
+        "player_name": "Sean Morgan",
+        "player_year": "SO",
+        "stats": {
+          "TKL": "11.0"
         }
       }
     ]
@@ -5536,7 +7649,7 @@
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_931e8899-5525-40e0-b778-26d19bb94511.jpg"
     },
     "away": {
-      "school_id": "",
+      "school_id": "rhinelander",
       "name": "Rhinelander",
       "score": 14,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_c5f56096-0700-4c2f-8a53-d51999885149.jpg"
@@ -5550,6 +7663,53 @@
       "bound"
     ],
     "stat_leaders": [
+      {
+        "team_school_id": "rhinelander",
+        "team_name": "Rhinelander",
+        "category": "Passing Yards",
+        "player_name": "Abe Gretzinger",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "9/16",
+          "YDS": "102",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "rhinelander",
+        "team_name": "Rhinelander",
+        "category": "Rushing Yards",
+        "player_name": "Ben Olson",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "11",
+          "YDS": "39",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "rhinelander",
+        "team_name": "Rhinelander",
+        "category": "Receiving Yards",
+        "player_name": "Rowan Wiczek",
+        "player_year": "JR",
+        "stats": {
+          "REC": "5",
+          "YDS": "73",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "rhinelander",
+        "team_name": "Rhinelander",
+        "category": "Total Tackles",
+        "player_name": "Rowan Wiczek",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "7.0",
+          "TFL": "1.0"
+        }
+      },
       {
         "team_school_id": "mosinee",
         "team_name": "Mosinee",
@@ -5751,12 +7911,256 @@
     ]
   },
   {
+    "id": "football-2025-10-03-tomahawk-at-medford",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-10-03T19:00:00-05:00",
+    "home": {
+      "school_id": "medford",
+      "name": "Medford",
+      "score": 14,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_3c8f6cae-06c4-465f-838a-2151c0cd0d7a.jpg"
+    },
+    "away": {
+      "school_id": "tomahawk",
+      "name": "Tomahawk",
+      "score": 24,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_b455cbb7-3a4d-49ad-b7c5-e9935c3d78dc.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@Medford",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "tomahawk",
+        "team_name": "Tomahawk",
+        "category": "Passing Yards",
+        "player_name": "Jett Reilly",
+        "player_year": "SO",
+        "stats": {
+          "C/A": "2/5",
+          "YDS": "59",
+          "TDS": "1",
+          "RUS": "62"
+        }
+      },
+      {
+        "team_school_id": "tomahawk",
+        "team_name": "Tomahawk",
+        "category": "Rushing Yards",
+        "player_name": "Rex Reilly",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "15",
+          "YDS": "98",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "tomahawk",
+        "team_name": "Tomahawk",
+        "category": "Receiving Yards",
+        "player_name": "Jonah Dickens",
+        "player_year": "SR",
+        "stats": {
+          "REC": "2",
+          "YDS": "59",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "tomahawk",
+        "team_name": "Tomahawk",
+        "category": "Total Tackles",
+        "player_name": "Jett Reilly",
+        "player_year": "SO",
+        "stats": {
+          "TKL": "8.0"
+        }
+      },
+      {
+        "team_school_id": "medford",
+        "team_name": "Medford",
+        "category": "Passing Yards",
+        "player_name": "Dylan Frey",
+        "player_year": "SO",
+        "stats": {
+          "C/A": "5/12",
+          "YDS": "27",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "medford",
+        "team_name": "Medford",
+        "category": "Rushing Yards",
+        "player_name": "Will Wojcik",
+        "player_year": "SO",
+        "stats": {
+          "ATT": "17",
+          "YDS": "127",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "medford",
+        "team_name": "Medford",
+        "category": "Receiving Yards",
+        "player_name": "Cash Thums",
+        "player_year": "JR",
+        "stats": {
+          "REC": "3",
+          "YDS": "27",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "medford",
+        "team_name": "Medford",
+        "category": "Total Tackles",
+        "player_name": "Sawyer Elsner",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "12.0",
+          "TFL": "1.0"
+        }
+      }
+    ]
+  },
+  {
+    "id": "football-2025-10-03-lakeland-at-antigo",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-10-03T19:00:00-05:00",
+    "home": {
+      "school_id": "antigo",
+      "name": "Antigo",
+      "score": 7,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_6e5a8a7d-b90e-4975-9bea-15777d6e626e.jpg"
+    },
+    "away": {
+      "school_id": "lakeland",
+      "name": "Lakeland",
+      "score": 21,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_ffbadc1d-650a-4518-b67e-7fa8589a9808.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@Antigo",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "lakeland",
+        "team_name": "Lakeland",
+        "category": "Passing Yards",
+        "player_name": "Deklan McQuade",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "8/9",
+          "YDS": "127",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "lakeland",
+        "team_name": "Lakeland",
+        "category": "Rushing Yards",
+        "player_name": "Logan Burrows",
+        "player_year": "SO",
+        "stats": {
+          "ATT": "19",
+          "YDS": "107",
+          "TDS": "1",
+          "REC": "75"
+        }
+      },
+      {
+        "team_school_id": "lakeland",
+        "team_name": "Lakeland",
+        "category": "Receiving Yards",
+        "player_name": "Logan Burrows",
+        "player_year": "SO",
+        "stats": {
+          "REC": "3",
+          "YDS": "75",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "lakeland",
+        "team_name": "Lakeland",
+        "category": "Total Tackles",
+        "player_name": "Nolan Johnson",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "13.0"
+        }
+      },
+      {
+        "team_school_id": "antigo",
+        "team_name": "Antigo",
+        "category": "Passing Yards",
+        "player_name": "Max Kneeland",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "6/13",
+          "YDS": "75",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "antigo",
+        "team_name": "Antigo",
+        "category": "Rushing Yards",
+        "player_name": "Levi Binversie",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "22",
+          "YDS": "91",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "antigo",
+        "team_name": "Antigo",
+        "category": "Receiving Yards",
+        "player_name": "Levi Binversie",
+        "player_year": "SR",
+        "stats": {
+          "REC": "1",
+          "YDS": "23",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "antigo",
+        "team_name": "Antigo",
+        "category": "Total Tackles",
+        "player_name": "Owen Medo",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "9.0",
+          "TFL": "1.0"
+        }
+      }
+    ]
+  },
+  {
     "id": "football-2025-10-04-wausau-east-at-merrill",
     "sport": "football",
     "season": "2025-26",
     "date": "2025-10-04T13:00:00-05:00",
     "home": {
-      "school_id": "",
+      "school_id": "merrill",
       "name": "Merrill",
       "score": 14,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_20e5e107-d060-4d58-9cbe-58312f389ed8.jpg"
@@ -5821,6 +8225,55 @@
         "stats": {
           "TKL": "12.0",
           "TFL": "2.0"
+        }
+      },
+      {
+        "team_school_id": "merrill",
+        "team_name": "Merrill",
+        "category": "Passing Yards",
+        "player_name": "Cole Rudie",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "4/8",
+          "YDS": "61",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "merrill",
+        "team_name": "Merrill",
+        "category": "Rushing Yards",
+        "player_name": "Kanin Jahnke",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "31",
+          "YDS": "172",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "merrill",
+        "team_name": "Merrill",
+        "category": "Receiving Yards",
+        "player_name": "Keylin Allen",
+        "player_year": "SR",
+        "stats": {
+          "REC": "2",
+          "YDS": "54",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "merrill",
+        "team_name": "Merrill",
+        "category": "Total Tackles",
+        "player_name": "Noah Klug",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "9.0",
+          "TFL": "1.0",
+          "SKS": "1.0",
+          "INT": "1"
         }
       }
     ]
@@ -6469,7 +8922,7 @@
     "season": "2025-26",
     "date": "2025-10-10T19:00:00-05:00",
     "home": {
-      "school_id": "",
+      "school_id": "antigo",
       "name": "Antigo",
       "score": 0,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_6e5a8a7d-b90e-4975-9bea-15777d6e626e.jpg"
@@ -6536,6 +8989,52 @@
           "TKL": "6.0",
           "FR": "1"
         }
+      },
+      {
+        "team_school_id": "antigo",
+        "team_name": "Antigo",
+        "category": "Passing Yards",
+        "player_name": "Max Kneeland",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "6/13",
+          "YDS": "17",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "antigo",
+        "team_name": "Antigo",
+        "category": "Rushing Yards",
+        "player_name": "Levi Binversie",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "13",
+          "YDS": "22",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "antigo",
+        "team_name": "Antigo",
+        "category": "Receiving Yards",
+        "player_name": "Levi Binversie",
+        "player_year": "SR",
+        "stats": {
+          "REC": "2",
+          "YDS": "6",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "antigo",
+        "team_name": "Antigo",
+        "category": "Total Tackles",
+        "player_name": "Eli Cornelius",
+        "player_year": "SO",
+        "stats": {
+          "TKL": "21.0"
+        }
       }
     ]
   },
@@ -6566,6 +9065,251 @@
     "stat_leaders": []
   },
   {
+    "id": "football-2025-10-10-merrill-at-tomahawk",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-10-10T19:00:00-05:00",
+    "home": {
+      "school_id": "tomahawk",
+      "name": "Tomahawk",
+      "score": 24,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_b455cbb7-3a4d-49ad-b7c5-e9935c3d78dc.jpg"
+    },
+    "away": {
+      "school_id": "merrill",
+      "name": "Merrill",
+      "score": 3,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_20e5e107-d060-4d58-9cbe-58312f389ed8.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@Tomahawk",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "merrill",
+        "team_name": "Merrill",
+        "category": "Passing Yards",
+        "player_name": "Cole Rudie",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "6/18",
+          "YDS": "76",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "merrill",
+        "team_name": "Merrill",
+        "category": "Rushing Yards",
+        "player_name": "Kanin Jahnke",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "12",
+          "YDS": "70",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "merrill",
+        "team_name": "Merrill",
+        "category": "Receiving Yards",
+        "player_name": "Payton Zimmerman",
+        "player_year": "SO",
+        "stats": {
+          "REC": "3",
+          "YDS": "26",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "merrill",
+        "team_name": "Merrill",
+        "category": "Total Tackles",
+        "player_name": "Hunter Opper",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "11.0",
+          "TFL": "3.0",
+          "SKS": "1.0",
+          "FR": "1"
+        }
+      },
+      {
+        "team_school_id": "tomahawk",
+        "team_name": "Tomahawk",
+        "category": "Passing Yards",
+        "player_name": "Jett Reilly",
+        "player_year": "SO",
+        "stats": {
+          "C/A": "1/3",
+          "YDS": "3",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "tomahawk",
+        "team_name": "Tomahawk",
+        "category": "Rushing Yards",
+        "player_name": "Tiegan Sarazin",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "15",
+          "YDS": "137",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "tomahawk",
+        "team_name": "Tomahawk",
+        "category": "Receiving Yards",
+        "player_name": "Max Larson",
+        "player_year": "SO",
+        "stats": {
+          "REC": "1",
+          "YDS": "3",
+          "TDS": "1",
+          "RUS": "53"
+        }
+      },
+      {
+        "team_school_id": "tomahawk",
+        "team_name": "Tomahawk",
+        "category": "Total Tackles",
+        "player_name": "Jett Reilly",
+        "player_year": "SO",
+        "stats": {
+          "TKL": "8.0"
+        }
+      }
+    ]
+  },
+  {
+    "id": "football-2025-10-10-medford-at-rhinelander",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-10-10T19:00:00-05:00",
+    "home": {
+      "school_id": "rhinelander",
+      "name": "Rhinelander",
+      "score": 42,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_c5f56096-0700-4c2f-8a53-d51999885149.jpg"
+    },
+    "away": {
+      "school_id": "medford",
+      "name": "Medford",
+      "score": 12,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_3c8f6cae-06c4-465f-838a-2151c0cd0d7a.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@Rhinelander",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "medford",
+        "team_name": "Medford",
+        "category": "Passing Yards",
+        "player_name": "Nick Krause",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "2/3",
+          "YDS": "35",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "medford",
+        "team_name": "Medford",
+        "category": "Rushing Yards",
+        "player_name": "Carson Ingersoll",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "9",
+          "YDS": "111",
+          "TDS": "4"
+        }
+      },
+      {
+        "team_school_id": "medford",
+        "team_name": "Medford",
+        "category": "Receiving Yards",
+        "player_name": "Axel Brushaber",
+        "player_year": "JR",
+        "stats": {
+          "REC": "2",
+          "YDS": "35",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "medford",
+        "team_name": "Medford",
+        "category": "Total Tackles",
+        "player_name": "Luke Klapatauskas",
+        "player_year": "SO",
+        "stats": {
+          "TKL": "8.0",
+          "FR": "1"
+        }
+      },
+      {
+        "team_school_id": "rhinelander",
+        "team_name": "Rhinelander",
+        "category": "Passing Yards",
+        "player_name": "Abe Gretzinger",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "10/20",
+          "YDS": "80",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "rhinelander",
+        "team_name": "Rhinelander",
+        "category": "Rushing Yards",
+        "player_name": "Cyrus Leisure",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "12",
+          "YDS": "81",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "rhinelander",
+        "team_name": "Rhinelander",
+        "category": "Receiving Yards",
+        "player_name": "Rowan Wiczek",
+        "player_year": "JR",
+        "stats": {
+          "REC": "6",
+          "YDS": "58",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "rhinelander",
+        "team_name": "Rhinelander",
+        "category": "Total Tackles",
+        "player_name": "Rowan Wiczek",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "11.0"
+        }
+      }
+    ]
+  },
+  {
     "id": "football-2025-10-11-lakeland-at-wausau-east",
     "sport": "football",
     "season": "2025-26",
@@ -6577,7 +9321,7 @@
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_4e9a3bfe-acd7-47b2-94e9-a9b580bdc029.jpg"
     },
     "away": {
-      "school_id": "",
+      "school_id": "lakeland",
       "name": "Lakeland",
       "score": 10,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_ffbadc1d-650a-4518-b67e-7fa8589a9808.jpg"
@@ -6591,6 +9335,52 @@
       "bound"
     ],
     "stat_leaders": [
+      {
+        "team_school_id": "lakeland",
+        "team_name": "Lakeland",
+        "category": "Passing Yards",
+        "player_name": "Deklan McQuade",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "19/30",
+          "YDS": "177",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "lakeland",
+        "team_name": "Lakeland",
+        "category": "Rushing Yards",
+        "player_name": "Logan Burrows",
+        "player_year": "SO",
+        "stats": {
+          "ATT": "20",
+          "YDS": "68",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "lakeland",
+        "team_name": "Lakeland",
+        "category": "Receiving Yards",
+        "player_name": "Logan Burrows",
+        "player_year": "SO",
+        "stats": {
+          "REC": "5",
+          "YDS": "57",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "lakeland",
+        "team_name": "Lakeland",
+        "category": "Total Tackles",
+        "player_name": "Hudson Gehl",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "10.0"
+        }
+      },
       {
         "team_school_id": "wausau-east",
         "team_name": "Wausau East",
@@ -6653,7 +9443,7 @@
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_4e9a3bfe-acd7-47b2-94e9-a9b580bdc029.jpg"
     },
     "away": {
-      "school_id": "",
+      "school_id": "antigo",
       "name": "Antigo",
       "score": 0,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_6e5a8a7d-b90e-4975-9bea-15777d6e626e.jpg"
@@ -6667,6 +9457,52 @@
       "bound"
     ],
     "stat_leaders": [
+      {
+        "team_school_id": "antigo",
+        "team_name": "Antigo",
+        "category": "Passing Yards",
+        "player_name": "Max Kneeland",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "3/12",
+          "YDS": "15",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "antigo",
+        "team_name": "Antigo",
+        "category": "Rushing Yards",
+        "player_name": "Levi Binversie",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "11",
+          "YDS": "38",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "antigo",
+        "team_name": "Antigo",
+        "category": "Receiving Yards",
+        "player_name": "Owen Medo",
+        "player_year": "JR",
+        "stats": {
+          "REC": "1",
+          "YDS": "7",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "antigo",
+        "team_name": "Antigo",
+        "category": "Total Tackles",
+        "player_name": "Jordy Pregler",
+        "player_year": "SO",
+        "stats": {
+          "TKL": "8.0"
+        }
+      },
       {
         "team_school_id": "wausau-east",
         "team_name": "Wausau East",
@@ -7334,7 +10170,7 @@
     "season": "2025-26",
     "date": "2025-10-17T19:00:00-05:00",
     "home": {
-      "school_id": "",
+      "school_id": "medford",
       "name": "Medford",
       "score": 14,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_3c8f6cae-06c4-465f-838a-2151c0cd0d7a.jpg"
@@ -7399,6 +10235,53 @@
         "player_year": "SO",
         "stats": {
           "TKL": "6.0"
+        }
+      },
+      {
+        "team_school_id": "medford",
+        "team_name": "Medford",
+        "category": "Passing Yards",
+        "player_name": "Dylan Frey",
+        "player_year": "SO",
+        "stats": {
+          "C/A": "5/9",
+          "YDS": "47",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "medford",
+        "team_name": "Medford",
+        "category": "Rushing Yards",
+        "player_name": "Will Wojcik",
+        "player_year": "SO",
+        "stats": {
+          "ATT": "9",
+          "YDS": "20",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "medford",
+        "team_name": "Medford",
+        "category": "Receiving Yards",
+        "player_name": "Axel Brushaber",
+        "player_year": "JR",
+        "stats": {
+          "REC": "3",
+          "YDS": "23",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "medford",
+        "team_name": "Medford",
+        "category": "Total Tackles",
+        "player_name": "Sawyer Elsner",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "7.0",
+          "TFL": "2.0"
         }
       }
     ]
@@ -7474,6 +10357,256 @@
         "stats": {
           "TKL": "13.0",
           "TFL": "2.0"
+        }
+      }
+    ]
+  },
+  {
+    "id": "football-2025-10-17-tomahawk-at-lakeland",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-10-17T19:00:00-05:00",
+    "home": {
+      "school_id": "lakeland",
+      "name": "Lakeland",
+      "score": 13,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_ffbadc1d-650a-4518-b67e-7fa8589a9808.jpg"
+    },
+    "away": {
+      "school_id": "tomahawk",
+      "name": "Tomahawk",
+      "score": 28,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_b455cbb7-3a4d-49ad-b7c5-e9935c3d78dc.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@Lakeland",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "tomahawk",
+        "team_name": "Tomahawk",
+        "category": "Passing Yards",
+        "player_name": "Jett Reilly",
+        "player_year": "SO",
+        "stats": {
+          "C/A": "3/5",
+          "YDS": "29",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "tomahawk",
+        "team_name": "Tomahawk",
+        "category": "Rushing Yards",
+        "player_name": "Tiegan Sarazin",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "28",
+          "YDS": "124",
+          "TDS": "3"
+        }
+      },
+      {
+        "team_school_id": "tomahawk",
+        "team_name": "Tomahawk",
+        "category": "Receiving Yards",
+        "player_name": "Jonah Dickens",
+        "player_year": "SR",
+        "stats": {
+          "REC": "3",
+          "YDS": "29",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "tomahawk",
+        "team_name": "Tomahawk",
+        "category": "Total Tackles",
+        "player_name": "Rex Reilly",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "10.0",
+          "TFL": "2.0",
+          "INT": "1"
+        }
+      },
+      {
+        "team_school_id": "lakeland",
+        "team_name": "Lakeland",
+        "category": "Passing Yards",
+        "player_name": "Deklan McQuade",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "12/17",
+          "YDS": "104",
+          "TDS": "1",
+          "RUS": "31"
+        }
+      },
+      {
+        "team_school_id": "lakeland",
+        "team_name": "Lakeland",
+        "category": "Rushing Yards",
+        "player_name": "Logan Burrows",
+        "player_year": "SO",
+        "stats": {
+          "ATT": "8",
+          "YDS": "71",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "lakeland",
+        "team_name": "Lakeland",
+        "category": "Receiving Yards",
+        "player_name": "Will Backhaus",
+        "player_year": "JR",
+        "stats": {
+          "REC": "2",
+          "YDS": "27",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "lakeland",
+        "team_name": "Lakeland",
+        "category": "Total Tackles",
+        "player_name": "Sean Morgan",
+        "player_year": "SO",
+        "stats": {
+          "TKL": "18.0",
+          "TFL": "2.0",
+          "SKS": "1.0",
+          "FR": "1"
+        }
+      }
+    ]
+  },
+  {
+    "id": "football-2025-10-17-rhinelander-at-merrill",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-10-17T19:00:00-05:00",
+    "home": {
+      "school_id": "merrill",
+      "name": "Merrill",
+      "score": 13,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_20e5e107-d060-4d58-9cbe-58312f389ed8.jpg"
+    },
+    "away": {
+      "school_id": "rhinelander",
+      "name": "Rhinelander",
+      "score": 27,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_c5f56096-0700-4c2f-8a53-d51999885149.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@Merrill",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "rhinelander",
+        "team_name": "Rhinelander",
+        "category": "Passing Yards",
+        "player_name": "Abe Gretzinger",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "12/19",
+          "YDS": "114",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "rhinelander",
+        "team_name": "Rhinelander",
+        "category": "Rushing Yards",
+        "player_name": "Cyrus Leisure",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "9",
+          "YDS": "101",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "rhinelander",
+        "team_name": "Rhinelander",
+        "category": "Receiving Yards",
+        "player_name": "Cyrus Leisure",
+        "player_year": "SR",
+        "stats": {
+          "REC": "5",
+          "YDS": "61",
+          "TDS": "2",
+          "RUS": "101"
+        }
+      },
+      {
+        "team_school_id": "rhinelander",
+        "team_name": "Rhinelander",
+        "category": "Total Tackles",
+        "player_name": "Rowan Wiczek",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "12.0"
+        }
+      },
+      {
+        "team_school_id": "merrill",
+        "team_name": "Merrill",
+        "category": "Passing Yards",
+        "player_name": "Cole Rudie",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "5/9",
+          "YDS": "80",
+          "TDS": "1",
+          "RUS": "105"
+        }
+      },
+      {
+        "team_school_id": "merrill",
+        "team_name": "Merrill",
+        "category": "Rushing Yards",
+        "player_name": "Cole Rudie",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "12",
+          "YDS": "105",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "merrill",
+        "team_name": "Merrill",
+        "category": "Receiving Yards",
+        "player_name": "Keylin Allen",
+        "player_year": "SR",
+        "stats": {
+          "REC": "2",
+          "YDS": "47",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "merrill",
+        "team_name": "Merrill",
+        "category": "Total Tackles",
+        "player_name": "Hunter Opper",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "9.0",
+          "TFL": "7.0",
+          "SKS": "4.0"
         }
       }
     ]
@@ -8181,6 +11314,354 @@
     ]
   },
   {
+    "id": "football-2025-10-24-omro-at-tomahawk",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-10-24T19:00:00-05:00",
+    "home": {
+      "school_id": "tomahawk",
+      "name": "Tomahawk",
+      "score": 41,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_b455cbb7-3a4d-49ad-b7c5-e9935c3d78dc.jpg"
+    },
+    "away": {
+      "school_id": "",
+      "name": "Omro",
+      "score": 14,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_00f69e22-3385-4183-a495-0787870f4776.png"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": false,
+    "venue": "@Tomahawk",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "tomahawk",
+        "team_name": "Tomahawk",
+        "category": "Passing Yards",
+        "player_name": "Jett Reilly",
+        "player_year": "SO",
+        "stats": {
+          "C/A": "4/5",
+          "YDS": "79",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "tomahawk",
+        "team_name": "Tomahawk",
+        "category": "Rushing Yards",
+        "player_name": "Jett Reilly",
+        "player_year": "SO",
+        "stats": {
+          "ATT": "13",
+          "YDS": "80",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "tomahawk",
+        "team_name": "Tomahawk",
+        "category": "Receiving Yards",
+        "player_name": "Jonah Dickens",
+        "player_year": "SR",
+        "stats": {
+          "REC": "3",
+          "YDS": "63",
+          "TDS": "1",
+          "RUS": "32"
+        }
+      },
+      {
+        "team_school_id": "tomahawk",
+        "team_name": "Tomahawk",
+        "category": "Total Tackles",
+        "player_name": "Rex Reilly",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "9.0",
+          "TFL": "2.0"
+        }
+      }
+    ]
+  },
+  {
+    "id": "football-2025-10-24-rhinelander-at-edgewood",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-10-24T19:00:00-05:00",
+    "home": {
+      "school_id": "",
+      "name": "Edgewood",
+      "score": 35,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_abe57165-3a9e-4b89-b371-40ccd1890cf0.jpg"
+    },
+    "away": {
+      "school_id": "rhinelander",
+      "name": "Rhinelander",
+      "score": 7,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_c5f56096-0700-4c2f-8a53-d51999885149.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": false,
+    "venue": "Breese Stevens Field",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "rhinelander",
+        "team_name": "Rhinelander",
+        "category": "Passing Yards",
+        "player_name": "Abe Gretzinger",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "14/22",
+          "YDS": "128",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "rhinelander",
+        "team_name": "Rhinelander",
+        "category": "Rushing Yards",
+        "player_name": "Ben Olson",
+        "player_year": "SR",
+        "stats": {
+          "ATT": "10",
+          "YDS": "43",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "rhinelander",
+        "team_name": "Rhinelander",
+        "category": "Receiving Yards",
+        "player_name": "Rowan Wiczek",
+        "player_year": "JR",
+        "stats": {
+          "REC": "9",
+          "YDS": "90",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "rhinelander",
+        "team_name": "Rhinelander",
+        "category": "Total Tackles",
+        "player_name": "Rowan Wiczek",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "15.0",
+          "TFL": "1.0"
+        }
+      }
+    ]
+  },
+  {
+    "id": "football-2025-10-24-medford-at-grafton",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-10-24T19:00:00-05:00",
+    "home": {
+      "school_id": "",
+      "name": "Grafton",
+      "score": 49,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_53e60f13-7e30-48eb-bec6-c518dd5270f2.jpg"
+    },
+    "away": {
+      "school_id": "medford",
+      "name": "Medford",
+      "score": 14,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_3c8f6cae-06c4-465f-838a-2151c0cd0d7a.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": false,
+    "venue": "@Grafton",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "medford",
+        "team_name": "Medford",
+        "category": "Passing Yards",
+        "player_name": "Dylan Frey",
+        "player_year": "SO",
+        "stats": {
+          "C/A": "4/12",
+          "YDS": "68",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "medford",
+        "team_name": "Medford",
+        "category": "Rushing Yards",
+        "player_name": "Will Wojcik",
+        "player_year": "SO",
+        "stats": {
+          "ATT": "16",
+          "YDS": "79",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "medford",
+        "team_name": "Medford",
+        "category": "Receiving Yards",
+        "player_name": "Will Wojcik",
+        "player_year": "SO",
+        "stats": {
+          "REC": "1",
+          "YDS": "30",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "medford",
+        "team_name": "Medford",
+        "category": "Total Tackles",
+        "player_name": "Caden Olson",
+        "player_year": "JR",
+        "stats": {
+          "TKL": "6.0",
+          "FR": "1"
+        }
+      }
+    ]
+  },
+  {
+    "id": "football-2025-10-24-lakeland-at-merrill",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-10-24T19:00:00-05:00",
+    "home": {
+      "school_id": "merrill",
+      "name": "Merrill",
+      "score": 38,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_20e5e107-d060-4d58-9cbe-58312f389ed8.jpg"
+    },
+    "away": {
+      "school_id": "lakeland",
+      "name": "Lakeland",
+      "score": 12,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_ffbadc1d-650a-4518-b67e-7fa8589a9808.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": false,
+    "venue": "@Merrill",
+    "sources": [
+      "wiaa",
+      "bound"
+    ],
+    "stat_leaders": [
+      {
+        "team_school_id": "lakeland",
+        "team_name": "Lakeland",
+        "category": "Passing Yards",
+        "player_name": "Deklan McQuade",
+        "player_year": "SR",
+        "stats": {
+          "C/A": "15/27",
+          "YDS": "191",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "lakeland",
+        "team_name": "Lakeland",
+        "category": "Rushing Yards",
+        "player_name": "Logan Burrows",
+        "player_year": "SO",
+        "stats": {
+          "ATT": "9",
+          "YDS": "50",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "lakeland",
+        "team_name": "Lakeland",
+        "category": "Receiving Yards",
+        "player_name": "Tyson Redman",
+        "player_year": "SR",
+        "stats": {
+          "REC": "5",
+          "YDS": "111",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "lakeland",
+        "team_name": "Lakeland",
+        "category": "Total Tackles",
+        "player_name": "Blake Redman",
+        "player_year": "SO",
+        "stats": {
+          "TKL": "9.0"
+        }
+      },
+      {
+        "team_school_id": "merrill",
+        "team_name": "Merrill",
+        "category": "Passing Yards",
+        "player_name": "Cole Rudie",
+        "player_year": "JR",
+        "stats": {
+          "C/A": "8/10",
+          "YDS": "107",
+          "TDS": "1",
+          "RUS": "159"
+        }
+      },
+      {
+        "team_school_id": "merrill",
+        "team_name": "Merrill",
+        "category": "Rushing Yards",
+        "player_name": "Cole Rudie",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "11",
+          "YDS": "159",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "merrill",
+        "team_name": "Merrill",
+        "category": "Receiving Yards",
+        "player_name": "Ryker Remington",
+        "player_year": "JR",
+        "stats": {
+          "REC": "3",
+          "YDS": "49",
+          "TDS": "0"
+        }
+      },
+      {
+        "team_school_id": "merrill",
+        "team_name": "Merrill",
+        "category": "Total Tackles",
+        "player_name": "Noah Klug",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "12.0",
+          "TFL": "1.0"
+        }
+      }
+    ]
+  },
+  {
     "id": "football-2025-10-31-poynette-at-edgar",
     "sport": "football",
     "season": "2025-26",
@@ -8336,7 +11817,7 @@
     "season": "2025-26",
     "date": "2025-10-31T19:00:00-05:00",
     "home": {
-      "school_id": "",
+      "school_id": "tomahawk",
       "name": "Tomahawk",
       "score": 34,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_b455cbb7-3a4d-49ad-b7c5-e9935c3d78dc.jpg"
@@ -8352,9 +11833,58 @@
     "conference_game": false,
     "venue": "@Tomahawk",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "bound"
     ],
-    "stat_leaders": []
+    "stat_leaders": [
+      {
+        "team_school_id": "tomahawk",
+        "team_name": "Tomahawk",
+        "category": "Passing Yards",
+        "player_name": "Jett Reilly",
+        "player_year": "SO",
+        "stats": {
+          "C/A": "2/6",
+          "YDS": "26",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "tomahawk",
+        "team_name": "Tomahawk",
+        "category": "Rushing Yards",
+        "player_name": "Tiegan Sarazin",
+        "player_year": "JR",
+        "stats": {
+          "ATT": "19",
+          "YDS": "100",
+          "TDS": "2"
+        }
+      },
+      {
+        "team_school_id": "tomahawk",
+        "team_name": "Tomahawk",
+        "category": "Receiving Yards",
+        "player_name": "Jonah Dickens",
+        "player_year": "SR",
+        "stats": {
+          "REC": "2",
+          "YDS": "26",
+          "TDS": "1"
+        }
+      },
+      {
+        "team_school_id": "tomahawk",
+        "team_name": "Tomahawk",
+        "category": "Total Tackles",
+        "player_name": "Rex Reilly",
+        "player_year": "SR",
+        "stats": {
+          "TKL": "10.0",
+          "TFL": "2.0"
+        }
+      }
+    ]
   },
   {
     "id": "football-2025-10-31-evansville-at-mosinee",
@@ -8431,6 +11961,32 @@
         }
       }
     ]
+  },
+  {
+    "id": "football-2025-10-31-merrill-at-grafton",
+    "sport": "football",
+    "season": "2025-26",
+    "date": "2025-10-31T19:00:00-05:00",
+    "home": {
+      "school_id": "",
+      "name": "Grafton",
+      "score": 59,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_53e60f13-7e30-48eb-bec6-c518dd5270f2.jpg"
+    },
+    "away": {
+      "school_id": "merrill",
+      "name": "Merrill",
+      "score": 0,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_20e5e107-d060-4d58-9cbe-58312f389ed8.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": false,
+    "venue": "@Grafton",
+    "sources": [
+      "wiaa"
+    ],
+    "stat_leaders": []
   },
   {
     "id": "football-2025-11-07-bonduel-at-edgar",
@@ -8512,7 +12068,7 @@
     "season": "2025-26",
     "date": "2025-11-07T19:00:00-06:00",
     "home": {
-      "school_id": "",
+      "school_id": "tomahawk",
       "name": "Tomahawk",
       "score": 0,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_b455cbb7-3a4d-49ad-b7c5-e9935c3d78dc.jpg"

@@ -11766,5 +11766,4549 @@
       "TFL": "24",
       "SACKS": "6.0"
     }
+  },
+  {
+    "school_id": "tomahawk",
+    "sport": "football",
+    "category": "Passing",
+    "player_name": "Jett Reilly",
+    "player_year": "SO",
+    "jersey": "1",
+    "stats": {
+      "C/ATT": "18/38",
+      "PCT": "47.4%",
+      "YDS": "288",
+      "YPC": "16.0",
+      "TDS": "6",
+      "INT": "0",
+      "RTG": "163.2"
+    }
+  },
+  {
+    "school_id": "tomahawk",
+    "sport": "football",
+    "category": "Passing",
+    "player_name": "Cash Olsen",
+    "player_year": "SO",
+    "jersey": "5",
+    "stats": {
+      "C/ATT": "11/24",
+      "PCT": "45.8%",
+      "YDS": "240",
+      "YPC": "21.8",
+      "TDS": "4",
+      "INT": "1",
+      "RTG": "176.5"
+    }
+  },
+  {
+    "school_id": "tomahawk",
+    "sport": "football",
+    "category": "Passing",
+    "player_name": "Jonah Dickens",
+    "player_year": "SR",
+    "jersey": "7",
+    "stats": {
+      "C/ATT": "2/3",
+      "PCT": "66.7%",
+      "YDS": "31",
+      "YPC": "15.5",
+      "TDS": "1",
+      "INT": "0",
+      "RTG": "263.5"
+    }
+  },
+  {
+    "school_id": "tomahawk",
+    "sport": "football",
+    "category": "Passing",
+    "player_name": "Team",
+    "player_year": null,
+    "jersey": null,
+    "stats": {
+      "C/ATT": "31/65",
+      "PCT": "47.7%",
+      "YDS": "559",
+      "YPC": "18.0",
+      "TDS": "11",
+      "INT": "1",
+      "RTG": "172.7"
+    }
+  },
+  {
+    "school_id": "tomahawk",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Jett Reilly",
+    "player_year": "SO",
+    "jersey": "1",
+    "stats": {
+      "CAR": "73",
+      "YDS": "352",
+      "YPC": "4.8",
+      "TDS": "3",
+      "LONG": "13"
+    }
+  },
+  {
+    "school_id": "tomahawk",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Walter Horabik",
+    "player_year": "SR",
+    "jersey": "2",
+    "stats": {
+      "CAR": "1",
+      "YDS": "3",
+      "YPC": "3.0",
+      "TDS": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "tomahawk",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Hudson Evans",
+    "player_year": "SO",
+    "jersey": "4",
+    "stats": {
+      "CAR": "4",
+      "YDS": "45",
+      "YPC": "11.3",
+      "TDS": "1",
+      "LONG": "31"
+    }
+  },
+  {
+    "school_id": "tomahawk",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Cash Olsen",
+    "player_year": "SO",
+    "jersey": "5",
+    "stats": {
+      "CAR": "39",
+      "YDS": "173",
+      "YPC": "4.4",
+      "TDS": "5",
+      "LONG": "15"
+    }
+  },
+  {
+    "school_id": "tomahawk",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Rex Reilly",
+    "player_year": "SR",
+    "jersey": "6",
+    "stats": {
+      "CAR": "102",
+      "YDS": "503",
+      "YPC": "4.9",
+      "TDS": "9",
+      "LONG": "23"
+    }
+  },
+  {
+    "school_id": "tomahawk",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Jonah Dickens",
+    "player_year": "SR",
+    "jersey": "7",
+    "stats": {
+      "CAR": "19",
+      "YDS": "94",
+      "YPC": "4.9",
+      "TDS": "2",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "tomahawk",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Jack Reilly",
+    "player_year": "FR",
+    "jersey": "9",
+    "stats": {
+      "CAR": "2",
+      "YDS": "5",
+      "YPC": "2.5",
+      "TDS": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "tomahawk",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Tiegan Sarazin",
+    "player_year": "JR",
+    "jersey": "11",
+    "stats": {
+      "CAR": "97",
+      "YDS": "640",
+      "YPC": "6.6",
+      "TDS": "7",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "tomahawk",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Max Larson",
+    "player_year": "SO",
+    "jersey": "14",
+    "stats": {
+      "CAR": "134",
+      "YDS": "700",
+      "YPC": "5.2",
+      "TDS": "8",
+      "LONG": "38"
+    }
+  },
+  {
+    "school_id": "tomahawk",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Zander Zehner",
+    "player_year": "JR",
+    "jersey": "33",
+    "stats": {
+      "CAR": "5",
+      "YDS": "24",
+      "YPC": "4.8",
+      "TDS": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "tomahawk",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Team",
+    "player_year": null,
+    "jersey": null,
+    "stats": {
+      "CAR": "476",
+      "YDS": "2539",
+      "YPC": "5.3",
+      "TDS": "35",
+      "LONG": "38"
+    }
+  },
+  {
+    "school_id": "tomahawk",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Jett Reilly",
+    "player_year": "SO",
+    "jersey": "1",
+    "stats": {
+      "REC": "7",
+      "YDS": "139",
+      "YPC": "19.9",
+      "TDS": "2",
+      "LONG": "66"
+    }
+  },
+  {
+    "school_id": "tomahawk",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Rex Reilly",
+    "player_year": "SR",
+    "jersey": "6",
+    "stats": {
+      "REC": "1",
+      "YDS": "16",
+      "YPC": "16.0",
+      "TDS": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "tomahawk",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Jonah Dickens",
+    "player_year": "SR",
+    "jersey": "7",
+    "stats": {
+      "REC": "19",
+      "YDS": "382",
+      "YPC": "20.1",
+      "TDS": "9",
+      "LONG": "45"
+    }
+  },
+  {
+    "school_id": "tomahawk",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Tiegan Sarazin",
+    "player_year": "JR",
+    "jersey": "11",
+    "stats": {
+      "REC": "1",
+      "YDS": "9",
+      "YPC": "9.0",
+      "TDS": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "tomahawk",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Max Larson",
+    "player_year": "SO",
+    "jersey": "14",
+    "stats": {
+      "REC": "1",
+      "YDS": "3",
+      "YPC": "3.0",
+      "TDS": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "tomahawk",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Henry Nieman",
+    "player_year": "FR",
+    "jersey": "18",
+    "stats": {
+      "REC": "1",
+      "YDS": "7",
+      "YPC": "7.0",
+      "TDS": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "tomahawk",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Logan Norman",
+    "player_year": "SR",
+    "jersey": "32",
+    "stats": {
+      "REC": "1",
+      "YDS": "3",
+      "YPC": "3.0",
+      "TDS": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "tomahawk",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Team",
+    "player_year": null,
+    "jersey": null,
+    "stats": {
+      "REC": "31",
+      "YDS": "559",
+      "YPC": "18.0",
+      "TDS": "11",
+      "LONG": "66"
+    }
+  },
+  {
+    "school_id": "tomahawk",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Jett Reilly",
+    "player_year": "SO",
+    "jersey": "1",
+    "stats": {
+      "TOT": "56",
+      "SOLO": "37",
+      "TFL": "1",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "tomahawk",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Walter Horabik",
+    "player_year": "SR",
+    "jersey": "2",
+    "stats": {
+      "TOT": "19",
+      "SOLO": "13",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "tomahawk",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Jason Watkins",
+    "player_year": "SR",
+    "jersey": "3",
+    "stats": {
+      "TOT": "1",
+      "SOLO": "1",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "tomahawk",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Hudson Evans",
+    "player_year": "SO",
+    "jersey": "4",
+    "stats": {
+      "TOT": "39",
+      "SOLO": "24",
+      "TFL": "10",
+      "SACKS": "6.0"
+    }
+  },
+  {
+    "school_id": "tomahawk",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Cash Olsen",
+    "player_year": "SO",
+    "jersey": "5",
+    "stats": {
+      "TOT": "26",
+      "SOLO": "15",
+      "TFL": "1",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "tomahawk",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Rex Reilly",
+    "player_year": "SR",
+    "jersey": "6",
+    "stats": {
+      "TOT": "114",
+      "SOLO": "68",
+      "TFL": "11",
+      "SACKS": "1.0"
+    }
+  },
+  {
+    "school_id": "tomahawk",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Jonah Dickens",
+    "player_year": "SR",
+    "jersey": "7",
+    "stats": {
+      "TOT": "32",
+      "SOLO": "20",
+      "TFL": "2",
+      "SACKS": "1.0"
+    }
+  },
+  {
+    "school_id": "tomahawk",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Jack Reilly",
+    "player_year": "FR",
+    "jersey": "9",
+    "stats": {
+      "TOT": "1",
+      "SOLO": "1",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "tomahawk",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Tiegan Sarazin",
+    "player_year": "JR",
+    "jersey": "11",
+    "stats": {
+      "TOT": "70",
+      "SOLO": "41",
+      "TFL": "1",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "tomahawk",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Max Larson",
+    "player_year": "SO",
+    "jersey": "14",
+    "stats": {
+      "TOT": "14",
+      "SOLO": "8",
+      "TFL": "2",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "tomahawk",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Nathan Riemer",
+    "player_year": "SR",
+    "jersey": "17",
+    "stats": {
+      "TOT": "20",
+      "SOLO": "19",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "tomahawk",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Mason Hensel",
+    "player_year": "JR",
+    "jersey": "30",
+    "stats": {
+      "TOT": "2",
+      "SOLO": "2",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "tomahawk",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Logan Norman",
+    "player_year": "SR",
+    "jersey": "32",
+    "stats": {
+      "TOT": "7",
+      "SOLO": "4",
+      "TFL": "1",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "tomahawk",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Lucas Haring",
+    "player_year": "SO",
+    "jersey": "50",
+    "stats": {
+      "TOT": "45",
+      "SOLO": "29",
+      "TFL": "6",
+      "SACKS": "5.0"
+    }
+  },
+  {
+    "school_id": "tomahawk",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Kenny Turner",
+    "player_year": "SR",
+    "jersey": "51",
+    "stats": {
+      "TOT": "1",
+      "SOLO": "1",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "tomahawk",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Teddy Frederickson",
+    "player_year": "SO",
+    "jersey": "54",
+    "stats": {
+      "TOT": "2",
+      "SOLO": "1",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "tomahawk",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Ethan Gibeault",
+    "player_year": "SR",
+    "jersey": "55",
+    "stats": {
+      "TOT": "47",
+      "SOLO": "36",
+      "TFL": "4",
+      "SACKS": "4.0"
+    }
+  },
+  {
+    "school_id": "tomahawk",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Kaiden Kapellusch",
+    "player_year": "SR",
+    "jersey": "56",
+    "stats": {
+      "TOT": "33",
+      "SOLO": "16",
+      "TFL": "1",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "tomahawk",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Fletcher Baumann",
+    "player_year": "JR",
+    "jersey": "58",
+    "stats": {
+      "TOT": "5",
+      "SOLO": "3",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "tomahawk",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Nathan Norman",
+    "player_year": "SR",
+    "jersey": "65",
+    "stats": {
+      "TOT": "32",
+      "SOLO": "23",
+      "TFL": "1",
+      "SACKS": "1.0"
+    }
+  },
+  {
+    "school_id": "tomahawk",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Michael Samundsen",
+    "player_year": "SR",
+    "jersey": "66",
+    "stats": {
+      "TOT": "38",
+      "SOLO": "19",
+      "TFL": "5",
+      "SACKS": "3.0"
+    }
+  },
+  {
+    "school_id": "tomahawk",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Team",
+    "player_year": null,
+    "jersey": null,
+    "stats": {
+      "TOT": "604",
+      "SOLO": "381",
+      "TFL": "46",
+      "SACKS": "21.0"
+    }
+  },
+  {
+    "school_id": "rhinelander",
+    "sport": "football",
+    "category": "Passing",
+    "player_name": "Rowan Wiczek",
+    "player_year": "JR",
+    "jersey": "1",
+    "stats": {
+      "C/ATT": "0/1",
+      "PCT": "0.0%",
+      "YDS": "0",
+      "YPC": "0.0",
+      "TDS": "0",
+      "INT": "0",
+      "RTG": "0.0"
+    }
+  },
+  {
+    "school_id": "rhinelander",
+    "sport": "football",
+    "category": "Passing",
+    "player_name": "Abe Gretzinger",
+    "player_year": "JR",
+    "jersey": "2",
+    "stats": {
+      "C/ATT": "78/138",
+      "PCT": "56.5%",
+      "YDS": "1011",
+      "YPC": "13.0",
+      "TDS": "10",
+      "INT": "8",
+      "RTG": "130.4"
+    }
+  },
+  {
+    "school_id": "rhinelander",
+    "sport": "football",
+    "category": "Passing",
+    "player_name": "Team",
+    "player_year": null,
+    "jersey": null,
+    "stats": {
+      "C/ATT": "78/139",
+      "PCT": "56.1%",
+      "YDS": "1011",
+      "YPC": "13.0",
+      "TDS": "10",
+      "INT": "8",
+      "RTG": "129.4"
+    }
+  },
+  {
+    "school_id": "rhinelander",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Myles Eagleson",
+    "player_year": "SR",
+    "jersey": "0",
+    "stats": {
+      "CAR": "34",
+      "YDS": "200",
+      "YPC": "5.9",
+      "TDS": "3",
+      "LONG": "12"
+    }
+  },
+  {
+    "school_id": "rhinelander",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Rowan Wiczek",
+    "player_year": "JR",
+    "jersey": "1",
+    "stats": {
+      "CAR": "1",
+      "YDS": "-1",
+      "YPC": "-1.0",
+      "TDS": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "rhinelander",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Abe Gretzinger",
+    "player_year": "JR",
+    "jersey": "2",
+    "stats": {
+      "CAR": "48",
+      "YDS": "-236",
+      "YPC": "-4.9",
+      "TDS": "1",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "rhinelander",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Trenton Smits",
+    "player_year": "JR",
+    "jersey": "4",
+    "stats": {
+      "CAR": "5",
+      "YDS": "26",
+      "YPC": "5.2",
+      "TDS": "1",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "rhinelander",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Sam Zwaard",
+    "player_year": "SR",
+    "jersey": "5",
+    "stats": {
+      "CAR": "24",
+      "YDS": "226",
+      "YPC": "9.4",
+      "TDS": "3",
+      "LONG": "29"
+    }
+  },
+  {
+    "school_id": "rhinelander",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Josh Willoughby",
+    "player_year": "JR",
+    "jersey": "6",
+    "stats": {
+      "CAR": "37",
+      "YDS": "140",
+      "YPC": "3.8",
+      "TDS": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "rhinelander",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Judson O'Malley",
+    "player_year": "JR",
+    "jersey": "12",
+    "stats": {
+      "CAR": "6",
+      "YDS": "8",
+      "YPC": "1.3",
+      "TDS": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "rhinelander",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Blake Bauer",
+    "player_year": "FR",
+    "jersey": "14",
+    "stats": {
+      "CAR": "1",
+      "YDS": "-2",
+      "YPC": "-2.0",
+      "TDS": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "rhinelander",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Ben Olson",
+    "player_year": "SR",
+    "jersey": "23",
+    "stats": {
+      "CAR": "74",
+      "YDS": "416",
+      "YPC": "5.6",
+      "TDS": "4",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "rhinelander",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Matthew Haselton",
+    "player_year": "SO",
+    "jersey": "33",
+    "stats": {
+      "CAR": "5",
+      "YDS": "47",
+      "YPC": "9.4",
+      "TDS": "1",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "rhinelander",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Austin Sparling",
+    "player_year": "SR",
+    "jersey": "34",
+    "stats": {
+      "CAR": "18",
+      "YDS": "113",
+      "YPC": "6.3",
+      "TDS": "1",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "rhinelander",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Cyrus Leisure",
+    "player_year": "SR",
+    "jersey": "37",
+    "stats": {
+      "CAR": "96",
+      "YDS": "771",
+      "YPC": "8.0",
+      "TDS": "7",
+      "LONG": "54"
+    }
+  },
+  {
+    "school_id": "rhinelander",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Team",
+    "player_year": null,
+    "jersey": null,
+    "stats": {
+      "CAR": "349",
+      "YDS": "1696",
+      "YPC": "4.9",
+      "TDS": "21",
+      "LONG": "54"
+    }
+  },
+  {
+    "school_id": "rhinelander",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Rowan Wiczek",
+    "player_year": "JR",
+    "jersey": "1",
+    "stats": {
+      "REC": "43",
+      "YDS": "518",
+      "YPC": "12.0",
+      "TDS": "4",
+      "LONG": "35"
+    }
+  },
+  {
+    "school_id": "rhinelander",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Ryley Hull",
+    "player_year": "JR",
+    "jersey": "3",
+    "stats": {
+      "REC": "1",
+      "YDS": "8",
+      "YPC": "8.0",
+      "TDS": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "rhinelander",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Sam Zwaard",
+    "player_year": "SR",
+    "jersey": "5",
+    "stats": {
+      "REC": "2",
+      "YDS": "19",
+      "YPC": "9.5",
+      "TDS": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "rhinelander",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Josh Willoughby",
+    "player_year": "JR",
+    "jersey": "6",
+    "stats": {
+      "REC": "3",
+      "YDS": "15",
+      "YPC": "5.0",
+      "TDS": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "rhinelander",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Evan Shoeder",
+    "player_year": "SR",
+    "jersey": "7",
+    "stats": {
+      "REC": "26",
+      "YDS": "274",
+      "YPC": "10.5",
+      "TDS": "4",
+      "LONG": "65"
+    }
+  },
+  {
+    "school_id": "rhinelander",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Ben Olson",
+    "player_year": "SR",
+    "jersey": "23",
+    "stats": {
+      "REC": "7",
+      "YDS": "176",
+      "YPC": "25.1",
+      "TDS": "2",
+      "LONG": "84"
+    }
+  },
+  {
+    "school_id": "rhinelander",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Cyrus Leisure",
+    "player_year": "SR",
+    "jersey": "37",
+    "stats": {
+      "REC": "7",
+      "YDS": "78",
+      "YPC": "11.1",
+      "TDS": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "rhinelander",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Team",
+    "player_year": null,
+    "jersey": null,
+    "stats": {
+      "REC": "89",
+      "YDS": "1088",
+      "YPC": "12.2",
+      "TDS": "10",
+      "LONG": "84"
+    }
+  },
+  {
+    "school_id": "rhinelander",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Myles Eagleson",
+    "player_year": "SR",
+    "jersey": "0",
+    "stats": {
+      "TOT": "15",
+      "SOLO": "10",
+      "TFL": "3",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "rhinelander",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Rowan Wiczek",
+    "player_year": "JR",
+    "jersey": "1",
+    "stats": {
+      "TOT": "83",
+      "SOLO": "55",
+      "TFL": "5",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "rhinelander",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Ryley Hull",
+    "player_year": "JR",
+    "jersey": "3",
+    "stats": {
+      "TOT": "31",
+      "SOLO": "17",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "rhinelander",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Trenton Smits",
+    "player_year": "JR",
+    "jersey": "4",
+    "stats": {
+      "TOT": "2",
+      "SOLO": "1",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "rhinelander",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Sam Zwaard",
+    "player_year": "SR",
+    "jersey": "5",
+    "stats": {
+      "TOT": "43",
+      "SOLO": "32",
+      "TFL": "1",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "rhinelander",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Josh Willoughby",
+    "player_year": "JR",
+    "jersey": "6",
+    "stats": {
+      "TOT": "24",
+      "SOLO": "10",
+      "TFL": "1",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "rhinelander",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Evan Shoeder",
+    "player_year": "SR",
+    "jersey": "7",
+    "stats": {
+      "TOT": "11",
+      "SOLO": "6",
+      "TFL": "2",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "rhinelander",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Logan Leonard",
+    "player_year": "SR",
+    "jersey": "8",
+    "stats": {
+      "TOT": "5",
+      "SOLO": "1",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "rhinelander",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Tommy Eades",
+    "player_year": "SO",
+    "jersey": "9",
+    "stats": {
+      "TOT": "1",
+      "SOLO": "1",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "rhinelander",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Weston Kibler",
+    "player_year": "JR",
+    "jersey": "10",
+    "stats": {
+      "TOT": "1",
+      "SOLO": "0",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "rhinelander",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Judson O'Malley",
+    "player_year": "JR",
+    "jersey": "12",
+    "stats": {
+      "TOT": "17",
+      "SOLO": "8",
+      "TFL": "2",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "rhinelander",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Kaleb Zwaard",
+    "player_year": "JR",
+    "jersey": "18",
+    "stats": {
+      "TOT": "26",
+      "SOLO": "14",
+      "TFL": "1",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "rhinelander",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Ben Olson",
+    "player_year": "SR",
+    "jersey": "23",
+    "stats": {
+      "TOT": "29",
+      "SOLO": "25",
+      "TFL": "3",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "rhinelander",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Jaxton Tatrow",
+    "player_year": "SO",
+    "jersey": "35",
+    "stats": {
+      "TOT": "2",
+      "SOLO": "1",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "rhinelander",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Cyrus Leisure",
+    "player_year": "SR",
+    "jersey": "37",
+    "stats": {
+      "TOT": "26",
+      "SOLO": "19",
+      "TFL": "2",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "rhinelander",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Caden Sieker",
+    "player_year": "SR",
+    "jersey": "44",
+    "stats": {
+      "TOT": "29",
+      "SOLO": "19",
+      "TFL": "10",
+      "SACKS": "3.5"
+    }
+  },
+  {
+    "school_id": "rhinelander",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Trevor Denton",
+    "player_year": "SO",
+    "jersey": "47",
+    "stats": {
+      "TOT": "1",
+      "SOLO": "1",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "rhinelander",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Gage Anderson",
+    "player_year": "JR",
+    "jersey": "52",
+    "stats": {
+      "TOT": "31",
+      "SOLO": "12",
+      "TFL": "1",
+      "SACKS": "0.5"
+    }
+  },
+  {
+    "school_id": "rhinelander",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Joshua Haselton",
+    "player_year": "SR",
+    "jersey": "55",
+    "stats": {
+      "TOT": "7",
+      "SOLO": "4",
+      "TFL": "1",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "rhinelander",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Knox Flemming",
+    "player_year": "FR",
+    "jersey": "60",
+    "stats": {
+      "TOT": "2",
+      "SOLO": "1",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "rhinelander",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Leander Sprecksel",
+    "player_year": "SR",
+    "jersey": "63",
+    "stats": {
+      "TOT": "19",
+      "SOLO": "5",
+      "TFL": "1",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "rhinelander",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Parker McCone",
+    "player_year": "JR",
+    "jersey": "67",
+    "stats": {
+      "TOT": "6",
+      "SOLO": "4",
+      "TFL": "1",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "rhinelander",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Travis Trickey",
+    "player_year": "SR",
+    "jersey": "72",
+    "stats": {
+      "TOT": "14",
+      "SOLO": "6",
+      "TFL": "2",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "rhinelander",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Landon Webster",
+    "player_year": "SR",
+    "jersey": "73",
+    "stats": {
+      "TOT": "5",
+      "SOLO": "1",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "rhinelander",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Dominic Hakala",
+    "player_year": "SR",
+    "jersey": "75",
+    "stats": {
+      "TOT": "11",
+      "SOLO": "5",
+      "TFL": "1",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "rhinelander",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Sam Caselton",
+    "player_year": "SR",
+    "jersey": "76",
+    "stats": {
+      "TOT": "7",
+      "SOLO": "5",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "rhinelander",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Marshall Durkee",
+    "player_year": "JR",
+    "jersey": "80",
+    "stats": {
+      "TOT": "15",
+      "SOLO": "8",
+      "TFL": "2",
+      "SACKS": "1.0"
+    }
+  },
+  {
+    "school_id": "rhinelander",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Team",
+    "player_year": null,
+    "jersey": null,
+    "stats": {
+      "TOT": "463",
+      "SOLO": "271",
+      "TFL": "39",
+      "SACKS": "5.0"
+    }
+  },
+  {
+    "school_id": "medford",
+    "sport": "football",
+    "category": "Passing",
+    "player_name": "Cash Thums",
+    "player_year": "JR",
+    "jersey": "7",
+    "stats": {
+      "C/ATT": "0/1",
+      "PCT": "0.0%",
+      "YDS": "0",
+      "YPC": "0.0",
+      "TDS": "0",
+      "INT": "0",
+      "RTG": "0.0"
+    }
+  },
+  {
+    "school_id": "medford",
+    "sport": "football",
+    "category": "Passing",
+    "player_name": "Nick Krause",
+    "player_year": "SR",
+    "jersey": "9",
+    "stats": {
+      "C/ATT": "11/52",
+      "PCT": "21.2%",
+      "YDS": "259",
+      "YPC": "23.5",
+      "TDS": "4",
+      "INT": "4",
+      "RTG": "73.0"
+    }
+  },
+  {
+    "school_id": "medford",
+    "sport": "football",
+    "category": "Passing",
+    "player_name": "Dylan Frey",
+    "player_year": "SO",
+    "jersey": "15",
+    "stats": {
+      "C/ATT": "15/36",
+      "PCT": "41.7%",
+      "YDS": "146",
+      "YPC": "9.7",
+      "TDS": "0",
+      "INT": "3",
+      "RTG": "59.1"
+    }
+  },
+  {
+    "school_id": "medford",
+    "sport": "football",
+    "category": "Passing",
+    "player_name": "Team",
+    "player_year": null,
+    "jersey": null,
+    "stats": {
+      "C/ATT": "26/89",
+      "PCT": "29.2%",
+      "YDS": "405",
+      "YPC": "15.6",
+      "TDS": "4",
+      "INT": "7",
+      "RTG": "66.5"
+    }
+  },
+  {
+    "school_id": "medford",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Ashton Behling",
+    "player_year": "SR",
+    "jersey": "3",
+    "stats": {
+      "CAR": "13",
+      "YDS": "47",
+      "YPC": "3.6",
+      "TDS": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "medford",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Colton Soczka",
+    "player_year": "JR",
+    "jersey": "4",
+    "stats": {
+      "CAR": "26",
+      "YDS": "199",
+      "YPC": "7.7",
+      "TDS": "1",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "medford",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Cash Thums",
+    "player_year": "JR",
+    "jersey": "7",
+    "stats": {
+      "CAR": "23",
+      "YDS": "104",
+      "YPC": "4.5",
+      "TDS": "2",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "medford",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Sawyer Elsner",
+    "player_year": "SR",
+    "jersey": "8",
+    "stats": {
+      "CAR": "106",
+      "YDS": "519",
+      "YPC": "4.9",
+      "TDS": "7",
+      "LONG": "39"
+    }
+  },
+  {
+    "school_id": "medford",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Nick Krause",
+    "player_year": "SR",
+    "jersey": "9",
+    "stats": {
+      "CAR": "9",
+      "YDS": "-31",
+      "YPC": "-3.4",
+      "TDS": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "medford",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Austin Czarnezki",
+    "player_year": "JR",
+    "jersey": "11",
+    "stats": {
+      "CAR": "3",
+      "YDS": "16",
+      "YPC": "5.3",
+      "TDS": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "medford",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Axl Spanbauer",
+    "player_year": "JR",
+    "jersey": "13",
+    "stats": {
+      "CAR": "2",
+      "YDS": "6",
+      "YPC": "3.0",
+      "TDS": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "medford",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Dylan Frey",
+    "player_year": "SO",
+    "jersey": "15",
+    "stats": {
+      "CAR": "2",
+      "YDS": "-5",
+      "YPC": "-2.5",
+      "TDS": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "medford",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Jacob Doyle",
+    "player_year": "JR",
+    "jersey": "18",
+    "stats": {
+      "CAR": "2",
+      "YDS": "23",
+      "YPC": "11.5",
+      "TDS": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "medford",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Caden Olson",
+    "player_year": "JR",
+    "jersey": "20",
+    "stats": {
+      "CAR": "1",
+      "YDS": "3",
+      "YPC": "3.0",
+      "TDS": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "medford",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Will Wojcik",
+    "player_year": "SO",
+    "jersey": "22",
+    "stats": {
+      "CAR": "110",
+      "YDS": "722",
+      "YPC": "6.6",
+      "TDS": "5",
+      "LONG": "68"
+    }
+  },
+  {
+    "school_id": "medford",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Ty Thorson",
+    "player_year": "SO",
+    "jersey": "26",
+    "stats": {
+      "CAR": "3",
+      "YDS": "10",
+      "YPC": "3.3",
+      "TDS": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "medford",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Luke Klapatauskas",
+    "player_year": "SO",
+    "jersey": "28",
+    "stats": {
+      "CAR": "1",
+      "YDS": "1",
+      "YPC": "1.0",
+      "TDS": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "medford",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Austin Crabb",
+    "player_year": "SO",
+    "jersey": "30",
+    "stats": {
+      "CAR": "4",
+      "YDS": "16",
+      "YPC": "4.0",
+      "TDS": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "medford",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Carson Ingersoll",
+    "player_year": "JR",
+    "jersey": "32",
+    "stats": {
+      "CAR": "78",
+      "YDS": "451",
+      "YPC": "5.8",
+      "TDS": "7",
+      "LONG": "46"
+    }
+  },
+  {
+    "school_id": "medford",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Sawyer Hoops",
+    "player_year": "SO",
+    "jersey": "34",
+    "stats": {
+      "CAR": "2",
+      "YDS": "10",
+      "YPC": "5.0",
+      "TDS": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "medford",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Conor Anderson",
+    "player_year": "SR",
+    "jersey": "84",
+    "stats": {
+      "CAR": "8",
+      "YDS": "31",
+      "YPC": "3.9",
+      "TDS": "1",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "medford",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Team",
+    "player_year": null,
+    "jersey": null,
+    "stats": {
+      "CAR": "393",
+      "YDS": "2122",
+      "YPC": "5.4",
+      "TDS": "23",
+      "LONG": "68"
+    }
+  },
+  {
+    "school_id": "medford",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Colton Soczka",
+    "player_year": "JR",
+    "jersey": "4",
+    "stats": {
+      "REC": "1",
+      "YDS": "55",
+      "YPC": "55.0",
+      "TDS": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "medford",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Cash Thums",
+    "player_year": "JR",
+    "jersey": "7",
+    "stats": {
+      "REC": "4",
+      "YDS": "29",
+      "YPC": "7.3",
+      "TDS": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "medford",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Nick Krause",
+    "player_year": "SR",
+    "jersey": "9",
+    "stats": {
+      "REC": "1",
+      "YDS": "8",
+      "YPC": "8.0",
+      "TDS": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "medford",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Christian Preuss",
+    "player_year": "JR",
+    "jersey": "21",
+    "stats": {
+      "REC": "1",
+      "YDS": "10",
+      "YPC": "10.0",
+      "TDS": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "medford",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Will Wojcik",
+    "player_year": "SO",
+    "jersey": "22",
+    "stats": {
+      "REC": "10",
+      "YDS": "212",
+      "YPC": "21.2",
+      "TDS": "3",
+      "LONG": "54"
+    }
+  },
+  {
+    "school_id": "medford",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Carson Ingersoll",
+    "player_year": "JR",
+    "jersey": "32",
+    "stats": {
+      "REC": "1",
+      "YDS": "0",
+      "YPC": "0.0",
+      "TDS": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "medford",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Axel Brushaber",
+    "player_year": "JR",
+    "jersey": "33",
+    "stats": {
+      "REC": "7",
+      "YDS": "88",
+      "YPC": "12.6",
+      "TDS": "1",
+      "LONG": "10"
+    }
+  },
+  {
+    "school_id": "medford",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Conor Anderson",
+    "player_year": "SR",
+    "jersey": "84",
+    "stats": {
+      "REC": "1",
+      "YDS": "3",
+      "YPC": "3.0",
+      "TDS": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "medford",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Team",
+    "player_year": null,
+    "jersey": null,
+    "stats": {
+      "REC": "26",
+      "YDS": "405",
+      "YPC": "15.6",
+      "TDS": "4",
+      "LONG": "54"
+    }
+  },
+  {
+    "school_id": "medford",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Ashton Behling",
+    "player_year": "SR",
+    "jersey": "3",
+    "stats": {
+      "TOT": "14",
+      "SOLO": "8",
+      "TFL": "2",
+      "SACKS": "0.5"
+    }
+  },
+  {
+    "school_id": "medford",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Colton Soczka",
+    "player_year": "JR",
+    "jersey": "4",
+    "stats": {
+      "TOT": "22",
+      "SOLO": "13",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "medford",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Cash Thums",
+    "player_year": "JR",
+    "jersey": "7",
+    "stats": {
+      "TOT": "40",
+      "SOLO": "26",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "medford",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Sawyer Elsner",
+    "player_year": "SR",
+    "jersey": "8",
+    "stats": {
+      "TOT": "74",
+      "SOLO": "39",
+      "TFL": "10",
+      "SACKS": "1.5"
+    }
+  },
+  {
+    "school_id": "medford",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Nick Krause",
+    "player_year": "SR",
+    "jersey": "9",
+    "stats": {
+      "TOT": "9",
+      "SOLO": "6",
+      "TFL": "1",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "medford",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Austin Czarnezki",
+    "player_year": "JR",
+    "jersey": "11",
+    "stats": {
+      "TOT": "9",
+      "SOLO": "4",
+      "TFL": "2",
+      "SACKS": "1.0"
+    }
+  },
+  {
+    "school_id": "medford",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Easton Gebert",
+    "player_year": "SR",
+    "jersey": "12",
+    "stats": {
+      "TOT": "4",
+      "SOLO": "0",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "medford",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Axl Spanbauer",
+    "player_year": "JR",
+    "jersey": "13",
+    "stats": {
+      "TOT": "1",
+      "SOLO": "0",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "medford",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Aidan Beidel",
+    "player_year": "SR",
+    "jersey": "14",
+    "stats": {
+      "TOT": "9",
+      "SOLO": "5",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "medford",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Jacob Doyle",
+    "player_year": "JR",
+    "jersey": "18",
+    "stats": {
+      "TOT": "3",
+      "SOLO": "0",
+      "TFL": "1",
+      "SACKS": "0.5"
+    }
+  },
+  {
+    "school_id": "medford",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Caden Olson",
+    "player_year": "JR",
+    "jersey": "20",
+    "stats": {
+      "TOT": "29",
+      "SOLO": "14",
+      "TFL": "2",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "medford",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Will Wojcik",
+    "player_year": "SO",
+    "jersey": "22",
+    "stats": {
+      "TOT": "12",
+      "SOLO": "7",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "medford",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Madix Brooks",
+    "player_year": "JR",
+    "jersey": "23",
+    "stats": {
+      "TOT": "5",
+      "SOLO": "2",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "medford",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Parker Hill",
+    "player_year": "SR",
+    "jersey": "24",
+    "stats": {
+      "TOT": "29",
+      "SOLO": "17",
+      "TFL": "9",
+      "SACKS": "3.5"
+    }
+  },
+  {
+    "school_id": "medford",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Luke Klapatauskas",
+    "player_year": "SO",
+    "jersey": "28",
+    "stats": {
+      "TOT": "69",
+      "SOLO": "33",
+      "TFL": "10",
+      "SACKS": "1.0"
+    }
+  },
+  {
+    "school_id": "medford",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Austin Crabb",
+    "player_year": "SO",
+    "jersey": "30",
+    "stats": {
+      "TOT": "1",
+      "SOLO": "1",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "medford",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Carson Ingersoll",
+    "player_year": "JR",
+    "jersey": "32",
+    "stats": {
+      "TOT": "25",
+      "SOLO": "11",
+      "TFL": "6",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "medford",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Axel Brushaber",
+    "player_year": "JR",
+    "jersey": "33",
+    "stats": {
+      "TOT": "7",
+      "SOLO": "5",
+      "TFL": "2",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "medford",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Parker Fogo",
+    "player_year": "JR",
+    "jersey": "55",
+    "stats": {
+      "TOT": "2",
+      "SOLO": "1",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "medford",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Andrew Paff",
+    "player_year": "SO",
+    "jersey": "58",
+    "stats": {
+      "TOT": "1",
+      "SOLO": "1",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "medford",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Ian Stickney",
+    "player_year": "SO",
+    "jersey": "61",
+    "stats": {
+      "TOT": "20",
+      "SOLO": "5",
+      "TFL": "6",
+      "SACKS": "1.0"
+    }
+  },
+  {
+    "school_id": "medford",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Blake Tischendorf",
+    "player_year": "SR",
+    "jersey": "65",
+    "stats": {
+      "TOT": "8",
+      "SOLO": "2",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "medford",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Reuben Barnhart",
+    "player_year": "SR",
+    "jersey": "68",
+    "stats": {
+      "TOT": "3",
+      "SOLO": "0",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "medford",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Forest Hartl",
+    "player_year": "JR",
+    "jersey": "72",
+    "stats": {
+      "TOT": "28",
+      "SOLO": "12",
+      "TFL": "5",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "medford",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Hunter Jochimsen",
+    "player_year": "SR",
+    "jersey": "75",
+    "stats": {
+      "TOT": "7",
+      "SOLO": "1",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "medford",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Blake Thorson",
+    "player_year": "JR",
+    "jersey": "76",
+    "stats": {
+      "TOT": "3",
+      "SOLO": "3",
+      "TFL": "1",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "medford",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Logan Langdon",
+    "player_year": "JR",
+    "jersey": "82",
+    "stats": {
+      "TOT": "11",
+      "SOLO": "6",
+      "TFL": "1",
+      "SACKS": "1.0"
+    }
+  },
+  {
+    "school_id": "medford",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Conor Anderson",
+    "player_year": "SR",
+    "jersey": "84",
+    "stats": {
+      "TOT": "18",
+      "SOLO": "5",
+      "TFL": "3",
+      "SACKS": "0.5"
+    }
+  },
+  {
+    "school_id": "medford",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Team",
+    "player_year": null,
+    "jersey": null,
+    "stats": {
+      "TOT": "463",
+      "SOLO": "227",
+      "TFL": "61",
+      "SACKS": "10.5"
+    }
+  },
+  {
+    "school_id": "merrill",
+    "sport": "football",
+    "category": "Passing",
+    "player_name": "Cole Rudie",
+    "player_year": "JR",
+    "jersey": "4",
+    "stats": {
+      "C/ATT": "61/123",
+      "PCT": "49.6%",
+      "YDS": "915",
+      "YPC": "15.0",
+      "TDS": "9",
+      "INT": "12",
+      "RTG": "116.7"
+    }
+  },
+  {
+    "school_id": "merrill",
+    "sport": "football",
+    "category": "Passing",
+    "player_name": "Team",
+    "player_year": null,
+    "jersey": null,
+    "stats": {
+      "C/ATT": "61/123",
+      "PCT": "49.6%",
+      "YDS": "915",
+      "YPC": "15.0",
+      "TDS": "9",
+      "INT": "12",
+      "RTG": "116.7"
+    }
+  },
+  {
+    "school_id": "merrill",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Alex Bushar",
+    "player_year": "SO",
+    "jersey": "0",
+    "stats": {
+      "CAR": "5",
+      "YDS": "6",
+      "YPC": "1.2",
+      "TDS": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "merrill",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Payton Zimmerman",
+    "player_year": "SO",
+    "jersey": "2",
+    "stats": {
+      "CAR": "1",
+      "YDS": "15",
+      "YPC": "15.0",
+      "TDS": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "merrill",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Cole Rudie",
+    "player_year": "JR",
+    "jersey": "4",
+    "stats": {
+      "CAR": "116",
+      "YDS": "712",
+      "YPC": "6.1",
+      "TDS": "9",
+      "LONG": "79"
+    }
+  },
+  {
+    "school_id": "merrill",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Ben Gruett",
+    "player_year": "SR",
+    "jersey": "6",
+    "stats": {
+      "CAR": "1",
+      "YDS": "4",
+      "YPC": "4.0",
+      "TDS": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "merrill",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Hunter Opper",
+    "player_year": "SR",
+    "jersey": "8",
+    "stats": {
+      "CAR": "1",
+      "YDS": "16",
+      "YPC": "16.0",
+      "TDS": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "merrill",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Aiden Drake",
+    "player_year": "SO",
+    "jersey": "13",
+    "stats": {
+      "CAR": "18",
+      "YDS": "86",
+      "YPC": "4.8",
+      "TDS": "1",
+      "LONG": "34"
+    }
+  },
+  {
+    "school_id": "merrill",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Keylin Allen",
+    "player_year": "SR",
+    "jersey": "17",
+    "stats": {
+      "CAR": "24",
+      "YDS": "320",
+      "YPC": "13.3",
+      "TDS": "3",
+      "LONG": "92"
+    }
+  },
+  {
+    "school_id": "merrill",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Kanin Jahnke",
+    "player_year": "JR",
+    "jersey": "19",
+    "stats": {
+      "CAR": "177",
+      "YDS": "966",
+      "YPC": "5.5",
+      "TDS": "6",
+      "LONG": "14"
+    }
+  },
+  {
+    "school_id": "merrill",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Ryker Remington",
+    "player_year": "JR",
+    "jersey": "27",
+    "stats": {
+      "CAR": "1",
+      "YDS": "8",
+      "YPC": "8.0",
+      "TDS": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "merrill",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Noah Klug",
+    "player_year": "SR",
+    "jersey": "44",
+    "stats": {
+      "CAR": "23",
+      "YDS": "94",
+      "YPC": "4.1",
+      "TDS": "1",
+      "LONG": "2"
+    }
+  },
+  {
+    "school_id": "merrill",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Jordan Scheuermann",
+    "player_year": "SO",
+    "jersey": "88",
+    "stats": {
+      "CAR": "1",
+      "YDS": "0",
+      "YPC": "0.0",
+      "TDS": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "merrill",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Team",
+    "player_year": null,
+    "jersey": null,
+    "stats": {
+      "CAR": "368",
+      "YDS": "2227",
+      "YPC": "6.1",
+      "TDS": "20",
+      "LONG": "92"
+    }
+  },
+  {
+    "school_id": "merrill",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Jayden Chase",
+    "player_year": "SR",
+    "jersey": "1",
+    "stats": {
+      "REC": "2",
+      "YDS": "25",
+      "YPC": "12.5",
+      "TDS": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "merrill",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Payton Zimmerman",
+    "player_year": "SO",
+    "jersey": "2",
+    "stats": {
+      "REC": "6",
+      "YDS": "71",
+      "YPC": "11.8",
+      "TDS": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "merrill",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Ben Gruett",
+    "player_year": "SR",
+    "jersey": "6",
+    "stats": {
+      "REC": "5",
+      "YDS": "74",
+      "YPC": "14.8",
+      "TDS": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "merrill",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Hunter Opper",
+    "player_year": "SR",
+    "jersey": "8",
+    "stats": {
+      "REC": "5",
+      "YDS": "91",
+      "YPC": "18.2",
+      "TDS": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "merrill",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Aiden Drake",
+    "player_year": "SO",
+    "jersey": "13",
+    "stats": {
+      "REC": "2",
+      "YDS": "63",
+      "YPC": "31.5",
+      "TDS": "1",
+      "LONG": "61"
+    }
+  },
+  {
+    "school_id": "merrill",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Keylin Allen",
+    "player_year": "SR",
+    "jersey": "17",
+    "stats": {
+      "REC": "21",
+      "YDS": "419",
+      "YPC": "20.0",
+      "TDS": "5",
+      "LONG": "86"
+    }
+  },
+  {
+    "school_id": "merrill",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Kanin Jahnke",
+    "player_year": "JR",
+    "jersey": "19",
+    "stats": {
+      "REC": "4",
+      "YDS": "35",
+      "YPC": "8.8",
+      "TDS": "2",
+      "LONG": "18"
+    }
+  },
+  {
+    "school_id": "merrill",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Josue Amador",
+    "player_year": "SR",
+    "jersey": "21",
+    "stats": {
+      "REC": "1",
+      "YDS": "11",
+      "YPC": "11.0",
+      "TDS": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "merrill",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Ryker Remington",
+    "player_year": "JR",
+    "jersey": "27",
+    "stats": {
+      "REC": "4",
+      "YDS": "70",
+      "YPC": "17.5",
+      "TDS": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "merrill",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Noah Klug",
+    "player_year": "SR",
+    "jersey": "44",
+    "stats": {
+      "REC": "11",
+      "YDS": "56",
+      "YPC": "5.1",
+      "TDS": "1",
+      "LONG": "4"
+    }
+  },
+  {
+    "school_id": "merrill",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Team",
+    "player_year": null,
+    "jersey": null,
+    "stats": {
+      "REC": "61",
+      "YDS": "915",
+      "YPC": "15.0",
+      "TDS": "9",
+      "LONG": "86"
+    }
+  },
+  {
+    "school_id": "merrill",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Alex Bushar",
+    "player_year": "SO",
+    "jersey": "0",
+    "stats": {
+      "TOT": "2",
+      "SOLO": "2",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "merrill",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Payton Zimmerman",
+    "player_year": "SO",
+    "jersey": "2",
+    "stats": {
+      "TOT": "17",
+      "SOLO": "9",
+      "TFL": "1",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "merrill",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Jensen Olson",
+    "player_year": "JR",
+    "jersey": "3",
+    "stats": {
+      "TOT": "4",
+      "SOLO": "4",
+      "TFL": "1",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "merrill",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Cole Rudie",
+    "player_year": "JR",
+    "jersey": "4",
+    "stats": {
+      "TOT": "1",
+      "SOLO": "1",
+      "TFL": "1",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "merrill",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Ryan Coates",
+    "player_year": "SR",
+    "jersey": "5",
+    "stats": {
+      "TOT": "21",
+      "SOLO": "18",
+      "TFL": "1",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "merrill",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Ben Gruett",
+    "player_year": "SR",
+    "jersey": "6",
+    "stats": {
+      "TOT": "24",
+      "SOLO": "15",
+      "TFL": "1",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "merrill",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Hunter Opper",
+    "player_year": "SR",
+    "jersey": "8",
+    "stats": {
+      "TOT": "54",
+      "SOLO": "39",
+      "TFL": "19",
+      "SACKS": "9.0"
+    }
+  },
+  {
+    "school_id": "merrill",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Remington Skic",
+    "player_year": "JR",
+    "jersey": "12",
+    "stats": {
+      "TOT": "30",
+      "SOLO": "16",
+      "TFL": "3",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "merrill",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Aiden Drake",
+    "player_year": "SO",
+    "jersey": "13",
+    "stats": {
+      "TOT": "2",
+      "SOLO": "2",
+      "TFL": "1",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "merrill",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Ty Schuett",
+    "player_year": "JR",
+    "jersey": "14",
+    "stats": {
+      "TOT": "1",
+      "SOLO": "1",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "merrill",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Robert Hoffman",
+    "player_year": "SR",
+    "jersey": "16",
+    "stats": {
+      "TOT": "12",
+      "SOLO": "7",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "merrill",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Keylin Allen",
+    "player_year": "SR",
+    "jersey": "17",
+    "stats": {
+      "TOT": "45",
+      "SOLO": "36",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "merrill",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Kanin Jahnke",
+    "player_year": "JR",
+    "jersey": "19",
+    "stats": {
+      "TOT": "1",
+      "SOLO": "1",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "merrill",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Josue Amador",
+    "player_year": "SR",
+    "jersey": "21",
+    "stats": {
+      "TOT": "13",
+      "SOLO": "9",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "merrill",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Preston Schuelke",
+    "player_year": "SR",
+    "jersey": "22",
+    "stats": {
+      "TOT": "21",
+      "SOLO": "10",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "merrill",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "William Miemietz",
+    "player_year": "JR",
+    "jersey": "25",
+    "stats": {
+      "TOT": "12",
+      "SOLO": "7",
+      "TFL": "2",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "merrill",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Ryker Remington",
+    "player_year": "JR",
+    "jersey": "27",
+    "stats": {
+      "TOT": "12",
+      "SOLO": "9",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "merrill",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Brett Suchocki",
+    "player_year": "SR",
+    "jersey": "35",
+    "stats": {
+      "TOT": "1",
+      "SOLO": "1",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "merrill",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Brody Klebenow",
+    "player_year": "JR",
+    "jersey": "36",
+    "stats": {
+      "TOT": "23",
+      "SOLO": "19",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "merrill",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Peyton Hagenbucher",
+    "player_year": "JR",
+    "jersey": "42",
+    "stats": {
+      "TOT": "46",
+      "SOLO": "24",
+      "TFL": "9",
+      "SACKS": "4.0"
+    }
+  },
+  {
+    "school_id": "merrill",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Noah Klug",
+    "player_year": "SR",
+    "jersey": "44",
+    "stats": {
+      "TOT": "106",
+      "SOLO": "78",
+      "TFL": "9",
+      "SACKS": "3.0"
+    }
+  },
+  {
+    "school_id": "merrill",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Cole Schoerner",
+    "player_year": "SR",
+    "jersey": "45",
+    "stats": {
+      "TOT": "6",
+      "SOLO": "4",
+      "TFL": "1",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "merrill",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Conner Riste",
+    "player_year": "SO",
+    "jersey": "53",
+    "stats": {
+      "TOT": "1",
+      "SOLO": "1",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "merrill",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Gracin Bloch",
+    "player_year": "SO",
+    "jersey": "55",
+    "stats": {
+      "TOT": "1",
+      "SOLO": "1",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "merrill",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Jase Steinagel",
+    "player_year": "SR",
+    "jersey": "63",
+    "stats": {
+      "TOT": "22",
+      "SOLO": "16",
+      "TFL": "5",
+      "SACKS": "1.0"
+    }
+  },
+  {
+    "school_id": "merrill",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Jadon Van Der Nest",
+    "player_year": "JR",
+    "jersey": "67",
+    "stats": {
+      "TOT": "3",
+      "SOLO": "1",
+      "TFL": "1",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "merrill",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Mason Bloch",
+    "player_year": "JR",
+    "jersey": "70",
+    "stats": {
+      "TOT": "51",
+      "SOLO": "36",
+      "TFL": "9",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "merrill",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Brayden Mueller",
+    "player_year": "JR",
+    "jersey": "73",
+    "stats": {
+      "TOT": "16",
+      "SOLO": "10",
+      "TFL": "3",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "merrill",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Josh Gustum",
+    "player_year": "SR",
+    "jersey": "76",
+    "stats": {
+      "TOT": "14",
+      "SOLO": "11",
+      "TFL": "2",
+      "SACKS": "1.5"
+    }
+  },
+  {
+    "school_id": "merrill",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Max Kuhn",
+    "player_year": "SR",
+    "jersey": "78",
+    "stats": {
+      "TOT": "2",
+      "SOLO": "1",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "merrill",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Cartter Schade",
+    "player_year": "JR",
+    "jersey": "81",
+    "stats": {
+      "TOT": "5",
+      "SOLO": "3",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "merrill",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Avery Voermans",
+    "player_year": "JR",
+    "jersey": "89",
+    "stats": {
+      "TOT": "9",
+      "SOLO": "5",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "merrill",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Team",
+    "player_year": null,
+    "jersey": null,
+    "stats": {
+      "TOT": "578",
+      "SOLO": "397",
+      "TFL": "69",
+      "SACKS": "18.5"
+    }
+  },
+  {
+    "school_id": "lakeland",
+    "sport": "football",
+    "category": "Passing",
+    "player_name": "Deklan McQuade",
+    "player_year": "SR",
+    "jersey": "2",
+    "stats": {
+      "C/ATT": "124/202",
+      "PCT": "61.4%",
+      "YDS": "1429",
+      "YPC": "11.5",
+      "TDS": "12",
+      "INT": "8",
+      "RTG": "132.5"
+    }
+  },
+  {
+    "school_id": "lakeland",
+    "sport": "football",
+    "category": "Passing",
+    "player_name": "Gabe Karch",
+    "player_year": "SO",
+    "jersey": "8",
+    "stats": {
+      "C/ATT": "1/3",
+      "PCT": "33.3%",
+      "YDS": "2",
+      "YPC": "2.0",
+      "TDS": "0",
+      "INT": "0",
+      "RTG": "38.9"
+    }
+  },
+  {
+    "school_id": "lakeland",
+    "sport": "football",
+    "category": "Passing",
+    "player_name": "Team",
+    "player_year": null,
+    "jersey": null,
+    "stats": {
+      "C/ATT": "125/205",
+      "PCT": "61.0%",
+      "YDS": "1431",
+      "YPC": "11.4",
+      "TDS": "12",
+      "INT": "8",
+      "RTG": "131.1"
+    }
+  },
+  {
+    "school_id": "lakeland",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Mason Schettino",
+    "player_year": "SO",
+    "jersey": "1",
+    "stats": {
+      "CAR": "10",
+      "YDS": "30",
+      "YPC": "3.0",
+      "TDS": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "lakeland",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Deklan McQuade",
+    "player_year": "SR",
+    "jersey": "2",
+    "stats": {
+      "CAR": "46",
+      "YDS": "96",
+      "YPC": "2.1",
+      "TDS": "1",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "lakeland",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Tyson Redman",
+    "player_year": "SR",
+    "jersey": "4",
+    "stats": {
+      "CAR": "4",
+      "YDS": "20",
+      "YPC": "5.0",
+      "TDS": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "lakeland",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Evan Zoch",
+    "player_year": "SR",
+    "jersey": "5",
+    "stats": {
+      "CAR": "31",
+      "YDS": "271",
+      "YPC": "8.7",
+      "TDS": "4",
+      "LONG": "8"
+    }
+  },
+  {
+    "school_id": "lakeland",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Michael Schettino",
+    "player_year": "SR",
+    "jersey": "6",
+    "stats": {
+      "CAR": "29",
+      "YDS": "165",
+      "YPC": "5.7",
+      "TDS": "3",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "lakeland",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Gabe Karch",
+    "player_year": "SO",
+    "jersey": "8",
+    "stats": {
+      "CAR": "2",
+      "YDS": "4",
+      "YPC": "2.0",
+      "TDS": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "lakeland",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Brooks Lenz",
+    "player_year": "JR",
+    "jersey": "13",
+    "stats": {
+      "CAR": "1",
+      "YDS": "4",
+      "YPC": "4.0",
+      "TDS": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "lakeland",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Abe Rowe",
+    "player_year": "JR",
+    "jersey": "16",
+    "stats": {
+      "CAR": "2",
+      "YDS": "6",
+      "YPC": "3.0",
+      "TDS": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "lakeland",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Brady Bigjohn",
+    "player_year": "SR",
+    "jersey": "23",
+    "stats": {
+      "CAR": "13",
+      "YDS": "42",
+      "YPC": "3.2",
+      "TDS": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "lakeland",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Justin Baird",
+    "player_year": "JR",
+    "jersey": "24",
+    "stats": {
+      "CAR": "4",
+      "YDS": "5",
+      "YPC": "1.3",
+      "TDS": "1",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "lakeland",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Justin Doud-Sero",
+    "player_year": "SR",
+    "jersey": "26",
+    "stats": {
+      "CAR": "27",
+      "YDS": "101",
+      "YPC": "3.7",
+      "TDS": "4",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "lakeland",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Logan Burrows",
+    "player_year": "SO",
+    "jersey": "33",
+    "stats": {
+      "CAR": "95",
+      "YDS": "451",
+      "YPC": "4.7",
+      "TDS": "2",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "lakeland",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Team",
+    "player_year": null,
+    "jersey": null,
+    "stats": {
+      "CAR": "264",
+      "YDS": "1195",
+      "YPC": "4.5",
+      "TDS": "15",
+      "LONG": "8"
+    }
+  },
+  {
+    "school_id": "lakeland",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Mason Schettino",
+    "player_year": "SO",
+    "jersey": "1",
+    "stats": {
+      "REC": "6",
+      "YDS": "40",
+      "YPC": "6.7",
+      "TDS": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "lakeland",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Tyson Redman",
+    "player_year": "SR",
+    "jersey": "4",
+    "stats": {
+      "REC": "38",
+      "YDS": "501",
+      "YPC": "13.2",
+      "TDS": "5",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "lakeland",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Evan Zoch",
+    "player_year": "SR",
+    "jersey": "5",
+    "stats": {
+      "REC": "19",
+      "YDS": "345",
+      "YPC": "18.2",
+      "TDS": "4",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "lakeland",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Michael Schettino",
+    "player_year": "SR",
+    "jersey": "6",
+    "stats": {
+      "REC": "3",
+      "YDS": "41",
+      "YPC": "13.7",
+      "TDS": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "lakeland",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Mitch Mleko",
+    "player_year": "SR",
+    "jersey": "7",
+    "stats": {
+      "REC": "17",
+      "YDS": "95",
+      "YPC": "5.6",
+      "TDS": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "lakeland",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Will Backhaus",
+    "player_year": "JR",
+    "jersey": "12",
+    "stats": {
+      "REC": "10",
+      "YDS": "85",
+      "YPC": "8.5",
+      "TDS": "1",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "lakeland",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Brooks Lenz",
+    "player_year": "JR",
+    "jersey": "13",
+    "stats": {
+      "REC": "10",
+      "YDS": "90",
+      "YPC": "9.0",
+      "TDS": "1",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "lakeland",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Nolan Johnson",
+    "player_year": "JR",
+    "jersey": "14",
+    "stats": {
+      "REC": "4",
+      "YDS": "33",
+      "YPC": "8.3",
+      "TDS": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "lakeland",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Abe Rowe",
+    "player_year": "JR",
+    "jersey": "16",
+    "stats": {
+      "REC": "1",
+      "YDS": "28",
+      "YPC": "28.0",
+      "TDS": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "lakeland",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Nathaniel Decora",
+    "player_year": "SR",
+    "jersey": "21",
+    "stats": {
+      "REC": "1",
+      "YDS": "12",
+      "YPC": "12.0",
+      "TDS": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "lakeland",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Logan Burrows",
+    "player_year": "SO",
+    "jersey": "33",
+    "stats": {
+      "REC": "16",
+      "YDS": "161",
+      "YPC": "10.1",
+      "TDS": "1",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "lakeland",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Team",
+    "player_year": null,
+    "jersey": null,
+    "stats": {
+      "REC": "125",
+      "YDS": "1431",
+      "YPC": "11.4",
+      "TDS": "12",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "lakeland",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Mason Schettino",
+    "player_year": "SO",
+    "jersey": "1",
+    "stats": {
+      "TOT": "2",
+      "SOLO": "0",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "lakeland",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Ezra Crisco",
+    "player_year": "SO",
+    "jersey": "3",
+    "stats": {
+      "TOT": "4",
+      "SOLO": "2",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "lakeland",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Tyson Redman",
+    "player_year": "SR",
+    "jersey": "4",
+    "stats": {
+      "TOT": "71",
+      "SOLO": "31",
+      "TFL": "2",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "lakeland",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Evan Zoch",
+    "player_year": "SR",
+    "jersey": "5",
+    "stats": {
+      "TOT": "36",
+      "SOLO": "19",
+      "TFL": "6",
+      "SACKS": "0.5"
+    }
+  },
+  {
+    "school_id": "lakeland",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Michael Schettino",
+    "player_year": "SR",
+    "jersey": "6",
+    "stats": {
+      "TOT": "13",
+      "SOLO": "5",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "lakeland",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Mitch Mleko",
+    "player_year": "SR",
+    "jersey": "7",
+    "stats": {
+      "TOT": "25",
+      "SOLO": "10",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "lakeland",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Gabe Karch",
+    "player_year": "SO",
+    "jersey": "8",
+    "stats": {
+      "TOT": "43",
+      "SOLO": "17",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "lakeland",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Landon Gray-Ives",
+    "player_year": "SO",
+    "jersey": "11",
+    "stats": {
+      "TOT": "1",
+      "SOLO": "0",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "lakeland",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Will Backhaus",
+    "player_year": "JR",
+    "jersey": "12",
+    "stats": {
+      "TOT": "33",
+      "SOLO": "16",
+      "TFL": "2",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "lakeland",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Brooks Lenz",
+    "player_year": "JR",
+    "jersey": "13",
+    "stats": {
+      "TOT": "34",
+      "SOLO": "11",
+      "TFL": "2",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "lakeland",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Nolan Johnson",
+    "player_year": "JR",
+    "jersey": "14",
+    "stats": {
+      "TOT": "51",
+      "SOLO": "14",
+      "TFL": "10",
+      "SACKS": "2.5"
+    }
+  },
+  {
+    "school_id": "lakeland",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Blake Redman",
+    "player_year": "SO",
+    "jersey": "20",
+    "stats": {
+      "TOT": "42",
+      "SOLO": "19",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "lakeland",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Nathaniel Decora",
+    "player_year": "SR",
+    "jersey": "21",
+    "stats": {
+      "TOT": "1",
+      "SOLO": "1",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "lakeland",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Justin Baird",
+    "player_year": "JR",
+    "jersey": "24",
+    "stats": {
+      "TOT": "24",
+      "SOLO": "9",
+      "TFL": "1",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "lakeland",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Sean Morgan",
+    "player_year": "SO",
+    "jersey": "25",
+    "stats": {
+      "TOT": "46",
+      "SOLO": "14",
+      "TFL": "3",
+      "SACKS": "1.5"
+    }
+  },
+  {
+    "school_id": "lakeland",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Justin Doud-Sero",
+    "player_year": "SR",
+    "jersey": "26",
+    "stats": {
+      "TOT": "22",
+      "SOLO": "7",
+      "TFL": "3",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "lakeland",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Bennett Schillinger",
+    "player_year": "SO",
+    "jersey": "27",
+    "stats": {
+      "TOT": "8",
+      "SOLO": "2",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "lakeland",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Hudson Gehl",
+    "player_year": "JR",
+    "jersey": "44",
+    "stats": {
+      "TOT": "56",
+      "SOLO": "11",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "lakeland",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Aidan Bauers",
+    "player_year": "JR",
+    "jersey": "52",
+    "stats": {
+      "TOT": "19",
+      "SOLO": "2",
+      "TFL": "6",
+      "SACKS": "1.0"
+    }
+  },
+  {
+    "school_id": "lakeland",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Vinnie Wolfe",
+    "player_year": "SR",
+    "jersey": "60",
+    "stats": {
+      "TOT": "4",
+      "SOLO": "0",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "lakeland",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Gavin LaBarge",
+    "player_year": "JR",
+    "jersey": "64",
+    "stats": {
+      "TOT": "36",
+      "SOLO": "13",
+      "TFL": "7",
+      "SACKS": "0.5"
+    }
+  },
+  {
+    "school_id": "lakeland",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Tim Vazquez",
+    "player_year": "SR",
+    "jersey": "68",
+    "stats": {
+      "TOT": "3",
+      "SOLO": "0",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "lakeland",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Omar Mares",
+    "player_year": "SO",
+    "jersey": "71",
+    "stats": {
+      "TOT": "7",
+      "SOLO": "1",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "lakeland",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Liam Hunt",
+    "player_year": "SO",
+    "jersey": "72",
+    "stats": {
+      "TOT": "11",
+      "SOLO": "0",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "lakeland",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Josh Beson",
+    "player_year": "JR",
+    "jersey": "76",
+    "stats": {
+      "TOT": "1",
+      "SOLO": "0",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "lakeland",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Tyrone Moore",
+    "player_year": "SR",
+    "jersey": "77",
+    "stats": {
+      "TOT": "26",
+      "SOLO": "3",
+      "TFL": "7",
+      "SACKS": "1.5"
+    }
+  },
+  {
+    "school_id": "lakeland",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Team",
+    "player_year": null,
+    "jersey": null,
+    "stats": {
+      "TOT": "619",
+      "SOLO": "207",
+      "TFL": "49",
+      "SACKS": "7.5"
+    }
+  },
+  {
+    "school_id": "antigo",
+    "sport": "football",
+    "category": "Passing",
+    "player_name": "Max Kneeland",
+    "player_year": "SR",
+    "jersey": "1",
+    "stats": {
+      "C/ATT": "48/120",
+      "PCT": "40.0%",
+      "YDS": "459",
+      "YPC": "9.6",
+      "TDS": "2",
+      "INT": "10",
+      "RTG": "61.0"
+    }
+  },
+  {
+    "school_id": "antigo",
+    "sport": "football",
+    "category": "Passing",
+    "player_name": "Levi Binversie",
+    "player_year": "SR",
+    "jersey": "11",
+    "stats": {
+      "C/ATT": "0/1",
+      "PCT": "0.0%",
+      "YDS": "0",
+      "YPC": "0.0",
+      "TDS": "0",
+      "INT": "0",
+      "RTG": "0.0"
+    }
+  },
+  {
+    "school_id": "antigo",
+    "sport": "football",
+    "category": "Passing",
+    "player_name": "Team",
+    "player_year": null,
+    "jersey": null,
+    "stats": {
+      "C/ATT": "48/121",
+      "PCT": "39.7%",
+      "YDS": "459",
+      "YPC": "9.6",
+      "TDS": "2",
+      "INT": "10",
+      "RTG": "60.5"
+    }
+  },
+  {
+    "school_id": "antigo",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Max Kneeland",
+    "player_year": "SR",
+    "jersey": "1",
+    "stats": {
+      "CAR": "63",
+      "YDS": "69",
+      "YPC": "1.1",
+      "TDS": "1",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "antigo",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Owen Medo",
+    "player_year": "JR",
+    "jersey": "4",
+    "stats": {
+      "CAR": "38",
+      "YDS": "108",
+      "YPC": "2.8",
+      "TDS": "1",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "antigo",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Seth Medo",
+    "player_year": "JR",
+    "jersey": "7",
+    "stats": {
+      "CAR": "21",
+      "YDS": "94",
+      "YPC": "4.5",
+      "TDS": "3",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "antigo",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Levi Binversie",
+    "player_year": "SR",
+    "jersey": "11",
+    "stats": {
+      "CAR": "110",
+      "YDS": "605",
+      "YPC": "5.5",
+      "TDS": "2",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "antigo",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Jack Sundermeyer",
+    "player_year": "JR",
+    "jersey": "14",
+    "stats": {
+      "CAR": "11",
+      "YDS": "66",
+      "YPC": "6.0",
+      "TDS": "1",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "antigo",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Randy Quevedo",
+    "player_year": "JR",
+    "jersey": "23",
+    "stats": {
+      "CAR": "28",
+      "YDS": "119",
+      "YPC": "4.3",
+      "TDS": "4",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "antigo",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Bubba  Malone",
+    "player_year": "SO",
+    "jersey": "33",
+    "stats": {
+      "CAR": "8",
+      "YDS": "29",
+      "YPC": "3.6",
+      "TDS": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "antigo",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Brad Spencer",
+    "player_year": "SO",
+    "jersey": "34",
+    "stats": {
+      "CAR": "29",
+      "YDS": "167",
+      "YPC": "5.8",
+      "TDS": "1",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "antigo",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Team",
+    "player_year": null,
+    "jersey": null,
+    "stats": {
+      "CAR": "308",
+      "YDS": "1556",
+      "YPC": "5.1",
+      "TDS": "13",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "antigo",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Owen Medo",
+    "player_year": "JR",
+    "jersey": "4",
+    "stats": {
+      "REC": "11",
+      "YDS": "75",
+      "YPC": "6.8",
+      "TDS": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "antigo",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Levi Binversie",
+    "player_year": "SR",
+    "jersey": "11",
+    "stats": {
+      "REC": "10",
+      "YDS": "81",
+      "YPC": "8.1",
+      "TDS": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "antigo",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Braydon Kielman",
+    "player_year": "SR",
+    "jersey": "13",
+    "stats": {
+      "REC": "4",
+      "YDS": "71",
+      "YPC": "17.8",
+      "TDS": "1",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "antigo",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Randy Quevedo",
+    "player_year": "JR",
+    "jersey": "23",
+    "stats": {
+      "REC": "5",
+      "YDS": "77",
+      "YPC": "15.4",
+      "TDS": "1",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "antigo",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Bubba  Malone",
+    "player_year": "SO",
+    "jersey": "33",
+    "stats": {
+      "REC": "3",
+      "YDS": "3",
+      "YPC": "1.0",
+      "TDS": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "antigo",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Brad Spencer",
+    "player_year": "SO",
+    "jersey": "34",
+    "stats": {
+      "REC": "2",
+      "YDS": "4",
+      "YPC": "2.0",
+      "TDS": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "antigo",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Seth Krueger",
+    "player_year": "JR",
+    "jersey": "86",
+    "stats": {
+      "REC": "12",
+      "YDS": "144",
+      "YPC": "12.0",
+      "TDS": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "antigo",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Jordy Pregler",
+    "player_year": "SO",
+    "jersey": "88",
+    "stats": {
+      "REC": "1",
+      "YDS": "4",
+      "YPC": "4.0",
+      "TDS": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "antigo",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Team",
+    "player_year": null,
+    "jersey": null,
+    "stats": {
+      "REC": "48",
+      "YDS": "459",
+      "YPC": "9.6",
+      "TDS": "2",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "antigo",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Max Kneeland",
+    "player_year": "SR",
+    "jersey": "1",
+    "stats": {
+      "TOT": "40",
+      "SOLO": "28",
+      "TFL": "1",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "antigo",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Owen Medo",
+    "player_year": "JR",
+    "jersey": "4",
+    "stats": {
+      "TOT": "40",
+      "SOLO": "26",
+      "TFL": "3",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "antigo",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Seth Medo",
+    "player_year": "JR",
+    "jersey": "7",
+    "stats": {
+      "TOT": "37",
+      "SOLO": "19",
+      "TFL": "1",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "antigo",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Levi Binversie",
+    "player_year": "SR",
+    "jersey": "11",
+    "stats": {
+      "TOT": "50",
+      "SOLO": "32",
+      "TFL": "4",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "antigo",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Sam Lucas",
+    "player_year": "JR",
+    "jersey": "12",
+    "stats": {
+      "TOT": "1",
+      "SOLO": "1",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "antigo",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Braydon Kielman",
+    "player_year": "SR",
+    "jersey": "13",
+    "stats": {
+      "TOT": "21",
+      "SOLO": "10",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "antigo",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Jack Sundermeyer",
+    "player_year": "JR",
+    "jersey": "14",
+    "stats": {
+      "TOT": "22",
+      "SOLO": "11",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "antigo",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Eli Cornelius",
+    "player_year": "SO",
+    "jersey": "22",
+    "stats": {
+      "TOT": "24",
+      "SOLO": "23",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "antigo",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Randy Quevedo",
+    "player_year": "JR",
+    "jersey": "23",
+    "stats": {
+      "TOT": "13",
+      "SOLO": "7",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "antigo",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Bubba  Malone",
+    "player_year": "SO",
+    "jersey": "33",
+    "stats": {
+      "TOT": "51",
+      "SOLO": "28",
+      "TFL": "4",
+      "SACKS": "1.0"
+    }
+  },
+  {
+    "school_id": "antigo",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Brad Spencer",
+    "player_year": "SO",
+    "jersey": "34",
+    "stats": {
+      "TOT": "16",
+      "SOLO": "10",
+      "TFL": "3",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "antigo",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Bentley Knudson",
+    "player_year": "SO",
+    "jersey": "44",
+    "stats": {
+      "TOT": "3",
+      "SOLO": "3",
+      "TFL": "1",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "antigo",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "JoJo  Taylor",
+    "player_year": "SR",
+    "jersey": "53",
+    "stats": {
+      "TOT": "37",
+      "SOLO": "29",
+      "TFL": "3",
+      "SACKS": "1.0"
+    }
+  },
+  {
+    "school_id": "antigo",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Ted Baginski",
+    "player_year": "SO",
+    "jersey": "56",
+    "stats": {
+      "TOT": "5",
+      "SOLO": "3",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "antigo",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Xavier  Fermanich",
+    "player_year": "JR",
+    "jersey": "60",
+    "stats": {
+      "TOT": "2",
+      "SOLO": "2",
+      "TFL": "1",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "antigo",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "AJ Kolher",
+    "player_year": "JR",
+    "jersey": "75",
+    "stats": {
+      "TOT": "11",
+      "SOLO": "8",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "antigo",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Nate Wild",
+    "player_year": "SO",
+    "jersey": "78",
+    "stats": {
+      "TOT": "1",
+      "SOLO": "0",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "antigo",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Seth Krueger",
+    "player_year": "JR",
+    "jersey": "86",
+    "stats": {
+      "TOT": "14",
+      "SOLO": "11",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "antigo",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Jordy Pregler",
+    "player_year": "SO",
+    "jersey": "88",
+    "stats": {
+      "TOT": "50",
+      "SOLO": "37",
+      "TFL": "6",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "antigo",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Team",
+    "player_year": null,
+    "jersey": null,
+    "stats": {
+      "TOT": "438",
+      "SOLO": "288",
+      "TFL": "27",
+      "SACKS": "2.0"
+    }
   }
 ]
