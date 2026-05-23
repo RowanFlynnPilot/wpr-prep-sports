@@ -23,6 +23,7 @@ export default function StandingsTable({
   sponsors,
   seasonStats = [],
   sportConfig,
+  games = [],
 }) {
   const [hovered, setHovered] = useState(null);
 
@@ -49,6 +50,37 @@ export default function StandingsTable({
     : [];
 
   const labels = recordLabels(sportConfig);
+
+  // Most recent 3 conference results per team, oldest → newest. Used for
+  // the "Last 3" form pill in each row.
+  const recentFormByTeam = useMemo(() => {
+    const map = new Map();
+    if (!games || games.length === 0) return map;
+    for (const row of standing.rows) {
+      const sid = row.school_id;
+      if (!sid) continue;
+      const last3 = games
+        .filter(
+          (g) =>
+            g.status === "final" &&
+            g.conference_game &&
+            (g.home.school_id === sid || g.away.school_id === sid) &&
+            g.home.score != null &&
+            g.away.score != null,
+        )
+        .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+        .slice(0, 3)
+        .reverse()
+        .map((g) => {
+          const isHome = g.home.school_id === sid;
+          const own = isHome ? g.home.score : g.away.score;
+          const opp = isHome ? g.away.score : g.home.score;
+          return own > opp ? "W" : own < opp ? "L" : "T";
+        });
+      map.set(sid, last3);
+    }
+    return map;
+  }, [games, standing.rows]);
 
   return (
     <section
@@ -80,6 +112,7 @@ export default function StandingsTable({
               <th className="num">Overall</th>
               <th className="num">{labels.for}</th>
               <th className="num">{labels.against}</th>
+              <th className="form">Last 3</th>
             </tr>
           </thead>
           <tbody>
@@ -90,12 +123,20 @@ export default function StandingsTable({
                 school_id: row.school_id,
                 logo_url: school?.logo_url ?? null,
               };
+              const isLeader = idx === 0;
+              const form = recentFormByTeam.get(row.school_id) ?? [];
               return (
                 <tr
                   key={row.school_id || row.name}
+                  className={isLeader ? "standings__row standings__row--leader" : "standings__row"}
                   onMouseEnter={() => setHovered(row.school_id || row.name)}
                 >
-                  <td className="rank">{idx + 1}</td>
+                  <td className="rank">
+                    {isLeader && (
+                      <span className="standings__leader-pip" aria-hidden="true" />
+                    )}
+                    {idx + 1}
+                  </td>
                   <td className="team">
                     <TeamLogo team={stub} school={school} size="sm" />
                     <TeamLink team={stub}>{row.name}</TeamLink>
@@ -104,6 +145,25 @@ export default function StandingsTable({
                   <td className="num">{row.overall_wins}-{row.overall_losses}</td>
                   <td className="num">{fmtInt(row.points_for)}</td>
                   <td className="num">{fmtInt(row.points_against)}</td>
+                  <td className="form">
+                    {form.length > 0 ? (
+                      <span className="standings__form" aria-label={`Last ${form.length} games: ${form.join(", ")}`}>
+                        {form.map((r, i) => (
+                          <span
+                            key={i}
+                            className={
+                              "standings__form-chip standings__form-chip--" +
+                              r.toLowerCase()
+                            }
+                          >
+                            {r}
+                          </span>
+                        ))}
+                      </span>
+                    ) : (
+                      <span className="standings__form-empty">—</span>
+                    )}
+                  </td>
                 </tr>
               );
             })}

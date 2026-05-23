@@ -59,6 +59,7 @@
 }
 .standings__table thead th.num { text-align: right; }
 .standings__table thead th.rank { width: 2.5rem; text-align: center; }
+.standings__table thead th.form { width: 5rem; text-align: right; }
 
 .standings__table tbody td {
   padding: 0.6rem 0.85rem;
@@ -89,6 +90,64 @@
   font-weight: 500;
   font-size: 1rem;
 }
+
+/* Leader row — small accent pip next to the rank number and a faint
+   accent wash on the row. The existing rule already colors the rank
+   number with --accent-700, so this layers on top. */
+.standings__row--leader td {
+  background: linear-gradient(
+    to right,
+    color-mix(in srgb, var(--accent) 8%, transparent) 0,
+    transparent 18%
+  );
+}
+.standings__row--leader:hover td {
+  background: linear-gradient(
+    to right,
+    color-mix(in srgb, var(--accent) 18%, transparent) 0,
+    rgba(245, 158, 11, 0.1) 18%
+  );
+}
+.standings__leader-pip {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  margin-right: 0.4rem;
+  background: var(--accent);
+  vertical-align: middle;
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 30%, transparent);
+}
+
+/* Recent-form chips — 3 mini W/L pills, one per recent conference game.
+   Oldest on the left, newest on the right. */
+.standings__form {
+  display: inline-flex;
+  gap: 2px;
+  justify-content: flex-end;
+}
+.standings__form-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 3px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.65rem;
+  line-height: 1;
+  letter-spacing: 0;
+  color: #fff;
+}
+.standings__form-chip--w { background: #16a34a; } /* emerald-600 */
+.standings__form-chip--l { background: #dc2626; } /* red-600 */
+.standings__form-chip--t { background: #6b7280; } /* slate-500 */
+.standings__form-empty {
+  color: var(--muted-2);
+  font-size: 0.85rem;
+}
+.standings__table td.form { text-align: right; padding-right: 0.85rem; }
 
 /* Hover preview overlay — slides up from the bottom of the standings card,
    showing fuller season detail for whichever row the user is hovering. */
