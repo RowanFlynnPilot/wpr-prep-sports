@@ -21,59 +21,9 @@
     "conference_game": false,
     "venue": "@Wausau West",
     "sources": [
-      "wiaa",
-      "bound"
+      "wiaa"
     ],
-    "stat_leaders": [
-      {
-        "team_school_id": "wausau-west",
-        "team_name": "Wausau West",
-        "category": "Passing Yards",
-        "player_name": "Joe  Graveen",
-        "player_year": "SR",
-        "stats": {
-          "C/A": "11/14",
-          "YDS": "139",
-          "TDS": "2"
-        }
-      },
-      {
-        "team_school_id": "wausau-west",
-        "team_name": "Wausau West",
-        "category": "Rushing Yards",
-        "player_name": "Miles Waldvogel",
-        "player_year": "JR",
-        "stats": {
-          "ATT": "11",
-          "YDS": "125",
-          "TDS": "1"
-        }
-      },
-      {
-        "team_school_id": "wausau-west",
-        "team_name": "Wausau West",
-        "category": "Receiving Yards",
-        "player_name": "Shea Jones",
-        "player_year": "SR",
-        "stats": {
-          "REC": "3",
-          "YDS": "56",
-          "TDS": "1"
-        }
-      },
-      {
-        "team_school_id": "wausau-west",
-        "team_name": "Wausau West",
-        "category": "Total Tackles",
-        "player_name": "Teigan Rasmus",
-        "player_year": "SR",
-        "stats": {
-          "TKL": "10.0",
-          "TFL": "3.0",
-          "SKS": "1.5"
-        }
-      }
-    ]
+    "stat_leaders": []
   },
   {
     "id": "football-2025-08-21-dc-everest-at-rice-lake",
@@ -97,58 +47,9 @@
     "conference_game": false,
     "venue": "@Rice Lake High School",
     "sources": [
-      "wiaa",
-      "bound"
+      "wiaa"
     ],
-    "stat_leaders": [
-      {
-        "team_school_id": "dc-everest",
-        "team_name": "D.C. Everest",
-        "category": "Passing Yards",
-        "player_name": "Jake Staysniak",
-        "player_year": "SR",
-        "stats": {
-          "C/A": "11/17",
-          "YDS": "155",
-          "TDS": "2"
-        }
-      },
-      {
-        "team_school_id": "dc-everest",
-        "team_name": "D.C. Everest",
-        "category": "Rushing Yards",
-        "player_name": "Corbin Enzenroth",
-        "player_year": "SR",
-        "stats": {
-          "ATT": "16",
-          "YDS": "97",
-          "TDS": "1",
-          "REC": "14"
-        }
-      },
-      {
-        "team_school_id": "dc-everest",
-        "team_name": "D.C. Everest",
-        "category": "Receiving Yards",
-        "player_name": "Xavier Edwards",
-        "player_year": "SR",
-        "stats": {
-          "REC": "4",
-          "YDS": "86",
-          "TDS": "1"
-        }
-      },
-      {
-        "team_school_id": "dc-everest",
-        "team_name": "D.C. Everest",
-        "category": "Total Tackles",
-        "player_name": "Aiden Schmitz",
-        "player_year": "SR",
-        "stats": {
-          "TKL": "19.0"
-        }
-      }
-    ]
+    "stat_leaders": []
   },
   {
     "id": "football-2025-08-21-marshfield-at-new-richmond",
@@ -172,57 +73,9 @@
     "conference_game": false,
     "venue": "@New Richmond HIgh School Stadium",
     "sources": [
-      "wiaa",
-      "bound"
+      "wiaa"
     ],
-    "stat_leaders": [
-      {
-        "team_school_id": "marshfield",
-        "team_name": "Marshfield",
-        "category": "Passing Yards",
-        "player_name": "Ethan Foemmel",
-        "player_year": "FR",
-        "stats": {
-          "C/A": "5/10",
-          "YDS": "94",
-          "TDS": "1"
-        }
-      },
-      {
-        "team_school_id": "marshfield",
-        "team_name": "Marshfield",
-        "category": "Rushing Yards",
-        "player_name": "Haiden Carlson",
-        "player_year": "JR",
-        "stats": {
-          "ATT": "15",
-          "YDS": "93",
-          "TDS": "1"
-        }
-      },
-      {
-        "team_school_id": "marshfield",
-        "team_name": "Marshfield",
-        "category": "Receiving Yards",
-        "player_name": "Gavin Larson",
-        "player_year": "SO",
-        "stats": {
-          "REC": "2",
-          "YDS": "41",
-          "TDS": "0"
-        }
-      },
-      {
-        "team_school_id": "marshfield",
-        "team_name": "Marshfield",
-        "category": "Total Tackles",
-        "player_name": "Wes Novitzke",
-        "player_year": "JR",
-        "stats": {
-          "TKL": "9.0"
-        }
-      }
-    ]
+    "stat_leaders": []
   },
   {
     "id": "football-2025-08-21-chippewa-falls-at-spash",
@@ -246,59 +99,9 @@
     "conference_game": false,
     "venue": "@Stevens Point",
     "sources": [
-      "wiaa",
-      "bound"
+      "wiaa"
     ],
-    "stat_leaders": [
-      {
-        "team_school_id": "spash",
-        "team_name": "Stevens Point",
-        "category": "Passing Yards",
-        "player_name": "Trent Breitbach",
-        "player_year": "JR",
-        "stats": {
-          "C/A": "8/16",
-          "YDS": "180",
-          "TDS": "3",
-          "RUS": "110"
-        }
-      },
-      {
-        "team_school_id": "spash",
-        "team_name": "Stevens Point",
-        "category": "Rushing Yards",
-        "player_name": "Trent Breitbach",
-        "player_year": "JR",
-        "stats": {
-          "ATT": "15",
-          "YDS": "110",
-          "TDS": "3"
-        }
-      },
-      {
-        "team_school_id": "spash",
-        "team_name": "Stevens Point",
-        "category": "Receiving Yards",
-        "player_name": "Isaac Yang",
-        "player_year": "SR",
-        "stats": {
-          "REC": "6",
-          "YDS": "159",
-          "TDS": "3"
-        }
-      },
-      {
-        "team_school_id": "spash",
-        "team_name": "Stevens Point",
-        "category": "Total Tackles",
-        "player_name": "Tony Raczek",
-        "player_year": "JR",
-        "stats": {
-          "TKL": "10.0",
-          "TFL": "1.0"
-        }
-      }
-    ]
+    "stat_leaders": []
   },
   {
     "id": "football-2025-08-21-wisconsin-rapids-at-river-falls",
