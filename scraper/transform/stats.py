@@ -28,7 +28,7 @@ from rich.console import Console
 
 from config.loader import Manifest
 from models.schema import Dataset, Game, GameStatus, SeasonStat, Sport, StatLine
-from sources import bound
+from sources import bound, wph
 
 POLITE_DELAY_SECONDS = 0.4
 
@@ -163,6 +163,103 @@ def merge_team_season_stats(
         dataset.meta.sources_used.append("bound")
     if console:
         console.print(f"[green]Season stats:[/green] {len(out)} athlete-rows across {len(targets)} teams")
+    return dataset
+
+
+def merge_wph_season_stats(
+    dataset: Dataset,
+    *,
+    manifest: Manifest,
+    sport: str,
+    console: Console | None = None,
+) -> Dataset:
+    """
+    Pull per-team season stats from wisconsinprephockey.net and attach
+    them to dataset.season_stats. Used for hockey sports where Bound has
+    no data — see [[hockey-stats-gap]] memory for the source history.
+
+    Two SeasonStat categories emitted:
+      "Hockey Skater"   — G, A, PTS, SOG, PPG, PIM, ...
+      "Hockey Goalie"   — GP, MIN, W, L, SV, GAA, SV%, SO
+
+    Schools without a `wph_team_id` set on the manifest are skipped.
+    """
+    subseason = wph.SUBSEASONS.get((sport, dataset.meta.season))
+    if subseason is None:
+        if console:
+            console.print(
+                f"[yellow]No WPH subseason mapped for {sport} {dataset.meta.season}; skipping[/yellow]"
+            )
+        return dataset
+
+    targets = [s for s in manifest.schools if s.wph_team_id]
+    if not targets:
+        if console:
+            console.print("[yellow]No wph_team_id values in manifest — skipping hockey stats[/yellow]")
+        return dataset
+
+    if console:
+        console.print(
+            f"[bold]Fetching WPH season stats[/bold] for {len(targets)} teams (subseason={subseason})"
+        )
+
+    sport_enum = Sport(sport)
+    out: list[SeasonStat] = []
+
+    for school in targets:
+        tid = wph.find_team_instance_id(school.wph_team_id, subseason)
+        if tid is None:
+            if console:
+                console.print(
+                    f"[yellow]  ? {school.id}: no team_instance for subseason {subseason} (didn't play this season?)[/yellow]"
+                )
+            time.sleep(POLITE_DELAY_SECONDS)
+            continue
+        try:
+            skaters, goalies = wph.fetch_team_season_stats(tid, subseason=subseason)
+        except Exception as e:  # noqa: BLE001
+            if console:
+                console.print(f"[yellow]  ! {school.id}: WPH stats failed ({e})[/yellow]")
+            time.sleep(POLITE_DELAY_SECONDS)
+            continue
+
+        for sk in skaters:
+            out.append(
+                SeasonStat(
+                    school_id=school.id,
+                    sport=sport_enum,
+                    category="Hockey Skater",
+                    player_name=sk.player_name,
+                    player_year=None,
+                    jersey=sk.jersey,
+                    stats=dict(sk.stats),
+                )
+            )
+        for gl in goalies:
+            out.append(
+                SeasonStat(
+                    school_id=school.id,
+                    sport=sport_enum,
+                    category="Hockey Goalie",
+                    player_name=gl.player_name,
+                    player_year=None,
+                    jersey=gl.jersey,
+                    stats=dict(gl.stats),
+                )
+            )
+        if console:
+            console.print(
+                f"  · {school.id} (team_instance={tid}): {len(skaters)} skaters · {len(goalies)} goalies"
+            )
+        time.sleep(POLITE_DELAY_SECONDS)
+
+    dataset.season_stats = out
+    if out and "wisconsinprephockey" not in dataset.meta.sources_used:
+        dataset.meta.sources_used.append("wisconsinprephockey")
+    if console:
+        console.print(
+            f"[green]WPH season stats:[/green] {len(out)} athlete-rows across {len(targets)} teams"
+        )
     return dataset
 
 

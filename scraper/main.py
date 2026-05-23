@@ -23,7 +23,7 @@ from config.loader import ensure_org_ids, load_manifest, save_manifest
 from output.writer import write_dataset
 from sources import wiaa
 from transform.normalize import build_dataset, build_name_index_for_manifest
-from transform.stats import merge_bound_stats, merge_team_season_stats
+from transform.stats import merge_bound_stats, merge_team_season_stats, merge_wph_season_stats
 
 console = Console()
 
@@ -119,14 +119,15 @@ def main() -> int:
 
     # Map our internal sport ids to Bound's URL identifiers. Sports not in
     # this map have no Bound integration; stats merge is skipped for them.
-    # Hockey is intentionally absent — Bound publishes WI hockey scores but
-    # not per-team stats pages (404s on every team).
     BOUND_SPORT_ABBRS = {
         "football": "fb",
         "boys_basketball": "boysbasketball",
         "girls_basketball": "girlsbasketball",
         "volleyball": "vb",
     }
+    # Sports that pull stats from wisconsinprephockey.net instead. Bound
+    # publishes WI hockey scores but not per-team stats pages.
+    WPH_SPORTS = {"boys_hockey", "girls_hockey"}
 
     sport_abbr = BOUND_SPORT_ABBRS.get(args.sport)
     if not args.no_stats and sport_abbr:
@@ -142,6 +143,13 @@ def main() -> int:
             manifest=manifest,
             sport=args.sport,
             sport_abbr=sport_abbr,
+            console=console,
+        )
+    elif not args.no_stats and args.sport in WPH_SPORTS:
+        dataset = merge_wph_season_stats(
+            dataset,
+            manifest=manifest,
+            sport=args.sport,
             console=console,
         )
 
