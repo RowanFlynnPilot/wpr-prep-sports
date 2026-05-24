@@ -54,8 +54,10 @@ export function findPlayerGameLog(games, schoolId, playerName) {
     );
     if (lines.length > 0) matches.push({ game: g, lines });
   }
+  // Chronological — Week 1 at the top, most recent at the bottom, so
+  // a reader scrolls the player's season the way it actually unfolded.
   return matches.sort(
-    (a, b) => new Date(b.game.date).getTime() - new Date(a.game.date).getTime(),
+    (a, b) => new Date(a.game.date).getTime() - new Date(b.game.date).getTime(),
   );
 }
 
