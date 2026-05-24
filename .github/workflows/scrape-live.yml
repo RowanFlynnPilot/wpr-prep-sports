@@ -1,25 +1,32 @@
 name: Scrape Live
 
 # High-frequency live-scores cron — runs during typical game windows
-# only. The job is cheap (~10s) and a no-op off-season (the live merge
-# returns "0 updates" when nothing's in progress), so the cron is safe
-# to leave on year-round.
+# only. The job is cheap (~10s per sport) and a no-op off-season (the
+# live merge returns "0 updates" when nothing's in progress), so the
+# cron is safe to leave on year-round.
 #
-# Schedule covers Friday evening football in both Central Standard
-# Time (UTC-6) and Daylight Time (UTC-5):
-#   * Fri 23:00-23:59 UTC  (5pm or 6pm CT — pregame)
-#   * Sat 00:00-05:59 UTC  (Friday evening games CT)
+# Schedule covers Central Time game windows (UTC-6 std / UTC-5 DST):
+#   Friday evening (CT) → 23:00-05:59 UTC (Fri night + early Sat UTC)
+#     – Football (Aug-Nov), Volleyball (Aug-Oct), Basketball (Nov-Mar)
+#   Tuesday/Thursday evening (CT) → 23:00-05:59 UTC (Wed/Fri UTC)
+#     – Volleyball, Basketball, Hockey midweek games
+#   Saturday afternoon (CT) → 18:00-23:00 UTC
+#     – Basketball/Volleyball tournament days
+#
+# Each fires the live scrape for every sport — sports that aren't
+# in-season return empty + no commit; cost is ~60s total wall time.
 
 on:
   schedule:
-    - cron: "*/10 23 * * 5"   # Friday evening UTC (start of CT gameday)
-    - cron: "*/10 0-5 * * 6"  # Saturday early UTC (Friday night CT)
+    - cron: "*/10 23 * * 1,2,3,4,5"  # Mon-Fri evening UTC (CT weeknight)
+    - cron: "*/10 0-5 * * 2,3,4,5,6" # Tue-Sat early UTC (CT weeknight late)
+    - cron: "*/10 18-22 * * 6"       # Saturday afternoon UTC (tournament)
   workflow_dispatch:
     inputs:
       sport:
-        description: "Sport id for live scrape (currently only 'football' is wired)."
+        description: "Single sport id to run; default runs every sport."
         required: false
-        default: "football"
+        default: ""
 
 permissions:
   contents: write
@@ -42,11 +49,22 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run live scrape
+      - name: Run live scrape (per-sport)
         working-directory: scraper
         env:
-          SPORT: ${{ github.event.inputs.sport || 'football' }}
-        run: python main.py --sport "$SPORT" --live
+          # On cron runs we cycle through every sport. On manual dispatch
+          # the user can pass a single sport id.
+          SPORTS: ${{ github.event.inputs.sport || 'football boys_basketball girls_basketball volleyball boys_hockey girls_hockey' }}
+        run: |
+          for sport in $SPORTS; do
+            echo "::group::live $sport"
+            if python main.py --sport "$sport" --live; then
+              echo "ok: $sport"
+            else
+              echo "::warning::live failed for $sport — continuing"
+            fi
+            echo "::endgroup::"
+          done
 
       - name: Commit live updates
         run: |

@@ -3,6 +3,11 @@ Merge live in-progress scores from halftime/ScoreCenter into the
 existing dataset. Designed to run on a fast cadence (every 10 min
 during game windows) without touching the per-team WIAA scrape.
 
+Works across all sports WIAA exposes — football, basketball,
+volleyball, hockey — via the shared ScoreCenter GameResultsList
+endpoint. The merge logic is sport-agnostic; the per-sport variants
+live in sources/halftime.py.
+
 Safety guarantee: never DOWNGRADE a game. If our dataset has the
 game as final with both scores, the live scrape can't move it back
 to in_progress or scheduled. Live data only fills in or upgrades.
@@ -35,18 +40,20 @@ _STATUS_RANK = {
 }
 
 
-def merge_live_football(
+def merge_live_scores(
     dataset: Dataset,
     *,
+    sport: str,
     manifest: Manifest,
     console: Console | None = None,
 ) -> Dataset:
     """
-    Pull live football scores and merge into dataset.games. Returns
-    the (mutated) dataset; prints a summary to console.
+    Pull live scores for a sport and merge into dataset.games.
+    Returns the (mutated) dataset; prints a summary to console.
     """
+    season = dataset.meta.season if dataset.meta and dataset.meta.season else "2025-26"
     try:
-        rows = halftime.fetch_football_live()
+        rows = halftime.fetch_live(sport, season=season)
     except Exception as e:  # noqa: BLE001
         if console:
             console.print(f"[yellow]live scrape failed: {e}[/yellow]")
@@ -137,3 +144,13 @@ def merge_live_football(
         if "halftime" not in dataset.meta.sources_used:
             dataset.meta.sources_used.append("halftime")
     return dataset
+
+
+# Back-compat alias — old callers that only need football.
+def merge_live_football(
+    dataset: Dataset,
+    *,
+    manifest: Manifest,
+    console: Console | None = None,
+) -> Dataset:
+    return merge_live_scores(dataset, sport="football", manifest=manifest, console=console)

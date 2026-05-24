@@ -23,7 +23,7 @@ from config.loader import ensure_org_ids, load_manifest, save_manifest
 from output.writer import read_dataset, write_dataset
 from sources import wiaa, wph
 from transform.normalize import build_dataset, build_name_index_for_manifest
-from transform.live import merge_live_football
+from transform.live import merge_live_scores
 from transform.stats import (
     build_wph_roster_index,
     merge_bound_stats,
@@ -85,13 +85,6 @@ def main() -> int:
     # (also several minutes) — used by the high-frequency cron during
     # game windows.
     if args.live:
-        if args.sport != "football":
-            console.print(
-                f"[yellow]--live currently only supports football "
-                f"(got {args.sport}); other sports' live endpoints differ "
-                f"and aren't wired yet.[/yellow]"
-            )
-            return 0
         dataset = read_dataset(args.sport, DATA_DIR)
         if dataset is None:
             console.print(
@@ -99,7 +92,9 @@ def main() -> int:
                 f"run a full scrape first.[/red]"
             )
             return 1
-        dataset = merge_live_football(dataset, manifest=manifest, console=console)
+        dataset = merge_live_scores(
+            dataset, sport=args.sport, manifest=manifest, console=console,
+        )
         # Bump meta.last_updated so the StaleBanner / freshness pill on the
         # frontend reflects the live cron run, not the last full scrape.
         from datetime import datetime, timezone

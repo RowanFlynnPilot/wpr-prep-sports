@@ -65,6 +65,18 @@ def _get(url: str) -> str:
         return resp.text
 
 
+@retry(stop=stop_after_attempt(3), wait=wait_exponential(multiplier=1, min=2, max=8))
+def _post(url: str, data: dict) -> str:
+    with httpx.Client(
+        timeout=20.0,
+        follow_redirects=True,
+        headers={"User-Agent": USER_AGENT},
+    ) as client:
+        resp = client.post(url, data=data)
+        resp.raise_for_status()
+        return resp.text
+
+
 # In-progress markers WIAA uses in the team cell. Match before the score
 # pattern so we don't classify "Q1 — Madison West 14-7" as final.
 _IN_PROGRESS_RE = re.compile(
@@ -76,6 +88,12 @@ _IN_PROGRESS_RE = re.compile(
 _WIN_CELL_RE = re.compile(r"^(.*?)\s+WIN\s+(\d+)\s*-\s*(\d+)\s*$")
 # Loss cell: "TeamName LOSS"
 _LOSS_CELL_RE = re.compile(r"^(.*?)\s+LOSS\s*$")
+# Volleyball winner: "TeamName W 3-1 (25-20,25-23,...)"
+_VB_WIN_CELL_RE = re.compile(r"^(.*?)\s+W\s+(\d+)\s*-\s*(\d+)\s*\(([^)]*)\)\s*$")
+# Volleyball loser: "TeamName L 1-3 (...)"  — score perspective IS flipped
+# (own sets first, opp sets second), unlike football where loser cell has
+# no score.
+_VB_LOSS_CELL_RE = re.compile(r"^(.*?)\s+L\s+(\d+)\s*-\s*(\d+)\s*\(([^)]*)\)\s*$")
 # Date+time format like "10/16/2025 6:00PM" or "10/16/2025 6:00 PM (C)"
 _DATETIME_RE = re.compile(
     r"^(\d{1,2})/(\d{1,2})/(\d{4})\s+(\d{1,2}):(\d{2})\s*([AP]M)?",
@@ -103,47 +121,148 @@ def _parse_team_cell(text: str) -> tuple[str, int | None, str | None]:
       None          — final winner cell with score parsed, OR scheduled (no score)
       "WIN"         — winner, score returned
       "LOSS"        — loser, no score here (winner cell carries it)
-      "PROGRESS"    — game in progress; team_name preserved, score may be None
+      "Q1"/"HALF"/"OT"/... — game in progress
+
+    Order matters: check WIN/LOSS first. A final overtime win renders
+    as "Ashland WIN (OT)" — that's a completed game, not in-progress.
+    Only treat OT/Q-period markers as in-progress when no WIN/LOSS
+    marker is present.
     """
     text = text.strip()
     if not text:
         return ("", None, None)
 
-    # Check in-progress first — the marker may appear next to the team
-    # name with a partial score.
-    progress = _IN_PROGRESS_RE.search(text)
-    if progress:
-        score_m = re.search(r"(\d{1,3})\s*-\s*(\d{1,3})", text)
-        score_val = int(score_m.group(1)) if score_m else None
-        # Strip both the period marker AND the score so the team name
-        # comes back clean. "Mosinee Q3 14-7" → "Mosinee", Q3, 14.
-        clean = _IN_PROGRESS_RE.sub("", text)
-        clean = re.sub(r"\d{1,3}\s*-\s*\d{1,3}", "", clean)
-        clean = re.sub(r"\s+", " ", clean).strip(" -")
-        return (clean, score_val, progress.group(0).upper())
-
-    # WIN with score
+    # WIN with score — handle first so "Ashland WIN 60-50 (OT)" isn't
+    # misread as in-progress.
     win = _WIN_CELL_RE.match(text)
     if win:
         return (win.group(1).strip(), int(win.group(2)), "WIN")
+
+    # Volleyball winner — "TeamName W 3-1 (set scores)"
+    vb_win = _VB_WIN_CELL_RE.match(text)
+    if vb_win:
+        return (vb_win.group(1).strip(), int(vb_win.group(2)), "WIN")
+
+    # Volleyball loser — "TeamName L 1-3 (set scores)"
+    vb_loss = _VB_LOSS_CELL_RE.match(text)
+    if vb_loss:
+        return (vb_loss.group(1).strip(), int(vb_loss.group(2)), "LOSS")
 
     # LOSS only
     loss = _LOSS_CELL_RE.match(text)
     if loss:
         return (loss.group(1).strip(), None, "LOSS")
 
+    # Look for an OT-style trailer that follows the score, e.g.
+    # "Ashland WIN 60-50 (OT)" with extra punctuation we didn't catch
+    # in the strict regex. If we see WIN with a score, prefer that
+    # classification even when other markers appear.
+    if "WIN" in text and re.search(r"\d{1,3}\s*-\s*\d{1,3}", text):
+        score_m = re.search(r"(\d{1,3})\s*-\s*\d{1,3}", text)
+        # Trim everything after the score for the clean name.
+        name = re.split(r"\s+WIN\s+", text, maxsplit=1)[0].strip()
+        return (name, int(score_m.group(1)), "WIN")
+    if "LOSS" in text:
+        name = re.split(r"\s+LOSS", text, maxsplit=1)[0].strip()
+        return (name, None, "LOSS")
+
+    # In-progress marker (only when no WIN/LOSS landed above).
+    progress = _IN_PROGRESS_RE.search(text)
+    if progress:
+        score_m = re.search(r"(\d{1,3})\s*-\s*(\d{1,3})", text)
+        score_val = int(score_m.group(1)) if score_m else None
+        clean = _IN_PROGRESS_RE.sub("", text)
+        clean = re.sub(r"\d{1,3}\s*-\s*\d{1,3}", "", clean)
+        clean = re.sub(r"\s+", " ", clean).strip(" -")
+        return (clean, score_val, progress.group(0).upper())
+
     # No marker — treat as scheduled (team name only).
     return (text, None, None)
 
 
+def fetch_live(sport: str, season: str = "2025-26") -> list[LiveGame]:
+    """
+    Pull statewide live scores for any sport WIAA exposes on the
+    ScoreCenter ScoreList endpoint. The page is identical-shape across
+    sports — POST sport+contest type, get a single table with
+    home/away/date/location columns where the score lives next to the
+    WIN/LOSS marker (final) or with a Q-period/HALF/OT marker
+    (in-progress).
+
+    Football has a dedicated FBScoreboard GET endpoint as well, but the
+    POST endpoint returns the same rows in the same shape — so the
+    parser doesn't branch by sport here.
+
+    Returns LiveGame entries. Empty list if WIAA returns nothing
+    (off-season or unknown SSID).
+    """
+    # Import lazily to avoid an explicit cross-module dependency at the
+    # top of this file — keeps the live source self-contained for unit
+    # tests.
+    from sources.wiaa import SSID_BY_SPORT
+
+    ssid = SSID_BY_SPORT.get(sport)
+    if ssid is None:
+        return []
+
+    # School year format: "2025-26" → "2025"
+    year = season.split("-")[0]
+
+    # Different sports gate this endpoint differently:
+    #   - Football regular season (ContestType=1) returns the full
+    #     statewide scoreboard with no extra filter.
+    #   - Basketball/volleyball/hockey return empty for ContestType=1
+    #     unless an FB-style week is provided. The tournament path
+    #     (ContestType=10) returns rows ONLY when a TournRound (1-6) is
+    #     specified.
+    #
+    # Strategy: always try ContestType=1, then iterate TournRound 1..6
+    # under ContestType=10. Dedup later — the same game won't appear
+    # under multiple rounds.
+    rows: list[LiveGame] = []
+    post_url = "https://schools.wiaawi.org/ScoreCenter/Results/GameResultsList"
+
+    def _post_combo(contest_type: str, tourn_round: str = "") -> None:
+        data = {
+            "Options.SchoolYear": year,
+            "Options.SportSeasonID": str(ssid),
+            "Options.ContestType": contest_type,
+        }
+        if tourn_round:
+            data["Options.TournRound"] = tourn_round
+        try:
+            html = _post(post_url, data)
+        except httpx.HTTPError:
+            return
+        rows.extend(_parse_results_table(html))
+
+    _post_combo("1")  # regular season
+    for r in ("1", "2", "3", "4", "5", "6"):  # tournament rounds
+        _post_combo("10", r)
+
+    # Dedup by (date_iso, home_norm, away_norm) — the same game can
+    # appear in both regular and tournament contexts during transition
+    # weeks. Last write wins (likely the tournament row with more recent
+    # status).
+    dedup: dict[tuple[str, str, str], LiveGame] = {}
+    for r in rows:
+        key = (
+            r.date.strftime("%Y-%m-%d"),
+            (r.home_name or "").casefold().strip(),
+            (r.away_name or "").casefold().strip(),
+        )
+        dedup[key] = r
+    return list(dedup.values())
+
+
+# Back-compat alias for the football-only call site.
 def fetch_football_live() -> list[LiveGame]:
-    """
-    Pull the statewide football scoreboard and return one entry per
-    row. Filters out rows that fail to parse (defensive — WIAA's HTML
-    occasionally mangles a row).
-    """
-    url = "https://schools.wiaawi.org/ScoreCenter/Results/FBScoreboard"
-    html = _get(url)
+    return fetch_live("football")
+
+
+def _parse_results_table(html: str) -> list[LiveGame]:
+    """Shared parser — GameResultsList and FBScoreboard return the same
+    Home/Away/Date/Location table shape."""
     soup = BeautifulSoup(html, "lxml")
     table = soup.find("table")
     if table is None:
@@ -187,16 +306,25 @@ def fetch_football_live() -> list[LiveGame]:
             continue
 
         # Final classification — one cell has WIN with score, other LOSS.
+        # Volleyball stores both sides' set counts (W 3-1 / L 1-3) so
+        # we can use home_score and away_score directly. Football and
+        # other sports hide the loser's score in the winner's cell;
+        # _opposite_score extracts it.
         if home_mark == "WIN" and away_mark == "LOSS":
-            # home_score holds "winner-loser"; assign both sides.
-            ws, ls = home_score, _opposite_score(home_text)
+            if away_score is not None:
+                ws, ls = home_score, away_score
+            else:
+                ws, ls = home_score, _opposite_score(home_text)
             out.append(LiveGame(
                 date=dt, home_name=home_name, away_name=away_name,
                 home_score=ws, away_score=ls,
                 status="final", live_indicator=None,
             ))
         elif away_mark == "WIN" and home_mark == "LOSS":
-            ws, ls = away_score, _opposite_score(away_text)
+            if home_score is not None:
+                ws, ls = away_score, home_score
+            else:
+                ws, ls = away_score, _opposite_score(away_text)
             out.append(LiveGame(
                 date=dt, home_name=home_name, away_name=away_name,
                 home_score=ls, away_score=ws,
@@ -213,6 +341,9 @@ def fetch_football_live() -> list[LiveGame]:
 
 
 def _opposite_score(winner_cell_text: str) -> int | None:
-    """Pull the second number from a 'TeamName WIN X-Y' cell."""
-    m = re.search(r"WIN\s+\d+\s*-\s*(\d+)", winner_cell_text)
+    """
+    Pull the loser's score from the winner's cell. Handles both
+    football's "WIN X-Y" and volleyball's "W X-Y (set scores)".
+    """
+    m = re.search(r"\b(?:WIN|W)\s+\d+\s*-\s*(\d+)", winner_cell_text)
     return int(m.group(1)) if m else None
