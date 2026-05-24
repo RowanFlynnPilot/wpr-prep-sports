@@ -202,6 +202,70 @@
   padding: 0;
 }
 
+/* New category-grouped layout used when stat_leaders carries many
+   per-player rows (MaxPreps volleyball, etc.). Each category becomes a
+   sub-section under the team header with its own top-N display. */
+.team-stats__groups {
+  display: flex;
+  flex-direction: column;
+}
+
+.team-stats__group + .team-stats__group {
+  border-top: 1px solid var(--line);
+}
+
+.team-stats__group-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0.6rem 1rem;
+  background: var(--paper);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.team-stats__group-count {
+  font-family: var(--font-numeric);
+  font-weight: 600;
+  font-size: 0.7rem;
+  letter-spacing: 0;
+  color: var(--muted-2);
+  padding: 0.05rem 0.4rem;
+  border-radius: var(--radius-sm);
+  background: var(--paper-2);
+}
+
+.team-stats__expand {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  padding: 0.55rem 1rem;
+  text-align: center;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  border-top: 1px solid var(--paper-2);
+  transition: background 0.15s ease;
+}
+.team-stats__expand:hover {
+  background: rgba(243, 240, 232, 0.6);
+  text-decoration: underline;
+}
+.team-stats__expand--collapse {
+  color: var(--muted);
+}
+
 .stat-row {
   display: grid;
   grid-template-columns: 3rem minmax(0, 1fr);

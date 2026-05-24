@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import { useParams, Navigate, Link } from "react-router-dom";
 import Layout from "../components/Layout.jsx";
 import TeamLogo from "../components/TeamLogo.jsx";
@@ -231,9 +231,46 @@ function Side({ team, school, score, won, showScore }) {
   );
 }
 
+// Default leaders shown per category before the user clicks "Show all".
+// Bound + WPH typically emit 1-3 per category, so the cap is invisible
+// for those. MaxPreps volleyball ships entire rosters (15+ rows per
+// category) which is where the collapse pays off.
+const DEFAULT_LEADERS_PER_CATEGORY = 3;
+
+// Stat-key that ranks a player within a category. Players sort by this
+// descending; rows whose value here is missing/zero sink to the bottom.
+const LEADER_KEY_BY_CATEGORY = {
+  // Volleyball — canonical keys emitted by maxpreps.py + Bound's
+  // volleyball stat lines.
+  "Kills": "KLS",
+  "Assists": "AST",
+  "Digs": "DIG",
+  "Total Blocks": "BLK",
+  "Serve Aces": "ACE",
+  // Football (Bound).
+  "Passing Yards": "YDS",
+  "Rushing Yards": "YDS",
+  "Receiving Yards": "YDS",
+  "Total Tackles": "TKL",
+  // Basketball (Bound) — both rendered categories.
+  "Points": "PTS",
+  "Rebounds": "RBD",
+  // Hockey (WPH).
+  "Hockey Points": "PTS",
+  "Hockey Goals": "G",
+  "Hockey Saves": "SV",
+};
+
 function TeamStatsCard({ label, team, school, won, lines, score, showScore }) {
+  // Per-category expand toggle. State lives on the card (one card per
+  // team) so each side can be expanded independently.
+  const [expanded, setExpanded] = useState({});
+
+  // Group by category, sort each group by its leader stat. Categories
+  // arrive in the source's natural order; preserve that.
+  const groups = useMemo(() => groupLinesByCategory(lines), [lines]);
+
   if (lines.length === 0 && !team.school_id) {
-    // Opponent we don't track and no stats — render a minimal placeholder
     return (
       <article className="team-stats team-stats--empty">
         <header className="team-stats__header">
@@ -271,14 +308,90 @@ function TeamStatsCard({ label, team, school, won, lines, score, showScore }) {
       {lines.length === 0 ? (
         <p className="team-stats__empty-note">No stats reported for this team.</p>
       ) : (
-        <ul className="team-stats__list">
-          {lines.map((line, idx) => (
-            <StatRow key={`${line.category}-${idx}`} line={line} />
-          ))}
-        </ul>
+        <div className="team-stats__groups">
+          {groups.map(({ category, lines: groupLines }) => {
+            const isOpen = expanded[category] ?? false;
+            const visible = isOpen
+              ? groupLines
+              : groupLines.slice(0, DEFAULT_LEADERS_PER_CATEGORY);
+            const hiddenCount = groupLines.length - visible.length;
+            return (
+              <div key={category} className="team-stats__group">
+                <h4 className="team-stats__group-header">
+                  <span>{category}</span>
+                  <span className="team-stats__group-count">
+                    {groupLines.length}
+                  </span>
+                </h4>
+                <ul className="team-stats__list">
+                  {visible.map((line, idx) => (
+                    <StatRow key={`${category}-${idx}`} line={line} />
+                  ))}
+                </ul>
+                {hiddenCount > 0 && (
+                  <button
+                    type="button"
+                    className="team-stats__expand"
+                    onClick={() =>
+                      setExpanded((prev) => ({
+                        ...prev,
+                        [category]: !isOpen,
+                      }))
+                    }
+                  >
+                    Show all {groupLines.length} →
+                  </button>
+                )}
+                {isOpen && groupLines.length > DEFAULT_LEADERS_PER_CATEGORY && (
+                  <button
+                    type="button"
+                    className="team-stats__expand team-stats__expand--collapse"
+                    onClick={() =>
+                      setExpanded((prev) => ({
+                        ...prev,
+                        [category]: false,
+                      }))
+                    }
+                  >
+                    ← Show top {DEFAULT_LEADERS_PER_CATEGORY}
+                  </button>
+                )}
+              </div>
+            );
+          })}
+        </div>
       )}
     </article>
   );
+}
+
+function groupLinesByCategory(lines) {
+  // Preserve category order of first appearance; sort lines within each
+  // category by the canonical leader stat, descending.
+  const order = [];
+  const buckets = new Map();
+  for (const line of lines) {
+    const cat = line.category || "Other";
+    if (!buckets.has(cat)) {
+      buckets.set(cat, []);
+      order.push(cat);
+    }
+    buckets.get(cat).push(line);
+  }
+  return order.map((cat) => {
+    const arr = [...buckets.get(cat)];
+    const key = LEADER_KEY_BY_CATEGORY[cat];
+    arr.sort((a, b) => statNum(b.stats, key) - statNum(a.stats, key));
+    return { category: cat, lines: arr };
+  });
+}
+
+function statNum(stats, key) {
+  if (!key || !stats) return -Infinity;
+  const raw = stats[key];
+  if (raw == null || raw === "") return -Infinity;
+  const n = parseFloat(String(raw).replace(/[%,]/g, ""));
+  return Number.isFinite(n) ? n : -Infinity;
 }
 
 function normalizeName(name) {
@@ -311,11 +424,22 @@ const CATEGORY_POS = {
   "Hockey Saves": "G",
 };
 
+// Canonical leader keys we add in the parser layer that duplicate a
+// more readable column (Bound/MP both expose K for kills; KLS is our
+// own normalized copy). Hide the canonical key from display so each
+// row doesn't read "K 6 · KLS 6" with the same value twice.
+const REDUNDANT_KEYS = new Set(["KLS", "AST", "DIG", "BLK", "ACE"]);
+
 function StatRow({ line }) {
   const stats = line.stats ?? {};
-  // line.position (source-supplied, e.g. hockey "F"/"D"/"G") wins over the
-  // category-based fallback, which only fits football today.
   const pos = line.position || CATEGORY_POS[line.category] || null;
+  // Show every stat column EXCEPT the canonical leader key when a
+  // human-friendly equivalent already exists in the same dict.
+  const visibleStats = Object.entries(stats).filter(([k]) => {
+    if (!REDUNDANT_KEYS.has(k)) return true;
+    // Hide canonical only if a friendlier alternative is present.
+    return !hasReadableEquivalent(k, stats);
+  });
   return (
     <li className={`stat-row${pos ? "" : " stat-row--no-pos"}`}>
       {pos && <span className="stat-row__pos">{pos}</span>}
@@ -326,10 +450,12 @@ function StatRow({ line }) {
             <span className="stat-row__year"> ({line.player_year})</span>
           )}
         </span>
-        <span className="stat-row__category">{line.category}</span>
+        {/* Category label only when category isn't already in the
+            surrounding group header (back-compat for sports where
+            we still flatten — drop in a follow-up). */}
       </div>
       <div className="stat-row__stats">
-        {Object.entries(stats).map(([k, v]) => (
+        {visibleStats.map(([k, v]) => (
           <span key={k} className="stat-row__stat">
             <span className="stat-row__stat-label">{k}</span>
             <span className="stat-row__stat-value">{v}</span>
@@ -338,4 +464,17 @@ function StatRow({ line }) {
       </div>
     </li>
   );
+}
+
+function hasReadableEquivalent(canon, stats) {
+  // Canonical → list of source-side column headers that would be the
+  // same value. Hide canonical only when one of these is present.
+  const equivalents = {
+    KLS: ["K"],
+    AST: ["Ast"],
+    DIG: ["D"],
+    BLK: ["Tot Blks"],
+    ACE: ["A"],
+  };
+  return (equivalents[canon] ?? []).some((k) => k in stats);
 }
