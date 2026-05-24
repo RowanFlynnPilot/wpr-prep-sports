@@ -370,6 +370,20 @@ const STATE_TITLE_ROUNDS = new Set([
   "Level 4", "State Final", "State Championship",
 ]);
 
+// Tiny deterministic 0..1 hash — same key always picks the same
+// variant so a refresh doesn't shuffle the recap text under the user.
+function _seed(s) {
+  let h = 2166136261;
+  for (let i = 0; i < (s ?? "").length; i++) {
+    h ^= s.charCodeAt(i);
+    h = (h * 16777619) >>> 0;
+  }
+  return h / 0xffffffff;
+}
+function _pick(seed, choices) {
+  return choices[Math.floor(seed * choices.length) % choices.length];
+}
+
 function buildBookendOpener({
   teamGames, game, subject, oppLabel, own, opp, margin, won, tied, dateLabel,
 }) {
@@ -393,56 +407,127 @@ function buildBookendOpener({
   const isStateTitle = game.playoff && won && STATE_TITLE_ROUNDS.has(game.playoff_round ?? "");
   const isPlayoffAdvance = game.playoff && won && !isStateTitle;
 
+  const seed = _seed(game.id ?? `${dateLabel}-${oppLabel}`);
+  const score = `${own}-${opp}`;
+  const lossScore = `${opp}-${own}`;
+
   // 1. State champion — top priority. The Tigers brought home the title.
   if (isStateTitle) {
     if (Math.abs(margin) >= BLOWOUT_MARGIN) {
-      return `${subject} captured the state title with a ${own}-${opp} win over ${oppLabel} on ${dateLabel}.`;
+      return _pick(seed, [
+        `${subject} captured the state title with a ${score} win over ${oppLabel} on ${dateLabel}.`,
+        `${subject} ran away with the state title, ${score} over ${oppLabel} on ${dateLabel}.`,
+        `${subject} lifted the state title trophy after handling ${oppLabel} ${score} on ${dateLabel}.`,
+        `${subject} cruised to the state title, beating ${oppLabel} ${score} on ${dateLabel}.`,
+      ]);
     }
     if (Math.abs(margin) <= CLOSE_MARGIN) {
-      return `${subject} survived ${oppLabel} ${own}-${opp} on ${dateLabel} to claim the state title.`;
+      return _pick(seed, [
+        `${subject} survived ${oppLabel} ${score} on ${dateLabel} to claim the state title.`,
+        `${subject} outlasted ${oppLabel} ${score} on ${dateLabel} to win the state title.`,
+        `${subject} edged ${oppLabel} ${score} on ${dateLabel} for the state title.`,
+        `${subject} held off ${oppLabel} ${score} on ${dateLabel} to lift the state title.`,
+        `${subject} won the state title in a thriller, ${score} over ${oppLabel} on ${dateLabel}.`,
+      ]);
     }
-    return `${subject} beat ${oppLabel} ${own}-${opp} on ${dateLabel} to claim the state title.`;
+    return _pick(seed, [
+      `${subject} beat ${oppLabel} ${score} on ${dateLabel} to claim the state title.`,
+      `${subject} took down ${oppLabel} ${score} on ${dateLabel} for the state title.`,
+      `${subject} captured the state title with a ${score} win over ${oppLabel} on ${dateLabel}.`,
+    ]);
   }
 
   // 2. Playoff exit — season ends.
   if (isPlayoffExit) {
     const roundLabel = playoffRoundLabel(game);
     if (Math.abs(margin) <= CLOSE_MARGIN) {
-      return `${subject}' season ended in heartbreak — a ${opp}-${own} ${roundLabel} loss to ${oppLabel} on ${dateLabel}.`;
+      return _pick(seed, [
+        `${subject}' season ended in heartbreak — a ${lossScore} ${roundLabel} loss to ${oppLabel} on ${dateLabel}.`,
+        `${subject}' run ended with a gut-punch ${lossScore} loss to ${oppLabel} in the ${roundLabel} on ${dateLabel}.`,
+        `${subject} came up just short, falling ${lossScore} to ${oppLabel} in the ${roundLabel} on ${dateLabel}.`,
+        `${subject}' season closed with a ${lossScore} ${roundLabel} loss to ${oppLabel} on ${dateLabel}, decided by the final possession.`,
+      ]);
     }
     if (Math.abs(margin) >= BLOWOUT_MARGIN) {
-      return `${subject}' season ended with a ${opp}-${own} ${roundLabel} loss to ${oppLabel} on ${dateLabel}.`;
+      return _pick(seed, [
+        `${subject}' season ended with a ${lossScore} ${roundLabel} loss to ${oppLabel} on ${dateLabel}.`,
+        `${subject}' run came to an end at the hands of ${oppLabel}, ${lossScore} in the ${roundLabel} on ${dateLabel}.`,
+        `${subject} bowed out of the postseason with a ${lossScore} loss to ${oppLabel} in the ${roundLabel} on ${dateLabel}.`,
+      ]);
     }
-    return `${subject}' season came to a close with a ${opp}-${own} loss to ${oppLabel} in the ${roundLabel} on ${dateLabel}.`;
+    return _pick(seed, [
+      `${subject}' season came to a close with a ${lossScore} loss to ${oppLabel} in the ${roundLabel} on ${dateLabel}.`,
+      `${subject}' postseason ended in the ${roundLabel} on ${dateLabel}, ${lossScore} to ${oppLabel}.`,
+      `${subject} fell to ${oppLabel} ${lossScore} in the ${roundLabel} on ${dateLabel}, ending the season.`,
+    ]);
   }
 
   // 3. Last regular-season game — sets up the playoff or ends the year.
   if (isLastReg) {
     if (won) {
       if (Math.abs(margin) >= BLOWOUT_MARGIN) {
-        return `${subject} closed out the regular season strong with a ${own}-${opp} drubbing of ${oppLabel} on ${dateLabel}.`;
+        return _pick(seed, [
+          `${subject} closed out the regular season strong with a ${score} drubbing of ${oppLabel} on ${dateLabel}.`,
+          `${subject} put a bow on the regular season by routing ${oppLabel} ${score} on ${dateLabel}.`,
+          `${subject} wrapped the regular season with a ${score} blowout of ${oppLabel} on ${dateLabel}.`,
+          `${subject} ended the regular season on a high note, blasting ${oppLabel} ${score} on ${dateLabel}.`,
+        ]);
       }
       if (Math.abs(margin) <= CLOSE_MARGIN) {
-        return `${subject} edged ${oppLabel} ${own}-${opp} on ${dateLabel} to cap the regular season.`;
+        return _pick(seed, [
+          `${subject} edged ${oppLabel} ${score} on ${dateLabel} to cap the regular season.`,
+          `${subject} held off ${oppLabel} ${score} on ${dateLabel} to close the regular season.`,
+          `${subject} squeaked past ${oppLabel} ${score} in the regular-season finale on ${dateLabel}.`,
+        ]);
       }
-      return `${subject} closed the regular season with a ${own}-${opp} win over ${oppLabel} on ${dateLabel}.`;
+      return _pick(seed, [
+        `${subject} closed the regular season with a ${score} win over ${oppLabel} on ${dateLabel}.`,
+        `${subject} finished the regular season by beating ${oppLabel} ${score} on ${dateLabel}.`,
+        `${subject} capped the regular season with a ${score} win over ${oppLabel} on ${dateLabel}.`,
+      ]);
     }
     if (Math.abs(margin) >= BLOWOUT_MARGIN) {
-      return `${subject} stumbled into the postseason with a ${opp}-${own} loss to ${oppLabel} on ${dateLabel}.`;
+      return _pick(seed, [
+        `${subject} stumbled into the postseason with a ${lossScore} loss to ${oppLabel} on ${dateLabel}.`,
+        `${subject} limped to the playoffs after a ${lossScore} loss to ${oppLabel} on ${dateLabel}.`,
+        `${subject} closed the regular season on a sour note, falling ${lossScore} to ${oppLabel} on ${dateLabel}.`,
+      ]);
     }
-    return `${subject} closed the regular season with a ${opp}-${own} loss to ${oppLabel} on ${dateLabel}.`;
+    return _pick(seed, [
+      `${subject} closed the regular season with a ${lossScore} loss to ${oppLabel} on ${dateLabel}.`,
+      `${subject} finished the regular season with a ${lossScore} setback to ${oppLabel} on ${dateLabel}.`,
+      `${subject} dropped the regular-season finale to ${oppLabel} ${lossScore} on ${dateLabel}.`,
+    ]);
   }
 
   // 4. Playoff advancement (won, not the state title) — adds drive.
   if (isPlayoffAdvance) {
     const roundLabel = playoffRoundLabel(game);
     if (Math.abs(margin) >= BLOWOUT_MARGIN) {
-      return `${subject} rolled past ${oppLabel} ${own}-${opp} in the ${roundLabel} on ${dateLabel}.`;
+      return _pick(seed, [
+        `${subject} rolled past ${oppLabel} ${score} in the ${roundLabel} on ${dateLabel}.`,
+        `${subject} steamrolled ${oppLabel} ${score} in the ${roundLabel} on ${dateLabel}.`,
+        `${subject} ran away from ${oppLabel} ${score} in the ${roundLabel} on ${dateLabel}.`,
+        `${subject} blew past ${oppLabel} ${score} in the ${roundLabel} on ${dateLabel}.`,
+        `${subject} buried ${oppLabel} ${score} in the ${roundLabel} on ${dateLabel}.`,
+      ]);
     }
     if (Math.abs(margin) <= CLOSE_MARGIN) {
-      return `${subject} survived ${oppLabel} ${own}-${opp} in the ${roundLabel} on ${dateLabel} to advance.`;
+      return _pick(seed, [
+        `${subject} survived ${oppLabel} ${score} in the ${roundLabel} on ${dateLabel} to advance.`,
+        `${subject} held off ${oppLabel} ${score} in the ${roundLabel} on ${dateLabel} to advance.`,
+        `${subject} outlasted ${oppLabel} ${score} in the ${roundLabel} on ${dateLabel}.`,
+        `${subject} escaped ${oppLabel} ${score} in the ${roundLabel} on ${dateLabel} to advance.`,
+        `${subject} got past ${oppLabel} ${score} in the ${roundLabel} on ${dateLabel}.`,
+        `${subject} edged ${oppLabel} ${score} in the ${roundLabel} on ${dateLabel} to keep the season alive.`,
+      ]);
     }
-    return `${subject} beat ${oppLabel} ${own}-${opp} in the ${roundLabel} on ${dateLabel} to advance.`;
+    return _pick(seed, [
+      `${subject} beat ${oppLabel} ${score} in the ${roundLabel} on ${dateLabel} to advance.`,
+      `${subject} took down ${oppLabel} ${score} in the ${roundLabel} on ${dateLabel}.`,
+      `${subject} knocked off ${oppLabel} ${score} in the ${roundLabel} on ${dateLabel} to move on.`,
+      `${subject} ousted ${oppLabel} ${score} in the ${roundLabel} on ${dateLabel}.`,
+    ]);
   }
 
   return null;
