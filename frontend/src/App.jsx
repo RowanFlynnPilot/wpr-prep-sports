@@ -24,6 +24,7 @@ import "./styles/ThisWeekGrid.css";
 import "./styles/MonthCalendar.css";
 import "./styles/PlayerOfWeek.css";
 import "./styles/TournamentBracket.css";
+import "./styles/ScoringSummary.css";
 import "./styles/TeamPage.css";
 import "./styles/Sponsor.css";
 import "./styles/SeasonLeaders.css";

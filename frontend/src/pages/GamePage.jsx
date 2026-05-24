@@ -4,6 +4,7 @@ import Layout from "../components/Layout.jsx";
 import TeamLogo from "../components/TeamLogo.jsx";
 import TeamLink from "../components/TeamLink.jsx";
 import Sponsor from "../components/Sponsor.jsx";
+import ScoringSummary from "../components/ScoringSummary.jsx";
 import { schoolFor } from "../utils/schools.js";
 import { formatGameDay, formatGameDate, formatGameTime } from "../utils/dates.js";
 import { recapForGame } from "../utils/recap.js";
@@ -144,6 +145,8 @@ export default function GamePage({ dataset, schoolIndex, sportConfig }) {
         variant="inline"
         className="game-page__sponsor"
       />
+
+      <ScoringSummary game={game} schoolIndex={schoolIndex} />
 
       <section>
         <div className="section-header">

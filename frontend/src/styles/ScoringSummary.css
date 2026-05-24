@@ -1,0 +1,198 @@
+.scoring-summary {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.scoring-summary__header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.85rem 1rem;
+  background: var(--ink);
+  color: #fff;
+  border-bottom: 3px solid var(--accent);
+}
+.scoring-summary__header h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin: 0;
+}
+.scoring-summary__hint {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.scoring-summary__period + .scoring-summary__period {
+  border-top: 1px solid var(--line);
+}
+
+.scoring-summary__period-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  background: var(--paper);
+  border-bottom: 1px solid var(--paper-2);
+}
+.scoring-summary__period-label {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.scoring-summary__score-cols {
+  display: inline-flex;
+  gap: 0.5rem;
+}
+.scoring-summary__abbr {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.6rem;
+  height: 1.4rem;
+  padding: 0 0.4rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  border-radius: var(--radius-sm);
+  color: #fff;
+}
+.scoring-summary__abbr--away { background: var(--away-color); }
+.scoring-summary__abbr--home { background: var(--home-color); }
+
+.scoring-summary__goals {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.scoring-summary__goal {
+  display: grid;
+  grid-template-columns: 3rem 4px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0 0.75rem;
+  padding: 0.55rem 1rem;
+  border-top: 1px solid var(--paper-2);
+  position: relative;
+}
+.scoring-summary__goal:first-child { border-top: none; }
+.scoring-summary__goal:hover { background: rgba(243, 240, 232, 0.4); }
+
+.scoring-summary__time {
+  font-family: var(--font-numeric);
+  font-weight: 600;
+  font-size: 0.85rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+}
+
+.scoring-summary__rail {
+  width: 4px;
+  align-self: stretch;
+  border-radius: 2px;
+}
+.scoring-summary__goal--away .scoring-summary__rail { background: var(--away-color); }
+.scoring-summary__goal--home .scoring-summary__rail { background: var(--home-color); }
+
+.scoring-summary__play {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+}
+.scoring-summary__scorer {
+  display: inline-flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+.scoring-summary__jersey {
+  font-family: var(--font-numeric);
+  font-weight: 700;
+  font-size: 0.78rem;
+  color: var(--muted-2);
+}
+.scoring-summary__scorer-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--ink);
+}
+.scoring-summary__strength {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  padding: 0.12rem 0.35rem;
+  border-radius: var(--radius-sm);
+}
+.scoring-summary__strength--pp {
+  color: #b45309;
+  background: rgba(245, 158, 11, 0.18);
+}
+.scoring-summary__strength--sh {
+  color: #15803d;
+  background: rgba(22, 163, 74, 0.18);
+}
+.scoring-summary__strength--en {
+  color: #b91c1c;
+  background: rgba(220, 38, 38, 0.15);
+}
+
+.scoring-summary__assists {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+.scoring-summary__a-jersey {
+  font-family: var(--font-numeric);
+  color: var(--muted-2);
+  margin-right: 0.2rem;
+}
+
+.scoring-summary__running {
+  display: inline-flex;
+  gap: 0.5rem;
+  font-family: var(--font-numeric);
+  font-weight: 700;
+  font-size: 0.95rem;
+  font-variant-numeric: tabular-nums;
+}
+.scoring-summary__running-num {
+  min-width: 2.6rem;
+  text-align: center;
+  padding: 0.15rem 0.4rem;
+  border-radius: var(--radius-sm);
+  background: var(--paper);
+  color: var(--ink);
+}
+.scoring-summary__goal--away .scoring-summary__running-num--away {
+  background: var(--away-color);
+  color: #fff;
+}
+.scoring-summary__goal--home .scoring-summary__running-num--home {
+  background: var(--home-color);
+  color: #fff;
+}
+
+@media (max-width: 520px) {
+  .scoring-summary__goal {
+    grid-template-columns: 2.5rem 4px minmax(0, 1fr);
+    gap: 0 0.5rem;
+  }
+  .scoring-summary__running {
+    grid-column: 1 / -1;
+    margin-top: 0.25rem;
+    justify-content: flex-end;
+  }
+}
