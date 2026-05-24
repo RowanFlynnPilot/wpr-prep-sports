@@ -1,0 +1,226 @@
+.month-cal {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.month-cal__header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background: var(--ink);
+  color: #fff;
+  border-bottom: 3px solid var(--accent);
+}
+.month-cal__title {
+  flex: 1;
+  text-align: center;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin: 0;
+}
+.month-cal__nav {
+  width: 2rem;
+  height: 2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.08);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background var(--t-fast) var(--ease), color var(--t-fast) var(--ease);
+}
+.month-cal__nav:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+.month-cal__weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+}
+.month-cal__weekdays > span {
+  padding: 0.45rem 0;
+  text-align: center;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+.month-cal__grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-auto-rows: minmax(54px, auto);
+  gap: 1px;
+  background: var(--paper-2);
+}
+
+.month-cal__cell {
+  background: #fff;
+  border: none;
+  padding: 0.4rem 0.45rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.25rem;
+  font: inherit;
+  text-align: left;
+  cursor: default;
+  transition: background var(--t-fast) var(--ease);
+  min-height: 54px;
+}
+.month-cal__cell--out {
+  background: var(--paper);
+  color: var(--muted-2);
+}
+.month-cal__cell--has-games {
+  cursor: pointer;
+}
+.month-cal__cell--has-games:hover {
+  background: rgba(245, 158, 11, 0.08);
+}
+.month-cal__cell--today {
+  background: rgba(245, 158, 11, 0.12);
+}
+.month-cal__cell--today .month-cal__day-num {
+  color: var(--accent-700);
+  font-weight: 700;
+}
+.month-cal__cell--selected {
+  background: var(--ink);
+  color: #fff;
+}
+.month-cal__cell--selected .month-cal__day-num,
+.month-cal__cell--selected .month-cal__count {
+  color: #fff;
+}
+.month-cal__cell--selected .month-cal__count {
+  background: var(--accent);
+}
+
+.month-cal__day-num {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--ink);
+  line-height: 1;
+}
+.month-cal__cell--out .month-cal__day-num { color: var(--muted-2); }
+
+.month-cal__count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.4rem;
+  height: 1.1rem;
+  padding: 0 0.35rem;
+  border-radius: 999px;
+  background: rgba(14, 15, 18, 0.85);
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.7rem;
+  line-height: 1;
+}
+
+/* Day detail panel — slides under the grid when a day is selected. */
+.month-cal__sheet {
+  border-top: 1px solid var(--line);
+  background: var(--paper);
+  padding: 0.8rem 1rem 1rem;
+}
+.month-cal__sheet-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+.month-cal__sheet-header h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  margin: 0;
+}
+.month-cal__sheet-close {
+  background: transparent;
+  border: none;
+  font-size: 1.6rem;
+  line-height: 1;
+  color: var(--muted);
+  cursor: pointer;
+  padding: 0 0.3rem;
+}
+.month-cal__sheet-close:hover { color: var(--ink); }
+
+.month-cal__sheet-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.35rem;
+}
+.month-cal__sheet-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.5rem 0.7rem;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  color: var(--ink);
+  transition: background var(--t-fast) var(--ease),
+              border-color var(--t-fast) var(--ease);
+}
+.month-cal__sheet-link:hover {
+  background: rgba(245, 158, 11, 0.08);
+  border-color: var(--accent);
+}
+.month-cal__sheet-matchup {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 0.92rem;
+  line-height: 1.2;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.month-cal__sheet-sep {
+  color: var(--muted-2);
+  font-weight: 400;
+  margin: 0 0.15rem;
+}
+.month-cal__sheet-result {
+  font-family: var(--font-numeric);
+  font-weight: 700;
+  font-size: 0.92rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--accent-700);
+  white-space: nowrap;
+}
+
+@media (max-width: 520px) {
+  .month-cal__grid { grid-auto-rows: minmax(44px, auto); }
+  .month-cal__cell { padding: 0.3rem; min-height: 44px; }
+  .month-cal__day-num { font-size: 0.8rem; }
+  .month-cal__count { min-width: 1.2rem; height: 1rem; font-size: 0.65rem; }
+}
