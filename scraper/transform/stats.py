@@ -295,104 +295,112 @@ def aggregate_volleyball_season_stats(
     publishes). Rolling our own from the per-game lines we already
     extracted avoids the dependency and works year-round.
 
-    Strategy: for each (school_id, player_name, category) tuple across
-    every finalized volleyball game, sum the canonical stat key
-    (KLS/AST/DIG/BLK/ACE) and count games played. Emit one SeasonStat
-    row per (player, category). Replaces any existing volleyball season
-    rows so re-runs are idempotent.
+    Output shape mirrors what Bound used to emit so the frontend's
+    sportConfig.stats.categories pickup works unchanged: one
+    SeasonStat row per (school_id, player, raw category) where raw
+    category is "Volleyball Offense" / "Volleyball Defense" /
+    "Volleyball Serving". The stats dict aggregates every canonical
+    key relevant to that raw category (KLS+AST+ATT for offense,
+    DIG+BLK for defense, ACE for serving).
     """
-    if dataset.meta.sport != Sport.VOLLEYBALL:
+    if Sport.VOLLEYBALL not in (dataset.meta.sports_included or []):
         return dataset
 
-    # Canonical category → stat key emitted by maxpreps.py (matches what
-    # Bound emits for volleyball stat_leaders as well).
-    leader_key_for = {
-        "Kills": "KLS",
-        "Assists": "AST",
-        "Digs": "DIG",
-        "Total Blocks": "BLK",
-        "Serve Aces": "ACE",
+    # Per-game StatLine.category → (raw season category, [(canonical
+    # stat key, source key in per-game stats dict)...]) — the keys we
+    # accumulate when this category shows up for a player in a game.
+    CATEGORY_MAP = {
+        "Kills":        ("Volleyball Offense",  [("KLS", "KLS"), ("ATT", "Att"), ("E", "E")]),
+        "Assists":      ("Volleyball Offense",  [("AST", "AST")]),
+        "Digs":         ("Volleyball Defense",  [("DIG", "DIG")]),
+        "Total Blocks": ("Volleyball Defense",  [("BLK", "BLK")]),
+        "Serve Aces":   ("Volleyball Serving",  [("ACE", "ACE")]),
     }
 
     finals = [g for g in dataset.games if g.status == GameStatus.FINAL]
     if not finals:
         return dataset
 
-    # (school_id, player_name, category) → running totals
+    # (school_id, player_name, raw_category) → {canon_key: total, "GP": games_seen}
     bucket: dict[tuple[str, str, str], dict] = {}
     for game in finals:
-        # Track distinct games-played per player; a player who registers
-        # in multiple categories in one game should still count as one GP.
-        gp_seen: set[tuple[str, str]] = set()
+        # GP per (player, raw_cat) — a player who registers in BOTH Kills
+        # and Assists rows in one game still counts as one GP for offense.
+        gp_seen: set[tuple[str, str, str]] = set()
         for line in game.stat_leaders or []:
-            if line.category not in leader_key_for:
+            mapping = CATEGORY_MAP.get(line.category)
+            if not mapping:
                 continue
             school_id = line.team_school_id or ""
             if not school_id:
                 continue
-            key = (school_id, line.player_name, line.category)
-            stat_key = leader_key_for[line.category]
-            raw_val = (line.stats or {}).get(stat_key, "0")
-            try:
-                val = float(str(raw_val).replace(",", ""))
-            except ValueError:
-                continue
+            raw_cat, key_pairs = mapping
+            key = (school_id, line.player_name, raw_cat)
             entry = bucket.setdefault(
                 key,
                 {
                     "school_id": school_id,
                     "player_name": line.player_name,
                     "player_year": line.player_year,
-                    "category": line.category,
-                    "stat_key": stat_key,
-                    "total": 0.0,
+                    "raw_category": raw_cat,
+                    "totals": {},
                     "gp": 0,
                 },
             )
-            # Most recent player_year wins (handles mid-season class
-            # corrections; rare but worth tolerating).
             if line.player_year and not entry["player_year"]:
                 entry["player_year"] = line.player_year
-            entry["total"] += val
-            gp_id = (school_id, line.player_name)
+            gp_id = (school_id, line.player_name, raw_cat)
             if gp_id not in gp_seen:
                 gp_seen.add(gp_id)
                 entry["gp"] += 1
+            for canon, src_key in key_pairs:
+                raw_val = (line.stats or {}).get(src_key)
+                if raw_val is None:
+                    continue
+                try:
+                    val = float(str(raw_val).replace(",", ""))
+                except ValueError:
+                    continue
+                entry["totals"][canon] = entry["totals"].get(canon, 0.0) + val
 
-    # Replace prior volleyball rows (preserve other sports just in case
-    # this dataset is ever multi-sport — currently it isn't).
+    # Compute derived hitting efficiency (EFF) where possible:
+    #   EFF = (KLS - E) / ATT, three decimals, with leading "." if positive
+    # — matches the MaxPreps convention.
+    for entry in bucket.values():
+        t = entry["totals"]
+        if entry["raw_category"] == "Volleyball Offense":
+            kls, errs, atts = t.get("KLS"), t.get("E"), t.get("ATT")
+            if kls is not None and atts and atts > 0:
+                eff = (kls - (errs or 0)) / atts
+                t["EFF"] = f"{eff:.3f}" if eff < 0 else f"{eff:.3f}".lstrip("0")
+
     prior = [s for s in dataset.season_stats if s.sport != Sport.VOLLEYBALL]
     new_rows: list[SeasonStat] = []
     for e in bucket.values():
-        # Format total: integer when whole, one decimal otherwise.
-        tot = e["total"]
-        if tot == int(tot):
-            tot_str = str(int(tot))
-        else:
-            tot_str = f"{tot:.1f}"
+        stats: dict[str, str] = {"GP": str(e["gp"])}
+        for k, v in e["totals"].items():
+            if isinstance(v, str):
+                stats[k] = v
+            elif v == int(v):
+                stats[k] = str(int(v))
+            else:
+                stats[k] = f"{v:.1f}"
         new_rows.append(
             SeasonStat(
                 school_id=e["school_id"],
                 sport=Sport.VOLLEYBALL,
-                category=e["category"],
+                category=e["raw_category"],
                 player_name=e["player_name"],
                 player_year=e["player_year"],
-                stats={
-                    e["stat_key"]: tot_str,
-                    "GP": str(e["gp"]),
-                },
+                stats=stats,
             )
         )
 
-    # Drop the team-only Bound rows ("Volleyball Offense" / "Defense" /
-    # "Serving" with player_name="Team") — they coexist awkwardly with
-    # the per-player rows in the leaderboard UI. The per-player data is
-    # strictly better.
     dataset.season_stats = prior + new_rows
     if console:
         console.print(
             f"[green]Volleyball season stats:[/green] aggregated "
-            f"{len(new_rows)} player-category rows from {len(finals)} games"
+            f"{len(new_rows)} player-rows from {len(finals)} games"
         )
     return dataset
 
