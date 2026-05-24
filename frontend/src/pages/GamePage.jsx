@@ -73,9 +73,12 @@ export default function GamePage({ dataset, schoolIndex, sportConfig }) {
 
   const breadcrumb = (
     <>
-      <Link to={sportPrefix}>All Games</Link>
-      <span aria-hidden="true"> › </span>
-      <span>
+      <Link to={sportPrefix} className="breadcrumb__back">
+        <span aria-hidden="true" className="breadcrumb__back-arrow">‹</span>
+        Back to {sportConfig?.label ?? "Games"}
+      </Link>
+      <span aria-hidden="true" className="breadcrumb__sep">·</span>
+      <span className="breadcrumb__current">
         {game.away.name} {isFinal ? `${awayScore}-${homeScore}` : "vs"} {game.home.name}
       </span>
     </>

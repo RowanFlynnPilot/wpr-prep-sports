@@ -1,4 +1,8 @@
 .breadcrumb {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
   font-family: var(--font-display);
   font-size: 0.75rem;
   letter-spacing: 0.08em;
@@ -11,6 +15,43 @@
   border-bottom-color: transparent;
 }
 .breadcrumb a:hover { color: var(--ink); border-bottom-color: currentColor; }
+
+/* Back-link pill — the first breadcrumb entry on game/team detail
+   pages, distinguishable as a one-tap return action. */
+.breadcrumb__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.8rem 0.35rem 0.7rem;
+  background: #fff;
+  border: 1px solid var(--line) !important;
+  border-radius: 999px;
+  color: var(--ink) !important;
+  font-weight: 600;
+  text-decoration: none !important;
+  transition: background var(--t-fast) var(--ease),
+              border-color var(--t-fast) var(--ease),
+              color var(--t-fast) var(--ease),
+              transform var(--t-fast) var(--ease);
+}
+.breadcrumb__back:hover,
+.breadcrumb__back:focus-visible {
+  background: var(--ink);
+  border-color: var(--ink) !important;
+  color: #fff !important;
+  transform: translateX(-1px);
+}
+.breadcrumb__back-arrow {
+  font-size: 1.1em;
+  line-height: 1;
+  font-weight: 700;
+}
+.breadcrumb__sep {
+  color: var(--muted-2);
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.breadcrumb__current { color: var(--muted); }
 
 .team-hero {
   display: grid;

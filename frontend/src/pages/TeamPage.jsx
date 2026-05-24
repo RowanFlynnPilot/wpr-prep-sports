@@ -72,9 +72,12 @@ export default function TeamPage({ dataset, schoolIndex, sponsors, sportConfig }
 
   const breadcrumb = (
     <>
-      <Link to={sportPrefix}>All Teams</Link>
-      <span aria-hidden="true"> › </span>
-      <span>{school.name}</span>
+      <Link to={sportPrefix} className="breadcrumb__back">
+        <span aria-hidden="true" className="breadcrumb__back-arrow">‹</span>
+        Back to {sportConfig?.label ?? "Teams"}
+      </Link>
+      <span aria-hidden="true" className="breadcrumb__sep">·</span>
+      <span className="breadcrumb__current">{school.name}</span>
     </>
   );
 
