@@ -378,8 +378,21 @@ def _parse_result(
     if not m:
         return None, None, GameStatus.SCHEDULED
 
+    win = m.group(1).upper() == "W"
     owner_pts = int(m.group(2))
     opp_pts = int(m.group(3))
+
+    # WIAA isn't internally consistent about score ordering. Regular-
+    # season rows use "<owner>-<opp>" (loser-first for losses), but
+    # playoff rows often render as "<opp>-<owner>" (winner-first) when
+    # the row owner is the away team. Detect the swap by checking the
+    # W/L letter against the score ordering: if marked L but owner_pts
+    # > opp_pts (which would imply a win), the digits are reversed.
+    # Same in reverse for W with owner_pts < opp_pts.
+    if owner_pts != opp_pts:
+        owner_won = owner_pts > opp_pts
+        if owner_won != win:
+            owner_pts, opp_pts = opp_pts, owner_pts
 
     if owner_school_id == home_id:
         return owner_pts, opp_pts, GameStatus.FINAL
