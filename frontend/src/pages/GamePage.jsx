@@ -160,7 +160,7 @@ export default function GamePage({ dataset, schoolIndex, sportConfig }) {
           <h2>Game Stats</h2>
           <span className="section-header__hint">
             {game.stat_leaders?.length
-              ? `${game.stat_leaders.length} stat leaders · via Bound`
+              ? `${game.stat_leaders.length} stat leaders${statsSourceLabel(game) ? ` · via ${statsSourceLabel(game)}` : ""}`
               : "No stats available for this game"}
           </span>
         </div>
@@ -277,6 +277,18 @@ function TeamStatsCard({ label, team, school, won, lines, score, showScore }) {
 
 function normalizeName(name) {
   return (name || "").replace(/\s+/g, " ").trim().toLowerCase();
+}
+
+// Pretty label for the stats provider. WIAA gives schedule/scores, never
+// stats, so strip it; whatever remains is the stats source.
+const SOURCE_LABELS = {
+  bound: "Bound",
+  wisconsinprephockey: "Wisconsin Prep Hockey",
+};
+function statsSourceLabel(game) {
+  const stats = (game.sources ?? []).filter((s) => s !== "wiaa");
+  if (stats.length === 0) return null;
+  return stats.map((s) => SOURCE_LABELS[s] ?? s).join(" / ");
 }
 
 // Only categories whose position is fully determined by the category
