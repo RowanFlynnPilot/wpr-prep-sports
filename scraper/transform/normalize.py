@@ -132,7 +132,14 @@ def build_dataset(
             seen_in_source[base_id] = count
             if count > 1:
                 game = game.model_copy(update={"id": f"{base_id}-{count}"})
-            games.setdefault(game.id, game)
+            # Dedup cross-source. When the same game appears on both teams'
+            # schedules, validate that the score sides agree — disagreement
+            # signals a parser bug (which we hit before in _parse_result).
+            existing = games.get(game.id)
+            if existing is None:
+                games[game.id] = game
+            else:
+                _warn_if_scores_disagree(existing, game)
 
     games_list = sorted(games.values(), key=lambda g: g.date)
     standings = _build_standings(
@@ -328,6 +335,25 @@ def _parse_datetime(date_iso: str, time_str: str | None) -> datetime | None:
     return d.replace(hour=hour, minute=minute, tzinfo=CENTRAL)
 
 
+def _warn_if_scores_disagree(a: Game, b: Game) -> None:
+    """
+    When the same game appears in two teams' schedules, the parsed
+    home/away scores should match. Disagreement means we corrupted one
+    of them somewhere upstream — print to stderr so a scrape run won't
+    silently ship inconsistent data.
+    """
+    if a.status != GameStatus.FINAL or b.status != GameStatus.FINAL:
+        return
+    if a.home.score == b.home.score and a.away.score == b.away.score:
+        return
+    import sys
+    print(
+        f"[normalize] WARN score mismatch on {a.id}: "
+        f"a={a.away.score}-{a.home.score} vs b={b.away.score}-{b.home.score}",
+        file=sys.stderr,
+    )
+
+
 def _parse_result(
     result: str | None,
     *,
@@ -335,29 +361,30 @@ def _parse_result(
     home_id: str,
     away_id: str,
 ) -> tuple[int | None, int | None, GameStatus]:
-    """WIAA prints results from the owning team's perspective; flip to home/away."""
+    """
+    WIAA prints results from the owning team's perspective; rewrite to
+    absolute home/away scores. The W/L letter only confirms which side
+    won — it does NOT change which team is home or away. (Prior bug:
+    the score assignment was conditional on win/loss, which silently
+    reversed every game the owning team lost.)
+
+    Format we parse: "W 30-6" / "L 14-21" — the first number is the
+    owning team's score, the second is the opponent's, regardless of
+    outcome.
+    """
     if not result:
         return None, None, GameStatus.SCHEDULED
     m = _RESULT_RE.match(result.strip())
     if not m:
         return None, None, GameStatus.SCHEDULED
 
-    win = m.group(1).upper() == "W"
     owner_pts = int(m.group(2))
     opp_pts = int(m.group(3))
 
     if owner_school_id == home_id:
-        return (
-            owner_pts if win else opp_pts,
-            opp_pts if win else owner_pts,
-            GameStatus.FINAL,
-        )
+        return owner_pts, opp_pts, GameStatus.FINAL
     if owner_school_id == away_id:
-        return (
-            opp_pts if win else owner_pts,
-            owner_pts if win else opp_pts,
-            GameStatus.FINAL,
-        )
+        return opp_pts, owner_pts, GameStatus.FINAL
     return None, None, GameStatus.FINAL
 
 
