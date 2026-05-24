@@ -20,9 +20,10 @@ from pathlib import Path
 from rich.console import Console
 
 from config.loader import ensure_org_ids, load_manifest, save_manifest
-from output.writer import write_dataset
+from output.writer import read_dataset, write_dataset
 from sources import wiaa, wph
 from transform.normalize import build_dataset, build_name_index_for_manifest
+from transform.live import merge_live_football
 from transform.stats import (
     build_wph_roster_index,
     merge_bound_stats,
@@ -56,6 +57,15 @@ def parse_args() -> argparse.Namespace:
         action="store_true",
         help="Skip the Bound stats-merge phase (useful for fast iteration).",
     )
+    parser.add_argument(
+        "--live",
+        action="store_true",
+        help=(
+            "Live-only mode: skip the full WIAA schedule re-scrape, just "
+            "read the existing dataset and merge live scores from "
+            "halftime/ScoreCenter. ~10s vs ~5min for a full scrape."
+        ),
+    )
     return parser.parse_args()
 
 
@@ -68,9 +78,38 @@ def main() -> int:
         )
         return 1
 
-    console.print(f"[bold]Scraping[/bold] sport={args.sport} season={args.season}")
-
     manifest = load_manifest()
+
+    # ---- Live mode: read existing dataset, merge live scores, write back.
+    # Skips the full WIAA per-team scrape (5+ min) and the stats merges
+    # (also several minutes) — used by the high-frequency cron during
+    # game windows.
+    if args.live:
+        if args.sport != "football":
+            console.print(
+                f"[yellow]--live currently only supports football "
+                f"(got {args.sport}); other sports' live endpoints differ "
+                f"and aren't wired yet.[/yellow]"
+            )
+            return 0
+        dataset = read_dataset(args.sport, DATA_DIR)
+        if dataset is None:
+            console.print(
+                f"[red]--live requires an existing dataset for {args.sport}; "
+                f"run a full scrape first.[/red]"
+            )
+            return 1
+        dataset = merge_live_football(dataset, manifest=manifest, console=console)
+        # Bump meta.last_updated so the StaleBanner / freshness pill on the
+        # frontend reflects the live cron run, not the last full scrape.
+        from datetime import datetime, timezone
+        dataset.meta.last_updated = datetime.now(timezone.utc)
+        if not args.dry_run:
+            write_dataset(dataset, DATA_DIR)
+            console.print(f"[green]Wrote live updates to {DATA_DIR}[/green]")
+        return 0
+
+    console.print(f"[bold]Scraping[/bold] sport={args.sport} season={args.season}")
     console.print(f"Loaded {len(manifest.schools)} schools from manifest")
 
     targets = manifest.schools

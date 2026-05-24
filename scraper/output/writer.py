@@ -66,3 +66,34 @@ def _write_json(path: Path, data: object) -> None:
     with path.open("w", encoding="utf-8") as f:
         json.dump(data, f, indent=2, ensure_ascii=False, default=str)
         f.write("\n")
+
+
+def read_dataset(sport: str, out_dir: Path) -> Dataset | None:
+    """
+    Symmetric reader of write_dataset. Returns None when files don't
+    exist (e.g. a sport that hasn't been scraped yet); used by the
+    --live fast path which only updates existing data, never seeds it.
+    """
+    from models.schema import Game, Meta, School, SeasonStat, Standing  # local import to avoid cycles
+
+    sport_dir = out_dir / sport
+    if not sport_dir.exists():
+        return None
+    schools_path = out_dir / "schools.json"
+    meta_path = sport_dir / "meta.json"
+    games_path = sport_dir / "games.json"
+    standings_path = sport_dir / "standings.json"
+    season_path = sport_dir / "season_stats.json"
+    if not (meta_path.exists() and games_path.exists()):
+        return None
+
+    def _load(p):
+        return json.loads(p.read_text(encoding="utf-8")) if p.exists() else []
+
+    return Dataset(
+        meta=Meta(**_load(meta_path)),
+        schools=[School(**s) for s in _load(schools_path)],
+        games=[Game(**g) for g in _load(games_path)],
+        standings=[Standing(**s) for s in _load(standings_path)],
+        season_stats=[SeasonStat(**r) for r in _load(season_path)],
+    )
