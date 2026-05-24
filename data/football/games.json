@@ -78,7 +78,8 @@
           "TKL": "7.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-08-21-superior-at-wausau-west",
@@ -211,7 +212,8 @@
           "SKS": "1.5"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-08-21-dc-everest-at-rice-lake",
@@ -221,13 +223,13 @@
     "home": {
       "school_id": "rice-lake",
       "name": "Rice Lake",
-      "score": 25,
+      "score": 30,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_c8efa1ca-c48f-42d4-bc7c-6918f400a3a9.jpg"
     },
     "away": {
       "school_id": "dc-everest",
       "name": "D.C. Everest",
-      "score": 30,
+      "score": 25,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_90bf6c6c-964c-48da-9f99-0df569675bce.jpg"
     },
     "status": "final",
@@ -345,7 +347,8 @@
           "SKS": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-08-21-marshfield-at-new-richmond",
@@ -355,13 +358,13 @@
     "home": {
       "school_id": "new-richmond",
       "name": "New Richmond",
-      "score": 25,
+      "score": 49,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_8d7a6b7e-4675-4b6b-a563-87adccf6cf1a.jpg"
     },
     "away": {
       "school_id": "marshfield",
       "name": "Marshfield",
-      "score": 49,
+      "score": 25,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_deadd1c8-aaca-4c5f-b1f8-6e7fced8f9b6.jpg"
     },
     "status": "final",
@@ -477,7 +480,8 @@
           "TFL": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-08-21-chippewa-falls-at-spash",
@@ -609,7 +613,8 @@
           "TFL": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-08-21-wisconsin-rapids-at-river-falls",
@@ -619,13 +624,13 @@
     "home": {
       "school_id": "river-falls",
       "name": "River Falls",
-      "score": 0,
+      "score": 45,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_d4fe0fc0-e338-47af-a664-b53012197324.jpg"
     },
     "away": {
       "school_id": "wisconsin-rapids",
       "name": "Wisconsin Rapids Lincoln",
-      "score": 45,
+      "score": 0,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_3209dae3-72d3-4b53-ab81-def087d7df74.jpg"
     },
     "status": "final",
@@ -637,7 +642,8 @@
     ],
     "playoff": false,
     "playoff_round": null,
-    "stat_leaders": []
+    "stat_leaders": [],
+    "scoring": []
   },
   {
     "id": "football-2025-08-21-athens-at-prentice",
@@ -719,7 +725,8 @@
           "TKL": "7.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-08-21-newman-catholic-at-florence",
@@ -825,7 +832,8 @@
           "TKL": "11.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-08-21-eau-claire-north-at-menomonie",
@@ -835,13 +843,13 @@
     "home": {
       "school_id": "menomonie",
       "name": "Menomonie",
-      "score": 32,
+      "score": 54,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_0d184c10-2571-463a-ad04-2aac88094ce7.jpg"
     },
     "away": {
       "school_id": "eau-claire-north",
       "name": "Eau Claire North",
-      "score": 54,
+      "score": 32,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_99891af1-ebd7-4c0c-baf7-d29f52e48e43.jpg"
     },
     "status": "final",
@@ -958,7 +966,8 @@
           "TKL": "8.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-08-21-hudson-at-eau-claire-memorial",
@@ -968,13 +977,13 @@
     "home": {
       "school_id": "eau-claire-memorial",
       "name": "Eau Claire Memorial",
-      "score": 37,
+      "score": 21,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_5a211470-9969-410f-af84-33daef4d080f.jpg"
     },
     "away": {
       "school_id": "hudson",
       "name": "Hudson",
-      "score": 21,
+      "score": 37,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_b5429a0f-ab7b-4a72-bcde-bb8a04b1d448.jpg"
     },
     "status": "final",
@@ -1093,7 +1102,8 @@
           "INT": "1"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-08-21-pacelli-at-manawa",
@@ -1226,7 +1236,8 @@
           "TFL": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-08-21-hurley-at-rib-lake",
@@ -1254,7 +1265,8 @@
     ],
     "playoff": false,
     "playoff_round": null,
-    "stat_leaders": []
+    "stat_leaders": [],
+    "scoring": []
   },
   {
     "id": "football-2025-08-21-chequamegon-at-phillips",
@@ -1264,13 +1276,13 @@
     "home": {
       "school_id": "phillips",
       "name": "Phillips",
-      "score": 8,
+      "score": 52,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_c254fbf5-239d-4754-b90b-89888cd71d92.jpg"
     },
     "away": {
       "school_id": "chequamegon",
       "name": "Chequamegon/Butternut/Mercer",
-      "score": 52,
+      "score": 8,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_8a762f16-f752-446d-954d-5b2377aac421.jpg"
     },
     "status": "final",
@@ -1387,7 +1399,8 @@
           "TFL": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-08-21-sevastopol-at-wild-rose",
@@ -1397,13 +1410,13 @@
     "home": {
       "school_id": "wild-rose",
       "name": "Wild Rose",
-      "score": 66,
+      "score": 8,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_afc6dd34-d8be-4dad-bb02-f667d3849196.jpg"
     },
     "away": {
       "school_id": "",
       "name": "Sevastopol",
-      "score": 8,
+      "score": 66,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_8d3d8a7d-507b-4ecd-8a57-8cd65d8db455.JPG"
     },
     "status": "final",
@@ -1508,7 +1521,8 @@
           "TDS": "0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-08-21-port-edwards-at-siren",
@@ -1518,13 +1532,13 @@
     "home": {
       "school_id": "",
       "name": "Siren",
-      "score": 6,
+      "score": 44,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_a9576dd6-0175-4847-ba38-622394b610a2.jpg"
     },
     "away": {
       "school_id": "port-edwards",
       "name": "Port Edwards",
-      "score": 44,
+      "score": 6,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_d8f22e2b-26cd-4a22-88ba-2093b68a85a3.jpg"
     },
     "status": "final",
@@ -1640,7 +1654,8 @@
           "TFL": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-08-21-washburn-at-winter-birchwood",
@@ -1721,7 +1736,8 @@
           "TKL": "11.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-08-22-wausau-east-at-westby",
@@ -1854,7 +1870,8 @@
           "TFL": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-08-22-ladysmith-at-edgar",
@@ -1987,7 +2004,8 @@
           "TKL": "8.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-08-22-marathon-at-pittsville",
@@ -2118,7 +2136,8 @@
           "TKL": "8.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-08-22-stratford-at-mosinee",
@@ -2128,13 +2147,13 @@
     "home": {
       "school_id": "mosinee",
       "name": "Mosinee",
-      "score": 19,
+      "score": 26,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_931e8899-5525-40e0-b778-26d19bb94511.jpg"
     },
     "away": {
       "school_id": "stratford",
       "name": "Stratford",
-      "score": 26,
+      "score": 19,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_8aa5a37b-e404-41b0-83f2-799684d68afa.jpg"
     },
     "status": "final",
@@ -2253,7 +2272,8 @@
           "INT": "2"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-08-22-spencer-at-auburndale",
@@ -2263,13 +2283,13 @@
     "home": {
       "school_id": "auburndale",
       "name": "Auburndale",
-      "score": 27,
+      "score": 35,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_f8e095b1-38af-494e-8c1f-895948e340bf.jpg"
     },
     "away": {
       "school_id": "spencer",
       "name": "Spencer/Columbus Catholic",
-      "score": 35,
+      "score": 27,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_0b29e7c6-5aa2-4acd-a96e-8d476a8b9d50.jpg"
     },
     "status": "final",
@@ -2386,7 +2406,8 @@
           "TKL": "14.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-08-22-colby-at-stanley-boyd",
@@ -2519,7 +2540,8 @@
           "TFL": "3.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-08-22-loyal-at-abbotsford",
@@ -2529,13 +2551,13 @@
     "home": {
       "school_id": "abbotsford",
       "name": "Abbotsford",
-      "score": 24,
+      "score": 12,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_04f58fe2-896b-4c14-8b85-177ddb8edf4f.jpg"
     },
     "away": {
       "school_id": "loyal",
       "name": "Loyal/Greenwood",
-      "score": 12,
+      "score": 24,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_b2538b53-6986-4227-9a41-1fafb30dbd71.png"
     },
     "status": "final",
@@ -2651,7 +2673,8 @@
           "TKL": "10.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-08-22-crandon-at-tomahawk",
@@ -2783,7 +2806,8 @@
           "TFL": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-08-22-rhinelander-at-ashland",
@@ -2793,13 +2817,13 @@
     "home": {
       "school_id": "",
       "name": "Ashland",
-      "score": 20,
+      "score": 26,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_cde2e90c-cae0-42cd-a1da-f514034c71d6.jpg"
     },
     "away": {
       "school_id": "rhinelander",
       "name": "Rhinelander",
-      "score": 26,
+      "score": 20,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_c5f56096-0700-4c2f-8a53-d51999885149.jpg"
     },
     "status": "final",
@@ -2915,7 +2939,8 @@
           "TFL": "4.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-08-22-holmen-at-medford",
@@ -2925,13 +2950,13 @@
     "home": {
       "school_id": "medford",
       "name": "Medford",
-      "score": 55,
+      "score": 16,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_3c8f6cae-06c4-465f-838a-2151c0cd0d7a.jpg"
     },
     "away": {
       "school_id": "",
       "name": "Holmen",
-      "score": 16,
+      "score": 55,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_6adcc9d8-e68f-40a9-a856-f78c57dc075b.png"
     },
     "status": "final",
@@ -3047,7 +3072,8 @@
           "TKL": "8.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-08-22-osceola-at-merrill",
@@ -3057,13 +3083,13 @@
     "home": {
       "school_id": "merrill",
       "name": "Merrill",
-      "score": 35,
+      "score": 13,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_20e5e107-d060-4d58-9cbe-58312f389ed8.jpg"
     },
     "away": {
       "school_id": "",
       "name": "Osceola",
-      "score": 13,
+      "score": 35,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_2b04d132-d3ef-4b8c-b53c-7fcfd4b25995.jpg"
     },
     "status": "final",
@@ -3179,7 +3205,8 @@
           "INT": "1"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-08-22-lakeland-at-hayward-l-c-o",
@@ -3207,7 +3234,8 @@
     ],
     "playoff": false,
     "playoff_round": null,
-    "stat_leaders": []
+    "stat_leaders": [],
+    "scoring": []
   },
   {
     "id": "football-2025-08-22-antigo-at-northland-pines",
@@ -3217,13 +3245,13 @@
     "home": {
       "school_id": "northland-pines",
       "name": "Northland Pines",
-      "score": 14,
+      "score": 21,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_79c22a6c-afec-4ff7-91b5-4dc390886030.jpg"
     },
     "away": {
       "school_id": "antigo",
       "name": "Antigo",
-      "score": 21,
+      "score": 14,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_6e5a8a7d-b90e-4975-9bea-15777d6e626e.jpg"
     },
     "status": "final",
@@ -3342,7 +3370,8 @@
           "TFL": "2.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-08-22-markesan-at-assumption",
@@ -3352,13 +3381,13 @@
     "home": {
       "school_id": "assumption",
       "name": "Assumption",
-      "score": 38,
+      "score": 13,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_32bce1bc-933e-4cb3-8bbc-41483dd4f864.jpg"
     },
     "away": {
       "school_id": "",
       "name": "Markesan",
-      "score": 13,
+      "score": 38,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_404de91a-936e-49d0-9d6b-4bce8a9cba89.jpg"
     },
     "status": "final",
@@ -3478,7 +3507,8 @@
           "INT": "1"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-08-22-iola-scandinavia-at-shiocton",
@@ -3614,7 +3644,8 @@
           "SKS": "3.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-08-22-saint-mary-catholic-at-amherst",
@@ -3745,7 +3776,8 @@
           "TKL": "4.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-08-22-berlin-at-weyauwega-fremont",
@@ -3876,7 +3908,8 @@
           "TKL": "13.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-08-22-bonduel-at-wittenberg-birnamwood",
@@ -3984,7 +4017,8 @@
           "SKS": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-08-22-northwood-solon-springs-at-flambeau",
@@ -4066,7 +4100,8 @@
           "TFL": "3.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-08-22-bruce-at-shell-lake",
@@ -4076,13 +4111,13 @@
     "home": {
       "school_id": "shell-lake",
       "name": "Shell Lake",
-      "score": 20,
+      "score": 60,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_82eee0b6-ef6b-45a9-9190-14c55732bdcc.jpg"
     },
     "away": {
       "school_id": "bruce",
       "name": "Bruce",
-      "score": 60,
+      "score": 20,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_2213fe88-8922-4598-bcc4-fefe538f89f8.jpg"
     },
     "status": "final",
@@ -4199,7 +4234,8 @@
           "TFL": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-08-22-abundant-life-christian-saint-ambrose-at-almond-bancroft",
@@ -4227,7 +4263,8 @@
     ],
     "playoff": false,
     "playoff_round": null,
-    "stat_leaders": []
+    "stat_leaders": [],
+    "scoring": []
   },
   {
     "id": "football-2025-08-22-rosholt-at-marion",
@@ -4237,13 +4274,13 @@
     "home": {
       "school_id": "marion",
       "name": "Marion/Tigerton",
-      "score": 34,
+      "score": 28,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_d5fc99f4-f588-446f-964e-0f032a209576.jpg"
     },
     "away": {
       "school_id": "rosholt",
       "name": "Rosholt",
-      "score": 28,
+      "score": 34,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_f5ed9557-3c24-48ce-b465-7e3c50d33b5a.jpg"
     },
     "status": "final",
@@ -4348,7 +4385,8 @@
           "TKL": "10.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-08-22-waupaca-at-wrightstown",
@@ -4358,13 +4396,13 @@
     "home": {
       "school_id": "",
       "name": "Wrightstown",
-      "score": 14,
+      "score": 35,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_cae10fe6-1fc3-4bd2-9313-992a68748b09.jpg"
     },
     "away": {
       "school_id": "waupaca",
       "name": "Waupaca",
-      "score": 35,
+      "score": 14,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_de0d8522-ef3a-41b7-ac42-fa9c9b40beeb.jpg"
     },
     "status": "final",
@@ -4480,7 +4518,8 @@
           "TFL": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-08-22-owen-withee-at-gilman",
@@ -4490,13 +4529,13 @@
     "home": {
       "school_id": "gilman",
       "name": "Gilman",
-      "score": 0,
+      "score": 43,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_1859a659-e43a-4b25-b9f5-a0e8eee03201.jpg"
     },
     "away": {
       "school_id": "owen-withee",
       "name": "Owen-Withee",
-      "score": 43,
+      "score": 0,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_6f57ed49-9da4-4f3e-a887-b227bb6f0859.jpg"
     },
     "status": "final",
@@ -4611,7 +4650,8 @@
           "TKL": "9.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-08-22-mellen-at-south-shore",
@@ -4621,13 +4661,13 @@
     "home": {
       "school_id": "south-shore",
       "name": "South Shore",
-      "score": 0,
+      "score": 1,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_76c215b3-83b3-4b4e-a0ba-ddc90eddf23f.jpg"
     },
     "away": {
       "school_id": "mellen",
       "name": "Mellen",
-      "score": 1,
+      "score": 0,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_bfa93cf6-a5f9-4b30-bddb-78dfd3233087.jpg"
     },
     "status": "final",
@@ -4639,7 +4679,8 @@
     ],
     "playoff": false,
     "playoff_round": null,
-    "stat_leaders": []
+    "stat_leaders": [],
+    "scoring": []
   },
   {
     "id": "football-2025-08-28-wabeno-laona-at-menominee-nation",
@@ -4649,13 +4690,13 @@
     "home": {
       "school_id": "menominee-nation",
       "name": "Menominee Nation",
-      "score": 72,
+      "score": 0,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_89ad3d70-aba7-4aea-99eb-bcf33ac9056d.png"
     },
     "away": {
       "school_id": "",
       "name": "Wabeno/Laona",
-      "score": 0,
+      "score": 72,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_c2016b7c-25c5-441b-bb5b-de684fa47daa.jpg"
     },
     "status": "final",
@@ -4719,7 +4760,8 @@
           "TKL": "8.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-08-28-hurley-at-ironwood-mi",
@@ -4747,7 +4789,8 @@
     ],
     "playoff": false,
     "playoff_round": null,
-    "stat_leaders": []
+    "stat_leaders": [],
+    "scoring": []
   },
   {
     "id": "football-2025-08-28-phillips-at-oakfield",
@@ -4757,13 +4800,13 @@
     "home": {
       "school_id": "",
       "name": "Oakfield",
-      "score": 26,
+      "score": 47,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_8a2c6cb2-8a13-459a-98c7-2cc71d3ab78b.jpg"
     },
     "away": {
       "school_id": "phillips",
       "name": "Phillips",
-      "score": 47,
+      "score": 26,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_c254fbf5-239d-4754-b90b-89888cd71d92.jpg"
     },
     "status": "final",
@@ -4880,7 +4923,8 @@
           "TFL": "2.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-08-28-la-crosse-logan-at-wausau-east",
@@ -4890,13 +4934,13 @@
     "home": {
       "school_id": "wausau-east",
       "name": "Wausau East",
-      "score": 29,
+      "score": 21,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_4e9a3bfe-acd7-47b2-94e9-a9b580bdc029.jpg"
     },
     "away": {
       "school_id": "",
       "name": "La Crosse Logan",
-      "score": 21,
+      "score": 29,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_fe35aa59-0a52-4f3f-9ef5-3b573330b735.jpg"
     },
     "status": "final",
@@ -5014,7 +5058,8 @@
           "TFL": "3.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-08-28-wausau-west-at-hudson",
@@ -5024,13 +5069,13 @@
     "home": {
       "school_id": "hudson",
       "name": "Hudson",
-      "score": 14,
+      "score": 30,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_b5429a0f-ab7b-4a72-bcde-bb8a04b1d448.jpg"
     },
     "away": {
       "school_id": "wausau-west",
       "name": "Wausau West",
-      "score": 30,
+      "score": 14,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_08096aa8-b6b7-4492-8151-27d1822a8fa9.png"
     },
     "status": "final",
@@ -5149,7 +5194,8 @@
           "INT": "1"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-08-28-river-falls-at-dc-everest",
@@ -5159,13 +5205,13 @@
     "home": {
       "school_id": "dc-everest",
       "name": "D.C. Everest",
-      "score": 54,
+      "score": 21,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_90bf6c6c-964c-48da-9f99-0df569675bce.jpg"
     },
     "away": {
       "school_id": "river-falls",
       "name": "River Falls",
-      "score": 21,
+      "score": 54,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_d4fe0fc0-e338-47af-a664-b53012197324.jpg"
     },
     "status": "final",
@@ -5281,7 +5327,8 @@
           "TKL": "12.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-08-28-menomonie-at-marshfield",
@@ -5291,13 +5338,13 @@
     "home": {
       "school_id": "marshfield",
       "name": "Marshfield",
-      "score": 30,
+      "score": 16,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_deadd1c8-aaca-4c5f-b1f8-6e7fced8f9b6.jpg"
     },
     "away": {
       "school_id": "menomonie",
       "name": "Menomonie",
-      "score": 16,
+      "score": 30,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_0d184c10-2571-463a-ad04-2aac88094ce7.jpg"
     },
     "status": "final",
@@ -5415,7 +5462,8 @@
           "TKL": "15.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-08-28-spash-at-superior",
@@ -5549,7 +5597,8 @@
           "TKL": "13.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-08-28-rice-lake-at-wisconsin-rapids",
@@ -5559,13 +5608,13 @@
     "home": {
       "school_id": "wisconsin-rapids",
       "name": "Wisconsin Rapids Lincoln",
-      "score": 30,
+      "score": 14,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_3209dae3-72d3-4b53-ab81-def087d7df74.jpg"
     },
     "away": {
       "school_id": "rice-lake",
       "name": "Rice Lake",
-      "score": 14,
+      "score": 30,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_c8efa1ca-c48f-42d4-bc7c-6918f400a3a9.jpg"
     },
     "status": "final",
@@ -5577,7 +5626,8 @@
     ],
     "playoff": false,
     "playoff_round": null,
-    "stat_leaders": []
+    "stat_leaders": [],
+    "scoring": []
   },
   {
     "id": "football-2025-08-28-merrill-at-crandon",
@@ -5712,7 +5762,8 @@
           "TFL": "4.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-08-28-sturgeon-bay-at-antigo",
@@ -5845,7 +5896,8 @@
           "SKS": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-08-28-new-richmond-at-eau-claire-north",
@@ -5855,13 +5907,13 @@
     "home": {
       "school_id": "eau-claire-north",
       "name": "Eau Claire North",
-      "score": 48,
+      "score": 10,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_99891af1-ebd7-4c0c-baf7-d29f52e48e43.jpg"
     },
     "away": {
       "school_id": "new-richmond",
       "name": "New Richmond",
-      "score": 10,
+      "score": 48,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_8d7a6b7e-4675-4b6b-a563-87adccf6cf1a.jpg"
     },
     "status": "final",
@@ -5976,7 +6028,8 @@
           "TKL": "9.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-08-28-eau-claire-memorial-at-chippewa-falls",
@@ -5986,13 +6039,13 @@
     "home": {
       "school_id": "chippewa-falls",
       "name": "Chippewa Falls",
-      "score": 6,
+      "score": 33,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_a37c0e1b-af75-43da-ac8f-109620fc4b30.jpg"
     },
     "away": {
       "school_id": "eau-claire-memorial",
       "name": "Eau Claire Memorial",
-      "score": 33,
+      "score": 6,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_5a211470-9969-410f-af84-33daef4d080f.jpg"
     },
     "status": "final",
@@ -6110,7 +6163,8 @@
           "TFL": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-08-28-flambeau-at-bruce",
@@ -6244,7 +6298,8 @@
           "FR": "1"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-08-29-prentice-at-south-shore",
@@ -6272,7 +6327,8 @@
     ],
     "playoff": false,
     "playoff_round": null,
-    "stat_leaders": []
+    "stat_leaders": [],
+    "scoring": []
   },
   {
     "id": "football-2025-08-29-tri-county-at-port-edwards",
@@ -6282,13 +6338,13 @@
     "home": {
       "school_id": "port-edwards",
       "name": "Port Edwards",
-      "score": 58,
+      "score": 14,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_d8f22e2b-26cd-4a22-88ba-2093b68a85a3.jpg"
     },
     "away": {
       "school_id": "tri-county",
       "name": "Tri-County",
-      "score": 14,
+      "score": 58,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_f1be37fb-8cc3-4aa8-9aff-59ecfff66bce.jpg"
     },
     "status": "final",
@@ -6408,7 +6464,8 @@
           "SKS": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-08-29-assumption-at-pepin-alma",
@@ -6418,13 +6475,13 @@
     "home": {
       "school_id": "",
       "name": "Pepin/Alma",
-      "score": 0,
+      "score": 36,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_dbee19d1-fb4a-4cf8-a481-db2d7a9656b2.jpg"
     },
     "away": {
       "school_id": "assumption",
       "name": "Assumption",
-      "score": 36,
+      "score": 0,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_32bce1bc-933e-4cb3-8bbc-41483dd4f864.jpg"
     },
     "status": "final",
@@ -6539,7 +6596,8 @@
           "TFL": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-08-29-amherst-at-winnebago-lutheran",
@@ -6670,7 +6728,8 @@
           "TKL": "7.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-08-29-thorp-at-athens",
@@ -6753,7 +6812,8 @@
           "TFL": "2.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-08-29-edgar-at-stratford",
@@ -6885,7 +6945,8 @@
           "TFL": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-08-29-auburndale-at-marathon",
@@ -6895,13 +6956,13 @@
     "home": {
       "school_id": "marathon",
       "name": "Marathon",
-      "score": 14,
+      "score": 12,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_21893c9d-172b-4f3b-a52c-187062f259f9.jpg"
     },
     "away": {
       "school_id": "auburndale",
       "name": "Auburndale",
-      "score": 12,
+      "score": 14,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_f8e095b1-38af-494e-8c1f-895948e340bf.jpg"
     },
     "status": "final",
@@ -7006,7 +7067,8 @@
           "TDS": "0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-08-29-wild-rose-at-newman-catholic",
@@ -7127,7 +7189,8 @@
           "TFL": "4.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-08-29-pittsville-at-spencer",
@@ -7258,7 +7321,8 @@
           "TKL": "7.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-08-29-mosinee-at-menasha",
@@ -7268,13 +7332,13 @@
     "home": {
       "school_id": "",
       "name": "Menasha",
-      "score": 21,
+      "score": 41,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_027966e7-6528-4718-adec-08a4c26a85b3.jpg"
     },
     "away": {
       "school_id": "mosinee",
       "name": "Mosinee",
-      "score": 41,
+      "score": 21,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_931e8899-5525-40e0-b778-26d19bb94511.jpg"
     },
     "status": "final",
@@ -7391,7 +7455,8 @@
           "TKL": "10.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-08-29-colby-at-abbotsford",
@@ -7401,13 +7466,13 @@
     "home": {
       "school_id": "abbotsford",
       "name": "Abbotsford",
-      "score": 14,
+      "score": 27,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_04f58fe2-896b-4c14-8b85-177ddb8edf4f.jpg"
     },
     "away": {
       "school_id": "colby",
       "name": "Colby",
-      "score": 27,
+      "score": 14,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_341b5868-d166-406a-90e1-7bd5d0ca6cd2.jpg"
     },
     "status": "final",
@@ -7497,7 +7562,8 @@
           "FR": "1"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-08-29-wittenberg-birnamwood-at-tomahawk",
@@ -7630,7 +7696,8 @@
           "TFL": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-08-29-hayward-l-c-o-at-rhinelander",
@@ -7658,7 +7725,8 @@
     ],
     "playoff": false,
     "playoff_round": null,
-    "stat_leaders": []
+    "stat_leaders": [],
+    "scoring": []
   },
   {
     "id": "football-2025-08-29-medford-at-onalaska",
@@ -7668,13 +7736,13 @@
     "home": {
       "school_id": "",
       "name": "Onalaska",
-      "score": 0,
+      "score": 36,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_2f880ffb-dc0f-4f4c-860f-9453cd2fed51.jpg"
     },
     "away": {
       "school_id": "medford",
       "name": "Medford",
-      "score": 36,
+      "score": 0,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_3c8f6cae-06c4-465f-838a-2151c0cd0d7a.jpg"
     },
     "status": "final",
@@ -7762,7 +7830,8 @@
           "TKL": "11.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-08-29-ashland-at-lakeland",
@@ -7896,7 +7965,8 @@
           "TFL": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-08-29-pacelli-at-parkview-albany",
@@ -7906,13 +7976,13 @@
     "home": {
       "school_id": "",
       "name": "Parkview/Albany",
-      "score": 6,
+      "score": 32,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_29e528ea-7499-4dcf-a471-21e37831d2c6.jpg"
     },
     "away": {
       "school_id": "pacelli",
       "name": "Pacelli",
-      "score": 32,
+      "score": 6,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_a97ec00c-92c5-4107-8c93-5eba8b8297b4.jpg"
     },
     "status": "final",
@@ -8028,7 +8098,8 @@
           "TKL": "7.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-08-29-weyauwega-fremont-at-iola-scandinavia",
@@ -8038,13 +8109,13 @@
     "home": {
       "school_id": "iola-scandinavia",
       "name": "Iola-Scandinavia",
-      "score": 36,
+      "score": 14,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_6c42c796-b051-4596-9308-01ea09ded169.jpg"
     },
     "away": {
       "school_id": "weyauwega-fremont",
       "name": "Weyauwega-Fremont",
-      "score": 14,
+      "score": 36,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_853613a0-9914-41d4-ace4-c1987426ce34.jpg"
     },
     "status": "final",
@@ -8159,7 +8230,8 @@
           "TKL": "7.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-08-29-chequamegon-at-winter-birchwood",
@@ -8243,7 +8315,8 @@
           "INT": "1"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-08-29-rib-lake-at-gilman",
@@ -8253,13 +8326,13 @@
     "home": {
       "school_id": "gilman",
       "name": "Gilman",
-      "score": 0,
+      "score": 49,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_1859a659-e43a-4b25-b9f5-a0e8eee03201.jpg"
     },
     "away": {
       "school_id": "rib-lake",
       "name": "Rib Lake",
-      "score": 49,
+      "score": 0,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_7e7a8cc5-89bc-4cf1-8ad6-e057f46d5aa7.jpg"
     },
     "status": "final",
@@ -8324,7 +8397,8 @@
           "TKL": "15.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-08-29-almond-bancroft-at-marion",
@@ -8334,13 +8408,13 @@
     "home": {
       "school_id": "marion",
       "name": "Marion/Tigerton",
-      "score": 18,
+      "score": 31,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_d5fc99f4-f588-446f-964e-0f032a209576.jpg"
     },
     "away": {
       "school_id": "almond-bancroft",
       "name": "Almond-Bancroft",
-      "score": 31,
+      "score": 18,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_1e44e53a-b8d0-4890-9b36-49ec6a09d640.png"
     },
     "status": "final",
@@ -8430,7 +8504,8 @@
           "TFL": "2.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-08-29-menominee-nation-at-bowler",
@@ -8440,13 +8515,13 @@
     "home": {
       "school_id": "bowler",
       "name": "Bowler/Gresham",
-      "score": 1,
+      "score": 0,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_a3c24bd6-bd0f-4ce1-82b7-1f355a8267c2.jpg"
     },
     "away": {
       "school_id": "menominee-nation",
       "name": "Menominee Nation",
-      "score": 0,
+      "score": 1,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_89ad3d70-aba7-4aea-99eb-bcf33ac9056d.png"
     },
     "status": "final",
@@ -8458,7 +8533,8 @@
     ],
     "playoff": false,
     "playoff_round": null,
-    "stat_leaders": []
+    "stat_leaders": [],
+    "scoring": []
   },
   {
     "id": "football-2025-08-29-northland-pines-at-adams-friendship",
@@ -8527,7 +8603,8 @@
           "TDS": "1"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-08-29-freedom-at-waupaca",
@@ -8537,13 +8614,13 @@
     "home": {
       "school_id": "waupaca",
       "name": "Waupaca",
-      "score": 20,
+      "score": 13,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_de0d8522-ef3a-41b7-ac42-fa9c9b40beeb.jpg"
     },
     "away": {
       "school_id": "",
       "name": "Freedom",
-      "score": 13,
+      "score": 20,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_dc9638b5-a259-425a-a9de-edc4f7c3d896.jpg"
     },
     "status": "final",
@@ -8661,7 +8738,8 @@
           "TKL": "13.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-08-29-neillsville-granton-at-loyal",
@@ -8793,7 +8871,8 @@
           "TKL": "3.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-08-29-owen-withee-at-prairie-farm",
@@ -8821,7 +8900,8 @@
     ],
     "playoff": false,
     "playoff_round": null,
-    "stat_leaders": []
+    "stat_leaders": [],
+    "scoring": []
   },
   {
     "id": "football-2025-08-29-washburn-at-siren",
@@ -8831,13 +8911,13 @@
     "home": {
       "school_id": "",
       "name": "Siren",
-      "score": 12,
+      "score": 42,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_a9576dd6-0175-4847-ba38-622394b610a2.jpg"
     },
     "away": {
       "school_id": "washburn",
       "name": "Washburn",
-      "score": 42,
+      "score": 12,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_bd34b4d3-ce88-40f9-a743-53bd8b1bd3b9.jpg"
     },
     "status": "final",
@@ -8954,7 +9034,8 @@
           "SKS": "3.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-08-29-luck-at-shell-lake",
@@ -9087,7 +9168,8 @@
           "TFL": "3.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-04-prentice-at-hurley",
@@ -9097,13 +9179,13 @@
     "home": {
       "school_id": "hurley",
       "name": "Hurley",
-      "score": 8,
+      "score": 44,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_61a85d42-bed2-4ab9-9c83-51b63d021832.jpg"
     },
     "away": {
       "school_id": "prentice",
       "name": "Prentice",
-      "score": 44,
+      "score": 8,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_32350b25-0e25-4c39-ab7f-248cf3d3c50f.jpg"
     },
     "status": "final",
@@ -9167,7 +9249,8 @@
           "TKL": "10.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-04-rib-lake-at-chequamegon",
@@ -9177,13 +9260,13 @@
     "home": {
       "school_id": "chequamegon",
       "name": "Chequamegon/Butternut/Mercer",
-      "score": 44,
+      "score": 6,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_8a762f16-f752-446d-954d-5b2377aac421.jpg"
     },
     "away": {
       "school_id": "rib-lake",
       "name": "Rib Lake",
-      "score": 6,
+      "score": 44,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_7e7a8cc5-89bc-4cf1-8ad6-e057f46d5aa7.jpg"
     },
     "status": "final",
@@ -9248,7 +9331,8 @@
           "TFL": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-04-mellen-at-phillips",
@@ -9276,7 +9360,8 @@
     ],
     "playoff": false,
     "playoff_round": null,
-    "stat_leaders": []
+    "stat_leaders": [],
+    "scoring": []
   },
   {
     "id": "football-2025-09-04-marion-at-three-lakes-phelps",
@@ -9408,7 +9493,8 @@
           "TFL": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-05-winter-birchwood-at-south-shore",
@@ -9436,7 +9522,8 @@
     ],
     "playoff": false,
     "playoff_round": null,
-    "stat_leaders": []
+    "stat_leaders": [],
+    "scoring": []
   },
   {
     "id": "football-2025-09-05-tri-county-at-menominee-nation",
@@ -9446,13 +9533,13 @@
     "home": {
       "school_id": "menominee-nation",
       "name": "Menominee Nation",
-      "score": 94,
+      "score": 0,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_89ad3d70-aba7-4aea-99eb-bcf33ac9056d.png"
     },
     "away": {
       "school_id": "tri-county",
       "name": "Tri-County",
-      "score": 0,
+      "score": 94,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_f1be37fb-8cc3-4aa8-9aff-59ecfff66bce.jpg"
     },
     "status": "final",
@@ -9491,7 +9578,8 @@
           "TFL": "2.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-05-wausau-east-at-tomahawk",
@@ -9501,13 +9589,13 @@
     "home": {
       "school_id": "tomahawk",
       "name": "Tomahawk",
-      "score": 10,
+      "score": 11,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_b455cbb7-3a4d-49ad-b7c5-e9935c3d78dc.jpg"
     },
     "away": {
       "school_id": "wausau-east",
       "name": "Wausau East",
-      "score": 11,
+      "score": 10,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_4e9a3bfe-acd7-47b2-94e9-a9b580bdc029.jpg"
     },
     "status": "final",
@@ -9597,7 +9685,8 @@
           "TKL": "15.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-05-eau-claire-north-at-wausau-west",
@@ -9731,7 +9820,8 @@
           "TFL": "2.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-05-dc-everest-at-wisconsin-rapids",
@@ -9759,7 +9849,8 @@
     ],
     "playoff": false,
     "playoff_round": null,
-    "stat_leaders": []
+    "stat_leaders": [],
+    "scoring": []
   },
   {
     "id": "football-2025-09-05-marshfield-at-rice-lake",
@@ -9769,13 +9860,13 @@
     "home": {
       "school_id": "rice-lake",
       "name": "Rice Lake",
-      "score": 16,
+      "score": 30,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_c8efa1ca-c48f-42d4-bc7c-6918f400a3a9.jpg"
     },
     "away": {
       "school_id": "marshfield",
       "name": "Marshfield",
-      "score": 30,
+      "score": 16,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_deadd1c8-aaca-4c5f-b1f8-6e7fced8f9b6.jpg"
     },
     "status": "final",
@@ -9891,7 +9982,8 @@
           "TFL": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-05-spash-at-eau-claire-memorial",
@@ -10025,7 +10117,8 @@
           "TFL": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-05-flambeau-at-athens",
@@ -10035,13 +10128,13 @@
     "home": {
       "school_id": "athens",
       "name": "Athens",
-      "score": 48,
+      "score": 12,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_9de064b0-6623-41d4-b94e-6a900bfb5674.PNG"
     },
     "away": {
       "school_id": "flambeau",
       "name": "Flambeau",
-      "score": 12,
+      "score": 48,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_6c3721d9-03f4-4c1a-8120-21f7133f181f.png"
     },
     "status": "final",
@@ -10160,7 +10253,8 @@
           "TFL": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-05-auburndale-at-edgar",
@@ -10292,7 +10386,8 @@
           "TFL": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-05-loyal-at-marathon",
@@ -10302,13 +10397,13 @@
     "home": {
       "school_id": "marathon",
       "name": "Marathon",
-      "score": 26,
+      "score": 20,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_21893c9d-172b-4f3b-a52c-187062f259f9.jpg"
     },
     "away": {
       "school_id": "loyal",
       "name": "Loyal/Greenwood",
-      "score": 20,
+      "score": 26,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_b2538b53-6986-4227-9a41-1fafb30dbd71.png"
     },
     "status": "final",
@@ -10426,7 +10521,8 @@
           "TFL": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-05-newman-catholic-at-almond-bancroft",
@@ -10436,13 +10532,13 @@
     "home": {
       "school_id": "almond-bancroft",
       "name": "Almond-Bancroft",
-      "score": 13,
+      "score": 20,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_1e44e53a-b8d0-4890-9b36-49ec6a09d640.png"
     },
     "away": {
       "school_id": "newman-catholic",
       "name": "Newman Catholic",
-      "score": 20,
+      "score": 13,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_17ae3c02-235c-4b92-b1b2-699075c98ccd.jpg"
     },
     "status": "final",
@@ -10560,7 +10656,8 @@
           "INT": "1"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-05-spencer-at-stratford",
@@ -10694,7 +10791,8 @@
           "SKS": "0.5"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-05-merrill-at-mosinee",
@@ -10828,7 +10926,8 @@
           "INT": "1"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-05-amherst-at-colby",
@@ -10838,13 +10937,13 @@
     "home": {
       "school_id": "colby",
       "name": "Colby",
-      "score": 38,
+      "score": 8,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_341b5868-d166-406a-90e1-7bd5d0ca6cd2.jpg"
     },
     "away": {
       "school_id": "amherst",
       "name": "Amherst",
-      "score": 8,
+      "score": 38,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_8c17d9d9-12f6-469d-873c-c2a8fc11e2dc.jpg"
     },
     "status": "final",
@@ -10960,7 +11059,8 @@
           "TKL": "9.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-05-abbotsford-at-iola-scandinavia",
@@ -11092,7 +11192,8 @@
           "TKL": "12.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-05-lakeland-at-rhinelander",
@@ -11102,13 +11203,13 @@
     "home": {
       "school_id": "rhinelander",
       "name": "Rhinelander",
-      "score": 43,
+      "score": 32,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_c5f56096-0700-4c2f-8a53-d51999885149.jpg"
     },
     "away": {
       "school_id": "lakeland",
       "name": "Lakeland",
-      "score": 32,
+      "score": 43,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_ffbadc1d-650a-4518-b67e-7fa8589a9808.jpg"
     },
     "status": "final",
@@ -11224,7 +11325,8 @@
           "INT": "1"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-05-medford-at-antigo",
@@ -11358,7 +11460,8 @@
           "TKL": "12.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-05-chippewa-falls-at-new-richmond",
@@ -11368,13 +11471,13 @@
     "home": {
       "school_id": "new-richmond",
       "name": "New Richmond",
-      "score": 14,
+      "score": 42,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_8d7a6b7e-4675-4b6b-a563-87adccf6cf1a.jpg"
     },
     "away": {
       "school_id": "chippewa-falls",
       "name": "Chippewa Falls",
-      "score": 42,
+      "score": 14,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_a37c0e1b-af75-43da-ac8f-109620fc4b30.jpg"
     },
     "status": "final",
@@ -11494,7 +11597,8 @@
           "FR": "1"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-05-hudson-at-menomonie",
@@ -11628,7 +11732,8 @@
           "SKS": "0.5"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-05-assumption-at-pacelli",
@@ -11762,7 +11867,8 @@
           "TKL": "14.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-05-pittsville-at-rosholt",
@@ -11790,7 +11896,8 @@
     ],
     "playoff": false,
     "playoff_round": null,
-    "stat_leaders": []
+    "stat_leaders": [],
+    "scoring": []
   },
   {
     "id": "football-2025-09-05-weyauwega-fremont-at-wittenberg-birnamwood",
@@ -11800,13 +11907,13 @@
     "home": {
       "school_id": "wittenberg-birnamwood",
       "name": "Wittenberg-Birnamwood",
-      "score": 7,
+      "score": 34,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_08fbc74b-f839-4f21-9ba0-d72f3ac10a2f.jpg"
     },
     "away": {
       "school_id": "weyauwega-fremont",
       "name": "Weyauwega-Fremont",
-      "score": 34,
+      "score": 7,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_853613a0-9914-41d4-ace4-c1987426ce34.jpg"
     },
     "status": "final",
@@ -11922,7 +12029,8 @@
           "TFL": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-05-northwood-solon-springs-at-bruce",
@@ -11932,13 +12040,13 @@
     "home": {
       "school_id": "bruce",
       "name": "Bruce",
-      "score": 16,
+      "score": 6,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_2213fe88-8922-4598-bcc4-fefe538f89f8.jpg"
     },
     "away": {
       "school_id": "",
       "name": "Northwood/Solon Springs",
-      "score": 6,
+      "score": 16,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_07b92e6e-86b8-475d-afd0-afe5dfae7899.jpg"
     },
     "status": "final",
@@ -11989,7 +12097,8 @@
           "TKL": "12.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-05-port-edwards-at-wild-rose",
@@ -12114,7 +12223,8 @@
           "RUS": "82"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-05-marion-at-bowler",
@@ -12124,13 +12234,13 @@
     "home": {
       "school_id": "bowler",
       "name": "Bowler/Gresham",
-      "score": 1,
+      "score": 0,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_a3c24bd6-bd0f-4ce1-82b7-1f355a8267c2.jpg"
     },
     "away": {
       "school_id": "marion",
       "name": "Marion/Tigerton",
-      "score": 0,
+      "score": 1,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_d5fc99f4-f588-446f-964e-0f032a209576.jpg"
     },
     "status": "final",
@@ -12142,7 +12252,8 @@
     ],
     "playoff": false,
     "playoff_round": null,
-    "stat_leaders": []
+    "stat_leaders": [],
+    "scoring": []
   },
   {
     "id": "football-2025-09-05-superior-at-river-falls",
@@ -12275,7 +12386,8 @@
           "SKS": "2.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-05-manawa-at-northland-pines",
@@ -12408,7 +12520,8 @@
           "TFL": "2.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-05-waupaca-at-little-chute",
@@ -12418,13 +12531,13 @@
     "home": {
       "school_id": "",
       "name": "Little Chute",
-      "score": 0,
+      "score": 42,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_231e048d-1899-40e2-b05e-6463ff43f657.jpg"
     },
     "away": {
       "school_id": "waupaca",
       "name": "Waupaca",
-      "score": 42,
+      "score": 0,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_de0d8522-ef3a-41b7-ac42-fa9c9b40beeb.jpg"
     },
     "status": "final",
@@ -12541,7 +12654,8 @@
           "TFL": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-05-cornell-at-owen-withee",
@@ -12595,7 +12709,8 @@
           "TKL": "11.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-05-frederic-at-gilman",
@@ -12727,7 +12842,8 @@
           "SKS": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-05-shell-lake-at-washburn",
@@ -12737,13 +12853,13 @@
     "home": {
       "school_id": "washburn",
       "name": "Washburn",
-      "score": 76,
+      "score": 0,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_bd34b4d3-ce88-40f9-a743-53bd8b1bd3b9.jpg"
     },
     "away": {
       "school_id": "shell-lake",
       "name": "Shell Lake",
-      "score": 0,
+      "score": 76,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_82eee0b6-ef6b-45a9-9190-14c55732bdcc.jpg"
     },
     "status": "final",
@@ -12859,7 +12975,8 @@
           "TKL": "9.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-11-athens-at-bruce",
@@ -12980,7 +13097,8 @@
           "TKL": "16.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-11-phillips-at-rib-lake",
@@ -13063,7 +13181,8 @@
           "FR": "1"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-11-owen-withee-at-mcdonell-central-catholic",
@@ -13073,13 +13192,13 @@
     "home": {
       "school_id": "",
       "name": "McDonell Central Catholic",
-      "score": 0,
+      "score": 39,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_e97a0d92-4d25-48d6-8659-76af7687c602.jpg"
     },
     "away": {
       "school_id": "owen-withee",
       "name": "Owen-Withee",
-      "score": 39,
+      "score": 0,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_6f57ed49-9da4-4f3e-a887-b227bb6f0859.jpg"
     },
     "status": "final",
@@ -13091,7 +13210,8 @@
     ],
     "playoff": false,
     "playoff_round": null,
-    "stat_leaders": []
+    "stat_leaders": [],
+    "scoring": []
   },
   {
     "id": "football-2025-09-12-almond-bancroft-at-port-edwards",
@@ -13226,7 +13346,8 @@
           "TKL": "7.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-12-rhinelander-at-wausau-east",
@@ -13236,13 +13357,13 @@
     "home": {
       "school_id": "wausau-east",
       "name": "Wausau East",
-      "score": 28,
+      "score": 14,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_4e9a3bfe-acd7-47b2-94e9-a9b580bdc029.jpg"
     },
     "away": {
       "school_id": "rhinelander",
       "name": "Rhinelander",
-      "score": 14,
+      "score": 28,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_c5f56096-0700-4c2f-8a53-d51999885149.jpg"
     },
     "status": "final",
@@ -13360,7 +13481,8 @@
           "FR": "1"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-12-wausau-west-at-dc-everest",
@@ -13370,13 +13492,13 @@
     "home": {
       "school_id": "dc-everest",
       "name": "D.C. Everest",
-      "score": 0,
+      "score": 17,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_90bf6c6c-964c-48da-9f99-0df569675bce.jpg"
     },
     "away": {
       "school_id": "wausau-west",
       "name": "Wausau West",
-      "score": 17,
+      "score": 0,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_08096aa8-b6b7-4492-8151-27d1822a8fa9.png"
     },
     "status": "final",
@@ -13491,7 +13613,8 @@
           "TKL": "8.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-12-eau-claire-memorial-at-marshfield",
@@ -13622,7 +13745,8 @@
           "TKL": "12.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-12-wisconsin-rapids-at-spash",
@@ -13650,7 +13774,8 @@
     ],
     "playoff": false,
     "playoff_round": null,
-    "stat_leaders": []
+    "stat_leaders": [],
+    "scoring": []
   },
   {
     "id": "football-2025-09-12-ottawa-marquette-il-at-edgar",
@@ -13678,7 +13803,8 @@
     ],
     "playoff": false,
     "playoff_round": null,
-    "stat_leaders": []
+    "stat_leaders": [],
+    "scoring": []
   },
   {
     "id": "football-2025-09-12-edgar-at-rosholt",
@@ -13706,7 +13832,8 @@
     ],
     "playoff": false,
     "playoff_round": null,
-    "stat_leaders": []
+    "stat_leaders": [],
+    "scoring": []
   },
   {
     "id": "football-2025-09-12-marathon-at-amherst",
@@ -13716,13 +13843,13 @@
     "home": {
       "school_id": "amherst",
       "name": "Amherst",
-      "score": 7,
+      "score": 44,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_8c17d9d9-12f6-469d-873c-c2a8fc11e2dc.jpg"
     },
     "away": {
       "school_id": "marathon",
       "name": "Marathon",
-      "score": 44,
+      "score": 7,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_21893c9d-172b-4f3b-a52c-187062f259f9.jpg"
     },
     "status": "final",
@@ -13839,7 +13966,8 @@
           "TKL": "7.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-12-niagara-at-newman-catholic",
@@ -13971,7 +14099,8 @@
           "TFL": "6.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-12-stratford-at-wittenberg-birnamwood",
@@ -14102,7 +14231,8 @@
           "TKL": "16.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-12-weyauwega-fremont-at-spencer",
@@ -14112,13 +14242,13 @@
     "home": {
       "school_id": "spencer",
       "name": "Spencer/Columbus Catholic",
-      "score": 29,
+      "score": 15,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_0b29e7c6-5aa2-4acd-a96e-8d476a8b9d50.jpg"
     },
     "away": {
       "school_id": "weyauwega-fremont",
       "name": "Weyauwega-Fremont",
-      "score": 15,
+      "score": 29,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_853613a0-9914-41d4-ace4-c1987426ce34.jpg"
     },
     "status": "final",
@@ -14236,7 +14366,8 @@
           "TFL": "3.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-12-mosinee-at-lakeland",
@@ -14246,13 +14377,13 @@
     "home": {
       "school_id": "lakeland",
       "name": "Lakeland",
-      "score": 20,
+      "score": 24,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_ffbadc1d-650a-4518-b67e-7fa8589a9808.jpg"
     },
     "away": {
       "school_id": "mosinee",
       "name": "Mosinee",
-      "score": 24,
+      "score": 20,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_931e8899-5525-40e0-b778-26d19bb94511.jpg"
     },
     "status": "final",
@@ -14369,7 +14500,8 @@
           "TKL": "6.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-12-colby-at-loyal",
@@ -14379,13 +14511,13 @@
     "home": {
       "school_id": "loyal",
       "name": "Loyal/Greenwood",
-      "score": 6,
+      "score": 32,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_b2538b53-6986-4227-9a41-1fafb30dbd71.png"
     },
     "away": {
       "school_id": "colby",
       "name": "Colby",
-      "score": 32,
+      "score": 6,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_341b5868-d166-406a-90e1-7bd5d0ca6cd2.jpg"
     },
     "status": "final",
@@ -14504,7 +14636,8 @@
           "SKS": "3.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-12-pacelli-at-abbotsford",
@@ -14637,7 +14770,8 @@
           "SKS": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-12-tomahawk-at-antigo",
@@ -14770,7 +14904,8 @@
           "TFL": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-12-medford-at-merrill",
@@ -14780,13 +14915,13 @@
     "home": {
       "school_id": "merrill",
       "name": "Merrill",
-      "score": 16,
+      "score": 20,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_20e5e107-d060-4d58-9cbe-58312f389ed8.jpg"
     },
     "away": {
       "school_id": "medford",
       "name": "Medford",
-      "score": 20,
+      "score": 16,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_3c8f6cae-06c4-465f-838a-2151c0cd0d7a.jpg"
     },
     "status": "final",
@@ -14904,7 +15039,8 @@
           "FR": "1"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-12-superior-at-eau-claire-north",
@@ -15035,7 +15171,8 @@
           "TKL": "19.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-12-river-falls-at-chippewa-falls",
@@ -15045,13 +15182,13 @@
     "home": {
       "school_id": "chippewa-falls",
       "name": "Chippewa Falls",
-      "score": 28,
+      "score": 12,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_a37c0e1b-af75-43da-ac8f-109620fc4b30.jpg"
     },
     "away": {
       "school_id": "river-falls",
       "name": "River Falls",
-      "score": 12,
+      "score": 28,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_d4fe0fc0-e338-47af-a664-b53012197324.jpg"
     },
     "status": "final",
@@ -15169,7 +15306,8 @@
           "TFL": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-12-new-richmond-at-hudson",
@@ -15302,7 +15440,8 @@
           "INT": "2"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-12-menomonie-at-rice-lake",
@@ -15435,7 +15574,8 @@
           "TFL": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-12-auburndale-at-pittsville",
@@ -15568,7 +15708,8 @@
           "TKL": "8.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-12-iola-scandinavia-at-assumption",
@@ -15701,7 +15842,8 @@
           "TFL": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-12-chequamegon-at-prentice",
@@ -15711,13 +15853,13 @@
     "home": {
       "school_id": "prentice",
       "name": "Prentice",
-      "score": 54,
+      "score": 30,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_32350b25-0e25-4c39-ab7f-248cf3d3c50f.jpg"
     },
     "away": {
       "school_id": "chequamegon",
       "name": "Chequamegon/Butternut/Mercer",
-      "score": 30,
+      "score": 54,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_8a762f16-f752-446d-954d-5b2377aac421.jpg"
     },
     "status": "final",
@@ -15782,7 +15924,8 @@
           "TKL": "21.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-12-hurley-at-flambeau",
@@ -15916,7 +16059,8 @@
           "TFL": "3.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-12-wild-rose-at-tri-county",
@@ -15926,13 +16070,13 @@
     "home": {
       "school_id": "tri-county",
       "name": "Tri-County",
-      "score": 12,
+      "score": 70,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_f1be37fb-8cc3-4aa8-9aff-59ecfff66bce.jpg"
     },
     "away": {
       "school_id": "wild-rose",
       "name": "Wild Rose",
-      "score": 70,
+      "score": 12,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_afc6dd34-d8be-4dad-bb02-f667d3849196.jpg"
     },
     "status": "final",
@@ -16012,7 +16156,8 @@
           "INT": "1"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-12-menominee-nation-at-marion",
@@ -16040,7 +16185,8 @@
     ],
     "playoff": false,
     "playoff_round": null,
-    "stat_leaders": []
+    "stat_leaders": [],
+    "scoring": []
   },
   {
     "id": "football-2025-09-12-northland-pines-at-crivitz",
@@ -16050,13 +16196,13 @@
     "home": {
       "school_id": "",
       "name": "Crivitz",
-      "score": 7,
+      "score": 51,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_1fdcff88-7cc9-4f69-8fb9-ebc264baa87e.jpg"
     },
     "away": {
       "school_id": "northland-pines",
       "name": "Northland Pines",
-      "score": 51,
+      "score": 7,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_79c22a6c-afec-4ff7-91b5-4dc390886030.jpg"
     },
     "status": "final",
@@ -16174,7 +16320,8 @@
           "INT": "1"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-12-waupaca-at-fox-valley-lutheran",
@@ -16184,13 +16331,13 @@
     "home": {
       "school_id": "",
       "name": "Fox Valley Lutheran",
-      "score": 9,
+      "score": 45,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_2116d3ae-3540-49e0-ac30-ad5bb1d3eb72.jpg"
     },
     "away": {
       "school_id": "waupaca",
       "name": "Waupaca",
-      "score": 45,
+      "score": 9,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_de0d8522-ef3a-41b7-ac42-fa9c9b40beeb.jpg"
     },
     "status": "final",
@@ -16307,7 +16454,8 @@
           "TFL": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-12-gilman-at-cornell",
@@ -16388,7 +16536,8 @@
           "TKL": "10.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-12-winter-birchwood-at-mellen",
@@ -16398,13 +16547,13 @@
     "home": {
       "school_id": "mellen",
       "name": "Mellen",
-      "score": 1,
+      "score": 0,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_bfa93cf6-a5f9-4b30-bddb-78dfd3233087.jpg"
     },
     "away": {
       "school_id": "",
       "name": "Winter/Birchwood",
-      "score": 0,
+      "score": 1,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_25d11829-ab6a-4bb9-8c8f-bc32b3587c71.png"
     },
     "status": "final",
@@ -16416,7 +16565,8 @@
     ],
     "playoff": false,
     "playoff_round": null,
-    "stat_leaders": []
+    "stat_leaders": [],
+    "scoring": []
   },
   {
     "id": "football-2025-09-12-washburn-at-northwood-solon-springs",
@@ -16426,13 +16576,13 @@
     "home": {
       "school_id": "",
       "name": "Northwood/Solon Springs",
-      "score": 8,
+      "score": 44,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_07b92e6e-86b8-475d-afd0-afe5dfae7899.jpg"
     },
     "away": {
       "school_id": "washburn",
       "name": "Washburn",
-      "score": 44,
+      "score": 8,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_bd34b4d3-ce88-40f9-a743-53bd8b1bd3b9.jpg"
     },
     "status": "final",
@@ -16496,7 +16646,8 @@
           "TKL": "6.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-12-south-shore-at-shell-lake",
@@ -16524,7 +16675,8 @@
     ],
     "playoff": false,
     "playoff_round": null,
-    "stat_leaders": []
+    "stat_leaders": [],
+    "scoring": []
   },
   {
     "id": "football-2025-09-13-bowler-at-newman-catholic",
@@ -16552,7 +16704,8 @@
     ],
     "playoff": false,
     "playoff_round": null,
-    "stat_leaders": []
+    "stat_leaders": [],
+    "scoring": []
   },
   {
     "id": "football-2025-09-18-wausau-east-at-mosinee",
@@ -16562,13 +16715,13 @@
     "home": {
       "school_id": "mosinee",
       "name": "Mosinee",
-      "score": 7,
+      "score": 35,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_931e8899-5525-40e0-b778-26d19bb94511.jpg"
     },
     "away": {
       "school_id": "wausau-east",
       "name": "Wausau East",
-      "score": 35,
+      "score": 7,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_4e9a3bfe-acd7-47b2-94e9-a9b580bdc029.jpg"
     },
     "status": "final",
@@ -16686,7 +16839,8 @@
           "INT": "1"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-18-lakeland-at-medford",
@@ -16818,7 +16972,8 @@
           "TFL": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-18-antigo-at-merrill",
@@ -16951,7 +17106,8 @@
           "TFL": "3.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-18-port-edwards-at-bowler",
@@ -16961,13 +17117,13 @@
     "home": {
       "school_id": "bowler",
       "name": "Bowler/Gresham",
-      "score": 1,
+      "score": 0,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_a3c24bd6-bd0f-4ce1-82b7-1f355a8267c2.jpg"
     },
     "away": {
       "school_id": "port-edwards",
       "name": "Port Edwards",
-      "score": 0,
+      "score": 1,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_d8f22e2b-26cd-4a22-88ba-2093b68a85a3.jpg"
     },
     "status": "final",
@@ -16979,7 +17135,8 @@
     ],
     "playoff": false,
     "playoff_round": null,
-    "stat_leaders": []
+    "stat_leaders": [],
+    "scoring": []
   },
   {
     "id": "football-2025-09-19-wild-rose-at-menominee-nation",
@@ -17007,7 +17164,8 @@
     ],
     "playoff": false,
     "playoff_round": null,
-    "stat_leaders": []
+    "stat_leaders": [],
+    "scoring": []
   },
   {
     "id": "football-2025-09-19-wausaukee-at-port-edwards",
@@ -17017,13 +17175,13 @@
     "home": {
       "school_id": "port-edwards",
       "name": "Port Edwards",
-      "score": 49,
+      "score": 12,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_d8f22e2b-26cd-4a22-88ba-2093b68a85a3.jpg"
     },
     "away": {
       "school_id": "",
       "name": "Wausaukee",
-      "score": 12,
+      "score": 49,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_c0cb1197-8629-47c8-b63f-3bdf00b4b7e8.jpg"
     },
     "status": "final",
@@ -17088,7 +17246,8 @@
           "TKL": "6.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-19-shell-lake-at-mellen",
@@ -17098,13 +17257,13 @@
     "home": {
       "school_id": "mellen",
       "name": "Mellen",
-      "score": 1,
+      "score": 0,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_bfa93cf6-a5f9-4b30-bddb-78dfd3233087.jpg"
     },
     "away": {
       "school_id": "shell-lake",
       "name": "Shell Lake",
-      "score": 0,
+      "score": 1,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_82eee0b6-ef6b-45a9-9190-14c55732bdcc.jpg"
     },
     "status": "final",
@@ -17116,7 +17275,8 @@
     ],
     "playoff": false,
     "playoff_round": null,
-    "stat_leaders": []
+    "stat_leaders": [],
+    "scoring": []
   },
   {
     "id": "football-2025-09-19-northwood-solon-springs-at-south-shore",
@@ -17126,13 +17286,13 @@
     "home": {
       "school_id": "south-shore",
       "name": "South Shore",
-      "score": 66,
+      "score": 0,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_76c215b3-83b3-4b4e-a0ba-ddc90eddf23f.jpg"
     },
     "away": {
       "school_id": "",
       "name": "Northwood/Solon Springs",
-      "score": 0,
+      "score": 66,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_07b92e6e-86b8-475d-afd0-afe5dfae7899.jpg"
     },
     "status": "final",
@@ -17144,7 +17304,8 @@
     ],
     "playoff": false,
     "playoff_round": null,
-    "stat_leaders": []
+    "stat_leaders": [],
+    "scoring": []
   },
   {
     "id": "football-2025-09-19-wisconsin-rapids-at-wausau-west",
@@ -17172,7 +17333,8 @@
     ],
     "playoff": false,
     "playoff_round": null,
-    "stat_leaders": []
+    "stat_leaders": [],
+    "scoring": []
   },
   {
     "id": "football-2025-09-19-marshfield-at-dc-everest",
@@ -17305,7 +17467,8 @@
           "FR": "1"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-19-hudson-at-spash",
@@ -17315,13 +17478,13 @@
     "home": {
       "school_id": "spash",
       "name": "Stevens Point",
-      "score": 24,
+      "score": 14,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_4b812f69-ebb8-4b26-9ef8-f6718e899845.jpg"
     },
     "away": {
       "school_id": "hudson",
       "name": "Hudson",
-      "score": 14,
+      "score": 24,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_b5429a0f-ab7b-4a72-bcde-bb8a04b1d448.jpg"
     },
     "status": "final",
@@ -17439,7 +17602,8 @@
           "INT": "1"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-19-athens-at-hurley",
@@ -17571,7 +17735,8 @@
           "TKL": "12.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-19-marathon-at-colby",
@@ -17702,7 +17867,8 @@
           "TKL": "6.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-19-newman-catholic-at-marion",
@@ -17712,13 +17878,13 @@
     "home": {
       "school_id": "marion",
       "name": "Marion/Tigerton",
-      "score": 38,
+      "score": 48,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_d5fc99f4-f588-446f-964e-0f032a209576.jpg"
     },
     "away": {
       "school_id": "newman-catholic",
       "name": "Newman Catholic",
-      "score": 48,
+      "score": 38,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_17ae3c02-235c-4b92-b1b2-699075c98ccd.jpg"
     },
     "status": "final",
@@ -17809,7 +17975,8 @@
           "TFL": "2.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-19-stratford-at-weyauwega-fremont",
@@ -17940,7 +18107,8 @@
           "TKL": "16.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-19-wittenberg-birnamwood-at-spencer",
@@ -18074,7 +18242,8 @@
           "INT": "1"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-19-abbotsford-at-assumption",
@@ -18206,7 +18375,8 @@
           "TKL": "15.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-19-tomahawk-at-rhinelander",
@@ -18327,7 +18497,8 @@
           "TFL": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-19-eau-claire-north-at-eau-claire-memorial",
@@ -18460,7 +18631,8 @@
           "TFL": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-19-rice-lake-at-chippewa-falls",
@@ -18470,13 +18642,13 @@
     "home": {
       "school_id": "chippewa-falls",
       "name": "Chippewa Falls",
-      "score": 38,
+      "score": 22,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_a37c0e1b-af75-43da-ac8f-109620fc4b30.jpg"
     },
     "away": {
       "school_id": "rice-lake",
       "name": "Rice Lake",
-      "score": 22,
+      "score": 38,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_c8efa1ca-c48f-42d4-bc7c-6918f400a3a9.jpg"
     },
     "status": "final",
@@ -18594,7 +18766,8 @@
           "TFL": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-19-river-falls-at-new-richmond",
@@ -18728,7 +18901,8 @@
           "INT": "2"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-19-rosholt-at-auburndale",
@@ -18756,7 +18930,8 @@
     ],
     "playoff": false,
     "playoff_round": null,
-    "stat_leaders": []
+    "stat_leaders": [],
+    "scoring": []
   },
   {
     "id": "football-2025-09-19-pacelli-at-iola-scandinavia",
@@ -18891,7 +19066,8 @@
           "TFL": "2.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-19-amherst-at-loyal",
@@ -19023,7 +19199,8 @@
           "TKL": "9.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-19-prentice-at-phillips",
@@ -19033,13 +19210,13 @@
     "home": {
       "school_id": "phillips",
       "name": "Phillips",
-      "score": 0,
+      "score": 1,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_c254fbf5-239d-4754-b90b-89888cd71d92.jpg"
     },
     "away": {
       "school_id": "prentice",
       "name": "Prentice",
-      "score": 1,
+      "score": 0,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_32350b25-0e25-4c39-ab7f-248cf3d3c50f.jpg"
     },
     "status": "final",
@@ -19051,7 +19228,8 @@
     ],
     "playoff": false,
     "playoff_round": null,
-    "stat_leaders": []
+    "stat_leaders": [],
+    "scoring": []
   },
   {
     "id": "football-2025-09-19-flambeau-at-chequamegon",
@@ -19186,7 +19364,8 @@
           "TFL": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-19-bruce-at-washburn",
@@ -19290,7 +19469,8 @@
           "TKL": "7.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-19-rosholt-at-phillips",
@@ -19411,7 +19591,8 @@
           "TFL": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-19-winter-birchwood-at-rib-lake",
@@ -19439,7 +19620,8 @@
     ],
     "playoff": false,
     "playoff_round": null,
-    "stat_leaders": []
+    "stat_leaders": [],
+    "scoring": []
   },
   {
     "id": "football-2025-09-19-tri-county-at-almond-bancroft",
@@ -19449,13 +19631,13 @@
     "home": {
       "school_id": "almond-bancroft",
       "name": "Almond-Bancroft",
-      "score": 22,
+      "score": 14,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_1e44e53a-b8d0-4890-9b36-49ec6a09d640.png"
     },
     "away": {
       "school_id": "tri-county",
       "name": "Tri-County",
-      "score": 14,
+      "score": 22,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_f1be37fb-8cc3-4aa8-9aff-59ecfff66bce.jpg"
     },
     "status": "final",
@@ -19576,7 +19758,8 @@
           "SKS": "1.5"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-19-menomonie-at-superior",
@@ -19586,13 +19769,13 @@
     "home": {
       "school_id": "superior",
       "name": "Superior",
-      "score": 42,
+      "score": 6,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_43272079-e763-4d07-9373-dc599252cf34.jpg"
     },
     "away": {
       "school_id": "menomonie",
       "name": "Menomonie",
-      "score": 6,
+      "score": 42,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_0d184c10-2571-463a-ad04-2aac88094ce7.jpg"
     },
     "status": "final",
@@ -19707,7 +19890,8 @@
           "TKL": "12.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-19-crandon-at-northland-pines",
@@ -19717,13 +19901,13 @@
     "home": {
       "school_id": "northland-pines",
       "name": "Northland Pines",
-      "score": 40,
+      "score": 7,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_79c22a6c-afec-4ff7-91b5-4dc390886030.jpg"
     },
     "away": {
       "school_id": "",
       "name": "Crandon",
-      "score": 7,
+      "score": 40,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_d7249385-b862-4085-86a5-62d65d7000dc.jpg"
     },
     "status": "final",
@@ -19838,7 +20022,8 @@
           "TKL": "7.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-19-seymour-at-waupaca",
@@ -19848,13 +20033,13 @@
     "home": {
       "school_id": "waupaca",
       "name": "Waupaca",
-      "score": 34,
+      "score": 14,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_de0d8522-ef3a-41b7-ac42-fa9c9b40beeb.jpg"
     },
     "away": {
       "school_id": "",
       "name": "Seymour",
-      "score": 14,
+      "score": 34,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_8110b9ec-4048-4b89-9ea5-bc644fe2de25.jpg"
     },
     "status": "final",
@@ -19973,7 +20158,8 @@
           "SKS": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-19-thorp-at-owen-withee",
@@ -20055,7 +20241,8 @@
           "INT": "1"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-19-mcdonell-central-catholic-at-gilman",
@@ -20083,7 +20270,8 @@
     ],
     "playoff": false,
     "playoff_round": null,
-    "stat_leaders": []
+    "stat_leaders": [],
+    "scoring": []
   },
   {
     "id": "football-2025-09-19-new-auburn-at-shell-lake",
@@ -20218,7 +20406,8 @@
           "INT": "1"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-20-edgar-at-pittsville",
@@ -20326,7 +20515,8 @@
           "TKL": "8.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-25-phillips-at-flambeau",
@@ -20458,7 +20648,8 @@
           "TKL": "14.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-26-marion-at-port-edwards",
@@ -20593,7 +20784,8 @@
           "TFL": "2.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-26-medford-at-wausau-east",
@@ -20700,7 +20892,8 @@
           "TFL": "3.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-26-dc-everest-at-eau-claire-north",
@@ -20833,7 +21026,8 @@
           "TFL": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-26-marshfield-at-wisconsin-rapids",
@@ -20861,7 +21055,8 @@
     ],
     "playoff": false,
     "playoff_round": null,
-    "stat_leaders": []
+    "stat_leaders": [],
+    "scoring": []
   },
   {
     "id": "football-2025-09-26-chequamegon-at-athens",
@@ -20994,7 +21189,8 @@
           "TFL": "2.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-26-assumption-at-edgar",
@@ -21100,7 +21296,8 @@
           "TFL": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-26-weyauwega-fremont-at-marathon",
@@ -21232,7 +21429,8 @@
           "TFL": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-26-menominee-nation-at-newman-catholic",
@@ -21260,7 +21458,8 @@
     ],
     "playoff": false,
     "playoff_round": null,
-    "stat_leaders": []
+    "stat_leaders": [],
+    "scoring": []
   },
   {
     "id": "football-2025-09-26-spencer-at-amherst",
@@ -21270,13 +21469,13 @@
     "home": {
       "school_id": "amherst",
       "name": "Amherst",
-      "score": 22,
+      "score": 35,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_8c17d9d9-12f6-469d-873c-c2a8fc11e2dc.jpg"
     },
     "away": {
       "school_id": "spencer",
       "name": "Spencer/Columbus Catholic",
-      "score": 35,
+      "score": 22,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_0b29e7c6-5aa2-4acd-a96e-8d476a8b9d50.jpg"
     },
     "status": "final",
@@ -21392,7 +21591,8 @@
           "TFL": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-26-mosinee-at-tomahawk",
@@ -21524,7 +21724,8 @@
           "TKL": "10.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-26-pittsville-at-abbotsford",
@@ -21659,7 +21860,8 @@
           "INT": "1"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-26-antigo-at-rhinelander",
@@ -21792,7 +21994,8 @@
           "INT": "1"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-26-merrill-at-lakeland",
@@ -21925,7 +22128,8 @@
           "TKL": "11.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-26-eau-claire-memorial-at-menomonie",
@@ -21935,13 +22139,13 @@
     "home": {
       "school_id": "menomonie",
       "name": "Menomonie",
-      "score": 7,
+      "score": 42,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_0d184c10-2571-463a-ad04-2aac88094ce7.jpg"
     },
     "away": {
       "school_id": "eau-claire-memorial",
       "name": "Eau Claire Memorial",
-      "score": 42,
+      "score": 7,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_5a211470-9969-410f-af84-33daef4d080f.jpg"
     },
     "status": "final",
@@ -22058,7 +22262,8 @@
           "SKS": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-26-chippewa-falls-at-superior",
@@ -22191,7 +22396,8 @@
           "TKL": "10.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-26-hudson-at-river-falls",
@@ -22201,13 +22407,13 @@
     "home": {
       "school_id": "river-falls",
       "name": "River Falls",
-      "score": 21,
+      "score": 44,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_d4fe0fc0-e338-47af-a664-b53012197324.jpg"
     },
     "away": {
       "school_id": "hudson",
       "name": "Hudson",
-      "score": 44,
+      "score": 21,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_b5429a0f-ab7b-4a72-bcde-bb8a04b1d448.jpg"
     },
     "status": "final",
@@ -22322,7 +22528,8 @@
           "TKL": "17.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-26-rice-lake-at-new-richmond",
@@ -22332,13 +22539,13 @@
     "home": {
       "school_id": "new-richmond",
       "name": "New Richmond",
-      "score": 26,
+      "score": 23,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_8d7a6b7e-4675-4b6b-a563-87adccf6cf1a.jpg"
     },
     "away": {
       "school_id": "rice-lake",
       "name": "Rice Lake",
-      "score": 23,
+      "score": 26,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_c8efa1ca-c48f-42d4-bc7c-6918f400a3a9.jpg"
     },
     "status": "final",
@@ -22455,7 +22662,8 @@
           "TFL": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-26-auburndale-at-pacelli",
@@ -22588,7 +22796,8 @@
           "TKL": "8.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-26-iola-scandinavia-at-rosholt",
@@ -22616,7 +22825,8 @@
     ],
     "playoff": false,
     "playoff_round": null,
-    "stat_leaders": []
+    "stat_leaders": [],
+    "scoring": []
   },
   {
     "id": "football-2025-09-26-loyal-at-wittenberg-birnamwood",
@@ -22723,7 +22933,8 @@
           "TFL": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-26-rib-lake-at-prentice",
@@ -22751,7 +22962,8 @@
     ],
     "playoff": false,
     "playoff_round": null,
-    "stat_leaders": []
+    "stat_leaders": [],
+    "scoring": []
   },
   {
     "id": "football-2025-09-26-south-shore-at-bruce",
@@ -22779,7 +22991,8 @@
     ],
     "playoff": false,
     "playoff_round": null,
-    "stat_leaders": []
+    "stat_leaders": [],
+    "scoring": []
   },
   {
     "id": "football-2025-09-26-hurley-at-washburn",
@@ -22913,7 +23126,8 @@
           "TFL": "2.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-26-almond-bancroft-at-wild-rose",
@@ -22923,13 +23137,13 @@
     "home": {
       "school_id": "wild-rose",
       "name": "Wild Rose",
-      "score": 60,
+      "score": 40,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_afc6dd34-d8be-4dad-bb02-f667d3849196.jpg"
     },
     "away": {
       "school_id": "almond-bancroft",
       "name": "Almond-Bancroft",
-      "score": 40,
+      "score": 60,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_1e44e53a-b8d0-4890-9b36-49ec6a09d640.png"
     },
     "status": "final",
@@ -23037,7 +23251,8 @@
           "TDS": "4"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-26-bowler-at-tri-county",
@@ -23047,13 +23262,13 @@
     "home": {
       "school_id": "tri-county",
       "name": "Tri-County",
-      "score": 0,
+      "score": 1,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_f1be37fb-8cc3-4aa8-9aff-59ecfff66bce.jpg"
     },
     "away": {
       "school_id": "bowler",
       "name": "Bowler/Gresham",
-      "score": 1,
+      "score": 0,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_a3c24bd6-bd0f-4ce1-82b7-1f355a8267c2.jpg"
     },
     "status": "final",
@@ -23065,7 +23280,8 @@
     ],
     "playoff": false,
     "playoff_round": null,
-    "stat_leaders": []
+    "stat_leaders": [],
+    "scoring": []
   },
   {
     "id": "football-2025-09-26-tri-county-at-rosholt",
@@ -23075,13 +23291,13 @@
     "home": {
       "school_id": "rosholt",
       "name": "Rosholt",
-      "score": 34,
+      "score": 48,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_f5ed9557-3c24-48ce-b465-7e3c50d33b5a.jpg"
     },
     "away": {
       "school_id": "tri-county",
       "name": "Tri-County",
-      "score": 48,
+      "score": 34,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_f1be37fb-8cc3-4aa8-9aff-59ecfff66bce.jpg"
     },
     "status": "final",
@@ -23185,7 +23401,8 @@
           "TDS": "2"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-26-northland-pines-at-clintonville",
@@ -23318,7 +23535,8 @@
           "TFL": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-26-waupaca-at-new-london",
@@ -23453,7 +23671,8 @@
           "TFL": "2.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-26-owen-withee-at-alma-center-lincoln",
@@ -23576,7 +23795,8 @@
           "TDS": "0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-26-gilman-at-thorp",
@@ -23659,7 +23879,8 @@
           "INT": "1"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-26-mellen-at-northwood-solon-springs",
@@ -23669,13 +23890,13 @@
     "home": {
       "school_id": "",
       "name": "Northwood/Solon Springs",
-      "score": 0,
+      "score": 1,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_07b92e6e-86b8-475d-afd0-afe5dfae7899.jpg"
     },
     "away": {
       "school_id": "mellen",
       "name": "Mellen",
-      "score": 1,
+      "score": 0,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_bfa93cf6-a5f9-4b30-bddb-78dfd3233087.jpg"
     },
     "status": "final",
@@ -23687,7 +23908,8 @@
     ],
     "playoff": false,
     "playoff_round": null,
-    "stat_leaders": []
+    "stat_leaders": [],
+    "scoring": []
   },
   {
     "id": "football-2025-09-26-winter-birchwood-at-shell-lake",
@@ -23771,7 +23993,8 @@
           "INT": "1"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-27-spash-at-wausau-west",
@@ -23904,7 +24127,8 @@
           "SKS": "3.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-09-27-colby-at-stratford",
@@ -24036,7 +24260,8 @@
           "TFL": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-02-shell-lake-at-prentice",
@@ -24046,13 +24271,13 @@
     "home": {
       "school_id": "prentice",
       "name": "Prentice",
-      "score": 1,
+      "score": 0,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_32350b25-0e25-4c39-ab7f-248cf3d3c50f.jpg"
     },
     "away": {
       "school_id": "shell-lake",
       "name": "Shell Lake",
-      "score": 0,
+      "score": 1,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_82eee0b6-ef6b-45a9-9190-14c55732bdcc.jpg"
     },
     "status": "final",
@@ -24064,7 +24289,8 @@
     ],
     "playoff": false,
     "playoff_round": null,
-    "stat_leaders": []
+    "stat_leaders": [],
+    "scoring": []
   },
   {
     "id": "football-2025-10-02-bruce-at-clayton",
@@ -24074,13 +24300,13 @@
     "home": {
       "school_id": "",
       "name": "Clayton",
-      "score": 40,
+      "score": 62,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_cd5f95d9-1ba8-4ff6-a3f1-0c7d4324c519.jpg"
     },
     "away": {
       "school_id": "bruce",
       "name": "Bruce",
-      "score": 62,
+      "score": 40,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_2213fe88-8922-4598-bcc4-fefe538f89f8.jpg"
     },
     "status": "final",
@@ -24184,7 +24410,8 @@
           "TFL": "2.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-03-washburn-at-south-shore",
@@ -24212,7 +24439,8 @@
     ],
     "playoff": false,
     "playoff_round": null,
-    "stat_leaders": []
+    "stat_leaders": [],
+    "scoring": []
   },
   {
     "id": "football-2025-10-03-wausau-west-at-marshfield",
@@ -24222,13 +24450,13 @@
     "home": {
       "school_id": "marshfield",
       "name": "Marshfield",
-      "score": 22,
+      "score": 40,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_deadd1c8-aaca-4c5f-b1f8-6e7fced8f9b6.jpg"
     },
     "away": {
       "school_id": "wausau-west",
       "name": "Wausau West",
-      "score": 40,
+      "score": 22,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_08096aa8-b6b7-4492-8151-27d1822a8fa9.png"
     },
     "status": "final",
@@ -24345,7 +24573,8 @@
           "SKS": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-03-chippewa-falls-at-dc-everest",
@@ -24355,13 +24584,13 @@
     "home": {
       "school_id": "dc-everest",
       "name": "D.C. Everest",
-      "score": 35,
+      "score": 14,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_90bf6c6c-964c-48da-9f99-0df569675bce.jpg"
     },
     "away": {
       "school_id": "chippewa-falls",
       "name": "Chippewa Falls",
-      "score": 14,
+      "score": 35,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_a37c0e1b-af75-43da-ac8f-109620fc4b30.jpg"
     },
     "status": "final",
@@ -24478,7 +24707,8 @@
           "TKL": "10.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-03-eau-claire-north-at-spash",
@@ -24613,7 +24843,8 @@
           "SKS": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-03-wisconsin-rapids-at-eau-claire-memorial",
@@ -24623,13 +24854,13 @@
     "home": {
       "school_id": "eau-claire-memorial",
       "name": "Eau Claire Memorial",
-      "score": 20,
+      "score": 29,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_5a211470-9969-410f-af84-33daef4d080f.jpg"
     },
     "away": {
       "school_id": "wisconsin-rapids",
       "name": "Wisconsin Rapids Lincoln",
-      "score": 29,
+      "score": 20,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_3209dae3-72d3-4b53-ab81-def087d7df74.jpg"
     },
     "status": "final",
@@ -24641,7 +24872,8 @@
     ],
     "playoff": false,
     "playoff_round": null,
-    "stat_leaders": []
+    "stat_leaders": [],
+    "scoring": []
   },
   {
     "id": "football-2025-10-03-athens-at-phillips",
@@ -24651,13 +24883,13 @@
     "home": {
       "school_id": "phillips",
       "name": "Phillips",
-      "score": 48,
+      "score": 52,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_c254fbf5-239d-4754-b90b-89888cd71d92.jpg"
     },
     "away": {
       "school_id": "athens",
       "name": "Athens",
-      "score": 52,
+      "score": 48,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_9de064b0-6623-41d4-b94e-6a900bfb5674.PNG"
     },
     "status": "final",
@@ -24776,7 +25008,8 @@
           "TFL": "3.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-03-edgar-at-iola-scandinavia",
@@ -24908,7 +25141,8 @@
           "TKL": "8.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-03-marathon-at-stratford",
@@ -24918,13 +25152,13 @@
     "home": {
       "school_id": "stratford",
       "name": "Stratford",
-      "score": 6,
+      "score": 35,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_8aa5a37b-e404-41b0-83f2-799684d68afa.jpg"
     },
     "away": {
       "school_id": "marathon",
       "name": "Marathon",
-      "score": 35,
+      "score": 6,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_21893c9d-172b-4f3b-a52c-187062f259f9.jpg"
     },
     "status": "final",
@@ -25041,7 +25275,8 @@
           "SKS": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-03-port-edwards-at-newman-catholic",
@@ -25164,7 +25399,8 @@
           "INT": "1"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-03-spencer-at-loyal",
@@ -25294,7 +25530,8 @@
           "TKL": "11.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-03-rhinelander-at-mosinee",
@@ -25427,7 +25664,8 @@
           "TFL": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-03-wittenberg-birnamwood-at-colby",
@@ -25437,13 +25675,13 @@
     "home": {
       "school_id": "colby",
       "name": "Colby",
-      "score": 52,
+      "score": 33,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_341b5868-d166-406a-90e1-7bd5d0ca6cd2.jpg"
     },
     "away": {
       "school_id": "wittenberg-birnamwood",
       "name": "Wittenberg-Birnamwood",
-      "score": 33,
+      "score": 52,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_08fbc74b-f839-4f21-9ba0-d72f3ac10a2f.jpg"
     },
     "status": "final",
@@ -25560,7 +25798,8 @@
           "FR": "1"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-03-abbotsford-at-auburndale",
@@ -25570,13 +25809,13 @@
     "home": {
       "school_id": "auburndale",
       "name": "Auburndale",
-      "score": 0,
+      "score": 42,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_f8e095b1-38af-494e-8c1f-895948e340bf.jpg"
     },
     "away": {
       "school_id": "abbotsford",
       "name": "Abbotsford",
-      "score": 42,
+      "score": 0,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_04f58fe2-896b-4c14-8b85-177ddb8edf4f.jpg"
     },
     "status": "final",
@@ -25692,7 +25931,8 @@
           "TFL": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-03-tomahawk-at-medford",
@@ -25824,7 +26064,8 @@
           "TFL": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-03-lakeland-at-antigo",
@@ -25956,7 +26197,8 @@
           "TFL": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-03-superior-at-hudson",
@@ -26088,7 +26330,8 @@
           "TFL": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-03-new-richmond-at-menomonie",
@@ -26219,7 +26462,8 @@
           "TKL": "12.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-03-river-falls-at-rice-lake",
@@ -26229,13 +26473,13 @@
     "home": {
       "school_id": "rice-lake",
       "name": "Rice Lake",
-      "score": 40,
+      "score": 28,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_c8efa1ca-c48f-42d4-bc7c-6918f400a3a9.jpg"
     },
     "away": {
       "school_id": "river-falls",
       "name": "River Falls",
-      "score": 28,
+      "score": 40,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_d4fe0fc0-e338-47af-a664-b53012197324.jpg"
     },
     "status": "final",
@@ -26352,7 +26596,8 @@
           "TKL": "10.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-03-pittsville-at-assumption",
@@ -26362,13 +26607,13 @@
     "home": {
       "school_id": "assumption",
       "name": "Assumption",
-      "score": 30,
+      "score": 6,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_32bce1bc-933e-4cb3-8bbc-41483dd4f864.jpg"
     },
     "away": {
       "school_id": "pittsville",
       "name": "Pittsville",
-      "score": 6,
+      "score": 30,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_d56c5490-ed3e-471e-86f7-a5d96b8b690b.jpg"
     },
     "status": "final",
@@ -26486,7 +26731,8 @@
           "TFL": "4.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-03-pacelli-at-rosholt",
@@ -26514,7 +26760,8 @@
     ],
     "playoff": false,
     "playoff_round": null,
-    "stat_leaders": []
+    "stat_leaders": [],
+    "scoring": []
   },
   {
     "id": "football-2025-10-03-amherst-at-weyauwega-fremont",
@@ -26648,7 +26895,8 @@
           "TFL": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-03-flambeau-at-rib-lake",
@@ -26676,7 +26924,8 @@
     ],
     "playoff": false,
     "playoff_round": null,
-    "stat_leaders": []
+    "stat_leaders": [],
+    "scoring": []
   },
   {
     "id": "football-2025-10-03-flambeau-at-almond-bancroft",
@@ -26810,7 +27059,8 @@
           "TFL": "5.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-03-bruce-at-mellen",
@@ -26838,7 +27088,8 @@
     ],
     "playoff": false,
     "playoff_round": null,
-    "stat_leaders": []
+    "stat_leaders": [],
+    "scoring": []
   },
   {
     "id": "football-2025-10-03-hurley-at-chequamegon",
@@ -26974,7 +27225,8 @@
           "TFL": "3.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-03-wild-rose-at-bowler",
@@ -27002,7 +27254,8 @@
     ],
     "playoff": false,
     "playoff_round": null,
-    "stat_leaders": []
+    "stat_leaders": [],
+    "scoring": []
   },
   {
     "id": "football-2025-10-03-wild-rose-at-rosholt",
@@ -27012,13 +27265,13 @@
     "home": {
       "school_id": "rosholt",
       "name": "Rosholt",
-      "score": 0,
+      "score": 44,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_f5ed9557-3c24-48ce-b465-7e3c50d33b5a.jpg"
     },
     "away": {
       "school_id": "wild-rose",
       "name": "Wild Rose",
-      "score": 44,
+      "score": 0,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_afc6dd34-d8be-4dad-bb02-f667d3849196.jpg"
     },
     "status": "final",
@@ -27111,7 +27364,8 @@
           "TDS": "1"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-03-menominee-nation-at-almond-bancroft",
@@ -27139,7 +27393,8 @@
     ],
     "playoff": false,
     "playoff_round": null,
-    "stat_leaders": []
+    "stat_leaders": [],
+    "scoring": []
   },
   {
     "id": "football-2025-10-03-tri-county-at-marion",
@@ -27272,7 +27527,8 @@
           "TKL": "13.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-03-coleman-at-northland-pines",
@@ -27282,13 +27538,13 @@
     "home": {
       "school_id": "northland-pines",
       "name": "Northland Pines",
-      "score": 44,
+      "score": 7,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_79c22a6c-afec-4ff7-91b5-4dc390886030.jpg"
     },
     "away": {
       "school_id": "",
       "name": "Coleman",
-      "score": 7,
+      "score": 44,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_9975216b-284e-4726-ba2c-25ff5b5c6e97.jpg"
     },
     "status": "final",
@@ -27404,7 +27660,8 @@
           "TKL": "13.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-03-winneconne-at-waupaca",
@@ -27414,13 +27671,13 @@
     "home": {
       "school_id": "waupaca",
       "name": "Waupaca",
-      "score": 56,
+      "score": 0,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_de0d8522-ef3a-41b7-ac42-fa9c9b40beeb.jpg"
     },
     "away": {
       "school_id": "",
       "name": "Winneconne",
-      "score": 0,
+      "score": 56,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_9ed19baf-3191-4d18-8134-df6c66164077.jpg"
     },
     "status": "final",
@@ -27537,7 +27794,8 @@
           "TFL": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-03-lake-holcombe-at-owen-withee",
@@ -27618,7 +27876,8 @@
           "TKL": "11.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-03-alma-center-lincoln-at-gilman",
@@ -27698,7 +27957,8 @@
           "TKL": "6.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-04-wausau-east-at-merrill",
@@ -27708,13 +27968,13 @@
     "home": {
       "school_id": "merrill",
       "name": "Merrill",
-      "score": 14,
+      "score": 31,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_20e5e107-d060-4d58-9cbe-58312f389ed8.jpg"
     },
     "away": {
       "school_id": "wausau-east",
       "name": "Wausau East",
-      "score": 31,
+      "score": 14,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_4e9a3bfe-acd7-47b2-94e9-a9b580bdc029.jpg"
     },
     "status": "final",
@@ -27832,7 +28092,8 @@
           "INT": "1"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-04-aurora-central-catholic-at-pacelli",
@@ -27842,13 +28103,13 @@
     "home": {
       "school_id": "pacelli",
       "name": "Pacelli",
-      "score": 41,
+      "score": 6,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_a97ec00c-92c5-4107-8c93-5eba8b8297b4.jpg"
     },
     "away": {
       "school_id": "",
       "name": "Aurora Central Catholic",
-      "score": 6,
+      "score": 41,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/no_logo.jpg"
     },
     "status": "final",
@@ -27913,7 +28174,8 @@
           "TFL": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-09-edgar-at-pacelli",
@@ -28045,7 +28307,8 @@
           "TFL": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-09-shawano-at-waupaca",
@@ -28168,7 +28431,8 @@
           "SKS": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-10-chequamegon-at-south-shore",
@@ -28196,7 +28460,8 @@
     ],
     "playoff": false,
     "playoff_round": null,
-    "stat_leaders": []
+    "stat_leaders": [],
+    "scoring": []
   },
   {
     "id": "football-2025-10-10-port-edwards-at-menominee-nation",
@@ -28206,13 +28471,13 @@
     "home": {
       "school_id": "menominee-nation",
       "name": "Menominee Nation",
-      "score": 1,
+      "score": 0,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_89ad3d70-aba7-4aea-99eb-bcf33ac9056d.png"
     },
     "away": {
       "school_id": "port-edwards",
       "name": "Port Edwards",
-      "score": 0,
+      "score": 1,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_d8f22e2b-26cd-4a22-88ba-2093b68a85a3.jpg"
     },
     "status": "final",
@@ -28224,7 +28489,8 @@
     ],
     "playoff": false,
     "playoff_round": null,
-    "stat_leaders": []
+    "stat_leaders": [],
+    "scoring": []
   },
   {
     "id": "football-2025-10-10-eau-claire-memorial-at-wausau-west",
@@ -28358,7 +28624,8 @@
           "TFL": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-10-dc-everest-at-spash",
@@ -28491,7 +28758,8 @@
           "TKL": "10.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-10-marshfield-at-eau-claire-north",
@@ -28624,7 +28892,8 @@
           "FR": "1"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-10-new-richmond-at-wisconsin-rapids",
@@ -28634,13 +28903,13 @@
     "home": {
       "school_id": "wisconsin-rapids",
       "name": "Wisconsin Rapids Lincoln",
-      "score": 49,
+      "score": 14,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_3209dae3-72d3-4b53-ab81-def087d7df74.jpg"
     },
     "away": {
       "school_id": "new-richmond",
       "name": "New Richmond",
-      "score": 14,
+      "score": 49,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_8d7a6b7e-4675-4b6b-a563-87adccf6cf1a.jpg"
     },
     "status": "final",
@@ -28652,7 +28921,8 @@
     ],
     "playoff": false,
     "playoff_round": null,
-    "stat_leaders": []
+    "stat_leaders": [],
+    "scoring": []
   },
   {
     "id": "football-2025-10-10-rib-lake-at-athens",
@@ -28680,7 +28950,8 @@
     ],
     "playoff": false,
     "playoff_round": null,
-    "stat_leaders": []
+    "stat_leaders": [],
+    "scoring": []
   },
   {
     "id": "football-2025-10-10-wittenberg-birnamwood-at-marathon",
@@ -28812,7 +29083,8 @@
           "INT": "1"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-10-newman-catholic-at-tri-county",
@@ -28822,13 +29094,13 @@
     "home": {
       "school_id": "tri-county",
       "name": "Tri-County",
-      "score": 12,
+      "score": 34,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_f1be37fb-8cc3-4aa8-9aff-59ecfff66bce.jpg"
     },
     "away": {
       "school_id": "newman-catholic",
       "name": "Newman Catholic",
-      "score": 34,
+      "score": 12,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_17ae3c02-235c-4b92-b1b2-699075c98ccd.jpg"
     },
     "status": "final",
@@ -28946,7 +29218,8 @@
           "INT": "1"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-10-stratford-at-amherst",
@@ -29080,7 +29353,8 @@
           "SKS": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-10-colby-at-spencer",
@@ -29202,7 +29476,8 @@
           "TFL": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-10-mosinee-at-antigo",
@@ -29334,7 +29609,8 @@
           "TKL": "21.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-10-rosholt-at-abbotsford",
@@ -29362,7 +29638,8 @@
     ],
     "playoff": false,
     "playoff_round": null,
-    "stat_leaders": []
+    "stat_leaders": [],
+    "scoring": []
   },
   {
     "id": "football-2025-10-10-merrill-at-tomahawk",
@@ -29496,7 +29773,8 @@
           "TKL": "8.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-10-medford-at-rhinelander",
@@ -29506,13 +29784,13 @@
     "home": {
       "school_id": "rhinelander",
       "name": "Rhinelander",
-      "score": 42,
+      "score": 12,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_c5f56096-0700-4c2f-8a53-d51999885149.jpg"
     },
     "away": {
       "school_id": "medford",
       "name": "Medford",
-      "score": 12,
+      "score": 42,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_3c8f6cae-06c4-465f-838a-2151c0cd0d7a.jpg"
     },
     "status": "final",
@@ -29627,7 +29905,8 @@
           "TKL": "11.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-10-hudson-at-chippewa-falls",
@@ -29637,13 +29916,13 @@
     "home": {
       "school_id": "chippewa-falls",
       "name": "Chippewa Falls",
-      "score": 28,
+      "score": 15,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_a37c0e1b-af75-43da-ac8f-109620fc4b30.jpg"
     },
     "away": {
       "school_id": "hudson",
       "name": "Hudson",
-      "score": 15,
+      "score": 28,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_b5429a0f-ab7b-4a72-bcde-bb8a04b1d448.jpg"
     },
     "status": "final",
@@ -29760,7 +30039,8 @@
           "TKL": "21.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-10-rice-lake-at-superior",
@@ -29894,7 +30174,8 @@
           "TKL": "10.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-10-assumption-at-auburndale",
@@ -30028,7 +30309,8 @@
           "FR": "1"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-10-iola-scandinavia-at-pittsville",
@@ -30133,7 +30415,8 @@
           "TKL": "9.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-10-loyal-at-weyauwega-fremont",
@@ -30267,7 +30550,8 @@
           "TKL": "13.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-10-prentice-at-flambeau",
@@ -30277,13 +30561,13 @@
     "home": {
       "school_id": "flambeau",
       "name": "Flambeau",
-      "score": 0,
+      "score": 24,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_6c3721d9-03f4-4c1a-8120-21f7133f181f.png"
     },
     "away": {
       "school_id": "prentice",
       "name": "Prentice",
-      "score": 24,
+      "score": 0,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_32350b25-0e25-4c39-ab7f-248cf3d3c50f.jpg"
     },
     "status": "final",
@@ -30350,7 +30634,8 @@
           "TFL": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-10-winter-birchwood-at-bruce",
@@ -30419,7 +30704,8 @@
           "INT": "1"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-10-phillips-at-hurley",
@@ -30429,13 +30715,13 @@
     "home": {
       "school_id": "hurley",
       "name": "Hurley",
-      "score": 54,
+      "score": 6,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_61a85d42-bed2-4ab9-9c83-51b63d021832.jpg"
     },
     "away": {
       "school_id": "phillips",
       "name": "Phillips",
-      "score": 6,
+      "score": 54,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_c254fbf5-239d-4754-b90b-89888cd71d92.jpg"
     },
     "status": "final",
@@ -30552,7 +30838,8 @@
           "TFL": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-10-marion-at-wild-rose",
@@ -30562,13 +30849,13 @@
     "home": {
       "school_id": "wild-rose",
       "name": "Wild Rose",
-      "score": 51,
+      "score": 16,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_afc6dd34-d8be-4dad-bb02-f667d3849196.jpg"
     },
     "away": {
       "school_id": "marion",
       "name": "Marion/Tigerton",
-      "score": 16,
+      "score": 51,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_d5fc99f4-f588-446f-964e-0f032a209576.jpg"
     },
     "status": "final",
@@ -30672,7 +30959,8 @@
           "TDS": "2"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-10-almond-bancroft-at-wabeno-laona",
@@ -30682,13 +30970,13 @@
     "home": {
       "school_id": "",
       "name": "Wabeno/Laona",
-      "score": 6,
+      "score": 56,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_c2016b7c-25c5-441b-bb5b-de684fa47daa.jpg"
     },
     "away": {
       "school_id": "almond-bancroft",
       "name": "Almond-Bancroft",
-      "score": 56,
+      "score": 6,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_1e44e53a-b8d0-4890-9b36-49ec6a09d640.png"
     },
     "status": "final",
@@ -30806,7 +31094,8 @@
           "INT": "1"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-10-bowler-at-almond-bancroft",
@@ -30834,7 +31123,8 @@
     ],
     "playoff": false,
     "playoff_round": null,
-    "stat_leaders": []
+    "stat_leaders": [],
+    "scoring": []
   },
   {
     "id": "football-2025-10-10-menomonie-at-river-falls",
@@ -30965,7 +31255,8 @@
           "TFL": "2.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-10-northland-pines-at-oconto-falls",
@@ -30975,13 +31266,13 @@
     "home": {
       "school_id": "",
       "name": "Oconto Falls",
-      "score": 0,
+      "score": 32,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_f67e6236-e94c-4cd5-845d-17ab8561bcab.jpg"
     },
     "away": {
       "school_id": "northland-pines",
       "name": "Northland Pines",
-      "score": 32,
+      "score": 0,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_79c22a6c-afec-4ff7-91b5-4dc390886030.jpg"
     },
     "status": "final",
@@ -31084,7 +31375,8 @@
           "TDS": "0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-10-owen-withee-at-clayton",
@@ -31217,7 +31509,8 @@
           "TFL": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-10-gilman-at-lake-holcombe",
@@ -31298,7 +31591,8 @@
           "TKL": "9.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-10-mellen-at-washburn",
@@ -31308,13 +31602,13 @@
     "home": {
       "school_id": "washburn",
       "name": "Washburn",
-      "score": 0,
+      "score": 1,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_bd34b4d3-ce88-40f9-a743-53bd8b1bd3b9.jpg"
     },
     "away": {
       "school_id": "mellen",
       "name": "Mellen",
-      "score": 1,
+      "score": 0,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_bfa93cf6-a5f9-4b30-bddb-78dfd3233087.jpg"
     },
     "status": "final",
@@ -31326,7 +31620,8 @@
     ],
     "playoff": false,
     "playoff_round": null,
-    "stat_leaders": []
+    "stat_leaders": [],
+    "scoring": []
   },
   {
     "id": "football-2025-10-10-frederic-at-washburn",
@@ -31336,13 +31631,13 @@
     "home": {
       "school_id": "washburn",
       "name": "Washburn",
-      "score": 55,
+      "score": 7,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_bd34b4d3-ce88-40f9-a743-53bd8b1bd3b9.jpg"
     },
     "away": {
       "school_id": "",
       "name": "Frederic",
-      "score": 7,
+      "score": 55,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_74193b26-0ef5-4a3a-bc93-7b708cc4e291.jpg"
     },
     "status": "final",
@@ -31457,7 +31752,8 @@
           "TKL": "5.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-10-shell-lake-at-northwood-solon-springs",
@@ -31539,7 +31835,8 @@
           "TFL": "2.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-11-lakeland-at-wausau-east",
@@ -31671,7 +31968,8 @@
           "TFL": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-16-northland-pines-at-shiocton",
@@ -31681,13 +31979,13 @@
     "home": {
       "school_id": "",
       "name": "Shiocton",
-      "score": 12,
+      "score": 36,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_e1e35bad-270a-4dab-b59e-dfd189fb3bfd.jpg"
     },
     "away": {
       "school_id": "northland-pines",
       "name": "Northland Pines",
-      "score": 36,
+      "score": 12,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_79c22a6c-afec-4ff7-91b5-4dc390886030.jpg"
     },
     "status": "final",
@@ -31804,7 +32102,8 @@
           "FR": "1"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-17-antigo-at-wausau-east",
@@ -31936,7 +32235,8 @@
           "FR": "1"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-17-wausau-west-at-river-falls",
@@ -31946,13 +32246,13 @@
     "home": {
       "school_id": "river-falls",
       "name": "River Falls",
-      "score": 19,
+      "score": 56,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_d4fe0fc0-e338-47af-a664-b53012197324.jpg"
     },
     "away": {
       "school_id": "wausau-west",
       "name": "Wausau West",
-      "score": 56,
+      "score": 19,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_08096aa8-b6b7-4492-8151-27d1822a8fa9.png"
     },
     "status": "final",
@@ -32067,7 +32367,8 @@
           "TKL": "9.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-17-eau-claire-memorial-at-dc-everest",
@@ -32201,7 +32502,8 @@
           "FR": "1"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-17-spash-at-marshfield",
@@ -32335,7 +32637,8 @@
           "TFL": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-17-wisconsin-rapids-at-eau-claire-north",
@@ -32345,13 +32648,13 @@
     "home": {
       "school_id": "eau-claire-north",
       "name": "Eau Claire North",
-      "score": 28,
+      "score": 35,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_99891af1-ebd7-4c0c-baf7-d29f52e48e43.jpg"
     },
     "away": {
       "school_id": "wisconsin-rapids",
       "name": "Wisconsin Rapids Lincoln",
-      "score": 35,
+      "score": 28,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_3209dae3-72d3-4b53-ab81-def087d7df74.jpg"
     },
     "status": "final",
@@ -32363,7 +32666,8 @@
     ],
     "playoff": false,
     "playoff_round": null,
-    "stat_leaders": []
+    "stat_leaders": [],
+    "scoring": []
   },
   {
     "id": "football-2025-10-17-abbotsford-at-edgar",
@@ -32484,7 +32788,8 @@
           "TFL": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-17-spencer-at-marathon",
@@ -32494,13 +32799,13 @@
     "home": {
       "school_id": "marathon",
       "name": "Marathon",
-      "score": 14,
+      "score": 6,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_21893c9d-172b-4f3b-a52c-187062f259f9.jpg"
     },
     "away": {
       "school_id": "spencer",
       "name": "Spencer/Columbus Catholic",
-      "score": 6,
+      "score": 14,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_0b29e7c6-5aa2-4acd-a96e-8d476a8b9d50.jpg"
     },
     "status": "final",
@@ -32617,7 +32922,8 @@
           "TFL": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-17-loyal-at-stratford",
@@ -32748,7 +33054,8 @@
           "TKL": "6.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-17-mosinee-at-medford",
@@ -32880,7 +33187,8 @@
           "TFL": "2.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-17-weyauwega-fremont-at-colby",
@@ -32890,13 +33198,13 @@
     "home": {
       "school_id": "colby",
       "name": "Colby",
-      "score": 22,
+      "score": 14,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_341b5868-d166-406a-90e1-7bd5d0ca6cd2.jpg"
     },
     "away": {
       "school_id": "weyauwega-fremont",
       "name": "Weyauwega-Fremont",
-      "score": 14,
+      "score": 22,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_853613a0-9914-41d4-ace4-c1987426ce34.jpg"
     },
     "status": "final",
@@ -33013,7 +33321,8 @@
           "TFL": "2.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-17-tomahawk-at-lakeland",
@@ -33149,7 +33458,8 @@
           "FR": "1"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-17-rhinelander-at-merrill",
@@ -33159,13 +33469,13 @@
     "home": {
       "school_id": "merrill",
       "name": "Merrill",
-      "score": 13,
+      "score": 27,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_20e5e107-d060-4d58-9cbe-58312f389ed8.jpg"
     },
     "away": {
       "school_id": "rhinelander",
       "name": "Rhinelander",
-      "score": 27,
+      "score": 13,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_c5f56096-0700-4c2f-8a53-d51999885149.jpg"
     },
     "status": "final",
@@ -33283,7 +33593,8 @@
           "SKS": "4.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-17-chippewa-falls-at-menomonie",
@@ -33415,7 +33726,8 @@
           "TFL": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-17-rice-lake-at-hudson",
@@ -33425,13 +33737,13 @@
     "home": {
       "school_id": "hudson",
       "name": "Hudson",
-      "score": 22,
+      "score": 20,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_b5429a0f-ab7b-4a72-bcde-bb8a04b1d448.jpg"
     },
     "away": {
       "school_id": "rice-lake",
       "name": "Rice Lake",
-      "score": 20,
+      "score": 22,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_c8efa1ca-c48f-42d4-bc7c-6918f400a3a9.jpg"
     },
     "status": "final",
@@ -33547,7 +33859,8 @@
           "TKL": "16.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-17-superior-at-new-richmond",
@@ -33682,7 +33995,8 @@
           "SKS": "3.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-17-auburndale-at-iola-scandinavia",
@@ -33812,7 +34126,8 @@
           "TKL": "9.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-17-rosholt-at-assumption",
@@ -33840,7 +34155,8 @@
     ],
     "playoff": false,
     "playoff_round": null,
-    "stat_leaders": []
+    "stat_leaders": [],
+    "scoring": []
   },
   {
     "id": "football-2025-10-17-pittsville-at-pacelli",
@@ -33850,13 +34166,13 @@
     "home": {
       "school_id": "pacelli",
       "name": "Pacelli",
-      "score": 28,
+      "score": 14,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_a97ec00c-92c5-4107-8c93-5eba8b8297b4.jpg"
     },
     "away": {
       "school_id": "pittsville",
       "name": "Pittsville",
-      "score": 14,
+      "score": 28,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_d56c5490-ed3e-471e-86f7-a5d96b8b690b.jpg"
     },
     "status": "final",
@@ -33973,7 +34289,8 @@
           "TFL": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-17-amherst-at-wittenberg-birnamwood",
@@ -34107,7 +34424,8 @@
           "TFL": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-17-xavier-at-waupaca",
@@ -34188,7 +34506,8 @@
           "TKL": "22.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-18-niagara-at-athens",
@@ -34320,7 +34639,8 @@
           "TKL": "7.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-18-newman-catholic-at-frederic",
@@ -34330,13 +34650,13 @@
     "home": {
       "school_id": "",
       "name": "Frederic",
-      "score": 65,
+      "score": 0,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_74193b26-0ef5-4a3a-bc93-7b708cc4e291.jpg"
     },
     "away": {
       "school_id": "newman-catholic",
       "name": "Newman Catholic",
-      "score": 0,
+      "score": 65,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_17ae3c02-235c-4b92-b1b2-699075c98ccd.jpg"
     },
     "status": "final",
@@ -34454,7 +34774,8 @@
           "INT": "1"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-18-bruce-at-flambeau",
@@ -34536,7 +34857,8 @@
           "TKL": "13.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-18-hurley-at-tri-county",
@@ -34669,7 +34991,8 @@
           "FR": "1"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-18-almond-bancroft-at-owen-withee",
@@ -34679,13 +35002,13 @@
     "home": {
       "school_id": "owen-withee",
       "name": "Owen-Withee",
-      "score": 38,
+      "score": 0,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_6f57ed49-9da4-4f3e-a887-b227bb6f0859.jpg"
     },
     "away": {
       "school_id": "almond-bancroft",
       "name": "Almond-Bancroft",
-      "score": 0,
+      "score": 38,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_1e44e53a-b8d0-4890-9b36-49ec6a09d640.png"
     },
     "status": "final",
@@ -34803,7 +35126,8 @@
           "SKS": "2.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-18-alma-center-lincoln-at-marion",
@@ -34883,7 +35207,8 @@
           "TKL": "8.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-18-siren-at-gilman",
@@ -35013,7 +35338,8 @@
           "TKL": "6.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-24-marshfield-at-oshkosh-north",
@@ -35023,13 +35349,13 @@
     "home": {
       "school_id": "",
       "name": "Oshkosh North",
-      "score": 28,
+      "score": 7,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_703ece4f-2c73-4709-b37f-8940122dde3d.jpg"
     },
     "away": {
       "school_id": "marshfield",
       "name": "Marshfield",
-      "score": 7,
+      "score": 28,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_deadd1c8-aaca-4c5f-b1f8-6e7fced8f9b6.jpg"
     },
     "status": "final",
@@ -35147,7 +35473,8 @@
           "SKS": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-24-hurley-at-north-crawford",
@@ -35157,13 +35484,13 @@
     "home": {
       "school_id": "",
       "name": "North Crawford",
-      "score": 60,
+      "score": 12,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_e2d7a325-8e86-4281-a413-afb357356f75.jpg"
     },
     "away": {
       "school_id": "hurley",
       "name": "Hurley",
-      "score": 12,
+      "score": 60,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_61a85d42-bed2-4ab9-9c83-51b63d021832.jpg"
     },
     "status": "final",
@@ -35281,7 +35608,8 @@
           "TFL": "2.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-24-kaukauna-at-rice-lake",
@@ -35414,7 +35742,8 @@
           "SKS": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-24-wausau-east-at-mount-horeb-barneveld",
@@ -35424,13 +35753,13 @@
     "home": {
       "school_id": "",
       "name": "Mount Horeb/Barneveld",
-      "score": 31,
+      "score": 7,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_3f775865-5759-411b-bf8b-7b9cdf39c7e7.jpg"
     },
     "away": {
       "school_id": "wausau-east",
       "name": "Wausau East",
-      "score": 7,
+      "score": 31,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_4e9a3bfe-acd7-47b2-94e9-a9b580bdc029.jpg"
     },
     "status": "final",
@@ -35547,7 +35876,8 @@
           "TKL": "12.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-24-wausau-west-at-arrowhead",
@@ -35557,13 +35887,13 @@
     "home": {
       "school_id": "",
       "name": "Arrowhead",
-      "score": 56,
+      "score": 12,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_ee6f7540-2ad4-4476-ae08-1b93401454b3.jpg"
     },
     "away": {
       "school_id": "wausau-west",
       "name": "Wausau West",
-      "score": 12,
+      "score": 56,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_08096aa8-b6b7-4492-8151-27d1822a8fa9.png"
     },
     "status": "final",
@@ -35679,7 +36009,8 @@
           "FR": "1"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-24-dc-everest-at-brookfield-east",
@@ -35689,13 +36020,13 @@
     "home": {
       "school_id": "",
       "name": "Brookfield East",
-      "score": 19,
+      "score": 13,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_ddec7b8d-2724-41a3-bbb1-dc5e4b6c5a92.jpg"
     },
     "away": {
       "school_id": "dc-everest",
       "name": "D.C. Everest",
-      "score": 13,
+      "score": 19,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_90bf6c6c-964c-48da-9f99-0df569675bce.jpg"
     },
     "status": "final",
@@ -35811,7 +36142,8 @@
           "TFL": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-24-athens-at-lena-saint-thomas-aquinas",
@@ -35821,13 +36153,13 @@
     "home": {
       "school_id": "",
       "name": "Lena/Saint Thomas Aquinas",
-      "score": 14,
+      "score": 6,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_578b14e2-722f-4d70-9a86-b4716a8086cf.jpg"
     },
     "away": {
       "school_id": "athens",
       "name": "Athens",
-      "score": 6,
+      "score": 14,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_9de064b0-6623-41d4-b94e-6a900bfb5674.PNG"
     },
     "status": "final",
@@ -35839,7 +36171,8 @@
     ],
     "playoff": true,
     "playoff_round": "Level 2",
-    "stat_leaders": []
+    "stat_leaders": [],
+    "scoring": []
   },
   {
     "id": "football-2025-10-24-loyal-at-edgar",
@@ -35974,7 +36307,8 @@
           "TKL": "14.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-24-marathon-at-kewaunee",
@@ -35984,13 +36318,13 @@
     "home": {
       "school_id": "",
       "name": "Kewaunee",
-      "score": 36,
+      "score": 6,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_79e3890b-e816-42d8-8328-c272f2ca0dce.jpg"
     },
     "away": {
       "school_id": "marathon",
       "name": "Marathon",
-      "score": 6,
+      "score": 36,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_21893c9d-172b-4f3b-a52c-187062f259f9.jpg"
     },
     "status": "final",
@@ -36057,7 +36391,8 @@
           "TFL": "2.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-24-richland-center-at-stratford",
@@ -36178,7 +36513,8 @@
           "SKS": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-24-spencer-at-new-holstein",
@@ -36310,7 +36646,8 @@
           "TFL": "3.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-24-turner-at-mosinee",
@@ -36441,7 +36778,8 @@
           "TKL": "6.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-24-abbotsford-at-mondovi",
@@ -36451,13 +36789,13 @@
     "home": {
       "school_id": "",
       "name": "Mondovi",
-      "score": 41,
+      "score": 6,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_d7c86ead-513e-4736-a91c-4abe7c739473.jpg"
     },
     "away": {
       "school_id": "abbotsford",
       "name": "Abbotsford",
-      "score": 6,
+      "score": 41,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_04f58fe2-896b-4c14-8b85-177ddb8edf4f.jpg"
     },
     "status": "final",
@@ -36572,7 +36910,8 @@
           "TKL": "7.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-24-omro-at-tomahawk",
@@ -36704,7 +37043,8 @@
           "TFL": "2.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-24-rhinelander-at-edgewood",
@@ -36714,13 +37054,13 @@
     "home": {
       "school_id": "",
       "name": "Edgewood",
-      "score": 35,
+      "score": 7,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_abe57165-3a9e-4b89-b371-40ccd1890cf0.jpg"
     },
     "away": {
       "school_id": "rhinelander",
       "name": "Rhinelander",
-      "score": 7,
+      "score": 35,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_c5f56096-0700-4c2f-8a53-d51999885149.jpg"
     },
     "status": "final",
@@ -36838,7 +37178,8 @@
           "SKS": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-24-medford-at-grafton",
@@ -36848,13 +37189,13 @@
     "home": {
       "school_id": "",
       "name": "Grafton",
-      "score": 49,
+      "score": 14,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_53e60f13-7e30-48eb-bec6-c518dd5270f2.jpg"
     },
     "away": {
       "school_id": "medford",
       "name": "Medford",
-      "score": 14,
+      "score": 49,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_3c8f6cae-06c4-465f-838a-2151c0cd0d7a.jpg"
     },
     "status": "final",
@@ -36970,7 +37311,8 @@
           "TFL": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-24-lakeland-at-merrill",
@@ -37102,7 +37444,8 @@
           "TFL": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-24-chippewa-falls-at-waunakee",
@@ -37112,13 +37455,13 @@
     "home": {
       "school_id": "",
       "name": "Waunakee",
-      "score": 28,
+      "score": 21,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_e85c0b56-7341-4176-bc73-d501900c39ec.jpg"
     },
     "away": {
       "school_id": "chippewa-falls",
       "name": "Chippewa Falls",
-      "score": 21,
+      "score": 28,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_a37c0e1b-af75-43da-ac8f-109620fc4b30.jpg"
     },
     "status": "final",
@@ -37233,7 +37576,8 @@
           "TKL": "12.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-24-sun-prairie-east-at-hudson",
@@ -37366,7 +37710,8 @@
           "SKS": "2.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-24-ashwaubenon-at-new-richmond",
@@ -37449,7 +37794,8 @@
           "SKS": "2.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-24-crandon-at-auburndale",
@@ -37459,13 +37805,13 @@
     "home": {
       "school_id": "auburndale",
       "name": "Auburndale",
-      "score": 33,
+      "score": 40,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_f8e095b1-38af-494e-8c1f-895948e340bf.jpg"
     },
     "away": {
       "school_id": "",
       "name": "Crandon",
-      "score": 40,
+      "score": 33,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_d7249385-b862-4085-86a5-62d65d7000dc.jpg"
     },
     "status": "final",
@@ -37579,7 +37925,8 @@
           "TKL": "24.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-24-assumption-at-cochrane-fountain-city",
@@ -37589,13 +37936,13 @@
     "home": {
       "school_id": "",
       "name": "Cochrane-Fountain City",
-      "score": 49,
+      "score": 7,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_1874a148-0732-417a-a35d-b90d1833db10.jpg"
     },
     "away": {
       "school_id": "assumption",
       "name": "Assumption",
-      "score": 7,
+      "score": 49,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_32bce1bc-933e-4cb3-8bbc-41483dd4f864.jpg"
     },
     "status": "final",
@@ -37711,7 +38058,8 @@
           "TKL": "7.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-24-pittsville-at-hilbert",
@@ -37721,13 +38069,13 @@
     "home": {
       "school_id": "",
       "name": "Hilbert",
-      "score": 35,
+      "score": 8,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_fbd67fcf-7667-488b-b7e1-1fceb52cbe5a.png"
     },
     "away": {
       "school_id": "pittsville",
       "name": "Pittsville",
-      "score": 8,
+      "score": 35,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_d56c5490-ed3e-471e-86f7-a5d96b8b690b.jpg"
     },
     "status": "final",
@@ -37842,7 +38190,8 @@
           "TKL": "4.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-24-lancaster-at-amherst",
@@ -37974,7 +38323,8 @@
           "TKL": "10.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-24-weyauwega-fremont-at-cambridge",
@@ -38068,7 +38418,8 @@
           "TFL": "3.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-24-wittenberg-birnamwood-at-brookfield-academy",
@@ -38202,7 +38553,8 @@
           "TKL": "11.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-24-frederic-at-flambeau",
@@ -38306,7 +38658,8 @@
           "TKL": "18.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-24-sevastopol-at-marion",
@@ -38316,13 +38669,13 @@
     "home": {
       "school_id": "marion",
       "name": "Marion/Tigerton",
-      "score": 16,
+      "score": 50,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_d5fc99f4-f588-446f-964e-0f032a209576.jpg"
     },
     "away": {
       "school_id": "",
       "name": "Sevastopol",
-      "score": 50,
+      "score": 16,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_8d3d8a7d-507b-4ecd-8a57-8cd65d8db455.JPG"
     },
     "status": "final",
@@ -38438,7 +38791,8 @@
           "TFL": "2.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-24-beaver-dam-at-river-falls",
@@ -38569,7 +38923,8 @@
           "TKL": "17.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-24-menomonie-at-onalaska",
@@ -38579,13 +38934,13 @@
     "home": {
       "school_id": "",
       "name": "Onalaska",
-      "score": 34,
+      "score": 31,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_2f880ffb-dc0f-4f4c-860f-9453cd2fed51.jpg"
     },
     "away": {
       "school_id": "menomonie",
       "name": "Menomonie",
-      "score": 31,
+      "score": 34,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_0d184c10-2571-463a-ad04-2aac88094ce7.jpg"
     },
     "status": "final",
@@ -38639,7 +38994,8 @@
           "TDS": "1"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-24-owen-withee-at-gilman",
@@ -38649,13 +39005,13 @@
     "home": {
       "school_id": "gilman",
       "name": "Gilman",
-      "score": 55,
+      "score": 8,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_1859a659-e43a-4b25-b9f5-a0e8eee03201.jpg"
     },
     "away": {
       "school_id": "owen-withee",
       "name": "Owen-Withee",
-      "score": 8,
+      "score": 55,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_6f57ed49-9da4-4f3e-a887-b227bb6f0859.jpg"
     },
     "status": "final",
@@ -38770,7 +39126,8 @@
           "TKL": "9.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-31-oshkosh-north-at-new-richmond",
@@ -38780,13 +39137,13 @@
     "home": {
       "school_id": "new-richmond",
       "name": "New Richmond",
-      "score": 36,
+      "score": 42,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_8d7a6b7e-4675-4b6b-a563-87adccf6cf1a.jpg"
     },
     "away": {
       "school_id": "",
       "name": "Oshkosh North",
-      "score": 42,
+      "score": 36,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_703ece4f-2c73-4709-b37f-8940122dde3d.jpg"
     },
     "status": "final",
@@ -38902,7 +39259,8 @@
           "TFL": "2.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-31-poynette-at-edgar",
@@ -39035,7 +39393,8 @@
           "INT": "1"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-31-prairie-du-chien-at-stratford",
@@ -39167,7 +39526,8 @@
           "TKL": "8.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-31-spencer-at-tomahawk",
@@ -39177,13 +39537,13 @@
     "home": {
       "school_id": "tomahawk",
       "name": "Tomahawk",
-      "score": 34,
+      "score": 12,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_b455cbb7-3a4d-49ad-b7c5-e9935c3d78dc.jpg"
     },
     "away": {
       "school_id": "spencer",
       "name": "Spencer/Columbus Catholic",
-      "score": 12,
+      "score": 34,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_0b29e7c6-5aa2-4acd-a96e-8d476a8b9d50.jpg"
     },
     "status": "final",
@@ -39248,7 +39608,8 @@
           "TFL": "2.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-31-evansville-at-mosinee",
@@ -39380,7 +39741,8 @@
           "INT": "1"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-31-merrill-at-grafton",
@@ -39390,13 +39752,13 @@
     "home": {
       "school_id": "",
       "name": "Grafton",
-      "score": 59,
+      "score": 0,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_53e60f13-7e30-48eb-bec6-c518dd5270f2.jpg"
     },
     "away": {
       "school_id": "merrill",
       "name": "Merrill",
-      "score": 0,
+      "score": 59,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_20e5e107-d060-4d58-9cbe-58312f389ed8.jpg"
     },
     "status": "final",
@@ -39461,7 +39823,8 @@
           "TFL": "5.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-31-de-pere-at-hudson",
@@ -39471,13 +39834,13 @@
     "home": {
       "school_id": "hudson",
       "name": "Hudson",
-      "score": 14,
+      "score": 17,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_b5429a0f-ab7b-4a72-bcde-bb8a04b1d448.jpg"
     },
     "away": {
       "school_id": "",
       "name": "De Pere",
-      "score": 17,
+      "score": 14,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_c4957c18-0162-4742-b214-d2d9496fad88.JPG"
     },
     "status": "final",
@@ -39594,7 +39957,8 @@
           "TFL": "3.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-31-wauwatosa-east-at-rice-lake",
@@ -39713,7 +40077,8 @@
           "TKL": "13.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-31-brillion-at-amherst",
@@ -39848,7 +40213,8 @@
           "SKS": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-31-weyauwega-fremont-at-manitowoc-lutheran",
@@ -39858,13 +40224,13 @@
     "home": {
       "school_id": "",
       "name": "Manitowoc Lutheran",
-      "score": 35,
+      "score": 22,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_acc8c1dd-5474-4e28-927a-add263d9962a.png"
     },
     "away": {
       "school_id": "weyauwega-fremont",
       "name": "Weyauwega-Fremont",
-      "score": 22,
+      "score": 35,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_853613a0-9914-41d4-ace4-c1987426ce34.jpg"
     },
     "status": "final",
@@ -39980,7 +40346,8 @@
           "TKL": "9.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-31-wittenberg-birnamwood-at-lake-country-lutheran",
@@ -39990,13 +40357,13 @@
     "home": {
       "school_id": "",
       "name": "Lake Country Lutheran",
-      "score": 35,
+      "score": 14,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_1f7fa3aa-672e-4fa8-99bf-0c58a46a0295.png"
     },
     "away": {
       "school_id": "wittenberg-birnamwood",
       "name": "Wittenberg-Birnamwood",
-      "score": 14,
+      "score": 35,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_08fbc74b-f839-4f21-9ba0-d72f3ac10a2f.jpg"
     },
     "status": "final",
@@ -40063,7 +40430,8 @@
           "FR": "1"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-10-31-la-crosse-central-at-river-falls",
@@ -40185,7 +40553,8 @@
           "FR": "1"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-11-01-mcdonell-central-catholic-at-flambeau",
@@ -40195,13 +40564,13 @@
     "home": {
       "school_id": "flambeau",
       "name": "Flambeau",
-      "score": 30,
+      "score": 66,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_6c3721d9-03f4-4c1a-8120-21f7133f181f.png"
     },
     "away": {
       "school_id": "",
       "name": "McDonell Central Catholic",
-      "score": 66,
+      "score": 30,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_e97a0d92-4d25-48d6-8659-76af7687c602.jpg"
     },
     "status": "final",
@@ -40213,7 +40582,8 @@
     ],
     "playoff": true,
     "playoff_round": "Level 3",
-    "stat_leaders": []
+    "stat_leaders": [],
+    "scoring": []
   },
   {
     "id": "football-2025-11-01-north-crawford-at-gilman",
@@ -40347,7 +40717,8 @@
           "SKS": "2.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-11-07-oshkosh-north-at-river-falls",
@@ -40479,7 +40850,8 @@
           "TKL": "11.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-11-07-bonduel-at-edgar",
@@ -40609,7 +40981,8 @@
           "TKL": "14.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-11-07-stratford-at-tomahawk",
@@ -40689,7 +41062,8 @@
           "TKL": "11.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-11-07-mosinee-at-columbus",
@@ -40699,13 +41073,13 @@
     "home": {
       "school_id": "",
       "name": "Columbus",
-      "score": 38,
+      "score": 19,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_9e8aa966-578d-43c6-b7a9-ee809e4ec53b.jpg"
     },
     "away": {
       "school_id": "mosinee",
       "name": "Mosinee",
-      "score": 19,
+      "score": 38,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_931e8899-5525-40e0-b778-26d19bb94511.jpg"
     },
     "status": "final",
@@ -40823,7 +41197,8 @@
           "SKS": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-11-07-rice-lake-at-notre-dame",
@@ -40833,13 +41208,13 @@
     "home": {
       "school_id": "",
       "name": "Notre Dame",
-      "score": 28,
+      "score": 20,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_a1fb0289-5f6d-4abc-bb90-bde6353c2d74.jpg"
     },
     "away": {
       "school_id": "rice-lake",
       "name": "Rice Lake",
-      "score": 20,
+      "score": 28,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_c8efa1ca-c48f-42d4-bc7c-6918f400a3a9.jpg"
     },
     "status": "final",
@@ -40928,7 +41303,8 @@
           "FR": "1"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-11-07-amherst-at-mayville",
@@ -40938,13 +41314,13 @@
     "home": {
       "school_id": "",
       "name": "Mayville",
-      "score": 26,
+      "score": 21,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_6be0da48-874b-4ffd-ae32-fc2ec1c27f94.jpg"
     },
     "away": {
       "school_id": "amherst",
       "name": "Amherst",
-      "score": 21,
+      "score": 26,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_8c17d9d9-12f6-469d-873c-c2a8fc11e2dc.jpg"
     },
     "status": "final",
@@ -41011,7 +41387,8 @@
           "TFL": "2.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-11-08-oakfield-at-gilman",
@@ -41133,7 +41510,8 @@
           "RUS": "76"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-11-14-mondovi-at-edgar",
@@ -41265,7 +41643,8 @@
           "TKL": "12.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-11-14-northwestern-at-stratford",
@@ -41275,13 +41654,13 @@
     "home": {
       "school_id": "stratford",
       "name": "Stratford",
-      "score": 13,
+      "score": 22,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_8aa5a37b-e404-41b0-83f2-799684d68afa.jpg"
     },
     "away": {
       "school_id": "",
       "name": "Northwestern",
-      "score": 22,
+      "score": 13,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_230e51f0-e968-4168-ace3-7af7f123343e.jpg"
     },
     "status": "final",
@@ -41398,7 +41777,8 @@
           "TFL": "3.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   },
   {
     "id": "football-2025-11-14-notre-dame-at-river-falls",
@@ -41408,13 +41788,13 @@
     "home": {
       "school_id": "river-falls",
       "name": "River Falls",
-      "score": 6,
+      "score": 42,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_d4fe0fc0-e338-47af-a664-b53012197324.jpg"
     },
     "away": {
       "school_id": "",
       "name": "Notre Dame",
-      "score": 42,
+      "score": 6,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_a1fb0289-5f6d-4abc-bb90-bde6353c2d74.jpg"
     },
     "status": "final",
@@ -41530,6 +41910,7 @@
           "TFL": "1.0"
         }
       }
-    ]
+    ],
+    "scoring": []
   }
 ]
