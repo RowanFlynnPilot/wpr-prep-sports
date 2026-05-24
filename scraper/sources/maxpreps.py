@@ -346,8 +346,7 @@ def fetch_box_score(url: str) -> BoxScore:
 
     set_scores = _parse_set_scores_table(soup)
 
-    # Find the "Match Stats" anchor, then walk forward picking up team
-    # headers and the tables that belong to each.
+    # Find the "Match Stats" anchor.
     match_stats = None
     for hdr in soup.find_all(["h2", "h3"]):
         if hdr.get_text(strip=True) == "Match Stats":
@@ -356,14 +355,19 @@ def fetch_box_score(url: str) -> BoxScore:
     if match_stats is None:
         return BoxScore(stat_lines=[], set_scores_by_team=set_scores)
 
+    # The DOM lists every team that input stats up front (one <h3>
+    # each, like "Mosinee (25-26)"), then per category emits one <h4>
+    # + table per team in the SAME order. Two-team boxes therefore
+    # repeat each h4 — first h4 owns team[0]'s table, the next h4 with
+    # the same label owns team[1]'s, and so on. Track which team owns
+    # the next table by counting how many tables we've seen under the
+    # current category.
+    teams_in_order: list[str] = []
     out: list[StatLine] = []
-    current_team: str | None = None
     current_category: tuple[str, str] | None = None
+    tables_in_current_cat = 0
+    last_category_text: str | None = None
 
-    # Section labels (Attacking/Serving/Blocking/Digging/Ball Handling/Serve
-    # Receiving) live in <h4> elements between each stat table; team
-    # headers ("Wausau East (25-26)") are <h3>. Walk all of them in
-    # document order.
     for el in match_stats.find_all_next(["h2", "h3", "h4", "table"]):
         if el.name in ("h2", "h3", "h4"):
             text = el.get_text(strip=True)
@@ -371,18 +375,32 @@ def fetch_box_score(url: str) -> BoxScore:
                 break
             team_match = re.match(r"^(.+?)\s*\(\d{2}-\d{2}\)\s*$", text)
             if team_match and el.name == "h3":
-                current_team = team_match.group(1).strip()
-                current_category = None
+                tm = team_match.group(1).strip()
+                if tm not in teams_in_order:
+                    teams_in_order.append(tm)
                 continue
             if text in _CATEGORY_FROM_HEADER:
                 current_category = _CATEGORY_FROM_HEADER[text]
+                # First time we see this category-text in a row resets
+                # the per-team counter; subsequent repeats advance it.
+                if text != last_category_text:
+                    tables_in_current_cat = 0
+                last_category_text = text
             else:
                 current_category = None
+                last_category_text = None
             continue
 
-        if el.name == "table" and current_team and current_category:
+        if el.name == "table" and current_category and teams_in_order:
             category, leader_key = current_category
-            out.extend(_parse_box_table(el, current_team, category, leader_key))
+            team_idx = tables_in_current_cat
+            if team_idx >= len(teams_in_order):
+                # Defensive: more tables than teams. Stick with the last
+                # team rather than crashing.
+                team_idx = len(teams_in_order) - 1
+            team_name = teams_in_order[team_idx]
+            out.extend(_parse_box_table(el, team_name, category, leader_key))
+            tables_in_current_cat += 1
 
     return BoxScore(stat_lines=out, set_scores_by_team=set_scores)
 
