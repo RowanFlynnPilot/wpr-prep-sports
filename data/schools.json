@@ -126,6 +126,10 @@
       {
         "sport": "volleyball",
         "conference": "Wisconsin Valley"
+      },
+      {
+        "sport": "boys_hockey",
+        "conference": "Wisconsin Valley"
       }
     ],
     "wiaa_division": {},
@@ -545,6 +549,10 @@
       {
         "sport": "volleyball",
         "conference": "Great Northern"
+      },
+      {
+        "sport": "boys_hockey",
+        "conference": "Great Northern"
       }
     ],
     "wiaa_division": {},
@@ -575,6 +583,10 @@
       },
       {
         "sport": "volleyball",
+        "conference": "Great Northern"
+      },
+      {
+        "sport": "boys_hockey",
         "conference": "Great Northern"
       }
     ],
@@ -607,6 +619,10 @@
       {
         "sport": "volleyball",
         "conference": "Great Northern"
+      },
+      {
+        "sport": "boys_hockey",
+        "conference": "Wisconsin Valley"
       }
     ],
     "wiaa_division": {},
@@ -672,6 +688,10 @@
       },
       {
         "sport": "volleyball",
+        "conference": "Great Northern"
+      },
+      {
+        "sport": "boys_hockey",
         "conference": "Great Northern"
       }
     ],
@@ -830,6 +850,18 @@
       {
         "sport": "football",
         "conference": "Marawood/CWC"
+      },
+      {
+        "sport": "boys_basketball",
+        "conference": "Marawood"
+      },
+      {
+        "sport": "girls_basketball",
+        "conference": "Marawood"
+      },
+      {
+        "sport": "volleyball",
+        "conference": "Marawood"
       }
     ],
     "wiaa_division": {},
@@ -849,6 +881,18 @@
       {
         "sport": "football",
         "conference": "Marawood/CWC"
+      },
+      {
+        "sport": "boys_basketball",
+        "conference": "Marawood"
+      },
+      {
+        "sport": "girls_basketball",
+        "conference": "Marawood"
+      },
+      {
+        "sport": "volleyball",
+        "conference": "Marawood"
       }
     ],
     "wiaa_division": {},
@@ -1001,6 +1045,18 @@
       {
         "sport": "football",
         "conference": "Northwoods-East 8"
+      },
+      {
+        "sport": "boys_basketball",
+        "conference": "Marawood"
+      },
+      {
+        "sport": "girls_basketball",
+        "conference": "Marawood"
+      },
+      {
+        "sport": "volleyball",
+        "conference": "Marawood"
       }
     ],
     "wiaa_division": {},
@@ -1077,6 +1133,18 @@
       {
         "sport": "football",
         "conference": "Northwoods-East 8"
+      },
+      {
+        "sport": "boys_basketball",
+        "conference": "Marawood"
+      },
+      {
+        "sport": "girls_basketball",
+        "conference": "Marawood"
+      },
+      {
+        "sport": "volleyball",
+        "conference": "Marawood"
       }
     ],
     "wiaa_division": {},
@@ -1096,6 +1164,18 @@
       {
         "sport": "football",
         "conference": "Northwoods-East 8"
+      },
+      {
+        "sport": "boys_basketball",
+        "conference": "Marawood"
+      },
+      {
+        "sport": "girls_basketball",
+        "conference": "Marawood"
+      },
+      {
+        "sport": "volleyball",
+        "conference": "Marawood"
       }
     ],
     "wiaa_division": {},
@@ -1115,6 +1195,18 @@
       {
         "sport": "football",
         "conference": "Northwoods-East 8"
+      },
+      {
+        "sport": "boys_basketball",
+        "conference": "Marawood"
+      },
+      {
+        "sport": "girls_basketball",
+        "conference": "Marawood"
+      },
+      {
+        "sport": "volleyball",
+        "conference": "Marawood"
       }
     ],
     "wiaa_division": {},
@@ -1313,6 +1405,302 @@
       {
         "sport": "boys_hockey",
         "conference": "Big Rivers"
+      }
+    ],
+    "wiaa_division": {},
+    "athletics_url": null
+  },
+  {
+    "id": "northland-pines",
+    "name": "Northland Pines",
+    "full_name": "Northland Pines High School",
+    "mascot": "Eagles",
+    "city": "Eagle River",
+    "colors": [
+      "#1e3a8a",
+      "#fbbf24"
+    ],
+    "conferences": [
+      {
+        "sport": "football",
+        "conference": "Great Northern"
+      },
+      {
+        "sport": "boys_basketball",
+        "conference": "Great Northern"
+      },
+      {
+        "sport": "girls_basketball",
+        "conference": "Great Northern"
+      },
+      {
+        "sport": "volleyball",
+        "conference": "Great Northern"
+      },
+      {
+        "sport": "boys_hockey",
+        "conference": "Great Northern"
+      }
+    ],
+    "wiaa_division": {},
+    "athletics_url": null
+  },
+  {
+    "id": "waupaca",
+    "name": "Waupaca",
+    "full_name": "Waupaca High School",
+    "mascot": "Comets",
+    "city": "Waupaca",
+    "colors": [
+      "#1e40af",
+      "#fde047"
+    ],
+    "conferences": [
+      {
+        "sport": "boys_hockey",
+        "conference": "Great Northern"
+      }
+    ],
+    "wiaa_division": {},
+    "athletics_url": null
+  },
+  {
+    "id": "loyal",
+    "name": "Loyal",
+    "full_name": "Loyal High School",
+    "mascot": "Greyhounds",
+    "city": "Loyal",
+    "colors": [
+      "#000000",
+      "#facc15"
+    ],
+    "conferences": [
+      {
+        "sport": "boys_basketball",
+        "conference": "Cloverbelt"
+      },
+      {
+        "sport": "girls_basketball",
+        "conference": "Cloverbelt"
+      },
+      {
+        "sport": "volleyball",
+        "conference": "Cloverbelt"
+      },
+      {
+        "sport": "football",
+        "conference": "CWC-Large"
+      }
+    ],
+    "wiaa_division": {},
+    "athletics_url": null
+  },
+  {
+    "id": "neillsville",
+    "name": "Neillsville",
+    "full_name": "Neillsville High School",
+    "mascot": "Warriors",
+    "city": "Neillsville",
+    "colors": [
+      "#dc2626",
+      "#000000"
+    ],
+    "conferences": [
+      {
+        "sport": "boys_basketball",
+        "conference": "Cloverbelt"
+      },
+      {
+        "sport": "girls_basketball",
+        "conference": "Cloverbelt"
+      },
+      {
+        "sport": "volleyball",
+        "conference": "Cloverbelt"
+      }
+    ],
+    "wiaa_division": {},
+    "athletics_url": null
+  },
+  {
+    "id": "owen-withee",
+    "name": "Owen-Withee",
+    "full_name": "Owen-Withee High School",
+    "mascot": "Blackhawks",
+    "city": "Owen",
+    "colors": [
+      "#000000",
+      "#fbbf24"
+    ],
+    "conferences": [
+      {
+        "sport": "boys_basketball",
+        "conference": "Cloverbelt"
+      },
+      {
+        "sport": "girls_basketball",
+        "conference": "Cloverbelt"
+      },
+      {
+        "sport": "volleyball",
+        "conference": "Cloverbelt"
+      }
+    ],
+    "wiaa_division": {},
+    "athletics_url": null
+  },
+  {
+    "id": "gilman",
+    "name": "Gilman",
+    "full_name": "Gilman High School",
+    "mascot": "Pirates",
+    "city": "Gilman",
+    "colors": [
+      "#000000",
+      "#facc15"
+    ],
+    "conferences": [
+      {
+        "sport": "boys_basketball",
+        "conference": "Cloverbelt"
+      },
+      {
+        "sport": "girls_basketball",
+        "conference": "Cloverbelt"
+      },
+      {
+        "sport": "volleyball",
+        "conference": "Cloverbelt"
+      }
+    ],
+    "wiaa_division": {},
+    "athletics_url": null
+  },
+  {
+    "id": "greenwood",
+    "name": "Greenwood",
+    "full_name": "Greenwood High School",
+    "mascot": "Indians",
+    "city": "Greenwood",
+    "colors": [
+      "#15803d",
+      "#fbbf24"
+    ],
+    "conferences": [
+      {
+        "sport": "boys_basketball",
+        "conference": "Cloverbelt"
+      },
+      {
+        "sport": "girls_basketball",
+        "conference": "Cloverbelt"
+      },
+      {
+        "sport": "volleyball",
+        "conference": "Cloverbelt"
+      }
+    ],
+    "wiaa_division": {},
+    "athletics_url": null
+  },
+  {
+    "id": "columbus-catholic",
+    "name": "Columbus Catholic",
+    "full_name": "Columbus Catholic High School",
+    "mascot": "Dons",
+    "city": "Marshfield",
+    "colors": [
+      "#1d4ed8",
+      "#fbbf24"
+    ],
+    "conferences": [
+      {
+        "sport": "boys_basketball",
+        "conference": "Cloverbelt"
+      },
+      {
+        "sport": "girls_basketball",
+        "conference": "Cloverbelt"
+      },
+      {
+        "sport": "volleyball",
+        "conference": "Cloverbelt"
+      }
+    ],
+    "wiaa_division": {},
+    "athletics_url": null
+  },
+  {
+    "id": "mellen",
+    "name": "Mellen",
+    "full_name": "Mellen High School",
+    "mascot": "Granite Diggers",
+    "city": "Mellen",
+    "colors": [
+      "#1e3a8a",
+      "#fbbf24"
+    ],
+    "conferences": [
+      {
+        "sport": "football",
+        "conference": "Northwoods-East 8"
+      }
+    ],
+    "wiaa_division": {},
+    "athletics_url": null
+  },
+  {
+    "id": "washburn",
+    "name": "Washburn",
+    "full_name": "Washburn High School",
+    "mascot": "Castle Guards",
+    "city": "Washburn",
+    "colors": [
+      "#000000",
+      "#fbbf24"
+    ],
+    "conferences": [
+      {
+        "sport": "football",
+        "conference": "Northwoods-East 8"
+      }
+    ],
+    "wiaa_division": {},
+    "athletics_url": null
+  },
+  {
+    "id": "shell-lake",
+    "name": "Shell Lake",
+    "full_name": "Shell Lake High School",
+    "mascot": "Lakers",
+    "city": "Shell Lake",
+    "colors": [
+      "#1d4ed8",
+      "#fbbf24"
+    ],
+    "conferences": [
+      {
+        "sport": "football",
+        "conference": "Northwoods-East 8"
+      }
+    ],
+    "wiaa_division": {},
+    "athletics_url": null
+  },
+  {
+    "id": "south-shore",
+    "name": "South Shore",
+    "full_name": "South Shore High School",
+    "mascot": "Cardinals",
+    "city": "Port Wing",
+    "colors": [
+      "#dc2626",
+      "#000000"
+    ],
+    "conferences": [
+      {
+        "sport": "football",
+        "conference": "Northwoods-East 8"
       }
     ],
     "wiaa_division": {},

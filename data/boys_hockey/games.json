@@ -257,12 +257,40 @@
     ]
   },
   {
+    "id": "boys_hockey-2025-11-22-waupaca-at-xavier-co-op",
+    "sport": "boys_hockey",
+    "season": "2025-26",
+    "date": "2025-11-22T19:00:00-06:00",
+    "home": {
+      "school_id": "",
+      "name": "Xavier Co-op",
+      "score": 1,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_44ea4a89-d9c1-4a94-bae3-8e3a0693b0b5.jpg"
+    },
+    "away": {
+      "school_id": "waupaca",
+      "name": "Waupaca",
+      "score": 8,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_de0d8522-ef3a-41b7-ac42-fa9c9b40beeb.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": false,
+    "venue": "@Champion Center, Grand Chute, WI",
+    "sources": [
+      "wiaa"
+    ],
+    "playoff": false,
+    "playoff_round": null,
+    "stat_leaders": []
+  },
+  {
     "id": "boys_hockey-2025-11-25-dc-everest-at-northland-pines",
     "sport": "boys_hockey",
     "season": "2025-26",
     "date": "2025-11-25T19:00:00-06:00",
     "home": {
-      "school_id": "",
+      "school_id": "northland-pines",
       "name": "Northland Pines",
       "score": 0,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_79c22a6c-afec-4ff7-91b5-4dc390886030.jpg"
@@ -300,7 +328,7 @@
         }
       },
       {
-        "team_school_id": "",
+        "team_school_id": "northland-pines",
         "team_name": "Northland Pines",
         "category": "Hockey Points",
         "player_name": "Josh Graves",
@@ -316,7 +344,7 @@
         }
       },
       {
-        "team_school_id": "",
+        "team_school_id": "northland-pines",
         "team_name": "Northland Pines",
         "category": "Hockey Saves",
         "player_name": "Evrett  Leslie",
@@ -598,6 +626,34 @@
     "conference": null,
     "conference_game": false,
     "venue": "@Menomonie- Fanetti Ice Arena",
+    "sources": [
+      "wiaa"
+    ],
+    "playoff": false,
+    "playoff_round": null,
+    "stat_leaders": []
+  },
+  {
+    "id": "boys_hockey-2025-11-25-sheboygan-south-co-op-at-waupaca",
+    "sport": "boys_hockey",
+    "season": "2025-26",
+    "date": "2025-11-25T19:00:00-06:00",
+    "home": {
+      "school_id": "waupaca",
+      "name": "Waupaca",
+      "score": 2,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_de0d8522-ef3a-41b7-ac42-fa9c9b40beeb.jpg"
+    },
+    "away": {
+      "school_id": "",
+      "name": "Sheboygan South Co-op",
+      "score": 0,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_29c5899d-bdce-4e78-b3e9-ae9add69fed0.png"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": false,
+    "venue": "@Waupaca",
     "sources": [
       "wiaa"
     ],
@@ -2165,7 +2221,7 @@
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_c5f56096-0700-4c2f-8a53-d51999885149.jpg"
     },
     "away": {
-      "school_id": "",
+      "school_id": "northland-pines",
       "name": "Northland Pines",
       "score": 1,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_79c22a6c-afec-4ff7-91b5-4dc390886030.jpg"
@@ -2182,7 +2238,7 @@
     "playoff_round": null,
     "stat_leaders": [
       {
-        "team_school_id": "",
+        "team_school_id": "northland-pines",
         "team_name": "Northland Pines",
         "category": "Hockey Points",
         "player_name": "Josh Graves",
@@ -2198,7 +2254,7 @@
         }
       },
       {
-        "team_school_id": "",
+        "team_school_id": "northland-pines",
         "team_name": "Northland Pines",
         "category": "Hockey Saves",
         "player_name": "Evrett  Leslie",
@@ -2257,7 +2313,7 @@
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_3c8f6cae-06c4-465f-838a-2151c0cd0d7a.jpg"
     },
     "away": {
-      "school_id": "",
+      "school_id": "waupaca",
       "name": "Waupaca",
       "score": 0,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_de0d8522-ef3a-41b7-ac42-fa9c9b40beeb.jpg"
@@ -2274,7 +2330,7 @@
     "playoff_round": null,
     "stat_leaders": [
       {
-        "team_school_id": "",
+        "team_school_id": "waupaca",
         "team_name": "Waupaca",
         "category": "Hockey Points",
         "player_name": "Colin Lockwood",
@@ -2290,7 +2346,7 @@
         }
       },
       {
-        "team_school_id": "",
+        "team_school_id": "waupaca",
         "team_name": "Waupaca",
         "category": "Hockey Saves",
         "player_name": "Carson Jameson (A)",
@@ -2849,7 +2905,7 @@
     "season": "2025-26",
     "date": "2025-12-04T19:00:00-06:00",
     "home": {
-      "school_id": "",
+      "school_id": "northland-pines",
       "name": "Northland Pines",
       "score": 2,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_79c22a6c-afec-4ff7-91b5-4dc390886030.jpg"
@@ -2903,7 +2959,7 @@
         }
       },
       {
-        "team_school_id": "",
+        "team_school_id": "northland-pines",
         "team_name": "Northland Pines",
         "category": "Hockey Points",
         "player_name": "Cooper  Saari",
@@ -2919,7 +2975,7 @@
         }
       },
       {
-        "team_school_id": "",
+        "team_school_id": "northland-pines",
         "team_name": "Northland Pines",
         "category": "Hockey Saves",
         "player_name": "Evrett  Leslie",
@@ -3110,7 +3166,7 @@
     "season": "2025-26",
     "date": "2025-12-04T19:00:00-06:00",
     "home": {
-      "school_id": "",
+      "school_id": "waupaca",
       "name": "Waupaca",
       "score": null,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_de0d8522-ef3a-41b7-ac42-fa9c9b40beeb.jpg"
@@ -3737,6 +3793,34 @@
     ]
   },
   {
+    "id": "boys_hockey-2025-12-05-waupaca-at-oregon",
+    "sport": "boys_hockey",
+    "season": "2025-26",
+    "date": "2025-12-05T19:00:00-06:00",
+    "home": {
+      "school_id": "",
+      "name": "Oregon",
+      "score": 2,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_e7a06a90-2b22-4789-bbdf-5b456972bea3.jpg"
+    },
+    "away": {
+      "school_id": "waupaca",
+      "name": "Waupaca",
+      "score": 8,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_de0d8522-ef3a-41b7-ac42-fa9c9b40beeb.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": false,
+    "venue": "@Oregon",
+    "sources": [
+      "wiaa"
+    ],
+    "playoff": false,
+    "playoff_round": null,
+    "stat_leaders": []
+  },
+  {
     "id": "boys_hockey-2025-12-06-notre-dame-at-spash",
     "sport": "boys_hockey",
     "season": "2025-26",
@@ -3923,6 +4007,34 @@
     "conference": null,
     "conference_game": false,
     "venue": "@Waukesha North Co-op",
+    "sources": [
+      "wiaa"
+    ],
+    "playoff": false,
+    "playoff_round": null,
+    "stat_leaders": []
+  },
+  {
+    "id": "boys_hockey-2025-12-06-northland-pines-at-amery-co-op",
+    "sport": "boys_hockey",
+    "season": "2025-26",
+    "date": "2025-12-06T14:00:00-06:00",
+    "home": {
+      "school_id": "",
+      "name": "Amery Co-op",
+      "score": 2,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_ff5024eb-d79e-45f2-90f9-38cb74b8e33d.jpg"
+    },
+    "away": {
+      "school_id": "northland-pines",
+      "name": "Northland Pines",
+      "score": 4,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_79c22a6c-afec-4ff7-91b5-4dc390886030.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": false,
+    "venue": "@Amery Co-op",
     "sources": [
       "wiaa"
     ],
@@ -4385,7 +4497,7 @@
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_b455cbb7-3a4d-49ad-b7c5-e9935c3d78dc.jpg"
     },
     "away": {
-      "school_id": "",
+      "school_id": "northland-pines",
       "name": "Northland Pines",
       "score": 5,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_79c22a6c-afec-4ff7-91b5-4dc390886030.jpg"
@@ -4402,7 +4514,7 @@
     "playoff_round": null,
     "stat_leaders": [
       {
-        "team_school_id": "",
+        "team_school_id": "northland-pines",
         "team_name": "Northland Pines",
         "category": "Hockey Points",
         "player_name": "Josh Graves",
@@ -4418,7 +4530,7 @@
         }
       },
       {
-        "team_school_id": "",
+        "team_school_id": "northland-pines",
         "team_name": "Northland Pines",
         "category": "Hockey Saves",
         "player_name": "Evrett  Leslie",
@@ -4477,7 +4589,7 @@
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_c5f56096-0700-4c2f-8a53-d51999885149.jpg"
     },
     "away": {
-      "school_id": "",
+      "school_id": "waupaca",
       "name": "Waupaca",
       "score": null,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_de0d8522-ef3a-41b7-ac42-fa9c9b40beeb.jpg"
@@ -5104,6 +5216,34 @@
     ]
   },
   {
+    "id": "boys_hockey-2025-12-11-appleton-north-appleton-east-appleton-west-at-waupaca",
+    "sport": "boys_hockey",
+    "season": "2025-26",
+    "date": "2025-12-11T19:00:00-06:00",
+    "home": {
+      "school_id": "waupaca",
+      "name": "Waupaca",
+      "score": 2,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_de0d8522-ef3a-41b7-ac42-fa9c9b40beeb.jpg"
+    },
+    "away": {
+      "school_id": "",
+      "name": "Appleton North/Appleton East/Appleton West",
+      "score": 1,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_57622272-b3dc-41ef-8b7d-46f2af290bb7.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": false,
+    "venue": "@Waupaca",
+    "sources": [
+      "wiaa"
+    ],
+    "playoff": false,
+    "playoff_round": null,
+    "stat_leaders": []
+  },
+  {
     "id": "boys_hockey-2025-12-11-mosinee-at-dc-everest",
     "sport": "boys_hockey",
     "season": "2025-26",
@@ -5638,6 +5778,34 @@
     ]
   },
   {
+    "id": "boys_hockey-2025-12-12-somerset-saint-croix-falls-at-northland-pines",
+    "sport": "boys_hockey",
+    "season": "2025-26",
+    "date": "2025-12-12T19:00:00-06:00",
+    "home": {
+      "school_id": "northland-pines",
+      "name": "Northland Pines",
+      "score": 5,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_79c22a6c-afec-4ff7-91b5-4dc390886030.jpg"
+    },
+    "away": {
+      "school_id": "",
+      "name": "Somerset/Saint Croix Falls",
+      "score": 2,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_28389be2-47e5-4b81-bcc8-1eabfad92247.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": false,
+    "venue": "@Northland Pines",
+    "sources": [
+      "wiaa"
+    ],
+    "playoff": false,
+    "playoff_round": null,
+    "stat_leaders": []
+  },
+  {
     "id": "boys_hockey-2025-12-13-spash-at-brookfield-east-co-op",
     "sport": "boys_hockey",
     "season": "2025-26",
@@ -5867,7 +6035,7 @@
     "season": "2025-26",
     "date": "2025-12-13T15:00:00-06:00",
     "home": {
-      "school_id": "",
+      "school_id": "northland-pines",
       "name": "Northland Pines",
       "score": 0,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_79c22a6c-afec-4ff7-91b5-4dc390886030.jpg"
@@ -5905,7 +6073,7 @@
         }
       },
       {
-        "team_school_id": "",
+        "team_school_id": "northland-pines",
         "team_name": "Northland Pines",
         "category": "Hockey Points",
         "player_name": "Josh Graves",
@@ -5921,7 +6089,7 @@
         }
       },
       {
-        "team_school_id": "",
+        "team_school_id": "northland-pines",
         "team_name": "Northland Pines",
         "category": "Hockey Saves",
         "player_name": "Evrett  Leslie",
@@ -6304,6 +6472,34 @@
     "stat_leaders": []
   },
   {
+    "id": "boys_hockey-2025-12-13-beloit-memorial-co-op-at-waupaca",
+    "sport": "boys_hockey",
+    "season": "2025-26",
+    "date": "2025-12-13T19:00:00-06:00",
+    "home": {
+      "school_id": "waupaca",
+      "name": "Waupaca",
+      "score": 4,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_de0d8522-ef3a-41b7-ac42-fa9c9b40beeb.jpg"
+    },
+    "away": {
+      "school_id": "",
+      "name": "Beloit Memorial Co-op",
+      "score": 3,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_9d8ea785-3775-40f5-88cc-762192c740d6.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": false,
+    "venue": "@Waupaca",
+    "sources": [
+      "wiaa"
+    ],
+    "playoff": false,
+    "playoff_round": null,
+    "stat_leaders": []
+  },
+  {
     "id": "boys_hockey-2025-12-15-menomonie-at-altoona-co-op",
     "sport": "boys_hockey",
     "season": "2025-26",
@@ -6643,7 +6839,7 @@
     "season": "2025-26",
     "date": "2025-12-16T19:00:00-06:00",
     "home": {
-      "school_id": "",
+      "school_id": "waupaca",
       "name": "Waupaca",
       "score": 0,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_de0d8522-ef3a-41b7-ac42-fa9c9b40beeb.jpg"
@@ -6697,7 +6893,7 @@
         }
       },
       {
-        "team_school_id": "",
+        "team_school_id": "waupaca",
         "team_name": "Waupaca",
         "category": "Hockey Saves",
         "player_name": "Carson Jameson (A)",
@@ -6812,7 +7008,7 @@
     "season": "2025-26",
     "date": "2025-12-16T19:00:00-06:00",
     "home": {
-      "school_id": "",
+      "school_id": "northland-pines",
       "name": "Northland Pines",
       "score": 0,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_79c22a6c-afec-4ff7-91b5-4dc390886030.jpg"
@@ -6850,7 +7046,7 @@
         }
       },
       {
-        "team_school_id": "",
+        "team_school_id": "northland-pines",
         "team_name": "Northland Pines",
         "category": "Hockey Points",
         "player_name": "Josh Graves",
@@ -6866,7 +7062,7 @@
         }
       },
       {
-        "team_school_id": "",
+        "team_school_id": "northland-pines",
         "team_name": "Northland Pines",
         "category": "Hockey Saves",
         "player_name": "Evrett  Leslie",
@@ -7386,7 +7582,7 @@
     "season": "2025-26",
     "date": "2025-12-19T19:00:00-06:00",
     "home": {
-      "school_id": "",
+      "school_id": "northland-pines",
       "name": "Northland Pines",
       "score": 0,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_79c22a6c-afec-4ff7-91b5-4dc390886030.jpg"
@@ -7424,7 +7620,7 @@
         }
       },
       {
-        "team_school_id": "",
+        "team_school_id": "northland-pines",
         "team_name": "Northland Pines",
         "category": "Hockey Points",
         "player_name": "Cooper  Saari",
@@ -7440,7 +7636,7 @@
         }
       },
       {
-        "team_school_id": "",
+        "team_school_id": "northland-pines",
         "team_name": "Northland Pines",
         "category": "Hockey Saves",
         "player_name": "Evrett  Leslie",
@@ -7955,6 +8151,34 @@
     "conference": null,
     "conference_game": false,
     "venue": "@Rice Lake",
+    "sources": [
+      "wiaa"
+    ],
+    "playoff": false,
+    "playoff_round": null,
+    "stat_leaders": []
+  },
+  {
+    "id": "boys_hockey-2025-12-20-cedarburg-at-waupaca",
+    "sport": "boys_hockey",
+    "season": "2025-26",
+    "date": "2025-12-20T19:00:00-06:00",
+    "home": {
+      "school_id": "waupaca",
+      "name": "Waupaca",
+      "score": null,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_de0d8522-ef3a-41b7-ac42-fa9c9b40beeb.jpg"
+    },
+    "away": {
+      "school_id": "",
+      "name": "Cedarburg",
+      "score": null,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_b72eb914-78b5-46a8-abac-1c460e531f27.jpg"
+    },
+    "status": "scheduled",
+    "conference": null,
+    "conference_game": false,
+    "venue": "@Waupaca",
     "sources": [
       "wiaa"
     ],
@@ -8589,7 +8813,7 @@
     "season": "2025-26",
     "date": "2025-12-26T19:00:00-06:00",
     "home": {
-      "school_id": "",
+      "school_id": "waupaca",
       "name": "Waupaca",
       "score": null,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_de0d8522-ef3a-41b7-ac42-fa9c9b40beeb.jpg"
@@ -8842,7 +9066,7 @@
     "season": "2025-26",
     "date": "2025-12-27T19:00:00-06:00",
     "home": {
-      "school_id": "",
+      "school_id": "waupaca",
       "name": "Waupaca",
       "score": null,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_de0d8522-ef3a-41b7-ac42-fa9c9b40beeb.jpg"
@@ -9078,6 +9302,34 @@
     "stat_leaders": []
   },
   {
+    "id": "boys_hockey-2025-12-27-milton-co-op-at-northland-pines",
+    "sport": "boys_hockey",
+    "season": "2025-26",
+    "date": "2025-12-27T19:00:00-06:00",
+    "home": {
+      "school_id": "northland-pines",
+      "name": "Northland Pines",
+      "score": 10,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_79c22a6c-afec-4ff7-91b5-4dc390886030.jpg"
+    },
+    "away": {
+      "school_id": "",
+      "name": "Milton Co-op",
+      "score": 1,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_54d55e5f-aea8-4d44-8ad0-0d72475e1e0c.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": false,
+    "venue": "@Hartmeyer Ice Arena - Madison",
+    "sources": [
+      "wiaa"
+    ],
+    "playoff": false,
+    "playoff_round": null,
+    "stat_leaders": []
+  },
+  {
     "id": "boys_hockey-2025-12-28-tomahawk-at-spash",
     "sport": "boys_hockey",
     "season": "2025-26",
@@ -9144,7 +9396,7 @@
     "season": "2025-26",
     "date": "2025-12-28T19:00:00-06:00",
     "home": {
-      "school_id": "",
+      "school_id": "waupaca",
       "name": "Waupaca",
       "score": null,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_de0d8522-ef3a-41b7-ac42-fa9c9b40beeb.jpg"
@@ -9409,6 +9661,34 @@
         }
       }
     ]
+  },
+  {
+    "id": "boys_hockey-2025-12-29-xavier-co-op-at-northland-pines",
+    "sport": "boys_hockey",
+    "season": "2025-26",
+    "date": "2025-12-29T00:00:00-06:00",
+    "home": {
+      "school_id": "northland-pines",
+      "name": "Northland Pines",
+      "score": 7,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_79c22a6c-afec-4ff7-91b5-4dc390886030.jpg"
+    },
+    "away": {
+      "school_id": "",
+      "name": "Xavier Co-op",
+      "score": 5,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_44ea4a89-d9c1-4a94-bae3-8e3a0693b0b5.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": false,
+    "venue": "@Northland Pines",
+    "sources": [
+      "wiaa"
+    ],
+    "playoff": false,
+    "playoff_round": null,
+    "stat_leaders": []
   },
   {
     "id": "boys_hockey-2025-12-29-manistique-mi-at-rhinelander",
@@ -9930,7 +10210,7 @@
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_20e5e107-d060-4d58-9cbe-58312f389ed8.jpg"
     },
     "away": {
-      "school_id": "",
+      "school_id": "waupaca",
       "name": "Waupaca",
       "score": null,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_de0d8522-ef3a-41b7-ac42-fa9c9b40beeb.jpg"
@@ -10738,6 +11018,34 @@
     ]
   },
   {
+    "id": "boys_hockey-2026-01-02-chequamegon-butternut-phillips-at-waupaca",
+    "sport": "boys_hockey",
+    "season": "2025-26",
+    "date": "2026-01-02T19:00:00-06:00",
+    "home": {
+      "school_id": "waupaca",
+      "name": "Waupaca",
+      "score": null,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_de0d8522-ef3a-41b7-ac42-fa9c9b40beeb.jpg"
+    },
+    "away": {
+      "school_id": "",
+      "name": "Chequamegon/Butternut/Phillips",
+      "score": null,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_8a762f16-f752-446d-954d-5b2377aac421.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": false,
+    "venue": "@Waupaca",
+    "sources": [
+      "wiaa"
+    ],
+    "playoff": false,
+    "playoff_round": null,
+    "stat_leaders": []
+  },
+  {
     "id": "boys_hockey-2026-01-03-spooner-shell-lake-at-antigo",
     "sport": "boys_hockey",
     "season": "2025-26",
@@ -11476,6 +11784,34 @@
     "stat_leaders": []
   },
   {
+    "id": "boys_hockey-2026-01-06-northland-pines-at-waupaca",
+    "sport": "boys_hockey",
+    "season": "2025-26",
+    "date": "2026-01-06T19:00:00-06:00",
+    "home": {
+      "school_id": "waupaca",
+      "name": "Waupaca",
+      "score": 3,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_de0d8522-ef3a-41b7-ac42-fa9c9b40beeb.jpg"
+    },
+    "away": {
+      "school_id": "northland-pines",
+      "name": "Northland Pines",
+      "score": 7,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_79c22a6c-afec-4ff7-91b5-4dc390886030.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@Waupaca",
+    "sources": [
+      "wiaa"
+    ],
+    "playoff": false,
+    "playoff_round": null,
+    "stat_leaders": []
+  },
+  {
     "id": "boys_hockey-2026-01-06-rice-lake-at-eau-claire-memorial",
     "sport": "boys_hockey",
     "season": "2025-26",
@@ -11930,7 +12266,7 @@
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_ffbadc1d-650a-4518-b67e-7fa8589a9808.jpg"
     },
     "away": {
-      "school_id": "",
+      "school_id": "northland-pines",
       "name": "Northland Pines",
       "score": 0,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_79c22a6c-afec-4ff7-91b5-4dc390886030.jpg"
@@ -11947,7 +12283,7 @@
     "playoff_round": null,
     "stat_leaders": [
       {
-        "team_school_id": "",
+        "team_school_id": "northland-pines",
         "team_name": "Northland Pines",
         "category": "Hockey Points",
         "player_name": "Cooper  Saari",
@@ -11963,7 +12299,7 @@
         }
       },
       {
-        "team_school_id": "",
+        "team_school_id": "northland-pines",
         "team_name": "Northland Pines",
         "category": "Hockey Saves",
         "player_name": "Evrett  Leslie",
@@ -12006,7 +12342,7 @@
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_6e5a8a7d-b90e-4975-9bea-15777d6e626e.jpg"
     },
     "away": {
-      "school_id": "",
+      "school_id": "waupaca",
       "name": "Waupaca",
       "score": 1,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_de0d8522-ef3a-41b7-ac42-fa9c9b40beeb.jpg"
@@ -12023,7 +12359,7 @@
     "playoff_round": null,
     "stat_leaders": [
       {
-        "team_school_id": "",
+        "team_school_id": "waupaca",
         "team_name": "Waupaca",
         "category": "Hockey Points",
         "player_name": "Nate Hines (C)",
@@ -12039,7 +12375,7 @@
         }
       },
       {
-        "team_school_id": "",
+        "team_school_id": "waupaca",
         "team_name": "Waupaca",
         "category": "Hockey Saves",
         "player_name": "Carson Jameson (A)",
@@ -13088,6 +13424,34 @@
     ]
   },
   {
+    "id": "boys_hockey-2026-01-10-northland-pines-at-hayward-lac-courte-oreilles",
+    "sport": "boys_hockey",
+    "season": "2025-26",
+    "date": "2026-01-10T15:00:00-06:00",
+    "home": {
+      "school_id": "",
+      "name": "Hayward/Lac Courte Oreilles",
+      "score": 1,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_c29ca9af-ce2f-405e-8fbd-19d807b7e75f.jpg"
+    },
+    "away": {
+      "school_id": "northland-pines",
+      "name": "Northland Pines",
+      "score": 8,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_79c22a6c-afec-4ff7-91b5-4dc390886030.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": false,
+    "venue": "@Hayward/Lac Courte Oreilles",
+    "sources": [
+      "wiaa"
+    ],
+    "playoff": false,
+    "playoff_round": null,
+    "stat_leaders": []
+  },
+  {
     "id": "boys_hockey-2026-01-10-chequamegon-butternut-phillips-at-pacelli",
     "sport": "boys_hockey",
     "season": "2025-26",
@@ -13797,7 +14161,7 @@
     "season": "2025-26",
     "date": "2026-01-13T19:00:00-06:00",
     "home": {
-      "school_id": "",
+      "school_id": "waupaca",
       "name": "Waupaca",
       "score": 1,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_de0d8522-ef3a-41b7-ac42-fa9c9b40beeb.jpg"
@@ -13851,7 +14215,7 @@
         }
       },
       {
-        "team_school_id": "",
+        "team_school_id": "waupaca",
         "team_name": "Waupaca",
         "category": "Hockey Points",
         "player_name": "Nate Hines (C)",
@@ -13867,7 +14231,7 @@
         }
       },
       {
-        "team_school_id": "",
+        "team_school_id": "waupaca",
         "team_name": "Waupaca",
         "category": "Hockey Saves",
         "player_name": "Carson Jameson (A)",
@@ -14775,7 +15139,7 @@
     "season": "2025-26",
     "date": "2026-01-15T19:00:00-06:00",
     "home": {
-      "school_id": "",
+      "school_id": "northland-pines",
       "name": "Northland Pines",
       "score": 1,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_79c22a6c-afec-4ff7-91b5-4dc390886030.jpg"
@@ -14814,7 +15178,7 @@
         }
       },
       {
-        "team_school_id": "",
+        "team_school_id": "northland-pines",
         "team_name": "Northland Pines",
         "category": "Hockey Points",
         "player_name": "Josh Graves",
@@ -14830,7 +15194,7 @@
         }
       },
       {
-        "team_school_id": "",
+        "team_school_id": "northland-pines",
         "team_name": "Northland Pines",
         "category": "Hockey Goals",
         "player_name": "Cooper  Saari",
@@ -14846,7 +15210,7 @@
         }
       },
       {
-        "team_school_id": "",
+        "team_school_id": "northland-pines",
         "team_name": "Northland Pines",
         "category": "Hockey Saves",
         "player_name": "Evrett  Leslie",
@@ -15548,6 +15912,34 @@
     ]
   },
   {
+    "id": "boys_hockey-2026-01-16-waupaca-at-hayward-lac-courte-oreilles",
+    "sport": "boys_hockey",
+    "season": "2025-26",
+    "date": "2026-01-16T19:00:00-06:00",
+    "home": {
+      "school_id": "",
+      "name": "Hayward/Lac Courte Oreilles",
+      "score": 1,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_c29ca9af-ce2f-405e-8fbd-19d807b7e75f.jpg"
+    },
+    "away": {
+      "school_id": "waupaca",
+      "name": "Waupaca",
+      "score": 2,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_de0d8522-ef3a-41b7-ac42-fa9c9b40beeb.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": false,
+    "venue": "@Hayward/Lac Courte Oreilles",
+    "sources": [
+      "wiaa"
+    ],
+    "playoff": false,
+    "playoff_round": null,
+    "stat_leaders": []
+  },
+  {
     "id": "boys_hockey-2026-01-17-wisconsin-rapids-at-beaver-dam-co-op",
     "sport": "boys_hockey",
     "season": "2025-26",
@@ -15772,7 +16164,7 @@
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_ffbadc1d-650a-4518-b67e-7fa8589a9808.jpg"
     },
     "away": {
-      "school_id": "",
+      "school_id": "waupaca",
       "name": "Waupaca",
       "score": 0,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_de0d8522-ef3a-41b7-ac42-fa9c9b40beeb.jpg"
@@ -15789,7 +16181,7 @@
     "playoff_round": null,
     "stat_leaders": [
       {
-        "team_school_id": "",
+        "team_school_id": "waupaca",
         "team_name": "Waupaca",
         "category": "Hockey Saves",
         "player_name": "Carson Jameson (A)",
@@ -16548,7 +16940,7 @@
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_931e8899-5525-40e0-b778-26d19bb94511.jpg"
     },
     "away": {
-      "school_id": "",
+      "school_id": "northland-pines",
       "name": "Northland Pines",
       "score": 2,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_79c22a6c-afec-4ff7-91b5-4dc390886030.jpg"
@@ -16565,7 +16957,7 @@
     "playoff_round": null,
     "stat_leaders": [
       {
-        "team_school_id": "",
+        "team_school_id": "northland-pines",
         "team_name": "Northland Pines",
         "category": "Hockey Points",
         "player_name": "Josh Graves",
@@ -16581,7 +16973,7 @@
         }
       },
       {
-        "team_school_id": "",
+        "team_school_id": "northland-pines",
         "team_name": "Northland Pines",
         "category": "Hockey Saves",
         "player_name": "Evrett  Leslie",
@@ -16640,7 +17032,7 @@
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_b455cbb7-3a4d-49ad-b7c5-e9935c3d78dc.jpg"
     },
     "away": {
-      "school_id": "",
+      "school_id": "waupaca",
       "name": "Waupaca",
       "score": 0,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_de0d8522-ef3a-41b7-ac42-fa9c9b40beeb.jpg"
@@ -16657,7 +17049,7 @@
     "playoff_round": null,
     "stat_leaders": [
       {
-        "team_school_id": "",
+        "team_school_id": "waupaca",
         "team_name": "Waupaca",
         "category": "Hockey Saves",
         "player_name": "Carson Jameson (A)",
@@ -18802,6 +19194,34 @@
     ]
   },
   {
+    "id": "boys_hockey-2026-01-27-waupaca-at-northland-pines",
+    "sport": "boys_hockey",
+    "season": "2025-26",
+    "date": "2026-01-27T19:00:00-06:00",
+    "home": {
+      "school_id": "northland-pines",
+      "name": "Northland Pines",
+      "score": 9,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_79c22a6c-afec-4ff7-91b5-4dc390886030.jpg"
+    },
+    "away": {
+      "school_id": "waupaca",
+      "name": "Waupaca",
+      "score": 0,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_de0d8522-ef3a-41b7-ac42-fa9c9b40beeb.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": true,
+    "venue": "@Eagle River Hockey Arena",
+    "sources": [
+      "wiaa"
+    ],
+    "playoff": false,
+    "playoff_round": null,
+    "stat_leaders": []
+  },
+  {
     "id": "boys_hockey-2026-01-29-medford-at-chequamegon-butternut-phillips",
     "sport": "boys_hockey",
     "season": "2025-26",
@@ -19564,6 +19984,90 @@
         }
       }
     ]
+  },
+  {
+    "id": "boys_hockey-2026-01-29-ashwaubenon-co-op-at-northland-pines",
+    "sport": "boys_hockey",
+    "season": "2025-26",
+    "date": "2026-01-29T19:00:00-06:00",
+    "home": {
+      "school_id": "northland-pines",
+      "name": "Northland Pines",
+      "score": 6,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_79c22a6c-afec-4ff7-91b5-4dc390886030.jpg"
+    },
+    "away": {
+      "school_id": "",
+      "name": "Ashwaubenon Co-op",
+      "score": 1,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_9708065e-30d7-4cba-b31a-1b21b3827bfd.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": false,
+    "venue": "@Northland Pines High School--Eagle River",
+    "sources": [
+      "wiaa"
+    ],
+    "playoff": false,
+    "playoff_round": null,
+    "stat_leaders": []
+  },
+  {
+    "id": "boys_hockey-2026-01-29-waupun-at-waupaca",
+    "sport": "boys_hockey",
+    "season": "2025-26",
+    "date": "2026-01-29T19:00:00-06:00",
+    "home": {
+      "school_id": "waupaca",
+      "name": "Waupaca",
+      "score": 4,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_de0d8522-ef3a-41b7-ac42-fa9c9b40beeb.jpg"
+    },
+    "away": {
+      "school_id": "",
+      "name": "Waupun",
+      "score": 1,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_871e8d56-522d-445a-a310-979556d6be8f.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": false,
+    "venue": "@Waupaca",
+    "sources": [
+      "wiaa"
+    ],
+    "playoff": false,
+    "playoff_round": null,
+    "stat_leaders": []
+  },
+  {
+    "id": "boys_hockey-2026-01-30-northland-pines-at-kingsford-mi",
+    "sport": "boys_hockey",
+    "season": "2025-26",
+    "date": "2026-01-30T17:30:00-06:00",
+    "home": {
+      "school_id": "",
+      "name": "Kingsford (MI)",
+      "score": 2,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/no_logo.jpg"
+    },
+    "away": {
+      "school_id": "northland-pines",
+      "name": "Northland Pines",
+      "score": 3,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_79c22a6c-afec-4ff7-91b5-4dc390886030.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": false,
+    "venue": "@Mountain View Ice Arena",
+    "sources": [
+      "wiaa"
+    ],
+    "playoff": false,
+    "playoff_round": null,
+    "stat_leaders": []
   },
   {
     "id": "boys_hockey-2026-01-30-river-falls-at-muskego-co-op",
@@ -20590,7 +21094,7 @@
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_931e8899-5525-40e0-b778-26d19bb94511.jpg"
     },
     "away": {
-      "school_id": "",
+      "school_id": "waupaca",
       "name": "Waupaca",
       "score": 1,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_de0d8522-ef3a-41b7-ac42-fa9c9b40beeb.jpg"
@@ -20607,7 +21111,7 @@
     "playoff_round": null,
     "stat_leaders": [
       {
-        "team_school_id": "",
+        "team_school_id": "waupaca",
         "team_name": "Waupaca",
         "category": "Hockey Points",
         "player_name": "Nate Hines (C)",
@@ -20623,7 +21127,7 @@
         }
       },
       {
-        "team_school_id": "",
+        "team_school_id": "waupaca",
         "team_name": "Waupaca",
         "category": "Hockey Saves",
         "player_name": "Carson Jameson (A)",
@@ -20676,7 +21180,7 @@
     "season": "2025-26",
     "date": "2026-02-03T19:00:00-06:00",
     "home": {
-      "school_id": "",
+      "school_id": "northland-pines",
       "name": "Northland Pines",
       "score": 3,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_79c22a6c-afec-4ff7-91b5-4dc390886030.jpg"
@@ -20746,7 +21250,7 @@
         }
       },
       {
-        "team_school_id": "",
+        "team_school_id": "northland-pines",
         "team_name": "Northland Pines",
         "category": "Hockey Points",
         "player_name": "Hunter Tameling",
@@ -20762,7 +21266,7 @@
         }
       },
       {
-        "team_school_id": "",
+        "team_school_id": "northland-pines",
         "team_name": "Northland Pines",
         "category": "Hockey Saves",
         "player_name": "Evrett  Leslie",
@@ -21855,7 +22359,7 @@
     "season": "2025-26",
     "date": "2026-02-05T19:00:00-06:00",
     "home": {
-      "school_id": "",
+      "school_id": "waupaca",
       "name": "Waupaca",
       "score": 0,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_de0d8522-ef3a-41b7-ac42-fa9c9b40beeb.jpg"
@@ -22254,6 +22758,34 @@
     ]
   },
   {
+    "id": "boys_hockey-2026-02-07-baldwin-woodville-saint-croix-central-at-northland-pines",
+    "sport": "boys_hockey",
+    "season": "2025-26",
+    "date": "2026-02-07T15:00:00-06:00",
+    "home": {
+      "school_id": "northland-pines",
+      "name": "Northland Pines",
+      "score": 3,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_79c22a6c-afec-4ff7-91b5-4dc390886030.jpg"
+    },
+    "away": {
+      "school_id": "",
+      "name": "Baldwin-Woodville/Saint Croix Central",
+      "score": 2,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_4b4351db-6105-4e55-829c-4492252325d9.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": false,
+    "venue": "@Eagle River Hockey Arena",
+    "sources": [
+      "wiaa"
+    ],
+    "playoff": false,
+    "playoff_round": null,
+    "stat_leaders": []
+  },
+  {
     "id": "boys_hockey-2026-02-07-hudson-at-notre-dame",
     "sport": "boys_hockey",
     "season": "2025-26",
@@ -22562,6 +23094,34 @@
     "conference": null,
     "conference_game": true,
     "venue": "@Wisconsin Rapids Lincoln",
+    "sources": [
+      "wiaa"
+    ],
+    "playoff": false,
+    "playoff_round": null,
+    "stat_leaders": []
+  },
+  {
+    "id": "boys_hockey-2026-02-10-hancock-mi-at-northland-pines",
+    "sport": "boys_hockey",
+    "season": "2025-26",
+    "date": "2026-02-10T18:15:00-06:00",
+    "home": {
+      "school_id": "northland-pines",
+      "name": "Northland Pines",
+      "score": 5,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_79c22a6c-afec-4ff7-91b5-4dc390886030.jpg"
+    },
+    "away": {
+      "school_id": "",
+      "name": "Hancock (MI)",
+      "score": 4,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/no_logo.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": false,
+    "venue": "@Eagle River Hockey Arena",
     "sources": [
       "wiaa"
     ],
@@ -24009,6 +24569,34 @@
     ]
   },
   {
+    "id": "boys_hockey-2026-02-13-northland-pines-at-jeffers-mi",
+    "sport": "boys_hockey",
+    "season": "2025-26",
+    "date": "2026-02-13T18:00:00-06:00",
+    "home": {
+      "school_id": "",
+      "name": "Jeffers (MI)",
+      "score": 3,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/no_logo.jpg"
+    },
+    "away": {
+      "school_id": "northland-pines",
+      "name": "Northland Pines",
+      "score": 4,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_79c22a6c-afec-4ff7-91b5-4dc390886030.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": false,
+    "venue": "@John Maclnnes Student Ice Arena",
+    "sources": [
+      "wiaa"
+    ],
+    "playoff": false,
+    "playoff_round": null,
+    "stat_leaders": []
+  },
+  {
     "id": "boys_hockey-2026-02-13-milton-co-op-at-antigo",
     "sport": "boys_hockey",
     "season": "2025-26",
@@ -24106,6 +24694,34 @@
     "conference": null,
     "conference_game": false,
     "venue": "@Brookfield East Co-op",
+    "sources": [
+      "wiaa"
+    ],
+    "playoff": false,
+    "playoff_round": null,
+    "stat_leaders": []
+  },
+  {
+    "id": "boys_hockey-2026-02-13-waupaca-at-marquette",
+    "sport": "boys_hockey",
+    "season": "2025-26",
+    "date": "2026-02-13T19:00:00-06:00",
+    "home": {
+      "school_id": "",
+      "name": "Marquette",
+      "score": 0,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_a0c5d2d7-112f-4998-b72d-b7b154cd93a2.jpg"
+    },
+    "away": {
+      "school_id": "waupaca",
+      "name": "Waupaca",
+      "score": 8,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_de0d8522-ef3a-41b7-ac42-fa9c9b40beeb.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": false,
+    "venue": "@Marquette",
     "sources": [
       "wiaa"
     ],
@@ -24507,7 +25123,7 @@
     "season": "2025-26",
     "date": "2026-02-19T19:00:00-06:00",
     "home": {
-      "school_id": "",
+      "school_id": "northland-pines",
       "name": "Northland Pines",
       "score": 10,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_79c22a6c-afec-4ff7-91b5-4dc390886030.jpg"
@@ -24698,6 +25314,34 @@
     "stat_leaders": []
   },
   {
+    "id": "boys_hockey-2026-02-19-waupaca-at-mcfarland",
+    "sport": "boys_hockey",
+    "season": "2025-26",
+    "date": "2026-02-19T19:00:00-06:00",
+    "home": {
+      "school_id": "",
+      "name": "McFarland",
+      "score": 7,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_02477f75-df25-49b6-baa4-96ef7dbfb0cb.jpg"
+    },
+    "away": {
+      "school_id": "waupaca",
+      "name": "Waupaca",
+      "score": 1,
+      "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_de0d8522-ef3a-41b7-ac42-fa9c9b40beeb.jpg"
+    },
+    "status": "final",
+    "conference": null,
+    "conference_game": false,
+    "venue": "@McFarland",
+    "sources": [
+      "wiaa"
+    ],
+    "playoff": true,
+    "playoff_round": "Regional",
+    "stat_leaders": []
+  },
+  {
     "id": "boys_hockey-2026-02-19-medford-at-mosinee",
     "sport": "boys_hockey",
     "season": "2025-26",
@@ -24759,7 +25403,7 @@
     "season": "2025-26",
     "date": "2026-02-24T19:00:00-06:00",
     "home": {
-      "school_id": "",
+      "school_id": "northland-pines",
       "name": "Northland Pines",
       "score": 6,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_79c22a6c-afec-4ff7-91b5-4dc390886030.jpg"
@@ -24955,7 +25599,7 @@
     "season": "2025-26",
     "date": "2026-02-28T19:30:00-06:00",
     "home": {
-      "school_id": "",
+      "school_id": "northland-pines",
       "name": "Northland Pines",
       "score": 5,
       "logo_url": "https://schools.wiaawi.org/Upload/School/Logo/Logo_79c22a6c-afec-4ff7-91b5-4dc390886030.jpg"

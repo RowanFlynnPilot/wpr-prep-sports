@@ -26,6 +26,16 @@
         "points_against": 42
       },
       {
+        "school_id": "marshfield",
+        "name": "Marshfield",
+        "conference_wins": 6,
+        "conference_losses": 4,
+        "overall_wins": 20,
+        "overall_losses": 5,
+        "points_for": 144,
+        "points_against": 60
+      },
+      {
         "school_id": "spash",
         "name": "SPASH",
         "conference_wins": 4,
@@ -44,6 +54,16 @@
         "overall_losses": 9,
         "points_for": 104,
         "points_against": 94
+      },
+      {
+        "school_id": "merrill",
+        "name": "Merrill",
+        "conference_wins": 0,
+        "conference_losses": 10,
+        "overall_wins": 7,
+        "overall_losses": 13,
+        "points_for": 69,
+        "points_against": 135
       }
     ]
   },
@@ -74,6 +94,26 @@
         "points_against": 71
       },
       {
+        "school_id": "rhinelander",
+        "name": "Rhinelander",
+        "conference_wins": 6,
+        "conference_losses": 2,
+        "overall_wins": 13,
+        "overall_losses": 5,
+        "points_for": 97,
+        "points_against": 77
+      },
+      {
+        "school_id": "medford",
+        "name": "Medford",
+        "conference_wins": 6,
+        "conference_losses": 4,
+        "overall_wins": 15,
+        "overall_losses": 7,
+        "points_for": 94,
+        "points_against": 74
+      },
+      {
         "school_id": "lakeland",
         "name": "Lakeland",
         "conference_wins": 4,
@@ -82,6 +122,36 @@
         "overall_losses": 6,
         "points_for": 43,
         "points_against": 43
+      },
+      {
+        "school_id": "northland-pines",
+        "name": "Northland Pines",
+        "conference_wins": 2,
+        "conference_losses": 8,
+        "overall_wins": 15,
+        "overall_losses": 11,
+        "points_for": 106,
+        "points_against": 102
+      },
+      {
+        "school_id": "antigo",
+        "name": "Antigo",
+        "conference_wins": 2,
+        "conference_losses": 8,
+        "overall_wins": 14,
+        "overall_losses": 10,
+        "points_for": 85,
+        "points_against": 70
+      },
+      {
+        "school_id": "waupaca",
+        "name": "Waupaca",
+        "conference_wins": 0,
+        "conference_losses": 9,
+        "overall_wins": 8,
+        "overall_losses": 11,
+        "points_for": 45,
+        "points_against": 70
       }
     ]
   },

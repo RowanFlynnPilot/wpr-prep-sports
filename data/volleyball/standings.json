@@ -104,6 +104,16 @@
         "points_against": 15
       },
       {
+        "school_id": "prentice",
+        "name": "Prentice",
+        "conference_wins": 5,
+        "conference_losses": 2,
+        "overall_wins": 22,
+        "overall_losses": 12,
+        "points_for": 60,
+        "points_against": 34
+      },
+      {
         "school_id": "marathon",
         "name": "Marathon",
         "conference_wins": 4,
@@ -131,6 +141,56 @@
         "overall_wins": 28,
         "overall_losses": 5,
         "points_for": 69,
+        "points_against": 25
+      },
+      {
+        "school_id": "chequamegon",
+        "name": "Chequamegon",
+        "conference_wins": 2,
+        "conference_losses": 5,
+        "overall_wins": 23,
+        "overall_losses": 11,
+        "points_for": 53,
+        "points_against": 33
+      },
+      {
+        "school_id": "auburndale",
+        "name": "Auburndale",
+        "conference_wins": 1,
+        "conference_losses": 4,
+        "overall_wins": 21,
+        "overall_losses": 14,
+        "points_for": 54,
+        "points_against": 44
+      },
+      {
+        "school_id": "phillips",
+        "name": "Phillips",
+        "conference_wins": 1,
+        "conference_losses": 4,
+        "overall_wins": 20,
+        "overall_losses": 14,
+        "points_for": 48,
+        "points_against": 45
+      },
+      {
+        "school_id": "rib-lake",
+        "name": "Rib Lake",
+        "conference_wins": 0,
+        "conference_losses": 5,
+        "overall_wins": 19,
+        "overall_losses": 19,
+        "points_for": 49,
+        "points_against": 50
+      },
+      {
+        "school_id": "assumption",
+        "name": "Assumption",
+        "conference_wins": 0,
+        "conference_losses": 5,
+        "overall_wins": 16,
+        "overall_losses": 8,
+        "points_for": 38,
         "points_against": 25
       }
     ]
@@ -210,6 +270,16 @@
         "overall_losses": 13,
         "points_for": 35,
         "points_against": 39
+      },
+      {
+        "school_id": "northland-pines",
+        "name": "Northland Pines",
+        "conference_wins": 0,
+        "conference_losses": 10,
+        "overall_wins": 15,
+        "overall_losses": 20,
+        "points_for": 41,
+        "points_against": 59
       }
     ]
   },
@@ -230,6 +300,16 @@
         "points_against": 25
       },
       {
+        "school_id": "loyal",
+        "name": "Loyal",
+        "conference_wins": 5,
+        "conference_losses": 2,
+        "overall_wins": 21,
+        "overall_losses": 8,
+        "points_for": 53,
+        "points_against": 28
+      },
+      {
         "school_id": "abbotsford",
         "name": "Abbotsford",
         "conference_wins": 4,
@@ -238,6 +318,56 @@
         "overall_losses": 9,
         "points_for": 60,
         "points_against": 32
+      },
+      {
+        "school_id": "neillsville",
+        "name": "Neillsville",
+        "conference_wins": 4,
+        "conference_losses": 3,
+        "overall_wins": 22,
+        "overall_losses": 7,
+        "points_for": 56,
+        "points_against": 24
+      },
+      {
+        "school_id": "owen-withee",
+        "name": "Owen-Withee",
+        "conference_wins": 4,
+        "conference_losses": 3,
+        "overall_wins": 17,
+        "overall_losses": 14,
+        "points_for": 46,
+        "points_against": 40
+      },
+      {
+        "school_id": "gilman",
+        "name": "Gilman",
+        "conference_wins": 3,
+        "conference_losses": 5,
+        "overall_wins": 12,
+        "overall_losses": 15,
+        "points_for": 38,
+        "points_against": 41
+      },
+      {
+        "school_id": "greenwood",
+        "name": "Greenwood",
+        "conference_wins": 1,
+        "conference_losses": 6,
+        "overall_wins": 8,
+        "overall_losses": 13,
+        "points_for": 22,
+        "points_against": 39
+      },
+      {
+        "school_id": "columbus-catholic",
+        "name": "Columbus Catholic",
+        "conference_wins": 0,
+        "conference_losses": 7,
+        "overall_wins": 17,
+        "overall_losses": 25,
+        "points_for": 40,
+        "points_against": 65
       }
     ]
   }

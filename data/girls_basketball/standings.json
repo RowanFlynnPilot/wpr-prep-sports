@@ -132,6 +132,66 @@
         "overall_losses": 8,
         "points_for": 1366,
         "points_against": 1098
+      },
+      {
+        "school_id": "auburndale",
+        "name": "Auburndale",
+        "conference_wins": 6,
+        "conference_losses": 10,
+        "overall_wins": 15,
+        "overall_losses": 11,
+        "points_for": 1189,
+        "points_against": 1087
+      },
+      {
+        "school_id": "prentice",
+        "name": "Prentice",
+        "conference_wins": 6,
+        "conference_losses": 10,
+        "overall_wins": 12,
+        "overall_losses": 13,
+        "points_for": 1092,
+        "points_against": 1135
+      },
+      {
+        "school_id": "chequamegon",
+        "name": "Chequamegon",
+        "conference_wins": 4,
+        "conference_losses": 10,
+        "overall_wins": 10,
+        "overall_losses": 16,
+        "points_for": 1208,
+        "points_against": 1349
+      },
+      {
+        "school_id": "assumption",
+        "name": "Assumption",
+        "conference_wins": 4,
+        "conference_losses": 12,
+        "overall_wins": 12,
+        "overall_losses": 15,
+        "points_for": 1314,
+        "points_against": 1180
+      },
+      {
+        "school_id": "phillips",
+        "name": "Phillips",
+        "conference_wins": 2,
+        "conference_losses": 14,
+        "overall_wins": 10,
+        "overall_losses": 16,
+        "points_for": 1186,
+        "points_against": 1319
+      },
+      {
+        "school_id": "rib-lake",
+        "name": "Rib Lake",
+        "conference_wins": 0,
+        "conference_losses": 16,
+        "overall_wins": 6,
+        "overall_losses": 19,
+        "points_for": 990,
+        "points_against": 1268
       }
     ]
   },
@@ -210,6 +270,16 @@
         "overall_losses": 14,
         "points_for": 1021,
         "points_against": 1204
+      },
+      {
+        "school_id": "northland-pines",
+        "name": "Northland Pines",
+        "conference_wins": 0,
+        "conference_losses": 14,
+        "overall_wins": 5,
+        "overall_losses": 19,
+        "points_for": 1047,
+        "points_against": 1269
       }
     ]
   },
@@ -230,6 +300,16 @@
         "points_against": 943
       },
       {
+        "school_id": "loyal",
+        "name": "Loyal",
+        "conference_wins": 10,
+        "conference_losses": 4,
+        "overall_wins": 15,
+        "overall_losses": 10,
+        "points_for": 1176,
+        "points_against": 1051
+      },
+      {
         "school_id": "abbotsford",
         "name": "Abbotsford",
         "conference_wins": 10,
@@ -238,6 +318,56 @@
         "overall_losses": 9,
         "points_for": 1196,
         "points_against": 1126
+      },
+      {
+        "school_id": "neillsville",
+        "name": "Neillsville",
+        "conference_wins": 8,
+        "conference_losses": 6,
+        "overall_wins": 18,
+        "overall_losses": 10,
+        "points_for": 1277,
+        "points_against": 1150
+      },
+      {
+        "school_id": "owen-withee",
+        "name": "Owen-Withee",
+        "conference_wins": 6,
+        "conference_losses": 8,
+        "overall_wins": 14,
+        "overall_losses": 14,
+        "points_for": 1072,
+        "points_against": 1159
+      },
+      {
+        "school_id": "gilman",
+        "name": "Gilman",
+        "conference_wins": 4,
+        "conference_losses": 10,
+        "overall_wins": 11,
+        "overall_losses": 15,
+        "points_for": 1220,
+        "points_against": 1211
+      },
+      {
+        "school_id": "greenwood",
+        "name": "Greenwood",
+        "conference_wins": 3,
+        "conference_losses": 12,
+        "overall_wins": 11,
+        "overall_losses": 15,
+        "points_for": 1147,
+        "points_against": 1149
+      },
+      {
+        "school_id": "columbus-catholic",
+        "name": "Columbus Catholic",
+        "conference_wins": 0,
+        "conference_losses": 14,
+        "overall_wins": 3,
+        "overall_losses": 23,
+        "points_for": 1116,
+        "points_against": 1549
       }
     ]
   }

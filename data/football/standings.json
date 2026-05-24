@@ -16,6 +16,16 @@
         "points_against": 121
       },
       {
+        "school_id": "northland-pines",
+        "name": "Northland Pines",
+        "conference_wins": 7,
+        "conference_losses": 0,
+        "overall_wins": 8,
+        "overall_losses": 1,
+        "points_for": 281,
+        "points_against": 80
+      },
+      {
         "school_id": "mosinee",
         "name": "Mosinee",
         "conference_wins": 6,
@@ -212,6 +222,16 @@
         "points_against": 202
       },
       {
+        "school_id": "mellen",
+        "name": "Mellen",
+        "conference_wins": 5,
+        "conference_losses": 2,
+        "overall_wins": 5,
+        "overall_losses": 2,
+        "points_for": 5,
+        "points_against": 2
+      },
+      {
         "school_id": "hurley",
         "name": "Hurley",
         "conference_wins": 4,
@@ -220,6 +240,26 @@
         "overall_losses": 4,
         "points_for": 225,
         "points_against": 242
+      },
+      {
+        "school_id": "washburn",
+        "name": "Washburn",
+        "conference_wins": 4,
+        "conference_losses": 3,
+        "overall_wins": 6,
+        "overall_losses": 3,
+        "points_for": 314,
+        "points_against": 144
+      },
+      {
+        "school_id": "shell-lake",
+        "name": "Shell Lake",
+        "conference_wins": 3,
+        "conference_losses": 4,
+        "overall_wins": 5,
+        "overall_losses": 4,
+        "points_for": 239,
+        "points_against": 156
       },
       {
         "school_id": "chequamegon",
@@ -240,6 +280,16 @@
         "overall_losses": 5,
         "points_for": 208,
         "points_against": 295
+      },
+      {
+        "school_id": "south-shore",
+        "name": "South Shore",
+        "conference_wins": 2,
+        "conference_losses": 5,
+        "overall_wins": 2,
+        "overall_losses": 6,
+        "points_for": 107,
+        "points_against": 77
       },
       {
         "school_id": "rib-lake",
@@ -416,6 +466,16 @@
         "overall_losses": 8,
         "points_for": 233,
         "points_against": 309
+      },
+      {
+        "school_id": "loyal",
+        "name": "Loyal",
+        "conference_wins": 0,
+        "conference_losses": 7,
+        "overall_wins": 1,
+        "overall_losses": 9,
+        "points_for": 168,
+        "points_against": 267
       }
     ]
   },
