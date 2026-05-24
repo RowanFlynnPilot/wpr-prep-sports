@@ -58344,12 +58344,222 @@
     "conference_game": false,
     "venue": "@Eau Claire Memorial",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "wisconsinprephockey"
     ],
     "playoff": true,
     "playoff_round": "Regional",
-    "stat_leaders": [],
-    "scoring": []
+    "stat_leaders": [
+      {
+        "team_school_id": "wisconsin-rapids",
+        "team_name": "Wisconsin Rapids Lincoln",
+        "category": "Hockey Points",
+        "player_name": "Collin Ashbeck",
+        "player_year": "SR",
+        "position": "F",
+        "stats": {
+          "G": "1",
+          "A": "0",
+          "PTS": "1",
+          "SOG": "1",
+          "PIM": "0",
+          "+ / -": "0"
+        }
+      },
+      {
+        "team_school_id": "wisconsin-rapids",
+        "team_name": "Wisconsin Rapids Lincoln",
+        "category": "Hockey Saves",
+        "player_name": "Raleigh Bastien",
+        "player_year": "SR",
+        "position": "G",
+        "stats": {
+          "MIN": "37:33",
+          "SOG": "35",
+          "GA": "3",
+          "SV": "32",
+          "SV %": ".914"
+        }
+      },
+      {
+        "team_school_id": "eau-claire-memorial",
+        "team_name": "Eau Claire Memorial",
+        "category": "Hockey Points",
+        "player_name": "Kaden Kruschke",
+        "player_year": "SO",
+        "position": "D",
+        "stats": {
+          "G": "0",
+          "A": "2",
+          "PTS": "2",
+          "SOG": "0",
+          "PIM": "0",
+          "+ / -": "0"
+        }
+      },
+      {
+        "team_school_id": "eau-claire-memorial",
+        "team_name": "Eau Claire Memorial",
+        "category": "Hockey Goals",
+        "player_name": "Peyton Huls",
+        "player_year": "SO",
+        "position": "F",
+        "stats": {
+          "G": "2",
+          "A": "0",
+          "PTS": "2",
+          "SOG": "2",
+          "PIM": "4",
+          "+ / -": "0"
+        }
+      },
+      {
+        "team_school_id": "eau-claire-memorial",
+        "team_name": "Eau Claire Memorial",
+        "category": "Hockey Saves",
+        "player_name": "Evan Madsen",
+        "player_year": "JR",
+        "position": "G",
+        "stats": {
+          "MIN": "51:00",
+          "SOG": "17",
+          "GA": "1",
+          "SV": "16",
+          "SV %": ".941"
+        }
+      }
+    ],
+    "scoring": [
+      {
+        "period": "1st",
+        "time": "3:28",
+        "team_school_id": "eau-claire-memorial",
+        "team_name": "Eau Claire Memorial",
+        "scorer_jersey": "37",
+        "scorer_name": "Carson Halseth",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "20",
+            "name": "Luke Schemberger"
+          }
+        ],
+        "away_score": 0,
+        "home_score": 1
+      },
+      {
+        "period": "1st",
+        "time": "7:14",
+        "team_school_id": "eau-claire-memorial",
+        "team_name": "Eau Claire Memorial",
+        "scorer_jersey": "17",
+        "scorer_name": "Peyton Huls",
+        "strength": "even strength",
+        "assists": [],
+        "away_score": 0,
+        "home_score": 2
+      },
+      {
+        "period": "1st",
+        "time": "8:25",
+        "team_school_id": "eau-claire-memorial",
+        "team_name": "Eau Claire Memorial",
+        "scorer_jersey": "29",
+        "scorer_name": "Mason Flannery",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "2",
+            "name": "Kaden Kruschke"
+          }
+        ],
+        "away_score": 0,
+        "home_score": 3
+      },
+      {
+        "period": "1st",
+        "time": "13:27",
+        "team_school_id": "eau-claire-memorial",
+        "team_name": "Eau Claire Memorial",
+        "scorer_jersey": "29",
+        "scorer_name": "Mason Flannery",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "2",
+            "name": "Kaden Kruschke"
+          },
+          {
+            "jersey": "23",
+            "name": "Wyatt Seymour"
+          }
+        ],
+        "away_score": 0,
+        "home_score": 4
+      },
+      {
+        "period": "2nd",
+        "time": "7:44",
+        "team_school_id": "wisconsin-rapids",
+        "team_name": "Wisconsin Rapids Lincoln",
+        "scorer_jersey": "20",
+        "scorer_name": "Collin Ashbeck",
+        "strength": "even strength",
+        "assists": [],
+        "away_score": 1,
+        "home_score": 4
+      },
+      {
+        "period": "2nd",
+        "time": "12:38",
+        "team_school_id": "eau-claire-memorial",
+        "team_name": "Eau Claire Memorial",
+        "scorer_jersey": "20",
+        "scorer_name": "Luke Schemberger",
+        "strength": "even strength",
+        "assists": [],
+        "away_score": 1,
+        "home_score": 5
+      },
+      {
+        "period": "2nd",
+        "time": "16:51",
+        "team_school_id": "eau-claire-memorial",
+        "team_name": "Eau Claire Memorial",
+        "scorer_jersey": "17",
+        "scorer_name": "Peyton Huls",
+        "strength": "power play",
+        "assists": [
+          {
+            "jersey": "8",
+            "name": "Carter Hays"
+          },
+          {
+            "jersey": "23",
+            "name": "Wyatt Seymour"
+          }
+        ],
+        "away_score": 1,
+        "home_score": 6
+      },
+      {
+        "period": "3rd",
+        "time": "14:46",
+        "team_school_id": "eau-claire-memorial",
+        "team_name": "Eau Claire Memorial",
+        "scorer_jersey": "3",
+        "scorer_name": "Collin Bill",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "9",
+            "name": "Cole Ahneman"
+          }
+        ],
+        "away_score": 1,
+        "home_score": 7
+      }
+    ]
   },
   {
     "id": "boys_hockey-2026-02-17-black-river-falls-co-op-at-mosinee",
@@ -58732,12 +58942,187 @@
     "conference_game": false,
     "venue": "@D.C. Everest",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "wisconsinprephockey"
     ],
     "playoff": true,
     "playoff_round": "Regional",
-    "stat_leaders": [],
-    "scoring": []
+    "stat_leaders": [
+      {
+        "team_school_id": "new-richmond",
+        "team_name": "New Richmond",
+        "category": "Hockey Points",
+        "player_name": "Ceagan Langeness",
+        "player_year": "JR",
+        "position": "D|F",
+        "stats": {
+          "G": "0",
+          "A": "2",
+          "PTS": "2",
+          "SOG": "0",
+          "PIM": "0",
+          "+ / -": "0"
+        }
+      },
+      {
+        "team_school_id": "new-richmond",
+        "team_name": "New Richmond",
+        "category": "Hockey Saves",
+        "player_name": "Drake Bowman",
+        "player_year": "JR",
+        "position": "G",
+        "stats": {
+          "MIN": "51:00",
+          "SOG": "34",
+          "GA": "1",
+          "SV": "33",
+          "SV %": ".971"
+        }
+      },
+      {
+        "team_school_id": "dc-everest",
+        "team_name": "D.C. Everest",
+        "category": "Hockey Points",
+        "player_name": "Bode Slavin",
+        "player_year": "FR",
+        "position": "D",
+        "stats": {
+          "G": "1",
+          "A": "0",
+          "PTS": "1",
+          "SOG": "1",
+          "PIM": "0",
+          "+ / -": "0"
+        }
+      },
+      {
+        "team_school_id": "dc-everest",
+        "team_name": "D.C. Everest",
+        "category": "Hockey Saves",
+        "player_name": "Griffen Bunnell",
+        "player_year": "SR",
+        "position": "G",
+        "stats": {
+          "MIN": "51:00",
+          "SOG": "40",
+          "GA": "5",
+          "SV": "35",
+          "SV %": ".875"
+        }
+      }
+    ],
+    "scoring": [
+      {
+        "period": "1st",
+        "time": "14:36",
+        "team_school_id": "new-richmond",
+        "team_name": "New Richmond",
+        "scorer_jersey": "15",
+        "scorer_name": "Charlie Stanger",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "9",
+            "name": "Tegan  Lachaussie"
+          },
+          {
+            "jersey": "24",
+            "name": "Chase Huber"
+          }
+        ],
+        "away_score": 1,
+        "home_score": 0
+      },
+      {
+        "period": "2nd",
+        "time": "0:56",
+        "team_school_id": "dc-everest",
+        "team_name": "D.C. Everest",
+        "scorer_jersey": "8",
+        "scorer_name": "Bode Slavin",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "18",
+            "name": "Cole VanSlyke"
+          }
+        ],
+        "away_score": 1,
+        "home_score": 1
+      },
+      {
+        "period": "2nd",
+        "time": "8:36",
+        "team_school_id": "new-richmond",
+        "team_name": "New Richmond",
+        "scorer_jersey": "22",
+        "scorer_name": "Reegan Saverine \"C\"",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "24",
+            "name": "Chase Huber"
+          }
+        ],
+        "away_score": 2,
+        "home_score": 1
+      },
+      {
+        "period": "2nd",
+        "time": "9:05",
+        "team_school_id": "new-richmond",
+        "team_name": "New Richmond",
+        "scorer_jersey": "20",
+        "scorer_name": "Brooks Posel",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "8",
+            "name": "Ceagan Langeness"
+          },
+          {
+            "jersey": "7",
+            "name": "Lafe Knutson"
+          }
+        ],
+        "away_score": 3,
+        "home_score": 1
+      },
+      {
+        "period": "2nd",
+        "time": "12:41",
+        "team_school_id": "new-richmond",
+        "team_name": "New Richmond",
+        "scorer_jersey": "17",
+        "scorer_name": "Maddux Gaspord",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "21",
+            "name": "Colin Olson \"C\""
+          }
+        ],
+        "away_score": 4,
+        "home_score": 1
+      },
+      {
+        "period": "3rd",
+        "time": "7:50",
+        "team_school_id": "new-richmond",
+        "team_name": "New Richmond",
+        "scorer_jersey": "9",
+        "scorer_name": "Tegan Lachaussie",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "8",
+            "name": "Ceagan Langeness"
+          }
+        ],
+        "away_score": 5,
+        "home_score": 1
+      }
+    ]
   },
   {
     "id": "boys_hockey-2026-02-17-merrill-at-superior",
@@ -58761,12 +59146,193 @@
     "conference_game": false,
     "venue": "@Superior",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "wisconsinprephockey"
     ],
     "playoff": true,
     "playoff_round": "Regional",
-    "stat_leaders": [],
-    "scoring": []
+    "stat_leaders": [
+      {
+        "team_school_id": "superior",
+        "team_name": "Superior",
+        "category": "Hockey Points",
+        "player_name": "Ryan Nelson",
+        "player_year": "FR",
+        "position": "F",
+        "stats": {
+          "G": "1",
+          "A": "3",
+          "PTS": "4",
+          "SOG": "1",
+          "PIM": "0",
+          "+ / -": "0"
+        }
+      },
+      {
+        "team_school_id": "superior",
+        "team_name": "Superior",
+        "category": "Hockey Goals",
+        "player_name": "Thor Netland",
+        "player_year": "SO",
+        "position": "F",
+        "stats": {
+          "G": "2",
+          "A": "1",
+          "PTS": "3",
+          "SOG": "2",
+          "PIM": "0",
+          "+ / -": "0"
+        }
+      },
+      {
+        "team_school_id": "superior",
+        "team_name": "Superior",
+        "category": "Hockey Saves",
+        "player_name": "Ryan  Pettingill",
+        "player_year": "SR",
+        "position": "G",
+        "stats": {
+          "MIN": "51:00",
+          "SOG": "14",
+          "GA": "2",
+          "SV": "12",
+          "SV %": ".857"
+        }
+      }
+    ],
+    "scoring": [
+      {
+        "period": "1st",
+        "time": "0:17",
+        "team_school_id": "",
+        "team_name": "Wausau East-Merrill United",
+        "scorer_jersey": "12",
+        "scorer_name": "Jackson Pierce",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "2",
+            "name": "Erik Grunenwald"
+          }
+        ],
+        "away_score": 1,
+        "home_score": 0
+      },
+      {
+        "period": "1st",
+        "time": "3:19",
+        "team_school_id": "superior",
+        "team_name": "Superior",
+        "scorer_jersey": "17",
+        "scorer_name": "Ryan Nelson",
+        "strength": "power play",
+        "assists": [
+          {
+            "jersey": "23",
+            "name": "Thor Netland"
+          }
+        ],
+        "away_score": 1,
+        "home_score": 1
+      },
+      {
+        "period": "2nd",
+        "time": "1:22",
+        "team_school_id": "",
+        "team_name": "Wausau East-Merrill United",
+        "scorer_jersey": "13",
+        "scorer_name": "Ryker Remington",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "24",
+            "name": "Connor Zdroik"
+          }
+        ],
+        "away_score": 2,
+        "home_score": 1
+      },
+      {
+        "period": "2nd",
+        "time": "3:24",
+        "team_school_id": "superior",
+        "team_name": "Superior",
+        "scorer_jersey": "22",
+        "scorer_name": "Henry Haugen",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "17",
+            "name": "Ryan Nelson"
+          }
+        ],
+        "away_score": 2,
+        "home_score": 2
+      },
+      {
+        "period": "2nd",
+        "time": "3:44",
+        "team_school_id": "superior",
+        "team_name": "Superior",
+        "scorer_jersey": "11",
+        "scorer_name": "Brady Haroldson",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "17",
+            "name": "Ryan Nelson"
+          }
+        ],
+        "away_score": 2,
+        "home_score": 3
+      },
+      {
+        "period": "2nd",
+        "time": "4:46",
+        "team_school_id": "superior",
+        "team_name": "Superior",
+        "scorer_jersey": "23",
+        "scorer_name": "Thor Netland",
+        "strength": "even strength",
+        "assists": [],
+        "away_score": 2,
+        "home_score": 4
+      },
+      {
+        "period": "2nd",
+        "time": "6:26",
+        "team_school_id": "superior",
+        "team_name": "Superior",
+        "scorer_jersey": "37",
+        "scorer_name": "Landon Norton",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "17",
+            "name": "Ryan Nelson"
+          }
+        ],
+        "away_score": 2,
+        "home_score": 5
+      },
+      {
+        "period": "3rd",
+        "time": "0:00",
+        "team_school_id": "superior",
+        "team_name": "Superior",
+        "scorer_jersey": "23",
+        "scorer_name": "Thor Netland",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "21",
+            "name": "Tucker  Tepsa"
+          }
+        ],
+        "away_score": 2,
+        "home_score": 6
+      }
+    ]
   },
   {
     "id": "boys_hockey-2026-02-17-altoona-co-op-at-chippewa-falls",
@@ -58819,12 +59385,169 @@
     "conference_game": false,
     "venue": "@ Hobbs Ice Arena - Eau Claire",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "wisconsinprephockey"
     ],
     "playoff": true,
     "playoff_round": "Regional",
-    "stat_leaders": [],
-    "scoring": []
+    "stat_leaders": [
+      {
+        "team_school_id": "tomahawk",
+        "team_name": "Tomahawk",
+        "category": "Hockey Points",
+        "player_name": "Jett Reilly",
+        "player_year": "SO",
+        "position": "F",
+        "stats": {
+          "G": "1",
+          "A": "5",
+          "PTS": "6",
+          "SOG": "1",
+          "PIM": "0",
+          "+ / -": "0"
+        }
+      },
+      {
+        "team_school_id": "tomahawk",
+        "team_name": "Tomahawk",
+        "category": "Hockey Goals",
+        "player_name": "Brayden Lamer (C)",
+        "player_year": "JR",
+        "position": "D",
+        "stats": {
+          "G": "2",
+          "A": "1",
+          "PTS": "3",
+          "SOG": "2",
+          "PIM": "0",
+          "+ / -": "0"
+        }
+      },
+      {
+        "team_school_id": "tomahawk",
+        "team_name": "Tomahawk",
+        "category": "Hockey Saves",
+        "player_name": "Hudson Seymour",
+        "player_year": null,
+        "position": "G",
+        "stats": {
+          "MIN": "51:00",
+          "SOG": "36",
+          "GA": "1",
+          "SV": "35",
+          "SV %": ".972"
+        }
+      },
+      {
+        "team_school_id": "eau-claire-north",
+        "team_name": "Eau Claire North",
+        "category": "Hockey Points",
+        "player_name": "Cam Moseler",
+        "player_year": "SR",
+        "position": "D",
+        "stats": {
+          "G": "0",
+          "A": "1",
+          "PTS": "1",
+          "SOG": "0",
+          "PIM": "0",
+          "+ / -": "0"
+        }
+      },
+      {
+        "team_school_id": "eau-claire-north",
+        "team_name": "Eau Claire North",
+        "category": "Hockey Saves",
+        "player_name": "Landon Ivey",
+        "player_year": "SR",
+        "position": "G",
+        "stats": {
+          "MIN": "51:00",
+          "SOG": "48",
+          "GA": "7",
+          "SV": "41",
+          "SV %": ".854"
+        }
+      }
+    ],
+    "scoring": [
+      {
+        "period": "1st",
+        "time": "16:49",
+        "team_school_id": "tomahawk",
+        "team_name": "Tomahawk",
+        "scorer_jersey": "8",
+        "scorer_name": "Brayden Lamer (C)",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "5",
+            "name": "Jett Reilly"
+          },
+          {
+            "jersey": "22",
+            "name": "Breck Stromberg"
+          }
+        ],
+        "away_score": 1,
+        "home_score": 0
+      },
+      {
+        "period": "2nd",
+        "time": "8:19",
+        "team_school_id": "eau-claire-north",
+        "team_name": "Eau Claire North",
+        "scorer_jersey": "21",
+        "scorer_name": "Ty Haats",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "14",
+            "name": "Cam Moseler"
+          },
+          {
+            "jersey": "15",
+            "name": "Easton Parker"
+          }
+        ],
+        "away_score": 3,
+        "home_score": 1
+      },
+      {
+        "period": "3rd",
+        "time": "4:34",
+        "team_school_id": "tomahawk",
+        "team_name": "Tomahawk",
+        "scorer_jersey": "9",
+        "scorer_name": "Beau Stromberg",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "16",
+            "name": "Cole Peterson"
+          }
+        ],
+        "away_score": 5,
+        "home_score": 1
+      },
+      {
+        "period": "3rd",
+        "time": "12:49",
+        "team_school_id": "tomahawk",
+        "team_name": "Tomahawk",
+        "scorer_jersey": "7",
+        "scorer_name": "Jonah Dickens (A)",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "5",
+            "name": "Jett Reilly"
+          }
+        ],
+        "away_score": 6,
+        "home_score": 1
+      }
+    ]
   },
   {
     "id": "boys_hockey-2026-02-19-new-richmond-at-wausau-west",
@@ -58848,12 +59571,212 @@
     "conference_game": false,
     "venue": "Marathon Park Ice Arena",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "wisconsinprephockey"
     ],
     "playoff": true,
     "playoff_round": "Regional Final",
-    "stat_leaders": [],
-    "scoring": []
+    "stat_leaders": [
+      {
+        "team_school_id": "new-richmond",
+        "team_name": "New Richmond",
+        "category": "Hockey Points",
+        "player_name": "Maddux Gaspord",
+        "player_year": "SR",
+        "position": "F",
+        "stats": {
+          "G": "2",
+          "A": "0",
+          "PTS": "2",
+          "SOG": "2",
+          "PIM": "0",
+          "+ / -": "0"
+        }
+      },
+      {
+        "team_school_id": "new-richmond",
+        "team_name": "New Richmond",
+        "category": "Hockey Saves",
+        "player_name": "Drake Bowman",
+        "player_year": "JR",
+        "position": "G",
+        "stats": {
+          "MIN": "51:52",
+          "SOG": "51",
+          "GA": "4",
+          "SV": "47",
+          "SV %": ".922"
+        }
+      },
+      {
+        "team_school_id": "wausau-west",
+        "team_name": "Wausau West",
+        "category": "Hockey Points",
+        "player_name": "Owen Pergolski",
+        "player_year": "JR",
+        "position": "F",
+        "stats": {
+          "G": "2",
+          "A": "0",
+          "PTS": "2",
+          "SOG": "2",
+          "PIM": "0",
+          "+ / -": "0"
+        }
+      },
+      {
+        "team_school_id": "wausau-west",
+        "team_name": "Wausau West",
+        "category": "Hockey Saves",
+        "player_name": "Julian Scalcucci",
+        "player_year": "JR",
+        "position": "G",
+        "stats": {
+          "MIN": "51:52",
+          "SOG": "27",
+          "GA": "3",
+          "SV": "24",
+          "SV %": ".889"
+        }
+      }
+    ],
+    "scoring": [
+      {
+        "period": "1st",
+        "time": "3:35",
+        "team_school_id": "new-richmond",
+        "team_name": "New Richmond",
+        "scorer_jersey": "17",
+        "scorer_name": "Maddux Gaspord",
+        "strength": "power play",
+        "assists": [
+          {
+            "jersey": "24",
+            "name": "Chase Huber"
+          }
+        ],
+        "away_score": 1,
+        "home_score": 0
+      },
+      {
+        "period": "1st",
+        "time": "15:14",
+        "team_school_id": "new-richmond",
+        "team_name": "New Richmond",
+        "scorer_jersey": "20",
+        "scorer_name": "Brooks Posel",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "8",
+            "name": "Ceagan Langeness"
+          }
+        ],
+        "away_score": 2,
+        "home_score": 0
+      },
+      {
+        "period": "2nd",
+        "time": "0:58",
+        "team_school_id": "wausau-west",
+        "team_name": "Wausau West",
+        "scorer_jersey": "9",
+        "scorer_name": "Owen Pergolski",
+        "strength": "power play",
+        "assists": [
+          {
+            "jersey": "14",
+            "name": "Tyler Wendell"
+          }
+        ],
+        "away_score": 2,
+        "home_score": 1
+      },
+      {
+        "period": "2nd",
+        "time": "7:45",
+        "team_school_id": "new-richmond",
+        "team_name": "New Richmond",
+        "scorer_jersey": "17",
+        "scorer_name": "Maddux Gaspord",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "6",
+            "name": "Axel Knutson"
+          },
+          {
+            "jersey": "22",
+            "name": "Reegan Saverine \"C\""
+          }
+        ],
+        "away_score": 3,
+        "home_score": 1
+      },
+      {
+        "period": "3rd",
+        "time": "10:35",
+        "team_school_id": "wausau-west",
+        "team_name": "Wausau West",
+        "scorer_jersey": "14",
+        "scorer_name": "Tyler Wendell",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "11",
+            "name": "Finn  Richardt"
+          },
+          {
+            "jersey": "4",
+            "name": "Hendrix Damrow"
+          }
+        ],
+        "away_score": 3,
+        "home_score": 2
+      },
+      {
+        "period": "3rd",
+        "time": "13:45",
+        "team_school_id": "wausau-west",
+        "team_name": "Wausau West",
+        "scorer_jersey": "10",
+        "scorer_name": "Chase Crass",
+        "strength": "power play",
+        "assists": [
+          {
+            "jersey": "12",
+            "name": "Shea Jones"
+          },
+          {
+            "jersey": "19",
+            "name": "Cooper DePuydt"
+          }
+        ],
+        "away_score": 3,
+        "home_score": 3
+      },
+      {
+        "period": "OT1",
+        "time": "0:52",
+        "team_school_id": "wausau-west",
+        "team_name": "Wausau West",
+        "scorer_jersey": "9",
+        "scorer_name": "Owen Pergolski",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "19",
+            "name": "Cooper DePuydt"
+          },
+          {
+            "jersey": "10",
+            "name": "Chase Crass"
+          }
+        ],
+        "away_score": 3,
+        "home_score": 4
+      }
+    ]
   },
   {
     "id": "boys_hockey-2026-02-19-marshfield-at-baldwin-woodville-saint-croix-central",
@@ -58906,12 +59829,273 @@
     "conference_game": false,
     "venue": "@Stevens Point",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "wisconsinprephockey"
     ],
     "playoff": true,
     "playoff_round": "Regional Final",
-    "stat_leaders": [],
-    "scoring": []
+    "stat_leaders": [
+      {
+        "team_school_id": "chippewa-falls",
+        "team_name": "Chippewa Falls",
+        "category": "Hockey Points",
+        "player_name": "Elijah Burmeister",
+        "player_year": null,
+        "position": "D",
+        "stats": {
+          "G": "0",
+          "A": "2",
+          "PTS": "2",
+          "SOG": "0",
+          "PIM": "2",
+          "+ / -": "0"
+        }
+      },
+      {
+        "team_school_id": "chippewa-falls",
+        "team_name": "Chippewa Falls",
+        "category": "Hockey Goals",
+        "player_name": "Matt Frenette",
+        "player_year": null,
+        "position": "F",
+        "stats": {
+          "G": "2",
+          "A": "0",
+          "PTS": "2",
+          "SOG": "2",
+          "PIM": "0",
+          "+ / -": "0"
+        }
+      },
+      {
+        "team_school_id": "chippewa-falls",
+        "team_name": "Chippewa Falls",
+        "category": "Hockey Saves",
+        "player_name": "Andrew Brovold",
+        "player_year": null,
+        "position": "G",
+        "stats": {
+          "MIN": "51:00",
+          "SOG": "65",
+          "GA": "7",
+          "SV": "58",
+          "SV %": ".892"
+        }
+      },
+      {
+        "team_school_id": "spash",
+        "team_name": "Stevens Point",
+        "category": "Hockey Points",
+        "player_name": "Beckett Carroll",
+        "player_year": "SO",
+        "position": "D",
+        "stats": {
+          "G": "1",
+          "A": "2",
+          "PTS": "3",
+          "SOG": "1",
+          "PIM": "0",
+          "+ / -": "0"
+        }
+      },
+      {
+        "team_school_id": "spash",
+        "team_name": "Stevens Point",
+        "category": "Hockey Saves",
+        "player_name": "Zachary Burdick",
+        "player_year": "JR",
+        "position": "G",
+        "stats": {
+          "MIN": "51:00",
+          "SOG": "25",
+          "GA": "3",
+          "SV": "22",
+          "SV %": ".880"
+        }
+      }
+    ],
+    "scoring": [
+      {
+        "period": "1st",
+        "time": "0:00",
+        "team_school_id": "chippewa-falls",
+        "team_name": "Chippewa Falls",
+        "scorer_jersey": "7",
+        "scorer_name": "Samuel Johnson",
+        "strength": "even strength",
+        "assists": [],
+        "away_score": 1,
+        "home_score": 0
+      },
+      {
+        "period": "1st",
+        "time": "0:00",
+        "team_school_id": "spash",
+        "team_name": "Stevens Point",
+        "scorer_jersey": "8",
+        "scorer_name": "Grady Miller",
+        "strength": "power play",
+        "assists": [
+          {
+            "jersey": "6",
+            "name": "Beckett Carroll"
+          },
+          {
+            "jersey": "25",
+            "name": "Jerome Poirier"
+          }
+        ],
+        "away_score": 1,
+        "home_score": 1
+      },
+      {
+        "period": "1st",
+        "time": "0:00",
+        "team_school_id": "spash",
+        "team_name": "Stevens Point",
+        "scorer_jersey": "11",
+        "scorer_name": "Teddy Westrick",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "17",
+            "name": "Fletcher Schroeder"
+          }
+        ],
+        "away_score": 1,
+        "home_score": 2
+      },
+      {
+        "period": "2nd",
+        "time": "0:00",
+        "team_school_id": "spash",
+        "team_name": "Stevens Point",
+        "scorer_jersey": "2",
+        "scorer_name": "Grant Molski",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "8",
+            "name": "Grady Miller"
+          }
+        ],
+        "away_score": 1,
+        "home_score": 3
+      },
+      {
+        "period": "2nd",
+        "time": "0:00",
+        "team_school_id": "spash",
+        "team_name": "Stevens Point",
+        "scorer_jersey": "6",
+        "scorer_name": "Beckett Carroll",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "4",
+            "name": "Logan Ostricki"
+          }
+        ],
+        "away_score": 1,
+        "home_score": 4
+      },
+      {
+        "period": "2nd",
+        "time": "0:00",
+        "team_school_id": "spash",
+        "team_name": "Stevens Point",
+        "scorer_jersey": "17",
+        "scorer_name": "Fletcher Schroeder",
+        "strength": "even strength",
+        "assists": [],
+        "away_score": 1,
+        "home_score": 5
+      },
+      {
+        "period": "3rd",
+        "time": "0:00",
+        "team_school_id": "spash",
+        "team_name": "Stevens Point",
+        "scorer_jersey": "4",
+        "scorer_name": "Logan Ostricki",
+        "strength": "power play",
+        "assists": [
+          {
+            "jersey": "7",
+            "name": "Max Mittelsteadt"
+          },
+          {
+            "jersey": "10",
+            "name": "Jackson Flees"
+          }
+        ],
+        "away_score": 1,
+        "home_score": 6
+      },
+      {
+        "period": "3rd",
+        "time": "0:00",
+        "team_school_id": "spash",
+        "team_name": "Stevens Point",
+        "scorer_jersey": "19",
+        "scorer_name": "Zach Ostricki",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "6",
+            "name": "Beckett Carroll"
+          },
+          {
+            "jersey": "8",
+            "name": "Grady Miller"
+          }
+        ],
+        "away_score": 1,
+        "home_score": 7
+      },
+      {
+        "period": "3rd",
+        "time": "0:00",
+        "team_school_id": "chippewa-falls",
+        "team_name": "Chippewa Falls",
+        "scorer_jersey": "16",
+        "scorer_name": "Matt Frenette",
+        "strength": "power play",
+        "assists": [
+          {
+            "jersey": "6",
+            "name": "Elijah Burmeister"
+          },
+          {
+            "jersey": "9",
+            "name": "Dane Krista"
+          }
+        ],
+        "away_score": 2,
+        "home_score": 7
+      },
+      {
+        "period": "3rd",
+        "time": "0:00",
+        "team_school_id": "chippewa-falls",
+        "team_name": "Chippewa Falls",
+        "scorer_jersey": "16",
+        "scorer_name": "Matt Frenette",
+        "strength": "power play",
+        "assists": [
+          {
+            "jersey": "6",
+            "name": "Elijah Burmeister"
+          },
+          {
+            "jersey": "9",
+            "name": "Dane Krista"
+          }
+        ],
+        "away_score": 3,
+        "home_score": 7
+      }
+    ]
   },
   {
     "id": "boys_hockey-2026-02-19-tomahawk-at-hudson",
@@ -58935,12 +60119,311 @@
     "conference_game": false,
     "venue": "@Hudson",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "wisconsinprephockey"
     ],
     "playoff": true,
     "playoff_round": "Regional Final",
-    "stat_leaders": [],
-    "scoring": []
+    "stat_leaders": [
+      {
+        "team_school_id": "tomahawk",
+        "team_name": "Tomahawk",
+        "category": "Hockey Points",
+        "player_name": "Jonah Dickens (A)",
+        "player_year": "SR",
+        "position": "F",
+        "stats": {
+          "G": "3",
+          "A": "0",
+          "PTS": "3",
+          "SOG": "3",
+          "PIM": "0",
+          "+ / -": "0"
+        }
+      },
+      {
+        "team_school_id": "tomahawk",
+        "team_name": "Tomahawk",
+        "category": "Hockey Saves",
+        "player_name": "Hudson Seymour",
+        "player_year": null,
+        "position": "G",
+        "stats": {
+          "MIN": "50:32",
+          "SOG": "38",
+          "GA": "7",
+          "SV": "31",
+          "SV %": ".816"
+        }
+      },
+      {
+        "team_school_id": "hudson",
+        "team_name": "Hudson",
+        "category": "Hockey Points",
+        "player_name": "Caiden Spreiter",
+        "player_year": "JR",
+        "position": "F",
+        "stats": {
+          "G": "1",
+          "A": "3",
+          "PTS": "4",
+          "SOG": "1",
+          "PIM": "2",
+          "+ / -": "0"
+        }
+      },
+      {
+        "team_school_id": "hudson",
+        "team_name": "Hudson",
+        "category": "Hockey Goals",
+        "player_name": "Will Mauer",
+        "player_year": "JR",
+        "position": "F",
+        "stats": {
+          "G": "2",
+          "A": "1",
+          "PTS": "3",
+          "SOG": "2",
+          "PIM": "2",
+          "+ / -": "0"
+        }
+      },
+      {
+        "team_school_id": "hudson",
+        "team_name": "Hudson",
+        "category": "Hockey Saves",
+        "player_name": "Sam Kramber",
+        "player_year": "SR",
+        "position": "G",
+        "stats": {
+          "MIN": "51:00",
+          "SOG": "18",
+          "GA": "6",
+          "SV": "12",
+          "SV %": ".667"
+        }
+      }
+    ],
+    "scoring": [
+      {
+        "period": "1st",
+        "time": "6:43",
+        "team_school_id": "hudson",
+        "team_name": "Hudson",
+        "scorer_jersey": "5",
+        "scorer_name": "Buchanon Franta",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "22",
+            "name": "Caiden Spreiter"
+          },
+          {
+            "jersey": "15",
+            "name": "Will Mauer"
+          }
+        ],
+        "away_score": 0,
+        "home_score": 1
+      },
+      {
+        "period": "1st",
+        "time": "9:39",
+        "team_school_id": "hudson",
+        "team_name": "Hudson",
+        "scorer_jersey": "15",
+        "scorer_name": "Will Mauer",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "21",
+            "name": "Koa Lassi"
+          },
+          {
+            "jersey": "24",
+            "name": "Spencer Bullis"
+          }
+        ],
+        "away_score": 0,
+        "home_score": 2
+      },
+      {
+        "period": "1st",
+        "time": "10:01",
+        "team_school_id": "hudson",
+        "team_name": "Hudson",
+        "scorer_jersey": "22",
+        "scorer_name": "Caiden Spreiter",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "6",
+            "name": "Logan Destasio"
+          },
+          {
+            "jersey": "24",
+            "name": "Spencer Bullis"
+          }
+        ],
+        "away_score": 0,
+        "home_score": 3
+      },
+      {
+        "period": "2nd",
+        "time": "0:47",
+        "team_school_id": "hudson",
+        "team_name": "Hudson",
+        "scorer_jersey": "15",
+        "scorer_name": "Will Mauer",
+        "strength": "power play",
+        "assists": [
+          {
+            "jersey": "9",
+            "name": "Eric Palm"
+          }
+        ],
+        "away_score": 1,
+        "home_score": 4
+      },
+      {
+        "period": "2nd",
+        "time": "7:19",
+        "team_school_id": "tomahawk",
+        "team_name": "Tomahawk",
+        "scorer_jersey": "5",
+        "scorer_name": "Jett Reilly",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "20",
+            "name": "Jake Albert"
+          }
+        ],
+        "away_score": 2,
+        "home_score": 4
+      },
+      {
+        "period": "2nd",
+        "time": "8:57",
+        "team_school_id": "hudson",
+        "team_name": "Hudson",
+        "scorer_jersey": "12",
+        "scorer_name": "Wyatt Turnquist",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "6",
+            "name": "Logan Destasio"
+          },
+          {
+            "jersey": "24",
+            "name": "Spencer Bullis"
+          }
+        ],
+        "away_score": 2,
+        "home_score": 5
+      },
+      {
+        "period": "2nd",
+        "time": "16:53",
+        "team_school_id": "tomahawk",
+        "team_name": "Tomahawk",
+        "scorer_jersey": "16",
+        "scorer_name": "Cole Peterson",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "9",
+            "name": "Beau Stromberg"
+          }
+        ],
+        "away_score": 3,
+        "home_score": 5
+      },
+      {
+        "period": "3rd",
+        "time": "0:15",
+        "team_school_id": "tomahawk",
+        "team_name": "Tomahawk",
+        "scorer_jersey": "8",
+        "scorer_name": "Brayden Lamer",
+        "strength": "c",
+        "assists": [],
+        "away_score": 4,
+        "home_score": 5
+      },
+      {
+        "period": "3rd",
+        "time": "3:31",
+        "team_school_id": "tomahawk",
+        "team_name": "Tomahawk",
+        "scorer_jersey": "7",
+        "scorer_name": "Jonah Dickens (A)",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "5",
+            "name": "Jett Reilly"
+          }
+        ],
+        "away_score": 5,
+        "home_score": 5
+      },
+      {
+        "period": "3rd",
+        "time": "14:34",
+        "team_school_id": "hudson",
+        "team_name": "Hudson",
+        "scorer_jersey": "19",
+        "scorer_name": "Henry Kullman",
+        "strength": "power play",
+        "assists": [
+          {
+            "jersey": "5",
+            "name": "Buchanon Franta"
+          },
+          {
+            "jersey": "22",
+            "name": "Caiden Spreiter"
+          }
+        ],
+        "away_score": 6,
+        "home_score": 6
+      },
+      {
+        "period": "3rd",
+        "time": "15:31",
+        "team_school_id": "hudson",
+        "team_name": "Hudson",
+        "scorer_jersey": "6",
+        "scorer_name": "Logan Destasio",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "12",
+            "name": "Wyatt Turnquist"
+          },
+          {
+            "jersey": "22",
+            "name": "Caiden Spreiter"
+          }
+        ],
+        "away_score": 6,
+        "home_score": 7
+      },
+      {
+        "period": "3rd",
+        "time": "16:21",
+        "team_school_id": "hudson",
+        "team_name": "Hudson",
+        "scorer_jersey": "24",
+        "scorer_name": "Spencer Bullis",
+        "strength": "even strength",
+        "assists": [],
+        "away_score": 6,
+        "home_score": 8
+      }
+    ]
   },
   {
     "id": "boys_hockey-2026-02-19-rhinelander-at-northland-pines",
@@ -58964,12 +60447,295 @@
     "conference_game": false,
     "venue": "@Northland Pines",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "wisconsinprephockey"
     ],
     "playoff": true,
     "playoff_round": "Regional",
-    "stat_leaders": [],
-    "scoring": []
+    "stat_leaders": [
+      {
+        "team_school_id": "rhinelander",
+        "team_name": "Rhinelander Co-op",
+        "category": "Hockey Points",
+        "player_name": "Drake Nelson",
+        "player_year": "JR",
+        "position": "F",
+        "stats": {
+          "G": "2",
+          "A": "0",
+          "PTS": "2",
+          "SOG": "2",
+          "PIM": "0",
+          "+ / -": "0"
+        }
+      },
+      {
+        "team_school_id": "rhinelander",
+        "team_name": "Rhinelander Co-op",
+        "category": "Hockey Saves",
+        "player_name": "Connor  McGee",
+        "player_year": "FR",
+        "position": "G",
+        "stats": {
+          "MIN": "51:00",
+          "SOG": "43",
+          "GA": "10",
+          "SV": "33",
+          "SV %": ".767"
+        }
+      },
+      {
+        "team_school_id": "northland-pines",
+        "team_name": "Northland Pines",
+        "category": "Hockey Points",
+        "player_name": "Josh Graves",
+        "player_year": null,
+        "position": null,
+        "stats": {
+          "G": "4",
+          "A": "1",
+          "PTS": "5",
+          "SOG": "4",
+          "PIM": "0",
+          "+ / -": "0"
+        }
+      },
+      {
+        "team_school_id": "northland-pines",
+        "team_name": "Northland Pines",
+        "category": "Hockey Saves",
+        "player_name": "Evrett  Leslie",
+        "player_year": null,
+        "position": null,
+        "stats": {
+          "MIN": "24:00",
+          "SOG": "15",
+          "GA": "2",
+          "SV": "13",
+          "SV %": ".867"
+        }
+      }
+    ],
+    "scoring": [
+      {
+        "period": "1st",
+        "time": "4:39",
+        "team_school_id": "northland-pines",
+        "team_name": "Northland Pines",
+        "scorer_jersey": "8",
+        "scorer_name": "Josh Graves",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "26",
+            "name": "Michael Schmidt"
+          }
+        ],
+        "away_score": 0,
+        "home_score": 1
+      },
+      {
+        "period": "1st",
+        "time": "9:06",
+        "team_school_id": "northland-pines",
+        "team_name": "Northland Pines",
+        "scorer_jersey": "7",
+        "scorer_name": "Hunter Tameling",
+        "strength": "short handed",
+        "assists": [
+          {
+            "jersey": "26",
+            "name": "Michael Schmidt"
+          },
+          {
+            "jersey": "21",
+            "name": "Oliver DePuydt"
+          }
+        ],
+        "away_score": 0,
+        "home_score": 2
+      },
+      {
+        "period": "1st",
+        "time": "10:03",
+        "team_school_id": "northland-pines",
+        "team_name": "Northland Pines",
+        "scorer_jersey": "34",
+        "scorer_name": "Cash Powell",
+        "strength": "short handed",
+        "assists": [
+          {
+            "jersey": "12",
+            "name": "Nicholas Hahn"
+          }
+        ],
+        "away_score": 0,
+        "home_score": 3
+      },
+      {
+        "period": "1st",
+        "time": "14:56",
+        "team_school_id": "northland-pines",
+        "team_name": "Northland Pines",
+        "scorer_jersey": "12",
+        "scorer_name": "Nicholas Hahn",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "16",
+            "name": "Sam Shrock"
+          },
+          {
+            "jersey": "4",
+            "name": "Jonny Graves"
+          }
+        ],
+        "away_score": 0,
+        "home_score": 4
+      },
+      {
+        "period": "1st",
+        "time": "15:28",
+        "team_school_id": "rhinelander",
+        "team_name": "Rhinelander Co-op",
+        "scorer_jersey": "13",
+        "scorer_name": "Drake Nelson",
+        "strength": "even strength",
+        "assists": [],
+        "away_score": 1,
+        "home_score": 4
+      },
+      {
+        "period": "2nd",
+        "time": "7:01",
+        "team_school_id": "northland-pines",
+        "team_name": "Northland Pines",
+        "scorer_jersey": "8",
+        "scorer_name": "Josh Graves",
+        "strength": "power play",
+        "assists": [
+          {
+            "jersey": "15",
+            "name": "Jazek  Jantzen"
+          },
+          {
+            "jersey": "12",
+            "name": "Nicholas Hahn"
+          }
+        ],
+        "away_score": 1,
+        "home_score": 5
+      },
+      {
+        "period": "2nd",
+        "time": "7:29",
+        "team_school_id": "northland-pines",
+        "team_name": "Northland Pines",
+        "scorer_jersey": "8",
+        "scorer_name": "Josh Graves",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "19",
+            "name": "Brock Adamovich"
+          },
+          {
+            "jersey": "2",
+            "name": "Royce Remme"
+          }
+        ],
+        "away_score": 1,
+        "home_score": 6
+      },
+      {
+        "period": "2nd",
+        "time": "8:52",
+        "team_school_id": "northland-pines",
+        "team_name": "Northland Pines",
+        "scorer_jersey": "8",
+        "scorer_name": "Josh Graves",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "16",
+            "name": "Sam Shrock"
+          }
+        ],
+        "away_score": 1,
+        "home_score": 7
+      },
+      {
+        "period": "2nd",
+        "time": "12:01",
+        "team_school_id": "northland-pines",
+        "team_name": "Northland Pines",
+        "scorer_jersey": "21",
+        "scorer_name": "Oliver DePuydt",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "15",
+            "name": "Jazek  Jantzen"
+          },
+          {
+            "jersey": "8",
+            "name": "Josh Graves"
+          }
+        ],
+        "away_score": 1,
+        "home_score": 8
+      },
+      {
+        "period": "2nd",
+        "time": "16:24",
+        "team_school_id": "rhinelander",
+        "team_name": "Rhinelander Co-op",
+        "scorer_jersey": "13",
+        "scorer_name": "Drake Nelson",
+        "strength": "power play",
+        "assists": [
+          {
+            "jersey": "12",
+            "name": "Dylan Shefveland"
+          }
+        ],
+        "away_score": 2,
+        "home_score": 8
+      },
+      {
+        "period": "3rd",
+        "time": "7:25",
+        "team_school_id": "northland-pines",
+        "team_name": "Northland Pines",
+        "scorer_jersey": "6",
+        "scorer_name": "Cooper Saari",
+        "strength": "short handed",
+        "assists": [],
+        "away_score": 2,
+        "home_score": 9
+      },
+      {
+        "period": "3rd",
+        "time": "11:38",
+        "team_school_id": "northland-pines",
+        "team_name": "Northland Pines",
+        "scorer_jersey": "20",
+        "scorer_name": "Hudson Gall",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "21",
+            "name": "Oliver DePuydt"
+          },
+          {
+            "jersey": "15",
+            "name": "Jazek  Jantzen"
+          }
+        ],
+        "away_score": 2,
+        "home_score": 10
+      }
+    ]
   },
   {
     "id": "boys_hockey-2026-02-19-shawano-bonduel-at-lakeland",
@@ -58993,12 +60759,152 @@
     "conference_game": false,
     "venue": "@Lakeland",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "wisconsinprephockey"
     ],
     "playoff": true,
     "playoff_round": "Regional",
-    "stat_leaders": [],
-    "scoring": []
+    "stat_leaders": [
+      {
+        "team_school_id": "",
+        "team_name": "Shawano/Bonduel",
+        "category": "Hockey Points",
+        "player_name": "Teagan Harkey",
+        "player_year": null,
+        "position": null,
+        "stats": {
+          "G": "0",
+          "A": "1",
+          "PTS": "1",
+          "SOG": "0",
+          "PIM": "0",
+          "+ / -": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Shawano/Bonduel",
+        "category": "Hockey Saves",
+        "player_name": "Tyson Lyons",
+        "player_year": null,
+        "position": null,
+        "stats": {
+          "MIN": "62:17",
+          "SOG": "31",
+          "GA": "3",
+          "SV": "28",
+          "SV %": ".903"
+        }
+      },
+      {
+        "team_school_id": "lakeland",
+        "team_name": "Lakeland",
+        "category": "Hockey Points",
+        "player_name": "Ryder Anderson",
+        "player_year": null,
+        "position": "F",
+        "stats": {
+          "G": "1",
+          "A": "0",
+          "PTS": "1",
+          "SOG": "1",
+          "PIM": "0",
+          "+ / -": "0"
+        }
+      },
+      {
+        "team_school_id": "lakeland",
+        "team_name": "Lakeland",
+        "category": "Hockey Saves",
+        "player_name": "Cam Bernard",
+        "player_year": "SR",
+        "position": "G",
+        "stats": {
+          "MIN": "62:17",
+          "SOG": "60",
+          "GA": "2",
+          "SV": "58",
+          "SV %": ".967"
+        }
+      }
+    ],
+    "scoring": [
+      {
+        "period": "1st",
+        "time": "2:52",
+        "team_school_id": "lakeland",
+        "team_name": "Lakeland",
+        "scorer_jersey": "3",
+        "scorer_name": "Ryder Anderson",
+        "strength": "power play",
+        "assists": [],
+        "away_score": 0,
+        "home_score": 1
+      },
+      {
+        "period": "1st",
+        "time": "11:55",
+        "team_school_id": "lakeland",
+        "team_name": "Lakeland",
+        "scorer_jersey": "7",
+        "scorer_name": "Noah Dube",
+        "strength": "even strength",
+        "assists": [],
+        "away_score": 0,
+        "home_score": 2
+      },
+      {
+        "period": "2nd",
+        "time": "15:21",
+        "team_school_id": "",
+        "team_name": "Shawano/Bonduel",
+        "scorer_jersey": "40",
+        "scorer_name": "Jeremy Helmuth",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "8",
+            "name": "Teagan Harkey"
+          }
+        ],
+        "away_score": 1,
+        "home_score": 2
+      },
+      {
+        "period": "3rd",
+        "time": "16:14",
+        "team_school_id": "",
+        "team_name": "Shawano/Bonduel",
+        "scorer_jersey": "47",
+        "scorer_name": "Quinten Harkey",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "12",
+            "name": "Blake Swedberg"
+          }
+        ],
+        "away_score": 2,
+        "home_score": 2
+      },
+      {
+        "period": "OT2",
+        "time": "3:17",
+        "team_school_id": "lakeland",
+        "team_name": "Lakeland",
+        "scorer_jersey": "6",
+        "scorer_name": "Lawson Bain",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "12",
+            "name": "Caden Schillinger"
+          }
+        ],
+        "away_score": 2,
+        "home_score": 3
+      }
+    ]
   },
   {
     "id": "boys_hockey-2026-02-19-pacelli-at-antigo",
@@ -59022,12 +60928,77 @@
     "conference_game": false,
     "venue": "@Antigo/Wittenberg-Birnamwood",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "wisconsinprephockey"
     ],
     "playoff": true,
     "playoff_round": "Regional",
-    "stat_leaders": [],
-    "scoring": []
+    "stat_leaders": [
+      {
+        "team_school_id": "antigo",
+        "team_name": "Antigo/Wittenberg-Birnamwood",
+        "category": "Hockey Points",
+        "player_name": "Liam  Burt",
+        "player_year": "JR",
+        "position": "F",
+        "stats": {
+          "G": "1",
+          "A": "0",
+          "PTS": "1",
+          "SOG": "1",
+          "PIM": "0",
+          "+ / -": "0"
+        }
+      }
+    ],
+    "scoring": [
+      {
+        "period": "1st",
+        "time": "4:28",
+        "team_school_id": "",
+        "team_name": "Stevens Point Pacelli Cardinals",
+        "scorer_jersey": "23",
+        "scorer_name": "Zane Phillis",
+        "strength": "short handed",
+        "assists": [
+          {
+            "jersey": "5",
+            "name": "Henry Gerritsen"
+          }
+        ],
+        "away_score": 1,
+        "home_score": 0
+      },
+      {
+        "period": "2nd",
+        "time": "10:51",
+        "team_school_id": "",
+        "team_name": "Stevens Point Pacelli Cardinals",
+        "scorer_jersey": "11",
+        "scorer_name": "Caleb McGregor",
+        "strength": "even strength",
+        "assists": [],
+        "away_score": 2,
+        "home_score": 0
+      },
+      {
+        "period": "3rd",
+        "time": "12:50",
+        "team_school_id": "antigo",
+        "team_name": "Antigo/Wittenberg-Birnamwood",
+        "scorer_jersey": "13",
+        "scorer_name": "Liam Burt",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "18",
+            "name": "Ethan  Novy"
+          }
+        ],
+        "away_score": 2,
+        "home_score": 1
+      }
+    ]
   },
   {
     "id": "boys_hockey-2026-02-19-eau-claire-memorial-at-superior",
@@ -59051,12 +61022,203 @@
     "conference_game": false,
     "venue": "@Superior",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "wisconsinprephockey"
     ],
     "playoff": true,
     "playoff_round": "Regional Final",
-    "stat_leaders": [],
-    "scoring": []
+    "stat_leaders": [
+      {
+        "team_school_id": "eau-claire-memorial",
+        "team_name": "Eau Claire Memorial",
+        "category": "Hockey Points",
+        "player_name": "Peyton Huls",
+        "player_year": "SO",
+        "position": "F",
+        "stats": {
+          "G": "1",
+          "A": "1",
+          "PTS": "2",
+          "SOG": "1",
+          "PIM": "0",
+          "+ / -": "0"
+        }
+      },
+      {
+        "team_school_id": "eau-claire-memorial",
+        "team_name": "Eau Claire Memorial",
+        "category": "Hockey Saves",
+        "player_name": "Evan Madsen",
+        "player_year": "JR",
+        "position": "G",
+        "stats": {
+          "MIN": "51:00",
+          "SOG": "37",
+          "GA": "5",
+          "SV": "32",
+          "SV %": ".865"
+        }
+      },
+      {
+        "team_school_id": "superior",
+        "team_name": "Superior",
+        "category": "Hockey Points",
+        "player_name": "Henry  Haugen",
+        "player_year": "SO",
+        "position": "F",
+        "stats": {
+          "G": "2",
+          "A": "1",
+          "PTS": "3",
+          "SOG": "2",
+          "PIM": "0",
+          "+ / -": "0"
+        }
+      },
+      {
+        "team_school_id": "superior",
+        "team_name": "Superior",
+        "category": "Hockey Saves",
+        "player_name": "Hunter  Sidorowicz",
+        "player_year": "SR",
+        "position": "G",
+        "stats": {
+          "MIN": "51:00",
+          "SOG": "26",
+          "GA": "2",
+          "SV": "24",
+          "SV %": ".923"
+        }
+      }
+    ],
+    "scoring": [
+      {
+        "period": "1st",
+        "time": "6:58",
+        "team_school_id": "eau-claire-memorial",
+        "team_name": "Eau Claire Memorial",
+        "scorer_jersey": "17",
+        "scorer_name": "Peyton Huls",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "23",
+            "name": "Wyatt Seymour"
+          }
+        ],
+        "away_score": 1,
+        "home_score": 0
+      },
+      {
+        "period": "2nd",
+        "time": "4:13",
+        "team_school_id": "superior",
+        "team_name": "Superior",
+        "scorer_jersey": "2",
+        "scorer_name": "Sam Hubbard",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "22",
+            "name": "Henry  Haugen"
+          }
+        ],
+        "away_score": 1,
+        "home_score": 1
+      },
+      {
+        "period": "2nd",
+        "time": "12:23",
+        "team_school_id": "superior",
+        "team_name": "Superior",
+        "scorer_jersey": "32",
+        "scorer_name": "Gryfen DeGraef",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "21",
+            "name": "Tucker  Tepsa"
+          },
+          {
+            "jersey": "3",
+            "name": "William Kyrola"
+          }
+        ],
+        "away_score": 1,
+        "home_score": 2
+      },
+      {
+        "period": "2nd",
+        "time": "14:25",
+        "team_school_id": "superior",
+        "team_name": "Superior",
+        "scorer_jersey": "22",
+        "scorer_name": "Henry Haugen",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "23",
+            "name": "Thor Netland"
+          },
+          {
+            "jersey": "9",
+            "name": "Cayden Reamer"
+          }
+        ],
+        "away_score": 1,
+        "home_score": 3
+      },
+      {
+        "period": "2nd",
+        "time": "16:38",
+        "team_school_id": "eau-claire-memorial",
+        "team_name": "Eau Claire Memorial",
+        "scorer_jersey": "23",
+        "scorer_name": "Wyatt Seymour",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "29",
+            "name": "Mason Flannery"
+          },
+          {
+            "jersey": "17",
+            "name": "Peyton Huls"
+          }
+        ],
+        "away_score": 2,
+        "home_score": 3
+      },
+      {
+        "period": "3rd",
+        "time": "12:52",
+        "team_school_id": "superior",
+        "team_name": "Superior",
+        "scorer_jersey": "11",
+        "scorer_name": "Brady Haroldson",
+        "strength": "even strength",
+        "assists": [],
+        "away_score": 2,
+        "home_score": 4
+      },
+      {
+        "period": "3rd",
+        "time": "14:24",
+        "team_school_id": "superior",
+        "team_name": "Superior",
+        "scorer_jersey": "22",
+        "scorer_name": "Henry Haugen",
+        "strength": "short handed",
+        "assists": [
+          {
+            "jersey": "2",
+            "name": "Sam  Hubbard"
+          }
+        ],
+        "away_score": 2,
+        "home_score": 5
+      }
+    ]
   },
   {
     "id": "boys_hockey-2026-02-19-rice-lake-at-frederic-co-op",
@@ -59109,12 +61271,204 @@
     "conference_game": false,
     "venue": "@River Falls",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "wisconsinprephockey"
     ],
     "playoff": true,
     "playoff_round": "Regional",
-    "stat_leaders": [],
-    "scoring": []
+    "stat_leaders": [
+      {
+        "team_school_id": "",
+        "team_name": "West Salem/Bangor",
+        "category": "Hockey Points",
+        "player_name": "Terryn Boland",
+        "player_year": null,
+        "position": null,
+        "stats": {
+          "G": "1",
+          "A": "0",
+          "PTS": "1",
+          "SOG": "1",
+          "PIM": "2",
+          "+ / -": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "West Salem/Bangor",
+        "category": "Hockey Saves",
+        "player_name": "Colin Devine",
+        "player_year": null,
+        "position": null,
+        "stats": {
+          "MIN": "51:00",
+          "SOG": "39",
+          "GA": "9",
+          "SV": "30",
+          "SV %": ".769"
+        }
+      },
+      {
+        "team_school_id": "river-falls",
+        "team_name": "River Falls",
+        "category": "Hockey Points",
+        "player_name": "Jaxon Flanagan (C)",
+        "player_year": "SR",
+        "position": "F|D",
+        "stats": {
+          "G": "3",
+          "A": "2",
+          "PTS": "5",
+          "SOG": "3",
+          "PIM": "0",
+          "+ / -": "0"
+        }
+      },
+      {
+        "team_school_id": "river-falls",
+        "team_name": "River Falls",
+        "category": "Hockey Saves",
+        "player_name": "Niklas Thomas",
+        "player_year": "SR",
+        "position": "G",
+        "stats": {
+          "MIN": "51:00",
+          "SOG": "9",
+          "GA": "1",
+          "SV": "8",
+          "SV %": ".889"
+        }
+      }
+    ],
+    "scoring": [
+      {
+        "period": "1st",
+        "time": "0:00",
+        "team_school_id": "",
+        "team_name": "West Salem/Bangor",
+        "scorer_jersey": "5",
+        "scorer_name": "Terryn Boland",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "13",
+            "name": "Coen Knutson"
+          }
+        ],
+        "away_score": 1,
+        "home_score": 0
+      },
+      {
+        "period": "1st",
+        "time": "0:00",
+        "team_school_id": "river-falls",
+        "team_name": "River Falls",
+        "scorer_jersey": "15",
+        "scorer_name": "Jaxon Flanagan (C)",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "14",
+            "name": "Jace Dougherty"
+          },
+          {
+            "jersey": "20",
+            "name": "Blake Fredrickson"
+          }
+        ],
+        "away_score": 1,
+        "home_score": 1
+      },
+      {
+        "period": "1st",
+        "time": "0:00",
+        "team_school_id": "river-falls",
+        "team_name": "River Falls",
+        "scorer_jersey": "19",
+        "scorer_name": "Calvin Vezina",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "16",
+            "name": "Kovi Prochnow"
+          }
+        ],
+        "away_score": 1,
+        "home_score": 2
+      },
+      {
+        "period": "2nd",
+        "time": "0:00",
+        "team_school_id": "river-falls",
+        "team_name": "River Falls",
+        "scorer_jersey": "16",
+        "scorer_name": "Kovi Prochnow",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "4",
+            "name": "Logan Link"
+          },
+          {
+            "jersey": "9",
+            "name": "Max Wilds"
+          }
+        ],
+        "away_score": 1,
+        "home_score": 4
+      },
+      {
+        "period": "2nd",
+        "time": "0:00",
+        "team_school_id": "river-falls",
+        "team_name": "River Falls",
+        "scorer_jersey": "22",
+        "scorer_name": "Chase Rudolph (C)",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "14",
+            "name": "Jace Dougherty"
+          }
+        ],
+        "away_score": 1,
+        "home_score": 5
+      },
+      {
+        "period": "2nd",
+        "time": "0:00",
+        "team_school_id": "river-falls",
+        "team_name": "River Falls",
+        "scorer_jersey": "21",
+        "scorer_name": "Charlie John",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "27",
+            "name": "Carter Serene"
+          }
+        ],
+        "away_score": 1,
+        "home_score": 6
+      },
+      {
+        "period": "3rd",
+        "time": "0:00",
+        "team_school_id": "river-falls",
+        "team_name": "River Falls",
+        "scorer_jersey": "15",
+        "scorer_name": "Jaxon Flanagan (C)",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "25",
+            "name": "Xander Halvorson"
+          }
+        ],
+        "away_score": 1,
+        "home_score": 8
+      }
+    ]
   },
   {
     "id": "boys_hockey-2026-02-19-black-river-falls-co-op-at-menomonie",
@@ -59138,12 +61492,257 @@
     "conference_game": false,
     "venue": "@Menomonie",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "wisconsinprephockey"
     ],
     "playoff": true,
     "playoff_round": "Regional",
-    "stat_leaders": [],
-    "scoring": []
+    "stat_leaders": [
+      {
+        "team_school_id": "",
+        "team_name": "Black River Falls Co-op",
+        "category": "Hockey Points",
+        "player_name": "Calvin Lakowske",
+        "player_year": null,
+        "position": null,
+        "stats": {
+          "G": "1",
+          "A": "2",
+          "PTS": "3",
+          "SOG": "1",
+          "PIM": "0",
+          "+ / -": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Black River Falls Co-op",
+        "category": "Hockey Saves",
+        "player_name": "Daniel Canfield",
+        "player_year": null,
+        "position": null,
+        "stats": {
+          "MIN": "51:00",
+          "SOG": "26",
+          "GA": "5",
+          "SV": "21",
+          "SV %": ".808"
+        }
+      },
+      {
+        "team_school_id": "menomonie",
+        "team_name": "Menomonie",
+        "category": "Hockey Points",
+        "player_name": "Wes Weir",
+        "player_year": "FR",
+        "position": "F",
+        "stats": {
+          "G": "1",
+          "A": "1",
+          "PTS": "2",
+          "SOG": "1",
+          "PIM": "0",
+          "+ / -": "0"
+        }
+      },
+      {
+        "team_school_id": "menomonie",
+        "team_name": "Menomonie",
+        "category": "Hockey Saves",
+        "player_name": "Davin  Ellis",
+        "player_year": "SR",
+        "position": "G",
+        "stats": {
+          "MIN": "51:00",
+          "SOG": "26",
+          "GA": "3",
+          "SV": "23",
+          "SV %": ".885"
+        }
+      }
+    ],
+    "scoring": [
+      {
+        "period": "1st",
+        "time": "7:15",
+        "team_school_id": "",
+        "team_name": "Black River Falls Co-op",
+        "scorer_jersey": "7",
+        "scorer_name": "Calvin Lakowske",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "8",
+            "name": "Lee Iverson"
+          },
+          {
+            "jersey": "22",
+            "name": "Ben Bresee"
+          }
+        ],
+        "away_score": 1,
+        "home_score": 0
+      },
+      {
+        "period": "1st",
+        "time": "15:30",
+        "team_school_id": "",
+        "team_name": "Black River Falls Co-op",
+        "scorer_jersey": "6",
+        "scorer_name": "Briar Peterson",
+        "strength": "power play",
+        "assists": [
+          {
+            "jersey": "7",
+            "name": "Calvin Lakowske"
+          },
+          {
+            "jersey": "11",
+            "name": "Houston Arnaud"
+          }
+        ],
+        "away_score": 2,
+        "home_score": 0
+      },
+      {
+        "period": "2nd",
+        "time": "2:15",
+        "team_school_id": "menomonie",
+        "team_name": "Menomonie",
+        "scorer_jersey": "3",
+        "scorer_name": "Wes Weir",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "11",
+            "name": "Kaden  Farrah"
+          },
+          {
+            "jersey": "12",
+            "name": "Quin Rabeneck"
+          }
+        ],
+        "away_score": 2,
+        "home_score": 1
+      },
+      {
+        "period": "2nd",
+        "time": "7:30",
+        "team_school_id": "menomonie",
+        "team_name": "Menomonie",
+        "scorer_jersey": "6",
+        "scorer_name": "Brekkin Cody",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "13",
+            "name": "Cooper Marincel"
+          },
+          {
+            "jersey": "22",
+            "name": "Blane  Anderson"
+          }
+        ],
+        "away_score": 2,
+        "home_score": 2
+      },
+      {
+        "period": "2nd",
+        "time": "11:52",
+        "team_school_id": "menomonie",
+        "team_name": "Menomonie",
+        "scorer_jersey": "12",
+        "scorer_name": "Quin Rabeneck",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "3",
+            "name": "Wes Weir"
+          },
+          {
+            "jersey": "24",
+            "name": "Brock Wilkens"
+          }
+        ],
+        "away_score": 2,
+        "home_score": 3
+      },
+      {
+        "period": "2nd",
+        "time": "13:30",
+        "team_school_id": "menomonie",
+        "team_name": "Menomonie",
+        "scorer_jersey": "21",
+        "scorer_name": "Kellen Turner",
+        "strength": "power play",
+        "assists": [
+          {
+            "jersey": "8",
+            "name": "Sam Smith"
+          },
+          {
+            "jersey": "24",
+            "name": "Brock Wilkens"
+          }
+        ],
+        "away_score": 2,
+        "home_score": 4
+      },
+      {
+        "period": "2nd",
+        "time": "15:40",
+        "team_school_id": "menomonie",
+        "team_name": "Menomonie",
+        "scorer_jersey": "20",
+        "scorer_name": "Wren Swaenepoel",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "5",
+            "name": "Jaxon Giertz"
+          },
+          {
+            "jersey": "10",
+            "name": "Liam Wachowicz"
+          }
+        ],
+        "away_score": 2,
+        "home_score": 5
+      },
+      {
+        "period": "2nd",
+        "time": "15:51",
+        "team_school_id": "",
+        "team_name": "Black River Falls Co-op",
+        "scorer_jersey": "21",
+        "scorer_name": "Ryan Magnuson",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "7",
+            "name": "Calvin Lakowske"
+          },
+          {
+            "jersey": "6",
+            "name": "Briar Peterson"
+          }
+        ],
+        "away_score": 3,
+        "home_score": 5
+      },
+      {
+        "period": "3rd",
+        "time": "15:26",
+        "team_school_id": "menomonie",
+        "team_name": "Menomonie",
+        "scorer_jersey": "13",
+        "scorer_name": "Cooper Marincel",
+        "strength": "even strength",
+        "assists": [],
+        "away_score": 3,
+        "home_score": 6
+      }
+    ]
   },
   {
     "id": "boys_hockey-2026-02-19-waupaca-at-mcfarland",
@@ -59196,12 +61795,284 @@
     "conference_game": false,
     "venue": "@Mosinee",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "wisconsinprephockey"
     ],
     "playoff": true,
     "playoff_round": "Regional",
-    "stat_leaders": [],
-    "scoring": []
+    "stat_leaders": [
+      {
+        "team_school_id": "medford",
+        "team_name": "Medford Co-op",
+        "category": "Hockey Points",
+        "player_name": "Cole Pernsteiner",
+        "player_year": "SR",
+        "position": "F",
+        "stats": {
+          "G": "2",
+          "A": "0",
+          "PTS": "2",
+          "SOG": "2",
+          "PIM": "2",
+          "+ / -": "0"
+        }
+      },
+      {
+        "team_school_id": "medford",
+        "team_name": "Medford Co-op",
+        "category": "Hockey Saves",
+        "player_name": "Jaxston Malzahn",
+        "player_year": "JR",
+        "position": "G",
+        "stats": {
+          "MIN": "51:00",
+          "SOG": "50",
+          "GA": "9",
+          "SV": "41",
+          "SV %": ".820"
+        }
+      },
+      {
+        "team_school_id": "mosinee",
+        "team_name": "Mosinee",
+        "category": "Hockey Points",
+        "player_name": "Tyler  Baars",
+        "player_year": "SR",
+        "position": "F",
+        "stats": {
+          "G": "2",
+          "A": "1",
+          "PTS": "3",
+          "SOG": "2",
+          "PIM": "0",
+          "+ / -": "0"
+        }
+      },
+      {
+        "team_school_id": "mosinee",
+        "team_name": "Mosinee",
+        "category": "Hockey Saves",
+        "player_name": "Charlie Michalski",
+        "player_year": "JR",
+        "position": "G",
+        "stats": {
+          "MIN": "34:00",
+          "SOG": "13",
+          "GA": "2",
+          "SV": "11",
+          "SV %": ".846"
+        }
+      }
+    ],
+    "scoring": [
+      {
+        "period": "1st",
+        "time": "9:53",
+        "team_school_id": "mosinee",
+        "team_name": "Mosinee",
+        "scorer_jersey": "22",
+        "scorer_name": "Tanner Brooks",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "4",
+            "name": "Hunter Fletcher"
+          },
+          {
+            "jersey": "6",
+            "name": "Tyler  Baars"
+          }
+        ],
+        "away_score": 0,
+        "home_score": 1
+      },
+      {
+        "period": "1st",
+        "time": "11:24",
+        "team_school_id": "mosinee",
+        "team_name": "Mosinee",
+        "scorer_jersey": "3",
+        "scorer_name": "Evan Gwidt",
+        "strength": "power play",
+        "assists": [
+          {
+            "jersey": "12",
+            "name": "Isaac  Lewens"
+          },
+          {
+            "jersey": "46",
+            "name": "Evan  Karst"
+          }
+        ],
+        "away_score": 0,
+        "home_score": 2
+      },
+      {
+        "period": "1st",
+        "time": "14:37",
+        "team_school_id": "medford",
+        "team_name": "Medford Co-op",
+        "scorer_jersey": "21",
+        "scorer_name": "Cole Pernsteiner",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "3",
+            "name": "Ian Roiger"
+          }
+        ],
+        "away_score": 1,
+        "home_score": 2
+      },
+      {
+        "period": "1st",
+        "time": "15:28",
+        "team_school_id": "mosinee",
+        "team_name": "Mosinee",
+        "scorer_jersey": "11",
+        "scorer_name": "Reid Butalla",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "34",
+            "name": "Tyler DeCaluwe"
+          }
+        ],
+        "away_score": 1,
+        "home_score": 3
+      },
+      {
+        "period": "2nd",
+        "time": "4:13",
+        "team_school_id": "mosinee",
+        "team_name": "Mosinee",
+        "scorer_jersey": "34",
+        "scorer_name": "Tyler DeCaluwe",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "19",
+            "name": "Noah Zebro"
+          },
+          {
+            "jersey": "11",
+            "name": "Reid Butalla"
+          }
+        ],
+        "away_score": 1,
+        "home_score": 4
+      },
+      {
+        "period": "2nd",
+        "time": "5:24",
+        "team_school_id": "mosinee",
+        "team_name": "Mosinee",
+        "scorer_jersey": "6",
+        "scorer_name": "Tyler Baars",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "2",
+            "name": "Ben Backman"
+          }
+        ],
+        "away_score": 1,
+        "home_score": 5
+      },
+      {
+        "period": "2nd",
+        "time": "8:54",
+        "team_school_id": "medford",
+        "team_name": "Medford Co-op",
+        "scorer_jersey": "21",
+        "scorer_name": "Cole Pernsteiner",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "28",
+            "name": "Tanner Hubbard"
+          }
+        ],
+        "away_score": 2,
+        "home_score": 5
+      },
+      {
+        "period": "2nd",
+        "time": "12:20",
+        "team_school_id": "mosinee",
+        "team_name": "Mosinee",
+        "scorer_jersey": "34",
+        "scorer_name": "Tyler DeCaluwe",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "11",
+            "name": "Reid Butalla"
+          }
+        ],
+        "away_score": 2,
+        "home_score": 6
+      },
+      {
+        "period": "2nd",
+        "time": "13:02",
+        "team_school_id": "mosinee",
+        "team_name": "Mosinee",
+        "scorer_jersey": "22",
+        "scorer_name": "Tanner Brooks",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "2",
+            "name": "Ben Backman"
+          }
+        ],
+        "away_score": 2,
+        "home_score": 7
+      },
+      {
+        "period": "3rd",
+        "time": "0:38",
+        "team_school_id": "mosinee",
+        "team_name": "Mosinee",
+        "scorer_jersey": "12",
+        "scorer_name": "Isaac Lewens",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "46",
+            "name": "Evan  Karst"
+          },
+          {
+            "jersey": "5",
+            "name": "Coltyn Fjeldsted"
+          }
+        ],
+        "away_score": 2,
+        "home_score": 8
+      },
+      {
+        "period": "3rd",
+        "time": "5:04",
+        "team_school_id": "mosinee",
+        "team_name": "Mosinee",
+        "scorer_jersey": "6",
+        "scorer_name": "Tyler Baars",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "46",
+            "name": "Evan  Karst"
+          },
+          {
+            "jersey": "5",
+            "name": "Coltyn Fjeldsted"
+          }
+        ],
+        "away_score": 2,
+        "home_score": 9
+      }
+    ]
   },
   {
     "id": "boys_hockey-2026-02-24-pacelli-at-mosinee",
@@ -59225,12 +62096,230 @@
     "conference_game": false,
     "venue": "@Mosinee",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "wisconsinprephockey"
     ],
     "playoff": true,
     "playoff_round": "Regional Final",
-    "stat_leaders": [],
-    "scoring": []
+    "stat_leaders": [
+      {
+        "team_school_id": "mosinee",
+        "team_name": "Mosinee",
+        "category": "Hockey Points",
+        "player_name": "Tyler  Baars",
+        "player_year": "SR",
+        "position": "F",
+        "stats": {
+          "G": "3",
+          "A": "2",
+          "PTS": "5",
+          "SOG": "3",
+          "PIM": "0",
+          "+ / -": "0"
+        }
+      },
+      {
+        "team_school_id": "mosinee",
+        "team_name": "Mosinee",
+        "category": "Hockey Goals",
+        "player_name": "Reid Butalla",
+        "player_year": "FR",
+        "position": "F",
+        "stats": {
+          "G": "4",
+          "A": "1",
+          "PTS": "5",
+          "SOG": "4",
+          "PIM": "0",
+          "+ / -": "0"
+        }
+      },
+      {
+        "team_school_id": "mosinee",
+        "team_name": "Mosinee",
+        "category": "Hockey Saves",
+        "player_name": "Charlie Michalski",
+        "player_year": "JR",
+        "position": "G",
+        "stats": {
+          "MIN": "51:00",
+          "SOG": "11",
+          "GA": "1",
+          "SV": "10",
+          "SV %": ".909"
+        }
+      }
+    ],
+    "scoring": [
+      {
+        "period": "1st",
+        "time": "4:55",
+        "team_school_id": "mosinee",
+        "team_name": "Mosinee",
+        "scorer_jersey": "6",
+        "scorer_name": "Tyler Baars",
+        "strength": "short handed",
+        "assists": [],
+        "away_score": 0,
+        "home_score": 1
+      },
+      {
+        "period": "1st",
+        "time": "6:06",
+        "team_school_id": "mosinee",
+        "team_name": "Mosinee",
+        "scorer_jersey": "11",
+        "scorer_name": "Reid Butalla",
+        "strength": "power play",
+        "assists": [
+          {
+            "jersey": "6",
+            "name": "Tyler  Baars"
+          },
+          {
+            "jersey": "12",
+            "name": "Isaac  Lewens"
+          }
+        ],
+        "away_score": 0,
+        "home_score": 2
+      },
+      {
+        "period": "1st",
+        "time": "14:59",
+        "team_school_id": "mosinee",
+        "team_name": "Mosinee",
+        "scorer_jersey": "11",
+        "scorer_name": "Reid Butalla",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "34",
+            "name": "Tyler DeCaluwe"
+          }
+        ],
+        "away_score": 0,
+        "home_score": 3
+      },
+      {
+        "period": "2nd",
+        "time": "0:49",
+        "team_school_id": "mosinee",
+        "team_name": "Mosinee",
+        "scorer_jersey": "11",
+        "scorer_name": "Reid Butalla",
+        "strength": "power play",
+        "assists": [
+          {
+            "jersey": "6",
+            "name": "Tyler  Baars"
+          },
+          {
+            "jersey": "46",
+            "name": "Evan  Karst"
+          }
+        ],
+        "away_score": 0,
+        "home_score": 4
+      },
+      {
+        "period": "2nd",
+        "time": "13:33",
+        "team_school_id": "mosinee",
+        "team_name": "Mosinee",
+        "scorer_jersey": "6",
+        "scorer_name": "Tyler Baars",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "47",
+            "name": "Spencer  Lemke"
+          },
+          {
+            "jersey": "5",
+            "name": "Coltyn Fjeldsted"
+          }
+        ],
+        "away_score": 0,
+        "home_score": 5
+      },
+      {
+        "period": "3rd",
+        "time": "1:23",
+        "team_school_id": "",
+        "team_name": "Stevens Point Pacelli Cardinals",
+        "scorer_jersey": "3",
+        "scorer_name": "Tyler Kluck",
+        "strength": "power play",
+        "assists": [
+          {
+            "jersey": "23",
+            "name": "Zane Phillis"
+          },
+          {
+            "jersey": "11",
+            "name": "Caleb McGregor"
+          }
+        ],
+        "away_score": 1,
+        "home_score": 5
+      },
+      {
+        "period": "3rd",
+        "time": "2:56",
+        "team_school_id": "mosinee",
+        "team_name": "Mosinee",
+        "scorer_jersey": "11",
+        "scorer_name": "Reid Butalla",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "19",
+            "name": "Noah Zebro"
+          }
+        ],
+        "away_score": 1,
+        "home_score": 6
+      },
+      {
+        "period": "3rd",
+        "time": "5:22",
+        "team_school_id": "mosinee",
+        "team_name": "Mosinee",
+        "scorer_jersey": "6",
+        "scorer_name": "Tyler Baars",
+        "strength": "power play",
+        "assists": [
+          {
+            "jersey": "3",
+            "name": "Evan Gwidt"
+          },
+          {
+            "jersey": "11",
+            "name": "Reid Butalla"
+          }
+        ],
+        "away_score": 1,
+        "home_score": 7
+      },
+      {
+        "period": "3rd",
+        "time": "11:48",
+        "team_school_id": "mosinee",
+        "team_name": "Mosinee",
+        "scorer_jersey": "34",
+        "scorer_name": "Tyler DeCaluwe",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "19",
+            "name": "Noah Zebro"
+          }
+        ],
+        "away_score": 1,
+        "home_score": 8
+      }
+    ]
   },
   {
     "id": "boys_hockey-2026-02-24-lakeland-at-northland-pines",
@@ -59254,12 +62343,162 @@
     "conference_game": false,
     "venue": "@Northland Pines",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "wisconsinprephockey"
     ],
     "playoff": true,
     "playoff_round": "Regional Final",
-    "stat_leaders": [],
-    "scoring": []
+    "stat_leaders": [
+      {
+        "team_school_id": "lakeland",
+        "team_name": "Lakeland",
+        "category": "Hockey Saves",
+        "player_name": "Cam Bernard",
+        "player_year": "SR",
+        "position": "G",
+        "stats": {
+          "MIN": "51:00",
+          "SOG": "41",
+          "GA": "6",
+          "SV": "35",
+          "SV %": ".854"
+        }
+      },
+      {
+        "team_school_id": "northland-pines",
+        "team_name": "Northland Pines",
+        "category": "Hockey Points",
+        "player_name": "Josh Graves",
+        "player_year": null,
+        "position": null,
+        "stats": {
+          "G": "2",
+          "A": "3",
+          "PTS": "5",
+          "SOG": "2",
+          "PIM": "0",
+          "+ / -": "0"
+        }
+      },
+      {
+        "team_school_id": "northland-pines",
+        "team_name": "Northland Pines",
+        "category": "Hockey Saves",
+        "player_name": "Evrett  Leslie",
+        "player_year": null,
+        "position": null,
+        "stats": {
+          "MIN": "51:00",
+          "SOG": "13",
+          "GA": "0",
+          "SV": "13",
+          "SV %": "1.000"
+        }
+      }
+    ],
+    "scoring": [
+      {
+        "period": "1st",
+        "time": "11:48",
+        "team_school_id": "northland-pines",
+        "team_name": "Northland Pines",
+        "scorer_jersey": "15",
+        "scorer_name": "Jazek Jantzen",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "8",
+            "name": "Josh Graves"
+          }
+        ],
+        "away_score": 0,
+        "home_score": 1
+      },
+      {
+        "period": "1st",
+        "time": "13:25",
+        "team_school_id": "northland-pines",
+        "team_name": "Northland Pines",
+        "scorer_jersey": "21",
+        "scorer_name": "Oliver DePuydt",
+        "strength": "short handed",
+        "assists": [
+          {
+            "jersey": "8",
+            "name": "Josh Graves"
+          }
+        ],
+        "away_score": 0,
+        "home_score": 2
+      },
+      {
+        "period": "2nd",
+        "time": "2:21",
+        "team_school_id": "northland-pines",
+        "team_name": "Northland Pines",
+        "scorer_jersey": "8",
+        "scorer_name": "Josh Graves",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "15",
+            "name": "Jazek  Jantzen"
+          }
+        ],
+        "away_score": 0,
+        "home_score": 3
+      },
+      {
+        "period": "2nd",
+        "time": "3:52",
+        "team_school_id": "northland-pines",
+        "team_name": "Northland Pines",
+        "scorer_jersey": "8",
+        "scorer_name": "Josh Graves",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "26",
+            "name": "Michael Schmidt"
+          }
+        ],
+        "away_score": 0,
+        "home_score": 4
+      },
+      {
+        "period": "3rd",
+        "time": "2:46",
+        "team_school_id": "northland-pines",
+        "team_name": "Northland Pines",
+        "scorer_jersey": "26",
+        "scorer_name": "Michael Schmidt",
+        "strength": "power play",
+        "assists": [
+          {
+            "jersey": "6",
+            "name": "Cooper  Saari"
+          },
+          {
+            "jersey": "8",
+            "name": "Josh Graves"
+          }
+        ],
+        "away_score": 0,
+        "home_score": 5
+      },
+      {
+        "period": "3rd",
+        "time": "7:21",
+        "team_school_id": "northland-pines",
+        "team_name": "Northland Pines",
+        "scorer_jersey": "12",
+        "scorer_name": "Nicholas Hahn",
+        "strength": "power play",
+        "assists": [],
+        "away_score": 0,
+        "home_score": 6
+      }
+    ]
   },
   {
     "id": "boys_hockey-2026-02-24-superior-at-hudson",
@@ -59283,12 +62522,152 @@
     "conference_game": false,
     "venue": "@Hudson",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "wisconsinprephockey"
     ],
     "playoff": true,
     "playoff_round": "Sectional Semifinal",
-    "stat_leaders": [],
-    "scoring": []
+    "stat_leaders": [
+      {
+        "team_school_id": "superior",
+        "team_name": "Superior",
+        "category": "Hockey Points",
+        "player_name": "Brady Haroldson",
+        "player_year": "SR",
+        "position": "F",
+        "stats": {
+          "G": "0",
+          "A": "1",
+          "PTS": "1",
+          "SOG": "0",
+          "PIM": "0",
+          "+ / -": "0"
+        }
+      },
+      {
+        "team_school_id": "superior",
+        "team_name": "Superior",
+        "category": "Hockey Saves",
+        "player_name": "Ryan  Pettingill",
+        "player_year": "SR",
+        "position": "G",
+        "stats": {
+          "MIN": "51:00",
+          "SOG": "38",
+          "GA": "3",
+          "SV": "35",
+          "SV %": ".921"
+        }
+      },
+      {
+        "team_school_id": "hudson",
+        "team_name": "Hudson",
+        "category": "Hockey Points",
+        "player_name": "Will Mauer",
+        "player_year": "JR",
+        "position": "F",
+        "stats": {
+          "G": "1",
+          "A": "1",
+          "PTS": "2",
+          "SOG": "1",
+          "PIM": "0",
+          "+ / -": "0"
+        }
+      },
+      {
+        "team_school_id": "hudson",
+        "team_name": "Hudson",
+        "category": "Hockey Saves",
+        "player_name": "Sam Kramber",
+        "player_year": "SR",
+        "position": "G",
+        "stats": {
+          "MIN": "51:00",
+          "SOG": "26",
+          "GA": "1",
+          "SV": "25",
+          "SV %": ".962"
+        }
+      }
+    ],
+    "scoring": [
+      {
+        "period": "1st",
+        "time": "0:34",
+        "team_school_id": "superior",
+        "team_name": "Superior",
+        "scorer_jersey": "27",
+        "scorer_name": "Maverik Milroy",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "11",
+            "name": "Brady Haroldson"
+          },
+          {
+            "jersey": "17",
+            "name": "Ryan Nelson"
+          }
+        ],
+        "away_score": 1,
+        "home_score": 0
+      },
+      {
+        "period": "2nd",
+        "time": "5:46",
+        "team_school_id": "hudson",
+        "team_name": "Hudson",
+        "scorer_jersey": "22",
+        "scorer_name": "Caiden Spreiter",
+        "strength": "power play",
+        "assists": [
+          {
+            "jersey": "15",
+            "name": "Will Mauer"
+          },
+          {
+            "jersey": "19",
+            "name": "Henry Kullman"
+          }
+        ],
+        "away_score": 1,
+        "home_score": 1
+      },
+      {
+        "period": "2nd",
+        "time": "8:00",
+        "team_school_id": "hudson",
+        "team_name": "Hudson",
+        "scorer_jersey": "11",
+        "scorer_name": "Brady Swanson",
+        "strength": "power play",
+        "assists": [
+          {
+            "jersey": "9",
+            "name": "Eric Palm"
+          },
+          {
+            "jersey": "6",
+            "name": "Logan Destasio"
+          }
+        ],
+        "away_score": 1,
+        "home_score": 2
+      },
+      {
+        "period": "3rd",
+        "time": "5:29",
+        "team_school_id": "hudson",
+        "team_name": "Hudson",
+        "scorer_jersey": "15",
+        "scorer_name": "Will Mauer",
+        "strength": "even strength",
+        "assists": [],
+        "away_score": 1,
+        "home_score": 3
+      }
+    ]
   },
   {
     "id": "boys_hockey-2026-02-24-rice-lake-at-amery-co-op",
@@ -59312,12 +62691,228 @@
     "conference_game": false,
     "venue": "@Amery Co-op",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "wisconsinprephockey"
     ],
     "playoff": true,
     "playoff_round": "Regional Final",
-    "stat_leaders": [],
-    "scoring": []
+    "stat_leaders": [
+      {
+        "team_school_id": "rice-lake",
+        "team_name": "Rice Lake",
+        "category": "Hockey Points",
+        "player_name": "Lincoln Heinn",
+        "player_year": null,
+        "position": "F",
+        "stats": {
+          "G": "2",
+          "A": "0",
+          "PTS": "2",
+          "SOG": "2",
+          "PIM": "0",
+          "+ / -": "0"
+        }
+      },
+      {
+        "team_school_id": "rice-lake",
+        "team_name": "Rice Lake",
+        "category": "Hockey Saves",
+        "player_name": "Hayden Van Gilder",
+        "player_year": null,
+        "position": "G",
+        "stats": {
+          "MIN": "51:00",
+          "SOG": "44",
+          "GA": "6",
+          "SV": "38",
+          "SV %": ".864"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Amery Co-op",
+        "category": "Hockey Points",
+        "player_name": "Logan Doten",
+        "player_year": null,
+        "position": null,
+        "stats": {
+          "G": "3",
+          "A": "1",
+          "PTS": "4",
+          "SOG": "3",
+          "PIM": "0",
+          "+ / -": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Amery Co-op",
+        "category": "Hockey Saves",
+        "player_name": "Carter Meyer",
+        "player_year": null,
+        "position": null,
+        "stats": {
+          "MIN": "51:00",
+          "SOG": "25",
+          "GA": "2",
+          "SV": "23",
+          "SV %": ".920"
+        }
+      }
+    ],
+    "scoring": [
+      {
+        "period": "1st",
+        "time": "10:33",
+        "team_school_id": "",
+        "team_name": "Amery Co-op",
+        "scorer_jersey": "11",
+        "scorer_name": "Logan Doten",
+        "strength": "short handed",
+        "assists": [
+          {
+            "jersey": "14",
+            "name": "Jacob Maxon"
+          }
+        ],
+        "away_score": 0,
+        "home_score": 1
+      },
+      {
+        "period": "1st",
+        "time": "15:48",
+        "team_school_id": "rice-lake",
+        "team_name": "Rice Lake",
+        "scorer_jersey": "4",
+        "scorer_name": "Lincoln Heinn",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "8",
+            "name": "Max Tomesh"
+          },
+          {
+            "jersey": "19",
+            "name": "Owen Storberg"
+          }
+        ],
+        "away_score": 1,
+        "home_score": 1
+      },
+      {
+        "period": "2nd",
+        "time": "6:45",
+        "team_school_id": "",
+        "team_name": "Amery Co-op",
+        "scorer_jersey": "11",
+        "scorer_name": "Logan Doten",
+        "strength": "power play",
+        "assists": [
+          {
+            "jersey": "5",
+            "name": "Gavin Humpal"
+          },
+          {
+            "jersey": "29",
+            "name": "Oscar Troff"
+          }
+        ],
+        "away_score": 1,
+        "home_score": 2
+      },
+      {
+        "period": "3rd",
+        "time": "3:26",
+        "team_school_id": "",
+        "team_name": "Amery Co-op",
+        "scorer_jersey": "16",
+        "scorer_name": "Gavin Lindsay",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "14",
+            "name": "Jacob Maxon"
+          },
+          {
+            "jersey": "11",
+            "name": "Logan Doten"
+          }
+        ],
+        "away_score": 1,
+        "home_score": 3
+      },
+      {
+        "period": "3rd",
+        "time": "3:26",
+        "team_school_id": "rice-lake",
+        "team_name": "Rice Lake",
+        "scorer_jersey": "4",
+        "scorer_name": "Lincoln Heinn",
+        "strength": "power play",
+        "assists": [
+          {
+            "jersey": "14",
+            "name": "Marshall  Powers"
+          },
+          {
+            "jersey": "19",
+            "name": "Owen Storberg"
+          }
+        ],
+        "away_score": 2,
+        "home_score": 3
+      },
+      {
+        "period": "3rd",
+        "time": "4:46",
+        "team_school_id": "",
+        "team_name": "Amery Co-op",
+        "scorer_jersey": "14",
+        "scorer_name": "Jacob Maxon",
+        "strength": "even strength",
+        "assists": [],
+        "away_score": 2,
+        "home_score": 4
+      },
+      {
+        "period": "3rd",
+        "time": "9:48",
+        "team_school_id": "",
+        "team_name": "Amery Co-op",
+        "scorer_jersey": "28",
+        "scorer_name": "Nolan Babcock",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "5",
+            "name": "Gavin Humpal"
+          },
+          {
+            "jersey": "32",
+            "name": "Brodie Bader"
+          }
+        ],
+        "away_score": 2,
+        "home_score": 5
+      },
+      {
+        "period": "3rd",
+        "time": "10:25",
+        "team_school_id": "",
+        "team_name": "Amery Co-op",
+        "scorer_jersey": "11",
+        "scorer_name": "Logan Doten",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "22",
+            "name": "Levi  Tylee"
+          }
+        ],
+        "away_score": 2,
+        "home_score": 6
+      }
+    ]
   },
   {
     "id": "boys_hockey-2026-02-24-menomonie-at-river-falls",
@@ -59341,12 +62936,198 @@
     "conference_game": false,
     "venue": "River Falls Wildcat Center",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "wisconsinprephockey"
     ],
     "playoff": true,
     "playoff_round": "Regional Final",
-    "stat_leaders": [],
-    "scoring": []
+    "stat_leaders": [
+      {
+        "team_school_id": "menomonie",
+        "team_name": "Menomonie",
+        "category": "Hockey Points",
+        "player_name": "Jaxon Giertz",
+        "player_year": "SO",
+        "position": "D",
+        "stats": {
+          "G": "2",
+          "A": "0",
+          "PTS": "2",
+          "SOG": "2",
+          "PIM": "0",
+          "+ / -": "0"
+        }
+      },
+      {
+        "team_school_id": "menomonie",
+        "team_name": "Menomonie",
+        "category": "Hockey Saves",
+        "player_name": "Davin  Ellis",
+        "player_year": "SR",
+        "position": "G",
+        "stats": {
+          "MIN": "51:00",
+          "SOG": "27",
+          "GA": "5",
+          "SV": "22",
+          "SV %": ".815"
+        }
+      },
+      {
+        "team_school_id": "river-falls",
+        "team_name": "River Falls",
+        "category": "Hockey Points",
+        "player_name": "Jaxon Flanagan (C)",
+        "player_year": "SR",
+        "position": "F|D",
+        "stats": {
+          "G": "3",
+          "A": "1",
+          "PTS": "4",
+          "SOG": "3",
+          "PIM": "0",
+          "+ / -": "0"
+        }
+      },
+      {
+        "team_school_id": "river-falls",
+        "team_name": "River Falls",
+        "category": "Hockey Saves",
+        "player_name": "Niklas Thomas",
+        "player_year": "SR",
+        "position": "G",
+        "stats": {
+          "MIN": "51:00",
+          "SOG": "21",
+          "GA": "3",
+          "SV": "18",
+          "SV %": ".857"
+        }
+      }
+    ],
+    "scoring": [
+      {
+        "period": "1st",
+        "time": "14:20",
+        "team_school_id": "river-falls",
+        "team_name": "River Falls",
+        "scorer_jersey": "10",
+        "scorer_name": "Eric Wiech",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "26",
+            "name": "Ben Robinson"
+          },
+          {
+            "jersey": "41",
+            "name": "Hudson Wilson"
+          }
+        ],
+        "away_score": 0,
+        "home_score": 1
+      },
+      {
+        "period": "2nd",
+        "time": "1:36",
+        "team_school_id": "menomonie",
+        "team_name": "Menomonie",
+        "scorer_jersey": "19",
+        "scorer_name": "Ryder Anderson",
+        "strength": "short handed",
+        "assists": [],
+        "away_score": 1,
+        "home_score": 2
+      },
+      {
+        "period": "2nd",
+        "time": "3:39",
+        "team_school_id": "menomonie",
+        "team_name": "Menomonie",
+        "scorer_jersey": "5",
+        "scorer_name": "Jaxon Giertz",
+        "strength": "power play",
+        "assists": [
+          {
+            "jersey": "21",
+            "name": "Kellen Turner"
+          }
+        ],
+        "away_score": 2,
+        "home_score": 2
+      },
+      {
+        "period": "2nd",
+        "time": "5:20",
+        "team_school_id": "menomonie",
+        "team_name": "Menomonie",
+        "scorer_jersey": "5",
+        "scorer_name": "Jaxon Giertz",
+        "strength": "power play",
+        "assists": [
+          {
+            "jersey": "13",
+            "name": "Cooper Marincel"
+          },
+          {
+            "jersey": "20",
+            "name": "Wren Swaenepoel"
+          }
+        ],
+        "away_score": 3,
+        "home_score": 2
+      },
+      {
+        "period": "2nd",
+        "time": "13:00",
+        "team_school_id": "river-falls",
+        "team_name": "River Falls",
+        "scorer_jersey": "15",
+        "scorer_name": "Jaxon Flanagan (C)",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "14",
+            "name": "Jace Dougherty"
+          }
+        ],
+        "away_score": 3,
+        "home_score": 4
+      },
+      {
+        "period": "3rd",
+        "time": "7:33",
+        "team_school_id": "river-falls",
+        "team_name": "River Falls",
+        "scorer_jersey": "22",
+        "scorer_name": "Chase Rudolph (C)",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "26",
+            "name": "Ben Robinson"
+          },
+          {
+            "jersey": "14",
+            "name": "Jace Dougherty"
+          }
+        ],
+        "away_score": 3,
+        "home_score": 5
+      },
+      {
+        "period": "3rd",
+        "time": "14:30",
+        "team_school_id": "river-falls",
+        "team_name": "River Falls",
+        "scorer_jersey": "15",
+        "scorer_name": "Jaxon Flanagan (C)",
+        "strength": "even strength",
+        "assists": [],
+        "away_score": 3,
+        "home_score": 6
+      }
+    ]
   },
   {
     "id": "boys_hockey-2026-02-24-spash-at-wausau-west",
@@ -59370,12 +63151,139 @@
     "conference_game": false,
     "venue": "Marathon Park Ice Arena",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "wisconsinprephockey"
     ],
     "playoff": true,
     "playoff_round": "Sectional Semifinal",
-    "stat_leaders": [],
-    "scoring": []
+    "stat_leaders": [
+      {
+        "team_school_id": "spash",
+        "team_name": "Stevens Point",
+        "category": "Hockey Points",
+        "player_name": "Grant Molski",
+        "player_year": "SR",
+        "position": "F",
+        "stats": {
+          "G": "1",
+          "A": "1",
+          "PTS": "2",
+          "SOG": "1",
+          "PIM": "0",
+          "+ / -": "0"
+        }
+      },
+      {
+        "team_school_id": "spash",
+        "team_name": "Stevens Point",
+        "category": "Hockey Saves",
+        "player_name": "Zachary Burdick",
+        "player_year": "JR",
+        "position": "G",
+        "stats": {
+          "MIN": "51:00",
+          "SOG": "46",
+          "GA": "1",
+          "SV": "45",
+          "SV %": ".978"
+        }
+      },
+      {
+        "team_school_id": "wausau-west",
+        "team_name": "Wausau West",
+        "category": "Hockey Points",
+        "player_name": "Chase Crass",
+        "player_year": "SR",
+        "position": "F",
+        "stats": {
+          "G": "1",
+          "A": "0",
+          "PTS": "1",
+          "SOG": "1",
+          "PIM": "0",
+          "+ / -": "0"
+        }
+      },
+      {
+        "team_school_id": "wausau-west",
+        "team_name": "Wausau West",
+        "category": "Hockey Saves",
+        "player_name": "Julian Scalcucci",
+        "player_year": "JR",
+        "position": "G",
+        "stats": {
+          "MIN": "51:00",
+          "SOG": "43",
+          "GA": "4",
+          "SV": "39",
+          "SV %": ".907"
+        }
+      }
+    ],
+    "scoring": [
+      {
+        "period": "1st",
+        "time": "10:49",
+        "team_school_id": "wausau-west",
+        "team_name": "Wausau West",
+        "scorer_jersey": "10",
+        "scorer_name": "Chase Crass",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "19",
+            "name": "Cooper DePuydt"
+          }
+        ],
+        "away_score": 0,
+        "home_score": 1
+      },
+      {
+        "period": "1st",
+        "time": "13:36",
+        "team_school_id": "spash",
+        "team_name": "Stevens Point",
+        "scorer_jersey": "3",
+        "scorer_name": "Johnny Weiss",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "10",
+            "name": "Jackson Flees"
+          },
+          {
+            "jersey": "9",
+            "name": "Jace  Dedie"
+          }
+        ],
+        "away_score": 1,
+        "home_score": 1
+      },
+      {
+        "period": "2nd",
+        "time": "9:29",
+        "team_school_id": "spash",
+        "team_name": "Stevens Point",
+        "scorer_jersey": "9",
+        "scorer_name": "Jace Dedie",
+        "strength": "even strength",
+        "assists": [],
+        "away_score": 3,
+        "home_score": 1
+      },
+      {
+        "period": "2nd",
+        "time": "12:21",
+        "team_school_id": "spash",
+        "team_name": "Stevens Point",
+        "scorer_jersey": "2",
+        "scorer_name": "Grant Molski",
+        "strength": "power play",
+        "assists": [],
+        "away_score": 4,
+        "home_score": 1
+      }
+    ]
   },
   {
     "id": "boys_hockey-2026-02-27-spash-at-hudson",
@@ -59399,12 +63307,212 @@
     "conference_game": false,
     "venue": "Chippewa Area Ice Arena",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "wisconsinprephockey"
     ],
     "playoff": true,
     "playoff_round": "Sectional Final",
-    "stat_leaders": [],
-    "scoring": []
+    "stat_leaders": [
+      {
+        "team_school_id": "spash",
+        "team_name": "Stevens Point",
+        "category": "Hockey Points",
+        "player_name": "Grady Miller",
+        "player_year": "SR",
+        "position": "F",
+        "stats": {
+          "G": "0",
+          "A": "2",
+          "PTS": "2",
+          "SOG": "0",
+          "PIM": "0",
+          "+ / -": "0"
+        }
+      },
+      {
+        "team_school_id": "spash",
+        "team_name": "Stevens Point",
+        "category": "Hockey Saves",
+        "player_name": "Zachary Burdick",
+        "player_year": "JR",
+        "position": "G",
+        "stats": {
+          "MIN": "53:24",
+          "SOG": "25",
+          "GA": "3",
+          "SV": "22",
+          "SV %": ".880"
+        }
+      },
+      {
+        "team_school_id": "hudson",
+        "team_name": "Hudson",
+        "category": "Hockey Points",
+        "player_name": "Eric Palm",
+        "player_year": "JR",
+        "position": "F",
+        "stats": {
+          "G": "0",
+          "A": "2",
+          "PTS": "2",
+          "SOG": "0",
+          "PIM": "0",
+          "+ / -": "0"
+        }
+      },
+      {
+        "team_school_id": "hudson",
+        "team_name": "Hudson",
+        "category": "Hockey Saves",
+        "player_name": "Sam Kramber",
+        "player_year": "SR",
+        "position": "G",
+        "stats": {
+          "MIN": "53:24",
+          "SOG": "26",
+          "GA": "4",
+          "SV": "22",
+          "SV %": ".846"
+        }
+      }
+    ],
+    "scoring": [
+      {
+        "period": "1st",
+        "time": "5:43",
+        "team_school_id": "spash",
+        "team_name": "Stevens Point",
+        "scorer_jersey": "11",
+        "scorer_name": "Teddy Westrick",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "25",
+            "name": "Jerome Poirier"
+          }
+        ],
+        "away_score": 1,
+        "home_score": 0
+      },
+      {
+        "period": "1st",
+        "time": "8:00",
+        "team_school_id": "hudson",
+        "team_name": "Hudson",
+        "scorer_jersey": "5",
+        "scorer_name": "Buchanon Franta",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "6",
+            "name": "Logan Destasio"
+          },
+          {
+            "jersey": "22",
+            "name": "Caiden Spreiter"
+          }
+        ],
+        "away_score": 1,
+        "home_score": 1
+      },
+      {
+        "period": "2nd",
+        "time": "1:51",
+        "team_school_id": "spash",
+        "team_name": "Stevens Point",
+        "scorer_jersey": "7",
+        "scorer_name": "Max Mittelsteadt",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "15",
+            "name": "Benny Abbott"
+          }
+        ],
+        "away_score": 2,
+        "home_score": 1
+      },
+      {
+        "period": "3rd",
+        "time": "1:43",
+        "team_school_id": "hudson",
+        "team_name": "Hudson",
+        "scorer_jersey": "19",
+        "scorer_name": "Henry Kullman",
+        "strength": "power play",
+        "assists": [
+          {
+            "jersey": "15",
+            "name": "Will Mauer"
+          },
+          {
+            "jersey": "9",
+            "name": "Eric Palm"
+          }
+        ],
+        "away_score": 2,
+        "home_score": 2
+      },
+      {
+        "period": "3rd",
+        "time": "3:34",
+        "team_school_id": "spash",
+        "team_name": "Stevens Point",
+        "scorer_jersey": "2",
+        "scorer_name": "Grant Molski",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "8",
+            "name": "Grady Miller"
+          },
+          {
+            "jersey": "6",
+            "name": "Beckett Carroll"
+          }
+        ],
+        "away_score": 3,
+        "home_score": 2
+      },
+      {
+        "period": "3rd",
+        "time": "16:06",
+        "team_school_id": "hudson",
+        "team_name": "Hudson",
+        "scorer_jersey": "24",
+        "scorer_name": "Spencer Bullis",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "15",
+            "name": "Will Mauer"
+          },
+          {
+            "jersey": "9",
+            "name": "Eric Palm"
+          }
+        ],
+        "away_score": 3,
+        "home_score": 3
+      },
+      {
+        "period": "OT1",
+        "time": "2:24",
+        "team_school_id": "spash",
+        "team_name": "Stevens Point",
+        "scorer_jersey": "10",
+        "scorer_name": "Jackson Flees",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "8",
+            "name": "Grady Miller"
+          }
+        ],
+        "away_score": 4,
+        "home_score": 3
+      }
+    ]
   },
   {
     "id": "boys_hockey-2026-02-28-river-falls-at-somerset-saint-croix-falls",
@@ -59428,12 +63536,153 @@
     "conference_game": false,
     "venue": "Wildcat Centre Arena",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "wisconsinprephockey"
     ],
     "playoff": true,
     "playoff_round": "Sectional Final",
-    "stat_leaders": [],
-    "scoring": []
+    "stat_leaders": [
+      {
+        "team_school_id": "river-falls",
+        "team_name": "River Falls",
+        "category": "Hockey Points",
+        "player_name": "Jaxon Flanagan (C)",
+        "player_year": "SR",
+        "position": "F|D",
+        "stats": {
+          "G": "0",
+          "A": "2",
+          "PTS": "2",
+          "SOG": "0",
+          "PIM": "0",
+          "+ / -": "0"
+        }
+      },
+      {
+        "team_school_id": "river-falls",
+        "team_name": "River Falls",
+        "category": "Hockey Saves",
+        "player_name": "Niklas Thomas",
+        "player_year": "SR",
+        "position": "G",
+        "stats": {
+          "MIN": "51:00",
+          "SOG": "34",
+          "GA": "4",
+          "SV": "30",
+          "SV %": ".882"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Somerset/Saint Croix Falls",
+        "category": "Hockey Points",
+        "player_name": "Marshall Haukom (C)",
+        "player_year": null,
+        "position": null,
+        "stats": {
+          "G": "2",
+          "A": "1",
+          "PTS": "3",
+          "SOG": "2",
+          "PIM": "2",
+          "+ / -": "0"
+        }
+      },
+      {
+        "team_school_id": "",
+        "team_name": "Somerset/Saint Croix Falls",
+        "category": "Hockey Saves",
+        "player_name": "Carson Belisle",
+        "player_year": null,
+        "position": null,
+        "stats": {
+          "MIN": "51:00",
+          "SOG": "36",
+          "GA": "2",
+          "SV": "34",
+          "SV %": ".944"
+        }
+      }
+    ],
+    "scoring": [
+      {
+        "period": "1st",
+        "time": "2:41",
+        "team_school_id": "",
+        "team_name": "Somerset/Saint Croix Falls",
+        "scorer_jersey": "21",
+        "scorer_name": "Josh Albert",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "10",
+            "name": "Brock Thiel"
+          },
+          {
+            "jersey": "29",
+            "name": "Devin Richardson"
+          }
+        ],
+        "away_score": 0,
+        "home_score": 1
+      },
+      {
+        "period": "1st",
+        "time": "14:41",
+        "team_school_id": "",
+        "team_name": "Somerset/Saint Croix Falls",
+        "scorer_jersey": "28",
+        "scorer_name": "Finn McDonough",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "24",
+            "name": "Ryland Lathe"
+          },
+          {
+            "jersey": "12",
+            "name": "Wyatt Olson"
+          }
+        ],
+        "away_score": 1,
+        "home_score": 2
+      },
+      {
+        "period": "2nd",
+        "time": "3:30",
+        "team_school_id": "",
+        "team_name": "Somerset/Saint Croix Falls",
+        "scorer_jersey": "4",
+        "scorer_name": "Marshall Haukom (C)",
+        "strength": "short handed",
+        "assists": [
+          {
+            "jersey": "20",
+            "name": "Blake Thiel"
+          }
+        ],
+        "away_score": 1,
+        "home_score": 3
+      },
+      {
+        "period": "3rd",
+        "time": "3:47",
+        "team_school_id": "",
+        "team_name": "Somerset/Saint Croix Falls",
+        "scorer_jersey": "4",
+        "scorer_name": "Marshall Haukom (C)",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "20",
+            "name": "Blake Thiel"
+          }
+        ],
+        "away_score": 1,
+        "home_score": 4
+      }
+    ]
   },
   {
     "id": "boys_hockey-2026-02-28-mosinee-at-northland-pines",
@@ -59457,11 +63706,238 @@
     "conference_game": false,
     "venue": "Eagle River Rec Arena",
     "sources": [
-      "wiaa"
+      "wiaa",
+      "wisconsinprephockey"
     ],
     "playoff": true,
     "playoff_round": "Sectional Final",
-    "stat_leaders": [],
-    "scoring": []
+    "stat_leaders": [
+      {
+        "team_school_id": "mosinee",
+        "team_name": "Mosinee",
+        "category": "Hockey Points",
+        "player_name": "Tyler  Baars",
+        "player_year": "SR",
+        "position": "F",
+        "stats": {
+          "G": "1",
+          "A": "1",
+          "PTS": "2",
+          "SOG": "1",
+          "PIM": "0",
+          "+ / -": "0"
+        }
+      },
+      {
+        "team_school_id": "mosinee",
+        "team_name": "Mosinee",
+        "category": "Hockey Saves",
+        "player_name": "Charlie Michalski",
+        "player_year": "JR",
+        "position": "G",
+        "stats": {
+          "MIN": "50:00",
+          "SOG": "22",
+          "GA": "4",
+          "SV": "18",
+          "SV %": ".818"
+        }
+      },
+      {
+        "team_school_id": "northland-pines",
+        "team_name": "Northland Pines",
+        "category": "Hockey Points",
+        "player_name": "Cooper  Saari",
+        "player_year": null,
+        "position": null,
+        "stats": {
+          "G": "1",
+          "A": "1",
+          "PTS": "2",
+          "SOG": "1",
+          "PIM": "0",
+          "+ / -": "0"
+        }
+      },
+      {
+        "team_school_id": "northland-pines",
+        "team_name": "Northland Pines",
+        "category": "Hockey Goals",
+        "player_name": "Josh Graves",
+        "player_year": null,
+        "position": null,
+        "stats": {
+          "G": "2",
+          "A": "0",
+          "PTS": "2",
+          "SOG": "2",
+          "PIM": "0",
+          "+ / -": "0"
+        }
+      },
+      {
+        "team_school_id": "northland-pines",
+        "team_name": "Northland Pines",
+        "category": "Hockey Saves",
+        "player_name": "Evrett  Leslie",
+        "player_year": null,
+        "position": null,
+        "stats": {
+          "MIN": "51:00",
+          "SOG": "22",
+          "GA": "3",
+          "SV": "19",
+          "SV %": ".864"
+        }
+      }
+    ],
+    "scoring": [
+      {
+        "period": "1st",
+        "time": "4:01",
+        "team_school_id": "northland-pines",
+        "team_name": "Northland Pines",
+        "scorer_jersey": "8",
+        "scorer_name": "Josh Graves",
+        "strength": "power play",
+        "assists": [
+          {
+            "jersey": "9",
+            "name": "Bodie Bakken"
+          },
+          {
+            "jersey": "12",
+            "name": "Nicholas Hahn"
+          }
+        ],
+        "away_score": 0,
+        "home_score": 1
+      },
+      {
+        "period": "2nd",
+        "time": "5:01",
+        "team_school_id": "mosinee",
+        "team_name": "Mosinee",
+        "scorer_jersey": "34",
+        "scorer_name": "Tyler DeCaluwe",
+        "strength": "power play",
+        "assists": [
+          {
+            "jersey": "11",
+            "name": "Reid Butalla"
+          },
+          {
+            "jersey": "6",
+            "name": "Tyler  Baars"
+          }
+        ],
+        "away_score": 1,
+        "home_score": 1
+      },
+      {
+        "period": "2nd",
+        "time": "5:49",
+        "team_school_id": "mosinee",
+        "team_name": "Mosinee",
+        "scorer_jersey": "11",
+        "scorer_name": "Reid Butalla",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "34",
+            "name": "Tyler DeCaluwe"
+          }
+        ],
+        "away_score": 2,
+        "home_score": 1
+      },
+      {
+        "period": "2nd",
+        "time": "6:51",
+        "team_school_id": "northland-pines",
+        "team_name": "Northland Pines",
+        "scorer_jersey": "34",
+        "scorer_name": "Cash Powell",
+        "strength": "even strength",
+        "assists": [
+          {
+            "jersey": "9",
+            "name": "Bodie Bakken"
+          },
+          {
+            "jersey": "26",
+            "name": "Michael Schmidt"
+          }
+        ],
+        "away_score": 2,
+        "home_score": 2
+      },
+      {
+        "period": "2nd",
+        "time": "9:36",
+        "team_school_id": "mosinee",
+        "team_name": "Mosinee",
+        "scorer_jersey": "6",
+        "scorer_name": "Tyler Baars",
+        "strength": "power play",
+        "assists": [
+          {
+            "jersey": "3",
+            "name": "Evan Gwidt"
+          },
+          {
+            "jersey": "46",
+            "name": "Evan  Karst"
+          }
+        ],
+        "away_score": 3,
+        "home_score": 2
+      },
+      {
+        "period": "2nd",
+        "time": "12:02",
+        "team_school_id": "northland-pines",
+        "team_name": "Northland Pines",
+        "scorer_jersey": "8",
+        "scorer_name": "Josh Graves",
+        "strength": "power play",
+        "assists": [
+          {
+            "jersey": "26",
+            "name": "Michael Schmidt"
+          },
+          {
+            "jersey": "6",
+            "name": "Cooper  Saari"
+          }
+        ],
+        "away_score": 3,
+        "home_score": 3
+      },
+      {
+        "period": "2nd",
+        "time": "15:23",
+        "team_school_id": "northland-pines",
+        "team_name": "Northland Pines",
+        "scorer_jersey": "6",
+        "scorer_name": "Cooper Saari",
+        "strength": "even strength",
+        "assists": [],
+        "away_score": 3,
+        "home_score": 4
+      },
+      {
+        "period": "3rd",
+        "time": "16:24",
+        "team_school_id": "northland-pines",
+        "team_name": "Northland Pines",
+        "scorer_jersey": "16",
+        "scorer_name": "Sam Shrock",
+        "strength": "even strength",
+        "assists": [],
+        "away_score": 3,
+        "home_score": 5
+      }
+    ]
   }
 ]
