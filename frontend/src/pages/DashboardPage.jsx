@@ -6,6 +6,8 @@ import ThisWeekGrid from "../components/ThisWeekGrid.jsx";
 import MonthCalendar from "../components/MonthCalendar.jsx";
 import PlayerOfWeek from "../components/PlayerOfWeek.jsx";
 import TournamentBracket from "../components/TournamentBracket.jsx";
+import Notable from "../components/Notable.jsx";
+import Pickem from "../components/Pickem.jsx";
 import StandingsTable from "../components/StandingsTable.jsx";
 import StaleBanner from "../components/StaleBanner.jsx";
 import Sponsor from "../components/Sponsor.jsx";
@@ -142,6 +144,14 @@ export default function DashboardPage({ dataset, schoolIndex, sponsors, sportCon
         sportConfig={sportConfig}
       />
 
+      <Notable
+        games={games}
+        standings={standings}
+        seasonStats={seasonStats}
+        sportConfig={sportConfig}
+        schoolIndex={schoolIndex}
+      />
+
       {showThisWeek && (
         <section>
           <div className="section-header">
@@ -153,6 +163,8 @@ export default function DashboardPage({ dataset, schoolIndex, sponsors, sportCon
           <ThisWeekGrid week={week} schoolIndex={schoolIndex} allGames={games} sportConfig={sportConfig} />
         </section>
       )}
+
+      <Pickem games={games} schoolIndex={schoolIndex} sponsors={sponsors} />
 
       <section>
         <div className="section-header">

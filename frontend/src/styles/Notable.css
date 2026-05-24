@@ -1,0 +1,76 @@
+.notable {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.notable__header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: var(--ink);
+  color: #fff;
+  border-bottom: 3px solid var(--accent);
+}
+.notable__eyebrow {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.notable__hint {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.notable__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.notable__item {
+  display: block;
+  padding: 0;
+  border-top: 1px solid var(--paper-2);
+  position: relative;
+  transition: background var(--t-fast) var(--ease);
+}
+.notable__item:first-child { border-top: none; }
+.notable__item:hover { background: rgba(245, 158, 11, 0.06); }
+
+/* School-color rail on the left when the headline is tied to a team. */
+.notable__item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--school-color, var(--accent));
+  opacity: 0.85;
+}
+
+.notable__link,
+.notable__static {
+  display: block;
+  padding: 0.7rem 1rem 0.7rem 1.25rem;
+  text-decoration: none;
+  color: var(--ink);
+}
+.notable__link:hover .notable__headline { color: var(--accent-700); }
+
+.notable__headline {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.35;
+  letter-spacing: 0.01em;
+}
