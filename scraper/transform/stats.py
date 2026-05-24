@@ -310,11 +310,11 @@ def aggregate_volleyball_season_stats(
     # stat key, source key in per-game stats dict)...]) — the keys we
     # accumulate when this category shows up for a player in a game.
     CATEGORY_MAP = {
-        "Kills":        ("Volleyball Offense",  [("KLS", "KLS"), ("ATT", "Att"), ("E", "E")]),
-        "Assists":      ("Volleyball Offense",  [("AST", "AST")]),
-        "Digs":         ("Volleyball Defense",  [("DIG", "DIG")]),
-        "Total Blocks": ("Volleyball Defense",  [("BLK", "BLK")]),
-        "Serve Aces":   ("Volleyball Serving",  [("ACE", "ACE")]),
+        "Kills":        ("Volleyball Offense",  [("KLS", "KLS"), ("ATT", "Att"), ("E", "E"), ("SP", "SP")]),
+        "Assists":      ("Volleyball Offense",  [("AST", "AST"), ("SP", "SP")]),
+        "Digs":         ("Volleyball Defense",  [("DIG", "DIG"), ("SP", "SP")]),
+        "Total Blocks": ("Volleyball Defense",  [("BLK", "BLK"), ("SP", "SP")]),
+        "Serve Aces":   ("Volleyball Serving",  [("ACE", "ACE"), ("SP", "SP")]),
     }
 
     finals = [g for g in dataset.games if g.status == GameStatus.FINAL]
@@ -350,7 +350,8 @@ def aggregate_volleyball_season_stats(
             if line.player_year and not entry["player_year"]:
                 entry["player_year"] = line.player_year
             gp_id = (school_id, line.player_name, raw_cat)
-            if gp_id not in gp_seen:
+            first_line_in_game = gp_id not in gp_seen
+            if first_line_in_game:
                 gp_seen.add(gp_id)
                 entry["gp"] += 1
             for canon, src_key in key_pairs:
@@ -360,6 +361,13 @@ def aggregate_volleyball_season_stats(
                 try:
                     val = float(str(raw_val).replace(",", ""))
                 except ValueError:
+                    continue
+                # SP (sets played) appears in every category line for the
+                # same player — Kills, Assists, etc. all expose the same
+                # count. Only accumulate it once per (player, game, raw_cat)
+                # to avoid double-counting when a player registers in
+                # multiple sub-categories of the same raw category.
+                if canon == "SP" and not first_line_in_game:
                     continue
                 entry["totals"][canon] = entry["totals"].get(canon, 0.0) + val
 

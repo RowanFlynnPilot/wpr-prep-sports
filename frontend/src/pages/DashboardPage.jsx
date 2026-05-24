@@ -14,6 +14,7 @@ import Sponsor from "../components/Sponsor.jsx";
 import TopPerformers from "../components/TopPerformers.jsx";
 import Marquee from "../components/Marquee.jsx";
 import SpiritStrip from "../components/SpiritStrip.jsx";
+import PowerRankings from "../components/PowerRankings.jsx";
 import { pickFeaturedGame, tickerGames } from "../utils/games.js";
 import { pickFeaturedWeek } from "../utils/weeks.js";
 import { pickMarqueeGame } from "../utils/marquee.js";
@@ -25,7 +26,7 @@ function hasPlayerRows(rows) {
 }
 
 export default function DashboardPage({ dataset, schoolIndex, sponsors, sportConfig }) {
-  const { meta, schools, games, standings, seasonStats, spirit, potwOverride } = dataset;
+  const { meta, schools, games, standings, seasonStats, spirit, potwOverride, powerRankings } = dataset;
 
   // "anchor now" is the off-season content shim: pick games / ticker /
   // featured-week relative to just after the most-recent scraped game so
@@ -216,6 +217,14 @@ export default function DashboardPage({ dataset, schoolIndex, sponsors, sportCon
           </div>
         </section>
       )}
+
+      <PowerRankings
+        rankings={powerRankings?.rankings}
+        method={powerRankings?.method}
+        schoolIndex={schoolIndex}
+        sponsors={sponsors}
+        sportConfig={sportConfig}
+      />
 
       {seasonStats && seasonStats.length > 0 && hasPlayerRows(seasonStats) && (
         <section>

@@ -24,6 +24,7 @@ from output.writer import read_dataset, write_dataset
 from sources import wiaa, wph
 from transform.normalize import build_dataset, build_name_index_for_manifest
 from transform.live import merge_live_scores
+from transform.rankings import compute_power_rankings
 from transform.stats import (
     build_wph_roster_index,
     aggregate_volleyball_season_stats,
@@ -230,6 +231,10 @@ def main() -> int:
             roster_index=roster_index,
             console=console,
         )
+
+    # Power rankings run last — they need finalized scores + any post-
+    # processing already applied. Cheap (in-memory only).
+    dataset = compute_power_rankings(dataset, manifest=manifest, console=console)
 
     if args.dry_run:
         console.print("[yellow]Dry run — not writing files[/yellow]")

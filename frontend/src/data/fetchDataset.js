@@ -33,16 +33,18 @@ export async function fetchDataset(sportId = DEFAULT_SPORT) {
   // dataset is picked up immediately without manual cache clears.
   const meta = await fetchJson(`${sportBase}/meta.json`);
   const v = encodeURIComponent(meta.last_updated ?? Date.now());
-  const [schools, games, standings, sponsors, seasonStats, spirit, potwOverrides] = await Promise.all([
+  const [schools, games, standings, sponsors, seasonStats, spirit, potwOverrides, powerRankingsRaw] = await Promise.all([
     fetchJson(`${DATA_BASE}/schools.json?v=${v}`),
     fetchJson(`${sportBase}/games.json?v=${v}`),
     fetchJson(`${sportBase}/standings.json?v=${v}`),
-    // Sponsors, season_stats, spirit photos, and the editor's PotW override
-    // are all optional — the widget renders fine without any of them.
+    // Sponsors, season_stats, spirit photos, the editor's PotW
+    // override, and power rankings are all optional — the widget
+    // renders fine without any of them.
     fetchJsonOptional(`${DATA_BASE}/sponsors.json?v=${v}`),
     fetchJsonOptional(`${sportBase}/season_stats.json?v=${v}`),
     fetchJsonOptional(`${DATA_BASE}/spirit.json?v=${v}`),
     fetchJsonOptional(`${DATA_BASE}/potw.json?v=${v}`),
+    fetchJsonOptional(`${sportBase}/power_rankings.json?v=${v}`),
   ]);
   // Spirit file is a wrapper { photos: [...] } so editors can park
   // metadata alongside the photo list. Normalize to a flat array here.
@@ -58,6 +60,17 @@ export async function fetchDataset(sportId = DEFAULT_SPORT) {
       ? overrideForSport
       : null;
 
+  // power_rankings.json wraps the list in { method, generated_at,
+  // rankings: [...] } so the renderer can show provenance. Unwrap to
+  // { rankings, method, generatedAt } on the dataset object.
+  const powerRankings = Array.isArray(powerRankingsRaw)
+    ? { rankings: powerRankingsRaw, method: null, generatedAt: null }
+    : {
+        rankings: powerRankingsRaw?.rankings ?? [],
+        method: powerRankingsRaw?.method ?? null,
+        generatedAt: powerRankingsRaw?.generated_at ?? null,
+      };
+
   return {
     sport: sportId,
     meta,
@@ -68,6 +81,7 @@ export async function fetchDataset(sportId = DEFAULT_SPORT) {
     seasonStats: seasonStats ?? [],
     spirit: spiritPhotos,
     potwOverride,
+    powerRankings,
   };
 }
 

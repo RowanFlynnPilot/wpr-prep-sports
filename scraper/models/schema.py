@@ -139,6 +139,25 @@ class SeasonStat(BaseModel):
     stats: dict[str, str] = Field(default_factory=dict)  # column header → value
 
 
+class PowerRanking(BaseModel):
+    """One team's slot in the WPR Power Index — cross-conference
+    algorithmic ranking shipped to data/<sport>/power_rankings.json.
+
+    Components are surfaced so a reader can see *why* a team is ranked
+    where it is. `score` is the combined 0-100 value used for ordering.
+    """
+    rank: int
+    school_id: str
+    school_name: str
+    wins: int
+    losses: int
+    win_pct: float            # 0..1
+    sos: float                # 0..1, avg opponent W% (tracked opponents only)
+    avg_margin_capped: float  # in score-units (points/sets/goals)
+    score: float              # 0..100 combined index
+    movement: Optional[int] = None  # change vs last published ranking (future use)
+
+
 class Meta(BaseModel):
     last_updated: datetime
     season: str
@@ -152,3 +171,4 @@ class Dataset(BaseModel):
     games: list[Game]
     standings: list[Standing]
     season_stats: list[SeasonStat] = Field(default_factory=list)
+    power_rankings: list[PowerRanking] = Field(default_factory=list)

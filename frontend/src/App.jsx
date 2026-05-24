@@ -36,6 +36,7 @@ import "./styles/GamePage.css";
 import "./styles/GamePreview.css";
 import "./styles/OgCard.css";
 import "./styles/Spirit.css";
+import "./styles/PowerRankings.css";
 import "./styles/Marquee.css";
 
 export default function App() {
