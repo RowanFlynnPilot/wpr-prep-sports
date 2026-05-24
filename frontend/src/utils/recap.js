@@ -128,7 +128,14 @@ export function recapForGame(
   // when possible because it reads more sportsly than "Wausau East…"
   const subject = ownSchool?.mascot ? `The ${ownSchool.mascot}` : ownSchool?.name ?? ownLabel;
 
-  const opener = `${subject} ${resultPhrase}${recordPhrase}${conferencePhrase} on ${dateLabel}.`;
+  // Editorial framing for season-bookend games (last reg-season,
+  // playoff exit, state title) — these override the standard opener
+  // because they're the story, not just another game.
+  const bookend = buildBookendOpener({
+    teamGames, game, subject, oppLabel, own, opp, margin, won, tied, dateLabel,
+  });
+  const opener = bookend
+    ?? `${subject} ${resultPhrase}${recordPhrase}${conferencePhrase} on ${dateLabel}.`;
   const headline = headlineStatLine(game, perspective, sportConfig);
   if (!headline) return opener;
 
@@ -350,6 +357,107 @@ function confFor(school, sport) {
   return (
     (school.conferences ?? []).find((c) => c.sport === sport)?.conference ?? null
   );
+}
+
+/* ------------------------------------------------------------------
+ * Editorial bookend framing — replaces the standard opener for games
+ * that mark the end of the regular season or the playoff run. These
+ * games carry narrative weight, not just box-score weight.
+ * ------------------------------------------------------------------ */
+
+// Rounds that end the playoff run for a winner (= state champion).
+const STATE_TITLE_ROUNDS = new Set([
+  "Level 4", "State Final", "State Championship",
+]);
+
+function buildBookendOpener({
+  teamGames, game, subject, oppLabel, own, opp, margin, won, tied, dateLabel,
+}) {
+  if (!teamGames || teamGames.length === 0) return null;
+  if (tied) return null; // tied games keep the default framing
+
+  // Find the latest regular-season game and latest overall game for
+  // this team — used to classify the current game.
+  let lastReg = null;
+  let lastOverall = null;
+  for (const g of teamGames) {
+    if (g.status !== "final") continue;
+    if (!lastOverall || new Date(g.date) > new Date(lastOverall.date)) lastOverall = g;
+    if (!g.playoff && (!lastReg || new Date(g.date) > new Date(lastReg.date))) {
+      lastReg = g;
+    }
+  }
+
+  const isLastReg = !game.playoff && lastReg && game.id === lastReg.id;
+  const isPlayoffExit = game.playoff && !won && lastOverall && game.id === lastOverall.id;
+  const isStateTitle = game.playoff && won && STATE_TITLE_ROUNDS.has(game.playoff_round ?? "");
+  const isPlayoffAdvance = game.playoff && won && !isStateTitle;
+
+  // 1. State champion — top priority. The Tigers brought home the title.
+  if (isStateTitle) {
+    if (Math.abs(margin) >= BLOWOUT_MARGIN) {
+      return `${subject} captured the state title with a ${own}-${opp} win over ${oppLabel} on ${dateLabel}.`;
+    }
+    if (Math.abs(margin) <= CLOSE_MARGIN) {
+      return `${subject} survived ${oppLabel} ${own}-${opp} on ${dateLabel} to claim the state title.`;
+    }
+    return `${subject} beat ${oppLabel} ${own}-${opp} on ${dateLabel} to claim the state title.`;
+  }
+
+  // 2. Playoff exit — season ends.
+  if (isPlayoffExit) {
+    const roundLabel = playoffRoundLabel(game);
+    if (Math.abs(margin) <= CLOSE_MARGIN) {
+      return `${subject}' season ended in heartbreak — a ${opp}-${own} ${roundLabel} loss to ${oppLabel} on ${dateLabel}.`;
+    }
+    if (Math.abs(margin) >= BLOWOUT_MARGIN) {
+      return `${subject}' season ended with a ${opp}-${own} ${roundLabel} loss to ${oppLabel} on ${dateLabel}.`;
+    }
+    return `${subject}' season came to a close with a ${opp}-${own} loss to ${oppLabel} in the ${roundLabel} on ${dateLabel}.`;
+  }
+
+  // 3. Last regular-season game — sets up the playoff or ends the year.
+  if (isLastReg) {
+    if (won) {
+      if (Math.abs(margin) >= BLOWOUT_MARGIN) {
+        return `${subject} closed out the regular season strong with a ${own}-${opp} drubbing of ${oppLabel} on ${dateLabel}.`;
+      }
+      if (Math.abs(margin) <= CLOSE_MARGIN) {
+        return `${subject} edged ${oppLabel} ${own}-${opp} on ${dateLabel} to cap the regular season.`;
+      }
+      return `${subject} closed the regular season with a ${own}-${opp} win over ${oppLabel} on ${dateLabel}.`;
+    }
+    if (Math.abs(margin) >= BLOWOUT_MARGIN) {
+      return `${subject} stumbled into the postseason with a ${opp}-${own} loss to ${oppLabel} on ${dateLabel}.`;
+    }
+    return `${subject} closed the regular season with a ${opp}-${own} loss to ${oppLabel} on ${dateLabel}.`;
+  }
+
+  // 4. Playoff advancement (won, not the state title) — adds drive.
+  if (isPlayoffAdvance) {
+    const roundLabel = playoffRoundLabel(game);
+    if (Math.abs(margin) >= BLOWOUT_MARGIN) {
+      return `${subject} rolled past ${oppLabel} ${own}-${opp} in the ${roundLabel} on ${dateLabel}.`;
+    }
+    if (Math.abs(margin) <= CLOSE_MARGIN) {
+      return `${subject} survived ${oppLabel} ${own}-${opp} in the ${roundLabel} on ${dateLabel} to advance.`;
+    }
+    return `${subject} beat ${oppLabel} ${own}-${opp} in the ${roundLabel} on ${dateLabel} to advance.`;
+  }
+
+  return null;
+}
+
+function playoffRoundLabel(game) {
+  const r = game.playoff_round;
+  if (!r) return "playoff";
+  // Football: "Level 1" reads better as "first round" / "Level 4" → "state championship game"
+  if (r === "Level 1") return "first round";
+  if (r === "Level 2") return "second round";
+  if (r === "Level 3") return "third round";
+  if (r === "Level 4") return "state championship game";
+  // basketball/volleyball/hockey — round name reads cleanly as-is
+  return r;
 }
 
 const DATE_LONG = new Intl.DateTimeFormat("en-US", {
