@@ -69,9 +69,16 @@
   font-size: 0.95rem;
   color: var(--ink);
   line-height: 1.2;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  align-self: flex-start;
   /* Allow long names ("Brooks Vanderhoof", "Owen Richardson") to wrap
      rather than ellipsis-truncate; keep "(SR)" attached to the name. */
   overflow-wrap: anywhere;
+}
+.top-card__name:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
 }
 .top-card__year {
   font-weight: 400;

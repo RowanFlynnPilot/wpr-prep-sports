@@ -11,6 +11,7 @@ import { schoolFor } from "../utils/schools.js";
 import { formatGameDay, formatGameDate, formatGameTime } from "../utils/dates.js";
 import { recapForGame } from "../utils/recap.js";
 import { useSportPrefix } from "../utils/links.js";
+import { playerProfileHref } from "../utils/players.js";
 
 /**
  * Full game detail. Shows the matchup header, the recap line, and every
@@ -191,6 +192,7 @@ export default function GamePage({ dataset, schoolIndex, sportConfig }) {
               lines={statsByKey.get(keyForSide(game.away)) ?? []}
               score={awayScore}
               showScore={isFinal}
+              sportPrefix={sportPrefix}
               otherSideHasStats={
                 (statsByKey.get(keyForSide(game.home)) ?? []).length > 0
               }
@@ -203,6 +205,7 @@ export default function GamePage({ dataset, schoolIndex, sportConfig }) {
               lines={statsByKey.get(keyForSide(game.home)) ?? []}
               score={homeScore}
               showScore={isFinal}
+              sportPrefix={sportPrefix}
               otherSideHasStats={
                 (statsByKey.get(keyForSide(game.away)) ?? []).length > 0
               }
@@ -331,7 +334,7 @@ const LEADER_KEY_BY_CATEGORY = {
   "Hockey Saves": "SV",
 };
 
-function TeamStatsCard({ label, team, school, won, lines, score, showScore, otherSideHasStats }) {
+function TeamStatsCard({ label, team, school, won, lines, score, showScore, otherSideHasStats, sportPrefix }) {
   // Per-category expand toggle. State lives on the card (one card per
   // team) so each side can be expanded independently.
   const [expanded, setExpanded] = useState({});
@@ -399,7 +402,11 @@ function TeamStatsCard({ label, team, school, won, lines, score, showScore, othe
                 </h4>
                 <ul className="team-stats__list">
                   {visible.map((line, idx) => (
-                    <StatRow key={`${category}-${idx}`} line={line} />
+                    <StatRow
+                      key={`${category}-${idx}`}
+                      line={line}
+                      sportPrefix={sportPrefix}
+                    />
                   ))}
                 </ul>
                 {hiddenCount > 0 && (
@@ -504,29 +511,35 @@ const CATEGORY_POS = {
 // row doesn't read "K 6 · KLS 6" with the same value twice.
 const REDUNDANT_KEYS = new Set(["KLS", "AST", "DIG", "BLK", "ACE"]);
 
-function StatRow({ line }) {
+function StatRow({ line, sportPrefix }) {
   const stats = line.stats ?? {};
   const pos = line.position || CATEGORY_POS[line.category] || null;
-  // Show every stat column EXCEPT the canonical leader key when a
-  // human-friendly equivalent already exists in the same dict.
   const visibleStats = Object.entries(stats).filter(([k]) => {
     if (!REDUNDANT_KEYS.has(k)) return true;
-    // Hide canonical only if a friendlier alternative is present.
     return !hasReadableEquivalent(k, stats);
   });
+  // Player name links to profile when we have a school_id for them
+  // (we can't build a profile route for untracked opponents).
+  const NameWrap = line.team_school_id
+    ? ({ children }) => (
+        <Link
+          to={playerProfileHref(sportPrefix, line.team_school_id, line.player_name)}
+          className="stat-row__name stat-row__name--link"
+        >
+          {children}
+        </Link>
+      )
+    : ({ children }) => <span className="stat-row__name">{children}</span>;
   return (
     <li className={`stat-row${pos ? "" : " stat-row--no-pos"}`}>
       {pos && <span className="stat-row__pos">{pos}</span>}
       <div className="stat-row__player">
-        <span className="stat-row__name">
+        <NameWrap>
           {line.player_name}
           {line.player_year && (
             <span className="stat-row__year"> ({line.player_year})</span>
           )}
-        </span>
-        {/* Category label only when category isn't already in the
-            surrounding group header (back-compat for sports where
-            we still flatten — drop in a follow-up). */}
+        </NameWrap>
       </div>
       <div className="stat-row__stats">
         {visibleStats.map(([k, v]) => (

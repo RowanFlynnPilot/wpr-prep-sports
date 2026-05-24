@@ -391,6 +391,14 @@
   color: var(--ink);
   overflow-wrap: anywhere;
 }
+.stat-row__name--link {
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+.stat-row__name--link:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
 .stat-row__year {
   font-weight: 400;
   color: var(--muted);

@@ -1,0 +1,307 @@
+.player-page__hero {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 1.25rem;
+  background: linear-gradient(180deg, var(--ink-hero) 0%, #112832 100%);
+  color: #fff;
+  padding: 1.5rem 1.75rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-hero);
+}
+
+.player-page__hero-text {
+  min-width: 0;
+}
+
+.player-page__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+
+.player-page__pos {
+  background: var(--accent);
+  color: var(--ink);
+  padding: 0.18rem 0.5rem;
+  border-radius: var(--radius-sm);
+}
+
+.player-page__sport {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.player-page__name {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 2rem;
+  margin: 0;
+  line-height: 1.05;
+  letter-spacing: 0.01em;
+}
+
+.player-page__year {
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-left: 0.5rem;
+}
+
+.player-page__school {
+  display: inline-block;
+  margin-top: 0.4rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+.player-page__school:hover {
+  border-bottom-color: var(--accent);
+  color: var(--accent);
+}
+
+.player-page__mascot {
+  font-style: italic;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.player-page__sponsor {
+  margin-bottom: 0;
+}
+
+/* ---------- Season totals ---------- */
+
+.player-page__season {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.85rem;
+}
+
+.player-season-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 0.85rem 1rem;
+}
+
+.player-season-card__header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.55rem;
+}
+
+.player-season-card__header h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin: 0;
+}
+
+.player-season-card__gp {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 0.74rem;
+  color: var(--muted);
+}
+
+.player-season-card__stats {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.player-season-card__line {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: baseline;
+  gap: 0.6rem;
+}
+
+.player-season-card__line dt {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.player-season-card__line dd {
+  margin: 0;
+  text-align: right;
+  font-family: var(--font-numeric);
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- Game log ---------- */
+
+.game-log {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.game-log__row {
+  display: grid;
+  grid-template-columns: 5.5rem minmax(0, 1.4fr) auto minmax(0, 1.8fr);
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.7rem 1rem;
+  border-top: 1px solid var(--paper-2);
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.15s ease;
+}
+.game-log__row:first-child {
+  border-top: none;
+}
+.game-log__row:hover {
+  background: rgba(243, 240, 232, 0.5);
+}
+
+.game-log__date {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.game-log__opp {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 0;
+}
+
+.game-log__opp-loc {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 0.78rem;
+  color: var(--muted);
+  min-width: 1.4rem;
+  text-align: right;
+}
+
+.game-log__opp-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: var(--ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.game-log__result {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.4rem;
+}
+
+.game-log__wl {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.92rem;
+  padding: 0.05rem 0.4rem;
+  border-radius: var(--radius-sm);
+}
+.game-log__row--won .game-log__wl {
+  background: rgba(22, 163, 74, 0.15);
+  color: #15803d;
+}
+.game-log__row--lost .game-log__wl {
+  background: rgba(220, 38, 38, 0.13);
+  color: #b91c1c;
+}
+
+.game-log__score {
+  font-family: var(--font-numeric);
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.game-log__stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  justify-content: flex-end;
+}
+
+.game-log__stat-chip {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.3rem;
+  padding: 0.18rem 0.5rem;
+  background: var(--paper);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-numeric);
+  font-size: 0.78rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.game-log__stat-label {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.66rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.game-log__stat-value {
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.player-page__empty {
+  font-family: var(--font-body);
+  font-style: italic;
+  color: var(--muted);
+  padding: 0.85rem 1rem;
+  background: var(--paper);
+  border-radius: var(--radius);
+}
+
+@media (max-width: 640px) {
+  .player-page__hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .player-page__hero > :first-child {
+    justify-self: center;
+  }
+  .game-log__row {
+    grid-template-columns: 5rem minmax(0, 1fr) auto;
+    grid-template-areas:
+      "date opp result"
+      "stats stats stats";
+    row-gap: 0.4rem;
+  }
+  .game-log__date { grid-area: date; }
+  .game-log__opp { grid-area: opp; }
+  .game-log__result { grid-area: result; }
+  .game-log__stats { grid-area: stats; justify-content: flex-start; }
+}

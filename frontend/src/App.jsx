@@ -11,6 +11,7 @@ import DashboardPage from "./pages/DashboardPage.jsx";
 import TeamPage from "./pages/TeamPage.jsx";
 import GamePage from "./pages/GamePage.jsx";
 import OgCardPage from "./pages/OgCardPage.jsx";
+import PlayerPage from "./pages/PlayerPage.jsx";
 import Skeleton from "./components/Skeleton.jsx";
 import { indexSchools } from "./utils/schools.js";
 import { useIframeHeightReporter } from "./utils/iframe.js";
@@ -37,6 +38,7 @@ import "./styles/GamePreview.css";
 import "./styles/OgCard.css";
 import "./styles/Spirit.css";
 import "./styles/PowerRankings.css";
+import "./styles/PlayerPage.css";
 import "./styles/Marquee.css";
 
 export default function App() {
@@ -203,6 +205,16 @@ function SportShell() {
             dataset={dataset}
             schoolIndex={schoolIndex}
             sponsors={dataset.sponsors}
+            sportConfig={sportConfig}
+          />
+        }
+      />
+      <Route
+        path="/player/:schoolId/:playerSlug"
+        element={
+          <PlayerPage
+            dataset={dataset}
+            schoolIndex={schoolIndex}
             sportConfig={sportConfig}
           />
         }

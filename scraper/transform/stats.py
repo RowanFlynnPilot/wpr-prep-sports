@@ -424,13 +424,22 @@ def _attach_maxpreps_stats(
     lines: Iterable[maxpreps.StatLine],
     name_to_id: dict[str, str],
 ) -> int:
-    """Append MaxPreps stat lines to a game. Preserves any existing
-    Bound-sourced lines (a game can carry both)."""
-    attached = list(game.stat_leaders or [])
-    added = 0
+    """Attach MaxPreps stat lines to a game, replacing any existing
+    line with the same (school_id, player_name, category). Keeps any
+    Bound-sourced lines that *don't* overlap (different category or
+    different player), so a game can still carry both sources without
+    duplicates piling up on re-runs."""
+    existing = list(game.stat_leaders or [])
+
+    # Build the set of keys MaxPreps is about to provide so we know
+    # which existing lines to drop.
+    incoming_keys = set()
+    new_lines: list[StatLine] = []
     for line in lines:
         school_id = name_to_id.get(_norm(line.team_name), "")
-        attached.append(
+        key = (school_id, line.player_name, line.category)
+        incoming_keys.add(key)
+        new_lines.append(
             StatLine(
                 team_school_id=school_id,
                 team_name=line.team_name,
@@ -440,10 +449,14 @@ def _attach_maxpreps_stats(
                 stats=dict(line.stats),
             )
         )
-        added += 1
-    if added:
-        game.stat_leaders = attached
-    return added
+
+    # Keep existing lines whose key isn't being replaced.
+    kept = [
+        e for e in existing
+        if (e.team_school_id, e.player_name, e.category) not in incoming_keys
+    ]
+    game.stat_leaders = kept + new_lines
+    return len(new_lines)
 
 
 def _attach_set_scores(
