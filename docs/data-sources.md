@@ -82,16 +82,54 @@ individual stats).
 - Schedule Star — used by some smaller schools
 - Custom WordPress/static pages — used by some Marawood schools
 
-## 5. WisSports.net (`wissports.net`)
+## 5. WisSports.net (`wissports.net`) — winding down
 
-Independent WI HS sports site. Strong on rankings and rosters for football and
-basketball especially. Manual reference for now; evaluate scraping if rankings
-become a feature.
+Historical reference. **As of the 2026-27 school year WSN is migrating its
+content to MaxPreps Wisconsin** (see
+https://www.wissports.net/news_article/show/1344219 — "Changes coming to
+WSN; Getting started with MaxPreps"). Don't invest in a WSN scraper —
+prefer MaxPreps below for any new stats integration.
 
-## 6. MaxPreps (`maxpreps.com`)
+## 6. MaxPreps (`maxpreps.com`) — volleyball stats (active)
 
-National HS sports aggregator with Wisconsin coverage. May have stricter rate
-limits or terms restrictions — evaluate carefully before scraping.
+National HS sports aggregator now inheriting Wisconsin coverage as WSN
+sunsets. Wired in for **volleyball per-game player stats** as of this
+session — Bound's central-WI volleyball coverage is effectively zero
+(2 games out of 1,491 in the 2025-26 dataset), MaxPreps has full box
+scores (Hitting / Serving / Blocking / Digging / Ball Handling / Serve
+Receiving) for every team that inputs stats.
+
+Endpoints in use:
+- `/wi/<city>/<school-mascot>/volleyball/` — team home (used by slug
+  discovery to validate the constructed URL via head `<title>`)
+- `/wi/<city>/<school-mascot>/volleyball/schedule/all-time/` —
+  server-rendered legacy HTML containing every box-score URL the team
+  has on file. Box-score URLs match
+  `/games/<M-D-YYYY>/volleyball-<YY>/<away-slug>-vs-<home-slug>.htm?c=<token>`
+- `/games/<...>.htm?c=<token>` — per-game box score, server-rendered with
+  one `<h3>Team Name (YY-YY)</h3>` followed by six `<h4>` section labels
+  and tables. Only teams that input stats appear (single-team coverage
+  is the common case).
+
+Discovery: `scraper/scripts/discover_maxpreps_slugs.py` walks every
+manifest school playing the sport, tries auto-constructed slug
+candidates (city/name-mascot, full-name variants, color-prefix mascot
+variants like "red-raiders", city-as-name for SPASH-style cases),
+validates by fetching the team home and checking the head `<title>` for
+an identity-token substring match. One-shot, idempotent; re-run after
+expanding the manifest.
+
+Parser: `scraper/sources/maxpreps.py`. Merge layer:
+`scraper/transform/stats.py:merge_maxpreps_stats`.
+
+The current-season `/schedule/` page is JS-rendered (`__NEXT_DATA__`
+contests array is empty off-season) — that's why discovery uses the
+all-time history page instead.
+
+**Note on `<title>` parsing:** MaxPreps has an SVG `<title>MaxPreps
+Logo</title>` earlier in the document than the head `<title>`. Use
+BeautifulSoup's `soup.head.title` to pick the right one — a naive regex
+grabs the SVG title.
 
 ## Scrape etiquette
 

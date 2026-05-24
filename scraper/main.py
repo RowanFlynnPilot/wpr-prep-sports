@@ -27,6 +27,7 @@ from transform.live import merge_live_scores
 from transform.stats import (
     build_wph_roster_index,
     merge_bound_stats,
+    merge_maxpreps_stats,
     merge_team_season_stats,
     merge_wph_per_game_stats,
     merge_wph_season_stats,
@@ -185,6 +186,18 @@ def main() -> int:
             sport_abbr=sport_abbr,
             console=console,
         )
+        # MaxPreps augments volleyball where Bound's central-WI coverage
+        # is effectively absent. Per-game stat leaders only for now;
+        # season stats stay Bound-sourced (team-only rows) until MaxPreps
+        # season-stats parsing is wired in.
+        if args.sport == "volleyball":
+            dataset = merge_maxpreps_stats(
+                dataset,
+                manifest=manifest,
+                name_to_id=name_to_id,
+                season=args.season,
+                console=console,
+            )
     elif not args.no_stats and args.sport in WPH_SPORTS:
         subseason = wph.SUBSEASONS.get((args.sport, args.season))
         roster_index = (

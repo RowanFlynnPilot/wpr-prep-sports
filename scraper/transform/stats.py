@@ -28,7 +28,7 @@ from rich.console import Console
 
 from config.loader import Manifest
 from models.schema import Dataset, Game, GameStatus, Goal, SeasonStat, Sport, StatLine
-from sources import bound, wph
+from sources import bound, maxpreps, wph
 
 POLITE_DELAY_SECONDS = 0.4
 
@@ -164,6 +164,174 @@ def merge_team_season_stats(
     if console:
         console.print(f"[green]Season stats:[/green] {len(out)} athlete-rows across {len(targets)} teams")
     return dataset
+
+
+# ---------------------------------------------------------------------------
+# MaxPreps — per-game stat leaders for sports where Bound's central-WI
+# coverage is too thin (volleyball, primarily).
+# ---------------------------------------------------------------------------
+
+
+def merge_maxpreps_stats(
+    dataset: Dataset,
+    *,
+    manifest: Manifest,
+    name_to_id: dict[str, str],
+    season: str,
+    console: Console | None = None,
+) -> Dataset:
+    """Attach per-player stat lines from MaxPreps to each finalized game
+    in the dataset where at least one side has a `maxpreps_slug`.
+
+    Discovery: for each tracked school, fetch their all-time match
+    history page and harvest box-score URLs for the current season.
+    Then dedupe URLs across schools (both sides of a game point at the
+    same box score) and fetch each unique URL once.
+
+    Games without a MaxPreps box score are left with whatever
+    stat_leaders Bound already attached (often none for volleyball).
+    """
+    finals = [g for g in dataset.games if g.status == GameStatus.FINAL]
+    if not finals:
+        return dataset
+
+    season_year = _season_start_year(season)
+    if season_year is None:
+        if console:
+            console.print(f"[yellow]Cannot parse season year from {season!r} — skipping MaxPreps[/yellow]")
+        return dataset
+
+    # Index our finalized games by (date, school_id) for fast lookup.
+    games_by_key: dict[tuple[str, str], Game] = {}
+    for g in finals:
+        date = g.date.strftime("%Y-%m-%d")
+        for side in (g.home, g.away):
+            if side.school_id:
+                games_by_key[(date, side.school_id)] = g
+
+    sport_path = "volleyball"  # the only sport using MaxPreps today
+    targeted = [s for s in manifest.schools if s.maxpreps_slug]
+    if not targeted:
+        if console:
+            console.print("[yellow]No maxpreps_slug values in manifest — skipping[/yellow]")
+        return dataset
+
+    if console:
+        console.print(
+            f"[bold]Discovering MaxPreps box scores[/bold] across "
+            f"{len(targeted)} teams for {season_year} season"
+        )
+
+    # url → (Game, MaxPrepsGame, school_id). Dedupe across schools.
+    url_index: dict[str, tuple[Game, maxpreps.MaxPrepsGame, str]] = {}
+    for school in targeted:
+        school_slug = _strip_mascot_from_slug(school.maxpreps_slug, school.mascot)
+        try:
+            history = maxpreps.fetch_team_match_history(
+                school.maxpreps_slug,
+                sport_path=sport_path,
+                season_year=season_year,
+                school_slug=school_slug,
+            )
+        except Exception as e:  # noqa: BLE001
+            if console:
+                console.print(f"[yellow]  ! {school.id} match-history failed: {e}[/yellow]")
+            time.sleep(POLITE_DELAY_SECONDS)
+            continue
+        time.sleep(POLITE_DELAY_SECONDS)
+        for mp_game in history:
+            our_game = games_by_key.get((mp_game.date, school.id))
+            if our_game is None:
+                continue
+            url_index.setdefault(mp_game.box_score_url, (our_game, mp_game, school.id))
+
+    if console:
+        console.print(f"  [dim]{len(url_index)} unique box scores to fetch[/dim]")
+
+    matched = 0
+    stat_lines_total = 0
+    for url, (game, _mp_game, _school_id) in url_index.items():
+        try:
+            lines = maxpreps.fetch_box_score(url)
+        except Exception as e:  # noqa: BLE001
+            if console:
+                console.print(f"[yellow]  ! box score failed: {url[:80]} ({e})[/yellow]")
+            continue
+        if not lines:
+            time.sleep(POLITE_DELAY_SECONDS)
+            continue
+        attached = _attach_maxpreps_stats(game, lines, name_to_id)
+        if attached:
+            matched += 1
+            stat_lines_total += attached
+            if "maxpreps" not in game.sources:
+                game.sources.append("maxpreps")
+        time.sleep(POLITE_DELAY_SECONDS)
+
+    if console:
+        console.print(
+            f"[green]MaxPreps stats merged:[/green] {matched}/{len(url_index)} box scores · "
+            f"{stat_lines_total} stat lines"
+        )
+
+    if matched > 0 and "maxpreps" not in dataset.meta.sources_used:
+        dataset.meta.sources_used.append("maxpreps")
+
+    return dataset
+
+
+def _attach_maxpreps_stats(
+    game: Game,
+    lines: Iterable[maxpreps.StatLine],
+    name_to_id: dict[str, str],
+) -> int:
+    """Append MaxPreps stat lines to a game. Preserves any existing
+    Bound-sourced lines (a game can carry both)."""
+    attached = list(game.stat_leaders or [])
+    added = 0
+    for line in lines:
+        school_id = name_to_id.get(_norm(line.team_name), "")
+        attached.append(
+            StatLine(
+                team_school_id=school_id,
+                team_name=line.team_name,
+                category=line.category,
+                player_name=line.player_name,
+                player_year=line.player_year,
+                stats=dict(line.stats),
+            )
+        )
+        added += 1
+    if added:
+        game.stat_leaders = attached
+    return added
+
+
+def _season_start_year(season: str) -> int | None:
+    """'2025-26' → 2025. For volleyball (a fall sport) the season starts
+    in calendar year N and ends N+1."""
+    try:
+        return int(season.split("-")[0])
+    except (ValueError, IndexError):
+        return None
+
+
+def _strip_mascot_from_slug(slug_path: str | None, mascot: str | None) -> str | None:
+    """Box-score URLs use `<school-slug>` without the mascot, so to
+    detect home/away we need the school slug without our manifest's
+    trailing mascot tokens.
+
+      "wausau/wausau-east-lumberjacks"  + mascot="Lumberjacks"  →
+      "wausau-east"
+      "park-falls/chequamegon-screaming-eagles" + "Screaming Eagles" →
+      "chequamegon"
+    """
+    if not slug_path or not mascot:
+        return None
+    last = slug_path.split("/")[-1]
+    tokens = len(_norm(mascot).split())
+    parts = last.rsplit("-", tokens)
+    return parts[0] if len(parts) > tokens else last
 
 
 _COOP_SUFFIX_RE = re.compile(r"\s+co[\-\s]?op\b", re.IGNORECASE)

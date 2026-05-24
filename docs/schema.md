@@ -31,7 +31,13 @@ Pydantic models in `scraper/models/schema.py` are the source of truth.
     { "sport": "boys_basketball", "conference": "Wisconsin Valley" }
   ],
   "wiaa_division": { "football": "D2", "boys_basketball": "D1" },
-  "athletics_url": "https://..."
+  "athletics_url": "https://...",
+  // Optional source-specific identifiers used by the scraper. All
+  // nullable; populated by discovery scripts (see scraper/scripts/).
+  "wiaa_org_id": 12345,
+  "bound_slug": "wausaueast",                    // segment used by gobound.com
+  "wph_team_id": 67890,                          // wisconsinprephockey.net team page id
+  "maxpreps_slug": "wausau/wausau-east-lumberjacks"  // segment between /wi/ and /<sport>/ on maxpreps.com
 }
 ```
 
