@@ -44,19 +44,30 @@ TeamIDs are minted per-season — re-discover at the start of every scrape
 from cached OrganizationIDs. See [docs/data-sources.md](docs/data-sources.md)
 for full endpoint and SSID details.
 
-**Deferred: Bound (gobound.com)** — inspected 2026-05-22, found to be a
-jQuery shell that loads scores via AJAX. Unparseable by `requests + bs4`.
-Would need Playwright to revive. v1 ships without Bound; revisit post-launch
-if conference metadata becomes onerous to maintain by hand.
+**Active stats sources (post-launch evolution):**
+- **Bound (`gobound.com`)** — per-game stat leaders + per-team season
+  totals for football, boys/girls basketball. Solid central-WI coverage
+  for those three sports. Effectively no coverage for volleyball
+  (2/1491 games in 2025-26).
+- **Wisconsin Prep Hockey (`wisconsinprephockey.net`)** — per-game stats
+  + scoring summaries + rosters for boys hockey. Girls hockey deferred
+  (co-op modeling problem — see `memory/hockey_stats_gap.md`).
+- **MaxPreps (`maxpreps.com`)** — per-game stat leaders for volleyball
+  where Bound has nothing. Inheriting WI coverage as WisSports.net
+  sunsets (per WSN article 1344219). Discovery via
+  `scraper/scripts/discover_maxpreps_slugs.py`. Season totals
+  aggregated locally from per-game lines (MP's season-leader UI goes
+  empty off-season).
+- **Halftime Score Center (`halftime.wiaawi.org`)** — live scores during
+  games. Wired in via the Friday Night Live cron.
 
 **Per-school athletics sites** (last-resort fallback for stats and rosters):
 - Wausau East, Wausau West, D.C. Everest: rSchoolToday
 - Marawood/Cloverbelt smaller schools: varies (often Schedule Star / individual sites)
 
-**Other sources to evaluate as we expand:**
-- Halftime Score Center (`halftime.wiaawi.org`) — live scores during games
-- WisSports.net — rankings, rosters, sometimes stats
-- MaxPreps — broader stats, may have rate limits
+**WisSports.net** — winding down. PlayOn acquired MaxPreps; WSN content
+is transferring to MaxPreps WI starting current school year. Don't
+build new integrations against WSN.
 
 See `docs/data-sources.md` for detailed URL patterns and notes as they're
 discovered.
