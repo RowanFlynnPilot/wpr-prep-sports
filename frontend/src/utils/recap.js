@@ -503,6 +503,36 @@ function buildBookendOpener({
   // 4. Playoff advancement (won, not the state title) — adds drive.
   if (isPlayoffAdvance) {
     const roundLabel = playoffRoundLabel(game);
+    // Wins in a "Final" round (Regional Final, Sectional Final, etc.)
+    // ARE wins for that round's title — frame as winning a championship,
+    // not just advancing.
+    const titleName = roundTitleName(game);
+    if (titleName) {
+      if (Math.abs(margin) >= BLOWOUT_MARGIN) {
+        return _pick(seed, [
+          `${subject} won the ${titleName} with a ${score} rout of ${oppLabel} on ${dateLabel}.`,
+          `${subject} captured the ${titleName}, running away from ${oppLabel} ${score} on ${dateLabel}.`,
+          `${subject} took the ${titleName} with a dominant ${score} win over ${oppLabel} on ${dateLabel}.`,
+        ]);
+      }
+      if (Math.abs(margin) <= CLOSE_MARGIN) {
+        return _pick(seed, [
+          `${subject} captured the ${titleName} with a ${score} thriller over ${oppLabel} on ${dateLabel}.`,
+          `${subject} won the ${titleName} in a nail-biter, ${score} over ${oppLabel} on ${dateLabel}.`,
+          `${subject} edged ${oppLabel} ${score} on ${dateLabel} to claim the ${titleName}.`,
+          `${subject} held off ${oppLabel} ${score} on ${dateLabel} for the ${titleName}.`,
+          `${subject} outlasted ${oppLabel} ${score} on ${dateLabel} to take the ${titleName}.`,
+        ]);
+      }
+      return _pick(seed, [
+        `${subject} won the ${titleName} with a ${score} win over ${oppLabel} on ${dateLabel}.`,
+        `${subject} captured the ${titleName}, beating ${oppLabel} ${score} on ${dateLabel}.`,
+        `${subject} took home the ${titleName} after a ${score} win over ${oppLabel} on ${dateLabel}.`,
+      ]);
+    }
+
+    // Non-final rounds (Regional, Sectional Semifinal, Level 1-3, etc.)
+    // — just advancement.
     if (Math.abs(margin) >= BLOWOUT_MARGIN) {
       return _pick(seed, [
         `${subject} rolled past ${oppLabel} ${score} in the ${roundLabel} on ${dateLabel}.`,
@@ -531,6 +561,24 @@ function buildBookendOpener({
   }
 
   return null;
+}
+
+/**
+ * For wins in a "Final" round (Regional Final, Sectional Final, etc.),
+ * return the championship label they just won ("Regional title",
+ * "Sectional title"). null for non-final rounds + for State Final /
+ * Level 4 which are handled by the isStateTitle branch.
+ */
+function roundTitleName(game) {
+  const r = (game.playoff_round || "").trim();
+  if (STATE_TITLE_ROUNDS.has(r)) return null;
+  // "Regional Final" → "Regional title". Same shape: "Sectional Final" →
+  // "Sectional title". Only matches when the round name ends in "Final".
+  const m = /^(.*?)\s+Final$/.exec(r);
+  if (!m) return null;
+  const stage = m[1];
+  if (!stage) return null;
+  return `${stage} title`;
 }
 
 function playoffRoundLabel(game) {
