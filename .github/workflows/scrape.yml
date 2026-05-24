@@ -60,6 +60,56 @@ jobs:
             echo "::endgroup::"
           done
 
+      # OG share-card PNGs. Built once per scrape: build the frontend,
+      # serve dist/ on localhost, run Playwright to screenshot each
+      # in-window game's /card/ route, commit any new PNGs with the data.
+      # If this step fails, log and continue — the data commit is more
+      # important than the cards.
+      - name: Setup Node (for OG card build)
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Install frontend deps
+        working-directory: frontend
+        run: npm ci
+
+      - name: Build frontend (for card server)
+        working-directory: frontend
+        run: npm run build
+
+      - name: Install Playwright chromium
+        working-directory: scraper
+        run: python -m playwright install --with-deps chromium
+
+      - name: Stage dist + data under /wpr-prep-sports prefix
+        run: |
+          # The widget's built assets reference /wpr-prep-sports/assets/* so
+          # the local server must serve under that prefix. Build a small
+          # _serve/ tree that mirrors what GH Pages exposes.
+          rm -rf _serve
+          mkdir -p _serve/wpr-prep-sports/data
+          cp -R frontend/dist/. _serve/wpr-prep-sports/
+          cp -R data/. _serve/wpr-prep-sports/data/
+
+      - name: Generate OG share cards
+        working-directory: scraper
+        run: |
+          npx --yes http-server ../_serve -p 8080 --silent &
+          SERVER_PID=$!
+          for i in 1 2 3 4 5; do
+            if curl -sf http://localhost:8080/wpr-prep-sports/ > /dev/null; then break; fi
+            sleep 1
+          done
+          if ! python scripts/generate_og_cards.py \
+                --base-url http://localhost:8080/wpr-prep-sports; then
+            echo "::warning::OG card generation failed — continuing without card update"
+          fi
+          kill $SERVER_PID || true
+          rm -rf ../_serve
+
       - name: Commit updated data
         run: |
           git config user.name "github-actions[bot]"

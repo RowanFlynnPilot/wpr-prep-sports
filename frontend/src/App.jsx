@@ -10,6 +10,7 @@ import { fetchDataset } from "./data/fetchDataset.js";
 import DashboardPage from "./pages/DashboardPage.jsx";
 import TeamPage from "./pages/TeamPage.jsx";
 import GamePage from "./pages/GamePage.jsx";
+import OgCardPage from "./pages/OgCardPage.jsx";
 import Skeleton from "./components/Skeleton.jsx";
 import { indexSchools } from "./utils/schools.js";
 import { useIframeHeightReporter } from "./utils/iframe.js";
@@ -33,6 +34,7 @@ import "./styles/SeasonLeaders.css";
 import "./styles/TopPerformers.css";
 import "./styles/GamePage.css";
 import "./styles/GamePreview.css";
+import "./styles/OgCard.css";
 import "./styles/Marquee.css";
 
 export default function App() {
@@ -52,6 +54,11 @@ export default function App() {
         path="/game/:gameId"
         element={<LegacyRedirect kind="game" />}
       />
+
+      {/* OG share-card route — fetched by the PNG generator, never linked
+          from the UI. Bypasses SportShell so the screenshot only captures
+          the card with no widget chrome around it. */}
+      <Route path="/card/:sport/:gameId" element={<OgCardPage />} />
 
       {/* Sport-scoped routes. SportShell fetches that sport's dataset and
           renders nested routes once it's loaded. */}

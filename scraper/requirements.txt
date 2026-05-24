@@ -9,5 +9,5 @@ pydantic>=2.7.0
 tenacity>=8.3.0
 rich>=13.7.0
 
-# Optional — uncomment if a source requires JS rendering (mirrors wpr-gas-prices)
-# playwright>=1.44.0
+# Used by scripts/generate_og_cards.py to screenshot per-game share cards
+playwright>=1.44.0
