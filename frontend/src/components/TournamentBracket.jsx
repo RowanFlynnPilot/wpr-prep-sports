@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import TeamLogo from "./TeamLogo.jsx";
 import {
@@ -16,49 +16,134 @@ import { useSportPrefix } from "../utils/links.js";
  * State champs (still alive at the latest round) sort to the top;
  * Round 1 exits to the bottom.
  */
-export default function TournamentBracket({ games, schoolIndex }) {
-  const journeys = useMemo(
+export default function TournamentBracket({ games, schoolIndex, sportConfig }) {
+  const allJourneys = useMemo(
     () => buildTeamJourneys(games, schoolIndex),
     [games, schoolIndex],
   );
-  const rounds = useMemo(() => playoffRoundsInOrder(games), [games]);
+  const sportId = sportConfig?.id;
+
+  // Conferences sourced from each tracked team's per-sport conference
+  // membership in the manifest. Deduped + sorted alphabetically; "All"
+  // is the implicit default.
+  const conferences = useMemo(() => {
+    const set = new Set();
+    for (const j of allJourneys) {
+      const conf = (j.school?.conferences ?? []).find(
+        (c) => c.sport === sportId,
+      )?.conference;
+      if (conf) set.add(conf);
+    }
+    return [...set].sort();
+  }, [allJourneys, sportId]);
+
+  const [activeConf, setActiveConf] = useState("ALL");
+  // Reset to All whenever the sport changes (parent remount).
+  // (The component itself is keyed on sport via sportConfig.id-driven
+  // remount in DashboardPage's parent, but the state survives the
+  // games change in-place — defensive guard.)
+
+  const journeys = useMemo(() => {
+    if (activeConf === "ALL") return allJourneys;
+    return allJourneys.filter((j) => {
+      const conf = (j.school?.conferences ?? []).find(
+        (c) => c.sport === sportId,
+      )?.conference;
+      return conf === activeConf;
+    });
+  }, [allJourneys, activeConf, sportId]);
+
+  // Only show rounds where at least one filtered team played — keeps
+  // the grid from rendering an empty "Level 4" column when nobody in
+  // the selected conference advanced that far.
+  const rounds = useMemo(() => {
+    const allRounds = playoffRoundsInOrder(games);
+    if (activeConf === "ALL") return allRounds;
+    const seen = new Set();
+    for (const j of journeys) {
+      for (const g of j.games) seen.add(g.round);
+    }
+    return allRounds.filter((r) => seen.has(r));
+  }, [games, journeys, activeConf]);
+
   const lastRound = rounds[rounds.length - 1];
 
-  if (journeys.length === 0 || rounds.length === 0) return null;
+  if (allJourneys.length === 0 || rounds.length === 0) return null;
 
   return (
     <div className="bracket">
       <div className="bracket__toolbar">
         <span className="bracket__meta">
-          {journeys.length} tracked {journeys.length === 1 ? "team" : "teams"} in the tournament
+          {journeys.length} of {allJourneys.length}{" "}
+          {allJourneys.length === 1 ? "team" : "teams"} in the tournament
         </span>
+        {conferences.length > 1 && (
+          <div
+            className="bracket__filter"
+            role="group"
+            aria-label="Filter by conference"
+          >
+            <FilterChip
+              label="All"
+              active={activeConf === "ALL"}
+              onClick={() => setActiveConf("ALL")}
+            />
+            {conferences.map((c) => (
+              <FilterChip
+                key={c}
+                label={c}
+                active={activeConf === c}
+                onClick={() => setActiveConf(c)}
+              />
+            ))}
+          </div>
+        )}
       </div>
 
-      <div
-        className="bracket__journey"
-        style={{ "--round-count": rounds.length }}
-      >
-        <div className="bracket__journey-header" role="row">
-          <div className="bracket__journey-cell bracket__journey-cell--team" role="columnheader">
-            Team
-          </div>
-          {rounds.map((r) => (
-            <div key={r} className="bracket__journey-cell bracket__journey-cell--round" role="columnheader">
-              {r}
+      {journeys.length === 0 ? (
+        <p className="bracket__empty">
+          No tracked teams from {activeConf} reached the tournament this season.
+        </p>
+      ) : (
+        <div
+          className="bracket__journey"
+          style={{ "--round-count": rounds.length }}
+        >
+          <div className="bracket__journey-header" role="row">
+            <div className="bracket__journey-cell bracket__journey-cell--team" role="columnheader">
+              Team
             </div>
+            {rounds.map((r) => (
+              <div key={r} className="bracket__journey-cell bracket__journey-cell--round" role="columnheader">
+                {r}
+              </div>
+            ))}
+          </div>
+
+          {journeys.map((j) => (
+            <JourneyRow
+              key={j.schoolId}
+              journey={j}
+              rounds={rounds}
+              lastRound={lastRound}
+            />
           ))}
         </div>
-
-        {journeys.map((j) => (
-          <JourneyRow
-            key={j.schoolId}
-            journey={j}
-            rounds={rounds}
-            lastRound={lastRound}
-          />
-        ))}
-      </div>
+      )}
     </div>
+  );
+}
+
+function FilterChip({ label, active, onClick }) {
+  return (
+    <button
+      type="button"
+      className={`bracket__filter-chip ${active ? "bracket__filter-chip--active" : ""}`}
+      onClick={onClick}
+      aria-pressed={active}
+    >
+      {label}
+    </button>
   );
 }
 

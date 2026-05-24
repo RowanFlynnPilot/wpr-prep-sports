@@ -21,6 +21,52 @@
   color: var(--muted);
 }
 
+.bracket__filter {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.bracket__filter-chip {
+  appearance: none;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--muted);
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.65rem;
+  border-radius: 999px;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+.bracket__filter-chip:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.bracket__filter-chip--active {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: #fff;
+}
+.bracket__filter-chip--active:hover {
+  background: var(--accent);
+  color: var(--ink);
+  border-color: var(--accent);
+}
+
+.bracket__empty {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 0.9rem;
+  color: var(--muted);
+  padding: 1rem;
+  margin: 0;
+  text-align: center;
+}
+
 /* Team journey grid — one row per tracked team, one column per round.
    Round count is set as --round-count on the container so the grid
    adapts to whichever rounds the sport actually has (e.g. 4 for

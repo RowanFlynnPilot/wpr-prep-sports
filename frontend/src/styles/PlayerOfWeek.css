@@ -88,6 +88,14 @@
   align-items: baseline;
   gap: 0.45rem;
 }
+.potw__name-link {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+.potw__name-link:hover {
+  border-bottom-color: rgba(255, 255, 255, 0.55);
+}
 .potw__year {
   font-weight: 400;
   font-size: 0.95rem;

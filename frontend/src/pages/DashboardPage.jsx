@@ -247,7 +247,11 @@ export default function DashboardPage({ dataset, schoolIndex, sponsors, sportCon
             <h2>Playoff Bracket</h2>
             <span className="section-header__hint">WIAA tournament · {sportConfig.label}</span>
           </div>
-          <TournamentBracket games={games} schoolIndex={schoolIndex} />
+          <TournamentBracket
+            games={games}
+            schoolIndex={schoolIndex}
+            sportConfig={sportConfig}
+          />
         </section>
       )}
     </Layout>

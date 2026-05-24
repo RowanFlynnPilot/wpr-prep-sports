@@ -4,6 +4,7 @@ import Sponsor from "./Sponsor.jsx";
 import { pickPlayerOfWeek, resolveOverridePotw } from "../utils/playerOfWeek.js";
 import { initials, primaryColor } from "../utils/schools.js";
 import { useSportPrefix } from "../utils/links.js";
+import { playerProfileHref } from "../utils/players.js";
 
 /**
  * Player of the Week — highlights the standout performance from the
@@ -63,10 +64,15 @@ export default function PlayerOfWeek({ games, schoolIndex, sponsors, sportConfig
 
         <div className="potw__meta">
           <h3 className="potw__name">
-            {line.player_name}
-            {line.player_year && (
-              <span className="potw__year"> ({line.player_year})</span>
-            )}
+            <Link
+              to={playerProfileHref(sportPrefix, schoolId, line.player_name)}
+              className="potw__name-link"
+            >
+              {line.player_name}
+              {line.player_year && (
+                <span className="potw__year"> ({line.player_year})</span>
+              )}
+            </Link>
             {line.position && (
               <span className="potw__pos">{line.position}</span>
             )}
