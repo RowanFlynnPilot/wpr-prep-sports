@@ -252,15 +252,21 @@ def merge_maxpreps_stats(
     stat_lines_total = 0
     for url, (game, _mp_game, _school_id) in url_index.items():
         try:
-            lines = maxpreps.fetch_box_score(url)
+            box = maxpreps.fetch_box_score(url)
         except Exception as e:  # noqa: BLE001
             if console:
                 console.print(f"[yellow]  ! box score failed: {url[:80]} ({e})[/yellow]")
             continue
-        if not lines:
+        # Set scores are independent of stat lines — a game can have
+        # set scores even when neither coach input player stats.
+        if box.set_scores_by_team:
+            _attach_set_scores(game, box.set_scores_by_team)
+            if "maxpreps" not in game.sources:
+                game.sources.append("maxpreps")
+        if not box.stat_lines:
             time.sleep(POLITE_DELAY_SECONDS)
             continue
-        attached = _attach_maxpreps_stats(game, lines, name_to_id)
+        attached = _attach_maxpreps_stats(game, box.stat_lines, name_to_id)
         if attached:
             matched += 1
             stat_lines_total += attached
@@ -438,6 +444,65 @@ def _attach_maxpreps_stats(
     if added:
         game.stat_leaders = attached
     return added
+
+
+def _attach_set_scores(
+    game: Game,
+    set_scores_by_team: dict[str, list[int]],
+) -> None:
+    """Map MaxPreps team-name → set scores onto the game's
+    home/away set_scores. Picks the best name match; falls back to
+    URL-position when names diverge (e.g. "WRLHS" abbreviation vs
+    "Wisconsin Rapids Lincoln")."""
+    if not set_scores_by_team:
+        return
+    teams = list(set_scores_by_team.items())
+    # Try direct name match first.
+    home_scores = _match_team_scores(game.home.name, teams)
+    away_scores = _match_team_scores(game.away.name, teams)
+    # If names didn't disambiguate cleanly, fall back to "the first
+    # listed team is the away team" — matches MaxPreps' usual order,
+    # and gracefully degrades when wrong (the values are still real,
+    # just possibly swapped). Frontend can detect a swap by comparing
+    # set-count to game.home.score / game.away.score.
+    if home_scores is None and away_scores is None and len(teams) == 2:
+        away_scores = teams[0][1]
+        home_scores = teams[1][1]
+    if home_scores is None and away_scores is not None and len(teams) == 2:
+        # Whatever isn't the away team must be home.
+        for name, scores in teams:
+            if scores is not away_scores:
+                home_scores = scores
+                break
+    if away_scores is None and home_scores is not None and len(teams) == 2:
+        for name, scores in teams:
+            if scores is not home_scores:
+                away_scores = scores
+                break
+    if not home_scores or not away_scores:
+        return
+    sets = min(len(home_scores), len(away_scores))
+    game.set_scores = [
+        {"home": home_scores[i], "away": away_scores[i]}
+        for i in range(sets)
+    ]
+
+
+def _match_team_scores(
+    side_name: str,
+    teams: list[tuple[str, list[int]]],
+) -> list[int] | None:
+    """Find the team in `teams` whose MP-rendered name best matches
+    `side_name`. Uses casefold equality first, then loose containment."""
+    needle = _norm(side_name)
+    for name, scores in teams:
+        if _norm(name) == needle:
+            return scores
+    for name, scores in teams:
+        n = _norm(name)
+        if n in needle or needle in n:
+            return scores
+    return None
 
 
 def _season_start_year(season: str) -> int | None:

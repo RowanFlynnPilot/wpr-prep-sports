@@ -106,6 +106,10 @@ class Game(BaseModel):
     playoff_round: Optional[str] = None       # "Level 1" | "Level 2" | "Level 3" | "Level 4" | "State Semifinal" | "State Championship"
     stat_leaders: list[StatLine] = Field(default_factory=list)  # populated by Bound
     scoring: list[Goal] = Field(default_factory=list)  # hockey-only — populated by WPH
+    # Volleyball set-by-set scores ([{away: 25, home: 22}, ...]) sourced
+    # from MaxPreps. Empty for non-volleyball games and for any vb game
+    # whose box score didn't surface a Score by Period table.
+    set_scores: list[dict[str, int]] = Field(default_factory=list)
 
 
 class StandingRow(BaseModel):

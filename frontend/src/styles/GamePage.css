@@ -202,6 +202,80 @@
   padding: 0;
 }
 
+/* Volleyball set-by-set ladder, rendered inside the hero. Sits below
+   the recap line, before the section divider, so the matchup → set
+   detail → game stats flow reads top-down. */
+.set-score-line {
+  margin-top: 1rem;
+  padding: 0.85rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+.set-score-line__heading {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 0.55rem;
+}
+.set-score-line__table {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 480px;
+  table-layout: fixed;
+}
+.set-score-line__corner {
+  background: transparent;
+  border: none;
+  width: 38%;
+}
+.set-score-line__set-head {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+  padding: 0 0.5rem 0.35rem;
+  text-align: center;
+}
+.set-score-line__team {
+  text-align: left;
+  padding: 0.4rem 0.65rem 0.4rem 0;
+  font-weight: 400;
+  vertical-align: middle;
+}
+.set-score-line__team-name {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: #fff;
+  line-height: 1.1;
+}
+.set-score-line__team-mascot {
+  display: block;
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.55);
+  margin-top: 0.1rem;
+}
+.set-score-line__set {
+  font-family: var(--font-numeric);
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+  padding: 0.4rem 0.5rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-variant-numeric: tabular-nums;
+}
+.set-score-line__set--won {
+  color: var(--accent);
+  font-weight: 800;
+}
+
 /* New category-grouped layout used when stat_leaders carries many
    per-player rows (MaxPreps volleyball, etc.). Each category becomes a
    sub-section under the team header with its own top-N display. */

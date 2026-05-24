@@ -146,6 +146,16 @@ export default function GamePage({ dataset, schoolIndex, sportConfig }) {
         </div>
 
         {recap && <p className="game-page__recap">{recap}</p>}
+
+        {game.set_scores && game.set_scores.length > 0 && (
+          <SetScoreLine
+            sets={game.set_scores}
+            awayName={game.away.name}
+            homeName={game.home.name}
+            awayMascot={awaySchool?.mascot}
+            homeMascot={homeSchool?.mascot}
+          />
+        )}
       </section>
 
       <Sponsor
@@ -181,6 +191,9 @@ export default function GamePage({ dataset, schoolIndex, sportConfig }) {
               lines={statsByKey.get(keyForSide(game.away)) ?? []}
               score={awayScore}
               showScore={isFinal}
+              otherSideHasStats={
+                (statsByKey.get(keyForSide(game.home)) ?? []).length > 0
+              }
             />
             <TeamStatsCard
               label={game.home.name}
@@ -190,6 +203,9 @@ export default function GamePage({ dataset, schoolIndex, sportConfig }) {
               lines={statsByKey.get(keyForSide(game.home)) ?? []}
               score={homeScore}
               showScore={isFinal}
+              otherSideHasStats={
+                (statsByKey.get(keyForSide(game.away)) ?? []).length > 0
+              }
             />
           </div>
         ) : (
@@ -203,6 +219,60 @@ export default function GamePage({ dataset, schoolIndex, sportConfig }) {
         )}
       </section>)}
     </Layout>
+  );
+}
+
+/**
+ * Volleyball set-by-set ladder. Renders below the matchup hero on
+ * games that have set_scores populated (MaxPreps boxes). Each set's
+ * winner gets a bold treatment so a 25-22, 25-18, 24-26, 25-23 sweep
+ * reads at a glance.
+ */
+function SetScoreLine({ sets, awayName, homeName, awayMascot, homeMascot }) {
+  return (
+    <div className="set-score-line" aria-label="Set-by-set score">
+      <div className="set-score-line__heading">Sets</div>
+      <table className="set-score-line__table">
+        <thead>
+          <tr>
+            <th scope="col" className="set-score-line__corner" aria-hidden="true" />
+            {sets.map((_, i) => (
+              <th key={i} scope="col" className="set-score-line__set-head">
+                {i + 1}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          <SetRow side="away" name={awayName} mascot={awayMascot} sets={sets} />
+          <SetRow side="home" name={homeName} mascot={homeMascot} sets={sets} />
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
+function SetRow({ side, name, mascot, sets }) {
+  return (
+    <tr className={`set-score-line__row set-score-line__row--${side}`}>
+      <th scope="row" className="set-score-line__team">
+        <span className="set-score-line__team-name">{name}</span>
+        {mascot && <span className="set-score-line__team-mascot">{mascot}</span>}
+      </th>
+      {sets.map((s, i) => {
+        const own = s[side];
+        const other = s[side === "home" ? "away" : "home"];
+        const wonSet = own > other;
+        return (
+          <td
+            key={i}
+            className={`set-score-line__set ${wonSet ? "set-score-line__set--won" : ""}`}
+          >
+            {own}
+          </td>
+        );
+      })}
+    </tr>
   );
 }
 
@@ -261,7 +331,7 @@ const LEADER_KEY_BY_CATEGORY = {
   "Hockey Saves": "SV",
 };
 
-function TeamStatsCard({ label, team, school, won, lines, score, showScore }) {
+function TeamStatsCard({ label, team, school, won, lines, score, showScore, otherSideHasStats }) {
   // Per-category expand toggle. State lives on the card (one card per
   // team) so each side can be expanded independently.
   const [expanded, setExpanded] = useState({});
@@ -306,7 +376,11 @@ function TeamStatsCard({ label, team, school, won, lines, score, showScore }) {
         )}
       </header>
       {lines.length === 0 ? (
-        <p className="team-stats__empty-note">No stats reported for this team.</p>
+        <p className="team-stats__empty-note">
+          {otherSideHasStats
+            ? "No box score submitted for this team — coaches input stats per-team on MaxPreps."
+            : "No stats reported for this team."}
+        </p>
       ) : (
         <div className="team-stats__groups">
           {groups.map(({ category, lines: groupLines }) => {

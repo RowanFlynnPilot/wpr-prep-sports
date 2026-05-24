@@ -1,0 +1,32 @@
+{
+  "sport": "girls_hockey",
+  "season": "2025-26",
+  "generated_at": "2026-05-23T12:39:01.274616-05:00",
+  "method": "WPR Power Index v1: 40% W%, 35% SOS, 25% margin (capped per sport)",
+  "rankings": [
+    {
+      "rank": 1,
+      "school_id": "spash",
+      "school_name": "SPASH",
+      "wins": 17,
+      "losses": 1,
+      "win_pct": 0.9444,
+      "sos": 0.5,
+      "avg_margin_capped": 2.83,
+      "score": 74.86,
+      "movement": null
+    },
+    {
+      "rank": 2,
+      "school_id": "hudson",
+      "school_name": "Hudson",
+      "wins": 19,
+      "losses": 1,
+      "win_pct": 0.95,
+      "sos": 0.5,
+      "avg_margin_capped": 2.45,
+      "score": 74.12,
+      "movement": null
+    }
+  ]
+}

@@ -55,14 +55,28 @@ METHOD_DESCRIPTION = (
 )
 
 
+# How long to keep a "previous" snapshot before rotating in the
+# current rankings as the new comparison baseline. Picked at 6 days so
+# a weekly cron lands neatly — Friday's scrape becomes next Friday's
+# comparison point.
+PREV_SNAPSHOT_AGE_DAYS = 6
+
+
 def compute_power_rankings(
     dataset: Dataset,
     *,
     manifest: Manifest,
+    prev_rankings: dict | None = None,
     console: Console | None = None,
 ) -> Dataset:
     """Compute Power Rankings for the dataset's sport. Writes to
-    `dataset.power_rankings` and returns the dataset."""
+    `dataset.power_rankings` and returns the dataset.
+
+    `prev_rankings` (optional) is the wrapped JSON shape we write to
+    `data/<sport>/power_rankings_prev.json`. When supplied, movement
+    arrows fill in vs that snapshot. The caller decides when to rotate
+    — see `output.writer:_maybe_rotate_prev_rankings`.
+    """
 
     if not dataset.meta.sports_included:
         return dataset
@@ -165,6 +179,16 @@ def compute_power_rankings(
     for i, r in enumerate(out, 1):
         r.rank = i
 
+    # Fill in movement vs the previous snapshot. Positive = improved
+    # (e.g., was #5, now #2 → movement=3). New teams in the list get
+    # movement=None and render as "NEW" in the UI.
+    if prev_rankings:
+        prev_rank_by_id = _prev_rank_map(prev_rankings)
+        for r in out:
+            prev_rank = prev_rank_by_id.get(r.school_id)
+            if prev_rank is not None:
+                r.movement = prev_rank - r.rank
+
     dataset.power_rankings = out
     if console:
         console.print(
@@ -177,3 +201,20 @@ def compute_power_rankings(
 
 def _clamp(x: float, lo: float, hi: float) -> float:
     return max(lo, min(hi, x))
+
+
+def _prev_rank_map(prev_rankings: dict) -> dict[str, int]:
+    """Extract `{school_id: rank}` from the wrapped power_rankings_prev.json
+    shape. Tolerates both the wrapped dict and bare list forms — same
+    handling the dataset reader uses."""
+    if isinstance(prev_rankings, list):
+        items = prev_rankings
+    else:
+        items = prev_rankings.get("rankings", [])
+    out: dict[str, int] = {}
+    for entry in items:
+        sid = entry.get("school_id") if isinstance(entry, dict) else None
+        rank = entry.get("rank") if isinstance(entry, dict) else None
+        if sid and isinstance(rank, int):
+            out[sid] = rank
+    return out

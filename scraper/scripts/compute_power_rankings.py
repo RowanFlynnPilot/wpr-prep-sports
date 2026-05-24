@@ -21,7 +21,7 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(REPO_ROOT / "scraper"))
 
 from config.loader import load_manifest  # noqa: E402
-from output.writer import read_dataset, write_dataset  # noqa: E402
+from output.writer import load_prev_rankings, read_dataset, write_dataset  # noqa: E402
 from transform.rankings import compute_power_rankings  # noqa: E402
 
 DATA_DIR = REPO_ROOT / "data"
@@ -48,7 +48,8 @@ def main() -> int:
         if ds is None:
             print(f"[{sport}] no dataset on disk — skipping")
             continue
-        ds = compute_power_rankings(ds, manifest=manifest)
+        prev = load_prev_rankings(sport, DATA_DIR)
+        ds = compute_power_rankings(ds, manifest=manifest, prev_rankings=prev)
         write_dataset(ds, DATA_DIR)
         top = ", ".join(
             f"#{r.rank} {r.school_name} ({r.wins}-{r.losses})"

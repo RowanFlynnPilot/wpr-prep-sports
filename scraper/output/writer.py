@@ -15,9 +15,14 @@ sports — frontend loads it once regardless of which sport is selected.
 from __future__ import annotations
 
 import json
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 from models.schema import Dataset
+
+# Days a power_rankings_prev.json snapshot stays in place before it
+# rotates. Matches `transform.rankings.PREV_SNAPSHOT_AGE_DAYS`.
+_PREV_SNAPSHOT_AGE_DAYS = 6
 
 
 def write_dataset(dataset: Dataset, out_dir: Path) -> None:
@@ -63,8 +68,15 @@ def write_dataset(dataset: Dataset, out_dir: Path) -> None:
     # Only emit power_rankings.json when we actually computed any —
     # avoids overwriting a hand-edited file with an empty array.
     if dataset.power_rankings:
+        rankings_path = sport_dir / "power_rankings.json"
+        prev_path = sport_dir / "power_rankings_prev.json"
+        # Rotate the comparison snapshot if it's missing or older than
+        # PREV_SNAPSHOT_AGE_DAYS. Done BEFORE writing the new file so
+        # next run's movement is calculated vs the rankings being
+        # replaced now, not vs themselves.
+        _maybe_rotate_prev_rankings(rankings_path, prev_path)
         _write_json(
-            sport_dir / "power_rankings.json",
+            rankings_path,
             {
                 "sport": sports[0].value,
                 "season": dataset.meta.season,
@@ -73,6 +85,49 @@ def write_dataset(dataset: Dataset, out_dir: Path) -> None:
                 "rankings": [r.model_dump(mode="json") for r in dataset.power_rankings],
             },
         )
+
+
+def _maybe_rotate_prev_rankings(current_path: Path, prev_path: Path) -> None:
+    """If `prev_path` is missing or older than the snapshot age, copy
+    the current rankings file into prev (atomic-ish: read then write).
+    First-ever scrape leaves prev empty — movement fills in on the
+    second snapshot."""
+    if not current_path.exists():
+        return
+    rotate = False
+    if not prev_path.exists():
+        rotate = True
+    else:
+        try:
+            prev_data = json.loads(prev_path.read_text(encoding="utf-8"))
+            generated = prev_data.get("generated_at") if isinstance(prev_data, dict) else None
+            if generated:
+                # ISO 8601 — tolerate both with and without timezone.
+                ts = datetime.fromisoformat(generated.replace("Z", "+00:00"))
+                if ts.tzinfo is None:
+                    ts = ts.replace(tzinfo=timezone.utc)
+                age = datetime.now(timezone.utc) - ts
+                if age >= timedelta(days=_PREV_SNAPSHOT_AGE_DAYS):
+                    rotate = True
+            else:
+                rotate = True
+        except (json.JSONDecodeError, ValueError):
+            rotate = True
+    if rotate:
+        prev_path.write_text(current_path.read_text(encoding="utf-8"), encoding="utf-8")
+
+
+def load_prev_rankings(sport: str, out_dir: Path) -> dict | None:
+    """Read `data/<sport>/power_rankings_prev.json` if it exists.
+    Returns the parsed wrapped object (or None) — caller passes this
+    directly into `compute_power_rankings(prev_rankings=...)`."""
+    p = out_dir / sport / "power_rankings_prev.json"
+    if not p.exists():
+        return None
+    try:
+        return json.loads(p.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return None
 
 
 _POWER_RANKINGS_METHOD = (

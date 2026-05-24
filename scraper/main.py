@@ -20,7 +20,7 @@ from pathlib import Path
 from rich.console import Console
 
 from config.loader import ensure_org_ids, load_manifest, save_manifest
-from output.writer import read_dataset, write_dataset
+from output.writer import load_prev_rankings, read_dataset, write_dataset
 from sources import wiaa, wph
 from transform.normalize import build_dataset, build_name_index_for_manifest
 from transform.live import merge_live_scores
@@ -233,8 +233,12 @@ def main() -> int:
         )
 
     # Power rankings run last — they need finalized scores + any post-
-    # processing already applied. Cheap (in-memory only).
-    dataset = compute_power_rankings(dataset, manifest=manifest, console=console)
+    # processing already applied. Cheap (in-memory only). Pass the prior
+    # snapshot (if any) so movement arrows fill in.
+    prev_rankings = load_prev_rankings(args.sport, DATA_DIR)
+    dataset = compute_power_rankings(
+        dataset, manifest=manifest, prev_rankings=prev_rankings, console=console,
+    )
 
     if args.dry_run:
         console.print("[yellow]Dry run — not writing files[/yellow]")

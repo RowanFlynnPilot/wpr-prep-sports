@@ -96,6 +96,7 @@ function PowerRow({ row, topScore, sportPrefix, schoolIndex }) {
   return (
     <li className="power-row">
       <span className="power-row__rank">{row.rank}</span>
+      <MovementChip movement={row.movement} />
       <TeamLogo team={teamForLogo} school={school} size="sm" />
       <div className="power-row__team">
         <Link to={`${sportPrefix}/team/${row.school_id}`} className="power-row__name">
@@ -118,6 +119,47 @@ function PowerRow({ row, topScore, sportPrefix, schoolIndex }) {
         />
       </div>
     </li>
+  );
+}
+
+/**
+ * Tiny chip next to the rank showing weekly movement.
+ *   movement > 0  — improved (e.g. was #5, now #2 → +3) — green ▲
+ *   movement < 0  — dropped — red ▼
+ *   movement = 0  — held — neutral dash
+ *   movement null — wasn't ranked last snapshot — "NEW"
+ */
+function MovementChip({ movement }) {
+  if (movement == null) {
+    return (
+      <span
+        className="power-row__move power-row__move--new"
+        title="Newly ranked this week"
+      >
+        NEW
+      </span>
+    );
+  }
+  if (movement === 0) {
+    return (
+      <span
+        className="power-row__move power-row__move--flat"
+        title="Unchanged from last week"
+        aria-label="Unchanged from last week"
+      >
+        —
+      </span>
+    );
+  }
+  const up = movement > 0;
+  return (
+    <span
+      className={`power-row__move ${up ? "power-row__move--up" : "power-row__move--down"}`}
+      title={`${up ? "Up" : "Down"} ${Math.abs(movement)} from last week`}
+    >
+      <span aria-hidden="true">{up ? "▲" : "▼"}</span>
+      {Math.abs(movement)}
+    </span>
   );
 }
 

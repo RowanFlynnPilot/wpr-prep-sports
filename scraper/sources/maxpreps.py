@@ -62,6 +62,17 @@ class StatLine:
     stats: dict[str, str]   # raw label → value
 
 
+@dataclass(frozen=True)
+class BoxScore:
+    """Bundles everything we extract from one MaxPreps box-score URL —
+    per-player stat lines plus the team-level set-by-set scores. Both
+    pieces come from the same page, so one HTTP fetch produces both."""
+    stat_lines: list[StatLine]
+    # Set-by-set scores keyed by MP-rendered team name. Empty when the
+    # box score didn't surface a Score by Period table (rare).
+    set_scores_by_team: dict[str, list[int]]
+
+
 # ---------------------------------------------------------------------------
 # HTTP
 # ---------------------------------------------------------------------------
@@ -318,17 +329,22 @@ _CATEGORY_FROM_HEADER = {
 _ATHLETE_RE = re.compile(r"^(?P<name>.+?)\((?P<year>\w{1,3})\)$")
 
 
-def fetch_box_score(url: str) -> list[StatLine]:
-    """Parse a MaxPreps volleyball box score into per-player StatLines.
+def fetch_box_score(url: str) -> BoxScore:
+    """Parse a MaxPreps volleyball box score into a BoxScore bundle —
+    per-player stat lines plus set-by-set scores.
 
-    Layout: each team that input stats has a `<h3>Team Name (YY-YY)</h3>`
-    followed by six section headers (Attacking / Serving / Blocking /
-    Digging / Ball Handling / Serve Receiving), each with one table.
-    Only teams that input stats show up — single-team coverage is the
-    common case.
+    Layout: a Score by Period table sits at the top of the page (with
+    a row per team and a column per set), followed by a Match Stats
+    block. Within Match Stats each team that input stats has a
+    `<h3>Team Name (YY-YY)</h3>` followed by six section headers
+    (Attacking / Serving / Blocking / Digging / Ball Handling / Serve
+    Receiving), each with one table. Only teams that input stats show
+    up — single-team coverage is the common case.
     """
     html = _get(url)
     soup = BeautifulSoup(html, "html.parser")
+
+    set_scores = _parse_set_scores_table(soup)
 
     # Find the "Match Stats" anchor, then walk forward picking up team
     # headers and the tables that belong to each.
@@ -338,7 +354,7 @@ def fetch_box_score(url: str) -> list[StatLine]:
             match_stats = hdr
             break
     if match_stats is None:
-        return []
+        return BoxScore(stat_lines=[], set_scores_by_team=set_scores)
 
     out: list[StatLine] = []
     current_team: str | None = None
@@ -368,6 +384,55 @@ def fetch_box_score(url: str) -> list[StatLine]:
             category, leader_key = current_category
             out.extend(_parse_box_table(el, current_team, category, leader_key))
 
+    return BoxScore(stat_lines=out, set_scores_by_team=set_scores)
+
+
+def _parse_set_scores_table(soup) -> dict[str, list[int]]:
+    """Find the Score by Period table at the top of a box-score page
+    and pull set scores per team. Returns `{team_name: [s1, s2, ...]}`.
+
+    The table's header row reads `['', 'S1', 'S2', 'S3', 'S4', 'Wins']`
+    (or fewer S* columns for shorter matches); each subsequent row is
+    `[team_name, score_s1, score_s2, ..., total_wins]`. We discard the
+    Wins column — total set count is derivable from the per-set scores
+    and is already in game.home.score / game.away.score from WIAA.
+    """
+    out: dict[str, list[int]] = {}
+    for table in soup.find_all("table"):
+        rows = table.find_all("tr")
+        if not rows:
+            continue
+        headers = [th.get_text(strip=True) for th in rows[0].find_all(["th", "td"])]
+        if len(headers) < 3:
+            continue
+        set_cols = [i for i, h in enumerate(headers) if re.fullmatch(r"S\d+", h)]
+        if not set_cols:
+            continue
+        # The header row ends in "Wins"; everything after the last S*
+        # column we ignore.
+        for row in rows[1:]:
+            cells = [c.get_text(strip=True) for c in row.find_all(["th", "td"])]
+            if len(cells) <= max(set_cols):
+                continue
+            team_name = cells[0]
+            if not team_name:
+                continue
+            scores: list[int] = []
+            for i in set_cols:
+                try:
+                    scores.append(int(cells[i]))
+                except (ValueError, IndexError):
+                    scores.append(0)
+            # Trim trailing zeros — matches that go 3 sets show "0" for
+            # set 4 in a 4-column table; we don't want phantom 25-0 sets.
+            while scores and scores[-1] == 0:
+                scores.pop()
+            if scores:
+                out[team_name] = scores
+        if out:
+            # First table with valid set scores wins; the page repeats
+            # a similar table further down which we don't need.
+            return out
     return out
 
 
