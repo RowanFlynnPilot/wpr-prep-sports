@@ -57,21 +57,28 @@ function scoreStatLine(line) {
       return (Number.isFinite(tkl) ? tkl : 0) * 8
         + (Number.isFinite(sks) ? sks : 0) * 25;
 
-    // Basketball — both rendered categories
+    // Basketball
     case "Points":
       return (Number.isFinite(pts) ? pts : 0) * 4;
     case "Rebounds":
       return (Number.isFinite(rbd) ? rbd : 0) * 5;
+    // "Assists" is shared between basketball and volleyball (Bound emits
+    // the same label for both). Sport-disambiguate via the team-game
+    // context isn't worth wiring here; a 10-assist basketball game and a
+    // 30-assist volleyball setter line both land around the same scale
+    // (60 vs 90) with this single coefficient.
     case "Assists":
       return (Number.isFinite(ast) ? ast : 0) * 6;
 
     // Volleyball
     case "Kills":
-      return (Number.isFinite(kls) ? kls : 0) * 4;
+      return (Number.isFinite(kls) ? kls : 0) * 5;
     case "Digs":
       return (Number.isFinite(dig) ? dig : 0) * 2.5;
     case "Total Blocks":
       return (Number.isFinite(asNum(s.BLK)) ? asNum(s.BLK) : 0) * 8;
+    case "Serve Aces":
+      return (Number.isFinite(ace) ? ace : 0) * 10;
 
     // Hockey
     case "Hockey Points":
