@@ -107,7 +107,14 @@ function Card({ game, schoolIndex, sportConfig }) {
       </div>
 
       <footer className="og-card__footer">
-        <span className="og-card__pub">WAUSAU PILOT &amp; REVIEW</span>
+        <span className="og-card__pub">
+          <img
+            src={`${import.meta.env.BASE_URL}wpr-logo.png`}
+            alt=""
+            className="og-card__pub-logo"
+          />
+          WAUSAU PILOT &amp; REVIEW
+        </span>
         <span className="og-card__url">wausaupilotandreview.com</span>
       </footer>
     </div>
