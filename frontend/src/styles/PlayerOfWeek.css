@@ -49,6 +49,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
   font-family: var(--font-display);
   font-weight: 700;
   font-size: 1.4rem;
@@ -57,6 +58,15 @@
   background: var(--school-color, var(--muted-2));
   box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.08);
   flex: 0 0 auto;
+}
+.potw__avatar-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  /* Most WIAA logos are darker on transparent — give them a white pad
+     so they read clearly inside the navy POTW header. */
+  background: #fff;
+  padding: 4px;
 }
 
 .potw__meta {

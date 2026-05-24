@@ -41,7 +41,17 @@ export default function PlayerOfWeek({ games, schoolIndex, sponsors, sportConfig
 
       <div className="potw__body">
         <div className="potw__avatar" aria-hidden="true">
-          {initials(line.player_name)}
+          {school?.logo_url ? (
+            <img
+              src={school.logo_url}
+              alt=""
+              loading="lazy"
+              decoding="async"
+              className="potw__avatar-logo"
+            />
+          ) : (
+            initials(line.player_name)
+          )}
         </div>
 
         <div className="potw__meta">
