@@ -22,6 +22,8 @@ import "./styles/ScoreTicker.css";
 import "./styles/StandingsTable.css";
 import "./styles/ThisWeekGrid.css";
 import "./styles/MonthCalendar.css";
+import "./styles/PlayerOfWeek.css";
+import "./styles/TournamentBracket.css";
 import "./styles/TeamPage.css";
 import "./styles/Sponsor.css";
 import "./styles/SeasonLeaders.css";

@@ -4,6 +4,8 @@ import Hero from "../components/Hero.jsx";
 import ScoreTicker from "../components/ScoreTicker.jsx";
 import ThisWeekGrid from "../components/ThisWeekGrid.jsx";
 import MonthCalendar from "../components/MonthCalendar.jsx";
+import PlayerOfWeek from "../components/PlayerOfWeek.jsx";
+import TournamentBracket from "../components/TournamentBracket.jsx";
 import StandingsTable from "../components/StandingsTable.jsx";
 import StaleBanner from "../components/StaleBanner.jsx";
 import Sponsor from "../components/Sponsor.jsx";
@@ -133,6 +135,13 @@ export default function DashboardPage({ dataset, schoolIndex, sponsors, sportCon
         daysToNext={daysToNext}
       />
 
+      <PlayerOfWeek
+        games={games}
+        schoolIndex={schoolIndex}
+        sponsors={sponsors}
+        sportConfig={sportConfig}
+      />
+
       {showThisWeek && (
         <section>
           <div className="section-header">
@@ -204,6 +213,16 @@ export default function DashboardPage({ dataset, schoolIndex, sponsors, sportCon
             sportConfig={sportConfig}
             n={5}
           />
+        </section>
+      )}
+
+      {games.some((g) => g.playoff) && (
+        <section>
+          <div className="section-header">
+            <h2>Playoff Bracket</h2>
+            <span className="section-header__hint">WIAA tournament · {sportConfig.label}</span>
+          </div>
+          <TournamentBracket games={games} />
         </section>
       )}
     </Layout>
