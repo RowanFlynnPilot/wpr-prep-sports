@@ -27,7 +27,15 @@ function toNum(value) {
 }
 
 function sortBy(rows, key) {
-  return [...rows].sort((a, b) => toNum(b.stats?.[key]) - toNum(a.stats?.[key]));
+  // Coerce missing/non-numeric values to -Infinity so they sort last.
+  // Plain NaN subtraction returns NaN and yields non-transitive
+  // comparisons, which made volleyball Assists leaders show players
+  // whose row had no AST key at all (their NaN ties beat real leaders).
+  const val = (r) => {
+    const n = toNum(r.stats?.[key]);
+    return Number.isFinite(n) ? n : -Infinity;
+  };
+  return [...rows].sort((a, b) => val(b) - val(a));
 }
 
 /** Group raw rows by school_id, returning a Map. */
