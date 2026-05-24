@@ -290,6 +290,7 @@ function normalizeName(name) {
 const SOURCE_LABELS = {
   bound: "Bound",
   wisconsinprephockey: "Wisconsin Prep Hockey",
+  maxpreps: "MaxPreps",
 };
 function statsSourceLabel(game) {
   const stats = (game.sources ?? []).filter((s) => s !== "wiaa");
