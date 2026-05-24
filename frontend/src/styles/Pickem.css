@@ -1,0 +1,178 @@
+.pickem {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.pickem__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.85rem 1rem;
+  background: var(--ink);
+  color: #fff;
+  border-bottom: 3px solid var(--accent);
+  flex-wrap: wrap;
+}
+.pickem__title {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+}
+.pickem__eyebrow {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.pickem__score {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  font-family: var(--font-numeric);
+  font-variant-numeric: tabular-nums;
+  color: #fff;
+}
+.pickem__score-num { font-weight: 700; font-size: 1.15rem; }
+.pickem__score-num--correct { color: #4ade80; }
+.pickem__score-sep { color: rgba(255, 255, 255, 0.45); }
+.pickem__score-label {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.65);
+  margin-left: 0.2rem;
+}
+.pickem__pending {
+  margin-left: 0.6rem;
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.pickem__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.pickem__row {
+  display: grid;
+  grid-template-columns: 6.5rem minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.6rem 1rem;
+  border-top: 1px solid var(--paper-2);
+}
+.pickem__row:first-child { border-top: none; }
+
+.pickem__when {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.pickem__time {
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  font-family: var(--font-body);
+  color: var(--muted);
+}
+
+.pickem__team {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.55rem 0.8rem;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  font: inherit;
+  cursor: pointer;
+  transition: background var(--t-fast) var(--ease),
+              border-color var(--t-fast) var(--ease),
+              transform var(--t-fast) var(--ease);
+  text-align: left;
+  min-width: 0;
+}
+.pickem__team:hover {
+  background: #fff;
+  border-color: var(--school-color, var(--accent));
+  transform: translateY(-1px);
+}
+.pickem__team--picked {
+  background: var(--school-color, var(--accent));
+  border-color: var(--school-color, var(--accent));
+  color: #fff;
+  box-shadow: 0 4px 14px color-mix(in srgb, var(--school-color, var(--accent)) 35%, transparent);
+}
+.pickem__team-loc {
+  font-family: var(--font-display);
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted-2);
+  flex: 0 0 auto;
+}
+.pickem__team--picked .pickem__team-loc { color: rgba(255, 255, 255, 0.7); }
+
+.pickem__team-name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.92rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+  flex: 1 1 auto;
+}
+.pickem__check {
+  font-weight: 700;
+  font-size: 1rem;
+  color: #fff;
+  flex: 0 0 auto;
+}
+
+.pickem__vs {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted-2);
+  text-align: center;
+}
+
+.pickem__footer {
+  padding: 0.55rem 1rem;
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 0.78rem;
+  color: var(--muted);
+  background: var(--paper);
+  border-top: 1px solid var(--line);
+}
+
+@media (max-width: 720px) {
+  .pickem__row {
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    row-gap: 0.45rem;
+  }
+  .pickem__when {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+}
