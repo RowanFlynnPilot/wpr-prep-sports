@@ -154,20 +154,13 @@ export default function TeamPage({ dataset, schoolIndex, sponsors, sportConfig }
         {teamGames.length === 0 ? (
           <div className="team-empty">No games scheduled.</div>
         ) : (
-          <ol className="team-schedule">
-            {teamGames.map((g, idx) => (
-              <ScheduleRow
-                key={g.id}
-                game={g}
-                index={idx + 1}
-                schoolId={schoolId}
-                schoolIndex={schoolIndex}
-                allTeamGames={teamGames}
-                sportPrefix={sportPrefix}
-                sportConfig={sportConfig}
-              />
-            ))}
-          </ol>
+          <SeasonSchedule
+            teamGames={teamGames}
+            schoolId={schoolId}
+            schoolIndex={schoolIndex}
+            sportPrefix={sportPrefix}
+            sportConfig={sportConfig}
+          />
         )}
       </section>
 
@@ -215,6 +208,77 @@ function computeRecord(games, schoolId) {
   };
 }
 
+function SeasonSchedule({ teamGames, schoolId, schoolIndex, sportPrefix, sportConfig }) {
+  const regular = teamGames.filter((g) => !g.playoff);
+  const playoffs = teamGames.filter((g) => g.playoff);
+
+  // When no playoff games exist, render as a single list with no
+  // sub-headers — the existing layout. Same when the team got 0
+  // regular-season games (unlikely but possible during a fresh scrape).
+  if (playoffs.length === 0 || regular.length === 0) {
+    return (
+      <ol className="team-schedule">
+        {teamGames.map((g, idx) => (
+          <ScheduleRow
+            key={g.id}
+            game={g}
+            index={idx + 1}
+            schoolId={schoolId}
+            schoolIndex={schoolIndex}
+            allTeamGames={teamGames}
+            sportPrefix={sportPrefix}
+            sportConfig={sportConfig}
+          />
+        ))}
+      </ol>
+    );
+  }
+
+  return (
+    <>
+      <h3 className="schedule-divider">
+        <span>Regular Season</span>
+        <span className="schedule-divider__count">{regular.length} games</span>
+      </h3>
+      <ol className="team-schedule">
+        {regular.map((g, idx) => (
+          <ScheduleRow
+            key={g.id}
+            game={g}
+            index={idx + 1}
+            schoolId={schoolId}
+            schoolIndex={schoolIndex}
+            allTeamGames={teamGames}
+            sportPrefix={sportPrefix}
+            sportConfig={sportConfig}
+          />
+        ))}
+      </ol>
+
+      <h3 className="schedule-divider schedule-divider--playoffs">
+        <span>WIAA Playoffs</span>
+        <span className="schedule-divider__count">
+          {playoffs.length} game{playoffs.length === 1 ? "" : "s"}
+        </span>
+      </h3>
+      <ol className="team-schedule">
+        {playoffs.map((g, idx) => (
+          <ScheduleRow
+            key={g.id}
+            game={g}
+            index={idx + 1}
+            schoolId={schoolId}
+            schoolIndex={schoolIndex}
+            allTeamGames={teamGames}
+            sportPrefix={sportPrefix}
+            sportConfig={sportConfig}
+          />
+        ))}
+      </ol>
+    </>
+  );
+}
+
 function ScheduleRow({ game, index, schoolId, schoolIndex, allTeamGames, sportPrefix, sportConfig }) {
   const isHome = game.home.school_id === schoolId;
   const opponent = isHome ? game.away : game.home;
@@ -233,7 +297,7 @@ function ScheduleRow({ game, index, schoolId, schoolIndex, allTeamGames, sportPr
   });
 
   return (
-    <li className="schedule-row">
+    <li className={"schedule-row" + (game.playoff ? " schedule-row--playoff" : "")}>
       <span className="schedule-row__index">{index}</span>
       <div className="schedule-row__date">
         <span className="schedule-row__day">{formatGameDay(game.date)}</span>
@@ -245,6 +309,11 @@ function ScheduleRow({ game, index, schoolId, schoolIndex, allTeamGames, sportPr
         <TeamLink team={opponent} className="schedule-row__opponent">
           {opponent.name}
         </TeamLink>
+        {game.playoff && game.playoff_round && (
+          <span className="schedule-row__round" title="WIAA tournament round">
+            {game.playoff_round}
+          </span>
+        )}
       </div>
       <Link
         to={`${sportPrefix}/game/${game.id}`}

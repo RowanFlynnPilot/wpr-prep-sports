@@ -168,6 +168,62 @@
   overflow: hidden;
 }
 
+/* Sub-section divider between the regular season list and the
+   playoff list. Sits in the document flow between the two <ol>s. */
+.schedule-divider {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 1.5rem 0 0.5rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--line);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.schedule-divider:first-of-type { margin-top: 0; }
+.schedule-divider__count {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 0.78rem;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--muted);
+}
+/* WIAA Playoffs divider gets an accent underline so the post-season
+   stands out from the regular season list. */
+.schedule-divider--playoffs {
+  color: var(--accent-700);
+  border-bottom-color: var(--accent);
+}
+
+/* Playoff-row tweak — small accent rail on the left so even out of
+   context (e.g. on a long schedule) you can see which games were
+   tournament play. */
+.schedule-row--playoff {
+  box-shadow: inset 3px 0 0 var(--accent);
+}
+
+.schedule-row__round {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 0.4rem;
+  padding: 0.18rem 0.45rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-700);
+  background: rgba(245, 158, 11, 0.15);
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+}
+
 .schedule-row {
   display: grid;
   grid-template-columns: 2.5rem 7rem minmax(0, 1fr) auto;
