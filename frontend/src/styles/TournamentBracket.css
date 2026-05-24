@@ -97,6 +97,14 @@
   transition: border-color var(--t-fast) var(--ease);
 }
 .bracket__journey-team:hover { border-bottom-color: currentColor; }
+.bracket__journey-trophy {
+  display: inline-block;
+  margin-right: 0.4rem;
+  font-size: 1.05em;
+  filter: saturate(1.2);
+  /* Don't underline-track with the team-name hover state. */
+  text-decoration: none;
+}
 .bracket__journey-mascot {
   font-family: var(--font-body);
   font-style: italic;

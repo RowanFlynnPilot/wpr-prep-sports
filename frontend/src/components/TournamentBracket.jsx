@@ -93,6 +93,11 @@ function JourneyRow({ journey, rounds, lastRound }) {
           to={`${sportPrefix}/team/${journey.schoolId}`}
           className="bracket__journey-team"
         >
+          {stateChamp && (
+            <span className="bracket__journey-trophy" aria-label="State champion" title="State champion">
+              🏆
+            </span>
+          )}
           {journey.school?.name ?? journey.schoolId}
         </Link>
         {journey.school?.mascot && (
