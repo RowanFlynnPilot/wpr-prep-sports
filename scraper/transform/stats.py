@@ -334,8 +334,8 @@ def merge_wph_per_game_stats(
                         same player already leads in points)
       "Hockey Saves"  — top goalie by SV (only counts goalies who played)
     """
-    subseason = wph.SUBSEASONS.get((sport, dataset.meta.season))
-    if subseason is None:
+    subseasons = wph.all_subseasons(sport, dataset.meta.season)
+    if not subseasons:
         return dataset
 
     finals = [g for g in dataset.games if g.status == GameStatus.FINAL]
@@ -346,12 +346,12 @@ def merge_wph_per_game_stats(
     if console:
         console.print(
             f"[bold]Indexing WPH schedules[/bold] for {len(targets)} teams "
-            f"(per-game stats; subseason={subseason})"
+            f"(per-game stats; subseasons={subseasons})"
         )
 
     if roster_index is None:
         roster_index = build_wph_roster_index(
-            manifest, subseason=subseason, season=dataset.meta.season, console=console,
+            manifest, subseason=subseasons[0], season=dataset.meta.season, console=console,
         )
     if console:
         console.print(f"  [dim]rosters loaded: {len(roster_index)} teams[/dim]")
@@ -362,26 +362,31 @@ def merge_wph_per_game_stats(
     # mascot-suffix mismatches between WIAA and WPH don't break the match.
     pair_index: dict[tuple[str, str, str], int] = {}
 
+    # Iterate every subseason so playoff games (Sectional Final, State
+    # Tournament) get indexed alongside regular season — WPH stores them
+    # under distinct subseason IDs.
     for school in targets:
-        tid = wph.find_team_instance_id(school.wph_team_id, subseason)
-        if tid is None:
-            time.sleep(POLITE_DELAY_SECONDS)
-            continue
-        try:
-            sched = wph.fetch_team_schedule(tid, subseason=subseason)
-        except Exception as e:  # noqa: BLE001
-            if console:
-                console.print(f"[yellow]  ! {school.id}: WPH schedule failed ({e})[/yellow]")
-            time.sleep(POLITE_DELAY_SECONDS)
-            continue
-        for sg in sched:
-            iso = _wph_date_to_iso(sg.date_text, season_start_year)
-            if not iso:
+        for sub in subseasons:
+            tid = wph.find_team_instance_id(school.wph_team_id, sub)
+            if tid is None:
+                time.sleep(POLITE_DELAY_SECONDS)
                 continue
-            opp_clean = (sg.opponent or "").lstrip("@").strip()
-            if not opp_clean:
+            try:
+                sched = wph.fetch_team_schedule(tid, subseason=sub)
+            except Exception as e:  # noqa: BLE001
+                if console:
+                    console.print(f"[yellow]  ! {school.id} sub={sub}: WPH schedule failed ({e})[/yellow]")
+                time.sleep(POLITE_DELAY_SECONDS)
                 continue
-            pair_index.setdefault((iso, school.id, _opp_key(opp_clean)), sg.game_id)
+            for sg in sched:
+                iso = _wph_date_to_iso(sg.date_text, season_start_year)
+                if not iso:
+                    continue
+                opp_clean = (sg.opponent or "").lstrip("@").strip()
+                if not opp_clean:
+                    continue
+                pair_index.setdefault((iso, school.id, _opp_key(opp_clean)), sg.game_id)
+            time.sleep(POLITE_DELAY_SECONDS)
         time.sleep(POLITE_DELAY_SECONDS)
 
     if console:

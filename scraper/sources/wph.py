@@ -56,10 +56,31 @@ USER_AGENT = (
 DEFAULT_TOOL_ID = 5762186
 
 # Subseason IDs by (sport_key, season).
+#
+# WPH splits each season into multiple subseasons — Regular Season and
+# Playoffs at minimum, sometimes State Tournament as a third. We need
+# all of them to attach stats / scoring summaries to playoff games:
+# Sectional Final wins land in the Playoffs subseason, not Regular.
+#
+# SUBSEASONS is the primary (regular season) ID; SUBSEASONS_EXTRA holds
+# every additional subseason for the same sport+season.
 SUBSEASONS: dict[tuple[str, str], int] = {
-    ("boys_hockey", "2025-26"): 951906,
+    ("boys_hockey", "2025-26"): 951906,   # Regular Season
     ("girls_hockey", "2025-26"): 953552,
 }
+SUBSEASONS_EXTRA: dict[tuple[str, str], list[int]] = {
+    ("boys_hockey", "2025-26"): [959128], # Playoffs (Regional/Sectional/State games)
+}
+
+
+def all_subseasons(sport: str, season: str) -> list[int]:
+    """Every subseason for a sport+season — primary first, then extras."""
+    out: list[int] = []
+    primary = SUBSEASONS.get((sport, season))
+    if primary is not None:
+        out.append(primary)
+    out.extend(SUBSEASONS_EXTRA.get((sport, season), []))
+    return out
 
 
 @dataclass(frozen=True)
