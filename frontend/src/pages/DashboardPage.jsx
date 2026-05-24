@@ -13,6 +13,7 @@ import StaleBanner from "../components/StaleBanner.jsx";
 import Sponsor from "../components/Sponsor.jsx";
 import TopPerformers from "../components/TopPerformers.jsx";
 import Marquee from "../components/Marquee.jsx";
+import SpiritStrip from "../components/SpiritStrip.jsx";
 import { pickFeaturedGame, tickerGames } from "../utils/games.js";
 import { pickFeaturedWeek } from "../utils/weeks.js";
 import { pickMarqueeGame } from "../utils/marquee.js";
@@ -24,7 +25,7 @@ function hasPlayerRows(rows) {
 }
 
 export default function DashboardPage({ dataset, schoolIndex, sponsors, sportConfig }) {
-  const { meta, schools, games, standings, seasonStats } = dataset;
+  const { meta, schools, games, standings, seasonStats, spirit } = dataset;
 
   // "anchor now" is the off-season content shim: pick games / ticker /
   // featured-week relative to just after the most-recent scraped game so
@@ -163,6 +164,8 @@ export default function DashboardPage({ dataset, schoolIndex, sponsors, sportCon
           <ThisWeekGrid week={week} schoolIndex={schoolIndex} allGames={games} sportConfig={sportConfig} />
         </section>
       )}
+
+      <SpiritStrip photos={spirit} schoolIndex={schoolIndex} sportConfig={sportConfig} />
 
       <Pickem games={games} schoolIndex={schoolIndex} sponsors={sponsors} />
 

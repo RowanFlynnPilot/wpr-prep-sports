@@ -1,0 +1,65 @@
+{
+  "_comment": "Reader-submitted school spirit photos. Populated via the WordPress submission workflow described in docs/spirit-workflow.md — DO NOT hand-edit production entries here. The sample entries below are placeholders so the widget renders something during local development; remove or overwrite once the WP pipeline begins delivering real photos.",
+  "photos": [
+    {
+      "id": "spirit-sample-001",
+      "school_id": "wausau-east",
+      "sport": "football",
+      "game_id": null,
+      "image_url": "https://placehold.co/800x600/003DA5/ffffff/png?text=Lumberjack+Pride",
+      "thumb_url": null,
+      "caption": "Section J brought the noise — placeholder photo until real submissions arrive.",
+      "credit": "Sample placeholder",
+      "approved_at": "2026-05-24T12:00:00Z",
+      "tags": ["sample"]
+    },
+    {
+      "id": "spirit-sample-002",
+      "school_id": "wausau-west",
+      "sport": "football",
+      "game_id": null,
+      "image_url": "https://placehold.co/800x600/0a2e6e/FFC72C/png?text=Warriors+Friday+Night",
+      "thumb_url": null,
+      "caption": "Friday night lights — placeholder photo until real submissions arrive.",
+      "credit": "Sample placeholder",
+      "approved_at": "2026-05-24T12:01:00Z",
+      "tags": ["sample"]
+    },
+    {
+      "id": "spirit-sample-003",
+      "school_id": "dc-everest",
+      "sport": "boys_basketball",
+      "game_id": null,
+      "image_url": "https://placehold.co/800x600/006633/ffffff/png?text=Evergreen+Strong",
+      "thumb_url": null,
+      "caption": "Student section in green-out mode — placeholder photo until real submissions arrive.",
+      "credit": "Sample placeholder",
+      "approved_at": "2026-05-24T12:02:00Z",
+      "tags": ["sample"]
+    },
+    {
+      "id": "spirit-sample-004",
+      "school_id": "stratford",
+      "sport": "football",
+      "game_id": null,
+      "image_url": "https://placehold.co/800x600/8B0000/ffffff/png?text=Tigers+Tailgate",
+      "thumb_url": null,
+      "caption": "Tailgate before kickoff — placeholder photo until real submissions arrive.",
+      "credit": "Sample placeholder",
+      "approved_at": "2026-05-24T12:03:00Z",
+      "tags": ["sample"]
+    },
+    {
+      "id": "spirit-sample-005",
+      "school_id": "wausau-east",
+      "sport": "boys_basketball",
+      "game_id": "boys_basketball-2026-02-12-wausau-east-at-wausau-west",
+      "image_url": "https://placehold.co/800x600/003DA5/FFC72C/png?text=East+vs+West+2026",
+      "thumb_url": null,
+      "caption": "Crosstown showdown — placeholder photo pinned to a specific game.",
+      "credit": "Sample placeholder",
+      "approved_at": "2026-02-13T08:00:00Z",
+      "tags": ["sample", "rivalry"]
+    }
+  ]
+}

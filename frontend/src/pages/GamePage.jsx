@@ -6,6 +6,7 @@ import TeamLink from "../components/TeamLink.jsx";
 import Sponsor from "../components/Sponsor.jsx";
 import ScoringSummary from "../components/ScoringSummary.jsx";
 import GamePreview from "../components/GamePreview.jsx";
+import SpiritGallery from "../components/SpiritGallery.jsx";
 import { schoolFor } from "../utils/schools.js";
 import { formatGameDay, formatGameDate, formatGameTime } from "../utils/dates.js";
 import { recapForGame } from "../utils/recap.js";
@@ -157,6 +158,8 @@ export default function GamePage({ dataset, schoolIndex, sportConfig }) {
       <GamePreview game={game} dataset={dataset} schoolIndex={schoolIndex} />
 
       <ScoringSummary game={game} schoolIndex={schoolIndex} />
+
+      <SpiritGallery game={game} photos={dataset.spirit} />
 
       {game.status !== "scheduled" && (<section>
         <div className="section-header">

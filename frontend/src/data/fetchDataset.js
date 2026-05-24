@@ -33,14 +33,21 @@ export async function fetchDataset(sportId = DEFAULT_SPORT) {
   // dataset is picked up immediately without manual cache clears.
   const meta = await fetchJson(`${sportBase}/meta.json`);
   const v = encodeURIComponent(meta.last_updated ?? Date.now());
-  const [schools, games, standings, sponsors, seasonStats] = await Promise.all([
+  const [schools, games, standings, sponsors, seasonStats, spirit] = await Promise.all([
     fetchJson(`${DATA_BASE}/schools.json?v=${v}`),
     fetchJson(`${sportBase}/games.json?v=${v}`),
     fetchJson(`${sportBase}/standings.json?v=${v}`),
-    // Sponsors and season_stats are optional — the widget renders fine without them.
+    // Sponsors, season_stats, and spirit photos are optional — the widget
+    // renders fine without any of them.
     fetchJsonOptional(`${DATA_BASE}/sponsors.json?v=${v}`),
     fetchJsonOptional(`${sportBase}/season_stats.json?v=${v}`),
+    fetchJsonOptional(`${DATA_BASE}/spirit.json?v=${v}`),
   ]);
+  // Spirit file is a wrapper { photos: [...] } so editors can park
+  // metadata alongside the photo list. Normalize to a flat array here.
+  const spiritPhotos = Array.isArray(spirit)
+    ? spirit
+    : (spirit?.photos ?? []);
   return {
     sport: sportId,
     meta,
@@ -49,6 +56,7 @@ export async function fetchDataset(sportId = DEFAULT_SPORT) {
     standings,
     sponsors,
     seasonStats: seasonStats ?? [],
+    spirit: spiritPhotos,
   };
 }
 
