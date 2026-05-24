@@ -250,17 +250,66 @@ def _parse_stat_table(table, kind: str, team_name: str) -> list[WPHGameStatRow]:
     return out
 
 
-def fetch_game_stats(game_id: int) -> list[WPHGameStatRow]:
+@dataclass(frozen=True)
+class WPHGoal:
+    """One goal entry parsed from the scoring summary list."""
+    period: str               # "1st" / "2nd" / "3rd" / "OT" / etc.
+    time: str                 # game clock at goal, e.g. "0:58"
+    team_name: str            # WPH-rendered team display name
+    scorer_jersey: str | None
+    scorer_name: str
+    strength: str             # "even strength" / "power play" / "shorthanded" / "empty net"
+    assists: list[tuple[str | None, str]]  # [(jersey, name), ...]
+    away_score: int           # cumulative away-team score after this goal
+    home_score: int           # cumulative home-team score after this goal
+
+
+@dataclass(frozen=True)
+class WPHGameDetail:
+    """Combined per-game payload — one HTTP request gives us both."""
+    stat_rows: list[WPHGameStatRow]
+    goals: list[WPHGoal]
+
+
+_SCORER_RE = re.compile(
+    r"^\s*#(?P<jersey>\d+)\s+(?P<name>.+?)\s+\((?P<strength>[^)]+)\)\s*(?:\((?P<assists>[^)]*)\))?\s*$",
+)
+_ASSIST_RE = re.compile(r"#(?P<jersey>\d+)\s+(?P<name>[^,#]+)")
+
+
+def _parse_play_details(text: str) -> tuple[str | None, str, str, list[tuple[str | None, str]]] | None:
     """
-    Pull one game's per-player stats. The /game/show/<id> page lays out
-    four tables under <h3> headings shaped "<Team Name> Skaters" /
-    "<Team Name> Goalies" — one pair per team. Returns flattened rows
-    tagged with their team_name and kind ('skater' | 'goalie').
+    Decompose a goal's play_details cell into scorer + strength + assists.
+    Returns (scorer_jersey, scorer_name, strength, assists) or None when
+    the line doesn't match the expected shape (own-goal entries, empty
+    rows, etc.).
+    """
+    m = _SCORER_RE.match(text.strip())
+    if not m:
+        return None
+    jersey = m.group("jersey")
+    name = re.sub(r"\s+", " ", m.group("name").strip())
+    strength = m.group("strength").strip().lower()
+    assist_text = m.group("assists") or ""
+    assists: list[tuple[str | None, str]] = []
+    for am in _ASSIST_RE.finditer(assist_text):
+        assists.append((am.group("jersey"), am.group("name").strip()))
+    return jersey, name, strength, assists
+
+
+def fetch_game_detail(game_id: int) -> WPHGameDetail:
+    """
+    One-shot fetch of /game/show/<id> that parses both the per-player
+    stat tables (skaters + goalies, per team) and the scoring summary
+    (periods + goals). Single HTTP request — callers that only need
+    stats can use fetch_game_stats which wraps this.
     """
     url = f"{BASE_URL}/game/show/{game_id}"
     html = _get(url)
     soup = BeautifulSoup(html, "lxml")
-    out: list[WPHGameStatRow] = []
+
+    # --- Stat tables (skater / goalie per team) ----------------------------
+    stat_rows: list[WPHGameStatRow] = []
     for h3 in soup.find_all("h3"):
         text = h3.get_text(" ", strip=True)
         if text.endswith(" Skaters"):
@@ -274,8 +323,55 @@ def fetch_game_stats(game_id: int) -> list[WPHGameStatRow]:
         table = h3.find_next("table")
         if table is None:
             continue
-        out.extend(_parse_stat_table(table, kind, team_name))
-    return out
+        stat_rows.extend(_parse_stat_table(table, kind, team_name))
+
+    # --- Scoring summary ---------------------------------------------------
+    goals: list[WPHGoal] = []
+    summary = soup.find("ul", class_="scoring_summary")
+    if summary is not None:
+        current_period = ""
+        for li in summary.find_all("li", recursive=False):
+            cls = li.get("class") or []
+            if "interval_row" in cls:
+                # First nested li holds "<span>1st</span> Period"
+                span = li.find("span")
+                current_period = span.get_text(strip=True) if span else ""
+                continue
+            if "scoring_info" not in cls:
+                continue
+            clock_el = li.select_one(".game_clock")
+            team_el = li.select_one(".team_name")
+            details_el = li.select_one(".play_details")
+            score_cells = li.select(".team_score")
+            if not (clock_el and team_el and details_el and len(score_cells) >= 2):
+                continue
+            parsed = _parse_play_details(details_el.get_text(" ", strip=True))
+            if parsed is None:
+                continue
+            scorer_jersey, scorer_name, strength, assists = parsed
+            try:
+                away_score = int(score_cells[0].get_text(strip=True))
+                home_score = int(score_cells[1].get_text(strip=True))
+            except (ValueError, IndexError):
+                continue
+            goals.append(WPHGoal(
+                period=current_period or "Unknown",
+                time=clock_el.get_text(strip=True),
+                team_name=team_el.get_text(" ", strip=True),
+                scorer_jersey=scorer_jersey,
+                scorer_name=scorer_name,
+                strength=strength,
+                assists=assists,
+                away_score=away_score,
+                home_score=home_score,
+            ))
+
+    return WPHGameDetail(stat_rows=stat_rows, goals=goals)
+
+
+def fetch_game_stats(game_id: int) -> list[WPHGameStatRow]:
+    """Back-compat wrapper around fetch_game_detail for stat-only callers."""
+    return fetch_game_detail(game_id).stat_rows
 
 
 @dataclass(frozen=True)

@@ -27,7 +27,7 @@ from typing import Iterable
 from rich.console import Console
 
 from config.loader import Manifest
-from models.schema import Dataset, Game, GameStatus, SeasonStat, Sport, StatLine
+from models.schema import Dataset, Game, GameStatus, Goal, SeasonStat, Sport, StatLine
 from sources import bound, wph
 
 POLITE_DELAY_SECONDS = 0.4
@@ -320,6 +320,7 @@ def merge_wph_per_game_stats(
     manifest: Manifest,
     sport: str,
     roster_index: dict[str, dict[tuple[str, str], tuple[str | None, str | None]]] | None = None,
+    name_to_id: dict[str, str] | None = None,
     console: Console | None = None,
 ) -> Dataset:
     """
@@ -388,7 +389,7 @@ def merge_wph_per_game_stats(
 
     matched_games = 0
     stat_lines_total = 0
-    stats_cache: dict[int, list[wph.WPHGameStatRow]] = {}
+    stats_cache: dict[int, wph.WPHGameDetail | None] = {}
 
     for game in finals:
         date_iso = game.date.strftime("%Y-%m-%d")
@@ -405,21 +406,25 @@ def merge_wph_per_game_stats(
             continue
 
         if game_id in stats_cache:
-            rows = stats_cache[game_id]
+            detail = stats_cache[game_id]
         else:
             try:
-                rows = wph.fetch_game_stats(game_id)
+                detail = wph.fetch_game_detail(game_id)
             except Exception as e:  # noqa: BLE001
                 if console:
-                    console.print(f"[yellow]  ! game {game_id}: stats fetch failed ({e})[/yellow]")
-                stats_cache[game_id] = []
+                    console.print(f"[yellow]  ! game {game_id}: fetch failed ({e})[/yellow]")
+                stats_cache[game_id] = None
                 time.sleep(POLITE_DELAY_SECONDS)
                 continue
-            stats_cache[game_id] = rows
+            stats_cache[game_id] = detail
             time.sleep(POLITE_DELAY_SECONDS)
 
-        attached = _attach_wph_per_game(game, rows, roster_index)
-        if attached:
+        if detail is None:
+            continue
+
+        attached = _attach_wph_per_game(game, detail.stat_rows, roster_index, name_to_id)
+        _attach_wph_scoring(game, detail.goals, name_to_id)
+        if attached or detail.goals:
             matched_games += 1
             stat_lines_total += attached
             if "wisconsinprephockey" not in game.sources:
@@ -437,14 +442,46 @@ def merge_wph_per_game_stats(
     return dataset
 
 
-def _match_wph_team_to_side(wph_team_name: str, game: Game):
+def _match_wph_team_to_side(wph_team_name: str, game: Game, name_to_id: dict[str, str] | None = None):
     """
     Pick which side (game.home / game.away) a WPH team_name corresponds
-    to. Matching is prefix-style on _opp_key so WPH's mascot-laden
-    "Notre Dame Academy Tritons" lines up with WIAA's "Notre Dame", and
-    WIAA's co-op "Marshfield/Columbus Catholic" lines up with WPH's
-    "Marshfield". Returns None on no confident match.
+    to.
+
+    Strategy (first non-None wins):
+      1. Alias-table lookup — _norm(wph_team_name) → school_id, then match
+         against home.school_id / away.school_id. Handles cases where WPH
+         uses a different display than WIAA ("SPASH Panthers" vs
+         "Stevens Point") but our normalize.py _NAME_ALIASES already
+         maps both to the same slug.
+      2. Prefix overlap on _opp_key — handles mascot-laden WPH names
+         ("Notre Dame Academy Tritons" against WIAA's "Notre Dame") and
+         co-op stripping ("Marshfield/Columbus Catholic" → "Marshfield").
+    Returns None on no confident match.
     """
+    wph_norm = _norm(wph_team_name)
+
+    # Alias lookup — try the full normalized name first, then trim
+    # trailing mascot tokens. "spash panthers" doesn't resolve, but
+    # "spash" does; same trick handles "Notre Dame Academy Tritons"
+    # via "notre dame academy" → "notre dame".
+    def _alias_to_side(candidate: str):
+        if not (name_to_id and candidate and candidate in name_to_id):
+            return None
+        sid = name_to_id[candidate]
+        if sid == game.home.school_id:
+            return game.home
+        if sid == game.away.school_id:
+            return game.away
+        return None
+
+    if name_to_id:
+        tokens = wph_norm.split()
+        for k in range(len(tokens), 0, -1):
+            hit = _alias_to_side(" ".join(tokens[:k]))
+            if hit is not None:
+                return hit
+
+    # Prefix overlap on _opp_key
     wph_key = _opp_key(wph_team_name)
     if not wph_key:
         return None
@@ -468,10 +505,46 @@ def _match_wph_team_to_side(wph_team_name: str, game: Game):
     return best
 
 
+def _attach_wph_scoring(game: Game, wph_goals: list[wph.WPHGoal], name_to_id: dict[str, str] | None = None) -> int:
+    """
+    Convert WPH scoring-summary goals into schema Goal records and
+    attach them to game.scoring. Each goal's team_name is resolved to
+    one of the game's two sides via _match_wph_team_to_side so the
+    frontend can compare against game.home.name / game.away.name
+    without re-fuzzy-matching.
+    """
+    if not wph_goals:
+        return 0
+    side_for_team: dict[str, object] = {}
+    out: list[Goal] = []
+    for wg in wph_goals:
+        side = side_for_team.get(wg.team_name)
+        if side is None:
+            side = _match_wph_team_to_side(wg.team_name, game, name_to_id)
+            if side is not None:
+                side_for_team[wg.team_name] = side
+        out.append(Goal(
+            period=wg.period,
+            time=wg.time,
+            team_school_id=(side.school_id if side else ""),
+            team_name=(side.name if side else wg.team_name),
+            scorer_jersey=wg.scorer_jersey,
+            scorer_name=wg.scorer_name,
+            strength=wg.strength,
+            assists=[{"jersey": j, "name": n} for j, n in wg.assists],
+            away_score=wg.away_score,
+            home_score=wg.home_score,
+        ))
+    if out:
+        game.scoring = out
+    return len(out)
+
+
 def _attach_wph_per_game(
     game: Game,
     rows: list[wph.WPHGameStatRow],
     roster_index: dict[str, dict[tuple[str, str], tuple[str | None, str | None]]],
+    name_to_id: dict[str, str] | None = None,
 ) -> int:
     """
     Reduce a game's raw athlete rows to up to 3 stat-leader lines per
@@ -491,7 +564,7 @@ def _attach_wph_per_game(
     for r in rows:
         if r.team_name in side_for_team:
             continue
-        side = _match_wph_team_to_side(r.team_name, game)
+        side = _match_wph_team_to_side(r.team_name, game, name_to_id)
         if side is None:
             continue
         side_for_team[r.team_name] = side

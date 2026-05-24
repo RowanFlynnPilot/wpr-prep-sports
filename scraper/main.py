@@ -160,11 +160,13 @@ def main() -> int:
             if subseason is not None
             else None
         )
+        name_to_id = build_name_index_for_manifest(manifest)
         dataset = merge_wph_per_game_stats(
             dataset,
             manifest=manifest,
             sport=args.sport,
             roster_index=roster_index,
+            name_to_id=name_to_id,
             console=console,
         )
         dataset = merge_wph_season_stats(

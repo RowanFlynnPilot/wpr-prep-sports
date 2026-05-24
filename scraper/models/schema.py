@@ -76,6 +76,20 @@ class StatLine(BaseModel):
     stats: dict[str, str] = Field(default_factory=dict)  # raw labels → values, e.g. {"YDS": "197"}
 
 
+class Goal(BaseModel):
+    """One goal entry in a hockey game's scoring summary (WPH-sourced)."""
+    period: str                       # "1st" | "2nd" | "3rd" | "OT" | "SO"
+    time: str                         # game clock at goal, e.g. "0:58"
+    team_school_id: str               # resolved to manifest school, "" if untracked
+    team_name: str                    # WIAA-rendered side name (matches game.home/away.name)
+    scorer_jersey: Optional[str] = None
+    scorer_name: str
+    strength: str = "even strength"   # "even strength" | "power play" | "shorthanded" | "empty net"
+    assists: list[dict[str, Optional[str]]] = Field(default_factory=list)  # [{"jersey": "10", "name": "Chase Crass"}]
+    away_score: int                   # running score after this goal
+    home_score: int
+
+
 class Game(BaseModel):
     id: str  # synthetic, e.g. "{sport}-{date}-{home_id}-{away_id}"
     sport: Sport
@@ -91,6 +105,7 @@ class Game(BaseModel):
     playoff: bool = False                     # True if this is a WIAA tournament game
     playoff_round: Optional[str] = None       # "Level 1" | "Level 2" | "Level 3" | "Level 4" | "State Semifinal" | "State Championship"
     stat_leaders: list[StatLine] = Field(default_factory=list)  # populated by Bound
+    scoring: list[Goal] = Field(default_factory=list)  # hockey-only — populated by WPH
 
 
 class StandingRow(BaseModel):
