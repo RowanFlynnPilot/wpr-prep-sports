@@ -3,6 +3,7 @@ import Layout from "../components/Layout.jsx";
 import Hero from "../components/Hero.jsx";
 import ScoreTicker from "../components/ScoreTicker.jsx";
 import ThisWeekGrid from "../components/ThisWeekGrid.jsx";
+import MonthCalendar from "../components/MonthCalendar.jsx";
 import StandingsTable from "../components/StandingsTable.jsx";
 import StaleBanner from "../components/StaleBanner.jsx";
 import Sponsor from "../components/Sponsor.jsx";
@@ -77,15 +78,26 @@ export default function DashboardPage({ dataset, schoolIndex, sponsors, sportCon
       })
     : null;
 
-  const weekLabel = week
-    ? week.isCurrent
-      ? "This Week"
-      : `Week of ${new Date(week.start).toLocaleDateString(undefined, { month: "short", day: "numeric" })}`
-    : "This Week";
+  // Same threshold as StaleBanner: 4 hours in-season, 48 hours off-season.
+  const dataStale = useMemo(() => {
+    if (!meta?.last_updated) return false;
+    const ageHours =
+      (Date.now() - new Date(meta.last_updated).getTime()) / 3_600_000;
+    const inSeason = (sportConfig?.activeMonths ?? []).includes(
+      new Date().getMonth(),
+    );
+    return ageHours > (inSeason ? 4 : 48);
+  }, [meta?.last_updated, sportConfig?.activeMonths]);
+
+  // Only show the "This Week" section when we're actually in a week that
+  // has games — the prior off-season fallback ("Week of Oct 17") read as
+  // misleading. The new month calendar covers the off-season gap.
+  const showThisWeek = week?.isCurrent === true;
 
   return (
     <Layout
       lastUpdated={lastUpdated}
+      dataStale={dataStale}
       sponsors={sponsors}
       footerStats={{
         sports: SPORT_IDS.length,
@@ -97,6 +109,16 @@ export default function DashboardPage({ dataset, schoolIndex, sponsors, sportCon
         lastUpdatedIso={meta?.last_updated}
         activeMonths={sportConfig?.activeMonths}
       />
+
+      {standings.length === 0 && (
+        <div className="coverage-note" role="status">
+          <strong>Coverage in progress.</strong>{" "}
+          We track {sportConfig.label.toLowerCase()} schedules and scores, but
+          conference standings and team stats aren't wired up yet — most of the
+          central-WI programs are co-op entries that need extra manifest work.
+          The schedule and recent scores below are accurate.
+        </div>
+      )}
 
       <Marquee pick={marquee} sportConfig={sportConfig} sponsors={sponsors} />
 
@@ -111,15 +133,17 @@ export default function DashboardPage({ dataset, schoolIndex, sponsors, sportCon
         daysToNext={daysToNext}
       />
 
-      <section>
-        <div className="section-header">
-          <h2>{weekLabel}</h2>
-          <span className="section-header__hint">
-            {week ? `${week.games.length} games · grouped by day` : ""}
-          </span>
-        </div>
-        <ThisWeekGrid week={week} schoolIndex={schoolIndex} allGames={games} sportConfig={sportConfig} />
-      </section>
+      {showThisWeek && (
+        <section>
+          <div className="section-header">
+            <h2>This Week</h2>
+            <span className="section-header__hint">
+              {week.games.length} games · grouped by day
+            </span>
+          </div>
+          <ThisWeekGrid week={week} schoolIndex={schoolIndex} allGames={games} sportConfig={sportConfig} />
+        </section>
+      )}
 
       <section>
         <div className="section-header">
@@ -129,27 +153,44 @@ export default function DashboardPage({ dataset, schoolIndex, sponsors, sportCon
         <ScoreTicker games={recent} schoolIndex={schoolIndex} allGames={games} sportConfig={sportConfig} />
       </section>
 
-      <section>
-        <div className="section-header">
-          <h2>Conference Standings</h2>
-          <span className="section-header__hint">
-            {sportConfig.label} · {sportConfig.season}
-          </span>
-        </div>
-        <div className="standings-grid">
-          {standings.map((s) => (
-            <StandingsTable
-              key={`${s.conference}-${s.sport}`}
-              standing={s}
-              schoolIndex={schoolIndex}
-              sponsors={sponsors}
-              seasonStats={seasonStats}
-              sportConfig={sportConfig}
-              games={games}
-            />
-          ))}
-        </div>
-      </section>
+      {games.length > 0 && (
+        <section>
+          <div className="section-header">
+            <h2>Schedule</h2>
+            <span className="section-header__hint">Month at a glance · click a day for details</span>
+          </div>
+          <MonthCalendar
+            key={sportConfig.id}
+            games={games}
+            schoolIndex={schoolIndex}
+            sportConfig={sportConfig}
+          />
+        </section>
+      )}
+
+      {standings.length > 0 && (
+        <section>
+          <div className="section-header">
+            <h2>Conference Standings</h2>
+            <span className="section-header__hint">
+              {sportConfig.label} · {sportConfig.season}
+            </span>
+          </div>
+          <div className="standings-grid">
+            {standings.map((s) => (
+              <StandingsTable
+                key={`${s.conference}-${s.sport}`}
+                standing={s}
+                schoolIndex={schoolIndex}
+                sponsors={sponsors}
+                seasonStats={seasonStats}
+                sportConfig={sportConfig}
+                games={games}
+              />
+            ))}
+          </div>
+        </section>
+      )}
 
       {seasonStats && seasonStats.length > 0 && hasPlayerRows(seasonStats) && (
         <section>

@@ -15,7 +15,14 @@ const WPR_LOGO = `${import.meta.env.BASE_URL}wpr-logo.png`;
  * inside this so the iframe feels like one widget regardless of which view
  * the user is on.
  */
-export default function Layout({ children, footerStats, lastUpdated, breadcrumb, sponsors }) {
+export default function Layout({
+  children,
+  footerStats,
+  lastUpdated,
+  dataStale = false,
+  breadcrumb,
+  sponsors,
+}) {
   const sportPrefix = useSportPrefix();
   return (
     <div className="app">
@@ -40,7 +47,16 @@ export default function Layout({ children, footerStats, lastUpdated, breadcrumb,
         <div className="masthead__attribution">
           <Sponsor slot="title" sponsors={sponsors} variant="compact" />
           {lastUpdated && (
-            <div className="masthead__updated">Updated {lastUpdated}</div>
+            <div
+              className={
+                "masthead__updated" +
+                (dataStale ? " masthead__updated--stale" : " masthead__updated--fresh")
+              }
+              title={dataStale ? "Scrape hasn't run recently" : "Data is up to date"}
+            >
+              <span className="masthead__updated-dot" aria-hidden="true" />
+              Updated {lastUpdated}
+            </div>
           )}
         </div>
       </header>

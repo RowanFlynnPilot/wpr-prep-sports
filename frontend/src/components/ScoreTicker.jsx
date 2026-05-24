@@ -2,7 +2,7 @@ import { useEffect, useRef, useState, useCallback } from "react";
 import { Link } from "react-router-dom";
 import TeamLogo from "./TeamLogo.jsx";
 import TeamLink from "./TeamLink.jsx";
-import { schoolFor } from "../utils/schools.js";
+import { primaryColor, schoolFor } from "../utils/schools.js";
 import { formatGameShortDay, formatGameDate } from "../utils/dates.js";
 import { playerLineForGame } from "../utils/recap.js";
 import { useSportPrefix } from "../utils/links.js";
@@ -131,8 +131,17 @@ function GameCard({ game, schoolIndex, allGames, sportConfig }) {
   const awayWon = isFinal && (awayScore ?? -1) > (homeScore ?? -1);
   const playerLine = playerLineForGame(game, { contextGames: allGames, sportConfig });
 
+  // Card accent — winning team's primary color for finals; home team's
+  // for upcoming (so the away/road game in the next slot still reads as
+  // belonging to one of the matchup's two teams).
+  const accentSchool = isFinal
+    ? (homeWon ? homeSchool : awayWon ? awaySchool : homeSchool)
+    : homeSchool;
+  const accentColor = accentSchool ? primaryColor(accentSchool) : null;
+  const cardStyle = accentColor ? { "--school-color": accentColor } : undefined;
+
   return (
-    <article className="card">
+    <article className={"card" + (accentColor ? " card--themed" : "")} style={cardStyle}>
       <header className="card__header">
         <span className="card__day">{formatGameShortDay(game.date)}</span>
         <span className="card__date">{formatGameDate(game.date)}</span>

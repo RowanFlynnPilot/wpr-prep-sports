@@ -98,10 +98,24 @@
   padding: 0.85rem 0.95rem 0.95rem;
   transition: transform var(--t-fast) var(--ease),
               box-shadow var(--t-fast) var(--ease);
+  position: relative;
+}
+/* Themed cards get a school-colored left rail via inset shadow so the
+   accent doesn't push content around. */
+.card--themed {
+  box-shadow:
+    var(--shadow-lift),
+    inset 4px 0 0 var(--school-color, transparent);
 }
 .card:hover {
   transform: translateY(-1px);
   box-shadow: 0 2px 4px rgba(14,15,18,0.08), 0 8px 24px rgba(14,15,18,0.07);
+}
+.card--themed:hover {
+  box-shadow:
+    0 2px 4px rgba(14,15,18,0.08),
+    0 8px 24px rgba(14,15,18,0.07),
+    inset 4px 0 0 var(--school-color, transparent);
 }
 
 .card__header {

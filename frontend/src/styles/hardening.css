@@ -109,6 +109,27 @@
   margin-right: 0.4rem;
 }
 
+/* Coverage-status banner — same shape as stale-banner but cooler tone,
+   used when a sport has games but no standings / stats (girls hockey). */
+.coverage-note {
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-left: 3px solid #2563eb;
+  border-radius: var(--radius-sm);
+  padding: 0.7rem 1rem;
+  font-size: 0.9rem;
+  color: #1e3a8a;
+  margin-bottom: 1.25rem;
+  line-height: 1.45;
+}
+.coverage-note strong {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-right: 0.4rem;
+}
+
 /* Focus rings — keyboard nav polish across the app */
 *:focus-visible {
   outline: 3px solid var(--accent);
