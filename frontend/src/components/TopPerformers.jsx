@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import TeamLogo from "./TeamLogo.jsx";
 import { formatStatsLine, topPerformers } from "../utils/seasonStats.js";
 import { useSportPrefix } from "../utils/links.js";
 
@@ -31,9 +32,17 @@ export default function TopPerformers({ rows, schoolIndex, sportConfig, n = 5 })
             <ol className="top-card__list">
               {leaders.map((r, idx) => {
                 const school = schoolIndex.get(r.school_id);
+                // TeamLogo wants a `team` with optional logo_url; the
+                // school index attaches one from the games payload.
+                const teamForLogo = {
+                  school_id: r.school_id,
+                  name: school?.name ?? r.school_id,
+                  logo_url: school?.logo_url ?? null,
+                };
                 return (
                   <li key={`${r.school_id}-${r.player_name}`} className="top-card__row">
                     <span className="top-card__rank">{idx + 1}</span>
+                    <TeamLogo team={teamForLogo} school={school} size="sm" />
                     <div className="top-card__player">
                       <span className="top-card__name">
                         {r.player_name}

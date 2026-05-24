@@ -1,5 +1,6 @@
 import { useMemo } from "react";
 import { Link } from "react-router-dom";
+import TeamLogo from "./TeamLogo.jsx";
 import {
   buildTeamJourneys,
   playoffRoundsInOrder,
@@ -89,17 +90,28 @@ function JourneyRow({ journey, rounds, lastRound }) {
       role="row"
     >
       <div className="bracket__journey-cell bracket__journey-cell--team">
-        <Link
-          to={`${sportPrefix}/team/${journey.schoolId}`}
-          className="bracket__journey-team"
-        >
-          {stateChamp && (
-            <span className="bracket__journey-trophy" aria-label="State champion" title="State champion">
-              🏆
-            </span>
-          )}
-          {journey.school?.name ?? journey.schoolId}
-        </Link>
+        <div className="bracket__journey-team-row">
+          <TeamLogo
+            team={{
+              school_id: journey.schoolId,
+              name: journey.school?.name ?? journey.schoolId,
+              logo_url: journey.school?.logo_url ?? null,
+            }}
+            school={journey.school}
+            size="sm"
+          />
+          <Link
+            to={`${sportPrefix}/team/${journey.schoolId}`}
+            className="bracket__journey-team"
+          >
+            {stateChamp && (
+              <span className="bracket__journey-trophy" aria-label="State champion" title="State champion">
+                🏆
+              </span>
+            )}
+            {journey.school?.name ?? journey.schoolId}
+          </Link>
+        </div>
         {journey.school?.mascot && (
           <span className="bracket__journey-mascot">{journey.school.mascot}</span>
         )}

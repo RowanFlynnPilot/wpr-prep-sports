@@ -96,6 +96,11 @@
   border-bottom: 1px solid transparent;
   transition: border-color var(--t-fast) var(--ease);
 }
+.bracket__journey-team-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
 .bracket__journey-team:hover { border-bottom-color: currentColor; }
 .bracket__journey-trophy {
   display: inline-block;
