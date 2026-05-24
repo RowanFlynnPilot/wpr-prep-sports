@@ -99,6 +99,29 @@ a:hover { border-bottom-color: currentColor; }
   color: var(--muted);
 }
 .eyebrow--accent { color: var(--accent-700); }
+.eyebrow--live {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #dc2626;
+  color: #fff;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+.game-page__live-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.3);
+  animation: live-pulse-page 1.2s ease-in-out infinite;
+}
+@keyframes live-pulse-page {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.5; }
+}
 
 /* Loading / error states */
 .loading, .error {

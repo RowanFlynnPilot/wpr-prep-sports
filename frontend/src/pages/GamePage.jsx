@@ -103,9 +103,16 @@ export default function GamePage({ dataset, schoolIndex, sportConfig }) {
     <Layout breadcrumb={breadcrumb} sponsors={dataset.sponsors}>
       <section className="game-page__hero">
         <div className="game-page__meta">
-          <span className="eyebrow eyebrow--accent">
-            {isFinal ? "Final" : game.status === "in_progress" ? "Live" : "Up Next"}
-          </span>
+          {game.status === "in_progress" ? (
+            <span className="eyebrow eyebrow--live">
+              <span className="game-page__live-dot" aria-hidden="true" />
+              LIVE
+            </span>
+          ) : (
+            <span className="eyebrow eyebrow--accent">
+              {isFinal ? "Final" : "Up Next"}
+            </span>
+          )}
           <span className="game-page__date">
             {formatGameDay(game.date)} · {formatGameDate(game.date)}
             {!isFinal && <> · {formatGameTime(game.date)}</>}
@@ -122,7 +129,7 @@ export default function GamePage({ dataset, schoolIndex, sportConfig }) {
             school={awaySchool}
             score={awayScore}
             won={awayWon}
-            showScore={isFinal}
+            showScore={isFinal || game.status === "in_progress"}
           />
           <div className="game-page__divider" aria-hidden="true">
             <span>vs</span>
@@ -132,7 +139,7 @@ export default function GamePage({ dataset, schoolIndex, sportConfig }) {
             school={homeSchool}
             score={homeScore}
             won={homeWon}
-            showScore={isFinal}
+            showScore={isFinal || game.status === "in_progress"}
           />
         </div>
 

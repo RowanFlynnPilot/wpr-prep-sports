@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
   Routes,
   Route,
@@ -100,6 +100,23 @@ function SportShell() {
       cancelled = true;
     };
   }, [sport, valid]);
+
+  // Live auto-refresh: when any game in the current dataset is mid-play,
+  // re-fetch every 60s so the Friday Night Lights crowd sees scores
+  // tick up without a manual refresh.
+  const hasLiveGame = useMemo(
+    () => (dataset?.games ?? []).some((g) => g.status === "in_progress"),
+    [dataset?.games],
+  );
+  useEffect(() => {
+    if (!valid || !hasLiveGame) return;
+    const id = setInterval(() => {
+      fetchDataset(sport)
+        .then((d) => setDataset(d))
+        .catch(() => {/* ignore — next tick will retry */});
+    }, 60_000);
+    return () => clearInterval(id);
+  }, [sport, valid, hasLiveGame]);
 
   // Unknown sport → bounce to default after hooks have run, so hook order
   // stays stable on subsequent renders.

@@ -145,14 +145,21 @@ function GameCard({ game, schoolIndex, allGames, sportConfig }) {
       <header className="card__header">
         <span className="card__day">{formatGameShortDay(game.date)}</span>
         <span className="card__date">{formatGameDate(game.date)}</span>
-        <span className={`card__status card__status--${game.status}`}>
-          {isFinal ? "Final" : game.status === "in_progress" ? "Live" : "Upcoming"}
-        </span>
+        {game.status === "in_progress" ? (
+          <span className="card__status card__status--in_progress card__status--live">
+            <span className="card__live-dot" aria-hidden="true" />
+            LIVE
+          </span>
+        ) : (
+          <span className={`card__status card__status--${game.status}`}>
+            {isFinal ? "Final" : "Upcoming"}
+          </span>
+        )}
       </header>
 
       <ul className="card__teams">
-        <Row team={game.away} school={awaySchool} score={awayScore} won={awayWon} showScore={isFinal} />
-        <Row team={game.home} school={homeSchool} score={homeScore} won={homeWon} showScore={isFinal} />
+        <Row team={game.away} school={awaySchool} score={awayScore} won={awayWon} showScore={isFinal || game.status === "in_progress"} />
+        <Row team={game.home} school={homeSchool} score={homeScore} won={homeWon} showScore={isFinal || game.status === "in_progress"} />
       </ul>
 
       {playerLine && (
