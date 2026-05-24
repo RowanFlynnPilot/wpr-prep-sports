@@ -338,6 +338,10 @@ function TeamStatsCard({ label, team, school, won, lines, score, showScore, othe
   // Per-category expand toggle. State lives on the card (one card per
   // team) so each side can be expanded independently.
   const [expanded, setExpanded] = useState({});
+  // Card-level view mode: compact per-category leaders ("leaders") vs.
+  // a comprehensive box-score table ("box") that shows every player ×
+  // every stat column the source provided. Toggle via the header.
+  const [viewMode, setViewMode] = useState("leaders");
 
   // Group by category, sort each group by its leader stat. Categories
   // arrive in the source's natural order; preserve that.
@@ -384,8 +388,22 @@ function TeamStatsCard({ label, team, school, won, lines, score, showScore, othe
             ? "No box score submitted for this team — coaches input stats per-team on MaxPreps."
             : "No stats reported for this team."}
         </p>
+      ) : viewMode === "box" ? (
+        <FullBoxScore
+          groups={groups}
+          sportPrefix={sportPrefix}
+          onClose={() => setViewMode("leaders")}
+        />
       ) : (
         <div className="team-stats__groups">
+          <button
+            type="button"
+            className="team-stats__view-toggle"
+            onClick={() => setViewMode("box")}
+            aria-label="View full box score"
+          >
+            Full box score →
+          </button>
           {groups.map(({ category, lines: groupLines }) => {
             const isOpen = expanded[category] ?? false;
             const visible = isOpen
@@ -443,6 +461,119 @@ function TeamStatsCard({ label, team, school, won, lines, score, showScore, othe
         </div>
       )}
     </article>
+  );
+}
+
+/**
+ * Comprehensive box-score view for one team. Renders a table per
+ * category with every column the source provided (Hitting, Serving,
+ * Blocking, Digging, Ball Handling — all of MP's columns including
+ * the granular ones the leader view collapses).
+ *
+ * The first column links the player name to their profile when the
+ * team is tracked. Players sort by their category's leader stat.
+ */
+function FullBoxScore({ groups, sportPrefix, onClose }) {
+  return (
+    <div className="team-stats__box">
+      <button
+        type="button"
+        className="team-stats__view-toggle team-stats__view-toggle--back"
+        onClick={onClose}
+      >
+        ← Back to leaders
+      </button>
+      {groups.map(({ category, lines }) => (
+        <BoxCategoryTable
+          key={category}
+          category={category}
+          lines={lines}
+          sportPrefix={sportPrefix}
+        />
+      ))}
+    </div>
+  );
+}
+
+function BoxCategoryTable({ category, lines, sportPrefix }) {
+  // Build the column set from the union of every player's stats keys
+  // in this category. Order them: SP first (sets played, always
+  // useful), then the leader key, then everything else in first-seen
+  // order. Hide the canonical leader key when a friendlier equivalent
+  // exists (same dedupe rule as the compact view).
+  const columns = useMemo(() => {
+    const seen = [];
+    const set = new Set();
+    for (const line of lines) {
+      for (const k of Object.keys(line.stats ?? {})) {
+        if (set.has(k)) continue;
+        if (REDUNDANT_KEYS.has(k) && hasReadableEquivalent(k, line.stats)) {
+          continue;
+        }
+        set.add(k);
+        seen.push(k);
+      }
+    }
+    // Promote SP to the front, then the canonical leader key.
+    const leaderKey = LEADER_KEY_BY_CATEGORY[category];
+    const promoted = [];
+    if (seen.includes("SP")) promoted.push("SP");
+    if (leaderKey && seen.includes(leaderKey) && !promoted.includes(leaderKey)) {
+      promoted.push(leaderKey);
+    }
+    for (const k of seen) {
+      if (!promoted.includes(k)) promoted.push(k);
+    }
+    return promoted;
+  }, [lines, category]);
+
+  if (columns.length === 0) return null;
+
+  return (
+    <div className="box-cat">
+      <h4 className="box-cat__header">{category}</h4>
+      <div className="box-cat__scroll">
+        <table className="box-cat__table">
+          <thead>
+            <tr>
+              <th scope="col" className="box-cat__col-name">Player</th>
+              {columns.map((col) => (
+                <th key={col} scope="col">{col}</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {lines.map((line, i) => (
+              <tr key={`${line.player_name}-${i}`}>
+                <th scope="row" className="box-cat__col-name">
+                  {line.team_school_id ? (
+                    <Link
+                      to={playerProfileHref(sportPrefix, line.team_school_id, line.player_name)}
+                      className="box-cat__name-link"
+                    >
+                      {line.player_name}
+                      {line.player_year && (
+                        <span className="box-cat__year"> ({line.player_year})</span>
+                      )}
+                    </Link>
+                  ) : (
+                    <>
+                      {line.player_name}
+                      {line.player_year && (
+                        <span className="box-cat__year"> ({line.player_year})</span>
+                      )}
+                    </>
+                  )}
+                </th>
+                {columns.map((col) => (
+                  <td key={col}>{line.stats?.[col] ?? "—"}</td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
   );
 }
 

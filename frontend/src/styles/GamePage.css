@@ -332,6 +332,133 @@
   border-top: 1px solid var(--paper-2);
   transition: background 0.15s ease;
 }
+
+.team-stats__view-toggle {
+  appearance: none;
+  border: 1px solid var(--accent);
+  background: transparent;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  transition: background 0.15s ease;
+}
+.team-stats__view-toggle:hover {
+  background: var(--accent);
+  color: #fff;
+}
+.team-stats__view-toggle--back {
+  margin: 0.5rem;
+  width: auto;
+  display: inline-flex;
+  align-self: flex-start;
+  border-color: var(--line);
+  color: var(--muted);
+}
+.team-stats__view-toggle--back:hover {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: #fff;
+}
+
+/* ---- Full box-score view (per-category tables) ---- */
+
+.team-stats__box {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.box-cat + .box-cat {
+  border-top: 1px solid var(--paper-2);
+}
+
+.box-cat__header {
+  margin: 0;
+  padding: 0.55rem 1rem;
+  background: var(--paper);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.box-cat__scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.box-cat__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-numeric);
+  font-size: 0.82rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.box-cat__table th,
+.box-cat__table td {
+  padding: 0.4rem 0.6rem;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.box-cat__table thead th {
+  background: #fff;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.66rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted-2);
+  border-bottom: 1px solid var(--paper-2);
+  position: sticky;
+  top: 0;
+}
+
+.box-cat__table tbody tr + tr {
+  border-top: 1px solid var(--paper-2);
+}
+
+.box-cat__table tbody tr:hover {
+  background: rgba(243, 240, 232, 0.45);
+}
+
+.box-cat__col-name {
+  text-align: left !important;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: var(--ink);
+  min-width: 9rem;
+  letter-spacing: 0;
+}
+
+.box-cat__name-link {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+.box-cat__name-link:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+.box-cat__year {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--muted);
+}
 .team-stats__expand:hover {
   background: rgba(243, 240, 232, 0.6);
   text-decoration: underline;
