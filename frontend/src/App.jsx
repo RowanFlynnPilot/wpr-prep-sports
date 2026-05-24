@@ -32,6 +32,7 @@ import "./styles/Sponsor.css";
 import "./styles/SeasonLeaders.css";
 import "./styles/TopPerformers.css";
 import "./styles/GamePage.css";
+import "./styles/GamePreview.css";
 import "./styles/Marquee.css";
 
 export default function App() {

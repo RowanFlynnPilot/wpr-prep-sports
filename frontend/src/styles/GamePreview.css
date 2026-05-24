@@ -1,0 +1,172 @@
+.game-preview {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.game-preview__teams {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.85rem;
+}
+
+@media (max-width: 640px) {
+  .game-preview__teams {
+    grid-template-columns: 1fr;
+  }
+}
+
+.game-preview__team {
+  --school-color: var(--ink);
+  background: #fff;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--school-color);
+  border-radius: var(--radius);
+  padding: 0.85rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.game-preview__team-header {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.65rem;
+}
+.game-preview__team-text h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1rem;
+  margin: 0;
+  color: var(--ink);
+  line-height: 1.15;
+}
+.game-preview__team-text p {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin: 0.1rem 0 0;
+}
+.game-preview__record {
+  font-family: var(--font-numeric);
+  font-weight: 700;
+  font-size: 1.15rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-sm);
+  background: var(--paper);
+}
+
+.game-preview__untracked-note {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin: 0;
+}
+
+.game-preview__stats {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.game-preview__stat {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.5rem;
+  border-top: 1px solid var(--paper-2);
+  padding-top: 0.4rem;
+}
+.game-preview__stat:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+.game-preview__stat dt {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.game-preview__stat dd {
+  margin: 0;
+  font-family: var(--font-numeric);
+  font-weight: 600;
+  font-size: 0.92rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
+}
+
+.game-preview__form {
+  display: inline-flex;
+  gap: 0.25rem;
+}
+.game-preview__form-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.4rem;
+  height: 1.4rem;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0;
+  color: #fff;
+}
+.game-preview__form-mark--w {
+  background: #16a34a;
+}
+.game-preview__form-mark--l {
+  background: #b91c1c;
+}
+
+.game-preview__no-meeting {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin: 0;
+  padding: 0.4rem 0;
+}
+
+.game-preview__last-meeting {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.85rem 1rem;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.15s ease;
+}
+.game-preview__last-meeting:hover {
+  background: var(--paper-2);
+}
+.game-preview__last-meeting-label {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.game-preview__last-meeting-detail {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--ink);
+}
+.game-preview__last-meeting-detail strong {
+  font-weight: 700;
+}
+.game-preview__last-meeting-date {
+  color: var(--muted);
+  font-style: italic;
+}

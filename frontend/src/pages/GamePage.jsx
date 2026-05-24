@@ -5,6 +5,7 @@ import TeamLogo from "../components/TeamLogo.jsx";
 import TeamLink from "../components/TeamLink.jsx";
 import Sponsor from "../components/Sponsor.jsx";
 import ScoringSummary from "../components/ScoringSummary.jsx";
+import GamePreview from "../components/GamePreview.jsx";
 import { schoolFor } from "../utils/schools.js";
 import { formatGameDay, formatGameDate, formatGameTime } from "../utils/dates.js";
 import { recapForGame } from "../utils/recap.js";
@@ -153,9 +154,11 @@ export default function GamePage({ dataset, schoolIndex, sportConfig }) {
         className="game-page__sponsor"
       />
 
+      <GamePreview game={game} dataset={dataset} schoolIndex={schoolIndex} />
+
       <ScoringSummary game={game} schoolIndex={schoolIndex} />
 
-      <section>
+      {game.status !== "scheduled" && (<section>
         <div className="section-header">
           <h2>Game Stats</h2>
           <span className="section-header__hint">
@@ -195,7 +198,7 @@ export default function GamePage({ dataset, schoolIndex, sportConfig }) {
             </p>
           </div>
         )}
-      </section>
+      </section>)}
     </Layout>
   );
 }
