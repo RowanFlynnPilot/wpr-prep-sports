@@ -1,8 +1,4 @@
-import {
-  formatStatsLine,
-  positionFor,
-  teamSeasonLeaders,
-} from "../utils/seasonStats.js";
+import { formatStatsLine, teamSeasonLeaders } from "../utils/seasonStats.js";
 
 /**
  * "Season Leaders" card on the team page. One row per configured
@@ -28,9 +24,6 @@ export default function SeasonLeaders({ rows, sportConfig }) {
       <ul className="season-leaders__list">
         {leaders.map(({ category, row }) => (
           <li key={category.id} className="season-leaders__row">
-            <span className="season-leaders__position">
-              {positionFor(category)}
-            </span>
             <div className="season-leaders__player">
               <span className="season-leaders__name">
                 {row.player_name}
