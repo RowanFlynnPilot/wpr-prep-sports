@@ -26,6 +26,7 @@ from transform.normalize import build_dataset, build_name_index_for_manifest
 from transform.live import merge_live_scores
 from transform.stats import (
     build_wph_roster_index,
+    aggregate_volleyball_season_stats,
     merge_bound_stats,
     merge_maxpreps_stats,
     merge_team_season_stats,
@@ -197,6 +198,12 @@ def main() -> int:
                 name_to_id=name_to_id,
                 season=args.season,
                 console=console,
+            )
+            # Roll per-game MP stats up into per-player season totals so
+            # TopPerformers shows real player leaderboards (MP's own
+            # season-leader panel goes empty off-season).
+            dataset = aggregate_volleyball_season_stats(
+                dataset, console=console,
             )
     elif not args.no_stats and args.sport in WPH_SPORTS:
         subseason = wph.SUBSEASONS.get((args.sport, args.season))

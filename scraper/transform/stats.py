@@ -280,6 +280,123 @@ def merge_maxpreps_stats(
     return dataset
 
 
+def aggregate_volleyball_season_stats(
+    dataset: Dataset,
+    *,
+    console: Console | None = None,
+) -> Dataset:
+    """Roll per-game volleyball stat_leaders up into per-player season
+    totals and write to dataset.season_stats.
+
+    Why aggregate locally instead of scraping MP's season-stats UI:
+    MaxPreps's team home `wallCards.teamLeaders` panel is the
+    season-leader surface, but it goes empty off-season (selects the
+    upcoming season's data set, which is empty until the schedule
+    publishes). Rolling our own from the per-game lines we already
+    extracted avoids the dependency and works year-round.
+
+    Strategy: for each (school_id, player_name, category) tuple across
+    every finalized volleyball game, sum the canonical stat key
+    (KLS/AST/DIG/BLK/ACE) and count games played. Emit one SeasonStat
+    row per (player, category). Replaces any existing volleyball season
+    rows so re-runs are idempotent.
+    """
+    if dataset.meta.sport != Sport.VOLLEYBALL:
+        return dataset
+
+    # Canonical category → stat key emitted by maxpreps.py (matches what
+    # Bound emits for volleyball stat_leaders as well).
+    leader_key_for = {
+        "Kills": "KLS",
+        "Assists": "AST",
+        "Digs": "DIG",
+        "Total Blocks": "BLK",
+        "Serve Aces": "ACE",
+    }
+
+    finals = [g for g in dataset.games if g.status == GameStatus.FINAL]
+    if not finals:
+        return dataset
+
+    # (school_id, player_name, category) → running totals
+    bucket: dict[tuple[str, str, str], dict] = {}
+    for game in finals:
+        # Track distinct games-played per player; a player who registers
+        # in multiple categories in one game should still count as one GP.
+        gp_seen: set[tuple[str, str]] = set()
+        for line in game.stat_leaders or []:
+            if line.category not in leader_key_for:
+                continue
+            school_id = line.team_school_id or ""
+            if not school_id:
+                continue
+            key = (school_id, line.player_name, line.category)
+            stat_key = leader_key_for[line.category]
+            raw_val = (line.stats or {}).get(stat_key, "0")
+            try:
+                val = float(str(raw_val).replace(",", ""))
+            except ValueError:
+                continue
+            entry = bucket.setdefault(
+                key,
+                {
+                    "school_id": school_id,
+                    "player_name": line.player_name,
+                    "player_year": line.player_year,
+                    "category": line.category,
+                    "stat_key": stat_key,
+                    "total": 0.0,
+                    "gp": 0,
+                },
+            )
+            # Most recent player_year wins (handles mid-season class
+            # corrections; rare but worth tolerating).
+            if line.player_year and not entry["player_year"]:
+                entry["player_year"] = line.player_year
+            entry["total"] += val
+            gp_id = (school_id, line.player_name)
+            if gp_id not in gp_seen:
+                gp_seen.add(gp_id)
+                entry["gp"] += 1
+
+    # Replace prior volleyball rows (preserve other sports just in case
+    # this dataset is ever multi-sport — currently it isn't).
+    prior = [s for s in dataset.season_stats if s.sport != Sport.VOLLEYBALL]
+    new_rows: list[SeasonStat] = []
+    for e in bucket.values():
+        # Format total: integer when whole, one decimal otherwise.
+        tot = e["total"]
+        if tot == int(tot):
+            tot_str = str(int(tot))
+        else:
+            tot_str = f"{tot:.1f}"
+        new_rows.append(
+            SeasonStat(
+                school_id=e["school_id"],
+                sport=Sport.VOLLEYBALL,
+                category=e["category"],
+                player_name=e["player_name"],
+                player_year=e["player_year"],
+                stats={
+                    e["stat_key"]: tot_str,
+                    "GP": str(e["gp"]),
+                },
+            )
+        )
+
+    # Drop the team-only Bound rows ("Volleyball Offense" / "Defense" /
+    # "Serving" with player_name="Team") — they coexist awkwardly with
+    # the per-player rows in the leaderboard UI. The per-player data is
+    # strictly better.
+    dataset.season_stats = prior + new_rows
+    if console:
+        console.print(
+            f"[green]Volleyball season stats:[/green] aggregated "
+            f"{len(new_rows)} player-category rows from {len(finals)} games"
+        )
+    return dataset
+
+
 def _attach_maxpreps_stats(
     game: Game,
     lines: Iterable[maxpreps.StatLine],
