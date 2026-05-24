@@ -25,7 +25,7 @@ function hasPlayerRows(rows) {
 }
 
 export default function DashboardPage({ dataset, schoolIndex, sponsors, sportConfig }) {
-  const { meta, schools, games, standings, seasonStats, spirit } = dataset;
+  const { meta, schools, games, standings, seasonStats, spirit, potwOverride } = dataset;
 
   // "anchor now" is the off-season content shim: pick games / ticker /
   // featured-week relative to just after the most-recent scraped game so
@@ -143,6 +143,7 @@ export default function DashboardPage({ dataset, schoolIndex, sponsors, sportCon
         schoolIndex={schoolIndex}
         sponsors={sponsors}
         sportConfig={sportConfig}
+        override={potwOverride}
       />
 
       <Notable

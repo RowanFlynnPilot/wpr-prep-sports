@@ -1,0 +1,14 @@
+{
+  "_comment": "Editor's Player of the Week override. When a sport has an entry here (and its expires_at is in the future), it wins over the algorithmic pick. Remove a sport's entry to revert to the algorithm. Schema per sport: { school_id, game_id, player_name, player_year?, position?, headline?, expires_at? }. See docs/potw-override.md.",
+  "_sample": {
+    "football": {
+      "school_id": "wausau-east",
+      "game_id": "football-2025-10-17-merrill-at-wausau-east",
+      "player_name": "Jane Doe",
+      "player_year": "SR",
+      "position": "QB",
+      "headline": "Threw for 350 and 4 TDs in the Friday rout — best line of the season.",
+      "expires_at": "2025-10-24T00:00:00Z"
+    }
+  }
+}

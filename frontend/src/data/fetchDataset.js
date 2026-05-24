@@ -33,21 +33,31 @@ export async function fetchDataset(sportId = DEFAULT_SPORT) {
   // dataset is picked up immediately without manual cache clears.
   const meta = await fetchJson(`${sportBase}/meta.json`);
   const v = encodeURIComponent(meta.last_updated ?? Date.now());
-  const [schools, games, standings, sponsors, seasonStats, spirit] = await Promise.all([
+  const [schools, games, standings, sponsors, seasonStats, spirit, potwOverrides] = await Promise.all([
     fetchJson(`${DATA_BASE}/schools.json?v=${v}`),
     fetchJson(`${sportBase}/games.json?v=${v}`),
     fetchJson(`${sportBase}/standings.json?v=${v}`),
-    // Sponsors, season_stats, and spirit photos are optional — the widget
-    // renders fine without any of them.
+    // Sponsors, season_stats, spirit photos, and the editor's PotW override
+    // are all optional — the widget renders fine without any of them.
     fetchJsonOptional(`${DATA_BASE}/sponsors.json?v=${v}`),
     fetchJsonOptional(`${sportBase}/season_stats.json?v=${v}`),
     fetchJsonOptional(`${DATA_BASE}/spirit.json?v=${v}`),
+    fetchJsonOptional(`${DATA_BASE}/potw.json?v=${v}`),
   ]);
   // Spirit file is a wrapper { photos: [...] } so editors can park
   // metadata alongside the photo list. Normalize to a flat array here.
   const spiritPhotos = Array.isArray(spirit)
     ? spirit
     : (spirit?.photos ?? []);
+  // The override file is keyed by sport — pull just this sport's entry.
+  // Expired entries are filtered out here so the algorithm takes over
+  // cleanly without the renderer needing to know about expires_at.
+  const overrideForSport = potwOverrides?.[sportId] ?? null;
+  const potwOverride =
+    overrideForSport && !isOverrideExpired(overrideForSport)
+      ? overrideForSport
+      : null;
+
   return {
     sport: sportId,
     meta,
@@ -57,7 +67,15 @@ export async function fetchDataset(sportId = DEFAULT_SPORT) {
     sponsors,
     seasonStats: seasonStats ?? [],
     spirit: spiritPhotos,
+    potwOverride,
   };
+}
+
+function isOverrideExpired(o) {
+  if (!o?.expires_at) return false;
+  const ts = Date.parse(o.expires_at);
+  if (Number.isNaN(ts)) return false;
+  return ts < Date.now();
 }
 
 async function fetchJson(url) {

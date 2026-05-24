@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import { Link } from "react-router-dom";
 import Sponsor from "./Sponsor.jsx";
-import { pickPlayerOfWeek } from "../utils/playerOfWeek.js";
+import { pickPlayerOfWeek, resolveOverridePotw } from "../utils/playerOfWeek.js";
 import { initials, primaryColor } from "../utils/schools.js";
 import { useSportPrefix } from "../utils/links.js";
 
@@ -10,8 +10,11 @@ import { useSportPrefix } from "../utils/links.js";
  * most recent week of play. Hidden when no qualifying line exists, so
  * quiet weeks don't field a halfhearted card.
  */
-export default function PlayerOfWeek({ games, schoolIndex, sponsors, sportConfig }) {
-  const pick = useMemo(() => pickPlayerOfWeek(games), [games]);
+export default function PlayerOfWeek({ games, schoolIndex, sponsors, sportConfig, override }) {
+  const pick = useMemo(
+    () => resolveOverridePotw(override, games) ?? pickPlayerOfWeek(games),
+    [override, games],
+  );
   const sportPrefix = useSportPrefix();
   if (!pick) return null;
 
@@ -30,7 +33,11 @@ export default function PlayerOfWeek({ games, schoolIndex, sponsors, sportConfig
 
   const schoolColor = school ? primaryColor(school) : null;
   const cardStyle = schoolColor ? { "--school-color": schoolColor } : undefined;
-  const formatted = sportConfig?.stats?.gameLine?.format?.(line, { tone: "default" }) ?? null;
+  // Editor-supplied headline wins; otherwise format the algorithmic stat line.
+  const formatted =
+    line.headline
+    ?? sportConfig?.stats?.gameLine?.format?.(line, { tone: "default" })
+    ?? null;
 
   return (
     <section className="potw" aria-label="Player of the Week" style={cardStyle}>

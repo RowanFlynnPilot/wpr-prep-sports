@@ -102,6 +102,34 @@ const SEVEN_DAYS = 7 * DAY_MS;
  *              high-impact performance). Prevents quiet weeks from
  *              fielding an underwhelming highlight.
  */
+/**
+ * Resolve an editor's override against the dataset. Returns a pick
+ * shaped like the algorithmic result so the renderer doesn't branch.
+ * Returns null if the override can't be resolved (unknown game, etc.) —
+ * caller should fall back to the algorithm.
+ */
+export function resolveOverridePotw(override, games) {
+  if (!override) return null;
+  const { school_id, game_id, player_name } = override;
+  if (!school_id || !game_id || !player_name) return null;
+  const game = (games ?? []).find((g) => g.id === game_id);
+  if (!game) return null;
+
+  // Build a StatLine-shaped object so PlayerOfWeek.jsx renders the same
+  // way it does for an algorithmic pick. `headline` is rendered in
+  // place of the formatted stat line when present.
+  const line = {
+    player_name,
+    player_year: override.player_year ?? null,
+    position: override.position ?? null,
+    team_school_id: school_id,
+    category: override.category ?? null,
+    stats: override.stats ?? {},
+    headline: override.headline ?? null,
+  };
+  return { line, game, schoolId: school_id, source: "editor" };
+}
+
 export function pickPlayerOfWeek(games, { minScore = 80, anchor = null } = {}) {
   if (!games || games.length === 0) return null;
 
@@ -128,7 +156,7 @@ export function pickPlayerOfWeek(games, { minScore = 80, anchor = null } = {}) {
       const score = scoreStatLine(line);
       if (score < minScore) continue;
       if (!best || score > best.score) {
-        best = { line, game, schoolId: line.team_school_id, score };
+        best = { line, game, schoolId: line.team_school_id, score, source: "algorithm" };
       }
     }
   }
