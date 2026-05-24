@@ -187,9 +187,9 @@ _NAME_ALIASES: dict[str, str] = {
     "d.c. everest": "dc-everest",
     "dc everest": "dc-everest",
     "marshfield": "marshfield",
-    "stevens point": "spash",
     "stevens point area": "spash",
     "stevens point area sr.": "spash",
+    "stevens point": "spash",
     "spash": "spash",
     "wisconsin rapids": "wisconsin-rapids",
     "wisconsin rapids lincoln": "wisconsin-rapids",
@@ -217,6 +217,14 @@ _NAME_ALIASES: dict[str, str] = {
     "antigo/wittenberg-birnamwood": "antigo",
     "rhinelander co-op": "rhinelander",
     "pacelli co-op": "pacelli",
+    # Football co-op aliases for newly-tracked small-school programs.
+    "loyal/greenwood": "loyal",
+    "greenwood/granton": "greenwood",
+    "columbus catholic": "columbus-catholic",
+    "owen-withee": "owen-withee",
+    "northland pines": "northland-pines",
+    "shell lake": "shell-lake",
+    "south shore": "south-shore",
 }
 
 

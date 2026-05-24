@@ -31,6 +31,7 @@
       ],
       "wiaa_org_id": 454,
       "bound_slug": "wausaueast",
+      "wph_team_id": null,
       "athletics_url": null
     },
     {
@@ -67,8 +68,8 @@
       ],
       "wiaa_org_id": 455,
       "bound_slug": "wausauwest",
-      "athletics_url": null,
-      "wph_team_id": 9184052
+      "wph_team_id": 9184052,
+      "athletics_url": null
     },
     {
       "id": "dc-everest",
@@ -104,8 +105,8 @@
       ],
       "wiaa_org_id": 93,
       "bound_slug": "dceverest",
-      "athletics_url": null,
-      "wph_team_id": 9184048
+      "wph_team_id": 9184048,
+      "athletics_url": null
     },
     {
       "id": "marshfield",
@@ -133,12 +134,16 @@
         {
           "sport": "volleyball",
           "conference": "Wisconsin Valley"
+        },
+        {
+          "sport": "boys_hockey",
+          "conference": "Wisconsin Valley"
         }
       ],
       "wiaa_org_id": 234,
       "bound_slug": "marshfield",
-      "athletics_url": null,
-      "wph_team_id": 9184049
+      "wph_team_id": 9184049,
+      "athletics_url": null
     },
     {
       "id": "spash",
@@ -174,8 +179,8 @@
       ],
       "wiaa_org_id": 412,
       "bound_slug": "stevenspoi",
-      "athletics_url": null,
-      "wph_team_id": 9184051
+      "wph_team_id": 9184051,
+      "athletics_url": null
     },
     {
       "id": "wisconsin-rapids",
@@ -211,8 +216,8 @@
       ],
       "wiaa_org_id": 487,
       "bound_slug": "wisconsinr",
-      "athletics_url": null,
-      "wph_team_id": 9184053
+      "wph_team_id": 9184053,
+      "athletics_url": null
     },
     {
       "id": "athens",
@@ -244,6 +249,7 @@
       ],
       "wiaa_org_id": 22,
       "bound_slug": "athens",
+      "wph_team_id": null,
       "athletics_url": null
     },
     {
@@ -276,6 +282,7 @@
       ],
       "wiaa_org_id": 112,
       "bound_slug": "edgar",
+      "wph_team_id": null,
       "athletics_url": null
     },
     {
@@ -308,6 +315,7 @@
       ],
       "wiaa_org_id": 227,
       "bound_slug": "marathon",
+      "wph_team_id": null,
       "athletics_url": null
     },
     {
@@ -340,6 +348,7 @@
       ],
       "wiaa_org_id": 296,
       "bound_slug": "newmancath",
+      "wph_team_id": null,
       "athletics_url": null
     },
     {
@@ -372,6 +381,7 @@
       ],
       "wiaa_org_id": 415,
       "bound_slug": "stratford",
+      "wph_team_id": null,
       "athletics_url": null
     },
     {
@@ -404,6 +414,7 @@
       ],
       "wiaa_org_id": 408,
       "bound_slug": "spencer",
+      "wph_team_id": null,
       "athletics_url": null
     },
     {
@@ -440,8 +451,8 @@
       ],
       "wiaa_org_id": 280,
       "bound_slug": "mosinee",
-      "athletics_url": null,
-      "wph_team_id": 9184026
+      "wph_team_id": 9184026,
+      "athletics_url": null
     },
     {
       "id": "colby",
@@ -473,6 +484,7 @@
       ],
       "wiaa_org_id": 79,
       "bound_slug": "colby",
+      "wph_team_id": null,
       "athletics_url": null
     },
     {
@@ -505,6 +517,7 @@
       ],
       "wiaa_org_id": 1,
       "bound_slug": "abbotsford",
+      "wph_team_id": null,
       "athletics_url": null
     },
     {
@@ -541,8 +554,8 @@
       ],
       "wiaa_org_id": 427,
       "bound_slug": "tomahawk",
-      "athletics_url": null,
-      "wph_team_id": 9184029
+      "wph_team_id": 9184029,
+      "athletics_url": null
     },
     {
       "id": "rhinelander",
@@ -570,12 +583,16 @@
         {
           "sport": "volleyball",
           "conference": "Great Northern"
+        },
+        {
+          "sport": "boys_hockey",
+          "conference": "Great Northern"
         }
       ],
       "wiaa_org_id": 363,
       "bound_slug": "rhinelande",
-      "athletics_url": null,
-      "wph_team_id": 9184028
+      "wph_team_id": 9184028,
+      "athletics_url": null
     },
     {
       "id": "medford",
@@ -603,12 +620,16 @@
         {
           "sport": "volleyball",
           "conference": "Great Northern"
+        },
+        {
+          "sport": "boys_hockey",
+          "conference": "Great Northern"
         }
       ],
       "wiaa_org_id": 240,
       "bound_slug": "medford",
-      "athletics_url": null,
-      "wph_team_id": 9184025
+      "wph_team_id": 9184025,
+      "athletics_url": null
     },
     {
       "id": "merrill",
@@ -636,12 +657,16 @@
         {
           "sport": "volleyball",
           "conference": "Great Northern"
+        },
+        {
+          "sport": "boys_hockey",
+          "conference": "Wisconsin Valley"
         }
       ],
       "wiaa_org_id": 248,
       "bound_slug": "merrill",
-      "athletics_url": null,
-      "wph_team_id": 9184050
+      "wph_team_id": 9184050,
+      "athletics_url": null
     },
     {
       "id": "lakeland",
@@ -677,8 +702,8 @@
       ],
       "wiaa_org_id": 203,
       "bound_slug": "lakeland",
-      "athletics_url": null,
-      "wph_team_id": 9184024
+      "wph_team_id": 9184024,
+      "athletics_url": null
     },
     {
       "id": "antigo",
@@ -706,12 +731,16 @@
         {
           "sport": "volleyball",
           "conference": "Great Northern"
+        },
+        {
+          "sport": "boys_hockey",
+          "conference": "Great Northern"
         }
       ],
       "wiaa_org_id": 11,
       "bound_slug": "antigo",
-      "athletics_url": null,
-      "wph_team_id": 9184022
+      "wph_team_id": 9184022,
+      "athletics_url": null
     },
     {
       "id": "eau-claire-north",
@@ -735,8 +764,8 @@
       ],
       "wiaa_org_id": 111,
       "bound_slug": "eauclairen",
-      "athletics_url": null,
-      "wph_team_id": 9183991
+      "wph_team_id": 9183991,
+      "athletics_url": null
     },
     {
       "id": "eau-claire-memorial",
@@ -760,8 +789,8 @@
       ],
       "wiaa_org_id": 110,
       "bound_slug": "eauclairem",
-      "athletics_url": null,
-      "wph_team_id": 9183990
+      "wph_team_id": 9183990,
+      "athletics_url": null
     },
     {
       "id": "chippewa-falls",
@@ -785,8 +814,8 @@
       ],
       "wiaa_org_id": 73,
       "bound_slug": "chippewafa",
-      "athletics_url": null,
-      "wph_team_id": 9183987
+      "wph_team_id": 9183987,
+      "athletics_url": null
     },
     {
       "id": "hudson",
@@ -810,8 +839,8 @@
       ],
       "wiaa_org_id": 168,
       "bound_slug": "hudson",
-      "athletics_url": null,
-      "wph_team_id": 9183992
+      "wph_team_id": 9183992,
+      "athletics_url": null
     },
     {
       "id": "new-richmond",
@@ -835,8 +864,8 @@
       ],
       "wiaa_org_id": 295,
       "bound_slug": "newrichmond",
-      "athletics_url": null,
-      "wph_team_id": 9183994
+      "wph_team_id": 9183994,
+      "athletics_url": null
     },
     {
       "id": "rice-lake",
@@ -860,8 +889,8 @@
       ],
       "wiaa_org_id": 365,
       "bound_slug": "ricelake",
-      "athletics_url": null,
-      "wph_team_id": 9183995
+      "wph_team_id": 9183995,
+      "athletics_url": null
     },
     {
       "id": "auburndale",
@@ -877,10 +906,23 @@
         {
           "sport": "football",
           "conference": "Marawood/CWC"
+        },
+        {
+          "sport": "boys_basketball",
+          "conference": "Marawood"
+        },
+        {
+          "sport": "girls_basketball",
+          "conference": "Marawood"
+        },
+        {
+          "sport": "volleyball",
+          "conference": "Marawood"
         }
       ],
       "wiaa_org_id": 23,
       "bound_slug": "auburndale",
+      "wph_team_id": null,
       "athletics_url": null
     },
     {
@@ -897,10 +939,23 @@
         {
           "sport": "football",
           "conference": "Marawood/CWC"
+        },
+        {
+          "sport": "boys_basketball",
+          "conference": "Marawood"
+        },
+        {
+          "sport": "girls_basketball",
+          "conference": "Marawood"
+        },
+        {
+          "sport": "volleyball",
+          "conference": "Marawood"
         }
       ],
       "wiaa_org_id": 21,
       "bound_slug": "assumption",
+      "wph_team_id": null,
       "athletics_url": null
     },
     {
@@ -921,8 +976,8 @@
       ],
       "wiaa_org_id": 324,
       "bound_slug": "pacelli",
-      "athletics_url": null,
-      "wph_team_id": 9184058
+      "wph_team_id": 9184058,
+      "athletics_url": null
     },
     {
       "id": "pittsville",
@@ -942,6 +997,7 @@
       ],
       "wiaa_org_id": 337,
       "bound_slug": "pittsville",
+      "wph_team_id": null,
       "athletics_url": null
     },
     {
@@ -962,6 +1018,7 @@
       ],
       "wiaa_org_id": 172,
       "bound_slug": "iolascandi",
+      "wph_team_id": null,
       "athletics_url": null
     },
     {
@@ -982,6 +1039,7 @@
       ],
       "wiaa_org_id": 10,
       "bound_slug": "amherst",
+      "wph_team_id": null,
       "athletics_url": null
     },
     {
@@ -1002,6 +1060,7 @@
       ],
       "wiaa_org_id": 472,
       "bound_slug": "weyauwegaf",
+      "wph_team_id": null,
       "athletics_url": null
     },
     {
@@ -1022,6 +1081,7 @@
       ],
       "wiaa_org_id": 491,
       "bound_slug": "wittenberg",
+      "wph_team_id": null,
       "athletics_url": null
     },
     {
@@ -1042,6 +1102,7 @@
       ],
       "wiaa_org_id": 374,
       "bound_slug": "rosholt",
+      "wph_team_id": null,
       "athletics_url": null
     },
     {
@@ -1058,10 +1119,23 @@
         {
           "sport": "football",
           "conference": "Northwoods-East 8"
+        },
+        {
+          "sport": "boys_basketball",
+          "conference": "Marawood"
+        },
+        {
+          "sport": "girls_basketball",
+          "conference": "Marawood"
+        },
+        {
+          "sport": "volleyball",
+          "conference": "Marawood"
         }
       ],
       "wiaa_org_id": 349,
       "bound_slug": "prentice",
+      "wph_team_id": null,
       "athletics_url": null
     },
     {
@@ -1082,6 +1156,7 @@
       ],
       "wiaa_org_id": 127,
       "bound_slug": "flambeau",
+      "wph_team_id": null,
       "athletics_url": null
     },
     {
@@ -1102,6 +1177,7 @@
       ],
       "wiaa_org_id": 56,
       "bound_slug": "bruce",
+      "wph_team_id": null,
       "athletics_url": null
     },
     {
@@ -1122,6 +1198,7 @@
       ],
       "wiaa_org_id": 169,
       "bound_slug": "hurley",
+      "wph_team_id": null,
       "athletics_url": null
     },
     {
@@ -1138,12 +1215,24 @@
         {
           "sport": "football",
           "conference": "Northwoods-East 8"
+        },
+        {
+          "sport": "boys_basketball",
+          "conference": "Marawood"
+        },
+        {
+          "sport": "girls_basketball",
+          "conference": "Marawood"
+        },
+        {
+          "sport": "volleyball",
+          "conference": "Marawood"
         }
       ],
       "wiaa_org_id": 515,
       "bound_slug": "chequamego",
-      "athletics_url": null,
-      "wph_team_id": 9184055
+      "wph_team_id": 9184055,
+      "athletics_url": null
     },
     {
       "id": "phillips",
@@ -1159,10 +1248,23 @@
         {
           "sport": "football",
           "conference": "Northwoods-East 8"
+        },
+        {
+          "sport": "boys_basketball",
+          "conference": "Marawood"
+        },
+        {
+          "sport": "girls_basketball",
+          "conference": "Marawood"
+        },
+        {
+          "sport": "volleyball",
+          "conference": "Marawood"
         }
       ],
       "wiaa_org_id": 335,
       "bound_slug": "phillips",
+      "wph_team_id": null,
       "athletics_url": null
     },
     {
@@ -1179,10 +1281,23 @@
         {
           "sport": "football",
           "conference": "Northwoods-East 8"
+        },
+        {
+          "sport": "boys_basketball",
+          "conference": "Marawood"
+        },
+        {
+          "sport": "girls_basketball",
+          "conference": "Marawood"
+        },
+        {
+          "sport": "volleyball",
+          "conference": "Marawood"
         }
       ],
       "wiaa_org_id": 364,
       "bound_slug": "riblake",
+      "wph_team_id": null,
       "athletics_url": null
     },
     {
@@ -1203,6 +1318,7 @@
       ],
       "wiaa_org_id": 478,
       "bound_slug": "wildrose",
+      "wph_team_id": null,
       "athletics_url": null
     },
     {
@@ -1223,6 +1339,7 @@
       ],
       "wiaa_org_id": 7,
       "bound_slug": "almondbanc",
+      "wph_team_id": null,
       "athletics_url": null
     },
     {
@@ -1243,6 +1360,7 @@
       ],
       "wiaa_org_id": 47,
       "bound_slug": "bowler",
+      "wph_team_id": null,
       "athletics_url": null
     },
     {
@@ -1263,6 +1381,7 @@
       ],
       "wiaa_org_id": 230,
       "bound_slug": "marion",
+      "wph_team_id": null,
       "athletics_url": null
     },
     {
@@ -1283,6 +1402,7 @@
       ],
       "wiaa_org_id": 244,
       "bound_slug": "menomineenation",
+      "wph_team_id": null,
       "athletics_url": null
     },
     {
@@ -1303,6 +1423,7 @@
       ],
       "wiaa_org_id": 342,
       "bound_slug": "portedward",
+      "wph_team_id": null,
       "athletics_url": null
     },
     {
@@ -1323,6 +1444,7 @@
       ],
       "wiaa_org_id": 428,
       "bound_slug": "tricounty",
+      "wph_team_id": null,
       "athletics_url": null
     },
     {
@@ -1347,8 +1469,8 @@
       ],
       "wiaa_org_id": 369,
       "bound_slug": "riverfalls",
-      "athletics_url": null,
-      "wph_team_id": 9183996
+      "wph_team_id": 9183996,
+      "athletics_url": null
     },
     {
       "id": "superior",
@@ -1368,8 +1490,8 @@
       ],
       "wiaa_org_id": 418,
       "bound_slug": "superior",
-      "athletics_url": null,
-      "wph_team_id": 9184056
+      "wph_team_id": 9184056,
+      "athletics_url": null
     },
     {
       "id": "menomonie",
@@ -1393,8 +1515,328 @@
       ],
       "wiaa_org_id": 246,
       "bound_slug": "menomonie",
-      "athletics_url": null,
-      "wph_team_id": 9183993
+      "wph_team_id": 9183993,
+      "athletics_url": null
+    },
+    {
+      "id": "northland-pines",
+      "name": "Northland Pines",
+      "full_name": "Northland Pines High School",
+      "mascot": "Eagles",
+      "city": "Eagle River",
+      "colors": [
+        "#1e3a8a",
+        "#fbbf24"
+      ],
+      "conferences": [
+        {
+          "sport": "football",
+          "conference": "Great Northern"
+        },
+        {
+          "sport": "boys_basketball",
+          "conference": "Great Northern"
+        },
+        {
+          "sport": "girls_basketball",
+          "conference": "Great Northern"
+        },
+        {
+          "sport": "volleyball",
+          "conference": "Great Northern"
+        },
+        {
+          "sport": "boys_hockey",
+          "conference": "Great Northern"
+        }
+      ],
+      "wiaa_org_id": 303,
+      "bound_slug": null,
+      "wph_team_id": null,
+      "athletics_url": null
+    },
+    {
+      "id": "waupaca",
+      "name": "Waupaca",
+      "full_name": "Waupaca High School",
+      "mascot": "Comets",
+      "city": "Waupaca",
+      "colors": [
+        "#1e40af",
+        "#fde047"
+      ],
+      "conferences": [
+        {
+          "sport": "boys_hockey",
+          "conference": "Great Northern"
+        }
+      ],
+      "wiaa_org_id": 452,
+      "bound_slug": null,
+      "wph_team_id": null,
+      "athletics_url": null
+    },
+    {
+      "id": "loyal",
+      "name": "Loyal",
+      "full_name": "Loyal High School",
+      "mascot": "Greyhounds",
+      "city": "Loyal",
+      "colors": [
+        "#000000",
+        "#facc15"
+      ],
+      "conferences": [
+        {
+          "sport": "boys_basketball",
+          "conference": "Cloverbelt"
+        },
+        {
+          "sport": "girls_basketball",
+          "conference": "Cloverbelt"
+        },
+        {
+          "sport": "volleyball",
+          "conference": "Cloverbelt"
+        },
+        {
+          "sport": "football",
+          "conference": "CWC-Large"
+        }
+      ],
+      "wiaa_org_id": 213,
+      "bound_slug": null,
+      "wph_team_id": null,
+      "athletics_url": null
+    },
+    {
+      "id": "neillsville",
+      "name": "Neillsville",
+      "full_name": "Neillsville High School",
+      "mascot": "Warriors",
+      "city": "Neillsville",
+      "colors": [
+        "#dc2626",
+        "#000000"
+      ],
+      "conferences": [
+        {
+          "sport": "boys_basketball",
+          "conference": "Cloverbelt"
+        },
+        {
+          "sport": "girls_basketball",
+          "conference": "Cloverbelt"
+        },
+        {
+          "sport": "volleyball",
+          "conference": "Cloverbelt"
+        }
+      ],
+      "wiaa_org_id": 286,
+      "bound_slug": null,
+      "wph_team_id": null,
+      "athletics_url": null
+    },
+    {
+      "id": "owen-withee",
+      "name": "Owen-Withee",
+      "full_name": "Owen-Withee High School",
+      "mascot": "Blackhawks",
+      "city": "Owen",
+      "colors": [
+        "#000000",
+        "#fbbf24"
+      ],
+      "conferences": [
+        {
+          "sport": "boys_basketball",
+          "conference": "Cloverbelt"
+        },
+        {
+          "sport": "girls_basketball",
+          "conference": "Cloverbelt"
+        },
+        {
+          "sport": "volleyball",
+          "conference": "Cloverbelt"
+        }
+      ],
+      "wiaa_org_id": 322,
+      "bound_slug": null,
+      "wph_team_id": null,
+      "athletics_url": null
+    },
+    {
+      "id": "gilman",
+      "name": "Gilman",
+      "full_name": "Gilman High School",
+      "mascot": "Pirates",
+      "city": "Gilman",
+      "colors": [
+        "#000000",
+        "#facc15"
+      ],
+      "conferences": [
+        {
+          "sport": "boys_basketball",
+          "conference": "Cloverbelt"
+        },
+        {
+          "sport": "girls_basketball",
+          "conference": "Cloverbelt"
+        },
+        {
+          "sport": "volleyball",
+          "conference": "Cloverbelt"
+        }
+      ],
+      "wiaa_org_id": 139,
+      "bound_slug": null,
+      "wph_team_id": null,
+      "athletics_url": null
+    },
+    {
+      "id": "greenwood",
+      "name": "Greenwood",
+      "full_name": "Greenwood High School",
+      "mascot": "Indians",
+      "city": "Greenwood",
+      "colors": [
+        "#15803d",
+        "#fbbf24"
+      ],
+      "conferences": [
+        {
+          "sport": "boys_basketball",
+          "conference": "Cloverbelt"
+        },
+        {
+          "sport": "girls_basketball",
+          "conference": "Cloverbelt"
+        },
+        {
+          "sport": "volleyball",
+          "conference": "Cloverbelt"
+        }
+      ],
+      "wiaa_org_id": 154,
+      "bound_slug": null,
+      "wph_team_id": null,
+      "athletics_url": null
+    },
+    {
+      "id": "columbus-catholic",
+      "name": "Columbus Catholic",
+      "full_name": "Columbus Catholic High School",
+      "mascot": "Dons",
+      "city": "Marshfield",
+      "colors": [
+        "#1d4ed8",
+        "#fbbf24"
+      ],
+      "conferences": [
+        {
+          "sport": "boys_basketball",
+          "conference": "Cloverbelt"
+        },
+        {
+          "sport": "girls_basketball",
+          "conference": "Cloverbelt"
+        },
+        {
+          "sport": "volleyball",
+          "conference": "Cloverbelt"
+        }
+      ],
+      "wiaa_org_id": 82,
+      "bound_slug": null,
+      "wph_team_id": null,
+      "athletics_url": null
+    },
+    {
+      "id": "mellen",
+      "name": "Mellen",
+      "full_name": "Mellen High School",
+      "mascot": "Granite Diggers",
+      "city": "Mellen",
+      "colors": [
+        "#1e3a8a",
+        "#fbbf24"
+      ],
+      "conferences": [
+        {
+          "sport": "football",
+          "conference": "Northwoods-East 8"
+        }
+      ],
+      "wiaa_org_id": 241,
+      "bound_slug": null,
+      "wph_team_id": null,
+      "athletics_url": null
+    },
+    {
+      "id": "washburn",
+      "name": "Washburn",
+      "full_name": "Washburn High School",
+      "mascot": "Castle Guards",
+      "city": "Washburn",
+      "colors": [
+        "#000000",
+        "#fbbf24"
+      ],
+      "conferences": [
+        {
+          "sport": "football",
+          "conference": "Northwoods-East 8"
+        }
+      ],
+      "wiaa_org_id": 442,
+      "bound_slug": null,
+      "wph_team_id": null,
+      "athletics_url": null
+    },
+    {
+      "id": "shell-lake",
+      "name": "Shell Lake",
+      "full_name": "Shell Lake High School",
+      "mascot": "Lakers",
+      "city": "Shell Lake",
+      "colors": [
+        "#1d4ed8",
+        "#fbbf24"
+      ],
+      "conferences": [
+        {
+          "sport": "football",
+          "conference": "Northwoods-East 8"
+        }
+      ],
+      "wiaa_org_id": 394,
+      "bound_slug": null,
+      "wph_team_id": null,
+      "athletics_url": null
+    },
+    {
+      "id": "south-shore",
+      "name": "South Shore",
+      "full_name": "South Shore High School",
+      "mascot": "Cardinals",
+      "city": "Port Wing",
+      "colors": [
+        "#dc2626",
+        "#000000"
+      ],
+      "conferences": [
+        {
+          "sport": "football",
+          "conference": "Northwoods-East 8"
+        }
+      ],
+      "wiaa_org_id": 404,
+      "bound_slug": null,
+      "wph_team_id": null,
+      "athletics_url": null
     }
   ]
 }
