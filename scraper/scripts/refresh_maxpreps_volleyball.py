@@ -41,6 +41,19 @@ def main() -> int:
     if ds is None:
         console.print("[red]No volleyball dataset on disk[/red]")
         return 1
+    # Pre-clean any MaxPreps data already on disk — past bugs could
+    # have cross-attached set_scores or stat_leaders to the wrong
+    # tournament-day game. Drop only MP-sourced lines; preserve Bound
+    # lines (which never carry set_scores anyway).
+    cleared_games = 0
+    for g in ds.games:
+        if "maxpreps" in g.sources:
+            g.stat_leaders = []
+            g.set_scores = []
+            g.sources = [s for s in g.sources if s != "maxpreps"]
+            cleared_games += 1
+    console.print(f"[dim]Pre-cleaned MP data from {cleared_games} games[/dim]")
+
     name_to_id = build_name_index_for_manifest(manifest)
     ds = merge_maxpreps_stats(
         ds, manifest=manifest, name_to_id=name_to_id,

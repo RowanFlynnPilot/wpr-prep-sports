@@ -201,13 +201,20 @@ def merge_maxpreps_stats(
             console.print(f"[yellow]Cannot parse season year from {season!r} — skipping MaxPreps[/yellow]")
         return dataset
 
-    # Index our finalized games by (date, school_id) for fast lookup.
-    games_by_key: dict[tuple[str, str], Game] = {}
+    # Index our finalized games by (date, our_school_id, opponent_school_id)
+    # so multiple games on the same day (tournament play) don't collapse
+    # to one bucket. Untracked opponents key on "" — those games match
+    # any MP URL on that date for the tracked side, but only one such
+    # URL can exist per pair so collisions are unlikely.
+    games_by_key: dict[tuple[str, str, str], Game] = {}
     for g in finals:
         date = g.date.strftime("%Y-%m-%d")
-        for side in (g.home, g.away):
-            if side.school_id:
-                games_by_key[(date, side.school_id)] = g
+        home_id = g.home.school_id or ""
+        away_id = g.away.school_id or ""
+        if home_id:
+            games_by_key[(date, home_id, away_id)] = g
+        if away_id:
+            games_by_key[(date, away_id, home_id)] = g
 
     sport_path = "volleyball"  # the only sport using MaxPreps today
     targeted = [s for s in manifest.schools if s.maxpreps_slug]
@@ -215,6 +222,15 @@ def merge_maxpreps_stats(
         if console:
             console.print("[yellow]No maxpreps_slug values in manifest — skipping[/yellow]")
         return dataset
+
+    # Build an MP-slug → our school_id map so MaxPreps URL fragments
+    # (e.g. "dc-everest", "wausau-east") resolve back to our manifest
+    # ids. Used to disambiguate multiple games per day.
+    mp_slug_to_id: dict[str, str] = {}
+    for s in targeted:
+        slug = _strip_mascot_from_slug(s.maxpreps_slug, s.mascot)
+        if slug:
+            mp_slug_to_id[slug] = s.id
 
     if console:
         console.print(
@@ -240,7 +256,26 @@ def merge_maxpreps_stats(
             continue
         time.sleep(POLITE_DELAY_SECONDS)
         for mp_game in history:
-            our_game = games_by_key.get((mp_game.date, school.id))
+            # mp_game.opponent is unslug'd from the URL; we need the
+            # opponent's our-school-id to look up the right tournament
+            # entry. Extract the opponent's slug from the URL directly
+            # (more reliable than re-slugging the display name).
+            opp_slug = _extract_opponent_slug_from_url(
+                mp_game.box_score_url, school_slug,
+            )
+            opp_id = mp_slug_to_id.get(opp_slug or "", "")
+            our_game = games_by_key.get((mp_game.date, school.id, opp_id))
+            if our_game is None:
+                # Fallback: try the date/school pair without opponent
+                # (covers untracked opponents). Only use it when EXACTLY
+                # one game exists for the day — otherwise we'd risk the
+                # tournament cross-attach bug all over again.
+                same_day = [
+                    g for k, g in games_by_key.items()
+                    if k[0] == mp_game.date and k[1] == school.id
+                ]
+                if len(same_day) == 1:
+                    our_game = same_day[0]
             if our_game is None:
                 continue
             url_index.setdefault(mp_game.box_score_url, (our_game, mp_game, school.id))
@@ -525,6 +560,30 @@ def _season_start_year(season: str) -> int | None:
         return int(season.split("-")[0])
     except (ValueError, IndexError):
         return None
+
+
+_MP_URL_TEAMS_RE = re.compile(
+    r"/games/\d+-\d+-\d+/[a-z0-9-]+/(?P<away>[a-z0-9-]+)-vs-(?P<home>[a-z0-9-]+)\.htm"
+)
+
+
+def _extract_opponent_slug_from_url(url: str, our_slug: str | None) -> str | None:
+    """Pull the opponent's MaxPreps school slug from a box-score URL.
+    `our_slug` is this team's slug (e.g. 'mosinee') — whichever side of
+    the URL isn't us is the opponent."""
+    if not url or not our_slug:
+        return None
+    m = _MP_URL_TEAMS_RE.search(url)
+    if not m:
+        return None
+    away, home = m.group("away"), m.group("home")
+    if away == our_slug:
+        return home
+    if home == our_slug:
+        return away
+    # Neutral-site / tournament URL where our slug isn't either side —
+    # nothing we can disambiguate by.
+    return None
 
 
 def _strip_mascot_from_slug(slug_path: str | None, mascot: str | None) -> str | None:
