@@ -188,11 +188,12 @@ def main() -> int:
             sport_abbr=sport_abbr,
             console=console,
         )
-        # MaxPreps augments volleyball where Bound's central-WI coverage
-        # is effectively absent. Per-game stat leaders only for now;
-        # season stats stay Bound-sourced (team-only rows) until MaxPreps
-        # season-stats parsing is wired in.
-        if args.sport == "volleyball":
+        # MaxPreps augments Bound for every sport with central-WI MP
+        # coverage. For volleyball MP is the primary source (Bound has
+        # ~zero data); for football/basketball MP supplements Bound's
+        # leader-only output with full per-player rosters.
+        MP_SPORTS = {"volleyball", "football", "boys_basketball", "girls_basketball"}
+        if args.sport in MP_SPORTS:
             dataset = merge_maxpreps_stats(
                 dataset,
                 manifest=manifest,
@@ -200,12 +201,14 @@ def main() -> int:
                 season=args.season,
                 console=console,
             )
-            # Roll per-game MP stats up into per-player season totals so
-            # TopPerformers shows real player leaderboards (MP's own
-            # season-leader panel goes empty off-season).
-            dataset = aggregate_volleyball_season_stats(
-                dataset, console=console,
-            )
+            # Volleyball gets a per-player season-stats aggregation
+            # because MP doesn't publish season totals (their UI goes
+            # empty off-season). Football/basketball keep Bound's
+            # season totals — they're authoritative there.
+            if args.sport == "volleyball":
+                dataset = aggregate_volleyball_season_stats(
+                    dataset, console=console,
+                )
     elif not args.no_stats and args.sport in WPH_SPORTS:
         subseason = wph.SUBSEASONS.get((args.sport, args.season))
         roster_index = (

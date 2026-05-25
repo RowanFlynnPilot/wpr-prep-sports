@@ -308,48 +308,80 @@ def _unslug(s: str) -> str:
 # ---------------------------------------------------------------------------
 
 
-# Maps MP's section header (above the 6 tables) to our canonical category
-# and the stat-column key that's most newsworthy. Each player in a team's
-# section gets one StatLine per category they registered in.
-_CATEGORY_FROM_HEADER = {
-    # (canonical category, MP-column-with-the-leader-stat)
-    # NOTE: MP volleyball columns are abbreviated and overloaded — in the
-    # Serving table, "A" is Aces and "SA" is Serves Attempted, not the
-    # other way around. Verify any retune against an actual box score.
-    "Attacking": ("Kills", "K"),
-    "Serving": ("Serve Aces", "A"),
-    "Blocking": ("Total Blocks", "Tot Blks"),
-    "Digging": ("Digs", "D"),
-    "Ball Handling": ("Assists", "Ast"),
-    # Serve Receiving deliberately omitted — receptions are a role stat
-    # that doesn't translate into a "leader" category in our schema.
+# Per-sport map: MP's section header (above each table) → (canonical
+# category we expose downstream, MP-column carrying the leader stat).
+# Each player who registers in a category gets one StatLine using that
+# table's full column set as the stats dict.
+#
+# Volleyball gotcha: the Serving table's "A" is Aces and "SA" is Serves
+# Attempted, NOT the other way around — verify any retune against a
+# real box score.
+_CATEGORY_FROM_HEADER_BY_SPORT: dict[str, dict[str, tuple[str, str]]] = {
+    "volleyball": {
+        "Attacking":     ("Kills",        "K"),
+        "Serving":       ("Serve Aces",   "A"),
+        "Blocking":      ("Total Blocks", "Tot Blks"),
+        "Digging":       ("Digs",         "D"),
+        "Ball Handling": ("Assists",      "Ast"),
+        # Serve Receiving deliberately omitted — receptions don't slot
+        # into our existing "leader" schema.
+    },
+    "football": {
+        # MaxPreps' All Purpose Yards table has Rush/Rec/KR/PR/IR/Total
+        # — we lift Rec out of it as a receiving leader since MP doesn't
+        # publish a dedicated Receiving table.
+        "Passing":            ("Passing Yards",   "Yds"),
+        "Rushing":            ("Rushing Yards",   "Yds"),
+        "All Purpose Yards":  ("Receiving Yards", "Rec"),
+        "Tackles":            ("Total Tackles",   "Tot Tckls"),
+    },
+    "basketball": {
+        # "Shooting" carries Pts + FG splits; "Totals" carries
+        # Reb/Ast/Stl/Blk/TO/PF — we map both into our existing
+        # Points/Rebounds leader categories. MP uses one `basketball`
+        # URL path for both genders; ssid disambiguates.
+        "Shooting":  ("Points",   "Pts"),
+        "Totals":    ("Rebounds", "Reb"),
+    },
 }
+
+
+def _category_map_for(sport_path: str) -> dict[str, tuple[str, str]]:
+    """Return the header→(category, leader_key) map for a sport, falling
+    back to volleyball's for back-compat with callers that don't pass a
+    sport (none in tree, but defensive)."""
+    return _CATEGORY_FROM_HEADER_BY_SPORT.get(sport_path, _CATEGORY_FROM_HEADER_BY_SPORT["volleyball"])
 
 
 _ATHLETE_RE = re.compile(r"^(?P<name>.+?)\((?P<year>\w{1,3})\)$")
 
 
-def fetch_box_score(url: str) -> BoxScore:
-    """Parse a MaxPreps volleyball box score into a BoxScore bundle —
-    per-player stat lines plus set-by-set scores.
+def fetch_box_score(url: str, sport_path: str = "volleyball") -> BoxScore:
+    """Parse a MaxPreps box score (any sport we map) into a BoxScore
+    bundle — per-player stat lines plus per-period scores.
 
-    Layout: a Score by Period table sits at the top of the page (with
-    a row per team and a column per set), followed by a Match Stats
-    block. Within Match Stats each team that input stats has a
-    `<h3>Team Name (YY-YY)</h3>` followed by six section headers
-    (Attacking / Serving / Blocking / Digging / Ball Handling / Serve
-    Receiving), each with one table. Only teams that input stats show
-    up — single-team coverage is the common case.
+    The DOM is the same shape across sports — a Match/Game Stats
+    anchor, then per-team `<h3>` blocks with per-category `<h4>` +
+    table pairs — only the category labels differ. `sport_path`
+    selects the per-sport header→category map; see
+    `_CATEGORY_FROM_HEADER_BY_SPORT`.
+
+    Only teams that input stats show up — single-team coverage is the
+    common case across every sport.
     """
     html = _get(url)
     soup = BeautifulSoup(html, "html.parser")
 
     set_scores = _parse_set_scores_table(soup)
 
-    # Find the "Match Stats" anchor.
+    category_map = _category_map_for(sport_path)
+
+    # Find the "Match Stats" anchor — labeled "Game Stats" on football
+    # and basketball pages, "Match Stats" on volleyball.
     match_stats = None
     for hdr in soup.find_all(["h2", "h3"]):
-        if hdr.get_text(strip=True) == "Match Stats":
+        text = hdr.get_text(strip=True)
+        if text in ("Match Stats", "Game Stats"):
             match_stats = hdr
             break
     if match_stats is None:
@@ -379,8 +411,8 @@ def fetch_box_score(url: str) -> BoxScore:
                 if tm not in teams_in_order:
                     teams_in_order.append(tm)
                 continue
-            if text in _CATEGORY_FROM_HEADER:
-                current_category = _CATEGORY_FROM_HEADER[text]
+            if text in category_map:
+                current_category = category_map[text]
                 # First time we see this category-text in a row resets
                 # the per-team counter; subsequent repeats advance it.
                 if text != last_category_text:
@@ -509,14 +541,27 @@ def _parse_box_table(
     return lines
 
 
-# Map canonical category → canonical stats-dict key the frontend looks up.
-# Mirrors Bound's emitted keys for volleyball (KLS/AST/DIG/BLK/ACE).
+# Map canonical category → canonical stats-dict key the frontend looks
+# up. Mirrors Bound's emitted keys for back-compat (so frontend code
+# that filters by "YDS" or "KLS" works regardless of source). When MP
+# doesn't surface this exact key in the raw stats dict, the parser
+# copies the leader_key's value to this canonical key so the lookup
+# always lands.
 _CANON_KEY = {
-    "Kills": "KLS",
-    "Assists": "AST",
-    "Digs": "DIG",
-    "Total Blocks": "BLK",
-    "Serve Aces": "ACE",
+    # Volleyball.
+    "Kills":          "KLS",
+    "Assists":        "AST",
+    "Digs":           "DIG",
+    "Total Blocks":   "BLK",
+    "Serve Aces":     "ACE",
+    # Football — matches Bound's per-game keys.
+    "Passing Yards":  "YDS",
+    "Rushing Yards":  "YDS",
+    "Receiving Yards": "YDS",
+    "Total Tackles":  "TKL",
+    # Basketball.
+    "Points":   "PTS",
+    "Rebounds": "RBD",
 }
 
 

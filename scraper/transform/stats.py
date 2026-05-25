@@ -172,6 +172,18 @@ def merge_team_season_stats(
 # ---------------------------------------------------------------------------
 
 
+# Map our internal sport id → MP's URL fragment. MP uses sport-id
+# variations in URL paths (`volleyball`, `football`, `basketball` —
+# basketball is shared between boys and girls; MP scopes via the school
+# slug + the `?ssid=` middleware param, not a separate gender path).
+_MP_SPORT_PATH = {
+    "volleyball": "volleyball",
+    "football": "football",
+    "boys_basketball": "basketball",
+    "girls_basketball": "basketball",
+}
+
+
 def merge_maxpreps_stats(
     dataset: Dataset,
     *,
@@ -216,7 +228,15 @@ def merge_maxpreps_stats(
         if away_id:
             games_by_key[(date, away_id, home_id)] = g
 
-    sport_path = "volleyball"  # the only sport using MaxPreps today
+    # Resolve MP's URL fragment for this sport. Sports not in the map
+    # (hockey, etc.) skip MaxPreps entirely — caller shouldn't have
+    # invoked us in the first place but we degrade gracefully.
+    sport_id = dataset.meta.sports_included[0].value if dataset.meta.sports_included else None
+    sport_path = _MP_SPORT_PATH.get(sport_id)
+    if sport_path is None:
+        if console:
+            console.print(f"[yellow]MaxPreps merge skipped — no URL path for {sport_id}[/yellow]")
+        return dataset
     targeted = [s for s in manifest.schools if s.maxpreps_slug]
     if not targeted:
         if console:
@@ -287,7 +307,7 @@ def merge_maxpreps_stats(
     stat_lines_total = 0
     for url, (game, _mp_game, _school_id) in url_index.items():
         try:
-            box = maxpreps.fetch_box_score(url)
+            box = maxpreps.fetch_box_score(url, sport_path=sport_path)
         except Exception as e:  # noqa: BLE001
             if console:
                 console.print(f"[yellow]  ! box score failed: {url[:80]} ({e})[/yellow]")
