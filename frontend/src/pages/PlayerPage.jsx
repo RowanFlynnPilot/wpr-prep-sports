@@ -188,6 +188,30 @@ function SeasonCard({ row, sportConfig }) {
   const matchingCats = (sportConfig?.stats?.categories ?? []).filter(
     (c) => c.rawCategory === row.category,
   );
+
+  // Build (label, lead, secondary) tuples per stat line. `lead` is the
+  // headline number ("21.2 PPG") rendered large; `secondary` carries
+  // the dot-separated supporting stats ("54.6% FG · 42.5% 3P").
+  const blocks =
+    matchingCats.length > 0
+      ? matchingCats
+          .map((cat) => {
+            const full = formatStatsLine(cat, row.stats);
+            if (!full) return null;
+            const [lead, ...rest] = full.split(" · ");
+            return {
+              key: cat.id,
+              label: cat.displayLabel,
+              lead,
+              secondary: rest.join(" · "),
+            };
+          })
+          .filter(Boolean)
+      : // Fallback: dump dict as label/value pairs with no lead split.
+        Object.entries(row.stats || {})
+          .filter(([k]) => k !== "GP")
+          .map(([k, v]) => ({ key: k, label: k, lead: String(v), secondary: "" }));
+
   return (
     <article className="player-season-card">
       <header className="player-season-card__header">
@@ -198,24 +222,17 @@ function SeasonCard({ row, sportConfig }) {
           </span>
         )}
       </header>
-      <dl className="player-season-card__stats">
-        {matchingCats.length > 0
-          ? matchingCats.map((cat) => (
-              <div key={cat.id} className="player-season-card__line">
-                <dt>{cat.displayLabel}</dt>
-                <dd>{formatStatsLine(cat, row.stats) || "—"}</dd>
-              </div>
-            ))
-          : // Fallback: just dump the stats dict.
-            Object.entries(row.stats || {})
-              .filter(([k]) => k !== "GP")
-              .map(([k, v]) => (
-                <div key={k} className="player-season-card__line">
-                  <dt>{k}</dt>
-                  <dd>{v}</dd>
-                </div>
-              ))}
-      </dl>
+      <div className="player-season-card__blocks">
+        {blocks.map((b) => (
+          <div key={b.key} className="season-stat-block">
+            <span className="season-stat-block__label">{b.label}</span>
+            <span className="season-stat-block__lead">{b.lead}</span>
+            {b.secondary && (
+              <span className="season-stat-block__secondary">{b.secondary}</span>
+            )}
+          </div>
+        ))}
+      </div>
     </article>
   );
 }
