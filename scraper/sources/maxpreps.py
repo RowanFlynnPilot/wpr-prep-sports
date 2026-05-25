@@ -529,6 +529,12 @@ def _parse_box_table(
         # `formatLine` lookup hits regardless of source (Bound uses
         # different short labels for volleyball stats).
         stats[_CANON_KEY[category]] = stats.get(leader_key, leader_val)
+        # Add additional canonical aliases for common stats Bound also
+        # surfaces (TDS, ATT, COMP, INT, REC, AVG, etc.) so format
+        # strings can use one set of keys regardless of source.
+        for canon_key, src_key in _EXTRA_CANON_BY_CATEGORY.get(category, {}).items():
+            if src_key in stats and canon_key not in stats:
+                stats[canon_key] = stats[src_key]
         lines.append(
             StatLine(
                 team_name=team_name,
@@ -562,6 +568,21 @@ _CANON_KEY = {
     # Basketball.
     "Points":   "PTS",
     "Rebounds": "RBD",
+}
+
+
+# Additional canonical aliases per category — these don't replace the
+# raw MP column names (we keep those for the Full Box Score view) but
+# DO let the frontend format strings use one stable key set across
+# sources. Example: Bound emits "ATT" for rushing carries, MP emits
+# "Car"; both end up as stats["ATT"] after this pass.
+_EXTRA_CANON_BY_CATEGORY: dict[str, dict[str, str]] = {
+    "Rushing Yards": {"TDS": "TD", "ATT": "Car", "AVG": "Avg", "LNG": "Lng"},
+    "Passing Yards": {"TDS": "TD", "COMP": "C", "ATT": "Att", "INT": "Int", "AVG": "Avg"},
+    "Receiving Yards": {"TDS": "TD"},
+    "Total Tackles": {"SOLO": "Solo", "AST": "Asst"},
+    "Points": {"FGM": "FGM", "FGA": "FGA", "FT_PCT": "FT%", "FG_PCT": "FG%", "MIN": "Min"},
+    "Rebounds": {"OREB": "OReb", "DREB": "DReb", "AST": "Ast", "STL": "Stl", "BLK_BB": "Blk", "TO": "TO"},
 }
 
 

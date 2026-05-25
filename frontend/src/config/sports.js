@@ -339,40 +339,100 @@ function tdsToClause(tds) {
   return ` and ${Math.round(n)} TDs`;
 }
 
+// Pull the first finite numeric value from a stats dict, given an
+// ordered list of keys to try. Lets format functions accept whichever
+// key the source actually wrote — Bound's "ATT" or MP's "Car" for
+// rushing carries, etc.
+function pickNum(stats, ...keys) {
+  for (const k of keys) {
+    const v = asNum(stats?.[k]);
+    if (Number.isFinite(v)) return v;
+  }
+  return NaN;
+}
+
 const FOOTBALL_GAME_LINE = {
   order: ["Passing Yards", "Rushing Yards", "Receiving Yards", "Total Tackles"],
   format: (line, ctx = {}) => {
     const stats = line.stats ?? {};
-    const yds = asNum(stats.YDS);
-    const tds = asNum(stats.TDS);
-    const tkl = asNum(stats.TKL);
+    const yds = pickNum(stats, "YDS", "Yds");
+    const tds = pickNum(stats, "TDS", "TD");
+    const tkl = pickNum(stats, "TKL", "Tot Tckls");
     const player = playerNameWithYear(line);
     const tone = ctx.tone || "default";
     switch (line.category) {
       case "Passing Yards": {
         if (!Number.isFinite(yds) || (yds < 150 && (!Number.isFinite(tds) || tds < 2))) return null;
-        const ca = stats["C/A"] ? ` (${stats["C/A"]})` : "";
+        const comp = pickNum(stats, "COMP", "C");
+        const att = pickNum(stats, "ATT", "Att");
+        const int = pickNum(stats, "INT", "Int");
         const verb = tonePhrase(tone, "passing");
-        return `QB ${player} ${verb} ${Math.round(yds).toLocaleString()} yards${ca}${tdsToClause(tds)}.`;
+        // "QB X threw for 245 yards and 3 TDs (15/22, 11.1 YPA, 1 INT)."
+        const tdClause = Number.isFinite(tds) && tds > 0
+          ? ` and ${tds} TD${tds === 1 ? "" : "s"}`
+          : "";
+        const ctxPieces = [];
+        if (Number.isFinite(comp) && Number.isFinite(att) && att > 0) {
+          ctxPieces.push(`${comp}/${att}`);
+          ctxPieces.push(`${(yds / att).toFixed(1)} YPA`);
+        }
+        if (Number.isFinite(int) && int > 0) {
+          ctxPieces.push(`${int} INT`);
+        }
+        const ctxClause = ctxPieces.length ? ` (${ctxPieces.join(", ")})` : "";
+        return `QB ${player} ${verb} ${Math.round(yds).toLocaleString()} yards${tdClause}${ctxClause}.`;
       }
       case "Rushing Yards": {
         if (!Number.isFinite(yds) || (yds < 75 && (!Number.isFinite(tds) || tds < 2))) return null;
-        const att = stats.ATT ? ` on ${stats.ATT} carries` : "";
+        const att = pickNum(stats, "ATT", "Car");
+        const lng = pickNum(stats, "LNG", "Lng");
         const verb = tonePhrase(tone, "rushing");
-        return `RB ${player} ${verb} ${Math.round(yds).toLocaleString()} yards${att}${tdsToClause(tds)}.`;
+        const tdClause = Number.isFinite(tds) && tds > 0
+          ? ` and ${tds} TD${tds === 1 ? "" : "s"}`
+          : "";
+        // "RB X rushed for 198 yards and 3 TDs on 14 carries (14.1 YPC, long of 58)."
+        let ctxClause = "";
+        if (Number.isFinite(att) && att > 0) {
+          const ypc = yds / att;
+          const parts = [`${(ypc).toFixed(1)} YPC`];
+          if (Number.isFinite(lng) && lng >= 30) parts.push(`long of ${Math.round(lng)}`);
+          ctxClause = ` on ${att} carries (${parts.join(", ")})`;
+        }
+        return `RB ${player} ${verb} ${Math.round(yds).toLocaleString()} yards${tdClause}${ctxClause}.`;
       }
       case "Receiving Yards": {
         if (!Number.isFinite(yds) || (yds < 75 && (!Number.isFinite(tds) || tds < 2))) return null;
-        const rec = stats.REC ? ` on ${stats.REC} catches` : "";
+        const rec = pickNum(stats, "REC", "Rec");
         const verb = tonePhrase(tone, "receiving");
-        return `WR ${player} ${verb} ${Math.round(yds).toLocaleString()} yards${rec}${tdsToClause(tds)}.`;
+        const tdClause = Number.isFinite(tds) && tds > 0
+          ? ` and ${tds} TD${tds === 1 ? "" : "s"}`
+          : "";
+        let ctxClause = "";
+        if (Number.isFinite(rec) && rec > 0) {
+          const ypr = yds / rec;
+          ctxClause = ` on ${rec} catch${rec === 1 ? "" : "es"} (${ypr.toFixed(1)} YPR)`;
+        }
+        return `WR ${player} ${verb} ${Math.round(yds).toLocaleString()} yards${tdClause}${ctxClause}.`;
       }
       case "Total Tackles": {
         if (!Number.isFinite(tkl) || tkl < 10) return null;
-        const sks = asNum(stats.SKS);
-        const sksClause = Number.isFinite(sks) && sks >= 1 ? ` and ${sks.toFixed(1)} sacks` : "";
+        const sks = pickNum(stats, "SKS", "Sk");
+        const tfl = pickNum(stats, "TFL");
+        const solo = pickNum(stats, "SOLO", "Solo");
+        const ast = pickNum(stats, "AST", "Asst");
         const verb = tonePhrase(tone, "tackles");
-        return `LB ${player} ${verb} ${tkl.toFixed(1)} tackles${sksClause}.`;
+        const ctxPieces = [];
+        if (Number.isFinite(solo) && Number.isFinite(ast)) {
+          ctxPieces.push(`${Math.round(solo)} solo, ${Math.round(ast)} assist`);
+        }
+        if (Number.isFinite(tfl) && tfl >= 1) {
+          ctxPieces.push(`${tfl % 1 === 0 ? tfl : tfl.toFixed(1)} TFL`);
+        }
+        if (Number.isFinite(sks) && sks >= 1) {
+          ctxPieces.push(`${sks % 1 === 0 ? sks : sks.toFixed(1)} sack${sks === 1 ? "" : "s"}`);
+        }
+        const ctxClause = ctxPieces.length ? ` (${ctxPieces.join(", ")})` : "";
+        return `LB ${player} ${verb} ${tkl.toFixed(1)} tackles${ctxClause}.`;
       }
       default:
         return null;
@@ -414,17 +474,57 @@ const BASKETBALL_GAME_LINE = {
     switch (line.category) {
       case "Points": {
         if (!Number.isFinite(pts) || pts < 15) return null;
-        const fg = s.FG ? ` (${s.FG} FG` + (s["3PT"] ? `, ${s["3PT"]} 3PT)` : ")") : "";
-        return `${player} dropped ${Math.round(pts)} points${fg}.`;
+        // Prefer canonical FGM/FGA + 3PM/3PA from MaxPreps; fall back
+        // to Bound's pre-formatted FG / 3PT strings.
+        const fgm = pickNum(s, "FGM");
+        const fga = pickNum(s, "FGA");
+        const threeM = pickNum(s, "3PM");
+        const ctxPieces = [];
+        if (Number.isFinite(fgm) && Number.isFinite(fga) && fga > 0) {
+          const pct = (fgm / fga * 100).toFixed(0);
+          ctxPieces.push(`${fgm}/${fga} FG, ${pct}%`);
+        } else if (s.FG) {
+          ctxPieces.push(`${s.FG} FG`);
+        }
+        if (Number.isFinite(threeM) && threeM > 0) {
+          ctxPieces.push(`${threeM} 3PM`);
+        } else if (s["3PT"]) {
+          ctxPieces.push(`${s["3PT"]} 3PT`);
+        }
+        const ctxClause = ctxPieces.length ? ` (${ctxPieces.join(", ")})` : "";
+        return `${player} dropped ${Math.round(pts)} points${ctxClause}.`;
       }
       case "Rebounds": {
         if (!Number.isFinite(rbd) || rbd < 8) return null;
-        const off = s.OFF ? ` (${s.OFF} OFF)` : "";
-        return `${player} grabbed ${Math.round(rbd)} rebounds${off}.`;
+        const oreb = pickNum(s, "OREB", "OReb", "OFF");
+        const dreb = pickNum(s, "DREB", "DReb", "DEF");
+        const ast = pickNum(s, "AST", "Ast");
+        const stl = pickNum(s, "STL", "Stl");
+        const ctxPieces = [];
+        if (Number.isFinite(oreb) && Number.isFinite(dreb)) {
+          ctxPieces.push(`${Math.round(oreb)} OFF / ${Math.round(dreb)} DEF`);
+        } else if (s.OFF) {
+          ctxPieces.push(`${s.OFF} OFF`);
+        }
+        // Side-stats only when notable.
+        if (Number.isFinite(ast) && ast >= 4) {
+          ctxPieces.push(`${Math.round(ast)} AST`);
+        }
+        if (Number.isFinite(stl) && stl >= 3) {
+          ctxPieces.push(`${Math.round(stl)} STL`);
+        }
+        const ctxClause = ctxPieces.length ? ` (${ctxPieces.join(", ")})` : "";
+        return `${player} grabbed ${Math.round(rbd)} rebounds${ctxClause}.`;
       }
       case "Assists": {
         if (!Number.isFinite(ast) || ast < 6) return null;
-        return `${player} dished ${Math.round(ast)} assists.`;
+        const to = pickNum(s, "TO");
+        let ctxClause = "";
+        if (Number.isFinite(to) && to >= 0) {
+          const ratio = to > 0 ? (ast / to).toFixed(1) : "∞";
+          ctxClause = ` (${ratio} A/TO)`;
+        }
+        return `${player} dished ${Math.round(ast)} assists${ctxClause}.`;
       }
       default:
         return null;
@@ -549,17 +649,36 @@ const HOCKEY_GAME_LINE = {
         const g = asNum(s.G);
         const a = asNum(s.A);
         if (!Number.isFinite(pts) || pts < 2) return null;
-        const breakdown = (Number.isFinite(g) && Number.isFinite(a))
-          ? ` (${Math.round(g)}G, ${Math.round(a)}A)`
-          : "";
-        return `${skaterPrefix}${player} racked up ${Math.round(pts)} points${breakdown}.`;
+        const ctxPieces = [];
+        if (Number.isFinite(g) && Number.isFinite(a)) {
+          ctxPieces.push(`${Math.round(g)}G, ${Math.round(a)}A`);
+        }
+        const sog = asNum(s.SOG);
+        if (Number.isFinite(sog) && Number.isFinite(g) && sog >= g + 2) {
+          ctxPieces.push(`${Math.round(sog)} SOG`);
+        }
+        const ppg = asNum(s.PPG);
+        if (Number.isFinite(ppg) && ppg >= 1) {
+          ctxPieces.push(`${Math.round(ppg)} PPG`);
+        }
+        const ctxClause = ctxPieces.length ? ` (${ctxPieces.join(", ")})` : "";
+        return `${skaterPrefix}${player} racked up ${Math.round(pts)} points${ctxClause}.`;
       }
       case "Hockey Goals": {
         const g = asNum(s.G);
         const sog = asNum(s.SOG);
         if (!Number.isFinite(g) || g < 2) return null;
-        const sogClause = Number.isFinite(sog) && sog > g ? ` on ${Math.round(sog)} shots` : "";
-        return `${skaterPrefix}${player} scored ${Math.round(g)} goals${sogClause}.`;
+        const ctxPieces = [];
+        if (Number.isFinite(sog) && sog >= g) {
+          const pct = sog > 0 ? Math.round((g / sog) * 100) : 0;
+          ctxPieces.push(`${Math.round(sog)} SOG, ${pct}% shooting`);
+        }
+        const gwg = asNum(s.GW);
+        if (Number.isFinite(gwg) && gwg > 0) {
+          ctxPieces.push(`${Math.round(gwg)} GWG`);
+        }
+        const ctxClause = ctxPieces.length ? ` (${ctxPieces.join(", ")})` : "";
+        return `${skaterPrefix}${player} scored ${Math.round(g)} goal${g === 1 ? "" : "s"}${ctxClause}.`;
       }
       case "Hockey Saves": {
         const sv = asNum(s.SV);
@@ -592,23 +711,49 @@ const VOLLEYBALL_GAME_LINE = {
     const ast = asNum(s.AST);
     const dig = asNum(s.DIG);
     const blk = asNum(s.BLK);
+    const sp = asNum(s.SP);
     switch (line.category) {
       case "Kills": {
         if (!Number.isFinite(kls) || kls < 10) return null;
-        const eff = s.PCT ? ` (${s.PCT})` : "";
-        return `${player} pounded ${Math.round(kls)} kills${eff}.`;
+        // MaxPreps gives ATT/Att/E + Hit %; show efficiency context.
+        const att = asNum(s.Att);
+        const err = asNum(s.E);
+        const ctxPieces = [];
+        if (Number.isFinite(att) && att > 0) {
+          ctxPieces.push(`${att} ATT`);
+          if (Number.isFinite(err)) {
+            const eff = ((kls - err) / att).toFixed(3);
+            const effDisp = eff.startsWith("0.") ? eff.slice(1) : eff;
+            ctxPieces.push(`${effDisp} EFF`);
+          }
+        } else if (s.PCT) {
+          ctxPieces.push(s.PCT);
+        }
+        const ctxClause = ctxPieces.length ? ` (${ctxPieces.join(", ")})` : "";
+        return `${player} pounded ${Math.round(kls)} kills${ctxClause}.`;
       }
       case "Assists": {
         if (!Number.isFinite(ast) || ast < 20) return null;
-        return `${player} set ${Math.round(ast)} assists.`;
+        const perSet = Number.isFinite(sp) && sp > 0
+          ? ` (${(ast / sp).toFixed(1)} per set)`
+          : "";
+        return `${player} set ${Math.round(ast)} assists${perSet}.`;
       }
       case "Digs": {
         if (!Number.isFinite(dig) || dig < 15) return null;
-        return `${player} dug up ${Math.round(dig)} balls.`;
+        const perSet = Number.isFinite(sp) && sp > 0
+          ? ` (${(dig / sp).toFixed(1)} per set)`
+          : "";
+        return `${player} dug up ${Math.round(dig)} balls${perSet}.`;
       }
       case "Total Blocks": {
         if (!Number.isFinite(blk) || blk < 5) return null;
-        return `${player} stuffed ${Math.round(blk)} blocks at the net.`;
+        const bs = asNum(s.BS);
+        const ba = asNum(s.BA);
+        const splitClause = (Number.isFinite(bs) && Number.isFinite(ba))
+          ? ` (${Math.round(bs)} solo, ${Math.round(ba)} assist)`
+          : "";
+        return `${player} stuffed ${Math.round(blk)} blocks at the net${splitClause}.`;
       }
       default:
         return null;
