@@ -161,7 +161,7 @@ export default function PlayerPage({ dataset, schoolIndex, sportConfig }) {
         <div className="section-header">
           <h2>Game Log</h2>
           <span className="section-header__hint">
-            {gameLog.length} game{gameLog.length === 1 ? "" : "s"} with stats
+            {gameLogHint(gameLog, seasonRows)}
           </span>
         </div>
         {gameLog.length === 0 ? (
@@ -289,32 +289,152 @@ function GameLogTable({ entries, sportPrefix, schoolId, schoolIndex }) {
   );
 }
 
-// Render the most informative stat from a per-game StatLine in a
-// compact form for the game log. Tries the canonical leader key
-// first; falls back to the first non-empty value in the dict.
-const LEADER_KEY = {
-  "Kills": "KLS",
-  "Assists": "AST",
-  "Digs": "DIG",
-  "Total Blocks": "BLK",
-  "Serve Aces": "ACE",
-  "Passing Yards": "YDS",
-  "Rushing Yards": "YDS",
-  "Receiving Yards": "YDS",
-  "Total Tackles": "TKL",
-  "Points": "PTS",
-  "Rebounds": "RBD",
-  "Hockey Points": "PTS",
-  "Hockey Goals": "G",
-  "Hockey Saves": "SV",
+// Per-category formatters for the game-log stat chip. Each returns a
+// compact, scannable string like "23 YDS · 2 TD". The first key in
+// each list whose value is non-empty/non-zero is used; trailing keys
+// only render when they add information. Designed to be denser than
+// "HOCKEY POINTS 2" — a reader should see at a glance what kind of
+// game it was.
+const CATEGORY_FORMATTERS = {
+  // Hockey — composite goal/assist/point line per skater.
+  "Hockey Points": (s) =>
+    composeStat([
+      [s.G, "G"],
+      [s.A, "A"],
+      [s.PTS, "PTS"],
+    ]),
+  "Hockey Goals": (s) =>
+    composeStat([
+      [s.G, "G"],
+      [s.A, "A"],
+    ]),
+  "Hockey Saves": (s) => {
+    const sv = num(s.SV);
+    const ga = num(s.GA);
+    const parts = [];
+    if (Number.isFinite(sv)) parts.push(`${sv} SV`);
+    if (Number.isFinite(ga)) parts.push(`${ga} GA`);
+    if (Number.isFinite(sv) && Number.isFinite(ga) && ga === 0 && sv >= 10) {
+      parts.push("SHO");
+    }
+    return parts.join(" · ") || "—";
+  },
+
+  // Football.
+  "Passing Yards": (s) =>
+    composeStat([
+      [s.YDS, "YDS"],
+      [s.TDS, "TD"],
+      [s.COMP && s.ATT ? `${s.COMP}/${s.ATT}` : null, ""],
+    ]),
+  "Rushing Yards": (s) =>
+    composeStat([
+      [s.YDS, "YDS"],
+      [s.TDS, "TD"],
+      [s.CAR, "CAR"],
+    ]),
+  "Receiving Yards": (s) =>
+    composeStat([
+      [s.YDS, "YDS"],
+      [s.TDS, "TD"],
+      [s.REC, "REC"],
+    ]),
+  "Total Tackles": (s) =>
+    composeStat([
+      [s.TKL || s.TOT, "TKL"],
+      [s.SKS || s.SACKS, "SK"],
+      [s.TFL, "TFL"],
+    ]),
+
+  // Basketball.
+  Points: (s) =>
+    composeStat([
+      [s.PTS, "PTS"],
+      [s.RBD, "RBD"],
+      [s.AST, "AST"],
+    ]),
+  Rebounds: (s) =>
+    composeStat([
+      [s.RBD, "RBD"],
+      [s.PTS, "PTS"],
+    ]),
+
+  // Volleyball (per-game).
+  Kills: (s) =>
+    composeStat([
+      [s.K || s.KLS, "K"],
+      [s.E, "E"],
+      [s["Hit %"] || s["HIT %"], ""],
+    ]),
+  Assists: (s) =>
+    composeStat([
+      [s.Ast || s.AST, "A"],
+      [s.SP, "SP"],
+    ]),
+  Digs: (s) =>
+    composeStat([
+      [s.D || s.DIG, "D"],
+    ]),
+  "Total Blocks": (s) =>
+    composeStat([
+      [s["Tot Blks"] || s.BLK, "BLK"],
+      [s.BS, "BS"],
+    ]),
+  "Serve Aces": (s) =>
+    composeStat([
+      [s.A || s.ACE, "ACE"],
+      [s.PTS, "PTS"],
+    ]),
 };
 
 function leaderValueText(line) {
-  const key = LEADER_KEY[line.category];
   const stats = line.stats || {};
-  if (key && stats[key] != null && stats[key] !== "") return stats[key];
+  const formatter = CATEGORY_FORMATTERS[line.category];
+  if (formatter) {
+    const out = formatter(stats);
+    if (out && out !== "—") return out;
+  }
+  // Fallback: first non-empty stat.
   for (const [k, v] of Object.entries(stats)) {
     if (v != null && v !== "") return `${v} ${k}`;
   }
   return "—";
+}
+
+// Hint shown next to the Game Log header. When we know the player's
+// season GP (from season totals) we show "9 of 23 games" so the
+// reader understands box-score coverage is partial — common for
+// hockey (WPH doesn't publish detail pages for every game) and
+// volleyball (coach-uploaded MaxPreps boxes).
+function gameLogHint(gameLog, seasonRows) {
+  const n = gameLog.length;
+  let seasonGp = 0;
+  for (const row of seasonRows) {
+    const gp = parseInt(row.stats?.GP, 10);
+    if (Number.isFinite(gp) && gp > seasonGp) seasonGp = gp;
+  }
+  if (seasonGp > n) {
+    return `${n} of ${seasonGp} games with detailed stats`;
+  }
+  return `${n} game${n === 1 ? "" : "s"} with stats`;
+}
+
+function num(v) {
+  if (v == null || v === "") return NaN;
+  const n = parseFloat(String(v).replace(/[%,]/g, ""));
+  return Number.isFinite(n) ? n : NaN;
+}
+
+// Build "X G · Y A · Z PTS" from [[value, label], ...]. Drops parts
+// where value is null/empty/zero (zero "TD" is uninteresting). Label
+// can be empty for already-formatted segments (e.g. "12/24" passing).
+function composeStat(pairs) {
+  const out = [];
+  for (const [value, label] of pairs) {
+    if (value == null || value === "") continue;
+    const n = num(value);
+    if (Number.isFinite(n) && n === 0) continue;
+    out.push(label ? `${value} ${label}` : value);
+  }
+  return out.length ? out.join(" · ") : "—";
 }

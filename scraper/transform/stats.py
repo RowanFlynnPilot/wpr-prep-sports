@@ -553,6 +553,32 @@ def _match_team_scores(
     return None
 
 
+def _dedupe_wph_athletes(athletes):
+    """Collapse duplicate WPH player rows down to one per (name, jersey),
+    keeping the row with the highest GP. WPH renders Overall + Conference
+    sections on the same page; the Conference rows are subsets we don't
+    want to ship alongside the totals."""
+    best: dict[tuple[str, str], tuple[int, object]] = {}
+    for a in athletes:
+        key = (a.player_name, a.jersey or "")
+        try:
+            gp = int(a.stats.get("GP", "0") or "0")
+        except (ValueError, AttributeError):
+            gp = 0
+        existing = best.get(key)
+        if existing is None or gp > existing[0]:
+            best[key] = (gp, a)
+    # Preserve original first-seen ordering.
+    seen_keys: list[tuple[str, str]] = []
+    seen_set: set[tuple[str, str]] = set()
+    for a in athletes:
+        key = (a.player_name, a.jersey or "")
+        if key not in seen_set:
+            seen_set.add(key)
+            seen_keys.append(key)
+    return [best[k][1] for k in seen_keys]
+
+
 def _season_start_year(season: str) -> int | None:
     """'2025-26' → 2025. For volleyball (a fall sport) the season starts
     in calendar year N and ends N+1."""
@@ -1142,13 +1168,19 @@ def merge_wph_season_stats(
                 stats=dict(athlete.stats),
             )
 
-        for sk in skaters:
-            out.append(_season_stat("Hockey Skater", sk))
-        for gl in goalies:
-            out.append(_season_stat("Hockey Goalie", gl))
+        # WPH's player-stats page emits two "Player Stats" sections per
+        # team — Overall first, then Conference (a subset of Overall).
+        # Both come back as separate rows from fetch_team_season_stats;
+        # dedupe by (player_name, jersey) keeping the row with the
+        # highest GP so we preserve full-season totals, not the
+        # conference-only subset.
+        for athlete in _dedupe_wph_athletes(skaters):
+            out.append(_season_stat("Hockey Skater", athlete))
+        for athlete in _dedupe_wph_athletes(goalies):
+            out.append(_season_stat("Hockey Goalie", athlete))
         if console:
             console.print(
-                f"  · {school.id} (team_instance={tid}): {len(skaters)} skaters · {len(goalies)} goalies"
+                f"  · {school.id} (team_instance={tid}): {len(skaters)} skaters · {len(goalies)} goalies (raw)"
             )
         time.sleep(POLITE_DELAY_SECONDS)
 
