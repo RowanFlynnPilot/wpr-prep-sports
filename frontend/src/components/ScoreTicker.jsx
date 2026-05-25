@@ -4,7 +4,7 @@ import TeamLogo from "./TeamLogo.jsx";
 import TeamLink from "./TeamLink.jsx";
 import { primaryColor, schoolFor } from "../utils/schools.js";
 import { formatGameShortDay, formatGameDate } from "../utils/dates.js";
-import { playerLineForGame } from "../utils/recap.js";
+import { gameSummaryLine, playerLineForGame } from "../utils/recap.js";
 import { useSportPrefix } from "../utils/links.js";
 
 /**
@@ -129,7 +129,9 @@ function GameCard({ game, schoolIndex, allGames, sportConfig }) {
   const awayScore = game.away.score;
   const homeWon = isFinal && (homeScore ?? -1) > (awayScore ?? -1);
   const awayWon = isFinal && (awayScore ?? -1) > (homeScore ?? -1);
-  const playerLine = playerLineForGame(game, { contextGames: allGames, sportConfig });
+  const summary = gameSummaryLine(game, { sportConfig });
+  const player = playerLineForGame(game, { contextGames: allGames, sportConfig });
+  const playerSchool = player ? schoolIndex.get(player.schoolId) : null;
 
   // Card accent — winning team's primary color for finals; home team's
   // for upcoming (so the away/road game in the next slot still reads as
@@ -162,9 +164,16 @@ function GameCard({ game, schoolIndex, allGames, sportConfig }) {
         <Row team={game.home} school={homeSchool} score={homeScore} won={homeWon} showScore={isFinal || game.status === "in_progress"} />
       </ul>
 
-      {playerLine && (
-        <p className="card__recap" title={playerLine}>
-          {playerLine}
+      {summary && (
+        <p className="card__summary">{summary}</p>
+      )}
+      {player && (
+        <p className="card__recap" title={player.text}>
+          <span className="card__recap-team">
+            {playerSchool?.name ?? player.schoolId}
+          </span>
+          {" — "}
+          {player.text}
         </p>
       )}
 

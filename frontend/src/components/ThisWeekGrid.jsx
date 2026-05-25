@@ -4,7 +4,7 @@ import TeamLink from "./TeamLink.jsx";
 import { schoolFor } from "../utils/schools.js";
 import { groupByDay } from "../utils/weeks.js";
 import { formatGameDay, formatGameDate, formatGameTime } from "../utils/dates.js";
-import { playerLineForGame } from "../utils/recap.js";
+import { gameSummaryLine, playerLineForGame } from "../utils/recap.js";
 import { useSportPrefix } from "../utils/links.js";
 
 /**
@@ -60,7 +60,9 @@ function GameRow({ game, schoolIndex, allGames, sportConfig }) {
 
   const homeWon = isFinal && (game.home.score ?? -1) > (game.away.score ?? -1);
   const awayWon = isFinal && (game.away.score ?? -1) > (game.home.score ?? -1);
-  const playerLine = playerLineForGame(game, { contextGames: allGames, sportConfig });
+  const summary = gameSummaryLine(game, { sportConfig });
+  const player = playerLineForGame(game, { contextGames: allGames, sportConfig });
+  const playerSchool = player ? schoolIndex.get(player.schoolId) : null;
 
   return (
     <li className="game-row">
@@ -83,7 +85,16 @@ function GameRow({ game, schoolIndex, allGames, sportConfig }) {
         {isFinal ? "Final" : formatGameTime(game.date)}
         <span aria-hidden="true"> ›</span>
       </Link>
-      {playerLine && <p className="game-row__recap">{playerLine}</p>}
+      {summary && <p className="game-row__summary">{summary}</p>}
+      {player && (
+        <p className="game-row__recap">
+          <span className="game-row__recap-team">
+            {playerSchool?.name ?? player.schoolId}
+          </span>
+          {" — "}
+          {player.text}
+        </p>
+      )}
     </li>
   );
 }

@@ -65,15 +65,35 @@
 .game-row:first-child { border-top: none; }
 .game-row:hover { background: rgba(243, 240, 232, 0.4); }
 
-.game-row__recap {
+.game-row__summary {
   grid-column: 1 / -1;
   grid-row: 2;
   margin: 0.15rem 0 0;
+  font-family: var(--font-body);
+  font-size: 0.86rem;
+  color: var(--ink);
+  line-height: 1.4;
+}
+
+.game-row__recap {
+  grid-column: 1 / -1;
+  grid-row: 3;
+  margin: 0.1rem 0 0;
   font-family: var(--font-body);
   font-style: italic;
   font-size: 0.82rem;
   color: var(--muted);
   line-height: 1.45;
+}
+
+.game-row__recap-team {
+  font-style: normal;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink);
 }
 
 .game-row__at {

@@ -159,10 +159,14 @@ export function recapForGame(
 }
 
 /**
- * Standalone player line: returns just the headline stat sentence for
- * whoever won the game, with no score-summary prefix. Used by the
- * dashboard ticker cards and the This Week grid where the score is
- * already visible elsewhere in the row.
+ * Standalone player line: returns the headline stat sentence for
+ * whoever won the game plus the school_id the player belongs to, so
+ * the renderer can show team context next to the highlight. Used by
+ * the dashboard ticker cards and the This Week grid where the score
+ * is already visible elsewhere in the row.
+ *
+ * Returns `{text, schoolId}` or null. Callers that need just the
+ * sentence string can read `.text`.
  */
 export function playerLineForGame(game, { contextGames = null, sportConfig = null } = {}) {
   if (!game || game.status !== "final") return null;
@@ -189,7 +193,73 @@ export function playerLineForGame(game, { contextGames = null, sportConfig = nul
   const prior = contextGames
     ? findPriorAppearance(contextGames, headline, perspective, game)
     : null;
-  return formatStatLine(headline, prior, sportConfig);
+  const text = formatStatLine(headline, prior, sportConfig);
+  if (!text) return null;
+  return { text, schoolId: perspective };
+}
+
+/**
+ * One-sentence summary of how the game went, written in the voice of
+ * a sports column ("Edgar outlasted Mondovi 21-14"). Verb pool is
+ * selected from a deterministic hash of the game id so the same game
+ * reads the same on every refresh but neighboring games rotate.
+ *
+ * Returns a string ready to render, or null when the game isn't final
+ * or the score is missing.
+ */
+export function gameSummaryLine(game, { sportConfig = null } = {}) {
+  if (!game || game.status !== "final") return null;
+  const homeScore = game.home?.score;
+  const awayScore = game.away?.score;
+  if (homeScore == null || awayScore == null) return null;
+  const winner = homeScore > awayScore ? game.home : awayScore > homeScore ? game.away : null;
+  const loser = winner === game.home ? game.away : winner === game.away ? game.home : null;
+  const winScore = Math.max(homeScore, awayScore);
+  const lossScore = Math.min(homeScore, awayScore);
+  const seed = _seed(game.id ?? `${winner?.name}-${loser?.name}`);
+
+  // Tied — rare in our sports, but the schema allows it.
+  if (!winner) {
+    return `${game.home.name} and ${game.away.name} tied ${homeScore}-${awayScore}.`;
+  }
+
+  const margin = winScore - lossScore;
+  // Margin "scale" depends on the sport — a 5-set diff means nothing
+  // in football but a 3-set sweep is decisive in volleyball.
+  const scoreLabel = sportConfig?.scoreLabel; // "set" for volleyball
+  const isSetSport = scoreLabel === "set";
+
+  let verb;
+  if (isSetSport) {
+    if (margin >= 3 || lossScore === 0) {
+      verb = _pick(seed, ["swept", "rolled past", "dispatched", "ran past"]);
+    } else if (margin === 2) {
+      verb = _pick(seed, ["dispatched", "took down", "topped"]);
+    } else {
+      verb = _pick(seed, ["edged", "outlasted", "held off", "survived"]);
+    }
+  } else {
+    // Football/basketball/hockey — margin in points/goals.
+    const blowout = sportConfig?.id === "football"
+      ? margin >= 28
+      : sportConfig?.id?.includes("basketball")
+        ? margin >= 25
+        : margin >= 5; // hockey
+    const close = sportConfig?.id === "football"
+      ? margin <= 7
+      : sportConfig?.id?.includes("basketball")
+        ? margin <= 6
+        : margin <= 1;
+    if (blowout) {
+      verb = _pick(seed, ["rolled past", "buried", "ran past", "blew out", "throttled"]);
+    } else if (close) {
+      verb = _pick(seed, ["edged", "outlasted", "held off", "survived", "squeaked past"]);
+    } else {
+      verb = _pick(seed, ["defeated", "beat", "took down", "topped", "downed"]);
+    }
+  }
+
+  return `${winner.name} ${verb} ${loser.name} ${winScore}-${lossScore}.`;
 }
 
 /**
