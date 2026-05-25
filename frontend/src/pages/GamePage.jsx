@@ -396,14 +396,23 @@ function TeamStatsCard({ label, team, school, won, lines, score, showScore, othe
         />
       ) : (
         <div className="team-stats__groups">
-          <button
-            type="button"
-            className="team-stats__view-toggle"
-            onClick={() => setViewMode("box")}
-            aria-label="View full box score"
-          >
-            Full box score →
-          </button>
+          {/* Only offer the Full Box Score toggle when there's
+              actually MORE data behind it than what the leader view
+              shows. Bound's football/basketball/hockey output is
+              typically 1-3 leaders per category — the box view would
+              just re-render the same rows in a table. Volleyball
+              (MaxPreps) routinely has 15+ rows per category, where
+              the box view earns its place. */}
+          {hasFullBoxData(groups) && (
+            <button
+              type="button"
+              className="team-stats__view-toggle"
+              onClick={() => setViewMode("box")}
+              aria-label="View full box score"
+            >
+              Full box score →
+            </button>
+          )}
           {groups.map(({ category, lines: groupLines }) => {
             const isOpen = expanded[category] ?? false;
             const visible = isOpen
@@ -575,6 +584,18 @@ function BoxCategoryTable({ category, lines, sportPrefix }) {
       </div>
     </div>
   );
+}
+
+/**
+ * Whether opening the Full Box Score view would surface any data the
+ * default leader view doesn't already show. True when any category
+ * carries more than DEFAULT_LEADERS_PER_CATEGORY rows. Used to hide
+ * the toggle for sources (Bound football/basketball/hockey) that only
+ * publish top performers — no point promising a "full" view that's
+ * identical to the leader view.
+ */
+function hasFullBoxData(groups) {
+  return groups.some(({ lines }) => lines.length > DEFAULT_LEADERS_PER_CATEGORY);
 }
 
 function groupLinesByCategory(lines) {
