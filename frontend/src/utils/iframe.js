@@ -15,6 +15,24 @@ import { useEffect } from "react";
 
 const MESSAGE_TYPE = "wpr-prep-sports:resize";
 
+/**
+ * True when the widget is running inside the WPR WordPress iframe (or any
+ * other host page) — used to hide dev/diagnostic chrome like the
+ * stale-data banner that's useful in standalone preview but noisy for
+ * end readers. Also flips to true when `?embed=1` is present on the URL
+ * so we can verify the embedded look locally without an actual iframe.
+ *
+ * Computed once at module load; the embed state can't change during a
+ * session (iframe-ness is fixed for the page lifetime, and the query
+ * param is read once).
+ */
+export const isEmbedded = (() => {
+  if (typeof window === "undefined") return false;
+  if (window.self !== window.top) return true;
+  const params = new URLSearchParams(window.location.search);
+  return params.get("embed") === "1";
+})();
+
 export function useIframeHeightReporter() {
   useEffect(() => {
     if (typeof window === "undefined") return;

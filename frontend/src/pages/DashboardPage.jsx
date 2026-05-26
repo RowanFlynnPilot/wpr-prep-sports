@@ -10,6 +10,7 @@ import Notable from "../components/Notable.jsx";
 import Pickem from "../components/Pickem.jsx";
 import StandingsTable from "../components/StandingsTable.jsx";
 import StaleBanner from "../components/StaleBanner.jsx";
+import { isEmbedded } from "../utils/iframe.js";
 import Sponsor from "../components/Sponsor.jsx";
 import TopPerformers from "../components/TopPerformers.jsx";
 import Marquee from "../components/Marquee.jsx";
@@ -111,10 +112,12 @@ export default function DashboardPage({ dataset, schoolIndex, sponsors, sportCon
         schools: schools.length,
       }}
     >
-      <StaleBanner
-        lastUpdatedIso={meta?.last_updated}
-        activeMonths={sportConfig?.activeMonths}
-      />
+      {!isEmbedded && (
+        <StaleBanner
+          lastUpdatedIso={meta?.last_updated}
+          activeMonths={sportConfig?.activeMonths}
+        />
+      )}
 
       {standings.length === 0 && (
         <div className="coverage-note" role="status">
