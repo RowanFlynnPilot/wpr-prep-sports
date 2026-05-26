@@ -21,6 +21,10 @@ on:
 
 permissions:
   contents: write
+  # actions: write lets the final step dispatch the Deploy workflow.
+  # Bot-authored pushes don't trigger downstream workflows (GitHub loop
+  # protection), so without this an updated data/ never reaches Pages.
+  actions: write
 
 jobs:
   scrape:
@@ -111,13 +115,24 @@ jobs:
           rm -rf ../_serve
 
       - name: Commit updated data
+        id: commit
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/
           if git diff --cached --quiet; then
             echo "No data changes."
+            echo "pushed=false" >> "$GITHUB_OUTPUT"
           else
             git commit -m "data: scrape $(date -u +%Y-%m-%dT%H:%MZ)"
             git push
+            echo "pushed=true" >> "$GITHUB_OUTPUT"
           fi
+
+      # Bot pushes via GITHUB_TOKEN don't trigger Deploy on their own, so
+      # kick it explicitly when there was actually a data change to ship.
+      - name: Trigger Deploy
+        if: steps.commit.outputs.pushed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh workflow run deploy.yml --ref main
