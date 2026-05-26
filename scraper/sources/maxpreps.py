@@ -387,54 +387,60 @@ def fetch_box_score(url: str, sport_path: str = "volleyball") -> BoxScore:
     if match_stats is None:
         return BoxScore(stat_lines=[], set_scores_by_team=set_scores)
 
-    # The DOM lists every team that input stats up front (one <h3>
-    # each, like "Mosinee (25-26)"), then per category emits one <h4>
-    # + table per team in the SAME order. Two-team boxes therefore
-    # repeat each h4 — first h4 owns team[0]'s table, the next h4 with
-    # the same label owns team[1]'s, and so on. Track which team owns
-    # the next table by counting how many tables we've seen under the
-    # current category.
-    teams_in_order: list[str] = []
+    # Per-team stat block: <span class="school">TeamName</span> +
+    # <h4>Category</h4> + <table>. Two flavors of wrapper:
+    #   1. Two-team upload — outer <div class="stat-category"> with
+    #      inner <div class="team-list__team"> per team, each holding
+    #      one (span, h4, table) triple.
+    #   2. Single-team upload — <div class="stat-category"> holds the
+    #      triple directly, no inner team-list__team wrapper.
+    # Walk every stat-category div, prefer its inner team-list__team
+    # children when present; fall back to the div itself otherwise.
     out: list[StatLine] = []
-    current_category: tuple[str, str] | None = None
-    tables_in_current_cat = 0
-    last_category_text: str | None = None
+    boundary = None
+    for h in match_stats.find_all_next(["h2", "h3"]):
+        text = h.get_text(strip=True)
+        if text in ("Match Story", "Players of the Match", "Rankings & Records"):
+            boundary = h
+            break
 
-    for el in match_stats.find_all_next(["h2", "h3", "h4", "table"]):
-        if el.name in ("h2", "h3", "h4"):
-            text = el.get_text(strip=True)
-            if text in ("Match Story", "Players of the Match", "Rankings & Records"):
-                break
-            team_match = re.match(r"^(.+?)\s*\(\d{2}-\d{2}\)\s*$", text)
-            if team_match and el.name == "h3":
-                tm = team_match.group(1).strip()
-                if tm not in teams_in_order:
-                    teams_in_order.append(tm)
-                continue
-            if text in category_map:
-                current_category = category_map[text]
-                # First time we see this category-text in a row resets
-                # the per-team counter; subsequent repeats advance it.
-                if text != last_category_text:
-                    tables_in_current_cat = 0
-                last_category_text = text
-            else:
-                current_category = None
-                last_category_text = None
-            continue
+    def _emit(container):
+        school_span = container.find("span", class_="school")
+        h4 = container.find("h4")
+        table = container.find("table")
+        if not (school_span and h4 and table):
+            return
+        category_text = h4.get_text(strip=True)
+        mapping = category_map.get(category_text)
+        if mapping is None:
+            return
+        category, leader_key = mapping
+        team_name = school_span.get_text(strip=True)
+        if not team_name:
+            return
+        out.extend(_parse_box_table(table, team_name, category, leader_key))
 
-        if el.name == "table" and current_category and teams_in_order:
-            category, leader_key = current_category
-            team_idx = tables_in_current_cat
-            if team_idx >= len(teams_in_order):
-                # Defensive: more tables than teams. Stick with the last
-                # team rather than crashing.
-                team_idx = len(teams_in_order) - 1
-            team_name = teams_in_order[team_idx]
-            out.extend(_parse_box_table(el, team_name, category, leader_key))
-            tables_in_current_cat += 1
+    for div in match_stats.find_all_next("div", class_="stat-category"):
+        if boundary is not None and _is_after(div, boundary):
+            break
+        inner_blocks = div.find_all("div", class_="team-list__team", recursive=False)
+        if inner_blocks:
+            for blk in inner_blocks:
+                _emit(blk)
+        else:
+            _emit(div)
 
     return BoxScore(stat_lines=out, set_scores_by_team=set_scores)
+
+
+def _is_after(node, boundary) -> bool:
+    """True if `node` appears later in document order than `boundary`."""
+    cur = boundary
+    while cur is not None:
+        cur = cur.find_next()
+        if cur is node:
+            return True
+    return False
 
 
 def _parse_set_scores_table(soup) -> dict[str, list[int]]:
