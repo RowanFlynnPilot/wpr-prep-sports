@@ -1,7 +1,7 @@
 {
   "sport": "football",
   "season": "2025-26",
-  "generated_at": "2026-05-23T21:56:28.016509-05:00",
+  "generated_at": "2026-05-30T02:43:59.477618+00:00",
   "method": "WPR Power Index v1: 40% W%, 35% SOS, 25% margin (capped per sport)",
   "rankings": [
     {
@@ -14,7 +14,7 @@
       "sos": 0.55,
       "avg_margin_capped": 27.0,
       "score": 83.8,
-      "movement": 3
+      "movement": 0
     },
     {
       "rank": 2,
@@ -26,7 +26,7 @@
       "sos": 0.4516,
       "avg_margin_capped": 18.21,
       "score": 76.44,
-      "movement": 3
+      "movement": 0
     },
     {
       "rank": 3,
@@ -62,7 +62,7 @@
       "sos": 0.4608,
       "avg_margin_capped": 18.08,
       "score": 70.04,
-      "movement": -3
+      "movement": 0
     },
     {
       "rank": 6,
@@ -194,7 +194,7 @@
       "sos": 0.3498,
       "avg_margin_capped": 9.55,
       "score": 61.73,
-      "movement": null
+      "movement": 0
     },
     {
       "rank": 17,
@@ -206,7 +206,7 @@
       "sos": 0.4205,
       "avg_margin_capped": 5.67,
       "score": 60.86,
-      "movement": null
+      "movement": 0
     },
     {
       "rank": 18,
@@ -218,7 +218,7 @@
       "sos": 0.3908,
       "avg_margin_capped": 7.9,
       "score": 57.7,
-      "movement": null
+      "movement": 0
     },
     {
       "rank": 19,
