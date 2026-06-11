@@ -219,14 +219,20 @@ def merge_maxpreps_stats(
     # any MP URL on that date for the tracked side, but only one such
     # URL can exist per pair so collisions are unlikely.
     games_by_key: dict[tuple[str, str, str], Game] = {}
+    # Secondary index for the verification fallback: every game a school
+    # played on a date, as a LIST — the (date, school, "") key above
+    # silently collapses two same-day games against untracked opponents.
+    games_by_day_school: dict[tuple[str, str], list[Game]] = {}
     for g in finals:
         date = g.date.strftime("%Y-%m-%d")
         home_id = g.home.school_id or ""
         away_id = g.away.school_id or ""
         if home_id:
             games_by_key[(date, home_id, away_id)] = g
+            games_by_day_school.setdefault((date, home_id), []).append(g)
         if away_id:
             games_by_key[(date, away_id, home_id)] = g
+            games_by_day_school.setdefault((date, away_id), []).append(g)
 
     # Resolve MP's URL fragment for this sport. Sports not in the map
     # (hockey, etc.) skip MaxPreps entirely — caller shouldn't have
@@ -284,18 +290,28 @@ def merge_maxpreps_stats(
                 mp_game.box_score_url, school_slug,
             )
             opp_id = mp_slug_to_id.get(opp_slug or "", "")
-            our_game = games_by_key.get((mp_game.date, school.id, opp_id))
+            our_game = (
+                games_by_key.get((mp_game.date, school.id, opp_id)) if opp_id else None
+            )
             if our_game is None:
-                # Fallback: try the date/school pair without opponent
-                # (covers untracked opponents). Only use it when EXACTLY
-                # one game exists for the day — otherwise we'd risk the
-                # tournament cross-attach bug all over again.
-                same_day = [
-                    g for k, g in games_by_key.items()
-                    if k[0] == mp_game.date and k[1] == school.id
+                # The opponent didn't resolve to a tracked slug
+                # (untracked school, MP slug variant, neutral-site URL).
+                # Verify the box-score URL's team slugs against each
+                # same-day candidate's opponent side and require exactly
+                # one hit. NEVER attach just because only one game
+                # exists that day: WIAA often lists a subset of a
+                # tournament day's matches, and attach-by-elimination
+                # piled every unlisted match's box onto the one listed
+                # game (the ~20% volleyball cross-attach bug).
+                matches = [
+                    g
+                    for g in games_by_day_school.get((mp_game.date, school.id), [])
+                    if _mp_box_matches_game(
+                        g, school.id, mp_game.box_score_url, mp_slug_to_id
+                    )
                 ]
-                if len(same_day) == 1:
-                    our_game = same_day[0]
+                if len(matches) == 1:
+                    our_game = matches[0]
             if our_game is None:
                 continue
             url_index.setdefault(mp_game.box_score_url, (our_game, mp_game, school.id))
@@ -329,10 +345,30 @@ def merge_maxpreps_stats(
                 game.sources.append("maxpreps")
         time.sleep(POLITE_DELAY_SECONDS)
 
+    # Self-heal: drop stat lines whose team resolves to a TRACKED school
+    # that is neither side of the game — by definition misattached
+    # (residue of the pre-verification cross-attach). The verified
+    # matcher above re-attaches those boxes to the right game whenever
+    # that game exists in our schedule.
+    swept = 0
+    for g in finals:
+        if not g.stat_leaders:
+            continue
+        side_ids = {g.home.school_id, g.away.school_id} - {""}
+        kept = [
+            line
+            for line in g.stat_leaders
+            if not line.team_school_id or line.team_school_id in side_ids
+        ]
+        if len(kept) != len(g.stat_leaders):
+            swept += len(g.stat_leaders) - len(kept)
+            g.stat_leaders = kept
+
     if console:
         console.print(
             f"[green]MaxPreps stats merged:[/green] {matched}/{len(url_index)} box scores · "
             f"{stat_lines_total} stat lines"
+            + (f" · swept {swept} misattached tracked-team lines" if swept else "")
         )
 
     if matched > 0 and "maxpreps" not in dataset.meta.sources_used:
@@ -611,6 +647,60 @@ def _season_start_year(season: str) -> int | None:
 _MP_URL_TEAMS_RE = re.compile(
     r"/games/\d+-\d+-\d+/[a-z0-9-]+/(?P<away>[a-z0-9-]+)-vs-(?P<home>[a-z0-9-]+)\.htm"
 )
+
+
+_SLUG_NON_ALNUM_RE = re.compile(r"[^a-z0-9]+")
+
+
+def _school_name_slug(name: str) -> str:
+    """kebab-case a display name the way MP slugs school names."""
+    return _SLUG_NON_ALNUM_RE.sub("-", (name or "").casefold()).strip("-")
+
+
+def _collapsed_slug(slug: str) -> str:
+    """Comparison form: drop hyphens ('d-c-everest' == 'dc-everest')
+    and normalize the one common word-variant ('saint-mary' ==
+    'st-mary')."""
+    return slug.replace("-", "").replace("saint", "st")
+
+
+def _slug_matches_school_name(slug: str | None, name: str | None) -> bool:
+    if not slug or not name:
+        return False
+    return _collapsed_slug(slug) == _collapsed_slug(_school_name_slug(name))
+
+
+def _mp_box_matches_game(
+    game: Game,
+    school_id: str,
+    url: str,
+    mp_slug_to_id: dict[str, str],
+) -> bool:
+    """True when the box-score URL's team slugs are consistent with this
+    game record's opponent side (the side that isn't `school_id`).
+
+    Used to verify same-day candidates on tournament days. One of the
+    URL's two slugs is `school_id` itself (possibly in a slug variant we
+    couldn't recognize); the opponent side must match the other — either
+    through the manifest slug map or a tolerant slug-vs-name compare.
+    Unverifiable boxes are skipped entirely: a missed box score shows as
+    a coverage gap, a misattached one corrupts two game pages and every
+    player log it touches."""
+    m = _MP_URL_TEAMS_RE.search(url)
+    if m is None:
+        return False
+    if game.home.school_id == school_id:
+        theirs = game.away
+    elif game.away.school_id == school_id:
+        theirs = game.home
+    else:
+        return False
+    for slug in (m.group("away"), m.group("home")):
+        if theirs.school_id and mp_slug_to_id.get(slug) == theirs.school_id:
+            return True
+        if _slug_matches_school_name(slug, theirs.name):
+            return True
+    return False
 
 
 def _extract_opponent_slug_from_url(url: str, our_slug: str | None) -> str | None:

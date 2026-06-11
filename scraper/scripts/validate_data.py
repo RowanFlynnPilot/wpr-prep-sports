@@ -43,6 +43,7 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(REPO_ROOT / "scraper"))
 
 from output.writer import load_full_games_raw  # noqa: E402
+from transform.stats import _school_name_slug, _slug_matches_school_name  # noqa: E402
 
 DATA_DIR = REPO_ROOT / "data"
 
@@ -110,10 +111,16 @@ def validate_sport(sport_dir: Path) -> list[str]:
     foreign = 0
     for g in games:
         seen = Counter()
-        names = {g["home"]["name"], g["away"]["name"]}
+        names = (g["home"]["name"], g["away"]["name"])
         for l in g.get("stat_leaders") or []:
             seen[(l.get("team_school_id") or l.get("team_name"), l.get("player_name"), l.get("category"))] += 1
-            if l.get("team_name") not in names:
+            tn = l.get("team_name") or ""
+            # Tolerant compare — "St. Mary Catholic" (MaxPreps) on a
+            # "Saint Mary Catholic" (WIAA) game is the same school, not
+            # a misattached line.
+            if tn not in names and not any(
+                _slug_matches_school_name(_school_name_slug(tn), n) for n in names
+            ):
                 foreign += 1
         if any(v > 1 for v in seen.values()):
             dup_games.add(g["id"])
