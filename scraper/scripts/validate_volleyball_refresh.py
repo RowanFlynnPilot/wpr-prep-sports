@@ -124,10 +124,6 @@ def main() -> int:
             ):
                 per_game[g["id"]] += 1
                 per_game_cats[g["id"]].append(line.get("category"))
-    dups = sum(1 for n in per_game.values() if any(
-        per_game_cats[g].count(c) > 1 for c in set(per_game_cats[g])
-    ) for g in [list(per_game.keys())[0]])
-    # simpler dup check:
     n_dup_games = 0
     for game_id, cats in per_game_cats.items():
         counter = Counter(cats)
