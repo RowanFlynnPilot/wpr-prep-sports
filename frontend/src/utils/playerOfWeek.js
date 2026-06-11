@@ -11,6 +11,8 @@
  * elevating an opponent's box score.
  */
 
+import { topStatLines } from "./games.js";
+
 function asNum(v) {
   if (v == null) return NaN;
   const n = parseFloat(String(v).replace(/[%,]/g, ""));
@@ -141,7 +143,7 @@ export function pickPlayerOfWeek(games, { minScore = 80, anchor = null } = {}) {
   if (!games || games.length === 0) return null;
 
   const finals = games.filter(
-    (g) => g.status === "final" && (g.stat_leaders ?? []).length > 0,
+    (g) => g.status === "final" && topStatLines(g).length > 0,
   );
   if (finals.length === 0) return null;
 
@@ -158,7 +160,7 @@ export function pickPlayerOfWeek(games, { minScore = 80, anchor = null } = {}) {
   for (const game of finals) {
     const gameTs = new Date(game.date).getTime();
     if (gameTs < windowStart || gameTs > lastTs + DAY_MS) continue;
-    for (const line of game.stat_leaders) {
+    for (const line of topStatLines(game)) {
       if (!line.team_school_id) continue; // editorial focus: tracked schools only
       const score = scoreStatLine(line);
       if (score < minScore) continue;

@@ -18,6 +18,7 @@
  */
 
 import { SPORTS } from "../config/sports.js";
+import { topStatLines } from "./games.js";
 
 const BLOWOUT_MARGIN = 21;
 const CLOSE_MARGIN = 7;
@@ -271,7 +272,7 @@ export function gameSummaryLine(game, { sportConfig = null } = {}) {
  * supplied, so existing callers that haven't been updated still work.
  */
 function headlineStatLine(game, schoolId, sportConfig = null) {
-  const leaders = (game.stat_leaders ?? []).filter(
+  const leaders = topStatLines(game).filter(
     (l) => l.team_school_id === schoolId,
   );
   if (leaders.length === 0) return null;
@@ -387,7 +388,7 @@ function findPriorAppearance(contextGames, headline, schoolId, currentGame) {
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
   for (const g of candidates) {
-    const match = (g.stat_leaders ?? []).find(
+    const match = topStatLines(g).find(
       (l) =>
         l.team_school_id === schoolId &&
         l.category === headline.category &&

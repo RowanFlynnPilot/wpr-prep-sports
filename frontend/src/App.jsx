@@ -168,12 +168,16 @@ function SportShell() {
     );
   }
 
-  if (!dataset) return <Skeleton />;
+  // Guard against the brief window between a sport-id change and the new
+  // dataset's arrival: state still holds the PREVIOUS sport's dataset for
+  // one render (the [sport] effect clears it after), and pages like
+  // GamePage would look up a volleyball game id in football's games and
+  // bounce to the dashboard. The dataset knows which sport it is — treat
+  // a mismatched one as still-loading.
+  if (!dataset || dataset.sport !== sport) return <Skeleton />;
 
   const schoolIndex = indexSchools(dataset.schools, dataset.games);
   const sportConfig = configFor(sport);
-  // Sanity: avoid stale dataset mismatching the URL during the brief
-  // window between sport-id change and dataset arrival.
   void location;
 
   // Per-sport accent: re-emit --accent / --accent-700 from sportConfig so

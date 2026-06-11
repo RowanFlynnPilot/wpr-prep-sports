@@ -1,15 +1,27 @@
 """
 Write the canonical Dataset to JSON files in the data/ directory.
 
-Layout (since the sport-switcher refactor):
+Layout (since the sport-switcher refactor + the payload split):
 - schools.json            (top level, cross-sport)
 - <sport>/meta.json
-- <sport>/games.json
+- <sport>/games.json      (slim: no stat_leaders; carries headline_stats
+                           + stat_line_count instead)
+- <sport>/boxscores/<game_id>.json   (full stat_leaders, one per game)
+- <sport>/players/<school_id>.json   (per-school player game lines)
 - <sport>/standings.json
 - <sport>/season_stats.json
 
 schools.json stays at the root because the same school appears across
 sports — frontend loads it once regardless of which sport is selected.
+
+The split keeps the dashboard payload small (volleyball's flat
+games.json hit 19 MB once MaxPreps box scores landed): game pages
+fetch one boxscore file on demand, player pages fetch one school
+file. `headline_stats` is the first stat line per (team, category) in
+source order — exactly what the recap/ticker/Player-of-the-Week code
+read from full stat_leaders before the split, so their behavior is
+unchanged. Internally the Game model still carries full stat_leaders;
+the writer splits at dump time and `read_dataset` merges back.
 """
 
 from __future__ import annotations
@@ -53,10 +65,7 @@ def write_dataset(dataset: Dataset, out_dir: Path) -> None:
 
     # Per-sport — isolated under data/<sport>/ so multiple sports coexist.
     _write_json(sport_dir / "meta.json", dataset.meta.model_dump(mode="json"))
-    _write_json(
-        sport_dir / "games.json",
-        [g.model_dump(mode="json") for g in dataset.games],
-    )
+    _write_split_games(sport_dir, [g.model_dump(mode="json") for g in dataset.games])
     _write_json(
         sport_dir / "standings.json",
         [s.model_dump(mode="json") for s in dataset.standings],
@@ -85,6 +94,104 @@ def write_dataset(dataset: Dataset, out_dir: Path) -> None:
                 "rankings": [r.model_dump(mode="json") for r in dataset.power_rankings],
             },
         )
+
+
+def _write_split_games(sport_dir: Path, games: list[dict]) -> None:
+    """Write the slim games.json plus the boxscores/ and players/ detail
+    files. `games` are full model dumps (stat_leaders inline)."""
+    boxscore_dir = sport_dir / "boxscores"
+    players_dir = sport_dir / "players"
+
+    slim_games: list[dict] = []
+    school_lines: dict[str, list[dict]] = {}
+    expected_boxscores: set[str] = set()
+
+    for g in games:
+        lines = g.get("stat_leaders") or []
+        slim = {k: v for k, v in g.items() if k != "stat_leaders"}
+        slim["headline_stats"] = _headline_stats(lines)
+        slim["stat_line_count"] = len(lines)
+        slim_games.append(slim)
+
+        if lines:
+            expected_boxscores.add(g["id"])
+            boxscore_dir.mkdir(parents=True, exist_ok=True)
+            _write_json(
+                boxscore_dir / f"{g['id']}.json",
+                {"game_id": g["id"], "stat_leaders": lines},
+                compact=True,
+            )
+            for line in lines:
+                sid = line.get("team_school_id") or ""
+                if not sid:
+                    continue  # no profile route exists for untracked schools
+                school_lines.setdefault(sid, []).append(
+                    {"game_id": g["id"], **{k: v for k, v in line.items() if k != "team_school_id"}}
+                )
+
+    _write_json(sport_dir / "games.json", slim_games, compact=True)
+
+    for sid, rows in school_lines.items():
+        players_dir.mkdir(parents=True, exist_ok=True)
+        _write_json(
+            players_dir / f"{sid}.json",
+            {"school_id": sid, "lines": rows},
+            compact=True,
+        )
+
+    # Prune detail files for games/schools that vanished from the dataset
+    # (rescheduled ids, de-duped games) so stale data can't be fetched.
+    _prune_dir(boxscore_dir, expected_boxscores)
+    _prune_dir(players_dir, set(school_lines))
+
+
+def _headline_stats(lines: list[dict]) -> list[dict]:
+    """First stat line per (team, category) in source order — the subset
+    the recap line, score ticker, and Player-of-the-Week picker read.
+    Source order puts each category's leader first, so this matches what
+    those consumers selected from the full array before the split."""
+    seen: set[tuple[str, str]] = set()
+    out: list[dict] = []
+    for line in lines:
+        key = (
+            line.get("team_school_id") or line.get("team_name") or "",
+            line.get("category") or "",
+        )
+        if key in seen:
+            continue
+        seen.add(key)
+        out.append(line)
+    return out
+
+
+def _prune_dir(directory: Path, expected_stems: set[str]) -> None:
+    if not directory.exists():
+        return
+    for p in directory.glob("*.json"):
+        if p.stem not in expected_stems:
+            p.unlink()
+
+
+def load_full_games_raw(sport_dir: Path) -> list[dict]:
+    """Read games.json and merge each game's full stat_leaders back in
+    from boxscores/. Tolerates the pre-split layout (stat_leaders still
+    inline) so it works against old data checkouts. Strips the
+    slim-only fields so the dicts validate cleanly as Game models."""
+    games_path = sport_dir / "games.json"
+    games = json.loads(games_path.read_text(encoding="utf-8"))
+    if not isinstance(games, list):
+        games = games.get("games", [])
+    boxscore_dir = sport_dir / "boxscores"
+    for g in games:
+        g.pop("headline_stats", None)
+        g.pop("stat_line_count", None)
+        if g.get("stat_leaders"):
+            continue  # pre-split layout — already inline
+        box_path = boxscore_dir / f"{g['id']}.json"
+        if box_path.exists():
+            box = json.loads(box_path.read_text(encoding="utf-8"))
+            g["stat_leaders"] = box.get("stat_leaders", [])
+    return games
 
 
 def _maybe_rotate_prev_rankings(current_path: Path, prev_path: Path) -> None:
@@ -135,9 +242,15 @@ _POWER_RANKINGS_METHOD = (
 )
 
 
-def _write_json(path: Path, data: object) -> None:
+def _write_json(path: Path, data: object, compact: bool = False) -> None:
+    """compact=True drops indentation — used for the machine-read bulk
+    files (games, boxscores, players) where pretty-printing costs 40%+
+    of the payload; small editor-facing files stay readable."""
     with path.open("w", encoding="utf-8") as f:
-        json.dump(data, f, indent=2, ensure_ascii=False, default=str)
+        if compact:
+            json.dump(data, f, separators=(",", ":"), ensure_ascii=False, default=str)
+        else:
+            json.dump(data, f, indent=2, ensure_ascii=False, default=str)
         f.write("\n")
 
 
@@ -173,7 +286,7 @@ def read_dataset(sport: str, out_dir: Path) -> Dataset | None:
     return Dataset(
         meta=Meta(**_load(meta_path)),
         schools=[School(**s) for s in _load(schools_path)],
-        games=[Game(**g) for g in _load(games_path)],
+        games=[Game(**g) for g in load_full_games_raw(sport_dir)],
         standings=[Standing(**s) for s in _load(standings_path)],
         season_stats=[SeasonStat(**r) for r in _load(season_path)],
         power_rankings=[PowerRanking(**r) for r in rankings_raw],

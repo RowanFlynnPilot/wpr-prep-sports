@@ -31,7 +31,7 @@ export async function fetchDataset(sportId = DEFAULT_SPORT) {
   // Bust browser cache when the meta.json timestamp changes. We fetch meta
   // first; subsequent requests carry ?v=<timestamp> so a freshly-scraped
   // dataset is picked up immediately without manual cache clears.
-  const meta = await fetchJson(`${sportBase}/meta.json`);
+  const meta = await fetchJson(`${sportBase}/meta.json`, { noStore: true });
   const v = encodeURIComponent(meta.last_updated ?? Date.now());
   const [schools, games, standings, sponsors, seasonStats, spirit, potwOverrides, powerRankingsRaw] = await Promise.all([
     fetchJson(`${DATA_BASE}/schools.json?v=${v}`),
@@ -92,8 +92,37 @@ function isOverrideExpired(o) {
   return ts < Date.now();
 }
 
-async function fetchJson(url) {
-  const resp = await fetch(url, { cache: "no-store" });
+/**
+ * Per-game full box score, fetched on demand by GamePage. Returns
+ * { game_id, stat_leaders } or null (game has no reported stats, or
+ * pre-split data where stat_leaders still live inline on the game).
+ */
+export function fetchBoxscore(sportId, gameId, version) {
+  const v = encodeURIComponent(version ?? "");
+  return fetchJsonOptional(
+    `${DATA_BASE}/${sportId}/boxscores/${encodeURIComponent(gameId)}.json?v=${v}`,
+  );
+}
+
+/**
+ * Per-school player stat lines ({ school_id, lines: [...] }), fetched
+ * on demand by PlayerPage. Null when the school has no stat lines on
+ * record this season.
+ */
+export function fetchPlayerLines(sportId, schoolId, version) {
+  const v = encodeURIComponent(version ?? "");
+  return fetchJsonOptional(
+    `${DATA_BASE}/${sportId}/players/${encodeURIComponent(schoolId)}.json?v=${v}`,
+  );
+}
+
+// Only meta.json bypasses the HTTP cache — it's the freshness signal.
+// Everything else carries ?v=<meta.last_updated>, so a new scrape
+// changes the URL and old cached payloads simply stop being requested.
+// (Previously every fetch was no-store, which forced a full re-download
+// of multi-MB JSON on every single widget load.)
+async function fetchJson(url, { noStore = false } = {}) {
+  const resp = await fetch(url, noStore ? { cache: "no-store" } : undefined);
   if (!resp.ok) {
     throw new Error(`${resp.status} ${resp.statusText} — ${url}`);
   }
@@ -102,7 +131,7 @@ async function fetchJson(url) {
 
 async function fetchJsonOptional(url) {
   try {
-    const resp = await fetch(url, { cache: "no-store" });
+    const resp = await fetch(url);
     if (!resp.ok) return null;
     return await resp.json();
   } catch {

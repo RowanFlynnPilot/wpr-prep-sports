@@ -2,6 +2,17 @@
 
 const DAY_MS = 24 * 60 * 60 * 1000;
 
+/**
+ * Headline stat lines for a game — the first line per (team, category).
+ * Post-split data carries these as `headline_stats` on the slim game;
+ * pre-split data still has the full `stat_leaders` inline, whose first
+ * line per (team, category) is identical. Full box scores live in
+ * per-game files (see fetchBoxscore) — only GamePage needs those.
+ */
+export function topStatLines(game) {
+  return game?.headline_stats ?? game?.stat_leaders ?? [];
+}
+
 /** Most recent final between two TRACKED schools (both have school_id). */
 function isRivalryFinal(g) {
   return (

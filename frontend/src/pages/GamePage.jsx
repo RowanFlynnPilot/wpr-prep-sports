@@ -1,5 +1,6 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useParams, Navigate, Link } from "react-router-dom";
+import { fetchBoxscore } from "../data/fetchDataset.js";
 import Layout from "../components/Layout.jsx";
 import TeamLogo from "../components/TeamLogo.jsx";
 import TeamLink from "../components/TeamLink.jsx";
@@ -25,17 +26,56 @@ export default function GamePage({ dataset, schoolIndex, sportConfig }) {
     [dataset.games, gameId],
   );
 
+  // Full box score is a per-game fetch (slim games.json only carries
+  // headline lines). Headline lines render immediately; the full list
+  // swaps in when the boxscore file arrives. Pre-split data (inline
+  // stat_leaders) short-circuits the fetch.
+  const [fullLines, setFullLines] = useState(null);
+  useEffect(() => {
+    setFullLines(null);
+    if (!game || game.status === "scheduled") return undefined;
+    if (game.stat_leaders?.length) {
+      setFullLines(game.stat_leaders);
+      return undefined;
+    }
+    if (!(game.stat_line_count > 0)) return undefined;
+    let cancelled = false;
+    fetchBoxscore(dataset.sport, game.id, dataset.meta?.last_updated).then(
+      (box) => {
+        if (!cancelled && box?.stat_leaders) setFullLines(box.stat_leaders);
+      },
+    );
+    return () => {
+      cancelled = true;
+    };
+  }, [game, dataset.sport, dataset.meta?.last_updated]);
+
+  const statLines = fullLines ?? game?.headline_stats ?? game?.stat_leaders ?? [];
+
   // Stat-line grouping memo must run on every render (hooks rule), so we
   // compute it before the not-found guard and tolerate game === undefined.
   const statsByKey = useMemo(() => {
     const m = new Map();
-    for (const line of game?.stat_leaders ?? []) {
+    for (const line of statLines) {
       const key = line.team_school_id || `name:${normalizeName(line.team_name)}`;
       if (!m.has(key)) m.set(key, []);
       m.get(key).push(line);
     }
     return m;
-  }, [game]);
+  }, [statLines]);
+
+  const keyForSide = (side) =>
+    side.school_id || `name:${normalizeName(side.name)}`;
+
+  // Count only lines belonging to the two teams on this page. Tournament
+  // Saturdays can cross-attach another matchup's box score to this game
+  // record (scraper bug being fixed separately) — those lines bucket
+  // under a team key nobody renders, and they shouldn't inflate the
+  // "N stat leaders" hint either.
+  const onGameCount = game
+    ? (statsByKey.get(keyForSide(game.home)) ?? []).length +
+      (statsByKey.get(keyForSide(game.away)) ?? []).length
+    : 0;
 
   if (!game) {
     return <Navigate to={sportPrefix} replace />;
@@ -71,9 +111,6 @@ export default function GamePage({ dataset, schoolIndex, sportConfig }) {
     perspectiveSchoolId,
     sportConfig,
   });
-
-  const keyForSide = (side) =>
-    side.school_id || `name:${normalizeName(side.name)}`;
 
   const breadcrumb = (
     <>
@@ -176,13 +213,13 @@ export default function GamePage({ dataset, schoolIndex, sportConfig }) {
         <div className="section-header">
           <h2>Game Stats</h2>
           <span className="section-header__hint">
-            {game.stat_leaders?.length
-              ? `${game.stat_leaders.length} stat leaders${statsSourceLabel(game) ? ` · via ${statsSourceLabel(game)}` : ""}`
+            {onGameCount
+              ? `${onGameCount} stat leaders${statsSourceLabel(game) ? ` · via ${statsSourceLabel(game)}` : ""}${fullLines === null && (game.stat_line_count ?? 0) > statLines.length ? " · loading full box score…" : ""}`
               : "No stats available for this game"}
           </span>
         </div>
 
-        {game.stat_leaders?.length > 0 ? (
+        {onGameCount > 0 ? (
           <div className="game-stats">
             <TeamStatsCard
               label={game.away.name}

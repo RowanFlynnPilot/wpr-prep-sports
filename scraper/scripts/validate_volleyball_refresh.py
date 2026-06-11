@@ -19,21 +19,22 @@ Checks:
 
 from __future__ import annotations
 
-import json
 import sys
 from collections import Counter, defaultdict
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(REPO_ROOT / "scraper"))
+
+from output.writer import load_full_games_raw  # noqa: E402
 
 
 def main() -> int:
-    games_path = REPO_ROOT / "data" / "volleyball" / "games.json"
-    if not games_path.exists():
+    sport_dir = REPO_ROOT / "data" / "volleyball"
+    if not (sport_dir / "games.json").exists():
         print("missing games.json")
         return 1
-    raw = json.loads(games_path.read_text(encoding="utf-8"))
-    games = raw if isinstance(raw, list) else raw.get("games", [])
+    games = load_full_games_raw(sport_dir)
 
     finals = [g for g in games if g.get("status") == "final"]
     mp_games = [g for g in finals if "maxpreps" in (g.get("sources") or [])]

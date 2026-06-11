@@ -1,12 +1,15 @@
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Link, Navigate, useParams } from "react-router-dom";
 import Layout from "../components/Layout.jsx";
+import Skeleton from "../components/Skeleton.jsx";
 import TeamLogo from "../components/TeamLogo.jsx";
 import Sponsor from "../components/Sponsor.jsx";
+import { fetchPlayerLines } from "../data/fetchDataset.js";
 import { schoolFor } from "../utils/schools.js";
 import { useSportPrefix } from "../utils/links.js";
 import { formatGameDate } from "../utils/dates.js";
 import {
+  buildSchoolLines,
   findPlayerGameLog,
   findPlayerSeasonStats,
   resolvePlayerName,
@@ -27,15 +30,33 @@ export default function PlayerPage({ dataset, schoolIndex, sportConfig }) {
   const { schoolId, playerSlug: slug } = useParams();
   const sportPrefix = useSportPrefix();
 
+  // Per-school stat lines are a separate fetch (slim games.json no
+  // longer carries full box scores). null = still loading — the page
+  // must not decide "player unknown" until the file has answered.
+  const [schoolLines, setSchoolLines] = useState(null);
+  useEffect(() => {
+    let cancelled = false;
+    setSchoolLines(null);
+    fetchPlayerLines(dataset.sport, schoolId, dataset.meta?.last_updated).then(
+      (file) => {
+        if (cancelled) return;
+        setSchoolLines(buildSchoolLines(file, dataset.games, schoolId));
+      },
+    );
+    return () => {
+      cancelled = true;
+    };
+  }, [dataset.sport, dataset.games, dataset.meta?.last_updated, schoolId]);
+
   const playerName = useMemo(
     () =>
       resolvePlayerName({
-        games: dataset.games,
+        schoolLines,
         seasonStats: dataset.seasonStats,
         schoolId,
         slug,
       }),
-    [dataset.games, dataset.seasonStats, schoolId, slug],
+    [schoolLines, dataset.seasonStats, schoolId, slug],
   );
 
   const seasonRows = useMemo(
@@ -54,36 +75,43 @@ export default function PlayerPage({ dataset, schoolIndex, sportConfig }) {
   const gameLog = useMemo(
     () =>
       playerName
-        ? findPlayerGameLog(dataset.games, schoolId, playerName)
+        ? findPlayerGameLog(schoolLines, dataset.games, playerName)
         : [],
-    [dataset.games, schoolId, playerName],
+    [schoolLines, dataset.games, playerName],
   );
 
   const position = useMemo(
     () =>
       playerName
         ? resolvePlayerPosition({
-            games: dataset.games,
+            schoolLines,
             seasonStats: dataset.seasonStats,
             schoolId,
             slug,
           })
         : null,
-    [dataset.games, dataset.seasonStats, schoolId, slug, playerName],
+    [schoolLines, dataset.seasonStats, schoolId, slug, playerName],
   );
 
   const year = useMemo(
     () =>
       playerName
         ? resolvePlayerYear({
-            games: dataset.games,
+            schoolLines,
             seasonStats: dataset.seasonStats,
             schoolId,
             slug,
           })
         : null,
-    [dataset.games, dataset.seasonStats, schoolId, slug, playerName],
+    [schoolLines, dataset.seasonStats, schoolId, slug, playerName],
   );
+
+  if (schoolLines === null && !playerName) {
+    // Still fetching the school's stat-line file and the season-stats
+    // fallback didn't resolve the name — hold the skeleton rather than
+    // bouncing to the team page prematurely.
+    return <Skeleton />;
+  }
 
   if (!playerName) {
     return <Navigate to={`${sportPrefix}/team/${schoolId}`} replace />;

@@ -37,10 +37,9 @@ def main() -> int:
         print(f"missing {games_path}")
         return 1
 
-    with games_path.open(encoding="utf-8") as f:
-        raw_games = json.load(f)
-    games_list = raw_games if isinstance(raw_games, list) else raw_games.get("games", [])
-    games = [Game.model_validate(g) for g in games_list]
+    from output.writer import load_full_games_raw
+
+    games = [Game.model_validate(g) for g in load_full_games_raw(DATA_DIR)]
 
     # Build a minimal Dataset shim; aggregator only reads meta.sport, games, and season_stats.
     meta = Meta(

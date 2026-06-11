@@ -37,26 +37,45 @@ export function playerProfileHref(sportPrefix, schoolId, playerName) {
 }
 
 /**
- * Walk every stat_leader on every finalized game; return entries that
- * match the requested player. Each entry pairs the game with the
- * specific stat lines this player registered in that game (a player
- * can register in multiple categories in one game).
+ * Normalize per-school stat lines to one shape regardless of data
+ * layout. Post-split: the players/<school_id>.json file carries
+ * { lines: [{ game_id, ...line }] }. Pre-split (or when that file is
+ * missing): scan the games' inline stat_leaders. Every line in the
+ * result belongs to `schoolId` and carries a `game_id`.
  */
-export function findPlayerGameLog(games, schoolId, playerName) {
-  const slug = playerSlug(playerName);
-  const matches = [];
+export function buildSchoolLines(playerFile, games, schoolId) {
+  if (playerFile?.lines?.length) return playerFile.lines;
+  const out = [];
   for (const g of games ?? []) {
-    if (g.status !== "final") continue;
-    const lines = (g.stat_leaders ?? []).filter(
-      (l) =>
-        (l.team_school_id || "") === schoolId &&
-        playerSlug(l.player_name) === slug,
-    );
-    if (lines.length > 0) matches.push({ game: g, lines });
+    for (const l of g.stat_leaders ?? []) {
+      if ((l.team_school_id || "") === schoolId) {
+        out.push({ game_id: g.id, ...l });
+      }
+    }
+  }
+  return out;
+}
+
+/**
+ * Group the school's stat lines by finalized game for one player. Each
+ * entry pairs the (slim) game object with the stat lines this player
+ * registered in it (a player can register in multiple categories in
+ * one game).
+ */
+export function findPlayerGameLog(schoolLines, games, playerName) {
+  const slug = playerSlug(playerName);
+  const gamesById = new Map((games ?? []).map((g) => [g.id, g]));
+  const byGame = new Map();
+  for (const l of schoolLines ?? []) {
+    if (playerSlug(l.player_name) !== slug) continue;
+    const game = gamesById.get(l.game_id);
+    if (!game || game.status !== "final") continue;
+    if (!byGame.has(l.game_id)) byGame.set(l.game_id, { game, lines: [] });
+    byGame.get(l.game_id).lines.push(l);
   }
   // Chronological — Week 1 at the top, most recent at the bottom, so
   // a reader scrolls the player's season the way it actually unfolded.
-  return matches.sort(
+  return [...byGame.values()].sort(
     (a, b) => new Date(a.game.date).getTime() - new Date(b.game.date).getTime(),
   );
 }
@@ -88,21 +107,14 @@ export function findPlayerSeasonStats(seasonStats, schoolId, playerName, sportCo
  * lets the page render the human name even when the URL only has the
  * slug. Returns null if the slug isn't found anywhere.
  */
-export function resolvePlayerName({ games, seasonStats, schoolId, slug }) {
+export function resolvePlayerName({ schoolLines, seasonStats, schoolId, slug }) {
   for (const r of seasonStats ?? []) {
     if (r.school_id === schoolId && playerSlug(r.player_name) === slug) {
       return r.player_name;
     }
   }
-  for (const g of games ?? []) {
-    for (const l of g.stat_leaders ?? []) {
-      if (
-        (l.team_school_id || "") === schoolId &&
-        playerSlug(l.player_name) === slug
-      ) {
-        return l.player_name;
-      }
-    }
+  for (const l of schoolLines ?? []) {
+    if (playerSlug(l.player_name) === slug) return l.player_name;
   }
   return null;
 }
@@ -111,7 +123,7 @@ export function resolvePlayerName({ games, seasonStats, schoolId, slug }) {
  * Find the player's best position guess from their stat lines. If
  * multiple positions appear across rows, pick the most common.
  */
-export function resolvePlayerPosition({ games, seasonStats, schoolId, slug }) {
+export function resolvePlayerPosition({ schoolLines, seasonStats, schoolId, slug }) {
   const counts = new Map();
   const bump = (pos) => {
     if (!pos) return;
@@ -122,15 +134,8 @@ export function resolvePlayerPosition({ games, seasonStats, schoolId, slug }) {
       bump(r.position);
     }
   }
-  for (const g of games ?? []) {
-    for (const l of g.stat_leaders ?? []) {
-      if (
-        (l.team_school_id || "") === schoolId &&
-        playerSlug(l.player_name) === slug
-      ) {
-        bump(l.position);
-      }
-    }
+  for (const l of schoolLines ?? []) {
+    if (playerSlug(l.player_name) === slug) bump(l.position);
   }
   if (counts.size === 0) return null;
   return [...counts.entries()].sort((a, b) => b[1] - a[1])[0][0];
@@ -140,21 +145,15 @@ export function resolvePlayerPosition({ games, seasonStats, schoolId, slug }) {
  * Player year (class) from any source. Stat lines carry it more often
  * than season-stat rows (Bound emits "JR" in per-game stat leaders).
  */
-export function resolvePlayerYear({ games, seasonStats, schoolId, slug }) {
+export function resolvePlayerYear({ schoolLines, seasonStats, schoolId, slug }) {
   for (const r of seasonStats ?? []) {
     if (r.school_id === schoolId && playerSlug(r.player_name) === slug && r.player_year) {
       return r.player_year;
     }
   }
-  for (const g of games ?? []) {
-    for (const l of g.stat_leaders ?? []) {
-      if (
-        (l.team_school_id || "") === schoolId &&
-        playerSlug(l.player_name) === slug &&
-        l.player_year
-      ) {
-        return l.player_year;
-      }
+  for (const l of schoolLines ?? []) {
+    if (playerSlug(l.player_name) === slug && l.player_year) {
+      return l.player_year;
     }
   }
   return null;

@@ -23,9 +23,10 @@ function serveRepoData() {
       server.middlewares.use(async (req, res, next) => {
         if (!req.url || !req.url.startsWith(dataPrefix)) return next();
         const filename = req.url.slice(dataPrefix.length).split("?")[0];
-        // Allow either flat `<name>.json` or one level of subdirectory
-        // (`<sport>/<name>.json`) so per-sport data partitioning works in dev.
-        if (!/^([a-z0-9_-]+\/)?[a-z0-9_-]+\.json$/i.test(filename)) return next();
+        // Allow up to two directory levels: flat `<name>.json`, per-sport
+        // `<sport>/<name>.json`, and the split-layout detail files
+        // `<sport>/boxscores/<game_id>.json` / `<sport>/players/<school>.json`.
+        if (!/^([a-z0-9_-]+\/){0,2}[a-z0-9_-]+\.json$/i.test(filename)) return next();
         const fullPath = resolve(dataDir, filename);
         if (!existsSync(fullPath)) {
           res.statusCode = 404;
