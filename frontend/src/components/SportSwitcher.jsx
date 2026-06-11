@@ -12,11 +12,28 @@ import { SPORT_IDS, configFor } from "../config/sports.js";
  *
  * Mobile polish: on narrow viewports the strip can overflow, so we
  * auto-scroll the active tab into view whenever the sport changes.
- * A right-edge fade gradient (CSS-driven) hints there's more to scroll.
+ * A right-edge fade gradient hints there's more to scroll — applied
+ * only while the strip actually overflows (the `--scrollable` class
+ * below), so on wide viewports the navy bar runs solid to the edge
+ * and lines up with the masthead above it.
  */
 export default function SportSwitcher() {
   const { sport } = useParams();
   const navRef = useRef(null);
+
+  useEffect(() => {
+    const nav = navRef.current;
+    if (!nav) return;
+    const update = () =>
+      nav.classList.toggle(
+        "sport-switcher--scrollable",
+        nav.scrollWidth > nav.clientWidth + 1,
+      );
+    update();
+    const ro = new ResizeObserver(update);
+    ro.observe(nav);
+    return () => ro.disconnect();
+  }, []);
 
   useEffect(() => {
     const nav = navRef.current;

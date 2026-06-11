@@ -115,8 +115,12 @@
   overflow-x: auto;
   /* hide native scrollbar — overflow-x stays usable via touch/trackpad */
   scrollbar-width: none;
-  /* Right-edge fade hints "scroll for more" on narrow viewports. Uses a
-     gradient mask so it doesn't dim the active tab content itself. */
+}
+/* Right-edge fade hints "scroll for more" — ONLY while the strip
+   actually overflows (class toggled by SportSwitcher.jsx). On wide
+   viewports the navy bar must run solid to the edge so it lines up
+   with the masthead above it. */
+.sport-switcher--scrollable {
   mask-image: linear-gradient(
     to right,
     #000 0,
