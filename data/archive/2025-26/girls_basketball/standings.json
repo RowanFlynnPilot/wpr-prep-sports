@@ -1,0 +1,374 @@
+[
+  {
+    "sport": "girls_basketball",
+    "season": "2025-26",
+    "conference": "Wisconsin Valley",
+    "division": null,
+    "rows": [
+      {
+        "school_id": "spash",
+        "name": "SPASH",
+        "conference_wins": 10,
+        "conference_losses": 0,
+        "overall_wins": 23,
+        "overall_losses": 5,
+        "points_for": 1839,
+        "points_against": 1266
+      },
+      {
+        "school_id": "wisconsin-rapids",
+        "name": "Wisconsin Rapids Lincoln",
+        "conference_wins": 6,
+        "conference_losses": 4,
+        "overall_wins": 13,
+        "overall_losses": 12,
+        "points_for": 1098,
+        "points_against": 1125
+      },
+      {
+        "school_id": "dc-everest",
+        "name": "D.C. Everest",
+        "conference_wins": 6,
+        "conference_losses": 4,
+        "overall_wins": 12,
+        "overall_losses": 12,
+        "points_for": 973,
+        "points_against": 1067
+      },
+      {
+        "school_id": "marshfield",
+        "name": "Marshfield",
+        "conference_wins": 6,
+        "conference_losses": 4,
+        "overall_wins": 11,
+        "overall_losses": 15,
+        "points_for": 1246,
+        "points_against": 1427
+      },
+      {
+        "school_id": "wausau-east",
+        "name": "Wausau East",
+        "conference_wins": 1,
+        "conference_losses": 9,
+        "overall_wins": 7,
+        "overall_losses": 16,
+        "points_for": 1139,
+        "points_against": 1382
+      },
+      {
+        "school_id": "wausau-west",
+        "name": "Wausau West",
+        "conference_wins": 1,
+        "conference_losses": 9,
+        "overall_wins": 6,
+        "overall_losses": 19,
+        "points_for": 1014,
+        "points_against": 1455
+      }
+    ]
+  },
+  {
+    "sport": "girls_basketball",
+    "season": "2025-26",
+    "conference": "Marawood",
+    "division": null,
+    "rows": [
+      {
+        "school_id": "marathon",
+        "name": "Marathon",
+        "conference_wins": 13,
+        "conference_losses": 2,
+        "overall_wins": 23,
+        "overall_losses": 3,
+        "points_for": 1602,
+        "points_against": 1126
+      },
+      {
+        "school_id": "stratford",
+        "name": "Stratford",
+        "conference_wins": 13,
+        "conference_losses": 3,
+        "overall_wins": 21,
+        "overall_losses": 6,
+        "points_for": 1430,
+        "points_against": 1034
+      },
+      {
+        "school_id": "assumption",
+        "name": "Assumption",
+        "conference_wins": 13,
+        "conference_losses": 3,
+        "overall_wins": 18,
+        "overall_losses": 9,
+        "points_for": 1404,
+        "points_against": 1090
+      },
+      {
+        "school_id": "auburndale",
+        "name": "Auburndale",
+        "conference_wins": 12,
+        "conference_losses": 4,
+        "overall_wins": 17,
+        "overall_losses": 9,
+        "points_for": 1274,
+        "points_against": 1002
+      },
+      {
+        "school_id": "rib-lake",
+        "name": "Rib Lake",
+        "conference_wins": 11,
+        "conference_losses": 5,
+        "overall_wins": 16,
+        "overall_losses": 9,
+        "points_for": 1274,
+        "points_against": 984
+      },
+      {
+        "school_id": "edgar",
+        "name": "Edgar",
+        "conference_wins": 7,
+        "conference_losses": 9,
+        "overall_wins": 12,
+        "overall_losses": 14,
+        "points_for": 1224,
+        "points_against": 1210
+      },
+      {
+        "school_id": "athens",
+        "name": "Athens",
+        "conference_wins": 6,
+        "conference_losses": 9,
+        "overall_wins": 8,
+        "overall_losses": 16,
+        "points_for": 1001,
+        "points_against": 1257
+      },
+      {
+        "school_id": "prentice",
+        "name": "Prentice",
+        "conference_wins": 6,
+        "conference_losses": 10,
+        "overall_wins": 9,
+        "overall_losses": 16,
+        "points_for": 994,
+        "points_against": 1233
+      },
+      {
+        "school_id": "newman-catholic",
+        "name": "Newman Catholic",
+        "conference_wins": 5,
+        "conference_losses": 11,
+        "overall_wins": 9,
+        "overall_losses": 17,
+        "points_for": 1142,
+        "points_against": 1307
+      },
+      {
+        "school_id": "spencer",
+        "name": "Spencer",
+        "conference_wins": 4,
+        "conference_losses": 10,
+        "overall_wins": 9,
+        "overall_losses": 17,
+        "points_for": 1036,
+        "points_against": 1252
+      },
+      {
+        "school_id": "chequamegon",
+        "name": "Chequamegon",
+        "conference_wins": 3,
+        "conference_losses": 11,
+        "overall_wins": 9,
+        "overall_losses": 17,
+        "points_for": 1137,
+        "points_against": 1420
+      },
+      {
+        "school_id": "phillips",
+        "name": "Phillips",
+        "conference_wins": 2,
+        "conference_losses": 14,
+        "overall_wins": 6,
+        "overall_losses": 20,
+        "points_for": 1071,
+        "points_against": 1434
+      }
+    ]
+  },
+  {
+    "sport": "girls_basketball",
+    "season": "2025-26",
+    "conference": "Great Northern",
+    "division": null,
+    "rows": [
+      {
+        "school_id": "mosinee",
+        "name": "Mosinee",
+        "conference_wins": 14,
+        "conference_losses": 0,
+        "overall_wins": 24,
+        "overall_losses": 4,
+        "points_for": 1670,
+        "points_against": 1092
+      },
+      {
+        "school_id": "medford",
+        "name": "Medford",
+        "conference_wins": 12,
+        "conference_losses": 2,
+        "overall_wins": 17,
+        "overall_losses": 8,
+        "points_for": 1460,
+        "points_against": 1190
+      },
+      {
+        "school_id": "rhinelander",
+        "name": "Rhinelander",
+        "conference_wins": 10,
+        "conference_losses": 4,
+        "overall_wins": 16,
+        "overall_losses": 11,
+        "points_for": 1442,
+        "points_against": 1108
+      },
+      {
+        "school_id": "tomahawk",
+        "name": "Tomahawk",
+        "conference_wins": 6,
+        "conference_losses": 8,
+        "overall_wins": 12,
+        "overall_losses": 13,
+        "points_for": 1090,
+        "points_against": 1274
+      },
+      {
+        "school_id": "lakeland",
+        "name": "Lakeland",
+        "conference_wins": 6,
+        "conference_losses": 8,
+        "overall_wins": 8,
+        "overall_losses": 18,
+        "points_for": 1180,
+        "points_against": 1470
+      },
+      {
+        "school_id": "merrill",
+        "name": "Merrill",
+        "conference_wins": 4,
+        "conference_losses": 10,
+        "overall_wins": 5,
+        "overall_losses": 18,
+        "points_for": 814,
+        "points_against": 1243
+      },
+      {
+        "school_id": "northland-pines",
+        "name": "Northland Pines",
+        "conference_wins": 3,
+        "conference_losses": 11,
+        "overall_wins": 8,
+        "overall_losses": 16,
+        "points_for": 1099,
+        "points_against": 1217
+      },
+      {
+        "school_id": "antigo",
+        "name": "Antigo",
+        "conference_wins": 1,
+        "conference_losses": 13,
+        "overall_wins": 4,
+        "overall_losses": 21,
+        "points_for": 894,
+        "points_against": 1331
+      }
+    ]
+  },
+  {
+    "sport": "girls_basketball",
+    "season": "2025-26",
+    "conference": "Cloverbelt",
+    "division": null,
+    "rows": [
+      {
+        "school_id": "neillsville",
+        "name": "Neillsville",
+        "conference_wins": 14,
+        "conference_losses": 0,
+        "overall_wins": 27,
+        "overall_losses": 1,
+        "points_for": 1642,
+        "points_against": 785
+      },
+      {
+        "school_id": "columbus-catholic",
+        "name": "Columbus Catholic",
+        "conference_wins": 11,
+        "conference_losses": 3,
+        "overall_wins": 19,
+        "overall_losses": 7,
+        "points_for": 1541,
+        "points_against": 1124
+      },
+      {
+        "school_id": "owen-withee",
+        "name": "Owen-Withee",
+        "conference_wins": 9,
+        "conference_losses": 5,
+        "overall_wins": 20,
+        "overall_losses": 8,
+        "points_for": 1213,
+        "points_against": 1018
+      },
+      {
+        "school_id": "gilman",
+        "name": "Gilman",
+        "conference_wins": 7,
+        "conference_losses": 7,
+        "overall_wins": 14,
+        "overall_losses": 12,
+        "points_for": 1223,
+        "points_against": 1208
+      },
+      {
+        "school_id": "loyal",
+        "name": "Loyal",
+        "conference_wins": 7,
+        "conference_losses": 7,
+        "overall_wins": 13,
+        "overall_losses": 12,
+        "points_for": 1136,
+        "points_against": 1091
+      },
+      {
+        "school_id": "abbotsford",
+        "name": "Abbotsford",
+        "conference_wins": 3,
+        "conference_losses": 13,
+        "overall_wins": 3,
+        "overall_losses": 19,
+        "points_for": 958,
+        "points_against": 1364
+      },
+      {
+        "school_id": "colby",
+        "name": "Colby",
+        "conference_wins": 2,
+        "conference_losses": 12,
+        "overall_wins": 5,
+        "overall_losses": 18,
+        "points_for": 915,
+        "points_against": 1272
+      },
+      {
+        "school_id": "greenwood",
+        "name": "Greenwood",
+        "conference_wins": 2,
+        "conference_losses": 13,
+        "overall_wins": 7,
+        "overall_losses": 19,
+        "points_for": 1006,
+        "points_against": 1290
+      }
+    ]
+  }
+]

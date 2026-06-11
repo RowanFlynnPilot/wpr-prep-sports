@@ -1,0 +1,648 @@
+[
+  {
+    "sport": "football",
+    "season": "2025-26",
+    "conference": "Great Northern",
+    "division": null,
+    "rows": [
+      {
+        "school_id": "tomahawk",
+        "name": "Tomahawk",
+        "conference_wins": 6,
+        "conference_losses": 1,
+        "overall_wins": 10,
+        "overall_losses": 2,
+        "points_for": 344,
+        "points_against": 151
+      },
+      {
+        "school_id": "mosinee",
+        "name": "Mosinee",
+        "conference_wins": 6,
+        "conference_losses": 1,
+        "overall_wins": 9,
+        "overall_losses": 3,
+        "points_for": 353,
+        "points_against": 199
+      },
+      {
+        "school_id": "merrill",
+        "name": "Merrill",
+        "conference_wins": 5,
+        "conference_losses": 2,
+        "overall_wins": 7,
+        "overall_losses": 4,
+        "points_for": 245,
+        "points_against": 228
+      },
+      {
+        "school_id": "lakeland",
+        "name": "Lakeland",
+        "conference_wins": 3,
+        "conference_losses": 4,
+        "overall_wins": 5,
+        "overall_losses": 5,
+        "points_for": 219,
+        "points_against": 226
+      },
+      {
+        "school_id": "wausau-east",
+        "name": "Wausau East",
+        "conference_wins": 3,
+        "conference_losses": 4,
+        "overall_wins": 4,
+        "overall_losses": 6,
+        "points_for": 200,
+        "points_against": 189
+      },
+      {
+        "school_id": "medford",
+        "name": "Medford",
+        "conference_wins": 3,
+        "conference_losses": 4,
+        "overall_wins": 3,
+        "overall_losses": 7,
+        "points_for": 195,
+        "points_against": 311
+      },
+      {
+        "school_id": "northland-pines",
+        "name": "Northland Pines",
+        "conference_wins": 2,
+        "conference_losses": 5,
+        "overall_wins": 4,
+        "overall_losses": 5,
+        "points_for": 118,
+        "points_against": 243
+      },
+      {
+        "school_id": "rhinelander",
+        "name": "Rhinelander",
+        "conference_wins": 2,
+        "conference_losses": 5,
+        "overall_wins": 3,
+        "overall_losses": 7,
+        "points_for": 221,
+        "points_against": 307
+      },
+      {
+        "school_id": "antigo",
+        "name": "Antigo",
+        "conference_wins": 0,
+        "conference_losses": 7,
+        "overall_wins": 1,
+        "overall_losses": 8,
+        "points_for": 103,
+        "points_against": 320
+      }
+    ]
+  },
+  {
+    "sport": "football",
+    "season": "2025-26",
+    "conference": "Wisconsin Valley",
+    "division": null,
+    "rows": [
+      {
+        "school_id": "dc-everest",
+        "name": "D.C. Everest",
+        "conference_wins": 6,
+        "conference_losses": 1,
+        "overall_wins": 6,
+        "overall_losses": 4,
+        "points_for": 278,
+        "points_against": 186
+      },
+      {
+        "school_id": "marshfield",
+        "name": "Marshfield",
+        "conference_wins": 5,
+        "conference_losses": 2,
+        "overall_wins": 5,
+        "overall_losses": 5,
+        "points_for": 245,
+        "points_against": 292
+      },
+      {
+        "school_id": "wausau-west",
+        "name": "Wausau West",
+        "conference_wins": 4,
+        "conference_losses": 2,
+        "overall_wins": 5,
+        "overall_losses": 5,
+        "points_for": 235,
+        "points_against": 288
+      },
+      {
+        "school_id": "spash",
+        "name": "SPASH",
+        "conference_wins": 3,
+        "conference_losses": 4,
+        "overall_wins": 5,
+        "overall_losses": 4,
+        "points_for": 323,
+        "points_against": 189
+      },
+      {
+        "school_id": "eau-claire-north",
+        "name": "Eau Claire North",
+        "conference_wins": 3,
+        "conference_losses": 4,
+        "overall_wins": 3,
+        "overall_losses": 6,
+        "points_for": 215,
+        "points_against": 338
+      },
+      {
+        "school_id": "eau-claire-memorial",
+        "name": "Eau Claire Memorial",
+        "conference_wins": 1,
+        "conference_losses": 6,
+        "overall_wins": 1,
+        "overall_losses": 8,
+        "points_for": 144,
+        "points_against": 331
+      },
+      {
+        "school_id": "wisconsin-rapids",
+        "name": "Wisconsin Rapids Lincoln",
+        "conference_wins": 0,
+        "conference_losses": 7,
+        "overall_wins": 0,
+        "overall_losses": 9,
+        "points_for": 107,
+        "points_against": 323
+      }
+    ]
+  },
+  {
+    "sport": "football",
+    "season": "2025-26",
+    "conference": "Northwoods-East 8",
+    "division": null,
+    "rows": [
+      {
+        "school_id": "flambeau",
+        "name": "Flambeau",
+        "conference_wins": 7,
+        "conference_losses": 0,
+        "overall_wins": 11,
+        "overall_losses": 1,
+        "points_for": 513,
+        "points_against": 142
+      },
+      {
+        "school_id": "shell-lake",
+        "name": "Shell Lake",
+        "conference_wins": 7,
+        "conference_losses": 0,
+        "overall_wins": 9,
+        "overall_losses": 0,
+        "points_for": 357,
+        "points_against": 38
+      },
+      {
+        "school_id": "phillips",
+        "name": "Phillips",
+        "conference_wins": 6,
+        "conference_losses": 1,
+        "overall_wins": 7,
+        "overall_losses": 2,
+        "points_for": 284,
+        "points_against": 219
+      },
+      {
+        "school_id": "athens",
+        "name": "Athens",
+        "conference_wins": 5,
+        "conference_losses": 2,
+        "overall_wins": 7,
+        "overall_losses": 3,
+        "points_for": 327,
+        "points_against": 168
+      },
+      {
+        "school_id": "hurley",
+        "name": "Hurley",
+        "conference_wins": 4,
+        "conference_losses": 3,
+        "overall_wins": 6,
+        "overall_losses": 4,
+        "points_for": 213,
+        "points_against": 254
+      },
+      {
+        "school_id": "bruce",
+        "name": "Bruce",
+        "conference_wins": 4,
+        "conference_losses": 3,
+        "overall_wins": 4,
+        "overall_losses": 6,
+        "points_for": 192,
+        "points_against": 296
+      },
+      {
+        "school_id": "washburn",
+        "name": "Washburn",
+        "conference_wins": 3,
+        "conference_losses": 4,
+        "overall_wins": 3,
+        "overall_losses": 6,
+        "points_for": 125,
+        "points_against": 333
+      },
+      {
+        "school_id": "chequamegon",
+        "name": "Chequamegon",
+        "conference_wins": 2,
+        "conference_losses": 5,
+        "overall_wins": 3,
+        "overall_losses": 5,
+        "points_for": 153,
+        "points_against": 282
+      },
+      {
+        "school_id": "rib-lake",
+        "name": "Rib Lake",
+        "conference_wins": 2,
+        "conference_losses": 5,
+        "overall_wins": 2,
+        "overall_losses": 6,
+        "points_for": 174,
+        "points_against": 160
+      },
+      {
+        "school_id": "south-shore",
+        "name": "South Shore",
+        "conference_wins": 2,
+        "conference_losses": 5,
+        "overall_wins": 2,
+        "overall_losses": 6,
+        "points_for": 42,
+        "points_against": 142
+      },
+      {
+        "school_id": "prentice",
+        "name": "Prentice",
+        "conference_wins": 1,
+        "conference_losses": 6,
+        "overall_wins": 2,
+        "overall_losses": 6,
+        "points_for": 134,
+        "points_against": 217
+      },
+      {
+        "school_id": "mellen",
+        "name": "Mellen",
+        "conference_wins": 0,
+        "conference_losses": 7,
+        "overall_wins": 0,
+        "overall_losses": 7,
+        "points_for": 0,
+        "points_against": 7
+      }
+    ]
+  },
+  {
+    "sport": "football",
+    "season": "2025-26",
+    "conference": "Marawood/CWC",
+    "division": null,
+    "rows": [
+      {
+        "school_id": "edgar",
+        "name": "Edgar",
+        "conference_wins": 7,
+        "conference_losses": 0,
+        "overall_wins": 14,
+        "overall_losses": 0,
+        "points_for": 387,
+        "points_against": 48
+      },
+      {
+        "school_id": "auburndale",
+        "name": "Auburndale",
+        "conference_wins": 6,
+        "conference_losses": 1,
+        "overall_wins": 8,
+        "overall_losses": 2,
+        "points_for": 312,
+        "points_against": 119
+      },
+      {
+        "school_id": "abbotsford",
+        "name": "Abbotsford",
+        "conference_wins": 5,
+        "conference_losses": 2,
+        "overall_wins": 6,
+        "overall_losses": 4,
+        "points_for": 213,
+        "points_against": 215
+      },
+      {
+        "school_id": "pittsville",
+        "name": "Pittsville",
+        "conference_wins": 4,
+        "conference_losses": 3,
+        "overall_wins": 4,
+        "overall_losses": 6,
+        "points_for": 201,
+        "points_against": 302
+      },
+      {
+        "school_id": "assumption",
+        "name": "Assumption",
+        "conference_wins": 3,
+        "conference_losses": 4,
+        "overall_wins": 3,
+        "overall_losses": 7,
+        "points_for": 97,
+        "points_against": 303
+      },
+      {
+        "school_id": "pacelli",
+        "name": "Pacelli",
+        "conference_wins": 2,
+        "conference_losses": 5,
+        "overall_wins": 3,
+        "overall_losses": 7,
+        "points_for": 98,
+        "points_against": 280
+      },
+      {
+        "school_id": "iola-scandinavia",
+        "name": "Iola-Scandinavia",
+        "conference_wins": 1,
+        "conference_losses": 6,
+        "overall_wins": 2,
+        "overall_losses": 7,
+        "points_for": 130,
+        "points_against": 311
+      },
+      {
+        "school_id": "rosholt",
+        "name": "Rosholt",
+        "conference_wins": 0,
+        "conference_losses": 7,
+        "overall_wins": 3,
+        "overall_losses": 8,
+        "points_for": 160,
+        "points_against": 117
+      }
+    ]
+  },
+  {
+    "sport": "football",
+    "season": "2025-26",
+    "conference": "CWC-Large",
+    "division": null,
+    "rows": [
+      {
+        "school_id": "stratford",
+        "name": "Stratford",
+        "conference_wins": 7,
+        "conference_losses": 0,
+        "overall_wins": 10,
+        "overall_losses": 3,
+        "points_for": 392,
+        "points_against": 161
+      },
+      {
+        "school_id": "amherst",
+        "name": "Amherst",
+        "conference_wins": 6,
+        "conference_losses": 1,
+        "overall_wins": 10,
+        "overall_losses": 2,
+        "points_for": 440,
+        "points_against": 207
+      },
+      {
+        "school_id": "spencer",
+        "name": "Spencer",
+        "conference_wins": 4,
+        "conference_losses": 3,
+        "overall_wins": 6,
+        "overall_losses": 5,
+        "points_for": 281,
+        "points_against": 248
+      },
+      {
+        "school_id": "weyauwega-fremont",
+        "name": "Weyauwega-Fremont",
+        "conference_wins": 3,
+        "conference_losses": 4,
+        "overall_wins": 6,
+        "overall_losses": 5,
+        "points_for": 275,
+        "points_against": 301
+      },
+      {
+        "school_id": "wittenberg-birnamwood",
+        "name": "Wittenberg-Birnamwood",
+        "conference_wins": 3,
+        "conference_losses": 4,
+        "overall_wins": 5,
+        "overall_losses": 6,
+        "points_for": 279,
+        "points_against": 263
+      },
+      {
+        "school_id": "marathon",
+        "name": "Marathon",
+        "conference_wins": 3,
+        "conference_losses": 4,
+        "overall_wins": 4,
+        "overall_losses": 6,
+        "points_for": 200,
+        "points_against": 210
+      },
+      {
+        "school_id": "loyal",
+        "name": "Loyal",
+        "conference_wins": 2,
+        "conference_losses": 5,
+        "overall_wins": 4,
+        "overall_losses": 6,
+        "points_for": 212,
+        "points_against": 223
+      },
+      {
+        "school_id": "colby",
+        "name": "Colby",
+        "conference_wins": 0,
+        "conference_losses": 7,
+        "overall_wins": 1,
+        "overall_losses": 8,
+        "points_for": 116,
+        "points_against": 323
+      }
+    ]
+  },
+  {
+    "sport": "football",
+    "season": "2025-26",
+    "conference": "Central Wisconsin-8",
+    "division": null,
+    "rows": [
+      {
+        "school_id": "marion",
+        "name": "Marion",
+        "conference_wins": 7,
+        "conference_losses": 0,
+        "overall_wins": 9,
+        "overall_losses": 2,
+        "points_for": 335,
+        "points_against": 216
+      },
+      {
+        "school_id": "tri-county",
+        "name": "Tri-County",
+        "conference_wins": 6,
+        "conference_losses": 1,
+        "overall_wins": 7,
+        "overall_losses": 3,
+        "points_for": 399,
+        "points_against": 179
+      },
+      {
+        "school_id": "almond-bancroft",
+        "name": "Almond-Bancroft",
+        "conference_wins": 5,
+        "conference_losses": 2,
+        "overall_wins": 6,
+        "overall_losses": 5,
+        "points_for": 242,
+        "points_against": 280
+      },
+      {
+        "school_id": "newman-catholic",
+        "name": "Newman Catholic",
+        "conference_wins": 4,
+        "conference_losses": 3,
+        "overall_wins": 6,
+        "overall_losses": 4,
+        "points_for": 218,
+        "points_against": 195
+      },
+      {
+        "school_id": "wild-rose",
+        "name": "Wild Rose",
+        "conference_wins": 3,
+        "conference_losses": 4,
+        "overall_wins": 3,
+        "overall_losses": 6,
+        "points_for": 128,
+        "points_against": 361
+      },
+      {
+        "school_id": "port-edwards",
+        "name": "Port Edwards",
+        "conference_wins": 2,
+        "conference_losses": 5,
+        "overall_wins": 2,
+        "overall_losses": 7,
+        "points_for": 86,
+        "points_against": 356
+      },
+      {
+        "school_id": "menominee-nation",
+        "name": "Menominee Nation",
+        "conference_wins": 1,
+        "conference_losses": 6,
+        "overall_wins": 1,
+        "overall_losses": 7,
+        "points_for": 1,
+        "points_against": 171
+      },
+      {
+        "school_id": "bowler",
+        "name": "Bowler",
+        "conference_wins": 0,
+        "conference_losses": 7,
+        "overall_wins": 0,
+        "overall_losses": 7,
+        "points_for": 0,
+        "points_against": 7
+      }
+    ]
+  },
+  {
+    "sport": "football",
+    "season": "2025-26",
+    "conference": "Big Rivers",
+    "division": null,
+    "rows": [
+      {
+        "school_id": "rice-lake",
+        "name": "Rice Lake",
+        "conference_wins": 6,
+        "conference_losses": 1,
+        "overall_wins": 10,
+        "overall_losses": 2,
+        "points_for": 394,
+        "points_against": 308
+      },
+      {
+        "school_id": "river-falls",
+        "name": "River Falls",
+        "conference_wins": 5,
+        "conference_losses": 1,
+        "overall_wins": 11,
+        "overall_losses": 2,
+        "points_for": 519,
+        "points_against": 283
+      },
+      {
+        "school_id": "hudson",
+        "name": "Hudson",
+        "conference_wins": 5,
+        "conference_losses": 2,
+        "overall_wins": 8,
+        "overall_losses": 3,
+        "points_for": 301,
+        "points_against": 206
+      },
+      {
+        "school_id": "new-richmond",
+        "name": "New Richmond",
+        "conference_wins": 5,
+        "conference_losses": 2,
+        "overall_wins": 8,
+        "overall_losses": 3,
+        "points_for": 413,
+        "points_against": 189
+      },
+      {
+        "school_id": "chippewa-falls",
+        "name": "Chippewa Falls",
+        "conference_wins": 3,
+        "conference_losses": 4,
+        "overall_wins": 4,
+        "overall_losses": 6,
+        "points_for": 238,
+        "points_against": 233
+      },
+      {
+        "school_id": "menomonie",
+        "name": "Menomonie",
+        "conference_wins": 2,
+        "conference_losses": 5,
+        "overall_wins": 4,
+        "overall_losses": 6,
+        "points_for": 251,
+        "points_against": 260
+      },
+      {
+        "school_id": "superior",
+        "name": "Superior",
+        "conference_wins": 0,
+        "conference_losses": 7,
+        "overall_wins": 0,
+        "overall_losses": 9,
+        "points_for": 154,
+        "points_against": 381
+      }
+    ]
+  }
+]

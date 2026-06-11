@@ -46,6 +46,9 @@ jobs:
         run: |
           mkdir -p frontend/dist/data
           cp -R data/* frontend/dist/data/ || echo "No data yet"
+          # Season archives live in the repo for future rivalry/history
+          # features but don't ship to Pages — nothing fetches them.
+          rm -rf frontend/dist/data/archive
 
       - uses: actions/configure-pages@v5
 
