@@ -107,7 +107,7 @@ def _write_split_games(sport_dir: Path, games: list[dict]) -> None:
     expected_boxscores: set[str] = set()
 
     for g in games:
-        lines = g.get("stat_leaders") or []
+        lines = _drop_exact_duplicates(g.get("stat_leaders") or [])
         slim = {k: v for k, v in g.items() if k != "stat_leaders"}
         slim["headline_stats"] = _headline_stats(lines)
         slim["stat_line_count"] = len(lines)
@@ -143,6 +143,22 @@ def _write_split_games(sport_dir: Path, games: list[dict]) -> None:
     # (rescheduled ids, de-duped games) so stale data can't be fetched.
     _prune_dir(boxscore_dir, expected_boxscores)
     _prune_dir(players_dir, set(school_lines))
+
+
+def _drop_exact_duplicates(lines: list[dict]) -> list[dict]:
+    """Drop byte-identical stat lines (same team, player, category AND
+    stats). MaxPreps occasionally emits the same row twice when a player
+    appears in two tables of one category block; identical rows can't be
+    legitimate and they inflate season aggregation."""
+    seen: set[str] = set()
+    out: list[dict] = []
+    for line in lines:
+        key = json.dumps(line, sort_keys=True, default=str)
+        if key in seen:
+            continue
+        seen.add(key)
+        out.append(line)
+    return out
 
 
 def _headline_stats(lines: list[dict]) -> list[dict]:

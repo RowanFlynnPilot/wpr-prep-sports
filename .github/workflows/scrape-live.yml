@@ -39,9 +39,9 @@ jobs:
   live:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
           cache: "pip"
@@ -69,6 +69,13 @@ jobs:
             fi
             echo "::endgroup::"
           done
+
+      # Data gate: structurally broken output must never commit. Fails
+      # the run before the commit step (see scripts/validate_data.py
+      # for what counts as broken vs. a known soft signal).
+      - name: Validate data
+        working-directory: scraper
+        run: python scripts/validate_data.py
 
       - name: Commit live updates
         id: commit

@@ -30,9 +30,9 @@ jobs:
   scrape:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
           cache: "pip"
@@ -64,13 +64,20 @@ jobs:
             echo "::endgroup::"
           done
 
+      # Data gate: structurally broken output must never commit (and
+      # isn't worth generating share cards for). Fails the run before
+      # anything ships; see scripts/validate_data.py.
+      - name: Validate data
+        working-directory: scraper
+        run: python scripts/validate_data.py
+
       # OG share-card PNGs. Built once per scrape: build the frontend,
       # serve dist/ on localhost, run Playwright to screenshot each
       # in-window game's /card/ route, commit any new PNGs with the data.
       # If this step fails, log and continue — the data commit is more
       # important than the cards.
       - name: Setup Node (for OG card build)
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: "20"
           cache: "npm"
