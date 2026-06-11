@@ -14,6 +14,7 @@ import OgCardPage from "./pages/OgCardPage.jsx";
 import PlayerPage from "./pages/PlayerPage.jsx";
 import Skeleton from "./components/Skeleton.jsx";
 import { indexSchools } from "./utils/schools.js";
+import { useAnalyticsPageviews } from "./utils/analytics.js";
 import { useIframeHeightReporter } from "./utils/iframe.js";
 import { DEFAULT_SPORT, configFor, isKnownSport } from "./config/sports.js";
 
@@ -43,6 +44,7 @@ import "./styles/Marquee.css";
 
 export default function App() {
   useIframeHeightReporter();
+  useAnalyticsPageviews();
 
   return (
     <Routes>

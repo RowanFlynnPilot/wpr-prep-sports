@@ -36,6 +36,10 @@ jobs:
 
       - name: Build
         working-directory: frontend
+        env:
+          # Repo variable (Settings → Secrets and variables → Actions →
+          # Variables). Unset = analytics disabled. See docs/analytics.md.
+          VITE_GOATCOUNTER_URL: ${{ vars.GOATCOUNTER_URL }}
         run: npm run build
 
       - name: Stage data alongside frontend
