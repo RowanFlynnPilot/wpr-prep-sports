@@ -939,9 +939,10 @@ export const SPORTS = {
     icon: "🏒",
     season: "2025–26",
     activeMonths: [10, 11, 0, 1, 2], // Nov–Mar
-    // Girls hockey on WPH is heavily co-op'd into entities that don't map
-    // 1:1 to our manifest schools — stats not wired yet.
-    hasSeasonStats: false,
+    // Girls hockey is co-op'd on WPH. We model the central-WI co-op as
+    // one tracked team (Central Wisconsin Storm, wph_team_id 6170050),
+    // which carries WPH season + per-game stats like the boys teams.
+    hasSeasonStats: true,
     accentColor: "#0284c7", // ice blue
     accentDarkColor: "#075985",
     nextSeasonStart: "2026-11-14",

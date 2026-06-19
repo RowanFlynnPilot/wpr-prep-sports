@@ -913,7 +913,18 @@ def merge_wph_per_game_stats(
         return dataset
 
     finals = [g for g in dataset.games if g.status == GameStatus.FINAL]
-    targets = [s for s in manifest.schools if s.wph_team_id]
+    # Only teams that actually field a team in THIS sport's dataset.
+    # Hockey co-ops (e.g. the Central Wisconsin Storm) share a WPH page
+    # with their member schools, so an unfiltered manifest scan resolves
+    # every member's wph_team_id to the same girls instance — pulling
+    # duplicate stats onto schools that play no girls hockey. Scoping to
+    # teams-with-games is sport-correct for boys too (all boys teams have
+    # games, so behavior there is unchanged).
+    teams_with_games = _teams_with_games(dataset)
+    targets = [
+        s for s in manifest.schools
+        if s.wph_team_id and s.id in teams_with_games
+    ]
     if not finals or not targets:
         return dataset
 
@@ -935,6 +946,10 @@ def merge_wph_per_game_stats(
     # tracked side's school_id (not its display name) means co-op /
     # mascot-suffix mismatches between WIAA and WPH don't break the match.
     pair_index: dict[tuple[str, str, str], int] = {}
+    # (iso_date, tracked_school_id) → {wph_game_ids} — fallback when the
+    # opponent name itself diverges between sources (girls co-ops: WPH
+    # uses nicknames like "Wis Valley Union", WIAA uses "Stevens Point").
+    day_index: dict[tuple[str, str], set[int]] = {}
 
     # Iterate every subseason so playoff games (Sectional Final, State
     # Tournament) get indexed alongside regular season — WPH stores them
@@ -960,6 +975,7 @@ def merge_wph_per_game_stats(
                 if not opp_clean:
                     continue
                 pair_index.setdefault((iso, school.id, _opp_key(opp_clean)), sg.game_id)
+                day_index.setdefault((iso, school.id), set()).add(sg.game_id)
             time.sleep(POLITE_DELAY_SECONDS)
         time.sleep(POLITE_DELAY_SECONDS)
 
@@ -969,6 +985,7 @@ def merge_wph_per_game_stats(
     matched_games = 0
     stat_lines_total = 0
     stats_cache: dict[int, wph.WPHGameDetail | None] = {}
+    used_wph: set[int] = set()  # a WPH game attaches to at most one dataset game
 
     for game in finals:
         date_iso = game.date.strftime("%Y-%m-%d")
@@ -982,7 +999,22 @@ def merge_wph_per_game_stats(
             if game_id is not None:
                 break
         if game_id is None:
+            # Fallback: opponent names diverge between WPH and WIAA. A
+            # tracked team almost never plays twice in a day, so a single
+            # unused WPH game for (date, team) is an unambiguous match.
+            for tracked in (game.home, game.away):
+                if not tracked.school_id:
+                    continue
+                cands = [
+                    gid for gid in day_index.get((date_iso, tracked.school_id), ())
+                    if gid not in used_wph
+                ]
+                if len(cands) == 1:
+                    game_id = cands[0]
+                    break
+        if game_id is None or game_id in used_wph:
             continue
+        used_wph.add(game_id)
 
         if game_id in stats_cache:
             detail = stats_cache[game_id]
@@ -1227,10 +1259,17 @@ def merge_wph_season_stats(
             )
         return dataset
 
-    targets = [s for s in manifest.schools if s.wph_team_id]
+    # Scope to teams that actually field a team in this sport's dataset —
+    # see merge_wph_per_game_stats for why (co-op WPH page sharing would
+    # otherwise duplicate one co-op's roster across every member school).
+    teams_with_games = _teams_with_games(dataset)
+    targets = [
+        s for s in manifest.schools
+        if s.wph_team_id and s.id in teams_with_games
+    ]
     if not targets:
         if console:
-            console.print("[yellow]No wph_team_id values in manifest — skipping hockey stats[/yellow]")
+            console.print("[yellow]No wph_team_id values for teams with games — skipping hockey stats[/yellow]")
         return dataset
 
     if console:
@@ -1307,6 +1346,18 @@ def merge_wph_season_stats(
 def _norm(name: str) -> str:
     """Collapse whitespace + case for name matching between sources."""
     return re.sub(r"\s+", " ", (name or "").strip().casefold())
+
+
+def _teams_with_games(dataset: Dataset) -> set[str]:
+    """School ids that appear as a tracked side on any game — used to
+    scope WPH stat fetching to teams that actually field a team in this
+    sport (co-op pages otherwise leak one roster across members)."""
+    out: set[str] = set()
+    for g in dataset.games:
+        for side in (g.home, g.away):
+            if side.school_id:
+                out.add(side.school_id)
+    return out
 
 
 def _find_match(

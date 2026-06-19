@@ -72,6 +72,17 @@ SUBSEASONS_EXTRA: dict[tuple[str, str], list[int]] = {
     ("boys_hockey", "2025-26"): [959128], # Playoffs (Regional/Sectional/State games)
 }
 
+# Some legacy team pages don't embed the current-season team_instance in
+# their subnav — the ?subseason= query param is ignored and an old
+# instance is rendered instead (e.g. the Central Wisconsin Storm page
+# 6170050 links its 2018-ish instance regardless of subseason). Hardcode
+# (team_page_id, subseason) -> correct team_instance for those. Find the
+# value from the team's /schedule/team_instance/<id>?subseason=<sub> URL
+# on WPH. Season-specific: refresh alongside SUBSEASONS at rollover.
+TEAM_INSTANCE_OVERRIDES: dict[tuple[int, int], int] = {
+    (6170050, 953552): 10331454,  # Central Wisconsin Storm — girls 2025-26
+}
+
 
 def all_subseasons(sport: str, season: str) -> list[int]:
     """Every subseason for a sport+season — primary first, then extras."""
@@ -132,6 +143,9 @@ def find_team_instance_id(team_page_id: int, subseason: int) -> int | None:
     None if the page can't be loaded or the link isn't present (e.g. the
     school doesn't field that sport this season).
     """
+    override = TEAM_INSTANCE_OVERRIDES.get((team_page_id, subseason))
+    if override is not None:
+        return override
     url = f"{BASE_URL}/page/show/{team_page_id}?subseason={subseason}"
     try:
         html = _get(url)

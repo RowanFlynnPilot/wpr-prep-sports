@@ -105,6 +105,12 @@ def build_dataset(
 
     schools_out = _schools_to_model(manifest)
     name_to_id = _build_name_index(manifest)
+    # Canonical display name per tracked school. When a WIAA row resolves
+    # to a tracked school, we show this name instead of WIAA's raw string
+    # so co-op / abbreviation variants render consistently — e.g. the
+    # girls-hockey co-op that WIAA labels "D.C. Everest Co-op" displays as
+    # "Central Wisconsin Storm".
+    id_to_name = {s.id: s.name for s in manifest.schools}
 
     games: dict[str, Game] = {}
     for sched in raw_team_schedules:
@@ -124,6 +130,7 @@ def build_dataset(
                 season=season,
                 owner_school_id=owner_school_id,
                 name_to_id=name_to_id,
+                id_to_name=id_to_name,
             )
             if game is None:
                 continue
@@ -139,7 +146,17 @@ def build_dataset(
             if existing is None:
                 games[game.id] = game
             else:
-                _warn_if_scores_disagree(existing, game)
+                # Prefer the copy that actually has scores. A co-op hosted
+                # under a member school's org (girls-hockey Storm under
+                # D.C. Everest) is fetched under two owners; only the owner
+                # that IS a side of the game parses the result string, so
+                # the other copy is scoreless. Keep the scored one.
+                ex_scored = existing.home.score is not None and existing.away.score is not None
+                in_scored = game.home.score is not None and game.away.score is not None
+                if in_scored and not ex_scored:
+                    games[game.id] = game
+                elif ex_scored and in_scored:
+                    _warn_if_scores_disagree(existing, game)
 
     games_list = sorted(games.values(), key=lambda g: g.date)
     standings = _build_standings(
@@ -224,6 +241,13 @@ _NAME_ALIASES: dict[str, str] = {
     "antigo/wittenberg-birnamwood": "antigo",
     "rhinelander co-op": "rhinelander",
     "pacelli co-op": "pacelli",
+    # Girls hockey: the Central Wisconsin Storm is a Wausau-area co-op
+    # that WIAA registers under D.C. Everest's org (so its schedule
+    # surfaces as "D.C. Everest Co-op"). We model it as one tracked
+    # team rather than the member high schools. Safe cross-sport: boys
+    # hockey DCE is "D.C. Everest" (never the "Co-op" string).
+    "d.c. everest co-op": "central-wisconsin-storm",
+    "central wisconsin storm": "central-wisconsin-storm",
     # Football co-op aliases for newly-tracked small-school programs.
     "loyal/greenwood": "loyal",
     "greenwood/granton": "greenwood",
@@ -264,6 +288,7 @@ def _raw_to_game(
     season: str,
     owner_school_id: str | None,
     name_to_id: dict[str, str],
+    id_to_name: dict[str, str] | None = None,
 ) -> Game | None:
     date_iso = raw.get("date")
     if not date_iso:
@@ -278,6 +303,12 @@ def _raw_to_game(
 
     if not home_id and not away_id:
         return None  # game involves no tracked school — skip
+
+    # Display name: canonical manifest name when the side is tracked,
+    # else WIAA's raw string (untracked opponents keep their WIAA name).
+    id_to_name = id_to_name or {}
+    home_name = id_to_name.get(home_id, raw["home"]["name"]) if home_id else raw["home"]["name"]
+    away_name = id_to_name.get(away_id, raw["away"]["name"]) if away_id else raw["away"]["name"]
 
     home_score, away_score, status = _parse_result(
         raw.get("result"),
@@ -299,13 +330,13 @@ def _raw_to_game(
         date=dt,
         home=TeamScore(
             school_id=home_id,
-            name=raw["home"]["name"],
+            name=home_name,
             score=home_score,
             logo_url=raw["home"].get("logo_url"),
         ),
         away=TeamScore(
             school_id=away_id,
-            name=raw["away"]["name"],
+            name=away_name,
             score=away_score,
             logo_url=raw["away"].get("logo_url"),
         ),
