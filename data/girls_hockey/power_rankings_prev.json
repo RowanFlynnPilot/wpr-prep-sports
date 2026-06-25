@@ -1,32 +1,44 @@
 {
   "sport": "girls_hockey",
   "season": "2025-26",
-  "generated_at": "2026-06-18T22:01:18.754231-05:00",
+  "generated_at": "2026-06-25T02:51:14.318844+00:00",
   "method": "WPR Power Index v1: 40% W%, 35% SOS, 25% margin (capped per sport)",
   "rankings": [
     {
       "rank": 1,
-      "school_id": "spash",
-      "school_name": "SPASH",
-      "wins": 9,
-      "losses": 9,
-      "win_pct": 0.5,
-      "sos": 0.5,
-      "avg_margin_capped": 0.83,
-      "score": 52.08,
-      "movement": 0
+      "school_id": "central-wisconsin-storm",
+      "school_name": "Central Wisconsin Storm",
+      "wins": 16,
+      "losses": 8,
+      "win_pct": 0.6667,
+      "sos": 0.4282,
+      "avg_margin_capped": 1.25,
+      "score": 57.28,
+      "movement": null
     },
     {
       "rank": 2,
+      "school_id": "spash",
+      "school_name": "SPASH",
+      "wins": 9,
+      "losses": 11,
+      "win_pct": 0.45,
+      "sos": 0.6667,
+      "avg_margin_capped": 0.55,
+      "score": 55.21,
+      "movement": -1
+    },
+    {
+      "rank": 3,
       "school_id": "hudson",
       "school_name": "Hudson",
-      "wins": 9,
-      "losses": 12,
-      "win_pct": 0.4286,
-      "sos": 0.5,
-      "avg_margin_capped": -0.48,
-      "score": 45.95,
-      "movement": 0
+      "wins": 10,
+      "losses": 16,
+      "win_pct": 0.3846,
+      "sos": 0.6667,
+      "avg_margin_capped": -0.58,
+      "score": 49.78,
+      "movement": -1
     }
   ]
 }
