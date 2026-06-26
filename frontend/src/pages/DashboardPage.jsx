@@ -196,6 +196,15 @@ export default function DashboardPage({ dataset, schoolIndex, sponsors, sportCon
 
       <SectionTabs tabs={tabs} active={activeTab} onChange={setActiveTab} />
 
+      {activeTab && (
+        <Sponsor
+          slot={`tab:${activeTab}`}
+          sponsors={sponsors}
+          variant="inline"
+          className="section-tabs__sponsor"
+        />
+      )}
+
       {/* Tab: Scores — the live scoreboard. */}
       {activeTab === "scores" && (
         <>

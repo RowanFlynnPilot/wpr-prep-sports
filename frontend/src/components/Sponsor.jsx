@@ -1,3 +1,5 @@
+import { trackEvent } from "../utils/analytics.js";
+
 /**
  * Editorial-style sponsor placement. Renders nothing when the slot is
  * empty (name missing) — by design, no "Your ad here" filler that wrecks
@@ -64,6 +66,7 @@ export default function Sponsor({ slot, sponsors, variant = "inline", className 
         rel="noopener noreferrer sponsored"
         className={classNames}
         aria-label={`${label}: ${data.name}`}
+        onClick={() => trackEvent(`sponsor-click:${slot}`)}
       >
         {content}
       </a>

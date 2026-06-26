@@ -12,6 +12,7 @@ import TeamPage from "./pages/TeamPage.jsx";
 import GamePage from "./pages/GamePage.jsx";
 import OgCardPage from "./pages/OgCardPage.jsx";
 import PlayerPage from "./pages/PlayerPage.jsx";
+import MediaKitPage from "./pages/MediaKitPage.jsx";
 import Skeleton from "./components/Skeleton.jsx";
 import { indexSchools } from "./utils/schools.js";
 import { useAnalytics } from "./utils/analytics.js";
@@ -65,6 +66,9 @@ export default function App() {
           from the UI. Bypasses SportShell so the screenshot only captures
           the card with no widget chrome around it. */}
       <Route path="/card/:sport/:gameId" element={<OgCardPage />} />
+
+      {/* Sponsor media kit — cross-sport sales page, linked from the footer. */}
+      <Route path="/sponsor" element={<MediaKitPage />} />
 
       {/* Sport-scoped routes. SportShell fetches that sport's dataset and
           renders nested routes once it's loaded. */}

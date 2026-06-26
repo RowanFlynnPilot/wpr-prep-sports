@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 // Self-hosted under frontend/public; BASE_URL resolves to
 // "/wpr-prep-sports/" on GitHub Pages or whatever VITE_BASE is set to.
 const WPR_LOGO = `${import.meta.env.BASE_URL}wpr-logo.png`;
@@ -32,6 +34,8 @@ export default function Footer({ stats, lastUpdated }) {
         </a>
         <span className="site-footer__sep" aria-hidden="true">·</span>
         <span className="site-footer__tag">Central Wisconsin Prep Sports</span>
+        <span className="site-footer__sep" aria-hidden="true">·</span>
+        <Link to="/sponsor" className="site-footer__advertise">Advertise with us</Link>
       </div>
       {stats && (
         <div className="site-footer__row site-footer__row--stats">

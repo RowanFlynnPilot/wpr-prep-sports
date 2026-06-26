@@ -186,6 +186,11 @@
 @media (max-width: 640px) {
   .section-tabs__tab { padding: 0.55rem 0.7rem; font-size: 0.9rem; }
 }
+/* Sponsor line just under the active tab — one placement per view. */
+.section-tabs__sponsor {
+  margin: -0.75rem 0 1.25rem;
+  justify-content: flex-end;
+}
 .sport-switcher__list {
   display: flex;
   list-style: none;
@@ -321,6 +326,12 @@
   font-weight: 400;
   color: var(--muted);
 }
+.site-footer__advertise {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+.site-footer__advertise:hover { text-decoration: underline; }
 .site-footer__row--stats {
   font-family: var(--font-body);
   font-size: 0.78rem;
