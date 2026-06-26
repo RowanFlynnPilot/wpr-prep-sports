@@ -110,7 +110,31 @@
       "#13294B",
       "#69A8E0"
     ],
-    "conferences": [],
+    "conferences": [
+      {
+        "sport": "girls_hockey",
+        "conference": "Central Wisconsin"
+      }
+    ],
+    "wiaa_division": {},
+    "athletics_url": null
+  },
+  {
+    "id": "black-river-falls",
+    "name": "Black River Falls",
+    "full_name": "Black River Falls Co-op",
+    "mascot": "Tigers",
+    "city": "Black River Falls",
+    "colors": [
+      "#0C2340",
+      "#C8102E"
+    ],
+    "conferences": [
+      {
+        "sport": "girls_hockey",
+        "conference": "Central Wisconsin"
+      }
+    ],
     "wiaa_division": {},
     "athletics_url": null
   },
@@ -179,6 +203,10 @@
       {
         "sport": "boys_hockey",
         "conference": "Wisconsin Valley"
+      },
+      {
+        "sport": "girls_hockey",
+        "conference": "Central Wisconsin"
       }
     ],
     "wiaa_division": {},
@@ -602,6 +630,10 @@
       {
         "sport": "boys_hockey",
         "conference": "Great Northern"
+      },
+      {
+        "sport": "girls_hockey",
+        "conference": "Central Wisconsin"
       }
     ],
     "wiaa_division": {},
@@ -1454,6 +1486,10 @@
       {
         "sport": "boys_hockey",
         "conference": "Great Northern"
+      },
+      {
+        "sport": "girls_hockey",
+        "conference": "Central Wisconsin"
       }
     ],
     "wiaa_division": {},

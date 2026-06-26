@@ -1,1 +1,60 @@
-[]
+[
+  {
+    "sport": "girls_hockey",
+    "season": "2025-26",
+    "conference": "Central Wisconsin",
+    "division": null,
+    "rows": [
+      {
+        "school_id": "central-wisconsin-storm",
+        "name": "Central Wisconsin Storm",
+        "conference_wins": 7,
+        "conference_losses": 1,
+        "overall_wins": 16,
+        "overall_losses": 8,
+        "points_for": 69,
+        "points_against": 34
+      },
+      {
+        "school_id": "spash",
+        "name": "SPASH",
+        "conference_wins": 5,
+        "conference_losses": 4,
+        "overall_wins": 9,
+        "overall_losses": 11,
+        "points_for": 56,
+        "points_against": 38
+      },
+      {
+        "school_id": "black-river-falls",
+        "name": "Black River Falls",
+        "conference_wins": 4,
+        "conference_losses": 1,
+        "overall_wins": 15,
+        "overall_losses": 7,
+        "points_for": 76,
+        "points_against": 36
+      },
+      {
+        "school_id": "northland-pines",
+        "name": "Northland Pines",
+        "conference_wins": 2,
+        "conference_losses": 5,
+        "overall_wins": 8,
+        "overall_losses": 14,
+        "points_for": 51,
+        "points_against": 73
+      },
+      {
+        "school_id": "medford",
+        "name": "Medford",
+        "conference_wins": 0,
+        "conference_losses": 7,
+        "overall_wins": 0,
+        "overall_losses": 18,
+        "points_for": 25,
+        "points_against": 144
+      }
+    ]
+  }
+]
