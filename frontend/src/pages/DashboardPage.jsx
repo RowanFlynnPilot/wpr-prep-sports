@@ -173,7 +173,7 @@ export default function DashboardPage({ dataset, schoolIndex, sponsors, sportCon
       )}
 
       {/* Pinned showcase — always visible above the tabs. */}
-      <Marquee pick={marquee} sportConfig={sportConfig} sponsors={sponsors} />
+      <Marquee pick={marquee} sportConfig={sportConfig} sponsors={sponsors} schoolIndex={schoolIndex} />
 
       <Hero
         game={featured}

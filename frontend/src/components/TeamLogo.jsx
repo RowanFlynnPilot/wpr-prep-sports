@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { initials, primaryColor } from "../utils/schools.js";
+import { logoOverrideFor } from "../config/logoOverrides.js";
 
 /**
  * School logo. Falls back to a colored monogram if no image is available
@@ -9,7 +10,9 @@ import { initials, primaryColor } from "../utils/schools.js";
  */
 export default function TeamLogo({ team, school, size = "md", className = "" }) {
   const [errored, setErrored] = useState(false);
-  const src = team?.logo_url;
+  // A local override (e.g. the Storm crest) wins over the WIAA logo so
+  // co-op teams don't inherit their host school's mark.
+  const src = logoOverrideFor(team?.school_id || school?.id) || team?.logo_url;
   const showImage = src && !errored;
 
   return (

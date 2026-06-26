@@ -1,107 +1,153 @@
-/* Marquee banner — slim editorial strip above the dashboard hero.
-   Single high-stakes game with an optional sponsor slot to the right.
-   Inherits --accent so each sport's marquee carries its own accent color. */
+/* Game of the Week hero — magazine-style showcase above the dashboard
+   hero. Navy base with each team's color as an accent (top bar split
+   away|home, colored logo rings), both logos prominent. Inherits
+   --accent per sport; --away-color / --home-color set inline per game. */
 
-.marquee {
+.gotw {
+  position: relative;
   display: block;
   text-decoration: none;
-  color: inherit;
+  color: #fff;
   border-bottom: none !important;
   border-radius: var(--radius);
+  overflow: hidden;
+  background:
+    radial-gradient(120% 140% at 0% 0%, color-mix(in srgb, var(--away-color, #888) 22%, transparent) 0%, transparent 45%),
+    radial-gradient(120% 140% at 100% 0%, color-mix(in srgb, var(--home-color, #888) 22%, transparent) 0%, transparent 45%),
+    var(--ink-hero);
+  padding: 0.9rem 1.1rem 0.8rem;
+  box-shadow: var(--shadow-lift);
+  transition: transform var(--t-fast) var(--ease), box-shadow var(--t-fast) var(--ease);
+}
+.gotw:hover { transform: translateY(-2px); box-shadow: var(--shadow-hero); }
+
+/* Top accent bar — away color on the left half, home on the right. */
+.gotw__bar {
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 4px;
   background: linear-gradient(
     90deg,
-    color-mix(in srgb, var(--accent) 18%, var(--ink-hero)) 0%,
-    var(--ink-hero) 50%
+    var(--away-color, var(--accent)) 0 50%,
+    var(--home-color, var(--accent)) 50% 100%
   );
-  border-left: 4px solid var(--accent);
-  padding: 0.7rem 1rem;
-  box-shadow: var(--shadow-lift);
-  transition: transform var(--t-fast) var(--ease),
-              box-shadow var(--t-fast) var(--ease);
-}
-.marquee:hover {
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-hero);
 }
 
-.marquee__inner {
+.gotw__top {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  color: #fff;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.6rem;
 }
-
-.marquee__primary {
-  display: flex;
-  flex-direction: column;
-  gap: 0.15rem;
-  min-width: 0;
-  flex: 1 1 auto;
-}
-
-.marquee__eyebrow {
+.gotw__eyebrow {
   font-family: var(--font-display);
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--accent);
 }
+.gotw__sponsor { flex: 0 0 auto; }
+.gotw__sponsor .sponsor__label { color: rgba(255, 255, 255, 0.6); }
+.gotw__sponsor .sponsor__name { color: #fff; }
 
-.marquee__headline {
+.gotw__teams {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 0.75rem;
+}
+.gotw__team {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-width: 0;
+}
+.gotw__team--away { justify-content: flex-start; }
+.gotw__team--home { justify-content: flex-end; }
+
+/* Colored ring around each team's logo, drawn from its team color. */
+.gotw__team--away .gotw__logo { box-shadow: 0 0 0 2px var(--away-color, var(--accent)); border-radius: 50%; }
+.gotw__team--home .gotw__logo { box-shadow: 0 0 0 2px var(--home-color, var(--accent)); border-radius: 50%; }
+
+.gotw__team-text { display: flex; flex-direction: column; min-width: 0; }
+.gotw__team--home .gotw__team-text { text-align: right; }
+.gotw__team-name {
   font-family: var(--font-display);
   font-weight: 700;
   font-size: 1.05rem;
-  line-height: 1.2;
+  line-height: 1.15;
   color: #fff;
-  letter-spacing: 0.01em;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+.gotw__team-mascot {
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+.gotw__team--won .gotw__team-name { color: var(--accent); }
 
-.marquee__meta {
+.gotw__score {
+  font-family: var(--font-numeric, var(--font-display));
+  font-weight: 700;
+  font-size: 1.7rem;
+  line-height: 1;
+  color: #fff;
+  flex: 0 0 auto;
+}
+.gotw__team--won .gotw__score { color: var(--accent); }
+
+.gotw__vs {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+  flex: 0 0 auto;
+}
+
+.gotw__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: 0.7rem;
+  padding-top: 0.55rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.gotw__when {
   font-family: var(--font-body);
   font-size: 0.78rem;
   color: rgba(255, 255, 255, 0.65);
   font-style: italic;
 }
-.marquee__round {
+.gotw__round {
   font-style: normal;
   color: rgba(255, 255, 255, 0.85);
   font-family: var(--font-display);
   font-size: 0.7rem;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
 }
-
-.marquee__sponsor {
-  flex: 0 0 auto;
-  /* The sponsor component's text uses --muted by default; override for
-     the dark marquee background. */
-  --sponsor-fg: #fff;
-}
-.marquee__sponsor .sponsor__label { color: rgba(255, 255, 255, 0.6); }
-.marquee__sponsor .sponsor__name { color: #fff; }
-
-.marquee__chevron {
+.gotw__cta {
   flex: 0 0 auto;
   font-family: var(--font-display);
+  font-size: 0.72rem;
   font-weight: 700;
-  font-size: 1.25rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
   color: var(--accent);
-  opacity: 0.7;
-  transition: transform var(--t-fast) var(--ease), opacity var(--t-fast) var(--ease);
+  transition: transform var(--t-fast) var(--ease);
 }
-.marquee:hover .marquee__chevron {
-  transform: translateX(3px);
-  opacity: 1;
-}
+.gotw:hover .gotw__cta { transform: translateX(3px); }
 
 @media (max-width: 640px) {
-  .marquee { padding: 0.6rem 0.85rem; }
-  .marquee__inner { gap: 0.5rem; }
-  .marquee__headline { font-size: 0.95rem; }
-  .marquee__sponsor { display: none; } /* keep mobile tight; sponsor still
-                                          rendered elsewhere (ticker slot). */
+  .gotw { padding: 0.8rem 0.85rem 0.7rem; }
+  .gotw__team-name { font-size: 0.92rem; }
+  .gotw__score { font-size: 1.4rem; }
+  .gotw__team-mascot { display: none; }
+  .gotw__sponsor { display: none; } /* keep mobile tight; sponsor renders in the ticker slot too */
 }

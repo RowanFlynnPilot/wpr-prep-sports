@@ -1,52 +1,85 @@
 import { Link } from "react-router-dom";
 import Sponsor from "./Sponsor.jsx";
+import TeamLogo from "./TeamLogo.jsx";
+import { schoolFor, primaryColor } from "../utils/schools.js";
 import { useSportPrefix } from "../utils/links.js";
 import { formatGameDay, formatGameDate } from "../utils/dates.js";
 
 /**
- * Slim editorial banner above the dashboard hero. Single marquee game
- * (Game of the Week in-season, Match of the Season off-season) with a
- * sport-specific sponsor slot. Designed to add an obvious premium
- * placement above the fold without competing with the hero card.
+ * Game of the Week hero — the magazine-style showcase above the dashboard
+ * hero. Both teams' logos and colors, a "Presented by" lockup, and the
+ * matchup/score. In-season it's the next high-stakes game; off-season it's
+ * the match of the season (with the final score). Pinned above the tabs.
  */
-export default function Marquee({ pick, sportConfig, sponsors }) {
+export default function Marquee({ pick, sportConfig, sponsors, schoolIndex }) {
   const sportPrefix = useSportPrefix();
   if (!pick) return null;
 
-  const { kind, game, eyebrow, headline } = pick;
+  const { kind, game, eyebrow } = pick;
+  const isFinal = game.status === "final";
+  const awaySchool = schoolFor(game.away, schoolIndex);
+  const homeSchool = schoolFor(game.home, schoolIndex);
+  const awayWon = isFinal && (game.away.score ?? -1) > (game.home.score ?? -1);
+  const homeWon = isFinal && (game.home.score ?? -1) > (game.away.score ?? -1);
+
   const dateBits = `${formatGameDay(game.date)} · ${formatGameDate(game.date)}`;
+  const style = {
+    "--away-color": primaryColor(awaySchool),
+    "--home-color": primaryColor(homeSchool),
+  };
 
   return (
     <Link
       to={`${sportPrefix}/game/${game.id}`}
-      className="marquee"
-      aria-label={`${eyebrow}: ${headline}`}
+      className="gotw"
+      style={style}
+      aria-label={`${eyebrow}: ${game.away.name} versus ${game.home.name}`}
+      data-kind={kind}
     >
-      <div className="marquee__inner">
-        <div className="marquee__primary">
-          <span className="marquee__eyebrow">{eyebrow}</span>
-          <span className="marquee__headline">{headline}</span>
-          <span className="marquee__meta">
-            {dateBits}
-            {game.playoff_round && (
-              <>
-                {" "}
-                · <span className="marquee__round">{game.playoff_round}</span>
-              </>
-            )}
-          </span>
-        </div>
+      <div className="gotw__bar" aria-hidden="true" />
+      <div className="gotw__top">
+        <span className="gotw__eyebrow">{eyebrow}</span>
         <Sponsor
           slot={`marquee:${sportConfig?.id ?? "default"}`}
           sponsors={sponsors}
           variant="inline"
-          className="marquee__sponsor"
+          className="gotw__sponsor"
         />
-        <span aria-hidden="true" className="marquee__chevron">›</span>
       </div>
-      {/* Reference kind so the linter doesn't grumble — kind is reserved
-          for future per-kind styling (e.g. live game indicator). */}
-      <span className="marquee__kind-marker" data-kind={kind} hidden />
+
+      <div className="gotw__teams">
+        <div className={`gotw__team gotw__team--away${awayWon ? " gotw__team--won" : ""}`}>
+          <TeamLogo team={game.away} school={awaySchool} size="lg" className="gotw__logo" />
+          <span className="gotw__team-text">
+            <span className="gotw__team-name">{game.away.name}</span>
+            {awaySchool?.mascot && <span className="gotw__team-mascot">{awaySchool.mascot}</span>}
+          </span>
+          {isFinal && <span className="gotw__score">{game.away.score ?? "—"}</span>}
+        </div>
+
+        <span className="gotw__vs" aria-hidden="true">{isFinal ? "–" : "vs"}</span>
+
+        <div className={`gotw__team gotw__team--home${homeWon ? " gotw__team--won" : ""}`}>
+          {isFinal && <span className="gotw__score">{game.home.score ?? "—"}</span>}
+          <span className="gotw__team-text">
+            <span className="gotw__team-name">{game.home.name}</span>
+            {homeSchool?.mascot && <span className="gotw__team-mascot">{homeSchool.mascot}</span>}
+          </span>
+          <TeamLogo team={game.home} school={homeSchool} size="lg" className="gotw__logo" />
+        </div>
+      </div>
+
+      <div className="gotw__meta">
+        <span className="gotw__when">
+          {dateBits}
+          {game.playoff_round && (
+            <> · <span className="gotw__round">{game.playoff_round}</span></>
+          )}
+        </span>
+        <span className="gotw__cta">
+          View game <span aria-hidden="true">›</span>
+        </span>
+      </div>
     </Link>
   );
 }
