@@ -135,6 +135,57 @@
   );
 }
 .sport-switcher::-webkit-scrollbar { display: none; }
+
+/* Section tabs — secondary strip under the pinned hero that switches
+   which group of dashboard sections is shown. Lighter than the navy
+   sport switcher; sits on the page background. */
+.section-tabs {
+  position: relative;
+  margin: 0 0 1.5rem;
+  border-bottom: 1px solid var(--line);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.section-tabs::-webkit-scrollbar { display: none; }
+/* Right-edge fade only while the strip overflows (toggled in JS). */
+.section-tabs--scrollable {
+  mask-image: linear-gradient(
+    to right, #000 0, #000 calc(100% - 1.5rem), transparent 100%);
+  -webkit-mask-image: linear-gradient(
+    to right, #000 0, #000 calc(100% - 1.5rem), transparent 100%);
+}
+.section-tabs__list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 0.25rem;
+}
+.section-tabs__item { margin: 0; padding: 0; }
+.section-tabs__tab {
+  appearance: none;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px; /* overlap the container's bottom border */
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--muted);
+  padding: 0.6rem 0.9rem;
+  white-space: nowrap;
+  transition: color var(--t-fast) var(--ease),
+    border-color var(--t-fast) var(--ease);
+}
+.section-tabs__tab:hover { color: var(--ink); }
+.section-tabs__tab--active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+@media (max-width: 640px) {
+  .section-tabs__tab { padding: 0.55rem 0.7rem; font-size: 0.9rem; }
+}
 .sport-switcher__list {
   display: flex;
   list-style: none;

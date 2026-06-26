@@ -1,5 +1,8 @@
 import { useMemo } from "react";
+import { useSearchParams } from "react-router-dom";
 import Layout from "../components/Layout.jsx";
+import SectionTabs from "../components/SectionTabs.jsx";
+import { buildNotable } from "../utils/notable.js";
 import Hero from "../components/Hero.jsx";
 import ScoreTicker from "../components/ScoreTicker.jsx";
 import ThisWeekGrid from "../components/ThisWeekGrid.jsx";
@@ -101,6 +104,46 @@ export default function DashboardPage({ dataset, schoolIndex, sponsors, sportCon
   // misleading. The new month calendar covers the off-season gap.
   const showThisWeek = week?.isCurrent === true;
 
+  // --- Section tabs ---------------------------------------------------
+  // Marquee + Hero + Player of the Week stay pinned above the tabs; the
+  // rest of the dashboard is grouped into four tabs so the page isn't one
+  // long scroll. A tab only appears when it has content (no empty tabs
+  // for coverage-in-progress or stat-less sports). The active tab is
+  // URL-synced (?tab=) so deep links and sponsor links land on it.
+  const notableItems = useMemo(
+    () => buildNotable({ games, standings, seasonStats, sportConfig }),
+    [games, standings, seasonStats, sportConfig],
+  );
+  const hasStatsTab =
+    standings.length > 0 ||
+    (powerRankings?.rankings?.length ?? 0) > 0 ||
+    (seasonStats?.length > 0 && hasPlayerRows(seasonStats)) ||
+    games.some((g) => g.playoff);
+  const hasSpotlightTab = notableItems.length > 0 || (spirit?.length ?? 0) > 0;
+
+  const tabDefs = [
+    { id: "scores", label: "Scores", show: games.length > 0 },
+    { id: "schedule", label: "Schedule", show: games.length > 0 },
+    { id: "standings", label: "Standings & Stats", show: hasStatsTab },
+    { id: "spotlight", label: "Spotlight", show: hasSpotlightTab },
+  ];
+  const tabs = tabDefs.filter((t) => t.show);
+
+  const [searchParams, setSearchParams] = useSearchParams();
+  const requestedTab = searchParams.get("tab");
+  const activeTab = tabs.some((t) => t.id === requestedTab)
+    ? requestedTab
+    : tabs[0]?.id;
+  const setActiveTab = (id) =>
+    setSearchParams(
+      (prev) => {
+        const next = new URLSearchParams(prev);
+        next.set("tab", id);
+        return next;
+      },
+      { replace: true },
+    );
+
   return (
     <Layout
       lastUpdated={lastUpdated}
@@ -129,6 +172,7 @@ export default function DashboardPage({ dataset, schoolIndex, sponsors, sportCon
         </div>
       )}
 
+      {/* Pinned showcase — always visible above the tabs. */}
       <Marquee pick={marquee} sportConfig={sportConfig} sponsors={sponsors} />
 
       <Hero
@@ -150,39 +194,37 @@ export default function DashboardPage({ dataset, schoolIndex, sponsors, sportCon
         override={potwOverride}
       />
 
-      <Notable
-        games={games}
-        standings={standings}
-        seasonStats={seasonStats}
-        sportConfig={sportConfig}
-        schoolIndex={schoolIndex}
-      />
+      <SectionTabs tabs={tabs} active={activeTab} onChange={setActiveTab} />
 
-      {showThisWeek && (
-        <section>
-          <div className="section-header">
-            <h2>This Week</h2>
-            <span className="section-header__hint">
-              {week.games.length} games · grouped by day
-            </span>
-          </div>
-          <ThisWeekGrid week={week} schoolIndex={schoolIndex} allGames={games} sportConfig={sportConfig} />
-        </section>
+      {/* Tab: Scores — the live scoreboard. */}
+      {activeTab === "scores" && (
+        <>
+          {showThisWeek && (
+            <section>
+              <div className="section-header">
+                <h2>This Week</h2>
+                <span className="section-header__hint">
+                  {week.games.length} games · grouped by day
+                </span>
+              </div>
+              <ThisWeekGrid week={week} schoolIndex={schoolIndex} allGames={games} sportConfig={sportConfig} />
+            </section>
+          )}
+
+          <section>
+            <div className="section-header">
+              <h2>Recent Scores</h2>
+              <Sponsor slot="ticker" sponsors={sponsors} variant="inline" />
+            </div>
+            <ScoreTicker games={recent} schoolIndex={schoolIndex} allGames={games} sportConfig={sportConfig} />
+          </section>
+
+          <Pickem games={games} schoolIndex={schoolIndex} sponsors={sponsors} />
+        </>
       )}
 
-      <SpiritStrip photos={spirit} schoolIndex={schoolIndex} sportConfig={sportConfig} />
-
-      <Pickem games={games} schoolIndex={schoolIndex} sponsors={sponsors} />
-
-      <section>
-        <div className="section-header">
-          <h2>Recent Scores</h2>
-          <Sponsor slot="ticker" sponsors={sponsors} variant="inline" />
-        </div>
-        <ScoreTicker games={recent} schoolIndex={schoolIndex} allGames={games} sportConfig={sportConfig} />
-      </section>
-
-      {games.length > 0 && (
+      {/* Tab: Schedule — full-season calendar. */}
+      {activeTab === "schedule" && games.length > 0 && (
         <section>
           <div className="section-header">
             <h2>Schedule</h2>
@@ -197,65 +239,85 @@ export default function DashboardPage({ dataset, schoolIndex, sponsors, sportCon
         </section>
       )}
 
-      {standings.length > 0 && (
-        <section>
-          <div className="section-header">
-            <h2>Conference Standings</h2>
-            <span className="section-header__hint">
-              {sportConfig.label} · {sportConfig.season}
-            </span>
-          </div>
-          <div className="standings-grid">
-            {standings.map((s) => (
-              <StandingsTable
-                key={`${s.conference}-${s.sport}`}
-                standing={s}
+      {/* Tab: Standings & Stats — the league picture. */}
+      {activeTab === "standings" && (
+        <>
+          {standings.length > 0 && (
+            <section>
+              <div className="section-header">
+                <h2>Conference Standings</h2>
+                <span className="section-header__hint">
+                  {sportConfig.label} · {sportConfig.season}
+                </span>
+              </div>
+              <div className="standings-grid">
+                {standings.map((s) => (
+                  <StandingsTable
+                    key={`${s.conference}-${s.sport}`}
+                    standing={s}
+                    schoolIndex={schoolIndex}
+                    sponsors={sponsors}
+                    seasonStats={seasonStats}
+                    sportConfig={sportConfig}
+                    games={games}
+                  />
+                ))}
+              </div>
+            </section>
+          )}
+
+          <PowerRankings
+            rankings={powerRankings?.rankings}
+            method={powerRankings?.method}
+            schoolIndex={schoolIndex}
+            sponsors={sponsors}
+            sportConfig={sportConfig}
+          />
+
+          {seasonStats && seasonStats.length > 0 && hasPlayerRows(seasonStats) && (
+            <section>
+              <div className="section-header">
+                <h2>Top Performers</h2>
+                <span className="section-header__hint">Season leaders across all tracked schools</span>
+              </div>
+              <TopPerformers
+                rows={seasonStats}
                 schoolIndex={schoolIndex}
-                sponsors={sponsors}
-                seasonStats={seasonStats}
                 sportConfig={sportConfig}
-                games={games}
+                n={5}
               />
-            ))}
-          </div>
-        </section>
+            </section>
+          )}
+
+          {games.some((g) => g.playoff) && (
+            <section>
+              <div className="section-header">
+                <h2>Playoff Bracket</h2>
+                <span className="section-header__hint">WIAA tournament · {sportConfig.label}</span>
+              </div>
+              <TournamentBracket
+                games={games}
+                schoolIndex={schoolIndex}
+                sportConfig={sportConfig}
+              />
+            </section>
+          )}
+        </>
       )}
 
-      <PowerRankings
-        rankings={powerRankings?.rankings}
-        method={powerRankings?.method}
-        schoolIndex={schoolIndex}
-        sponsors={sponsors}
-        sportConfig={sportConfig}
-      />
-
-      {seasonStats && seasonStats.length > 0 && hasPlayerRows(seasonStats) && (
-        <section>
-          <div className="section-header">
-            <h2>Top Performers</h2>
-            <span className="section-header__hint">Season leaders across all tracked schools</span>
-          </div>
-          <TopPerformers
-            rows={seasonStats}
-            schoolIndex={schoolIndex}
-            sportConfig={sportConfig}
-            n={5}
-          />
-        </section>
-      )}
-
-      {games.some((g) => g.playoff) && (
-        <section>
-          <div className="section-header">
-            <h2>Playoff Bracket</h2>
-            <span className="section-header__hint">WIAA tournament · {sportConfig.label}</span>
-          </div>
-          <TournamentBracket
+      {/* Tab: Spotlight — editorial & community. */}
+      {activeTab === "spotlight" && (
+        <>
+          <Notable
             games={games}
-            schoolIndex={schoolIndex}
+            standings={standings}
+            seasonStats={seasonStats}
             sportConfig={sportConfig}
+            schoolIndex={schoolIndex}
           />
-        </section>
+
+          <SpiritStrip photos={spirit} schoolIndex={schoolIndex} sportConfig={sportConfig} />
+        </>
       )}
     </Layout>
   );
