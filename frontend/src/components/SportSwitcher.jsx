@@ -1,61 +1,23 @@
-import { useEffect, useRef } from "react";
-import { NavLink, useParams } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { SPORT_IDS, configFor } from "../config/sports.js";
 
 /**
  * Tab strip in the masthead for switching between sports. Each tab is a
- * NavLink so react-router applies the active class automatically when
- * the current URL is inside that sport.
+ * NavLink so react-router applies the active class automatically when the
+ * current URL is inside that sport.
  *
- * Renders nothing if only one sport is registered — no point showing
- * a switcher with a single immutable option.
+ * The strip WRAPS rather than scrolls — with eight-plus sports we want
+ * every one visible (no tabs hidden behind a scroll fade), so the tabs
+ * fill the row and wrap onto a second row as needed.
  *
- * Mobile polish: on narrow viewports the strip can overflow, so we
- * auto-scroll the active tab into view whenever the sport changes.
- * A right-edge fade gradient hints there's more to scroll — applied
- * only while the strip actually overflows (the `--scrollable` class
- * below), so on wide viewports the navy bar runs solid to the edge
- * and lines up with the masthead above it.
+ * Renders nothing if only one sport is registered — no point showing a
+ * switcher with a single immutable option.
  */
 export default function SportSwitcher() {
-  const { sport } = useParams();
-  const navRef = useRef(null);
-
-  useEffect(() => {
-    const nav = navRef.current;
-    if (!nav) return;
-    const update = () =>
-      nav.classList.toggle(
-        "sport-switcher--scrollable",
-        nav.scrollWidth > nav.clientWidth + 1,
-      );
-    update();
-    const ro = new ResizeObserver(update);
-    ro.observe(nav);
-    return () => ro.disconnect();
-  }, []);
-
-  useEffect(() => {
-    const nav = navRef.current;
-    if (!nav || !sport) return;
-    // Defer one tick so React has committed the active-class swap. We use
-    // setTimeout(0) instead of requestAnimationFrame because rAF is
-    // throttled in background tabs / some headless environments, and the
-    // visual jump on tab change is a fine UX trade.
-    const id = setTimeout(() => {
-      const active = nav.querySelector(".sport-switcher__tab--active");
-      if (!active) return;
-      const target =
-        active.offsetLeft - nav.clientWidth / 2 + active.offsetWidth / 2;
-      nav.scrollLeft = Math.max(0, target);
-    }, 0);
-    return () => clearTimeout(id);
-  }, [sport]);
-
   if (SPORT_IDS.length < 2) return null;
 
   return (
-    <nav className="sport-switcher" aria-label="Sport" ref={navRef}>
+    <nav className="sport-switcher" aria-label="Sport">
       <ul className="sport-switcher__list" role="tablist">
         {SPORT_IDS.map((id) => {
           const cfg = configFor(id);
