@@ -5,6 +5,7 @@ import TeamLogo from "../components/TeamLogo.jsx";
 import TeamLink from "../components/TeamLink.jsx";
 import Sponsor from "../components/Sponsor.jsx";
 import SeasonLeaders from "../components/SeasonLeaders.jsx";
+import StandingsTable from "../components/StandingsTable.jsx";
 import { formatGameDay, formatGameDate, formatGameTime } from "../utils/dates.js";
 import { recapForGame } from "../utils/recap.js";
 import { seasonSummary } from "../utils/seasonSummary.js";
@@ -36,6 +37,17 @@ export default function TeamPage({ dataset, schoolIndex, sponsors, sportConfig }
   const seasonStatsForSchool = useMemo(
     () => (dataset.seasonStats ?? []).filter((r) => r.school_id === schoolId),
     [dataset.seasonStats, schoolId],
+  );
+
+  // The conference standing this team sits in (if any) — surfaced on the
+  // team page so a visitor sees where the team ranks without hopping to
+  // the dashboard's Standings tab.
+  const conferenceStanding = useMemo(
+    () =>
+      (dataset.standings ?? []).find((s) =>
+        (s.rows ?? []).some((r) => r.school_id === schoolId),
+      ) ?? null,
+    [dataset.standings, schoolId],
   );
 
   const summary = useMemo(
@@ -163,6 +175,26 @@ export default function TeamPage({ dataset, schoolIndex, sponsors, sportConfig }
           />
         )}
       </section>
+
+      {conferenceStanding && (
+        <section>
+          <div className="section-header">
+            <h2>Conference Standings</h2>
+            <span className="section-header__hint">
+              {conferenceStanding.conference} · {sportConfig?.label}
+            </span>
+          </div>
+          <StandingsTable
+            standing={conferenceStanding}
+            schoolIndex={schoolIndex}
+            sponsors={sponsors}
+            seasonStats={dataset.seasonStats}
+            sportConfig={sportConfig}
+            games={dataset.games}
+            highlightSchoolId={schoolId}
+          />
+        </section>
+      )}
 
       <SeasonLeaders rows={seasonStatsForSchool} sportConfig={sportConfig} />
 

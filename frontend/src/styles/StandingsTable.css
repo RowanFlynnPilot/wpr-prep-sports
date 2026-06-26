@@ -125,6 +125,17 @@
     rgba(245, 158, 11, 0.1) 18%
   );
 }
+/* The viewed team's own row, when this table is shown on its team page. */
+.standings__row--highlight td {
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  font-weight: 600;
+}
+.standings__row--highlight td:first-child {
+  box-shadow: inset 3px 0 0 var(--accent);
+}
+.standings__row--highlight:hover td {
+  background: color-mix(in srgb, var(--accent) 20%, transparent);
+}
 .standings__leader-pip {
   display: inline-block;
   width: 6px;
