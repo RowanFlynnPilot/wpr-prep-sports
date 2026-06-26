@@ -764,21 +764,23 @@ def build_wph_roster_index(
     *,
     subseason: int,
     season: str,
+    sport: str = "boys_hockey",
     console: Console | None = None,
 ) -> dict[str, dict[tuple[str, str], tuple[str | None, str | None]]]:
     """
-    For each manifest school with a wph_team_id, fetch the WPH roster and
-    return school.id → {(jersey, name_norm): (position, player_year)}.
-    Also stores a name-only fallback under jersey="". Schools without a
-    roster (e.g. team didn't field this season) are simply missing from
-    the map.
+    For each manifest school with a WPH page for `sport`, fetch the WPH
+    roster and return school.id → {(jersey, name_norm): (position,
+    player_year)}. Also stores a name-only fallback under jersey="".
+    Schools without a roster (e.g. team didn't field this season) are
+    simply missing from the map.
     """
     index: dict[str, dict[tuple[str, str], tuple[str | None, str | None]]] = {}
     for school in manifest.schools:
-        if not school.wph_team_id:
+        page = school.wph_page_for(sport)
+        if not page:
             continue
         try:
-            rows = wph.fetch_team_roster(school.wph_team_id, subseason=subseason)
+            rows = wph.fetch_team_roster(page, subseason=subseason)
         except Exception as e:  # noqa: BLE001
             if console:
                 console.print(f"[yellow]  ! {school.id}: WPH roster failed ({e})[/yellow]")
@@ -923,7 +925,7 @@ def merge_wph_per_game_stats(
     teams_with_games = _teams_with_games(dataset)
     targets = [
         s for s in manifest.schools
-        if s.wph_team_id and s.id in teams_with_games
+        if s.wph_page_for(sport) and s.id in teams_with_games
     ]
     if not finals or not targets:
         return dataset
@@ -936,7 +938,8 @@ def merge_wph_per_game_stats(
 
     if roster_index is None:
         roster_index = build_wph_roster_index(
-            manifest, subseason=subseasons[0], season=dataset.meta.season, console=console,
+            manifest, subseason=subseasons[0], season=dataset.meta.season,
+            sport=sport, console=console,
         )
     if console:
         console.print(f"  [dim]rosters loaded: {len(roster_index)} teams[/dim]")
@@ -955,8 +958,9 @@ def merge_wph_per_game_stats(
     # Tournament) get indexed alongside regular season — WPH stores them
     # under distinct subseason IDs.
     for school in targets:
+        page = school.wph_page_for(sport)
         for sub in subseasons:
-            tid = wph.find_team_instance_id(school.wph_team_id, sub)
+            tid = wph.find_team_instance_id(page, sub)
             if tid is None:
                 time.sleep(POLITE_DELAY_SECONDS)
                 continue
@@ -1265,11 +1269,11 @@ def merge_wph_season_stats(
     teams_with_games = _teams_with_games(dataset)
     targets = [
         s for s in manifest.schools
-        if s.wph_team_id and s.id in teams_with_games
+        if s.wph_page_for(sport) and s.id in teams_with_games
     ]
     if not targets:
         if console:
-            console.print("[yellow]No wph_team_id values for teams with games — skipping hockey stats[/yellow]")
+            console.print("[yellow]No WPH pages for teams with games — skipping hockey stats[/yellow]")
         return dataset
 
     if console:
@@ -1279,14 +1283,15 @@ def merge_wph_season_stats(
 
     if roster_index is None:
         roster_index = build_wph_roster_index(
-            manifest, subseason=subseason, season=dataset.meta.season, console=console,
+            manifest, subseason=subseason, season=dataset.meta.season,
+            sport=sport, console=console,
         )
 
     sport_enum = Sport(sport)
     out: list[SeasonStat] = []
 
     for school in targets:
-        tid = wph.find_team_instance_id(school.wph_team_id, subseason)
+        tid = wph.find_team_instance_id(school.wph_page_for(sport), subseason)
         if tid is None:
             if console:
                 console.print(

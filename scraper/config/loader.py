@@ -48,6 +48,12 @@ class SchoolManifestEntry:
     wiaa_org_id: int | None = None
     bound_slug: str | None = None
     wph_team_id: int | None = None
+    # Wisconsin Prep Hockey page id for the GIRLS program. Separate from
+    # wph_team_id (boys) because schools that field both genders use
+    # distinct WPH pages — and girls programs are usually co-ops with
+    # their own page (e.g. Central Wisconsin Storm). Falls back to
+    # wph_team_id when unset.
+    wph_team_id_girls: int | None = None
     maxpreps_slug: str | None = None
     athletics_url: str | None = None
 
@@ -56,6 +62,13 @@ class SchoolManifestEntry:
             if m.sport == sport:
                 return m.conference
         return None
+
+    def wph_page_for(self, sport: str) -> int | None:
+        """WPH program page id for a sport. Girls hockey prefers the
+        girls-specific page; everything else uses wph_team_id."""
+        if sport == "girls_hockey" and self.wph_team_id_girls:
+            return self.wph_team_id_girls
+        return self.wph_team_id
 
     def to_dict(self) -> dict[str, Any]:
         return {
@@ -69,6 +82,7 @@ class SchoolManifestEntry:
             "wiaa_org_id": self.wiaa_org_id,
             "bound_slug": self.bound_slug,
             "wph_team_id": self.wph_team_id,
+            "wph_team_id_girls": self.wph_team_id_girls,
             "maxpreps_slug": self.maxpreps_slug,
             "athletics_url": self.athletics_url,
         }
@@ -100,6 +114,7 @@ def load_manifest(path: Path = MANIFEST_PATH) -> Manifest:
             wiaa_org_id=s.get("wiaa_org_id"),
             bound_slug=s.get("bound_slug"),
             wph_team_id=s.get("wph_team_id"),
+            wph_team_id_girls=s.get("wph_team_id_girls"),
             maxpreps_slug=s.get("maxpreps_slug"),
             athletics_url=s.get("athletics_url"),
         )

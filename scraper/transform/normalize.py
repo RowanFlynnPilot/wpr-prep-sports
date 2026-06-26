@@ -248,6 +248,13 @@ _NAME_ALIASES: dict[str, str] = {
     # hockey DCE is "D.C. Everest" (never the "Co-op" string).
     "d.c. everest co-op": "central-wisconsin-storm",
     "central wisconsin storm": "central-wisconsin-storm",
+    # Rest of the WPH "Central Wisconsin" girls hockey conference — each
+    # is a co-op; map its WIAA display name to the tracked entity. (Wis
+    # Valley Union is registered under SPASH's org → already "spash".)
+    "medford/rib lake": "medford",
+    "northland pines co-op": "northland-pines",
+    "black river falls co-op": "black-river-falls",
+    "black river falls": "black-river-falls",
     # Football co-op aliases for newly-tracked small-school programs.
     "loyal/greenwood": "loyal",
     "greenwood/granton": "greenwood",

@@ -121,10 +121,39 @@
         "#13294B",
         "#69A8E0"
       ],
-      "conferences": [],
+      "conferences": [
+        {
+          "sport": "girls_hockey",
+          "conference": "Central Wisconsin"
+        }
+      ],
       "wiaa_org_id": 93,
       "bound_slug": null,
-      "wph_team_id": 6170050,
+      "wph_team_id": null,
+      "wph_team_id_girls": 9389642,
+      "athletics_url": null,
+      "maxpreps_slug": null
+    },
+    {
+      "id": "black-river-falls",
+      "name": "Black River Falls",
+      "full_name": "Black River Falls Co-op",
+      "mascot": "Tigers",
+      "city": "Black River Falls",
+      "colors": [
+        "#0C2340",
+        "#C8102E"
+      ],
+      "conferences": [
+        {
+          "sport": "girls_hockey",
+          "conference": "Central Wisconsin"
+        }
+      ],
+      "wiaa_org_id": 42,
+      "bound_slug": null,
+      "wph_team_id": null,
+      "wph_team_id_girls": 9389653,
       "athletics_url": null,
       "maxpreps_slug": null
     },
@@ -196,13 +225,18 @@
         {
           "sport": "boys_hockey",
           "conference": "Wisconsin Valley"
+        },
+        {
+          "sport": "girls_hockey",
+          "conference": "Central Wisconsin"
         }
       ],
       "wiaa_org_id": 412,
       "bound_slug": "stevenspoi",
       "wph_team_id": 9184051,
       "athletics_url": null,
-      "maxpreps_slug": "stevens-point/stevens-point-panthers"
+      "maxpreps_slug": "stevens-point/stevens-point-panthers",
+      "wph_team_id_girls": 9389645
     },
     {
       "id": "wisconsin-rapids",
@@ -658,13 +692,18 @@
         {
           "sport": "boys_hockey",
           "conference": "Great Northern"
+        },
+        {
+          "sport": "girls_hockey",
+          "conference": "Central Wisconsin"
         }
       ],
       "wiaa_org_id": 240,
       "bound_slug": "medford",
       "wph_team_id": 9184025,
       "athletics_url": null,
-      "maxpreps_slug": "medford/medford-raiders"
+      "maxpreps_slug": "medford/medford-raiders",
+      "wph_team_id_girls": 9389647
     },
     {
       "id": "merrill",
@@ -882,7 +921,8 @@
       "bound_slug": "hudson",
       "wph_team_id": 9183992,
       "athletics_url": null,
-      "maxpreps_slug": "hudson/hudson-raiders"
+      "maxpreps_slug": "hudson/hudson-raiders",
+      "wph_team_id_girls": 9389654
     },
     {
       "id": "new-richmond",
@@ -1617,13 +1657,18 @@
         {
           "sport": "boys_hockey",
           "conference": "Great Northern"
+        },
+        {
+          "sport": "girls_hockey",
+          "conference": "Central Wisconsin"
         }
       ],
       "wiaa_org_id": 303,
       "bound_slug": null,
       "wph_team_id": null,
       "athletics_url": null,
-      "maxpreps_slug": "eagle-river/northland-pines-eagles"
+      "maxpreps_slug": "eagle-river/northland-pines-eagles",
+      "wph_team_id_girls": 9389646
     },
     {
       "id": "waupaca",

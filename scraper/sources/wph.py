@@ -74,14 +74,15 @@ SUBSEASONS_EXTRA: dict[tuple[str, str], list[int]] = {
 
 # Some legacy team pages don't embed the current-season team_instance in
 # their subnav — the ?subseason= query param is ignored and an old
-# instance is rendered instead (e.g. the Central Wisconsin Storm page
-# 6170050 links its 2018-ish instance regardless of subseason). Hardcode
-# (team_page_id, subseason) -> correct team_instance for those. Find the
-# value from the team's /schedule/team_instance/<id>?subseason=<sub> URL
-# on WPH. Season-specific: refresh alongside SUBSEASONS at rollover.
-TEAM_INSTANCE_OVERRIDES: dict[tuple[int, int], int] = {
-    (6170050, 953552): 10331454,  # Central Wisconsin Storm — girls 2025-26
-}
+# instance is rendered instead. Hardcode (team_page_id, subseason) ->
+# correct team_instance for those. Find the value from the team's
+# /schedule/team_instance/<id>?subseason=<sub> URL on WPH. Season-
+# specific: refresh alongside SUBSEASONS at rollover.
+#
+# Currently empty: the girls programs use their per-season WPH program
+# pages (9389xxx) which self-resolve. Kept as the escape hatch for
+# legacy pages whose subnav ignores the subseason param.
+TEAM_INSTANCE_OVERRIDES: dict[tuple[int, int], int] = {}
 
 
 def all_subseasons(sport: str, season: str) -> list[int]:
