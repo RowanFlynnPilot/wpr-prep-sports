@@ -205,6 +205,8 @@ export default function DashboardPage({ dataset, schoolIndex, sponsors, sportCon
         />
       )}
 
+      {/* Keyed wrapper: remounts on tab change so the panel fades in. */}
+      <div key={activeTab} className="tab-panel">
       {/* Tab: Scores — the live scoreboard. */}
       {activeTab === "scores" && (
         <>
@@ -328,6 +330,7 @@ export default function DashboardPage({ dataset, schoolIndex, sponsors, sportCon
           <SpiritStrip photos={spirit} schoolIndex={schoolIndex} sportConfig={sportConfig} />
         </>
       )}
+      </div>
     </Layout>
   );
 }
