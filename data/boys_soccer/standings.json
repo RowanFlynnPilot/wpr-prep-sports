@@ -1,0 +1,236 @@
+[
+  {
+    "sport": "boys_soccer",
+    "season": "2025-26",
+    "conference": "Wisconsin Valley",
+    "division": null,
+    "rows": [
+      {
+        "school_id": "dc-everest",
+        "name": "D.C. Everest",
+        "conference_wins": 8,
+        "conference_losses": 0,
+        "overall_wins": 16,
+        "overall_losses": 3,
+        "points_for": 80,
+        "points_against": 19
+      },
+      {
+        "school_id": "spash",
+        "name": "SPASH",
+        "conference_wins": 5,
+        "conference_losses": 1,
+        "overall_wins": 9,
+        "overall_losses": 4,
+        "points_for": 32,
+        "points_against": 20
+      },
+      {
+        "school_id": "wisconsin-rapids",
+        "name": "Wisconsin Rapids Lincoln",
+        "conference_wins": 3,
+        "conference_losses": 3,
+        "overall_wins": 6,
+        "overall_losses": 8,
+        "points_for": 22,
+        "points_against": 26
+      },
+      {
+        "school_id": "wausau-east",
+        "name": "Wausau East",
+        "conference_wins": 3,
+        "conference_losses": 4,
+        "overall_wins": 10,
+        "overall_losses": 6,
+        "points_for": 39,
+        "points_against": 31
+      },
+      {
+        "school_id": "wausau-west",
+        "name": "Wausau West",
+        "conference_wins": 1,
+        "conference_losses": 6,
+        "overall_wins": 2,
+        "overall_losses": 12,
+        "points_for": 15,
+        "points_against": 48
+      },
+      {
+        "school_id": "marshfield",
+        "name": "Marshfield",
+        "conference_wins": 0,
+        "conference_losses": 6,
+        "overall_wins": 3,
+        "overall_losses": 12,
+        "points_for": 13,
+        "points_against": 44
+      }
+    ]
+  },
+  {
+    "sport": "boys_soccer",
+    "season": "2025-26",
+    "conference": "Great Northern",
+    "division": null,
+    "rows": [
+      {
+        "school_id": "lakeland",
+        "name": "Lakeland",
+        "conference_wins": 12,
+        "conference_losses": 0,
+        "overall_wins": 17,
+        "overall_losses": 1,
+        "points_for": 81,
+        "points_against": 7
+      },
+      {
+        "school_id": "mosinee",
+        "name": "Mosinee",
+        "conference_wins": 9,
+        "conference_losses": 3,
+        "overall_wins": 10,
+        "overall_losses": 8,
+        "points_for": 40,
+        "points_against": 35
+      },
+      {
+        "school_id": "northland-pines",
+        "name": "Northland Pines",
+        "conference_wins": 6,
+        "conference_losses": 5,
+        "overall_wins": 11,
+        "overall_losses": 7,
+        "points_for": 51,
+        "points_against": 37
+      },
+      {
+        "school_id": "antigo",
+        "name": "Antigo",
+        "conference_wins": 5,
+        "conference_losses": 6,
+        "overall_wins": 8,
+        "overall_losses": 12,
+        "points_for": 31,
+        "points_against": 66
+      },
+      {
+        "school_id": "merrill",
+        "name": "Merrill",
+        "conference_wins": 3,
+        "conference_losses": 7,
+        "overall_wins": 4,
+        "overall_losses": 12,
+        "points_for": 12,
+        "points_against": 36
+      },
+      {
+        "school_id": "medford",
+        "name": "Medford",
+        "conference_wins": 2,
+        "conference_losses": 7,
+        "overall_wins": 3,
+        "overall_losses": 11,
+        "points_for": 10,
+        "points_against": 50
+      },
+      {
+        "school_id": "rhinelander",
+        "name": "Rhinelander",
+        "conference_wins": 1,
+        "conference_losses": 10,
+        "overall_wins": 1,
+        "overall_losses": 15,
+        "points_for": 6,
+        "points_against": 70
+      }
+    ]
+  },
+  {
+    "sport": "boys_soccer",
+    "season": "2025-26",
+    "conference": "Big Rivers",
+    "division": null,
+    "rows": [
+      {
+        "school_id": "hudson",
+        "name": "Hudson",
+        "conference_wins": 9,
+        "conference_losses": 0,
+        "overall_wins": 17,
+        "overall_losses": 1,
+        "points_for": 70,
+        "points_against": 5
+      },
+      {
+        "school_id": "eau-claire-memorial",
+        "name": "Eau Claire Memorial",
+        "conference_wins": 8,
+        "conference_losses": 2,
+        "overall_wins": 13,
+        "overall_losses": 7,
+        "points_for": 72,
+        "points_against": 25
+      },
+      {
+        "school_id": "new-richmond",
+        "name": "New Richmond",
+        "conference_wins": 5,
+        "conference_losses": 5,
+        "overall_wins": 21,
+        "overall_losses": 6,
+        "points_for": 72,
+        "points_against": 31
+      },
+      {
+        "school_id": "river-falls",
+        "name": "River Falls",
+        "conference_wins": 3,
+        "conference_losses": 5,
+        "overall_wins": 6,
+        "overall_losses": 13,
+        "points_for": 24,
+        "points_against": 51
+      },
+      {
+        "school_id": "menomonie",
+        "name": "Menomonie",
+        "conference_wins": 2,
+        "conference_losses": 5,
+        "overall_wins": 5,
+        "overall_losses": 16,
+        "points_for": 23,
+        "points_against": 68
+      },
+      {
+        "school_id": "chippewa-falls",
+        "name": "Chippewa Falls",
+        "conference_wins": 2,
+        "conference_losses": 5,
+        "overall_wins": 3,
+        "overall_losses": 8,
+        "points_for": 21,
+        "points_against": 33
+      },
+      {
+        "school_id": "rice-lake",
+        "name": "Rice Lake",
+        "conference_wins": 2,
+        "conference_losses": 6,
+        "overall_wins": 10,
+        "overall_losses": 9,
+        "points_for": 56,
+        "points_against": 51
+      },
+      {
+        "school_id": "eau-claire-north",
+        "name": "Eau Claire North",
+        "conference_wins": 1,
+        "conference_losses": 4,
+        "overall_wins": 3,
+        "overall_losses": 11,
+        "points_for": 7,
+        "points_against": 38
+      }
+    ]
+  }
+]
