@@ -23,6 +23,27 @@ import { topStatLines } from "./games.js";
 const BLOWOUT_MARGIN = 21;
 const CLOSE_MARGIN = 7;
 
+// Margin descriptors are sport-relative: a 5-goal soccer win is a rout,
+// but a 5-point football game is a nail-biter. Returns the {blowout,
+// close} score-margin thresholds for a sport (falls back to football).
+function marginBands(sportConfig) {
+  switch (sportConfig?.id) {
+    case "boys_basketball":
+    case "girls_basketball":
+      return { blowout: 20, close: 6 };
+    case "volleyball":
+      return { blowout: 3, close: 1 }; // sets won (3-0 sweep vs 3-2)
+    case "boys_hockey":
+    case "girls_hockey":
+      return { blowout: 5, close: 1 };
+    case "boys_soccer":
+    case "girls_soccer":
+      return { blowout: 4, close: 1 };
+    default:
+      return { blowout: BLOWOUT_MARGIN, close: CLOSE_MARGIN };
+  }
+}
+
 /** Returns a single sentence describing the game's result, or null if not final. */
 export function recapForGame(
   game,
@@ -74,22 +95,23 @@ export function recapForGame(
   const venue = !isHome && game.venue && !/^@/.test(oppLabel) ? "" : "";
   void venue; // reserved for future use when we have stadium names
 
-  // Result + margin descriptor
+  // Result + margin descriptor (sport-relative thresholds)
+  const bands = marginBands(sportConfig);
   let resultPhrase;
   if (tied) {
     resultPhrase = `played to a ${own}-${opp} draw with ${oppLabel}`;
   } else if (won) {
-    if (Math.abs(margin) >= BLOWOUT_MARGIN) {
+    if (Math.abs(margin) >= bands.blowout) {
       resultPhrase = `routed ${oppLabel} ${own}-${opp}`;
-    } else if (Math.abs(margin) <= CLOSE_MARGIN) {
+    } else if (Math.abs(margin) <= bands.close) {
       resultPhrase = `edged ${oppLabel} ${own}-${opp}`;
     } else {
       resultPhrase = `beat ${oppLabel} ${own}-${opp}`;
     }
   } else {
-    if (Math.abs(margin) >= BLOWOUT_MARGIN) {
+    if (Math.abs(margin) >= bands.blowout) {
       resultPhrase = `fell to ${oppLabel} ${opp}-${own}`;
-    } else if (Math.abs(margin) <= CLOSE_MARGIN) {
+    } else if (Math.abs(margin) <= bands.close) {
       resultPhrase = `dropped a tight one to ${oppLabel} ${opp}-${own}`;
     } else {
       resultPhrase = `lost to ${oppLabel} ${opp}-${own}`;
@@ -133,7 +155,7 @@ export function recapForGame(
   // playoff exit, state title) — these override the standard opener
   // because they're the story, not just another game.
   const bookend = buildBookendOpener({
-    teamGames, game, subject, oppLabel, own, opp, margin, won, tied, dateLabel,
+    teamGames, game, subject, oppLabel, own, opp, margin, won, tied, dateLabel, bands,
   });
   const opener = bookend
     ?? `${subject} ${resultPhrase}${recordPhrase}${conferencePhrase} on ${dateLabel}.`;
@@ -457,6 +479,7 @@ function _pick(seed, choices) {
 
 function buildBookendOpener({
   teamGames, game, subject, oppLabel, own, opp, margin, won, tied, dateLabel,
+  bands = { blowout: BLOWOUT_MARGIN, close: CLOSE_MARGIN },
 }) {
   if (!teamGames || teamGames.length === 0) return null;
   if (tied) return null; // tied games keep the default framing
@@ -484,7 +507,7 @@ function buildBookendOpener({
 
   // 1. State champion — top priority. The Tigers brought home the title.
   if (isStateTitle) {
-    if (Math.abs(margin) >= BLOWOUT_MARGIN) {
+    if (Math.abs(margin) >= bands.blowout) {
       return _pick(seed, [
         `${subject} captured the state title with a ${score} win over ${oppLabel} on ${dateLabel}.`,
         `${subject} ran away with the state title, ${score} over ${oppLabel} on ${dateLabel}.`,
@@ -492,7 +515,7 @@ function buildBookendOpener({
         `${subject} cruised to the state title, beating ${oppLabel} ${score} on ${dateLabel}.`,
       ]);
     }
-    if (Math.abs(margin) <= CLOSE_MARGIN) {
+    if (Math.abs(margin) <= bands.close) {
       return _pick(seed, [
         `${subject} survived ${oppLabel} ${score} on ${dateLabel} to claim the state title.`,
         `${subject} outlasted ${oppLabel} ${score} on ${dateLabel} to win the state title.`,
@@ -511,7 +534,7 @@ function buildBookendOpener({
   // 2. Playoff exit — season ends.
   if (isPlayoffExit) {
     const roundLabel = playoffRoundLabel(game);
-    if (Math.abs(margin) <= CLOSE_MARGIN) {
+    if (Math.abs(margin) <= bands.close) {
       return _pick(seed, [
         `${subject}' season ended in heartbreak — a ${lossScore} ${roundLabel} loss to ${oppLabel} on ${dateLabel}.`,
         `${subject}' run ended with a gut-punch ${lossScore} loss to ${oppLabel} in the ${roundLabel} on ${dateLabel}.`,
@@ -519,7 +542,7 @@ function buildBookendOpener({
         `${subject}' season closed with a ${lossScore} ${roundLabel} loss to ${oppLabel} on ${dateLabel}, decided by the final possession.`,
       ]);
     }
-    if (Math.abs(margin) >= BLOWOUT_MARGIN) {
+    if (Math.abs(margin) >= bands.blowout) {
       return _pick(seed, [
         `${subject}' season ended with a ${lossScore} ${roundLabel} loss to ${oppLabel} on ${dateLabel}.`,
         `${subject}' run came to an end at the hands of ${oppLabel}, ${lossScore} in the ${roundLabel} on ${dateLabel}.`,
@@ -536,7 +559,7 @@ function buildBookendOpener({
   // 3. Last regular-season game — sets up the playoff or ends the year.
   if (isLastReg) {
     if (won) {
-      if (Math.abs(margin) >= BLOWOUT_MARGIN) {
+      if (Math.abs(margin) >= bands.blowout) {
         return _pick(seed, [
           `${subject} closed out the regular season strong with a ${score} drubbing of ${oppLabel} on ${dateLabel}.`,
           `${subject} put a bow on the regular season by routing ${oppLabel} ${score} on ${dateLabel}.`,
@@ -544,7 +567,7 @@ function buildBookendOpener({
           `${subject} ended the regular season on a high note, blasting ${oppLabel} ${score} on ${dateLabel}.`,
         ]);
       }
-      if (Math.abs(margin) <= CLOSE_MARGIN) {
+      if (Math.abs(margin) <= bands.close) {
         return _pick(seed, [
           `${subject} edged ${oppLabel} ${score} on ${dateLabel} to cap the regular season.`,
           `${subject} held off ${oppLabel} ${score} on ${dateLabel} to close the regular season.`,
@@ -557,7 +580,7 @@ function buildBookendOpener({
         `${subject} capped the regular season with a ${score} win over ${oppLabel} on ${dateLabel}.`,
       ]);
     }
-    if (Math.abs(margin) >= BLOWOUT_MARGIN) {
+    if (Math.abs(margin) >= bands.blowout) {
       return _pick(seed, [
         `${subject} stumbled into the postseason with a ${lossScore} loss to ${oppLabel} on ${dateLabel}.`,
         `${subject} limped to the playoffs after a ${lossScore} loss to ${oppLabel} on ${dateLabel}.`,
@@ -579,14 +602,14 @@ function buildBookendOpener({
     // not just advancing.
     const titleName = roundTitleName(game);
     if (titleName) {
-      if (Math.abs(margin) >= BLOWOUT_MARGIN) {
+      if (Math.abs(margin) >= bands.blowout) {
         return _pick(seed, [
           `${subject} won the ${titleName} with a ${score} rout of ${oppLabel} on ${dateLabel}.`,
           `${subject} captured the ${titleName}, running away from ${oppLabel} ${score} on ${dateLabel}.`,
           `${subject} took the ${titleName} with a dominant ${score} win over ${oppLabel} on ${dateLabel}.`,
         ]);
       }
-      if (Math.abs(margin) <= CLOSE_MARGIN) {
+      if (Math.abs(margin) <= bands.close) {
         return _pick(seed, [
           `${subject} captured the ${titleName} with a ${score} thriller over ${oppLabel} on ${dateLabel}.`,
           `${subject} won the ${titleName} in a nail-biter, ${score} over ${oppLabel} on ${dateLabel}.`,
@@ -604,7 +627,7 @@ function buildBookendOpener({
 
     // Non-final rounds (Regional, Sectional Semifinal, Level 1-3, etc.)
     // — just advancement.
-    if (Math.abs(margin) >= BLOWOUT_MARGIN) {
+    if (Math.abs(margin) >= bands.blowout) {
       return _pick(seed, [
         `${subject} rolled past ${oppLabel} ${score} in the ${roundLabel} on ${dateLabel}.`,
         `${subject} steamrolled ${oppLabel} ${score} in the ${roundLabel} on ${dateLabel}.`,
@@ -613,7 +636,7 @@ function buildBookendOpener({
         `${subject} buried ${oppLabel} ${score} in the ${roundLabel} on ${dateLabel}.`,
       ]);
     }
-    if (Math.abs(margin) <= CLOSE_MARGIN) {
+    if (Math.abs(margin) <= bands.close) {
       return _pick(seed, [
         `${subject} survived ${oppLabel} ${score} in the ${roundLabel} on ${dateLabel} to advance.`,
         `${subject} held off ${oppLabel} ${score} in the ${roundLabel} on ${dateLabel} to advance.`,

@@ -58,7 +58,7 @@ jobs:
         env:
           # On cron runs we cycle through every sport. On manual dispatch
           # the user can pass a single sport id.
-          SPORTS: ${{ github.event.inputs.sport || 'football boys_basketball girls_basketball volleyball boys_hockey girls_hockey' }}
+          SPORTS: ${{ github.event.inputs.sport || 'football boys_basketball girls_basketball volleyball boys_hockey girls_hockey boys_soccer girls_soccer' }}
         run: |
           for sport in $SPORTS; do
             echo "::group::live $sport"

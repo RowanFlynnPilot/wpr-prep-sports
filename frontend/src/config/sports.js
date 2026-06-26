@@ -844,6 +844,20 @@ const VOLLEYBALL_STANDOUT = {
   nominalSeasonGames: 30,
 };
 
+/* ---------------- soccer ---------------- */
+
+// Soccer is currently scores/schedules/standings only — no per-player
+// stats source is wired (Bound/MaxPreps soccer coverage for central WI
+// is unverified). The frontend reads stats through optional chaining, so
+// these minimal configs render cleanly: no Top Performers, no Player of
+// the Week, recaps fall back to the score-only summary line. Wire real
+// categories + a gameLine here if a stats source lands.
+const SOCCER_STAT_CATEGORIES = [];
+const SOCCER_GAME_LINE = {
+  order: [],
+  format: () => null,
+};
+
 /** Lookup of every sport the frontend knows about. */
 export const SPORTS = {
   football: {
@@ -971,6 +985,40 @@ export const SPORTS = {
       categories: VOLLEYBALL_STAT_CATEGORIES,
       standout: VOLLEYBALL_STANDOUT,
       gameLine: VOLLEYBALL_GAME_LINE,
+    },
+  },
+  boys_soccer: {
+    id: "boys_soccer",
+    label: "Boys Soccer",
+    shortLabel: "Boys Soccer",
+    icon: "⚽",
+    season: "2025–26",
+    activeMonths: [7, 8, 9, 10], // fall: Aug–Oct, state early Nov
+    hasSeasonStats: false,
+    accentColor: "#16a34a", // pitch green
+    accentDarkColor: "#15803d",
+    nextSeasonStart: "2026-08-18",
+    stats: {
+      categories: SOCCER_STAT_CATEGORIES,
+      standout: null,
+      gameLine: SOCCER_GAME_LINE,
+    },
+  },
+  girls_soccer: {
+    id: "girls_soccer",
+    label: "Girls Soccer",
+    shortLabel: "Girls Soccer",
+    icon: "⚽",
+    season: "2025–26",
+    activeMonths: [2, 3, 4, 5], // spring: Mar–Jun (WI girls soccer is spring)
+    hasSeasonStats: false,
+    accentColor: "#16a34a", // pitch green (shared with boys — same sport family)
+    accentDarkColor: "#15803d",
+    nextSeasonStart: "2027-03-23",
+    stats: {
+      categories: SOCCER_STAT_CATEGORIES,
+      standout: null,
+      gameLine: SOCCER_GAME_LINE,
     },
   },
 };
