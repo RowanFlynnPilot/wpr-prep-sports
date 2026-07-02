@@ -5,8 +5,10 @@ Persistent project context for Claude Code. Read this first.
 ## What this is
 
 An embeddable widget for **Wausau Pilot & Review** (WPR) covering central Wisconsin
-high school sports: schedules, scores, standings, and (eventually) stats for ~14
-schools across three conferences. Embedded into the WPR WordPress site via iframe
+high school sports: schedules, scores, standings, and player stats. Launched May
+2026; as of mid-2026 it tracks **67 schools** and **8 live sports** (football,
+boys/girls basketball, volleyball, boys/girls hockey, boys/girls soccer) across
+7+ conferences modeled per-sport. Embedded into the WPR WordPress site via iframe
 from GitHub Pages.
 
 This is part of WPR's broader widget suite alongside `wpr-woodchucks-widget`,
@@ -22,11 +24,14 @@ Standard WPR widget pattern:
 Python scraper → GitHub Actions cron → GitHub Pages static JSON → React/Vite frontend → WordPress iframe embed
 ```
 
-- **Scraper** (`scraper/`): Python. Pulls from Bound (primary) and WIAA
-  ScoreCenter (fallback/verification). Writes normalized JSON to `data/`.
-- **GitHub Actions** (`.github/workflows/`): Two workflows — `scrape.yml` runs
-  the scraper on cron and commits updated JSON; `deploy.yml` builds the
-  frontend and deploys to GitHub Pages.
+- **Scraper** (`scraper/`): Python. WIAA is the schedule/score backbone;
+  Bound, MaxPreps, and Wisconsin Prep Hockey layer in player stats;
+  Halftime supplies live scores. Writes normalized JSON to `data/`.
+- **GitHub Actions** (`.github/workflows/`): Three workflows — `scrape.yml`
+  (full scrape, cron paused off-season), `scrape-live.yml` (10-min live-score
+  merge during game windows, safe year-round), and `deploy.yml` (builds the
+  frontend and deploys to GitHub Pages). A data-validation gate
+  (`scraper/scripts/validate_data.py`) runs before every commit.
 - **Frontend** (`frontend/`): React + Vite. Fetches the static JSON at runtime.
   Builds to `frontend/dist/`, deployed to GitHub Pages.
 - **Embed**: WordPress `<iframe>` pointing at the GitHub Pages URL.
@@ -72,77 +77,64 @@ build new integrations against WSN.
 See `docs/data-sources.md` for detailed URL patterns and notes as they're
 discovered.
 
-## Coverage scope (v1)
+## Coverage scope
 
-~14 schools across three conferences. Wisconsin schools often belong to
-*different* conferences for *different* sports (e.g. football vs. everything
-else), so model conference membership per-sport, not globally.
+**67 schools, 8 live sports** (football, boys/girls basketball, volleyball,
+boys/girls hockey, boys/girls soccer). The original v1 footprint was the
+Wisconsin Valley + Marawood cores (Wausau East/West, D.C. Everest,
+Marshfield, SPASH, Wisconsin Rapids; Athens, Edgar, Marathon, Newman
+Catholic, Stratford, Spencer; plus Mosinee, Colby, Abbotsford) — coverage
+grew to complete every tracked conference's standings.
 
-**Wisconsin Valley Conference** (Marathon County + regional rivals):
-- Wausau East (Lumberjacks)
-- Wausau West (Warriors)
-- D.C. Everest (Evergreens)
-- Marshfield (Tigers)
-- Stevens Point Area (Panthers / SPASH)
-- Wisconsin Rapids Lincoln (Red Raiders)
+Wisconsin schools often belong to *different* conferences for *different*
+sports, so conference membership is modeled per-sport, not globally
+(`conferences: [(sport, conference)]` in the school manifest). Notable co-op:
+the **Central Wisconsin Storm** (girls hockey) is modeled as its own team.
 
-**Marawood Conference** (small schools in/near Marathon County):
-- Athens (Bluejays)
-- Edgar (Wildcats)
-- Marathon (Raiders)
-- Newman Catholic (Cardinals)
-- Stratford (Tigers)
-- Spencer (Rockets)
+See `docs/coverage.md` for the current conference-by-sport map and sport
+status table.
 
-**Great Northern / Cloverbelt overlap:**
-- Mosinee (Indians)
-- Colby (Hornets)
-- Abbotsford (Falcons)
+## Sport status
 
-Note: WVC football schools actually play in the **Valley Football
-Association (VFA)**, not WVC, for football only. Handle this in the data
-model.
+Live: football, boys/girls basketball, volleyball (full stats); boys/girls
+hockey (stats via Wisconsin Prep Hockey); boys/girls soccer
+(scores/schedules/standings only). Next up: **wrestling** (winter 2026-27,
+needs individual-sport modeling), then baseball/softball/track (spring).
 
-See `docs/coverage.md` for the full list with conference-by-sport mappings.
+## Feature set (shipped)
 
-## Sport phasing
+- Live/recent scores ticker + This Week grid + month calendar
+- Conference standings per sport, team pages, game pages with box scores,
+  player profile pages
+- Player of the Week (editor override via `data/potw.json`), Game of the
+  Week marquee, Power Rankings, Pick'em (browser-local), playoff bracket,
+  School Spirit photo galleries, OG share cards, off-season countdown hero
+- Sponsor system: `data/sponsors.json` slots + `#/sponsor` media-kit page
+  (see `docs/advertiser-inventory.md`)
 
-Build in this order — highest engagement and ad value first:
+## Backlog (sponsor-driven, rough priority)
 
-1. **Football** (fall) — single biggest weekly event; start here for v1
-2. **Boys & girls basketball** (winter) — long season, sustained traffic
-3. **Volleyball** (fall) — fast-growing audience
-4. **Wrestling, hockey** (winter) — central WI strongholds
-5. **Baseball, softball, track** (spring)
-6. Niche sports (XC, soccer, swimming, golf, tennis) as bandwidth allows
+- **Pick'em submission endpoint** — leaderboard + social proof (currently
+  localStorage-only)
+- **Per-school embed mode** (`?school=x&compact=1`) — per-school sponsor sell
+- **Senior Spotlights** — `data/spotlights.json` mirroring the PotW pattern
+- **Weekly digest export** — Friday roundup for the WPR newsletter
+- **Rivalry / historical archive** — 2025-26 season archived under
+  `data/archive/`
+- **`wiaa_division` backfill** → division filters + bracket challenge
 
-## v1 feature set
+## Data schema
 
-Keep tight, ship it:
+Canonical JSON written to `data/` (split per-sport layout since June 2026):
 
-- **Live/recent scores ticker** — last 7 days + tonight
-- **This week's schedule grid** — by sport
-- **Full season schedule per school** — clickable into school page
-- **Conference standings** — per conference, per sport
-- **Per-team page** — roster (if available), schedule, results
-
-## v2+ features (build sponsorship hooks)
-
-- **Pick'em game** — weekly winner predictions; obvious sponsor inventory
-- **Power rankings** — algorithmic ranking across conferences; original content
-- **Player of the Week** — community-voted, photo + writeup
-- **Rivalry / historical archive** — all-time records, state tournament history
-- **Senior Spotlights** — weekly senior profile
-- **Live game threads** — Friday Night Lights live score updates
-
-## Data schema (target)
-
-Canonical JSON written to `data/`:
-
-- `data/schools.json` — list of schools with metadata (name, mascot, colors, city, conferences-per-sport)
-- `data/games.json` — all games for current season(s), with home/away/score/status/sport/date
-- `data/standings.json` — current conference standings per sport
-- `data/meta.json` — last scrape timestamp, source freshness, season info
+- `data/schools.json` — cross-sport school metadata (name, mascot, colors, city, conferences-per-sport)
+- `data/<sport>/meta.json` — last scrape timestamp, sources used, season
+- `data/<sport>/games.json` — slim games (headline stats only; full stat lines split out)
+- `data/<sport>/boxscores/<game_id>.json` — per-game stat leaders, fetched on demand
+- `data/<sport>/players/<school_id>.json` — per-school player lines, fetched on demand
+- `data/<sport>/standings.json`, `season_stats.json`, `power_rankings.json`
+- `data/{sponsors,potw,spirit}.json` — cross-sport editorial/sponsor config
+- `data/archive/<season>/` — archived seasons (excluded from Pages deploy)
 
 See `docs/schema.md` for full field definitions. Frontend reads these files
 directly via `fetch()` against the GitHub Pages domain.

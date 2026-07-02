@@ -44,11 +44,19 @@ Without analytics there is nothing to put in the media kit.
   and every hash-route change — `/#/volleyball`,
   `/#/football/game/<id>`, `/#/volleyball/player/<school>/<slug>`,
   etc. No manual plumbing.
-- **Custom events** — call `trackEvent("sponsor-click-<slot>")` (from
-  `src/utils/analytics.js`) anywhere a sponsor-relevant interaction
-  happens, then add the event name as a custom-event Goal in Plausible
-  to see it in the dashboard. Nothing is wired to events yet; add them
-  as sponsorable surfaces firm up.
+- **Custom events** — `trackEvent(name, props)` (from
+  `src/utils/analytics.js`). Currently wired:
+  - `sponsor-click:<slot>` — every sponsor lockup click (per-sponsor
+    click-through reporting)
+  - `pickem-pick` (prop: `sport`) — a pick'em selection
+  - `tab-switch` (props: `tab`, `sport`) — dashboard section engagement
+  - `mediakit-contact` (prop: `placement`) — "Become a sponsor" CTA
+    clicks on `#/sponsor`
+
+  To surface an event in the dashboard, add its name as a custom-event
+  Goal in Plausible (sponsor-click goals can be added per-slot as slots
+  sell). Sport switching needs no event — every sport is a hash route,
+  so it's already a pageview.
 
 ## Self-hosting note
 
