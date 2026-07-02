@@ -1,6 +1,7 @@
 import { useMemo, useState, useEffect } from "react";
 import Sponsor from "./Sponsor.jsx";
 import { loadPicks, savePick, pickableGames, scorePicks } from "../utils/pickem.js";
+import { trackEvent } from "../utils/analytics.js";
 
 /**
  * Pick'em — weekly winner predictions. localStorage-backed so the
@@ -28,6 +29,10 @@ export default function Pickem({ games, schoolIndex, sponsors }) {
 
   const onPick = (gameId, side) => {
     const next = side === picks[gameId] ? null : side; // tap-twice to unset
+    if (next !== null) {
+      const game = upcoming.find((g) => g.id === gameId);
+      trackEvent("pickem-pick", { sport: game?.sport ?? "unknown" });
+    }
     savePick(gameId, next);
     setPicks((p) => {
       const out = { ...p };

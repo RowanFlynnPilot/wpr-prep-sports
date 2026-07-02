@@ -23,6 +23,7 @@ import { pickFeaturedGame, tickerGames } from "../utils/games.js";
 import { pickFeaturedWeek } from "../utils/weeks.js";
 import { pickMarqueeGame } from "../utils/marquee.js";
 import { SPORT_IDS } from "../config/sports.js";
+import { trackEvent } from "../utils/analytics.js";
 
 /** True if any season-stats row is for an actual player (not a "Team" total). */
 function hasPlayerRows(rows) {
@@ -134,7 +135,8 @@ export default function DashboardPage({ dataset, schoolIndex, sponsors, sportCon
   const activeTab = tabs.some((t) => t.id === requestedTab)
     ? requestedTab
     : tabs[0]?.id;
-  const setActiveTab = (id) =>
+  const setActiveTab = (id) => {
+    trackEvent("tab-switch", { tab: id, sport: sportConfig?.id ?? "unknown" });
     setSearchParams(
       (prev) => {
         const next = new URLSearchParams(prev);
@@ -143,6 +145,7 @@ export default function DashboardPage({ dataset, schoolIndex, sponsors, sportCon
       },
       { replace: true },
     );
+  };
 
   return (
     <Layout

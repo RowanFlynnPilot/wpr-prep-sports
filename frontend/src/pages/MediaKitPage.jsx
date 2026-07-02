@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import Layout from "../components/Layout.jsx";
 import { SPORT_IDS } from "../config/sports.js";
+import { trackEvent } from "../utils/analytics.js";
 import "../styles/MediaKit.css";
 
 const DATA_BASE = `${import.meta.env.BASE_URL.replace(/\/$/, "")}/data`;
@@ -195,7 +196,11 @@ export default function MediaKitPage() {
           back every week of the season.
         </p>
         <div className="mk-hero__cta">
-          <a className="mk-btn" href={`mailto:${CONTACT_EMAIL}?subject=Prep Sports sponsorship`}>
+          <a
+            className="mk-btn"
+            href={`mailto:${CONTACT_EMAIL}?subject=Prep Sports sponsorship`}
+            onClick={() => trackEvent("mediakit-contact", { placement: "hero" })}
+          >
             Become a sponsor
           </a>
           <span className="mk-hero__contact">{CONTACT_EMAIL}</span>
@@ -255,7 +260,11 @@ export default function MediaKitPage() {
 
       <section className="mk-foot-cta">
         <h2 className="mk-foot-cta__title">Lock your category before a competitor does.</h2>
-        <a className="mk-btn mk-btn--lg" href={`mailto:${CONTACT_EMAIL}?subject=Prep Sports sponsorship`}>
+        <a
+          className="mk-btn mk-btn--lg"
+          href={`mailto:${CONTACT_EMAIL}?subject=Prep Sports sponsorship`}
+          onClick={() => trackEvent("mediakit-contact", { placement: "footer" })}
+        >
           Talk to WPR advertising
         </a>
       </section>
