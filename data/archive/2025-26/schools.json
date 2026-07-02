@@ -25,6 +25,14 @@
       {
         "sport": "volleyball",
         "conference": "Wisconsin Valley"
+      },
+      {
+        "sport": "boys_soccer",
+        "conference": "Wisconsin Valley"
+      },
+      {
+        "sport": "girls_soccer",
+        "conference": "Wisconsin Valley"
       }
     ],
     "wiaa_division": {},
@@ -59,6 +67,14 @@
       },
       {
         "sport": "boys_hockey",
+        "conference": "Wisconsin Valley"
+      },
+      {
+        "sport": "boys_soccer",
+        "conference": "Wisconsin Valley"
+      },
+      {
+        "sport": "girls_soccer",
         "conference": "Wisconsin Valley"
       }
     ],
@@ -95,6 +111,52 @@
       {
         "sport": "boys_hockey",
         "conference": "Wisconsin Valley"
+      },
+      {
+        "sport": "boys_soccer",
+        "conference": "Wisconsin Valley"
+      },
+      {
+        "sport": "girls_soccer",
+        "conference": "Wisconsin Valley"
+      }
+    ],
+    "wiaa_division": {},
+    "athletics_url": null
+  },
+  {
+    "id": "central-wisconsin-storm",
+    "name": "Central Wisconsin Storm",
+    "full_name": "Central Wisconsin Storm",
+    "mascot": "Storm",
+    "city": "Wausau",
+    "colors": [
+      "#6E2639",
+      "#B0B5BA"
+    ],
+    "conferences": [
+      {
+        "sport": "girls_hockey",
+        "conference": "Central Wisconsin"
+      }
+    ],
+    "wiaa_division": {},
+    "athletics_url": null
+  },
+  {
+    "id": "black-river-falls",
+    "name": "Black River Falls",
+    "full_name": "Black River Falls Co-op",
+    "mascot": "Tigers",
+    "city": "Black River Falls",
+    "colors": [
+      "#0C2340",
+      "#C8102E"
+    ],
+    "conferences": [
+      {
+        "sport": "girls_hockey",
+        "conference": "Central Wisconsin"
       }
     ],
     "wiaa_division": {},
@@ -129,6 +191,14 @@
       },
       {
         "sport": "boys_hockey",
+        "conference": "Wisconsin Valley"
+      },
+      {
+        "sport": "boys_soccer",
+        "conference": "Wisconsin Valley"
+      },
+      {
+        "sport": "girls_soccer",
         "conference": "Wisconsin Valley"
       }
     ],
@@ -165,6 +235,18 @@
       {
         "sport": "boys_hockey",
         "conference": "Wisconsin Valley"
+      },
+      {
+        "sport": "girls_hockey",
+        "conference": "Central Wisconsin"
+      },
+      {
+        "sport": "boys_soccer",
+        "conference": "Wisconsin Valley"
+      },
+      {
+        "sport": "girls_soccer",
+        "conference": "Wisconsin Valley"
       }
     ],
     "wiaa_division": {},
@@ -199,6 +281,14 @@
       },
       {
         "sport": "boys_hockey",
+        "conference": "Wisconsin Valley"
+      },
+      {
+        "sport": "boys_soccer",
+        "conference": "Wisconsin Valley"
+      },
+      {
+        "sport": "girls_soccer",
         "conference": "Wisconsin Valley"
       }
     ],
@@ -421,6 +511,14 @@
       {
         "sport": "boys_hockey",
         "conference": "Great Northern"
+      },
+      {
+        "sport": "boys_soccer",
+        "conference": "Great Northern"
+      },
+      {
+        "sport": "girls_soccer",
+        "conference": "Great Northern"
       }
     ],
     "wiaa_division": {},
@@ -553,6 +651,14 @@
       {
         "sport": "boys_hockey",
         "conference": "Great Northern"
+      },
+      {
+        "sport": "boys_soccer",
+        "conference": "Great Northern"
+      },
+      {
+        "sport": "girls_soccer",
+        "conference": "Great Northern"
       }
     ],
     "wiaa_division": {},
@@ -587,6 +693,18 @@
       },
       {
         "sport": "boys_hockey",
+        "conference": "Great Northern"
+      },
+      {
+        "sport": "girls_hockey",
+        "conference": "Central Wisconsin"
+      },
+      {
+        "sport": "boys_soccer",
+        "conference": "Great Northern"
+      },
+      {
+        "sport": "girls_soccer",
         "conference": "Great Northern"
       }
     ],
@@ -623,6 +741,14 @@
       {
         "sport": "boys_hockey",
         "conference": "Wisconsin Valley"
+      },
+      {
+        "sport": "boys_soccer",
+        "conference": "Great Northern"
+      },
+      {
+        "sport": "girls_soccer",
+        "conference": "Great Northern"
       }
     ],
     "wiaa_division": {},
@@ -657,6 +783,14 @@
       },
       {
         "sport": "boys_hockey",
+        "conference": "Great Northern"
+      },
+      {
+        "sport": "boys_soccer",
+        "conference": "Great Northern"
+      },
+      {
+        "sport": "girls_soccer",
         "conference": "Great Northern"
       }
     ],
@@ -693,6 +827,14 @@
       {
         "sport": "boys_hockey",
         "conference": "Great Northern"
+      },
+      {
+        "sport": "boys_soccer",
+        "conference": "Great Northern"
+      },
+      {
+        "sport": "girls_soccer",
+        "conference": "Great Northern"
       }
     ],
     "wiaa_division": {},
@@ -715,6 +857,14 @@
       },
       {
         "sport": "boys_hockey",
+        "conference": "Big Rivers"
+      },
+      {
+        "sport": "boys_soccer",
+        "conference": "Big Rivers"
+      },
+      {
+        "sport": "girls_soccer",
         "conference": "Big Rivers"
       }
     ],
@@ -739,6 +889,14 @@
       {
         "sport": "boys_hockey",
         "conference": "Big Rivers"
+      },
+      {
+        "sport": "boys_soccer",
+        "conference": "Big Rivers"
+      },
+      {
+        "sport": "girls_soccer",
+        "conference": "Big Rivers"
       }
     ],
     "wiaa_division": {},
@@ -761,6 +919,14 @@
       },
       {
         "sport": "boys_hockey",
+        "conference": "Big Rivers"
+      },
+      {
+        "sport": "boys_soccer",
+        "conference": "Big Rivers"
+      },
+      {
+        "sport": "girls_soccer",
         "conference": "Big Rivers"
       }
     ],
@@ -785,6 +951,14 @@
       {
         "sport": "boys_hockey",
         "conference": "Big Rivers"
+      },
+      {
+        "sport": "boys_soccer",
+        "conference": "Big Rivers"
+      },
+      {
+        "sport": "girls_soccer",
+        "conference": "Big Rivers"
       }
     ],
     "wiaa_division": {},
@@ -808,6 +982,14 @@
       {
         "sport": "boys_hockey",
         "conference": "Big Rivers"
+      },
+      {
+        "sport": "boys_soccer",
+        "conference": "Big Rivers"
+      },
+      {
+        "sport": "girls_soccer",
+        "conference": "Big Rivers"
       }
     ],
     "wiaa_division": {},
@@ -830,6 +1012,14 @@
       },
       {
         "sport": "boys_hockey",
+        "conference": "Big Rivers"
+      },
+      {
+        "sport": "boys_soccer",
+        "conference": "Big Rivers"
+      },
+      {
+        "sport": "girls_soccer",
         "conference": "Big Rivers"
       }
     ],
@@ -1363,6 +1553,14 @@
       {
         "sport": "boys_hockey",
         "conference": "Big Rivers"
+      },
+      {
+        "sport": "boys_soccer",
+        "conference": "Big Rivers"
+      },
+      {
+        "sport": "girls_soccer",
+        "conference": "Big Rivers"
       }
     ],
     "wiaa_division": {},
@@ -1405,6 +1603,14 @@
       {
         "sport": "boys_hockey",
         "conference": "Big Rivers"
+      },
+      {
+        "sport": "boys_soccer",
+        "conference": "Big Rivers"
+      },
+      {
+        "sport": "girls_soccer",
+        "conference": "Big Rivers"
       }
     ],
     "wiaa_division": {},
@@ -1439,6 +1645,18 @@
       },
       {
         "sport": "boys_hockey",
+        "conference": "Great Northern"
+      },
+      {
+        "sport": "girls_hockey",
+        "conference": "Central Wisconsin"
+      },
+      {
+        "sport": "boys_soccer",
+        "conference": "Great Northern"
+      },
+      {
+        "sport": "girls_soccer",
         "conference": "Great Northern"
       }
     ],
