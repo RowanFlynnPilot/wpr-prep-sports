@@ -197,7 +197,7 @@ def _schools_to_model(manifest: Manifest) -> list[School]:
                 )
                 for c in s.conferences
             ],
-            wiaa_division={},
+            wiaa_division=dict(s.wiaa_division),
             athletics_url=s.athletics_url,
         )
         for s in manifest.schools

@@ -56,6 +56,10 @@ class SchoolManifestEntry:
     wph_team_id_girls: int | None = None
     maxpreps_slug: str | None = None
     athletics_url: str | None = None
+    # WIAA tournament division per sport, e.g. {"football": "Division 5"}.
+    # Per-season (enrollment-based); refreshed by scripts/backfill_divisions.py
+    # once brackets post. Football only covers playoff qualifiers.
+    wiaa_division: dict[str, str] = field(default_factory=dict)
 
     def conference_for(self, sport: str) -> str | None:
         for m in self.conferences:
@@ -85,6 +89,7 @@ class SchoolManifestEntry:
             "wph_team_id_girls": self.wph_team_id_girls,
             "maxpreps_slug": self.maxpreps_slug,
             "athletics_url": self.athletics_url,
+            "wiaa_division": dict(self.wiaa_division),
         }
 
 
@@ -117,6 +122,7 @@ def load_manifest(path: Path = MANIFEST_PATH) -> Manifest:
             wph_team_id_girls=s.get("wph_team_id_girls"),
             maxpreps_slug=s.get("maxpreps_slug"),
             athletics_url=s.get("athletics_url"),
+            wiaa_division=dict(s.get("wiaa_division") or {}),
         )
         for s in raw["schools"]
     ]

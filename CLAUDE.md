@@ -121,7 +121,9 @@ needs individual-sport modeling), then baseball/softball/track (spring).
 - **Weekly digest export** — Friday roundup for the WPR newsletter
 - **Rivalry / historical archive** — 2025-26 season archived under
   `data/archive/`
-- **`wiaa_division` backfill** → division filters + bracket challenge
+- **Division filters + bracket challenge** — `wiaa_division` data landed
+  2026-07 (90% of school-sport pairs, via `scripts/backfill_divisions.py`;
+  re-run each season once brackets post); frontend features still to build
 
 ## Data schema
 

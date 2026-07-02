@@ -85,4 +85,4 @@ What remains, in priority order for 2026-27:
 | Pick'em submission endpoint (leaderboard + "78% picked X" social proof) | Makes the `pickem` slot a flagship interactive sell |
 | Per-school embed mode (`?school=x&compact=1`) | Lets each `school:<id>` sponsor see their placement on "their" page anywhere WPR embeds it |
 | Senior Spotlights (`data/spotlights.json`, PotW pattern) | `spotlight:senior` slot |
-| State Tournament Bracket Challenge (needs `wiaa_division` backfill) | Bracket Challenge package |
+| State Tournament Bracket Challenge (division data now in place; frontend to build) | Bracket Challenge package |

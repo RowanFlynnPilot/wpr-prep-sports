@@ -35,7 +35,14 @@
         "conference": "Wisconsin Valley"
       }
     ],
-    "wiaa_division": {},
+    "wiaa_division": {
+      "boys_basketball": "D2",
+      "boys_soccer": "D2",
+      "football": "D3",
+      "girls_basketball": "D2",
+      "girls_soccer": "D2",
+      "volleyball": "D1"
+    },
     "athletics_url": null
   },
   {
@@ -78,7 +85,15 @@
         "conference": "Wisconsin Valley"
       }
     ],
-    "wiaa_division": {},
+    "wiaa_division": {
+      "boys_basketball": "D1",
+      "boys_hockey": "D1",
+      "boys_soccer": "D1",
+      "football": "D1",
+      "girls_basketball": "D1",
+      "girls_soccer": "D1",
+      "volleyball": "D1"
+    },
     "athletics_url": null
   },
   {
@@ -121,7 +136,15 @@
         "conference": "Wisconsin Valley"
       }
     ],
-    "wiaa_division": {},
+    "wiaa_division": {
+      "boys_basketball": "D1",
+      "boys_hockey": "D1",
+      "boys_soccer": "D1",
+      "football": "D1",
+      "girls_basketball": "D1",
+      "girls_soccer": "D1",
+      "volleyball": "D1"
+    },
     "athletics_url": null
   },
   {
@@ -140,7 +163,9 @@
         "conference": "Central Wisconsin"
       }
     ],
-    "wiaa_division": {},
+    "wiaa_division": {
+      "girls_hockey": "D1"
+    },
     "athletics_url": null
   },
   {
@@ -159,7 +184,9 @@
         "conference": "Central Wisconsin"
       }
     ],
-    "wiaa_division": {},
+    "wiaa_division": {
+      "girls_hockey": "D1"
+    },
     "athletics_url": null
   },
   {
@@ -202,7 +229,15 @@
         "conference": "Wisconsin Valley"
       }
     ],
-    "wiaa_division": {},
+    "wiaa_division": {
+      "boys_basketball": "D1",
+      "boys_hockey": "D2",
+      "boys_soccer": "D2",
+      "football": "D2",
+      "girls_basketball": "D2",
+      "girls_soccer": "D2",
+      "volleyball": "D1"
+    },
     "athletics_url": null
   },
   {
@@ -249,7 +284,15 @@
         "conference": "Wisconsin Valley"
       }
     ],
-    "wiaa_division": {},
+    "wiaa_division": {
+      "boys_basketball": "D1",
+      "boys_hockey": "D1",
+      "boys_soccer": "D1",
+      "girls_basketball": "D1",
+      "girls_hockey": "D1",
+      "girls_soccer": "D1",
+      "volleyball": "D1"
+    },
     "athletics_url": null
   },
   {
@@ -292,7 +335,14 @@
         "conference": "Wisconsin Valley"
       }
     ],
-    "wiaa_division": {},
+    "wiaa_division": {
+      "boys_basketball": "D1",
+      "boys_hockey": "D1",
+      "boys_soccer": "D1",
+      "girls_basketball": "D1",
+      "girls_soccer": "D1",
+      "volleyball": "D1"
+    },
     "athletics_url": null
   },
   {
@@ -323,7 +373,12 @@
         "conference": "Marawood"
       }
     ],
-    "wiaa_division": {},
+    "wiaa_division": {
+      "boys_basketball": "D5",
+      "football": "8P-D1",
+      "girls_basketball": "D5",
+      "volleyball": "D5"
+    },
     "athletics_url": null
   },
   {
@@ -354,7 +409,12 @@
         "conference": "Marawood"
       }
     ],
-    "wiaa_division": {},
+    "wiaa_division": {
+      "boys_basketball": "D4",
+      "football": "D6",
+      "girls_basketball": "D5",
+      "volleyball": "D4"
+    },
     "athletics_url": null
   },
   {
@@ -385,7 +445,12 @@
         "conference": "Marawood"
       }
     ],
-    "wiaa_division": {},
+    "wiaa_division": {
+      "boys_basketball": "D4",
+      "football": "D6",
+      "girls_basketball": "D4",
+      "volleyball": "D3"
+    },
     "athletics_url": null
   },
   {
@@ -416,7 +481,12 @@
         "conference": "Marawood"
       }
     ],
-    "wiaa_division": {},
+    "wiaa_division": {
+      "boys_basketball": "D5",
+      "football": "8P-D1",
+      "girls_basketball": "D5",
+      "volleyball": "D5"
+    },
     "athletics_url": null
   },
   {
@@ -447,7 +517,12 @@
         "conference": "Marawood"
       }
     ],
-    "wiaa_division": {},
+    "wiaa_division": {
+      "boys_basketball": "D4",
+      "football": "D5",
+      "girls_basketball": "D4",
+      "volleyball": "D3"
+    },
     "athletics_url": null
   },
   {
@@ -478,7 +553,12 @@
         "conference": "Marawood"
       }
     ],
-    "wiaa_division": {},
+    "wiaa_division": {
+      "boys_basketball": "D4",
+      "football": "D5",
+      "girls_basketball": "D4",
+      "volleyball": "D4"
+    },
     "athletics_url": null
   },
   {
@@ -521,7 +601,15 @@
         "conference": "Great Northern"
       }
     ],
-    "wiaa_division": {},
+    "wiaa_division": {
+      "boys_basketball": "D3",
+      "boys_hockey": "D2",
+      "boys_soccer": "D3",
+      "football": "D4",
+      "girls_basketball": "D3",
+      "girls_soccer": "D3",
+      "volleyball": "D2"
+    },
     "athletics_url": null
   },
   {
@@ -552,7 +640,11 @@
         "conference": "Cloverbelt"
       }
     ],
-    "wiaa_division": {},
+    "wiaa_division": {
+      "boys_basketball": "D4",
+      "girls_basketball": "D4",
+      "volleyball": "D3"
+    },
     "athletics_url": null
   },
   {
@@ -583,7 +675,12 @@
         "conference": "Cloverbelt"
       }
     ],
-    "wiaa_division": {},
+    "wiaa_division": {
+      "boys_basketball": "D4",
+      "football": "D6",
+      "girls_basketball": "D4",
+      "volleyball": "D4"
+    },
     "athletics_url": null
   },
   {
@@ -618,7 +715,13 @@
         "conference": "Great Northern"
       }
     ],
-    "wiaa_division": {},
+    "wiaa_division": {
+      "boys_basketball": "D3",
+      "boys_hockey": "D1",
+      "football": "D5",
+      "girls_basketball": "D3",
+      "volleyball": "D3"
+    },
     "athletics_url": null
   },
   {
@@ -661,7 +764,15 @@
         "conference": "Great Northern"
       }
     ],
-    "wiaa_division": {},
+    "wiaa_division": {
+      "boys_basketball": "D2",
+      "boys_hockey": "D2",
+      "boys_soccer": "D3",
+      "football": "D3",
+      "girls_basketball": "D2",
+      "girls_soccer": "D3",
+      "volleyball": "D2"
+    },
     "athletics_url": null
   },
   {
@@ -708,7 +819,16 @@
         "conference": "Great Northern"
       }
     ],
-    "wiaa_division": {},
+    "wiaa_division": {
+      "boys_basketball": "D2",
+      "boys_hockey": "D2",
+      "boys_soccer": "D3",
+      "football": "D3",
+      "girls_basketball": "D2",
+      "girls_hockey": "D1",
+      "girls_soccer": "D3",
+      "volleyball": "D2"
+    },
     "athletics_url": null
   },
   {
@@ -751,7 +871,15 @@
         "conference": "Great Northern"
       }
     ],
-    "wiaa_division": {},
+    "wiaa_division": {
+      "boys_basketball": "D2",
+      "boys_hockey": "D1",
+      "boys_soccer": "D3",
+      "football": "D3",
+      "girls_basketball": "D2",
+      "girls_soccer": "D3",
+      "volleyball": "D2"
+    },
     "athletics_url": null
   },
   {
@@ -794,7 +922,15 @@
         "conference": "Great Northern"
       }
     ],
-    "wiaa_division": {},
+    "wiaa_division": {
+      "boys_basketball": "D2",
+      "boys_hockey": "D2",
+      "boys_soccer": "D3",
+      "football": "D3",
+      "girls_basketball": "D2",
+      "girls_soccer": "D3",
+      "volleyball": "D2"
+    },
     "athletics_url": null
   },
   {
@@ -837,7 +973,14 @@
         "conference": "Great Northern"
       }
     ],
-    "wiaa_division": {},
+    "wiaa_division": {
+      "boys_basketball": "D2",
+      "boys_hockey": "D2",
+      "boys_soccer": "D3",
+      "girls_basketball": "D2",
+      "girls_soccer": "D3",
+      "volleyball": "D2"
+    },
     "athletics_url": null
   },
   {
@@ -868,7 +1011,11 @@
         "conference": "Big Rivers"
       }
     ],
-    "wiaa_division": {},
+    "wiaa_division": {
+      "boys_hockey": "D1",
+      "boys_soccer": "D1",
+      "girls_soccer": "D1"
+    },
     "athletics_url": null
   },
   {
@@ -899,7 +1046,11 @@
         "conference": "Big Rivers"
       }
     ],
-    "wiaa_division": {},
+    "wiaa_division": {
+      "boys_hockey": "D1",
+      "boys_soccer": "D1",
+      "girls_soccer": "D1"
+    },
     "athletics_url": null
   },
   {
@@ -930,7 +1081,12 @@
         "conference": "Big Rivers"
       }
     ],
-    "wiaa_division": {},
+    "wiaa_division": {
+      "boys_hockey": "D1",
+      "boys_soccer": "D1",
+      "football": "D1",
+      "girls_soccer": "D1"
+    },
     "athletics_url": null
   },
   {
@@ -961,7 +1117,12 @@
         "conference": "Big Rivers"
       }
     ],
-    "wiaa_division": {},
+    "wiaa_division": {
+      "boys_hockey": "D1",
+      "boys_soccer": "D1",
+      "football": "D1",
+      "girls_soccer": "D1"
+    },
     "athletics_url": null
   },
   {
@@ -992,7 +1153,12 @@
         "conference": "Big Rivers"
       }
     ],
-    "wiaa_division": {},
+    "wiaa_division": {
+      "boys_hockey": "D1",
+      "boys_soccer": "D2",
+      "football": "D2",
+      "girls_soccer": "D2"
+    },
     "athletics_url": null
   },
   {
@@ -1023,7 +1189,12 @@
         "conference": "Big Rivers"
       }
     ],
-    "wiaa_division": {},
+    "wiaa_division": {
+      "boys_hockey": "D2",
+      "boys_soccer": "D3",
+      "football": "D2",
+      "girls_soccer": "D3"
+    },
     "athletics_url": null
   },
   {
@@ -1054,7 +1225,12 @@
         "conference": "Marawood"
       }
     ],
-    "wiaa_division": {},
+    "wiaa_division": {
+      "boys_basketball": "D4",
+      "football": "D6",
+      "girls_basketball": "D4",
+      "volleyball": "D4"
+    },
     "athletics_url": null
   },
   {
@@ -1085,7 +1261,12 @@
         "conference": "Marawood"
       }
     ],
-    "wiaa_division": {},
+    "wiaa_division": {
+      "boys_basketball": "D5",
+      "football": "D7",
+      "girls_basketball": "D5",
+      "volleyball": "D5"
+    },
     "athletics_url": null
   },
   {
@@ -1123,7 +1304,9 @@
         "conference": "Marawood/CWC"
       }
     ],
-    "wiaa_division": {},
+    "wiaa_division": {
+      "football": "D7"
+    },
     "athletics_url": null
   },
   {
@@ -1161,7 +1344,9 @@
         "conference": "CWC-Large"
       }
     ],
-    "wiaa_division": {},
+    "wiaa_division": {
+      "football": "D5"
+    },
     "athletics_url": null
   },
   {
@@ -1180,7 +1365,9 @@
         "conference": "CWC-Large"
       }
     ],
-    "wiaa_division": {},
+    "wiaa_division": {
+      "football": "D6"
+    },
     "athletics_url": null
   },
   {
@@ -1199,7 +1386,9 @@
         "conference": "CWC-Large"
       }
     ],
-    "wiaa_division": {},
+    "wiaa_division": {
+      "football": "D5"
+    },
     "athletics_url": null
   },
   {
@@ -1249,7 +1438,11 @@
         "conference": "Marawood"
       }
     ],
-    "wiaa_division": {},
+    "wiaa_division": {
+      "boys_basketball": "D5",
+      "girls_basketball": "D5",
+      "volleyball": "D5"
+    },
     "athletics_url": null
   },
   {
@@ -1268,7 +1461,9 @@
         "conference": "Northwoods-East 8"
       }
     ],
-    "wiaa_division": {},
+    "wiaa_division": {
+      "football": "8P-D1"
+    },
     "athletics_url": null
   },
   {
@@ -1287,7 +1482,9 @@
         "conference": "Northwoods-East 8"
       }
     ],
-    "wiaa_division": {},
+    "wiaa_division": {
+      "football": "8P-D1"
+    },
     "athletics_url": null
   },
   {
@@ -1306,7 +1503,9 @@
         "conference": "Northwoods-East 8"
       }
     ],
-    "wiaa_division": {},
+    "wiaa_division": {
+      "football": "8P-D1"
+    },
     "athletics_url": null
   },
   {
@@ -1337,7 +1536,11 @@
         "conference": "Marawood"
       }
     ],
-    "wiaa_division": {},
+    "wiaa_division": {
+      "boys_basketball": "D4",
+      "girls_basketball": "D5",
+      "volleyball": "D4"
+    },
     "athletics_url": null
   },
   {
@@ -1368,7 +1571,11 @@
         "conference": "Marawood"
       }
     ],
-    "wiaa_division": {},
+    "wiaa_division": {
+      "boys_basketball": "D4",
+      "girls_basketball": "D4",
+      "volleyball": "D4"
+    },
     "athletics_url": null
   },
   {
@@ -1399,7 +1606,11 @@
         "conference": "Marawood"
       }
     ],
-    "wiaa_division": {},
+    "wiaa_division": {
+      "boys_basketball": "D5",
+      "girls_basketball": "D5",
+      "volleyball": "D5"
+    },
     "athletics_url": null
   },
   {
@@ -1437,7 +1648,9 @@
         "conference": "Central Wisconsin-8"
       }
     ],
-    "wiaa_division": {},
+    "wiaa_division": {
+      "football": "8P-D1"
+    },
     "athletics_url": null
   },
   {
@@ -1475,7 +1688,9 @@
         "conference": "Central Wisconsin-8"
       }
     ],
-    "wiaa_division": {},
+    "wiaa_division": {
+      "football": "8P-D1"
+    },
     "athletics_url": null
   },
   {
@@ -1532,7 +1747,9 @@
         "conference": "Central Wisconsin-8"
       }
     ],
-    "wiaa_division": {},
+    "wiaa_division": {
+      "football": "8P-D1"
+    },
     "athletics_url": null
   },
   {
@@ -1563,7 +1780,12 @@
         "conference": "Big Rivers"
       }
     ],
-    "wiaa_division": {},
+    "wiaa_division": {
+      "boys_hockey": "D2",
+      "boys_soccer": "D2",
+      "football": "D2",
+      "girls_soccer": "D2"
+    },
     "athletics_url": null
   },
   {
@@ -1613,7 +1835,12 @@
         "conference": "Big Rivers"
       }
     ],
-    "wiaa_division": {},
+    "wiaa_division": {
+      "boys_hockey": "D2",
+      "boys_soccer": "D2",
+      "football": "D3",
+      "girls_soccer": "D2"
+    },
     "athletics_url": null
   },
   {
@@ -1660,7 +1887,15 @@
         "conference": "Great Northern"
       }
     ],
-    "wiaa_division": {},
+    "wiaa_division": {
+      "boys_basketball": "D3",
+      "boys_hockey": "D2",
+      "boys_soccer": "D4",
+      "girls_basketball": "D3",
+      "girls_hockey": "D1",
+      "girls_soccer": "D4",
+      "volleyball": "D3"
+    },
     "athletics_url": null
   },
   {
@@ -1679,7 +1914,9 @@
         "conference": "Great Northern"
       }
     ],
-    "wiaa_division": {},
+    "wiaa_division": {
+      "boys_hockey": "D2"
+    },
     "athletics_url": null
   },
   {
@@ -1710,7 +1947,12 @@
         "conference": "CWC-Large"
       }
     ],
-    "wiaa_division": {},
+    "wiaa_division": {
+      "boys_basketball": "D5",
+      "football": "D6",
+      "girls_basketball": "D5",
+      "volleyball": "D4"
+    },
     "athletics_url": null
   },
   {
@@ -1737,7 +1979,11 @@
         "conference": "Cloverbelt"
       }
     ],
-    "wiaa_division": {},
+    "wiaa_division": {
+      "boys_basketball": "D4",
+      "girls_basketball": "D4",
+      "volleyball": "D4"
+    },
     "athletics_url": null
   },
   {
@@ -1764,7 +2010,11 @@
         "conference": "Cloverbelt"
       }
     ],
-    "wiaa_division": {},
+    "wiaa_division": {
+      "boys_basketball": "D5",
+      "girls_basketball": "D5",
+      "volleyball": "D5"
+    },
     "athletics_url": null
   },
   {
@@ -1791,7 +2041,11 @@
         "conference": "Cloverbelt"
       }
     ],
-    "wiaa_division": {},
+    "wiaa_division": {
+      "boys_basketball": "D5",
+      "girls_basketball": "D5",
+      "volleyball": "D5"
+    },
     "athletics_url": null
   },
   {
@@ -1818,7 +2072,11 @@
         "conference": "Cloverbelt"
       }
     ],
-    "wiaa_division": {},
+    "wiaa_division": {
+      "boys_basketball": "D5",
+      "girls_basketball": "D5",
+      "volleyball": "D5"
+    },
     "athletics_url": null
   },
   {
@@ -1845,7 +2103,11 @@
         "conference": "Cloverbelt"
       }
     ],
-    "wiaa_division": {},
+    "wiaa_division": {
+      "boys_basketball": "D5",
+      "girls_basketball": "D5",
+      "volleyball": "D4"
+    },
     "athletics_url": null
   },
   {

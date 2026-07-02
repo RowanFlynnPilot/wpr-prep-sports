@@ -40,8 +40,17 @@
       "wiaa_org_id": 454,
       "bound_slug": "wausaueast",
       "wph_team_id": null,
+      "wph_team_id_girls": null,
+      "maxpreps_slug": "wausau/wausau-east-lumberjacks",
       "athletics_url": null,
-      "maxpreps_slug": "wausau/wausau-east-lumberjacks"
+      "wiaa_division": {
+        "boys_basketball": "D2",
+        "boys_soccer": "D2",
+        "football": "D3",
+        "girls_basketball": "D2",
+        "girls_soccer": "D2",
+        "volleyball": "D1"
+      }
     },
     {
       "id": "wausau-west",
@@ -86,8 +95,18 @@
       "wiaa_org_id": 455,
       "bound_slug": "wausauwest",
       "wph_team_id": 9184052,
+      "wph_team_id_girls": null,
+      "maxpreps_slug": "wausau/wausau-west-warriors",
       "athletics_url": null,
-      "maxpreps_slug": "wausau/wausau-west-warriors"
+      "wiaa_division": {
+        "boys_basketball": "D1",
+        "boys_hockey": "D1",
+        "boys_soccer": "D1",
+        "football": "D1",
+        "girls_basketball": "D1",
+        "girls_soccer": "D1",
+        "volleyball": "D1"
+      }
     },
     {
       "id": "dc-everest",
@@ -132,8 +151,18 @@
       "wiaa_org_id": 93,
       "bound_slug": "dceverest",
       "wph_team_id": 9184048,
+      "wph_team_id_girls": null,
+      "maxpreps_slug": "schofield/dc-everest-evergreens",
       "athletics_url": null,
-      "maxpreps_slug": "schofield/dc-everest-evergreens"
+      "wiaa_division": {
+        "boys_basketball": "D1",
+        "boys_hockey": "D1",
+        "boys_soccer": "D1",
+        "football": "D1",
+        "girls_basketball": "D1",
+        "girls_soccer": "D1",
+        "volleyball": "D1"
+      }
     },
     {
       "id": "central-wisconsin-storm",
@@ -155,8 +184,11 @@
       "bound_slug": null,
       "wph_team_id": null,
       "wph_team_id_girls": 9389642,
+      "maxpreps_slug": null,
       "athletics_url": null,
-      "maxpreps_slug": null
+      "wiaa_division": {
+        "girls_hockey": "D1"
+      }
     },
     {
       "id": "black-river-falls",
@@ -178,8 +210,11 @@
       "bound_slug": null,
       "wph_team_id": null,
       "wph_team_id_girls": 9389653,
+      "maxpreps_slug": null,
       "athletics_url": null,
-      "maxpreps_slug": null
+      "wiaa_division": {
+        "girls_hockey": "D1"
+      }
     },
     {
       "id": "marshfield",
@@ -224,8 +259,18 @@
       "wiaa_org_id": 234,
       "bound_slug": "marshfield",
       "wph_team_id": 9184049,
+      "wph_team_id_girls": null,
+      "maxpreps_slug": "marshfield/marshfield-tigers",
       "athletics_url": null,
-      "maxpreps_slug": "marshfield/marshfield-tigers"
+      "wiaa_division": {
+        "boys_basketball": "D1",
+        "boys_hockey": "D2",
+        "boys_soccer": "D2",
+        "football": "D2",
+        "girls_basketball": "D2",
+        "girls_soccer": "D2",
+        "volleyball": "D1"
+      }
     },
     {
       "id": "spash",
@@ -274,9 +319,18 @@
       "wiaa_org_id": 412,
       "bound_slug": "stevenspoi",
       "wph_team_id": 9184051,
-      "athletics_url": null,
+      "wph_team_id_girls": 9389645,
       "maxpreps_slug": "stevens-point/stevens-point-panthers",
-      "wph_team_id_girls": 9389645
+      "athletics_url": null,
+      "wiaa_division": {
+        "boys_basketball": "D1",
+        "boys_hockey": "D1",
+        "boys_soccer": "D1",
+        "girls_basketball": "D1",
+        "girls_hockey": "D1",
+        "girls_soccer": "D1",
+        "volleyball": "D1"
+      }
     },
     {
       "id": "wisconsin-rapids",
@@ -321,8 +375,17 @@
       "wiaa_org_id": 487,
       "bound_slug": "wisconsinr",
       "wph_team_id": 9184053,
+      "wph_team_id_girls": null,
+      "maxpreps_slug": "wisconsin-rapids/wisconsin-rapids-lincoln-red-raiders",
       "athletics_url": null,
-      "maxpreps_slug": "wisconsin-rapids/wisconsin-rapids-lincoln-red-raiders"
+      "wiaa_division": {
+        "boys_basketball": "D1",
+        "boys_hockey": "D1",
+        "boys_soccer": "D1",
+        "girls_basketball": "D1",
+        "girls_soccer": "D1",
+        "volleyball": "D1"
+      }
     },
     {
       "id": "athens",
@@ -355,8 +418,15 @@
       "wiaa_org_id": 22,
       "bound_slug": "athens",
       "wph_team_id": null,
+      "wph_team_id_girls": null,
+      "maxpreps_slug": "athens/athens-bluejays",
       "athletics_url": null,
-      "maxpreps_slug": "athens/athens-bluejays"
+      "wiaa_division": {
+        "boys_basketball": "D5",
+        "football": "8P-D1",
+        "girls_basketball": "D5",
+        "volleyball": "D5"
+      }
     },
     {
       "id": "edgar",
@@ -389,8 +459,15 @@
       "wiaa_org_id": 112,
       "bound_slug": "edgar",
       "wph_team_id": null,
+      "wph_team_id_girls": null,
+      "maxpreps_slug": "edgar/edgar-wildcats",
       "athletics_url": null,
-      "maxpreps_slug": "edgar/edgar-wildcats"
+      "wiaa_division": {
+        "boys_basketball": "D4",
+        "football": "D6",
+        "girls_basketball": "D5",
+        "volleyball": "D4"
+      }
     },
     {
       "id": "marathon",
@@ -423,8 +500,15 @@
       "wiaa_org_id": 227,
       "bound_slug": "marathon",
       "wph_team_id": null,
+      "wph_team_id_girls": null,
+      "maxpreps_slug": "marathon/marathon-red-raiders",
       "athletics_url": null,
-      "maxpreps_slug": "marathon/marathon-red-raiders"
+      "wiaa_division": {
+        "boys_basketball": "D4",
+        "football": "D6",
+        "girls_basketball": "D4",
+        "volleyball": "D3"
+      }
     },
     {
       "id": "newman-catholic",
@@ -457,8 +541,15 @@
       "wiaa_org_id": 296,
       "bound_slug": "newmancath",
       "wph_team_id": null,
+      "wph_team_id_girls": null,
+      "maxpreps_slug": "wausau/newman-catholic-cardinals",
       "athletics_url": null,
-      "maxpreps_slug": "wausau/newman-catholic-cardinals"
+      "wiaa_division": {
+        "boys_basketball": "D5",
+        "football": "8P-D1",
+        "girls_basketball": "D5",
+        "volleyball": "D5"
+      }
     },
     {
       "id": "stratford",
@@ -491,8 +582,15 @@
       "wiaa_org_id": 415,
       "bound_slug": "stratford",
       "wph_team_id": null,
+      "wph_team_id_girls": null,
+      "maxpreps_slug": "stratford/stratford-tigers",
       "athletics_url": null,
-      "maxpreps_slug": "stratford/stratford-tigers"
+      "wiaa_division": {
+        "boys_basketball": "D4",
+        "football": "D5",
+        "girls_basketball": "D4",
+        "volleyball": "D3"
+      }
     },
     {
       "id": "spencer",
@@ -525,8 +623,15 @@
       "wiaa_org_id": 408,
       "bound_slug": "spencer",
       "wph_team_id": null,
+      "wph_team_id_girls": null,
+      "maxpreps_slug": "spencer/spencer-rockets",
       "athletics_url": null,
-      "maxpreps_slug": "spencer/spencer-rockets"
+      "wiaa_division": {
+        "boys_basketball": "D4",
+        "football": "D5",
+        "girls_basketball": "D4",
+        "volleyball": "D4"
+      }
     },
     {
       "id": "mosinee",
@@ -571,8 +676,18 @@
       "wiaa_org_id": 280,
       "bound_slug": "mosinee",
       "wph_team_id": 9184026,
+      "wph_team_id_girls": null,
+      "maxpreps_slug": "mosinee/mosinee-indians",
       "athletics_url": null,
-      "maxpreps_slug": "mosinee/mosinee-indians"
+      "wiaa_division": {
+        "boys_basketball": "D3",
+        "boys_hockey": "D2",
+        "boys_soccer": "D3",
+        "football": "D4",
+        "girls_basketball": "D3",
+        "girls_soccer": "D3",
+        "volleyball": "D2"
+      }
     },
     {
       "id": "colby",
@@ -605,8 +720,14 @@
       "wiaa_org_id": 79,
       "bound_slug": "colby",
       "wph_team_id": null,
+      "wph_team_id_girls": null,
+      "maxpreps_slug": "colby/colby-hornets",
       "athletics_url": null,
-      "maxpreps_slug": "colby/colby-hornets"
+      "wiaa_division": {
+        "boys_basketball": "D4",
+        "girls_basketball": "D4",
+        "volleyball": "D3"
+      }
     },
     {
       "id": "abbotsford",
@@ -639,8 +760,15 @@
       "wiaa_org_id": 1,
       "bound_slug": "abbotsford",
       "wph_team_id": null,
+      "wph_team_id_girls": null,
+      "maxpreps_slug": "abbotsford/abbotsford-falcons",
       "athletics_url": null,
-      "maxpreps_slug": "abbotsford/abbotsford-falcons"
+      "wiaa_division": {
+        "boys_basketball": "D4",
+        "football": "D6",
+        "girls_basketball": "D4",
+        "volleyball": "D4"
+      }
     },
     {
       "id": "tomahawk",
@@ -677,8 +805,16 @@
       "wiaa_org_id": 427,
       "bound_slug": "tomahawk",
       "wph_team_id": 9184029,
+      "wph_team_id_girls": null,
+      "maxpreps_slug": "tomahawk/tomahawk-hatchets",
       "athletics_url": null,
-      "maxpreps_slug": "tomahawk/tomahawk-hatchets"
+      "wiaa_division": {
+        "boys_basketball": "D3",
+        "boys_hockey": "D1",
+        "football": "D5",
+        "girls_basketball": "D3",
+        "volleyball": "D3"
+      }
     },
     {
       "id": "rhinelander",
@@ -723,8 +859,18 @@
       "wiaa_org_id": 363,
       "bound_slug": "rhinelande",
       "wph_team_id": 9184028,
+      "wph_team_id_girls": null,
+      "maxpreps_slug": "rhinelander/rhinelander-hodags",
       "athletics_url": null,
-      "maxpreps_slug": "rhinelander/rhinelander-hodags"
+      "wiaa_division": {
+        "boys_basketball": "D2",
+        "boys_hockey": "D2",
+        "boys_soccer": "D3",
+        "football": "D3",
+        "girls_basketball": "D2",
+        "girls_soccer": "D3",
+        "volleyball": "D2"
+      }
     },
     {
       "id": "medford",
@@ -773,9 +919,19 @@
       "wiaa_org_id": 240,
       "bound_slug": "medford",
       "wph_team_id": 9184025,
-      "athletics_url": null,
+      "wph_team_id_girls": 9389647,
       "maxpreps_slug": "medford/medford-raiders",
-      "wph_team_id_girls": 9389647
+      "athletics_url": null,
+      "wiaa_division": {
+        "boys_basketball": "D2",
+        "boys_hockey": "D2",
+        "boys_soccer": "D3",
+        "football": "D3",
+        "girls_basketball": "D2",
+        "girls_hockey": "D1",
+        "girls_soccer": "D3",
+        "volleyball": "D2"
+      }
     },
     {
       "id": "merrill",
@@ -820,8 +976,18 @@
       "wiaa_org_id": 248,
       "bound_slug": "merrill",
       "wph_team_id": 9184050,
+      "wph_team_id_girls": null,
+      "maxpreps_slug": "merrill/merrill-bluejays",
       "athletics_url": null,
-      "maxpreps_slug": "merrill/merrill-bluejays"
+      "wiaa_division": {
+        "boys_basketball": "D2",
+        "boys_hockey": "D1",
+        "boys_soccer": "D3",
+        "football": "D3",
+        "girls_basketball": "D2",
+        "girls_soccer": "D3",
+        "volleyball": "D2"
+      }
     },
     {
       "id": "lakeland",
@@ -866,8 +1032,18 @@
       "wiaa_org_id": 203,
       "bound_slug": "lakeland",
       "wph_team_id": 9184024,
+      "wph_team_id_girls": null,
+      "maxpreps_slug": "minocqua/lakeland-thunderbirds",
       "athletics_url": null,
-      "maxpreps_slug": "minocqua/lakeland-thunderbirds"
+      "wiaa_division": {
+        "boys_basketball": "D2",
+        "boys_hockey": "D2",
+        "boys_soccer": "D3",
+        "football": "D3",
+        "girls_basketball": "D2",
+        "girls_soccer": "D3",
+        "volleyball": "D2"
+      }
     },
     {
       "id": "antigo",
@@ -912,8 +1088,17 @@
       "wiaa_org_id": 11,
       "bound_slug": "antigo",
       "wph_team_id": 9184022,
+      "wph_team_id_girls": null,
+      "maxpreps_slug": "antigo/antigo-red-robins",
       "athletics_url": null,
-      "maxpreps_slug": "antigo/antigo-red-robins"
+      "wiaa_division": {
+        "boys_basketball": "D2",
+        "boys_hockey": "D2",
+        "boys_soccer": "D3",
+        "girls_basketball": "D2",
+        "girls_soccer": "D3",
+        "volleyball": "D2"
+      }
     },
     {
       "id": "eau-claire-north",
@@ -946,8 +1131,14 @@
       "wiaa_org_id": 111,
       "bound_slug": "eauclairen",
       "wph_team_id": 9183991,
+      "wph_team_id_girls": null,
+      "maxpreps_slug": "eau-claire/eau-claire-north-huskies",
       "athletics_url": null,
-      "maxpreps_slug": "eau-claire/eau-claire-north-huskies"
+      "wiaa_division": {
+        "boys_hockey": "D1",
+        "boys_soccer": "D1",
+        "girls_soccer": "D1"
+      }
     },
     {
       "id": "eau-claire-memorial",
@@ -980,8 +1171,14 @@
       "wiaa_org_id": 110,
       "bound_slug": "eauclairem",
       "wph_team_id": 9183990,
+      "wph_team_id_girls": null,
+      "maxpreps_slug": "eau-claire/eau-claire-memorial-old-abes",
       "athletics_url": null,
-      "maxpreps_slug": "eau-claire/eau-claire-memorial-old-abes"
+      "wiaa_division": {
+        "boys_hockey": "D1",
+        "boys_soccer": "D1",
+        "girls_soccer": "D1"
+      }
     },
     {
       "id": "chippewa-falls",
@@ -1014,8 +1211,15 @@
       "wiaa_org_id": 73,
       "bound_slug": "chippewafa",
       "wph_team_id": 9183987,
+      "wph_team_id_girls": null,
+      "maxpreps_slug": "chippewa-falls/chippewa-falls-cardinals",
       "athletics_url": null,
-      "maxpreps_slug": "chippewa-falls/chippewa-falls-cardinals"
+      "wiaa_division": {
+        "boys_hockey": "D1",
+        "boys_soccer": "D1",
+        "football": "D1",
+        "girls_soccer": "D1"
+      }
     },
     {
       "id": "hudson",
@@ -1048,9 +1252,15 @@
       "wiaa_org_id": 168,
       "bound_slug": "hudson",
       "wph_team_id": 9183992,
-      "athletics_url": null,
+      "wph_team_id_girls": 9389654,
       "maxpreps_slug": "hudson/hudson-raiders",
-      "wph_team_id_girls": 9389654
+      "athletics_url": null,
+      "wiaa_division": {
+        "boys_hockey": "D1",
+        "boys_soccer": "D1",
+        "football": "D1",
+        "girls_soccer": "D1"
+      }
     },
     {
       "id": "new-richmond",
@@ -1083,8 +1293,15 @@
       "wiaa_org_id": 295,
       "bound_slug": "newrichmond",
       "wph_team_id": 9183994,
+      "wph_team_id_girls": null,
+      "maxpreps_slug": "new-richmond/new-richmond-tigers",
       "athletics_url": null,
-      "maxpreps_slug": "new-richmond/new-richmond-tigers"
+      "wiaa_division": {
+        "boys_hockey": "D1",
+        "boys_soccer": "D2",
+        "football": "D2",
+        "girls_soccer": "D2"
+      }
     },
     {
       "id": "rice-lake",
@@ -1117,8 +1334,15 @@
       "wiaa_org_id": 365,
       "bound_slug": "ricelake",
       "wph_team_id": 9183995,
+      "wph_team_id_girls": null,
+      "maxpreps_slug": "rice-lake/rice-lake-warriors",
       "athletics_url": null,
-      "maxpreps_slug": "rice-lake/rice-lake-warriors"
+      "wiaa_division": {
+        "boys_hockey": "D2",
+        "boys_soccer": "D3",
+        "football": "D2",
+        "girls_soccer": "D3"
+      }
     },
     {
       "id": "auburndale",
@@ -1151,8 +1375,15 @@
       "wiaa_org_id": 23,
       "bound_slug": "auburndale",
       "wph_team_id": null,
+      "wph_team_id_girls": null,
+      "maxpreps_slug": "auburndale/auburndale-eagles",
       "athletics_url": null,
-      "maxpreps_slug": "auburndale/auburndale-eagles"
+      "wiaa_division": {
+        "boys_basketball": "D4",
+        "football": "D6",
+        "girls_basketball": "D4",
+        "volleyball": "D4"
+      }
     },
     {
       "id": "assumption",
@@ -1185,8 +1416,15 @@
       "wiaa_org_id": 21,
       "bound_slug": "assumption",
       "wph_team_id": null,
+      "wph_team_id_girls": null,
+      "maxpreps_slug": "wisconsin-rapids/assumption-royals",
       "athletics_url": null,
-      "maxpreps_slug": "wisconsin-rapids/assumption-royals"
+      "wiaa_division": {
+        "boys_basketball": "D5",
+        "football": "D7",
+        "girls_basketball": "D5",
+        "volleyball": "D5"
+      }
     },
     {
       "id": "pacelli",
@@ -1207,8 +1445,10 @@
       "wiaa_org_id": 324,
       "bound_slug": "pacelli",
       "wph_team_id": 9184058,
+      "wph_team_id_girls": null,
+      "maxpreps_slug": "stevens-point/pacelli-cardinals",
       "athletics_url": null,
-      "maxpreps_slug": "stevens-point/pacelli-cardinals"
+      "wiaa_division": {}
     },
     {
       "id": "pittsville",
@@ -1229,8 +1469,12 @@
       "wiaa_org_id": 337,
       "bound_slug": "pittsville",
       "wph_team_id": null,
+      "wph_team_id_girls": null,
+      "maxpreps_slug": "pittsville/pittsville-panthers",
       "athletics_url": null,
-      "maxpreps_slug": "pittsville/pittsville-panthers"
+      "wiaa_division": {
+        "football": "D7"
+      }
     },
     {
       "id": "iola-scandinavia",
@@ -1251,8 +1495,10 @@
       "wiaa_org_id": 172,
       "bound_slug": "iolascandi",
       "wph_team_id": null,
+      "wph_team_id_girls": null,
+      "maxpreps_slug": "iola/iola-scandinavia-thunderbirds",
       "athletics_url": null,
-      "maxpreps_slug": "iola/iola-scandinavia-thunderbirds"
+      "wiaa_division": {}
     },
     {
       "id": "amherst",
@@ -1273,8 +1519,12 @@
       "wiaa_org_id": 10,
       "bound_slug": "amherst",
       "wph_team_id": null,
+      "wph_team_id_girls": null,
+      "maxpreps_slug": "amherst/amherst-falcons",
       "athletics_url": null,
-      "maxpreps_slug": "amherst/amherst-falcons"
+      "wiaa_division": {
+        "football": "D5"
+      }
     },
     {
       "id": "weyauwega-fremont",
@@ -1295,8 +1545,12 @@
       "wiaa_org_id": 472,
       "bound_slug": "weyauwegaf",
       "wph_team_id": null,
+      "wph_team_id_girls": null,
+      "maxpreps_slug": "weyauwega/weyauwega-fremont-warhawks",
       "athletics_url": null,
-      "maxpreps_slug": "weyauwega/weyauwega-fremont-warhawks"
+      "wiaa_division": {
+        "football": "D6"
+      }
     },
     {
       "id": "wittenberg-birnamwood",
@@ -1317,8 +1571,12 @@
       "wiaa_org_id": 491,
       "bound_slug": "wittenberg",
       "wph_team_id": null,
+      "wph_team_id_girls": null,
+      "maxpreps_slug": "wittenberg/wittenberg-birnamwood-chargers",
       "athletics_url": null,
-      "maxpreps_slug": "wittenberg/wittenberg-birnamwood-chargers"
+      "wiaa_division": {
+        "football": "D5"
+      }
     },
     {
       "id": "rosholt",
@@ -1339,8 +1597,10 @@
       "wiaa_org_id": 374,
       "bound_slug": "rosholt",
       "wph_team_id": null,
+      "wph_team_id_girls": null,
+      "maxpreps_slug": "rosholt/rosholt-hornets",
       "athletics_url": null,
-      "maxpreps_slug": "rosholt/rosholt-hornets"
+      "wiaa_division": {}
     },
     {
       "id": "prentice",
@@ -1373,8 +1633,14 @@
       "wiaa_org_id": 349,
       "bound_slug": "prentice",
       "wph_team_id": null,
+      "wph_team_id_girls": null,
+      "maxpreps_slug": "prentice/prentice-buccaneers",
       "athletics_url": null,
-      "maxpreps_slug": "prentice/prentice-buccaneers"
+      "wiaa_division": {
+        "boys_basketball": "D5",
+        "girls_basketball": "D5",
+        "volleyball": "D5"
+      }
     },
     {
       "id": "flambeau",
@@ -1395,8 +1661,12 @@
       "wiaa_org_id": 127,
       "bound_slug": "flambeau",
       "wph_team_id": null,
+      "wph_team_id_girls": null,
+      "maxpreps_slug": "tony/flambeau-falcons",
       "athletics_url": null,
-      "maxpreps_slug": "tony/flambeau-falcons"
+      "wiaa_division": {
+        "football": "8P-D1"
+      }
     },
     {
       "id": "bruce",
@@ -1417,8 +1687,12 @@
       "wiaa_org_id": 56,
       "bound_slug": "bruce",
       "wph_team_id": null,
+      "wph_team_id_girls": null,
+      "maxpreps_slug": "bruce/bruce-red-raiders",
       "athletics_url": null,
-      "maxpreps_slug": "bruce/bruce-red-raiders"
+      "wiaa_division": {
+        "football": "8P-D1"
+      }
     },
     {
       "id": "hurley",
@@ -1439,8 +1713,12 @@
       "wiaa_org_id": 169,
       "bound_slug": "hurley",
       "wph_team_id": null,
+      "wph_team_id_girls": null,
+      "maxpreps_slug": "hurley/hurley-northstars",
       "athletics_url": null,
-      "maxpreps_slug": "hurley/hurley-northstars"
+      "wiaa_division": {
+        "football": "8P-D1"
+      }
     },
     {
       "id": "chequamegon",
@@ -1473,8 +1751,14 @@
       "wiaa_org_id": 515,
       "bound_slug": "chequamego",
       "wph_team_id": 9184055,
+      "wph_team_id_girls": null,
+      "maxpreps_slug": "park-falls/chequamegon-screaming-eagles",
       "athletics_url": null,
-      "maxpreps_slug": "park-falls/chequamegon-screaming-eagles"
+      "wiaa_division": {
+        "boys_basketball": "D4",
+        "girls_basketball": "D5",
+        "volleyball": "D4"
+      }
     },
     {
       "id": "phillips",
@@ -1507,8 +1791,14 @@
       "wiaa_org_id": 335,
       "bound_slug": "phillips",
       "wph_team_id": null,
+      "wph_team_id_girls": null,
+      "maxpreps_slug": "phillips/phillips-loggers",
       "athletics_url": null,
-      "maxpreps_slug": "phillips/phillips-loggers"
+      "wiaa_division": {
+        "boys_basketball": "D4",
+        "girls_basketball": "D4",
+        "volleyball": "D4"
+      }
     },
     {
       "id": "rib-lake",
@@ -1541,8 +1831,14 @@
       "wiaa_org_id": 364,
       "bound_slug": "riblake",
       "wph_team_id": null,
+      "wph_team_id_girls": null,
+      "maxpreps_slug": "rib-lake/rib-lake-redmen",
       "athletics_url": null,
-      "maxpreps_slug": "rib-lake/rib-lake-redmen"
+      "wiaa_division": {
+        "boys_basketball": "D5",
+        "girls_basketball": "D5",
+        "volleyball": "D5"
+      }
     },
     {
       "id": "wild-rose",
@@ -1563,8 +1859,10 @@
       "wiaa_org_id": 478,
       "bound_slug": "wildrose",
       "wph_team_id": null,
+      "wph_team_id_girls": null,
+      "maxpreps_slug": "wild-rose/wild-rose-wildcats",
       "athletics_url": null,
-      "maxpreps_slug": "wild-rose/wild-rose-wildcats"
+      "wiaa_division": {}
     },
     {
       "id": "almond-bancroft",
@@ -1585,8 +1883,12 @@
       "wiaa_org_id": 7,
       "bound_slug": "almondbanc",
       "wph_team_id": null,
+      "wph_team_id_girls": null,
+      "maxpreps_slug": "almond/almond-bancroft-eagles",
       "athletics_url": null,
-      "maxpreps_slug": "almond/almond-bancroft-eagles"
+      "wiaa_division": {
+        "football": "8P-D1"
+      }
     },
     {
       "id": "bowler",
@@ -1607,8 +1909,10 @@
       "wiaa_org_id": 47,
       "bound_slug": "bowler",
       "wph_team_id": null,
+      "wph_team_id_girls": null,
+      "maxpreps_slug": "bowler/bowler-panthers",
       "athletics_url": null,
-      "maxpreps_slug": "bowler/bowler-panthers"
+      "wiaa_division": {}
     },
     {
       "id": "marion",
@@ -1629,8 +1933,12 @@
       "wiaa_org_id": 230,
       "bound_slug": "marion",
       "wph_team_id": null,
+      "wph_team_id_girls": null,
+      "maxpreps_slug": "marion/marion-mustangs",
       "athletics_url": null,
-      "maxpreps_slug": "marion/marion-mustangs"
+      "wiaa_division": {
+        "football": "8P-D1"
+      }
     },
     {
       "id": "menominee-nation",
@@ -1651,8 +1959,10 @@
       "wiaa_org_id": 244,
       "bound_slug": "menomineenation",
       "wph_team_id": null,
+      "wph_team_id_girls": null,
+      "maxpreps_slug": "keshena/menominee-nation-eagles",
       "athletics_url": null,
-      "maxpreps_slug": "keshena/menominee-nation-eagles"
+      "wiaa_division": {}
     },
     {
       "id": "port-edwards",
@@ -1673,7 +1983,10 @@
       "wiaa_org_id": 342,
       "bound_slug": "portedward",
       "wph_team_id": null,
-      "athletics_url": null
+      "wph_team_id_girls": null,
+      "maxpreps_slug": null,
+      "athletics_url": null,
+      "wiaa_division": {}
     },
     {
       "id": "tri-county",
@@ -1694,8 +2007,12 @@
       "wiaa_org_id": 428,
       "bound_slug": "tricounty",
       "wph_team_id": null,
+      "wph_team_id_girls": null,
+      "maxpreps_slug": "plainfield/tri-county-penguins",
       "athletics_url": null,
-      "maxpreps_slug": "plainfield/tri-county-penguins"
+      "wiaa_division": {
+        "football": "8P-D1"
+      }
     },
     {
       "id": "river-falls",
@@ -1728,8 +2045,15 @@
       "wiaa_org_id": 369,
       "bound_slug": "riverfalls",
       "wph_team_id": 9183996,
+      "wph_team_id_girls": null,
+      "maxpreps_slug": "river-falls/river-falls-wildcats",
       "athletics_url": null,
-      "maxpreps_slug": "river-falls/river-falls-wildcats"
+      "wiaa_division": {
+        "boys_hockey": "D2",
+        "boys_soccer": "D2",
+        "football": "D2",
+        "girls_soccer": "D2"
+      }
     },
     {
       "id": "superior",
@@ -1750,8 +2074,10 @@
       "wiaa_org_id": 418,
       "bound_slug": "superior",
       "wph_team_id": 9184056,
+      "wph_team_id_girls": null,
+      "maxpreps_slug": "superior/superior-spartans",
       "athletics_url": null,
-      "maxpreps_slug": "superior/superior-spartans"
+      "wiaa_division": {}
     },
     {
       "id": "menomonie",
@@ -1784,8 +2110,15 @@
       "wiaa_org_id": 246,
       "bound_slug": "menomonie",
       "wph_team_id": 9183993,
+      "wph_team_id_girls": null,
+      "maxpreps_slug": "menomonie/menomonie-mustangs",
       "athletics_url": null,
-      "maxpreps_slug": "menomonie/menomonie-mustangs"
+      "wiaa_division": {
+        "boys_hockey": "D2",
+        "boys_soccer": "D2",
+        "football": "D3",
+        "girls_soccer": "D2"
+      }
     },
     {
       "id": "northland-pines",
@@ -1834,9 +2167,18 @@
       "wiaa_org_id": 303,
       "bound_slug": null,
       "wph_team_id": null,
-      "athletics_url": null,
+      "wph_team_id_girls": 9389646,
       "maxpreps_slug": "eagle-river/northland-pines-eagles",
-      "wph_team_id_girls": 9389646
+      "athletics_url": null,
+      "wiaa_division": {
+        "boys_basketball": "D3",
+        "boys_hockey": "D2",
+        "boys_soccer": "D4",
+        "girls_basketball": "D3",
+        "girls_hockey": "D1",
+        "girls_soccer": "D4",
+        "volleyball": "D3"
+      }
     },
     {
       "id": "waupaca",
@@ -1857,7 +2199,12 @@
       "wiaa_org_id": 452,
       "bound_slug": null,
       "wph_team_id": null,
-      "athletics_url": null
+      "wph_team_id_girls": null,
+      "maxpreps_slug": null,
+      "athletics_url": null,
+      "wiaa_division": {
+        "boys_hockey": "D2"
+      }
     },
     {
       "id": "loyal",
@@ -1890,8 +2237,15 @@
       "wiaa_org_id": 213,
       "bound_slug": null,
       "wph_team_id": null,
+      "wph_team_id_girls": null,
+      "maxpreps_slug": "loyal/loyal-greyhounds",
       "athletics_url": null,
-      "maxpreps_slug": "loyal/loyal-greyhounds"
+      "wiaa_division": {
+        "boys_basketball": "D5",
+        "football": "D6",
+        "girls_basketball": "D5",
+        "volleyball": "D4"
+      }
     },
     {
       "id": "neillsville",
@@ -1920,8 +2274,14 @@
       "wiaa_org_id": 286,
       "bound_slug": null,
       "wph_team_id": null,
+      "wph_team_id_girls": null,
+      "maxpreps_slug": "neillsville/neillsville-warriors",
       "athletics_url": null,
-      "maxpreps_slug": "neillsville/neillsville-warriors"
+      "wiaa_division": {
+        "boys_basketball": "D4",
+        "girls_basketball": "D4",
+        "volleyball": "D4"
+      }
     },
     {
       "id": "owen-withee",
@@ -1950,8 +2310,14 @@
       "wiaa_org_id": 322,
       "bound_slug": null,
       "wph_team_id": null,
+      "wph_team_id_girls": null,
+      "maxpreps_slug": "owen/owen-withee-blackhawks",
       "athletics_url": null,
-      "maxpreps_slug": "owen/owen-withee-blackhawks"
+      "wiaa_division": {
+        "boys_basketball": "D5",
+        "girls_basketball": "D5",
+        "volleyball": "D5"
+      }
     },
     {
       "id": "gilman",
@@ -1980,8 +2346,14 @@
       "wiaa_org_id": 139,
       "bound_slug": null,
       "wph_team_id": null,
+      "wph_team_id_girls": null,
+      "maxpreps_slug": "gilman/gilman-pirates",
       "athletics_url": null,
-      "maxpreps_slug": "gilman/gilman-pirates"
+      "wiaa_division": {
+        "boys_basketball": "D5",
+        "girls_basketball": "D5",
+        "volleyball": "D5"
+      }
     },
     {
       "id": "greenwood",
@@ -2010,8 +2382,14 @@
       "wiaa_org_id": 154,
       "bound_slug": null,
       "wph_team_id": null,
+      "wph_team_id_girls": null,
+      "maxpreps_slug": "greenwood/greenwood-indians",
       "athletics_url": null,
-      "maxpreps_slug": "greenwood/greenwood-indians"
+      "wiaa_division": {
+        "boys_basketball": "D5",
+        "girls_basketball": "D5",
+        "volleyball": "D5"
+      }
     },
     {
       "id": "columbus-catholic",
@@ -2040,8 +2418,14 @@
       "wiaa_org_id": 82,
       "bound_slug": null,
       "wph_team_id": null,
+      "wph_team_id_girls": null,
+      "maxpreps_slug": "marshfield/columbus-catholic-dons",
       "athletics_url": null,
-      "maxpreps_slug": "marshfield/columbus-catholic-dons"
+      "wiaa_division": {
+        "boys_basketball": "D5",
+        "girls_basketball": "D5",
+        "volleyball": "D4"
+      }
     },
     {
       "id": "mellen",
@@ -2062,8 +2446,10 @@
       "wiaa_org_id": 241,
       "bound_slug": null,
       "wph_team_id": null,
+      "wph_team_id_girls": null,
+      "maxpreps_slug": "mellen/mellen-granite-diggers",
       "athletics_url": null,
-      "maxpreps_slug": "mellen/mellen-granite-diggers"
+      "wiaa_division": {}
     },
     {
       "id": "washburn",
@@ -2084,8 +2470,10 @@
       "wiaa_org_id": 442,
       "bound_slug": null,
       "wph_team_id": null,
+      "wph_team_id_girls": null,
+      "maxpreps_slug": "washburn/washburn-castle-guards",
       "athletics_url": null,
-      "maxpreps_slug": "washburn/washburn-castle-guards"
+      "wiaa_division": {}
     },
     {
       "id": "shell-lake",
@@ -2106,8 +2494,10 @@
       "wiaa_org_id": 394,
       "bound_slug": null,
       "wph_team_id": null,
+      "wph_team_id_girls": null,
+      "maxpreps_slug": "shell-lake/shell-lake-lakers",
       "athletics_url": null,
-      "maxpreps_slug": "shell-lake/shell-lake-lakers"
+      "wiaa_division": {}
     },
     {
       "id": "south-shore",
@@ -2128,8 +2518,10 @@
       "wiaa_org_id": 404,
       "bound_slug": null,
       "wph_team_id": null,
+      "wph_team_id_girls": null,
+      "maxpreps_slug": "port-wing/south-shore-cardinals",
       "athletics_url": null,
-      "maxpreps_slug": "port-wing/south-shore-cardinals"
+      "wiaa_division": {}
     }
   ]
 }
