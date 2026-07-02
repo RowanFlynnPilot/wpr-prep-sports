@@ -1,25 +1,28 @@
 name: Scrape
 
 on:
-  # Cron paused for the off-season (no live games to refresh until football
-  # preseason in mid-August 2026). Re-enable by uncommenting the schedule
-  # block below; both crons were the in-season cadence (hourly base +
-  # Fri-evening 15-min windows) used during the 2025-26 football season.
-  # schedule:
-  #   - cron: "*/15 0-5 * * 6"  # Fri evenings/Sat early UTC (15-min cadence)
-  #   - cron: "5 * * * *"        # hourly otherwise
+  # Season-aware cadence — no more manual pause/unpause between seasons:
+  #   Jan-May + Aug-Dec (in-season): hourly base + Fri-evening 15-min
+  #     windows (Fri night CT = 0-5 UTC Saturday).
+  #   Jun-Jul (summer): one run a day. Keeps published-schedule tweaks
+  #     fresh and auto-rolls each fall sport the day WIAA posts its new
+  #     season (the scraper's wipe guard no-ops until then).
+  schedule:
+    - cron: "*/15 0-5 * 1-3,8-12 6" # Fri evenings/Sat early UTC, in-season months
+    - cron: "5 * * 1-5,8-12 *"      # hourly, Jan-May + Aug-Dec
+    - cron: "0 11 * 6-7 *"          # daily 6am CT, June-July
   workflow_dispatch:
     inputs:
       sport:
-        # Football only until the other fall sports' 2026-27 schedules
-        # post on WIAA (volleyball/soccer ~late July). Scraping a sport
-        # whose new-season schedule doesn't exist yet would replace its
-        # 2025-26 dataset with an empty one — expand this list only
-        # after confirming schedules render (2025-26 is fully archived
-        # either way).
-        description: "Space-separated sport id(s) to scrape. Defaults to rolled-over sports."
+        # All fall sports. Volleyball/boys-soccer 2026-27 schedules
+        # hadn't posted as of 2026-07-02 — until they do, their scrapes
+        # hit the wipe guard (0 games scraped + existing data → no
+        # write) and the 2025-26 datasets stay live. They roll over
+        # automatically the day WIAA publishes. Add winter sports to
+        # this list in November.
+        description: "Space-separated sport id(s) to scrape. Defaults to in-season sports."
         required: false
-        default: "football"
+        default: "football volleyball boys_soccer"
       season:
         description: "Season identifier"
         required: false
@@ -54,10 +57,10 @@ jobs:
         working-directory: scraper
         env:
           # On cron runs `inputs.sport` is empty, so we scrape every
-          # rolled-over sport (see the workflow_dispatch comment above —
-          # expand as 2026-27 schedules post). On manual dispatch the
-          # user can pass a single id (or several space-separated).
-          SPORTS: ${{ github.event.inputs.sport || 'football' }}
+          # in-season sport (see the workflow_dispatch comment above).
+          # On manual dispatch the user can pass a single id (or several
+          # space-separated).
+          SPORTS: ${{ github.event.inputs.sport || 'football volleyball boys_soccer' }}
           SEASON: ${{ github.event.inputs.season || '2026-27' }}
         run: |
           for sport in $SPORTS; do

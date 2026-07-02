@@ -255,6 +255,23 @@ def main() -> int:
         console.print("[yellow]Dry run — not writing files[/yellow]")
         return 0
 
+    # Wipe guard: a scrape that found ZERO games must never replace a
+    # dataset that has them. Two scenarios this catches: (a) preseason —
+    # the cron can carry next-season sports before WIAA posts their
+    # schedules and they no-op here until publish day, then roll over
+    # automatically; (b) a WIAA outage / parse regression mid-season.
+    # Manual override: remove data/<sport>/games.json first.
+    if not dataset.games:
+        existing = read_dataset(args.sport, DATA_DIR)
+        if existing is not None and existing.games:
+            console.print(
+                f"[yellow]0 games scraped for {args.sport} {args.season}, but the "
+                f"existing dataset holds {len(existing.games)} games "
+                f"({existing.meta.season}) — refusing to overwrite. "
+                f"(Expected preseason: schedules not posted yet.)[/yellow]"
+            )
+            return 0
+
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     write_dataset(dataset, DATA_DIR)
     console.print(f"[green]Wrote dataset to {DATA_DIR}[/green]")
