@@ -55,14 +55,20 @@ export function pickFeaturedGame(games, now = new Date()) {
 
 /**
  * Games to show in the ticker. We surface "recently completed + tonight":
- *   - Any final within the last 7 days (most recent first)
- *   - Plus any in_progress/scheduled in the same window
+ *   - Any final within the last `windowDays` (most recent first)
+ *   - Plus any in_progress/scheduled through tomorrow
+ * The upper bound matters when `now` is anchored to the season opener
+ * (preseason): without it every future scheduled game would flood in.
  */
 export function tickerGames(games, now = new Date(), windowDays = 7) {
   if (!games) return [];
   const cutoff = now.getTime() - windowDays * DAY_MS;
+  const horizon = now.getTime() + DAY_MS;
   return games
-    .filter((g) => new Date(g.date).getTime() >= cutoff)
+    .filter((g) => {
+      const ts = new Date(g.date).getTime();
+      return ts >= cutoff && ts <= horizon;
+    })
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 }
 

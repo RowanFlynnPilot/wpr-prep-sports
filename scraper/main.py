@@ -185,6 +185,7 @@ def main() -> int:
             dataset,
             name_to_id=name_to_id,
             sport_abbr=sport_abbr,
+            season=args.season,
             console=console,
         )
         dataset = merge_team_season_stats(
@@ -192,6 +193,7 @@ def main() -> int:
             manifest=manifest,
             sport=args.sport,
             sport_abbr=sport_abbr,
+            season=args.season,
             console=console,
         )
         # MaxPreps augments Bound for every sport with central-WI MP

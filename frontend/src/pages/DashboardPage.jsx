@@ -33,19 +33,32 @@ function hasPlayerRows(rows) {
 export default function DashboardPage({ dataset, schoolIndex, sponsors, sportConfig }) {
   const { meta, schools, games, standings, seasonStats, spirit, potwOverride, powerRankings } = dataset;
 
-  // "anchor now" is the off-season content shim: pick games / ticker /
-  // featured-week relative to just after the most-recent scraped game so
-  // every section has real content even when today's real calendar date
-  // is months past the last game. The off-season Hero treatment below
-  // uses TODAY's real date for its countdown, not this anchor.
+  // "anchor now" is the content shim: pick games / ticker / featured-week
+  // relative to a date clamped INTO the season window, so every section
+  // has real content in all three phases —
+  //   preseason  (new schedule, no games played): anchor = season opener,
+  //   in-season:                                  anchor = actual today,
+  //   off-season (all games in the past):         anchor = just after the
+  //                                               final game.
+  // The off-season Hero treatment below uses TODAY's real date for its
+  // countdown, not this anchor.
   const lastGameTs = useMemo(
     () => games.reduce((acc, g) => Math.max(acc, new Date(g.date).getTime()), 0),
     [games],
   );
-  const anchorNow = useMemo(
-    () => (lastGameTs ? new Date(lastGameTs + 60_000) : new Date()),
-    [lastGameTs],
+  const firstGameTs = useMemo(
+    () =>
+      games.reduce(
+        (acc, g) => Math.min(acc, new Date(g.date).getTime()),
+        Number.POSITIVE_INFINITY,
+      ),
+    [games],
   );
+  const anchorNow = useMemo(() => {
+    if (!lastGameTs) return new Date();
+    const clamped = Math.min(Math.max(Date.now(), firstGameTs), lastGameTs + 60_000);
+    return new Date(clamped);
+  }, [firstGameTs, lastGameTs]);
 
   const featured = useMemo(() => pickFeaturedGame(games, anchorNow), [games, anchorNow]);
   const recent = useMemo(() => tickerGames(games, anchorNow, 21), [games, anchorNow]);

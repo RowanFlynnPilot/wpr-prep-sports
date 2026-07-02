@@ -38,6 +38,7 @@ def merge_bound_stats(
     *,
     name_to_id: dict[str, str],
     sport_abbr: str = "fb",
+    season: str = "2025-26",
     console: Console | None = None,
 ) -> Dataset:
     """Mutate-and-return the dataset with stat_leaders populated where possible."""
@@ -58,7 +59,7 @@ def merge_bound_stats(
 
     for date in dates:
         try:
-            games_on_date = bound.find_game_ids(date, sport_abbr=sport_abbr)
+            games_on_date = bound.find_game_ids(date, season=season, sport_abbr=sport_abbr)
         except Exception as e:  # noqa: BLE001
             if console:
                 console.print(f"[yellow]  ! Bound scores index failed for {date}: {e}[/yellow]")
@@ -80,7 +81,7 @@ def merge_bound_stats(
         if not bg:
             continue
         try:
-            lines = bound.fetch_game_stats(bg.comp_id, sport_abbr=sport_abbr)
+            lines = bound.fetch_game_stats(bg.comp_id, season=season, sport_abbr=sport_abbr)
         except Exception as e:  # noqa: BLE001
             if console:
                 console.print(f"[yellow]  ! stats fetch failed for {bg.comp_id}: {e}[/yellow]")
@@ -112,6 +113,7 @@ def merge_team_season_stats(
     manifest: Manifest,
     sport: str,
     sport_abbr: str = "fb",
+    season: str = "2025-26",
     console: Console | None = None,
 ) -> Dataset:
     """
@@ -136,7 +138,9 @@ def merge_team_season_stats(
     out: list[SeasonStat] = []
     for school in targets:
         try:
-            rows = bound.fetch_team_season_stats(school.bound_slug, sport_abbr=sport_abbr)
+            rows = bound.fetch_team_season_stats(
+                school.bound_slug, season=season, sport_abbr=sport_abbr
+            )
         except Exception as e:  # noqa: BLE001
             if console:
                 console.print(f"[yellow]  ! season stats failed for {school.id}: {e}[/yellow]")

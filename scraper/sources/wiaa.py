@@ -29,6 +29,12 @@ LOGO_URL_PREFIX = f"{BASE_URL}/Upload/School/Logo/"
 
 # WIAA SSID (SportSeason ID) mapping. The site's per-school directory page
 # uses these as <tr id="..."> on team rows.
+#
+# CAUTION: SSIDs are minted PER SEASON and rotate when WIAA rolls the site
+# to a new school year (discovered 2026-07: Boys Football 1499 → 1533 for
+# 2026-27). These values are the 2025-26 vintage and act only as a fast
+# path; `discover_team_id_for_sport` falls back to matching WIAA's sport
+# label text, which is stable across seasons.
 SSID_BY_SPORT: dict[str, int] = {
     "football": 1499,           # Boys Football (11-player)
     "football_8p": 1500,        # Boys Football 8-Player
@@ -175,6 +181,39 @@ _SSID_FALLBACKS: dict[str, list[int]] = {
 }
 
 
+def _norm_label(label: str) -> str:
+    return re.sub(r"\s+", " ", (label or "").strip()).casefold()
+
+
+def _label_matches(sport: str, label: str) -> bool:
+    """
+    Match a sport key against WIAA's display label for a team row
+    ("Boys Football", "Girls Swimming & Diving", "Boys Track and Field").
+    Labels are stable across seasons, unlike SSIDs.
+    """
+    n = _norm_label(label)
+    if sport == "football":
+        return n == "boys football"
+    if sport == "football_8p":
+        return n.startswith("boys football") and "8" in n
+    if sport == "volleyball":
+        return n == "girls volleyball"
+    if sport == "baseball":
+        return n == "boys baseball"
+    if sport == "softball":
+        return n == "girls softball"
+    gender, _, rest = sport.partition("_")
+    if gender not in ("boys", "girls"):
+        return False
+    if rest in ("hockey",):
+        return n.startswith(gender) and "hockey" in n
+    if rest in ("swimming",):
+        return n.startswith(gender) and "swimming" in n
+    if rest in ("track",):
+        return n.startswith(gender) and "track" in n
+    return n == f"{gender} {rest.replace('_', ' ')}"
+
+
 def discover_team_id_for_sport(org_id: int, sport: str) -> int | None:
     """Convenience: find one school's TeamID for a single sport key."""
     primary = SSID_BY_SPORT.get(sport)
@@ -185,6 +224,12 @@ def discover_team_id_for_sport(org_id: int, sport: str) -> int | None:
     for ssid in candidates:
         for team in teams:
             if team.ssid == ssid:
+                return team.team_id
+    # SSIDs rotate every season — fall back to the sport's display label.
+    label_keys = [sport] + (["football_8p"] if sport == "football" else [])
+    for key in label_keys:
+        for team in teams:
+            if _label_matches(key, team.sport_name):
                 return team.team_id
     return None
 
