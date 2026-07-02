@@ -95,9 +95,15 @@ def main() -> int:
                 f"run a full scrape first.[/red]"
             )
             return 1
-        dataset = merge_live_scores(
+        dataset, live_updates = merge_live_scores(
             dataset, sport=args.sport, manifest=manifest, console=console,
         )
+        # Zero updates → leave the dataset untouched. Off-season this keeps
+        # the live cron from producing timestamp-only commits + deploys;
+        # in-season freshness is covered by the hourly full scrape.
+        if live_updates == 0:
+            console.print("[dim]no live updates — dataset unchanged, nothing written[/dim]")
+            return 0
         # Bump meta.last_updated so the StaleBanner / freshness pill on the
         # frontend reflects the live cron run, not the last full scrape.
         from datetime import datetime, timezone

@@ -98,4 +98,15 @@ jobs:
         if: steps.commit.outputs.pushed == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh workflow run deploy.yml --ref main
+        # The dispatch API occasionally returns transient 5xx errors
+        # (seen 2026-07-01); retry so a committed data change always ships.
+        run: |
+          for attempt in 1 2 3; do
+            if gh workflow run deploy.yml --ref main; then
+              exit 0
+            fi
+            echo "deploy dispatch failed (attempt $attempt) — retrying in 15s"
+            sleep 15
+          done
+          echo "::error::deploy dispatch failed after 3 attempts"
+          exit 1

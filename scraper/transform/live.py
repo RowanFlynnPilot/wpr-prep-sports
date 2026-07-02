@@ -46,10 +46,11 @@ def merge_live_scores(
     sport: str,
     manifest: Manifest,
     console: Console | None = None,
-) -> Dataset:
+) -> tuple[Dataset, int]:
     """
     Pull live scores for a sport and merge into dataset.games.
-    Returns the (mutated) dataset; prints a summary to console.
+    Returns the (mutated) dataset and the number of games updated;
+    prints a summary to console.
     """
     season = dataset.meta.season if dataset.meta and dataset.meta.season else "2025-26"
     try:
@@ -57,12 +58,12 @@ def merge_live_scores(
     except Exception as e:  # noqa: BLE001
         if console:
             console.print(f"[yellow]live scrape failed: {e}[/yellow]")
-        return dataset
+        return dataset, 0
 
     if not rows:
         if console:
             console.print("[dim]no live rows returned[/dim]")
-        return dataset
+        return dataset, 0
 
     # Build lookup: (date_iso, frozenset({home_norm, away_norm})) → LiveGame
     pair_index: dict[tuple[str, frozenset[str]], halftime.LiveGame] = {}
@@ -143,7 +144,7 @@ def merge_live_scores(
     if updated_in_progress > 0 or updated_final > 0:
         if "halftime" not in dataset.meta.sources_used:
             dataset.meta.sources_used.append("halftime")
-    return dataset
+    return dataset, updated_in_progress + updated_final
 
 
 # Back-compat alias — old callers that only need football.
@@ -153,4 +154,5 @@ def merge_live_football(
     manifest: Manifest,
     console: Console | None = None,
 ) -> Dataset:
-    return merge_live_scores(dataset, sport="football", manifest=manifest, console=console)
+    dataset, _ = merge_live_scores(dataset, sport="football", manifest=manifest, console=console)
+    return dataset
