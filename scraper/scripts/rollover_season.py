@@ -22,6 +22,11 @@ Usage:
   cd scraper
   .venv/Scripts/python.exe scripts/rollover_season.py            # auto-detect season from meta
   .venv/Scripts/python.exe scripts/rollover_season.py --season 2025-26
+  .venv/Scripts/python.exe scripts/rollover_season.py --season 2025-26 --sport boys_soccer girls_soccer
+
+--sport limits the run to specific sports — use it to add a late-added
+sport to an existing archive without refreshing sports whose archived
+snapshot should be preserved as-is.
 """
 
 from __future__ import annotations
@@ -71,9 +76,21 @@ def live_season(sport_dir: Path) -> str | None:
 def main() -> int:
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--season", help="season to archive, e.g. 2025-26; default = from meta.json")
+    p.add_argument(
+        "--sport",
+        nargs="+",
+        help="only archive these sport ids (default: every sport under data/)",
+    )
     args = p.parse_args()
 
     dirs = sport_dirs()
+    if args.sport:
+        wanted = set(args.sport)
+        unknown = wanted - {d.name for d in dirs}
+        if unknown:
+            print(f"unknown sport(s): {sorted(unknown)} — known: {[d.name for d in dirs]}")
+            return 1
+        dirs = [d for d in dirs if d.name in wanted]
     if not dirs:
         print("no sport data found under data/ — nothing to archive")
         return 1

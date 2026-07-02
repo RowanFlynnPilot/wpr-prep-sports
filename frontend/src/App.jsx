@@ -37,6 +37,7 @@ import "./styles/SeasonLeaders.css";
 import "./styles/TopPerformers.css";
 import "./styles/GamePage.css";
 import "./styles/GamePreview.css";
+import "./styles/HeadToHead.css";
 import "./styles/OgCard.css";
 import "./styles/Spirit.css";
 import "./styles/PowerRankings.css";

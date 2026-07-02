@@ -105,6 +105,25 @@ export function fetchBoxscore(sportId, gameId, version) {
 }
 
 /**
+ * Head-to-head history from archived seasons ({ seasons, matchups }),
+ * fetched on demand by GamePage's HeadToHead section. Built by
+ * scraper/scripts/build_history.py; null when no archive exists for
+ * this sport. Cached per sport for the session — the file only changes
+ * once a season.
+ */
+const historyCache = new Map();
+export function fetchHistory(sportId, version) {
+  if (!historyCache.has(sportId)) {
+    const v = encodeURIComponent(version ?? "");
+    historyCache.set(
+      sportId,
+      fetchJsonOptional(`${DATA_BASE}/history/${sportId}.json?v=${v}`),
+    );
+  }
+  return historyCache.get(sportId);
+}
+
+/**
  * Per-school player stat lines ({ school_id, lines: [...] }), fetched
  * on demand by PlayerPage. Null when the school has no stat lines on
  * record this season.

@@ -53,6 +53,7 @@ page.
 | **Live scores** (Friday Night Live cron, 10-min updates) | "Tonight presented by ___" | — (use `ticker`) | **Shipped** (data side) | Sports bar showing the games |
 | **Playoff bracket** | "Bracket Challenge presented by ___" | — | Bracket view shipped; pick-the-bracket game not built | Bank, credit union (March Madness analog) |
 | **Senior Spotlight** | "Senior Spotlight presented by ___" | — | **Not built** (planned: mirror the PotW override pattern) | Photo studio, tux rental, college consultant |
+| **Head-to-Head history** (multi-season series on game pages) | "Head-to-head presented by ___" | `rivalry` | **Shipped** (2025-26 archive distilled via `build_history.py`) | Sports bar, auto dealer, community bank |
 
 ## Annual / seasonal packages
 
@@ -85,4 +86,3 @@ What remains, in priority order for 2026-27:
 | Senior Spotlights (`data/spotlights.json`, PotW pattern) | `spotlight:senior` slot |
 | Weekly digest export (Friday roundup for the WPR newsletter) | "Weekly Roundup presented by ___" |
 | State Tournament Bracket Challenge (needs `wiaa_division` backfill) | Bracket Challenge package |
-| Rivalry / historical archive (2025-26 archive already banked) | "Rivalry Week presented by ___" |

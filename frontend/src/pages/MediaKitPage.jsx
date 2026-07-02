@@ -102,6 +102,13 @@ const INVENTORY = [
         status: "ready",
         preview: { label: "Pick'em presented by", tone: "feature" },
       },
+      {
+        title: "Head-to-Head history",
+        blurb: "Multi-season series records on every game page — \"Edgar leads 3-1\" is the stuff rivalries are made of. Prime real estate for Rivalry Week.",
+        fit: "Sports bar · auto dealer · community bank",
+        slots: ["rivalry"],
+        preview: { label: "Head-to-head presented by", tone: "feature" },
+      },
     ],
   },
   {

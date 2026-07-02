@@ -7,6 +7,7 @@ import TeamLink from "../components/TeamLink.jsx";
 import Sponsor from "../components/Sponsor.jsx";
 import ScoringSummary from "../components/ScoringSummary.jsx";
 import GamePreview from "../components/GamePreview.jsx";
+import HeadToHead from "../components/HeadToHead.jsx";
 import SpiritGallery from "../components/SpiritGallery.jsx";
 import { schoolFor } from "../utils/schools.js";
 import { formatGameDay, formatGameDate, formatGameTime } from "../utils/dates.js";
@@ -206,6 +207,8 @@ export default function GamePage({ dataset, schoolIndex, sportConfig }) {
       <GamePreview game={game} dataset={dataset} schoolIndex={schoolIndex} />
 
       <ScoringSummary game={game} schoolIndex={schoolIndex} />
+
+      <HeadToHead game={game} dataset={dataset} />
 
       <SpiritGallery game={game} photos={dataset.spirit} />
 
