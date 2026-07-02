@@ -1,5 +1,5 @@
 .season-leaders {
-  background: #fff;
+  background: var(--card);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   overflow: hidden;
@@ -11,7 +11,7 @@
   align-items: baseline;
   justify-content: space-between;
   padding: 0.85rem 1rem;
-  background: var(--ink);
+  background: var(--chrome);
   color: #fff;
   border-bottom: 3px solid var(--accent);
 }

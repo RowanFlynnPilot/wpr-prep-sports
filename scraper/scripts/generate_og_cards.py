@@ -198,7 +198,10 @@ def main() -> int:
                     total_skipped += 1
                     continue
 
-                url = f"{args.base_url.rstrip('/')}/#/card/{sport}/{gid}"
+                # ?theme=light pins the widget's light palette — share
+                # cards must never inherit a dark prefers-color-scheme
+                # from the headless browser.
+                url = f"{args.base_url.rstrip('/')}/?theme=light#/card/{sport}/{gid}"
                 try:
                     page.goto(url, wait_until="networkidle", timeout=20000)
                     page.wait_for_selector("[data-og-ready]", timeout=10000)

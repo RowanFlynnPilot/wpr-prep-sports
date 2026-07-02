@@ -49,7 +49,7 @@
 /* Error boundary --------------------------------------------------------- */
 
 .boundary {
-  background: #fff;
+  background: var(--card);
   border: 1px solid var(--line);
   border-top: 4px solid var(--loss);
   border-radius: var(--radius);
@@ -92,8 +92,8 @@
 /* Stale-data banner ------------------------------------------------------ */
 
 .stale-banner {
-  background: #fff7ed;
-  border: 1px solid #fed7aa;
+  background: var(--banner-warn-bg);
+  border: 1px solid var(--banner-warn-line);
   border-left: 3px solid var(--accent);
   border-radius: var(--radius-sm);
   padding: 0.7rem 1rem;
@@ -112,13 +112,13 @@
 /* Coverage-status banner — same shape as stale-banner but cooler tone,
    used when a sport has games but no standings / stats (girls hockey). */
 .coverage-note {
-  background: #eff6ff;
-  border: 1px solid #bfdbfe;
-  border-left: 3px solid #2563eb;
+  background: var(--banner-info-bg);
+  border: 1px solid var(--banner-info-line);
+  border-left: 3px solid var(--banner-info-edge);
   border-radius: var(--radius-sm);
   padding: 0.7rem 1rem;
   font-size: 0.9rem;
-  color: #1e3a8a;
+  color: var(--banner-info-ink);
   margin-bottom: 1.25rem;
   line-height: 1.45;
 }

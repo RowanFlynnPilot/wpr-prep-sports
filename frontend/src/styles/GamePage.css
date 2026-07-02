@@ -1,6 +1,6 @@
 .game-page__hero {
   position: relative;
-  background: linear-gradient(180deg, var(--ink-hero) 0%, #112832 100%);
+  background: linear-gradient(180deg, var(--chrome-hero) 0%, #112832 100%);
   color: #fff;
   padding: 1.75rem 1.75rem 2rem;
   border-radius: var(--radius);
@@ -146,7 +146,7 @@
 }
 
 .team-stats {
-  background: #fff;
+  background: var(--card);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   overflow: hidden;
@@ -164,7 +164,7 @@
   align-items: center;
   gap: 0.8rem;
   padding: 0.85rem 1rem;
-  background: var(--ink);
+  background: var(--chrome);
   color: #fff;
 }
 .team-stats__title h3 {
@@ -363,7 +363,7 @@
   color: var(--muted);
 }
 .team-stats__view-toggle--back:hover {
-  background: var(--ink);
+  background: var(--chrome);
   border-color: var(--ink);
   color: #fff;
 }
@@ -413,7 +413,7 @@
 }
 
 .box-cat__table thead th {
-  background: #fff;
+  background: var(--card);
   font-family: var(--font-display);
   font-weight: 700;
   font-size: 0.66rem;

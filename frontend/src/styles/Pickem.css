@@ -1,5 +1,5 @@
 .pickem {
-  background: #fff;
+  background: var(--card);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   overflow: hidden;
@@ -11,7 +11,7 @@
   justify-content: space-between;
   gap: 1rem;
   padding: 0.85rem 1rem;
-  background: var(--ink);
+  background: var(--chrome);
   color: #fff;
   border-bottom: 3px solid var(--accent);
   flex-wrap: wrap;
@@ -109,7 +109,7 @@
   min-width: 0;
 }
 .pickem__team:hover {
-  background: #fff;
+  background: var(--card);
   border-color: var(--school-color, var(--accent));
   transform: translateY(-1px);
 }

@@ -3,8 +3,12 @@ import ReactDOM from "react-dom/client";
 import { HashRouter } from "react-router-dom";
 import App from "./App.jsx";
 import ErrorBoundary from "./components/ErrorBoundary.jsx";
+import { initTheme } from "./utils/theme.js";
 import "./styles/global.css";
 import "./styles/hardening.css";
+
+// Resolve light/dark before first paint so there's no theme flash.
+initTheme();
 
 // HashRouter (not BrowserRouter) is the correct choice for an embedded
 // iframe widget: it doesn't require server-side route configuration on

@@ -1,5 +1,5 @@
 .bracket {
-  background: #fff;
+  background: var(--card);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   overflow: hidden;
@@ -30,7 +30,7 @@
 .bracket__filter-chip {
   appearance: none;
   border: 1px solid var(--line);
-  background: #fff;
+  background: var(--card);
   color: var(--muted);
   cursor: pointer;
   font-family: var(--font-display);
@@ -47,7 +47,7 @@
   color: var(--accent);
 }
 .bracket__filter-chip--active {
-  background: var(--ink);
+  background: var(--chrome);
   border-color: var(--ink);
   color: #fff;
 }
@@ -84,7 +84,7 @@
 }
 
 .bracket__journey-header {
-  background: var(--ink);
+  background: var(--chrome);
   color: #fff;
 }
 .bracket__journey-header .bracket__journey-cell {
@@ -190,7 +190,7 @@
               background var(--t-fast) var(--ease);
 }
 .bracket__journey-game:hover {
-  background: #fff;
+  background: var(--card);
   border-color: var(--accent);
 }
 .bracket__journey-result {

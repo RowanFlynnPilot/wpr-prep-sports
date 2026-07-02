@@ -23,7 +23,7 @@
   align-items: center;
   gap: 0.35rem;
   padding: 0.35rem 0.8rem 0.35rem 0.7rem;
-  background: #fff;
+  background: var(--card);
   border: 1px solid var(--line) !important;
   border-radius: 999px;
   color: var(--ink) !important;
@@ -36,7 +36,7 @@
 }
 .breadcrumb__back:hover,
 .breadcrumb__back:focus-visible {
-  background: var(--ink);
+  background: var(--chrome);
   border-color: var(--ink) !important;
   color: #fff !important;
   transform: translateX(-1px);
@@ -59,7 +59,7 @@
   align-items: center;
   gap: 1.25rem;
   padding: 1.5rem;
-  background: #fff;
+  background: var(--card);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   box-shadow: var(--shadow-lift);
@@ -126,7 +126,7 @@
 .season-summary {
   margin-top: 1.25rem;
   padding: 1rem 1.25rem 1rem 1.5rem;
-  background: #fff;
+  background: var(--card);
   border: 1px solid var(--line);
   border-left: 4px solid var(--accent);
   border-radius: var(--radius);
@@ -162,7 +162,7 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  background: #fff;
+  background: var(--card);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   overflow: hidden;

@@ -18,7 +18,7 @@
 
 .game-preview__team {
   --school-color: var(--ink);
-  background: #fff;
+  background: var(--card);
   border: 1px solid var(--line);
   border-left: 4px solid var(--school-color);
   border-radius: var(--radius);

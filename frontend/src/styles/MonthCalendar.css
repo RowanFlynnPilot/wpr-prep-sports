@@ -1,5 +1,5 @@
 .month-cal {
-  background: #fff;
+  background: var(--card);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   overflow: hidden;
@@ -10,7 +10,7 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.75rem 1rem;
-  background: var(--ink);
+  background: var(--chrome);
   color: #fff;
   border-bottom: 3px solid var(--accent);
 }
@@ -72,7 +72,7 @@
 }
 
 .month-cal__cell {
-  background: #fff;
+  background: var(--card);
   border: none;
   padding: 0.4rem 0.45rem;
   display: flex;
@@ -103,7 +103,7 @@
   font-weight: 700;
 }
 .month-cal__cell--selected {
-  background: var(--ink);
+  background: var(--chrome);
   color: #fff;
 }
 .month-cal__cell--selected .month-cal__day-num,
@@ -183,7 +183,7 @@
   justify-content: space-between;
   gap: 0.75rem;
   padding: 0.5rem 0.7rem;
-  background: #fff;
+  background: var(--card);
   border: 1px solid var(--line);
   border-radius: var(--radius-sm);
   text-decoration: none;

@@ -14,7 +14,7 @@
   background:
     radial-gradient(120% 140% at 0% 0%, color-mix(in srgb, var(--away-color, #888) 22%, transparent) 0%, transparent 45%),
     radial-gradient(120% 140% at 100% 0%, color-mix(in srgb, var(--home-color, #888) 22%, transparent) 0%, transparent 45%),
-    var(--ink-hero);
+    var(--chrome-hero);
   padding: 0.9rem 1.1rem 0.8rem;
   box-shadow: var(--shadow-lift);
   transition: transform var(--t-fast) var(--ease), box-shadow var(--t-fast) var(--ease);

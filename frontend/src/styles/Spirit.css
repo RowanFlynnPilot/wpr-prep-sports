@@ -26,7 +26,7 @@
 }
 
 .spirit-gallery__item {
-  background: #fff;
+  background: var(--card);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   overflow: hidden;
@@ -145,7 +145,7 @@
   position: relative;
   max-width: min(900px, 95vw);
   max-height: 90vh;
-  background: #fff;
+  background: var(--card);
   border-radius: var(--radius);
   overflow: hidden;
   display: flex;
@@ -184,7 +184,7 @@
 
 .spirit-lightbox__meta {
   padding: 0.75rem 1rem 1rem;
-  background: #fff;
+  background: var(--card);
 }
 .spirit-lightbox__caption {
   margin: 0;

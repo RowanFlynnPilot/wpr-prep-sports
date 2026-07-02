@@ -1,5 +1,5 @@
 .potw {
-  background: var(--ink);
+  background: var(--chrome);
   color: #fff;
   border-radius: var(--radius);
   overflow: hidden;
@@ -65,7 +65,7 @@
   object-fit: contain;
   /* Most WIAA logos are darker on transparent — give them a white pad
      so they read clearly inside the navy POTW header. */
-  background: #fff;
+  background: var(--card);
   padding: 4px;
 }
 

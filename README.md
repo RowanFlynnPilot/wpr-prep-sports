@@ -60,6 +60,12 @@ The widget runs as a self-contained React app inside the iframe — no
 script dependencies leak into the host page, no cookies are set, and
 internal navigation uses hash routes so it never reloads the host page.
 
+**Theming:** embedded, the widget always renders its light palette (the
+WPR page around it is light). Append `?theme=dark` to the iframe `src`
+(before the `#`) to force the dark palette if the host page ever ships
+a dark skin. Standalone visits to the GitHub Pages URL follow the
+visitor's OS `prefers-color-scheme` automatically.
+
 ## Local development
 
 **Scraper:**
