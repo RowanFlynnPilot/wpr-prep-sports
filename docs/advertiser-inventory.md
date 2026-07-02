@@ -54,6 +54,7 @@ page.
 | **Playoff bracket** | "Bracket Challenge presented by ___" | — | Bracket view shipped; pick-the-bracket game not built | Bank, credit union (March Madness analog) |
 | **Senior Spotlight** | "Senior Spotlight presented by ___" | — | **Not built** (planned: mirror the PotW override pattern) | Photo studio, tux rental, college consultant |
 | **Head-to-Head history** (multi-season series on game pages) | "Head-to-head presented by ___" | `rivalry` | **Shipped** (2025-26 archive distilled via `build_history.py`) | Sports bar, auto dealer, community bank |
+| **Weekly Roundup** (Saturday digest for the WPR newsletter) | "Weekly Roundup presented by ___" | `digest` | **Shipped** (`npm run digest` / digest.yml cron → `data/digest/latest.html`) | Grocery, bank, regional brand |
 
 ## Annual / seasonal packages
 
@@ -84,5 +85,4 @@ What remains, in priority order for 2026-27:
 | Pick'em submission endpoint (leaderboard + "78% picked X" social proof) | Makes the `pickem` slot a flagship interactive sell |
 | Per-school embed mode (`?school=x&compact=1`) | Lets each `school:<id>` sponsor see their placement on "their" page anywhere WPR embeds it |
 | Senior Spotlights (`data/spotlights.json`, PotW pattern) | `spotlight:senior` slot |
-| Weekly digest export (Friday roundup for the WPR newsletter) | "Weekly Roundup presented by ___" |
 | State Tournament Bracket Challenge (needs `wiaa_division` backfill) | Bracket Challenge package |

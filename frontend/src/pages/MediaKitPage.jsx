@@ -109,6 +109,13 @@ const INVENTORY = [
         slots: ["rivalry"],
         preview: { label: "Head-to-head presented by", tone: "feature" },
       },
+      {
+        title: "Weekly Roundup",
+        blurb: "The Saturday-morning digest of the week's games, auto-built for the WPR newsletter. Your name rides along into every subscriber inbox.",
+        fit: "Grocery · bank · regional brand",
+        slots: ["digest"],
+        preview: { label: "Weekly Roundup presented by", tone: "feature" },
+      },
     ],
   },
   {
