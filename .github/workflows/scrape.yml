@@ -11,13 +11,19 @@ on:
   workflow_dispatch:
     inputs:
       sport:
-        description: "Space-separated sport id(s) to scrape. Defaults to all live sports."
+        # Football only until the other fall sports' 2026-27 schedules
+        # post on WIAA (volleyball/soccer ~late July). Scraping a sport
+        # whose new-season schedule doesn't exist yet would replace its
+        # 2025-26 dataset with an empty one — expand this list only
+        # after confirming schedules render (2025-26 is fully archived
+        # either way).
+        description: "Space-separated sport id(s) to scrape. Defaults to rolled-over sports."
         required: false
-        default: "football boys_basketball girls_basketball"
+        default: "football"
       season:
         description: "Season identifier"
         required: false
-        default: "2025-26"
+        default: "2026-27"
 
 permissions:
   contents: write
@@ -47,11 +53,12 @@ jobs:
       - name: Run scrapers
         working-directory: scraper
         env:
-          # On cron runs `inputs.sport` is empty, so we scrape every live sport.
-          # On manual dispatch the user can pass a single id (or several
-          # space-separated) to target a subset.
-          SPORTS: ${{ github.event.inputs.sport || 'football boys_basketball girls_basketball' }}
-          SEASON: ${{ github.event.inputs.season || '2025-26' }}
+          # On cron runs `inputs.sport` is empty, so we scrape every
+          # rolled-over sport (see the workflow_dispatch comment above —
+          # expand as 2026-27 schedules post). On manual dispatch the
+          # user can pass a single id (or several space-separated).
+          SPORTS: ${{ github.event.inputs.sport || 'football' }}
+          SEASON: ${{ github.event.inputs.season || '2026-27' }}
         run: |
           for sport in $SPORTS; do
             echo "::group::scraping $sport"

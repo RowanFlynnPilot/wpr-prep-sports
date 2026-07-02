@@ -22,9 +22,11 @@ export default function StaleBanner({
   const month = now.getMonth();
   const inSeason = activeMonths.includes(month);
 
-  // 4-hour grace in-season, 48-hour grace off-season.
-  const threshold = inSeason ? 4 : 48;
-  if (ageHours <= threshold) return null;
+  // Off-season, stale is the expected state — no banner. (Previously a
+  // 48h off-season threshold existed but was masked by the live cron
+  // bumping last_updated nightly; that no-op write is gone now.)
+  if (!inSeason) return null;
+  if (ageHours <= 4) return null;
 
   const ageLabel =
     ageHours >= 24
