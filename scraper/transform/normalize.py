@@ -472,10 +472,18 @@ def _build_standings(
             points_against=0,
         )
 
-    # Track which schools actually have any finalized games — we drop the
-    # rest before returning so teams that didn't field a roster (e.g.,
-    # Athens / Newman Catholic in football) don't sit at 0-0 in standings.
+    # Track which schools actually field a team this season — we drop the
+    # rest before returning so teams without a roster (e.g., Athens /
+    # Newman Catholic in football) don't sit at 0-0 in standings. ANY
+    # scheduled game counts: preseason standings must show the full
+    # conference at 0-0, not come back empty (the frontend treats empty
+    # standings as "coverage missing").
+    games = list(games)
     schools_with_games: set[str] = set()
+    for game in games:
+        for side in (game.home, game.away):
+            if side.school_id:
+                schools_with_games.add(side.school_id)
 
     for game in games:
         if game.status != GameStatus.FINAL:
@@ -514,7 +522,6 @@ def _build_standings(
             row = buckets.get(conf, {}).get(school_id)
             if row is None:
                 continue
-            schools_with_games.add(school_id)
             row.points_for = (row.points_for or 0) + scored
             row.points_against = (row.points_against or 0) + allowed
             if won:

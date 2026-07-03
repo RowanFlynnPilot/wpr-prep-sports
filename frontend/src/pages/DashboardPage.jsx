@@ -178,13 +178,16 @@ export default function DashboardPage({ dataset, schoolIndex, sponsors, sportCon
         />
       )}
 
-      {standings.length === 0 && (
+      {/* Safety-net note: with the preseason 0-0 standings fix in the
+          scraper this should never fire for a fully-scraped sport — it
+          covers partial mid-publish states (e.g. WIAA still loading a
+          new season's schedules). */}
+      {standings.length === 0 && games.length > 0 && (
         <div className="coverage-note" role="status">
-          <strong>Coverage in progress.</strong>{" "}
-          We track {sportConfig.label.toLowerCase()} schedules and scores, but
-          conference standings and team stats aren't wired up yet — most of the
-          central-WI programs are co-op entries that need extra manifest work.
-          The schedule and recent scores below are accurate.
+          <strong>Early look.</strong>{" "}
+          {sportConfig.label} schedules are still being published — conference
+          standings will fill in as the full slate posts. The games below are
+          accurate.
         </div>
       )}
 
