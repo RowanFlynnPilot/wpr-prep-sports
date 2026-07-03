@@ -20,13 +20,26 @@
  * VITE_DATA_BASE is a further override for split-deployment scenarios.
  */
 import { DEFAULT_SPORT } from "../config/sports.js";
+import { selectedSeason } from "../utils/season.js";
 
 const DATA_BASE =
   import.meta.env.VITE_DATA_BASE ??
   `${import.meta.env.BASE_URL.replace(/\/$/, "")}/data`;
 
+// Per-sport files resolve against the live season or an archived one
+// (utils/season.js). Cross-sport files (schools, sponsors, potw,
+// spirit, spotlights, history) always come from the live tree — the
+// live schools.json carries the corrected colors/divisions, and
+// editorial/sponsor config shouldn't time-travel.
+function sportBaseFor(sportId) {
+  const season = selectedSeason();
+  return season === "live"
+    ? `${DATA_BASE}/${sportId}`
+    : `${DATA_BASE}/archive/${season}/${sportId}`;
+}
+
 export async function fetchDataset(sportId = DEFAULT_SPORT) {
-  const sportBase = `${DATA_BASE}/${sportId}`;
+  const sportBase = sportBaseFor(sportId);
 
   // Bust browser cache when the meta.json timestamp changes. We fetch meta
   // first; subsequent requests carry ?v=<timestamp> so a freshly-scraped
@@ -74,6 +87,9 @@ export async function fetchDataset(sportId = DEFAULT_SPORT) {
 
   return {
     sport: sportId,
+    // Non-null when the reader flipped to an archived season — pages
+    // use it to skip live-only framing (countdown hero, stale banner).
+    archiveSeason: selectedSeason() === "live" ? null : selectedSeason(),
     meta,
     schools,
     games,
@@ -105,7 +121,7 @@ function isOverrideExpired(o) {
 export function fetchBoxscore(sportId, gameId, version) {
   const v = encodeURIComponent(version ?? "");
   return fetchJsonOptional(
-    `${DATA_BASE}/${sportId}/boxscores/${encodeURIComponent(gameId)}.json?v=${v}`,
+    `${sportBaseFor(sportId)}/boxscores/${encodeURIComponent(gameId)}.json?v=${v}`,
   );
 }
 
@@ -136,7 +152,7 @@ export function fetchHistory(sportId, version) {
 export function fetchPlayerLines(sportId, schoolId, version) {
   const v = encodeURIComponent(version ?? "");
   return fetchJsonOptional(
-    `${DATA_BASE}/${sportId}/players/${encodeURIComponent(schoolId)}.json?v=${v}`,
+    `${sportBaseFor(sportId)}/players/${encodeURIComponent(schoolId)}.json?v=${v}`,
   );
 }
 

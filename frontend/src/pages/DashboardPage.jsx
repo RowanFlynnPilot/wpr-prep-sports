@@ -68,12 +68,14 @@ export default function DashboardPage({ dataset, schoolIndex, sponsors, sportCon
   // Real today, for the off-season detection. We treat the sport as
   // off-season when the last game was > 14 days ago — short enough that
   // a Friday game still feels current on Tuesday, long enough that the
-  // 4-month summer gap reliably triggers it.
+  // 4-month summer gap reliably triggers it. Archive view opts out:
+  // when reliving a finished season, show it in full swing (featured
+  // game hero), not a countdown to a season that already happened.
   const offSeason = useMemo(() => {
-    if (!lastGameTs) return false;
+    if (!lastGameTs || dataset.archiveSeason) return false;
     const daysSinceLast = (Date.now() - lastGameTs) / 86_400_000;
     return daysSinceLast > 14;
-  }, [lastGameTs]);
+  }, [lastGameTs, dataset.archiveSeason]);
 
   const nextSeasonStart = useMemo(() => {
     if (!offSeason || !sportConfig?.nextSeasonStart) return null;
@@ -172,7 +174,7 @@ export default function DashboardPage({ dataset, schoolIndex, sponsors, sportCon
         schools: schools.length,
       }}
     >
-      {!isEmbedded && (
+      {!isEmbedded && !dataset.archiveSeason && (
         <StaleBanner
           lastUpdatedIso={meta?.last_updated}
           activeMonths={sportConfig?.activeMonths}

@@ -49,10 +49,10 @@ jobs:
         run: |
           mkdir -p frontend/dist/data
           cp -R data/* frontend/dist/data/ || echo "No data yet"
-          # Season archives stay repo-only (45MB+). The frontend reads
-          # the compact head-to-head distillation in data/history/
-          # instead (scraper/scripts/build_history.py).
-          rm -rf frontend/dist/data/archive
+          # Season archives DO ship since 2026-07: the season selector
+          # (utils/season.js) serves archived seasons straight from
+          # data/archive/<season>/. ~45MB in the artifact — readers only
+          # download the files they actually open.
 
       - uses: actions/configure-pages@v5
 

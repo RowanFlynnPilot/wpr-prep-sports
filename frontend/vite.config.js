@@ -23,10 +23,11 @@ function serveRepoData() {
       server.middlewares.use(async (req, res, next) => {
         if (!req.url || !req.url.startsWith(dataPrefix)) return next();
         const filename = req.url.slice(dataPrefix.length).split("?")[0];
-        // Allow up to two directory levels: flat `<name>.json`, per-sport
-        // `<sport>/<name>.json`, and the split-layout detail files
-        // `<sport>/boxscores/<game_id>.json` / `<sport>/players/<school>.json`.
-        if (!/^([a-z0-9_-]+\/){0,2}[a-z0-9_-]+\.json$/i.test(filename)) return next();
+        // Allow up to four directory levels: flat `<name>.json`, per-sport
+        // `<sport>/<name>.json`, split-layout detail files
+        // `<sport>/boxscores/<game_id>.json`, and archived seasons
+        // `archive/<season>/<sport>/boxscores/<game_id>.json`.
+        if (!/^([a-z0-9_-]+\/){0,4}[a-z0-9_-]+\.json$/i.test(filename)) return next();
         const fullPath = resolve(dataDir, filename);
         if (!existsSync(fullPath)) {
           res.statusCode = 404;
