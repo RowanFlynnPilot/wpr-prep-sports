@@ -190,16 +190,12 @@ function SportShell() {
   const sportConfig = configFor(sport);
   void location;
 
-  // Per-sport accent: re-emit --accent / --accent-700 from sportConfig so
-  // every existing `var(--accent)` consumer recolors automatically when the
-  // user switches sports — no per-component plumbing needed.
-  const accentStyle = {
-    "--accent": sportConfig.accentColor,
-    "--accent-700": sportConfig.accentDarkColor,
-  };
-
+  // Accent is a single global token now (press red, matching the WPR
+  // site's monochrome-plus-red look) — the per-sport accent recoloring
+  // was retired in the 2026-07 retheme. data-sport stays for any
+  // future sport-scoped styling.
   return (
-    <div className="sport-shell" data-sport={sport} style={accentStyle}>
+    <div className="sport-shell" data-sport={sport}>
     <Routes>
       <Route
         path="/"

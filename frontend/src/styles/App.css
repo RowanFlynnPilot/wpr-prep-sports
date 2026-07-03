@@ -51,10 +51,10 @@
   border-bottom: none;
   white-space: nowrap;
 }
-.masthead__title:hover { color: var(--accent); border-bottom: none; }
+.masthead__title:hover { color: var(--accent-on-dark); border-bottom: none; }
 .masthead__title em {
   font-style: normal;
-  color: var(--accent);
+  color: var(--accent-on-dark);
 }
 
 .masthead__attribution {
@@ -97,11 +97,11 @@
   box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.18);
 }
 .masthead__updated--stale {
-  color: #fbbf24; /* amber-400 */
-  background: rgba(251, 191, 36, 0.12);
+  color: #dba617; /* the site's warning gold */
+  background: rgba(219, 166, 23, 0.14);
 }
 .masthead__updated--stale .masthead__updated-dot {
-  box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.25);
+  box-shadow: 0 0 0 3px rgba(219, 166, 23, 0.28);
 }
 
 /* Sport switcher — second-row tab strip under the masthead. Sits inside
@@ -158,7 +158,7 @@
 }
 .section-tabs__tab:hover { color: var(--ink); }
 .section-tabs__tab--active {
-  color: var(--accent);
+  color: var(--accent-700);
   border-bottom-color: var(--accent);
 }
 @media (max-width: 640px) {
@@ -228,11 +228,11 @@
 .sport-switcher__tab--active {
   color: #fff;
   font-weight: 700;
-  border-bottom-color: var(--accent);
+  border-bottom-color: var(--accent-on-dark);
   background: rgba(255, 255, 255, 0.06);
 }
 .sport-switcher__tab--active .sport-switcher__icon { filter: saturate(1.3); }
-.sport-switcher__tab--active:hover { border-bottom-color: var(--accent); }
+.sport-switcher__tab--active:hover { border-bottom-color: var(--accent-on-dark); }
 .sport-switcher__label--short { display: none; }
 
 /* Main column rhythm — minmax(0,1fr) keeps a wide nowrap child (e.g. the

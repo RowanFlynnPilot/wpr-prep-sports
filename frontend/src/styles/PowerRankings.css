@@ -162,8 +162,8 @@
   font-weight: 500;
 }
 .power-row__move--new {
-  background: rgba(255, 199, 44, 0.20);
-  color: #b45309;
+  background: rgba(204, 24, 24, 0.12);
+  color: var(--accent-700);
   font-size: 0.62rem;
   letter-spacing: 0.06em;
 }

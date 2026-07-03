@@ -879,8 +879,6 @@ export const SPORTS = {
     /** Whether scraper writes a season_stats.json for this sport. */
     hasSeasonStats: true,
     /** Accent color emitted as --accent on the SportShell wrapper. */
-    accentColor: "#f59e0b", // amber — Friday night lights
-    accentDarkColor: "#b45309",
     /** Approximate next-season opener — used for off-season countdowns. */
     nextSeasonStart: "2026-08-21",
     stats: {
@@ -897,8 +895,6 @@ export const SPORTS = {
     season: "2025–26",
     activeMonths: [10, 11, 0, 1, 2], // Nov–Mar
     hasSeasonStats: true,
-    accentColor: "#dc2626", // basketball red
-    accentDarkColor: "#991b1b",
     nextSeasonStart: "2026-11-17",
     stats: {
       categories: BOYS_BASKETBALL_STAT_CATEGORIES,
@@ -916,8 +912,6 @@ export const SPORTS = {
     season: "2025–26",
     activeMonths: [10, 11, 0, 1, 2], // Nov–Mar
     hasSeasonStats: true,
-    accentColor: "#dc2626", // basketball red (shared with boys — same sport family)
-    accentDarkColor: "#991b1b",
     nextSeasonStart: "2026-11-10",
     stats: {
       categories: GIRLS_BASKETBALL_STAT_CATEGORIES,
@@ -937,8 +931,6 @@ export const SPORTS = {
     season: "2025–26",
     activeMonths: [10, 11, 0, 1, 2], // Nov–Mar
     hasSeasonStats: true,
-    accentColor: "#0284c7", // ice blue
-    accentDarkColor: "#075985",
     nextSeasonStart: "2026-11-14",
     stats: {
       categories: HOCKEY_STAT_CATEGORIES,
@@ -957,8 +949,6 @@ export const SPORTS = {
     // one tracked team (Central Wisconsin Storm, wph_team_id 6170050),
     // which carries WPH season + per-game stats like the boys teams.
     hasSeasonStats: true,
-    accentColor: "#0284c7", // ice blue
-    accentDarkColor: "#075985",
     nextSeasonStart: "2026-11-14",
     stats: {
       categories: HOCKEY_STAT_CATEGORIES,
@@ -978,8 +968,6 @@ export const SPORTS = {
     // Scores are sets won/lost, not points — note this in the team page hero
     // so PF/PA don't read as points. See TeamPage record block.
     scoreLabel: "set",
-    accentColor: "#c026d3", // vivid magenta
-    accentDarkColor: "#86198f",
     nextSeasonStart: "2026-08-19",
     stats: {
       categories: VOLLEYBALL_STAT_CATEGORIES,
@@ -995,8 +983,6 @@ export const SPORTS = {
     season: "2025–26",
     activeMonths: [7, 8, 9, 10], // fall: Aug–Oct, state early Nov
     hasSeasonStats: false,
-    accentColor: "#16a34a", // pitch green
-    accentDarkColor: "#15803d",
     nextSeasonStart: "2026-08-18",
     stats: {
       categories: SOCCER_STAT_CATEGORIES,
@@ -1012,8 +998,6 @@ export const SPORTS = {
     season: "2025–26",
     activeMonths: [2, 3, 4, 5], // spring: Mar–Jun (WI girls soccer is spring)
     hasSeasonStats: false,
-    accentColor: "#16a34a", // pitch green (shared with boys — same sport family)
-    accentDarkColor: "#15803d",
     nextSeasonStart: "2027-03-23",
     stats: {
       categories: SOCCER_STAT_CATEGORIES,

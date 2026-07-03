@@ -10,7 +10,7 @@ body:has(.og-card),
 #root:has(.og-card) {
   margin: 0;
   padding: 0;
-  background: #f1ece1;
+  background: #f0f0f0;
 }
 
 .og-card {
@@ -19,8 +19,8 @@ body:has(.og-card),
   box-sizing: border-box;
   margin: 0;
   padding: 56px 64px;
-  background: linear-gradient(135deg, #023a48 0%, #014a59 55%, #035d6b 100%);
-  color: #f5efe0;
+  background: linear-gradient(135deg, #000000 0%, #1a1a1a 55%, #2b2b2b 100%);
+  color: #f5f5f5;
   font-family: "Oswald", "Helvetica Neue", Arial, sans-serif;
   display: flex;
   flex-direction: column;
@@ -66,7 +66,7 @@ body:has(.og-card),
   font-size: 20px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: #ffc72c;
+  color: #e35d5d;
 }
 
 .og-card__sport-icon {
@@ -165,7 +165,7 @@ body:has(.og-card),
 }
 
 .og-card__side--won .og-card__score {
-  color: #ffc72c;
+  color: #e35d5d;
 }
 
 .og-card__center {
@@ -189,7 +189,7 @@ body:has(.og-card),
 }
 
 .og-card__status--final {
-  background: #ffc72c;
+  background: #cc1818;
   color: #0a1f2a;
 }
 
@@ -210,7 +210,7 @@ body:has(.og-card),
   font-size: 14px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: #ffc72c;
+  color: #e35d5d;
   font-weight: 700;
 }
 
@@ -237,7 +237,7 @@ body:has(.og-card),
   font-weight: 600;
   font-size: 22px;
   letter-spacing: 0.16em;
-  color: #ffc72c;
+  color: #e35d5d;
 }
 
 .og-card__pub-logo {
@@ -264,7 +264,7 @@ body:has(.og-card),
   flex-direction: column;
   gap: 10px;
   background: #0a1f2a;
-  color: #f5efe0;
+  color: #f5f5f5;
   font-family: "Oswald", sans-serif;
 }
 .og-card--error strong {

@@ -1,27 +1,32 @@
 /* =========================================================================
-   Design tokens — WPR-adjacent, sport-distinctive.
-   Pulls Oswald + Merriweather from WPR's own type system, with a navy-teal
-   base derived from the WPR brand and an amber accent unique to the widget.
+   Design tokens — matched to wausaupilotandreview.com's live theme
+   (Newspack; verified 2026-07-02: primary #000, secondary #666, white
+   body, hairline #ddd rules, Oswald headings + Merriweather body). The
+   widget reads as a section of the paper: monochrome chrome, the
+   schools' own colors carry the color, and one press-red accent is
+   used sparingly for wayfinding.
    ========================================================================= */
 
 :root {
-  /* Brand chrome (inherited from wausaupilotandreview.com) */
-  --wpr-navy:        #004a59;
-  --wpr-navy-700:    #005a87;
-  --wpr-blue:        #006ba1;
-  --wpr-link:        #007cba;
+  /* Brand chrome — the site's primary/secondary. (Token names kept
+     from the navy era to avoid a 26-file rename; values are the
+     site's actual monochrome palette.) */
+  --wpr-navy:        #000000;
+  --wpr-navy-700:    #3e3e3e;
+  --wpr-blue:        #666666;
+  --wpr-link:        #1e1e1e;
 
-  /* Our distinctive layer */
-  --ink:             #0e0f12;          /* primary text */
-  --ink-hero:        #0a1a1f;          /* darker heading text (flips in dark mode) */
-  --chrome:          #0e0f12;          /* always-dark chip/header surface (stable across themes) */
-  --chrome-hero:     #0a1a1f;          /* always-dark hero gradient base (stable across themes) */
-  --paper:           #fafaf7;          /* warm off-white, newsprint-ish */
-  --paper-2:         #f3f0e8;          /* card lift */
+  /* Surfaces & text — the site's neutral ramp */
+  --ink:             #1e1e1e;          /* primary text */
+  --ink-hero:        #000000;          /* headline text (flips in dark mode) */
+  --chrome:          #000000;          /* always-dark chip/header surface (stable across themes) */
+  --chrome-hero:     #000000;          /* always-dark hero gradient base (stable across themes) */
+  --paper:           #ffffff;          /* page background — white like the site */
+  --paper-2:         #f0f0f0;          /* chip / lift */
   --card:            #ffffff;          /* card surface (adapts in dark mode) */
-  --line:            #e7e2d6;          /* warm divider line */
-  --muted:           #6b7280;
-  --muted-2:         #9ca3af;
+  --line:            #dddddd;          /* hairline rules, same as the site */
+  --muted:           #666666;
+  --muted-2:         #949494;
 
   /* Status banners (stale data / coverage notes) */
   --banner-warn-bg:   #fff7ed;
@@ -32,8 +37,9 @@
   --banner-info-edge: #2563eb;
 
   /* Sport accent — swap per sport in v2. Football = warm amber. */
-  --accent:          #f59e0b;
-  --accent-700:      #b45309;
+  --accent:          #cc1818;          /* press red — the site's own red family, used sparingly */
+  --accent-700:      #991212;          /* darker red for small text on light surfaces */
+  --accent-on-dark:  #e35d5d;          /* red that reads on the black chrome band */
 
   /* Result colors */
   --win:             #15803d;
@@ -60,8 +66,8 @@
   /* Layout */
   --radius:          10px;
   --radius-sm:       6px;
-  --shadow-lift:     0 1px 2px rgba(14, 15, 18, 0.06), 0 4px 16px rgba(14, 15, 18, 0.05);
-  --shadow-hero:     0 2px 4px rgba(0, 0, 0, 0.15), 0 12px 36px rgba(0, 74, 89, 0.2);
+  --shadow-lift:     0 1px 2px rgba(0, 0, 0, 0.06), 0 4px 16px rgba(0, 0, 0, 0.05);
+  --shadow-hero:     0 2px 4px rgba(0, 0, 0, 0.15), 0 12px 36px rgba(0, 0, 0, 0.18);
 
   /* Motion */
   --ease:            cubic-bezier(0.2, 0.7, 0.2, 1);
@@ -74,21 +80,22 @@
    forced with ?theme=dark|light, otherwise follows prefers-color-scheme —
    but ONLY when the widget runs standalone. Embedded in the (light) WPR
    WordPress page it stays light unless the embed opts in via ?theme=dark.
-   Deep navy-charcoal base keeps the WPR family feel; amber accent and
-   school colors read well on it unchanged.
+   Neutral graphite — the monochrome newspaper look inverted; school
+   colors and the press-red accent read well on it unchanged.
    ========================================================================= */
 :root[data-theme="dark"] {
-  --ink:             #e8e6df;
-  --ink-hero:        #f2f0e9;
-  --paper:           #10181d;
-  --paper-2:         #1b2730;
-  --card:            #17222a;
-  --line:            #2a3742;
-  --muted:           #9aa4ae;
-  --muted-2:         #6e7882;
+  --ink:             #ededed;
+  --ink-hero:        #ffffff;
+  --paper:           #121212;
+  --paper-2:         #1f1f1f;
+  --card:            #191919;
+  --line:            #333333;
+  --muted:           #9c9c9c;
+  --muted-2:         #707070;
 
-  --wpr-link:        #4db8dc;
-  --accent-700:      #fbbf24;
+  --wpr-link:        #e0e0e0;
+  --accent:          #e35d5d;
+  --accent-700:      #ef9a9a;
 
   --win:             #4ade80;
   --win-bg:          #123323;

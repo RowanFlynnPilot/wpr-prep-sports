@@ -1,6 +1,6 @@
 .game-page__hero {
   position: relative;
-  background: linear-gradient(180deg, var(--chrome-hero) 0%, #112832 100%);
+  background: linear-gradient(180deg, var(--chrome-hero) 0%, #2b2b2b 100%);
   color: #fff;
   padding: 1.75rem 1.75rem 2rem;
   border-radius: var(--radius);
