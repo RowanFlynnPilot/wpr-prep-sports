@@ -25,6 +25,7 @@ const INVENTORY = [
         blurb: "Your name in the masthead on every view, every sport. The single highest-visibility placement — an annual deal.",
         fit: "Sports medicine · hospital system · credit union",
         slots: ["title"],
+        rateKey: "title",
         preview: { label: "Presented by", tone: "title" },
       },
       {
@@ -32,6 +33,7 @@ const INVENTORY = [
         blurb: "Above recent scores — seen on every dashboard, peak impressions on game weekends.",
         fit: "Pizza · sports bar · wings",
         slots: ["ticker"],
+        rateKey: "ticker",
         preview: { label: "Scoreboard presented by", tone: "ticker" },
       },
       {
@@ -39,6 +41,7 @@ const INVENTORY = [
         blurb: "A placement under each of the four dashboard tabs — Scores, Schedule, Standings, Spotlight. Four discrete surfaces.",
         fit: "Any local business · rotate by category",
         slots: ["tab:scores", "tab:schedule", "tab:standings", "tab:spotlight"],
+        rateKey: "tabs",
         preview: { label: "This view presented by", tone: "ticker" },
       },
     ],
@@ -50,6 +53,7 @@ const INVENTORY = [
         title: "Standings presented by",
         blurb: "One sponsor per conference, shown across every sport that conference plays. Wisconsin Valley, Great Northern, Big Rivers, Marawood, Cloverbelt.",
         fit: "Bank · credit union · insurance",
+        rateKey: "standings",
         slots: [
           "standings:Wisconsin Valley",
           "standings:Great Northern",
@@ -67,6 +71,7 @@ const INVENTORY = [
         title: "Game of the Week",
         blurb: "The marquee matchup above each sport's hero. \"GOTW presented by\" — the placement everyone sees first.",
         fit: "Auto dealer · supper club · pizza",
+        rateKey: "marquee",
         slots: SPORT_IDS.map((s) => `marquee:${s}`),
         countLabel: "per sport",
         preview: { label: "Game of the Week", tone: "marquee" },
@@ -75,6 +80,7 @@ const INVENTORY = [
         title: "Game recap",
         blurb: "On every game detail page, beside the recap and box score.",
         fit: "Pharmacy · clinic · local services",
+        rateKey: "game-detail",
         slots: ["game-detail"],
         preview: { label: "Game recap presented by", tone: "ticker" },
       },
@@ -84,6 +90,7 @@ const INVENTORY = [
         fit: "Orthodontist · sports medicine · photo studio",
         slots: [],
         status: "ready",
+        rateKey: "potw",
         preview: { label: "Player of the Week presented by", tone: "feature" },
       },
       {
@@ -92,6 +99,7 @@ const INVENTORY = [
         fit: "Auto dealer · athletic gear",
         slots: [],
         status: "ready",
+        rateKey: "power-rankings",
         preview: { label: "Power Rankings presented by", tone: "feature" },
       },
       {
@@ -100,12 +108,14 @@ const INVENTORY = [
         fit: "Bank · credit union · insurance",
         slots: [],
         status: "ready",
+        rateKey: "pickem",
         preview: { label: "Pick'em presented by", tone: "feature" },
       },
       {
         title: "Head-to-Head history",
         blurb: "Multi-season series records on every game page — \"Edgar leads 3-1\" is the stuff rivalries are made of. Prime real estate for Rivalry Week.",
         fit: "Sports bar · auto dealer · community bank",
+        rateKey: "rivalry",
         slots: ["rivalry"],
         preview: { label: "Head-to-head presented by", tone: "feature" },
       },
@@ -113,6 +123,7 @@ const INVENTORY = [
         title: "Weekly Roundup",
         blurb: "The Saturday-morning digest of the week's games, auto-built for the WPR newsletter. Your name rides along into every subscriber inbox.",
         fit: "Grocery · bank · regional brand",
+        rateKey: "digest",
         slots: ["digest"],
         preview: { label: "Weekly Roundup presented by", tone: "feature" },
       },
@@ -120,6 +131,7 @@ const INVENTORY = [
         title: "Senior Spotlight",
         blurb: "Editor-curated senior profiles — the games end, the memories get framed. The most parent-treasured surface in the widget.",
         fit: "Photo studio · formalwear · college consultant",
+        rateKey: "spotlight:senior",
         slots: ["spotlight:senior"],
         preview: { label: "Senior Spotlight presented by", tone: "feature" },
       },
@@ -132,6 +144,7 @@ const INVENTORY = [
         title: "Team coverage sponsor",
         blurb: "Each school's page becomes its own surface — sell to a business right down the road from that school. Hyper-targeted to that exact community of parents, grandparents, and alums.",
         fit: "Neighborhood businesses, one per school",
+        rateKey: "school",
         slots: ["school:wausau-east"],
         countLabel: "every school",
         preview: { label: "Wausau East coverage brought to you by", tone: "card" },
@@ -163,7 +176,9 @@ function isAvailable(slotData) {
 
 export default function MediaKitPage() {
   const [sponsors, setSponsors] = useState(null);
-  const [schoolCount, setSchoolCount] = useState(null);
+  const [schools, setSchools] = useState(null);
+  const [pricing, setPricing] = useState(null);
+  const schoolCount = schools?.length ?? null;
 
   useEffect(() => {
     let cancelled = false;
@@ -173,7 +188,13 @@ export default function MediaKitPage() {
       .catch(() => {});
     fetch(`${DATA_BASE}/schools.json`)
       .then((r) => (r.ok ? r.json() : null))
-      .then((d) => !cancelled && Array.isArray(d) && setSchoolCount(d.length))
+      .then((d) => !cancelled && Array.isArray(d) && setSchools(d))
+      .catch(() => {});
+    // Optional rate card (data/pricing.json) — cards show prices only
+    // when ad-ops fills them in.
+    fetch(`${DATA_BASE}/pricing.json`)
+      .then((r) => (r.ok ? r.json() : null))
+      .then((d) => !cancelled && setPricing(d))
       .catch(() => {});
     return () => {
       cancelled = true;
@@ -256,6 +277,9 @@ export default function MediaKitPage() {
                   <p className="mk-card__blurb">{item.blurb}</p>
                   <div className="mk-card__foot">
                     <span className="mk-card__fit">{item.fit}</span>
+                    {pricing?.rates?.[item.rateKey] && (
+                      <span className="mk-card__rate">{pricing.rates[item.rateKey]}</span>
+                    )}
                     {item.countLabel && (
                       <span className="mk-card__count">{item.countLabel}</span>
                     )}
@@ -274,10 +298,15 @@ export default function MediaKitPage() {
             <div key={p.title} className="mk-package">
               <span className="mk-package__title">{p.title}</span>
               <span className="mk-package__note">{p.note}</span>
+              {pricing?.packages?.[p.title] && (
+                <span className="mk-package__rate">{pricing.packages[p.title]}</span>
+              )}
             </div>
           ))}
         </div>
       </section>
+
+      {schools && <EmbedBuilder schools={schools} />}
 
       <section className="mk-foot-cta">
         <h2 className="mk-foot-cta__title">Lock your category before a competitor does.</h2>
@@ -290,6 +319,107 @@ export default function MediaKitPage() {
         </a>
       </section>
     </Layout>
+  );
+}
+
+// Per-school embed snippet builder — ad-ops (or the newsroom) picks a
+// school + sport and copies ready-to-paste iframe code for a WPR
+// article or sidebar. The generated module carries that school's
+// sponsor slot, so this doubles as the fulfillment tool for per-school
+// sales.
+const WIDGET_ORIGIN = "https://rowanflynnpilot.github.io/wpr-prep-sports/";
+const SPORT_LABELS = {
+  football: "Football",
+  boys_basketball: "Boys Basketball",
+  girls_basketball: "Girls Basketball",
+  volleyball: "Volleyball",
+  boys_hockey: "Boys Hockey",
+  girls_hockey: "Girls Hockey",
+  boys_soccer: "Boys Soccer",
+  girls_soccer: "Girls Soccer",
+};
+
+function EmbedBuilder({ schools }) {
+  const sorted = useMemo(
+    () => [...schools].sort((a, b) => a.name.localeCompare(b.name)),
+    [schools],
+  );
+  const [schoolId, setSchoolId] = useState("wausau-east");
+  const [sport, setSport] = useState("football");
+  const [copied, setCopied] = useState(false);
+
+  const frameId = `wpr-team-${schoolId}`;
+  const snippet = `<iframe id="${frameId}"
+  src="${WIDGET_ORIGIN}#/${sport}/embed/${schoolId}"
+  width="100%" height="330" frameborder="0" loading="lazy"
+  style="border:0;display:block;max-width:640px;"></iframe>
+<script>
+  (function () {
+    var f = document.getElementById('${frameId}');
+    window.addEventListener('message', function (e) {
+      if (!e.data || e.data.type !== 'wpr-prep-sports:resize') return;
+      if (f && e.source === f.contentWindow && e.data.height > 0) {
+        f.style.height = e.data.height + 'px';
+      }
+    });
+  })();
+</script>`;
+
+  const copy = () => {
+    navigator.clipboard?.writeText(snippet).then(() => {
+      setCopied(true);
+      trackEvent("mediakit-embed-copy", { school: schoolId, sport });
+      setTimeout(() => setCopied(false), 2000);
+    });
+  };
+
+  return (
+    <section className="mk-group mk-embed">
+      <h2 className="mk-group__title">Per-school embed builder</h2>
+      <p className="mk-embed__lede">
+        Drop a live team module into any WPR story or sidebar — record,
+        last/next game, and that school&apos;s sponsor. Pick a team, copy,
+        paste into WordPress (Custom HTML block).
+      </p>
+      <div className="mk-embed__controls">
+        <label>
+          School
+          <select value={schoolId} onChange={(e) => setSchoolId(e.target.value)}>
+            {sorted.map((s) => (
+              <option key={s.id} value={s.id}>
+                {s.name}
+              </option>
+            ))}
+          </select>
+        </label>
+        <label>
+          Sport
+          <select value={sport} onChange={(e) => setSport(e.target.value)}>
+            {SPORT_IDS.map((id) => (
+              <option key={id} value={id}>
+                {SPORT_LABELS[id] ?? id}
+              </option>
+            ))}
+          </select>
+        </label>
+        <button type="button" className="mk-btn" onClick={copy}>
+          {copied ? "Copied!" : "Copy embed code"}
+        </button>
+      </div>
+      <pre className="mk-embed__code">
+        <code>{snippet}</code>
+      </pre>
+      <p className="mk-embed__preview-note">
+        Live preview:{" "}
+        <a
+          href={`${WIDGET_ORIGIN}#/${sport}/embed/${schoolId}`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {WIDGET_ORIGIN}#/{sport}/embed/{schoolId}
+        </a>
+      </p>
+    </section>
   );
 }
 

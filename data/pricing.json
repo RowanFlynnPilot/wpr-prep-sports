@@ -1,0 +1,34 @@
+{
+  "_comment": "Media-kit rate card. Set a rate string (e.g. '$250/mo' or '$1,500/season') and it renders on that surface's card on #/sponsor; leave null and the card shows no price (the 'contact us' CTA carries it). Keys match the media kit's rateKey per surface. Edit + commit — live on next deploy.",
+  "_suggested_tiers_not_rendered": {
+    "note": "Internal guidance only — nothing in this block renders. Indicative tiers based on comparable local-news sponsorships; calibrate against WPR's display rate card before quoting.",
+    "title": "$400-600/mo or $3,500-5,000/yr (exclusive, every page)",
+    "ticker": "$200-300/mo",
+    "standings": "$100-150/mo per conference",
+    "marquee": "$150-250/mo per sport in season",
+    "school": "$50-100/mo per school (village businesses at the low end)",
+    "feature_slots": "$100-200/mo (PotW, Pick'em, Rankings, H2H, Spotlight, Digest)",
+    "packages": "Football Season Title $1,500-2,500; Tournament Special $500-1,000"
+  },
+  "rates": {
+    "title": null,
+    "ticker": null,
+    "tabs": null,
+    "standings": null,
+    "marquee": null,
+    "game-detail": null,
+    "potw": null,
+    "power-rankings": null,
+    "pickem": null,
+    "rivalry": null,
+    "digest": null,
+    "spotlight:senior": null,
+    "school": null
+  },
+  "packages": {
+    "Football Season Title": null,
+    "Basketball Season Title": null,
+    "Tournament Special": null,
+    "Senior Night Special": null
+  }
+}

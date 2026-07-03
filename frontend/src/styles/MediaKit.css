@@ -203,3 +203,70 @@
   color: var(--ink-hero);
   margin: 0 0 1rem;
 }
+
+/* --- Rate chips + embed builder --------------------------------------- */
+
+.mk-card__rate,
+.mk-package__rate {
+  font-family: var(--font-numeric);
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--wpr-navy);
+  background: var(--paper-2);
+  border-radius: var(--radius-sm);
+  padding: 0.15rem 0.5rem;
+  white-space: nowrap;
+}
+
+.mk-embed__lede {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin: 0 0 0.75rem;
+  max-width: 60ch;
+}
+.mk-embed__controls {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.75rem;
+}
+.mk-embed__controls label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.mk-embed__controls select {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--ink);
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 0.45rem 0.6rem;
+  min-width: 12rem;
+}
+.mk-embed__code {
+  background: var(--chrome);
+  color: #e8e6df;
+  border-radius: var(--radius);
+  padding: 0.85rem 1rem;
+  overflow-x: auto;
+  font-size: 0.78rem;
+  line-height: 1.5;
+  margin: 0 0 0.5rem;
+}
+.mk-embed__preview-note {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin: 0;
+  overflow-wrap: anywhere;
+}
