@@ -13,6 +13,7 @@ import GamePage from "./pages/GamePage.jsx";
 import OgCardPage from "./pages/OgCardPage.jsx";
 import PlayerPage from "./pages/PlayerPage.jsx";
 import MediaKitPage from "./pages/MediaKitPage.jsx";
+import EmbedPage from "./pages/EmbedPage.jsx";
 import Skeleton from "./components/Skeleton.jsx";
 import { indexSchools } from "./utils/schools.js";
 import { useAnalytics } from "./utils/analytics.js";
@@ -43,6 +44,7 @@ import "./styles/Spirit.css";
 import "./styles/PowerRankings.css";
 import "./styles/PlayerPage.css";
 import "./styles/Marquee.css";
+import "./styles/Embed.css";
 
 export default function App() {
   useIframeHeightReporter();
@@ -216,6 +218,17 @@ function SportShell() {
             dataset={dataset}
             schoolIndex={schoolIndex}
             sponsors={dataset.sponsors}
+            sportConfig={sportConfig}
+          />
+        }
+      />
+      {/* Chrome-free per-school module for WPR article/sidebar embeds. */}
+      <Route
+        path="/embed/:schoolId"
+        element={
+          <EmbedPage
+            dataset={dataset}
+            schoolIndex={schoolIndex}
             sportConfig={sportConfig}
           />
         }

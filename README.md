@@ -66,6 +66,27 @@ WPR page around it is light). Append `?theme=dark` to the iframe `src`
 a dark skin. Standalone visits to the GitHub Pages URL follow the
 visitor's OS `prefers-color-scheme` automatically.
 
+### Per-school embed (article / sidebar module)
+
+Any tracked team has a compact, chrome-free module for placing inside
+game stories and sidebars — record, conference rank, last/next game,
+recent form, and that school's sponsor slot:
+
+```html
+<iframe
+  src="https://rowanflynnpilot.github.io/wpr-prep-sports/#/football/embed/wausau-east"
+  width="100%" height="330" frameborder="0" loading="lazy"
+  style="border:0;display:block;max-width:640px;"
+></iframe>
+```
+
+Swap the sport and school-id path segments per placement (ids are the
+slugs in `data/schools.json`). The module posts the same
+`wpr-prep-sports:resize` height messages as the main widget; give each
+iframe on a page its own id and match `event.source` against
+`iframe.contentWindow` when wiring auto-resize for multiple embeds.
+The `#/sponsor` media kit generates these snippets per school.
+
 ## Local development
 
 **Scraper:**
