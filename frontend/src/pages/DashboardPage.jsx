@@ -250,7 +250,12 @@ export default function DashboardPage({ dataset, schoolIndex, sponsors, sportCon
             <ScoreTicker games={recent} schoolIndex={schoolIndex} allGames={games} sportConfig={sportConfig} />
           </section>
 
-          <Pickem games={games} schoolIndex={schoolIndex} sponsors={sponsors} />
+          <Pickem
+            games={games}
+            schoolIndex={schoolIndex}
+            sponsors={sponsors}
+            sportId={sportConfig?.id}
+          />
         </>
       )}
 

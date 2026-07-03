@@ -1,0 +1,11 @@
+# Pick'em API — Cloudflare Worker config.
+# Deploy: see README.md in this directory (one-time, ~10 minutes).
+name = "wpr-pickem"
+main = "worker.js"
+compatibility_date = "2026-06-01"
+
+# KV namespace binding. `npx wrangler kv namespace create PICKS` prints
+# the id — paste it below before the first deploy.
+[[kv_namespaces]]
+binding = "PICKS"
+id = "REPLACE_WITH_KV_NAMESPACE_ID"

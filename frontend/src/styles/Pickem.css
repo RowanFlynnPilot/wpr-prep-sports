@@ -176,3 +176,135 @@
     gap: 0.5rem;
   }
 }
+
+/* --- Community layer (renders only when the Pick'em API is on) ------- */
+
+.pickem__row-wrap {
+  border-top: 1px solid var(--paper-2);
+}
+.pickem__row-wrap:first-child {
+  border-top: none;
+}
+
+.pickem__community {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0 1rem 0.5rem;
+}
+.pickem__community-away,
+.pickem__community-home {
+  font-family: var(--font-numeric);
+  font-weight: 600;
+  font-size: 0.72rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+  min-width: 2.2rem;
+}
+.pickem__community-home {
+  text-align: right;
+}
+.pickem__community-bar {
+  height: 5px;
+  border-radius: 999px;
+  background: var(--paper-2);
+  overflow: hidden;
+  display: block;
+}
+.pickem__community-fill {
+  display: block;
+  height: 100%;
+  background: var(--accent);
+  border-radius: 999px;
+}
+
+.pickem__board {
+  padding: 0.65rem 1rem;
+  border-top: 1px solid var(--line);
+  background: var(--paper);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.pickem__board-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-700);
+}
+.pickem__board-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.pickem__board-list li {
+  display: grid;
+  grid-template-columns: 2rem minmax(0, 1fr) auto;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+}
+.pickem__board-rank {
+  font-family: var(--font-numeric);
+  font-weight: 700;
+  color: var(--muted);
+}
+.pickem__board-name {
+  font-family: var(--font-body);
+  color: var(--ink);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.pickem__board-score {
+  font-family: var(--font-numeric);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
+}
+.pickem__board-you {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.pickem__footer--api {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  font-style: normal;
+}
+.pickem__name {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.pickem__name span {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.pickem__name input {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--ink);
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 0.3rem 0.55rem;
+  width: 11rem;
+}
+.pickem__lock-note {
+  font-style: italic;
+}

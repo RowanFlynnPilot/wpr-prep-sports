@@ -37,9 +37,12 @@ jobs:
       - name: Build
         working-directory: frontend
         env:
-          # Repo variable (Settings → Secrets and variables → Actions →
-          # Variables). Unset = analytics disabled. See docs/analytics.md.
+          # Repo variables (Settings → Secrets and variables → Actions →
+          # Variables). Unset = feature disabled.
+          # PLAUSIBLE_DOMAIN → analytics (docs/analytics.md).
+          # PICKEM_API → community pick'em worker URL (pickem-api/README.md).
           VITE_PLAUSIBLE_DOMAIN: ${{ vars.PLAUSIBLE_DOMAIN }}
+          VITE_PICKEM_API: ${{ vars.PICKEM_API }}
         run: npm run build
 
       - name: Stage data alongside frontend
