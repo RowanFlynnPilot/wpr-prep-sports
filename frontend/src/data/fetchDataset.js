@@ -33,18 +33,19 @@ export async function fetchDataset(sportId = DEFAULT_SPORT) {
   // dataset is picked up immediately without manual cache clears.
   const meta = await fetchJson(`${sportBase}/meta.json`, { noStore: true });
   const v = encodeURIComponent(meta.last_updated ?? Date.now());
-  const [schools, games, standings, sponsors, seasonStats, spirit, potwOverrides, powerRankingsRaw] = await Promise.all([
+  const [schools, games, standings, sponsors, seasonStats, spirit, potwOverrides, powerRankingsRaw, spotlightsRaw] = await Promise.all([
     fetchJson(`${DATA_BASE}/schools.json?v=${v}`),
     fetchJson(`${sportBase}/games.json?v=${v}`),
     fetchJson(`${sportBase}/standings.json?v=${v}`),
     // Sponsors, season_stats, spirit photos, the editor's PotW
-    // override, and power rankings are all optional — the widget
-    // renders fine without any of them.
+    // override, power rankings, and senior spotlights are all
+    // optional — the widget renders fine without any of them.
     fetchJsonOptional(`${DATA_BASE}/sponsors.json?v=${v}`),
     fetchJsonOptional(`${sportBase}/season_stats.json?v=${v}`),
     fetchJsonOptional(`${DATA_BASE}/spirit.json?v=${v}`),
     fetchJsonOptional(`${DATA_BASE}/potw.json?v=${v}`),
     fetchJsonOptional(`${sportBase}/power_rankings.json?v=${v}`),
+    fetchJsonOptional(`${DATA_BASE}/spotlights.json?v=${v}`),
   ]);
   // Spirit file is a wrapper { photos: [...] } so editors can park
   // metadata alongside the photo list. Normalize to a flat array here.
@@ -82,6 +83,10 @@ export async function fetchDataset(sportId = DEFAULT_SPORT) {
     spirit: spiritPhotos,
     potwOverride,
     powerRankings,
+    // Wrapper { spotlights: [...] } so editors can park notes alongside.
+    spotlights: Array.isArray(spotlightsRaw)
+      ? spotlightsRaw
+      : (spotlightsRaw?.spotlights ?? []),
   };
 }
 

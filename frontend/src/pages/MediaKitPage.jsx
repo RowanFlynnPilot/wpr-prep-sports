@@ -116,6 +116,13 @@ const INVENTORY = [
         slots: ["digest"],
         preview: { label: "Weekly Roundup presented by", tone: "feature" },
       },
+      {
+        title: "Senior Spotlight",
+        blurb: "Editor-curated senior profiles — the games end, the memories get framed. The most parent-treasured surface in the widget.",
+        fit: "Photo studio · formalwear · college consultant",
+        slots: ["spotlight:senior"],
+        preview: { label: "Senior Spotlight presented by", tone: "feature" },
+      },
     ],
   },
   {

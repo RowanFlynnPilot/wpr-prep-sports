@@ -45,6 +45,7 @@ import "./styles/PowerRankings.css";
 import "./styles/PlayerPage.css";
 import "./styles/Marquee.css";
 import "./styles/Embed.css";
+import "./styles/SeniorSpotlight.css";
 
 export default function App() {
   useIframeHeightReporter();

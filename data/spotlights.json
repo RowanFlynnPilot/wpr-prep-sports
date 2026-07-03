@@ -1,0 +1,15 @@
+{
+  "_comment": "Senior Spotlights — editor-curated senior profiles, shown on the dashboard's Spotlight tab. Cross-sport file: each entry may set `sport` (shown only on that sport's dashboard) or omit it (shown everywhere). Entries render newest-first; an entry disappears when `expires_at` passes (omit for evergreen). `photo_url` is optional — the school logo fills in. See docs/spotlights.md.",
+  "_sample": {
+    "school_id": "stratford",
+    "name": "Jane Doe",
+    "sport": "football",
+    "position": "RB",
+    "photo_url": null,
+    "blurb": "Four-year varsity letterwinner and two-time all-conference pick who capped her career with 1,200 rushing yards.",
+    "plans": "Nursing at UW-Eau Claire",
+    "published_at": "2026-09-01",
+    "expires_at": null
+  },
+  "spotlights": []
+}

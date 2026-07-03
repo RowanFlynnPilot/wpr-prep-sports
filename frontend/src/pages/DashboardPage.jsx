@@ -18,6 +18,7 @@ import Sponsor from "../components/Sponsor.jsx";
 import TopPerformers from "../components/TopPerformers.jsx";
 import Marquee from "../components/Marquee.jsx";
 import SpiritStrip from "../components/SpiritStrip.jsx";
+import SeniorSpotlight from "../components/SeniorSpotlight.jsx";
 import PowerRankings from "../components/PowerRankings.jsx";
 import { pickFeaturedGame, tickerGames } from "../utils/games.js";
 import { pickFeaturedWeek } from "../utils/weeks.js";
@@ -338,6 +339,13 @@ export default function DashboardPage({ dataset, schoolIndex, sponsors, sportCon
       {/* Tab: Spotlight — editorial & community. */}
       {activeTab === "spotlight" && (
         <>
+          <SeniorSpotlight
+            spotlights={dataset.spotlights}
+            schoolIndex={schoolIndex}
+            sponsors={sponsors}
+            sportId={sportConfig?.id}
+          />
+
           <Notable
             games={games}
             standings={standings}
