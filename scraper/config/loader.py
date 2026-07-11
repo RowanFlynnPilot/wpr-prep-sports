@@ -45,6 +45,12 @@ class SchoolManifestEntry:
     city: str
     colors: list[str] = field(default_factory=list)
     conferences: list[ConferenceMembership] = field(default_factory=list)
+    # Alternate display names the sources render for this school — co-op
+    # strings ("Antigo/Wittenberg-Birnamwood"), WIAA long forms ("Stevens
+    # Point Area"), legacy spellings. transform/normalize.py folds these
+    # into its name→id index; add here (not in code) when a new variant
+    # surfaces. Case-insensitive; whitespace-collapsed before matching.
+    aliases: list[str] = field(default_factory=list)
     wiaa_org_id: int | None = None
     bound_slug: str | None = None
     wph_team_id: int | None = None
@@ -83,6 +89,7 @@ class SchoolManifestEntry:
             "city": self.city,
             "colors": list(self.colors),
             "conferences": [c.to_dict() for c in self.conferences],
+            "aliases": list(self.aliases),
             "wiaa_org_id": self.wiaa_org_id,
             "bound_slug": self.bound_slug,
             "wph_team_id": self.wph_team_id,
@@ -116,6 +123,7 @@ def load_manifest(path: Path = MANIFEST_PATH) -> Manifest:
                 ConferenceMembership(sport=c["sport"], conference=c["conference"])
                 for c in s.get("conferences") or []
             ],
+            aliases=list(s.get("aliases") or []),
             wiaa_org_id=s.get("wiaa_org_id"),
             bound_slug=s.get("bound_slug"),
             wph_team_id=s.get("wph_team_id"),

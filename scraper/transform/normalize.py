@@ -73,11 +73,7 @@ def _parse_playoff_label(label: str | None) -> tuple[bool, str | None]:
         return False, None
     text = label.strip()
     lower = text.lower()
-    if (
-        "tournament" not in lower
-        and "playoff" not in lower
-        and "championship" not in lower
-    ):
+    if "tournament" not in lower and "playoff" not in lower and "championship" not in lower:
         return False, None
 
     # Strip the WIAA Tournament prefix if present.
@@ -204,74 +200,30 @@ def _schools_to_model(manifest: Manifest) -> list[School]:
     ]
 
 
-# WIAA's name variants → manifest slug. Extend as new mismatches surface.
-_NAME_ALIASES: dict[str, str] = {
-    "wausau east": "wausau-east",
-    "wausau west": "wausau-west",
-    "d.c. everest": "dc-everest",
-    "dc everest": "dc-everest",
-    "marshfield": "marshfield",
-    "stevens point area": "spash",
-    "stevens point area sr.": "spash",
-    "stevens point": "spash",
-    "spash": "spash",
-    "wisconsin rapids": "wisconsin-rapids",
-    "wisconsin rapids lincoln": "wisconsin-rapids",
-    "athens": "athens",
-    "edgar": "edgar",
-    "marathon": "marathon",
-    "newman catholic": "newman-catholic",
-    "stratford": "stratford",
-    "spencer": "spencer",
-    "spencer/columbus catholic": "spencer",
-    "mosinee": "mosinee",
-    "chequamegon": "chequamegon",
-    "chequamegon/butternut/mercer": "chequamegon",
-    "bowler": "bowler",
-    "bowler/gresham": "bowler",
-    "marion": "marion",
-    "marion/tigerton": "marion",
-    "colby": "colby",
-    "abbotsford": "abbotsford",
-    # Hockey co-op display names (WIAA records co-op programs under the
-    # lead school's slug for boys hockey when a single school is listed).
-    "marshfield/columbus catholic": "marshfield",
-    "medford co-op": "medford",
-    "merrill co-op": "merrill",
-    "antigo/wittenberg-birnamwood": "antigo",
-    "rhinelander co-op": "rhinelander",
-    "pacelli co-op": "pacelli",
-    # Girls hockey: the Central Wisconsin Storm is a Wausau-area co-op
-    # that WIAA registers under D.C. Everest's org (so its schedule
-    # surfaces as "D.C. Everest Co-op"). We model it as one tracked
-    # team rather than the member high schools. Safe cross-sport: boys
-    # hockey DCE is "D.C. Everest" (never the "Co-op" string).
-    "d.c. everest co-op": "central-wisconsin-storm",
-    "central wisconsin storm": "central-wisconsin-storm",
-    # Rest of the WPH "Central Wisconsin" girls hockey conference — each
-    # is a co-op; map its WIAA display name to the tracked entity. (Wis
-    # Valley Union is registered under SPASH's org → already "spash".)
-    "medford/rib lake": "medford",
-    "northland pines co-op": "northland-pines",
-    "black river falls co-op": "black-river-falls",
-    "black river falls": "black-river-falls",
-    # Football co-op aliases for newly-tracked small-school programs.
-    "loyal/greenwood": "loyal",
-    "greenwood/granton": "greenwood",
-    "columbus catholic": "columbus-catholic",
-    "owen-withee": "owen-withee",
-    "northland pines": "northland-pines",
-    "shell lake": "shell-lake",
-    "south shore": "south-shore",
-}
-
-
 def _normalize_name(name: str) -> str:
     return re.sub(r"\s+", " ", name.strip().casefold())
 
 
 def _build_name_index(manifest: Manifest) -> dict[str, str]:
-    idx: dict[str, str] = dict(_NAME_ALIASES)
+    """
+    Source display name → manifest slug. Three layers, in precedence order:
+
+    1. Per-school `aliases` from the manifest — co-op strings
+       ("Antigo/Wittenberg-Birnamwood"), WIAA long forms, legacy
+       spellings. This is DATA, not code: when a source renders a new
+       variant, add it to that school's `aliases` in
+       config/schools.json. (The old module-level _NAME_ALIASES dict
+       migrated there 2026-07.)
+    2. Each school's own name.
+    3. Each school's full_name.
+
+    Alias entries win over name collisions so co-op mappings (e.g.
+    "D.C. Everest Co-op" → central-wisconsin-storm) can't be shadowed.
+    """
+    idx: dict[str, str] = {}
+    for s in manifest.schools:
+        for alias in s.aliases:
+            idx[_normalize_name(alias)] = s.id
     for s in manifest.schools:
         idx.setdefault(_normalize_name(s.name), s.id)
         idx.setdefault(_normalize_name(s.full_name), s.id)
@@ -385,6 +337,7 @@ def _warn_if_scores_disagree(a: Game, b: Game) -> None:
     if a.home.score == b.home.score and a.away.score == b.away.score:
         return
     import sys
+
     print(
         f"[normalize] WARN score mismatch on {a.id}: "
         f"a={a.away.score}-{a.home.score} vs b={b.away.score}-{b.home.score}",

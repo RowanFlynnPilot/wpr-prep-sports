@@ -6,8 +6,8 @@ from __future__ import annotations
 from config.loader import load_manifest
 from models.schema import GameStatus
 from transform.normalize import (
-    _NAME_ALIASES,
     _build_name_index,
+    _normalize_name,
     _parse_datetime,
     _parse_result,
     _slugify,
@@ -93,13 +93,25 @@ def test_slugify():
     assert _slugify("Stevens Point Area") == "stevens-point-area"
 
 
-def test_every_alias_points_at_a_manifest_school():
-    """Integrity check for the hand-maintained alias table: a typo'd
-    target would silently drop every game for that school."""
+def test_manifest_aliases_are_unambiguous():
+    """Integrity check for the hand-maintained per-school alias lists:
+    the same alias on two schools would resolve games to whichever one
+    sorts last, and an alias colliding with another school's canonical
+    name would shadow it."""
     manifest = load_manifest()
-    ids = {s.id for s in manifest.schools}
-    bad = {alias: target for alias, target in _NAME_ALIASES.items() if target not in ids}
-    assert not bad, f"aliases pointing at unknown school ids: {bad}"
+    seen: dict[str, str] = {}
+    for s in manifest.schools:
+        for alias in s.aliases:
+            key = _normalize_name(alias)
+            assert key not in seen or seen[key] == s.id, (
+                f"alias {alias!r} claimed by both {seen[key]} and {s.id}"
+            )
+            seen[key] = s.id
+    canonical = {_normalize_name(s.name): s.id for s in manifest.schools}
+    for key, owner in seen.items():
+        assert canonical.get(key, owner) == owner, (
+            f"alias {key!r} on {owner} shadows school {canonical[key]!r}'s own name"
+        )
 
 
 def test_name_index_resolves_coop_display_names():

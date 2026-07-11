@@ -52,7 +52,9 @@ def merge_bound_stats(
         return dataset
 
     if console:
-        console.print(f"[bold]Fetching Bound stats[/bold] for {len(targeted)} finalized games (sport_abbr={sport_abbr})")
+        console.print(
+            f"[bold]Fetching Bound stats[/bold] for {len(targeted)} finalized games (sport_abbr={sport_abbr})"
+        )
 
     dates = sorted({g.date.strftime("%Y-%m-%d") for g in targeted})
     bound_index: dict[tuple[str, str], bound.BoundGame] = {}
@@ -72,7 +74,9 @@ def merge_bound_stats(
         time.sleep(POLITE_DELAY_SECONDS)
 
     if console:
-        console.print(f"  [dim]{len(bound_index)} unique Bound games available across {len(dates)} dates[/dim]")
+        console.print(
+            f"  [dim]{len(bound_index)} unique Bound games available across {len(dates)} dates[/dim]"
+        )
 
     matched = 0
     stat_lines_total = 0
@@ -128,7 +132,9 @@ def merge_team_season_stats(
     targets = [s for s in manifest.schools if s.bound_slug]
     if not targets:
         if console:
-            console.print("[yellow]No bound_slug values in manifest — skipping season stats[/yellow]")
+            console.print(
+                "[yellow]No bound_slug values in manifest — skipping season stats[/yellow]"
+            )
         return dataset
 
     if console:
@@ -166,7 +172,9 @@ def merge_team_season_stats(
     if out and "bound" not in dataset.meta.sources_used:
         dataset.meta.sources_used.append("bound")
     if console:
-        console.print(f"[green]Season stats:[/green] {len(out)} athlete-rows across {len(targets)} teams")
+        console.print(
+            f"[green]Season stats:[/green] {len(out)} athlete-rows across {len(targets)} teams"
+        )
     return dataset
 
 
@@ -214,7 +222,9 @@ def merge_maxpreps_stats(
     season_year = _season_start_year(season)
     if season_year is None:
         if console:
-            console.print(f"[yellow]Cannot parse season year from {season!r} — skipping MaxPreps[/yellow]")
+            console.print(
+                f"[yellow]Cannot parse season year from {season!r} — skipping MaxPreps[/yellow]"
+            )
         return dataset
 
     # Index our finalized games by (date, our_school_id, opponent_school_id)
@@ -291,12 +301,11 @@ def merge_maxpreps_stats(
             # entry. Extract the opponent's slug from the URL directly
             # (more reliable than re-slugging the display name).
             opp_slug = _extract_opponent_slug_from_url(
-                mp_game.box_score_url, school_slug,
+                mp_game.box_score_url,
+                school_slug,
             )
             opp_id = mp_slug_to_id.get(opp_slug or "", "")
-            our_game = (
-                games_by_key.get((mp_game.date, school.id, opp_id)) if opp_id else None
-            )
+            our_game = games_by_key.get((mp_game.date, school.id, opp_id)) if opp_id else None
             if our_game is None:
                 # The opponent didn't resolve to a tracked slug
                 # (untracked school, MP slug variant, neutral-site URL).
@@ -310,9 +319,7 @@ def merge_maxpreps_stats(
                 matches = [
                     g
                     for g in games_by_day_school.get((mp_game.date, school.id), [])
-                    if _mp_box_matches_game(
-                        g, school.id, mp_game.box_score_url, mp_slug_to_id
-                    )
+                    if _mp_box_matches_game(g, school.id, mp_game.box_score_url, mp_slug_to_id)
                 ]
                 if len(matches) == 1:
                     our_game = matches[0]
@@ -411,11 +418,11 @@ def aggregate_volleyball_season_stats(
     # stat key, source key in per-game stats dict)...]) — the keys we
     # accumulate when this category shows up for a player in a game.
     CATEGORY_MAP = {
-        "Kills":        ("Volleyball Offense",  [("KLS", "KLS"), ("ATT", "Att"), ("E", "E"), ("SP", "SP")]),
-        "Assists":      ("Volleyball Offense",  [("AST", "AST"), ("SP", "SP")]),
-        "Digs":         ("Volleyball Defense",  [("DIG", "DIG"), ("SP", "SP")]),
-        "Total Blocks": ("Volleyball Defense",  [("BLK", "BLK"), ("SP", "SP")]),
-        "Serve Aces":   ("Volleyball Serving",  [("ACE", "ACE"), ("SP", "SP")]),
+        "Kills": ("Volleyball Offense", [("KLS", "KLS"), ("ATT", "Att"), ("E", "E"), ("SP", "SP")]),
+        "Assists": ("Volleyball Offense", [("AST", "AST"), ("SP", "SP")]),
+        "Digs": ("Volleyball Defense", [("DIG", "DIG"), ("SP", "SP")]),
+        "Total Blocks": ("Volleyball Defense", [("BLK", "BLK"), ("SP", "SP")]),
+        "Serve Aces": ("Volleyball Serving", [("ACE", "ACE"), ("SP", "SP")]),
     }
 
     finals = [g for g in dataset.games if g.status == GameStatus.FINAL]
@@ -547,8 +554,7 @@ def _attach_maxpreps_stats(
 
     # Keep existing lines whose key isn't being replaced.
     kept = [
-        e for e in existing
-        if (e.team_school_id, e.player_name, e.category) not in incoming_keys
+        e for e in existing if (e.team_school_id, e.player_name, e.category) not in incoming_keys
     ]
     game.stat_leaders = kept + new_lines
     return len(new_lines)
@@ -590,10 +596,7 @@ def _attach_set_scores(
     if not home_scores or not away_scores:
         return
     sets = min(len(home_scores), len(away_scores))
-    game.set_scores = [
-        {"home": home_scores[i], "away": away_scores[i]}
-        for i in range(sets)
-    ]
+    game.set_scores = [{"home": home_scores[i], "away": away_scores[i]} for i in range(sets)]
 
 
 def _match_team_scores(
@@ -840,8 +843,18 @@ def _opp_key(name: str) -> str:
 
 
 _WPH_MONTHS = {
-    "Jan": 1, "Feb": 2, "Mar": 3, "Apr": 4, "May": 5, "Jun": 6,
-    "Jul": 7, "Aug": 8, "Sep": 9, "Oct": 10, "Nov": 11, "Dec": 12,
+    "Jan": 1,
+    "Feb": 2,
+    "Mar": 3,
+    "Apr": 4,
+    "May": 5,
+    "Jun": 6,
+    "Jul": 7,
+    "Aug": 8,
+    "Sep": 9,
+    "Oct": 10,
+    "Nov": 11,
+    "Dec": 12,
 }
 
 
@@ -927,10 +940,7 @@ def merge_wph_per_game_stats(
     # teams-with-games is sport-correct for boys too (all boys teams have
     # games, so behavior there is unchanged).
     teams_with_games = _teams_with_games(dataset)
-    targets = [
-        s for s in manifest.schools
-        if s.wph_page_for(sport) and s.id in teams_with_games
-    ]
+    targets = [s for s in manifest.schools if s.wph_page_for(sport) and s.id in teams_with_games]
     if not finals or not targets:
         return dataset
 
@@ -942,8 +952,11 @@ def merge_wph_per_game_stats(
 
     if roster_index is None:
         roster_index = build_wph_roster_index(
-            manifest, subseason=subseasons[0], season=dataset.meta.season,
-            sport=sport, console=console,
+            manifest,
+            subseason=subseasons[0],
+            season=dataset.meta.season,
+            sport=sport,
+            console=console,
         )
     if console:
         console.print(f"  [dim]rosters loaded: {len(roster_index)} teams[/dim]")
@@ -972,7 +985,9 @@ def merge_wph_per_game_stats(
                 sched = wph.fetch_team_schedule(tid, subseason=sub)
             except Exception as e:  # noqa: BLE001
                 if console:
-                    console.print(f"[yellow]  ! {school.id} sub={sub}: WPH schedule failed ({e})[/yellow]")
+                    console.print(
+                        f"[yellow]  ! {school.id} sub={sub}: WPH schedule failed ({e})[/yellow]"
+                    )
                 time.sleep(POLITE_DELAY_SECONDS)
                 continue
             for sg in sched:
@@ -1014,7 +1029,8 @@ def merge_wph_per_game_stats(
                 if not tracked.school_id:
                     continue
                 cands = [
-                    gid for gid in day_index.get((date_iso, tracked.school_id), ())
+                    gid
+                    for gid in day_index.get((date_iso, tracked.school_id), ())
                     if gid not in used_wph
                 ]
                 if len(cands) == 1:
@@ -1061,7 +1077,9 @@ def merge_wph_per_game_stats(
     return dataset
 
 
-def _match_wph_team_to_side(wph_team_name: str, game: Game, name_to_id: dict[str, str] | None = None):
+def _match_wph_team_to_side(
+    wph_team_name: str, game: Game, name_to_id: dict[str, str] | None = None
+):
     """
     Pick which side (game.home / game.away) a WPH team_name corresponds
     to.
@@ -1070,8 +1088,8 @@ def _match_wph_team_to_side(wph_team_name: str, game: Game, name_to_id: dict[str
       1. Alias-table lookup — _norm(wph_team_name) → school_id, then match
          against home.school_id / away.school_id. Handles cases where WPH
          uses a different display than WIAA ("SPASH Panthers" vs
-         "Stevens Point") but our normalize.py _NAME_ALIASES already
-         maps both to the same slug.
+         "Stevens Point") but the manifest's per-school `aliases`
+         already map both to the same slug.
       2. Prefix overlap on _opp_key — handles mascot-laden WPH names
          ("Notre Dame Academy Tritons" against WIAA's "Notre Dame") and
          co-op stripping ("Marshfield/Columbus Catholic" → "Marshfield").
@@ -1124,7 +1142,9 @@ def _match_wph_team_to_side(wph_team_name: str, game: Game, name_to_id: dict[str
     return best
 
 
-def _attach_wph_scoring(game: Game, wph_goals: list[wph.WPHGoal], name_to_id: dict[str, str] | None = None) -> int:
+def _attach_wph_scoring(
+    game: Game, wph_goals: list[wph.WPHGoal], name_to_id: dict[str, str] | None = None
+) -> int:
     """
     Convert WPH scoring-summary goals into schema Goal records and
     attach them to game.scoring. Each goal's team_name is resolved to
@@ -1142,18 +1162,20 @@ def _attach_wph_scoring(game: Game, wph_goals: list[wph.WPHGoal], name_to_id: di
             side = _match_wph_team_to_side(wg.team_name, game, name_to_id)
             if side is not None:
                 side_for_team[wg.team_name] = side
-        out.append(Goal(
-            period=wg.period,
-            time=wg.time,
-            team_school_id=(side.school_id if side else ""),
-            team_name=(side.name if side else wg.team_name),
-            scorer_jersey=wg.scorer_jersey,
-            scorer_name=wg.scorer_name,
-            strength=wg.strength,
-            assists=[{"jersey": j, "name": n} for j, n in wg.assists],
-            away_score=wg.away_score,
-            home_score=wg.home_score,
-        ))
+        out.append(
+            Goal(
+                period=wg.period,
+                time=wg.time,
+                team_school_id=(side.school_id if side else ""),
+                team_name=(side.name if side else wg.team_name),
+                scorer_jersey=wg.scorer_jersey,
+                scorer_name=wg.scorer_name,
+                strength=wg.strength,
+                assists=[{"jersey": j, "name": n} for j, n in wg.assists],
+                away_score=wg.away_score,
+                home_score=wg.home_score,
+            )
+        )
     if out:
         game.scoring = out
     return len(out)
@@ -1202,7 +1224,10 @@ def _attach_wph_per_game(
 
     def _line(side, category, athlete):
         position, year = _lookup_roster(
-            roster_index, side.school_id, athlete.jersey, athlete.player_name,
+            roster_index,
+            side.school_id,
+            athlete.jersey,
+            athlete.player_name,
         )
         return StatLine(
             team_school_id=side.school_id,
@@ -1225,9 +1250,8 @@ def _attach_wph_per_game(
                 points_leader = top_pts
                 out.append(_line(side, "Hockey Points", top_pts))
             top_g = max(skaters, key=lambda r: _wph_num(r.stats.get("G")))
-            if (
-                _wph_num(top_g.stats.get("G")) >= 2
-                and (points_leader is None or top_g.player_name != points_leader.player_name)
+            if _wph_num(top_g.stats.get("G")) >= 2 and (
+                points_leader is None or top_g.player_name != points_leader.player_name
             ):
                 out.append(_line(side, "Hockey Goals", top_g))
         goalies = [g for g in kinds.get("goalie", []) if _wph_minutes(g.stats.get("MIN")) > 0]
@@ -1271,13 +1295,12 @@ def merge_wph_season_stats(
     # see merge_wph_per_game_stats for why (co-op WPH page sharing would
     # otherwise duplicate one co-op's roster across every member school).
     teams_with_games = _teams_with_games(dataset)
-    targets = [
-        s for s in manifest.schools
-        if s.wph_page_for(sport) and s.id in teams_with_games
-    ]
+    targets = [s for s in manifest.schools if s.wph_page_for(sport) and s.id in teams_with_games]
     if not targets:
         if console:
-            console.print("[yellow]No WPH pages for teams with games — skipping hockey stats[/yellow]")
+            console.print(
+                "[yellow]No WPH pages for teams with games — skipping hockey stats[/yellow]"
+            )
         return dataset
 
     if console:
@@ -1287,8 +1310,11 @@ def merge_wph_season_stats(
 
     if roster_index is None:
         roster_index = build_wph_roster_index(
-            manifest, subseason=subseason, season=dataset.meta.season,
-            sport=sport, console=console,
+            manifest,
+            subseason=subseason,
+            season=dataset.meta.season,
+            sport=sport,
+            console=console,
         )
 
     sport_enum = Sport(sport)
@@ -1313,7 +1339,10 @@ def merge_wph_season_stats(
 
         def _season_stat(category: str, athlete) -> SeasonStat:
             position, year = _lookup_roster(
-                roster_index, school.id, athlete.jersey, athlete.player_name,
+                roster_index,
+                school.id,
+                athlete.jersey,
+                athlete.player_name,
             )
             return SeasonStat(
                 school_id=school.id,

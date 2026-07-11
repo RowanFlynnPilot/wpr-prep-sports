@@ -37,6 +37,7 @@
           "conference": "Wisconsin Valley"
         }
       ],
+      "aliases": [],
       "wiaa_org_id": 454,
       "bound_slug": "wausaueast",
       "wph_team_id": null,
@@ -92,6 +93,7 @@
           "conference": "Wisconsin Valley"
         }
       ],
+      "aliases": [],
       "wiaa_org_id": 455,
       "bound_slug": "wausauwest",
       "wph_team_id": 9184052,
@@ -148,6 +150,9 @@
           "conference": "Wisconsin Valley"
         }
       ],
+      "aliases": [
+        "dc everest"
+      ],
       "wiaa_org_id": 93,
       "bound_slug": "dceverest",
       "wph_team_id": 9184048,
@@ -180,6 +185,9 @@
           "conference": "Central Wisconsin"
         }
       ],
+      "aliases": [
+        "d.c. everest co-op"
+      ],
       "wiaa_org_id": 93,
       "bound_slug": null,
       "wph_team_id": null,
@@ -206,6 +214,7 @@
           "conference": "Central Wisconsin"
         }
       ],
+      "aliases": [],
       "wiaa_org_id": 42,
       "bound_slug": null,
       "wph_team_id": null,
@@ -255,6 +264,9 @@
           "sport": "girls_soccer",
           "conference": "Wisconsin Valley"
         }
+      ],
+      "aliases": [
+        "marshfield/columbus catholic"
       ],
       "wiaa_org_id": 234,
       "bound_slug": "marshfield",
@@ -316,6 +328,11 @@
           "conference": "Wisconsin Valley"
         }
       ],
+      "aliases": [
+        "stevens point area",
+        "stevens point area sr.",
+        "stevens point"
+      ],
       "wiaa_org_id": 412,
       "bound_slug": "stevenspoi",
       "wph_team_id": 9184051,
@@ -372,6 +389,9 @@
           "conference": "Wisconsin Valley"
         }
       ],
+      "aliases": [
+        "wisconsin rapids"
+      ],
       "wiaa_org_id": 487,
       "bound_slug": "wisconsinr",
       "wph_team_id": 9184053,
@@ -415,6 +435,7 @@
           "conference": "Marawood"
         }
       ],
+      "aliases": [],
       "wiaa_org_id": 22,
       "bound_slug": "athens",
       "wph_team_id": null,
@@ -456,6 +477,7 @@
           "conference": "Marawood"
         }
       ],
+      "aliases": [],
       "wiaa_org_id": 112,
       "bound_slug": "edgar",
       "wph_team_id": null,
@@ -497,6 +519,7 @@
           "conference": "Marawood"
         }
       ],
+      "aliases": [],
       "wiaa_org_id": 227,
       "bound_slug": "marathon",
       "wph_team_id": null,
@@ -538,6 +561,7 @@
           "conference": "Marawood"
         }
       ],
+      "aliases": [],
       "wiaa_org_id": 296,
       "bound_slug": "newmancath",
       "wph_team_id": null,
@@ -579,6 +603,7 @@
           "conference": "Marawood"
         }
       ],
+      "aliases": [],
       "wiaa_org_id": 415,
       "bound_slug": "stratford",
       "wph_team_id": null,
@@ -619,6 +644,9 @@
           "sport": "volleyball",
           "conference": "Marawood"
         }
+      ],
+      "aliases": [
+        "spencer/columbus catholic"
       ],
       "wiaa_org_id": 408,
       "bound_slug": "spencer",
@@ -673,6 +701,7 @@
           "conference": "Great Northern"
         }
       ],
+      "aliases": [],
       "wiaa_org_id": 280,
       "bound_slug": "mosinee",
       "wph_team_id": 9184026,
@@ -717,6 +746,7 @@
           "conference": "Cloverbelt"
         }
       ],
+      "aliases": [],
       "wiaa_org_id": 79,
       "bound_slug": "colby",
       "wph_team_id": null,
@@ -757,6 +787,7 @@
           "conference": "Cloverbelt"
         }
       ],
+      "aliases": [],
       "wiaa_org_id": 1,
       "bound_slug": "abbotsford",
       "wph_team_id": null,
@@ -802,6 +833,7 @@
           "conference": "Great Northern"
         }
       ],
+      "aliases": [],
       "wiaa_org_id": 427,
       "bound_slug": "tomahawk",
       "wph_team_id": 9184029,
@@ -855,6 +887,9 @@
           "sport": "girls_soccer",
           "conference": "Great Northern"
         }
+      ],
+      "aliases": [
+        "rhinelander co-op"
       ],
       "wiaa_org_id": 363,
       "bound_slug": "rhinelande",
@@ -916,6 +951,10 @@
           "conference": "Great Northern"
         }
       ],
+      "aliases": [
+        "medford co-op",
+        "medford/rib lake"
+      ],
       "wiaa_org_id": 240,
       "bound_slug": "medford",
       "wph_team_id": 9184025,
@@ -973,6 +1012,9 @@
           "conference": "Great Northern"
         }
       ],
+      "aliases": [
+        "merrill co-op"
+      ],
       "wiaa_org_id": 248,
       "bound_slug": "merrill",
       "wph_team_id": 9184050,
@@ -1029,6 +1071,7 @@
           "conference": "Great Northern"
         }
       ],
+      "aliases": [],
       "wiaa_org_id": 203,
       "bound_slug": "lakeland",
       "wph_team_id": 9184024,
@@ -1085,6 +1128,9 @@
           "conference": "Great Northern"
         }
       ],
+      "aliases": [
+        "antigo/wittenberg-birnamwood"
+      ],
       "wiaa_org_id": 11,
       "bound_slug": "antigo",
       "wph_team_id": 9184022,
@@ -1128,6 +1174,7 @@
           "conference": "Big Rivers"
         }
       ],
+      "aliases": [],
       "wiaa_org_id": 111,
       "bound_slug": "eauclairen",
       "wph_team_id": 9183991,
@@ -1168,6 +1215,7 @@
           "conference": "Big Rivers"
         }
       ],
+      "aliases": [],
       "wiaa_org_id": 110,
       "bound_slug": "eauclairem",
       "wph_team_id": 9183990,
@@ -1208,6 +1256,7 @@
           "conference": "Big Rivers"
         }
       ],
+      "aliases": [],
       "wiaa_org_id": 73,
       "bound_slug": "chippewafa",
       "wph_team_id": 9183987,
@@ -1249,6 +1298,7 @@
           "conference": "Big Rivers"
         }
       ],
+      "aliases": [],
       "wiaa_org_id": 168,
       "bound_slug": "hudson",
       "wph_team_id": 9183992,
@@ -1290,6 +1340,7 @@
           "conference": "Big Rivers"
         }
       ],
+      "aliases": [],
       "wiaa_org_id": 295,
       "bound_slug": "newrichmond",
       "wph_team_id": 9183994,
@@ -1331,6 +1382,7 @@
           "conference": "Big Rivers"
         }
       ],
+      "aliases": [],
       "wiaa_org_id": 365,
       "bound_slug": "ricelake",
       "wph_team_id": 9183995,
@@ -1372,6 +1424,7 @@
           "conference": "Marawood"
         }
       ],
+      "aliases": [],
       "wiaa_org_id": 23,
       "bound_slug": "auburndale",
       "wph_team_id": null,
@@ -1413,6 +1466,7 @@
           "conference": "Marawood"
         }
       ],
+      "aliases": [],
       "wiaa_org_id": 21,
       "bound_slug": "assumption",
       "wph_team_id": null,
@@ -1442,6 +1496,9 @@
           "conference": "Marawood/CWC"
         }
       ],
+      "aliases": [
+        "pacelli co-op"
+      ],
       "wiaa_org_id": 324,
       "bound_slug": "pacelli",
       "wph_team_id": 9184058,
@@ -1466,6 +1523,7 @@
           "conference": "Marawood/CWC"
         }
       ],
+      "aliases": [],
       "wiaa_org_id": 337,
       "bound_slug": "pittsville",
       "wph_team_id": null,
@@ -1492,6 +1550,7 @@
           "conference": "Marawood/CWC"
         }
       ],
+      "aliases": [],
       "wiaa_org_id": 172,
       "bound_slug": "iolascandi",
       "wph_team_id": null,
@@ -1516,6 +1575,7 @@
           "conference": "CWC-Large"
         }
       ],
+      "aliases": [],
       "wiaa_org_id": 10,
       "bound_slug": "amherst",
       "wph_team_id": null,
@@ -1542,6 +1602,7 @@
           "conference": "CWC-Large"
         }
       ],
+      "aliases": [],
       "wiaa_org_id": 472,
       "bound_slug": "weyauwegaf",
       "wph_team_id": null,
@@ -1568,6 +1629,7 @@
           "conference": "CWC-Large"
         }
       ],
+      "aliases": [],
       "wiaa_org_id": 491,
       "bound_slug": "wittenberg",
       "wph_team_id": null,
@@ -1594,6 +1656,7 @@
           "conference": "Marawood/CWC"
         }
       ],
+      "aliases": [],
       "wiaa_org_id": 374,
       "bound_slug": "rosholt",
       "wph_team_id": null,
@@ -1630,6 +1693,7 @@
           "conference": "Marawood"
         }
       ],
+      "aliases": [],
       "wiaa_org_id": 349,
       "bound_slug": "prentice",
       "wph_team_id": null,
@@ -1658,6 +1722,7 @@
           "conference": "Northwoods-East 8"
         }
       ],
+      "aliases": [],
       "wiaa_org_id": 127,
       "bound_slug": "flambeau",
       "wph_team_id": null,
@@ -1684,6 +1749,7 @@
           "conference": "Northwoods-East 8"
         }
       ],
+      "aliases": [],
       "wiaa_org_id": 56,
       "bound_slug": "bruce",
       "wph_team_id": null,
@@ -1710,6 +1776,7 @@
           "conference": "Northwoods-East 8"
         }
       ],
+      "aliases": [],
       "wiaa_org_id": 169,
       "bound_slug": "hurley",
       "wph_team_id": null,
@@ -1747,6 +1814,9 @@
           "sport": "volleyball",
           "conference": "Marawood"
         }
+      ],
+      "aliases": [
+        "chequamegon/butternut/mercer"
       ],
       "wiaa_org_id": 515,
       "bound_slug": "chequamego",
@@ -1788,6 +1858,7 @@
           "conference": "Marawood"
         }
       ],
+      "aliases": [],
       "wiaa_org_id": 335,
       "bound_slug": "phillips",
       "wph_team_id": null,
@@ -1828,6 +1899,7 @@
           "conference": "Marawood"
         }
       ],
+      "aliases": [],
       "wiaa_org_id": 364,
       "bound_slug": "riblake",
       "wph_team_id": null,
@@ -1856,6 +1928,7 @@
           "conference": "Central Wisconsin-8"
         }
       ],
+      "aliases": [],
       "wiaa_org_id": 478,
       "bound_slug": "wildrose",
       "wph_team_id": null,
@@ -1880,6 +1953,7 @@
           "conference": "Central Wisconsin-8"
         }
       ],
+      "aliases": [],
       "wiaa_org_id": 7,
       "bound_slug": "almondbanc",
       "wph_team_id": null,
@@ -1906,6 +1980,9 @@
           "conference": "Central Wisconsin-8"
         }
       ],
+      "aliases": [
+        "bowler/gresham"
+      ],
       "wiaa_org_id": 47,
       "bound_slug": "bowler",
       "wph_team_id": null,
@@ -1929,6 +2006,9 @@
           "sport": "football",
           "conference": "Central Wisconsin-8"
         }
+      ],
+      "aliases": [
+        "marion/tigerton"
       ],
       "wiaa_org_id": 230,
       "bound_slug": "marion",
@@ -1956,6 +2036,7 @@
           "conference": "Central Wisconsin-8"
         }
       ],
+      "aliases": [],
       "wiaa_org_id": 244,
       "bound_slug": "menomineenation",
       "wph_team_id": null,
@@ -1980,6 +2061,7 @@
           "conference": "Central Wisconsin-8"
         }
       ],
+      "aliases": [],
       "wiaa_org_id": 342,
       "bound_slug": "portedward",
       "wph_team_id": null,
@@ -2004,6 +2086,7 @@
           "conference": "Central Wisconsin-8"
         }
       ],
+      "aliases": [],
       "wiaa_org_id": 428,
       "bound_slug": "tricounty",
       "wph_team_id": null,
@@ -2042,6 +2125,7 @@
           "conference": "Big Rivers"
         }
       ],
+      "aliases": [],
       "wiaa_org_id": 369,
       "bound_slug": "riverfalls",
       "wph_team_id": 9183996,
@@ -2071,6 +2155,7 @@
           "conference": "Big Rivers"
         }
       ],
+      "aliases": [],
       "wiaa_org_id": 418,
       "bound_slug": "superior",
       "wph_team_id": 9184056,
@@ -2107,6 +2192,7 @@
           "conference": "Big Rivers"
         }
       ],
+      "aliases": [],
       "wiaa_org_id": 246,
       "bound_slug": "menomonie",
       "wph_team_id": 9183993,
@@ -2164,6 +2250,9 @@
           "conference": "Great Northern"
         }
       ],
+      "aliases": [
+        "northland pines co-op"
+      ],
       "wiaa_org_id": 303,
       "bound_slug": null,
       "wph_team_id": null,
@@ -2196,6 +2285,7 @@
           "conference": "Great Northern"
         }
       ],
+      "aliases": [],
       "wiaa_org_id": 452,
       "bound_slug": null,
       "wph_team_id": null,
@@ -2234,6 +2324,9 @@
           "conference": "CWC-Large"
         }
       ],
+      "aliases": [
+        "loyal/greenwood"
+      ],
       "wiaa_org_id": 213,
       "bound_slug": null,
       "wph_team_id": null,
@@ -2271,6 +2364,7 @@
           "conference": "Cloverbelt"
         }
       ],
+      "aliases": [],
       "wiaa_org_id": 286,
       "bound_slug": null,
       "wph_team_id": null,
@@ -2307,6 +2401,7 @@
           "conference": "Cloverbelt"
         }
       ],
+      "aliases": [],
       "wiaa_org_id": 322,
       "bound_slug": null,
       "wph_team_id": null,
@@ -2343,6 +2438,7 @@
           "conference": "Cloverbelt"
         }
       ],
+      "aliases": [],
       "wiaa_org_id": 139,
       "bound_slug": null,
       "wph_team_id": null,
@@ -2378,6 +2474,9 @@
           "sport": "volleyball",
           "conference": "Cloverbelt"
         }
+      ],
+      "aliases": [
+        "greenwood/granton"
       ],
       "wiaa_org_id": 154,
       "bound_slug": null,
@@ -2415,6 +2514,7 @@
           "conference": "Cloverbelt"
         }
       ],
+      "aliases": [],
       "wiaa_org_id": 82,
       "bound_slug": null,
       "wph_team_id": null,
@@ -2443,6 +2543,7 @@
           "conference": "Northwoods-East 8"
         }
       ],
+      "aliases": [],
       "wiaa_org_id": 241,
       "bound_slug": null,
       "wph_team_id": null,
@@ -2467,6 +2568,7 @@
           "conference": "Northwoods-East 8"
         }
       ],
+      "aliases": [],
       "wiaa_org_id": 442,
       "bound_slug": null,
       "wph_team_id": null,
@@ -2491,6 +2593,7 @@
           "conference": "Northwoods-East 8"
         }
       ],
+      "aliases": [],
       "wiaa_org_id": 394,
       "bound_slug": null,
       "wph_team_id": null,
@@ -2515,6 +2618,7 @@
           "conference": "Northwoods-East 8"
         }
       ],
+      "aliases": [],
       "wiaa_org_id": 404,
       "bound_slug": null,
       "wph_team_id": null,
