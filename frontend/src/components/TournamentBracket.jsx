@@ -43,28 +43,51 @@ export default function TournamentBracket({ games, schoolIndex, sportConfig }) {
   // remount in DashboardPage's parent, but the state survives the
   // games change in-place — defensive guard.)
 
+  // WIAA tournament divisions present among the journeying teams
+  // (manifest wiaa_division, backfilled per season). Playoff matchups
+  // are always intra-division, so filtering on the tracked side is
+  // exact. 8-player football ("8P-D1") sorts after the 11-player list.
+  const divisions = useMemo(() => {
+    const set = new Set();
+    for (const j of allJourneys) {
+      const div = j.school?.wiaa_division?.[sportId];
+      if (div) set.add(div);
+    }
+    return [...set].sort(
+      (a, b) =>
+        (a.startsWith("8P") ? 1 : 0) - (b.startsWith("8P") ? 1 : 0) ||
+        a.localeCompare(b, undefined, { numeric: true }),
+    );
+  }, [allJourneys, sportId]);
+  const [activeDiv, setActiveDiv] = useState("ALL");
+
   const journeys = useMemo(() => {
-    if (activeConf === "ALL") return allJourneys;
     return allJourneys.filter((j) => {
-      const conf = (j.school?.conferences ?? []).find(
-        (c) => c.sport === sportId,
-      )?.conference;
-      return conf === activeConf;
+      if (activeConf !== "ALL") {
+        const conf = (j.school?.conferences ?? []).find(
+          (c) => c.sport === sportId,
+        )?.conference;
+        if (conf !== activeConf) return false;
+      }
+      if (activeDiv !== "ALL") {
+        if (j.school?.wiaa_division?.[sportId] !== activeDiv) return false;
+      }
+      return true;
     });
-  }, [allJourneys, activeConf, sportId]);
+  }, [allJourneys, activeConf, activeDiv, sportId]);
 
   // Only show rounds where at least one filtered team played — keeps
   // the grid from rendering an empty "Level 4" column when nobody in
-  // the selected conference advanced that far.
+  // the selected conference/division advanced that far.
   const rounds = useMemo(() => {
     const allRounds = playoffRoundsInOrder(games);
-    if (activeConf === "ALL") return allRounds;
+    if (activeConf === "ALL" && activeDiv === "ALL") return allRounds;
     const seen = new Set();
     for (const j of journeys) {
       for (const g of j.games) seen.add(g.round);
     }
     return allRounds.filter((r) => seen.has(r));
-  }, [games, journeys, activeConf]);
+  }, [games, journeys, activeConf, activeDiv]);
 
   const lastRound = rounds[rounds.length - 1];
 
@@ -98,11 +121,32 @@ export default function TournamentBracket({ games, schoolIndex, sportConfig }) {
             ))}
           </div>
         )}
+        {divisions.length > 1 && (
+          <div
+            className="bracket__filter"
+            role="group"
+            aria-label="Filter by division"
+          >
+            <FilterChip
+              label="All divisions"
+              active={activeDiv === "ALL"}
+              onClick={() => setActiveDiv("ALL")}
+            />
+            {divisions.map((d) => (
+              <FilterChip
+                key={d}
+                label={d}
+                active={activeDiv === d}
+                onClick={() => setActiveDiv(d)}
+              />
+            ))}
+          </div>
+        )}
       </div>
 
       {journeys.length === 0 ? (
         <p className="bracket__empty">
-          No tracked teams from {activeConf} reached the tournament this season.
+          No tracked teams match this filter in the tournament this season.
         </p>
       ) : (
         <div

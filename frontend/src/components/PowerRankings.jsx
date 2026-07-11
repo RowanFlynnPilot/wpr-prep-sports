@@ -4,6 +4,7 @@ import TeamLogo from "./TeamLogo.jsx";
 import Sponsor from "./Sponsor.jsx";
 import { useSportPrefix } from "../utils/links.js";
 import { primaryColor } from "../utils/schools.js";
+import { trackEvent } from "../utils/analytics.js";
 
 const DEFAULT_VISIBLE = 10;
 
@@ -12,6 +13,11 @@ const DEFAULT_VISIBLE = 10;
  * a sortable list with the top N visible by default, expandable to the
  * full ranked field. Each row shows record + 0–100 index score with a
  * small horizontal bar visualizing the gap to #1.
+ *
+ * A division chip row (WIAA tournament divisions from the manifest)
+ * filters the list while PRESERVING each team's overall rank — "the
+ * D5 schools and where they sit in the whole region" reads better than
+ * renumbering within the division.
  *
  * Hidden when the dataset has no rankings (off-season or sport with
  * too few finalized games to qualify).
@@ -25,12 +31,45 @@ export default function PowerRankings({
 }) {
   const sportPrefix = useSportPrefix();
   const [expanded, setExpanded] = useState(false);
+  const [activeDiv, setActiveDiv] = useState("ALL");
+  const sportId = sportConfig?.id;
+
+  const divisionFor = (schoolId) =>
+    schoolIndex?.get?.(schoolId)?.wiaa_division?.[sportId] ?? null;
+
+  const divisions = useMemo(() => {
+    const set = new Set();
+    for (const row of rankings ?? []) {
+      const div = schoolIndex?.get?.(row.school_id)?.wiaa_division?.[sportId];
+      if (div) set.add(div);
+    }
+    return [...set].sort(
+      (a, b) =>
+        (a.startsWith("8P") ? 1 : 0) - (b.startsWith("8P") ? 1 : 0) ||
+        a.localeCompare(b, undefined, { numeric: true }),
+    );
+  }, [rankings, schoolIndex, sportId]);
 
   if (!rankings || rankings.length === 0) return null;
 
+  const filtered =
+    activeDiv === "ALL"
+      ? rankings
+      : rankings.filter((row) => divisionFor(row.school_id) === activeDiv);
+
+  // Bars stay scaled to the OVERALL #1 so a filtered view keeps the
+  // same visual meaning ("gap to the region's best").
   const topScore = rankings[0]?.score ?? 100;
-  const visible = expanded ? rankings : rankings.slice(0, DEFAULT_VISIBLE);
-  const hiddenCount = rankings.length - visible.length;
+  const visible = expanded ? filtered : filtered.slice(0, DEFAULT_VISIBLE);
+  const hiddenCount = filtered.length - visible.length;
+
+  const pickDivision = (d) => {
+    setActiveDiv(d);
+    trackEvent("division-filter", {
+      sport: sportId ?? "unknown",
+      division: d,
+    });
+  };
 
   return (
     <section className="power-rankings" aria-label="Power Rankings">
@@ -43,21 +82,49 @@ export default function PowerRankings({
         Every tracked {sportConfig?.shortLabel?.toLowerCase() ?? ""} team,
         ranked across conferences. {" "}
         <span className="power-rankings__method">
-          {method ?? "WPR Power Index"}
+          {method ?? "Power Index"}
         </span>
       </p>
 
-      <ol className="power-rankings__list">
-        {visible.map((row) => (
-          <PowerRow
-            key={row.school_id}
-            row={row}
-            topScore={topScore}
-            sportPrefix={sportPrefix}
-            schoolIndex={schoolIndex}
+      {divisions.length > 1 && (
+        <div
+          className="power-rankings__filter"
+          role="group"
+          aria-label="Filter by WIAA division"
+        >
+          <DivisionChip
+            label="All divisions"
+            active={activeDiv === "ALL"}
+            onClick={() => pickDivision("ALL")}
           />
-        ))}
-      </ol>
+          {divisions.map((d) => (
+            <DivisionChip
+              key={d}
+              label={d}
+              active={activeDiv === d}
+              onClick={() => pickDivision(d)}
+            />
+          ))}
+        </div>
+      )}
+
+      {filtered.length === 0 ? (
+        <p className="power-rankings__empty">
+          No ranked teams in {activeDiv} yet this season.
+        </p>
+      ) : (
+        <ol className="power-rankings__list">
+          {visible.map((row) => (
+            <PowerRow
+              key={row.school_id}
+              row={row}
+              topScore={topScore}
+              sportPrefix={sportPrefix}
+              schoolIndex={schoolIndex}
+            />
+          ))}
+        </ol>
+      )}
 
       {hiddenCount > 0 && (
         <button
@@ -65,10 +132,10 @@ export default function PowerRankings({
           className="power-rankings__expand"
           onClick={() => setExpanded(true)}
         >
-          Show all {rankings.length} ranked teams →
+          Show all {filtered.length} ranked teams →
         </button>
       )}
-      {expanded && rankings.length > DEFAULT_VISIBLE && (
+      {expanded && filtered.length > DEFAULT_VISIBLE && (
         <button
           type="button"
           className="power-rankings__expand power-rankings__expand--collapse"
@@ -78,6 +145,19 @@ export default function PowerRankings({
         </button>
       )}
     </section>
+  );
+}
+
+function DivisionChip({ label, active, onClick }) {
+  return (
+    <button
+      type="button"
+      className={`power-rankings__chip ${active ? "power-rankings__chip--active" : ""}`}
+      onClick={onClick}
+      aria-pressed={active}
+    >
+      {label}
+    </button>
   );
 }
 

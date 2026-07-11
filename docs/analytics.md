@@ -52,6 +52,11 @@ Without analytics there is nothing to put in the media kit.
   - `tab-switch` (props: `tab`, `sport`) — dashboard section engagement
   - `mediakit-contact` (prop: `placement`) — "Become a sponsor" CTA
     clicks on `#/sponsor`
+  - `mediakit-embed-copy` (props: `school`, `sport`) — per-school embed
+    snippet copied from the media-kit builder
+  - `season-view` (prop: `season`) — archive season selector use
+  - `division-filter` (props: `sport`, `division`) — power-rankings
+    division chip engagement
 
   To surface an event in the dashboard, add its name as a custom-event
   Goal in Plausible (sponsor-click goals can be added per-slot as slots
