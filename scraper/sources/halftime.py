@@ -31,7 +31,7 @@ from zoneinfo import ZoneInfo
 
 import httpx
 from bs4 import BeautifulSoup
-from tenacity import retry, stop_after_attempt, wait_exponential
+from tenacity import retry, retry_if_exception, stop_after_attempt, wait_exponential
 
 USER_AGENT = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
@@ -44,16 +44,31 @@ CENTRAL = ZoneInfo("America/Chicago")
 @dataclass(frozen=True)
 class LiveGame:
     """One row from a WIAA scoreboard scrape."""
-    date: datetime              # game start (tz-aware, US/Central)
-    home_name: str              # WIAA-rendered name
+
+    date: datetime  # game start (tz-aware, US/Central)
+    home_name: str  # WIAA-rendered name
     away_name: str
     home_score: int | None
     away_score: int | None
-    status: str                 # "scheduled" | "in_progress" | "final"
-    live_indicator: str | None  # raw period/clock text when in_progress ("Q3", "Halftime", "OT", etc.)
+    status: str  # "scheduled" | "in_progress" | "final"
+    live_indicator: (
+        str | None
+    )  # raw period/clock text when in_progress ("Q3", "Halftime", "OT", etc.)
 
 
-@retry(stop=stop_after_attempt(3), wait=wait_exponential(multiplier=1, min=2, max=8))
+def _is_retryable(exc: BaseException) -> bool:
+    """4xx is terminal (the URL/params are wrong); 5xx + network errors retry."""
+    if isinstance(exc, httpx.HTTPStatusError):
+        return 500 <= exc.response.status_code < 600
+    return isinstance(exc, (httpx.TransportError, httpx.TimeoutException))
+
+
+@retry(
+    stop=stop_after_attempt(3),
+    wait=wait_exponential(multiplier=1, min=2, max=8),
+    retry=retry_if_exception(_is_retryable),
+    reraise=True,
+)
 def _get(url: str) -> str:
     with httpx.Client(
         timeout=15.0,
@@ -65,7 +80,12 @@ def _get(url: str) -> str:
         return resp.text
 
 
-@retry(stop=stop_after_attempt(3), wait=wait_exponential(multiplier=1, min=2, max=8))
+@retry(
+    stop=stop_after_attempt(3),
+    wait=wait_exponential(multiplier=1, min=2, max=8),
+    retry=retry_if_exception(_is_retryable),
+    reraise=True,
+)
 def _post(url: str, data: dict) -> str:
     with httpx.Client(
         timeout=20.0,
@@ -285,24 +305,24 @@ def _parse_results_table(html: str) -> list[LiveGame]:
         # the winner's score first.
         # Final classification: either side carries WIN or LOSS.
         is_in_progress = home_mark and home_mark.upper() not in {"WIN", "LOSS"}
-        is_in_progress = is_in_progress or (
-            away_mark and away_mark.upper() not in {"WIN", "LOSS"}
-        )
+        is_in_progress = is_in_progress or (away_mark and away_mark.upper() not in {"WIN", "LOSS"})
 
         if is_in_progress:
             status = "in_progress"
             indicator = home_mark or away_mark
             # In progress: the scores on each cell are partial. If the
             # parser pulled a score from one cell, use it.
-            out.append(LiveGame(
-                date=dt,
-                home_name=home_name,
-                away_name=away_name,
-                home_score=home_score,
-                away_score=away_score,
-                status=status,
-                live_indicator=indicator,
-            ))
+            out.append(
+                LiveGame(
+                    date=dt,
+                    home_name=home_name,
+                    away_name=away_name,
+                    home_score=home_score,
+                    away_score=away_score,
+                    status=status,
+                    live_indicator=indicator,
+                )
+            )
             continue
 
         # Final classification — one cell has WIN with score, other LOSS.
@@ -315,28 +335,46 @@ def _parse_results_table(html: str) -> list[LiveGame]:
                 ws, ls = home_score, away_score
             else:
                 ws, ls = home_score, _opposite_score(home_text)
-            out.append(LiveGame(
-                date=dt, home_name=home_name, away_name=away_name,
-                home_score=ws, away_score=ls,
-                status="final", live_indicator=None,
-            ))
+            out.append(
+                LiveGame(
+                    date=dt,
+                    home_name=home_name,
+                    away_name=away_name,
+                    home_score=ws,
+                    away_score=ls,
+                    status="final",
+                    live_indicator=None,
+                )
+            )
         elif away_mark == "WIN" and home_mark == "LOSS":
             if home_score is not None:
                 ws, ls = away_score, home_score
             else:
                 ws, ls = away_score, _opposite_score(away_text)
-            out.append(LiveGame(
-                date=dt, home_name=home_name, away_name=away_name,
-                home_score=ls, away_score=ws,
-                status="final", live_indicator=None,
-            ))
+            out.append(
+                LiveGame(
+                    date=dt,
+                    home_name=home_name,
+                    away_name=away_name,
+                    home_score=ls,
+                    away_score=ws,
+                    status="final",
+                    live_indicator=None,
+                )
+            )
         else:
             # No marker — scheduled, no scores yet
-            out.append(LiveGame(
-                date=dt, home_name=home_name, away_name=away_name,
-                home_score=None, away_score=None,
-                status="scheduled", live_indicator=None,
-            ))
+            out.append(
+                LiveGame(
+                    date=dt,
+                    home_name=home_name,
+                    away_name=away_name,
+                    home_score=None,
+                    away_score=None,
+                    status="scheduled",
+                    live_indicator=None,
+                )
+            )
     return out
 
 

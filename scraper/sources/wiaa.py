@@ -21,7 +21,7 @@ from typing import Any, Iterable
 
 import httpx
 from bs4 import BeautifulSoup
-from tenacity import retry, stop_after_attempt, wait_exponential
+from tenacity import retry, retry_if_exception, stop_after_attempt, wait_exponential
 
 BASE_URL = "https://schools.wiaawi.org"
 USER_AGENT = "wpr-prep-sports/0.1 (+https://wausaupilotandreview.com)"
@@ -36,13 +36,13 @@ LOGO_URL_PREFIX = f"{BASE_URL}/Upload/School/Logo/"
 # path; `discover_team_id_for_sport` falls back to matching WIAA's sport
 # label text, which is stable across seasons.
 SSID_BY_SPORT: dict[str, int] = {
-    "football": 1499,           # Boys Football (11-player)
-    "football_8p": 1500,        # Boys Football 8-Player
+    "football": 1499,  # Boys Football (11-player)
+    "football_8p": 1500,  # Boys Football 8-Player
     "boys_basketball": 1502,
     "girls_basketball": 1512,
     "boys_hockey": 1505,
     "girls_hockey": 1517,
-    "volleyball": 1523,         # Girls Volleyball
+    "volleyball": 1523,  # Girls Volleyball
     "boys_volleyball": 1510,
     "boys_soccer": 1506,
     "girls_soccer": 1518,
@@ -66,7 +66,7 @@ SSID_BY_SPORT: dict[str, int] = {
 @dataclass(frozen=True)
 class TeamEntry:
     ssid: int
-    sport_name: str       # as labeled by WIAA, e.g. "Boys Football"
+    sport_name: str  # as labeled by WIAA, e.g. "Boys Football"
     team_id: int
 
 
@@ -83,7 +83,19 @@ def _client() -> httpx.Client:
     )
 
 
-@retry(stop=stop_after_attempt(3), wait=wait_exponential(multiplier=1, min=2, max=10))
+def _is_retryable(exc: BaseException) -> bool:
+    """4xx is terminal (the URL/params are wrong); 5xx + network errors retry."""
+    if isinstance(exc, httpx.HTTPStatusError):
+        return 500 <= exc.response.status_code < 600
+    return isinstance(exc, (httpx.TransportError, httpx.TimeoutException))
+
+
+@retry(
+    stop=stop_after_attempt(3),
+    wait=wait_exponential(multiplier=1, min=2, max=10),
+    retry=retry_if_exception(_is_retryable),
+    reraise=True,
+)
 def _get(url: str, params: dict | None = None) -> httpx.Response:
     with _client() as client:
         resp = client.get(url, params=params)
@@ -91,7 +103,12 @@ def _get(url: str, params: dict | None = None) -> httpx.Response:
         return resp
 
 
-@retry(stop=stop_after_attempt(3), wait=wait_exponential(multiplier=1, min=2, max=10))
+@retry(
+    stop=stop_after_attempt(3),
+    wait=wait_exponential(multiplier=1, min=2, max=10),
+    retry=retry_if_exception(_is_retryable),
+    reraise=True,
+)
 def _post(url: str, params: dict | None = None) -> httpx.Response:
     # WIAA's directory POSTs are bodyless but the IIS frontend requires
     # an explicit Content-Length: 0.
@@ -146,7 +163,13 @@ def discover_team_ids(org_id: int) -> list[TeamEntry]:
         f"{BASE_URL}/Directory/School/GetDirectorySchool",
         params={"OrgID": org_id, "showPub": "False"},
     )
-    soup = BeautifulSoup(resp.text, "lxml")
+    return parse_team_entries_html(resp.text)
+
+
+def parse_team_entries_html(html: str) -> list[TeamEntry]:
+    """Parse a GetDirectorySchool response into TeamEntry rows. Split from
+    the HTTP call so the parser can run against saved fixtures in tests."""
+    soup = BeautifulSoup(html, "lxml")
 
     entries: list[TeamEntry] = []
     for tr in soup.select("tr.gridTableRow"):
@@ -265,7 +288,14 @@ def fetch_team_schedule(team_id: int) -> dict[str, Any]:
         f"{BASE_URL}/Directory/Schedule/Index",
         params={"TeamID": team_id},
     )
-    soup = BeautifulSoup(resp.text, "lxml")
+    return parse_team_schedule_html(resp.text, team_id)
+
+
+def parse_team_schedule_html(html: str, team_id: int) -> dict[str, Any]:
+    """Parse a Schedule/Index response into the raw-schedule dict (shape
+    documented on fetch_team_schedule). Split from the HTTP call so the
+    parser can run against saved fixtures in tests."""
+    soup = BeautifulSoup(html, "lxml")
 
     headers = [h.get_text(strip=True) for h in soup.select("h1, h2, h3, h4, h5, h6")][:6]
     school_name = headers[0] if len(headers) > 0 else None
@@ -332,8 +362,7 @@ def _parse_schedule_row(row) -> dict[str, Any] | None:
     time_str = time_match.group(0).upper().replace(" ", "") if time_match else None
     # Sub-label (e.g. "WIAA Tournament - Level1") sits in a muted span/label
     sub_label_el = visible_date_cell.find(
-        lambda t: t.name in ("label", "span")
-        and "text-muted" in (t.get("class") or [])
+        lambda t: t.name in ("label", "span") and "text-muted" in (t.get("class") or [])
     )
     sub_label = sub_label_el.get_text(strip=True) if sub_label_el else None
 

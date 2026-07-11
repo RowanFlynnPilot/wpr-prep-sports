@@ -43,7 +43,7 @@ from dataclasses import dataclass
 
 import httpx
 from bs4 import BeautifulSoup
-from tenacity import retry, stop_after_attempt, wait_exponential
+from tenacity import retry, retry_if_exception, stop_after_attempt, wait_exponential
 
 BASE_URL = "https://www.wisconsinprephockey.net"
 USER_AGENT = (
@@ -65,11 +65,11 @@ DEFAULT_TOOL_ID = 5762186
 # SUBSEASONS is the primary (regular season) ID; SUBSEASONS_EXTRA holds
 # every additional subseason for the same sport+season.
 SUBSEASONS: dict[tuple[str, str], int] = {
-    ("boys_hockey", "2025-26"): 951906,   # Regular Season
+    ("boys_hockey", "2025-26"): 951906,  # Regular Season
     ("girls_hockey", "2025-26"): 953552,
 }
 SUBSEASONS_EXTRA: dict[tuple[str, str], list[int]] = {
-    ("boys_hockey", "2025-26"): [959128], # Playoffs (Regional/Sectional/State games)
+    ("boys_hockey", "2025-26"): [959128],  # Playoffs (Regional/Sectional/State games)
 }
 
 # Some legacy team pages don't embed the current-season team_instance in
@@ -122,7 +122,19 @@ def _client() -> httpx.Client:
     )
 
 
-@retry(stop=stop_after_attempt(3), wait=wait_exponential(multiplier=1, min=2, max=10))
+def _is_retryable(exc: BaseException) -> bool:
+    """4xx is terminal (the URL/params are wrong); 5xx + network errors retry."""
+    if isinstance(exc, httpx.HTTPStatusError):
+        return 500 <= exc.response.status_code < 600
+    return isinstance(exc, (httpx.TransportError, httpx.TimeoutException))
+
+
+@retry(
+    stop=stop_after_attempt(3),
+    wait=wait_exponential(multiplier=1, min=2, max=10),
+    retry=retry_if_exception(_is_retryable),
+    reraise=True,
+)
 def _get(url: str) -> str:
     with _client() as client:
         resp = client.get(url)
@@ -240,8 +252,8 @@ def fetch_team_season_stats(
 @dataclass(frozen=True)
 class WPHGame:
     game_id: int
-    date_text: str          # raw, e.g. "Fri Nov 28"
-    result_text: str | None # e.g. "W 5-4"
+    date_text: str  # raw, e.g. "Fri Nov 28"
+    result_text: str | None  # e.g. "W 5-4"
     opponent: str
     location: str | None
 
@@ -249,8 +261,9 @@ class WPHGame:
 @dataclass(frozen=True)
 class WPHGameStatRow:
     """One athlete's per-game line from a /game/show/<id> page."""
-    team_name: str         # e.g. "Wausau West Warriors" — full display name as WPH renders it
-    kind: str              # "skater" | "goalie"
+
+    team_name: str  # e.g. "Wausau West Warriors" — full display name as WPH renders it
+    kind: str  # "skater" | "goalie"
     jersey: str | None
     player_name: str
     stats: dict[str, str]  # column header → cell value
@@ -261,7 +274,9 @@ def _parse_stat_table(table, kind: str, team_name: str) -> list[WPHGameStatRow]:
     per-game pages. Filters footer/Totals rows by requiring a numeric
     jersey in the first cell."""
     thead = table.find("thead")
-    cols = [th.get_text(strip=True) for th in (thead.find_all("th") if thead else table.find_all("th"))]
+    cols = [
+        th.get_text(strip=True) for th in (thead.find_all("th") if thead else table.find_all("th"))
+    ]
     if not cols or cols[0] != "#":
         return []
     out: list[WPHGameStatRow] = []
@@ -279,30 +294,37 @@ def _parse_stat_table(table, kind: str, team_name: str) -> list[WPHGameStatRow]:
         if not player_name:
             continue
         stats = {cols[i]: values[i] for i in range(2, len(cols))}
-        out.append(WPHGameStatRow(
-            team_name=team_name, kind=kind, jersey=jersey,
-            player_name=player_name, stats=stats,
-        ))
+        out.append(
+            WPHGameStatRow(
+                team_name=team_name,
+                kind=kind,
+                jersey=jersey,
+                player_name=player_name,
+                stats=stats,
+            )
+        )
     return out
 
 
 @dataclass(frozen=True)
 class WPHGoal:
     """One goal entry parsed from the scoring summary list."""
-    period: str               # "1st" / "2nd" / "3rd" / "OT" / etc.
-    time: str                 # game clock at goal, e.g. "0:58"
-    team_name: str            # WPH-rendered team display name
+
+    period: str  # "1st" / "2nd" / "3rd" / "OT" / etc.
+    time: str  # game clock at goal, e.g. "0:58"
+    team_name: str  # WPH-rendered team display name
     scorer_jersey: str | None
     scorer_name: str
-    strength: str             # "even strength" / "power play" / "shorthanded" / "empty net"
+    strength: str  # "even strength" / "power play" / "shorthanded" / "empty net"
     assists: list[tuple[str | None, str]]  # [(jersey, name), ...]
-    away_score: int           # cumulative away-team score after this goal
-    home_score: int           # cumulative home-team score after this goal
+    away_score: int  # cumulative away-team score after this goal
+    home_score: int  # cumulative home-team score after this goal
 
 
 @dataclass(frozen=True)
 class WPHGameDetail:
     """Combined per-game payload — one HTTP request gives us both."""
+
     stat_rows: list[WPHGameStatRow]
     goals: list[WPHGoal]
 
@@ -313,7 +335,9 @@ _SCORER_RE = re.compile(
 _ASSIST_RE = re.compile(r"#(?P<jersey>\d+)\s+(?P<name>[^,#]+)")
 
 
-def _parse_play_details(text: str) -> tuple[str | None, str, str, list[tuple[str | None, str]]] | None:
+def _parse_play_details(
+    text: str,
+) -> tuple[str | None, str, str, list[tuple[str | None, str]]] | None:
     """
     Decompose a goal's play_details cell into scorer + strength + assists.
     Returns (scorer_jersey, scorer_name, strength, assists) or None when
@@ -390,17 +414,19 @@ def fetch_game_detail(game_id: int) -> WPHGameDetail:
                 home_score = int(score_cells[1].get_text(strip=True))
             except (ValueError, IndexError):
                 continue
-            goals.append(WPHGoal(
-                period=current_period or "Unknown",
-                time=clock_el.get_text(strip=True),
-                team_name=team_el.get_text(" ", strip=True),
-                scorer_jersey=scorer_jersey,
-                scorer_name=scorer_name,
-                strength=strength,
-                assists=assists,
-                away_score=away_score,
-                home_score=home_score,
-            ))
+            goals.append(
+                WPHGoal(
+                    period=current_period or "Unknown",
+                    time=clock_el.get_text(strip=True),
+                    team_name=team_el.get_text(" ", strip=True),
+                    scorer_jersey=scorer_jersey,
+                    scorer_name=scorer_name,
+                    strength=strength,
+                    assists=assists,
+                    away_score=away_score,
+                    home_score=home_score,
+                )
+            )
 
     return WPHGameDetail(stat_rows=stat_rows, goals=goals)
 
@@ -414,8 +440,8 @@ def fetch_game_stats(game_id: int) -> list[WPHGameStatRow]:
 class WPHRosterRow:
     jersey: str | None
     player_name: str
-    position: str | None       # "F" (forward) | "D" (defense) | "G" (goalie)
-    grad_year: int | None      # graduating class — convert to class letter at use site
+    position: str | None  # "F" (forward) | "D" (defense) | "G" (goalie)
+    grad_year: int | None  # graduating class — convert to class letter at use site
 
 
 def fetch_team_roster(team_page_id: int, *, subseason: int) -> list[WPHRosterRow]:
@@ -452,16 +478,20 @@ def fetch_team_roster(team_page_id: int, *, subseason: int) -> list[WPHRosterRow
             name = values[n_i].strip()
             if not name:
                 continue
-            position = (values[p_i].strip() or None)
+            position = values[p_i].strip() or None
             grad_text = values[g_i].strip()
             try:
                 grad_year = int(grad_text) if grad_text else None
             except ValueError:
                 grad_year = None
-            out.append(WPHRosterRow(
-                jersey=jersey, player_name=name,
-                position=position, grad_year=grad_year,
-            ))
+            out.append(
+                WPHRosterRow(
+                    jersey=jersey,
+                    player_name=name,
+                    position=position,
+                    grad_year=grad_year,
+                )
+            )
     return out
 
 
@@ -505,11 +535,13 @@ def fetch_team_schedule(
             def col(i: int | None) -> str | None:
                 return values[i].strip() if i is not None and i < len(values) else None
 
-            out.append(WPHGame(
-                game_id=game_id,
-                date_text=col(date_i) or "",
-                result_text=col(result_i),
-                opponent=col(opp_i) or "",
-                location=col(loc_i),
-            ))
+            out.append(
+                WPHGame(
+                    game_id=game_id,
+                    date_text=col(date_i) or "",
+                    result_text=col(result_i),
+                    opponent=col(opp_i) or "",
+                    location=col(loc_i),
+                )
+            )
     return out

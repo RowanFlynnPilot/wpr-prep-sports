@@ -15,14 +15,16 @@ from __future__ import annotations
 
 import argparse
 import sys
+import time
 from pathlib import Path
 
 from rich.console import Console
 
 from config.loader import ensure_org_ids, load_manifest, save_manifest
+from models.schema import GameStatus
 from output.writer import load_prev_rankings, read_dataset, write_dataset
 from sources import wiaa, wph
-from transform.normalize import build_dataset, build_name_index_for_manifest
+from transform.normalize import CENTRAL, build_dataset, build_name_index_for_manifest
 from transform.live import merge_live_scores
 from transform.rankings import compute_power_rankings
 from transform.stats import (
@@ -38,6 +40,17 @@ from transform.stats import (
 console = Console()
 
 DATA_DIR = Path(__file__).parent.parent / "data"
+
+# Scrape etiquette for the core WIAA loop — same pacing the stats merges
+# use (transform/stats.py POLITE_DELAY_SECONDS).
+POLITE_DELAY_SECONDS = 0.4
+
+# When more than this fraction of attempted schools fail, abort without
+# writing: a dataset missing a third of the region is worse than keeping
+# yesterday's. Below the threshold we write what we got and exit
+# EXIT_PARTIAL so CI can flag the run without discarding good data.
+SCHOOL_FAILURE_ABORT_RATIO = 0.3
+EXIT_PARTIAL = 3
 
 
 def parse_args() -> argparse.Namespace:
@@ -96,7 +109,10 @@ def main() -> int:
             )
             return 1
         dataset, live_updates = merge_live_scores(
-            dataset, sport=args.sport, manifest=manifest, console=console,
+            dataset,
+            sport=args.sport,
+            manifest=manifest,
+            console=console,
         )
         # Zero updates → leave the dataset untouched. Off-season this keeps
         # the live cron from producing timestamp-only commits + deploys;
@@ -106,8 +122,11 @@ def main() -> int:
             return 0
         # Bump meta.last_updated so the StaleBanner / freshness pill on the
         # frontend reflects the live cron run, not the last full scrape.
-        from datetime import datetime, timezone
-        dataset.meta.last_updated = datetime.now(timezone.utc)
+        # Same zone the full scrape stamps (transform/normalize.py) so the
+        # two paths write comparable timestamps.
+        from datetime import datetime
+
+        dataset.meta.last_updated = datetime.now(CENTRAL)
         if not args.dry_run:
             write_dataset(dataset, DATA_DIR)
             console.print(f"[green]Wrote live updates to {DATA_DIR}[/green]")
@@ -137,21 +156,44 @@ def main() -> int:
             console.print("[dim]Persisted OrgID discoveries back to schools.json[/dim]")
 
     raw_schedules: list[dict] = []
+    school_failures: list[tuple[str, str]] = []
+    attempted = 0
     for school in targets:
         if school.wiaa_org_id is None:
             console.print(f"[yellow]  · {school.id}: skipping (no OrgID)[/yellow]")
             continue
-        team_id = wiaa.discover_team_id_for_sport(school.wiaa_org_id, args.sport)
-        if team_id is None:
-            console.print(
-                f"[yellow]  · {school.id}: no {args.sport} team this season[/yellow]"
-            )
+        if attempted:
+            time.sleep(POLITE_DELAY_SECONDS)
+        attempted += 1
+        # One school's broken page / timeout must not abort the whole
+        # sport — collect the failure, keep scraping the rest, and let
+        # the exit code + CI alerting surface it.
+        try:
+            team_id = wiaa.discover_team_id_for_sport(school.wiaa_org_id, args.sport)
+            if team_id is None:
+                console.print(f"[yellow]  · {school.id}: no {args.sport} team this season[/yellow]")
+                continue
+            console.print(f"  · {school.id} (TeamID={team_id})")
+            sched = wiaa.fetch_team_schedule(team_id)
+        except Exception as e:  # noqa: BLE001
+            console.print(f"[red]  · {school.id}: fetch failed after retries — {e}[/red]")
+            school_failures.append((school.id, str(e)))
             continue
-        console.print(f"  · {school.id} (TeamID={team_id})")
-        sched = wiaa.fetch_team_schedule(team_id)
         sched["_school_id"] = school.id
         raw_schedules.append(sched)
         console.print(f"      {len(sched['games'])} games")
+
+    if school_failures:
+        console.print(
+            f"[red]{len(school_failures)}/{attempted} school fetches failed:[/red] "
+            + ", ".join(sid for sid, _ in school_failures)
+        )
+        if len(school_failures) > SCHOOL_FAILURE_ABORT_RATIO * attempted:
+            console.print(
+                "[red]Failure rate above abort threshold — not writing, so the "
+                "existing dataset stays intact.[/red]"
+            )
+            return 1
 
     dataset = build_dataset(
         manifest=manifest,
@@ -215,13 +257,17 @@ def main() -> int:
             # season totals — they're authoritative there.
             if args.sport == "volleyball":
                 dataset = aggregate_volleyball_season_stats(
-                    dataset, console=console,
+                    dataset,
+                    console=console,
                 )
     elif not args.no_stats and args.sport in WPH_SPORTS:
         subseason = wph.SUBSEASONS.get((args.sport, args.season))
         roster_index = (
             build_wph_roster_index(
-                manifest, subseason=subseason, season=args.season, console=console,
+                manifest,
+                subseason=subseason,
+                season=args.season,
+                console=console,
             )
             if subseason is not None
             else None
@@ -248,12 +294,17 @@ def main() -> int:
     # snapshot (if any) so movement arrows fill in.
     prev_rankings = load_prev_rankings(args.sport, DATA_DIR)
     dataset = compute_power_rankings(
-        dataset, manifest=manifest, prev_rankings=prev_rankings, console=console,
+        dataset,
+        manifest=manifest,
+        prev_rankings=prev_rankings,
+        console=console,
     )
 
     if args.dry_run:
         console.print("[yellow]Dry run — not writing files[/yellow]")
-        return 0
+        return EXIT_PARTIAL if school_failures else 0
+
+    existing = read_dataset(args.sport, DATA_DIR)
 
     # Wipe guard: a scrape that found ZERO games must never replace a
     # dataset that has them. Two scenarios this catches: (a) preseason —
@@ -262,7 +313,6 @@ def main() -> int:
     # automatically; (b) a WIAA outage / parse regression mid-season.
     # Manual override: remove data/<sport>/games.json first.
     if not dataset.games:
-        existing = read_dataset(args.sport, DATA_DIR)
         if existing is not None and existing.games:
             console.print(
                 f"[yellow]0 games scraped for {args.sport} {args.season}, but the "
@@ -270,11 +320,37 @@ def main() -> int:
                 f"({existing.meta.season}) — refusing to overwrite. "
                 f"(Expected preseason: schedules not posted yet.)[/yellow]"
             )
-            return 0
+            return EXIT_PARTIAL if school_failures else 0
+
+    # Stats wipe guard: an empty season-stats merge must never replace a
+    # populated file within the same season once games have gone final —
+    # that's a source outage / parser regression (seen 2026-07-08: Bound's
+    # rolled-over season pages emptied football + volleyball season stats).
+    # Legitimately-empty cases still pass: a new season (meta.season
+    # differs) or a preseason dataset with no finals yet.
+    if (
+        existing is not None
+        and existing.meta.season == dataset.meta.season
+        and existing.season_stats
+        and not dataset.season_stats
+        and any(g.status is GameStatus.FINAL for g in dataset.games)
+    ):
+        console.print(
+            f"[yellow]season-stats merge returned 0 rows but the existing "
+            f"dataset holds {len(existing.season_stats)} for the same season — "
+            f"carrying the existing rows forward instead of wiping.[/yellow]"
+        )
+        dataset.season_stats = existing.season_stats
 
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     write_dataset(dataset, DATA_DIR)
     console.print(f"[green]Wrote dataset to {DATA_DIR}[/green]")
+    if school_failures:
+        console.print(
+            f"[yellow]exit {EXIT_PARTIAL}: partial scrape "
+            f"({len(school_failures)} school(s) failed — see above)[/yellow]"
+        )
+        return EXIT_PARTIAL
     return 0
 
 

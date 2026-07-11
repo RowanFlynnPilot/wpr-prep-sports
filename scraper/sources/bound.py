@@ -29,7 +29,7 @@ from dataclasses import dataclass
 
 import httpx
 from bs4 import BeautifulSoup
-from tenacity import retry, stop_after_attempt, wait_exponential
+from tenacity import retry, retry_if_exception, stop_after_attempt, wait_exponential
 
 BASE_URL = "https://www.gobound.com"
 
@@ -46,7 +46,7 @@ USER_AGENT = (
 @dataclass(frozen=True)
 class BoundGame:
     comp_id: str
-    date: str        # YYYY-MM-DD
+    date: str  # YYYY-MM-DD
     away_team: str
     home_team: str
     away_score: int | None
@@ -56,8 +56,9 @@ class BoundGame:
 @dataclass(frozen=True)
 class StatLine:
     """One stat-leader entry from Bound's box-score panel."""
-    team_name: str         # the Bound-rendered name of the team this player plays for
-    category: str          # "Passing Yards" | "Rushing Yards" | "Receiving Yards" | "Total Tackles"
+
+    team_name: str  # the Bound-rendered name of the team this player plays for
+    category: str  # "Passing Yards" | "Rushing Yards" | "Receiving Yards" | "Total Tackles"
     player_name: str
     player_year: str | None
     stats: dict[str, str]  # raw label → value, e.g. {"YDS": "197", "TDS": "1"}
@@ -71,7 +72,19 @@ def _client() -> httpx.Client:
     )
 
 
-@retry(stop=stop_after_attempt(3), wait=wait_exponential(multiplier=1, min=2, max=10))
+def _is_retryable(exc: BaseException) -> bool:
+    """4xx is terminal (the URL/params are wrong); 5xx + network errors retry."""
+    if isinstance(exc, httpx.HTTPStatusError):
+        return 500 <= exc.response.status_code < 600
+    return isinstance(exc, (httpx.TransportError, httpx.TimeoutException))
+
+
+@retry(
+    stop=stop_after_attempt(3),
+    wait=wait_exponential(multiplier=1, min=2, max=10),
+    retry=retry_if_exception(_is_retryable),
+    reraise=True,
+)
 def _get(url: str, params: dict | None = None) -> str:
     with _client() as client:
         resp = client.get(url, params=params)
@@ -101,9 +114,9 @@ def find_game_ids(date: str, season: str = "2025-26", sport_abbr: str = "fb") ->
     for comp_id, body in _GAME_ROW_RE.findall(html):
         team_spans = _SPAN_RE.findall(body)
         teams = [
-            t for t in team_spans
-            if t not in {"vs.", "FINAL", "C", "Home", "Away"}
-            and not re.match(r"^[\d\-:]+$", t)
+            t
+            for t in team_spans
+            if t not in {"vs.", "FINAL", "C", "Home", "Away"} and not re.match(r"^[\d\-:]+$", t)
         ]
         if len(teams) < 2:
             continue
@@ -134,7 +147,9 @@ def find_game_ids(date: str, season: str = "2025-26", sport_abbr: str = "fb") ->
 # ---------------------------------------------------------------------------
 
 
-def fetch_game_stats(comp_id: str, season: str = "2025-26", sport_abbr: str = "fb") -> list[StatLine]:
+def fetch_game_stats(
+    comp_id: str, season: str = "2025-26", sport_abbr: str = "fb"
+) -> list[StatLine]:
     """
     Fetch one game's stat-leader blocks.
 
@@ -190,7 +205,7 @@ def fetch_game_stats(comp_id: str, season: str = "2025-26", sport_abbr: str = "f
         if "," in player_part:
             split_idx = player_part.rfind(",")
             player_name = player_part[:split_idx].strip()
-            player_year = player_part[split_idx + 1:].strip()
+            player_year = player_part[split_idx + 1 :].strip()
 
         # Body div sits next to the h7; pull alternating <strong>K</strong> V pairs.
         stats: dict[str, str] = {}
@@ -202,7 +217,9 @@ def fetch_game_stats(comp_id: str, season: str = "2025-26", sport_abbr: str = "f
                 if name == "strong":
                     current_key = kid.get_text(strip=True)
                 else:
-                    text = (kid.get_text(strip=True) if hasattr(kid, "get_text") else str(kid)).strip()
+                    text = (
+                        kid.get_text(strip=True) if hasattr(kid, "get_text") else str(kid)
+                    ).strip()
                     if current_key and text:
                         stats[current_key] = text
                         current_key = None
@@ -228,11 +245,12 @@ def fetch_game_stats(comp_id: str, season: str = "2025-26", sport_abbr: str = "f
 @dataclass(frozen=True)
 class SeasonStatRow:
     """One athlete's season totals in one category (Bound team stats page)."""
-    category: str                 # "Passing" | "Rushing" | "Receiving" | "Defense"
+
+    category: str  # "Passing" | "Rushing" | "Receiving" | "Defense"
     player_name: str
     player_year: str | None
     jersey: str | None
-    stats: dict[str, str]         # column header → cell value, e.g. {"YDS": "1247", "TDS": "12"}
+    stats: dict[str, str]  # column header → cell value, e.g. {"YDS": "1247", "TDS": "12"}
 
 
 # Map the category title on Bound's stats page → our canonical category key,
