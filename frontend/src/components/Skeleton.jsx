@@ -3,12 +3,14 @@
  * doesn't jolt when real data arrives. Plain divs with a CSS shimmer;
  * no animation libs.
  */
+import { SITE } from "../config/site.js";
+
 export default function Skeleton() {
   return (
     <div className="app">
       <header className="masthead">
         <div className="masthead__title">
-          Central Wisconsin <em>Prep Sports</em>
+          {SITE.titleLead} <em>{SITE.titleEm}</em>
         </div>
         <div className="masthead__attribution">Loading the latest…</div>
       </header>

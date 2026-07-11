@@ -161,7 +161,7 @@ a.game-row__details:focus-visible {
 }
 .team-link:hover,
 .team-link:focus-visible {
-  color: var(--wpr-link);
+  color: var(--link);
   border-bottom-color: currentColor;
   outline: none;
 }

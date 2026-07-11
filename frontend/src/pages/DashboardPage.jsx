@@ -26,6 +26,7 @@ import { pickFeaturedWeek } from "../utils/weeks.js";
 import { pickMarqueeGame } from "../utils/marquee.js";
 import { SPORT_IDS } from "../config/sports.js";
 import { trackEvent } from "../utils/analytics.js";
+import { SITE } from "../config/site.js";
 
 /** True if any season-stats row is for an actual player (not a "Team" total). */
 function hasPlayerRows(rows) {
@@ -354,7 +355,7 @@ export default function DashboardPage({
             <section>
               <div className="section-header">
                 <h2>Playoff Bracket</h2>
-                <span className="section-header__hint">WIAA tournament · {sportConfig.label}</span>
+                <span className="section-header__hint">{SITE.governingBody} tournament · {sportConfig.label}</span>
               </div>
               <SectionBoundary label="bracket">
                 <TournamentBracket

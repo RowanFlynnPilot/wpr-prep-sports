@@ -15,6 +15,7 @@ import { formatGameDay, formatGameDate, formatGameTime } from "../utils/dates.js
 import { recapForGame } from "../utils/recap.js";
 import { useSportPrefix } from "../utils/links.js";
 import { playerProfileHref } from "../utils/players.js";
+import { SITE } from "../config/site.js";
 
 /**
  * Full game detail. Shows the matchup header, the recap line, and every
@@ -132,8 +133,8 @@ export default function GamePage({ dataset, schoolIndex, sportConfig }) {
     sportConfig?.label,
     game.playoff
       ? game.playoff_round
-        ? `WIAA Tournament · ${game.playoff_round}`
-        : "WIAA Tournament"
+        ? `${SITE.governingBody} Tournament · ${game.playoff_round}`
+        : `${SITE.governingBody} Tournament`
       : game.conference_game
         ? "Conference matchup"
         : null,

@@ -1,4 +1,5 @@
 import { Component } from "react";
+import { SITE } from "../config/site.js";
 
 /**
  * Catches React render errors so a single broken component doesn't blank
@@ -17,8 +18,7 @@ export default class ErrorBoundary extends Component {
 
   componentDidCatch(error, info) {
     // Surface to the console for ops-style debugging via host devtools.
-    // eslint-disable-next-line no-console
-    console.error("[wpr-prep-sports] render error:", error, info);
+    console.error(`[${SITE.messageNamespace}] render error:`, error, info);
   }
 
   render() {
@@ -27,7 +27,7 @@ export default class ErrorBoundary extends Component {
         <div className="app">
           <header className="masthead">
             <div className="masthead__title">
-              Central Wisconsin <em>Prep Sports</em>
+              {SITE.titleLead} <em>{SITE.titleEm}</em>
             </div>
           </header>
           <main className="app-main">
@@ -35,8 +35,7 @@ export default class ErrorBoundary extends Component {
               <h2>Something went sideways.</h2>
               <p>
                 The scores widget hit an unexpected error. Try reloading; if
-                this keeps happening, the team at Wausau Pilot &amp; Review
-                has been notified.
+                it keeps happening, let the {SITE.orgName} team know.
               </p>
               <button
                 type="button"

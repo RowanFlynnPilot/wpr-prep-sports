@@ -4,11 +4,15 @@ import { HashRouter } from "react-router-dom";
 import App from "./App.jsx";
 import ErrorBoundary from "./components/ErrorBoundary.jsx";
 import { initTheme } from "./utils/theme.js";
+import { DOC_TITLE } from "./config/site.js";
 import "./styles/global.css";
 import "./styles/hardening.css";
 
 // Resolve light/dark before first paint so there's no theme flash.
 initTheme();
+
+// Tab title follows the site config; index.html carries a static fallback.
+document.title = DOC_TITLE;
 
 // HashRouter (not BrowserRouter) is the correct choice for an embedded
 // iframe widget: it doesn't require server-side route configuration on

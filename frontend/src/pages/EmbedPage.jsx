@@ -3,10 +3,11 @@ import { useParams } from "react-router-dom";
 import TeamLogo from "../components/TeamLogo.jsx";
 import Sponsor from "../components/Sponsor.jsx";
 import { formatGameDate, formatGameTime } from "../utils/dates.js";
+import { SITE, SITE_TITLE } from "../config/site.js";
 
 /**
  * Per-school embed — a compact, chrome-free team module for placing in
- * WPR article bodies and sidebars via iframe:
+ * publisher article bodies and sidebars via iframe:
  *
  *   <iframe src=".../wpr-prep-sports/#/football/embed/wausau-east" ...>
  *
@@ -16,7 +17,7 @@ import { formatGameDate, formatGameTime } from "../utils/dates.js";
  * no footer, no sport switcher: the host page provides the context.
  * Links open a new tab (the module lives inside someone else's page).
  */
-const FULL_WIDGET_URL = "https://rowanflynnpilot.github.io/wpr-prep-sports/";
+const FULL_WIDGET_URL = SITE.widgetOrigin;
 
 export default function EmbedPage({ dataset, schoolIndex, sportConfig }) {
   const { schoolId } = useParams();
@@ -77,7 +78,7 @@ export default function EmbedPage({ dataset, schoolIndex, sportConfig }) {
         <p>
           Team not found.{" "}
           <a href={FULL_WIDGET_URL} target="_blank" rel="noopener noreferrer">
-            Central Wisconsin Prep Sports →
+            {SITE_TITLE} →
           </a>
         </p>
       </div>
@@ -145,7 +146,7 @@ export default function EmbedPage({ dataset, schoolIndex, sportConfig }) {
         <a href={teamUrl} target="_blank" rel="noopener noreferrer">
           Full {school.name} coverage →
         </a>
-        <span className="embed__credit">Wausau Pilot &amp; Review</span>
+        <span className="embed__credit">{SITE.orgName}</span>
       </footer>
     </div>
   );

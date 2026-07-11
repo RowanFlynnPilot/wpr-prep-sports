@@ -2,7 +2,7 @@
    context. Sized to work from a 300px sidebar up to article width. */
 
 .embed {
-  --school-color: var(--wpr-navy);
+  --school-color: var(--brand);
   max-width: 640px;
   margin: 0 auto;
   background: var(--card);

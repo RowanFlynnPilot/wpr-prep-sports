@@ -1,11 +1,12 @@
 /**
  * Date formatting helpers. All dates in the dataset are tz-aware ISO 8601
- * strings in US/Central. We render in the user's browser locale but with
- * Central-time field values (so a parent in Wausau sees "Friday Oct 24"
- * regardless of where they're reading from).
+ * strings in the site's home time zone. We render in the user's browser
+ * locale but with home-zone field values (so a parent in Wausau sees
+ * "Friday Oct 24" regardless of where they're reading from).
  */
+import { SITE } from "../config/site.js";
 
-const CENTRAL = "America/Chicago";
+const CENTRAL = SITE.timeZone;
 
 const DAY_LONG = new Intl.DateTimeFormat("en-US", {
   weekday: "long",

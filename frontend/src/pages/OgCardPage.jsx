@@ -4,6 +4,7 @@ import { fetchDataset } from "../data/fetchDataset.js";
 import { indexSchools, schoolFor, primaryColor, initials } from "../utils/schools.js";
 import { isKnownSport, configFor } from "../config/sports.js";
 import { formatGameDay, formatGameDate } from "../utils/dates.js";
+import { SITE, SITE_TITLE } from "../config/site.js";
 import "../styles/OgCard.css";
 
 /**
@@ -67,7 +68,7 @@ function Card({ game, schoolIndex, sportConfig }) {
   return (
     <div className="og-card" data-og-ready="true">
       <header className="og-card__header">
-        <span className="og-card__brand">CENTRAL WISCONSIN PREP SPORTS</span>
+        <span className="og-card__brand">{SITE_TITLE.toUpperCase()}</span>
         <span className="og-card__sport">
           <span className="og-card__sport-icon" aria-hidden="true">
             {sportConfig.icon ?? ""}
@@ -110,13 +111,13 @@ function Card({ game, schoolIndex, sportConfig }) {
       <footer className="og-card__footer">
         <span className="og-card__pub">
           <img
-            src={`${import.meta.env.BASE_URL}wpr-logo.png`}
+            src={`${import.meta.env.BASE_URL}${SITE.logoFile}`}
             alt=""
             className="og-card__pub-logo"
           />
-          WAUSAU PILOT &amp; REVIEW
+          {SITE.orgName.toUpperCase()}
         </span>
-        <span className="og-card__url">wausaupilotandreview.com</span>
+        <span className="og-card__url">{SITE.orgDomain}</span>
       </footer>
     </div>
   );

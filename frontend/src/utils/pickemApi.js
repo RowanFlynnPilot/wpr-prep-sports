@@ -8,11 +8,13 @@
  * re-run Deploy.
  */
 
+import { SITE } from "../config/site.js";
+
 const API_BASE = (import.meta.env.VITE_PICKEM_API || "").replace(/\/$/, "");
 export const pickemApiEnabled = Boolean(API_BASE);
 
-const CLIENT_ID_KEY = "wpr-pickem-client-v1";
-const NAME_KEY = "wpr-pickem-name-v1";
+const CLIENT_ID_KEY = `${SITE.storagePrefix}-pickem-client-v1`;
+const NAME_KEY = `${SITE.storagePrefix}-pickem-name-v1`;
 
 /** Stable anonymous id for this browser (mints on first use). */
 export function clientId() {

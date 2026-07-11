@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import { SITE } from "../config/site.js";
 
 /**
  * Reader-submitted "school spirit" photos for one game. Renders nothing
@@ -116,13 +117,13 @@ function Lightbox({ photo, onClose }) {
   );
 }
 
-// Single source of truth for the submit-a-photo link. Update once when
-// WPR finalizes the WordPress submission URL.
+// Single source of truth for the submit-a-photo link — the URL lives in
+// the site config (SITE.photoSubmitUrl).
 export function SpiritSubmitLink({ className = "" }) {
   return (
     <a
       className={`spirit-submit-link ${className}`.trim()}
-      href="https://wausaupilotandreview.com/submit-prep-sports-photo/"
+      href={SITE.photoSubmitUrl}
       target="_top"
       rel="noopener"
     >

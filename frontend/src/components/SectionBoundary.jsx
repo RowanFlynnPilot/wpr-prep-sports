@@ -1,4 +1,5 @@
 import { Component } from "react";
+import { SITE } from "../config/site.js";
 
 /**
  * Per-section error boundary. The global ErrorBoundary (main.jsx) is the
@@ -19,7 +20,7 @@ export default class SectionBoundary extends Component {
 
   componentDidCatch(error, info) {
     console.error(
-      `[wpr-prep-sports] section "${this.props.label ?? "unnamed"}" crashed:`,
+      `[${SITE.messageNamespace}] section "${this.props.label ?? "unnamed"}" crashed:`,
       error,
       info,
     );

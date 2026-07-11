@@ -13,7 +13,9 @@
  * `?season=live` (or `current`) resets.
  */
 
-const KEY = "wpr-season-view";
+import { SITE } from "../config/site.js";
+
+const KEY = `${SITE.storagePrefix}-season-view`;
 
 /** Archived seasons available on Pages (data/archive/<season>/). */
 export const ARCHIVE_SEASONS = ["2025-26"];

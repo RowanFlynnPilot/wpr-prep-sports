@@ -101,7 +101,7 @@
   font-size: 0.9rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  background: var(--wpr-navy);
+  background: var(--brand);
   color: #fff;
   border: none;
   border-radius: var(--radius-sm);
@@ -109,7 +109,7 @@
   cursor: pointer;
   transition: background var(--t-fast) var(--ease);
 }
-.boundary__reload:hover { background: var(--wpr-navy-700); }
+.boundary__reload:hover { background: var(--brand-700); }
 .boundary__reload:focus-visible {
   outline: 3px solid var(--accent);
   outline-offset: 2px;

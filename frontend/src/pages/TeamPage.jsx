@@ -11,6 +11,7 @@ import { recapForGame } from "../utils/recap.js";
 import { seasonSummary } from "../utils/seasonSummary.js";
 import { useSportPrefix } from "../utils/links.js";
 import { recordLabels } from "../config/sports.js";
+import { SITE } from "../config/site.js";
 
 export default function TeamPage({ dataset, schoolIndex, sponsors, sportConfig }) {
   const { schoolId } = useParams();
@@ -288,7 +289,7 @@ function SeasonSchedule({ teamGames, schoolId, schoolIndex, sportPrefix, sportCo
       </ol>
 
       <h3 className="schedule-divider schedule-divider--playoffs">
-        <span>WIAA Playoffs</span>
+        <span>{SITE.governingBody} Playoffs</span>
         <span className="schedule-divider__count">
           {playoffs.length} game{playoffs.length === 1 ? "" : "s"}
         </span>
@@ -342,7 +343,10 @@ function ScheduleRow({ game, index, schoolId, schoolIndex, allTeamGames, sportPr
           {opponent.name}
         </TeamLink>
         {game.playoff && game.playoff_round && (
-          <span className="schedule-row__round" title="WIAA tournament round">
+          <span
+            className="schedule-row__round"
+            title={`${SITE.governingBody} tournament round`}
+          >
             {game.playoff_round}
           </span>
         )}

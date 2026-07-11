@@ -211,3 +211,41 @@
     font-size: 0.66rem;
   }
 }
+
+/* Division filter chips — same visual language as the bracket's
+   conference chips (TournamentBracket.css). */
+.power-rankings__filter {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0 0 0.85rem;
+}
+.power-rankings__chip {
+  appearance: none;
+  border: 1px solid var(--line);
+  background: var(--card);
+  color: var(--muted);
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.65rem;
+  border-radius: 999px;
+  transition: border-color var(--t-fast) var(--ease), color var(--t-fast) var(--ease);
+}
+.power-rankings__chip:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.power-rankings__chip--active {
+  background: var(--chrome);
+  border-color: var(--ink);
+  color: #fff;
+}
+.power-rankings__empty {
+  color: var(--muted);
+  font-size: 0.9rem;
+  padding: 0.75rem 0;
+}

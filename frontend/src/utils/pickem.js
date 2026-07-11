@@ -6,7 +6,9 @@
  * deliberate choice to keep the widget static-site friendly.
  */
 
-const STORAGE_KEY = "wpr-pickem-v1";
+import { SITE } from "../config/site.js";
+
+const STORAGE_KEY = `${SITE.storagePrefix}-pickem-v1`;
 
 /** Read all picks from localStorage. Shape: { [gameId]: "home" | "away" } */
 export function loadPicks() {

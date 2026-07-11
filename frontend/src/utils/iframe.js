@@ -12,8 +12,9 @@
  */
 
 import { useEffect } from "react";
+import { SITE } from "../config/site.js";
 
-const MESSAGE_TYPE = "wpr-prep-sports:resize";
+const MESSAGE_TYPE = `${SITE.messageNamespace}:resize`;
 
 /**
  * True when the widget is running inside the WPR WordPress iframe (or any

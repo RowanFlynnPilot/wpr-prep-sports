@@ -53,7 +53,7 @@
   text-decoration: none;
   transition: transform var(--t-fast) var(--ease), background var(--t-fast) var(--ease);
 }
-.mk-btn:hover { transform: translateY(-1px); background: var(--wpr-navy); }
+.mk-btn:hover { transform: translateY(-1px); background: var(--brand); }
 .mk-btn--lg { font-size: 1rem; padding: 0.75rem 1.4rem; }
 
 /* Why-sponsor strip */
@@ -168,7 +168,7 @@
   font-size: 0.78rem;
 }
 .mk-preview--title,
-.mk-preview--marquee { background: var(--wpr-navy); border-color: var(--wpr-navy); }
+.mk-preview--marquee { background: var(--brand); border-color: var(--brand); }
 .mk-preview--title .mk-preview__label,
 .mk-preview--marquee .mk-preview__label { color: rgba(255,255,255,0.7); }
 .mk-preview--title .mk-preview__brand,
@@ -211,7 +211,7 @@
   font-family: var(--font-numeric);
   font-weight: 700;
   font-size: 0.85rem;
-  color: var(--wpr-navy);
+  color: var(--brand);
   background: var(--paper-2);
   border-radius: var(--radius-sm);
   padding: 0.15rem 0.5rem;

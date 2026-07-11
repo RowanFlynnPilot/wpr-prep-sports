@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
+import { SITE, SITE_TITLE } from "../config/site.js";
 
 // Self-hosted under frontend/public; BASE_URL resolves to
 // "/wpr-prep-sports/" on GitHub Pages or whatever VITE_BASE is set to.
-const WPR_LOGO = `${import.meta.env.BASE_URL}wpr-logo.png`;
+const ORG_LOGO = `${import.meta.env.BASE_URL}${SITE.logoFile}`;
 
 /**
  * Footer block — newsroom-style credit + data attribution + stats.
@@ -17,29 +18,29 @@ export default function Footer({ stats, lastUpdated }) {
       <div className="site-footer__divider" aria-hidden="true" />
       <div className="site-footer__row site-footer__row--credit">
         <a
-          href="https://wausaupilotandreview.com/category/sports/"
+          href={SITE.orgSportsUrl}
           className="site-footer__brand"
           rel="noopener noreferrer"
           target="_top"
         >
           <img
-            src={WPR_LOGO}
+            src={ORG_LOGO}
             alt=""
             aria-hidden="true"
             className="site-footer__brand-logo"
             loading="lazy"
             decoding="async"
           />
-          <span>Wausau Pilot &amp; Review</span>
+          <span>{SITE.orgName}</span>
         </a>
         <span className="site-footer__sep" aria-hidden="true">·</span>
-        <span className="site-footer__tag">Central Wisconsin Prep Sports</span>
+        <span className="site-footer__tag">{SITE_TITLE}</span>
         <span className="site-footer__sep" aria-hidden="true">·</span>
         <Link to="/sponsor" className="site-footer__advertise">Advertise with us</Link>
       </div>
       {stats && (
         <div className="site-footer__row site-footer__row--stats">
-          <span>Data via WIAA</span>
+          <span>Data via {SITE.governingBody}</span>
           {stats.sports != null && (
             <>
               <span className="site-footer__sep" aria-hidden="true">·</span>

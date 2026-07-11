@@ -9,12 +9,13 @@ import {
   setSelectedSeason,
 } from "../utils/season.js";
 import { trackEvent } from "../utils/analytics.js";
+import { SITE } from "../config/site.js";
 
-// Self-hosted under frontend/public so we don't depend on the WPR CDN
-// (which previously rendered blank in some browsers / iframe contexts).
+// Self-hosted under frontend/public so we don't depend on the publisher's
+// CDN (which previously rendered blank in some browsers / iframe contexts).
 // BASE_URL resolves to "/wpr-prep-sports/" on GitHub Pages or whatever
 // VITE_BASE is set to.
-const WPR_LOGO = `${import.meta.env.BASE_URL}wpr-logo.png`;
+const ORG_LOGO = `${import.meta.env.BASE_URL}${SITE.logoFile}`;
 
 /**
  * Shared shell: navy WPR masthead + freshness footer slot. All pages render
@@ -34,13 +35,13 @@ export default function Layout({
     <div className="app">
       <header className="masthead">
         <a
-          href="https://wausaupilotandreview.com"
+          href={SITE.orgHomeUrl}
           className="masthead__brand"
-          aria-label="Wausau Pilot & Review"
+          aria-label={SITE.orgName}
         >
           <img
-            src={WPR_LOGO}
-            alt="Wausau Pilot & Review"
+            src={ORG_LOGO}
+            alt={SITE.orgName}
             className="masthead__brand-logo"
             loading="eager"
             decoding="async"
@@ -48,7 +49,7 @@ export default function Layout({
         </a>
         <span className="masthead__divider" aria-hidden="true" />
         <Link to={sportPrefix} className="masthead__title">
-          Central Wisconsin <em>Prep Sports</em>
+          {SITE.titleLead} <em>{SITE.titleEm}</em>
         </Link>
         <div className="masthead__attribution">
           <Sponsor slot="title" sponsors={sponsors} variant="compact" />

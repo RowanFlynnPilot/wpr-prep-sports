@@ -97,7 +97,7 @@
 }
 .top-card__team:hover,
 .top-card__team:focus-visible {
-  color: var(--wpr-link);
+  color: var(--link);
   border-bottom-color: currentColor;
   outline: none;
 }

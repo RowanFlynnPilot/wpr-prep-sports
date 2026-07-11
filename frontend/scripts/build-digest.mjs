@@ -1,5 +1,5 @@
 /**
- * Weekly digest export — the Friday roundup for the WPR newsletter.
+ * Weekly digest export — the Friday roundup for the publisher's newsletter.
  *
  * Reuses the frontend's deterministic recap generator (utils/recap.js:
  * every word comes from scraped data, no embellishment) so the digest
@@ -22,13 +22,14 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { SPORTS, SPORT_IDS } from "../src/config/sports.js";
+import { SITE, SITE_TITLE } from "../src/config/site.js";
 import { recapForGame } from "../src/utils/recap.js";
 import { indexSchools } from "../src/utils/schools.js";
 
 const REPO_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 const DATA_DIR = path.join(REPO_ROOT, "data");
 const OUT_DIR = path.join(DATA_DIR, "digest");
-const WIDGET_URL = "https://rowanflynnpilot.github.io/wpr-prep-sports/";
+const WIDGET_URL = SITE.widgetOrigin;
 
 // ---- args ----------------------------------------------------------------
 
@@ -150,7 +151,7 @@ for (const sportId of sports) {
           sportConfig,
         }),
         url: `${WIDGET_URL}#/${sportId}/game/${g.id}`,
-        playoff: g.playoff ? (g.playoff_round ?? "WIAA Tournament") : null,
+        playoff: g.playoff ? (g.playoff_round ?? `${SITE.governingBody} Tournament`) : null,
       };
     }),
   }));
@@ -192,11 +193,11 @@ if (sections.length === 0) {
 
 // ---- render ----------------------------------------------------------------
 
-const title = `Central Wisconsin Prep Sports Weekly — week of ${fmtShort(weekStart)}–${fmtShort(weekEnd)}, ${weekEnd.getFullYear()}`;
+const title = `${SITE_TITLE} Weekly — week of ${fmtShort(weekStart)}–${fmtShort(weekEnd)}, ${weekEnd.getFullYear()}`;
 
 let md = `# ${title}\n\n`;
 if (sponsorLine) md += `*${sponsorLine}*\n\n`;
-md += `The week in central Wisconsin high school sports, from the [WPR scoreboard](${WIDGET_URL}).\n\n`;
+md += `The week in ${SITE.regionLabel} high school sports, from the [${SITE.orgShort} scoreboard](${WIDGET_URL}).\n\n`;
 for (const s of sections) {
   md += `## ${s.label} — ${s.gameCount} game${s.gameCount === 1 ? "" : "s"}\n\n`;
   for (const day of s.days) {
@@ -225,15 +226,15 @@ md += `---\n\nScores, stats, and standings all season: ${WIDGET_URL}\n`;
 
 const esc = (t) =>
   String(t).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-let html = `<div style="font-family: Georgia, 'Times New Roman', serif; color: #0e0f12; max-width: 640px;">\n`;
-html += `<h1 style="font-family: 'Arial Narrow', Arial, sans-serif; text-transform: uppercase; letter-spacing: 0.02em; font-size: 22px; color: #004a59;">${esc(title)}</h1>\n`;
+let html = `<div style="font-family: Georgia, 'Times New Roman', serif; color: ${SITE.digest.ink}; max-width: 640px;">\n`;
+html += `<h1 style="font-family: 'Arial Narrow', Arial, sans-serif; text-transform: uppercase; letter-spacing: 0.02em; font-size: 22px; color: ${SITE.digest.heading};">${esc(title)}</h1>\n`;
 if (sponsorLine) html += `<p style="font-style: italic; color: #6b7280;">${esc(sponsorLine)}</p>\n`;
 for (const s of sections) {
-  html += `<h2 style="font-family: 'Arial Narrow', Arial, sans-serif; text-transform: uppercase; font-size: 17px; border-bottom: 2px solid #f59e0b; padding-bottom: 4px;">${esc(s.label)} — ${s.gameCount} game${s.gameCount === 1 ? "" : "s"}</h2>\n`;
+  html += `<h2 style="font-family: 'Arial Narrow', Arial, sans-serif; text-transform: uppercase; font-size: 17px; border-bottom: 2px solid ${SITE.digest.rule}; padding-bottom: 4px;">${esc(s.label)} — ${s.gameCount} game${s.gameCount === 1 ? "" : "s"}</h2>\n`;
   for (const day of s.days) {
     html += `<p style="font-weight: bold; margin-bottom: 4px;">${esc(day.label)}</p>\n<ul style="margin-top: 0;">\n`;
     for (const g of day.games) {
-      html += `<li style="margin-bottom: 6px;"><a href="${g.url}" style="color: #007cba; font-weight: bold; text-decoration: none;">${esc(g.line)}</a>`;
+      html += `<li style="margin-bottom: 6px;"><a href="${g.url}" style="color: ${SITE.digest.link}; font-weight: bold; text-decoration: none;">${esc(g.line)}</a>`;
       if (g.playoff) html += ` <em>(${esc(g.playoff)})</em>`;
       if (g.recap) html += ` — ${esc(g.recap)}`;
       html += `</li>\n`;
@@ -247,7 +248,7 @@ for (const s of sections) {
     html += `<p><strong>Power Rankings top 5:</strong> ${s.top5.map((t) => `${t.rank}. ${esc(t.name)}${t.record ? ` (${esc(t.record)})` : ""}`).join(" · ")}</p>\n`;
   }
 }
-html += `<p style="border-top: 1px solid #e7e2d6; padding-top: 8px;">Scores, stats, and standings all season: <a href="${WIDGET_URL}" style="color: #007cba;">the WPR prep sports scoreboard</a></p>\n</div>\n`;
+html += `<p style="border-top: 1px solid ${SITE.digest.mutedRule}; padding-top: 8px;">Scores, stats, and standings all season: <a href="${WIDGET_URL}" style="color: ${SITE.digest.link};">the ${SITE.orgShort} prep sports scoreboard</a></p>\n</div>\n`;
 
 // ---- write ----------------------------------------------------------------
 

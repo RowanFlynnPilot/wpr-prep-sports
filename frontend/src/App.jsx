@@ -23,6 +23,7 @@ import { indexSchools } from "./utils/schools.js";
 import { useAnalytics } from "./utils/analytics.js";
 import { useIframeHeightReporter } from "./utils/iframe.js";
 import { DEFAULT_SPORT, configFor, isKnownSport } from "./config/sports.js";
+import { SITE } from "./config/site.js";
 
 import "./styles/App.css";
 import "./styles/TeamLogo.css";
@@ -161,7 +162,7 @@ function SportShell() {
           setRefreshFailures(0);
         })
         .catch((e) => {
-          console.warn("[wpr-prep-sports] live refresh failed:", e);
+          console.warn(`[${SITE.messageNamespace}] live refresh failed:`, e);
           setRefreshFailures((n) => n + 1);
         });
     }, 60_000);
@@ -179,7 +180,7 @@ function SportShell() {
       <div className="app">
         <header className="masthead">
           <div className="masthead__title">
-            Central Wisconsin <em>Prep Sports</em>
+            {SITE.titleLead} <em>{SITE.titleEm}</em>
           </div>
         </header>
         <main className="app-main">

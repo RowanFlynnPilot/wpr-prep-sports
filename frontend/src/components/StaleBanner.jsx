@@ -8,6 +8,8 @@
  * football window so existing callers keep working during the
  * phase-1 refactor.
  */
+import { SITE } from "../config/site.js";
+
 const FOOTBALL_FALLBACK_MONTHS = [7, 8, 9, 10];
 
 export default function StaleBanner({
@@ -36,7 +38,7 @@ export default function StaleBanner({
   return (
     <div className="stale-banner" role="status">
       <strong>Heads up:</strong> last data refresh was {ageLabel}. Live scores
-      may lag if the WIAA scrape ran into trouble.
+      may lag if the {SITE.governingBody} scrape ran into trouble.
     </div>
   );
 }

@@ -8,13 +8,13 @@
    ========================================================================= */
 
 :root {
-  /* Brand chrome — the site's primary/secondary. (Token names kept
-     from the navy era to avoid a 26-file rename; values are the
-     site's actual monochrome palette.) */
-  --wpr-navy:        #000000;
-  --wpr-navy-700:    #3e3e3e;
-  --wpr-blue:        #666666;
-  --wpr-link:        #1e1e1e;
+  /* Brand chrome — the publisher's primary/secondary. Neutral token
+     names (renamed from the --wpr-* era) so a white-label reskin is a
+     values-only edit in this file. */
+  --brand:           #000000;
+  --brand-700:       #3e3e3e;
+  --brand-2:         #666666;
+  --link:            #1e1e1e;
 
   /* Surfaces & text — the site's neutral ramp */
   --ink:             #1e1e1e;          /* primary text */
@@ -93,7 +93,7 @@
   --muted:           #9c9c9c;
   --muted-2:         #707070;
 
-  --wpr-link:        #e0e0e0;
+  --link:        #e0e0e0;
   --accent:          #e35d5d;
   --accent-700:      #ef9a9a;
 
@@ -139,7 +139,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a {
-  color: var(--wpr-link);
+  color: var(--link);
   text-decoration: none;
   border-bottom: 1px solid transparent;
   transition: border-color var(--t-fast) var(--ease);

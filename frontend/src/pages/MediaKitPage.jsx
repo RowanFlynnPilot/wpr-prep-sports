@@ -1,15 +1,15 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import Layout from "../components/Layout.jsx";
-import { SPORT_IDS } from "../config/sports.js";
+import { SPORT_IDS, configFor } from "../config/sports.js";
 import { trackEvent } from "../utils/analytics.js";
+import { SITE } from "../config/site.js";
 import "../styles/MediaKit.css";
 
 const DATA_BASE = `${import.meta.env.BASE_URL.replace(/\/$/, "")}/data`;
 
-// Where WPR ad-ops wants inquiries to land. Override at build time.
-const CONTACT_EMAIL =
-  import.meta.env.VITE_SPONSOR_EMAIL || "advertising@wausaupilotandreview.com";
+// Where ad-ops wants inquiries to land. Override at build time.
+const CONTACT_EMAIL = import.meta.env.VITE_SPONSOR_EMAIL || SITE.contactEmail;
 
 // Inventory taxonomy — mirrors docs/advertiser-inventory.md, rendered as a
 // living sales page so WPR can send one link instead of a PDF. `slots`
@@ -121,7 +121,7 @@ const INVENTORY = [
       },
       {
         title: "Weekly Roundup",
-        blurb: "The Saturday-morning digest of the week's games, auto-built for the WPR newsletter. Your name rides along into every subscriber inbox.",
+        blurb: `The Saturday-morning digest of the week's games, auto-built for the ${SITE.orgShort} newsletter. Your name rides along into every subscriber inbox.`,
         fit: "Grocery · bank · regional brand",
         rateKey: "digest",
         slots: ["digest"],
@@ -229,10 +229,10 @@ export default function MediaKitPage() {
       <section className="mk-hero">
         <span className="mk-hero__eyebrow">Sponsorship</span>
         <h1 className="mk-hero__title">
-          Put your brand where central Wisconsin checks the score.
+          Put your brand where {SITE.regionLabel} checks the score.
         </h1>
         <p className="mk-hero__sub">
-          The only comprehensive hub for central-WI high school sports — schedules,
+          The only comprehensive hub for {SITE.regionShort} high school sports — schedules,
           scores, standings, and stats across {SPORT_IDS.length} sports
           {schoolCount ? ` and ${schoolCount} schools` : ""}. Loyal, local, and
           back every week of the season.
@@ -315,7 +315,7 @@ export default function MediaKitPage() {
           href={`mailto:${CONTACT_EMAIL}?subject=Prep Sports sponsorship`}
           onClick={() => trackEvent("mediakit-contact", { placement: "footer" })}
         >
-          Talk to WPR advertising
+          Talk to {SITE.orgShort} advertising
         </a>
       </section>
     </Layout>
@@ -323,32 +323,21 @@ export default function MediaKitPage() {
 }
 
 // Per-school embed snippet builder — ad-ops (or the newsroom) picks a
-// school + sport and copies ready-to-paste iframe code for a WPR
-// article or sidebar. The generated module carries that school's
-// sponsor slot, so this doubles as the fulfillment tool for per-school
-// sales.
-const WIDGET_ORIGIN = "https://rowanflynnpilot.github.io/wpr-prep-sports/";
-const SPORT_LABELS = {
-  football: "Football",
-  boys_basketball: "Boys Basketball",
-  girls_basketball: "Girls Basketball",
-  volleyball: "Volleyball",
-  boys_hockey: "Boys Hockey",
-  girls_hockey: "Girls Hockey",
-  boys_soccer: "Boys Soccer",
-  girls_soccer: "Girls Soccer",
-};
+// school + sport and copies ready-to-paste iframe code for an article
+// or sidebar. The generated module carries that school's sponsor slot,
+// so this doubles as the fulfillment tool for per-school sales.
+const WIDGET_ORIGIN = SITE.widgetOrigin;
 
 function EmbedBuilder({ schools }) {
   const sorted = useMemo(
     () => [...schools].sort((a, b) => a.name.localeCompare(b.name)),
     [schools],
   );
-  const [schoolId, setSchoolId] = useState("wausau-east");
+  const [schoolId, setSchoolId] = useState(() => sorted[0]?.id ?? "");
   const [sport, setSport] = useState("football");
   const [copied, setCopied] = useState(false);
 
-  const frameId = `wpr-team-${schoolId}`;
+  const frameId = `${SITE.storagePrefix}-team-${schoolId}`;
   const snippet = `<iframe id="${frameId}"
   src="${WIDGET_ORIGIN}#/${sport}/embed/${schoolId}"
   width="100%" height="330" frameborder="0" loading="lazy"
@@ -357,7 +346,7 @@ function EmbedBuilder({ schools }) {
   (function () {
     var f = document.getElementById('${frameId}');
     window.addEventListener('message', function (e) {
-      if (!e.data || e.data.type !== 'wpr-prep-sports:resize') return;
+      if (!e.data || e.data.type !== '${SITE.messageNamespace}:resize') return;
       if (f && e.source === f.contentWindow && e.data.height > 0) {
         f.style.height = e.data.height + 'px';
       }
@@ -377,9 +366,9 @@ function EmbedBuilder({ schools }) {
     <section className="mk-group mk-embed">
       <h2 className="mk-group__title">Per-school embed builder</h2>
       <p className="mk-embed__lede">
-        Drop a live team module into any WPR story or sidebar — record,
-        last/next game, and that school&apos;s sponsor. Pick a team, copy,
-        paste into WordPress (Custom HTML block).
+        Drop a live team module into any {SITE.orgShort} story or sidebar —
+        record, last/next game, and that school&apos;s sponsor. Pick a team,
+        copy, paste into WordPress (Custom HTML block).
       </p>
       <div className="mk-embed__controls">
         <label>
@@ -397,7 +386,7 @@ function EmbedBuilder({ schools }) {
           <select value={sport} onChange={(e) => setSport(e.target.value)}>
             {SPORT_IDS.map((id) => (
               <option key={id} value={id}>
-                {SPORT_LABELS[id] ?? id}
+                {configFor(id)?.label ?? id}
               </option>
             ))}
           </select>
