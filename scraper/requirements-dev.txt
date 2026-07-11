@@ -1,0 +1,3 @@
+# Test/dev-only dependencies — CI installs this alongside requirements.txt
+# for the Tests workflow; the scrape workflows don't need it.
+pytest==8.4.1
