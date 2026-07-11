@@ -116,19 +116,25 @@ needs individual-sport modeling), then baseball/softball/track (spring).
   School Spirit photo galleries, OG share cards, off-season countdown hero
 - Sponsor system: `data/sponsors.json` slots + `#/sponsor` media-kit page
   (see `docs/advertiser-inventory.md`)
+- Per-school embeds (`#/<sport>/embed/<id>` + media-kit builder), Senior
+  Spotlights, weekly digest, rivalry/head-to-head history, season archive
+  selector, division filter chips (power rankings + bracket)
+- **White-label ready** (2026-07-10): brand/org config centralized in
+  `frontend/src/config/site.js`, neutral `--brand`/`--link` CSS tokens,
+  school-name aliases in the manifest, tenant-parameterized deploy vars
+  + Pick'em worker. Onboarding runbook: `docs/white-label.md`.
 
 ## Backlog (sponsor-driven, rough priority)
 
-- **Pick'em submission endpoint** — leaderboard + social proof (currently
-  localStorage-only)
-- **Per-school embed mode** (`?school=x&compact=1`) — per-school sponsor sell
-- **Senior Spotlights** — `data/spotlights.json` mirroring the PotW pattern
-- **Weekly digest export** — Friday roundup for the WPR newsletter
-- **Rivalry / historical archive** — 2025-26 season archived under
-  `data/archive/`
-- **Division filters + bracket challenge** — `wiaa_division` data landed
-  2026-07 (90% of school-sport pairs, via `scripts/backfill_divisions.py`;
-  re-run each season once brackets post); frontend features still to build
+- **Bracket challenge** — pick'em-style tournament picks; division data +
+  bracket UI shipped, needs the picks/scoring layer (target: October
+  before playoffs)
+- **Pick'em worker deploy** — code + tests complete in `pickem-api/`;
+  human-blocked on a Cloudflare account (README runbook)
+- **Plausible activation** — human-blocked on Toto (docs/analytics.md)
+- **Wrestling** (winter 2026-27) — Trackwrestling spike scoped in
+  `docs/wrestling-scoping.md`
+- **Per-sponsor monthly report script** — after Plausible is live
 
 ## Data schema
 
