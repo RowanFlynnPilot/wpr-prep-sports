@@ -1,0 +1,42 @@
+name: "Open ops-alert issue"
+description: >
+  Create a labeled ops-alert issue — unless one is already open. The
+  open issue IS the signal that something needs a human; while it
+  exists, further failures stay visible in the Actions log without
+  generating notification spam (the live cron can fail every 10 minutes
+  during a bad night). Close the issue once resolved; the next failure
+  opens a fresh one.
+
+inputs:
+  title:
+    description: "Issue title"
+    required: true
+  body:
+    description: "Issue body (markdown)"
+    required: true
+  label:
+    description: "Dedupe label"
+    required: false
+    default: "ops-alert"
+
+runs:
+  using: "composite"
+  steps:
+    - shell: bash
+      env:
+        GH_TOKEN: ${{ github.token }}
+        TITLE: ${{ inputs.title }}
+        BODY: ${{ inputs.body }}
+        LABEL: ${{ inputs.label }}
+      run: |
+        gh label create "$LABEL" --repo "$GITHUB_REPOSITORY" \
+          --color D93F0B --description "Automated data-pipeline health alert" \
+          --force
+        EXISTING=$(gh issue list --repo "$GITHUB_REPOSITORY" --label "$LABEL" \
+          --state open --json number --jq '.[0].number // empty')
+        if [ -n "$EXISTING" ]; then
+          echo "open $LABEL issue #$EXISTING already exists — not creating another"
+          exit 0
+        fi
+        gh issue create --repo "$GITHUB_REPOSITORY" \
+          --title "$TITLE" --label "$LABEL" --body "$BODY"

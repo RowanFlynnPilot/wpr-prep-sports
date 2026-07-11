@@ -69,3 +69,24 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+
+  # A failed deploy means committed data never reaches readers — the
+  # scrape workflows show green, so without this alert nobody notices.
+  alert:
+    needs: [build, deploy]
+    if: failure()
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      - uses: actions/checkout@v5
+      - uses: ./.github/actions/alert-issue
+        with:
+          title: "Ops alert: Pages deploy failed"
+          body: |
+            **Run:** ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+
+            The site is still serving the LAST successful deploy; committed data
+            isn't reaching readers until a deploy goes green. Re-run the workflow
+            once the cause is fixed. Triage steps: docs/operations.md.

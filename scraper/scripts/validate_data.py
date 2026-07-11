@@ -25,16 +25,29 @@ Soft signals (printed, never fail):
     fix lands.
   - Per-sport dup-game counts below the threshold.
 
+Coverage-regression gate (hard failures, exit 1):
+  Compares the working tree against the same files at git HEAD — in CI
+  that's "what this scrape produced" vs "what's currently published".
+  A structurally-valid dataset whose coverage collapsed (games halved,
+  stat lines gone, standings emptied) means a source broke upstream,
+  not that the season went quiet; it must not ship. Skipped per sport
+  when meta.season changed (rollover legitimately resets counts), when
+  the sport has no HEAD version (new sport), or when git isn't
+  available. Bypass explicitly with --no-regression when hand-repairing
+  data.
+
 Usage:
   cd scraper
   python scripts/validate_data.py            # all sports found in data/
   python scripts/validate_data.py --sport volleyball
+  python scripts/validate_data.py --no-regression   # skip HEAD comparison
 """
 
 from __future__ import annotations
 
 import argparse
 import json
+import subprocess
 import sys
 from collections import Counter
 from pathlib import Path
@@ -53,6 +66,19 @@ CORE_FIELDS = ("id", "sport", "season", "date", "home", "away", "status")
 # (team, player, category) keys. The known cross-attach tail is ~1%;
 # the dedupe regressions this is meant to catch hit 50%+.
 DUP_GAME_PCT_MAX = 3.0
+
+# --- Coverage-regression thresholds (vs git HEAD) -------------------------
+# Games can legitimately shrink a little (WIAA reschedules, de-dupes) but
+# not collapse. Only enforced once HEAD had a meaningful baseline so
+# preseason noise never trips it.
+GAMES_COLLAPSE_RATIO = 0.5
+GAMES_BASELINE_MIN = 20
+# Stat lines only grow during a season; a wholesale drop means a stats
+# source broke or a re-attach regressed. The zero-threshold catches the
+# classic "source down → 0 lines merged" case.
+LINES_ZERO_BASELINE_MIN = 100
+LINES_COLLAPSE_RATIO = 0.5
+LINES_COLLAPSE_BASELINE_MIN = 500
 
 
 def validate_sport(sport_dir: Path) -> list[str]:
@@ -113,7 +139,13 @@ def validate_sport(sport_dir: Path) -> list[str]:
         seen = Counter()
         names = (g["home"]["name"], g["away"]["name"])
         for l in g.get("stat_leaders") or []:
-            seen[(l.get("team_school_id") or l.get("team_name"), l.get("player_name"), l.get("category"))] += 1
+            seen[
+                (
+                    l.get("team_school_id") or l.get("team_name"),
+                    l.get("player_name"),
+                    l.get("category"),
+                )
+            ] += 1
             tn = l.get("team_name") or ""
             # Tolerant compare — "St. Mary Catholic" (MaxPreps) on a
             # "Saint Mary Catholic" (WIAA) game is the same school, not
@@ -140,9 +172,120 @@ def validate_sport(sport_dir: Path) -> list[str]:
     return errors
 
 
+# ---------------------------------------------------------------------------
+# Coverage regression vs git HEAD
+# ---------------------------------------------------------------------------
+
+
+def _git_show_json(rel_path: str):
+    """Return the parsed JSON of `rel_path` as of git HEAD, or None when
+    unavailable (not a repo, file didn't exist at HEAD, git missing)."""
+    try:
+        out = subprocess.run(
+            ["git", "show", f"HEAD:{rel_path}"],
+            cwd=REPO_ROOT,
+            capture_output=True,
+            timeout=60,
+        )
+    except (OSError, subprocess.TimeoutExpired):
+        return None
+    if out.returncode != 0:
+        return None
+    try:
+        return json.loads(out.stdout.decode("utf-8"))
+    except (json.JSONDecodeError, UnicodeDecodeError):
+        return None
+
+
+def _read_json(path: Path):
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return None
+
+
+def _line_total(slim_games: list) -> int:
+    return sum(g.get("stat_line_count") or 0 for g in slim_games if isinstance(g, dict))
+
+
+def check_regression(sport_dir: Path) -> list[str]:
+    """Compare the working-tree dataset against HEAD. Returns hard-failure
+    messages (empty = pass). Conservative by design: any state it can't
+    interpret (missing HEAD file, unparseable JSON, season change) is a
+    skip, not a failure — validate_sport() owns structural correctness."""
+    sport = sport_dir.name
+    rel = f"data/{sport}"
+
+    old_meta = _git_show_json(f"{rel}/meta.json")
+    new_meta = _read_json(sport_dir / "meta.json")
+    if not isinstance(old_meta, dict) or not isinstance(new_meta, dict):
+        return []
+    if old_meta.get("season") != new_meta.get("season"):
+        print(
+            f"{sport}: regression check skipped — season rolled "
+            f"{old_meta.get('season')} -> {new_meta.get('season')}"
+        )
+        return []
+
+    old_games = _git_show_json(f"{rel}/games.json")
+    new_games = _read_json(sport_dir / "games.json")
+    if not isinstance(old_games, list) or not isinstance(new_games, list):
+        return []
+
+    errors: list[str] = []
+
+    if (
+        len(old_games) >= GAMES_BASELINE_MIN
+        and len(new_games) < len(old_games) * GAMES_COLLAPSE_RATIO
+    ):
+        errors.append(
+            f"{sport}: games collapsed {len(old_games)} -> {len(new_games)} vs HEAD "
+            f"(>{int((1 - GAMES_COLLAPSE_RATIO) * 100)}% drop) — source/parser regression?"
+        )
+
+    old_lines = _line_total(old_games)
+    new_lines = _line_total(new_games)
+    if old_lines >= LINES_ZERO_BASELINE_MIN and new_lines == 0:
+        errors.append(
+            f"{sport}: stat lines collapsed {old_lines} -> 0 vs HEAD - stats source down?"
+        )
+    elif old_lines >= LINES_COLLAPSE_BASELINE_MIN and new_lines < old_lines * LINES_COLLAPSE_RATIO:
+        errors.append(
+            f"{sport}: stat lines collapsed {old_lines} -> {new_lines} vs HEAD "
+            f"(>{int((1 - LINES_COLLAPSE_RATIO) * 100)}% drop)"
+        )
+
+    old_standings = _git_show_json(f"{rel}/standings.json")
+    new_standings = _read_json(sport_dir / "standings.json")
+    if isinstance(old_standings, list) and isinstance(new_standings, list):
+        old_rows = sum(len(s.get("rows") or []) for s in old_standings if isinstance(s, dict))
+        new_rows = sum(len(s.get("rows") or []) for s in new_standings if isinstance(s, dict))
+        if old_rows > 0 and new_rows == 0:
+            errors.append(f"{sport}: standings emptied ({old_rows} rows -> 0) vs HEAD")
+
+    old_season = _git_show_json(f"{rel}/season_stats.json")
+    new_season = _read_json(sport_dir / "season_stats.json")
+    if isinstance(old_season, list) and isinstance(new_season, list):
+        has_finals = any(isinstance(g, dict) and g.get("status") == "final" for g in new_games)
+        if old_season and not new_season and has_finals:
+            errors.append(
+                f"{sport}: season_stats emptied ({len(old_season)} rows -> 0) vs HEAD "
+                f"with final games present - stats source down?"
+            )
+
+    if errors:
+        print(f"{sport}: REGRESSION vs HEAD — see failures below")
+    return errors
+
+
 def main() -> int:
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--sport", action="append", help="sport id(s); default = all in data/")
+    p.add_argument(
+        "--no-regression",
+        action="store_true",
+        help="skip the git-HEAD coverage comparison (deliberate repairs/backfills)",
+    )
     args = p.parse_args()
 
     sport_dirs = (
@@ -157,11 +300,13 @@ def main() -> int:
             print(f"{sport_dir.name}: no games.json — skipping")
             continue
         all_errors.extend(validate_sport(sport_dir))
+        if not args.no_regression:
+            all_errors.extend(check_regression(sport_dir))
 
     if all_errors:
         print("\nVALIDATION FAILED:")
         for e in all_errors:
-            print(f"  ✗ {e}")
+            print(f"  x {e}")
         return 1
     print("\nAll sports pass validation.")
     return 0

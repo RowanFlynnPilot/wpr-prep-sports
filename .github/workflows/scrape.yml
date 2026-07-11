@@ -34,6 +34,10 @@ permissions:
   # Bot-authored pushes don't trigger downstream workflows (GitHub loop
   # protection), so without this an updated data/ never reaches Pages.
   actions: write
+  # issues: write lets the health-report step open an ops-alert issue —
+  # per-sport failures are tolerated mid-run (good sports still commit)
+  # but must never be silent.
+  issues: write
 
 jobs:
   scrape:
@@ -54,6 +58,7 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run scrapers
+        id: scrape
         working-directory: scraper
         env:
           # On cron runs `inputs.sport` is empty, so we scrape every
@@ -63,16 +68,27 @@ jobs:
           SPORTS: ${{ github.event.inputs.sport || 'football volleyball boys_soccer' }}
           SEASON: ${{ github.event.inputs.season || '2026-27' }}
         run: |
+          FAILED=""
+          PARTIAL=""
           for sport in $SPORTS; do
             echo "::group::scraping $sport"
-            if python main.py --sport "$sport" --season "$SEASON"; then
+            rc=0
+            python main.py --sport "$sport" --season "$SEASON" || rc=$?
+            if [ "$rc" -eq 0 ]; then
               echo "ok: $sport"
+            elif [ "$rc" -eq 3 ]; then
+              # EXIT_PARTIAL — dataset written, but some schools failed.
+              echo "::warning::partial scrape for $sport (some school fetches failed)"
+              PARTIAL="$PARTIAL $sport"
             else
               # Don't kill the run — let the other sports' data still commit.
               echo "::warning::scrape failed for $sport — continuing with remaining sports"
+              FAILED="$FAILED $sport"
             fi
             echo "::endgroup::"
           done
+          echo "failed=${FAILED# }" >> "$GITHUB_OUTPUT"
+          echo "partial=${PARTIAL# }" >> "$GITHUB_OUTPUT"
 
       # Data gate: structurally broken output must never commit (and
       # isn't worth generating share cards for). Fails the run before
@@ -163,4 +179,28 @@ jobs:
             sleep 15
           done
           echo "::error::deploy dispatch failed after 3 attempts"
+          exit 1
+
+      # ---- Loud-failure tail. Ordered LAST so good data commits and
+      # deploys before we make noise. Fires on: any earlier step failing
+      # (validation gate, commit, deploy dispatch) OR per-sport scrape
+      # failures that the loop above deliberately tolerated.
+      - name: Open ops alert
+        if: always() && (failure() || steps.scrape.outputs.failed != '' || steps.scrape.outputs.partial != '')
+        uses: ./.github/actions/alert-issue
+        with:
+          title: "Ops alert: Scrape workflow needs attention"
+          body: |
+            **Run:** ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+            **Sports with hard failures (no data written):** ${{ steps.scrape.outputs.failed || 'none' }}
+            **Sports partially scraped (data written, some schools failed):** ${{ steps.scrape.outputs.partial || 'none' }}
+
+            If both lists say "none", a later step failed (validation gate /
+            OG cards / commit / deploy dispatch) — check the run log.
+            Triage steps: docs/operations.md.
+
+      - name: Fail run on hard scrape failures
+        if: steps.scrape.outputs.failed != ''
+        run: |
+          echo "::error::hard scrape failures: ${{ steps.scrape.outputs.failed }}"
           exit 1

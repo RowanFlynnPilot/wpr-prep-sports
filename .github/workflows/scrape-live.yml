@@ -34,6 +34,8 @@ permissions:
   # Bot-authored pushes don't trigger downstream workflows (GitHub loop
   # protection), so without this an updated data/ never reaches Pages.
   actions: write
+  # issues: write lets the failure tail open an ops-alert issue.
+  issues: write
 
 jobs:
   live:
@@ -54,21 +56,25 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run live scrape (per-sport)
+        id: scrape
         working-directory: scraper
         env:
           # On cron runs we cycle through every sport. On manual dispatch
           # the user can pass a single sport id.
           SPORTS: ${{ github.event.inputs.sport || 'football boys_basketball girls_basketball volleyball boys_hockey girls_hockey boys_soccer girls_soccer' }}
         run: |
+          FAILED=""
           for sport in $SPORTS; do
             echo "::group::live $sport"
             if python main.py --sport "$sport" --live; then
               echo "ok: $sport"
             else
               echo "::warning::live failed for $sport — continuing"
+              FAILED="$FAILED $sport"
             fi
             echo "::endgroup::"
           done
+          echo "failed=${FAILED# }" >> "$GITHUB_OUTPUT"
 
       # Data gate: structurally broken output must never commit. Fails
       # the run before the commit step (see scripts/validate_data.py
@@ -109,4 +115,25 @@ jobs:
             sleep 15
           done
           echo "::error::deploy dispatch failed after 3 attempts"
+          exit 1
+
+      # ---- Loud-failure tail (after commit/deploy so good data ships
+      # first). The alert-issue action dedupes on an open label, so a
+      # broken source during a Friday window opens ONE issue, not one
+      # per 10-minute run.
+      - name: Open ops alert
+        if: always() && (failure() || steps.scrape.outputs.failed != '')
+        uses: ./.github/actions/alert-issue
+        with:
+          title: "Ops alert: Scrape Live workflow needs attention"
+          body: |
+            **Run:** ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+            **Sports whose live merge crashed:** ${{ steps.scrape.outputs.failed || 'none (a later step failed — see run log)' }}
+
+            Triage steps: docs/operations.md.
+
+      - name: Fail run on live-scrape crashes
+        if: steps.scrape.outputs.failed != ''
+        run: |
+          echo "::error::live scrape crashed for: ${{ steps.scrape.outputs.failed }}"
           exit 1

@@ -20,6 +20,7 @@ on:
 permissions:
   contents: write
   actions: write
+  issues: write
 
 jobs:
   digest:
@@ -73,3 +74,18 @@ jobs:
           done
           echo "::error::deploy dispatch failed after 3 attempts"
           exit 1
+
+      # Saturday digest failing = newsletter team ships without the
+      # roundup. Weekly cadence means a missed run stays missed for a
+      # week — alert it.
+      - name: Open ops alert
+        if: failure()
+        uses: ./.github/actions/alert-issue
+        with:
+          title: "Ops alert: Weekly Digest failed"
+          body: |
+            **Run:** ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+
+            data/digest/latest.html was NOT refreshed this week. Re-run via
+            workflow_dispatch (optionally with week_ending) once fixed.
+            Triage steps: docs/operations.md.

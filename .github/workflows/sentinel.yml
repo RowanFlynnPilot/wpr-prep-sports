@@ -1,0 +1,43 @@
+name: Sentinel
+
+# Daily freshness watchdog. The scrape workflows alert on their OWN
+# failures; this catches the failure mode they can't see — green runs
+# that stopped producing data (wipe-guarded source breakage, a cron
+# that quietly stopped firing, schedule-skips under GitHub load).
+# Stdlib-only script, no pip install: the whole job takes ~10s.
+
+on:
+  schedule:
+    - cron: "0 14 * * *" # daily 14:00 UTC = 8/9am Central, after the morning scrape
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  freshness:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Check in-season data freshness
+        run: python scraper/scripts/check_freshness.py
+
+      - name: Open ops alert
+        if: failure()
+        uses: ./.github/actions/alert-issue
+        with:
+          title: "Ops alert: in-season data has gone stale"
+          body: |
+            The freshness sentinel found in-season sport data older than its threshold.
+
+            **Run:** ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }} (per-sport ages in the log)
+
+            Likely causes, in order: the Scrape workflow failing repeatedly, a WIAA
+            markup change making every scrape trip the wipe guard (0 games parsed),
+            or the scheduled cron not firing. Triage steps: docs/operations.md.
