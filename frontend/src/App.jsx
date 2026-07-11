@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { lazy, Suspense, useEffect, useMemo, useState } from "react";
 import {
   Routes,
   Route,
@@ -10,11 +10,15 @@ import { fetchDataset } from "./data/fetchDataset.js";
 import DashboardPage from "./pages/DashboardPage.jsx";
 import TeamPage from "./pages/TeamPage.jsx";
 import GamePage from "./pages/GamePage.jsx";
-import OgCardPage from "./pages/OgCardPage.jsx";
 import PlayerPage from "./pages/PlayerPage.jsx";
-import MediaKitPage from "./pages/MediaKitPage.jsx";
 import EmbedPage from "./pages/EmbedPage.jsx";
 import Skeleton from "./components/Skeleton.jsx";
+
+// Route-split: readers never visit the media kit or the OG-card
+// generator target, so neither belongs in the main bundle. Their CSS
+// moves with them (imported inside each page component).
+const MediaKitPage = lazy(() => import("./pages/MediaKitPage.jsx"));
+const OgCardPage = lazy(() => import("./pages/OgCardPage.jsx"));
 import { indexSchools } from "./utils/schools.js";
 import { useAnalytics } from "./utils/analytics.js";
 import { useIframeHeightReporter } from "./utils/iframe.js";
@@ -39,7 +43,6 @@ import "./styles/TopPerformers.css";
 import "./styles/GamePage.css";
 import "./styles/GamePreview.css";
 import "./styles/HeadToHead.css";
-import "./styles/OgCard.css";
 import "./styles/Spirit.css";
 import "./styles/PowerRankings.css";
 import "./styles/PlayerPage.css";
@@ -68,11 +71,26 @@ export default function App() {
 
       {/* OG share-card route — fetched by the PNG generator, never linked
           from the UI. Bypasses SportShell so the screenshot only captures
-          the card with no widget chrome around it. */}
-      <Route path="/card/:sport/:gameId" element={<OgCardPage />} />
+          the card with no widget chrome around it. Null fallback is safe:
+          the generator waits for [data-og-ready], not first paint. */}
+      <Route
+        path="/card/:sport/:gameId"
+        element={
+          <Suspense fallback={null}>
+            <OgCardPage />
+          </Suspense>
+        }
+      />
 
       {/* Sponsor media kit — cross-sport sales page, linked from the footer. */}
-      <Route path="/sponsor" element={<MediaKitPage />} />
+      <Route
+        path="/sponsor"
+        element={
+          <Suspense fallback={<Skeleton />}>
+            <MediaKitPage />
+          </Suspense>
+        }
+      />
 
       {/* Sport-scoped routes. SportShell fetches that sport's dataset and
           renders nested routes once it's loaded. */}
@@ -109,12 +127,14 @@ function SportShell() {
   const valid = isKnownSport(sport);
   const [dataset, setDataset] = useState(null);
   const [error, setError] = useState(null);
+  const [refreshFailures, setRefreshFailures] = useState(0);
 
   useEffect(() => {
     if (!valid) return;
     let cancelled = false;
     setDataset(null);
     setError(null);
+    setRefreshFailures(0);
     fetchDataset(sport)
       .then((d) => !cancelled && setDataset(d))
       .catch((e) => !cancelled && setError(e.message));
@@ -125,7 +145,9 @@ function SportShell() {
 
   // Live auto-refresh: when any game in the current dataset is mid-play,
   // re-fetch every 60s so the Friday Night Lights crowd sees scores
-  // tick up without a manual refresh.
+  // tick up without a manual refresh. Failures keep the last good data
+  // on screen but are counted — after two misses the dashboard shows a
+  // "scores may lag" note instead of silently freezing.
   const hasLiveGame = useMemo(
     () => (dataset?.games ?? []).some((g) => g.status === "in_progress"),
     [dataset?.games],
@@ -134,8 +156,14 @@ function SportShell() {
     if (!valid || !hasLiveGame) return;
     const id = setInterval(() => {
       fetchDataset(sport)
-        .then((d) => setDataset(d))
-        .catch(() => {/* ignore — next tick will retry */});
+        .then((d) => {
+          setDataset(d);
+          setRefreshFailures(0);
+        })
+        .catch((e) => {
+          console.warn("[wpr-prep-sports] live refresh failed:", e);
+          setRefreshFailures((n) => n + 1);
+        });
     }, 60_000);
     return () => clearInterval(id);
   }, [sport, valid, hasLiveGame]);
@@ -158,7 +186,7 @@ function SportShell() {
           <div className="boundary">
             <h2>Scores temporarily unavailable.</h2>
             <p>
-              We couldn't load the latest {configFor(sport).label} data. The
+              We couldn&rsquo;t load the latest {configFor(sport).label} data. The
               scraper or GitHub Pages may be having a moment — please check
               back shortly.
             </p>
@@ -205,6 +233,7 @@ function SportShell() {
             schoolIndex={schoolIndex}
             sponsors={dataset.sponsors}
             sportConfig={sportConfig}
+            liveRefreshStalled={refreshFailures >= 2}
           />
         }
       />

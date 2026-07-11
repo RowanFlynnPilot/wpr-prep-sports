@@ -156,17 +156,34 @@ export function fetchPlayerLines(sportId, schoolId, version) {
   );
 }
 
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
 // Only meta.json bypasses the HTTP cache — it's the freshness signal.
 // Everything else carries ?v=<meta.last_updated>, so a new scrape
 // changes the URL and old cached payloads simply stop being requested.
 // (Previously every fetch was no-store, which forced a full re-download
 // of multi-MB JSON on every single widget load.)
+//
+// Required files retry twice (0.5s / 1s backoff) on network errors and
+// 5xx — a transient Pages hiccup shouldn't hard-fail the whole widget.
+// 4xx means the file genuinely isn't there; fail immediately.
 async function fetchJson(url, { noStore = false } = {}) {
-  const resp = await fetch(url, noStore ? { cache: "no-store" } : undefined);
-  if (!resp.ok) {
-    throw new Error(`${resp.status} ${resp.statusText} — ${url}`);
+  const RETRIES = 2;
+  let lastError;
+  for (let attempt = 0; attempt <= RETRIES; attempt += 1) {
+    if (attempt > 0) await sleep(500 * attempt);
+    let resp;
+    try {
+      resp = await fetch(url, noStore ? { cache: "no-store" } : undefined);
+    } catch (e) {
+      lastError = e; // network-level failure — retryable
+      continue;
+    }
+    if (resp.ok) return resp.json();
+    lastError = new Error(`${resp.status} ${resp.statusText} — ${url}`);
+    if (resp.status < 500 && resp.status !== 429) break;
   }
-  return resp.json();
+  throw lastError;
 }
 
 async function fetchJsonOptional(url) {

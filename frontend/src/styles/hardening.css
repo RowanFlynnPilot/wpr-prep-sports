@@ -46,6 +46,32 @@
   border: 0;
 }
 
+/* Section boundary — compact fallback when ONE section crashes
+   (SectionBoundary.jsx); the full-page .boundary below stays the
+   global last resort. ---------------------------------------------------- */
+
+.section-boundary {
+  background: var(--card);
+  border: 1px dashed var(--line);
+  border-radius: var(--radius);
+  color: var(--muted);
+  font-size: 0.85rem;
+  padding: 0.9rem 1rem;
+  margin: 0.75rem 0;
+  text-align: center;
+}
+
+/* Live-refresh stall notice — the 60s auto-refresh has failed repeatedly;
+   scores shown may lag until it recovers. */
+.live-stall-note {
+  background: var(--paper-2);
+  border-left: 3px solid var(--accent);
+  color: var(--muted);
+  font-size: 0.8rem;
+  padding: 0.5rem 0.75rem;
+  margin: 0 0 0.75rem;
+}
+
 /* Error boundary --------------------------------------------------------- */
 
 .boundary {

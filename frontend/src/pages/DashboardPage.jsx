@@ -9,6 +9,7 @@ import ThisWeekGrid from "../components/ThisWeekGrid.jsx";
 import MonthCalendar from "../components/MonthCalendar.jsx";
 import PlayerOfWeek from "../components/PlayerOfWeek.jsx";
 import TournamentBracket from "../components/TournamentBracket.jsx";
+import SectionBoundary from "../components/SectionBoundary.jsx";
 import Notable from "../components/Notable.jsx";
 import Pickem from "../components/Pickem.jsx";
 import StandingsTable from "../components/StandingsTable.jsx";
@@ -31,7 +32,13 @@ function hasPlayerRows(rows) {
   return (rows ?? []).some((r) => r.player_name && r.player_name !== "Team");
 }
 
-export default function DashboardPage({ dataset, schoolIndex, sponsors, sportConfig }) {
+export default function DashboardPage({
+  dataset,
+  schoolIndex,
+  sponsors,
+  sportConfig,
+  liveRefreshStalled = false,
+}) {
   const { meta, schools, games, standings, seasonStats, spirit, potwOverride, powerRankings } = dataset;
 
   // "anchor now" is the content shim: pick games / ticker / featured-week
@@ -181,6 +188,13 @@ export default function DashboardPage({ dataset, schoolIndex, sponsors, sportCon
         />
       )}
 
+      {liveRefreshStalled && (
+        <div className="live-stall-note" role="status">
+          Live updates are lagging — scores may be a minute or two behind.
+          They&rsquo;ll catch up automatically.
+        </div>
+      )}
+
       {/* Safety-net note: with the preseason 0-0 standings fix in the
           scraper this should never fire for a fully-scraped sport — it
           covers partial mid-publish states (e.g. WIAA still loading a
@@ -194,27 +208,34 @@ export default function DashboardPage({ dataset, schoolIndex, sponsors, sportCon
         </div>
       )}
 
-      {/* Pinned showcase — always visible above the tabs. */}
-      <Marquee pick={marquee} sportConfig={sportConfig} sponsors={sponsors} schoolIndex={schoolIndex} />
+      {/* Pinned showcase — always visible above the tabs. Each pinned
+          section is fenced so one crashing can't take down the page. */}
+      <SectionBoundary label="marquee">
+        <Marquee pick={marquee} sportConfig={sportConfig} sponsors={sponsors} schoolIndex={schoolIndex} />
+      </SectionBoundary>
 
-      <Hero
-        game={featured}
-        schoolIndex={schoolIndex}
-        games={games}
-        seasonStats={seasonStats}
-        offSeason={offSeason}
-        sportConfig={sportConfig}
-        nextSeasonStart={nextSeasonStart}
-        daysToNext={daysToNext}
-      />
+      <SectionBoundary label="hero">
+        <Hero
+          game={featured}
+          schoolIndex={schoolIndex}
+          games={games}
+          seasonStats={seasonStats}
+          offSeason={offSeason}
+          sportConfig={sportConfig}
+          nextSeasonStart={nextSeasonStart}
+          daysToNext={daysToNext}
+        />
+      </SectionBoundary>
 
-      <PlayerOfWeek
-        games={games}
-        schoolIndex={schoolIndex}
-        sponsors={sponsors}
-        sportConfig={sportConfig}
-        override={potwOverride}
-      />
+      <SectionBoundary label="player-of-week">
+        <PlayerOfWeek
+          games={games}
+          schoolIndex={schoolIndex}
+          sponsors={sponsors}
+          sportConfig={sportConfig}
+          override={potwOverride}
+        />
+      </SectionBoundary>
 
       <SectionTabs tabs={tabs} active={activeTab} onChange={setActiveTab} />
 
@@ -252,12 +273,14 @@ export default function DashboardPage({ dataset, schoolIndex, sponsors, sportCon
             <ScoreTicker games={recent} schoolIndex={schoolIndex} allGames={games} sportConfig={sportConfig} />
           </section>
 
-          <Pickem
-            games={games}
-            schoolIndex={schoolIndex}
-            sponsors={sponsors}
-            sportId={sportConfig?.id}
-          />
+          <SectionBoundary label="pickem">
+            <Pickem
+              games={games}
+              schoolIndex={schoolIndex}
+              sponsors={sponsors}
+              sportId={sportConfig?.id}
+            />
+          </SectionBoundary>
         </>
       )}
 
@@ -333,11 +356,13 @@ export default function DashboardPage({ dataset, schoolIndex, sponsors, sportCon
                 <h2>Playoff Bracket</h2>
                 <span className="section-header__hint">WIAA tournament · {sportConfig.label}</span>
               </div>
-              <TournamentBracket
-                games={games}
-                schoolIndex={schoolIndex}
-                sportConfig={sportConfig}
-              />
+              <SectionBoundary label="bracket">
+                <TournamentBracket
+                  games={games}
+                  schoolIndex={schoolIndex}
+                  sportConfig={sportConfig}
+                />
+              </SectionBoundary>
             </section>
           )}
         </>

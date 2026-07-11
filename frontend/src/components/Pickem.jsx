@@ -90,7 +90,7 @@ export default function Pickem({ games, schoolIndex, sponsors, sportId }) {
     <section className="pickem" aria-label="Pick'em game">
       <header className="pickem__header">
         <div className="pickem__title">
-          <span className="pickem__eyebrow">Pick'em</span>
+          <span className="pickem__eyebrow">Pick&rsquo;em</span>
           <Sponsor slot="pickem" sponsors={sponsors} variant="inline" />
         </div>
         <div className="pickem__score" aria-label="Your record">

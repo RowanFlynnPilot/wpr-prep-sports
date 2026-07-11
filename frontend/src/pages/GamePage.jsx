@@ -8,6 +8,7 @@ import Sponsor from "../components/Sponsor.jsx";
 import ScoringSummary from "../components/ScoringSummary.jsx";
 import GamePreview from "../components/GamePreview.jsx";
 import HeadToHead from "../components/HeadToHead.jsx";
+import SectionBoundary from "../components/SectionBoundary.jsx";
 import SpiritGallery from "../components/SpiritGallery.jsx";
 import { schoolFor } from "../utils/schools.js";
 import { formatGameDay, formatGameDate, formatGameTime } from "../utils/dates.js";
@@ -208,7 +209,9 @@ export default function GamePage({ dataset, schoolIndex, sportConfig }) {
 
       <ScoringSummary game={game} schoolIndex={schoolIndex} />
 
-      <HeadToHead game={game} dataset={dataset} />
+      <SectionBoundary label="head-to-head">
+        <HeadToHead game={game} dataset={dataset} />
+      </SectionBoundary>
 
       <SpiritGallery game={game} photos={dataset.spirit} />
 
@@ -254,7 +257,7 @@ export default function GamePage({ dataset, schoolIndex, sportConfig }) {
         ) : (
           <div className="game-stats__empty">
             <p>
-              Stats for this game haven't been reported to Bound yet, or this
+              Stats for this game haven&rsquo;t been reported to Bound yet, or this
               matchup is outside the coverage area. The final score above is
               authoritative.
             </p>

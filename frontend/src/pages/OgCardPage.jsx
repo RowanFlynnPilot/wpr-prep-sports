@@ -4,6 +4,7 @@ import { fetchDataset } from "../data/fetchDataset.js";
 import { indexSchools, schoolFor, primaryColor, initials } from "../utils/schools.js";
 import { isKnownSport, configFor } from "../config/sports.js";
 import { formatGameDay, formatGameDate } from "../utils/dates.js";
+import "../styles/OgCard.css";
 
 /**
  * Standalone 1200x630 game-card route used by the OG-image generator.
