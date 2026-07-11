@@ -27,11 +27,16 @@ Python scraper → GitHub Actions cron → GitHub Pages static JSON → React/Vi
 - **Scraper** (`scraper/`): Python. WIAA is the schedule/score backbone;
   Bound, MaxPreps, and Wisconsin Prep Hockey layer in player stats;
   Halftime supplies live scores. Writes normalized JSON to `data/`.
-- **GitHub Actions** (`.github/workflows/`): Three workflows — `scrape.yml`
-  (full scrape, cron paused off-season), `scrape-live.yml` (10-min live-score
-  merge during game windows, safe year-round), and `deploy.yml` (builds the
-  frontend and deploys to GitHub Pages). A data-validation gate
-  (`scraper/scripts/validate_data.py`) runs before every commit.
+- **GitHub Actions** (`.github/workflows/`): Six workflows — `scrape.yml`
+  (full scrape, season-aware cron), `scrape-live.yml` (10-min live-score
+  merge during game windows, safe year-round), `deploy.yml` (builds the
+  frontend and deploys to GitHub Pages), `digest.yml` (Saturday newsletter
+  export), `sentinel.yml` (daily freshness watchdog), and `tests.yml`
+  (scraper pytest on push/PR). A data-validation gate
+  (`scraper/scripts/validate_data.py`) runs before every commit and
+  includes a coverage-regression check vs git HEAD. **Failures open a
+  GitHub issue labeled `ops-alert`** (create-only dedupe while one is
+  open). Ops map + incident runbook: `docs/operations.md`.
 - **Frontend** (`frontend/`): React + Vite. Fetches the static JSON at runtime.
   Builds to `frontend/dist/`, deployed to GitHub Pages.
 - **Embed**: WordPress `<iframe>` pointing at the GitHub Pages URL.
@@ -157,8 +162,10 @@ directly via `fetch()` against the GitHub Pages domain.
 # Scraper
 cd scraper
 python -m venv .venv && source .venv/bin/activate  # or .venv\Scripts\activate on Windows
-pip install -r requirements.txt
-python main.py --sport football --season 2025-26
+pip install -r requirements.txt -r requirements-dev.txt
+python main.py --sport football --season 2026-27
+python -m pytest tests -q          # unit + saved-fixture parser tests (no network)
+python scripts/validate_data.py    # data gate incl. coverage regression vs HEAD
 
 # Frontend
 cd frontend
