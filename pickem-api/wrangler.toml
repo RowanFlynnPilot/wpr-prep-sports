@@ -9,3 +9,11 @@ compatibility_date = "2026-06-01"
 [[kv_namespaces]]
 binding = "PICKS"
 id = "REPLACE_WITH_KV_NAMESPACE_ID"
+
+# --- Per-tenant overrides (white-label deployments) -------------------
+# Unset = the WPR production defaults baked into worker.js. A second
+# publisher's deployment sets both:
+#
+# [vars]
+# DATA_ORIGIN = "https://<user>.github.io/<repo>"        # where games.json lives
+# ALLOWED_ORIGINS = "https://<user>.github.io,https://<news-site>.com"  # comma-separated

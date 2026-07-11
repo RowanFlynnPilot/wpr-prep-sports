@@ -5,8 +5,11 @@ import { existsSync } from "node:fs";
 import { resolve } from "node:path";
 
 // GitHub Pages serves the site under /wpr-prep-sports/.
-// Override at build time with VITE_BASE if needed (e.g. for a custom domain).
-const base = process.env.VITE_BASE ?? "/wpr-prep-sports/";
+// Override at build time with VITE_BASE if needed (e.g. for a custom
+// domain or a fork's repo name). `||`, not `??`: CI passes unset repo
+// variables through as EMPTY strings, which must mean "use the default",
+// not "base is ''".
+const base = process.env.VITE_BASE || "/wpr-prep-sports/";
 
 // Strip a leading "/wpr-prep-sports" off whatever `base` is so the path
 // inside the data URL matches both dev and prod.

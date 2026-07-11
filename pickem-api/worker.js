@@ -24,13 +24,28 @@
  *      players per sport)
  */
 
-const DATA_ORIGIN = "https://rowanflynnpilot.github.io/wpr-prep-sports";
-const ALLOWED_ORIGINS = [
+// Per-tenant config comes from wrangler.toml [vars] (DATA_ORIGIN,
+// ALLOWED_ORIGINS) — these defaults are the WPR production values so
+// the original deployment needs no vars at all.
+const DEFAULT_DATA_ORIGIN = "https://rowanflynnpilot.github.io/wpr-prep-sports";
+const DEFAULT_ALLOWED_ORIGINS = [
   "https://rowanflynnpilot.github.io",
   "https://wausaupilotandreview.com",
   "https://www.wausaupilotandreview.com",
   "http://localhost:5173",
 ];
+
+function dataOrigin(env) {
+  return (env?.DATA_ORIGIN || DEFAULT_DATA_ORIGIN).replace(/\/+$/, "");
+}
+
+function allowedOrigins(env) {
+  if (!env?.ALLOWED_ORIGINS) return DEFAULT_ALLOWED_ORIGINS;
+  return String(env.ALLOWED_ORIGINS)
+    .split(",")
+    .map((s) => s.trim())
+    .filter(Boolean);
+}
 const KNOWN_SPORTS = new Set([
   "football",
   "boys_basketball",
@@ -48,7 +63,7 @@ export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
     const origin = request.headers.get("Origin") ?? "";
-    const cors = corsHeaders(origin);
+    const cors = corsHeaders(origin, env);
 
     if (request.method === "OPTIONS") {
       return new Response(null, { status: 204, headers: cors });
@@ -71,8 +86,9 @@ export default {
   },
 };
 
-function corsHeaders(origin) {
-  const allowed = ALLOWED_ORIGINS.includes(origin) ? origin : ALLOWED_ORIGINS[0];
+function corsHeaders(origin, env) {
+  const origins = allowedOrigins(env);
+  const allowed = origins.includes(origin) ? origin : origins[0];
   return {
     "Access-Control-Allow-Origin": allowed,
     "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
@@ -89,8 +105,8 @@ function json(body, status = 200, extra = {}) {
 }
 
 /** games.json for a sport, edge-cached 5 minutes. Returns Map<id, game>. */
-async function gamesIndex(sport, ctx) {
-  const req = new Request(`${DATA_ORIGIN}/data/${sport}/games.json`, {
+async function gamesIndex(sport, env) {
+  const req = new Request(`${dataOrigin(env)}/data/${sport}/games.json`, {
     cf: { cacheTtl: 300, cacheEverything: true },
   });
   const resp = await fetch(req);
@@ -112,7 +128,7 @@ async function handleSubmit(request, env, ctx, cors) {
   }
   const entries = Object.entries(picks).slice(0, MAX_PICKS_PER_SUBMIT);
 
-  const index = await gamesIndex(sport, ctx);
+  const index = await gamesIndex(sport, env);
   const now = Date.now();
   const key = `entry:${sport}:${clientId}`;
   const existing = (await env.PICKS.get(key, "json")) ?? { picks: {} };
@@ -182,7 +198,7 @@ async function handleLeaderboard(url, env, ctx, cors) {
   if (!KNOWN_SPORTS.has(sport)) return json({ error: "unknown sport" }, 400, cors);
   const clientId = url.searchParams.get("client_id");
 
-  const index = await gamesIndex(sport, ctx);
+  const index = await gamesIndex(sport, env);
   const rows = [];
   for await (const entry of listEntries(env, sport)) {
     let correct = 0;

@@ -115,4 +115,37 @@ assert(r.status === 400, "unknown sport rejected");
 r = await call("/api/nope");
 assert(r.status === 404, "unknown route 404s");
 
+// 6. Tenant overrides: ALLOWED_ORIGINS + DATA_ORIGIN from env (white-label).
+const tenantEnv = {
+  PICKS,
+  DATA_ORIGIN: "https://tenant.example/prep-widget/",
+  ALLOWED_ORIGINS: "https://tenant.example, https://news.example",
+};
+r = await worker.fetch(
+  new Request("https://pickem.example/api/aggregates?sport=football&ids=g-future", {
+    headers: { Origin: "https://news.example" },
+  }),
+  tenantEnv,
+  ctx,
+);
+assert(
+  r.headers.get("Access-Control-Allow-Origin") === "https://news.example",
+  "env ALLOWED_ORIGINS echoed for tenant origin",
+);
+let tenantFetched = null;
+globalThis.fetch = async (input) => {
+  const url = typeof input === "string" ? input : input.url;
+  tenantFetched = url;
+  return new Response(JSON.stringify(GAMES), { status: 200 });
+};
+await worker.fetch(
+  new Request("https://pickem.example/api/leaderboard?sport=football"),
+  tenantEnv,
+  ctx,
+);
+assert(
+  tenantFetched === "https://tenant.example/prep-widget/data/football/games.json",
+  "env DATA_ORIGIN drives games.json fetch (trailing slash trimmed)",
+);
+
 console.log(process.exitCode ? "\nTESTS FAILED" : "\nall tests passed");

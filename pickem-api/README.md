@@ -67,3 +67,11 @@ No account needed — `node worker.test.mjs` runs the endpoint suite
 against mocked KV and games.json (kickoff lock, aggregates, scoring,
 validation). `npx wrangler dev --local` also works for a live local
 instance.
+
+## White-label deployments
+
+The worker defaults to WPR's data origin and CORS allow-list. A second
+publisher's deployment overrides both without touching code — set
+`[vars]` in `wrangler.toml` (`DATA_ORIGIN`, comma-separated
+`ALLOWED_ORIGINS`; template in the file) and deploy under its own
+worker name + KV namespace. See docs/white-label.md.
