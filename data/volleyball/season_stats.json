@@ -1,1 +1,2697 @@
-[]
+[
+  {
+    "school_id": "wausau-east",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "AST": "0",
+      "KLS": "0",
+      "ERR": "0",
+      "ATT": "0",
+      "EFF": ".000"
+    }
+  },
+  {
+    "school_id": "wausau-east",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "SOLO": "0",
+      "AST": "0",
+      "BLK": "0",
+      "DIG": "0"
+    }
+  },
+  {
+    "school_id": "wausau-east",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "ACE": "0",
+      "SUC": "0",
+      "ATT": "0",
+      "EFF": "0.0%"
+    }
+  },
+  {
+    "school_id": "wausau-west",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "AST": "0",
+      "KLS": "0",
+      "ERR": "0",
+      "ATT": "0",
+      "EFF": ".000"
+    }
+  },
+  {
+    "school_id": "wausau-west",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "SOLO": "0",
+      "AST": "0",
+      "BLK": "0",
+      "DIG": "0"
+    }
+  },
+  {
+    "school_id": "wausau-west",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "ACE": "0",
+      "SUC": "0",
+      "ATT": "0",
+      "EFF": "0.0%"
+    }
+  },
+  {
+    "school_id": "dc-everest",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "AST": "0",
+      "KLS": "0",
+      "ERR": "0",
+      "ATT": "0",
+      "EFF": ".000"
+    }
+  },
+  {
+    "school_id": "dc-everest",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "SOLO": "0",
+      "AST": "0",
+      "BLK": "0",
+      "DIG": "0"
+    }
+  },
+  {
+    "school_id": "dc-everest",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "ACE": "0",
+      "SUC": "0",
+      "ATT": "0",
+      "EFF": "0.0%"
+    }
+  },
+  {
+    "school_id": "marshfield",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "AST": "0",
+      "KLS": "0",
+      "ERR": "0",
+      "ATT": "0",
+      "EFF": ".000"
+    }
+  },
+  {
+    "school_id": "marshfield",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "SOLO": "0",
+      "AST": "0",
+      "BLK": "0",
+      "DIG": "0"
+    }
+  },
+  {
+    "school_id": "marshfield",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "ACE": "0",
+      "SUC": "0",
+      "ATT": "0",
+      "EFF": "0.0%"
+    }
+  },
+  {
+    "school_id": "spash",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "AST": "0",
+      "KLS": "0",
+      "ERR": "0",
+      "ATT": "0",
+      "EFF": ".000"
+    }
+  },
+  {
+    "school_id": "spash",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "SOLO": "0",
+      "AST": "0",
+      "BLK": "0",
+      "DIG": "0"
+    }
+  },
+  {
+    "school_id": "spash",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "ACE": "0",
+      "SUC": "0",
+      "ATT": "0",
+      "EFF": "0.0%"
+    }
+  },
+  {
+    "school_id": "wisconsin-rapids",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "AST": "0",
+      "KLS": "0",
+      "ERR": "0",
+      "ATT": "0",
+      "EFF": ".000"
+    }
+  },
+  {
+    "school_id": "wisconsin-rapids",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "SOLO": "0",
+      "AST": "0",
+      "BLK": "0",
+      "DIG": "0"
+    }
+  },
+  {
+    "school_id": "wisconsin-rapids",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "ACE": "0",
+      "SUC": "0",
+      "ATT": "0",
+      "EFF": "0.0%"
+    }
+  },
+  {
+    "school_id": "athens",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "AST": "0",
+      "KLS": "0",
+      "ERR": "0",
+      "ATT": "0",
+      "EFF": ".000"
+    }
+  },
+  {
+    "school_id": "athens",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "SOLO": "0",
+      "AST": "0",
+      "BLK": "0",
+      "DIG": "0"
+    }
+  },
+  {
+    "school_id": "athens",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "ACE": "0",
+      "SUC": "0",
+      "ATT": "0",
+      "EFF": "0.0%"
+    }
+  },
+  {
+    "school_id": "edgar",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "AST": "0",
+      "KLS": "0",
+      "ERR": "0",
+      "ATT": "0",
+      "EFF": ".000"
+    }
+  },
+  {
+    "school_id": "edgar",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "SOLO": "0",
+      "AST": "0",
+      "BLK": "0",
+      "DIG": "0"
+    }
+  },
+  {
+    "school_id": "edgar",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "ACE": "0",
+      "SUC": "0",
+      "ATT": "0",
+      "EFF": "0.0%"
+    }
+  },
+  {
+    "school_id": "marathon",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "AST": "0",
+      "KLS": "0",
+      "ERR": "0",
+      "ATT": "0",
+      "EFF": ".000"
+    }
+  },
+  {
+    "school_id": "marathon",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "SOLO": "0",
+      "AST": "0",
+      "BLK": "0",
+      "DIG": "0"
+    }
+  },
+  {
+    "school_id": "marathon",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "ACE": "0",
+      "SUC": "0",
+      "ATT": "0",
+      "EFF": "0.0%"
+    }
+  },
+  {
+    "school_id": "newman-catholic",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "AST": "0",
+      "KLS": "0",
+      "ERR": "0",
+      "ATT": "0",
+      "EFF": ".000"
+    }
+  },
+  {
+    "school_id": "newman-catholic",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "SOLO": "0",
+      "AST": "0",
+      "BLK": "0",
+      "DIG": "0"
+    }
+  },
+  {
+    "school_id": "newman-catholic",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "ACE": "0",
+      "SUC": "0",
+      "ATT": "0",
+      "EFF": "0.0%"
+    }
+  },
+  {
+    "school_id": "stratford",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "AST": "0",
+      "KLS": "0",
+      "ERR": "0",
+      "ATT": "0",
+      "EFF": ".000"
+    }
+  },
+  {
+    "school_id": "stratford",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "SOLO": "0",
+      "AST": "0",
+      "BLK": "0",
+      "DIG": "0"
+    }
+  },
+  {
+    "school_id": "stratford",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "ACE": "0",
+      "SUC": "0",
+      "ATT": "0",
+      "EFF": "0.0%"
+    }
+  },
+  {
+    "school_id": "spencer",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "AST": "0",
+      "KLS": "0",
+      "ERR": "0",
+      "ATT": "0",
+      "EFF": ".000"
+    }
+  },
+  {
+    "school_id": "spencer",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "SOLO": "0",
+      "AST": "0",
+      "BLK": "0",
+      "DIG": "0"
+    }
+  },
+  {
+    "school_id": "spencer",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "ACE": "0",
+      "SUC": "0",
+      "ATT": "0",
+      "EFF": "0.0%"
+    }
+  },
+  {
+    "school_id": "mosinee",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "AST": "0",
+      "KLS": "0",
+      "ERR": "0",
+      "ATT": "0",
+      "EFF": ".000"
+    }
+  },
+  {
+    "school_id": "mosinee",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "SOLO": "0",
+      "AST": "0",
+      "BLK": "0",
+      "DIG": "0"
+    }
+  },
+  {
+    "school_id": "mosinee",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "ACE": "0",
+      "SUC": "0",
+      "ATT": "0",
+      "EFF": "0.0%"
+    }
+  },
+  {
+    "school_id": "colby",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "AST": "0",
+      "KLS": "0",
+      "ERR": "0",
+      "ATT": "0",
+      "EFF": ".000"
+    }
+  },
+  {
+    "school_id": "colby",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "SOLO": "0",
+      "AST": "0",
+      "BLK": "0",
+      "DIG": "0"
+    }
+  },
+  {
+    "school_id": "colby",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "ACE": "0",
+      "SUC": "0",
+      "ATT": "0",
+      "EFF": "0.0%"
+    }
+  },
+  {
+    "school_id": "abbotsford",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "AST": "0",
+      "KLS": "0",
+      "ERR": "0",
+      "ATT": "0",
+      "EFF": ".000"
+    }
+  },
+  {
+    "school_id": "abbotsford",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "SOLO": "0",
+      "AST": "0",
+      "BLK": "0",
+      "DIG": "0"
+    }
+  },
+  {
+    "school_id": "abbotsford",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "ACE": "0",
+      "SUC": "0",
+      "ATT": "0",
+      "EFF": "0.0%"
+    }
+  },
+  {
+    "school_id": "tomahawk",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "AST": "0",
+      "KLS": "0",
+      "ERR": "0",
+      "ATT": "0",
+      "EFF": ".000"
+    }
+  },
+  {
+    "school_id": "tomahawk",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "SOLO": "0",
+      "AST": "0",
+      "BLK": "0",
+      "DIG": "0"
+    }
+  },
+  {
+    "school_id": "tomahawk",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "ACE": "0",
+      "SUC": "0",
+      "ATT": "0",
+      "EFF": "0.0%"
+    }
+  },
+  {
+    "school_id": "rhinelander",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "AST": "0",
+      "KLS": "0",
+      "ERR": "0",
+      "ATT": "0",
+      "EFF": ".000"
+    }
+  },
+  {
+    "school_id": "rhinelander",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "SOLO": "0",
+      "AST": "0",
+      "BLK": "0",
+      "DIG": "0"
+    }
+  },
+  {
+    "school_id": "rhinelander",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "ACE": "0",
+      "SUC": "0",
+      "ATT": "0",
+      "EFF": "0.0%"
+    }
+  },
+  {
+    "school_id": "medford",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "AST": "0",
+      "KLS": "0",
+      "ERR": "0",
+      "ATT": "0",
+      "EFF": ".000"
+    }
+  },
+  {
+    "school_id": "medford",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "SOLO": "0",
+      "AST": "0",
+      "BLK": "0",
+      "DIG": "0"
+    }
+  },
+  {
+    "school_id": "medford",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "ACE": "0",
+      "SUC": "0",
+      "ATT": "0",
+      "EFF": "0.0%"
+    }
+  },
+  {
+    "school_id": "merrill",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "AST": "0",
+      "KLS": "0",
+      "ERR": "0",
+      "ATT": "0",
+      "EFF": ".000"
+    }
+  },
+  {
+    "school_id": "merrill",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "SOLO": "0",
+      "AST": "0",
+      "BLK": "0",
+      "DIG": "0"
+    }
+  },
+  {
+    "school_id": "merrill",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "ACE": "0",
+      "SUC": "0",
+      "ATT": "0",
+      "EFF": "0.0%"
+    }
+  },
+  {
+    "school_id": "lakeland",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "AST": "0",
+      "KLS": "0",
+      "ERR": "0",
+      "ATT": "0",
+      "EFF": ".000"
+    }
+  },
+  {
+    "school_id": "lakeland",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "SOLO": "0",
+      "AST": "0",
+      "BLK": "0",
+      "DIG": "0"
+    }
+  },
+  {
+    "school_id": "lakeland",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "ACE": "0",
+      "SUC": "0",
+      "ATT": "0",
+      "EFF": "0.0%"
+    }
+  },
+  {
+    "school_id": "antigo",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "AST": "0",
+      "KLS": "0",
+      "ERR": "0",
+      "ATT": "0",
+      "EFF": ".000"
+    }
+  },
+  {
+    "school_id": "antigo",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "SOLO": "0",
+      "AST": "0",
+      "BLK": "0",
+      "DIG": "0"
+    }
+  },
+  {
+    "school_id": "antigo",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "ACE": "0",
+      "SUC": "0",
+      "ATT": "0",
+      "EFF": "0.0%"
+    }
+  },
+  {
+    "school_id": "eau-claire-north",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "AST": "0",
+      "KLS": "0",
+      "ERR": "0",
+      "ATT": "0",
+      "EFF": ".000"
+    }
+  },
+  {
+    "school_id": "eau-claire-north",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "SOLO": "0",
+      "AST": "0",
+      "BLK": "0",
+      "DIG": "0"
+    }
+  },
+  {
+    "school_id": "eau-claire-north",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "ACE": "0",
+      "SUC": "0",
+      "ATT": "0",
+      "EFF": "0.0%"
+    }
+  },
+  {
+    "school_id": "eau-claire-memorial",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "AST": "0",
+      "KLS": "0",
+      "ERR": "0",
+      "ATT": "0",
+      "EFF": ".000"
+    }
+  },
+  {
+    "school_id": "eau-claire-memorial",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "SOLO": "0",
+      "AST": "0",
+      "BLK": "0",
+      "DIG": "0"
+    }
+  },
+  {
+    "school_id": "eau-claire-memorial",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "ACE": "0",
+      "SUC": "0",
+      "ATT": "0",
+      "EFF": "0.0%"
+    }
+  },
+  {
+    "school_id": "chippewa-falls",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "AST": "0",
+      "KLS": "0",
+      "ERR": "0",
+      "ATT": "0",
+      "EFF": ".000"
+    }
+  },
+  {
+    "school_id": "chippewa-falls",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "SOLO": "0",
+      "AST": "0",
+      "BLK": "0",
+      "DIG": "0"
+    }
+  },
+  {
+    "school_id": "chippewa-falls",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "ACE": "0",
+      "SUC": "0",
+      "ATT": "0",
+      "EFF": "0.0%"
+    }
+  },
+  {
+    "school_id": "hudson",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "AST": "0",
+      "KLS": "0",
+      "ERR": "0",
+      "ATT": "0",
+      "EFF": ".000"
+    }
+  },
+  {
+    "school_id": "hudson",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "SOLO": "0",
+      "AST": "0",
+      "BLK": "0",
+      "DIG": "0"
+    }
+  },
+  {
+    "school_id": "hudson",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "ACE": "0",
+      "SUC": "0",
+      "ATT": "0",
+      "EFF": "0.0%"
+    }
+  },
+  {
+    "school_id": "new-richmond",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "AST": "0",
+      "KLS": "0",
+      "ERR": "0",
+      "ATT": "0",
+      "EFF": ".000"
+    }
+  },
+  {
+    "school_id": "new-richmond",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "SOLO": "0",
+      "AST": "0",
+      "BLK": "0",
+      "DIG": "0"
+    }
+  },
+  {
+    "school_id": "new-richmond",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "ACE": "0",
+      "SUC": "0",
+      "ATT": "0",
+      "EFF": "0.0%"
+    }
+  },
+  {
+    "school_id": "rice-lake",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "AST": "0",
+      "KLS": "0",
+      "ERR": "0",
+      "ATT": "0",
+      "EFF": ".000"
+    }
+  },
+  {
+    "school_id": "rice-lake",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "SOLO": "0",
+      "AST": "0",
+      "BLK": "0",
+      "DIG": "0"
+    }
+  },
+  {
+    "school_id": "rice-lake",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "ACE": "0",
+      "SUC": "0",
+      "ATT": "0",
+      "EFF": "0.0%"
+    }
+  },
+  {
+    "school_id": "auburndale",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "AST": "0",
+      "KLS": "0",
+      "ERR": "0",
+      "ATT": "0",
+      "EFF": ".000"
+    }
+  },
+  {
+    "school_id": "auburndale",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "SOLO": "0",
+      "AST": "0",
+      "BLK": "0",
+      "DIG": "0"
+    }
+  },
+  {
+    "school_id": "auburndale",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "ACE": "0",
+      "SUC": "0",
+      "ATT": "0",
+      "EFF": "0.0%"
+    }
+  },
+  {
+    "school_id": "assumption",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "AST": "0",
+      "KLS": "0",
+      "ERR": "0",
+      "ATT": "0",
+      "EFF": ".000"
+    }
+  },
+  {
+    "school_id": "assumption",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "SOLO": "0",
+      "AST": "0",
+      "BLK": "0",
+      "DIG": "0"
+    }
+  },
+  {
+    "school_id": "assumption",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "ACE": "0",
+      "SUC": "0",
+      "ATT": "0",
+      "EFF": "0.0%"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "AST": "0",
+      "KLS": "0",
+      "ERR": "0",
+      "ATT": "0",
+      "EFF": ".000"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "SOLO": "0",
+      "AST": "0",
+      "BLK": "0",
+      "DIG": "0"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "ACE": "0",
+      "SUC": "0",
+      "ATT": "0",
+      "EFF": "0.0%"
+    }
+  },
+  {
+    "school_id": "pittsville",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "AST": "0",
+      "KLS": "0",
+      "ERR": "0",
+      "ATT": "0",
+      "EFF": ".000"
+    }
+  },
+  {
+    "school_id": "pittsville",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "SOLO": "0",
+      "AST": "0",
+      "BLK": "0",
+      "DIG": "0"
+    }
+  },
+  {
+    "school_id": "pittsville",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "ACE": "0",
+      "SUC": "0",
+      "ATT": "0",
+      "EFF": "0.0%"
+    }
+  },
+  {
+    "school_id": "iola-scandinavia",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "AST": "0",
+      "KLS": "0",
+      "ERR": "0",
+      "ATT": "0",
+      "EFF": ".000"
+    }
+  },
+  {
+    "school_id": "iola-scandinavia",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "SOLO": "0",
+      "AST": "0",
+      "BLK": "0",
+      "DIG": "0"
+    }
+  },
+  {
+    "school_id": "iola-scandinavia",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "ACE": "0",
+      "SUC": "0",
+      "ATT": "0",
+      "EFF": "0.0%"
+    }
+  },
+  {
+    "school_id": "weyauwega-fremont",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "AST": "0",
+      "KLS": "0",
+      "ERR": "0",
+      "ATT": "0",
+      "EFF": ".000"
+    }
+  },
+  {
+    "school_id": "weyauwega-fremont",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "SOLO": "0",
+      "AST": "0",
+      "BLK": "0",
+      "DIG": "0"
+    }
+  },
+  {
+    "school_id": "weyauwega-fremont",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "ACE": "0",
+      "SUC": "0",
+      "ATT": "0",
+      "EFF": "0.0%"
+    }
+  },
+  {
+    "school_id": "wittenberg-birnamwood",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "AST": "0",
+      "KLS": "0",
+      "ERR": "0",
+      "ATT": "0",
+      "EFF": ".000"
+    }
+  },
+  {
+    "school_id": "wittenberg-birnamwood",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "SOLO": "0",
+      "AST": "0",
+      "BLK": "0",
+      "DIG": "0"
+    }
+  },
+  {
+    "school_id": "wittenberg-birnamwood",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "ACE": "0",
+      "SUC": "0",
+      "ATT": "0",
+      "EFF": "0.0%"
+    }
+  },
+  {
+    "school_id": "rosholt",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "AST": "0",
+      "KLS": "0",
+      "ERR": "0",
+      "ATT": "0",
+      "EFF": ".000"
+    }
+  },
+  {
+    "school_id": "rosholt",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "SOLO": "0",
+      "AST": "0",
+      "BLK": "0",
+      "DIG": "0"
+    }
+  },
+  {
+    "school_id": "rosholt",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "ACE": "0",
+      "SUC": "0",
+      "ATT": "0",
+      "EFF": "0.0%"
+    }
+  },
+  {
+    "school_id": "prentice",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "AST": "0",
+      "KLS": "0",
+      "ERR": "0",
+      "ATT": "0",
+      "EFF": ".000"
+    }
+  },
+  {
+    "school_id": "prentice",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "SOLO": "0",
+      "AST": "0",
+      "BLK": "0",
+      "DIG": "0"
+    }
+  },
+  {
+    "school_id": "prentice",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "ACE": "0",
+      "SUC": "0",
+      "ATT": "0",
+      "EFF": "0.0%"
+    }
+  },
+  {
+    "school_id": "flambeau",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "AST": "0",
+      "KLS": "0",
+      "ERR": "0",
+      "ATT": "0",
+      "EFF": ".000"
+    }
+  },
+  {
+    "school_id": "flambeau",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "SOLO": "0",
+      "AST": "0",
+      "BLK": "0",
+      "DIG": "0"
+    }
+  },
+  {
+    "school_id": "flambeau",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "ACE": "0",
+      "SUC": "0",
+      "ATT": "0",
+      "EFF": "0.0%"
+    }
+  },
+  {
+    "school_id": "bruce",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "AST": "0",
+      "KLS": "0",
+      "ERR": "0",
+      "ATT": "0",
+      "EFF": ".000"
+    }
+  },
+  {
+    "school_id": "bruce",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "SOLO": "0",
+      "AST": "0",
+      "BLK": "0",
+      "DIG": "0"
+    }
+  },
+  {
+    "school_id": "bruce",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "ACE": "0",
+      "SUC": "0",
+      "ATT": "0",
+      "EFF": "0.0%"
+    }
+  },
+  {
+    "school_id": "hurley",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "AST": "0",
+      "KLS": "0",
+      "ERR": "0",
+      "ATT": "0",
+      "EFF": ".000"
+    }
+  },
+  {
+    "school_id": "hurley",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "SOLO": "0",
+      "AST": "0",
+      "BLK": "0",
+      "DIG": "0"
+    }
+  },
+  {
+    "school_id": "hurley",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "ACE": "0",
+      "SUC": "0",
+      "ATT": "0",
+      "EFF": "0.0%"
+    }
+  },
+  {
+    "school_id": "chequamegon",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "AST": "0",
+      "KLS": "0",
+      "ERR": "0",
+      "ATT": "0",
+      "EFF": ".000"
+    }
+  },
+  {
+    "school_id": "chequamegon",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "SOLO": "0",
+      "AST": "0",
+      "BLK": "0",
+      "DIG": "0"
+    }
+  },
+  {
+    "school_id": "chequamegon",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "ACE": "0",
+      "SUC": "0",
+      "ATT": "0",
+      "EFF": "0.0%"
+    }
+  },
+  {
+    "school_id": "phillips",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "AST": "0",
+      "KLS": "0",
+      "ERR": "0",
+      "ATT": "0",
+      "EFF": ".000"
+    }
+  },
+  {
+    "school_id": "phillips",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "SOLO": "0",
+      "AST": "0",
+      "BLK": "0",
+      "DIG": "0"
+    }
+  },
+  {
+    "school_id": "phillips",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "ACE": "0",
+      "SUC": "0",
+      "ATT": "0",
+      "EFF": "0.0%"
+    }
+  },
+  {
+    "school_id": "rib-lake",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "AST": "0",
+      "KLS": "0",
+      "ERR": "0",
+      "ATT": "0",
+      "EFF": ".000"
+    }
+  },
+  {
+    "school_id": "rib-lake",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "SOLO": "0",
+      "AST": "0",
+      "BLK": "0",
+      "DIG": "0"
+    }
+  },
+  {
+    "school_id": "rib-lake",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "ACE": "0",
+      "SUC": "0",
+      "ATT": "0",
+      "EFF": "0.0%"
+    }
+  },
+  {
+    "school_id": "almond-bancroft",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "AST": "0",
+      "KLS": "0",
+      "ERR": "0",
+      "ATT": "0",
+      "EFF": ".000"
+    }
+  },
+  {
+    "school_id": "almond-bancroft",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "SOLO": "0",
+      "AST": "0",
+      "BLK": "0",
+      "DIG": "0"
+    }
+  },
+  {
+    "school_id": "almond-bancroft",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "ACE": "0",
+      "SUC": "0",
+      "ATT": "0",
+      "EFF": "0.0%"
+    }
+  },
+  {
+    "school_id": "bowler",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "AST": "0",
+      "KLS": "0",
+      "ERR": "0",
+      "ATT": "0",
+      "EFF": ".000"
+    }
+  },
+  {
+    "school_id": "bowler",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "SOLO": "0",
+      "AST": "0",
+      "BLK": "0",
+      "DIG": "0"
+    }
+  },
+  {
+    "school_id": "bowler",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "ACE": "0",
+      "SUC": "0",
+      "ATT": "0",
+      "EFF": "0.0%"
+    }
+  },
+  {
+    "school_id": "port-edwards",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "AST": "0",
+      "KLS": "0",
+      "ERR": "0",
+      "ATT": "0",
+      "EFF": ".000"
+    }
+  },
+  {
+    "school_id": "port-edwards",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "SOLO": "0",
+      "AST": "0",
+      "BLK": "0",
+      "DIG": "0"
+    }
+  },
+  {
+    "school_id": "port-edwards",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "ACE": "0",
+      "SUC": "0",
+      "ATT": "0",
+      "EFF": "0.0%"
+    }
+  },
+  {
+    "school_id": "tri-county",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "AST": "0",
+      "KLS": "0",
+      "ERR": "0",
+      "ATT": "0",
+      "EFF": ".000"
+    }
+  },
+  {
+    "school_id": "tri-county",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "SOLO": "0",
+      "AST": "0",
+      "BLK": "0",
+      "DIG": "0"
+    }
+  },
+  {
+    "school_id": "tri-county",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "ACE": "0",
+      "SUC": "0",
+      "ATT": "0",
+      "EFF": "0.0%"
+    }
+  },
+  {
+    "school_id": "river-falls",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "AST": "0",
+      "KLS": "0",
+      "ERR": "0",
+      "ATT": "0",
+      "EFF": ".000"
+    }
+  },
+  {
+    "school_id": "river-falls",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "SOLO": "0",
+      "AST": "0",
+      "BLK": "0",
+      "DIG": "0"
+    }
+  },
+  {
+    "school_id": "river-falls",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "ACE": "0",
+      "SUC": "0",
+      "ATT": "0",
+      "EFF": "0.0%"
+    }
+  },
+  {
+    "school_id": "superior",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "AST": "0",
+      "KLS": "0",
+      "ERR": "0",
+      "ATT": "0",
+      "EFF": ".000"
+    }
+  },
+  {
+    "school_id": "superior",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "SOLO": "0",
+      "AST": "0",
+      "BLK": "0",
+      "DIG": "0"
+    }
+  },
+  {
+    "school_id": "superior",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "ACE": "0",
+      "SUC": "0",
+      "ATT": "0",
+      "EFF": "0.0%"
+    }
+  },
+  {
+    "school_id": "menomonie",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "AST": "0",
+      "KLS": "0",
+      "ERR": "0",
+      "ATT": "0",
+      "EFF": ".000"
+    }
+  },
+  {
+    "school_id": "menomonie",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "SOLO": "0",
+      "AST": "0",
+      "BLK": "0",
+      "DIG": "0"
+    }
+  },
+  {
+    "school_id": "menomonie",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "MS": "-",
+      "MP": "-",
+      "SP": "0",
+      "ACE": "0",
+      "SUC": "0",
+      "ATT": "0",
+      "EFF": "0.0%"
+    }
+  }
+]
