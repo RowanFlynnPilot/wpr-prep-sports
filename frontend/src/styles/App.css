@@ -132,37 +132,97 @@
   -webkit-mask-image: linear-gradient(
     to right, #000 0, #000 calc(100% - 1.5rem), transparent 100%);
 }
+/* Tabs divide the full width rather than huddling at the left edge — with
+   only three or four views it reads as a deliberate nav bar instead of an
+   afterthought, and each target gets much bigger on a phone. */
 .section-tabs__list {
   display: flex;
   list-style: none;
   margin: 0;
   padding: 0;
-  gap: 0.25rem;
+  gap: 0;
 }
-.section-tabs__item { margin: 0; padding: 0; }
+.section-tabs__item {
+  margin: 0;
+  padding: 0;
+  flex: 1 1 0;
+  min-width: 0; /* let long labels shrink instead of forcing a scroll */
+}
 .section-tabs__tab {
   appearance: none;
   background: none;
   border: none;
-  border-bottom: 2px solid transparent;
+  border-bottom: 3px solid transparent;
   margin-bottom: -1px; /* overlap the container's bottom border */
   cursor: pointer;
-  font-family: inherit;
-  font-size: 0.95rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  /* Display face + uppercase to match the masthead and section headers. */
+  font-family: var(--font-display);
+  font-size: 1rem;
   font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   color: var(--muted);
-  padding: 0.6rem 0.9rem;
+  padding: 0.85rem 0.6rem;
   white-space: nowrap;
   transition: color var(--t-fast) var(--ease),
-    border-color var(--t-fast) var(--ease);
+    border-color var(--t-fast) var(--ease),
+    background var(--t-fast) var(--ease);
 }
-.section-tabs__tab:hover { color: var(--ink); }
+
+.section-tabs__icon {
+  font-size: 1.05em;
+  line-height: 1;
+}
+
+.section-tabs__label--short { display: none; }
+
+.section-tabs__tab:hover {
+  color: var(--ink);
+  background: var(--paper-2);
+}
+
 .section-tabs__tab--active {
   color: var(--accent-700);
   border-bottom-color: var(--accent);
+  font-weight: 700;
 }
+
+/* Icons stay full-colour, matching the sport switcher one row above.
+   Desaturating them was tried and read as muddy grey blobs at this size —
+   the active state is carried by the label colour and the underline, which
+   is plenty. A touch of transparency on inactive tabs is all it needs. */
+.section-tabs__tab:not(.section-tabs__tab--active) .section-tabs__icon {
+  opacity: 0.75;
+}
+
 @media (max-width: 640px) {
-  .section-tabs__tab { padding: 0.55rem 0.7rem; font-size: 0.9rem; }
+  .section-tabs__tab {
+    padding: 0.7rem 0.3rem;
+    font-size: 0.82rem;
+    letter-spacing: 0.03em;
+    gap: 0.3rem;
+  }
+  .section-tabs__label { display: none; }
+  .section-tabs__label--short { display: inline; }
+}
+
+/* Phone widths: four tabs plus icon and label won't sit on one line at
+   375px (the commonest handset), so stack the icon above the label rather
+   than dropping either. Taller tabs are a bonus on touch. */
+@media (max-width: 460px) {
+  .section-tabs__tab {
+    flex-direction: column;
+    gap: 0.2rem;
+    padding: 0.55rem 0.2rem;
+    font-size: 0.72rem;
+    line-height: 1.1;
+  }
+  .section-tabs__icon { font-size: 1.15rem; }
 }
 /* Sponsor line just under the active tab — one placement per view. */
 .section-tabs__sponsor {

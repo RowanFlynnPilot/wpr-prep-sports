@@ -212,11 +212,20 @@ export default function DashboardPage({
     games.some((g) => g.playoff);
   const hasSpotlightTab = notableItems.length > 0 || (spirit?.length ?? 0) > 0;
 
+  // `shortLabel` is the narrow-screen variant; the tabs divide the full
+  // width, so "Standings & Stats" has nowhere to go on a phone. Icons echo
+  // the sport switcher's emoji treatment one row above.
   const tabDefs = [
-    { id: "scores", label: "Scores", show: games.length > 0 },
-    { id: "schedule", label: "Schedule", show: games.length > 0 },
-    { id: "standings", label: "Standings & Stats", show: hasStatsTab },
-    { id: "spotlight", label: "Spotlight", show: hasSpotlightTab },
+    { id: "scores", label: "Scores", icon: "🆚", show: games.length > 0 },
+    { id: "schedule", label: "Schedule", icon: "📅", show: games.length > 0 },
+    {
+      id: "standings",
+      label: "Standings & Stats",
+      shortLabel: "Standings",
+      icon: "📊",
+      show: hasStatsTab,
+    },
+    { id: "spotlight", label: "Spotlight", icon: "⭐", show: hasSpotlightTab },
   ];
   const tabs = tabDefs.filter((t) => t.show);
 
