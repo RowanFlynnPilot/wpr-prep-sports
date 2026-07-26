@@ -20,9 +20,20 @@ import { trackEvent } from "../utils/analytics.js";
  *
  * Renders nothing when there are no upcoming pickable games (skip
  * the section in off-season rather than ship an empty card).
+ *
+ * `now` is the dashboard's anchor date, not wall-clock. Every other
+ * section already works off that anchor so the widget stays populated
+ * between a schedule landing and the first whistle; Pick'em was the one
+ * that didn't, so its 7-day window sat 25 days short of the opener and
+ * the section vanished for the whole preseason. In-season the anchor IS
+ * wall-clock, so behaviour there is unchanged, and off-season the anchor
+ * sits past the final game and this still correctly renders nothing.
  */
-export default function Pickem({ games, schoolIndex, sponsors, sportId }) {
-  const upcoming = useMemo(() => pickableGames(games), [games]);
+export default function Pickem({ games, schoolIndex, sponsors, sportId, now }) {
+  const upcoming = useMemo(
+    () => pickableGames(games, now ? new Date(now) : undefined),
+    [games, now],
+  );
   const [picks, setPicks] = useState(() => loadPicks());
   const [agg, setAgg] = useState(null);
   const [board, setBoard] = useState(null);

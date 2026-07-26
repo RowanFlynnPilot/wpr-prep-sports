@@ -379,6 +379,7 @@ export default function DashboardPage({
               schoolIndex={schoolIndex}
               sponsors={sponsors}
               sportId={sportConfig?.id}
+              now={anchorNow.getTime()}
             />
           </SectionBoundary>
         </>
