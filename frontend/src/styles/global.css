@@ -154,6 +154,10 @@ a:hover { border-bottom-color: currentColor; }
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--muted);
+  /* Zeroed so the class can sit on a heading element as well as a span —
+     the featured-game hero uses an <h2> here to keep the document outline
+     from skipping h1 → h3. */
+  margin: 0;
 }
 .eyebrow--accent { color: var(--accent-700); }
 .eyebrow--live {

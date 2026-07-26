@@ -126,6 +126,39 @@ a.game-row__details:focus-visible {
   outline: none;
 }
 
+/* Whole-row tap target ----------------------------------------------------
+   The row is ~76px tall on a phone and already lightens on hover, implying
+   the whole thing is clickable — but only the 18px "7:00 PM ›" link
+   actually was. That is a poor target one-handed at a game, which is where
+   most of this audience reads. Stretching the existing link over the row
+   fixes the hit area without adding a second link to the accessibility
+   tree (a nested <a> per row would double every announcement). */
+.game-row {
+  position: relative;
+}
+
+a.game-row__details::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+/* Team names sit ABOVE the overlay so they still reach their team pages —
+   without this the stretched link swallows them. */
+.game-row .team-link {
+  position: relative;
+  z-index: 2;
+}
+
+/* The real link is small text, so show keyboard focus on the whole row.
+   :focus-within also covers the team links, which is what we want. */
+.game-row:focus-within {
+  background: var(--paper-2);
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+}
+
 .game-side {
   display: flex;
   align-items: center;

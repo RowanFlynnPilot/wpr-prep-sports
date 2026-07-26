@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import { useSearchParams } from "react-router-dom";
 import Layout from "../components/Layout.jsx";
-import SectionTabs from "../components/SectionTabs.jsx";
+import SectionTabs, { tabId, panelId } from "../components/SectionTabs.jsx";
 import { buildNotable } from "../utils/notable.js";
 import Hero from "../components/Hero.jsx";
 import ScoreTicker from "../components/ScoreTicker.jsx";
@@ -27,7 +27,12 @@ import { pickFeaturedWeek } from "../utils/weeks.js";
 import { pickMarqueeGame } from "../utils/marquee.js";
 import { SPORT_IDS } from "../config/sports.js";
 import { trackEvent } from "../utils/analytics.js";
-import { SITE } from "../config/site.js";
+import { SITE, SITE_TITLE } from "../config/site.js";
+
+/** Heading label for a sport, falling back if the registry entry is thin. */
+function configLabelForHeading(sportConfig) {
+  return sportConfig?.label ?? "Scores";
+}
 
 /** True if any season-stats row is for an actual player (not a "Team" total). */
 function hasPlayerRows(rows) {
@@ -243,6 +248,16 @@ export default function DashboardPage({
         schools: schools.length,
       }}
     >
+      {/* The dashboard's visual identity is the masthead, which is a link
+          rather than a heading — so this view had no <h1> at all, leaving
+          screen-reader users without a document title to orient by and
+          giving crawlers no top-level heading. Visually hidden because the
+          masthead already says it on screen; the sport is included because
+          it is what actually distinguishes one dashboard from another. */}
+      <h1 className="sr-only">
+        {configLabelForHeading(sportConfig)} — {SITE_TITLE}
+      </h1>
+
       {!isEmbedded && !dataset.archiveSeason && (
         <StaleBanner
           lastUpdatedIso={meta?.last_updated}
@@ -324,8 +339,17 @@ export default function DashboardPage({
         />
       )}
 
-      {/* Keyed wrapper: remounts on tab change so the panel fades in. */}
-      <div key={activeTab} className="tab-panel">
+      {/* Keyed wrapper: remounts on tab change so the panel fades in.
+          role/aria wire it to the tab that controls it — without this the
+          tablist announces tabs that control nothing. */}
+      <div
+        key={activeTab}
+        className="tab-panel"
+        id={activeTab ? panelId(activeTab) : undefined}
+        role={activeTab ? "tabpanel" : undefined}
+        aria-labelledby={activeTab ? tabId(activeTab) : undefined}
+        tabIndex={-1}
+      >
       {/* Tab: Scores — the live scoreboard. */}
       {activeTab === "scores" && (
         <>

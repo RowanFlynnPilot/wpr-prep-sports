@@ -36,6 +36,19 @@ export const SITE = {
   // vanishing. See docs/favorites-spec.md.
   widgetOrigin: "https://sports.wausaupilotandreview.com/",
 
+  // One-line pitch. Used for <meta name="description"> and for the
+  // Open Graph / Twitter card that Facebook, X, iMessage and Slack render
+  // when a reader shares the widget — which, for local high-school sports,
+  // is most of how it travels. Injected into index.html at build time by
+  // the socialTags() plugin in vite.config.js, so this stays the only copy.
+  shareDescription:
+    "Live scores, full schedules, conference standings, and player stats for " +
+    "central Wisconsin high school sports — football, basketball, volleyball, " +
+    "hockey, and soccer across 67 schools.",
+  // 1200x630 share image in frontend/public/. Regenerate after a rebrand
+  // with `python scraper/scripts/generate_site_card.py`.
+  shareImage: "og-card.png",
+
   // Coverage
   governingBody: "WIAA", // state association label in UI copy ("WIAA Tournament", "Data via WIAA")
   timeZone: "America/Chicago",

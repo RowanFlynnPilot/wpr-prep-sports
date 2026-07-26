@@ -54,6 +54,21 @@ and the digest email palette. Also:
 - Swap `frontend/public/wpr-logo.png` (or change `logoFile`).
 - Set the static fallback `<title>` in `frontend/index.html` (the app
   overwrites it at boot from the config).
+- Regenerate the social share card — the image Facebook/X/iMessage show
+  when a reader shares the widget, which is most of how local sports
+  coverage travels:
+
+  ```bash
+  cd scraper && python scripts/generate_site_card.py
+  ```
+
+  It reads the publisher name, masthead lockup and domain straight from
+  `site.js` and rewrites `frontend/public/og-card.png`, so there is no
+  artwork step. The `<meta>` tags that point at it (description, Open
+  Graph, Twitter) are injected at build time from `site.js` by the
+  `socialTags()` plugin in `vite.config.js` — nothing to edit in the HTML.
+- `frontend/public/favicon.svg` is deliberately letter-free, so most
+  tenants can keep it as-is.
 - Theme: `frontend/src/styles/global.css` `:root` tokens — `--brand`,
   `--brand-2`, `--link`, `--accent` and the neutral ramp, in both the
   light and dark blocks. Values-only edit.

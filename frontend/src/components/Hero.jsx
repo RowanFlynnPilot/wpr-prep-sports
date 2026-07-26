@@ -85,7 +85,11 @@ export default function Hero({
   return (
     <section className="hero" aria-label="Featured game">
       <div className="hero__meta">
-        <span className="eyebrow eyebrow--accent">{eyebrow}</span>
+        {/* An <h2>, not a span: this is the hero section's heading, and
+            without it the two team names (h3) sat directly under the page
+            h1 — a level skip that leaves screen-reader users navigating a
+            broken outline. Styling is unchanged; .eyebrow carries it. */}
+        <h2 className="eyebrow eyebrow--accent">{eyebrow}</h2>
         <span className="hero__date">
           {formatGameDay(game.date)} · {formatGameDate(game.date)}
           {!isFinal && <> · {formatGameTime(game.date)}</>}

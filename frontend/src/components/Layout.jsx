@@ -33,6 +33,13 @@ export default function Layout({
   const sportPrefix = useSportPrefix();
   return (
     <div className="app">
+      {/* First tab stop. Without it a keyboard or switch user re-traverses
+          the masthead, sport switcher, and section tabs on every single
+          navigation before reaching the scores. */}
+      <a href="#main" className="skip-link">
+        Skip to scores
+      </a>
+
       <header className="masthead">
         <a
           href={SITE.orgHomeUrl}
@@ -92,7 +99,12 @@ export default function Layout({
         </nav>
       )}
 
-      <main className="app-main">{children}</main>
+      {/* tabIndex -1 so the skip link actually moves focus here, not just
+          the scroll position — Safari and older Chrome won't focus a plain
+          element from a fragment link. */}
+      <main className="app-main" id="main" tabIndex={-1}>
+        {children}
+      </main>
 
       {/* Don't pass lastUpdated — already shown in the masthead, no point
           duplicating it at the bottom of the page. */}

@@ -241,6 +241,31 @@
   outline: none;
 }
 
+/* Whole-card tap target — same reasoning as .game-row in ThisWeekGrid.css.
+   The card is 280x180 but only the 84x19 "Game details ›" link opened it,
+   which is an awkward thing to hit on a phone. */
+.card {
+  position: relative;
+}
+
+.card__details::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+/* Team names stay above the overlay so they still link to team pages. */
+.card .team-link {
+  position: relative;
+  z-index: 2;
+}
+
+.card:focus-within {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+}
+
 .card__summary {
   margin: 0.6rem 0 0;
   padding-top: 0.5rem;

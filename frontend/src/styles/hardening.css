@@ -33,6 +33,36 @@
   100% { background-position: -100% 0; }
 }
 
+/* Skip link — off-screen until focused, then pinned top-left. Uses the
+   accent so it reads as deliberate UI rather than a rendering bug when it
+   appears. */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  background: var(--accent);
+  color: #ffffff;
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.6rem 1rem;
+  border-radius: 0 0 var(--radius-sm) 0;
+}
+
+.skip-link:focus {
+  left: 0;
+}
+
+/* The skip target itself must never draw a focus ring — focus lands there
+   programmatically, and a box around the whole page reads as a glitch. */
+.app-main:focus {
+  outline: none;
+}
+
 /* Screen-reader-only utility */
 .sr-only {
   position: absolute;

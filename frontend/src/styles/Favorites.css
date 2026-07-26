@@ -70,16 +70,26 @@
 
 .favcard__remove {
   position: absolute;
-  top: 0.3rem;
-  right: 0.35rem;
+  top: 0.2rem;
+  right: 0.2rem;
+  /* 28px square: WCAG 2.2 target-size minimum is 24, and this one sits in
+     the corner of a card whose whole body is a link — an undersized
+     unfollow button next to a big tap target is how people unfollow their
+     own team by accident. */
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   border: 0;
   background: transparent;
   color: var(--muted-2);
   font-size: 1.1rem;
   line-height: 1;
-  padding: 0.2rem 0.3rem;
   cursor: pointer;
   border-radius: var(--radius-sm);
+  /* Above the card's own hover/focus affordances. */
+  z-index: 3;
 }
 
 .favcard__remove:hover,
