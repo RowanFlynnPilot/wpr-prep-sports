@@ -332,13 +332,6 @@ function tonePhrase(tone, family) {
   return phrases[family]?.[tone] ?? phrases[family]?.default ?? "had";
 }
 
-function tdsToClause(tds) {
-  const n = asNum(tds);
-  if (!Number.isFinite(n) || n <= 0) return "";
-  if (n === 1) return " and a TD";
-  return ` and ${Math.round(n)} TDs`;
-}
-
 // Pull the first finite numeric value from a stats dict, given an
 // ordered list of keys to try. Lets format functions accept whichever
 // key the source actually wrote — Bound's "ATT" or MP's "Car" for
@@ -1018,6 +1011,38 @@ export function configFor(sportId) {
 /** True if `id` is a known sport. */
 export function isKnownSport(id) {
   return Object.prototype.hasOwnProperty.call(SPORTS, id);
+}
+
+/**
+ * Display form of a scraper season id: "2026-27" → "2026–27" (en dash, to
+ * match the registry's typography). Returns null for anything that doesn't
+ * parse, so callers fall back to the static label rather than printing junk.
+ */
+export function formatSeasonLabel(season) {
+  const m = typeof season === "string"
+    ? season.trim().match(/^(\d{4})\s*[-–—]\s*(\d{2,4})$/)
+    : null;
+  return m ? `${m[1]}–${m[2]}` : null;
+}
+
+/**
+ * The sport config a page should render with: the static registry entry,
+ * but with `season` taken from the dataset actually on screen.
+ *
+ * Sports roll over at different times — football flips to the new season in
+ * July, basketball not until November — so a season hardcoded per sport in
+ * this file goes stale the day WIAA publishes the next schedule, and the UI
+ * ends up captioning new-season games with last season's label. meta.season
+ * is written per sport by the scraper, so it always matches the data.
+ * (Archive view included: it reads the archived season's meta.)
+ *
+ * The registry `season` fields remain as the fallback for a dataset whose
+ * meta is missing or malformed.
+ */
+export function configForDataset(sportId, metaSeason) {
+  const base = configFor(sportId);
+  const label = formatSeasonLabel(metaSeason);
+  return label && label !== base.season ? { ...base, season: label } : base;
 }
 
 /**

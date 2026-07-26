@@ -1,5 +1,5 @@
 {
-  "_comment": "Sponsor inventory. WPR ad ops fills these without code changes — the frontend hides any slot that doesn't have a `name`. Slot keys: 'title' (masthead), 'ticker' (above recent scores, cross-sport), 'standings:<conference>' (per conference, cross-sport — e.g. one Wisconsin Valley sponsor renders on football + basketball + hockey + volleyball standings), 'school:<school_id>' (per team page, cross-sport). Each slot is { label?: string (default 'Presented by'), name: string, logo_url?: string, link_url?: string }. To enable a slot, set `name`. Leave name empty/null to hide it. SAMPLE entries below have names prefixed with 'Sample' so it's visually obvious they're placeholders — WPR replaces with real advertiser data when a slot sells.",
+  "_comment": "Sponsor inventory. WPR ad ops fills these without code changes - the frontend hides any slot that has no `name`. Slot keys: 'title' (masthead), 'ticker' (above recent scores, cross-sport), 'standings:<conference>' (per conference, cross-sport - e.g. one Wisconsin Valley sponsor renders on football + basketball + hockey + volleyball standings), 'school:<school_id>' (per team page, cross-sport). Each slot is { label?: string (default 'Presented by'), name: string, logo_url?: string, link_url?: string }. To enable a slot, set `name`; leave it null to hide it. SLOTS SHIP EMPTY: never publish placeholder advertiser names to readers - the #/sponsor media kit lists every slot as inventory on its own, so sales demos do not need sample data in here.",
   "slots": {
     "title": {
       "label": "Presented by",
@@ -9,25 +9,25 @@
     },
     "ticker": {
       "label": "Scoreboard presented by",
-      "name": "Sample Bank of Central Wisconsin",
+      "name": null,
       "logo_url": null,
       "link_url": null
     },
     "game-detail": {
       "label": "Game recap presented by",
-      "name": "Sample Pharmacy & Wellness",
+      "name": null,
       "logo_url": null,
       "link_url": null
     },
     "marquee:football": {
       "label": "Game of the Week",
-      "name": "Sample Tire & Auto Co.",
+      "name": null,
       "logo_url": null,
       "link_url": null
     },
     "marquee:boys_basketball": {
       "label": "Game of the Week",
-      "name": "Sample Furniture Outlet",
+      "name": null,
       "logo_url": null,
       "link_url": null
     },
@@ -57,13 +57,13 @@
     },
     "standings:Wisconsin Valley": {
       "label": "Wisconsin Valley standings presented by",
-      "name": "Sample Auto Group · Wausau",
+      "name": null,
       "logo_url": null,
       "link_url": null
     },
     "standings:Marawood": {
       "label": "Marawood standings presented by",
-      "name": "Sample Family Eye Care",
+      "name": null,
       "logo_url": null,
       "link_url": null
     },
@@ -87,19 +87,19 @@
     },
     "school:wausau-east": {
       "label": "Wausau East coverage brought to you by",
-      "name": "Sample Hometown Insurance",
+      "name": null,
       "logo_url": null,
       "link_url": null
     },
     "school:auburndale": {
       "label": "Auburndale coverage brought to you by",
-      "name": "Sample Lakes Region Realty",
+      "name": null,
       "logo_url": null,
       "link_url": null
     },
     "school:edgar": {
       "label": "Edgar coverage brought to you by",
-      "name": "Sample Northwoods Diner",
+      "name": null,
       "logo_url": null,
       "link_url": null
     },

@@ -33,6 +33,37 @@ function hasPlayerRows(rows) {
   return (rows ?? []).some((r) => r.player_name && r.player_name !== "Team");
 }
 
+/**
+ * Share of a sport's tracked roster that has a schedule published yet.
+ * WIAA posts a new season school-by-school over several weeks, so a
+ * rolled-over sport spends a while holding a handful of real fixtures and
+ * one-team conference tables. Accurate data — but presented as a live
+ * season it reads as broken coverage, so we caption it honestly instead.
+ */
+function rosterCoverage(schools, games, sportId) {
+  const roster = new Set(
+    (schools ?? [])
+      .filter((s) => (s.conferences ?? []).some((c) => c.sport === sportId))
+      .map((s) => s.id),
+  );
+  if (roster.size === 0) return 1;
+  const scheduled = new Set();
+  for (const g of games ?? []) {
+    for (const side of [g.home, g.away]) {
+      if (side?.school_id && roster.has(side.school_id)) scheduled.add(side.school_id);
+    }
+  }
+  return scheduled.size / roster.size;
+}
+
+/** Below this share of the roster, a rolled-over season is "still posting". */
+const SCHEDULE_COVERAGE_FLOOR = 1 / 3;
+
+/** A conference table needs at least two teams to be worth rendering. */
+function isMeaningfulTable(standing) {
+  return (standing?.rows?.length ?? 0) >= 2;
+}
+
 export default function DashboardPage({
   dataset,
   schoolIndex,
@@ -68,6 +99,28 @@ export default function DashboardPage({
     const clamped = Math.min(Math.max(Date.now(), firstGameTs), lastGameTs + 60_000);
     return new Date(clamped);
   }, [firstGameTs, lastGameTs]);
+
+  // Preseason: the schedule is published but nothing has been played yet, so
+  // `anchorNow` is sitting on the opener rather than today. The sections
+  // below still fill correctly, but their in-season headings ("This Week",
+  // "Recent Scores") would caption opening-night fixtures as if they were
+  // current results — misleading for the weeks between the schedule landing
+  // and the first whistle. Retitle instead of hiding: the opening slate is
+  // exactly what readers want to see in that window.
+  const preseason = useMemo(
+    () => Number.isFinite(firstGameTs) && firstGameTs > Date.now(),
+    [firstGameTs],
+  );
+
+  // A rolled-over sport whose schedules WIAA has barely started posting.
+  // Gated on `preseason` so it only describes the rollover window, never a
+  // live season having a quiet week.
+  const scheduleStillPosting = useMemo(
+    () =>
+      preseason &&
+      rosterCoverage(schools, games, sportConfig?.id) < SCHEDULE_COVERAGE_FLOOR,
+    [preseason, schools, games, sportConfig?.id],
+  );
 
   const featured = useMemo(() => pickFeaturedGame(games, anchorNow), [games, anchorNow]);
   const recent = useMemo(() => tickerGames(games, anchorNow, 21), [games, anchorNow]);
@@ -139,8 +192,15 @@ export default function DashboardPage({
     () => buildNotable({ games, standings, seasonStats, sportConfig }),
     [games, standings, seasonStats, sportConfig],
   );
+  // Standings only count toward the tab once a table has two teams in it —
+  // a rolled-over sport can carry a single 0-0 row for weeks, and a
+  // one-team "conference" reads as a bug rather than a season starting.
+  const meaningfulStandings = useMemo(
+    () => standings.filter(isMeaningfulTable),
+    [standings],
+  );
   const hasStatsTab =
-    standings.length > 0 ||
+    meaningfulStandings.length > 0 ||
     (powerRankings?.rankings?.length ?? 0) > 0 ||
     (seasonStats?.length > 0 && hasPlayerRows(seasonStats)) ||
     games.some((g) => g.playoff);
@@ -200,12 +260,13 @@ export default function DashboardPage({
           scraper this should never fire for a fully-scraped sport — it
           covers partial mid-publish states (e.g. WIAA still loading a
           new season's schedules). */}
-      {standings.length === 0 && games.length > 0 && (
+      {games.length > 0 && (scheduleStillPosting || !standings.some(isMeaningfulTable)) && (
         <div className="coverage-note" role="status">
           <strong>Early look.</strong>{" "}
-          {sportConfig.label} schedules are still being published — conference
-          standings will fill in as the full slate posts. The games below are
-          accurate.
+          {sportConfig.label} schedules for {sportConfig.season} are still being
+          published by {SITE.governingBody} — most of the slate, and the
+          conference standings, will fill in over the coming weeks. Everything
+          shown below is accurate; there just isn&rsquo;t much of it yet.
         </div>
       )}
 
@@ -257,9 +318,9 @@ export default function DashboardPage({
           {showThisWeek && (
             <section>
               <div className="section-header">
-                <h2>This Week</h2>
+                <h2>{preseason ? "Opening Week" : "This Week"}</h2>
                 <span className="section-header__hint">
-                  {week.games.length} games · grouped by day
+                  {week.games.length} {week.games.length === 1 ? "game" : "games"} · grouped by day
                 </span>
               </div>
               <ThisWeekGrid week={week} schoolIndex={schoolIndex} allGames={games} sportConfig={sportConfig} />
@@ -268,7 +329,7 @@ export default function DashboardPage({
 
           <section>
             <div className="section-header">
-              <h2>Recent Scores</h2>
+              <h2>{preseason ? "Season Openers" : "Recent Scores"}</h2>
               <Sponsor slot="ticker" sponsors={sponsors} variant="inline" />
             </div>
             <ScoreTicker games={recent} schoolIndex={schoolIndex} allGames={games} sportConfig={sportConfig} />
@@ -304,7 +365,7 @@ export default function DashboardPage({
       {/* Tab: Standings & Stats — the league picture. */}
       {activeTab === "standings" && (
         <>
-          {standings.length > 0 && (
+          {meaningfulStandings.length > 0 && (
             <section>
               <div className="section-header">
                 <h2>Conference Standings</h2>
@@ -313,7 +374,7 @@ export default function DashboardPage({
                 </span>
               </div>
               <div className="standings-grid">
-                {standings.map((s) => (
+                {meaningfulStandings.map((s) => (
                   <StandingsTable
                     key={`${s.conference}-${s.sport}`}
                     standing={s}
