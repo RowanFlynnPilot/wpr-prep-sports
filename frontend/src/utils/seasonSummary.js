@@ -12,26 +12,6 @@
  * yet, or no parseable scores).
  */
 
-const SEASON_LABEL = "2025–26";
-
-/** Numeric parse that strips commas/percent and returns NaN otherwise. */
-function toNum(value) {
-  if (value == null) return NaN;
-  const n = parseFloat(String(value).replace(/[%,]/g, ""));
-  return Number.isFinite(n) ? n : NaN;
-}
-
-/** Round a yardage total down to the nearest 100 for "over X yards" phrasing. */
-function roundDownToHundred(n) {
-  if (!Number.isFinite(n)) return null;
-  return Math.floor(n / 100) * 100;
-}
-
-/** Format an integer with thousands separators. */
-function withCommas(n) {
-  return Math.round(n).toLocaleString("en-US");
-}
-
 /** Walk a list of finals chronologically and compute W-L plus the last game. */
 function arcFromFinals(finals, schoolId) {
   let wins = 0;
@@ -316,5 +296,3 @@ export function seasonSummary({
 
   return player ? `${opener} ${player}` : opener;
 }
-
-export const SEASON_SUMMARY_LABEL = SEASON_LABEL;

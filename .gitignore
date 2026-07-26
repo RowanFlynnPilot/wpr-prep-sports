@@ -26,7 +26,10 @@ pnpm-debug.log*
 frontend/dist/
 frontend/.vite/
 
-# Editors
+# Editors / agent tooling
+# .claude/ holds machine-local state: settings.local.json, launch.json with
+# absolute node paths, and scratch git worktrees. Nothing in it is portable.
+.claude/
 .vscode/
 .idea/
 *.swp
