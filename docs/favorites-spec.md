@@ -1,7 +1,15 @@
 # Favorite schools — feature spec
 
-Status: **proposed** (2026-07-26). Not scheduled. Target build window is
-after go-live and before the football opener — see [Rollout](#rollout).
+Status: **shipped** (2026-07-26). Built and merged to main the same day the
+spec was written, ahead of the recommended window, because the author had a
+narrow stretch of time. Kept as the design record — the reasoning below is
+why the feature is shaped the way it is.
+
+The storage foundation this spec argued for **also shipped**: the widget now
+serves from `https://sports.wausaupilotandreview.com`, so its iframe is
+same-site with the host page and the partitioning / ITP problems described
+below no longer apply. The `?favorites=` URL seed stayed anyway — it is
+shareable and bookmarkable, which turned out to be worth having on its own.
 
 ## Why
 
@@ -27,10 +35,17 @@ Against the tie-breakers in CLAUDE.md:
 
 ## Storage: what the testing found
 
-The widget runs in a **third-party iframe** — `rowanflynnpilot.github.io`
-inside `wausaupilotandreview.com`. Existing browser-local state
-(`utils/pickem.js`, `utils/season.js`) uses `localStorage` in a try/catch,
-which fails *silently*.
+> **Resolved.** This section describes the situation *before* the widget
+> moved to `sports.wausaupilotandreview.com` on 2026-07-26. On a subdomain
+> of the host site the iframe is same-site, so none of the partitioning or
+> expiry below applies. Kept because it is the reasoning that justified the
+> move — and because it applies again immediately if anyone serves the
+> widget from a third-party origin.
+
+At the time, the widget ran in a **third-party iframe** —
+`rowanflynnpilot.github.io` inside `wausaupilotandreview.com`. Existing
+browser-local state (`utils/pickem.js`, `utils/season.js`) uses
+`localStorage` in a try/catch, which fails *silently*.
 
 Measured in Chromium on 2026-07-26 with a cross-site iframe (host on
 `localhost`, frame on `127.0.0.1`, so genuinely different sites):
@@ -62,27 +77,33 @@ This likely already affects **Pick'em**: iPhone users may be losing picks
 today. Two-minute check: make a pick on an iPhone in the WPR embed, close
 the tab, reopen the next day.
 
-### Recommended foundation: serve from a WPR subdomain
+### Foundation: serve from a WPR subdomain — DONE 2026-07-26
 
-Move the widget to `sports.wausaupilotandreview.com`. Because storage
-partitioning and ITP key on *site* (eTLD+1), an iframe on a subdomain of the
-embedding site is **same-site / first-party**. Partitioning, the 7-day cap,
-and the split-bucket problem all disappear at once — for favorites *and*
-Pick'em.
+Because storage partitioning and ITP key on *site* (eTLD+1), an iframe on a
+subdomain of the embedding site is **same-site**. Partitioning, the 7-day
+cap, and the split-bucket problem disappear at once — for favorites *and*
+Pick'em. It also reads better in a share sheet and keeps readers on WPR's
+brand.
 
-Cost is low and the plumbing exists:
+What was done, for the record (and for a tenant repeating it):
 
-- GitHub Pages supports custom domains with automatic HTTPS (currently
-  `cname: null`, `https_enforced: true`).
-- `VITE_BASE` already comes from the `BASE_PATH` repo variable
-  (`deploy.yml`), so it is a config change, not a code change — set
-  `BASE_PATH=/`.
-- `SITE.widgetOrigin` in `config/site.js` is already the single source for
-  the canonical URL (embed builder, digest links).
-- Add a DNS CNAME → `rowanflynnpilot.github.io`, set the custom domain in
-  repo settings.
+- Cloudflare DNS: `CNAME sports → rowanflynnpilot.github.io`, proxy
+  **disabled** (grey cloud). Proxying breaks GitHub's certificate
+  provisioning; if it is ever turned on, Cloudflare SSL/TLS must be
+  *Full (strict)* or Pages redirects loop.
+- GitHub repo → Settings → Pages → custom domain, then Enforce HTTPS once
+  the certificate is approved.
+- `BASE_PATH=/` repo variable (`deploy.yml` already threads it through as
+  `VITE_BASE`); `frontend/public/CNAME` so the domain rides in the artifact.
+- `SITE.widgetOrigin` → the new host. It is the single source for the embed
+  builder, digest links, and OG card URLs.
+- `scrape.yml` derives the OG-card server prefix from `BASE_PATH` instead of
+  hardcoding `/wpr-prep-sports`.
 
-It also reads better in a share sheet and keeps readers on WPR's brand.
+Gotcha worth remembering: setting the custom domain makes Pages 301 the old
+URL immediately, so the deployed build must be rebuilt with the new base in
+the same sitting — otherwise `index.html` resolves but its `/wpr-prep-sports/
+assets/*` 404 and the widget serves a blank page.
 
 **Do this first.** Building favorites on partitioned third-party storage
 means building it twice.

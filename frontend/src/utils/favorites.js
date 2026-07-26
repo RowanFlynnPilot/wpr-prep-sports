@@ -9,25 +9,21 @@
  *
  * STORAGE, and why there are two sources
  * --------------------------------------
- * The widget runs in a third-party iframe (github.io inside the publisher's
- * site), so localStorage is *partitioned* — measured 2026-07-26: it writes
- * and survives reloads in Chromium, but lives in a bucket keyed to (host
- * site, widget origin), invisible to a first-party visit to the widget URL.
- * Safari/ITP additionally caps third-party script-writable storage at 7 days
- * without first-party interaction, which nobody here will ever have. So on
- * iOS a stored list may silently evaporate.
+ * localStorage is the primary store. That is only safe because the widget
+ * is served from a SUBDOMAIN of the publisher's site
+ * (sports.wausaupilotandreview.com), which makes its iframe same-site with
+ * the host page. Serve this from a third-party origin instead and browsers
+ * partition the storage per (host site, widget origin), while Safari/ITP
+ * expires it after 7 days without first-party interaction — measured
+ * 2026-07-26, see docs/favorites-spec.md. Every storage call here is
+ * try/catch precisely because that failure is silent.
  *
- * Hence the `?favorites=` URL seed: a link like
- *   .../wpr-prep-sports/?favorites=wausau-east,edgar#/football
- * works no matter what storage does, is shareable and bookmarkable, and lets
- * the publisher link "follow your team" straight from an article. It is
- * applied ONCE per session (a repeat application would resurrect favorites
- * the reader had just removed, since the host page's iframe src keeps the
- * param).
- *
- * The durable fix is serving the widget from a subdomain of the publisher's
- * own site, which makes the frame same-site and removes every restriction
- * above — see docs/favorites-spec.md.
+ * The `?favorites=` URL seed is the second source. A link like
+ *   https://sports.wausaupilotandreview.com/?favorites=wausau-east,edgar#/football
+ * works regardless of storage, is shareable and bookmarkable, and lets the
+ * publisher link "follow your team" straight from an article. It is applied
+ * ONCE per session — a repeat application would resurrect favorites the
+ * reader had just removed, since the host page's iframe src keeps the param.
  */
 
 import { useSyncExternalStore } from "react";

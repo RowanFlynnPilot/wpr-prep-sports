@@ -17,7 +17,7 @@ from __future__ import annotations
 
 import re
 from dataclasses import dataclass
-from typing import Any, Iterable
+from typing import Any
 
 import httpx
 from bs4 import BeautifulSoup
