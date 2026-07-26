@@ -121,27 +121,36 @@ jobs:
         working-directory: scraper
         run: python -m playwright install --with-deps chromium
 
-      - name: Stage dist + data under /wpr-prep-sports prefix
+      - name: Stage dist + data under the Pages base path
+        env:
+          BASE_PATH: ${{ vars.BASE_PATH }}
         run: |
-          # The widget's built assets reference /wpr-prep-sports/assets/* so
-          # the local server must serve under that prefix. Build a small
-          # _serve/ tree that mirrors what GH Pages exposes.
+          # The widget's built assets are rooted at whatever base the build
+          # used, so the local card server has to serve under that same
+          # prefix. Derived, not hardcoded: on a custom domain BASE_PATH is
+          # "/" and the prefix is empty, while a github.io fork keeps
+          # "/wpr-prep-sports/". Getting this wrong doesn't fail the run —
+          # the OG step is warn-only — it just silently stops refreshing
+          # share cards, so it's worth deriving properly.
+          PREFIX="$(echo "${BASE_PATH:-/wpr-prep-sports/}" | sed 's:^/*::; s:/*$::')"
+          echo "SERVE_PREFIX=${PREFIX}" >> "$GITHUB_ENV"
           rm -rf _serve
-          mkdir -p _serve/wpr-prep-sports/data
-          cp -R frontend/dist/. _serve/wpr-prep-sports/
-          cp -R data/. _serve/wpr-prep-sports/data/
+          mkdir -p "_serve/${PREFIX}/data"
+          cp -R frontend/dist/. "_serve/${PREFIX}/"
+          cp -R data/. "_serve/${PREFIX}/data/"
 
       - name: Generate OG share cards
         working-directory: scraper
         run: |
           npx --yes http-server ../_serve -p 8080 --silent &
           SERVER_PID=$!
+          # Empty SERVE_PREFIX (custom domain) must not produce a double slash.
+          CARD_BASE="http://localhost:8080${SERVE_PREFIX:+/$SERVE_PREFIX}"
           for i in 1 2 3 4 5; do
-            if curl -sf http://localhost:8080/wpr-prep-sports/ > /dev/null; then break; fi
+            if curl -sf "$CARD_BASE/" > /dev/null; then break; fi
             sleep 1
           done
-          if ! python scripts/generate_og_cards.py \
-                --base-url http://localhost:8080/wpr-prep-sports; then
+          if ! python scripts/generate_og_cards.py --base-url "$CARD_BASE"; then
             echo "::warning::OG card generation failed — continuing without card update"
           fi
           kill $SERVER_PID || true

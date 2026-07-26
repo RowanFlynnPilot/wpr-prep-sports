@@ -28,7 +28,13 @@ export const SITE = {
   titleEm: "Prep Sports",
   regionLabel: "central Wisconsin", // prose mentions ("...where central Wisconsin checks the score")
   regionShort: "central-WI",
-  widgetOrigin: "https://rowanflynnpilot.github.io/wpr-prep-sports/", // canonical hosted URL (embed builder, digest links)
+  // Canonical hosted URL (embed builder, digest links, OG card URLs).
+  // Served from a subdomain of the publisher's own site on purpose: that
+  // makes the widget's iframe SAME-SITE with the host page, so browsers
+  // don't partition its localStorage and Safari/ITP doesn't expire it —
+  // which is what keeps Pick'em picks (and favorites) from silently
+  // vanishing. See docs/favorites-spec.md.
+  widgetOrigin: "https://sports.wausaupilotandreview.com/",
 
   // Coverage
   governingBody: "WIAA", // state association label in UI copy ("WIAA Tournament", "Data via WIAA")
