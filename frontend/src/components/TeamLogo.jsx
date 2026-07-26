@@ -10,9 +10,19 @@ import { logoOverrideFor } from "../config/logoOverrides.js";
  */
 export default function TeamLogo({ team, school, size = "md", className = "" }) {
   const [errored, setErrored] = useState(false);
-  // A local override (e.g. the Storm crest) wins over the WIAA logo so
-  // co-op teams don't inherit their host school's mark.
-  const src = logoOverrideFor(team?.school_id || school?.id) || team?.logo_url;
+  // Resolution order:
+  //   1. local override (e.g. the Storm crest) — so co-op teams don't
+  //      inherit their host school's mark
+  //   2. the game side's own WIAA logo, when rendered from a game
+  //   3. the school-index entry, which indexSchools() populates from the
+  //      games payload precisely so callers holding only a school_id can
+  //      still show a real logo
+  //
+  // (3) is why views built from a synthetic team stub — the favorites
+  // strip, the per-school embed — were falling through to the monogram
+  // even though the logo was sitting right there on the school entry.
+  const src =
+    logoOverrideFor(team?.school_id || school?.id) || team?.logo_url || school?.logo_url;
   const showImage = src && !errored;
 
   return (
