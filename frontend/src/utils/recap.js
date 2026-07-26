@@ -91,7 +91,6 @@ export function recapForGame(
   const oppLabel =
     oppSchool?.name ?? (isHome ? game.away.name : game.home.name);
 
-  const location = isHome ? "at home" : `on the road in ${oppLabel}`;
   const venue = !isHome && game.venue && !/^@/.test(oppLabel) ? "" : "";
   void venue; // reserved for future use when we have stadium names
 

@@ -22,7 +22,7 @@ const OgCardPage = lazy(() => import("./pages/OgCardPage.jsx"));
 import { indexSchools } from "./utils/schools.js";
 import { useAnalytics } from "./utils/analytics.js";
 import { useIframeHeightReporter } from "./utils/iframe.js";
-import { DEFAULT_SPORT, configFor, isKnownSport } from "./config/sports.js";
+import { DEFAULT_SPORT, configFor, configForDataset, isKnownSport } from "./config/sports.js";
 import { SITE } from "./config/site.js";
 
 import "./styles/App.css";
@@ -169,6 +169,15 @@ function SportShell() {
     return () => clearInterval(id);
   }, [sport, valid, hasLiveGame]);
 
+  // Season label follows the dataset, not the registry — see
+  // configForDataset(). Memoized on the season string so the identity stays
+  // stable across re-renders; several pages take sportConfig as a useMemo
+  // dependency.
+  const sportConfig = useMemo(
+    () => configForDataset(sport, dataset?.meta?.season),
+    [sport, dataset?.meta?.season],
+  );
+
   // Unknown sport → bounce to default after hooks have run, so hook order
   // stays stable on subsequent renders.
   if (!valid) {
@@ -216,7 +225,6 @@ function SportShell() {
   if (!dataset || dataset.sport !== sport) return <Skeleton />;
 
   const schoolIndex = indexSchools(dataset.schools, dataset.games);
-  const sportConfig = configFor(sport);
   void location;
 
   // Accent is a single global token now (press red, matching the WPR

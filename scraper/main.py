@@ -183,6 +183,22 @@ def main() -> int:
         raw_schedules.append(sched)
         console.print(f"      {len(sched['games'])} games")
 
+    console.print(
+        f"Team discovery: {len(raw_schedules)}/{len(targets)} schools have "
+        f"a {args.sport} team"
+    )
+    if not raw_schedules and not school_failures:
+        # Legitimate only in preseason, before WIAA mints the new season's
+        # TeamIDs. Any other time it means SSID/label matching broke — SSIDs
+        # rotate every season (see sources/wiaa.py). Distinct from the
+        # fetch-failure path below: there we reached WIAA and it errored;
+        # here every lookup succeeded and simply matched nothing.
+        console.print(
+            f"[red]Team discovery matched ZERO schools for {args.sport}. "
+            f"Fine before WIAA posts the season; otherwise check SSID/label "
+            f"matching in sources/wiaa.py.[/red]"
+        )
+
     if school_failures:
         console.print(
             f"[red]{len(school_failures)}/{attempted} school fetches failed:[/red] "

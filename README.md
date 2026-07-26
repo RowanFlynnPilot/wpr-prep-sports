@@ -1,11 +1,18 @@
 # wpr-prep-sports
 
-Central Wisconsin High School Sports Hub — schedules, scores, and standings
-for ~14 schools across the Wisconsin Valley, Marawood, Great Northern, and
-Cloverbelt conferences.
+Central Wisconsin High School Sports Hub — schedules, scores, standings, and
+player stats for **67 schools across 8 sports** (football, boys/girls
+basketball, volleyball, boys/girls hockey, boys/girls soccer) in the
+Wisconsin Valley, Marawood, Great Northern, Cloverbelt, Big Rivers,
+CWC, and Northwoods conferences.
+
+Wisconsin schools play in *different* conferences for *different* sports, so
+conference membership is modeled per-sport rather than globally.
 
 Built for [Wausau Pilot & Review](https://wausaupilotandreview.com/) and
-embedded into the site via iframe.
+embedded into the site via iframe. The frontend is white-label ready —
+publisher name, URLs, and branding live in `frontend/src/config/site.js`
+(see [docs/white-label.md](docs/white-label.md)).
 
 ## Architecture
 
@@ -17,11 +24,15 @@ Python scraper → GitHub Actions cron → GitHub Pages static JSON → React/Vi
 
 ```
 .
-├── .github/workflows/   GitHub Actions: scrape on cron, deploy on push
-├── scraper/             Python scraper (WIAA primary; Bound deferred)
+├── .github/workflows/   GitHub Actions: scrape, live scores, deploy, digest,
+│                        sentinel, tests
+├── scraper/             Python scraper (WIAA schedules/scores; Bound +
+│                        MaxPreps + Wisconsin Prep Hockey for player stats)
 ├── frontend/            React + Vite, deployed to GitHub Pages
+├── pickem-api/          Cloudflare Worker for community pick'em (see README)
 ├── data/                Static JSON output from the scraper
-├── docs/                Source notes, data schema, advertiser inventory
+├── docs/                Source notes, data schema, advertiser inventory,
+│                        operations runbook, white-label onboarding
 └── CLAUDE.md            Persistent project context for Claude Code
 ```
 
@@ -45,9 +56,15 @@ Add this anywhere in a WordPress post or template:
   // The widget posts { type: 'wpr-prep-sports:resize', height: N } on
   // load, on layout change, and on hash navigation.
   (function () {
-    const iframe = document.getElementById('wpr-prep-sports');
+    var WIDGET_ORIGIN = 'https://rowanflynnpilot.github.io';
+    var iframe = document.getElementById('wpr-prep-sports');
     if (!iframe) return;
     window.addEventListener('message', function (evt) {
+      // Only accept resize messages from the widget itself: any framed ad
+      // or third-party script on the page can post to window, and without
+      // these two checks any of them could resize this iframe.
+      if (evt.origin !== WIDGET_ORIGIN) return;
+      if (evt.source !== iframe.contentWindow) return;
       if (!evt.data || evt.data.type !== 'wpr-prep-sports:resize') return;
       var h = Number(evt.data.height);
       if (h > 0 && h < 100000) iframe.style.height = h + 'px';

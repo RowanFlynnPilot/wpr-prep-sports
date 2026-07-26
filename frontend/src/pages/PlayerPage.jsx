@@ -5,7 +5,6 @@ import Skeleton from "../components/Skeleton.jsx";
 import TeamLogo from "../components/TeamLogo.jsx";
 import Sponsor from "../components/Sponsor.jsx";
 import { fetchPlayerLines } from "../data/fetchDataset.js";
-import { schoolFor } from "../utils/schools.js";
 import { useSportPrefix } from "../utils/links.js";
 import { formatGameDate } from "../utils/dates.js";
 import {

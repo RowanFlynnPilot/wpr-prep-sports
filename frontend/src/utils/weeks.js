@@ -8,8 +8,6 @@
  * game in the same bucket.
  */
 
-const DAY_MS = 24 * 60 * 60 * 1000;
-
 function startOfWeekISO(d) {
   // Clone in Central time. We use UTC math here purely for stability —
   // the difference between "Monday in Central" and "Monday in UTC" is

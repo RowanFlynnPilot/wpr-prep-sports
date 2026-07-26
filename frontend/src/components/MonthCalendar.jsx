@@ -118,7 +118,7 @@ export default function MonthCalendar({ games, schoolIndex, sportConfig }) {
   );
 }
 
-function DaySheet({ dateIso, games, schoolIndex, onClose }) {
+function DaySheet({ dateIso, games, onClose }) {
   const sportPrefix = useSportPrefix();
   const dateLabel = new Date(dateIso + "T12:00:00").toLocaleDateString(
     undefined,

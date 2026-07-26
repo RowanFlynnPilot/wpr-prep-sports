@@ -130,7 +130,6 @@ function OffSeasonHero({
   lastGame,
   schoolIndex,
   games,
-  seasonStats,
 }) {
   const sportLabel = sportConfig?.label ?? "The season";
   const countdownLabel = daysToNext == null
@@ -148,12 +147,6 @@ function OffSeasonHero({
     : `${sportLabel} season has wrapped`;
 
   // Last-game recap for the small retro card.
-  const lastGameSchool = lastGame
-    ? schoolFor(
-        lastGame.home.score >= (lastGame.away.score ?? -1) ? lastGame.home : lastGame.away,
-        schoolIndex,
-      )
-    : null;
   const lastRecap = lastGame
     ? recapForGame(lastGame, {
         schoolsById: schoolIndex,
@@ -180,7 +173,7 @@ function OffSeasonHero({
             </div>
           )}
           <p className="hero-off__sub">
-            Catch up on the {sportConfig?.season ?? "2025–26"} season below —
+            Catch up on the {sportConfig?.season} season below —
             standings, full schedules, and game-by-game recaps.
           </p>
         </div>

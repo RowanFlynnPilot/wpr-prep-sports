@@ -31,36 +31,49 @@ LOGO_URL_PREFIX = f"{BASE_URL}/Upload/School/Logo/"
 # uses these as <tr id="..."> on team rows.
 #
 # CAUTION: SSIDs are minted PER SEASON and rotate when WIAA rolls the site
-# to a new school year (discovered 2026-07: Boys Football 1499 → 1533 for
-# 2026-27). These values are the 2025-26 vintage and act only as a fast
-# path; `discover_team_id_for_sport` falls back to matching WIAA's sport
-# label text, which is stable across seasons.
+# to a new school year (Boys Football 1499 in 2025-26 → 1533 in 2026-27).
+# The live map is discovered at runtime from the SchoolSSID dropdown on any
+# directory page (see `harvest_season_ssids`); this hardcoded map (2026-27
+# vintage) is only the fallback for when no page has been fetched yet, and
+# it doubles as the registry of known sport keys.
 SSID_BY_SPORT: dict[str, int] = {
-    "football": 1499,  # Boys Football (11-player)
-    "football_8p": 1500,  # Boys Football 8-Player
-    "boys_basketball": 1502,
-    "girls_basketball": 1512,
-    "boys_hockey": 1505,
-    "girls_hockey": 1517,
-    "volleyball": 1523,  # Girls Volleyball
-    "boys_volleyball": 1510,
-    "boys_soccer": 1506,
-    "girls_soccer": 1518,
-    "boys_wrestling": 1511,
-    "girls_wrestling": 1524,
-    "baseball": 1501,
-    "softball": 1519,
-    "boys_cross_country": 7382,
-    "girls_cross_country": 1514,
-    "boys_track": 1509,
-    "girls_track": 1522,
-    "boys_golf": 1504,
-    "girls_golf": 1515,
-    "boys_tennis": 1508,
-    "girls_tennis": 1521,
-    "boys_swimming": 1507,
-    "girls_swimming": 1520,
+    "football": 1533,  # Boys Football (11-player)
+    "football_8p": 1534,  # Boys Football 8-Player
+    "boys_basketball": 1536,
+    "girls_basketball": 1547,
+    "boys_hockey": 1539,
+    "girls_hockey": 1552,
+    "volleyball": 1559,  # Girls Volleyball
+    "boys_volleyball": 1545,
+    "boys_soccer": 1541,
+    "girls_soccer": 1554,
+    "boys_wrestling": 1546,
+    "girls_wrestling": 1560,
+    "baseball": 1535,
+    "softball": 1555,
+    "boys_cross_country": 1537,
+    "girls_cross_country": 1549,
+    "boys_track": 1544,
+    "girls_track": 1558,
+    "boys_golf": 1538,
+    "girls_golf": 1550,
+    "boys_tennis": 1543,
+    "girls_tennis": 1557,
+    "boys_swimming": 1542,
+    "girls_swimming": 1556,
 }
+
+# Season SSID map discovered from the live site (sport key → SSID). Populated
+# for free from the SchoolSSID dropdown the first time `discover_team_ids`
+# fetches a directory page, or lazily via `current_ssid_for_sport` for
+# live-score mode (which skips team discovery entirely). Takes precedence
+# over SSID_BY_SPORT.
+_season_ssids: dict[str, int] = {}
+
+# Any valid OrgID works for lazy SSID discovery — the SchoolSSID dropdown
+# lists every sport regardless of which school's page carries it.
+# 415 = Stratford.
+_REFERENCE_ORG_ID = 415
 
 
 @dataclass(frozen=True)
@@ -163,6 +176,12 @@ def discover_team_ids(org_id: int) -> list[TeamEntry]:
         f"{BASE_URL}/Directory/School/GetDirectorySchool",
         params={"OrgID": org_id, "showPub": "False"},
     )
+    # Free SSID refresh: the sport dropdown is on the page we just fetched, so
+    # this costs no extra request. Guarded on emptiness rather than run once —
+    # the season can't change mid-run, but a page that lacks the dropdown
+    # shouldn't stop the next one from populating it.
+    if not _season_ssids:
+        harvest_season_ssids(resp.text)
     return parse_team_entries_html(resp.text)
 
 
@@ -195,13 +214,51 @@ def parse_team_entries_html(html: str) -> list[TeamEntry]:
     return entries
 
 
-# Fallback chain — when a school doesn't field a team for a sport's primary
-# SSID, try alternates. The clearest case is small-school football: WIAA
-# splits 11-player (1499) from 8-player (1500) and a given school only
-# plays one format. We try 1499 first, then 1500.
-_SSID_FALLBACKS: dict[str, list[int]] = {
-    "football": [SSID_BY_SPORT["football"], SSID_BY_SPORT["football_8p"]],
-}
+def harvest_season_ssids(html: str) -> dict[str, int]:
+    """
+    Refresh `_season_ssids` from the SchoolSSID sport dropdown embedded in a
+    directory page (`<option value=SSID>Sport Label</option>`), returning what
+    was found.
+
+    The dropdown always reflects the season the site is currently serving,
+    even when the page's team grid was pinned to a past year via
+    `SchoolYear=` — which is what makes it a trustworthy source for the
+    current SSIDs. Split from the HTTP call so it can run against saved
+    fixtures in tests, matching parse_team_entries_html.
+    """
+    soup = BeautifulSoup(html, "lxml")
+    select = soup.select_one("select#SchoolSSID")
+    if select is None:
+        return {}
+    found: dict[str, int] = {}
+    for opt in select.select("option"):
+        value = opt.get("value") or ""
+        if not value.isdigit() or int(value) <= 0:
+            continue
+        label = opt.get_text(strip=True)
+        for key in SSID_BY_SPORT:
+            if _label_matches(key, label):
+                found[key] = int(value)
+                break
+    _season_ssids.update(found)
+    return found
+
+
+def current_ssid_for_sport(sport: str) -> int | None:
+    """
+    SSID for a sport in the season the site is currently serving.
+
+    Uses the map harvested from directory pages this run; if nothing has been
+    fetched yet (live-score mode skips team discovery), pulls one reference
+    directory page to populate it. Falls back to the hardcoded SSID_BY_SPORT
+    vintage if the site is unreachable — stale, but better than nothing.
+    """
+    if not _season_ssids:
+        try:
+            discover_team_ids(_REFERENCE_ORG_ID)
+        except httpx.HTTPError:
+            pass
+    return _season_ssids.get(sport, SSID_BY_SPORT.get(sport))
 
 
 def _norm_label(label: str) -> str:
@@ -239,18 +296,28 @@ def _label_matches(sport: str, label: str) -> bool:
 
 def discover_team_id_for_sport(org_id: int, sport: str) -> int | None:
     """Convenience: find one school's TeamID for a single sport key."""
-    primary = SSID_BY_SPORT.get(sport)
-    if primary is None:
+    if sport not in SSID_BY_SPORT:
         raise ValueError(f"Unknown sport key '{sport}'. Add it to SSID_BY_SPORT.")
-    candidates = _SSID_FALLBACKS.get(sport, [primary])
+    # discover_team_ids also refreshes _season_ssids from this page's dropdown,
+    # so the SSID candidates below match the grid we just got back.
     teams = discover_team_ids(org_id)
+    # Small-school football fallback: WIAA splits 11-player from 8-player and a
+    # given school only fields one format — try 11-player first.
+    keys = [sport] + (["football_8p"] if sport == "football" else [])
+    candidates: list[int] = []
+    for key in keys:
+        # Discovered SSIDs first; the hardcoded map is a stale-vintage backstop.
+        for source in (_season_ssids, SSID_BY_SPORT):
+            ssid = source.get(key)
+            if ssid is not None and ssid not in candidates:
+                candidates.append(ssid)
     for ssid in candidates:
         for team in teams:
             if team.ssid == ssid:
                 return team.team_id
-    # SSIDs rotate every season — fall back to the sport's display label.
-    label_keys = [sport] + (["football_8p"] if sport == "football" else [])
-    for key in label_keys:
+    # Last resort: match the sport's display label, which is stable across
+    # seasons even when every SSID has rotated.
+    for key in keys:
         for team in teams:
             if _label_matches(key, team.sport_name):
                 return team.team_id

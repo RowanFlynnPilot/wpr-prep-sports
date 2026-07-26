@@ -218,10 +218,13 @@ def fetch_live(sport: str, season: str = "2025-26") -> list[LiveGame]:
     """
     # Import lazily to avoid an explicit cross-module dependency at the
     # top of this file — keeps the live source self-contained for unit
-    # tests.
-    from sources.wiaa import SSID_BY_SPORT
+    # tests. SSIDs rotate every season, so ask wiaa for the one the site is
+    # serving right now rather than reading the static map: live mode skips
+    # team discovery, so nothing else here would ever notice a rotation, and
+    # a wrong SSID returns an empty scoreboard instead of an error.
+    from sources.wiaa import current_ssid_for_sport
 
-    ssid = SSID_BY_SPORT.get(sport)
+    ssid = current_ssid_for_sport(sport)
     if ssid is None:
         return []
 

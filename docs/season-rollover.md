@@ -14,8 +14,11 @@
   OrganizationIDs (`main.py` → `discover_team_id_for_sport`). TeamIDs
   are minted per-season; OrganizationIDs are stable.
 - **WIAA SSIDs also rotate per season** (discovered 2026-07: Boys
-  Football 1499 → 1533). Discovery falls back to matching the sport's
-  display label, which is stable — no per-season map update needed.
+  Football 1499 → 1533). The current map is discovered at runtime from
+  the SchoolSSID dropdown on any directory page (covers live scores
+  too), with the sport's display label — stable across seasons — as a
+  final fallback. No per-season map update needed; the hardcoded
+  `SSID_BY_SPORT` fallback can be refreshed opportunistically.
 - **Wipe guard** (`main.py`): a scrape that finds 0 games never
   replaces a dataset that has games. The cron can therefore carry a
   sport with `--season <new>` BEFORE WIAA posts its schedule; it no-ops

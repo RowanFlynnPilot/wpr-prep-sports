@@ -558,8 +558,10 @@ function BoxCategoryTable({ category, lines, sportPrefix }) {
     const seen = [];
     const set = new Set();
     for (const line of lines) {
+      const caseDupes = caseDuplicateKeys(line.stats);
       for (const k of Object.keys(line.stats ?? {})) {
         if (set.has(k)) continue;
+        if (caseDupes.has(k)) continue;
         if (REDUNDANT_KEYS.has(k) && hasReadableEquivalent(k, line.stats)) {
           continue;
         }
@@ -705,12 +707,22 @@ const CATEGORY_POS = {
 // more readable column (Bound/MP both expose K for kills; KLS is our
 // own normalized copy). Hide the canonical key from display so each
 // row doesn't read "K 6 · KLS 6" with the same value twice.
-const REDUNDANT_KEYS = new Set(["KLS", "AST", "DIG", "BLK", "ACE"]);
+// BLK_BB / FG_PCT / RBD are basketball's internal spellings, kept because
+// they're safe object keys; each ships alongside the reader-facing header
+// from the source. (Pairs that differ only in capitalization — PTS/Pts,
+// AST/Ast, STL/Stl, MIN/Min, OREB/OReb, DREB/DReb — are handled generically
+// by caseDuplicateKeys() instead of being enumerated here.)
+const REDUNDANT_KEYS = new Set([
+  "KLS", "AST", "DIG", "BLK", "ACE",
+  "BLK_BB", "FG_PCT", "RBD",
+]);
 
 function StatRow({ line, sportPrefix }) {
   const stats = line.stats ?? {};
   const pos = line.position || CATEGORY_POS[line.category] || null;
+  const caseDupes = caseDuplicateKeys(stats);
   const visibleStats = Object.entries(stats).filter(([k]) => {
+    if (caseDupes.has(k)) return false;
     if (!REDUNDANT_KEYS.has(k)) return true;
     return !hasReadableEquivalent(k, stats);
   });
@@ -749,6 +761,35 @@ function StatRow({ line, sportPrefix }) {
   );
 }
 
+/**
+ * Keys to hide because another key on the same row is the same stat under a
+ * different capitalization. Sources disagree on casing — MaxPreps writes
+ * "Pts" where our canonical form is "PTS" — and the merge keeps both, so a
+ * basketball box score renders "PTS 18 · Pts 18" (~750 boys / ~430 girls
+ * stat lines carry the pair). Keeps the all-caps spelling and drops the
+ * variant, but only when the values agree: differing values mean they're
+ * genuinely different stats that happen to collide in case.
+ */
+function caseDuplicateKeys(stats) {
+  const byLower = new Map();
+  for (const key of Object.keys(stats ?? {})) {
+    const lower = key.toLowerCase();
+    if (!byLower.has(lower)) byLower.set(lower, []);
+    byLower.get(lower).push(key);
+  }
+  const hidden = new Set();
+  for (const keys of byLower.values()) {
+    if (keys.length < 2) continue;
+    const canonical = keys.find((k) => k === k.toUpperCase()) ?? keys[0];
+    for (const k of keys) {
+      if (k !== canonical && String(stats[k]) === String(stats[canonical])) {
+        hidden.add(k);
+      }
+    }
+  }
+  return hidden;
+}
+
 function hasReadableEquivalent(canon, stats) {
   // Canonical → list of source-side column headers that would be the
   // same value. Hide canonical only when one of these is present.
@@ -758,6 +799,10 @@ function hasReadableEquivalent(canon, stats) {
     DIG: ["D"],
     BLK: ["Tot Blks"],
     ACE: ["A"],
+    // Basketball (MaxPreps/Bound merge).
+    RBD: ["Reb"],
+    BLK_BB: ["Blk"],
+    FG_PCT: ["FG%"],
   };
   return (equivalents[canon] ?? []).some((k) => k in stats);
 }
