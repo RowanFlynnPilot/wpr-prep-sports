@@ -6,6 +6,7 @@ import TeamLink from "../components/TeamLink.jsx";
 import Sponsor from "../components/Sponsor.jsx";
 import SeasonLeaders from "../components/SeasonLeaders.jsx";
 import StandingsTable from "../components/StandingsTable.jsx";
+import FavoriteButton from "../components/FavoriteButton.jsx";
 import { formatGameDay, formatGameDate, formatGameTime } from "../utils/dates.js";
 import { recapForGame } from "../utils/recap.js";
 import { seasonSummary } from "../utils/seasonSummary.js";
@@ -113,6 +114,7 @@ export default function TeamPage({ dataset, schoolIndex, sponsors, sportConfig }
           <p className="team-hero__mascot">
             {school.mascot} · {school.city}
           </p>
+          <FavoriteButton schoolId={schoolId} schoolName={school.name} />
         </div>
         <div className="team-hero__record">
           <div className="record-stat">

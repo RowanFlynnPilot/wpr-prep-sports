@@ -14,6 +14,7 @@ import Notable from "../components/Notable.jsx";
 import Pickem from "../components/Pickem.jsx";
 import StandingsTable from "../components/StandingsTable.jsx";
 import StaleBanner from "../components/StaleBanner.jsx";
+import FavoritesStrip from "../components/FavoritesStrip.jsx";
 import { isEmbedded } from "../utils/iframe.js";
 import Sponsor from "../components/Sponsor.jsx";
 import TopPerformers from "../components/TopPerformers.jsx";
@@ -269,6 +270,19 @@ export default function DashboardPage({
           shown below is accurate; there just isn&rsquo;t much of it yet.
         </div>
       )}
+
+      {/* Reader's own schools, above everything else — the whole point of
+          favoriting. Renders nothing when none are set, so a first-time
+          visitor sees the dashboard exactly as before. */}
+      <SectionBoundary label="favorites">
+        <FavoritesStrip
+          dataset={dataset}
+          schoolIndex={schoolIndex}
+          sponsors={sponsors}
+          sportConfig={sportConfig}
+          now={anchorNow.getTime()}
+        />
+      </SectionBoundary>
 
       {/* Pinned showcase — always visible above the tabs. Each pinned
           section is fenced so one crashing can't take down the page. */}
