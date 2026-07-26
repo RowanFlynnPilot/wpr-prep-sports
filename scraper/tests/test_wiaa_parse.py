@@ -49,6 +49,72 @@ def test_directory_page_yields_team_entries():
     assert any(wiaa._label_matches("football", e.sport_name) for e in entries)
 
 
+# --- season SSID rotation ------------------------------------------------
+# SSIDs are minted per season (Boys Football 1499 in 2025-26 -> 1533 in
+# 2026-27). Team discovery survives rotation via the sport-label fallback,
+# but live scores POST the SSID directly, so a stale one returns an empty
+# scoreboard with no error — silent dead air on game night. These cover the
+# runtime discovery that keeps that map current.
+
+SSID_DROPDOWN_HTML = """
+<html><body>
+  <select id="SchoolSSID">
+    <option value="0">-- Select --</option>
+    <option value="1533">Boys Football</option>
+    <option value="1559">Girls Volleyball</option>
+    <option value="1541">Boys Soccer</option>
+    <option value="">blank</option>
+  </select>
+</body></html>
+"""
+
+
+@pytest.fixture(autouse=True)
+def _clear_season_ssids():
+    """_season_ssids is module-global run state; keep tests independent."""
+    wiaa._season_ssids.clear()
+    yield
+    wiaa._season_ssids.clear()
+
+
+def test_harvest_season_ssids_reads_dropdown():
+    found = wiaa.harvest_season_ssids(SSID_DROPDOWN_HTML)
+    assert found["football"] == 1533
+    assert found["volleyball"] == 1559
+    assert found["boys_soccer"] == 1541
+    # Placeholder/blank options must not become sport entries.
+    assert all(v > 0 for v in found.values())
+    assert wiaa._season_ssids["football"] == 1533
+
+
+def test_harvest_season_ssids_tolerates_missing_dropdown():
+    assert wiaa.harvest_season_ssids("<html><body>no select here</body></html>") == {}
+    assert wiaa._season_ssids == {}
+
+
+def test_current_ssid_prefers_discovered_over_hardcoded(monkeypatch):
+    # Guard against the 2026-07 live-scores bug: whatever vintage the
+    # hardcoded map is, the discovered value must win.
+    monkeypatch.setitem(wiaa.SSID_BY_SPORT, "football", 1499)
+    wiaa.harvest_season_ssids(SSID_DROPDOWN_HTML)
+    assert wiaa.current_ssid_for_sport("football") == 1533
+
+
+def test_current_ssid_falls_back_when_site_unreachable(monkeypatch):
+    def _boom(_org_id):
+        raise wiaa.httpx.ConnectError("offline")
+
+    monkeypatch.setattr(wiaa, "discover_team_ids", _boom)
+    # No discovery possible -> hardcoded vintage, rather than None/crash.
+    assert wiaa.current_ssid_for_sport("football") == wiaa.SSID_BY_SPORT["football"]
+    assert wiaa.current_ssid_for_sport("not_a_sport") is None
+
+
+def test_discover_team_id_rejects_unknown_sport():
+    with pytest.raises(ValueError, match="Unknown sport key"):
+        wiaa.discover_team_id_for_sport(415, "underwater_basketweaving")
+
+
 def test_schedule_header_parse(schedule, schedule_meta):
     assert schedule["team_id"] == schedule_meta["team_id"]
     assert schedule["school_name"]

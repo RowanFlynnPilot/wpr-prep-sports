@@ -17,26 +17,47 @@ ASP.NET data grids — clean to parse. This is our primary source for v1.
 | `GET  /Directory/Schedule/Index?TeamID=<n>` | Full-season schedule + results for a single team. Each game row is `<tr class="gridTableRow">` with hidden sort key `<span style="display:none">YYYYMMDD</span>`, date/time labels, home/away anchors (with logo and TeamID), venue label, and result span (`winningTeamText` / `losingTeamText` for finals; absent for scheduled). |
 | `GET  /ScoreCenter/Results/FBScoreboard` | Statewide football scoreboard, useful for week-at-a-glance cross-checking. Has `FBWeekSel` filter. |
 
-**Sport SSIDs (from team list rows):**
+**Sport SSIDs (SportSeason IDs, from team list rows):**
 
-| SSID | Sport |
-|---|---|
-| 1499 | Boys Football |
-| 1500 | Boys Football 8-Player |
-| 1502 | Boys Basketball |
-| 1512 | Girls Basketball |
-| 1523 | Girls Volleyball |
-| 1510 | Boys Volleyball |
-| 1506 | Boys Soccer |
-| 1518 | Girls Soccer |
-| 1511 | Boys Wrestling |
-| 1524 | Girls Wrestling |
+⚠️ **SSIDs rotate every season.** WIAA mints a fresh set when the site
+rolls to a new school year each July — discovered 2026-07-02 when
+2025-26 SSIDs stopped matching. The scraper therefore discovers the
+current map at runtime from the `<select id="SchoolSSID">` sport
+dropdown embedded in every directory page (`option value` = SSID, text
+= sport label) and keeps the hardcoded `SSID_BY_SPORT` map in
+`scraper/sources/wiaa.py` only as a fallback. Team-row matching
+additionally falls back to the sport label text, which IS stable across
+seasons ("Boys Football", "Girls Volleyball", …).
 
-Discover others by inspecting any school's directory page.
+| Sport | 2025-26 | 2026-27 |
+|---|---|---|
+| Boys Football | 1499 | 1533 |
+| Boys Football 8-Player | 1500 | 1534 |
+| Boys Basketball | 1502 | 1536 |
+| Girls Basketball | 1512 | 1547 |
+| Girls Volleyball | 1523 | 1559 |
+| Boys Volleyball | 1510 | 1545 |
+| Boys Soccer | 1506 | 1541 |
+| Girls Soccer | 1518 | 1554 |
+| Boys Hockey | 1505 | 1539 |
+| Girls Hockey | 1517 | 1552 |
+| Boys Wrestling | 1511 | 1546 |
+| Girls Wrestling | 1524 | 1560 |
+| Boys Baseball | 1501 | 1535 |
+| Girls Softball | 1519 | 1555 |
+
+(Full current list in `SSID_BY_SPORT`; discover others from the dropdown
+on any school's directory page.)
 
 **TeamIDs are per-season.** A new TeamID is minted each year. The scraper
 re-discovers them from the OrgID at the start of every scrape cycle, so the
 only stable IDs we cache are `OrganizationID`s.
+
+**Historical seasons:** `GetDirectorySchool` also accepts a
+`SchoolYear=<yyyy>` query param (`SchoolYear=2025` → the 2025-26 team
+grid with that season's SSIDs and TeamIDs) — useful for tests and
+archive work. Caveat: the SchoolSSID dropdown embedded in the page
+always reflects the *current* season even when the grid is historical.
 
 **Notes:**
 - Authoritative — when Bound and WIAA disagree, WIAA wins.
