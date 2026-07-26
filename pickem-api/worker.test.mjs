@@ -58,6 +58,47 @@ const assert = (cond, msg) => {
 const CID_A = "aaaaaaaa-1111-2222-3333-444444444444";
 const CID_B = "bbbbbbbb-1111-2222-3333-444444444444";
 
+// 0. Defaults track the live deployment.
+//
+// Regression guard for 2026-07-26: the widget moved to its own subdomain
+// and these defaults still named the old github.io origin. Data would have
+// limped along on GitHub's 301, but the allow-list would not — requests
+// carry the iframe's own origin, so every API call would have failed CORS
+// and the community features would have silently never appeared, with a
+// green deploy. A stale default here is invisible until someone deploys.
+const WIDGET_ORIGIN = "https://sports.wausaupilotandreview.com";
+{
+  const pre = await worker.fetch(
+    new Request("https://pickem.example/api/picks", {
+      method: "OPTIONS",
+      headers: { Origin: WIDGET_ORIGIN },
+    }),
+    env,
+    ctx,
+  );
+  assert(
+    pre.headers.get("Access-Control-Allow-Origin") === WIDGET_ORIGIN,
+    "default allow-list covers the production widget origin",
+  );
+
+  let defaultFetched = null;
+  const prevFetch = globalThis.fetch;
+  globalThis.fetch = async (input) => {
+    defaultFetched = typeof input === "string" ? input : input.url;
+    return new Response(JSON.stringify(GAMES), { status: 200 });
+  };
+  await worker.fetch(
+    new Request("https://pickem.example/api/leaderboard?sport=football"),
+    env,
+    ctx,
+  );
+  globalThis.fetch = prevFetch;
+  assert(
+    defaultFetched === `${WIDGET_ORIGIN}/data/football/games.json`,
+    "default DATA_ORIGIN points at the live widget domain",
+  );
+}
+
 // 1. Submit: future accepted, started game rejected.
 let r = await call("/api/picks", {
   method: "POST",

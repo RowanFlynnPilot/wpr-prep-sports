@@ -27,12 +27,22 @@
 // Per-tenant config comes from wrangler.toml [vars] (DATA_ORIGIN,
 // ALLOWED_ORIGINS) — these defaults are the WPR production values so
 // the original deployment needs no vars at all.
-const DEFAULT_DATA_ORIGIN = "https://rowanflynnpilot.github.io/wpr-prep-sports";
+// NOTE: the widget moved to its own subdomain on 2026-07-26. The old
+// github.io URL still 301s (path intact), so DATA_ORIGIN would have kept
+// working via a redirect hop — but the allow-list would NOT: requests come
+// from the iframe's own origin, so a stale list blocks every API call with
+// a CORS error and the community features silently never appear.
+const DEFAULT_DATA_ORIGIN = "https://sports.wausaupilotandreview.com";
 const DEFAULT_ALLOWED_ORIGINS = [
-  "https://rowanflynnpilot.github.io",
+  // The widget itself — this is the Origin the browser actually sends,
+  // since the fetches run inside the iframe.
+  "https://sports.wausaupilotandreview.com",
+  // The host page, for a future direct call from WordPress.
   "https://wausaupilotandreview.com",
   "https://www.wausaupilotandreview.com",
+  // Local dev: 5173 is Vite's default, 5199 is .claude/launch.json.
   "http://localhost:5173",
+  "http://localhost:5199",
 ];
 
 function dataOrigin(env) {
