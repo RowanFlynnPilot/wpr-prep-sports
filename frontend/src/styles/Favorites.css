@@ -1,0 +1,302 @@
+/* Favorites — the pinned "Your Teams" strip and the follow toggle.
+   Uses the neutral --brand/--accent tokens so a white-label tenant
+   re-themes it for free (see docs/white-label.md). */
+
+/* ---- strip ------------------------------------------------------------ */
+
+.favstrip {
+  margin: 0 0 1.5rem;
+}
+
+.favstrip__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+  border-bottom: 2px solid var(--brand);
+  padding-bottom: 0.4rem;
+  margin-bottom: 0.85rem;
+}
+
+.favstrip__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-h3);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin: 0;
+  color: var(--ink-hero);
+}
+
+.favstrip__hint {
+  font-size: var(--fs-eyebrow);
+  color: var(--muted);
+  text-align: right;
+}
+
+/* Horizontal rail on wide screens; stacks on phones so cards stay legible
+   rather than shrinking to unreadable columns. */
+.favstrip__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(255px, 1fr));
+  gap: 0.75rem;
+}
+
+/* ---- card ------------------------------------------------------------- */
+
+.favcard {
+  position: relative;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  border-top: 3px solid var(--school-color, var(--accent));
+  padding: 0.75rem 0.85rem 0.6rem;
+  box-shadow: var(--shadow-lift);
+  transition: box-shadow var(--t-fast) var(--ease);
+}
+
+.favcard:hover {
+  box-shadow: var(--shadow-hero);
+}
+
+/* A favorite that doesn't field a team in the sport being viewed. Kept
+   visible so the list doesn't appear to lose schools on sport switch. */
+.favcard--inactive {
+  opacity: 0.62;
+}
+
+.favcard__remove {
+  position: absolute;
+  top: 0.3rem;
+  right: 0.35rem;
+  border: 0;
+  background: transparent;
+  color: var(--muted-2);
+  font-size: 1.1rem;
+  line-height: 1;
+  padding: 0.2rem 0.3rem;
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+}
+
+.favcard__remove:hover,
+.favcard__remove:focus-visible {
+  color: var(--accent);
+  background: var(--paper-2);
+}
+
+.favcard__main {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  color: inherit;
+  padding-right: 1.2rem; /* clear the remove button */
+}
+
+.favcard__meta {
+  min-width: 0;
+}
+
+.favcard__name {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--ink-hero);
+  line-height: 1.2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.favcard__main:hover .favcard__name {
+  text-decoration: underline;
+}
+
+.favcard__sub {
+  display: block;
+  font-size: var(--fs-eyebrow);
+  color: var(--muted);
+  font-family: var(--font-numeric);
+  letter-spacing: 0.02em;
+}
+
+.favcard__game {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  margin-top: 0.55rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.8rem;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.favcard__game:hover .favcard__game-detail {
+  text-decoration: underline;
+}
+
+.favcard__game-label {
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted-2);
+  flex: none;
+}
+
+.favcard__game-detail {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.favcard__when {
+  color: var(--muted);
+}
+
+.favcard__won {
+  color: var(--win);
+}
+
+.favcard__lost {
+  color: var(--loss);
+}
+
+.favcard__form {
+  display: flex;
+  gap: 0.22rem;
+  margin-top: 0.5rem;
+}
+
+.favcard__form-mark {
+  font-family: var(--font-numeric);
+  font-size: 0.66rem;
+  font-weight: 600;
+  width: 1.15rem;
+  height: 1.15rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+}
+
+.favcard__form-mark--w {
+  background: var(--win-bg);
+  color: var(--win);
+}
+
+.favcard__form-mark--l {
+  background: var(--loss-bg);
+  color: var(--loss);
+}
+
+.favcard__sponsor {
+  margin-top: 0.5rem;
+}
+
+/* ---- follow toggle ---------------------------------------------------- */
+
+.fav-toggle-wrap {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.25rem;
+}
+
+.fav-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: var(--card);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.32rem 0.8rem;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: background var(--t-fast) var(--ease), border-color var(--t-fast) var(--ease);
+}
+
+.fav-toggle:hover,
+.fav-toggle:focus-visible {
+  border-color: var(--accent);
+  color: var(--accent-700);
+}
+
+.fav-toggle--on {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #ffffff;
+}
+
+.fav-toggle--on:hover,
+.fav-toggle--on:focus-visible {
+  background: var(--accent-700);
+  border-color: var(--accent-700);
+  color: #ffffff;
+}
+
+.fav-toggle__star {
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+.fav-toggle__notice {
+  font-size: var(--fs-eyebrow);
+  color: var(--accent-700);
+  font-family: var(--font-body);
+  text-transform: none;
+  letter-spacing: 0;
+  max-width: 22ch;
+}
+
+/* On the team hero the toggle sits on the dark/colored band. */
+.team-hero .fav-toggle {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #ffffff;
+}
+
+.team-hero .fav-toggle:hover,
+.team-hero .fav-toggle:focus-visible {
+  background: rgba(255, 255, 255, 0.22);
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+.team-hero .fav-toggle--on {
+  background: #ffffff;
+  border-color: #ffffff;
+  color: var(--accent-700);
+}
+
+.team-hero .fav-toggle__notice {
+  color: #ffffff;
+}
+
+@media (max-width: 560px) {
+  .favstrip__head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.15rem;
+  }
+
+  .favstrip__hint {
+    text-align: left;
+  }
+
+  .favstrip__list {
+    grid-template-columns: 1fr;
+  }
+}

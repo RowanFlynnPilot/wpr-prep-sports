@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import TeamLogo from "../components/TeamLogo.jsx";
 import Sponsor from "../components/Sponsor.jsx";
 import { formatGameDate, formatGameTime } from "../utils/dates.js";
+import { teamGamesFor, summarizeTeam, conferenceStanding } from "../utils/teamSummary.js";
 import { SITE, SITE_TITLE } from "../config/site.js";
 
 /**
@@ -23,54 +24,22 @@ export default function EmbedPage({ dataset, schoolIndex, sportConfig }) {
   const { schoolId } = useParams();
   const school = schoolIndex?.get?.(schoolId) ?? null;
 
+  // Shared with the favorites strip (utils/teamSummary.js) so the embed and
+  // the pinned card can never disagree about a team's record.
   const teamGames = useMemo(
-    () =>
-      (dataset.games ?? [])
-        .filter(
-          (g) => g.home.school_id === schoolId || g.away.school_id === schoolId,
-        )
-        .sort((a, b) => new Date(a.date) - new Date(b.date)),
+    () => teamGamesFor(dataset.games, schoolId),
     [dataset.games, schoolId],
   );
 
-  const summary = useMemo(() => {
-    let wins = 0;
-    let losses = 0;
-    const form = [];
-    let lastGame = null;
-    for (const g of teamGames) {
-      if (g.status !== "final") continue;
-      const isHome = g.home.school_id === schoolId;
-      const ours = isHome ? g.home.score : g.away.score;
-      const theirs = isHome ? g.away.score : g.home.score;
-      if (ours == null || theirs == null) continue;
-      if (ours > theirs) wins++;
-      else if (theirs > ours) losses++;
-      form.push(ours > theirs ? "W" : "L");
-      lastGame = g;
-    }
-    const now = Date.now();
-    const nextGame =
-      teamGames.find(
-        (g) => g.status === "scheduled" && new Date(g.date).getTime() >= now,
-      ) ?? null;
-    return { wins, losses, form: form.slice(-5), lastGame, nextGame };
-  }, [teamGames, schoolId]);
+  const summary = useMemo(
+    () => summarizeTeam(teamGames, schoolId),
+    [teamGames, schoolId],
+  );
 
-  const standing = useMemo(() => {
-    const conf = school?.conferences?.find?.(
-      (c) => c.sport === dataset.sport,
-    )?.conference;
-    if (!conf) return null;
-    const table = (dataset.standings ?? []).find((s) => s.conference === conf);
-    if (!table) return { conference: conf, rank: null, size: null };
-    const idx = table.rows.findIndex((r) => r.school_id === schoolId);
-    return {
-      conference: conf,
-      rank: idx >= 0 ? idx + 1 : null,
-      size: table.rows.length,
-    };
-  }, [school, dataset.sport, dataset.standings, schoolId]);
+  const standing = useMemo(
+    () => conferenceStanding(school, dataset.sport, dataset.standings, schoolId),
+    [school, dataset.sport, dataset.standings, schoolId],
+  );
 
   if (!school) {
     return (
