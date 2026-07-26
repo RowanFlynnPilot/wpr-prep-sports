@@ -34,8 +34,8 @@ Without analytics there is nothing to put in the media kit.
    installation" — the pageview from step 4 is what it looks for.
    Note: verification must be run against the widget, not the WPR
    homepage; easiest is to just load
-   `https://rowanflynnpilot.github.io/wpr-prep-sports/` in a normal
-   browser tab and watch the realtime dashboard.
+   `https://sports.wausaupilotandreview.com/` in a normal browser tab and
+   watch the realtime dashboard.
 
 ## What gets tracked
 

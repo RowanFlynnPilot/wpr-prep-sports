@@ -38,12 +38,23 @@ Python scraper → GitHub Actions cron → GitHub Pages static JSON → React/Vi
 
 ## Embedding the widget on the WPR site
 
+The widget is served from `https://sports.wausaupilotandreview.com` — a
+subdomain of the publisher's own site, deliberately. That makes the iframe
+*same-site* with the host page, so browsers don't partition the widget's
+`localStorage` and Safari/ITP doesn't expire it after 7 days, which is what
+keeps reader state (Pick'em picks, favorites) from silently vanishing.
+Serving from `*.github.io` would make it third-party and reintroduce all of
+that. See [docs/favorites-spec.md](docs/favorites-spec.md).
+
+Use `https://` in the `src`: the host page is HTTPS, so an `http://` iframe
+is blocked as mixed content.
+
 Add this anywhere in a WordPress post or template:
 
 ```html
 <iframe
   id="wpr-prep-sports"
-  src="https://rowanflynnpilot.github.io/wpr-prep-sports/"
+  src="https://sports.wausaupilotandreview.com/"
   width="100%"
   height="900"
   frameborder="0"
@@ -56,7 +67,7 @@ Add this anywhere in a WordPress post or template:
   // The widget posts { type: 'wpr-prep-sports:resize', height: N } on
   // load, on layout change, and on hash navigation.
   (function () {
-    var WIDGET_ORIGIN = 'https://rowanflynnpilot.github.io';
+    var WIDGET_ORIGIN = 'https://sports.wausaupilotandreview.com';
     var iframe = document.getElementById('wpr-prep-sports');
     if (!iframe) return;
     window.addEventListener('message', function (evt) {
@@ -91,7 +102,7 @@ recent form, and that school's sponsor slot:
 
 ```html
 <iframe
-  src="https://rowanflynnpilot.github.io/wpr-prep-sports/#/football/embed/wausau-east"
+  src="https://sports.wausaupilotandreview.com/#/football/embed/wausau-east"
   width="100%" height="330" frameborder="0" loading="lazy"
   style="border:0;display:block;max-width:640px;"
 ></iframe>

@@ -193,10 +193,15 @@ deploy workflow can publish directly.
 
 ## WordPress embed
 
-Once deployed, embed in WPR with:
+Served from `https://sports.wausaupilotandreview.com` (GitHub Pages custom
+domain, Cloudflare DNS-only CNAME). The subdomain is deliberate: it makes
+the iframe same-site with the host page, so the widget's `localStorage`
+isn't partitioned and Safari/ITP doesn't expire it — see
+`docs/favorites-spec.md`. The full snippet, with the `origin`/`source`
+checks the resize listener needs, is in the README.
 
 ```html
-<iframe src="https://rowanflynnpilot.github.io/wpr-prep-sports/"
+<iframe src="https://sports.wausaupilotandreview.com/"
         width="100%" height="800" frameborder="0" loading="lazy"></iframe>
 ```
 
