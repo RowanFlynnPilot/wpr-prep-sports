@@ -86,25 +86,18 @@ export default function SectionTabs({ tabs, active, onChange }) {
                   "section-tabs__tab" + (selected ? " section-tabs__tab--active" : "")
                 }
                 onClick={() => onChange(t.id)}
-                // Both label variants stay in the DOM for the CSS viewport
-                // swap, so name the button once explicitly and hide the
-                // spans — otherwise each tab announces twice.
-                aria-label={t.label}
               >
                 {t.icon && (
                   <span className="section-tabs__icon" aria-hidden="true">
                     {t.icon}
                   </span>
                 )}
-                <span className="section-tabs__label" aria-hidden="true">
-                  {t.label}
-                </span>
-                <span
-                  className="section-tabs__label section-tabs__label--short"
-                  aria-hidden="true"
-                >
-                  {t.shortLabel ?? t.label}
-                </span>
+                {/* One label, wrapped onto two lines on narrow screens
+                    rather than swapped for an abbreviation. That keeps the
+                    accessible name identical to the visible text, so there
+                    is no aria-label to drift out of sync and no second
+                    hidden span to announce twice. */}
+                <span className="section-tabs__label">{t.label}</span>
               </button>
             </li>
           );

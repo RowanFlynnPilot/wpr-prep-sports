@@ -156,6 +156,9 @@
   margin-bottom: -1px; /* overlap the container's bottom border */
   cursor: pointer;
   width: 100%;
+  /* Fill the (stretched) list item so a tab that wraps to two lines doesn't
+     leave its neighbours' active underlines sitting at a different height. */
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -178,8 +181,6 @@
   font-size: 1.05em;
   line-height: 1;
 }
-
-.section-tabs__label--short { display: none; }
 
 .section-tabs__tab:hover {
   color: var(--ink);
@@ -207,20 +208,27 @@
     letter-spacing: 0.03em;
     gap: 0.3rem;
   }
-  .section-tabs__label { display: none; }
-  .section-tabs__label--short { display: inline; }
 }
 
 /* Phone widths: four tabs plus icon and label won't sit on one line at
-   375px (the commonest handset), so stack the icon above the label rather
-   than dropping either. Taller tabs are a bonus on touch. */
+   375px (the commonest handset), so stack the icon above the label and let
+   long labels wrap onto a second line rather than abbreviating them.
+   Taller tabs are a bonus on touch. */
 @media (max-width: 460px) {
   .section-tabs__tab {
     flex-direction: column;
     gap: 0.2rem;
     padding: 0.55rem 0.2rem;
     font-size: 0.72rem;
-    line-height: 1.1;
+    line-height: 1.15;
+    /* Overrides the desktop nowrap so "Standings & Stats" can break. */
+    white-space: normal;
+  }
+  .section-tabs__label {
+    text-align: center;
+    /* Prefer breaking at the space; only hyphenate if a single word can't
+       fit, which no current label does. */
+    overflow-wrap: break-word;
   }
   .section-tabs__icon { font-size: 1.15rem; }
 }
