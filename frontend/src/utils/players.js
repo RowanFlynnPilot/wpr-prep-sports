@@ -37,6 +37,23 @@ export function playerProfileHref(sportPrefix, schoolId, playerName) {
 }
 
 /**
+ * A player name as it should be shown to a reader.
+ *
+ * Sources hand us ragged whitespace — "Joe  Graveen", "Zach  Walters" —
+ * in 6% of stat rows (1,323 of 21,396 measured 2026-07-26), heavily in
+ * basketball and hockey. Slugs already collapse it, so links were fine
+ * and only the visible name looked wrong; on a page whose entire purpose
+ * is a parent finding their kid, a double-spaced name is exactly the
+ * detail that reads as sloppy.
+ *
+ * Normalizing at render rather than only in the scraper fixes the frozen
+ * archive seasons too, which will never be re-scraped.
+ */
+export function displayPlayerName(name) {
+  return (name || "").replace(/\s+/g, " ").trim();
+}
+
+/**
  * Normalize per-school stat lines to one shape regardless of data
  * layout. Post-split: the players/<school_id>.json file carries
  * { lines: [{ game_id, ...line }] }. Pre-split (or when that file is

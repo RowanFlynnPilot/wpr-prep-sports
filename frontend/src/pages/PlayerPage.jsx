@@ -9,6 +9,7 @@ import { useSportPrefix } from "../utils/links.js";
 import { formatGameDate } from "../utils/dates.js";
 import {
   buildSchoolLines,
+  displayPlayerName,
   findPlayerGameLog,
   findPlayerSeasonStats,
   resolvePlayerName,
@@ -49,12 +50,14 @@ export default function PlayerPage({ dataset, schoolIndex, sportConfig }) {
 
   const playerName = useMemo(
     () =>
-      resolvePlayerName({
-        schoolLines,
-        seasonStats: dataset.seasonStats,
-        schoolId,
-        slug,
-      }),
+      displayPlayerName(
+        resolvePlayerName({
+          schoolLines,
+          seasonStats: dataset.seasonStats,
+          schoolId,
+          slug,
+        }),
+      ),
     [schoolLines, dataset.seasonStats, schoolId, slug],
   );
 

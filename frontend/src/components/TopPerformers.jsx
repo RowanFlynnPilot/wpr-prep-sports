@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import TeamLogo from "./TeamLogo.jsx";
 import { formatStatsLine, topPerformers } from "../utils/seasonStats.js";
 import { useSportPrefix } from "../utils/links.js";
-import { playerProfileHref } from "../utils/players.js";
+import { displayPlayerName, playerProfileHref } from "../utils/players.js";
 
 /**
  * Top Performers — cross-team leaderboards. One small card per display
@@ -49,7 +49,7 @@ export default function TopPerformers({ rows, schoolIndex, sportConfig, n = 5 })
                         to={playerProfileHref(sportPrefix, r.school_id, r.player_name)}
                         className="top-card__name"
                       >
-                        {r.player_name}
+                        {displayPlayerName(r.player_name)}
                         {r.player_year && (
                           <span className="top-card__year"> ({r.player_year})</span>
                         )}

@@ -7,6 +7,7 @@ import {
   positionFor,
   teamSeasonLeaders,
 } from "../utils/seasonStats.js";
+import { displayPlayerName } from "../utils/players.js";
 import { recordLabels } from "../config/sports.js";
 
 /**
@@ -246,7 +247,7 @@ function HoverCard({ row, school, conference, leaders, labels }) {
                 {positionFor(category)}
               </span>
               <span className="standings__hover-leader-name">
-                {leader.player_name}
+                {displayPlayerName(leader.player_name)}
                 {leader.player_year && (
                   <span className="standings__hover-leader-year">
                     {" "}

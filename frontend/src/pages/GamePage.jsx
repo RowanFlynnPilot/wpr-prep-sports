@@ -14,7 +14,7 @@ import { schoolFor } from "../utils/schools.js";
 import { formatGameDay, formatGameDate, formatGameTime } from "../utils/dates.js";
 import { recapForGame } from "../utils/recap.js";
 import { useSportPrefix } from "../utils/links.js";
-import { playerProfileHref } from "../utils/players.js";
+import { displayPlayerName, playerProfileHref } from "../utils/players.js";
 import { SITE } from "../config/site.js";
 
 /**
@@ -606,14 +606,14 @@ function BoxCategoryTable({ category, lines, sportPrefix }) {
                       to={playerProfileHref(sportPrefix, line.team_school_id, line.player_name)}
                       className="box-cat__name-link"
                     >
-                      {line.player_name}
+                      {displayPlayerName(line.player_name)}
                       {line.player_year && (
                         <span className="box-cat__year"> ({line.player_year})</span>
                       )}
                     </Link>
                   ) : (
                     <>
-                      {line.player_name}
+                      {displayPlayerName(line.player_name)}
                       {line.player_year && (
                         <span className="box-cat__year"> ({line.player_year})</span>
                       )}
@@ -743,7 +743,7 @@ function StatRow({ line, sportPrefix }) {
       {pos && <span className="stat-row__pos">{pos}</span>}
       <div className="stat-row__player">
         <NameWrap>
-          {line.player_name}
+          {displayPlayerName(line.player_name)}
           {line.player_year && (
             <span className="stat-row__year"> ({line.player_year})</span>
           )}
