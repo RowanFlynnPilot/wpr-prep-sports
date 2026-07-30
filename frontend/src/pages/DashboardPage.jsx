@@ -384,15 +384,17 @@ export default function DashboardPage({
             <ScoreTicker games={recent} schoolIndex={schoolIndex} allGames={games} sportConfig={sportConfig} />
           </section>
 
-          <SectionBoundary label="pickem">
-            <Pickem
-              games={games}
-              schoolIndex={schoolIndex}
-              sponsors={sponsors}
-              sportId={sportConfig?.id}
-              now={anchorNow.getTime()}
-            />
-          </SectionBoundary>
+          {SITE.features?.pickem && (
+            <SectionBoundary label="pickem">
+              <Pickem
+                games={games}
+                schoolIndex={schoolIndex}
+                sponsors={sponsors}
+                sportId={sportConfig?.id}
+                now={anchorNow.getTime()}
+              />
+            </SectionBoundary>
+          )}
         </>
       )}
 

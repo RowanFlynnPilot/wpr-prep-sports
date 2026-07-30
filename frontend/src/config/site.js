@@ -53,6 +53,18 @@ export const SITE = {
   governingBody: "WIAA", // state association label in UI copy ("WIAA Tournament", "Data via WIAA")
   timeZone: "America/Chicago",
 
+  // Feature switches. Each one hides a whole reader-facing surface AND its
+  // line in the #/sponsor media kit, so the rate card can never advertise
+  // inventory the site isn't actually running. Flip to true to restore.
+  features: {
+    // Pick'em — weekly winner predictions. Off for the 2026-08 launch.
+    // The feature is complete, not broken: picks persist in localStorage,
+    // and the community leaderboard additionally needs the pickem-api/
+    // Cloudflare Worker deployed with VITE_PICKEM_API pointed at it.
+    // Turning this back on needs no other change.
+    pickem: false,
+  },
+
   // Namespaces. CAUTION: changing these on an existing deployment
   // orphans readers' saved picks (localStorage) and breaks host-page
   // resize listeners (postMessage type) — set once per tenant, before

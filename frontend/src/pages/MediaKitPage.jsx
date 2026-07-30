@@ -109,6 +109,7 @@ const INVENTORY = [
         slots: [],
         status: "ready",
         rateKey: "pickem",
+        feature: "pickem",
         preview: { label: "Pick'em presented by", tone: "feature" },
       },
       {
@@ -152,6 +153,15 @@ const INVENTORY = [
     ],
   },
 ];
+
+// Inventory for surfaces the site is actually running. An item tagged with
+// `feature` disappears from the rate card whenever that switch is off in
+// site.js, so a sales conversation can never offer a placement a reader
+// would not see. Sections left empty by the filter drop out entirely.
+const LIVE_INVENTORY = INVENTORY.map((section) => ({
+  ...section,
+  items: section.items.filter((item) => !item.feature || SITE.features?.[item.feature]),
+})).filter((section) => section.items.length > 0);
 
 const PACKAGES = [
   { title: "Football Season Title", note: "Aug–Nov · title sponsor for football" },
@@ -261,7 +271,7 @@ export default function MediaKitPage() {
         ))}
       </ul>
 
-      {INVENTORY.map((section) => (
+      {LIVE_INVENTORY.map((section) => (
         <section key={section.group} className="mk-group">
           <h2 className="mk-group__title">{section.group}</h2>
           <div className="mk-grid">
