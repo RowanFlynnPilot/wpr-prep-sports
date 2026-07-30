@@ -53,6 +53,33 @@ export const SITE = {
   governingBody: "WIAA", // state association label in UI copy ("WIAA Tournament", "Data via WIAA")
   timeZone: "America/Chicago",
 
+  // The publisher's own backyard, by school city as it appears in
+  // data/schools.json. Coverage runs wider than this on purpose — whole
+  // conferences are tracked so standings are complete, which pulls in
+  // Hurley on the Michigan border and the Eau Claire block out west. Those
+  // schools belong in the data; they just shouldn't be what a Wausau reader
+  // meets at the top of the page. The hero prefers a game from these cities
+  // within the next slate of games, so "Up Next" stays literally true while
+  // leading with a matchup this audience has a stake in.
+  //
+  // Editorial knob: add or remove a city and the hero follows, no code
+  // change. Purely a tie-break — an empty list restores strict
+  // chronological order, and any sport or week without a home-region game
+  // falls back to it automatically.
+  homeRegionCities: [
+    // Wausau metro
+    "Wausau", "Schofield", "Mosinee", "Merrill",
+    // Marathon County
+    "Marathon City", "Edgar", "Athens", "Stratford", "Spencer",
+    "Colby", "Abbotsford", "Auburndale", "Wittenberg",
+    // Marshfield / Wisconsin Rapids / Stevens Point corridor
+    "Marshfield", "Wisconsin Rapids", "Stevens Point",
+    "Pittsville", "Port Edwards", "Rosholt",
+    // Clark County and the near ring
+    "Neillsville", "Loyal", "Greenwood", "Owen",
+    "Medford", "Rib Lake", "Tomahawk", "Antigo",
+  ],
+
   // Feature switches. Each one hides a whole reader-facing surface AND its
   // line in the #/sponsor media kit, so the rate card can never advertise
   // inventory the site isn't actually running. Flip to true to restore.

@@ -26,13 +26,38 @@ function isRivalryFinal(g) {
  * Pick the most "feature-worthy" game.
  *
  * Priority order:
- *   1. The very next upcoming game (status=scheduled) within the next 7 days
- *      involving any tracked school — Friday night spotlight.
+ *   1. The next slate of upcoming games (status=scheduled) within the next 7
+ *      days, preferring one from the publisher's home region — see below.
  *   2. Most recent final between two tracked schools (rivalry / conference).
  *   3. Most recent final involving any tracked school.
  *   4. null if there are no games at all.
+ *
+ * `preferIds` biases step 1 toward the home region WITHOUT breaking the
+ * "Up Next" label above the card. Coverage spans whole conferences so
+ * standings are complete, which means the chronologically next game can be
+ * two schools on the Michigan border — accurate, and no reason for a Wausau
+ * reader to care. So the preference applies only WITHIN the earliest day
+ * that has games: the card still shows a game from the next slate, just the
+ * one this audience has a stake in. On the 2026 football opener that turns
+ * Tri-County at Hurley (5:00 PM) into Wausau West at Menomonie (7:00 PM) —
+ * same night either way.
+ *
+ * Deliberately never reaches past that day. Skipping tomorrow's game to
+ * feature one on Saturday would make the eyebrow a lie, and a wrong label
+ * costs more than a less local matchup.
+ *
+ * `excludeId` is the game already showing as Game of the Week directly
+ * above. Both cards prefer the best local game on the same slate, so
+ * without this they pick the same one and the page's two biggest slots
+ * carry one matchup. Only ever skips that single game, and only while
+ * another local one exists on the day.
  */
-export function pickFeaturedGame(games, now = new Date()) {
+export function pickFeaturedGame(
+  games,
+  now = new Date(),
+  preferIds = null,
+  excludeId = null,
+) {
   if (!games || games.length === 0) return null;
 
   const upcoming = games
@@ -40,7 +65,25 @@ export function pickFeaturedGame(games, now = new Date()) {
     .map((g) => ({ g, ts: new Date(g.date).getTime() }))
     .filter(({ ts }) => ts >= now.getTime() && ts - now.getTime() < 7 * DAY_MS)
     .sort((a, b) => a.ts - b.ts);
-  if (upcoming.length > 0) return upcoming[0].g;
+  if (upcoming.length > 0) {
+    if (preferIds && preferIds.size > 0) {
+      // Same slice the schedule groups on, so "day" means the same thing here
+      // as it does in the list below the hero.
+      const firstDay = upcoming[0].g.date.slice(0, 10);
+      const locals = upcoming.filter(
+        ({ g }) =>
+          g.date.slice(0, 10) === firstDay &&
+          (preferIds.has(g.home.school_id) || preferIds.has(g.away.school_id)),
+      );
+      // Prefer a local game the marquee isn't already showing; if that game
+      // is the only local one, showing it here too still beats dropping to
+      // a matchup from the other end of the state.
+      const local =
+        locals.find(({ g }) => g.id !== excludeId) ?? locals[0];
+      if (local) return local.g;
+    }
+    return upcoming[0].g;
+  }
 
   const finals = games
     .filter((g) => g.status === "final")

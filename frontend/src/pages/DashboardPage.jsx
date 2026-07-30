@@ -23,6 +23,7 @@ import SpiritStrip from "../components/SpiritStrip.jsx";
 import SeniorSpotlight from "../components/SeniorSpotlight.jsx";
 import PowerRankings from "../components/PowerRankings.jsx";
 import { pickFeaturedGame, tickerGames } from "../utils/games.js";
+import { homeRegionSchoolIds } from "../utils/schools.js";
 import { pickFeaturedWeek } from "../utils/weeks.js";
 import { pickMarqueeGame } from "../utils/marquee.js";
 import { SPORT_IDS } from "../config/sports.js";
@@ -128,7 +129,10 @@ export default function DashboardPage({
     [preseason, schools, games, sportConfig?.id],
   );
 
-  const featured = useMemo(() => pickFeaturedGame(games, anchorNow), [games, anchorNow]);
+  // Home-region school ids, used only to bias the hero's pick within the
+  // next slate of games. Derived from the manifest's cities, so it costs
+  // nothing to maintain as coverage grows.
+  const homeRegion = useMemo(() => homeRegionSchoolIds(schools), [schools]);
   const recent = useMemo(() => tickerGames(games, anchorNow, 21), [games, anchorNow]);
   const week = useMemo(() => pickFeaturedWeek(games, anchorNow), [games, anchorNow]);
 
@@ -168,6 +172,18 @@ export default function DashboardPage({
         now: anchorNow.getTime(),
       }),
     [games, schoolIndex, offSeason, anchorNow],
+  );
+
+  // Hero pick, computed AFTER the marquee so it can avoid repeating it.
+  // Both cards want the best local game on the next slate, so left alone
+  // they land on the same one and the top of the page shows the same
+  // matchup twice — the two most valuable slots spent on one game. Passing
+  // the marquee's id sends the hero to the next home-region game that day
+  // instead (opening night: the marquee takes Wausau West at Menomonie,
+  // the hero takes D.C. Everest at Chippewa Falls).
+  const featured = useMemo(
+    () => pickFeaturedGame(games, anchorNow, homeRegion, marquee?.game?.id ?? null),
+    [games, anchorNow, homeRegion, marquee],
   );
 
   const lastUpdated = meta?.last_updated

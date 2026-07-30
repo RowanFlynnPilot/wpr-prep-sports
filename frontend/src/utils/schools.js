@@ -10,6 +10,29 @@
  * where the underlying data model doesn't carry one.
  */
 
+import { SITE } from "../config/site.js";
+
+/**
+ * School ids in the publisher's own backyard, per SITE.homeRegionCities.
+ * Matched on the school's city rather than a hand-listed set of ids, so a
+ * two-school town (Marshfield and Columbus Catholic; SPASH and Pacelli)
+ * comes along without anyone remembering to add the second one.
+ *
+ * Returns an empty Set when no cities are configured, which callers treat
+ * as "no preference" — a tenant that hasn't set this gets the old
+ * behaviour rather than a broken one.
+ */
+export function homeRegionSchoolIds(schools, cities = SITE.homeRegionCities) {
+  if (!cities || cities.length === 0) return new Set();
+  const wanted = new Set(cities.map((c) => c.trim().toLowerCase()));
+  const ids = new Set();
+  for (const s of schools ?? []) {
+    const city = (s.city ?? "").trim().toLowerCase();
+    if (city && wanted.has(city)) ids.add(s.id);
+  }
+  return ids;
+}
+
 export function indexSchools(schools, games = []) {
   const byId = new Map();
   for (const s of schools ?? []) {
