@@ -157,9 +157,17 @@ export default function DashboardPage({
 
   // Marquee pick — single high-stakes game above the hero. In-season:
   // upcoming Game of the Week. Off-season: Match of the Season callout.
+  // Anchored like every other section, so the preseason weeks pick their
+  // Game of the Week from the opening slate instead of rendering nothing.
   const marquee = useMemo(
-    () => pickMarqueeGame({ games, schoolsById: schoolIndex, offSeason }),
-    [games, schoolIndex, offSeason],
+    () =>
+      pickMarqueeGame({
+        games,
+        schoolsById: schoolIndex,
+        offSeason,
+        now: anchorNow.getTime(),
+      }),
+    [games, schoolIndex, offSeason, anchorNow],
   );
 
   const lastUpdated = meta?.last_updated

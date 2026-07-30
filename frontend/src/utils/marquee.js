@@ -80,12 +80,18 @@ function scoreMarquee(game, schoolsById) {
 /**
  * Public entry. Returns the single marquee pick for the dashboard, or null
  * when nothing qualifies.
+ *
+ * `now` is the dashboard's anchor date, not necessarily the wall clock —
+ * preseason it sits on the season opener so the Game of the Week is picked
+ * from the opening slate. Without it, the 14-day horizon in `scoreUpcoming`
+ * rejects every game in the weeks between the schedule landing and the
+ * first whistle, and the slot renders empty. Defaults to the wall clock so
+ * callers that genuinely mean "today" need not pass it.
  */
-export function pickMarqueeGame({ games, schoolsById, offSeason }) {
+export function pickMarqueeGame({ games, schoolsById, offSeason, now = Date.now() }) {
   if (!games || games.length === 0) return null;
 
   if (!offSeason) {
-    const now = Date.now();
     const best = bestBy(games, (g) => scoreUpcoming(g, schoolsById, now));
     if (!best || best.score === -Infinity) return null;
     return {
