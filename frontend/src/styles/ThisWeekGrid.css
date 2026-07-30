@@ -63,7 +63,7 @@
   border-top: 1px solid var(--paper-2);
 }
 .game-row:first-child { border-top: none; }
-.game-row:hover { background: rgba(243, 240, 232, 0.4); }
+.game-row:hover { background: var(--row-tint); }
 
 .game-row__summary {
   grid-column: 1 / -1;
@@ -207,6 +207,22 @@ a.game-row__details::after {
       "status status status"
       "recap recap recap";
     gap: 0.35rem 0.75rem;
+  }
+  /* Two teams share one phone-width row, leaving each name ~108px — not
+     enough for "Wisconsin Rapids Lincoln", "Eau Claire Memorial" or
+     "Wittenberg-Birnamwood", which truncated to "Wisconsin Rapids Lin…".
+     Wrapping costs a second line; truncating costs the school's name on
+     the page a parent opened to find it. `anywhere` catches the co-op
+     names joined by a slash ("Hayward/Lac Courte Oreilles"), which has no
+     break opportunity of its own. */
+  .game-side {
+    align-items: flex-start;
+  }
+  .game-side__name {
+    white-space: normal;
+    overflow: visible;
+    overflow-wrap: anywhere;
+    line-height: 1.2;
   }
   .game-row__status {
     grid-area: status;

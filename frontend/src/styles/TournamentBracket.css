@@ -103,7 +103,7 @@
 .bracket__journey-row {
   transition: background var(--t-fast) var(--ease);
 }
-.bracket__journey-row:nth-child(even) { background: rgba(243, 240, 232, 0.4); }
+.bracket__journey-row:nth-child(even) { background: var(--row-tint); }
 .bracket__journey-row:hover { background: rgba(245, 158, 11, 0.06); }
 .bracket__journey-row:last-child { border-bottom: none; }
 
@@ -170,11 +170,15 @@
   font-family: var(--font-display);
   font-size: 1rem;
 }
+/* Tokens, not literals: the emerald-700/red-700 these replaced were mixed
+   for the white card and left behind by the dark retheme, where they sank
+   to 2.7:1 — the worst contrast anywhere in the app, on the one element in
+   the row that says who won. --win/--loss already carry a per-theme value. */
 .bracket__journey-cell--won .bracket__journey-result {
-  color: #15803d; /* emerald-700 */
+  color: var(--win);
 }
 .bracket__journey-cell--lost .bracket__journey-result {
-  color: #b91c1c; /* red-700 */
+  color: var(--loss);
 }
 
 .bracket__journey-game {

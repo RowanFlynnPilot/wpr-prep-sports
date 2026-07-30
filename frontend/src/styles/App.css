@@ -438,8 +438,12 @@
   .sport-switcher {
     margin: -1.25rem -0.75rem 1.25rem;
   }
-  /* Tighter grid on phones — 3 across keeps short labels readable. */
-  .sport-switcher__list { grid-template-columns: repeat(3, 1fr); padding: 0; }
+  /* Tighter grid on phones — 3 across keeps short labels readable.
+     minmax(0, 1fr) rather than a bare 1fr: a bare 1fr is minmax(auto, 1fr),
+     so the columns refused to shrink under the width of "Girls Hockey" plus
+     its icon and pushed the whole page 43px wider than a 320px screen —
+     every page scrolled sideways, not just this strip. */
+  .sport-switcher__list { grid-template-columns: repeat(3, minmax(0, 1fr)); padding: 0; }
   .sport-switcher__tab {
     padding: 0.6rem 0.5rem;
     font-size: 0.7rem;
@@ -449,6 +453,21 @@
   .sport-switcher__label { display: none; }
   .sport-switcher__label--short { display: inline; }
   .section-header h2 { font-size: 1.25rem; }
+}
+
+/* Narrowest handsets (360px and under is a large share of Android). Once the
+   columns are allowed to shrink, an icon sitting beside the label leaves it
+   about 54px — not enough for "Girls Hockey", so it would ellipsise instead
+   of overflow. Stacking the icon above the label hands the label the full
+   column and keeps every sport legible. Mirrors what the section tabs
+   already do at their own breakpoint. */
+@media (max-width: 360px) {
+  .sport-switcher__tab {
+    flex-direction: column;
+    gap: 0.15rem;
+    padding: 0.5rem 0.25rem;
+    line-height: 1.1;
+  }
 }
 
 /* --- Season selector + archive-view notice ---------------------------- */

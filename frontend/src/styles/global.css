@@ -28,6 +28,15 @@
   --muted:           #666666;
   --muted-2:         #949494;
 
+  /* Zebra stripes and row hovers. Tokenised because the literal these
+     replaced was a warm cream mixed for the white card — carried into dark
+     mode unchanged it composited to rgb(112,111,108), which is --muted-2
+     to within a hair, so striped rows rendered their rank numbers
+     invisible. A tint has to be defined per theme; it cannot be one
+     constant. Light keeps the original cream exactly. */
+  --row-tint:        rgba(243, 240, 232, 0.4);   /* stripes + row hover */
+  --row-tint-strong: rgba(243, 240, 232, 0.6);   /* expand-button hover */
+
   /* Status banners (stale data / coverage notes) */
   --banner-warn-bg:   #fff7ed;
   --banner-warn-line: #fed7aa;
@@ -91,7 +100,17 @@
   --card:            #191919;
   --line:            #333333;
   --muted:           #9c9c9c;
-  --muted-2:         #707070;
+  /* Was #707070, which lands at 3.55:1 on the card and below 3.2:1 on a
+     striped row — under AA for the small text it carries, and it carries a
+     lot of it: rank numbers, schedule indices, the "at"/"vs" separators,
+     every "—" placeholder. #8b8b8b clears 4.5:1 on both surfaces while
+     staying visibly dimmer than --muted, so the hierarchy is unchanged. */
+  --muted-2:         #8b8b8b;
+
+  /* Lift off the dark card rather than wash it out: white at a few percent
+     leaves --muted-2 well clear instead of colliding with it at ~1:1. */
+  --row-tint:        rgba(255, 255, 255, 0.05);
+  --row-tint-strong: rgba(255, 255, 255, 0.09);
 
   --link:        #e0e0e0;
   --accent:          #e35d5d;

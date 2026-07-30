@@ -44,7 +44,7 @@
   border-top: 1px solid var(--paper-2);
 }
 .season-leaders__row:first-child { border-top: none; }
-.season-leaders__row:hover { background: rgba(243, 240, 232, 0.4); }
+.season-leaders__row:hover { background: var(--row-tint); }
 
 .season-leaders__player {
   display: flex;

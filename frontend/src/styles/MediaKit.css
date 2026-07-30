@@ -42,7 +42,10 @@
 
 .mk-btn {
   display: inline-block;
-  background: var(--accent);
+  /* Fixed dark red for the same reason as .skip-link: --accent lightens to
+     #e35d5d in dark mode, leaving white-on-red at 3.5:1 — on the page's
+     primary call to action, and the page an advertiser is looking at. */
+  background: #991212;
   color: #fff;
   font-family: var(--font-display);
   text-transform: uppercase;
@@ -138,7 +141,8 @@
   flex: 0 0 auto;
 }
 .mk-pill--open { background: var(--win-bg); color: var(--win); }
-.mk-pill--ready { background: var(--tie); color: var(--ink); }
+/* slate-600 rather than --tie: the lighter slate left --ink at 4.1:1. */
+.mk-pill--ready { background: #4b5563; color: #ffffff; }
 .mk-pill--sold { background: var(--loss-bg); color: var(--loss); }
 
 /* Placement preview lockups — "here's where your brand goes" */

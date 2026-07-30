@@ -43,6 +43,19 @@
   overflow-x: auto;
 }
 
+/* Phones: the seven columns want 429–458px against roughly 350px of usable
+   width, so the table ran off the right edge with no cue and the Last 3
+   form guide fell off entirely. Points for/against are the least-scanned
+   pair here and the easiest to spare — dropping them brings the table to
+   ~321px, so everything that remains fits with nothing hidden and nothing
+   to swipe for. Both columns come back at tablet width, and the hover card
+   still carries point differential where there's a pointer to hover with. */
+@media (max-width: 540px) {
+  .standings__table .points {
+    display: none;
+  }
+}
+
 .standings__table {
   width: 100%;
   border-collapse: collapse;
@@ -72,7 +85,7 @@
   font-variant-numeric: tabular-nums;
 }
 .standings__table tbody td.rank { padding-left: 0.4rem; padding-right: 0.3rem; }
-.standings__table tbody tr:nth-child(odd) td { background: rgba(243, 240, 232, 0.4); }
+.standings__table tbody tr:nth-child(odd) td { background: var(--row-tint); }
 .standings__table tbody tr:last-child td { border-bottom: none; }
 .standings__table tbody tr { transition: background var(--t-fast) var(--ease); }
 .standings__table tbody tr:hover td { background: rgba(245, 158, 11, 0.1); cursor: pointer; }
@@ -168,9 +181,15 @@
   letter-spacing: 0;
   color: #fff;
 }
-.standings__form-chip--w { background: #16a34a; } /* emerald-600 */
-.standings__form-chip--l { background: #dc2626; } /* red-600 */
-.standings__form-chip--t { background: #6b7280; } /* slate-500 */
+/* One shade darker than the emerald-600/red-600/slate-500 they replaced.
+   The chip is 10px white text on a solid fill, which at those lighter
+   values sat around 3.3:1 — the label inside the chip was the least legible
+   text on the page, on the element most likely to be scanned at a glance.
+   These clear 5:1 and read identically in both themes, being self-coloured
+   badges rather than surface-dependent. */
+.standings__form-chip--w { background: #15803d; } /* emerald-700 */
+.standings__form-chip--l { background: #b91c1c; } /* red-700 */
+.standings__form-chip--t { background: #4b5563; } /* slate-600 */
 .standings__form-empty {
   color: var(--muted-2);
   font-size: 0.85rem;

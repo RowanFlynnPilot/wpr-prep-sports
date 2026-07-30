@@ -146,7 +146,17 @@
 
 @media (max-width: 640px) {
   .gotw { padding: 0.8rem 0.85rem 0.7rem; }
-  .gotw__team-name { font-size: 0.92rem; }
+  /* Logo + name + logo across a phone leaves each name barely 70px, so
+     even "Wausau West" ellipsised on the card the whole page is built
+     around. Let it wrap: a two-line school name reads fine here, a
+     half-one does not. */
+  .gotw__team-name {
+    font-size: 0.92rem;
+    white-space: normal;
+    overflow: visible;
+    overflow-wrap: anywhere;
+    line-height: 1.1;
+  }
   .gotw__score { font-size: 1.4rem; }
   .gotw__team-mascot { display: none; }
   .gotw__sponsor { display: none; } /* keep mobile tight; sponsor renders in the ticker slot too */

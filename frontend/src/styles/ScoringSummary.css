@@ -86,7 +86,7 @@
   position: relative;
 }
 .scoring-summary__goal:first-child { border-top: none; }
-.scoring-summary__goal:hover { background: rgba(243, 240, 232, 0.4); }
+.scoring-summary__goal:hover { background: var(--row-tint); }
 
 .scoring-summary__time {
   font-family: var(--font-numeric);

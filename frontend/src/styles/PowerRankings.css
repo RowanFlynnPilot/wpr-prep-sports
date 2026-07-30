@@ -47,7 +47,7 @@
 }
 
 .power-row:hover {
-  background: rgba(243, 240, 232, 0.4);
+  background: var(--row-tint);
 }
 
 .power-row__rank {
@@ -188,7 +188,7 @@
 }
 
 .power-rankings__expand:hover {
-  background: rgba(243, 240, 232, 0.6);
+  background: var(--row-tint-strong);
   text-decoration: underline;
 }
 

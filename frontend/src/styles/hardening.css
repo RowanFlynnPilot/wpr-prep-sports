@@ -41,7 +41,11 @@
   left: -9999px;
   top: 0;
   z-index: 100;
-  background: var(--accent);
+  /* Fixed dark red rather than var(--accent): in dark mode the accent
+     lightens to #e35d5d, and white on that is 3.5:1 — an accessibility
+     affordance failing the contrast bar it exists to serve. This reads
+     the same in both themes at 8.5:1. */
+  background: #991212;
   color: #ffffff;
   font-family: var(--font-display);
   font-size: 0.9rem;
@@ -191,4 +195,30 @@
   outline: 3px solid var(--accent);
   outline-offset: 2px;
   border-radius: 4px;
+}
+
+/* Horizontal scroll affordance ------------------------------------------- */
+
+/* On a phone the standings table runs past the right edge — between 10 and
+   108px of it, depending on the conference — and the bracket hides far more.
+   Nothing marks the cut, so it reads as a layout bug rather than a scrollable
+   region, and the columns past the fold (points for/against, the Last 3 form
+   guide) may as well not exist for a reader who never thinks to swipe.
+   These four gradients ride the scroll container: the two `local` layers
+   scroll with the content and mask the shadow once an edge is reached, so
+   shading shows only on a side that genuinely has more to see. Pure CSS —
+   no scroll listener, nothing to keep in sync.
+   Both targets are transparent over a var(--card) parent, which is what
+   lets the gradients show through at all. */
+.standings__table-wrap,
+.bracket__journey {
+  --scroll-hint-surface: var(--card);
+  background:
+    linear-gradient(to right, var(--scroll-hint-surface) 30%, rgba(0, 0, 0, 0)) left center,
+    linear-gradient(to left, var(--scroll-hint-surface) 30%, rgba(0, 0, 0, 0)) right center,
+    radial-gradient(farthest-side at 0 50%, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0)) left center,
+    radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0)) right center;
+  background-repeat: no-repeat;
+  background-size: 32px 100%, 32px 100%, 14px 100%, 14px 100%;
+  background-attachment: local, local, scroll, scroll;
 }

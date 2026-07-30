@@ -200,7 +200,7 @@
   border-top: none;
 }
 .game-log__row:hover {
-  background: rgba(243, 240, 232, 0.5);
+  background: var(--row-tint-strong);
 }
 
 .game-log__date {

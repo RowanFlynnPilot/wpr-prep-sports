@@ -233,7 +233,7 @@
   border-top: 1px solid var(--paper-2);
 }
 .schedule-row:first-child { border-top: none; }
-.schedule-row:hover { background: rgba(243, 240, 232, 0.4); }
+.schedule-row:hover { background: var(--row-tint); }
 
 .schedule-row__recap {
   grid-column: 2 / -1;

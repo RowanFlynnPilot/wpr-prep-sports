@@ -206,15 +206,24 @@
 .card__team--won {
   background: rgba(245, 158, 11, 0.08);
 }
+/* Two lines, then ellipsis. Hockey co-ops carry genuinely long names —
+   "Chippewa Falls/McDonell Central Catholic/Menomonie" wants 343px against
+   a 171px card, so unlike the schedule rows no width makes this fit on one
+   line. A single line cut it at "Chippewa Falls/McDon…", losing which
+   schools are even involved; two lines carry nearly all of them, and the
+   clamp keeps every card the same height so the ticker stays even. */
 .card__team-name {
   font-family: var(--font-display);
   font-weight: 500;
   font-size: 0.95rem;
+  line-height: 1.2;
   letter-spacing: 0.01em;
   color: var(--ink);
-  white-space: nowrap;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
   overflow: hidden;
-  text-overflow: ellipsis;
+  overflow-wrap: anywhere;
 }
 .card__team--won .card__team-name {
   font-weight: 700;

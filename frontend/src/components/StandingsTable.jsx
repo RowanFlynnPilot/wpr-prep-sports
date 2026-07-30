@@ -112,8 +112,8 @@ export default function StandingsTable({
               <th>Team</th>
               <th className="num">Conf</th>
               <th className="num">Overall</th>
-              <th className="num">{labels.for}</th>
-              <th className="num">{labels.against}</th>
+              <th className="num points">{labels.for}</th>
+              <th className="num points">{labels.against}</th>
               <th className="form">Last 3</th>
             </tr>
           </thead>
@@ -158,8 +158,8 @@ export default function StandingsTable({
                   </td>
                   <td className="num">{row.conference_wins}-{row.conference_losses}</td>
                   <td className="num">{row.overall_wins}-{row.overall_losses}</td>
-                  <td className="num">{fmtInt(row.points_for)}</td>
-                  <td className="num">{fmtInt(row.points_against)}</td>
+                  <td className="num points">{fmtInt(row.points_for)}</td>
+                  <td className="num points">{fmtInt(row.points_against)}</td>
                   <td className="form">
                     {form.length > 0 ? (
                       <span className="standings__form" aria-label={`Last ${form.length} games: ${form.join(", ")}`}>

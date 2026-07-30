@@ -430,7 +430,7 @@
 }
 
 .box-cat__table tbody tr:hover {
-  background: rgba(243, 240, 232, 0.45);
+  background: var(--row-tint);
 }
 
 .box-cat__col-name {
@@ -460,7 +460,7 @@
   color: var(--muted);
 }
 .team-stats__expand:hover {
-  background: rgba(243, 240, 232, 0.6);
+  background: var(--row-tint-strong);
   text-decoration: underline;
 }
 .team-stats__expand--collapse {
@@ -479,7 +479,7 @@
   border-top: 1px solid var(--paper-2);
 }
 .stat-row:first-child { border-top: none; }
-.stat-row:hover { background: rgba(243, 240, 232, 0.4); }
+.stat-row:hover { background: var(--row-tint); }
 
 /* When the sport doesn't expose position (basketball, volleyball,
    hockey skaters) drop the pos column so the player block isn't

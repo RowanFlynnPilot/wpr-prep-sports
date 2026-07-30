@@ -48,7 +48,7 @@
   transition: background var(--t-fast) var(--ease);
 }
 .top-card__row:first-child { border-top: none; }
-.top-card__row:hover { background: rgba(243, 240, 232, 0.4); }
+.top-card__row:hover { background: var(--row-tint); }
 .top-card__row:first-child .top-card__rank { color: var(--accent-700); }
 
 .top-card__rank {
