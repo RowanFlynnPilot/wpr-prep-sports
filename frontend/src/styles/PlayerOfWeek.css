@@ -34,6 +34,30 @@
   color: var(--accent);
 }
 
+/* Funder credit in the header. The card is black chrome in both themes,
+   so the label goes light (the default --muted ink would dissolve into
+   it) and the lockup — dark text on white — sits on its own small white
+   plate instead of floating as a white rectangle with hard edges. */
+.potw .sponsor__label {
+  color: rgba(255, 255, 255, 0.72);
+}
+.potw .sponsor__logo {
+  max-height: 34px;
+  max-width: 160px;
+  background: #fff;
+  padding: 3px 7px;
+  border-radius: 5px;
+  box-sizing: content-box;
+}
+/* Narrow phones: the header doesn't wrap, so the plate shrinks to keep
+   "Player of the Week" + credit on one 320px row. */
+@media (max-width: 400px) {
+  .potw .sponsor__logo {
+    max-height: 26px;
+    max-width: 112px;
+  }
+}
+
 .potw__body {
   display: grid;
   grid-template-columns: auto 1fr auto;

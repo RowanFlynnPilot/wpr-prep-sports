@@ -39,12 +39,20 @@ export default function Sponsor({ slot, sponsors, variant = "inline", className 
   }
 
   const label = data.label ?? "Presented by";
+  // A schemeless, root-less logo_url ("logos/sponsors/x.png") is an asset
+  // in frontend/public/ — resolve it against the build's base URL so the
+  // same sponsors.json works on the custom domain ("/") and on a
+  // github.io fork ("/wpr-prep-sports/") alike.
+  const logoSrc =
+    data.logo_url && !/^(?:https?:)?\/\//.test(data.logo_url) && !data.logo_url.startsWith("/")
+      ? `${import.meta.env.BASE_URL}${data.logo_url}`
+      : data.logo_url;
   const content = (
     <>
       <span className="sponsor__label">{label}</span>
-      {data.logo_url ? (
+      {logoSrc ? (
         <img
-          src={data.logo_url}
+          src={logoSrc}
           alt={data.name}
           className="sponsor__logo"
           loading="lazy"

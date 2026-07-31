@@ -88,8 +88,10 @@ const INVENTORY = [
         title: "Player of the Week",
         blurb: "The weekly standout, pinned at the top of every sport. \"Being the orthodontist behind Player of the Week\" is equity a banner can't buy.",
         fit: "Orthodontist · sports medicine · photo studio",
-        slots: [],
-        status: "ready",
+        // Slot-driven availability: the B.A. & Esther Greenheck Foundation
+        // holds this placement as grant recognition (data/sponsors.json),
+        // so the card reads Sold out rather than advertising it.
+        slots: ["potw"],
         rateKey: "potw",
         preview: { label: "Player of the Week presented by", tone: "feature" },
       },

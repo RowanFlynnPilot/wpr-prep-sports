@@ -1,5 +1,5 @@
 {
-  "_comment": "Sponsor inventory. WPR ad ops fills these without code changes - the frontend hides any slot that has no `name`. Slot keys: 'title' (masthead), 'ticker' (above recent scores, cross-sport), 'standings:<conference>' (per conference, cross-sport - e.g. one Wisconsin Valley sponsor renders on football + basketball + hockey + volleyball standings), 'school:<school_id>' (per team page, cross-sport). Each slot is { label?: string (default 'Presented by'), name: string, logo_url?: string, link_url?: string }. To enable a slot, set `name`; leave it null to hide it. SLOTS SHIP EMPTY: never publish placeholder advertiser names to readers - the #/sponsor media kit lists every slot as inventory on its own, so sales demos do not need sample data in here.",
+  "_comment": "Sponsor inventory. WPR ad ops fills these without code changes - the frontend hides any slot that has no `name`. Slot keys: 'title' (masthead), 'ticker' (above recent scores, cross-sport), 'standings:<conference>' (per conference, cross-sport - e.g. one Wisconsin Valley sponsor renders on football + basketball + hockey + volleyball standings), 'school:<school_id>' (per team page, cross-sport). Each slot is { label?: string (default 'Presented by'), name: string, logo_url?: string, link_url?: string }. To enable a slot, set `name`; leave it null to hide it. A logo_url without a scheme or leading slash (e.g. 'logos/sponsors/x.png') resolves against the widget's base URL — put the file in frontend/public/logos/sponsors/. SLOTS SHIP EMPTY: never publish placeholder advertiser names to readers - the #/sponsor media kit lists every slot as inventory on its own, so sales demos do not need sample data in here.",
   "slots": {
     "title": {
       "label": "Presented by",
@@ -18,6 +18,12 @@
       "name": null,
       "logo_url": null,
       "link_url": null
+    },
+    "potw": {
+      "label": "Made possible by",
+      "name": "B.A. & Esther Greenheck Foundation",
+      "logo_url": "logos/sponsors/greenheck-foundation.png",
+      "link_url": "https://providingopportunities.org/"
     },
     "marquee:football": {
       "label": "Game of the Week",
