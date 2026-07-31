@@ -18,7 +18,9 @@
   color: var(--ink);
   border: 1px solid var(--line);
   border-radius: 999px;
-  padding: 0.32rem 0.8rem;
+  /* Matches .fav-toggle — see the note there about the 44px target. */
+  min-height: 44px;
+  padding: 0.32rem 0.9rem;
   font-family: var(--font-display);
   font-size: 0.8rem;
   font-weight: 600;
