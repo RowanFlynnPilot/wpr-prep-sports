@@ -10,13 +10,27 @@
  */
 
 import { SITE } from "../config/site.js";
+import { selectedSeason } from "./season.js";
 
 const BASE = SITE.widgetOrigin.replace(/[?#].*$/, "").replace(/\/$/, "");
 
-/** Absolute widget URL for a hash route ("/football/game/xyz"). */
+/**
+ * Absolute widget URL for a hash route ("/football/game/xyz").
+ *
+ * Carries the archive season when the sharer is viewing one. Without it the
+ * link silently reproduces a different page than the one they were looking
+ * at: a team page would show this season's record instead of the one on
+ * their screen, and a game from an archived season isn't in the live
+ * dataset at all — the recipient would land on the not-found panel and have
+ * to click through to the archive themselves. The `?season=` boot param
+ * already exists as a shareable pointer; this just stops dropping it.
+ */
 export function shareUrlFor(route) {
   const path = String(route ?? "").replace(/^#/, "");
-  return path ? `${BASE}/#${path.startsWith("/") ? path : `/${path}`}` : `${BASE}/`;
+  const season = selectedSeason();
+  const query = season && season !== "live" ? `?season=${encodeURIComponent(season)}` : "";
+  const hash = path ? `#${path.startsWith("/") ? path : `/${path}`}` : "";
+  return `${BASE}/${query}${hash}`;
 }
 
 /**
