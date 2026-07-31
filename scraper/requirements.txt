@@ -11,3 +11,8 @@ rich>=13.7.0
 
 # Used by scripts/generate_og_cards.py to screenshot per-game share cards
 playwright>=1.44.0
+
+# Used by scripts/mirror_logos.py to downscale and re-encode school logos
+# before they are committed — WIAA's originals are ~20KB each for a 200px
+# mark, and the dashboard loads up to 89 at once.
+Pillow>=10.3.0
