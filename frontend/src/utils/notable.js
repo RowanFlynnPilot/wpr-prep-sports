@@ -11,6 +11,8 @@
  * across page loads — no jitter, no surprise.
  */
 
+import { formatGameDayDate } from "./dates.js";
+
 /** Maximum number of callouts shown on the dashboard. */
 export const NOTABLE_LIMIT = 5;
 
@@ -20,9 +22,21 @@ export const NOTABLE_LIMIT = 5;
  */
 export function buildNotable({ games, standings, seasonStats, sportConfig }) {
   const sport = sportConfig?.id ?? "";
+  // Present-tense detectors ("rides a streak into this week", "is
+  // rolling through the Marawood") only make sense while the season is
+  // actually running. Without this gate a finished season's dashboard
+  // reports February's 18-game skid as ongoing news all summer. Wall
+  // clock on purpose — the season-anchored clamp used elsewhere pins to
+  // the last game, which would make season-enders "recent" forever.
+  const lastFinalTs = (games ?? []).reduce((acc, g) => {
+    if (g.status !== "final") return acc;
+    const t = new Date(g.date).getTime();
+    return Number.isFinite(t) && t > acc ? t : acc;
+  }, 0);
+  const seasonLive = lastFinalTs > 0 && Date.now() - lastFinalTs <= 14 * 86_400_000;
   const all = [
-    ...detectStreaks(games, sport),
-    ...detectUndefeatedConference(standings, sport),
+    ...(seasonLive ? detectStreaks(games, sport) : []),
+    ...(seasonLive ? detectUndefeatedConference(standings, sport) : []),
     ...detectBlowouts(games, sport),
     ...detectCloseGames(games, sport),
     ...detectStateChampions(games, sport),
@@ -61,6 +75,11 @@ function hashSeed(s) {
 }
 function pick(seed, choices) {
   return choices[Math.floor(seed * choices.length) % choices.length];
+}
+
+/** "a 7-game" but "an 8-game" — for streak counts (spoken 8, 11, 18). */
+function aOrAn(n) {
+  return n === 8 || n === 11 || n === 18 ? "an" : "a";
 }
 
 /* ---------------- detectors ---------------- */
@@ -108,7 +127,7 @@ function detectStreaks(games, sport) {
           ]
         : [
             `${name} has won ${streak} straight.`,
-            `${name} rides a ${streak}-game winning streak into ${nextWeekDescriptor()}.`,
+            `${name} rides ${aOrAn(streak)} ${streak}-game winning streak into ${nextWeekDescriptor()}.`,
             `${name} has stacked ${streak} consecutive victories.`,
             `${name}'s ${streak}-game heater shows no signs of slowing.`,
             `${name} keeps winning — ${streak} in a row now.`,
@@ -124,7 +143,7 @@ function detectStreaks(games, sport) {
       // Loss streak — sparser variants, no flair.
       const variants = [
         `${name} has dropped ${streak} in a row.`,
-        `${name} is in a ${streak}-game skid.`,
+        `${name} is in ${aOrAn(streak)} ${streak}-game skid.`,
         `${name} hasn't won in ${streak} games.`,
       ];
       out.push({
@@ -343,6 +362,13 @@ function championshipNoun(sport) {
 function detectBigGameAheadThisWeek(games, standings, sport) {
   const topIds = new Set();
   for (const s of standings ?? []) {
+    // A preseason table is 0-0 rows in arbitrary order — "top-3" read
+    // off it would crown opening-week matchups at random. Only trust a
+    // table once someone in it has played.
+    const started = (s.rows ?? []).some(
+      (r) => (r.wins ?? 0) + (r.losses ?? 0) + (r.ties ?? 0) > 0,
+    );
+    if (!started) continue;
     (s.rows ?? []).slice(0, 3).forEach((r) => r.school_id && topIds.add(r.school_id));
   }
   if (topIds.size === 0) return [];
@@ -359,11 +385,9 @@ function detectBigGameAheadThisWeek(games, standings, sport) {
   if (candidates.length === 0) return [];
   candidates.sort((a, b) => new Date(a.date) - new Date(b.date));
   const g = candidates[0];
-  const dateLabel = new Date(g.date).toLocaleDateString(undefined, {
-    weekday: "long",
-    month: "short",
-    day: "numeric",
-  });
+  // Home-zone pinned — the viewer's locale must not shift a Friday
+  // kickoff to Saturday.
+  const dateLabel = formatGameDayDate(g.date);
   const seed = hashSeed(`bigweek-${g.id}`);
   const variants = [
     `${dateLabel}: ${g.away.name} at ${g.home.name} — two top-3 teams collide.`,

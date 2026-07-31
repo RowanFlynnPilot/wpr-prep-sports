@@ -69,6 +69,13 @@ export function scorePicks(games, picks) {
       pending++;
       continue;
     }
+    if (g.home.score === g.away.score) {
+      // A draw (real in soccer) is a push — grading it as an away win
+      // would mark every home-picker wrong. Count it toward total but
+      // neither right nor wrong.
+      pending++;
+      continue;
+    }
     const winner = g.home.score > g.away.score ? "home" : "away";
     if (winner === side) correct++;
     else incorrect++;

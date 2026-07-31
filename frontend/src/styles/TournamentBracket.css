@@ -104,7 +104,7 @@
   transition: background var(--t-fast) var(--ease);
 }
 .bracket__journey-row:nth-child(even) { background: var(--row-tint); }
-.bracket__journey-row:hover { background: rgba(245, 158, 11, 0.06); }
+.bracket__journey-row:hover { background: color-mix(in srgb, var(--accent) 6%, transparent); }
 .bracket__journey-row:last-child { border-bottom: none; }
 
 /* Still-alive team — accent rail on the left */
@@ -112,7 +112,7 @@
   box-shadow: inset 4px 0 0 var(--accent);
 }
 .bracket__journey-row--champ {
-  background: linear-gradient(to right, rgba(245, 158, 11, 0.12), transparent 30%);
+  background: linear-gradient(to right, color-mix(in srgb, var(--accent) 12%, transparent), transparent 30%);
 }
 .bracket__journey-row--champ .bracket__journey-team {
   color: var(--accent-700);

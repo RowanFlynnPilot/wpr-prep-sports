@@ -5,6 +5,7 @@ import { pickPlayerOfWeek, resolveOverridePotw } from "../utils/playerOfWeek.js"
 import { initials, primaryColor } from "../utils/schools.js";
 import { useSportPrefix } from "../utils/links.js";
 import { displayPlayerName, playerProfileHref } from "../utils/players.js";
+import { formatGameDayDate } from "../utils/dates.js";
 
 /**
  * Player of the Week — highlights the standout performance from the
@@ -26,11 +27,9 @@ export default function PlayerOfWeek({ games, schoolIndex, sponsors, sportConfig
   const oppScore = game.home.school_id === schoolId ? game.away.score : game.home.score;
   const won = (ownScore ?? -1) > (oppScore ?? -1);
   const isHome = game.home.school_id === schoolId;
-  const dateLabel = new Date(game.date).toLocaleDateString(undefined, {
-    weekday: "long",
-    month: "short",
-    day: "numeric",
-  });
+  // Pinned to the home zone like every other date on the page — the
+  // viewer's locale must not relabel a Friday-night game "Saturday".
+  const dateLabel = formatGameDayDate(game.date);
 
   const schoolColor = school ? primaryColor(school) : null;
   const cardStyle = schoolColor ? { "--school-color": schoolColor } : undefined;

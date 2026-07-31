@@ -93,10 +93,10 @@
   cursor: pointer;
 }
 .month-cal__cell--has-games:hover {
-  background: rgba(245, 158, 11, 0.08);
+  background: color-mix(in srgb, var(--accent) 8%, transparent);
 }
 .month-cal__cell--today {
-  background: rgba(245, 158, 11, 0.12);
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
 }
 .month-cal__cell--today .month-cal__day-num {
   color: var(--accent-700);
@@ -192,7 +192,7 @@
               border-color var(--t-fast) var(--ease);
 }
 .month-cal__sheet-link:hover {
-  background: rgba(245, 158, 11, 0.08);
+  background: color-mix(in srgb, var(--accent) 8%, transparent);
   border-color: var(--accent);
 }
 .month-cal__sheet-matchup {

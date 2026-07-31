@@ -13,6 +13,7 @@ import GamePage from "./pages/GamePage.jsx";
 import PlayerPage from "./pages/PlayerPage.jsx";
 import EmbedPage from "./pages/EmbedPage.jsx";
 import Skeleton from "./components/Skeleton.jsx";
+import NotFound from "./components/NotFound.jsx";
 
 // Route-split: readers never visit the media kit or the OG-card
 // generator target, so neither belongs in the main bundle. Their CSS
@@ -157,18 +158,28 @@ function SportShell() {
   );
   useEffect(() => {
     if (!valid || !hasLiveGame) return;
+    // cancelled guard matters here as much as on the initial load: a
+    // refresh in flight when the user switches sports would otherwise
+    // land AFTER the new sport's dataset, and the sport-mismatch guard
+    // below would strand the widget on the skeleton.
+    let cancelled = false;
     const id = setInterval(() => {
       fetchDataset(sport)
         .then((d) => {
+          if (cancelled) return;
           setDataset(d);
           setRefreshFailures(0);
         })
         .catch((e) => {
+          if (cancelled) return;
           console.warn(`[${SITE.messageNamespace}] live refresh failed:`, e);
           setRefreshFailures((n) => n + 1);
         });
     }, 60_000);
-    return () => clearInterval(id);
+    return () => {
+      cancelled = true;
+      clearInterval(id);
+    };
   }, [sport, valid, hasLiveGame]);
 
   // Season label follows the dataset, not the registry — see
@@ -289,6 +300,13 @@ function SportShell() {
             sportConfig={sportConfig}
           />
         }
+      />
+      {/* Anything else under a valid sport — a mistyped path, a shared
+          URL an email client truncated mid-route — used to fall through
+          to nothing: an empty sport-shell div, i.e. a blank page. */}
+      <Route
+        path="*"
+        element={<NotFound kind="page" sportPrefix={`/${sport}`} sponsors={dataset.sponsors} />}
       />
     </Routes>
     </div>

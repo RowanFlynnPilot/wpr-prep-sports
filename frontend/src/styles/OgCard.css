@@ -190,7 +190,9 @@ body:has(.og-card),
 
 .og-card__status--final {
   background: #cc1818;
-  color: #0a1f2a;
+  /* White like the in-progress chip below — the navy here was a leftover
+     from the retired navy/teal palette and was near-invisible on red. */
+  color: #fff;
 }
 
 .og-card__status--in_progress {

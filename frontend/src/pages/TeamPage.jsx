@@ -20,10 +20,10 @@ export default function TeamPage({ dataset, schoolIndex, sponsors, sportConfig }
   const { schoolId } = useParams();
   const sportPrefix = useSportPrefix();
   const school = schoolIndex.get(schoolId);
-
-  if (!school) {
-    return <NotFound kind="team" sportPrefix={sportPrefix} sponsors={sponsors} />;
-  }
+  // The unknown-school guard lives AFTER the hooks — the router keeps this
+  // component instance mounted when only :schoolId changes, so returning
+  // before the hooks on a bad id changes the hook count mid-lifecycle and
+  // React throws (which the error boundary turns into a dead widget).
 
   const teamGames = useMemo(
     () =>
@@ -56,14 +56,16 @@ export default function TeamPage({ dataset, schoolIndex, sponsors, sportConfig }
 
   const summary = useMemo(
     () =>
-      seasonSummary({
-        teamGames,
-        schoolId,
-        school,
-        schoolsById: schoolIndex,
-        seasonStatsForSchool,
-        sportConfig,
-      }),
+      school
+        ? seasonSummary({
+            teamGames,
+            schoolId,
+            school,
+            schoolsById: schoolIndex,
+            seasonStatsForSchool,
+            sportConfig,
+          })
+        : null,
     [teamGames, schoolId, school, schoolIndex, seasonStatsForSchool, sportConfig],
   );
 
@@ -79,6 +81,10 @@ export default function TeamPage({ dataset, schoolIndex, sponsors, sportConfig }
     );
     return awayGame?.away.logo_url ?? null;
   }, [teamGames, schoolId]);
+
+  if (!school) {
+    return <NotFound kind="team" sportPrefix={sportPrefix} sponsors={sponsors} />;
+  }
 
   const heroTeam = {
     school_id: schoolId,
@@ -131,6 +137,7 @@ export default function TeamPage({ dataset, schoolIndex, sponsors, sportConfig }
           <div className="record-stat">
             <span className="record-stat__num">
               {record.regWins}-{record.regLosses}
+              {record.regTies > 0 ? `-${record.regTies}` : ""}
             </span>
             <span className="record-stat__label">
               {record.playedPlayoffs ? "Regular" : "Overall"}
@@ -140,6 +147,7 @@ export default function TeamPage({ dataset, schoolIndex, sponsors, sportConfig }
             <div className="record-stat">
               <span className="record-stat__num">
                 {record.postWins}-{record.postLosses}
+                {record.postTies > 0 ? `-${record.postTies}` : ""}
               </span>
               <span className="record-stat__label">Playoffs</span>
             </div>
@@ -218,9 +226,11 @@ export default function TeamPage({ dataset, schoolIndex, sponsors, sportConfig }
 }
 
 function computeRecord(games, schoolId) {
-  let wins = 0, losses = 0, pf = 0, pa = 0;
-  let regWins = 0, regLosses = 0;
-  let postWins = 0, postLosses = 0;
+  // Draws are real in soccer — counting them as losses misstates the
+  // record and disagrees with the schedule rows below, which show "·".
+  let wins = 0, losses = 0, ties = 0, pf = 0, pa = 0;
+  let regWins = 0, regLosses = 0, regTies = 0;
+  let postWins = 0, postLosses = 0, postTies = 0;
   for (const g of games) {
     if (g.status !== "final") continue;
     const isHome = g.home.school_id === schoolId;
@@ -230,24 +240,31 @@ function computeRecord(games, schoolId) {
     pf += own;
     pa += opp;
     const won = own > opp;
+    const tied = own === opp;
     if (won) wins++;
+    else if (tied) ties++;
     else losses++;
     if (g.playoff) {
       if (won) postWins++;
+      else if (tied) postTies++;
       else postLosses++;
     } else {
       if (won) regWins++;
+      else if (tied) regTies++;
       else regLosses++;
     }
   }
-  const playedPlayoffs = postWins + postLosses > 0;
+  const playedPlayoffs = postWins + postLosses + postTies > 0;
   return {
     wins,
     losses,
+    ties,
     regWins,
     regLosses,
+    regTies,
     postWins,
     postLosses,
+    postTies,
     playedPlayoffs,
     pointsFor: pf,
     pointsAgainst: pa,

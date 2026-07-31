@@ -74,7 +74,7 @@
   box-shadow: inset 3px 0 0 var(--school-color, transparent);
 }
 .game-page__team--won {
-  background: rgba(245, 158, 11, 0.12);
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
   box-shadow: inset 3px 0 0 var(--accent);
 }
 
@@ -500,7 +500,7 @@
   letter-spacing: 0.1em;
   text-align: center;
   color: var(--accent-700);
-  background: rgba(245, 158, 11, 0.1);
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
   padding: 0.25rem 0.4rem;
   border-radius: var(--radius-sm);
 }

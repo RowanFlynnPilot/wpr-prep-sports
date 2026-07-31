@@ -10,6 +10,7 @@ import {
   saveDisplayName,
 } from "../utils/pickemApi.js";
 import { trackEvent } from "../utils/analytics.js";
+import { formatGameShortDay, formatGameDate, formatGameTime } from "../utils/dates.js";
 
 /**
  * Pick'em — weekly winner predictions. Picks always live in
@@ -182,15 +183,9 @@ export default function Pickem({ games, schoolIndex, sponsors, sportId, now }) {
 function PickRow({ game, picked, schoolIndex, community, onPick }) {
   const awayColor = schoolColor(game.away.school_id, schoolIndex);
   const homeColor = schoolColor(game.home.school_id, schoolIndex);
-  const dateLabel = new Date(game.date).toLocaleDateString(undefined, {
-    weekday: "short",
-    month: "short",
-    day: "numeric",
-  });
-  const timeLabel = new Date(game.date).toLocaleTimeString(undefined, {
-    hour: "numeric",
-    minute: "2-digit",
-  });
+  // Home-zone pinned like every other date/time in the widget.
+  const dateLabel = `${formatGameShortDay(game.date)} ${formatGameDate(game.date)}`;
+  const timeLabel = formatGameTime(game.date);
 
   // Community bar renders once a few picks exist — a 1-0 split reads
   // as noise, not signal.

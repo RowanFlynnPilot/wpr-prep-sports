@@ -45,11 +45,15 @@ export default function GamePage({ dataset, schoolIndex, sportConfig }) {
     }
     if (!(game.stat_line_count > 0)) return undefined;
     let cancelled = false;
-    fetchBoxscore(dataset.sport, game.id, dataset.meta?.last_updated).then(
-      (box) => {
-        if (!cancelled && box?.stat_leaders) setFullLines(box.stat_leaders);
-      },
-    );
+    // Settle to a terminal state either way: a failed or empty fetch falls
+    // back to the headline lines, so the "loading full box score…" hint
+    // can't stick forever on a transient network error.
+    const settle = (lines) => {
+      if (!cancelled) setFullLines(lines ?? game.headline_stats ?? []);
+    };
+    fetchBoxscore(dataset.sport, game.id, dataset.meta?.last_updated)
+      .then((box) => settle(box?.stat_leaders))
+      .catch(() => settle(null));
     return () => {
       cancelled = true;
     };

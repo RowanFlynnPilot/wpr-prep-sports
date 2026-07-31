@@ -16,7 +16,7 @@ import { trackEvent } from "../utils/analytics.js";
  * does something useful instead of silently failing.
  */
 export default function ShareButton({ route, title, label = "Share", className = "" }) {
-  const [state, setState] = useState("idle"); // idle | copied | manual
+  const [state, setState] = useState("idle"); // idle | shared | copied | manual
   const inputRef = useRef(null);
   const timerRef = useRef(null);
 
@@ -32,7 +32,10 @@ export default function ShareButton({ route, title, label = "Share", className =
       setState("manual");
       return;
     }
-    setState("copied");
+    // "shared" (the native sheet handled it) and "copied" are different
+    // facts — announcing "Link copied" after a share sheet would be false;
+    // nothing touched the clipboard.
+    setState(result === "shared" ? "shared" : "copied");
     window.clearTimeout(timerRef.current);
     timerRef.current = window.setTimeout(() => setState("idle"), 2600);
   };
@@ -61,13 +64,15 @@ export default function ShareButton({ route, title, label = "Share", className =
         <span className="share__icon" aria-hidden="true">
           ↗
         </span>
-        <span className="share__label">{state === "copied" ? "Link copied" : label}</span>
+        <span className="share__label">
+          {state === "copied" ? "Link copied" : state === "shared" ? "Shared" : label}
+        </span>
       </button>
 
       {/* Announced rather than shown-and-hoped-for: the label change alone
           never reaches a screen reader, since nothing moves focus. */}
       <span className="sr-only" role="status">
-        {state === "copied" ? "Link copied to clipboard" : ""}
+        {state === "copied" ? "Link copied to clipboard" : state === "shared" ? "Shared" : ""}
       </span>
 
       {state === "manual" && (

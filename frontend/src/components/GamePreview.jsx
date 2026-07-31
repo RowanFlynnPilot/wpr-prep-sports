@@ -94,6 +94,7 @@ function PreviewTeamCard({ side, school, summary }) {
         {summary && (
           <span className="game-preview__record">
             {summary.wins}-{summary.losses}
+            {summary.ties > 0 ? `-${summary.ties}` : ""}
           </span>
         )}
       </header>
@@ -110,9 +111,7 @@ function PreviewTeamCard({ side, school, summary }) {
             <div className="game-preview__stat">
               <dt>{summary.confName}</dt>
               <dd>
-                {summary.confRank
-                  ? `#${summary.confRank} of ${summary.confSize}`
-                  : "Unranked"}
+                {summary.confRank ? `#${summary.confRank} of ${summary.confSize}` : "—"}
               </dd>
             </div>
           )}
@@ -124,7 +123,7 @@ function PreviewTeamCard({ side, school, summary }) {
                   <span
                     key={i}
                     className={`game-preview__form-mark game-preview__form-mark--${r.toLowerCase()}`}
-                    title={r === "W" ? "Win" : "Loss"}
+                    title={r === "W" ? "Win" : r === "L" ? "Loss" : "Draw"}
                   >
                     {r}
                   </span>
@@ -136,7 +135,11 @@ function PreviewTeamCard({ side, school, summary }) {
             <div className="game-preview__stat">
               <dt>Avg margin</dt>
               <dd>
-                {formatMargin(summary.pointsFor, summary.pointsAgainst, summary.wins + summary.losses)}
+                {formatMargin(
+                  summary.pointsFor,
+                  summary.pointsAgainst,
+                  summary.wins + summary.losses + summary.ties,
+                )}
               </dd>
             </div>
           )}
@@ -215,6 +218,7 @@ function buildTeamSummary(side, school, gameTime, allGames, standings, currentGa
 
   let wins = 0;
   let losses = 0;
+  let ties = 0;
   let pointsFor = 0;
   let pointsAgainst = 0;
   for (const g of priorGames) {
@@ -226,6 +230,7 @@ function buildTeamSummary(side, school, gameTime, allGames, standings, currentGa
     pointsAgainst += theirs;
     if (ours > theirs) wins++;
     else if (theirs > ours) losses++;
+    else ties++;
   }
 
   const recentForm = priorGames
@@ -235,7 +240,7 @@ function buildTeamSummary(side, school, gameTime, allGames, standings, currentGa
       const ours = isHome ? g.home.score : g.away.score;
       const theirs = isHome ? g.away.score : g.home.score;
       if (ours == null || theirs == null) return null;
-      return ours > theirs ? "W" : "L";
+      return ours > theirs ? "W" : theirs > ours ? "L" : "T";
     })
     .filter(Boolean);
 
@@ -249,7 +254,13 @@ function buildTeamSummary(side, school, gameTime, allGames, standings, currentGa
   let confSize = null;
   if (confName && standings) {
     const confRow = standings.find((s) => s.conference === confName);
-    if (confRow) {
+    // A preseason table is a full list of 0-0 rows in arbitrary order —
+    // reading a row index off it would print "#1 of 8" for a team that
+    // hasn't played. Only rank once the conference has results.
+    const tableStarted = (confRow?.rows ?? []).some(
+      (r) => (r.wins ?? 0) + (r.losses ?? 0) + (r.ties ?? 0) > 0,
+    );
+    if (confRow && tableStarted) {
       const idx = confRow.rows.findIndex((r) => r.school_id === schoolId);
       if (idx >= 0) {
         confRank = idx + 1;
@@ -261,6 +272,7 @@ function buildTeamSummary(side, school, gameTime, allGames, standings, currentGa
   return {
     wins,
     losses,
+    ties,
     pointsFor: priorGames.length > 0 ? pointsFor : null,
     pointsAgainst: priorGames.length > 0 ? pointsAgainst : null,
     recentForm,

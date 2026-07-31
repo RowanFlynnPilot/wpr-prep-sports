@@ -26,6 +26,12 @@ const DAY_SHORT = new Intl.DateTimeFormat("en-US", {
   weekday: "short",
   timeZone: CENTRAL,
 });
+const DAY_AND_DATE = new Intl.DateTimeFormat("en-US", {
+  weekday: "long",
+  month: "short",
+  day: "numeric",
+  timeZone: CENTRAL,
+});
 
 export function formatGameDay(iso) {
   const d = new Date(iso);
@@ -42,6 +48,11 @@ export function formatGameTime(iso) {
 
 export function formatGameShortDay(iso) {
   return DAY_SHORT.format(new Date(iso)).toUpperCase();
+}
+
+/** "Friday, Sep 4" — for prose that names a game day. */
+export function formatGameDayDate(iso) {
+  return DAY_AND_DATE.format(new Date(iso));
 }
 
 export function isFuture(iso, now = new Date()) {

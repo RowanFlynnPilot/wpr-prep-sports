@@ -8,6 +8,7 @@ import {
   pickFocusMonth,
 } from "../utils/calendar.js";
 import { useSportPrefix } from "../utils/links.js";
+import { formatGameTime } from "../utils/dates.js";
 
 /**
  * Month-at-a-glance calendar. Each cell shows the day number and a count
@@ -162,10 +163,9 @@ function DaySheet({ dateIso, games, onClose }) {
 
 function timeFor(iso) {
   try {
-    return new Date(iso).toLocaleTimeString(undefined, {
-      hour: "numeric",
-      minute: "2-digit",
-    });
+    // Home-zone pinned via formatGameTime — an East-coast reader must see
+    // the same "7:00 PM" as every other view, not their local 8:00.
+    return formatGameTime(iso);
   } catch {
     return "";
   }

@@ -117,13 +117,18 @@
   font-weight: 700;
   font-size: 0.75rem;
   letter-spacing: 0;
-  color: #fff;
+  /* --paper, not #fff: dark mode lightens --win/--loss/--muted, so the
+     readable text color flips with the theme. */
+  color: var(--paper);
 }
 .game-preview__form-mark--w {
-  background: #16a34a;
+  background: var(--win);
 }
 .game-preview__form-mark--l {
-  background: #b91c1c;
+  background: var(--loss);
+}
+.game-preview__form-mark--t {
+  background: var(--muted);
 }
 
 .game-preview__no-meeting {

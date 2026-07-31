@@ -41,24 +41,14 @@ export default function StandingsTable({
     return map;
   }, [seasonStats]);
 
-  if (!standing || !standing.rows || standing.rows.length === 0) return null;
-
-  const hoveredRow = hovered
-    ? standing.rows.find((r) => r.school_id === hovered)
-    : null;
-  const hoveredSchool = hoveredRow ? schoolIndex.get(hoveredRow.school_id) : null;
-  const hoveredLeaders = hoveredRow
-    ? teamSeasonLeaders(seasonByTeam.get(hoveredRow.school_id) ?? [], sportConfig)
-    : [];
-
-  const labels = recordLabels(sportConfig);
-
   // Most recent 3 conference results per team, oldest → newest. Used for
-  // the "Last 3" form pill in each row.
+  // the "Last 3" form pill in each row. Computed BEFORE the empty-table
+  // return below — a live refresh can shrink a table's rows on a mounted
+  // instance, and a hook after a conditional return crashes React.
   const recentFormByTeam = useMemo(() => {
     const map = new Map();
     if (!games || games.length === 0) return map;
-    for (const row of standing.rows) {
+    for (const row of standing?.rows ?? []) {
       const sid = row.school_id;
       if (!sid) continue;
       const last3 = games
@@ -82,7 +72,24 @@ export default function StandingsTable({
       map.set(sid, last3);
     }
     return map;
-  }, [games, standing.rows]);
+  }, [games, standing?.rows]);
+
+  if (!standing || !standing.rows || standing.rows.length === 0) return null;
+
+  const hoveredRow = hovered
+    ? standing.rows.find((r) => r.school_id === hovered)
+    : null;
+  const hoveredSchool = hoveredRow ? schoolIndex.get(hoveredRow.school_id) : null;
+  const hoveredLeaders = hoveredRow
+    ? teamSeasonLeaders(seasonByTeam.get(hoveredRow.school_id) ?? [], sportConfig)
+    : [];
+
+  const labels = recordLabels(sportConfig);
+
+  // Any results in this table yet? Governs the leader pip below.
+  const tableStarted = standing.rows.some(
+    (r) => (r.wins ?? 0) + (r.losses ?? 0) + (r.ties ?? 0) > 0,
+  );
 
   return (
     <section
@@ -125,7 +132,9 @@ export default function StandingsTable({
                 school_id: row.school_id,
                 logo_url: school?.logo_url ?? null,
               };
-              const isLeader = idx === 0;
+              // No leader pip on a preseason table — every row is 0-0 in
+              // arbitrary order, and marking row 1 crowns someone at random.
+              const isLeader = idx === 0 && tableStarted;
               const isHighlight = highlightSchoolId && row.school_id === highlightSchoolId;
               const form = recentFormByTeam.get(row.school_id) ?? [];
               const schoolColor = school?.colors?.[0] ?? null;

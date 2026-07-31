@@ -22,6 +22,7 @@ export function teamGamesFor(games, schoolId) {
 export function summarizeTeam(teamGames, schoolId, { now = Date.now() } = {}) {
   let wins = 0;
   let losses = 0;
+  let ties = 0;
   const form = [];
   let lastGame = null;
 
@@ -31,9 +32,11 @@ export function summarizeTeam(teamGames, schoolId, { now = Date.now() } = {}) {
     const ours = isHome ? g.home.score : g.away.score;
     const theirs = isHome ? g.away.score : g.home.score;
     if (ours == null || theirs == null) continue;
+    // Soccer has real draws — a "T" in the form strip, not a red "L".
     if (ours > theirs) wins++;
     else if (theirs > ours) losses++;
-    form.push(ours > theirs ? "W" : "L");
+    else ties++;
+    form.push(ours > theirs ? "W" : theirs > ours ? "L" : "T");
     lastGame = g;
   }
 
@@ -45,10 +48,11 @@ export function summarizeTeam(teamGames, schoolId, { now = Date.now() } = {}) {
   return {
     wins,
     losses,
+    ties,
     form: form.slice(-5),
     lastGame,
     nextGame,
-    hasSeasonStarted: wins + losses > 0,
+    hasSeasonStarted: wins + losses + ties > 0,
   };
 }
 

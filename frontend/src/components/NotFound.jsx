@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Layout from "./Layout.jsx";
-import { archiveLocationForGame } from "../utils/season.js";
+import { archiveLocationForGame, selectedSeason } from "../utils/season.js";
 
 const LABELS = {
   game: "game",
@@ -29,7 +29,14 @@ const LABELS = {
  */
 export default function NotFound({ kind = "game", sportPrefix, id, sponsors }) {
   const label = LABELS[kind] ?? "page";
-  const archive = kind === "game" && id ? archiveLocationForGame(id, sportPrefix) : null;
+  // A miss on a known route shape ("that game") usually means an archived
+  // season; a miss on the route itself means a bad address — "isn't in the
+  // current season" would be the wrong diagnosis to offer for a typo.
+  const isEntity = kind in LABELS;
+  // Don't offer the archive we're already viewing — if the game isn't in
+  // that dataset either, the offer is a link straight back to this page.
+  const located = kind === "game" && id ? archiveLocationForGame(id, sportPrefix) : null;
+  const archive = located && located.season !== selectedSeason() ? located : null;
 
   return (
     <Layout sponsors={sponsors}>
@@ -38,7 +45,7 @@ export default function NotFound({ kind = "game", sportPrefix, id, sponsors }) {
             exactly one h1 (the dashboards carry an sr-only one), and a page
             with none breaks a screen reader's heading walk. */}
         <h1 className="not-found__title" id="not-found-title">
-          That {label} isn&rsquo;t in the current season
+          {isEntity ? <>That {label} isn&rsquo;t in the current season</> : <>That page doesn&rsquo;t exist</>}
         </h1>
         <p className="not-found__body">
           {archive ? (
@@ -46,11 +53,13 @@ export default function NotFound({ kind = "game", sportPrefix, id, sponsors }) {
               It looks like it&rsquo;s from the {archive.season} season, which is kept
               in the archive.
             </>
-          ) : (
+          ) : isEntity ? (
             <>
               The link may be from an earlier season, or point to a {label} this site
               doesn&rsquo;t cover.
             </>
+          ) : (
+            <>The address may be mistyped, or the link it came from is out of date.</>
           )}
         </p>
         <p className="not-found__actions">

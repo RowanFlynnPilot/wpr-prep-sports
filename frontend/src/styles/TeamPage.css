@@ -219,7 +219,7 @@
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--accent-700);
-  background: rgba(245, 158, 11, 0.15);
+  background: color-mix(in srgb, var(--accent) 15%, transparent);
   border-radius: var(--radius-sm);
   white-space: nowrap;
 }

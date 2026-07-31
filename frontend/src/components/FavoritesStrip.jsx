@@ -98,7 +98,7 @@ function FavoriteCard({
     : !hasGames
       ? "Schedule not posted yet"
       : summary.hasSeasonStarted
-        ? `${summary.wins}-${summary.losses}${
+        ? `${summary.wins}-${summary.losses}${summary.ties > 0 ? `-${summary.ties}` : ""}${
             standing?.rank ? ` · #${standing.rank} of ${standing.size}` : ""
           }`
         : standing?.conference ?? sportConfig.label;
@@ -165,6 +165,7 @@ function GameLine({ game, isNext, schoolId, sportPrefix }) {
   const them = isHome ? game.away : game.home;
   const isFinal = game.status === "final";
   const won = isFinal && (us.score ?? -1) > (them.score ?? -1);
+  const tied = isFinal && us.score != null && us.score === them.score;
 
   return (
     <Link to={`${sportPrefix}/game/${game.id}`} className="favcard__game">
@@ -172,9 +173,9 @@ function GameLine({ game, isNext, schoolId, sportPrefix }) {
       <span className="favcard__game-detail">
         {isHome ? "vs" : "at"} {them.name}
         {isFinal ? (
-          <strong className={won ? "favcard__won" : "favcard__lost"}>
+          <strong className={won ? "favcard__won" : tied ? "favcard__tied" : "favcard__lost"}>
             {" "}
-            {won ? "W" : "L"} {us.score}–{them.score}
+            {won ? "W" : tied ? "T" : "L"} {us.score}–{them.score}
           </strong>
         ) : (
           <span className="favcard__when">

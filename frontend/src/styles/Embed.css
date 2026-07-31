@@ -87,6 +87,7 @@
 }
 .embed__won { color: var(--win); }
 .embed__lost { color: var(--loss); }
+.embed__tied { color: var(--muted); }
 .embed__when {
   color: var(--muted);
   font-size: 0.8rem;
@@ -106,10 +107,13 @@
   font-family: var(--font-display);
   font-weight: 700;
   font-size: 0.7rem;
-  color: #fff;
+  /* --paper, not #fff: dark mode lightens --win/--loss/--muted, so the
+     readable text color flips with the theme. */
+  color: var(--paper);
 }
 .embed__form-mark--w { background: var(--win); }
 .embed__form-mark--l { background: var(--loss); }
+.embed__form-mark--t { background: var(--muted); }
 
 .embed__footer {
   display: flex;

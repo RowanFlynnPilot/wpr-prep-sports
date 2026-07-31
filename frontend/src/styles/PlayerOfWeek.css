@@ -109,7 +109,7 @@
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--accent);
-  background: rgba(245, 158, 11, 0.18);
+  background: color-mix(in srgb, var(--accent) 18%, transparent);
   padding: 0.2rem 0.45rem;
   border-radius: var(--radius-sm);
   margin-left: 0.2rem;

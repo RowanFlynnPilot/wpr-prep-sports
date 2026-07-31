@@ -70,7 +70,7 @@
   min-width: 0;
 }
 .hero__team--won {
-  background: rgba(245, 158, 11, 0.12);  /* amber wash */
+  background: color-mix(in srgb, var(--accent) 12%, transparent);  /* accent wash */
   box-shadow: inset 3px 0 0 var(--accent);
 }
 

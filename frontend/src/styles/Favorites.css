@@ -179,6 +179,10 @@
   color: var(--loss);
 }
 
+.favcard__tied {
+  color: var(--muted);
+}
+
 .favcard__form {
   display: flex;
   gap: 0.22rem;
@@ -205,6 +209,11 @@
 .favcard__form-mark--l {
   background: var(--loss-bg);
   color: var(--loss);
+}
+
+.favcard__form-mark--t {
+  background: var(--row-tint-strong);
+  color: var(--muted);
 }
 
 .favcard__sponsor {

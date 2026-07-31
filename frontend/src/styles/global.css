@@ -45,7 +45,7 @@
   --banner-info-ink:  #1e3a8a;
   --banner-info-edge: #2563eb;
 
-  /* Sport accent — swap per sport in v2. Football = warm amber. */
+  /* Single global accent since the 2026-07 monochrome retheme. */
   --accent:          #cc1818;          /* press red — the site's own red family, used sparingly */
   --accent-700:      #991212;          /* darker red for small text on light surfaces */
   --accent-on-dark:  #e35d5d;          /* red that reads on the black chrome band */

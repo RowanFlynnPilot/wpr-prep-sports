@@ -88,7 +88,7 @@
 .standings__table tbody tr:nth-child(odd) td { background: var(--row-tint); }
 .standings__table tbody tr:last-child td { border-bottom: none; }
 .standings__table tbody tr { transition: background var(--t-fast) var(--ease); }
-.standings__table tbody tr:hover td { background: rgba(245, 158, 11, 0.1); cursor: pointer; }
+.standings__table tbody tr:hover td { background: color-mix(in srgb, var(--accent) 10%, transparent); cursor: pointer; }
 
 .standings__table td.rank {
   text-align: center;
@@ -135,7 +135,7 @@
   background: linear-gradient(
     to right,
     color-mix(in srgb, var(--accent) 18%, transparent) 0,
-    rgba(245, 158, 11, 0.1) 18%
+    color-mix(in srgb, var(--accent) 10%, transparent) 18%
   );
 }
 /* The viewed team's own row, when this table is shown on its team page. */
@@ -305,7 +305,7 @@
   letter-spacing: 0.1em;
   text-align: center;
   color: var(--accent);
-  background: rgba(245, 158, 11, 0.14);
+  background: color-mix(in srgb, var(--accent) 14%, transparent);
   padding: 0.12rem 0.25rem;
   border-radius: var(--radius-sm);
 }

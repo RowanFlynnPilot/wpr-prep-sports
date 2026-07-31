@@ -41,12 +41,17 @@ export function pickFeaturedWeek(games, now = new Date()) {
     return { start: currentStart, end: currentEnd, games: currentGames, isCurrent: true };
   }
 
-  // Off-season fallback: find the most recent week that had games.
-  const sorted = [...games].sort(
-    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
-  );
-  const mostRecent = sorted[0];
-  const weekStart = startOfWeekISO(new Date(mostRecent.date));
+  // Off-season fallback: the most recent week BEFORE now that had games —
+  // not simply the newest game, which with a published future schedule
+  // would be the season's final week. Pure preseason (nothing before now)
+  // falls forward to the soonest week ahead instead.
+  const times = games
+    .map((g) => new Date(g.date).getTime())
+    .filter(Number.isFinite);
+  if (times.length === 0) return null;
+  const past = times.filter((t) => t < currentStart.getTime());
+  const anchorT = past.length > 0 ? Math.max(...past) : Math.min(...times);
+  const weekStart = startOfWeekISO(new Date(anchorT));
   const weekEnd = endOfWeek(weekStart);
   const weekGames = games.filter((g) => {
     const t = new Date(g.date).getTime();

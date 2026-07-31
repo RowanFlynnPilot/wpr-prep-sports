@@ -114,11 +114,16 @@ const listeners = new Set();
 
 function init() {
   if (current) return current;
-  const stored = readStorage();
-  const seed = takeUrlSeed();
-  // Seed first: a shared link should surface its schools at the top.
-  current = clean([...seed, ...stored]);
-  if (seed.length) writeStorage(current);
+  const stored = clean(readStorage());
+  const seed = clean(takeUrlSeed());
+  // New schools from a shared link go in front for visibility — but only
+  // as capacity allows. The cap must never evict what the reader saved
+  // themselves: toggleFavorite refuses politely at capacity, and merely
+  // FOLLOWING a link must not be more destructive than the add button.
+  const room = Math.max(0, MAX_FAVORITES - stored.length);
+  const fresh = seed.filter((id) => !stored.includes(id)).slice(0, room);
+  current = [...fresh, ...stored];
+  if (fresh.length) writeStorage(current);
   return current;
 }
 

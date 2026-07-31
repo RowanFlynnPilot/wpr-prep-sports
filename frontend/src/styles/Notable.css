@@ -44,7 +44,7 @@
   transition: background var(--t-fast) var(--ease);
 }
 .notable__item:first-child { border-top: none; }
-.notable__item:hover { background: rgba(245, 158, 11, 0.06); }
+.notable__item:hover { background: color-mix(in srgb, var(--accent) 6%, transparent); }
 
 /* School-color rail on the left when the headline is tied to a team. */
 .notable__item::before {

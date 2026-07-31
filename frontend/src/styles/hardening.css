@@ -5,10 +5,12 @@
 /* Loading skeleton ------------------------------------------------------- */
 
 .skeleton {
+  /* Sheen stop uses --row-tint (theme-aware) rather than a light-cream
+     literal, which composited to a bright band on dark --paper-2. */
   background: linear-gradient(
     90deg,
     var(--paper-2) 0%,
-    rgba(231, 226, 214, 0.4) 50%,
+    var(--row-tint-strong) 50%,
     var(--paper-2) 100%
   );
   background-size: 200% 100%;
@@ -253,11 +255,13 @@
   margin-right: 0.4rem;
 }
 
-/* Focus rings — keyboard nav polish across the app */
+/* Focus rings — keyboard nav polish across the app. No border-radius
+   here: it would OVERRIDE each element's own radius while focused (this
+   file loads last), visibly squaring the pill buttons — and the outline
+   already follows the element's radius on its own. */
 *:focus-visible {
   outline: 3px solid var(--accent);
   outline-offset: 2px;
-  border-radius: 4px;
 }
 
 /* Horizontal scroll affordance ------------------------------------------- */

@@ -56,7 +56,7 @@ export default function EmbedPage({ dataset, schoolIndex, sportConfig }) {
 
   const teamUrl = `${FULL_WIDGET_URL}#/${dataset.sport}/team/${schoolId}`;
   const color = school.colors?.[0];
-  const hasSeasonStarted = summary.wins + summary.losses > 0;
+  const hasSeasonStarted = summary.hasSeasonStarted;
 
   return (
     <div
@@ -74,7 +74,9 @@ export default function EmbedPage({ dataset, schoolIndex, sportConfig }) {
           </p>
         </div>
         <div className="embed__record" aria-label="Record">
-          {hasSeasonStarted ? `${summary.wins}-${summary.losses}` : `${sportConfig.label}`}
+          {hasSeasonStarted
+            ? `${summary.wins}-${summary.losses}${summary.ties > 0 ? `-${summary.ties}` : ""}`
+            : `${sportConfig.label}`}
           {hasSeasonStarted && standing?.rank ? (
             <span className="embed__rank">
               #{standing.rank} of {standing.size}
@@ -127,6 +129,7 @@ function GameRow({ label, game, schoolId }) {
   const them = isHome ? game.away : game.home;
   const isFinal = game.status === "final";
   const won = isFinal && (us.score ?? -1) > (them.score ?? -1);
+  const tied = isFinal && us.score != null && us.score === them.score;
   const gameUrl = `${FULL_WIDGET_URL}#/${game.sport}/game/${game.id}`;
 
   return (
@@ -140,9 +143,9 @@ function GameRow({ label, game, schoolId }) {
       <span className="embed__game-detail">
         {isHome ? "vs" : "at"} {them.name}
         {isFinal ? (
-          <strong className={won ? "embed__won" : "embed__lost"}>
+          <strong className={won ? "embed__won" : tied ? "embed__tied" : "embed__lost"}>
             {" "}
-            {won ? "W" : "L"} {us.score}-{them.score}
+            {won ? "W" : tied ? "T" : "L"} {us.score}-{them.score}
           </strong>
         ) : (
           <span className="embed__when">
