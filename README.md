@@ -51,6 +51,12 @@ is blocked as mixed content.
 
 Add this anywhere in a WordPress post or template:
 
+The `allow` attribute matters: the widget is a *cross-origin* frame for
+Permissions Policy purposes (`sports.` vs `www.`) even though it is
+same-site for cookies, so without it the Share button's copy-to-clipboard
+and native share sheet are both blocked and it falls back to showing the
+URL for the reader to copy by hand.
+
 ```html
 <iframe
   id="wpr-prep-sports"
@@ -59,6 +65,7 @@ Add this anywhere in a WordPress post or template:
   height="900"
   frameborder="0"
   loading="lazy"
+  allow="clipboard-write; web-share"
   style="border:0;display:block;"
 ></iframe>
 

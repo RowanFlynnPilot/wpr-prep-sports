@@ -11,6 +11,7 @@ import HeadToHead from "../components/HeadToHead.jsx";
 import SectionBoundary from "../components/SectionBoundary.jsx";
 import SpiritGallery from "../components/SpiritGallery.jsx";
 import NotFound from "../components/NotFound.jsx";
+import ShareButton from "../components/ShareButton.jsx";
 import { schoolFor } from "../utils/schools.js";
 import { formatGameDay, formatGameDate, formatGameTime } from "../utils/dates.js";
 import { recapForGame } from "../utils/recap.js";
@@ -173,6 +174,18 @@ export default function GamePage({ dataset, schoolIndex, sportConfig }) {
           {contextLabel && (
             <span className="game-page__context">{contextLabel}</span>
           )}
+          {/* The one page most likely to get sent to family. Title carries
+              the score when there is one, so the share sheet and the OG
+              card say the same thing. */}
+          <ShareButton
+            className="game-page__share"
+            route={`${sportPrefix}/game/${game.id}`}
+            title={
+              isFinal
+                ? `${game.away.name} ${awayScore}, ${game.home.name} ${homeScore}`
+                : `${game.away.name} at ${game.home.name}`
+            }
+          />
         </div>
 
         <div className="game-page__matchup">

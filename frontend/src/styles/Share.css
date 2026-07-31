@@ -1,0 +1,85 @@
+/* Share / copy-link control.
+   Deliberately shaped like .fav-toggle in Favorites.css — the two sit
+   side by side in the team hero, and two pill buttons of different heights
+   next to each other reads as a mistake. */
+
+.share {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35rem;
+}
+
+.share__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: var(--card);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.32rem 0.8rem;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: background var(--t-fast) var(--ease), border-color var(--t-fast) var(--ease),
+    color var(--t-fast) var(--ease);
+}
+
+.share__btn:hover,
+.share__btn:focus-visible {
+  border-color: var(--accent);
+  color: var(--accent-700);
+}
+
+.share__icon {
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+/* Manual fallback — shown only when the browser refused both the share
+   sheet and the clipboard, which in practice means an embed that didn't
+   grant the permissions. Wide enough to show a useful chunk of the URL
+   without pushing the hero layout around. */
+.share__manual {
+  display: block;
+  max-width: min(28rem, 100%);
+  width: 100%;
+}
+
+.share__url {
+  width: 100%;
+  background: var(--paper-2);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 0.45rem 0.6rem;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  /* The reader is about to copy this, so let them see the tail of it. */
+  text-overflow: ellipsis;
+}
+
+/* Game page: the meta row is a flex line of eyebrow / date / venue chips,
+   so the button rides along at its end rather than starting a new row. */
+.game-page__share {
+  margin-left: auto;
+}
+
+@media (max-width: 600px) {
+  .game-page__share {
+    margin-left: 0;
+  }
+}
+
+/* Team hero: Follow and Share as a pair. Wraps rather than squeezing,
+   since both carry words and the school name above them is already long. */
+.team-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 0.5rem 0.6rem;
+}

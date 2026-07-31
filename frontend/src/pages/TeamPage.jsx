@@ -13,7 +13,8 @@ import { recapForGame } from "../utils/recap.js";
 import { seasonSummary } from "../utils/seasonSummary.js";
 import { useSportPrefix } from "../utils/links.js";
 import { recordLabels } from "../config/sports.js";
-import { SITE } from "../config/site.js";
+import { SITE, SITE_TITLE } from "../config/site.js";
+import ShareButton from "../components/ShareButton.jsx";
 
 export default function TeamPage({ dataset, schoolIndex, sponsors, sportConfig }) {
   const { schoolId } = useParams();
@@ -115,7 +116,16 @@ export default function TeamPage({ dataset, schoolIndex, sponsors, sportConfig }
           <p className="team-hero__mascot">
             {school.mascot} · {school.city}
           </p>
-          <FavoriteButton schoolId={schoolId} schoolName={school.name} />
+          <span className="team-hero__actions">
+            <FavoriteButton schoolId={schoolId} schoolName={school.name} />
+            <ShareButton
+              route={`${sportPrefix}/team/${schoolId}`}
+              title={`${school.name} ${sportConfig?.label ?? ""} — ${SITE_TITLE}`.replace(
+                /\s+/g,
+                " ",
+              )}
+            />
+          </span>
         </div>
         <div className="team-hero__record">
           <div className="record-stat">

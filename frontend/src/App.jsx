@@ -51,6 +51,7 @@ import "./styles/Marquee.css";
 import "./styles/Embed.css";
 import "./styles/SeniorSpotlight.css";
 import "./styles/Favorites.css";
+import "./styles/Share.css";
 
 export default function App() {
   useIframeHeightReporter();
