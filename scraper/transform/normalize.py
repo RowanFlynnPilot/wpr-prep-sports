@@ -134,6 +134,21 @@ def build_dataset(
             count = seen_in_source.get(base_id, 0) + 1
             seen_in_source[base_id] = count
             if count > 1:
+                # WIAA sometimes lists ONE physical game twice — a regular
+                # row plus the tournament-bracket row for the same contest.
+                # Suffixing that would publish a phantom duplicate (double
+                # ticker entries, a team page counting one loss twice), so
+                # merge unambiguous double listings instead of keeping both.
+                first = games.get(base_id)
+                if first is not None and is_double_listing(first, game):
+                    if game.playoff and not first.playoff:
+                        games[base_id] = first.model_copy(
+                            update={"playoff": True, "playoff_round": game.playoff_round}
+                        )
+                    # Roll the counter back so a later genuine doubleheader
+                    # still becomes "-2", matching the opponent's schedule.
+                    seen_in_source[base_id] = count - 1
+                    continue
                 game = game.model_copy(update={"id": f"{base_id}-{count}"})
             # Dedup cross-source. When the same game appears on both teams'
             # schedules, validate that the score sides agree — disagreement
@@ -238,6 +253,38 @@ def build_name_index_for_manifest(manifest: Manifest) -> dict[str, str]:
 
 def _resolve_school_id(wiaa_name: str, name_to_id: dict[str, str]) -> str:
     return name_to_id.get(_normalize_name(wiaa_name), "")
+
+
+# Sports whose tournament formats can produce a GENUINE same-day rematch
+# between the same two schools (pool play, then bracket/consolation).
+# Everywhere else, the same matchup twice on one day with identical
+# scores is one game listed twice — soccer and hockey teams don't play
+# the same opponent two full games in an afternoon.
+SAME_DAY_REMATCH_SPORTS = {Sport.VOLLEYBALL, Sport.BOYS_BASKETBALL, Sport.GIRLS_BASKETBALL}
+
+
+def is_double_listing(a: Game, b: Game) -> bool:
+    """True when two same-id rows are one physical game listed twice,
+    not a genuine same-day rematch. Deliberately conservative — merging
+    a real second match loses a game, keeping a phantom only annoys —
+    so identical datetime + scores must be joined by an unambiguous
+    tell: differing playoff flags (a bracket game also listed as a
+    regular row), both rows scoreless (a future game listed twice), or
+    a sport whose format has no same-day rematches at all. A timeless
+    row's clock is NOT a tell — WIAA rows without a printed time all
+    default to 7 PM (see _parse_datetime), so equal times prove
+    nothing, and identical-score volleyball tournament pairs stay
+    unmerged rather than risk dropping a real consolation match.
+    """
+    if a.date != b.date:
+        return False
+    if a.home.score != b.home.score or a.away.score != b.away.score:
+        return False
+    if a.playoff != b.playoff:
+        return True
+    if a.home.score is None and a.away.score is None:
+        return True
+    return a.sport not in SAME_DAY_REMATCH_SPORTS
 
 
 def _raw_to_game(

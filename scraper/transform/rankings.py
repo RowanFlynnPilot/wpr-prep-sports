@@ -70,11 +70,10 @@ METHOD_DESCRIPTION = (
 )
 
 
-# How long to keep a "previous" snapshot before rotating in the
-# current rankings as the new comparison baseline. Picked at 6 days so
-# a weekly cron lands neatly — Friday's scrape becomes next Friday's
-# comparison point.
-PREV_SNAPSHOT_AGE_DAYS = 6
+# The "previous" snapshot used for movement arrows rotates on the first
+# write of each Monday-anchored calendar week — see
+# output.writer:_maybe_rotate_prev_rankings. Movement always reads "vs
+# last week" regardless of how often the scrape actually runs.
 
 
 def compute_power_rankings(

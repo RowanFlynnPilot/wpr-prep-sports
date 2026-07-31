@@ -1,16 +1,21 @@
 """Pure-logic tests for transform/normalize.py — result parsing, datetime
-defaults, slugs, and the alias table's integrity against the manifest."""
+defaults, slugs, double-listing detection, and the alias table's
+integrity against the manifest."""
 
 from __future__ import annotations
 
+from datetime import datetime
+from zoneinfo import ZoneInfo
+
 from config.loader import load_manifest
-from models.schema import GameStatus
+from models.schema import Game, GameStatus, Sport, TeamScore
 from transform.normalize import (
     _build_name_index,
     _normalize_name,
     _parse_datetime,
     _parse_result,
     _slugify,
+    is_double_listing,
 )
 
 
@@ -119,3 +124,71 @@ def test_name_index_resolves_coop_display_names():
     assert idx["d.c. everest co-op"] == "central-wisconsin-storm"
     assert idx["stevens point area"] == "spash"
     assert idx["wausau east"] == "wausau-east"
+
+
+# ---- double-listing detection ---------------------------------------------
+
+_CENTRAL = ZoneInfo("America/Chicago")
+
+
+def _listing(
+    sport: Sport,
+    *,
+    home_score=3,
+    away_score=1,
+    playoff=False,
+    hour=19,
+) -> Game:
+    status = GameStatus.FINAL if home_score is not None else GameStatus.SCHEDULED
+    return Game(
+        id=f"{sport.value}-2026-02-19-away-at-home",
+        sport=sport,
+        season="2025-26",
+        date=datetime(2026, 2, 19, hour, 0, tzinfo=_CENTRAL),
+        home=TeamScore(school_id="home", name="Home", score=home_score),
+        away=TeamScore(school_id="away", name="Away", score=away_score),
+        status=status,
+        playoff=playoff,
+    )
+
+
+def test_double_listing_playoff_flag_mismatch_merges():
+    """The girls-hockey 2026-02-19 case: one physical playoff game also
+    listed as a regular row — same time, same score."""
+    a = _listing(Sport.GIRLS_HOCKEY, playoff=False)
+    b = _listing(Sport.GIRLS_HOCKEY, playoff=True)
+    assert is_double_listing(a, b)
+
+
+def test_double_listing_scoreless_pair_merges():
+    a = _listing(Sport.VOLLEYBALL, home_score=None, away_score=None)
+    b = _listing(Sport.VOLLEYBALL, home_score=None, away_score=None)
+    assert is_double_listing(a, b)
+
+
+def test_double_listing_non_tournament_sport_merges():
+    """Soccer/hockey have no same-day rematches, so identical rows are
+    one game twice even with both flags regular."""
+    a = _listing(Sport.GIRLS_SOCCER, home_score=0, away_score=14)
+    b = _listing(Sport.GIRLS_SOCCER, home_score=0, away_score=14)
+    assert is_double_listing(a, b)
+
+
+def test_double_listing_volleyball_same_score_is_kept():
+    """A volleyball tournament rematch can genuinely repeat a set score;
+    without another tell, keep both rather than risk dropping a match."""
+    a = _listing(Sport.VOLLEYBALL, home_score=2, away_score=1)
+    b = _listing(Sport.VOLLEYBALL, home_score=2, away_score=1)
+    assert not is_double_listing(a, b)
+
+
+def test_double_listing_different_scores_is_kept():
+    a = _listing(Sport.GIRLS_SOCCER, home_score=2, away_score=1)
+    b = _listing(Sport.GIRLS_SOCCER, home_score=3, away_score=1)
+    assert not is_double_listing(a, b)
+
+
+def test_double_listing_different_times_is_kept():
+    a = _listing(Sport.GIRLS_SOCCER, hour=10)
+    b = _listing(Sport.GIRLS_SOCCER, hour=19)
+    assert not is_double_listing(a, b)

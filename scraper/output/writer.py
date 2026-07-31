@@ -32,9 +32,12 @@ from pathlib import Path
 
 from models.schema import Dataset
 
-# Days a power_rankings_prev.json snapshot stays in place before it
-# rotates. Matches `transform.rankings.PREV_SNAPSHOT_AGE_DAYS`.
-_PREV_SNAPSHOT_AGE_DAYS = 6
+# The prev-rankings snapshot rotates on the first write of each Monday-
+# anchored week (see _maybe_rotate_prev_rankings). Calendar-based, not
+# age-based: a "6 days old" rule re-fires on an exact 6-day cycle, which
+# regresses one weekday per cycle and periodically lands mid-Friday-
+# evening — snapshotting intra-game rankings and zeroing the following
+# week's movement arrows. Weeks don't drift.
 
 
 def write_dataset(dataset: Dataset, out_dir: Path) -> None:
@@ -90,8 +93,8 @@ def write_dataset(dataset: Dataset, out_dir: Path) -> None:
             if stale.exists():
                 stale.unlink()
     else:
-        # Rotate the comparison snapshot if it's missing or older than
-        # PREV_SNAPSHOT_AGE_DAYS. Done BEFORE writing the new file so
+        # Rotate the comparison snapshot if it's missing or from an
+        # earlier calendar week. Done BEFORE writing the new file so
         # next run's movement is calculated vs the rankings being
         # replaced now, not vs themselves.
         _maybe_rotate_prev_rankings(rankings_path, prev_path)
@@ -221,11 +224,19 @@ def load_full_games_raw(sport_dir: Path) -> list[dict]:
     return games
 
 
+def _week_anchor(ts: datetime) -> datetime:
+    """Monday 00:00 UTC of the week containing `ts`."""
+    monday = ts - timedelta(days=ts.weekday())
+    return monday.replace(hour=0, minute=0, second=0, microsecond=0)
+
+
 def _maybe_rotate_prev_rankings(current_path: Path, prev_path: Path) -> None:
-    """If `prev_path` is missing or older than the snapshot age, copy
+    """If `prev_path` is missing or from an earlier calendar week, copy
     the current rankings file into prev (atomic-ish: read then write).
-    First-ever scrape leaves prev empty — movement fills in on the
-    second snapshot."""
+    Rotation therefore lands on the week's FIRST write — an early-Monday
+    scrape, never a Friday game window — and movement arrows always read
+    "vs last week". First-ever scrape leaves prev empty — movement fills
+    in on the second snapshot."""
     if not current_path.exists():
         return
     rotate = False
@@ -240,8 +251,7 @@ def _maybe_rotate_prev_rankings(current_path: Path, prev_path: Path) -> None:
                 ts = datetime.fromisoformat(generated.replace("Z", "+00:00"))
                 if ts.tzinfo is None:
                     ts = ts.replace(tzinfo=timezone.utc)
-                age = datetime.now(timezone.utc) - ts
-                if age >= timedelta(days=_PREV_SNAPSHOT_AGE_DAYS):
+                if _week_anchor(ts) < _week_anchor(datetime.now(timezone.utc)):
                     rotate = True
             else:
                 rotate = True

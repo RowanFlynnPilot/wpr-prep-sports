@@ -145,6 +145,17 @@ def main() -> int:
         if not targets:
             console.print("[red]No matching schools — aborting.[/red]")
             return 1
+        # A subset scrape must never publish: writing it would replace the
+        # sport's full games.json, prune every other game's boxscore and
+        # player files, and (under MIN_RANKED_TEAMS) delete a good power-
+        # rankings file. --only exists to debug one school's parse, so it
+        # implies --dry-run rather than trusting the operator to remember.
+        if not args.dry_run:
+            console.print(
+                "[yellow]--only scrapes a subset — running as --dry-run so it "
+                "can't replace the full dataset. Use a full scrape to publish.[/yellow]"
+            )
+            args.dry_run = True
 
     # Backfill any missing OrgIDs.
     needs_lookup = [s for s in targets if s.wiaa_org_id is None]

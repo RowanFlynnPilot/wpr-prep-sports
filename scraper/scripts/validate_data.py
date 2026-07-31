@@ -79,6 +79,9 @@ GAMES_BASELINE_MIN = 20
 LINES_ZERO_BASELINE_MIN = 100
 LINES_COLLAPSE_RATIO = 0.5
 LINES_COLLAPSE_BASELINE_MIN = 500
+# Conference tables are fixed within a season — losing more than half of
+# them (8 -> 1) is a parser regression even when total rows stay > 0.
+STANDINGS_TABLES_COLLAPSE_RATIO = 0.5
 
 
 def validate_sport(sport_dir: Path) -> list[str]:
@@ -265,6 +268,14 @@ def check_regression(sport_dir: Path) -> list[str]:
         new_rows = sum(len(s.get("rows") or []) for s in new_standings if isinstance(s, dict))
         if old_rows > 0 and new_rows == 0:
             errors.append(f"{sport}: standings emptied ({old_rows} rows -> 0) vs HEAD")
+        # Conference tables are fixed within a season — a big drop in table
+        # count is a regression even when the surviving tables keep rows.
+        old_tables = sum(1 for s in old_standings if isinstance(s, dict) and s.get("rows"))
+        new_tables = sum(1 for s in new_standings if isinstance(s, dict) and s.get("rows"))
+        if old_tables >= 2 and new_tables < old_tables * STANDINGS_TABLES_COLLAPSE_RATIO:
+            errors.append(
+                f"{sport}: conference tables collapsed {old_tables} -> {new_tables} vs HEAD"
+            )
 
     old_season = _git_show_json(f"{rel}/season_stats.json")
     new_season = _read_json(sport_dir / "season_stats.json")
@@ -275,6 +286,20 @@ def check_regression(sport_dir: Path) -> list[str]:
                 f"{sport}: season_stats emptied ({len(old_season)} rows -> 0) vs HEAD "
                 f"with final games present - stats source down?"
             )
+
+    # Published power rankings can only grow within a season (qualifiers
+    # never un-qualify, and MIN_RANKED_TEAMS is crossed once) — so a file
+    # that HEAD had and the working tree lacks means a bug just deleted
+    # it, not a legitimate suppression.
+    old_rankings = _git_show_json(f"{rel}/power_rankings.json")
+    new_rankings = _read_json(sport_dir / "power_rankings.json")
+    old_ranked = len(old_rankings.get("rankings") or []) if isinstance(old_rankings, dict) else 0
+    new_ranked = len(new_rankings.get("rankings") or []) if isinstance(new_rankings, dict) else 0
+    if old_ranked > 0 and new_ranked == 0:
+        errors.append(
+            f"{sport}: power rankings vanished ({old_ranked} teams -> none) vs HEAD "
+            f"within the same season (--no-regression for deliberate removals)"
+        )
 
     if errors:
         print(f"{sport}: REGRESSION vs HEAD — see failures below")
