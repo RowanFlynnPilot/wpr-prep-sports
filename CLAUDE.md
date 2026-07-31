@@ -154,7 +154,8 @@ Canonical JSON written to `data/` (split per-sport layout since June 2026):
 - `data/<sport>/players/<school_id>.json` — per-school player lines, fetched on demand
 - `data/<sport>/standings.json`, `season_stats.json`, `power_rankings.json`
 - `data/{sponsors,potw,spirit}.json` — cross-sport editorial/sponsor config
-- `data/archive/<season>/` — archived seasons (excluded from Pages deploy)
+- `data/archive/<season>/` — archived seasons (shipped to Pages since
+  2026-07 — the season selector serves them directly; see deploy.yml)
 
 See `docs/schema.md` for full field definitions. Frontend reads these files
 directly via `fetch()` against the GitHub Pages domain.

@@ -6,27 +6,34 @@ name: Scrape Live
 # cron is safe to leave on year-round.
 #
 # Schedule covers Central Time game windows (UTC-6 std / UTC-5 DST):
-#   Friday evening (CT) → 23:00-05:59 UTC (Fri night + early Sat UTC)
-#     – Football (Aug-Nov), Volleyball (Aug-Oct), Basketball (Nov-Mar)
-#   Tuesday/Thursday evening (CT) → 23:00-05:59 UTC (Wed/Fri UTC)
-#     – Volleyball, Basketball, Hockey midweek games
-#   Saturday afternoon (CT) → 18:00-23:00 UTC
-#     – Basketball/Volleyball tournament days
+#   Weekday evenings (CT) → 23:00-05:59 UTC (same night + early next-day UTC)
+#     – Football Fridays (Aug-Nov), Volleyball (Aug-Oct), Basketball (Nov-Mar)
+#   Saturday afternoon + evening (CT) → 18:00 UTC Sat - 05:59 UTC Sun
+#     – Basketball/Volleyball tournament days, winter Saturday-night
+#       hockey, late playoff rounds
 #
 # Each fires the live scrape for every sport — sports that aren't
 # in-season return empty + no commit; cost is ~60s total wall time.
 
 on:
   schedule:
-    - cron: "*/10 23 * * 1,2,3,4,5"  # Mon-Fri evening UTC (CT weeknight)
-    - cron: "*/10 0-5 * * 2,3,4,5,6" # Tue-Sat early UTC (CT weeknight late)
-    - cron: "*/10 18-22 * * 6"       # Saturday afternoon UTC (tournament)
+    - cron: "*/10 23 * * 1,2,3,4,5,6"  # Mon-Sat evening UTC (CT weeknight + Sat)
+    - cron: "*/10 0-5 * * 0,2,3,4,5,6" # early UTC = CT late evening, Sun covers Sat night
+    - cron: "*/10 18-22 * * 6"         # Saturday afternoon UTC (tournament)
   workflow_dispatch:
     inputs:
       sport:
         description: "Single sport id to run; default runs every sport."
         required: false
         default: ""
+
+# One data-committing run at a time, shared with the full scrape — both
+# push to main, and on Friday nights their crons overlap. Queued runs
+# collapse to the newest pending, which is exactly right for a */10
+# cron: skipping an intermediate tick loses nothing.
+concurrency:
+  group: data-commits
+  cancel-in-progress: false
 
 permissions:
   contents: write
@@ -94,7 +101,14 @@ jobs:
             echo "pushed=false" >> "$GITHUB_OUTPUT"
           else
             git commit -m "live: $(date -u +%Y-%m-%dT%H:%MZ)"
-            git push
+            # Rebase-retry: another workflow (digest, a manual run) can
+            # land a commit between our checkout and push.
+            for attempt in 1 2 3; do
+              if git push; then break; fi
+              if [ "$attempt" = 3 ]; then exit 1; fi
+              echo "push rejected (attempt $attempt) — rebasing and retrying"
+              git pull --rebase
+            done
             echo "pushed=true" >> "$GITHUB_OUTPUT"
           fi
 
@@ -118,9 +132,9 @@ jobs:
           exit 1
 
       # ---- Loud-failure tail (after commit/deploy so good data ships
-      # first). The alert-issue action dedupes on an open label, so a
-      # broken source during a Friday window opens ONE issue, not one
-      # per 10-minute run.
+      # first). The alert-issue action dedupes on an open issue with the
+      # same title, so a broken source during a Friday window opens ONE
+      # issue, not one per 10-minute run.
       - name: Open ops alert
         if: always() && (failure() || steps.scrape.outputs.failed != '')
         uses: ./.github/actions/alert-issue

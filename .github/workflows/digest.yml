@@ -17,6 +17,12 @@ on:
         required: false
         default: ""
 
+# Shares the data-commits group with the scrape workflows — everything
+# that pushes to main queues behind whatever is mid-push.
+concurrency:
+  group: data-commits
+  cancel-in-progress: false
+
 permissions:
   contents: write
   actions: write
@@ -36,6 +42,10 @@ jobs:
         working-directory: frontend
         env:
           WEEK_ENDING: ${{ github.event.inputs.week_ending }}
+          # The digest's week window is computed in local time and game
+          # dates carry Central offsets — on the UTC runner a 7pm Friday
+          # kickoff would land in Saturday and slip a week.
+          TZ: America/Chicago
         run: |
           if [ -n "$WEEK_ENDING" ]; then
             node scripts/build-digest.mjs --week-ending "$WEEK_ENDING"
@@ -54,7 +64,12 @@ jobs:
             echo "pushed=false" >> "$GITHUB_OUTPUT"
           else
             git commit -m "data: weekly digest $(date -u +%Y-%m-%d)"
-            git push
+            for attempt in 1 2 3; do
+              if git push; then break; fi
+              if [ "$attempt" = 3 ]; then exit 1; fi
+              echo "push rejected (attempt $attempt) — rebasing and retrying"
+              git pull --rebase
+            done
             echo "pushed=true" >> "$GITHUB_OUTPUT"
           fi
 

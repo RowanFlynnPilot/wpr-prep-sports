@@ -28,6 +28,15 @@ on:
         required: false
         default: "2026-27"
 
+# One data-committing run at a time, shared with the live scrape — both
+# push to main, and on Friday nights the 15-min full-scrape cron overlaps
+# both itself (the job takes longer than 15 min) and the 10-min live
+# cron. Queued runs collapse to the newest pending, which is exactly
+# right for a cron: skipping an intermediate tick loses nothing.
+concurrency:
+  group: data-commits
+  cancel-in-progress: false
+
 permissions:
   contents: write
   # actions: write lets the final step dispatch the Deploy workflow.
@@ -167,7 +176,14 @@ jobs:
             echo "pushed=false" >> "$GITHUB_OUTPUT"
           else
             git commit -m "data: scrape $(date -u +%Y-%m-%dT%H:%MZ)"
-            git push
+            # Rebase-retry: another workflow (digest, a manual run) can
+            # land a commit between our checkout and push.
+            for attempt in 1 2 3; do
+              if git push; then break; fi
+              if [ "$attempt" = 3 ]; then exit 1; fi
+              echo "push rejected (attempt $attempt) — rebasing and retrying"
+              git pull --rebase
+            done
             echo "pushed=true" >> "$GITHUB_OUTPUT"
           fi
 

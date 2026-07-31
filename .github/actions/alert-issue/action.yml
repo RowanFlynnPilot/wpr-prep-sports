@@ -1,11 +1,14 @@
 name: "Open ops-alert issue"
 description: >
-  Create a labeled ops-alert issue — unless one is already open. The
-  open issue IS the signal that something needs a human; while it
-  exists, further failures stay visible in the Actions log without
-  generating notification spam (the live cron can fail every 10 minutes
-  during a bad night). Close the issue once resolved; the next failure
-  opens a fresh one.
+  Create a labeled ops-alert issue — unless one with the SAME TITLE is
+  already open. The open issue IS the signal that something needs a
+  human; while it exists, repeat failures of the same kind stay visible
+  in the Actions log without generating notification spam (the live
+  cron can fail every 10 minutes during a bad night). Dedupe is
+  per-title, not per-label: a long-lived coverage issue (WIAA hasn't
+  posted a sport's schedules) must not swallow the alert for a scrape
+  or deploy failure that happens while it's open. Close the issue once
+  resolved; the next failure opens a fresh one.
 
 inputs:
   title:
@@ -32,10 +35,16 @@ runs:
         gh label create "$LABEL" --repo "$GITHUB_REPOSITORY" \
           --color D93F0B --description "Automated data-pipeline health alert" \
           --force
+        # Match on exact title, compared in bash rather than interpolated
+        # into a jq program so titles never need quoting rules.
         EXISTING=$(gh issue list --repo "$GITHUB_REPOSITORY" --label "$LABEL" \
-          --state open --json number --jq '.[0].number // empty')
+          --state open --json number,title \
+          --jq '.[] | "\(.number)\t\(.title)"' | \
+          while IFS=$'\t' read -r num title; do
+            if [ "$title" = "$TITLE" ]; then echo "$num"; break; fi
+          done)
         if [ -n "$EXISTING" ]; then
-          echo "open $LABEL issue #$EXISTING already exists — not creating another"
+          echo "open issue #$EXISTING already carries this title — not creating another"
           exit 0
         fi
         gh issue create --repo "$GITHUB_REPOSITORY" \

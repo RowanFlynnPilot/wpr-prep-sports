@@ -16,6 +16,14 @@
  * data/sponsors.json has a `digest` slot with a name.
  */
 
+// The digest is a Central-time product: the week window and day
+// groupings below all use local time, because game dates carry Central
+// offsets. On a UTC runner that shifts every 7pm+ Friday kickoff into
+// Saturday — i.e. next week's digest — so pin the zone before the first
+// Date is constructed. (No-op on Windows, where Node ignores TZ, but
+// local runs there are already in Central.)
+process.env.TZ ||= "America/Chicago";
+
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { existsSync } from "node:fs";
 import path from "node:path";
