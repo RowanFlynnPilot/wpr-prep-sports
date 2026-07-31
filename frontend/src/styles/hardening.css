@@ -95,6 +95,69 @@
   text-align: center;
 }
 
+/* Deep link into something the current dataset doesn't hold — usually a
+   link shared during a season that has since rolled into data/archive/.
+   Sits with the other "the site is fine, the content isn't here" states
+   rather than the error boundary, because nothing has gone wrong. */
+
+.not-found {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 1.5rem 1.5rem 1.35rem;
+  max-width: 560px;
+  margin: 1.5rem auto;
+}
+.not-found__title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+  margin: 0 0 0.5rem;
+}
+.not-found__body {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0 0 1.1rem;
+}
+.not-found__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1.25rem;
+  margin: 0;
+}
+.not-found__primary {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #991212; /* fixed dark red — see .skip-link */
+  color: #ffffff;
+  border-radius: var(--radius-sm);
+  /* 44px tall so it clears the touch-target floor on a phone. */
+  padding: 0.75rem 1.1rem;
+}
+.not-found__primary:hover,
+.not-found__primary:focus-visible {
+  background: var(--brand);
+}
+.not-found__back {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--link);
+  /* Matches the button's box so the two sit on one baseline and the plain
+     link is just as easy to hit. */
+  padding: 0.75rem 0;
+}
+
 /* Live-refresh stall notice — the 60s auto-refresh has failed repeatedly;
    scores shown may lag until it recovers. */
 .live-stall-note {

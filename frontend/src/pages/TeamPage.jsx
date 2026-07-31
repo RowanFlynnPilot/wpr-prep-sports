@@ -1,6 +1,7 @@
 import { useMemo } from "react";
-import { useParams, Link, Navigate } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import Layout from "../components/Layout.jsx";
+import NotFound from "../components/NotFound.jsx";
 import TeamLogo from "../components/TeamLogo.jsx";
 import TeamLink from "../components/TeamLink.jsx";
 import Sponsor from "../components/Sponsor.jsx";
@@ -20,7 +21,7 @@ export default function TeamPage({ dataset, schoolIndex, sponsors, sportConfig }
   const school = schoolIndex.get(schoolId);
 
   if (!school) {
-    return <Navigate to={sportPrefix} replace />;
+    return <NotFound kind="team" sportPrefix={sportPrefix} sponsors={sponsors} />;
   }
 
   const teamGames = useMemo(

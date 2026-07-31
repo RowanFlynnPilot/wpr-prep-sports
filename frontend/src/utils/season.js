@@ -56,3 +56,39 @@ export function setSelectedSeason(season) {
   }
   window.location.reload();
 }
+
+/**
+ * The WIAA school year containing a date — "2025-26" for anything from
+ * August 2025 through July 2026. August is the boundary because that is
+ * when football, the first sport, opens.
+ */
+export function seasonForDate(iso) {
+  const m = /^(\d{4})-(\d{2})/.exec(String(iso ?? ""));
+  if (!m) return null;
+  const year = Number(m[1]);
+  const month = Number(m[2]);
+  const start = month >= 8 ? year : year - 1;
+  return `${start}-${String((start + 1) % 100).padStart(2, "0")}`;
+}
+
+/**
+ * Where to find a game that isn't in the current dataset.
+ *
+ * Game ids carry their own date — "football-2025-10-17-wausau-west-at-
+ * marshfield" — so a link shared during last season can be resolved to the
+ * archive that actually holds it rather than dumped on today's dashboard.
+ * Returns null when the date is unreadable or that season was never
+ * archived, so callers can fall back to a plain apology.
+ *
+ * Uses the `?season=` boot param (a full reload) because that is how the
+ * whole archive view works: every fetch in the session re-resolves against
+ * data/archive/<season>/. See the note at the top of this file.
+ */
+export function archiveLocationForGame(gameId, sportPrefix) {
+  const m = /^[a-z_]+-(\d{4}-\d{2}-\d{2})-/.exec(String(gameId ?? ""));
+  if (!m) return null;
+  const season = seasonForDate(m[1]);
+  if (!season || !ARCHIVE_SEASONS.includes(season)) return null;
+  const base = window.location.pathname;
+  return { season, href: `${base}?season=${season}#${sportPrefix}/game/${gameId}` };
+}

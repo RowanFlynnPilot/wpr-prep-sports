@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { useParams, Navigate, Link } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { fetchBoxscore } from "../data/fetchDataset.js";
 import Layout from "../components/Layout.jsx";
 import TeamLogo from "../components/TeamLogo.jsx";
@@ -10,6 +10,7 @@ import GamePreview from "../components/GamePreview.jsx";
 import HeadToHead from "../components/HeadToHead.jsx";
 import SectionBoundary from "../components/SectionBoundary.jsx";
 import SpiritGallery from "../components/SpiritGallery.jsx";
+import NotFound from "../components/NotFound.jsx";
 import { schoolFor } from "../utils/schools.js";
 import { formatGameDay, formatGameDate, formatGameTime } from "../utils/dates.js";
 import { recapForGame } from "../utils/recap.js";
@@ -81,7 +82,7 @@ export default function GamePage({ dataset, schoolIndex, sportConfig }) {
     : 0;
 
   if (!game) {
-    return <Navigate to={sportPrefix} replace />;
+    return <NotFound kind="game" sportPrefix={sportPrefix} id={gameId} />;
   }
 
   const isFinal = game.status === "final";
@@ -144,6 +145,14 @@ export default function GamePage({ dataset, schoolIndex, sportConfig }) {
 
   return (
     <Layout breadcrumb={breadcrumb} sponsors={dataset.sponsors}>
+      {/* Same reason as the dashboards': without it this page's heading walk
+          opened at the h3 team names, so a screen-reader user landing on a
+          shared game link got no title telling them which game it was, and
+          the outline then jumped h3 -> h2 at "Head-to-Head". Hidden
+          visually because the scoreboard below already says it. */}
+      <h1 className="sr-only">
+        {game.away.name} at {game.home.name} — {formatGameDate(game.date)}
+      </h1>
       <section className="game-page__hero">
         <div className="game-page__meta">
           {game.status === "in_progress" ? (
@@ -332,9 +341,13 @@ function Side({ team, school, score, won, showScore }) {
     >
       <TeamLogo team={team} school={school} size="xl" />
       <div className="game-page__team-text">
-        <h3 className="game-page__team-name">
+        {/* h2, not h3: the two teams are the page's top-level blocks, sitting
+            directly under the sr-only h1, and as h3 they skipped a level and
+            then sat *below* the h2 sections that follow them. Styling keys
+            off the class, so the level change is purely semantic. */}
+        <h2 className="game-page__team-name">
           <TeamLink team={team}>{team.name}</TeamLink>
-        </h3>
+        </h2>
         {school?.mascot && (
           <p className="game-page__team-mascot">{school.mascot}</p>
         )}
