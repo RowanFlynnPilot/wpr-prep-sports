@@ -41,6 +41,22 @@ MARGIN_CAPS: dict[Sport, int] = {
 # Below this we don't have enough signal to rank fairly.
 MIN_GAMES_PLAYED = 3
 
+# Minimum teams that must qualify before rankings are published at all.
+#
+# The point of this table is comparing teams that never play each other —
+# it earns its place by saying something the conference standings can't.
+# Girls hockey is tracked as a single five-team conference (the Central
+# Wisconsin Storm co-op plus its four opponents), so its "power ranking"
+# was six rows in the same order as the standings directly above it: the
+# same information twice, presented as analysis.
+#
+# Ten is comfortably clear of that and of anything a real season produces.
+# It does not delay the big sports early on: MIN_GAMES_PLAYED already
+# holds everyone back until week three, and since conference schedules run
+# in lockstep, teams cross that line together — football goes from zero
+# qualifiers to ~59 in one week, never lingering at eight.
+MIN_RANKED_TEAMS = 10
+
 # Component weights — must sum to 1.0.
 WEIGHT_WIN_PCT = 0.40
 WEIGHT_SOS = 0.35
@@ -128,6 +144,19 @@ def compute_power_rankings(
     for tid in list(teams.keys()):
         if teams[tid]["wins"] + teams[tid]["losses"] < MIN_GAMES_PLAYED:
             del teams[tid]
+
+    # Too small a field to be a ranking rather than a restatement of the
+    # standings — publish nothing. Returning early leaves
+    # dataset.power_rankings empty, and the writer only emits the file when
+    # it is non-empty, so the sport simply has no rankings to fetch and the
+    # frontend hides the section on its own.
+    if len(teams) < MIN_RANKED_TEAMS:
+        if console:
+            console.print(
+                f"[dim]{sport}: {len(teams)} qualifying team(s), "
+                f"under the {MIN_RANKED_TEAMS} needed — skipping power rankings[/dim]"
+            )
+        return dataset
 
     # Pass 1: win percentages.
     for t in teams.values():

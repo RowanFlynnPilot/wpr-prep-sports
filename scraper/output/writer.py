@@ -74,11 +74,22 @@ def write_dataset(dataset: Dataset, out_dir: Path) -> None:
         sport_dir / "season_stats.json",
         [s.model_dump(mode="json") for s in dataset.season_stats],
     )
-    # Only emit power_rankings.json when we actually computed any —
-    # avoids overwriting a hand-edited file with an empty array.
-    if dataset.power_rankings:
-        rankings_path = sport_dir / "power_rankings.json"
-        prev_path = sport_dir / "power_rankings_prev.json"
+    rankings_path = sport_dir / "power_rankings.json"
+    prev_path = sport_dir / "power_rankings_prev.json"
+    if not dataset.power_rankings:
+        # Nothing to publish — REMOVE any existing file rather than leaving
+        # it. Skipping the write was meant to protect a hand-edited file,
+        # but a hand-edited power ranking isn't a thing, and what it
+        # actually protected was last season's table: on rollover the new
+        # season has no finals, computes nothing, and the old file survived.
+        # Football and volleyball were both serving 2025-26 rankings
+        # ("Gilman 12-0") under a 2026-27 heading with zero games played.
+        # The frontend fetches this optionally and hides the section when
+        # it 404s, so deleting is the honest empty state.
+        for stale in (rankings_path, prev_path):
+            if stale.exists():
+                stale.unlink()
+    else:
         # Rotate the comparison snapshot if it's missing or older than
         # PREV_SNAPSHOT_AGE_DAYS. Done BEFORE writing the new file so
         # next run's movement is calculated vs the rankings being
