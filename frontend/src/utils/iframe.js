@@ -41,13 +41,20 @@ export function useIframeHeightReporter() {
 
     let lastHeight = 0;
     const post = () => {
-      // scrollHeight on documentElement is the most reliable cross-browser
-      // measure for "tallest rendered content."
-      const h = Math.max(
-        document.documentElement.scrollHeight,
-        document.body.scrollHeight,
-      );
-      if (h === lastHeight) return;
+      // Measure the BODY BOX, not documentElement.scrollHeight.
+      //
+      // scrollHeight is max(content, viewport) — and inside an iframe the
+      // viewport IS the height the host just set from our previous message.
+      // That makes it a ratchet: once the tall dashboard pushes the frame to
+      // ~5000px, a reader opening a team page measures 5000px again (the
+      // viewport floor), the value is unchanged, no message is sent, and the
+      // frame never shrinks. Verified against the live site through the
+      // README's own snippet: navigating dashboard -> team page produced
+      // zero resize messages and left thousands of pixels of blank below the
+      // content. html and body carry no height rule, so the body box is true
+      // content height and falls as well as rises.
+      const h = Math.ceil(document.body.getBoundingClientRect().height);
+      if (h === lastHeight || h === 0) return;
       lastHeight = h;
       window.parent.postMessage(
         { type: MESSAGE_TYPE, height: h },
@@ -57,8 +64,10 @@ export function useIframeHeightReporter() {
 
     post();
 
+    // Observe the body for the same reason: documentElement is the viewport,
+    // which the host controls, so it does not resize when our content does.
     const ro = new ResizeObserver(() => post());
-    ro.observe(document.documentElement);
+    ro.observe(document.body);
 
     // Hash route changes don't trigger ResizeObserver synchronously.
     const onHash = () => requestAnimationFrame(post);
