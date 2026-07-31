@@ -112,8 +112,13 @@ needs individual-sport modeling), then baseball/softball/track (spring).
 - Conference standings per sport, team pages, game pages with box scores,
   player profile pages
 - Player of the Week (editor override via `data/potw.json`), Game of the
-  Week marquee, Power Rankings, Pick'em (browser-local), playoff bracket,
-  School Spirit photo galleries, OG share cards, off-season countdown hero
+  Week marquee, Power Rankings, playoff bracket, School Spirit photo
+  galleries, OG share cards, off-season countdown hero
+- **Feature switches** in `SITE.features` (`frontend/src/config/site.js`).
+  Each hides a reader-facing surface AND its row in the `#/sponsor` media
+  kit, so the rate card can never advertise a placement the site isn't
+  running. **Pick'em is switched OFF for the Aug 2026 launch** — the code
+  is complete, not broken; flipping the switch restores it everywhere.
 - Sponsor system: `data/sponsors.json` slots + `#/sponsor` media-kit page
   (see `docs/advertiser-inventory.md`)
 - Per-school embeds (`#/<sport>/embed/<id>` + media-kit builder), Senior
@@ -129,8 +134,10 @@ needs individual-sport modeling), then baseball/softball/track (spring).
 - **Bracket challenge** — pick'em-style tournament picks; division data +
   bracket UI shipped, needs the picks/scoring layer (target: October
   before playoffs)
-- **Pick'em worker deploy** — code + tests complete in `pickem-api/`;
-  human-blocked on a Cloudflare account (README runbook)
+- **Pick'em re-enable** — flip `SITE.features.pickem` when WPR wants it
+  back; the community leaderboard additionally needs the `pickem-api/`
+  worker deployed (code + tests complete, human-blocked on a Cloudflare
+  account — README runbook)
 - **Plausible activation** — human-blocked on Toto (docs/analytics.md)
 - **Wrestling** (winter 2026-27) — Trackwrestling spike scoped in
   `docs/wrestling-scoping.md`

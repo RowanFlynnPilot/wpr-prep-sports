@@ -47,7 +47,7 @@ page.
 |---|---|---|---|---|
 | **Player of the Week** (editor override supported) | "POTW presented by ___" | `potw` | **Shipped** | Orthodontist, sports medicine clinic, athletic store, photo studio |
 | **Game of the Week** (marquee hero, per sport) | "GOTW presented by ___" | `marquee:<sport>` | **Shipped** (8 sport variants) | Auto dealer, supper club, pizza chain |
-| **Pick'em game** (predict weekly winners) | "Pick'em presented by ___" | `pickem` | **Shipped** (browser-local; leaderboard endpoint on the backlog) | Bank, credit union, insurance agent |
+| **Pick'em game** (predict weekly winners) | "Pick'em presented by ___" | `pickem` | **NOT SELLABLE** — built and complete, but switched off for the Aug 2026 launch via `SITE.features.pickem` in `frontend/src/config/site.js`. The `#/sponsor` media kit hides this row automatically while the switch is off, so a live rate card can never offer it. Flip the switch to true and it returns here and on the dashboard. | Bank, credit union, insurance agent |
 | **Game recaps / box scores** | "Game recap presented by ___" | `game-detail` | **Shipped** | Pharmacy, urgent care, restaurant |
 | **Power rankings** | "Power Rankings presented by ___" | `power-rankings` | **Shipped** | Auto dealer, athletic gear retailer |
 | **Live scores** (Friday Night Live cron, 10-min updates) | "Tonight presented by ___" | — (use `ticker`) | **Shipped** (data side) | Sports bar showing the games |
