@@ -20,7 +20,7 @@ export const SITE = {
   orgSportsUrl: "https://wausaupilotandreview.com/category/sports/",
   orgDomain: "wausaupilotandreview.com", // shown on OG share cards
   photoSubmitUrl: "https://wausaupilotandreview.com/submit-prep-sports-photo/",
-  contactEmail: "advertising@wausaupilotandreview.com", // VITE_SPONSOR_EMAIL overrides
+  contactEmail: "weber.chris@wausaupilotandreview.com", // VITE_SPONSOR_EMAIL overrides
   logoFile: "wpr-logo.png", // under frontend/public/
 
   // Widget identity — masthead renders `${titleLead} <em>${titleEm}</em>`

@@ -66,9 +66,17 @@ function isSameDay(a, b) {
 }
 
 /**
- * Pick the month to focus on given a list of games and the current date:
- * if the current month has games, use it. Otherwise jump to the
- * most-recent month with games.
+ * Pick the month the calendar opens on:
+ *   1. the current month, if it has games;
+ *   2. otherwise the SOONEST month ahead that has games;
+ *   3. otherwise the most recent month with games.
+ *
+ * Step 2 is the one that was missing. The old fallback went straight to the
+ * latest game in the dataset, which is right once a season has finished
+ * (land on the last month played rather than an empty grid) but wrong
+ * before one starts: in July, with a full schedule published, it skipped
+ * the whole season and opened on October — the month of the last game —
+ * so a reader looking for the opener had to page backwards to find it.
  */
 export function pickFocusMonth(games, now = new Date()) {
   const fallback = { year: now.getFullYear(), month: now.getMonth() };
@@ -76,18 +84,23 @@ export function pickFocusMonth(games, now = new Date()) {
 
   const currentYear = now.getFullYear();
   const currentMonth = now.getMonth();
-  const hasCurrent = games.some((g) => {
-    const d = new Date(g.date);
-    return d.getFullYear() === currentYear && d.getMonth() === currentMonth;
-  });
-  if (hasCurrent) return fallback;
+  // Compare on a year*12+month ordinal so December -> January is just +1
+  // and no month-boundary arithmetic is needed.
+  const nowOrd = currentYear * 12 + currentMonth;
 
-  // Most recent game's month.
-  const sorted = [...games].sort(
-    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
-  );
-  const latest = new Date(sorted[0].date);
-  return { year: latest.getFullYear(), month: latest.getMonth() };
+  const ords = games
+    .map((g) => {
+      const d = new Date(g.date);
+      return Number.isNaN(d.getTime()) ? null : d.getFullYear() * 12 + d.getMonth();
+    })
+    .filter((o) => o !== null);
+  if (ords.length === 0) return fallback;
+
+  if (ords.includes(nowOrd)) return fallback;
+
+  const upcoming = ords.filter((o) => o > nowOrd);
+  const target = upcoming.length > 0 ? Math.min(...upcoming) : Math.max(...ords);
+  return { year: Math.floor(target / 12), month: target % 12 };
 }
 
 /** Month names for the calendar header. */

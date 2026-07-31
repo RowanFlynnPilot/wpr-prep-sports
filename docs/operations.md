@@ -70,8 +70,10 @@ In-scraper guards (silent by design, they *prevent* damage):
 | Cloudflare account + KV namespace id | external | `pickem-api/wrangler.toml` | Pick'em worker | worker undeployed; see `pickem-api/README.md` |
 
 Not passed anywhere yet (build-time defaults apply): `VITE_BASE`
-(defaults to `/wpr-prep-sports/`), `VITE_SPONSOR_EMAIL` (defaults to WPR
-advertising), `VITE_DATA_BASE` (defaults to same-origin `data/`).
+(defaults to `/wpr-prep-sports/`), `VITE_SPONSOR_EMAIL` (defaults to
+`SITE.contactEmail` in `frontend/src/config/site.js` — set the repo
+variable only to point sponsorship mail somewhere else without a code
+change), `VITE_DATA_BASE` (defaults to same-origin `data/`).
 
 ## Incident runbook
 
