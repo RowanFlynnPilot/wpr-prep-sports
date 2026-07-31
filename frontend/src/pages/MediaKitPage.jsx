@@ -170,12 +170,54 @@ const PACKAGES = [
   { title: "Senior Night Special", note: "Late-season, senior families" },
 ];
 
+/* Inline SVG, not an icon font. These were written as <i class="ti ti-*">
+   against Tabler, but no Tabler stylesheet or @font-face was ever added, so
+   every one of them rendered as a zero-width empty element — the cards have
+   always been text-only. Inlining keeps the fix self-contained: no webfont
+   request for five glyphs, and nothing to break the way a missing font did.
+   Drawn on a 24x24 grid with a 1.75 stroke to sit right next to Oswald. */
+const WHY_ICONS = {
+  target: (
+    <>
+      <circle cx="12" cy="12" r="9" />
+      <circle cx="12" cy="12" r="5" />
+      <circle cx="12" cy="12" r="1.5" />
+    </>
+  ),
+  repeat: (
+    <>
+      <path d="M17 4l3 3-3 3" />
+      <path d="M20 7H9a5 5 0 0 0-5 5v1" />
+      <path d="M7 20l-3-3 3-3" />
+      <path d="M4 17h11a5 5 0 0 0 5-5v-1" />
+    </>
+  ),
+  shield: (
+    <>
+      <path d="M12 3l7 3v5.5c0 4.3-2.9 7.9-7 9.5-4.1-1.6-7-5.2-7-9.5V6z" />
+      <path d="M9 12l2.2 2.2L15.5 10" />
+    </>
+  ),
+  lock: (
+    <>
+      <rect x="4.5" y="10" width="15" height="10.5" rx="2.2" />
+      <path d="M8 10V7a4 4 0 0 1 8 0v3" />
+    </>
+  ),
+  chart: (
+    <>
+      <path d="M4 4v16h16" />
+      <path d="M7.5 15l3.5-4.2 3 2.4L19.5 8" />
+    </>
+  ),
+};
+
 const WHY = [
-  ["ti-target", "Hyper-targeted", "Parents, grandparents, alums, and students of specific schools."],
-  ["ti-refresh", "Highly engaged", "Repeat weekly visits in season — multiple per week at peak."],
-  ["ti-shield-check", "Brand-safe", "High school sports = community pride, never politics."],
-  ["ti-lock", "Local exclusivity", "Lock competitors out of your category."],
-  ["ti-chart-line", "Measurable", "Reportable impressions and per-sponsor click-throughs."],
+  ["target", "Hyper-targeted", "Parents, grandparents, alums, and students of specific schools."],
+  ["repeat", "Highly engaged", "Repeat weekly visits in season — multiple per week at peak."],
+  ["shield", "Brand-safe", "High school sports = community pride, never politics."],
+  ["lock", "Local exclusivity", "Lock competitors out of your category."],
+  ["chart", "Measurable", "Reportable impressions and per-sponsor click-throughs."],
 ];
 
 function isAvailable(slotData) {
@@ -262,8 +304,19 @@ export default function MediaKitPage() {
       <ul className="mk-why">
         {WHY.map(([icon, h, d]) => (
           <li key={h} className="mk-why__item">
-            <i className={`ti ${icon}`} aria-hidden="true" />
-            <div>
+            <span className="mk-why__icon" aria-hidden="true">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.75"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                {WHY_ICONS[icon]}
+              </svg>
+            </span>
+            <div className="mk-why__text">
               <span className="mk-why__h">{h}</span>
               <span className="mk-why__d">{d}</span>
             </div>

@@ -60,26 +60,119 @@
 .mk-btn--lg { font-size: 1rem; padding: 0.75rem 1.4rem; }
 
 /* Why-sponsor strip */
+/* Five is prime, so the column count has to be chosen rather than inferred.
+   auto-fit stranded the fifth card beside a card-sized hole; letting flex
+   items grow filled that hole but only by stretching one card the full
+   width, which is flush and still lopsided. So: explicit tracks, with the
+   final row's items widened to close it out. Every step is 5, 3+2, 2+2+1
+   or single file — four-across never happens, and no row is ever part
+   empty. */
+/* 3 + 2 on six tracks, so both rows divide exactly (3x2, then 2x3).
+   Not five across: .app caps at 1120px, which leaves each of five cards
+   about 206px — the copy drops to two or three words a line and the claims
+   stop scanning, which defeats the point of a card. Three-up gives ~350px
+   and the pair below ~535px, both comfortable, and the row of two reads as
+   a deliberate close rather than a leftover. */
 .mk-why {
   list-style: none;
   margin: 0 0 2.25rem;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  grid-template-columns: repeat(6, 1fr);
   gap: 0.75rem;
 }
 .mk-why__item {
-  display: flex;
-  gap: 0.6rem;
-  align-items: flex-start;
-  padding: 0.8rem;
-  background: var(--paper);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-sm);
+  grid-column: span 2;
 }
-.mk-why__item .ti { color: var(--accent); font-size: 1.25rem; flex: 0 0 auto; }
-.mk-why__h { display: block; font-weight: 700; font-size: 0.9rem; color: var(--ink); }
-.mk-why__d { display: block; font-size: 0.82rem; color: var(--muted); margin-top: 2px; }
+.mk-why__item:nth-child(n + 4) {
+  grid-column: span 3;
+}
+
+/* 2 + 2 + 1, the last one spanning both columns. */
+@media (max-width: 680px) {
+  .mk-why {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .mk-why__item,
+  .mk-why__item:nth-child(n + 4) {
+    grid-column: span 1;
+  }
+  .mk-why__item:nth-child(5) {
+    grid-column: span 2;
+  }
+}
+
+.mk-why__item {
+  display: flex;
+  gap: 0.7rem;
+  align-items: flex-start;
+  padding: 1rem 1rem 1.05rem;
+  background: var(--card);
+  border: 1px solid var(--line);
+  /* The accent edge is what makes these read as a set of claims rather than
+     five loose boxes — it lines them up and carries the brand red that the
+     rest of the page uses only on section rules. */
+  border-top: 3px solid var(--accent);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-lift);
+  transition: transform var(--t-fast) var(--ease), box-shadow var(--t-fast) var(--ease);
+}
+.mk-why__item:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hero);
+}
+
+/* Tinted disc behind the glyph. Gives the icon a fixed footprint so the
+   headings all start on the same x whatever the icon's own width. */
+.mk-why__icon {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+}
+.mk-why__icon svg {
+  width: 19px;
+  height: 19px;
+  display: block;
+}
+
+.mk-why__text {
+  min-width: 0;
+}
+.mk-why__h {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.98rem;
+  letter-spacing: 0.01em;
+  line-height: 1.25;
+  color: var(--ink);
+}
+.mk-why__d {
+  display: block;
+  font-size: 0.84rem;
+  line-height: 1.45;
+  color: var(--muted);
+  margin-top: 0.2rem;
+}
+
+@media (max-width: 520px) {
+  /* Single file on a phone: at two-up the copy breaks to three words a
+     line and the claims stop scanning. */
+  .mk-why {
+    grid-template-columns: 1fr;
+  }
+  .mk-why__item,
+  .mk-why__item:nth-child(n + 4),
+  .mk-why__item:nth-child(5) {
+    grid-column: span 1;
+  }
+}
 
 /* Inventory groups */
 .mk-group { margin-bottom: 2.25rem; }
