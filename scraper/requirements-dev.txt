@@ -1,3 +1,7 @@
 # Test/dev-only dependencies — CI installs this alongside requirements.txt
 # for the Tests workflow; the scrape workflows don't need it.
 pytest==8.4.1
+
+# Formatter/linter. Settings live in scraper/ruff.toml, so `ruff format` and
+# `ruff check` need no flags — see the note there about the 88-vs-100 trap.
+ruff==0.15.21

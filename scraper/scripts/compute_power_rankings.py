@@ -52,8 +52,7 @@ def main() -> int:
         ds = compute_power_rankings(ds, manifest=manifest, prev_rankings=prev)
         write_dataset(ds, DATA_DIR)
         top = ", ".join(
-            f"#{r.rank} {r.school_name} ({r.wins}-{r.losses})"
-            for r in ds.power_rankings[:5]
+            f"#{r.rank} {r.school_name} ({r.wins}-{r.losses})" for r in ds.power_rankings[:5]
         )
         print(f"[{sport}] {len(ds.power_rankings)} teams ranked. Top 5: {top}")
     return 0

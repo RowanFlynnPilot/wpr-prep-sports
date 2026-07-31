@@ -22,7 +22,7 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(REPO_ROOT / "scraper"))
 
-from models.schema import Dataset, Game, GameStatus, Meta, SeasonStat, Sport  # noqa: E402
+from models.schema import Dataset, Game, Meta, SeasonStat, Sport  # noqa: E402
 from transform.stats import aggregate_volleyball_season_stats  # noqa: E402
 
 DATA_DIR = REPO_ROOT / "data" / "volleyball"
@@ -31,7 +31,6 @@ DATA_DIR = REPO_ROOT / "data" / "volleyball"
 def main() -> int:
     games_path = DATA_DIR / "games.json"
     season_path = DATA_DIR / "season_stats.json"
-    meta_path = DATA_DIR / "meta.json"
 
     if not games_path.exists():
         print(f"missing {games_path}")

@@ -61,14 +61,20 @@ def refresh(sport: str, console: Console, manifest) -> bool:
 
     name_to_id = build_name_index_for_manifest(manifest)
     ds = merge_maxpreps_stats(
-        ds, manifest=manifest, name_to_id=name_to_id,
-        season=ds.meta.season, console=console,
+        ds,
+        manifest=manifest,
+        name_to_id=name_to_id,
+        season=ds.meta.season,
+        console=console,
     )
     if sport == "volleyball":
         ds = aggregate_volleyball_season_stats(ds, console=console)
     prev = load_prev_rankings(sport, DATA_DIR)
     ds = compute_power_rankings(
-        ds, manifest=manifest, prev_rankings=prev, console=console,
+        ds,
+        manifest=manifest,
+        prev_rankings=prev,
+        console=console,
     )
     write_dataset(ds, DATA_DIR)
     console.print(f"[green]{sport}: refreshed[/green]")

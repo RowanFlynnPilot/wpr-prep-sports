@@ -97,7 +97,9 @@ def categories_for(sport_abbr: str, slug: str) -> list[tuple[str, list[str]]]:
         keys: list[str] = []
         for th in table.select("thead th"):
             a = th.find("a")
-            label = (a.get_text(strip=True) if a and a.get_text(strip=True) else th.get_text(strip=True))
+            label = (
+                a.get_text(strip=True) if a and a.get_text(strip=True) else th.get_text(strip=True)
+            )
             keys.append(label)
         out.append((title, keys))
     return out

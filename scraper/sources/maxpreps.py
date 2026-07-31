@@ -25,7 +25,6 @@ from __future__ import annotations
 
 import re
 from dataclasses import dataclass
-from typing import Iterable
 
 import httpx
 from bs4 import BeautifulSoup
@@ -42,11 +41,12 @@ USER_AGENT = (
 @dataclass(frozen=True)
 class MaxPrepsGame:
     """One row from a team's match-history page."""
-    box_score_url: str   # absolute
-    date: str            # YYYY-MM-DD
+
+    box_score_url: str  # absolute
+    date: str  # YYYY-MM-DD
     opponent: str
-    home: bool           # True if this team was home, False if away
-    result: str | None   # "W 3-1", "L 0-3" — set wins/losses
+    home: bool  # True if this team was home, False if away
+    result: str | None  # "W 3-1", "L 0-3" — set wins/losses
 
 
 @dataclass(frozen=True)
@@ -55,11 +55,12 @@ class StatLine:
 
     Shape mirrors `bound.StatLine` so the merge layer can stay shared.
     """
-    team_name: str          # team this player plays for (as displayed by MP)
-    category: str           # canonical: "Kills" | "Digs" | "Total Blocks" | "Assists" | "Serve Aces"
+
+    team_name: str  # team this player plays for (as displayed by MP)
+    category: str  # canonical: "Kills" | "Digs" | "Total Blocks" | "Assists" | "Serve Aces"
     player_name: str
-    player_year: str | None # "SR" | "JR" | "SO" | "FR" | None
-    stats: dict[str, str]   # raw label → value
+    player_year: str | None  # "SR" | "JR" | "SO" | "FR" | None
+    stats: dict[str, str]  # raw label → value
 
 
 @dataclass(frozen=True)
@@ -67,6 +68,7 @@ class BoxScore:
     """Bundles everything we extract from one MaxPreps box-score URL —
     per-player stat lines plus the team-level set-by-set scores. Both
     pieces come from the same page, so one HTTP fetch produces both."""
+
     stat_lines: list[StatLine]
     # Set-by-set scores keyed by MP-rendered team name. Empty when the
     # box score didn't surface a Score by Period table (rare).
@@ -145,7 +147,9 @@ def auto_slug_candidates(school) -> list[str]:
     city = _slug(school.city or "")
     name = _slug(school.name or "")
     name_compact = _slug_collapse_initials(school.name or "")
-    full = _slug((school.full_name or "").replace("High School", "").replace("Senior High", "").strip())
+    full = _slug(
+        (school.full_name or "").replace("High School", "").replace("Senior High", "").strip()
+    )
     full_compact = _slug_collapse_initials(
         (school.full_name or "").replace("High School", "").replace("Senior High", "").strip()
     )
@@ -162,7 +166,7 @@ def auto_slug_candidates(school) -> list[str]:
 
     city_variants: list[str] = [city] if city else []
     if city.endswith("-city"):
-        city_variants.append(city[:-len("-city")])
+        city_variants.append(city[: -len("-city")])
     if " " in (school.city or ""):
         first = _slug((school.city or "").split()[0])
         if first and first not in city_variants:
@@ -237,11 +241,11 @@ def discover_slug(school, sport_path: str = "volleyball") -> str | None:
 
 
 _BOX_SCORE_RE = re.compile(
-    r'https?://www\.maxpreps\.com/games/'
-    r'(?P<m>\d{1,2})-(?P<d>\d{1,2})-(?P<y>\d{4})/'
-    r'[a-z0-9-]+/'  # sport-yy, e.g. "volleyball-25" (digits in the year suffix)
-    r'(?P<away>[a-z0-9-]+)-vs-(?P<home>[a-z0-9-]+)\.htm'
-    r'\?c=(?P<token>[A-Za-z0-9_-]+)'
+    r"https?://www\.maxpreps\.com/games/"
+    r"(?P<m>\d{1,2})-(?P<d>\d{1,2})-(?P<y>\d{4})/"
+    r"[a-z0-9-]+/"  # sport-yy, e.g. "volleyball-25" (digits in the year suffix)
+    r"(?P<away>[a-z0-9-]+)-vs-(?P<home>[a-z0-9-]+)\.htm"
+    r"\?c=(?P<token>[A-Za-z0-9_-]+)"
 )
 
 
@@ -318,11 +322,11 @@ def _unslug(s: str) -> str:
 # real box score.
 _CATEGORY_FROM_HEADER_BY_SPORT: dict[str, dict[str, tuple[str, str]]] = {
     "volleyball": {
-        "Attacking":     ("Kills",        "K"),
-        "Serving":       ("Serve Aces",   "A"),
-        "Blocking":      ("Total Blocks", "Tot Blks"),
-        "Digging":       ("Digs",         "D"),
-        "Ball Handling": ("Assists",      "Ast"),
+        "Attacking": ("Kills", "K"),
+        "Serving": ("Serve Aces", "A"),
+        "Blocking": ("Total Blocks", "Tot Blks"),
+        "Digging": ("Digs", "D"),
+        "Ball Handling": ("Assists", "Ast"),
         # Serve Receiving deliberately omitted — receptions don't slot
         # into our existing "leader" schema.
     },
@@ -330,18 +334,18 @@ _CATEGORY_FROM_HEADER_BY_SPORT: dict[str, dict[str, tuple[str, str]]] = {
         # MaxPreps' All Purpose Yards table has Rush/Rec/KR/PR/IR/Total
         # — we lift Rec out of it as a receiving leader since MP doesn't
         # publish a dedicated Receiving table.
-        "Passing":            ("Passing Yards",   "Yds"),
-        "Rushing":            ("Rushing Yards",   "Yds"),
-        "All Purpose Yards":  ("Receiving Yards", "Rec"),
-        "Tackles":            ("Total Tackles",   "Tot Tckls"),
+        "Passing": ("Passing Yards", "Yds"),
+        "Rushing": ("Rushing Yards", "Yds"),
+        "All Purpose Yards": ("Receiving Yards", "Rec"),
+        "Tackles": ("Total Tackles", "Tot Tckls"),
     },
     "basketball": {
         # "Shooting" carries Pts + FG splits; "Totals" carries
         # Reb/Ast/Stl/Blk/TO/PF — we map both into our existing
         # Points/Rebounds leader categories. MP uses one `basketball`
         # URL path for both genders; ssid disambiguates.
-        "Shooting":  ("Points",   "Pts"),
-        "Totals":    ("Rebounds", "Reb"),
+        "Shooting": ("Points", "Pts"),
+        "Totals": ("Rebounds", "Reb"),
     },
 }
 
@@ -350,7 +354,9 @@ def _category_map_for(sport_path: str) -> dict[str, tuple[str, str]]:
     """Return the header→(category, leader_key) map for a sport, falling
     back to volleyball's for back-compat with callers that don't pass a
     sport (none in tree, but defensive)."""
-    return _CATEGORY_FROM_HEADER_BY_SPORT.get(sport_path, _CATEGORY_FROM_HEADER_BY_SPORT["volleyball"])
+    return _CATEGORY_FROM_HEADER_BY_SPORT.get(
+        sport_path, _CATEGORY_FROM_HEADER_BY_SPORT["volleyball"]
+    )
 
 
 _ATHLETE_RE = re.compile(r"^(?P<name>.+?)\((?P<year>\w{1,3})\)$")
@@ -561,18 +567,18 @@ def _parse_box_table(
 # always lands.
 _CANON_KEY = {
     # Volleyball.
-    "Kills":          "KLS",
-    "Assists":        "AST",
-    "Digs":           "DIG",
-    "Total Blocks":   "BLK",
-    "Serve Aces":     "ACE",
+    "Kills": "KLS",
+    "Assists": "AST",
+    "Digs": "DIG",
+    "Total Blocks": "BLK",
+    "Serve Aces": "ACE",
     # Football — matches Bound's per-game keys.
-    "Passing Yards":  "YDS",
-    "Rushing Yards":  "YDS",
+    "Passing Yards": "YDS",
+    "Rushing Yards": "YDS",
     "Receiving Yards": "YDS",
-    "Total Tackles":  "TKL",
+    "Total Tackles": "TKL",
     # Basketball.
-    "Points":   "PTS",
+    "Points": "PTS",
     "Rebounds": "RBD",
 }
 
@@ -588,7 +594,14 @@ _EXTRA_CANON_BY_CATEGORY: dict[str, dict[str, str]] = {
     "Receiving Yards": {"TDS": "TD"},
     "Total Tackles": {"SOLO": "Solo", "AST": "Asst"},
     "Points": {"FGM": "FGM", "FGA": "FGA", "FT_PCT": "FT%", "FG_PCT": "FG%", "MIN": "Min"},
-    "Rebounds": {"OREB": "OReb", "DREB": "DReb", "AST": "Ast", "STL": "Stl", "BLK_BB": "Blk", "TO": "TO"},
+    "Rebounds": {
+        "OREB": "OReb",
+        "DREB": "DReb",
+        "AST": "Ast",
+        "STL": "Stl",
+        "BLK_BB": "Blk",
+        "TO": "TO",
+    },
 }
 
 

@@ -11,7 +11,6 @@ Usage:
 
 from __future__ import annotations
 
-import json
 import sys
 from pathlib import Path
 
@@ -32,8 +31,16 @@ def main() -> int:
         games = load_full_games_raw(sport_dir)
         _write_split_games(sport_dir, games)
         after = games_path.stat().st_size
-        n_box = len(list((sport_dir / "boxscores").glob("*.json"))) if (sport_dir / "boxscores").exists() else 0
-        n_players = len(list((sport_dir / "players").glob("*.json"))) if (sport_dir / "players").exists() else 0
+        n_box = (
+            len(list((sport_dir / "boxscores").glob("*.json")))
+            if (sport_dir / "boxscores").exists()
+            else 0
+        )
+        n_players = (
+            len(list((sport_dir / "players").glob("*.json")))
+            if (sport_dir / "players").exists()
+            else 0
+        )
         print(
             f"{sport_dir.name}: games.json {before / 1e6:.1f}MB -> {after / 1e6:.2f}MB | "
             f"{n_box} boxscores | {n_players} player files"

@@ -63,8 +63,7 @@ def main() -> int:
         elif len(sids) == 1:
             one_side += 1
     print(
-        f"\nCoverage: {two_side} games have BOTH teams' stats | "
-        f"{one_side} games have only one team"
+        f"\nCoverage: {two_side} games have BOTH teams' stats | {one_side} games have only one team"
     )
 
     # 3. DCE-Mosinee 8/26 specific
@@ -88,29 +87,18 @@ def main() -> int:
     # 4. Mosinee 8/26 tournament audit
     print("\nMosinee 8/26 tournament:")
     for g in games:
-        if (
-            g["date"].startswith("2025-08-26")
-            and (
-                g["home"].get("school_id") == "mosinee"
-                or g["away"].get("school_id") == "mosinee"
-            )
+        if g["date"].startswith("2025-08-26") and (
+            g["home"].get("school_id") == "mosinee" or g["away"].get("school_id") == "mosinee"
         ):
             sets = g.get("set_scores") or []
             sids = Counter(
-                (line.get("team_school_id") or "?")
-                for line in (g.get("stat_leaders") or [])
+                (line.get("team_school_id") or "?") for line in (g.get("stat_leaders") or [])
             )
             opp = (
-                g["away"]["name"]
-                if g["home"].get("school_id") == "mosinee"
-                else g["home"]["name"]
+                g["away"]["name"] if g["home"].get("school_id") == "mosinee" else g["home"]["name"]
             )
-            sets_str = (
-                ", ".join(f"{s['away']}-{s['home']}" for s in sets) or "(none)"
-            )
-            print(
-                f"  vs {opp:30} sets=[{sets_str}] lines_per_team={dict(sids)}"
-            )
+            sets_str = ", ".join(f"{s['away']}-{s['home']}" for s in sets) or "(none)"
+            print(f"  vs {opp:30} sets=[{sets_str}] lines_per_team={dict(sids)}")
 
     # 5. Daelyn Rieck per-game audit — should be ONE Kills line per
     # game (not doubled).
@@ -119,10 +107,7 @@ def main() -> int:
     per_game_cats = defaultdict(list)
     for g in mp_games:
         for line in g.get("stat_leaders") or []:
-            if (
-                line.get("team_school_id") == "colby"
-                and line.get("player_name") == "Daelyn Rieck"
-            ):
+            if line.get("team_school_id") == "colby" and line.get("player_name") == "Daelyn Rieck":
                 per_game[g["id"]] += 1
                 per_game_cats[g["id"]].append(line.get("category"))
     n_dup_games = 0

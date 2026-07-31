@@ -56,8 +56,11 @@ def main() -> int:
 
     name_to_id = build_name_index_for_manifest(manifest)
     ds = merge_maxpreps_stats(
-        ds, manifest=manifest, name_to_id=name_to_id,
-        season=ds.meta.season, console=console,
+        ds,
+        manifest=manifest,
+        name_to_id=name_to_id,
+        season=ds.meta.season,
+        console=console,
     )
     ds = aggregate_volleyball_season_stats(ds, console=console)
     prev = load_prev_rankings("volleyball", DATA_DIR)

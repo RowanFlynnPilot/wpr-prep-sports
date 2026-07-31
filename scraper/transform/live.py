@@ -16,14 +16,11 @@ to in_progress or scheduled. Live data only fills in or upgrades.
 from __future__ import annotations
 
 import re
-import sys
-from typing import Optional
 
 from rich.console import Console
 
-from models.schema import Dataset, Game, GameStatus
+from models.schema import Dataset, GameStatus
 from sources import halftime
-from transform.normalize import build_name_index_for_manifest
 from config.loader import Manifest
 
 
@@ -71,7 +68,10 @@ def merge_live_scores(
         iso = r.date.strftime("%Y-%m-%d")
         pair_index[(iso, frozenset({_norm(r.home_name), _norm(r.away_name)}))] = r
 
-    name_to_id = build_name_index_for_manifest(manifest)
+    # `manifest` stays on the signature — six call sites, and an alias-aware
+    # re-check is the obvious future need — but nothing reads it now: the
+    # name index it built each run only ever fed a redundant check (see the
+    # side-ordering note in the loop below).
     updated_in_progress = 0
     updated_final = 0
 
@@ -93,24 +93,15 @@ def merge_live_scores(
         if _STATUS_RANK[game.status] > _STATUS_RANK[live_status]:
             continue
 
-        # Resolve which live cell corresponds to home vs away on our side.
-        # halftime returns home/away keyed to WIAA's column order, which
-        # uses the same home_name/away_name as our schedule scrape — but
-        # spellings can differ. Verify via name_to_id alias resolution.
-        live_home_id = name_to_id.get(_norm(live.home_name), "")
-        live_away_id = name_to_id.get(_norm(live.away_name), "")
-        sides_match = (
-            live_home_id == game.home.school_id and live_away_id == game.away.school_id
-        ) or (
-            _norm(live.home_name) == _norm(game.home.name)
-            and _norm(live.away_name) == _norm(game.away.name)
-        )
-        # Sides may also be reversed due to WIAA inconsistencies. Detect
-        # and swap scores.
-        sides_reversed = (
-            _norm(live.home_name) == _norm(game.away.name)
-            and _norm(live.away_name) == _norm(game.home.name)
-        )
+        # Which live cell is home and which is away? pair_index is keyed on a
+        # frozenset, so reaching here already proves these are the right two
+        # teams — only their ORDER is open, and exactly one of the two
+        # orderings must hold. Detecting "reversed" therefore settles it on
+        # its own; a matching "sides match" test would be its provable
+        # complement, which is why one used to sit here doing nothing.
+        sides_reversed = _norm(live.home_name) == _norm(game.away.name) and _norm(
+            live.away_name
+        ) == _norm(game.home.name)
 
         if live_status == GameStatus.IN_PROGRESS:
             game.status = GameStatus.IN_PROGRESS

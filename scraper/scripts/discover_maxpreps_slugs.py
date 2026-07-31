@@ -32,6 +32,7 @@ MANIFEST_PATH = REPO_ROOT / "config" / "schools.json"
 class _StubSchool:
     """Minimal stand-in for sources/maxpreps.py's discover_slug interface —
     we don't want to depend on config.loader's dataclass machinery here."""
+
     id: str
     name: str
     full_name: str
@@ -59,7 +60,8 @@ def main() -> int:
         raw = json.load(f)
     schools_raw = raw["schools"]
     targets = [
-        s for s in schools_raw
+        s
+        for s in schools_raw
         if any(c.get("sport") == args.sport for c in (s.get("conferences") or []))
     ]
     print(f"Considering {len(targets)} schools playing {args.sport}")
@@ -98,9 +100,7 @@ def main() -> int:
     with MANIFEST_PATH.open("w", encoding="utf-8") as f:
         json.dump(raw, f, indent=2)
         f.write("\n")
-    print(
-        f"\nFilled: {filled} | unchanged: {unchanged} | missing: {missed}"
-    )
+    print(f"\nFilled: {filled} | unchanged: {unchanged} | missing: {missed}")
     if missed:
         print(
             "\nMissing schools need a manual `maxpreps_slug` value in "

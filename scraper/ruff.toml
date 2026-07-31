@@ -1,0 +1,19 @@
+# Formatting/lint settings for the scraper.
+#
+# CLAUDE.md has documented "format Python with ruff format (line length 100)"
+# since the project started, but nothing pinned it, so the setting lived only
+# in whatever `--line-length 100` anyone remembered to type. Ruff's own
+# default is 88, which meant a plain `ruff format scraper` reformatted the
+# whole tree against the documented convention — and 20 of 49 files had
+# already drifted apart that way.
+#
+# Pinning it here makes the convention real: `ruff format` and `ruff check`
+# now do the documented thing with no flags, from any working directory
+# inside scraper/.
+line-length = 100
+target-version = "py311"
+
+[format]
+# Ruff's default, stated explicitly so a future default change can't quietly
+# rewrite every file.
+quote-style = "double"

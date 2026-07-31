@@ -60,9 +60,7 @@ def main() -> int:
             continue
         if any(c.sport == "boys_hockey" for c in school.conferences):
             continue
-        school.conferences.append(
-            ConferenceMembership(sport="boys_hockey", conference=target)
-        )
+        school.conferences.append(ConferenceMembership(sport="boys_hockey", conference=target))
         added += 1
         print(f"  + {school.id} -> {target}")
     if added == 0:

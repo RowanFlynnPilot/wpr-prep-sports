@@ -184,8 +184,7 @@ def main() -> int:
         console.print(f"      {len(sched['games'])} games")
 
     console.print(
-        f"Team discovery: {len(raw_schedules)}/{len(targets)} schools have "
-        f"a {args.sport} team"
+        f"Team discovery: {len(raw_schedules)}/{len(targets)} schools have a {args.sport} team"
     )
     if not raw_schedules and not school_failures:
         # Legitimate only in preseason, before WIAA mints the new season's

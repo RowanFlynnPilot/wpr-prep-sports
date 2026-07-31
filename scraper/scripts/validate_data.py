@@ -120,8 +120,11 @@ def validate_sport(sport_dir: Path) -> list[str]:
         if declared is not None and declared != len(full):
             mismatches += 1
         keys = {
-            (l.get("team_school_id") or l.get("team_name") or "", l.get("category") or "")
-            for l in full
+            (
+                line.get("team_school_id") or line.get("team_name") or "",
+                line.get("category") or "",
+            )
+            for line in full
         }
         for h in s.get("headline_stats") or []:
             hk = (h.get("team_school_id") or h.get("team_name") or "", h.get("category") or "")
@@ -138,15 +141,15 @@ def validate_sport(sport_dir: Path) -> list[str]:
     for g in games:
         seen = Counter()
         names = (g["home"]["name"], g["away"]["name"])
-        for l in g.get("stat_leaders") or []:
+        for line in g.get("stat_leaders") or []:
             seen[
                 (
-                    l.get("team_school_id") or l.get("team_name"),
-                    l.get("player_name"),
-                    l.get("category"),
+                    line.get("team_school_id") or line.get("team_name"),
+                    line.get("player_name"),
+                    line.get("category"),
                 )
             ] += 1
-            tn = l.get("team_name") or ""
+            tn = line.get("team_name") or ""
             # Tolerant compare — "St. Mary Catholic" (MaxPreps) on a
             # "Saint Mary Catholic" (WIAA) game is the same school, not
             # a misattached line.

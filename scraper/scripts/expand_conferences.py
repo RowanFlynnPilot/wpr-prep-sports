@@ -217,8 +217,7 @@ NEW_SCHOOLS: list[dict] = [
 
 def _has_membership(school: dict, sport: str, conference: str) -> bool:
     return any(
-        c["sport"] == sport and c["conference"] == conference
-        for c in school.get("conferences", [])
+        c["sport"] == sport and c["conference"] == conference for c in school.get("conferences", [])
     )
 
 
@@ -234,9 +233,7 @@ def main() -> int:
             continue
         if _has_membership(school, sport, conf):
             continue
-        school.setdefault("conferences", []).append(
-            {"sport": sport, "conference": conf}
-        )
+        school.setdefault("conferences", []).append({"sport": sport, "conference": conf})
         added_memberships += 1
         print(f"  + {sid} -> {sport} / {conf}")
 

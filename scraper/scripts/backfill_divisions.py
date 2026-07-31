@@ -149,8 +149,7 @@ def collect_divisions(season: str, *, delay: float = 0.4) -> dict[str, dict[str,
         season_brackets = catalog.get(season)
         if not season_brackets:
             raise RuntimeError(
-                f"No '{season}' entry in brackets-data.js "
-                f"(have: {sorted(catalog)[-4:]})"
+                f"No '{season}' entry in brackets-data.js (have: {sorted(catalog)[-4:]})"
             )
 
         divisions: dict[str, dict[str, str]] = {}

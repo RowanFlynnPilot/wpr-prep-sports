@@ -69,13 +69,31 @@ def teams_on_conference(conf_id: int, subseason: int) -> list[tuple[int, str]]:
         if pid == conf_id or pid in seen_ids:
             continue
         # Skip the parent/season root and obvious non-team pages.
-        if slug in {"news", "calendar", "varsity-stat-leaders", "out-of-state-teams",
-                    "other", "wisconsin-valley", "great-northern", "big-rivers",
-                    "badger", "badgerland", "big-eight", "classic-eight",
-                    "fox-river-classic", "middle-border", "north-shore",
-                    "independents", "boys-2025-2026-", "girls-2025-2026-",
-                    "western-wisc", "submit-scores", "search-wisconsin-prep-hockey",
-                    "seniors", "information"}:
+        if slug in {
+            "news",
+            "calendar",
+            "varsity-stat-leaders",
+            "out-of-state-teams",
+            "other",
+            "wisconsin-valley",
+            "great-northern",
+            "big-rivers",
+            "badger",
+            "badgerland",
+            "big-eight",
+            "classic-eight",
+            "fox-river-classic",
+            "middle-border",
+            "north-shore",
+            "independents",
+            "boys-2025-2026-",
+            "girls-2025-2026-",
+            "western-wisc",
+            "submit-scores",
+            "search-wisconsin-prep-hockey",
+            "seniors",
+            "information",
+        }:
             continue
         seen_ids.add(pid)
         out.append((pid, slug))

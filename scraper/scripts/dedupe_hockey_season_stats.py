@@ -29,7 +29,12 @@ def main() -> int:
         best: dict[tuple, dict] = {}
         order: list[tuple] = []
         for r in rows:
-            key = (r.get("school_id"), r.get("player_name"), r.get("jersey") or "", r.get("category"))
+            key = (
+                r.get("school_id"),
+                r.get("player_name"),
+                r.get("jersey") or "",
+                r.get("category"),
+            )
             try:
                 gp = int((r.get("stats") or {}).get("GP", "0") or "0")
             except (ValueError, TypeError):

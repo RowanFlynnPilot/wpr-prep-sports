@@ -42,6 +42,7 @@ class Sport(str, Enum):
 
 class ConferenceMembership(BaseModel):
     """A school may belong to different conferences for different sports."""
+
     sport: Sport
     conference: str  # e.g. "Wisconsin Valley", "Marawood South", "VFA"
 
@@ -54,7 +55,9 @@ class School(BaseModel):
     city: str
     colors: list[str] = Field(default_factory=list)
     conferences: list[ConferenceMembership] = Field(default_factory=list)
-    wiaa_division: dict[str, str] = Field(default_factory=dict)  # sport -> division ("D1", "D5", etc.)
+    wiaa_division: dict[str, str] = Field(
+        default_factory=dict
+    )  # sport -> division ("D1", "D5", etc.)
     athletics_url: Optional[str] = None
 
 
@@ -67,26 +70,30 @@ class TeamScore(BaseModel):
 
 class StatLine(BaseModel):
     """One stat-leader line for a finalized game (Bound-sourced)."""
-    team_school_id: str           # resolved into our manifest, "" if opponent we don't track
-    team_name: str                # raw display name as Bound rendered it
-    category: str                 # "Passing Yards" | "Rushing Yards" | "Receiving Yards" | "Total Tackles"
+
+    team_school_id: str  # resolved into our manifest, "" if opponent we don't track
+    team_name: str  # raw display name as Bound rendered it
+    category: str  # "Passing Yards" | "Rushing Yards" | "Receiving Yards" | "Total Tackles"
     player_name: str
     player_year: Optional[str] = None  # "SR", "JR", "SO", "FR", or null
-    position: Optional[str] = None     # source-supplied position, e.g. hockey "F"/"D"/"G"
+    position: Optional[str] = None  # source-supplied position, e.g. hockey "F"/"D"/"G"
     stats: dict[str, str] = Field(default_factory=dict)  # raw labels → values, e.g. {"YDS": "197"}
 
 
 class Goal(BaseModel):
     """One goal entry in a hockey game's scoring summary (WPH-sourced)."""
-    period: str                       # "1st" | "2nd" | "3rd" | "OT" | "SO"
-    time: str                         # game clock at goal, e.g. "0:58"
-    team_school_id: str               # resolved to manifest school, "" if untracked
-    team_name: str                    # WIAA-rendered side name (matches game.home/away.name)
+
+    period: str  # "1st" | "2nd" | "3rd" | "OT" | "SO"
+    time: str  # game clock at goal, e.g. "0:58"
+    team_school_id: str  # resolved to manifest school, "" if untracked
+    team_name: str  # WIAA-rendered side name (matches game.home/away.name)
     scorer_jersey: Optional[str] = None
     scorer_name: str
-    strength: str = "even strength"   # "even strength" | "power play" | "shorthanded" | "empty net"
-    assists: list[dict[str, Optional[str]]] = Field(default_factory=list)  # [{"jersey": "10", "name": "Chase Crass"}]
-    away_score: int                   # running score after this goal
+    strength: str = "even strength"  # "even strength" | "power play" | "shorthanded" | "empty net"
+    assists: list[dict[str, Optional[str]]] = Field(
+        default_factory=list
+    )  # [{"jersey": "10", "name": "Chase Crass"}]
+    away_score: int  # running score after this goal
     home_score: int
 
 
@@ -102,8 +109,10 @@ class Game(BaseModel):
     conference_game: bool = False  # True if WIAA marked the row with "(C)"
     venue: Optional[str] = None
     sources: list[str] = Field(default_factory=list)  # ["bound", "wiaa"]
-    playoff: bool = False                     # True if this is a WIAA tournament game
-    playoff_round: Optional[str] = None       # "Level 1" | "Level 2" | "Level 3" | "Level 4" | "State Semifinal" | "State Championship"
+    playoff: bool = False  # True if this is a WIAA tournament game
+    playoff_round: Optional[str] = (
+        None  # "Level 1" | "Level 2" | "Level 3" | "Level 4" | "State Semifinal" | "State Championship"
+    )
     stat_leaders: list[StatLine] = Field(default_factory=list)  # populated by Bound
     scoring: list[Goal] = Field(default_factory=list)  # hockey-only — populated by WPH
     # Volleyball set-by-set scores ([{away: 25, home: 22}, ...]) sourced
@@ -133,12 +142,13 @@ class Standing(BaseModel):
 
 class SeasonStat(BaseModel):
     """One athlete's season totals in one category for one team (Bound-sourced)."""
+
     school_id: str
     sport: Sport
-    category: str                       # "Passing" | "Rushing" | "Receiving" | "Defense"
+    category: str  # "Passing" | "Rushing" | "Receiving" | "Defense"
     player_name: str
-    player_year: Optional[str] = None   # "SR" | "JR" | "SO" | "FR"
-    position: Optional[str] = None      # source-supplied position, e.g. hockey "F"/"D"/"G"
+    player_year: Optional[str] = None  # "SR" | "JR" | "SO" | "FR"
+    position: Optional[str] = None  # source-supplied position, e.g. hockey "F"/"D"/"G"
     jersey: Optional[str] = None
     stats: dict[str, str] = Field(default_factory=dict)  # column header → value
 
@@ -150,15 +160,16 @@ class PowerRanking(BaseModel):
     Components are surfaced so a reader can see *why* a team is ranked
     where it is. `score` is the combined 0-100 value used for ordering.
     """
+
     rank: int
     school_id: str
     school_name: str
     wins: int
     losses: int
-    win_pct: float            # 0..1
-    sos: float                # 0..1, avg opponent W% (tracked opponents only)
+    win_pct: float  # 0..1
+    sos: float  # 0..1, avg opponent W% (tracked opponents only)
     avg_margin_capped: float  # in score-units (points/sets/goals)
-    score: float              # 0..100 combined index
+    score: float  # 0..100 combined index
     movement: Optional[int] = None  # change vs last published ranking (future use)
 
 

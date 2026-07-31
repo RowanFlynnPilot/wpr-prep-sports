@@ -93,11 +93,15 @@ def main() -> int:
             json.dumps(games, indent=2, ensure_ascii=False) + "\n",
             encoding="utf-8",
         )
-        print(f"{games_path.relative_to(repo_root)}: backfilled {updated} field(s) across {len(games)} games")
+        print(
+            f"{games_path.relative_to(repo_root)}: backfilled {updated} field(s) across {len(games)} games"
+        )
         total_updated += updated
         total_games += len(games)
 
-    print(f"Total: {total_updated} field(s) across {total_games} games in {len(games_paths)} file(s)")
+    print(
+        f"Total: {total_updated} field(s) across {total_games} games in {len(games_paths)} file(s)"
+    )
     return 0
 
 

@@ -19,12 +19,11 @@ with #1.
 
 from __future__ import annotations
 
-from typing import Iterable
 
 from rich.console import Console
 
 from config.loader import Manifest
-from models.schema import Dataset, Game, GameStatus, PowerRanking, Sport
+from models.schema import Dataset, GameStatus, PowerRanking, Sport
 
 # Per-sport caps on the margin component so a single 70-0 football game
 # or a 3-0 volleyball sweep doesn't drown out a season of close wins.
@@ -33,7 +32,7 @@ MARGIN_CAPS: dict[Sport, int] = {
     Sport.FOOTBALL: 28,
     Sport.BOYS_BASKETBALL: 25,
     Sport.GIRLS_BASKETBALL: 25,
-    Sport.VOLLEYBALL: 3,       # set differential
+    Sport.VOLLEYBALL: 3,  # set differential
     Sport.BOYS_HOCKEY: 5,
     Sport.GIRLS_HOCKEY: 5,
 }
@@ -139,11 +138,7 @@ def compute_power_rankings(
     # that played mostly untracked opponents fall back to .500 so the
     # weight doesn't go to zero.
     for t in teams.values():
-        opp_pcts = [
-            teams[o]["win_pct"]
-            for o in t["opponents"]
-            if o and o in teams
-        ]
+        opp_pcts = [teams[o]["win_pct"] for o in t["opponents"] if o and o in teams]
         t["sos"] = sum(opp_pcts) / len(opp_pcts) if opp_pcts else 0.5
 
     # Pass 3: avg capped margin + final score.
@@ -153,9 +148,7 @@ def compute_power_rankings(
         # Normalize margin to 0..1 against the cap window (-cap..+cap).
         margin_norm = (avg_margin + cap) / (2 * cap)
         score = 100.0 * (
-            t["win_pct"] * WEIGHT_WIN_PCT
-            + t["sos"] * WEIGHT_SOS
-            + margin_norm * WEIGHT_MARGIN
+            t["win_pct"] * WEIGHT_WIN_PCT + t["sos"] * WEIGHT_SOS + margin_norm * WEIGHT_MARGIN
         )
         out.append(
             PowerRanking(
@@ -173,9 +166,7 @@ def compute_power_rankings(
 
     # Sort + assign ranks. Ties: score desc, then W% desc, then SOS
     # desc, then name asc — deterministic so re-runs don't shuffle.
-    out.sort(
-        key=lambda r: (-r.score, -r.win_pct, -r.sos, r.school_name)
-    )
+    out.sort(key=lambda r: (-r.score, -r.win_pct, -r.sos, r.school_name))
     for i, r in enumerate(out, 1):
         r.rank = i
 

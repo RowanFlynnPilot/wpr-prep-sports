@@ -253,9 +253,7 @@ def load_prev_rankings(sport: str, out_dir: Path) -> dict | None:
         return None
 
 
-_POWER_RANKINGS_METHOD = (
-    "WPR Power Index v1: 40% W%, 35% SOS, 25% margin (capped per sport)"
-)
+_POWER_RANKINGS_METHOD = "WPR Power Index v1: 40% W%, 35% SOS, 25% margin (capped per sport)"
 
 
 def _write_json(path: Path, data: object, compact: bool = False) -> None:
@@ -276,7 +274,14 @@ def read_dataset(sport: str, out_dir: Path) -> Dataset | None:
     exist (e.g. a sport that hasn't been scraped yet); used by the
     --live fast path which only updates existing data, never seeds it.
     """
-    from models.schema import Game, Meta, PowerRanking, School, SeasonStat, Standing  # local import to avoid cycles
+    from models.schema import (
+        Game,
+        Meta,
+        PowerRanking,
+        School,
+        SeasonStat,
+        Standing,
+    )  # local import to avoid cycles
 
     sport_dir = out_dir / sport
     if not sport_dir.exists():
