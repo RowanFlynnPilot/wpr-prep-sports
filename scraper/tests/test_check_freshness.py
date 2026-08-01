@@ -56,10 +56,19 @@ def _write_games(data_dir, sport: str, *, school_ids: list[str]):
 def _run(monkeypatch, tmp_path, argv: list[str], manifest=None) -> int:
     monkeypatch.setattr(cf, "DATA_DIR", tmp_path)
     # Default: no manifest on disk, so the coverage check skips and the
-    # freshness-only tests below stay unaffected.
+    # freshness-only tests below stay unaffected. Same for acks: absent
+    # file = no acknowledgments.
     monkeypatch.setattr(cf, "MANIFEST_PATH", manifest or (tmp_path / "no-manifest.json"))
+    monkeypatch.setattr(cf, "ACK_PATH", tmp_path / "sentinel_ack.json")
     monkeypatch.setattr(sys, "argv", ["check_freshness.py", *argv])
     return cf.main()
+
+
+def _write_ack(tmp_path, *, sport: str, check: str, until: str, reason="test ack"):
+    (tmp_path / "sentinel_ack.json").write_text(
+        json.dumps({"acks": [{"sport": sport, "check": check, "until": until, "reason": reason}]}),
+        encoding="utf-8",
+    )
 
 
 def test_fresh_in_season_passes(tmp_path, monkeypatch):
@@ -194,6 +203,80 @@ def test_coverage_counts_a_school_on_either_side(tmp_path, monkeypatch):
         encoding="utf-8",
     )
     assert cf.check_coverage("boys_soccer", 1.0) is None
+
+
+# --- acknowledgments -----------------------------------------------------
+# An ack records a HUMAN-VERIFIED external condition (August 2026: WIAA had
+# published no boys-soccer schedules three weeks before the opener) so the
+# sentinel reports it without failing daily until the source catches up.
+
+
+def _thin_boys_soccer(tmp_path):
+    """The August 2026 shape: fresh data, 1 of 21 schools scheduled."""
+    manifest = _write_manifest(tmp_path, {"boys_soccer": 21})
+    for sport in ("football", "volleyball", "boys_soccer"):
+        _write_meta(tmp_path, sport, age_hours=1)
+    _write_games(tmp_path, "boys_soccer", school_ids=["boys_soccer-0"])
+    return manifest
+
+
+def test_acked_coverage_gap_passes(tmp_path, monkeypatch):
+    manifest = _thin_boys_soccer(tmp_path)
+    far = (datetime.now(timezone.utc) + timedelta(days=30)).date().isoformat()
+    _write_ack(tmp_path, sport="boys_soccer", check="coverage", until=far)
+    assert _run(monkeypatch, tmp_path, ["--month", "9"], manifest=manifest) == 0
+
+
+def test_expired_ack_fails_again(tmp_path, monkeypatch):
+    manifest = _thin_boys_soccer(tmp_path)
+    past = (datetime.now(timezone.utc) - timedelta(days=1)).date().isoformat()
+    _write_ack(tmp_path, sport="boys_soccer", check="coverage", until=past)
+    assert _run(monkeypatch, tmp_path, ["--month", "9"], manifest=manifest) == 1
+
+
+def test_ack_until_is_inclusive(tmp_path, monkeypatch):
+    manifest = _thin_boys_soccer(tmp_path)
+    today = datetime.now(timezone.utc).date().isoformat()
+    _write_ack(tmp_path, sport="boys_soccer", check="coverage", until=today)
+    assert _run(monkeypatch, tmp_path, ["--month", "9"], manifest=manifest) == 0
+
+
+def test_ack_is_scoped_to_its_sport_and_check(tmp_path, monkeypatch):
+    manifest = _thin_boys_soccer(tmp_path)
+    far = (datetime.now(timezone.utc) + timedelta(days=30)).date().isoformat()
+    # Right sport, wrong check — the coverage gap must still fail.
+    _write_ack(tmp_path, sport="boys_soccer", check="freshness", until=far)
+    assert _run(monkeypatch, tmp_path, ["--month", "9"], manifest=manifest) == 1
+    # Wrong sport entirely.
+    _write_ack(tmp_path, sport="volleyball", check="coverage", until=far)
+    assert _run(monkeypatch, tmp_path, ["--month", "9"], manifest=manifest) == 1
+
+
+def test_ack_never_masks_a_second_failure(tmp_path, monkeypatch):
+    """The boys-soccer ack must not swallow a football freshness break."""
+    manifest = _thin_boys_soccer(tmp_path)
+    _write_meta(tmp_path, "football", age_hours=500)  # overwrite: now stale
+    far = (datetime.now(timezone.utc) + timedelta(days=30)).date().isoformat()
+    _write_ack(tmp_path, sport="boys_soccer", check="coverage", until=far)
+    assert _run(monkeypatch, tmp_path, ["--month", "9"], manifest=manifest) == 1
+
+
+def test_acked_freshness_passes(tmp_path, monkeypatch):
+    _write_meta(tmp_path, "football", age_hours=500)
+    _write_meta(tmp_path, "volleyball", age_hours=2)
+    _write_meta(tmp_path, "boys_soccer", age_hours=2)
+    far = (datetime.now(timezone.utc) + timedelta(days=30)).date().isoformat()
+    _write_ack(tmp_path, sport="football", check="freshness", until=far)
+    assert _run(monkeypatch, tmp_path, ["--month", "9"]) == 0
+
+
+def test_malformed_ack_is_ignored_not_fatal(tmp_path, monkeypatch):
+    manifest = _thin_boys_soccer(tmp_path)
+    (tmp_path / "sentinel_ack.json").write_text(
+        json.dumps({"acks": [{"sport": "boys_soccer", "check": "coverage", "until": "soon"}, 42]}),
+        encoding="utf-8",
+    )
+    assert _run(monkeypatch, tmp_path, ["--month", "9"], manifest=manifest) == 1
 
 
 def test_parse_ts_handles_zulu_and_naive():

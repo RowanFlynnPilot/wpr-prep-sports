@@ -101,6 +101,30 @@ change), `VITE_DATA_BASE` (defaults to same-origin `data/`).
   almost certainly a WIAA markup change (see fixtures flow above). No
   recent scrape runs at all = check the cron didn't get disabled
   (Actions can pause schedules after 60 days without repo activity).
+- **Sentinel: thin coverage** — an in-season sport references under a
+  third of its tracked roster. Two causes look identical from the data;
+  probe WIAA directly to tell them apart:
+
+  ```bash
+  # 1. Does the school profile list a current-season team for the sport?
+  curl -s -X POST -H "Content-Length: 0" \
+    "https://schools.wiaawi.org/Directory/School/GetDirectorySchool?OrgID=454&showPub=False" \
+    | grep -oE 'Soccer[^<]*|TeamID=[0-9]+'
+  # 2. Does that team's schedule page have any game rows?
+  curl -s "https://schools.wiaawi.org/Directory/Schedule/Index?TeamID=<id>" \
+    | grep -c 'gridTableRow'
+  ```
+
+  Team listed but zero rows (for several schools) = **WIAA hasn't
+  published yet** — the data is correctly thin. Record that verification
+  in `scraper/config/sentinel_ack.json` with an expiry date (`until`,
+  inclusive) and close the ops-alert issue; the sentinel keeps printing
+  the gap as ACKNOWLEDGED and goes red again automatically if the ack
+  expires before coverage recovers. No team listed at all, or rows
+  present that we're not capturing = **scraper-side** (TeamID discovery
+  or parsing) — treat as a real failure, don't ack it. August 2026
+  precedent: boys soccer sat at 1/21 schools with WIAA verified empty;
+  acked until Sept 1.
 - **Digest failed** — newsletter team needs `data/digest/latest.html`;
   re-run via dispatch (optionally `week_ending=YYYY-MM-DD`).
 

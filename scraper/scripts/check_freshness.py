@@ -31,6 +31,16 @@ below):
 Any input this can't interpret (missing manifest, unreadable games.json)
 is a skip, not a failure — the checks above own correctness.
 
+ACKNOWLEDGMENTS: a failure that investigation shows to be real but
+external — WIAA simply hasn't published a sport's schedules yet — can be
+acknowledged in scraper/config/sentinel_ack.json. An ack mutes exactly
+one (sport, check) pair until an expiry date: the condition still prints
+in the log, but doesn't fail the run (and so doesn't open or hold an
+ops-alert issue). When the ack expires, or stops matching anything, the
+log says so. An ack is a recorded verification that the data is
+*correctly* thin/stale — not a snooze button; verify against the source
+first (probe commands in docs/operations.md).
+
 Runs from .github/workflows/sentinel.yml (daily cron). Stdlib-only so
 the workflow needs no pip install.
 
@@ -45,12 +55,13 @@ from __future__ import annotations
 import argparse
 import json
 import sys
-from datetime import datetime, timezone
+from datetime import date, datetime, timezone
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 DATA_DIR = REPO_ROOT / "data"
 MANIFEST_PATH = REPO_ROOT / "scraper" / "config" / "schools.json"
+ACK_PATH = REPO_ROOT / "scraper" / "config" / "sentinel_ack.json"
 
 # Months (1-12) each sport is expected to receive updates, US Central
 # calendar. Edges sit safely INSIDE the real season windows so the age
@@ -132,6 +143,37 @@ def check_coverage(sport: str, min_coverage: float) -> str | None:
     )
 
 
+def _active_acks(today: date) -> tuple[dict[tuple[str, str], dict], list[str]]:
+    """Unexpired acknowledgments keyed by (sport, check), plus log notes
+    for entries that are expired or malformed. `until` is inclusive: an
+    ack dated 2026-09-01 still applies on Sept 1 (UTC) and stops the day
+    after — so the red run that follows expiry lands on data the acker
+    already predicted would be healthy by then."""
+    raw = _load_json(ACK_PATH)
+    acks: dict[tuple[str, str], dict] = {}
+    notes: list[str] = []
+    for entry in (raw or {}).get("acks", []):
+        if not isinstance(entry, dict):
+            continue
+        sport, check = entry.get("sport"), entry.get("check")
+        if check not in ("freshness", "coverage") or not sport:
+            notes.append(f"sentinel_ack.json entry {entry!r} malformed — ignoring it")
+            continue
+        try:
+            until = date.fromisoformat(entry.get("until") or "")
+        except ValueError:
+            notes.append(f"{sport}/{check}: ack 'until' unparseable — ignoring it")
+            continue
+        if today > until:
+            notes.append(
+                f"{sport}/{check}: ack EXPIRED {until.isoformat()} — if the condition still "
+                f"fires it now fails the run; re-verify against the source, then extend or fix"
+            )
+            continue
+        acks[(sport, check)] = entry
+    return acks, notes
+
+
 def _parse_ts(raw: str) -> datetime | None:
     try:
         ts = datetime.fromisoformat(raw.replace("Z", "+00:00"))
@@ -161,8 +203,8 @@ def main() -> int:
 
     now = datetime.now(timezone.utc)
     month = args.month or now.month
-    stale: list[str] = []
-    thin: list[str] = []
+    stale: list[tuple[str, str]] = []  # (sport, message)
+    thin: list[tuple[str, str]] = []
     checked = 0
 
     for sport, months in sorted(IN_SEASON_MONTHS.items()):
@@ -171,16 +213,16 @@ def main() -> int:
         meta_path = DATA_DIR / sport / "meta.json"
         if not meta_path.exists():
             # In-season sport with no data at all is its own kind of stale.
-            stale.append(f"{sport}: no meta.json on disk")
+            stale.append((sport, f"{sport}: no meta.json on disk"))
             continue
         try:
             meta = json.loads(meta_path.read_text(encoding="utf-8"))
         except (OSError, json.JSONDecodeError) as e:
-            stale.append(f"{sport}: meta.json unreadable - {e}")
+            stale.append((sport, f"{sport}: meta.json unreadable - {e}"))
             continue
         ts = _parse_ts(meta.get("last_updated") or "")
         if ts is None:
-            stale.append(f"{sport}: meta.last_updated missing/unparseable")
+            stale.append((sport, f"{sport}: meta.last_updated missing/unparseable"))
             continue
         checked += 1
         age_hours = (now - ts).total_seconds() / 3600
@@ -191,8 +233,11 @@ def main() -> int:
         )
         if age_hours > args.max_age_hours:
             stale.append(
-                f"{sport}: {age_hours:.0f}h since last update "
-                f"(threshold {args.max_age_hours:.0f}h, season {meta.get('season')})"
+                (
+                    sport,
+                    f"{sport}: {age_hours:.0f}h since last update "
+                    f"(threshold {args.max_age_hours:.0f}h, season {meta.get('season')})",
+                )
             )
 
         # Independent of freshness: a dataset can update daily and still be
@@ -200,15 +245,37 @@ def main() -> int:
         if args.min_coverage > 0:
             gap = check_coverage(sport, args.min_coverage)
             if gap:
-                thin.append(gap)
+                thin.append((sport, gap))
 
     if not checked and not stale and not thin:
         print(f"No sports in season for month {month} - nothing to check.")
         return 0
 
-    if stale:
+    # A failure with a matching, unexpired acknowledgment still prints —
+    # visibility is the point — but doesn't fail the run.
+    acks, ack_notes = _active_acks(now.date())
+    used: set[tuple[str, str]] = set()
+
+    def _split(
+        items: list[tuple[str, str]], check: str
+    ) -> tuple[list[str], list[tuple[str, dict]]]:
+        failing: list[str] = []
+        acked: list[tuple[str, dict]] = []
+        for item_sport, msg in items:
+            entry = acks.get((item_sport, check))
+            if entry:
+                used.add((item_sport, check))
+                acked.append((msg, entry))
+            else:
+                failing.append(msg)
+        return failing, acked
+
+    stale_fail, stale_acked = _split(stale, "freshness")
+    thin_fail, thin_acked = _split(thin, "coverage")
+
+    if stale_fail:
         print("\nFRESHNESS CHECK FAILED:")
-        for s in stale:
+        for s in stale_fail:
             print(f"  x {s}")
         print(
             "\nLikely causes: scrape cron not firing, repeated scrape failures, "
@@ -216,25 +283,47 @@ def main() -> int:
             "See docs/operations.md."
         )
 
-    if thin:
+    if thin_fail:
         print("\nCOVERAGE CHECK FAILED:")
-        for t in thin:
+        for t in thin_fail:
             print(f"  x {t}")
         print(
             "\nLikely causes: a season rollover where WIAA hasn't published the "
             "new schedules yet (expected early in a season — the dataset fills in "
             "as they post), or TeamID re-discovery failing for that sport so the "
             "scraper only found a handful of teams. Confirm against "
-            "schools.wiaawi.org before assuming a parser bug; if WIAA genuinely "
-            "hasn't posted, this stays open until they do. The frontend already "
-            "captions a sport this thin as 'still being published' rather than "
-            "showing it as a live season. See docs/operations.md."
+            "schools.wiaawi.org before assuming a parser bug (probe commands in "
+            "docs/operations.md); if WIAA genuinely hasn't posted, record that "
+            "verification as an ack in scraper/config/sentinel_ack.json so this "
+            "reports without staying red. The frontend already captions a sport "
+            "this thin as 'still being published' rather than showing it as a "
+            "live season."
         )
 
-    if stale or thin:
+    if stale_acked or thin_acked:
+        print("\nACKNOWLEDGED (known conditions — reported, not failing the run):")
+        for msg, entry in stale_acked + thin_acked:
+            print(f"  ~ {msg}")
+            print(f"    acked until {entry['until']}: {entry.get('reason', 'no reason recorded')}")
+
+    for key in acks:
+        if key not in used:
+            ack_notes.append(
+                f"{key[0]}/{key[1]}: acked condition is no longer firing — "
+                f"remove its entry from sentinel_ack.json"
+            )
+    if ack_notes:
+        print("\nACK NOTES:")
+        for n in ack_notes:
+            print(f"  ! {n}")
+
+    if stale_fail or thin_fail:
         return 1
 
-    print("\nAll in-season sports fresh, with usable coverage.")
+    if stale_acked or thin_acked:
+        print("\nRemaining conditions acknowledged - not failing the run.")
+    else:
+        print("\nAll in-season sports fresh, with usable coverage.")
     return 0
 
 

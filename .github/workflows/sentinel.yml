@@ -32,12 +32,20 @@ jobs:
         if: failure()
         uses: ./.github/actions/alert-issue
         with:
-          title: "Ops alert: in-season data has gone stale"
+          title: "Ops alert: sentinel failed — in-season data stale or thin"
           body: |
-            The freshness sentinel found in-season sport data older than its threshold.
+            The sentinel found an in-season sport with stale data (freshness check)
+            or a near-empty dataset (coverage check). The run log says which sport
+            and which check.
 
-            **Run:** ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }} (per-sport ages in the log)
+            **Run:** ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
 
             Likely causes, in order: the Scrape workflow failing repeatedly, a WIAA
             markup change making every scrape trip the wipe guard (0 games parsed),
-            or the scheduled cron not firing. Triage steps: docs/operations.md.
+            the scheduled cron not firing, or — for coverage — WIAA simply not having
+            published that sport's schedules yet. Triage steps: docs/operations.md.
+
+            If investigation shows the condition is real but external (verified
+            against schools.wiaawi.org), record it with an expiry date in
+            scraper/config/sentinel_ack.json — the sentinel keeps reporting it
+            without failing daily — then close this issue.
