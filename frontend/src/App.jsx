@@ -57,6 +57,7 @@ import "./styles/Share.css";
 export default function App() {
   useIframeHeightReporter();
   useAnalytics();
+  useScrollToTopOnNavigate();
 
   return (
     <Routes>
@@ -104,6 +105,22 @@ export default function App() {
       <Route path="*" element={<Navigate to={`/${DEFAULT_SPORT}`} replace />} />
     </Routes>
   );
+}
+
+/**
+ * Scroll back to the top on every route change, the way a full page
+ * navigation would. Without this, clicking a game from deep in the
+ * scores list rendered the (much shorter) game page at the old scroll
+ * offset. Standalone that strands the reader mid-page; embedded it's a
+ * no-op (the iframe's own window never scrolls) — the host page's
+ * matching correction rides on the `:navigated` message the height
+ * reporter posts (see utils/iframe.js and the README snippet).
+ */
+function useScrollToTopOnNavigate() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 }
 
 /**

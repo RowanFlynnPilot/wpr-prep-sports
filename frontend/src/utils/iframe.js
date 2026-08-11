@@ -15,6 +15,7 @@ import { useEffect } from "react";
 import { SITE } from "../config/site.js";
 
 const MESSAGE_TYPE = `${SITE.messageNamespace}:resize`;
+const NAVIGATED_TYPE = `${SITE.messageNamespace}:navigated`;
 
 /**
  * True when the widget is running inside the WPR WordPress iframe (or any
@@ -70,7 +71,19 @@ export function useIframeHeightReporter() {
     ro.observe(document.body);
 
     // Hash route changes don't trigger ResizeObserver synchronously.
-    const onHash = () => requestAnimationFrame(post);
+    // After reposting the height, tell the host a NAVIGATION happened —
+    // distinct from a mere resize (images loading, live score ticks),
+    // which must never move the reader's scroll position. The host page
+    // uses it to pull the widget's top edge back on-screen when the new,
+    // differently-sized page leaves the old scroll offset pointing at
+    // whatever sits below the iframe. Only the host can do this: we are
+    // cross-origin, and this window itself never scrolls. Posted after
+    // post() so the host handles the shrink first, then measures.
+    const onHash = () =>
+      requestAnimationFrame(() => {
+        post();
+        window.parent.postMessage({ type: NAVIGATED_TYPE }, "*");
+      });
     window.addEventListener("hashchange", onHash);
 
     // Images loading async (logos!) can change layout after first paint.

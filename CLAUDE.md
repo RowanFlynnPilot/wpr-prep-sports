@@ -208,10 +208,13 @@ isn't partitioned and Safari/ITP doesn't expire it — see
 `docs/favorites-spec.md`. The full snippet, with the `origin`/`source`
 checks the resize listener needs, is in the README.
 
-```html
-<iframe src="https://sports.wausaupilotandreview.com/"
-        width="100%" height="800" frameborder="0" loading="lazy"></iframe>
-```
+Don't copy an iframe tag from here — the canonical snippet lives in the
+README and matters in full: it carries `allow="clipboard-write; web-share"`
+(the subdomain is cross-origin for Permissions Policy despite being
+same-site for cookies) and a `<script>` listener that both auto-resizes
+the frame (`wpr-prep-sports:resize`) and restores scroll position after
+in-widget navigation (`wpr-prep-sports:navigated`). Live on the WPR site
+at `/high-school-sports/` since 2026-08.
 
 Frontend must be responsive and resize-friendly inside an iframe — use
 `postMessage` height reporting if needed (see `wpr-woodchucks-widget` for

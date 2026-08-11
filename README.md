@@ -70,22 +70,41 @@ URL for the reader to copy by hand.
 ></iframe>
 
 <script>
-  // Auto-resize the iframe to match the widget's actual content height.
-  // The widget posts { type: 'wpr-prep-sports:resize', height: N } on
-  // load, on layout change, and on hash navigation.
+  // Auto-resize the iframe to match the widget's actual content height,
+  // and restore a sane scroll position when the reader navigates inside
+  // it. The widget posts { type: 'wpr-prep-sports:resize', height: N }
+  // on load, on layout change, and on hash navigation — and
+  // { type: 'wpr-prep-sports:navigated' } after each in-widget page
+  // change. Without the navigated handler, clicking a game from deep in
+  // the scores list shrinks the iframe under the reader and strands
+  // them below the widget.
   (function () {
     var WIDGET_ORIGIN = 'https://sports.wausaupilotandreview.com';
+    // Breathing room above the widget after a scroll correction. Raise
+    // this if the site ever ships a sticky header that would cover it.
+    var HEADER_OFFSET = 12;
     var iframe = document.getElementById('wpr-prep-sports');
     if (!iframe) return;
     window.addEventListener('message', function (evt) {
-      // Only accept resize messages from the widget itself: any framed ad
-      // or third-party script on the page can post to window, and without
-      // these two checks any of them could resize this iframe.
+      // Only accept messages from the widget itself: any framed ad or
+      // third-party script on the page can post to window, and without
+      // these two checks any of them could resize this iframe or scroll
+      // the page.
       if (evt.origin !== WIDGET_ORIGIN) return;
       if (evt.source !== iframe.contentWindow) return;
-      if (!evt.data || evt.data.type !== 'wpr-prep-sports:resize') return;
-      var h = Number(evt.data.height);
-      if (h > 0 && h < 100000) iframe.style.height = h + 'px';
+      if (!evt.data) return;
+      if (evt.data.type === 'wpr-prep-sports:resize') {
+        var h = Number(evt.data.height);
+        if (h > 0 && h < 100000) iframe.style.height = h + 'px';
+      } else if (evt.data.type === 'wpr-prep-sports:navigated') {
+        // In-widget navigation: if the widget's top edge is now above
+        // the viewport (the new page is shorter, or the reader was deep
+        // in the old one), bring it back — the same "start at the top"
+        // a normal page navigation gives. Never fires on plain resizes,
+        // so live-score updates can't yank the reader's scroll.
+        var top = iframe.getBoundingClientRect().top;
+        if (top < 0) window.scrollBy(0, top - HEADER_OFFSET);
+      }
     });
   })();
 </script>
