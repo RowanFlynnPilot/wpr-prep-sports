@@ -1,4 +1,4 @@
-import { lazy, Suspense, useEffect, useMemo, useState } from "react";
+import { lazy, Suspense, useEffect, useMemo, useRef, useState } from "react";
 import {
   Routes,
   Route,
@@ -22,7 +22,7 @@ const MediaKitPage = lazy(() => import("./pages/MediaKitPage.jsx"));
 const OgCardPage = lazy(() => import("./pages/OgCardPage.jsx"));
 import { indexSchools } from "./utils/schools.js";
 import { useAnalytics } from "./utils/analytics.js";
-import { useIframeHeightReporter } from "./utils/iframe.js";
+import { notifyHostNavigated, useIframeHeightReporter } from "./utils/iframe.js";
 import { DEFAULT_SPORT, configFor, configForDataset, isKnownSport } from "./config/sports.js";
 import { SITE } from "./config/site.js";
 
@@ -108,18 +108,34 @@ export default function App() {
 }
 
 /**
- * Scroll back to the top on every route change, the way a full page
+ * Restore "start at the top" on every route change, the way a full page
  * navigation would. Without this, clicking a game from deep in the
  * scores list rendered the (much shorter) game page at the old scroll
- * offset. Standalone that strands the reader mid-page; embedded it's a
- * no-op (the iframe's own window never scrolls) — the host page's
- * matching correction rides on the `:navigated` message the height
- * reporter posts (see utils/iframe.js and the README snippet).
+ * offset. Standalone, window.scrollTo fixes the widget's own window;
+ * embedded that's a no-op (the iframe never scrolls), so we also post
+ * `:navigated` and the host page's snippet moves ITS scroll instead.
+ *
+ * Hooked on the router, not on `hashchange`: react-router Links navigate
+ * via pushState, which never fires hashchange — a listener there misses
+ * every in-app click (verified in the embed harness). Skips the initial
+ * render so merely loading the embed can't yank the host page around.
  */
 function useScrollToTopOnNavigate() {
   const { pathname } = useLocation();
+  const prevPath = useRef(null);
   useEffect(() => {
+    const prev = prevPath.current;
+    prevPath.current = pathname;
+    // Not a reader action — don't move anyone's scroll:
+    // prev === null: initial mount. prev === pathname: StrictMode's dev
+    // double-effect. prev "/" or a legacy unprefixed path: the entry
+    // redirects (Navigate replace) that fire before the first real page —
+    // a boolean first-render guard misses these, and the embed harness
+    // showed the host page getting scrolled just for loading the widget.
+    if (prev === null || prev === pathname) return;
+    if (prev === "/" || /^\/(team|game)\//.test(prev)) return;
     window.scrollTo(0, 0);
+    notifyHostNavigated();
   }, [pathname]);
 }
 

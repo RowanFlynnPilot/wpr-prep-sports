@@ -35,6 +35,22 @@ export const isEmbedded = (() => {
   return params.get("embed") === "1";
 })();
 
+/**
+ * Tell the host page the reader navigated to a different in-widget page —
+ * distinct from a resize (images loading, live score ticks), which must
+ * never move the reader's scroll position. The host's snippet scrolls the
+ * widget's top edge back on-screen if the navigation left it above the
+ * viewport; only the host can do that (we're cross-origin, and this
+ * window itself never scrolls). Order relative to the resize message
+ * doesn't matter: the correction anchors the iframe's TOP edge, which a
+ * later shrink doesn't move.
+ */
+export function notifyHostNavigated() {
+  if (typeof window === "undefined") return;
+  if (window.parent === window) return;
+  window.parent.postMessage({ type: NAVIGATED_TYPE }, "*");
+}
+
 export function useIframeHeightReporter() {
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -70,20 +86,14 @@ export function useIframeHeightReporter() {
     const ro = new ResizeObserver(() => post());
     ro.observe(document.body);
 
-    // Hash route changes don't trigger ResizeObserver synchronously.
-    // After reposting the height, tell the host a NAVIGATION happened —
-    // distinct from a mere resize (images loading, live score ticks),
-    // which must never move the reader's scroll position. The host page
-    // uses it to pull the widget's top edge back on-screen when the new,
-    // differently-sized page leaves the old scroll offset pointing at
-    // whatever sits below the iframe. Only the host can do this: we are
-    // cross-origin, and this window itself never scrolls. Posted after
-    // post() so the host handles the shrink first, then measures.
-    const onHash = () =>
-      requestAnimationFrame(() => {
-        post();
-        window.parent.postMessage({ type: NAVIGATED_TYPE }, "*");
-      });
+    // Manual hash edits and back/forward fragment traversals. Router
+    // Link clicks do NOT land here — react-router navigates via
+    // pushState, which never fires hashchange (verified in the embed
+    // harness: zero hashchange-driven messages during in-app clicks; the
+    // ResizeObserver carries those). Route-change signaling to the host
+    // therefore lives on the router itself — see notifyHostNavigated()
+    // and App's useScrollToTopOnNavigate.
+    const onHash = () => requestAnimationFrame(post);
     window.addEventListener("hashchange", onHash);
 
     // Images loading async (logos!) can change layout after first paint.
