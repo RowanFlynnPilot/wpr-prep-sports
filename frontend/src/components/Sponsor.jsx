@@ -47,6 +47,42 @@ export default function Sponsor({ slot, sponsors, variant = "inline", className 
     data.logo_url && !/^(?:https?:)?\/\//.test(data.logo_url) && !data.logo_url.startsWith("/")
       ? `${import.meta.env.BASE_URL}${data.logo_url}`
       : data.logo_url;
+  // Banner: a full-width image creative (e.g. "banner:<sport>" at the foot
+  // of a sport's dashboard) rather than the inline label+logo treatment.
+  // The eyebrow keeps the ad honestly labeled, news-site style; without a
+  // creative there is nothing worth showing, so an image-less banner slot
+  // renders like an empty one.
+  if (variant === "banner") {
+    if (!logoSrc) return null;
+    const img = (
+      <img
+        src={logoSrc}
+        alt={data.name}
+        className="sponsor-banner__img"
+        loading="lazy"
+        decoding="async"
+      />
+    );
+    return (
+      <div className={`sponsor-banner ${className}`.trim()}>
+        <span className="sponsor-banner__eyebrow">{label}</span>
+        {data.link_url ? (
+          <a
+            href={data.link_url}
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+            aria-label={`${label}: ${data.name}`}
+            onClick={() => trackEvent(`sponsor-click:${slot}`)}
+          >
+            {img}
+          </a>
+        ) : (
+          img
+        )}
+      </div>
+    );
+  }
+
   const content = (
     <>
       <span className="sponsor__label">{label}</span>

@@ -85,6 +85,14 @@ const INVENTORY = [
         preview: { label: "Game recap presented by", tone: "ticker" },
       },
       {
+        title: "Season Banner",
+        blurb: "Your full creative, anchoring every visit to a sport's dashboard for the whole season — the only full-size ad surface in the tool.",
+        fit: "Manufacturer · bank · healthcare system",
+        slots: ["banner:football"],
+        rateKey: "banner",
+        preview: { label: "Sponsor", tone: "feature" },
+      },
+      {
         title: "Player of the Week",
         blurb: "The weekly standout, pinned at the top of every sport. \"Being the orthodontist behind Player of the Week\" is equity a banner can't buy.",
         fit: "Orthodontist · sports medicine · photo studio",

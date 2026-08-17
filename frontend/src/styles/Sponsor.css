@@ -76,6 +76,36 @@ a.sponsor:focus-visible .sponsor__name {
   max-width: 160px;
 }
 
+/* Variant: banner — full-width image creative anchoring a sport's
+   dashboard. The one deliberately banner-shaped surface: everything else
+   stays editorial. The eyebrow labels it as sponsorship (ad transparency);
+   the radius + clip match the site's card language so the creative sits
+   in the layout rather than on it. */
+.sponsor-banner {
+  margin: 1.75rem 0 0.25rem;
+}
+.sponsor-banner__eyebrow {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted-2);
+}
+.sponsor-banner__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lift);
+}
+.sponsor-banner a {
+  display: block;
+  border-bottom: none !important;
+}
+
 /* Dev-only placeholder — only renders when import.meta.env.DEV is true.
    Helps the team see which slots exist while building out inventory. */
 .sponsor--placeholder {

@@ -520,6 +520,16 @@ export default function DashboardPage({
         </>
       )}
       </div>
+
+      {/* Anchor banner — the one full-creative ad surface, sold per sport
+          (data/sponsors.json "banner:<sport>"). Sits below every tab's
+          content so it never interrupts scores; hidden entirely while
+          unsold, like every other slot. */}
+      <Sponsor
+        slot={`banner:${sportConfig?.id ?? "football"}`}
+        sponsors={sponsors}
+        variant="banner"
+      />
     </Layout>
   );
 }
