@@ -85,11 +85,19 @@ const INVENTORY = [
         preview: { label: "Game recap presented by", tone: "ticker" },
       },
       {
-        title: "Season Banner",
-        blurb: "Your full creative, anchoring every visit to a sport's dashboard for the whole season — the only full-size ad surface in the tool.",
+        title: "Season Banner — Dashboards",
+        blurb: "Your full creative, anchoring every visit to every sport's dashboard for the whole season.",
         fit: "Manufacturer · bank · healthcare system",
-        slots: ["banner:football"],
+        slots: ["banner:all"],
         rateKey: "banner",
+        preview: { label: "Sponsor", tone: "feature" },
+      },
+      {
+        title: "Season Banner — Game Pages",
+        blurb: "Your full creative on every game page, all sports — where shared links and box-score traffic land.",
+        fit: "Printer · auto dealer · insurance",
+        slots: ["banner:game"],
+        rateKey: "banner-game",
         preview: { label: "Sponsor", tone: "feature" },
       },
       {

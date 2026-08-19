@@ -521,12 +521,17 @@ export default function DashboardPage({
       )}
       </div>
 
-      {/* Anchor banner — the one full-creative ad surface, sold per sport
-          (data/sponsors.json "banner:<sport>"). Sits below every tab's
-          content so it never interrupts scores; hidden entirely while
+      {/* Anchor banner — full-creative ad surface below every tab's
+          content, so it never interrupts scores. A per-sport slot
+          ("banner:<sport>") wins when sold; otherwise the cross-sport
+          "banner:all" runs on every dashboard. Hidden entirely while
           unsold, like every other slot. */}
       <Sponsor
-        slot={`banner:${sportConfig?.id ?? "football"}`}
+        slot={
+          sponsors?.slots?.[`banner:${sportConfig?.id}`]?.name
+            ? `banner:${sportConfig.id}`
+            : "banner:all"
+        }
         sponsors={sponsors}
         variant="banner"
       />

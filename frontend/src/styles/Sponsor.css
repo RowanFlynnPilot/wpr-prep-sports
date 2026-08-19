@@ -59,6 +59,19 @@ a.sponsor:focus-visible .sponsor__name {
 .sponsor--inline {
   padding: 0.4rem 0;
 }
+/* Inline logos ride on a small white plate: seamless on the light page,
+   a deliberate badge on dark — same treatment as the PoW funder credit,
+   so wordmark lockups (Wimmer) stay legible in both themes. Sized above
+   the 22px default because section headers have the room and a 22px
+   wordmark is decoration, not recognition. */
+.sponsor--inline .sponsor__logo {
+  max-height: 30px;
+  max-width: 140px;
+  background: #fff;
+  padding: 3px 6px;
+  border-radius: 4px;
+  box-sizing: content-box;
+}
 
 /* Variant: card — full-width card on per-team page footer. */
 .sponsor--card {

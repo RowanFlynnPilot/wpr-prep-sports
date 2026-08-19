@@ -291,6 +291,11 @@ export default function GamePage({ dataset, schoolIndex, sportConfig }) {
           </div>
         )}
       </section>)}
+
+      {/* Anchor banner — cross-sport full-creative surface for game pages
+          (data/sponsors.json "banner:game"), the widget's highest-traffic
+          deep links. Hidden entirely while unsold. */}
+      <Sponsor slot="banner:game" sponsors={dataset.sponsors} variant="banner" />
     </Layout>
   );
 }
