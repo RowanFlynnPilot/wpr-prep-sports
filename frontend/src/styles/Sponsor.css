@@ -65,10 +65,10 @@ a.sponsor:focus-visible .sponsor__name {
    the 22px default because section headers have the room and a 22px
    wordmark is decoration, not recognition. */
 .sponsor--inline .sponsor__logo {
-  max-height: 30px;
-  max-width: 140px;
+  max-height: 36px;
+  max-width: 160px;
   background: #fff;
-  padding: 3px 6px;
+  padding: 3px 7px;
   border-radius: 4px;
   box-sizing: content-box;
 }
@@ -113,6 +113,9 @@ a.sponsor:focus-visible .sponsor__name {
   height: auto;
   border-radius: var(--radius);
   box-shadow: var(--shadow-lift);
+  /* Hairline edge so light-background creatives (Wimmer's white strip)
+     read as a card on the light page instead of floating text. */
+  border: 1px solid var(--line);
 }
 .sponsor-banner a {
   display: block;

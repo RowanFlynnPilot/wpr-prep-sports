@@ -101,6 +101,14 @@ const INVENTORY = [
         preview: { label: "Sponsor", tone: "feature" },
       },
       {
+        title: "Season Banner — Team Pages",
+        blurb: "Your full creative on all 67 team pages, all sports — where families check their school's schedule and roster.",
+        fit: "Real estate · bank · orthodontist",
+        slots: ["banner:team"],
+        rateKey: "banner-team",
+        preview: { label: "Sponsor", tone: "feature" },
+      },
+      {
         title: "Player of the Week",
         blurb: "The weekly standout, pinned at the top of every sport. \"Being the orthodontist behind Player of the Week\" is equity a banner can't buy.",
         fit: "Orthodontist · sports medicine · photo studio",

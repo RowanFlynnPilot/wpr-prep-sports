@@ -221,6 +221,11 @@ export default function TeamPage({ dataset, schoolIndex, sponsors, sportConfig }
       <SeasonLeaders rows={seasonStatsForSchool} sportConfig={sportConfig} />
 
       <Sponsor slot={`school:${schoolId}`} sponsors={sponsors} variant="card" />
+
+      {/* Anchor banner — cross-sport full-creative surface on every team
+          page (data/sponsors.json "banner:team"). The per-school card
+          above stays independently sellable; this is the network buy. */}
+      <Sponsor slot="banner:team" sponsors={sponsors} variant="banner" />
     </Layout>
   );
 }
