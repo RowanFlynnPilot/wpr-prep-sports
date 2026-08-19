@@ -1,5 +1,5 @@
 {
-  "_comment": "Sponsor inventory. WPR ad ops fills these without code changes - the frontend hides any slot that has no `name`. Slot keys: 'title' (masthead), 'ticker' (above recent scores, cross-sport), 'standings:<conference>' (per conference, cross-sport - e.g. one Wisconsin Valley sponsor renders on football + basketball + hockey + volleyball standings), 'school:<school_id>' (per team page, cross-sport). Each slot is { label?: string (default 'Presented by'), name: string, logo_url?: string, link_url?: string }. To enable a slot, set `name`; leave it null to hide it. A logo_url without a scheme or leading slash (e.g. 'logos/sponsors/x.png') resolves against the widget's base URL — put the file in frontend/public/logos/sponsors/. Banner slots render logo_url as a full-width image creative (target ~2000x560; the widget scales it) rather than as an inline logo: 'banner:all' runs at the foot of every sport's dashboard, a 'banner:<sport>' key overrides it for that sport when sold separately, 'banner:game' anchors every game page, and 'banner:team' anchors every team page. SLOTS SHIP EMPTY: never publish placeholder advertiser names to readers - the #/sponsor media kit lists every slot as inventory on its own, so sales demos do not need sample data in here.",
+  "_comment": "Sponsor inventory. WPR ad ops fills these without code changes - the frontend hides any slot that has no `name`. Slot keys: 'title' (masthead), 'ticker' (above recent scores, cross-sport), 'standings:<conference>' (per conference, cross-sport - e.g. one Wisconsin Valley sponsor renders on football + basketball + hockey + volleyball standings), 'school:<school_id>' (per team page, cross-sport). Each slot is { label?: string (default 'Presented by'), name: string, logo_url?: string, link_url?: string }. To enable a slot, set `name`; leave it null to hide it. A logo_url without a scheme or leading slash (e.g. 'logos/sponsors/x.png') resolves against the widget's base URL — put the file in frontend/public/logos/sponsors/. Banner slots render logo_url as a full-width image creative (target ~2000x560; the widget scales it) rather than as an inline logo: 'banner:all' runs at the foot of every sport's dashboard, a 'banner:<sport>' key overrides it for that sport when sold separately, 'banner:mid' runs between Player of the Week and the tabs on every dashboard, 'banner:game' anchors every game page, and 'banner:team' anchors every team page. SLOTS SHIP EMPTY: never publish placeholder advertiser names to readers - the #/sponsor media kit lists every slot as inventory on its own, so sales demos do not need sample data in here.",
   "slots": {
     "title": {
       "label": "Presented by",
@@ -31,11 +31,17 @@
       "logo_url": "sponsors/jarp.jpg",
       "link_url": "https://www.jarpind.com/"
     },
-    "banner:game": {
+    "banner:mid": {
       "label": "Sponsor",
       "name": "Rotographic Printing",
       "logo_url": "sponsors/rotographics.jpg",
       "link_url": "https://www.rotographics.com/"
+    },
+    "banner:game": {
+      "label": "Sponsor",
+      "name": null,
+      "logo_url": null,
+      "link_url": null
     },
     "banner:team": {
       "label": "Sponsor",

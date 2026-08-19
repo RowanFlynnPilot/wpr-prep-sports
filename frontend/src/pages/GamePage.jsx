@@ -294,7 +294,8 @@ export default function GamePage({ dataset, schoolIndex, sportConfig }) {
 
       {/* Anchor banner — cross-sport full-creative surface for game pages
           (data/sponsors.json "banner:game"), the widget's highest-traffic
-          deep links. Hidden entirely while unsold. */}
+          deep links. Currently unsold (Rotographic moved to the
+          mid-dashboard slot); hidden until it's filled. */}
       <Sponsor slot="banner:game" sponsors={dataset.sponsors} variant="banner" />
     </Layout>
   );

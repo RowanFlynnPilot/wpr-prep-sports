@@ -355,6 +355,10 @@ export default function DashboardPage({
         />
       </SectionBoundary>
 
+      {/* Mid-dashboard banner — between Player of the Week and the tabs,
+          above the fold on most screens (data/sponsors.json "banner:mid"). */}
+      <Sponsor slot="banner:mid" sponsors={sponsors} variant="banner" />
+
       <SectionTabs tabs={tabs} active={activeTab} onChange={setActiveTab} />
 
       {activeTab && (

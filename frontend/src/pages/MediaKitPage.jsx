@@ -93,6 +93,14 @@ const INVENTORY = [
         preview: { label: "Sponsor", tone: "feature" },
       },
       {
+        title: "Season Banner — Mid-Dashboard",
+        blurb: "Your full creative between Player of the Week and the scores on every sport's dashboard — above the fold, every visit.",
+        fit: "Printer · auto dealer · insurance",
+        slots: ["banner:mid"],
+        rateKey: "banner-mid",
+        preview: { label: "Sponsor", tone: "feature" },
+      },
+      {
         title: "Season Banner — Game Pages",
         blurb: "Your full creative on every game page, all sports — where shared links and box-score traffic land.",
         fit: "Printer · auto dealer · insurance",
