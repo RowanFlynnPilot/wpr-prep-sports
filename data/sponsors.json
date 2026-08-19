@@ -33,15 +33,15 @@
     },
     "banner:mid": {
       "label": "Sponsor",
-      "name": "Rotographic Printing",
-      "logo_url": "sponsors/rotographics.jpg",
-      "link_url": "https://www.rotographics.com/"
-    },
-    "banner:game": {
-      "label": "Sponsor",
       "name": null,
       "logo_url": null,
       "link_url": null
+    },
+    "banner:game": {
+      "label": "Sponsor",
+      "name": "Rotographic Printing",
+      "logo_url": "sponsors/rotographics.jpg",
+      "link_url": "https://www.rotographics.com/"
     },
     "banner:team": {
       "label": "Sponsor",
