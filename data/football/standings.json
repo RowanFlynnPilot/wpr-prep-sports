@@ -182,6 +182,16 @@
     "division": null,
     "rows": [
       {
+        "school_id": "bruce",
+        "name": "Bruce",
+        "conference_wins": 1,
+        "conference_losses": 0,
+        "overall_wins": 1,
+        "overall_losses": 0,
+        "points_for": 1,
+        "points_against": 0
+      },
+      {
         "school_id": "athens",
         "name": "Athens",
         "conference_wins": 0,
@@ -204,16 +214,6 @@
       {
         "school_id": "flambeau",
         "name": "Flambeau",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "overall_wins": 0,
-        "overall_losses": 0,
-        "points_for": 0,
-        "points_against": 0
-      },
-      {
-        "school_id": "bruce",
-        "name": "Bruce",
         "conference_wins": 0,
         "conference_losses": 0,
         "overall_wins": 0,
@@ -285,11 +285,11 @@
         "school_id": "south-shore",
         "name": "South Shore",
         "conference_wins": 0,
-        "conference_losses": 0,
+        "conference_losses": 1,
         "overall_wins": 0,
-        "overall_losses": 0,
+        "overall_losses": 1,
         "points_for": 0,
-        "points_against": 0
+        "points_against": 1
       }
     ]
   },
@@ -476,6 +476,16 @@
     "division": null,
     "rows": [
       {
+        "school_id": "marion",
+        "name": "Marion",
+        "conference_wins": 2,
+        "conference_losses": 0,
+        "overall_wins": 3,
+        "overall_losses": 0,
+        "points_for": 3,
+        "points_against": 0
+      },
+      {
         "school_id": "newman-catholic",
         "name": "Newman Catholic",
         "conference_wins": 0,
@@ -506,36 +516,6 @@
         "points_against": 0
       },
       {
-        "school_id": "bowler",
-        "name": "Bowler",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "overall_wins": 0,
-        "overall_losses": 0,
-        "points_for": 0,
-        "points_against": 0
-      },
-      {
-        "school_id": "marion",
-        "name": "Marion",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "overall_wins": 0,
-        "overall_losses": 0,
-        "points_for": 0,
-        "points_against": 0
-      },
-      {
-        "school_id": "menominee-nation",
-        "name": "Menominee Nation",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "overall_wins": 0,
-        "overall_losses": 0,
-        "points_for": 0,
-        "points_against": 0
-      },
-      {
         "school_id": "port-edwards",
         "name": "Port Edwards",
         "conference_wins": 0,
@@ -554,6 +534,26 @@
         "overall_losses": 0,
         "points_for": 0,
         "points_against": 0
+      },
+      {
+        "school_id": "bowler",
+        "name": "Bowler",
+        "conference_wins": 0,
+        "conference_losses": 1,
+        "overall_wins": 0,
+        "overall_losses": 1,
+        "points_for": 0,
+        "points_against": 1
+      },
+      {
+        "school_id": "menominee-nation",
+        "name": "Menominee Nation",
+        "conference_wins": 0,
+        "conference_losses": 1,
+        "overall_wins": 0,
+        "overall_losses": 1,
+        "points_for": 0,
+        "points_against": 1
       }
     ]
   },
