@@ -300,6 +300,16 @@
     "division": null,
     "rows": [
       {
+        "school_id": "pacelli",
+        "name": "Pacelli",
+        "conference_wins": 0,
+        "conference_losses": 0,
+        "overall_wins": 1,
+        "overall_losses": 0,
+        "points_for": 31,
+        "points_against": 22
+      },
+      {
         "school_id": "edgar",
         "name": "Edgar",
         "conference_wins": 0,
@@ -332,16 +342,6 @@
       {
         "school_id": "assumption",
         "name": "Assumption",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "overall_wins": 0,
-        "overall_losses": 0,
-        "points_for": 0,
-        "points_against": 0
-      },
-      {
-        "school_id": "pacelli",
-        "name": "Pacelli",
         "conference_wins": 0,
         "conference_losses": 0,
         "overall_wins": 0,
