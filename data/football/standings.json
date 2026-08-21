@@ -144,16 +144,6 @@
         "points_against": 0
       },
       {
-        "school_id": "eau-claire-north",
-        "name": "Eau Claire North",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "overall_wins": 0,
-        "overall_losses": 0,
-        "points_for": 0,
-        "points_against": 0
-      },
-      {
         "school_id": "wisconsin-rapids",
         "name": "Wisconsin Rapids Lincoln",
         "conference_wins": 0,
@@ -162,6 +152,16 @@
         "overall_losses": 1,
         "points_for": 7,
         "points_against": 52
+      },
+      {
+        "school_id": "eau-claire-north",
+        "name": "Eau Claire North",
+        "conference_wins": 0,
+        "conference_losses": 1,
+        "overall_wins": 0,
+        "overall_losses": 1,
+        "points_for": 28,
+        "points_against": 58
       },
       {
         "school_id": "eau-claire-memorial",
@@ -584,6 +584,16 @@
         "points_against": 7
       },
       {
+        "school_id": "superior",
+        "name": "Superior",
+        "conference_wins": 1,
+        "conference_losses": 0,
+        "overall_wins": 1,
+        "overall_losses": 0,
+        "points_for": 58,
+        "points_against": 28
+      },
+      {
         "school_id": "chippewa-falls",
         "name": "Chippewa Falls",
         "conference_wins": 0,
@@ -612,16 +622,6 @@
         "overall_losses": 1,
         "points_for": 18,
         "points_against": 41
-      },
-      {
-        "school_id": "superior",
-        "name": "Superior",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "overall_wins": 0,
-        "overall_losses": 0,
-        "points_for": 0,
-        "points_against": 0
       },
       {
         "school_id": "menomonie",
