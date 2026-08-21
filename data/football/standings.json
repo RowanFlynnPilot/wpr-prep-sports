@@ -310,6 +310,16 @@
         "points_against": 22
       },
       {
+        "school_id": "iola-scandinavia",
+        "name": "Iola-Scandinavia",
+        "conference_wins": 0,
+        "conference_losses": 0,
+        "overall_wins": 1,
+        "overall_losses": 0,
+        "points_for": 34,
+        "points_against": 8
+      },
+      {
         "school_id": "edgar",
         "name": "Edgar",
         "conference_wins": 0,
@@ -352,16 +362,6 @@
       {
         "school_id": "pittsville",
         "name": "Pittsville",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "overall_wins": 0,
-        "overall_losses": 0,
-        "points_for": 0,
-        "points_against": 0
-      },
-      {
-        "school_id": "iola-scandinavia",
-        "name": "Iola-Scandinavia",
         "conference_wins": 0,
         "conference_losses": 0,
         "overall_wins": 0,
@@ -481,9 +481,9 @@
         "conference_wins": 2,
         "conference_losses": 0,
         "overall_wins": 3,
-        "overall_losses": 0,
-        "points_for": 3,
-        "points_against": 0
+        "overall_losses": 1,
+        "points_for": 11,
+        "points_against": 34
       },
       {
         "school_id": "port-edwards",
