@@ -106,12 +106,12 @@
       {
         "school_id": "wausau-west",
         "name": "Wausau West",
-        "conference_wins": 0,
+        "conference_wins": 1,
         "conference_losses": 0,
-        "overall_wins": 0,
+        "overall_wins": 1,
         "overall_losses": 0,
-        "points_for": 0,
-        "points_against": 0
+        "points_for": 36,
+        "points_against": 21
       },
       {
         "school_id": "dc-everest",
@@ -119,9 +119,9 @@
         "conference_wins": 0,
         "conference_losses": 0,
         "overall_wins": 0,
-        "overall_losses": 0,
-        "points_for": 0,
-        "points_against": 0
+        "overall_losses": 1,
+        "points_for": 22,
+        "points_against": 50
       },
       {
         "school_id": "marshfield",
@@ -144,16 +144,6 @@
         "points_against": 0
       },
       {
-        "school_id": "wisconsin-rapids",
-        "name": "Wisconsin Rapids Lincoln",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "overall_wins": 0,
-        "overall_losses": 0,
-        "points_for": 0,
-        "points_against": 0
-      },
-      {
         "school_id": "eau-claire-north",
         "name": "Eau Claire North",
         "conference_wins": 0,
@@ -164,14 +154,24 @@
         "points_against": 0
       },
       {
+        "school_id": "wisconsin-rapids",
+        "name": "Wisconsin Rapids Lincoln",
+        "conference_wins": 0,
+        "conference_losses": 1,
+        "overall_wins": 0,
+        "overall_losses": 1,
+        "points_for": 7,
+        "points_against": 52
+      },
+      {
         "school_id": "eau-claire-memorial",
         "name": "Eau Claire Memorial",
         "conference_wins": 0,
-        "conference_losses": 0,
+        "conference_losses": 1,
         "overall_wins": 0,
-        "overall_losses": 0,
-        "points_for": 0,
-        "points_against": 0
+        "overall_losses": 1,
+        "points_for": 7,
+        "points_against": 48
       }
     ]
   },
@@ -186,10 +186,10 @@
         "name": "Bruce",
         "conference_wins": 1,
         "conference_losses": 0,
-        "overall_wins": 1,
+        "overall_wins": 2,
         "overall_losses": 0,
-        "points_for": 1,
-        "points_against": 0
+        "points_for": 45,
+        "points_against": 16
       },
       {
         "school_id": "hurley",
@@ -200,6 +200,16 @@
         "overall_losses": 0,
         "points_for": 36,
         "points_against": 0
+      },
+      {
+        "school_id": "shell-lake",
+        "name": "Shell Lake",
+        "conference_wins": 0,
+        "conference_losses": 0,
+        "overall_wins": 1,
+        "overall_losses": 0,
+        "points_for": 52,
+        "points_against": 22
       },
       {
         "school_id": "athens",
@@ -237,9 +247,9 @@
         "conference_wins": 0,
         "conference_losses": 0,
         "overall_wins": 0,
-        "overall_losses": 0,
-        "points_for": 0,
-        "points_against": 0
+        "overall_losses": 1,
+        "points_for": 16,
+        "points_against": 44
       },
       {
         "school_id": "phillips",
@@ -264,16 +274,6 @@
       {
         "school_id": "washburn",
         "name": "Washburn",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "overall_wins": 0,
-        "overall_losses": 0,
-        "points_for": 0,
-        "points_against": 0
-      },
-      {
-        "school_id": "shell-lake",
-        "name": "Shell Lake",
         "conference_wins": 0,
         "conference_losses": 0,
         "overall_wins": 0,
@@ -486,6 +486,16 @@
         "points_against": 0
       },
       {
+        "school_id": "port-edwards",
+        "name": "Port Edwards",
+        "conference_wins": 0,
+        "conference_losses": 0,
+        "overall_wins": 1,
+        "overall_losses": 0,
+        "points_for": 58,
+        "points_against": 6
+      },
+      {
         "school_id": "newman-catholic",
         "name": "Newman Catholic",
         "conference_wins": 0,
@@ -508,16 +518,6 @@
       {
         "school_id": "almond-bancroft",
         "name": "Almond-Bancroft",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "overall_wins": 0,
-        "overall_losses": 0,
-        "points_for": 0,
-        "points_against": 0
-      },
-      {
-        "school_id": "port-edwards",
-        "name": "Port Edwards",
         "conference_wins": 0,
         "conference_losses": 0,
         "overall_wins": 0,
@@ -564,34 +564,34 @@
     "division": null,
     "rows": [
       {
-        "school_id": "chippewa-falls",
-        "name": "Chippewa Falls",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "overall_wins": 0,
-        "overall_losses": 0,
-        "points_for": 0,
-        "points_against": 0
-      },
-      {
         "school_id": "hudson",
         "name": "Hudson",
-        "conference_wins": 0,
+        "conference_wins": 1,
         "conference_losses": 0,
-        "overall_wins": 0,
+        "overall_wins": 1,
         "overall_losses": 0,
-        "points_for": 0,
-        "points_against": 0
+        "points_for": 52,
+        "points_against": 7
       },
       {
         "school_id": "new-richmond",
         "name": "New Richmond",
+        "conference_wins": 1,
+        "conference_losses": 0,
+        "overall_wins": 1,
+        "overall_losses": 0,
+        "points_for": 48,
+        "points_against": 7
+      },
+      {
+        "school_id": "chippewa-falls",
+        "name": "Chippewa Falls",
         "conference_wins": 0,
         "conference_losses": 0,
-        "overall_wins": 0,
+        "overall_wins": 1,
         "overall_losses": 0,
-        "points_for": 0,
-        "points_against": 0
+        "points_for": 50,
+        "points_against": 22
       },
       {
         "school_id": "rice-lake",
@@ -627,11 +627,11 @@
         "school_id": "menomonie",
         "name": "Menomonie",
         "conference_wins": 0,
-        "conference_losses": 0,
+        "conference_losses": 1,
         "overall_wins": 0,
-        "overall_losses": 0,
-        "points_for": 0,
-        "points_against": 0
+        "overall_losses": 1,
+        "points_for": 21,
+        "points_against": 36
       }
     ]
   }
