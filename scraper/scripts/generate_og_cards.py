@@ -159,6 +159,14 @@ def main() -> int:
         total_skipped = 0
         total_errors = 0
         total_seen = 0
+        # Circuit breaker: card failures are normally isolated (one odd
+        # game). A run of consecutive failures with zero successes means
+        # the page itself is broken (bad base path, dead server) — and at
+        # ~10s of timeout per card, opening week's 122-game window turns
+        # that into a 35-minute hang that delays the data commit into
+        # losing push races. Fail fast instead; the step is warn-only.
+        consecutive_errors = 0
+        CONSECUTIVE_ERROR_LIMIT = 8
 
         for sport in sports:
             games = load_games(sport)
@@ -211,10 +219,20 @@ def main() -> int:
                     el.screenshot(path=str(out_png), omit_background=False)
                     cache_file.write_text(key)
                     total_written += 1
+                    consecutive_errors = 0
                     print(f"  [ok] {gid}")
                 except Exception as exc:  # noqa: BLE001
                     total_errors += 1
+                    consecutive_errors += 1
                     print(f"  [err] {gid} -- {exc}")
+                    if consecutive_errors >= CONSECUTIVE_ERROR_LIMIT:
+                        print(
+                            f"\n{consecutive_errors} consecutive failures with no successes — "
+                            "the card page itself is broken (check the build base path vs the "
+                            "serve prefix). Aborting instead of timing out on every game."
+                        )
+                        browser.close()
+                        return 1
 
             if args.limit and total_seen >= args.limit:
                 break

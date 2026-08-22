@@ -124,6 +124,15 @@ jobs:
 
       - name: Build frontend (for card server)
         working-directory: frontend
+        env:
+          # MUST match deploy.yml's build base. The staging step below
+          # derives its serve prefix from vars.BASE_PATH; a build without
+          # this env falls back to vite's /wpr-prep-sports/ default, the
+          # card pages 404 every asset, render blank, and never signal
+          # [data-og-ready] — which cost 10s x 122 games (35 minutes) on
+          # opening night 2026 and had silently stopped card refreshes
+          # since the custom-domain cutover.
+          VITE_BASE: ${{ vars.BASE_PATH }}
         run: npm run build
 
       - name: Install Playwright chromium
@@ -150,6 +159,12 @@ jobs:
 
       - name: Generate OG share cards
         working-directory: scraper
+        # Hard ceiling: card generation is a nice-to-have and must never
+        # delay the data commit into losing Friday-night push races.
+        # continue-on-error keeps a timeout warn-only, matching the
+        # script-failure handling inside the step.
+        timeout-minutes: 12
+        continue-on-error: true
         run: |
           npx --yes http-server ../_serve -p 8080 --silent &
           SERVER_PID=$!
@@ -176,15 +191,34 @@ jobs:
             echo "pushed=false" >> "$GITHUB_OUTPUT"
           else
             git commit -m "data: scrape $(date -u +%Y-%m-%dT%H:%MZ)"
-            # Rebase-retry: another workflow (digest, a manual run) can
-            # land a commit between our checkout and push.
+            # Rebase-retry: another workflow (live merge, digest, a manual
+            # run) can land a commit between our checkout and push. Losing
+            # that race is BENIGN — the next cron re-scrapes from current
+            # state — so a conflicted or thrice-rejected push skips with a
+            # warning instead of failing the run. Only a pull that fails
+            # WITHOUT a rebase in progress (network/auth, not conflict)
+            # stays a hard error: that failure mode means nobody is
+            # pushing, and red is correct.
+            PUSHED=true
             for attempt in 1 2 3; do
               if git push; then break; fi
-              if [ "$attempt" = 3 ]; then exit 1; fi
+              if [ "$attempt" = 3 ]; then
+                echo "::warning::push rejected 3x — dataset superseded by concurrent runs; skipping (next cron re-scrapes)"
+                PUSHED=false
+                break
+              fi
               echo "push rejected (attempt $attempt) — rebasing and retrying"
-              git pull --rebase
+              if ! git pull --rebase; then
+                if git rebase --abort 2>/dev/null; then
+                  echo "::warning::rebase conflict — this dataset was computed against pre-race state and is superseded; skipping push (next cron re-scrapes)"
+                  PUSHED=false
+                  break
+                fi
+                echo "::error::git pull failed with no rebase in progress — network or auth problem, not a data race"
+                exit 1
+              fi
             done
-            echo "pushed=true" >> "$GITHUB_OUTPUT"
+            echo "pushed=$PUSHED" >> "$GITHUB_OUTPUT"
           fi
 
       # Bot pushes via GITHUB_TOKEN don't trigger Deploy on their own, so
