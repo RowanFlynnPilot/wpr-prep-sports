@@ -36,6 +36,16 @@
         "points_against": 14
       },
       {
+        "school_id": "northland-pines",
+        "name": "Northland Pines",
+        "conference_wins": 0,
+        "conference_losses": 0,
+        "overall_wins": 1,
+        "overall_losses": 0,
+        "points_for": 14,
+        "points_against": 6
+      },
+      {
         "school_id": "mosinee",
         "name": "Mosinee",
         "conference_wins": 0,
@@ -81,19 +91,9 @@
         "conference_wins": 0,
         "conference_losses": 0,
         "overall_wins": 0,
-        "overall_losses": 0,
-        "points_for": 0,
-        "points_against": 0
-      },
-      {
-        "school_id": "northland-pines",
-        "name": "Northland Pines",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "overall_wins": 0,
-        "overall_losses": 0,
-        "points_for": 0,
-        "points_against": 0
+        "overall_losses": 1,
+        "points_for": 6,
+        "points_against": 14
       }
     ]
   },
@@ -345,9 +345,9 @@
         "conference_wins": 0,
         "conference_losses": 0,
         "overall_wins": 1,
-        "overall_losses": 0,
+        "overall_losses": 1,
         "points_for": 34,
-        "points_against": 8
+        "points_against": 9
       },
       {
         "school_id": "auburndale",
@@ -486,6 +486,16 @@
         "points_against": 34
       },
       {
+        "school_id": "wild-rose",
+        "name": "Wild Rose",
+        "conference_wins": 0,
+        "conference_losses": 0,
+        "overall_wins": 1,
+        "overall_losses": 0,
+        "points_for": 62,
+        "points_against": 0
+      },
+      {
         "school_id": "port-edwards",
         "name": "Port Edwards",
         "conference_wins": 0,
@@ -498,16 +508,6 @@
       {
         "school_id": "newman-catholic",
         "name": "Newman Catholic",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "overall_wins": 0,
-        "overall_losses": 0,
-        "points_for": 0,
-        "points_against": 0
-      },
-      {
-        "school_id": "wild-rose",
-        "name": "Wild Rose",
         "conference_wins": 0,
         "conference_losses": 0,
         "overall_wins": 0,
