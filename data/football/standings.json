@@ -202,6 +202,16 @@
         "points_against": 22
       },
       {
+        "school_id": "athens",
+        "name": "Athens",
+        "conference_wins": 0,
+        "conference_losses": 0,
+        "overall_wins": 1,
+        "overall_losses": 0,
+        "points_for": 30,
+        "points_against": 8
+      },
+      {
         "school_id": "hurley",
         "name": "Hurley",
         "conference_wins": 0,
@@ -220,16 +230,6 @@
         "overall_losses": 0,
         "points_for": 52,
         "points_against": 22
-      },
-      {
-        "school_id": "athens",
-        "name": "Athens",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "overall_wins": 0,
-        "overall_losses": 0,
-        "points_for": 0,
-        "points_against": 0
       },
       {
         "school_id": "prentice",
