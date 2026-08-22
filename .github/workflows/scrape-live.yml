@@ -101,15 +101,31 @@ jobs:
             echo "pushed=false" >> "$GITHUB_OUTPUT"
           else
             git commit -m "live: $(date -u +%Y-%m-%dT%H:%MZ)"
-            # Rebase-retry: another workflow (digest, a manual run) can
-            # land a commit between our checkout and push.
+            # Rebase-retry, with race losses treated as benign — same
+            # logic as scrape.yml's commit step. A live merge that loses
+            # the push race is superseded within 10 minutes by the next
+            # cron; only a pull failing with NO rebase in progress
+            # (network/auth — nobody is pushing) stays a hard error.
+            PUSHED=true
             for attempt in 1 2 3; do
               if git push; then break; fi
-              if [ "$attempt" = 3 ]; then exit 1; fi
+              if [ "$attempt" = 3 ]; then
+                echo "::warning::push rejected 3x — live merge superseded by concurrent runs; skipping (next cron re-merges)"
+                PUSHED=false
+                break
+              fi
               echo "push rejected (attempt $attempt) — rebasing and retrying"
-              git pull --rebase
+              if ! git pull --rebase; then
+                if git rebase --abort 2>/dev/null; then
+                  echo "::warning::rebase conflict — live merge computed against pre-race state; skipping push (next cron re-merges)"
+                  PUSHED=false
+                  break
+                fi
+                echo "::error::git pull failed with no rebase in progress — network or auth problem, not a data race"
+                exit 1
+              fi
             done
-            echo "pushed=true" >> "$GITHUB_OUTPUT"
+            echo "pushed=$PUSHED" >> "$GITHUB_OUTPUT"
           fi
 
       # Bot pushes via GITHUB_TOKEN don't trigger Deploy on their own, so
