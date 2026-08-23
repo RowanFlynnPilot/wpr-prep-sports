@@ -248,6 +248,21 @@ _BOX_SCORE_RE = re.compile(
     r"\?c=(?P<token>[A-Za-z0-9_-]+)"
 )
 
+# August 2026: MaxPreps' platform migration (the WisSports transition)
+# replaced the legacy /games/...htm URLs everywhere with
+# /wi/<sport>/game/<a>-vs-<b>/<m>-<d>-<yyyy>/?c=<token>. CRITICAL
+# SEMANTIC CHANGE: the two slugs are ordered ALPHABETICALLY, not
+# away-vs-home — nothing about home/away can be read from the URL
+# anymore. `first`/`second` name the groups accordingly; callers must
+# identify "us" by slug match and treat the other side as the opponent.
+# Relative hrefs on the page; prepend BASE_URL before fetching.
+_BOX_SCORE_NEW_RE = re.compile(
+    r"/wi/[a-z-]+/game/"
+    r"(?P<first>[a-z0-9-]+)-vs-(?P<second>[a-z0-9-]+)/"
+    r"(?P<m>\d{1,2})-(?P<d>\d{1,2})-(?P<y>\d{4})/"
+    r"\?c=(?P<token>[A-Za-z0-9_-]+)"
+)
+
 
 def fetch_team_match_history(
     slug_path: str,
@@ -272,6 +287,7 @@ def fetch_team_match_history(
     html = _get(url)
     games: list[MaxPrepsGame] = []
     seen_urls: set[str] = set()
+
     for m in _BOX_SCORE_RE.finditer(html):
         year = int(m.group("y"))
         if season_year and year != season_year:
@@ -296,6 +312,34 @@ def fetch_team_match_history(
                 date=date_iso,
                 opponent=_unslug(opponent_slug),
                 home=home,
+                result=None,
+            )
+        )
+
+    # New-format URLs (post-migration): slugs are alphabetical, so home
+    # stays False and the opponent is simply the slug that isn't us —
+    # matching downstream is date+slug based and never trusts `home`.
+    for m in _BOX_SCORE_NEW_RE.finditer(html):
+        year = int(m.group("y"))
+        if season_year and year != season_year:
+            continue
+        href = f"{BASE_URL}{m.group(0)}"
+        if href in seen_urls:
+            continue
+        seen_urls.add(href)
+        first, second = m.group("first"), m.group("second")
+        opponent_slug = first
+        if school_slug and first == school_slug:
+            opponent_slug = second
+        elif school_slug and second == school_slug:
+            opponent_slug = first
+        date_iso = f"{year:04d}-{int(m.group('m')):02d}-{int(m.group('d')):02d}"
+        games.append(
+            MaxPrepsGame(
+                box_score_url=href,
+                date=date_iso,
+                opponent=_unslug(opponent_slug),
+                home=False,
                 result=None,
             )
         )
@@ -350,6 +394,28 @@ _CATEGORY_FROM_HEADER_BY_SPORT: dict[str, dict[str, tuple[str, str]]] = {
 }
 
 
+# Category maps for the post-migration (Aug 2026) `?tab=Stats` pages.
+# Same (category, leader-column) idea, but the new pages publish a
+# DEDICATED Receiving table (the old layout only exposed receiving via
+# the All Purpose Yards lift). "All Purpose Yards" is deliberately NOT
+# mapped here — mapping both would emit duplicate receiving lines.
+# Volleyball/basketball: add entries when their first new-layout box
+# scores exist to verify against; until then those sports fall back to
+# the legacy map (harmless — unmatched headers emit nothing).
+_CATEGORY_FROM_HEADER_NEW_BY_SPORT: dict[str, dict[str, tuple[str, str]]] = {
+    "football": {
+        "Passing": ("Passing Yards", "Yds"),
+        "Rushing": ("Rushing Yards", "Yds"),
+        "Receiving": ("Receiving Yards", "Yds"),
+        "Tackles": ("Total Tackles", "Tot Tckls"),
+    },
+}
+
+
+def _category_map_new_for(sport_path: str) -> dict[str, tuple[str, str]]:
+    return _CATEGORY_FROM_HEADER_NEW_BY_SPORT.get(sport_path) or _category_map_for(sport_path)
+
+
 def _category_map_for(sport_path: str) -> dict[str, tuple[str, str]]:
     """Return the header→(category, leader_key) map for a sport, falling
     back to volleyball's for back-compat with callers that don't pass a
@@ -360,6 +426,7 @@ def _category_map_for(sport_path: str) -> dict[str, tuple[str, str]]:
 
 
 _ATHLETE_RE = re.compile(r"^(?P<name>.+?)\((?P<year>\w{1,3})\)$")
+_ATHLETE_HREF_RE = re.compile(r"/athletes/(?P<athlete>[a-z0-9-]+)/")
 
 
 def fetch_box_score(url: str, sport_path: str = "volleyball") -> BoxScore:
@@ -374,7 +441,17 @@ def fetch_box_score(url: str, sport_path: str = "volleyball") -> BoxScore:
 
     Only teams that input stats show up — single-team coverage is the
     common case across every sport.
+
+    New-format URLs (…/game/…, post-Aug-2026 migration) are served by a
+    different page: the box score lives on the `tab=Stats` view as plain
+    h3-heading + table pairs under an "<Team> Varsity <Sport> @/vs
+    <Opponent>" h2. Those route to `_parse_new_layout`.
     """
+    if "/game/" in url:
+        sep = "&" if "?" in url else "?"
+        html = _get(f"{url}{sep}tab=Stats")
+        return _parse_new_layout(BeautifulSoup(html, "html.parser"), sport_path)
+
     html = _get(url)
     soup = BeautifulSoup(html, "html.parser")
 
@@ -437,6 +514,43 @@ def fetch_box_score(url: str, sport_path: str = "volleyball") -> BoxScore:
             _emit(div)
 
     return BoxScore(stat_lines=out, set_scores_by_team=set_scores)
+
+
+_VARSITY_TITLE_RE = re.compile(r"^(?P<team>.+?)\s+Varsity\s+.+?(?:@|vs\.?)\s+(?P<opp>.+)$")
+
+
+def _parse_new_layout(soup, sport_path: str) -> BoxScore:
+    """Parse the post-migration `tab=Stats` page: an h2 like
+    "Wausau West Varsity Football @ Menomonie" names the team whose
+    stats this view holds (the server renders one team per page — the
+    uploading team, matching MP's long-standing single-team reality),
+    then each mapped h3 category is followed directly by its table.
+    h3s with no data are followed by another heading instead of a
+    table ("No Data" renders as its own h3), so a category only counts
+    when its very next structural element is a table.
+    """
+    category_map = _category_map_new_for(sport_path)
+
+    team_name = None
+    for h2 in soup.find_all("h2"):
+        m = _VARSITY_TITLE_RE.match(h2.get_text(strip=True))
+        if m:
+            team_name = m.group("team").strip()
+            break
+    if not team_name:
+        return BoxScore(stat_lines=[], set_scores_by_team={})
+
+    out: list[StatLine] = []
+    for h3 in soup.find_all("h3"):
+        mapping = category_map.get(h3.get_text(strip=True))
+        if mapping is None:
+            continue
+        nxt = h3.find_next(["table", "h2", "h3"])
+        if nxt is None or nxt.name != "table":
+            continue  # "No Data" category
+        category, leader_key = mapping
+        out.extend(_parse_box_table(nxt, team_name, category, leader_key))
+    return BoxScore(stat_lines=out, set_scores_by_team={})
 
 
 def _is_after(node, boundary) -> bool:
@@ -505,8 +619,16 @@ def _parse_box_table(
     leader_key: str,
 ) -> list[StatLine]:
     """Pull per-player rows out of one stat table. Skips the Team Totals
-    row, which sits at the top with no jersey number."""
-    headers = [th.get_text(strip=True) for th in table.find_all("th")]
+    row, which sits at the top with no jersey number.
+
+    Headers come from the first ROW, not `find_all("th")` over the whole
+    table: post-migration tables carry an extra "Team Totals" th inside
+    the totals row, which inflated the header count past every data
+    row's cell count and silently skipped the entire table."""
+    header_row = table.find("tr")
+    if header_row is None:
+        return []
+    headers = [c.get_text(strip=True) for c in header_row.find_all(["th", "td"])]
     if not headers:
         return []
     lines: list[StatLine] = []
@@ -517,7 +639,7 @@ def _parse_box_table(
         # First cell is jersey number; "Team Totals" has empty jersey.
         jersey = cells[0]
         athlete_cell = cells[1] if len(cells) > 1 else ""
-        if not jersey or not athlete_cell or athlete_cell == "Athlete Name":
+        if not jersey or not athlete_cell or athlete_cell in ("Athlete Name", "Name"):
             continue
         # Strip "(Jr)"/"(Sr)" suffix into player_year.
         m = _ATHLETE_RE.match(athlete_cell)
@@ -527,6 +649,14 @@ def _parse_box_table(
         else:
             player_name = athlete_cell
             player_year = None
+        # Post-migration pages abbreviate the display name ("J. Riley")
+        # but the athlete link slug carries the full name — prefer it,
+        # since player pages key on the name.
+        link = row.find("a", href=_ATHLETE_HREF_RE)
+        if link is not None:
+            hm = _ATHLETE_HREF_RE.search(link.get("href", ""))
+            if hm:
+                player_name = _unslug(hm.group("athlete"))
         # Build raw stats dict from remaining columns.
         stats: dict[str, str] = {}
         for hdr, val in zip(headers[2:], cells[2:]):

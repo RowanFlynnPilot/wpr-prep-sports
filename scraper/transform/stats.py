@@ -654,6 +654,22 @@ def _season_start_year(season: str) -> int | None:
 _MP_URL_TEAMS_RE = re.compile(
     r"/games/\d+-\d+-\d+/[a-z0-9-]+/(?P<away>[a-z0-9-]+)-vs-(?P<home>[a-z0-9-]+)\.htm"
 )
+# Post-Aug-2026 URL format. The slug order is ALPHABETICAL, not
+# away-vs-home — consumers must only ever ask "which slug is us, which
+# is the opponent", never infer home/away from position.
+_MP_URL_TEAMS_NEW_RE = re.compile(
+    r"/wi/[a-z-]+/game/(?P<away>[a-z0-9-]+)-vs-(?P<home>[a-z0-9-]+)/\d+-\d+-\d+/"
+)
+
+
+def _mp_url_team_slugs(url: str) -> tuple[str, str] | None:
+    """The two school slugs in a box-score URL (either format), in URL
+    order — positionally meaningless in the new format, so callers must
+    treat them as an unordered pair."""
+    m = _MP_URL_TEAMS_RE.search(url) or _MP_URL_TEAMS_NEW_RE.search(url)
+    if m is None:
+        return None
+    return m.group("away"), m.group("home")
 
 
 _SLUG_NON_ALNUM_RE = re.compile(r"[^a-z0-9]+")
@@ -693,8 +709,8 @@ def _mp_box_matches_game(
     Unverifiable boxes are skipped entirely: a missed box score shows as
     a coverage gap, a misattached one corrupts two game pages and every
     player log it touches."""
-    m = _MP_URL_TEAMS_RE.search(url)
-    if m is None:
+    slugs = _mp_url_team_slugs(url)
+    if slugs is None:
         return False
     if game.home.school_id == school_id:
         theirs = game.away
@@ -702,7 +718,7 @@ def _mp_box_matches_game(
         theirs = game.home
     else:
         return False
-    for slug in (m.group("away"), m.group("home")):
+    for slug in slugs:
         if theirs.school_id and mp_slug_to_id.get(slug) == theirs.school_id:
             return True
         if _slug_matches_school_name(slug, theirs.name):
@@ -716,14 +732,14 @@ def _extract_opponent_slug_from_url(url: str, our_slug: str | None) -> str | Non
     the URL isn't us is the opponent."""
     if not url or not our_slug:
         return None
-    m = _MP_URL_TEAMS_RE.search(url)
-    if not m:
+    slugs = _mp_url_team_slugs(url)
+    if slugs is None:
         return None
-    away, home = m.group("away"), m.group("home")
-    if away == our_slug:
-        return home
-    if home == our_slug:
-        return away
+    first, second = slugs
+    if first == our_slug:
+        return second
+    if second == our_slug:
+        return first
     # Neutral-site / tournament URL where our slug isn't either side —
     # nothing we can disambiguate by.
     return None
