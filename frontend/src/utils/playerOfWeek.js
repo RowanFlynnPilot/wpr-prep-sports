@@ -139,13 +139,24 @@ export function resolveOverridePotw(override, games) {
   return { line, game, schoolId: school_id, source: "editor" };
 }
 
+// Minimum games with stat coverage (season-wide) before the algorithm
+// crowns anyone. Stats arrive as coaches upload to MaxPreps over the
+// days after a game, so early in a week the pool is "whoever's coach
+// filed first" — opening week 2026 had exactly one box score for two
+// days, which would have made Player of the Week a default judgment,
+// not a comparison. Season-wide on purpose: a finished season's final
+// week may hold under 10 stat games, but its pick was made against a
+// full season of coverage. The editor override in data/potw.json
+// bypasses this entirely — an explicit editorial pick always shows.
+const MIN_STAT_GAMES_FOR_AUTO_PICK = 10;
+
 export function pickPlayerOfWeek(games, { minScore = 80, anchor = null } = {}) {
   if (!games || games.length === 0) return null;
 
   const finals = games.filter(
     (g) => g.status === "final" && topStatLines(g).length > 0,
   );
-  if (finals.length === 0) return null;
+  if (finals.length < MIN_STAT_GAMES_FOR_AUTO_PICK) return null;
 
   // Anchor to the most-recent game; window is 7 days back from there.
   const lastTs = anchor
