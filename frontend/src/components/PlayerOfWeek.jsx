@@ -2,7 +2,7 @@ import { useMemo } from "react";
 import { Link } from "react-router-dom";
 import Sponsor from "./Sponsor.jsx";
 import { pickPlayerOfWeek, resolveOverridePotw } from "../utils/playerOfWeek.js";
-import { initials, primaryColor } from "../utils/schools.js";
+import { homeRegionSchoolIds, initials, primaryColor } from "../utils/schools.js";
 import { useSportPrefix } from "../utils/links.js";
 import { displayPlayerName, playerProfileHref } from "../utils/players.js";
 import { formatGameDayDate } from "../utils/dates.js";
@@ -13,9 +13,18 @@ import { formatGameDayDate } from "../utils/dates.js";
  * quiet weeks don't field a halfhearted card.
  */
 export default function PlayerOfWeek({ games, schoolIndex, sponsors, sportConfig, override }) {
+  // Editorial radius: the auto-pick only crowns home-region athletes
+  // (~60 miles of Wausau via SITE.homeRegionCities). The editor override
+  // is exempt — an explicit pick is an editorial decision either way.
+  const eligible = useMemo(
+    () => homeRegionSchoolIds([...(schoolIndex?.values?.() ?? [])]),
+    [schoolIndex],
+  );
   const pick = useMemo(
-    () => resolveOverridePotw(override, games) ?? pickPlayerOfWeek(games),
-    [override, games],
+    () =>
+      resolveOverridePotw(override, games) ??
+      pickPlayerOfWeek(games, { eligibleSchoolIds: eligible.size ? eligible : null }),
+    [override, games, eligible],
   );
   const sportPrefix = useSportPrefix();
   if (!pick) return null;

@@ -150,7 +150,10 @@ export function resolveOverridePotw(override, games) {
 // bypasses this entirely — an explicit editorial pick always shows.
 const MIN_STAT_GAMES_FOR_AUTO_PICK = 10;
 
-export function pickPlayerOfWeek(games, { minScore = 80, anchor = null } = {}) {
+export function pickPlayerOfWeek(
+  games,
+  { minScore = 80, anchor = null, eligibleSchoolIds = null } = {},
+) {
   if (!games || games.length === 0) return null;
 
   const finals = games.filter(
@@ -173,6 +176,13 @@ export function pickPlayerOfWeek(games, { minScore = 80, anchor = null } = {}) {
     if (gameTs < windowStart || gameTs > lastTs + DAY_MS) continue;
     for (const line of topStatLines(game)) {
       if (!line.team_school_id) continue; // editorial focus: tracked schools only
+      // Editorial radius (Shereen, 2026-08): Player of the Week features
+      // athletes within ~60 miles of Wausau. SITE.homeRegionCities is
+      // that radius as a city list — the same one the hero uses — so a
+      // Superior or Eau Claire line can lead the scoreboard without
+      // being crowned. null = no restriction (white-label tenants
+      // without a configured home region keep the whole-coverage pick).
+      if (eligibleSchoolIds && !eligibleSchoolIds.has(line.team_school_id)) continue;
       const score = scoreStatLine(line);
       if (score < minScore) continue;
       if (!best || score > best.score) {
