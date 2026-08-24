@@ -116,3 +116,50 @@ def test_match_history_still_parses_legacy_urls(monkeypatch):
     assert games[0].date == "2025-10-24"
     assert games[0].opponent == "Arrowhead"
     assert games[0].home is True  # legacy URLs are away-vs-home
+
+
+# --- tolerant slug matching (transform/stats.py) --------------------------
+# MP decorates game-URL slugs unpredictably: co-op partners, cities,
+# leftover mascots. Opening week 2026: 8 of 44 finals were undiscoverable
+# on exact equality.
+
+from transform.stats import _resolve_mp_slug, _slugs_equivalent  # noqa: E402
+
+
+@pytest.mark.parametrize(
+    ("a", "b"),
+    [
+        ("shawano-community", "shawano"),  # city/district suffix
+        ("stanley-boyd-rockets", "stanley-boyd"),  # leftover mascot
+        ("mellen", "mellen-co-op"),  # OUR side carries the suffix
+        ("chequamegon-park-falls", "chequamegon"),  # city suffix
+        ("spencer-columbus", "spencer"),  # co-op partner
+        ("dc-everest", "d-c-everest"),  # collapsed-hyphen equality
+    ],
+)
+def test_slugs_equivalent_accepts_mp_variants(a, b):
+    assert _slugs_equivalent(a, b)
+    assert _slugs_equivalent(b, a)
+
+
+@pytest.mark.parametrize(
+    ("a", "b"),
+    [
+        ("wausau-east", "wausau-west"),  # shared prefix, different school
+        ("colby", "cornell"),
+        ("marion", "marathon"),  # near-miss, no token boundary
+        ("st", "stanley-boyd"),  # short-fragment guard
+        ("", "shawano"),
+    ],
+)
+def test_slugs_equivalent_rejects_different_schools(a, b):
+    assert not _slugs_equivalent(a, b)
+
+
+def test_resolve_mp_slug_requires_unique_match():
+    table = {"shawano": "shawano", "stanley-boyd": "stanley-boyd"}
+    assert _resolve_mp_slug("shawano-community", table) == "shawano"
+    assert _resolve_mp_slug("shawano", table) == "shawano"  # exact still first
+    # Ambiguity means no attach: two tolerant candidates -> "".
+    two = {"river-falls": "a", "river": "b"}
+    assert _resolve_mp_slug("river-falls-wildcats", two) == ""

@@ -304,7 +304,7 @@ def merge_maxpreps_stats(
                 mp_game.box_score_url,
                 school_slug,
             )
-            opp_id = mp_slug_to_id.get(opp_slug or "", "")
+            opp_id = _resolve_mp_slug(opp_slug, mp_slug_to_id)
             our_game = games_by_key.get((mp_game.date, school.id, opp_id)) if opp_id else None
             if our_game is None:
                 # The opponent didn't resolve to a tracked slug
@@ -687,10 +687,51 @@ def _collapsed_slug(slug: str) -> str:
     return slug.replace("-", "").replace("saint", "st")
 
 
+def _slugs_equivalent(a: str | None, b: str | None) -> bool:
+    """Tolerant school-slug compare for MaxPreps' inconsistent naming.
+
+    MP's game-URL slugs decorate school names unpredictably — co-op
+    partners ("spencer-columbus", "loyal-greenwood"), cities
+    ("chequamegon-park-falls", "luther-onalaska"), leftover mascots
+    ("stanley-boyd-rockets", "bruce-raiders") — and occasionally go the
+    other way (their "mellen" vs our "mellen-co-op"). Opening week 2026:
+    8 of 44 finals were undiscoverable on exact-equality matching alone.
+
+    Equivalent when equal in collapsed form, or when one is a
+    token-boundary prefix of the other ("shawano" ~ "shawano-community",
+    but never "wausau-east" ~ "wausau-west"). The shorter side must
+    carry at least 4 characters so tiny fragments can't match broadly.
+    Callers still wrap this in date + tracked-side + exactly-one-
+    candidate constraints — tolerance here never means attach-by-
+    elimination."""
+    if not a or not b:
+        return False
+    if _collapsed_slug(a) == _collapsed_slug(b):
+        return True
+    shorter, longer = (a, b) if len(a) <= len(b) else (b, a)
+    if len(shorter) < 4:
+        return False
+    return longer.startswith(shorter + "-")
+
+
+def _resolve_mp_slug(slug: str | None, mp_slug_to_id: dict[str, str]) -> str:
+    """Map a game-URL school slug to our school id, tolerating MP's
+    slug decorations. Exact hit first; otherwise accept a UNIQUE
+    tolerant match — two candidate schools matching the same slug is
+    ambiguity, and ambiguity means no attach."""
+    if not slug:
+        return ""
+    exact = mp_slug_to_id.get(slug)
+    if exact:
+        return exact
+    hits = {sid for s, sid in mp_slug_to_id.items() if _slugs_equivalent(slug, s)}
+    return hits.pop() if len(hits) == 1 else ""
+
+
 def _slug_matches_school_name(slug: str | None, name: str | None) -> bool:
     if not slug or not name:
         return False
-    return _collapsed_slug(slug) == _collapsed_slug(_school_name_slug(name))
+    return _slugs_equivalent(slug, _school_name_slug(name))
 
 
 def _mp_box_matches_game(
@@ -719,7 +760,7 @@ def _mp_box_matches_game(
     else:
         return False
     for slug in slugs:
-        if theirs.school_id and mp_slug_to_id.get(slug) == theirs.school_id:
+        if theirs.school_id and _resolve_mp_slug(slug, mp_slug_to_id) == theirs.school_id:
             return True
         if _slug_matches_school_name(slug, theirs.name):
             return True
@@ -736,9 +777,9 @@ def _extract_opponent_slug_from_url(url: str, our_slug: str | None) -> str | Non
     if slugs is None:
         return None
     first, second = slugs
-    if first == our_slug:
+    if _slugs_equivalent(first, our_slug):
         return second
-    if second == our_slug:
+    if _slugs_equivalent(second, our_slug):
         return first
     # Neutral-site / tournament URL where our slug isn't either side —
     # nothing we can disambiguate by.
