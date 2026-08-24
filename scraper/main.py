@@ -368,6 +368,27 @@ def main() -> int:
         )
         dataset.season_stats = existing.season_stats
 
+    # Per-game stat-lines carry-forward: a final's stat lines are
+    # append-only truth — once attached they must survive later scrapes
+    # whose merges come back empty for that game. Two real causes: a
+    # stats source going dark (Bound serves GitHub-runner IPs a bot
+    # challenge — found 2026-08-24 — so CI merges can see 0 where a
+    # local run attached lines) and transient source outages. Matched by
+    # game id, which embeds the date, so a rescheduled game never
+    # inherits the old date's stats.
+    if existing is not None and existing.meta.season == dataset.meta.season:
+        prev_lines = {g.id: g.stat_leaders for g in existing.games if g.stat_leaders}
+        carried = 0
+        for g in dataset.games:
+            if g.status is GameStatus.FINAL and not g.stat_leaders and g.id in prev_lines:
+                g.stat_leaders = prev_lines[g.id]
+                carried += 1
+        if carried:
+            console.print(
+                f"[yellow]carried stat lines forward for {carried} game(s) whose "
+                f"merges came back empty this run[/yellow]"
+            )
+
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     write_dataset(dataset, DATA_DIR)
     console.print(f"[green]Wrote dataset to {DATA_DIR}[/green]")
