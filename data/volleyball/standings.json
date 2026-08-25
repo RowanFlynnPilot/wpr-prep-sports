@@ -6,6 +6,16 @@
     "division": null,
     "rows": [
       {
+        "school_id": "wisconsin-rapids",
+        "name": "Wisconsin Rapids Lincoln",
+        "conference_wins": 0,
+        "conference_losses": 0,
+        "overall_wins": 1,
+        "overall_losses": 0,
+        "points_for": 2,
+        "points_against": 1
+      },
+      {
         "school_id": "wausau-east",
         "name": "Wausau East",
         "conference_wins": 0,
@@ -48,16 +58,6 @@
       {
         "school_id": "spash",
         "name": "SPASH",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "overall_wins": 0,
-        "overall_losses": 0,
-        "points_for": 0,
-        "points_against": 0
-      },
-      {
-        "school_id": "wisconsin-rapids",
-        "name": "Wisconsin Rapids Lincoln",
         "conference_wins": 0,
         "conference_losses": 0,
         "overall_wins": 0,
