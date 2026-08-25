@@ -152,6 +152,16 @@
     "division": null,
     "rows": [
       {
+        "school_id": "menomonie",
+        "name": "Menomonie",
+        "conference_wins": 0,
+        "conference_losses": 0,
+        "overall_wins": 1,
+        "overall_losses": 0,
+        "points_for": 2,
+        "points_against": 1
+      },
+      {
         "school_id": "eau-claire-north",
         "name": "Eau Claire North",
         "conference_wins": 0,
@@ -214,16 +224,6 @@
       {
         "school_id": "river-falls",
         "name": "River Falls",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "overall_wins": 0,
-        "overall_losses": 0,
-        "points_for": 0,
-        "points_against": 0
-      },
-      {
-        "school_id": "menomonie",
-        "name": "Menomonie",
         "conference_wins": 0,
         "conference_losses": 0,
         "overall_wins": 0,
