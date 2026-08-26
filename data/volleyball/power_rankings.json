@@ -1,7 +1,7 @@
 {
   "sport": "volleyball",
   "season": "2026-27",
-  "generated_at": "2026-08-26T06:42:35.045387-05:00",
+  "generated_at": "2026-08-26T08:14:04.060227-05:00",
   "method": "WPR Power Index v1: 40% W%, 35% SOS, 25% margin (capped per sport)",
   "rankings": [
     {
@@ -102,6 +102,18 @@
     },
     {
       "rank": 9,
+      "school_id": "medford",
+      "school_name": "Medford",
+      "wins": 1,
+      "losses": 3,
+      "win_pct": 0.25,
+      "sos": 0.5,
+      "avg_margin_capped": -0.5,
+      "score": 37.92,
+      "movement": null
+    },
+    {
+      "rank": 10,
       "school_id": "eau-claire-north",
       "school_name": "Eau Claire North",
       "wins": 0,
@@ -110,10 +122,10 @@
       "sos": 0.75,
       "avg_margin_capped": -2.0,
       "score": 30.42,
-      "movement": 0
+      "movement": -1
     },
     {
-      "rank": 10,
+      "rank": 11,
       "school_id": "superior",
       "school_name": "Superior",
       "wins": 0,
@@ -122,7 +134,7 @@
       "sos": 0.75,
       "avg_margin_capped": -2.0,
       "score": 30.42,
-      "movement": 0
+      "movement": -1
     }
   ]
 }
