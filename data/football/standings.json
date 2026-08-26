@@ -182,16 +182,6 @@
     "division": null,
     "rows": [
       {
-        "school_id": "bruce",
-        "name": "Bruce",
-        "conference_wins": 1,
-        "conference_losses": 0,
-        "overall_wins": 2,
-        "overall_losses": 0,
-        "points_for": 45,
-        "points_against": 16
-      },
-      {
         "school_id": "rib-lake",
         "name": "Rib Lake",
         "conference_wins": 1,
@@ -210,6 +200,16 @@
         "overall_losses": 0,
         "points_for": 30,
         "points_against": 8
+      },
+      {
+        "school_id": "bruce",
+        "name": "Bruce",
+        "conference_wins": 0,
+        "conference_losses": 0,
+        "overall_wins": 1,
+        "overall_losses": 0,
+        "points_for": 44,
+        "points_against": 16
       },
       {
         "school_id": "hurley",
@@ -478,11 +478,11 @@
       {
         "school_id": "marion",
         "name": "Marion",
-        "conference_wins": 2,
+        "conference_wins": 1,
         "conference_losses": 0,
-        "overall_wins": 3,
+        "overall_wins": 2,
         "overall_losses": 1,
-        "points_for": 11,
+        "points_for": 10,
         "points_against": 34
       },
       {
@@ -526,6 +526,16 @@
         "points_against": 47
       },
       {
+        "school_id": "menominee-nation",
+        "name": "Menominee Nation",
+        "conference_wins": 0,
+        "conference_losses": 0,
+        "overall_wins": 0,
+        "overall_losses": 0,
+        "points_for": 0,
+        "points_against": 0
+      },
+      {
         "school_id": "tri-county",
         "name": "Tri-County",
         "conference_wins": 0,
@@ -538,16 +548,6 @@
       {
         "school_id": "bowler",
         "name": "Bowler",
-        "conference_wins": 0,
-        "conference_losses": 1,
-        "overall_wins": 0,
-        "overall_losses": 1,
-        "points_for": 0,
-        "points_against": 1
-      },
-      {
-        "school_id": "menominee-nation",
-        "name": "Menominee Nation",
         "conference_wins": 0,
         "conference_losses": 1,
         "overall_wins": 0,
