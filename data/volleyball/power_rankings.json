@@ -1,0 +1,128 @@
+{
+  "sport": "volleyball",
+  "season": "2026-27",
+  "generated_at": "2026-08-26T00:47:28.048932-05:00",
+  "method": "WPR Power Index v1: 40% W%, 35% SOS, 25% margin (capped per sport)",
+  "rankings": [
+    {
+      "rank": 1,
+      "school_id": "mosinee",
+      "school_name": "Mosinee",
+      "wins": 4,
+      "losses": 0,
+      "win_pct": 1.0,
+      "sos": 0.25,
+      "avg_margin_capped": 1.75,
+      "score": 68.54,
+      "movement": null
+    },
+    {
+      "rank": 2,
+      "school_id": "hudson",
+      "school_name": "Hudson",
+      "wins": 2,
+      "losses": 1,
+      "win_pct": 0.6667,
+      "sos": 0.75,
+      "avg_margin_capped": 0.67,
+      "score": 68.19,
+      "movement": null
+    },
+    {
+      "rank": 3,
+      "school_id": "shell-lake",
+      "school_name": "Shell Lake",
+      "wins": 2,
+      "losses": 1,
+      "win_pct": 0.6667,
+      "sos": 0.5,
+      "avg_margin_capped": 0.67,
+      "score": 59.44,
+      "movement": null
+    },
+    {
+      "rank": 4,
+      "school_id": "marshfield",
+      "school_name": "Marshfield",
+      "wins": 3,
+      "losses": 1,
+      "win_pct": 0.75,
+      "sos": 0.25,
+      "avg_margin_capped": 1.25,
+      "score": 56.46,
+      "movement": null
+    },
+    {
+      "rank": 5,
+      "school_id": "wittenberg-birnamwood",
+      "school_name": "Wittenberg-Birnamwood",
+      "wins": 2,
+      "losses": 2,
+      "win_pct": 0.5,
+      "sos": 0.5,
+      "avg_margin_capped": 0.25,
+      "score": 51.04,
+      "movement": null
+    },
+    {
+      "rank": 6,
+      "school_id": "weyauwega-fremont",
+      "school_name": "Weyauwega-Fremont",
+      "wins": 2,
+      "losses": 2,
+      "win_pct": 0.5,
+      "sos": 0.5,
+      "avg_margin_capped": 0.0,
+      "score": 50.0,
+      "movement": null
+    },
+    {
+      "rank": 7,
+      "school_id": "chippewa-falls",
+      "school_name": "Chippewa Falls",
+      "wins": 1,
+      "losses": 2,
+      "win_pct": 0.3333,
+      "sos": 0.75,
+      "avg_margin_capped": -0.67,
+      "score": 49.31,
+      "movement": null
+    },
+    {
+      "rank": 8,
+      "school_id": "dc-everest",
+      "school_name": "D.C. Everest",
+      "wins": 2,
+      "losses": 2,
+      "win_pct": 0.5,
+      "sos": 0.25,
+      "avg_margin_capped": 0.0,
+      "score": 41.25,
+      "movement": null
+    },
+    {
+      "rank": 9,
+      "school_id": "eau-claire-north",
+      "school_name": "Eau Claire North",
+      "wins": 0,
+      "losses": 3,
+      "win_pct": 0.0,
+      "sos": 0.75,
+      "avg_margin_capped": -2.0,
+      "score": 30.42,
+      "movement": null
+    },
+    {
+      "rank": 10,
+      "school_id": "superior",
+      "school_name": "Superior",
+      "wins": 0,
+      "losses": 4,
+      "win_pct": 0.0,
+      "sos": 0.75,
+      "avg_margin_capped": -2.0,
+      "score": 30.42,
+      "movement": null
+    }
+  ]
+}
