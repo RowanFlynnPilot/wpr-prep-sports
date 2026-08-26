@@ -1,7 +1,7 @@
 {
   "sport": "volleyball",
   "season": "2026-27",
-  "generated_at": "2026-08-26T14:18:34.357063-05:00",
+  "generated_at": "2026-08-26T18:26:01.086505-05:00",
   "method": "WPR Power Index v1: 40% W%, 35% SOS, 25% margin (capped per sport)",
   "rankings": [
     {
@@ -102,6 +102,18 @@
     },
     {
       "rank": 9,
+      "school_id": "black-river-falls",
+      "school_name": "Black River Falls",
+      "wins": 2,
+      "losses": 2,
+      "win_pct": 0.5,
+      "sos": 0.5,
+      "avg_margin_capped": 0.0,
+      "score": 50.0,
+      "movement": null
+    },
+    {
+      "rank": 10,
       "school_id": "chippewa-falls",
       "school_name": "Chippewa Falls",
       "wins": 1,
@@ -110,10 +122,10 @@
       "sos": 0.75,
       "avg_margin_capped": -0.67,
       "score": 49.31,
-      "movement": -2
+      "movement": -3
     },
     {
-      "rank": 10,
+      "rank": 11,
       "school_id": "weyauwega-fremont",
       "school_name": "Weyauwega-Fremont",
       "wins": 2,
@@ -122,10 +134,10 @@
       "sos": 0.3333,
       "avg_margin_capped": 0.0,
       "score": 44.17,
-      "movement": -4
+      "movement": -5
     },
     {
-      "rank": 11,
+      "rank": 12,
       "school_id": "dc-everest",
       "school_name": "D.C. Everest",
       "wins": 2,
@@ -134,10 +146,10 @@
       "sos": 0.25,
       "avg_margin_capped": 0.0,
       "score": 41.25,
-      "movement": -3
+      "movement": -4
     },
     {
-      "rank": 12,
+      "rank": 13,
       "school_id": "rosholt",
       "school_name": "Rosholt",
       "wins": 1,
@@ -149,7 +161,7 @@
       "movement": null
     },
     {
-      "rank": 13,
+      "rank": 14,
       "school_id": "tri-county",
       "school_name": "Tri-County",
       "wins": 0,
@@ -161,7 +173,7 @@
       "movement": null
     },
     {
-      "rank": 14,
+      "rank": 15,
       "school_id": "athens",
       "school_name": "Athens",
       "wins": 2,
@@ -173,7 +185,7 @@
       "movement": null
     },
     {
-      "rank": 15,
+      "rank": 16,
       "school_id": "medford",
       "school_name": "Medford",
       "wins": 1,
@@ -185,7 +197,7 @@
       "movement": null
     },
     {
-      "rank": 16,
+      "rank": 17,
       "school_id": "gilman",
       "school_name": "Gilman",
       "wins": 1,
@@ -197,7 +209,7 @@
       "movement": null
     },
     {
-      "rank": 17,
+      "rank": 18,
       "school_id": "eau-claire-north",
       "school_name": "Eau Claire North",
       "wins": 0,
@@ -206,10 +218,10 @@
       "sos": 0.75,
       "avg_margin_capped": -2.0,
       "score": 30.42,
-      "movement": -8
+      "movement": -9
     },
     {
-      "rank": 18,
+      "rank": 19,
       "school_id": "superior",
       "school_name": "Superior",
       "wins": 0,
@@ -218,7 +230,7 @@
       "sos": 0.75,
       "avg_margin_capped": -2.0,
       "score": 30.42,
-      "movement": -8
+      "movement": -9
     }
   ]
 }
