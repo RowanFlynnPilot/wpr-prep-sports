@@ -17,6 +17,19 @@ team sponsors, Player of the Week presented-by). Sponsors ask for
 numbers: pageviews, repeat visits, which pages readers spend time on.
 Without analytics there is nothing to put in the media kit.
 
+> **Status: LIVE since 2026-08-25** — site `sports.wausaupilotandreview.com`,
+> new-style per-site script (repo vars `PLAUSIBLE_DOMAIN` +
+> `PLAUSIBLE_SCRIPT_ID`). Notes from activation night, for the next tenant:
+> sites created under Plausible's newer install flow issue a per-site
+> script (`pa-<id>.js`) and silently DISCARD events from the legacy
+> data-domain script — `/api/event` returns 202 either way; check the
+> `x-plausible-dropped: 1` response header. Set `PLAUSIBLE_SCRIPT_ID`
+> (the id from the site's install snippet) and the loader uses the new
+> script with hash routing. Verification must be a REAL human browser:
+> Plausible's bot filter drops automated/headless visits server-side, and
+> ad blockers hide your own — test from a phone on cellular and watch the
+> realtime view.
+
 ## One-time setup (~5 minutes, existing Plausible account)
 
 1. In the Plausible account: **Add a website**. The domain string is
