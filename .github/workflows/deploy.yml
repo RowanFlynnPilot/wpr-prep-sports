@@ -44,6 +44,7 @@ jobs:
           # BASE_PATH → Pages base path for forks (defaults /wpr-prep-sports/).
           # SPONSOR_EMAIL → media-kit contact (defaults to site config).
           VITE_PLAUSIBLE_DOMAIN: ${{ vars.PLAUSIBLE_DOMAIN }}
+          VITE_PLAUSIBLE_SCRIPT_ID: ${{ vars.PLAUSIBLE_SCRIPT_ID }}
           VITE_PICKEM_API: ${{ vars.PICKEM_API }}
           VITE_BASE: ${{ vars.BASE_PATH }}
           VITE_SPONSOR_EMAIL: ${{ vars.SPONSOR_EMAIL }}

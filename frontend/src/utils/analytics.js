@@ -25,25 +25,47 @@
 import { useEffect } from "react";
 
 const DOMAIN = import.meta.env.VITE_PLAUSIBLE_DOMAIN || null;
+// Plausible's 2025+ per-site script id (e.g. "pa-AbC123"). Sites created
+// under their newer install flow ingest through this script; the legacy
+// data-domain script can post events that such sites silently discard
+// (202 either way — found out the empirical way, launch week 2026).
+// When set, this wins over the legacy path below.
+const SCRIPT_ID = import.meta.env.VITE_PLAUSIBLE_SCRIPT_ID || null;
 // Override for a self-hosted Plausible instance; cloud by default.
 const SCRIPT_SRC =
   import.meta.env.VITE_PLAUSIBLE_SRC || "https://plausible.io/js/script.hash.js";
 
-export const analyticsEnabled = Boolean(DOMAIN);
+export const analyticsEnabled = Boolean(SCRIPT_ID || DOMAIN);
 
 let scriptLoaded = false;
 
 function ensureScript() {
-  if (!DOMAIN || scriptLoaded || typeof document === "undefined") return;
+  if (!analyticsEnabled || scriptLoaded || typeof document === "undefined") return;
   scriptLoaded = true;
   // Official queue shim — trackEvent calls made before the script
-  // lands are buffered and flushed by script.js when it loads.
+  // lands are buffered and flushed when it loads.
   window.plausible =
     window.plausible ||
     function () {
       (window.plausible.q = window.plausible.q || []).push(arguments);
     };
   const s = document.createElement("script");
+  if (SCRIPT_ID) {
+    // New-style per-site script: options go through init() (stashed on
+    // plausible.o for the script to read on load — the official snippet
+    // shape). hashBasedRouting replaces the legacy script.hash.js
+    // variant so hash-route changes still count as pageviews.
+    window.plausible.init =
+      window.plausible.init ||
+      function (opts) {
+        window.plausible.o = opts || {};
+      };
+    s.async = true;
+    s.src = `https://plausible.io/js/${SCRIPT_ID}.js`;
+    document.head.appendChild(s);
+    window.plausible.init({ hashBasedRouting: true });
+    return;
+  }
   s.defer = true;
   s.src = SCRIPT_SRC;
   s.dataset.domain = DOMAIN;
