@@ -1,7 +1,7 @@
 {
   "sport": "volleyball",
   "season": "2026-27",
-  "generated_at": "2026-08-26T02:07:57.131856-05:00",
+  "generated_at": "2026-08-26T02:58:58.085363-05:00",
   "method": "WPR Power Index v1: 40% W%, 35% SOS, 25% margin (capped per sport)",
   "rankings": [
     {
@@ -14,7 +14,7 @@
       "sos": 0.25,
       "avg_margin_capped": 1.75,
       "score": 68.54,
-      "movement": null
+      "movement": 0
     },
     {
       "rank": 2,
@@ -26,7 +26,7 @@
       "sos": 0.75,
       "avg_margin_capped": 0.67,
       "score": 68.19,
-      "movement": null
+      "movement": 0
     },
     {
       "rank": 3,
@@ -38,7 +38,7 @@
       "sos": 0.5,
       "avg_margin_capped": 0.67,
       "score": 59.44,
-      "movement": null
+      "movement": 0
     },
     {
       "rank": 4,
@@ -50,7 +50,7 @@
       "sos": 0.25,
       "avg_margin_capped": 1.25,
       "score": 56.46,
-      "movement": null
+      "movement": 0
     },
     {
       "rank": 5,
@@ -62,7 +62,7 @@
       "sos": 0.5,
       "avg_margin_capped": 0.25,
       "score": 51.04,
-      "movement": null
+      "movement": 0
     },
     {
       "rank": 6,
@@ -74,7 +74,7 @@
       "sos": 0.5,
       "avg_margin_capped": 0.0,
       "score": 50.0,
-      "movement": null
+      "movement": 0
     },
     {
       "rank": 7,
@@ -86,7 +86,7 @@
       "sos": 0.75,
       "avg_margin_capped": -0.67,
       "score": 49.31,
-      "movement": null
+      "movement": 0
     },
     {
       "rank": 8,
@@ -98,7 +98,7 @@
       "sos": 0.25,
       "avg_margin_capped": 0.0,
       "score": 41.25,
-      "movement": null
+      "movement": 0
     },
     {
       "rank": 9,
@@ -110,7 +110,7 @@
       "sos": 0.75,
       "avg_margin_capped": -2.0,
       "score": 30.42,
-      "movement": null
+      "movement": 0
     },
     {
       "rank": 10,
@@ -122,7 +122,7 @@
       "sos": 0.75,
       "avg_margin_capped": -2.0,
       "score": 30.42,
-      "movement": null
+      "movement": 0
     }
   ]
 }
