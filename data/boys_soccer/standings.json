@@ -74,6 +74,16 @@
     "division": null,
     "rows": [
       {
+        "school_id": "northland-pines",
+        "name": "Northland Pines",
+        "conference_wins": 0,
+        "conference_losses": 0,
+        "overall_wins": 1,
+        "overall_losses": 0,
+        "points_for": 6,
+        "points_against": 0
+      },
+      {
         "school_id": "mosinee",
         "name": "Mosinee",
         "conference_wins": 0,
@@ -132,16 +142,6 @@
         "overall_losses": 0,
         "points_for": 0,
         "points_against": 0
-      },
-      {
-        "school_id": "northland-pines",
-        "name": "Northland Pines",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "overall_wins": 0,
-        "overall_losses": 0,
-        "points_for": 0,
-        "points_against": 0
       }
     ]
   },
@@ -160,6 +160,16 @@
         "overall_losses": 0,
         "points_for": 5,
         "points_against": 3
+      },
+      {
+        "school_id": "new-richmond",
+        "name": "New Richmond",
+        "conference_wins": 0,
+        "conference_losses": 0,
+        "overall_wins": 1,
+        "overall_losses": 0,
+        "points_for": 1,
+        "points_against": 0
       },
       {
         "school_id": "rice-lake",
@@ -204,16 +214,6 @@
       {
         "school_id": "hudson",
         "name": "Hudson",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "overall_wins": 0,
-        "overall_losses": 0,
-        "points_for": 0,
-        "points_against": 0
-      },
-      {
-        "school_id": "new-richmond",
-        "name": "New Richmond",
         "conference_wins": 0,
         "conference_losses": 0,
         "overall_wins": 0,
