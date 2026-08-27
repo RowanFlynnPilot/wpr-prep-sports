@@ -1,7 +1,7 @@
 {
   "sport": "volleyball",
   "season": "2026-27",
-  "generated_at": "2026-08-26T23:26:31.119994-05:00",
+  "generated_at": "2026-08-27T04:29:45.194701-05:00",
   "method": "WPR Power Index v1: 40% W%, 35% SOS, 25% margin (capped per sport)",
   "rankings": [
     {
@@ -186,6 +186,18 @@
     },
     {
       "rank": 16,
+      "school_id": "amherst",
+      "school_name": "Amherst",
+      "wins": 1,
+      "losses": 2,
+      "win_pct": 0.3333,
+      "sos": 0.5,
+      "avg_margin_capped": -1.0,
+      "score": 39.17,
+      "movement": null
+    },
+    {
+      "rank": 17,
       "school_id": "medford",
       "school_name": "Medford",
       "wins": 1,
@@ -197,7 +209,7 @@
       "movement": null
     },
     {
-      "rank": 17,
+      "rank": 18,
       "school_id": "gilman",
       "school_name": "Gilman",
       "wins": 1,
@@ -209,7 +221,7 @@
       "movement": null
     },
     {
-      "rank": 18,
+      "rank": 19,
       "school_id": "eau-claire-north",
       "school_name": "Eau Claire North",
       "wins": 0,
@@ -218,10 +230,10 @@
       "sos": 0.75,
       "avg_margin_capped": -2.0,
       "score": 30.42,
-      "movement": -9
+      "movement": -10
     },
     {
-      "rank": 19,
+      "rank": 20,
       "school_id": "superior",
       "school_name": "Superior",
       "wins": 0,
@@ -230,7 +242,7 @@
       "sos": 0.75,
       "avg_margin_capped": -2.0,
       "score": 30.42,
-      "movement": -9
+      "movement": -10
     }
   ]
 }

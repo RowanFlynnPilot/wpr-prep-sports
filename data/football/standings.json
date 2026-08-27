@@ -184,11 +184,11 @@
       {
         "school_id": "rib-lake",
         "name": "Rib Lake",
-        "conference_wins": 1,
+        "conference_wins": 2,
         "conference_losses": 0,
-        "overall_wins": 1,
+        "overall_wins": 2,
         "overall_losses": 0,
-        "points_for": 46,
+        "points_for": 48,
         "points_against": 22
       },
       {
@@ -232,16 +232,6 @@
         "points_against": 22
       },
       {
-        "school_id": "prentice",
-        "name": "Prentice",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "overall_wins": 0,
-        "overall_losses": 1,
-        "points_for": 28,
-        "points_against": 64
-      },
-      {
         "school_id": "flambeau",
         "name": "Flambeau",
         "conference_wins": 0,
@@ -280,6 +270,16 @@
         "overall_losses": 1,
         "points_for": 6,
         "points_against": 40
+      },
+      {
+        "school_id": "prentice",
+        "name": "Prentice",
+        "conference_wins": 0,
+        "conference_losses": 1,
+        "overall_wins": 0,
+        "overall_losses": 2,
+        "points_for": 28,
+        "points_against": 66
       },
       {
         "school_id": "south-shore",
