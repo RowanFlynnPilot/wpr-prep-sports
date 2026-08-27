@@ -2,12 +2,15 @@
  * Hosted embed helper — auto-resize + scroll restore for widget iframes.
  *
  * Exists because WordPress article saves go through the REST API, and the
- * WAF in front of the site rejects POST bodies containing inline
- * <script> code as stored-XSS ("Updating failed. The response is not a
- * valid JSON response."). Articles therefore paste an iframe plus ONE
- * external script tag pointing here — no inline JS ever enters the post
- * body. If a strict author role strips even the script tag, the iframe's
- * fixed fallback height keeps the widget usable (it scrolls internally).
+ * WAF in front of the site 403s POST bodies containing ANY "<script" —
+ * inline code and bare external src tags alike ("Updating failed. The
+ * response is not a valid JSON response."; both variants verified against
+ * the live editor 2026-08-26). Article snippets are therefore iframe-ONLY,
+ * and this file is installed ONCE site-wide (code-snippets plugin or theme
+ * footer — outside post content, where the WAF doesn't look) to give every
+ * widget iframe on the site auto-resize. Until it's installed, each
+ * snippet's fixed fallback height keeps the widget usable (it scrolls
+ * internally).
  *
  * Behavior matches the README's inline page-template snippet:
  *  - `<namespace>:resize`    → set the iframe height to the reported px.

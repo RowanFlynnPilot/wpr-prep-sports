@@ -202,7 +202,11 @@ deploy workflow can publish directly.
 ## WordPress embed
 
 Served from `https://sports.wausaupilotandreview.com` (GitHub Pages custom
-domain, Cloudflare DNS-only CNAME). The subdomain is deliberate: it makes
+domain behind a Cloudflare-PROXIED CNAME — originally DNS-only, observed
+proxied as of 2026-08-26 via CF-RAY headers, so Cloudflare zone settings
+like bot protection now apply to the widget domain; automated/CDP
+browsers may get 403s on the iframe that real readers never see). The
+subdomain is deliberate: it makes
 the iframe same-site with the host page, so the widget's `localStorage`
 isn't partitioned and Safari/ITP doesn't expire it — see
 `docs/favorites-spec.md`. The full snippet, with the `origin`/`source`

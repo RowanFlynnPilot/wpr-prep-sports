@@ -114,19 +114,19 @@ The widget runs as a self-contained React app inside the iframe — no
 script dependencies leak into the host page, no cookies are set, and
 internal navigation uses hash routes so it never reloads the host page.
 
-### Embedding in an article — use this snippet, not the one above
+### Embedding in an article — iframe ONLY, no script tags
 
 The inline-script snippet above is for the page template, installed once
-by an admin. **Pasting it into an article will make the save fail** with
-*"Updating failed. The response is not a valid JSON response."* — the
-editor saves posts through the WordPress REST API, and the security
-layer in front of the site rejects any post body containing inline
-`<script>` code as a stored-XSS attempt, returning an HTML error page
-where the editor expects JSON. The iframe isn't the problem; the inline
-JavaScript is.
+by an admin. **Pasting any `<script>` tag into an article makes the save
+fail** with *"Updating failed. The response is not a valid JSON
+response."* — the editor saves posts through the WordPress REST API, and
+the WAF in front of the site 403s any post body containing `<script>`,
+returning an HTML error page where the editor expects JSON. Verified
+against the live editor (2026-08-26): the inline script AND a bare
+external `<script src>` both get the save 403'd; the iframe alone saves
+cleanly.
 
-Articles use this instead (Custom HTML block) — same behavior, zero
-inline JS; the resize/scroll logic is hosted on the widget's own domain:
+Articles therefore use exactly this, nothing more (Custom HTML block):
 
 ```html
 <iframe
@@ -138,22 +138,39 @@ inline JS; the resize/scroll logic is hosted on the widget's own domain:
   style="border:0;display:block;"
   title="Central Wisconsin Prep Sports"
 ></iframe>
-<script async src="https://sports.wausaupilotandreview.com/embed.js"></script>
 ```
 
 Notes:
 
 - To open the widget on a specific view, point the `src` at a hash
-  route: `.../#/volleyball`, `.../#/football/game/<id>`, etc.
-- `embed.js` handles any number of widget iframes on one page (it
-  matches each message to the frame that sent it), and pasting the
-  script line twice is harmless.
-- The `height="1400"` is a fallback: if an author role's save strips
-  even the external script tag, the widget still renders at that fixed
-  height and scrolls internally.
-- If the save fails **even with this snippet**, the block is coming from
-  a security plugin or a restricted user role — have a site admin save
-  the post once, or allowlist the rule that fired.
+  route: `.../#/volleyball`, `.../#/football/game/<id>`, etc. (browse
+  the widget, copy the address bar).
+- Without a script the frame can't auto-resize; the fixed
+  `height="1400"` keeps it fully usable (content scrolls inside the
+  frame). For real auto-resize in articles, install `embed.js`
+  site-wide — next section.
+- If the save fails even for the plain iframe, that's a restricted user
+  role or another security plugin — have a site admin save the post
+  once, or allowlist the rule that fired.
+
+### Site-wide auto-resize: install embed.js once (admin)
+
+`https://sports.wausaupilotandreview.com/embed.js` carries the same
+resize + scroll-restore logic as the template snippet, generalized: it
+finds every widget iframe on a page by matching each postMessage to the
+frame that sent it, so one copy serves the full widget and any number of
+per-school modules, on any page or article. Install it ONCE outside post
+content — a code-snippets plugin (WPCode etc.) injecting into the site
+footer, or the theme's footer template:
+
+```html
+<script async src="https://sports.wausaupilotandreview.com/embed.js"></script>
+```
+
+After that, every article's plain-iframe embed auto-resizes and gets the
+scroll-position fix; the fixed `height` in the snippets becomes just the
+pre-load placeholder. Safe alongside the page template's inline snippet
+(embed.js is idempotent and setting the same height twice is harmless).
 
 **Theming:** embedded, the widget always renders its light palette (the
 WPR page around it is light). Append `?theme=dark` to the iframe `src`
@@ -173,15 +190,13 @@ recent form, and that school's sponsor slot:
   width="100%" height="330" frameborder="0" loading="lazy"
   style="border:0;display:block;max-width:640px;"
 ></iframe>
-<script async src="https://sports.wausaupilotandreview.com/embed.js"></script>
 ```
 
 Swap the sport and school-id path segments per placement (ids are the
-slugs in `data/schools.json`). The `embed.js` line gives the module
-auto-resize (it matches messages per-frame, so several modules — or a
-module plus the full widget — coexist on one page); without it the
-module renders at the fixed 330px. Article-safe: no inline JS, so
-WordPress saves aren't rejected. The `#/sponsor` media kit generates
+slugs in `data/schools.json`). Iframe only — no script tags, or the
+article save gets 403'd (see above). The module renders at the fixed
+330px until the site-wide `embed.js` is installed, after which it
+auto-resizes like everything else. The `#/sponsor` media kit generates
 these snippets per school.
 
 ## Local development
