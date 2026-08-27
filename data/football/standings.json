@@ -345,9 +345,9 @@
         "conference_wins": 0,
         "conference_losses": 0,
         "overall_wins": 1,
-        "overall_losses": 1,
+        "overall_losses": 2,
         "points_for": 34,
-        "points_against": 9
+        "points_against": 10
       },
       {
         "school_id": "auburndale",
@@ -387,6 +387,16 @@
     "conference": "CWC-Large",
     "division": null,
     "rows": [
+      {
+        "school_id": "weyauwega-fremont",
+        "name": "Weyauwega-Fremont",
+        "conference_wins": 0,
+        "conference_losses": 0,
+        "overall_wins": 2,
+        "overall_losses": 0,
+        "points_for": 25,
+        "points_against": 14
+      },
       {
         "school_id": "marathon",
         "name": "Marathon",
@@ -436,16 +446,6 @@
         "overall_losses": 0,
         "points_for": 56,
         "points_against": 0
-      },
-      {
-        "school_id": "weyauwega-fremont",
-        "name": "Weyauwega-Fremont",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "overall_wins": 1,
-        "overall_losses": 0,
-        "points_for": 24,
-        "points_against": 14
       },
       {
         "school_id": "wittenberg-birnamwood",
