@@ -434,22 +434,17 @@ function EmbedBuilder({ schools }) {
   const [sport, setSport] = useState("football");
   const [copied, setCopied] = useState(false);
 
-  const frameId = `${SITE.storagePrefix}-team-${schoolId}`;
-  const snippet = `<iframe id="${frameId}"
+  // No inline JS in the snippet: WordPress article saves go through the
+  // REST API, and the WAF rejects post bodies containing inline <script>
+  // code ("Updating failed. The response is not a valid JSON response.").
+  // The hosted embed.js carries the auto-resize instead; if a strict
+  // author role strips even that tag, the fixed height keeps the module
+  // fully usable.
+  const snippet = `<iframe
   src="${WIDGET_ORIGIN}#/${sport}/embed/${schoolId}"
   width="100%" height="330" frameborder="0" loading="lazy"
   style="border:0;display:block;max-width:640px;"></iframe>
-<script>
-  (function () {
-    var f = document.getElementById('${frameId}');
-    window.addEventListener('message', function (e) {
-      if (!e.data || e.data.type !== '${SITE.messageNamespace}:resize') return;
-      if (f && e.source === f.contentWindow && e.data.height > 0) {
-        f.style.height = e.data.height + 'px';
-      }
-    });
-  })();
-</script>`;
+<script async src="${WIDGET_ORIGIN}embed.js"><\/script>`;
 
   const copy = () => {
     navigator.clipboard?.writeText(snippet).then(() => {
@@ -465,7 +460,9 @@ function EmbedBuilder({ schools }) {
       <p className="mk-embed__lede">
         Drop a live team module into any {SITE.orgShort} story or sidebar —
         record, last/next game, and that school&apos;s sponsor. Pick a team,
-        copy, paste into WordPress (Custom HTML block).
+        copy, paste into WordPress (Custom HTML block). The code is
+        article-safe: no inline JavaScript, so the editor&apos;s save
+        won&apos;t be rejected by security filters.
       </p>
       <div className="mk-embed__controls">
         <label>
