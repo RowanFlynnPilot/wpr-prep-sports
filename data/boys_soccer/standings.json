@@ -11,9 +11,9 @@
         "conference_wins": 0,
         "conference_losses": 0,
         "overall_wins": 1,
-        "overall_losses": 0,
-        "points_for": 4,
-        "points_against": 0
+        "overall_losses": 1,
+        "points_for": 6,
+        "points_against": 3
       },
       {
         "school_id": "wausau-west",
@@ -104,6 +104,16 @@
         "points_against": 1
       },
       {
+        "school_id": "lakeland",
+        "name": "Lakeland",
+        "conference_wins": 0,
+        "conference_losses": 0,
+        "overall_wins": 1,
+        "overall_losses": 0,
+        "points_for": 3,
+        "points_against": 2
+      },
+      {
         "school_id": "medford",
         "name": "Medford",
         "conference_wins": 0,
@@ -116,16 +126,6 @@
       {
         "school_id": "merrill",
         "name": "Merrill",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "overall_wins": 0,
-        "overall_losses": 0,
-        "points_for": 0,
-        "points_against": 0
-      },
-      {
-        "school_id": "lakeland",
-        "name": "Lakeland",
         "conference_wins": 0,
         "conference_losses": 0,
         "overall_wins": 0,

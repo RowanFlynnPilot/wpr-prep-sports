@@ -1,7 +1,7 @@
 {
   "sport": "volleyball",
   "season": "2026-27",
-  "generated_at": "2026-08-28T00:20:04.561705-05:00",
+  "generated_at": "2026-08-28T13:39:26.134706-05:00",
   "method": "WPR Power Index v1: 40% W%, 35% SOS, 25% margin (capped per sport)",
   "rankings": [
     {
@@ -138,8 +138,20 @@
     },
     {
       "rank": 12,
-      "school_id": "black-river-falls",
-      "school_name": "Black River Falls",
+      "school_id": "marion",
+      "school_name": "Marion",
+      "wins": 3,
+      "losses": 1,
+      "win_pct": 0.75,
+      "sos": 0.0,
+      "avg_margin_capped": 2.0,
+      "score": 50.83,
+      "movement": null
+    },
+    {
+      "rank": 13,
+      "school_id": "northland-pines",
+      "school_name": "Northland Pines",
       "wins": 2,
       "losses": 2,
       "win_pct": 0.5,
@@ -149,7 +161,7 @@
       "movement": null
     },
     {
-      "rank": 13,
+      "rank": 14,
       "school_id": "chippewa-falls",
       "school_name": "Chippewa Falls",
       "wins": 1,
@@ -158,10 +170,10 @@
       "sos": 0.75,
       "avg_margin_capped": -0.67,
       "score": 49.31,
-      "movement": -6
+      "movement": -7
     },
     {
-      "rank": 14,
+      "rank": 15,
       "school_id": "athens",
       "school_name": "Athens",
       "wins": 2,
@@ -173,7 +185,7 @@
       "movement": null
     },
     {
-      "rank": 15,
+      "rank": 16,
       "school_id": "gilman",
       "school_name": "Gilman",
       "wins": 2,
@@ -185,7 +197,7 @@
       "movement": null
     },
     {
-      "rank": 16,
+      "rank": 17,
       "school_id": "weyauwega-fremont",
       "school_name": "Weyauwega-Fremont",
       "wins": 2,
@@ -194,10 +206,10 @@
       "sos": 0.3333,
       "avg_margin_capped": 0.0,
       "score": 44.17,
-      "movement": -10
+      "movement": -11
     },
     {
-      "rank": 17,
+      "rank": 18,
       "school_id": "dc-everest",
       "school_name": "D.C. Everest",
       "wins": 2,
@@ -206,10 +218,22 @@
       "sos": 0.25,
       "avg_margin_capped": 0.0,
       "score": 41.25,
-      "movement": -9
+      "movement": -10
     },
     {
-      "rank": 18,
+      "rank": 19,
+      "school_id": "black-river-falls",
+      "school_name": "Black River Falls",
+      "wins": 2,
+      "losses": 4,
+      "win_pct": 0.3333,
+      "sos": 0.5,
+      "avg_margin_capped": -0.5,
+      "score": 41.25,
+      "movement": null
+    },
+    {
+      "rank": 20,
       "school_id": "rosholt",
       "school_name": "Rosholt",
       "wins": 1,
@@ -221,7 +245,7 @@
       "movement": null
     },
     {
-      "rank": 19,
+      "rank": 21,
       "school_id": "amherst",
       "school_name": "Amherst",
       "wins": 1,
@@ -233,7 +257,7 @@
       "movement": null
     },
     {
-      "rank": 20,
+      "rank": 22,
       "school_id": "eau-claire-north",
       "school_name": "Eau Claire North",
       "wins": 0,
@@ -242,10 +266,10 @@
       "sos": 0.75,
       "avg_margin_capped": -2.0,
       "score": 30.42,
-      "movement": -11
+      "movement": -13
     },
     {
-      "rank": 21,
+      "rank": 23,
       "school_id": "superior",
       "school_name": "Superior",
       "wins": 0,
@@ -254,7 +278,19 @@
       "sos": 0.75,
       "avg_margin_capped": -2.0,
       "score": 30.42,
-      "movement": -11
+      "movement": -13
+    },
+    {
+      "rank": 24,
+      "school_id": "menominee-nation",
+      "school_name": "Menominee Nation",
+      "wins": 0,
+      "losses": 3,
+      "win_pct": 0.0,
+      "sos": 0.75,
+      "avg_margin_capped": -2.33,
+      "score": 29.03,
+      "movement": null
     }
   ]
 }

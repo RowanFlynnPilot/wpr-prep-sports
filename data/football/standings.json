@@ -139,9 +139,9 @@
         "conference_wins": 0,
         "conference_losses": 0,
         "overall_wins": 1,
-        "overall_losses": 0,
-        "points_for": 41,
-        "points_against": 18
+        "overall_losses": 1,
+        "points_for": 55,
+        "points_against": 66
       },
       {
         "school_id": "dc-everest",
@@ -154,16 +154,6 @@
         "points_against": 50
       },
       {
-        "school_id": "eau-claire-memorial",
-        "name": "Eau Claire Memorial",
-        "conference_wins": 0,
-        "conference_losses": 1,
-        "overall_wins": 0,
-        "overall_losses": 1,
-        "points_for": 7,
-        "points_against": 48
-      },
-      {
         "school_id": "eau-claire-north",
         "name": "Eau Claire North",
         "conference_wins": 0,
@@ -172,6 +162,16 @@
         "overall_losses": 2,
         "points_for": 38,
         "points_against": 106
+      },
+      {
+        "school_id": "eau-claire-memorial",
+        "name": "Eau Claire Memorial",
+        "conference_wins": 0,
+        "conference_losses": 2,
+        "overall_wins": 0,
+        "overall_losses": 2,
+        "points_for": 13,
+        "points_against": 90
       }
     ]
   },
@@ -574,14 +574,24 @@
         "points_against": 17
       },
       {
+        "school_id": "chippewa-falls",
+        "name": "Chippewa Falls",
+        "conference_wins": 1,
+        "conference_losses": 0,
+        "overall_wins": 2,
+        "overall_losses": 0,
+        "points_for": 92,
+        "points_against": 28
+      },
+      {
         "school_id": "new-richmond",
         "name": "New Richmond",
         "conference_wins": 1,
         "conference_losses": 0,
-        "overall_wins": 1,
+        "overall_wins": 2,
         "overall_losses": 0,
-        "points_for": 48,
-        "points_against": 7
+        "points_for": 96,
+        "points_against": 21
       },
       {
         "school_id": "superior",
@@ -592,16 +602,6 @@
         "overall_losses": 1,
         "points_for": 73,
         "points_against": 63
-      },
-      {
-        "school_id": "chippewa-falls",
-        "name": "Chippewa Falls",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "overall_wins": 1,
-        "overall_losses": 0,
-        "points_for": 50,
-        "points_against": 22
       },
       {
         "school_id": "river-falls",
