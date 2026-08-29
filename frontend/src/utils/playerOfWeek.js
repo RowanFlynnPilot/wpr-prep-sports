@@ -194,10 +194,21 @@ export function pickPlayerOfWeek(
       if (!byWeek.has(key)) byWeek.set(key, []);
       byWeek.get(key).push(g);
     }
-    const weekKeys = [...byWeek.keys()].sort((a, b) => b - a);
+    // Editorial cadence (Rowan/Shereen, 2026-08): a week's Player of
+    // the Week is only DECLARED once the school week has ENDED — Monday
+    // morning at the earliest — so coach uploads through the weekend
+    // are in the pool before anyone is crowned. Saturday's early box
+    // scores must not crown a premature winner; the previous completed
+    // week keeps the card until then. The editor override in
+    // data/potw.json remains the way to feature someone sooner.
+    const weekKeys = [...byWeek.keys()]
+      .filter((k) => k + 7 * DAY_MS <= Date.now())
+      .sort((a, b) => b - a);
+    if (weekKeys.length === 0) return null; // season's first week still open
     let chosen = weekKeys.find((k) => byWeek.get(k).length >= MIN_WEEK_STAT_GAMES);
     if (chosen == null) {
-      // No week has real coverage — take the fullest (newest on ties).
+      // No completed week has real coverage — take the fullest (newest
+      // on ties).
       chosen = weekKeys.reduce((best_, k) =>
         byWeek.get(k).length > byWeek.get(best_).length ? k : best_,
       weekKeys[0]);
