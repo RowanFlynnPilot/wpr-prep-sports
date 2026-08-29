@@ -402,6 +402,23 @@ def main() -> int:
                 f"merges came back empty this run[/yellow]"
             )
 
+    # WIAA posts forfeits as FINALS on their future scheduled date, and a
+    # stats source can hang real stat lines on that matchup (live case
+    # 2026-08-29: Bound lines attached to the Oct 9 chequamegon-at-
+    # prentice forfeit). Stats on a game that hasn't happened are
+    # definitionally wrong — strip them AFTER carry-forward so the carry
+    # can't resurrect them, and the boxscore writer prunes the file.
+    from datetime import datetime, timedelta, timezone
+
+    stats_horizon = datetime.now(timezone.utc) + timedelta(days=1)
+    for g in dataset.games:
+        if g.status is GameStatus.FINAL and g.stat_leaders and g.date > stats_horizon:
+            console.print(
+                f"[yellow]dropped {len(g.stat_leaders)} stat line(s) from "
+                f"future-dated final {g.id} — stats can't precede the game[/yellow]"
+            )
+            g.stat_leaders = []
+
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     write_dataset(dataset, DATA_DIR)
     console.print(f"[green]Wrote dataset to {DATA_DIR}[/green]")
