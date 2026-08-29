@@ -1,11 +1,7 @@
 {
   "sport": "volleyball",
   "season": "2026-27",
-<<<<<<< Updated upstream
-  "generated_at": "2026-08-29T15:03:07.135837-05:00",
-=======
   "generated_at": "2026-08-29T15:07:53.613106-05:00",
->>>>>>> Stashed changes
   "method": "WPR Power Index v1: 40% W%, 35% SOS, 25% margin (capped per sport)",
   "rankings": [
     {
@@ -165,19 +161,6 @@
       "movement": -8
     },
     {
-<<<<<<< Updated upstream
-      "rank": 10,
-      "school_id": "wittenberg-birnamwood",
-      "school_name": "Wittenberg-Birnamwood",
-      "wins": 5,
-      "losses": 3,
-      "ties": 0,
-      "win_pct": 0.625,
-      "sos": 0.5,
-      "avg_margin_capped": 0.75,
-      "score": 58.13,
-      "movement": -5
-=======
       "rank": 13,
       "school_id": "rhinelander",
       "school_name": "Rhinelander",
@@ -189,7 +172,6 @@
       "avg_margin_capped": 0.0,
       "score": 57.0,
       "movement": null
->>>>>>> Stashed changes
     },
     {
       "rank": 14,
@@ -205,24 +187,7 @@
       "movement": null
     },
     {
-<<<<<<< Updated upstream
-      "rank": 12,
-      "school_id": "rhinelander",
-      "school_name": "Rhinelander",
-      "wins": 2,
-      "losses": 2,
-      "ties": 0,
-      "win_pct": 0.5,
-      "sos": 0.625,
-      "avg_margin_capped": 0.0,
-      "score": 54.37,
-      "movement": null
-    },
-    {
-      "rank": 13,
-=======
       "rank": 15,
->>>>>>> Stashed changes
       "school_id": "dc-everest",
       "school_name": "D.C. Everest",
       "wins": 6,
