@@ -232,16 +232,6 @@
         "points_against": 83
       },
       {
-        "school_id": "bruce",
-        "name": "Bruce",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "overall_wins": 1,
-        "overall_losses": 0,
-        "points_for": 44,
-        "points_against": 16
-      },
-      {
         "school_id": "shell-lake",
         "name": "Shell Lake",
         "conference_wins": 0,
@@ -270,6 +260,16 @@
         "overall_losses": 1,
         "points_for": 30,
         "points_against": 58
+      },
+      {
+        "school_id": "bruce",
+        "name": "Bruce",
+        "conference_wins": 0,
+        "conference_losses": 1,
+        "overall_wins": 1,
+        "overall_losses": 1,
+        "points_for": 74,
+        "points_against": 76
       },
       {
         "school_id": "south-shore",
@@ -330,16 +330,6 @@
         "points_against": 22
       },
       {
-        "school_id": "edgar",
-        "name": "Edgar",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "overall_wins": 1,
-        "overall_losses": 0,
-        "points_for": 21,
-        "points_against": 0
-      },
-      {
         "school_id": "abbotsford",
         "name": "Abbotsford",
         "conference_wins": 0,
@@ -378,6 +368,16 @@
         "overall_losses": 2,
         "points_for": 8,
         "points_against": 81
+      },
+      {
+        "school_id": "edgar",
+        "name": "Edgar",
+        "conference_wins": 0,
+        "conference_losses": 1,
+        "overall_wins": 1,
+        "overall_losses": 1,
+        "points_for": 24,
+        "points_against": 6
       }
     ]
   },
@@ -387,6 +387,16 @@
     "conference": "CWC-Large",
     "division": null,
     "rows": [
+      {
+        "school_id": "stratford",
+        "name": "Stratford",
+        "conference_wins": 1,
+        "conference_losses": 0,
+        "overall_wins": 2,
+        "overall_losses": 0,
+        "points_for": 37,
+        "points_against": 3
+      },
       {
         "school_id": "loyal",
         "name": "Loyal",
@@ -448,16 +458,6 @@
         "points_against": 14
       },
       {
-        "school_id": "stratford",
-        "name": "Stratford",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "overall_wins": 1,
-        "overall_losses": 0,
-        "points_for": 31,
-        "points_against": 0
-      },
-      {
         "school_id": "wittenberg-birnamwood",
         "name": "Wittenberg-Birnamwood",
         "conference_wins": 0,
@@ -476,14 +476,14 @@
     "division": null,
     "rows": [
       {
-        "school_id": "marion",
-        "name": "Marion",
+        "school_id": "almond-bancroft",
+        "name": "Almond-Bancroft",
         "conference_wins": 1,
         "conference_losses": 0,
-        "overall_wins": 2,
+        "overall_wins": 1,
         "overall_losses": 1,
-        "points_for": 10,
-        "points_against": 34
+        "points_for": 60,
+        "points_against": 81
       },
       {
         "school_id": "tri-county",
@@ -496,24 +496,14 @@
         "points_against": 70
       },
       {
-        "school_id": "newman-catholic",
-        "name": "Newman Catholic",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "overall_wins": 0,
-        "overall_losses": 1,
-        "points_for": 6,
-        "points_against": 44
-      },
-      {
-        "school_id": "almond-bancroft",
-        "name": "Almond-Bancroft",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "overall_wins": 0,
-        "overall_losses": 1,
-        "points_for": 6,
-        "points_against": 47
+        "school_id": "marion",
+        "name": "Marion",
+        "conference_wins": 1,
+        "conference_losses": 1,
+        "overall_wins": 2,
+        "overall_losses": 2,
+        "points_for": 44,
+        "points_against": 88
       },
       {
         "school_id": "menominee-nation",
@@ -544,6 +534,16 @@
         "overall_losses": 1,
         "points_for": 92,
         "points_against": 56
+      },
+      {
+        "school_id": "newman-catholic",
+        "name": "Newman Catholic",
+        "conference_wins": 0,
+        "conference_losses": 1,
+        "overall_wins": 0,
+        "overall_losses": 2,
+        "points_for": 6,
+        "points_against": 96
       },
       {
         "school_id": "bowler",

@@ -6,24 +6,24 @@
     "division": null,
     "rows": [
       {
-        "school_id": "marshfield",
-        "name": "Marshfield",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "overall_wins": 5,
-        "overall_losses": 2,
-        "points_for": 11,
-        "points_against": 4
-      },
-      {
         "school_id": "dc-everest",
         "name": "D.C. Everest",
         "conference_wins": 0,
         "conference_losses": 0,
-        "overall_wins": 4,
+        "overall_wins": 6,
         "overall_losses": 3,
-        "points_for": 9,
+        "points_for": 13,
         "points_against": 7
+      },
+      {
+        "school_id": "marshfield",
+        "name": "Marshfield",
+        "conference_wins": 0,
+        "conference_losses": 0,
+        "overall_wins": 6,
+        "overall_losses": 3,
+        "points_for": 13,
+        "points_against": 6
       },
       {
         "school_id": "wausau-west",
@@ -139,9 +139,9 @@
         "conference_wins": 0,
         "conference_losses": 0,
         "overall_wins": 0,
-        "overall_losses": 0,
+        "overall_losses": 1,
         "points_for": 0,
-        "points_against": 0
+        "points_against": 2
       },
       {
         "school_id": "newman-catholic",
@@ -206,9 +206,9 @@
         "name": "Mosinee",
         "conference_wins": 0,
         "conference_losses": 0,
-        "overall_wins": 7,
+        "overall_wins": 9,
         "overall_losses": 0,
-        "points_for": 14,
+        "points_for": 18,
         "points_against": 1
       },
       {
@@ -232,6 +232,16 @@
         "points_against": 2
       },
       {
+        "school_id": "lakeland",
+        "name": "Lakeland",
+        "conference_wins": 0,
+        "conference_losses": 0,
+        "overall_wins": 3,
+        "overall_losses": 2,
+        "points_for": 7,
+        "points_against": 4
+      },
+      {
         "school_id": "rhinelander",
         "name": "Rhinelander",
         "conference_wins": 0,
@@ -240,16 +250,6 @@
         "overall_losses": 2,
         "points_for": 5,
         "points_against": 5
-      },
-      {
-        "school_id": "lakeland",
-        "name": "Lakeland",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "overall_wins": 2,
-        "overall_losses": 2,
-        "points_for": 5,
-        "points_against": 4
       },
       {
         "school_id": "northland-pines",
