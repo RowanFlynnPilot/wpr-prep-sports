@@ -186,10 +186,10 @@
         "name": "Chequamegon",
         "conference_wins": 2,
         "conference_losses": 0,
-        "overall_wins": 2,
+        "overall_wins": 3,
         "overall_losses": 1,
-        "points_for": 18,
-        "points_against": 44
+        "points_for": 76,
+        "points_against": 74
       },
       {
         "school_id": "rib-lake",
@@ -365,9 +365,9 @@
         "conference_wins": 0,
         "conference_losses": 0,
         "overall_wins": 0,
-        "overall_losses": 1,
-        "points_for": 6,
-        "points_against": 7
+        "overall_losses": 2,
+        "points_for": 25,
+        "points_against": 29
       },
       {
         "school_id": "pittsville",
@@ -396,6 +396,16 @@
         "overall_losses": 1,
         "points_for": 57,
         "points_against": 31
+      },
+      {
+        "school_id": "marathon",
+        "name": "Marathon",
+        "conference_wins": 0,
+        "conference_losses": 0,
+        "overall_wins": 2,
+        "overall_losses": 0,
+        "points_for": 46,
+        "points_against": 35
       },
       {
         "school_id": "spencer",
@@ -436,16 +446,6 @@
         "overall_losses": 0,
         "points_for": 25,
         "points_against": 14
-      },
-      {
-        "school_id": "marathon",
-        "name": "Marathon",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "overall_wins": 1,
-        "overall_losses": 0,
-        "points_for": 24,
-        "points_against": 16
       },
       {
         "school_id": "stratford",
