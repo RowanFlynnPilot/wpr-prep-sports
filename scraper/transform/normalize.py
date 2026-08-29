@@ -282,12 +282,13 @@ def is_double_listing(a: Game, b: Game) -> bool:
     nothing, and identical-score volleyball tournament pairs stay
     unmerged rather than risk dropping a real consolation match.
     """
-    if a.date != b.date:
-        return False
     # A scoreless SCHEDULED row next to a scored FINAL of the same
     # matchup, days after the game date, is a stale twin — WIAA posted
     # the result on only one of two listings (live case: shell-lake at
-    # plum-city-elmwood volleyball, 2026-08-25). On game day itself the
+    # plum-city-elmwood volleyball, 2026-08-25). Compared on the
+    # CALENDAR DAY, before the exact-datetime gate below: the scored row
+    # carries a real clock while the phantom keeps the 7 PM default, so
+    # equal-datetime never matches this pair. On game day itself the
     # scoreless row could still be a pending second tournament match, so
     # this only fires once the date is comfortably past. The merge site
     # keeps whichever row is scored.
@@ -295,8 +296,12 @@ def is_double_listing(a: Game, b: Game) -> bool:
     b_scored = b.home.score is not None and b.away.score is not None
     if a_scored != b_scored:
         pending = b if a_scored else a
-        if pending.status is not GameStatus.FINAL and _comfortably_past(a.date):
-            return True
+        return (
+            a.date.date() == b.date.date()
+            and pending.status is not GameStatus.FINAL
+            and _comfortably_past(a.date)
+        )
+    if a.date != b.date:
         return False
     if a.home.score != b.home.score or a.away.score != b.away.score:
         return False

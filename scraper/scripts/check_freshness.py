@@ -189,12 +189,21 @@ def check_stats_coverage(sport: str, min_finals: int) -> str | None:
         and g.get("status") == "final"
         and (g.get("home") or {}).get("score") is not None
     ]
-    with_lines = sum(1 for g in finals if g.get("stat_leaders"))
     if len(finals) < min_finals:
         return None
-    marker = "BLACKOUT" if with_lines == 0 else "ok"
-    print(f"{sport}: {with_lines}/{len(finals)} finals carry stat lines [{marker}]")
-    if with_lines > 0:
+    # The split layout strips full stat_leaders out of the slim
+    # games.json into data/<sport>/boxscores/ — count evidence from
+    # every shape: boxscore files, plus headline/stat fields for
+    # archives and pre-split datasets.
+    box_files = len(list((DATA_DIR / sport / "boxscores").glob("*.json")))
+    with_lines = sum(1 for g in finals if g.get("headline_stats") or g.get("stat_leaders"))
+    evidence = max(box_files, with_lines)
+    marker = "BLACKOUT" if evidence == 0 else "ok"
+    print(
+        f"{sport}: {box_files} boxscore files, {with_lines}/{len(finals)} finals "
+        f"with headline stats [{marker}]"
+    )
+    if evidence > 0:
         return None
     return (
         f"{sport}: {len(finals)} finals and ZERO stat lines — the stats "
