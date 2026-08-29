@@ -49,7 +49,9 @@ that. See [docs/favorites-spec.md](docs/favorites-spec.md).
 Use `https://` in the `src`: the host page is HTTPS, so an `http://` iframe
 is blocked as mixed content.
 
-Add this anywhere in a WordPress post or template:
+Add this to the page **template** (a one-time admin install — NEVER
+paste it into an article: any `<script>` in a post body makes the save
+fail, see "Embedding in an article" below):
 
 The `allow` attribute matters: the widget is a *cross-origin* frame for
 Permissions Policy purposes (`sports.` vs `www.`) even though it is
@@ -208,7 +210,7 @@ cd scraper
 python -m venv .venv
 source .venv/bin/activate     # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
-python main.py --sport football --season 2025-26
+python main.py --sport football --season 2026-27
 ```
 
 **Frontend:**
@@ -225,18 +227,19 @@ Sponsorship slots are data-driven from [`data/sponsors.json`](data/sponsors.json
 Slots that don't have a `name` field render nothing — there's no "Your ad
 here" filler that breaks the visual rhythm when a slot is unsold.
 
-Active slot keys:
+The full slot inventory (~30 keys: `title`, `ticker`, `potw`,
+`banner:*`, `marquee:*`, `standings:<conference>`, `school:<slug>`,
+`tab:*`, and more) lives as commented examples inside
+[`data/sponsors.json`](data/sponsors.json) itself, with the sales-facing
+map in [`docs/advertiser-inventory.md`](docs/advertiser-inventory.md) —
+this README deliberately doesn't duplicate the list (it drifted).
+Two rules that stay true:
 
-| Key | Where it appears |
-|---|---|
-| `title` | Masthead, next to the WPR attribution |
-| `ticker` | Section header above "Recent Scores" |
-| `standings:VFA West` (etc.) | Band under each conference's standings header |
-| `school:wausau-east` (etc.) | Card at the bottom of each team page |
-
-Per-school keys are dynamic: add `school:<slug>` for any school slug in
-[`scraper/config/schools.json`](scraper/config/schools.json) and the widget
-picks it up on the next deploy.
+- `standings:<conference>` keys must match a conference name exactly as
+  it appears in `data/<sport>/standings.json` (e.g. `Wisconsin Valley`).
+- Per-school keys are dynamic: add `school:<slug>` for any school slug in
+  [`scraper/config/schools.json`](scraper/config/schools.json) and the
+  widget picks it up on the next deploy.
 
 To enable a slot, edit `data/sponsors.json` and set `name` (and optionally
 `label`, `logo_url`, `link_url`):

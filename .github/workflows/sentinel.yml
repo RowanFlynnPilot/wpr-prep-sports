@@ -1,9 +1,10 @@
 name: Sentinel
 
 # Daily freshness watchdog. The scrape workflows alert on their OWN
-# failures; this catches the failure mode they can't see — green runs
-# that stopped producing data (wipe-guarded source breakage, a cron
-# that quietly stopped firing, schedule-skips under GitHub load).
+# failures; this catches the failure modes they can't see — green runs
+# that stopped producing data (wipe-guarded source breakage), and
+# scheduled runs that never fired at all (GitHub load-sheds `schedule`
+# ticks at peak times; Fri Aug 28 2026 the live window got 2 of ~42).
 # Stdlib-only script, no pip install: the whole job takes ~10s.
 
 on:
@@ -14,10 +15,13 @@ on:
 permissions:
   contents: read
   issues: write
+  # actions: read lets the cron-delivery check count last night's runs.
+  actions: read
 
 jobs:
   freshness:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v5
 
@@ -26,10 +30,48 @@ jobs:
           python-version: "3.12"
 
       - name: Check in-season data freshness
+        id: fresh
+        continue-on-error: true
         run: python scraper/scripts/check_freshness.py
 
-      - name: Open ops alert
-        if: failure()
+      # Did last night's live-score runs actually FIRE? Every run that
+      # executes is green, so only counting them catches scheduler
+      # load-shedding. Window = yesterday 23:00Z → today 06:00Z (the CT
+      # evening). ~36 ticks are scheduled; the chain (scrape-live.yml)
+      # should sustain far more than the floor even when cron drops —
+      # below 6 means both cron AND the chain failed all evening.
+      - name: Check game-night cron delivery
+        id: cronwatch
+        if: always()
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          month=$((10#$(date -u +%m)))
+          # Evening windows matter Aug-Mar (football/volleyball/winter).
+          # Spring (Apr-Jul) rides the hourly scrape + chain seeding, and a
+          # quiet spring evening with dropped ticks is not worth an alert.
+          if [ "$month" -ge 4 ] && [ "$month" -le 7 ]; then
+            echo "off-season for evening live windows — skipped"
+            exit 0
+          fi
+          ydow=$(date -u -d yesterday +%u)   # 1=Mon .. 7=Sun
+          if [ "$ydow" -eq 7 ]; then
+            echo "no Sunday-evening live window — skipped"
+            exit 0
+          fi
+          start="$(date -u -d yesterday +%Y-%m-%d)T23:00:00Z"
+          end="$(date -u +%Y-%m-%d)T06:00:00Z"
+          n=$(gh run list --workflow=scrape-live.yml --created "$start..$end" --limit 100 \
+            --json databaseId --jq 'length')
+          echo "live-score runs in last night's window ($start .. $end): ${n} (~36 scheduled)"
+          if [ "${n:-0}" -lt 6 ]; then
+            echo "::error::only ${n} live-score runs fired during last night's game window — GitHub cron delivery collapsed and the chain never got a seed"
+            exit 1
+          fi
+
+      - name: Open ops alert (stale/thin data)
+        if: always() && steps.fresh.outcome == 'failure'
         uses: ./.github/actions/alert-issue
         with:
           title: "Ops alert: sentinel failed — in-season data stale or thin"
@@ -49,3 +91,27 @@ jobs:
             against schools.wiaawi.org), record it with an expiry date in
             scraper/config/sentinel_ack.json — the sentinel keeps reporting it
             without failing daily — then close this issue.
+
+      - name: Open ops alert (cron delivery)
+        if: always() && steps.cronwatch.outcome == 'failure'
+        uses: ./.github/actions/alert-issue
+        with:
+          title: "Ops alert: game-night scheduled runs did not fire"
+          body: |
+            Fewer live-score runs executed during last night's game window than
+            the floor allows. GitHub load-shedding dropped the `schedule` ticks
+            AND no run fired to seed the self-chain (see scrape-live.yml header).
+
+            **Run:** ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+
+            Scores still flowed via whatever hourly scrapes fired, but live
+            updates were degraded. If tonight has games, manually dispatch
+            "Scrape Live" once during the window — one run sustains the chain
+            for the whole evening. Check https://www.githubstatus.com/ for
+            Actions incidents. Triage: docs/operations.md.
+
+      - name: Fail run if any check failed
+        if: always() && (steps.fresh.outcome == 'failure' || steps.cronwatch.outcome == 'failure')
+        run: |
+          echo "::error::sentinel checks failed — freshness: ${{ steps.fresh.outcome }}, cron delivery: ${{ steps.cronwatch.outcome }}"
+          exit 1

@@ -257,8 +257,9 @@ function buildTeamSummary(side, school, gameTime, allGames, standings, currentGa
     // A preseason table is a full list of 0-0 rows in arbitrary order —
     // reading a row index off it would print "#1 of 8" for a team that
     // hasn't played. Only rank once the conference has results.
+    // Rows carry overall_wins/overall_losses (no wins/losses/ties fields).
     const tableStarted = (confRow?.rows ?? []).some(
-      (r) => (r.wins ?? 0) + (r.losses ?? 0) + (r.ties ?? 0) > 0,
+      (r) => (r.overall_wins ?? 0) + (r.overall_losses ?? 0) > 0,
     );
     if (confRow && tableStarted) {
       const idx = confRow.rows.findIndex((r) => r.school_id === schoolId);

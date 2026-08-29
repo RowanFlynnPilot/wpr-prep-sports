@@ -71,6 +71,20 @@ export default function PowerRankings({
     });
   };
 
+  // Division chips only make sense when the divisions backfill covers
+  // the ranked field — with partial data (volleyball's rankings debuted
+  // before the seasonal re-run) a "D2" chip listed 5 of 28 teams and
+  // silently hid the overall #1 from every division view.
+  const withDivision = rankings.filter((r) => divisionFor(r.school_id)).length;
+  const divisionCoverage = withDivision / rankings.length;
+
+  // A field-size jump (18 debutants in volleyball's first full week)
+  // makes every returning team show a big red ▼ that means "new teams
+  // ranked above you", not a slide. When debuts outnumber returners,
+  // movement is noise — show NEW chips only.
+  const newCount = rankings.filter((r) => r.movement == null).length;
+  const suppressMovement = newCount > rankings.length - newCount;
+
   return (
     <section className="power-rankings" aria-label="Power Rankings">
       <div className="section-header">
@@ -86,7 +100,7 @@ export default function PowerRankings({
         </span>
       </p>
 
-      {divisions.length > 1 && (
+      {divisions.length > 1 && divisionCoverage >= 0.8 && (
         <div
           className="power-rankings__filter"
           role="group"
@@ -121,6 +135,7 @@ export default function PowerRankings({
               topScore={topScore}
               sportPrefix={sportPrefix}
               schoolIndex={schoolIndex}
+              suppressMovement={suppressMovement}
             />
           ))}
         </ol>
@@ -161,7 +176,7 @@ function DivisionChip({ label, active, onClick }) {
   );
 }
 
-function PowerRow({ row, topScore, sportPrefix, schoolIndex }) {
+function PowerRow({ row, topScore, sportPrefix, schoolIndex, suppressMovement }) {
   const school = schoolIndex?.get?.(row.school_id);
   const teamForLogo = {
     school_id: row.school_id,
@@ -176,7 +191,13 @@ function PowerRow({ row, topScore, sportPrefix, schoolIndex }) {
   return (
     <li className="power-row">
       <span className="power-row__rank">{row.rank}</span>
-      <MovementChip movement={row.movement} />
+      {suppressMovement && row.movement != null ? (
+        <span className="power-row__move power-row__move--flat" aria-hidden="true">
+          {" "}
+        </span>
+      ) : (
+        <MovementChip movement={row.movement} />
+      )}
       <TeamLogo team={teamForLogo} school={school} size="sm" />
       <div className="power-row__team">
         <Link to={`${sportPrefix}/team/${row.school_id}`} className="power-row__name">
@@ -184,9 +205,10 @@ function PowerRow({ row, topScore, sportPrefix, schoolIndex }) {
         </Link>
         <span className="power-row__meta">
           {row.wins}-{row.losses}
+          {(row.ties ?? 0) > 0 && `-${row.ties}`}
           {" · "}
           <span className="power-row__sos" title="Strength of Schedule (avg opponent W%)">
-            SOS .{padDecimals(row.sos)}
+            SOS {formatSos(row.sos)}
           </span>
         </span>
       </div>
@@ -224,8 +246,8 @@ function MovementChip({ movement }) {
     return (
       <span
         className="power-row__move power-row__move--flat"
-        title="Unchanged from last week"
-        aria-label="Unchanged from last week"
+        title="Unchanged since the last rankings"
+        aria-label="Unchanged since the last rankings"
       >
         —
       </span>
@@ -235,7 +257,7 @@ function MovementChip({ movement }) {
   return (
     <span
       className={`power-row__move ${up ? "power-row__move--up" : "power-row__move--down"}`}
-      title={`${up ? "Up" : "Down"} ${Math.abs(movement)} from last week`}
+      title={`${up ? "Up" : "Down"} ${Math.abs(movement)} since the last rankings`}
     >
       <span aria-hidden="true">{up ? "▲" : "▼"}</span>
       {Math.abs(movement)}
@@ -243,10 +265,10 @@ function MovementChip({ movement }) {
   );
 }
 
-function padDecimals(num) {
-  // ".567" style rendering for SOS — strip the leading zero so it
-  // reads compactly inline.
+function formatSos(num) {
+  // Baseball-average style: ".567", and a perfect schedule is "1.000"
+  // (the old strip-the-dot version rendered 1.0 as "SOS .1000").
   if (num == null || Number.isNaN(num)) return "—";
   const s = num.toFixed(3);
-  return s.startsWith("0.") ? s.slice(2) : s.replace(".", "");
+  return s.startsWith("0.") ? s.slice(1) : s;
 }

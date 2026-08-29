@@ -377,13 +377,26 @@ def main() -> int:
     # game id, which embeds the date, so a rescheduled game never
     # inherits the old date's stats.
     if existing is not None and existing.meta.season == dataset.meta.season:
-        prev_lines = {g.id: g.stat_leaders for g in existing.games if g.stat_leaders}
+        prev_by_id = {g.id: g for g in existing.games if g.stat_leaders}
         carried = 0
+        carried_sources: set[str] = set()
         for g in dataset.games:
-            if g.status is GameStatus.FINAL and not g.stat_leaders and g.id in prev_lines:
-                g.stat_leaders = prev_lines[g.id]
+            if g.status is GameStatus.FINAL and not g.stat_leaders and g.id in prev_by_id:
+                prev = prev_by_id[g.id]
+                g.stat_leaders = prev.stat_leaders
+                # Carry the stats source tags with the lines — dropping
+                # them left 33 games credited to nobody ("Stats via …"
+                # vanished) and hid carried MaxPreps lines from the
+                # repair scripts that key on the source tag.
+                for src in prev.sources or []:
+                    if src != "wiaa" and src not in (g.sources or []):
+                        g.sources = [*(g.sources or []), src]
+                        carried_sources.add(src)
                 carried += 1
         if carried:
+            for src in carried_sources:
+                if src not in dataset.meta.sources_used:
+                    dataset.meta.sources_used.append(src)
             console.print(
                 f"[yellow]carried stat lines forward for {carried} game(s) whose "
                 f"merges came back empty this run[/yellow]"

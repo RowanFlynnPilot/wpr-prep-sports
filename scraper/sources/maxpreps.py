@@ -256,8 +256,12 @@ _BOX_SCORE_RE = re.compile(
 # anymore. `first`/`second` name the groups accordingly; callers must
 # identify "us" by slug match and treat the other side as the opponent.
 # Relative hrefs on the page; prepend BASE_URL before fetching.
+# Path segment differs by sport: football (and other "game" sports) use
+# /game/, volleyball uses /match/ — found 2026-08-29 after volleyball
+# opened its season with zero stat lines (141 finals) because this regex
+# only knew /game/.
 _BOX_SCORE_NEW_RE = re.compile(
-    r"/wi/[a-z-]+/game/"
+    r"/wi/[a-z-]+/(?:game|match)/"
     r"(?P<first>[a-z0-9-]+)-vs-(?P<second>[a-z0-9-]+)/"
     r"(?P<m>\d{1,2})-(?P<d>\d{1,2})-(?P<y>\d{4})/"
     r"\?c=(?P<token>[A-Za-z0-9_-]+)"
@@ -409,6 +413,19 @@ _CATEGORY_FROM_HEADER_NEW_BY_SPORT: dict[str, dict[str, tuple[str, str]]] = {
         "Receiving": ("Receiving Yards", "Yds"),
         "Tackles": ("Total Tackles", "Tot Tckls"),
     },
+    # Verified against a real new-layout match 2026-08-29 (chippewa-falls
+    # -vs-mosinee 8-25-2026): headings and columns are IDENTICAL to the
+    # legacy layout — but the headings are h2 (football's new pages use
+    # h3) and the URL segment is /match/, not /game/.
+    "volleyball": {
+        "Attacking": ("Kills", "K"),
+        "Serving": ("Serve Aces", "A"),
+        "Blocking": ("Total Blocks", "Tot Blks"),
+        "Digging": ("Digs", "D"),
+        "Ball Handling": ("Assists", "Ast"),
+    },
+    # Basketball: add when the first new-layout box scores exist to
+    # verify against (before November's winter cron expansion).
 }
 
 
@@ -447,10 +464,19 @@ def fetch_box_score(url: str, sport_path: str = "volleyball") -> BoxScore:
     h3-heading + table pairs under an "<Team> Varsity <Sport> @/vs
     <Opponent>" h2. Those route to `_parse_new_layout`.
     """
-    if "/game/" in url:
+    if "/game/" in url or "/match/" in url:
         sep = "&" if "?" in url else "?"
         html = _get(f"{url}{sep}tab=Stats")
-        return _parse_new_layout(BeautifulSoup(html, "html.parser"), sport_path)
+        box = _parse_new_layout(BeautifulSoup(html, "html.parser"), sport_path)
+        # Set scores live on the BASE tab of the new match pages (the
+        # Stats tab drops the Score-by-Set table) — one extra fetch,
+        # volleyball only.
+        if sport_path == "volleyball":
+            base_soup = BeautifulSoup(_get(url), "html.parser")
+            sets = _parse_set_scores_table(base_soup)
+            if sets:
+                box = BoxScore(stat_lines=box.stat_lines, set_scores_by_team=sets)
+        return box
 
     html = _get(url)
     soup = BeautifulSoup(html, "html.parser")
@@ -516,7 +542,13 @@ def fetch_box_score(url: str, sport_path: str = "volleyball") -> BoxScore:
     return BoxScore(stat_lines=out, set_scores_by_team=set_scores)
 
 
-_VARSITY_TITLE_RE = re.compile(r"^(?P<team>.+?)\s+Varsity\s+.+?(?:@|vs\.?)\s+(?P<opp>.+)$")
+# Title shapes seen live: "Wausau West Varsity Football @ Menomonie"
+# (football) and "Chippewa Falls Girls Varsity Volleyball vs. Mosinee"
+# (volleyball) — the optional gender word must not leak into the team
+# name or downstream school matching gets "Chippewa Falls Girls".
+_VARSITY_TITLE_RE = re.compile(
+    r"^(?P<team>.+?)(?:\s+(?:Girls|Boys))?\s+Varsity\s+.+?(?:@|vs\.?)\s+(?P<opp>.+)$"
+)
 
 
 def _parse_new_layout(soup, sport_path: str) -> BoxScore:
@@ -541,11 +573,14 @@ def _parse_new_layout(soup, sport_path: str) -> BoxScore:
         return BoxScore(stat_lines=[], set_scores_by_team={})
 
     out: list[StatLine] = []
-    for h3 in soup.find_all("h3"):
-        mapping = category_map.get(h3.get_text(strip=True))
+    # Category headings are h3 on football's new pages but h2 on
+    # volleyball's — scan both; the title h2 never matches a category
+    # label so it falls through harmlessly.
+    for heading in soup.find_all(["h2", "h3"]):
+        mapping = category_map.get(heading.get_text(strip=True))
         if mapping is None:
             continue
-        nxt = h3.find_next(["table", "h2", "h3"])
+        nxt = heading.find_next(["table", "h2", "h3"])
         if nxt is None or nxt.name != "table":
             continue  # "No Data" category
         category, leader_key = mapping

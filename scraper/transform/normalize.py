@@ -145,6 +145,12 @@ def build_dataset(
                         games[base_id] = first.model_copy(
                             update={"playoff": True, "playoff_round": game.playoff_round}
                         )
+                    # Stale-twin merges (final + scoreless scheduled row):
+                    # the SCORED row must survive under the base id.
+                    first_scored = first.home.score is not None and first.away.score is not None
+                    game_scored = game.home.score is not None and game.away.score is not None
+                    if game_scored and not first_scored:
+                        games[base_id] = game.model_copy(update={"id": base_id})
                     # Roll the counter back so a later genuine doubleheader
                     # still becomes "-2", matching the opponent's schedule.
                     seen_in_source[base_id] = count - 1
@@ -278,6 +284,20 @@ def is_double_listing(a: Game, b: Game) -> bool:
     """
     if a.date != b.date:
         return False
+    # A scoreless SCHEDULED row next to a scored FINAL of the same
+    # matchup, days after the game date, is a stale twin — WIAA posted
+    # the result on only one of two listings (live case: shell-lake at
+    # plum-city-elmwood volleyball, 2026-08-25). On game day itself the
+    # scoreless row could still be a pending second tournament match, so
+    # this only fires once the date is comfortably past. The merge site
+    # keeps whichever row is scored.
+    a_scored = a.home.score is not None and a.away.score is not None
+    b_scored = b.home.score is not None and b.away.score is not None
+    if a_scored != b_scored:
+        pending = b if a_scored else a
+        if pending.status is not GameStatus.FINAL and _comfortably_past(a.date):
+            return True
+        return False
     if a.home.score != b.home.score or a.away.score != b.away.score:
         return False
     if a.playoff != b.playoff:
@@ -285,6 +305,12 @@ def is_double_listing(a: Game, b: Game) -> bool:
     if a.home.score is None and a.away.score is None:
         return True
     return a.sport not in SAME_DAY_REMATCH_SPORTS
+
+
+def _comfortably_past(dt: datetime, days: int = 2) -> bool:
+    """The game date is at least `days` behind the wall clock."""
+    now = datetime.now(dt.tzinfo) if dt.tzinfo else datetime.now()
+    return (now - dt).total_seconds() > days * 86_400
 
 
 def _raw_to_game(
@@ -501,20 +527,18 @@ def _build_standings(
         # more than 15 schools.)
         is_conf_game = bool(game.conference_game)
 
-        for school_id, conf, scored, allowed, won in (
+        for school_id, conf, scored, allowed in (
             (
                 game.home.school_id,
                 home_conf,
                 game.home.score,
                 game.away.score,
-                game.home.score > game.away.score,
             ),
             (
                 game.away.school_id,
                 away_conf,
                 game.away.score,
                 game.home.score,
-                game.away.score > game.home.score,
             ),
         ):
             if not school_id or not conf:
@@ -524,15 +548,20 @@ def _build_standings(
                 continue
             row.points_for = (row.points_for or 0) + scored
             row.points_against = (row.points_against or 0) + allowed
-            if won:
+            # Three outcomes: soccer draws are ties, not losses for both.
+            if scored > allowed:
                 row.overall_wins += 1
-            else:
+            elif scored < allowed:
                 row.overall_losses += 1
+            else:
+                row.overall_ties += 1
             if is_conf_game:
-                if won:
+                if scored > allowed:
                     row.conference_wins += 1
-                else:
+                elif scored < allowed:
                     row.conference_losses += 1
+                else:
+                    row.conference_ties += 1
 
     standings: list[Standing] = []
     for conf, rows_by_school in buckets.items():

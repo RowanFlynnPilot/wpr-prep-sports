@@ -138,10 +138,12 @@ needs individual-sport modeling), then baseball/softball/track (spring).
   back; the community leaderboard additionally needs the `pickem-api/`
   worker deployed (code + tests complete, human-blocked on a Cloudflare
   account — README runbook)
-- **Plausible activation** — human-blocked on Toto (docs/analytics.md)
+- ~~Plausible activation~~ — **LIVE since 2026-08-25** (per-site pa-script,
+  repo vars set; docs/analytics.md has the setup + verification traps)
 - **Wrestling** (winter 2026-27) — Trackwrestling spike scoped in
   `docs/wrestling-scoping.md`
-- **Per-sponsor monthly report script** — after Plausible is live
+- **Per-sponsor monthly report script** — now unblocked (Plausible live);
+  build once a few weeks of click data accumulate
 
 ## Data schema
 

@@ -4,15 +4,15 @@ The whole pipeline is GitHub Actions + GitHub Pages; there are no servers.
 This page is the map, the secrets inventory, and the incident runbook the
 ops-alert issues link to.
 
-## The five workflows
+## The six workflows
 
 | Workflow | Trigger | What it does |
 |---|---|---|
-| `scrape.yml` | Season-aware cron (hourly in-season, Fri 15-min windows, daily Jun–Jul) + dispatch | Full per-sport scrape → validation gate → OG cards → commit `data/` → dispatch Deploy |
-| `scrape-live.yml` | Every 10 min during CT game windows | Live-score merge only (~60s); no-op off-season |
+| `scrape.yml` | Season-aware cron (hourly in-season, Fri 15-min windows, daily Jun–Jul) + dispatch | Full per-sport scrape → validation gate → OG cards → commit `data/` → dispatch Deploy → seed live chain in game windows |
+| `scrape-live.yml` | Every 10 min during CT game windows + self-chaining dispatch | Live-score merge only (~60s); no-op off-season. GitHub load-sheds cron at peak times (Fri 8/28/26: 2 of ~42 ticks fired), so in-window runs re-dispatch themselves — one tick sustains the whole evening |
 | `deploy.yml` | Push to `main` touching `frontend/**` or `data/**`, + dispatched by the others | Build frontend, stage `data/` into `dist/`, publish to Pages |
 | `digest.yml` | Sat 13:00 UTC | Weekly newsletter export → `data/digest/latest.html` |
-| `sentinel.yml` | Daily 14:00 UTC | Freshness watchdog (`scraper/scripts/check_freshness.py`) |
+| `sentinel.yml` | Daily 14:00 UTC | Watchdog (`scraper/scripts/check_freshness.py`): freshness, coverage, stats-blackout — plus a run-count check that alerts when last night's game-window crons didn't fire |
 | `tests.yml` | Push/PR touching `scraper/**` | pytest (pure-logic + saved-fixture parser tests) |
 
 Chain: **scrape → validate → commit → dispatch deploy**. Bot pushes don't
@@ -65,15 +65,16 @@ In-scraper guards (silent by design, they *prevent* damage):
 | Name | Kind | Where set | Used by | Unset means |
 |---|---|---|---|---|
 | `GITHUB_TOKEN` | automatic | — | all workflows (commit, dispatch, issues) | n/a |
-| `PLAUSIBLE_DOMAIN` | repo **variable** | Settings → Variables | `deploy.yml` → `VITE_PLAUSIBLE_DOMAIN` | analytics disabled (all trackEvent calls no-op) |
-| `PICKEM_API` | repo **variable** | Settings → Variables | `deploy.yml` → `VITE_PICKEM_API` | Pick'em community features hidden (localStorage-only mode) |
+| `BASE_PATH` | repo **variable** | Settings → Variables — **SET to `/`** | `deploy.yml` AND `scrape.yml` → `VITE_BASE` (both frontend builds must match) | builds fall back to `/wpr-prep-sports/` → on the custom domain every asset 404s; OG cards render blank and silently stop refreshing (the opening-night 2026 incident). Do NOT delete. |
+| `PLAUSIBLE_DOMAIN` | repo **variable** | Settings → Variables — set (`sports.wausaupilotandreview.com`) | `deploy.yml` → `VITE_PLAUSIBLE_DOMAIN` | analytics disabled (all trackEvent calls no-op) |
+| `PLAUSIBLE_SCRIPT_ID` | repo **variable** | Settings → Variables — set (`pa-…`, live since 2026-08-25) | `deploy.yml` → `VITE_PLAUSIBLE_SCRIPT_ID` (new-style per-site script; the legacy data-domain script gets `x-plausible-dropped` on new-flow sites — see docs/analytics.md) | falls back to the legacy script path, which this site's Plausible config silently drops |
+| `PICKEM_API` | repo **variable** | intentionally unset | `deploy.yml` → `VITE_PICKEM_API` | Pick'em community features hidden (localStorage-only mode) |
 | Cloudflare account + KV namespace id | external | `pickem-api/wrangler.toml` | Pick'em worker | worker undeployed; see `pickem-api/README.md` |
 
-Not passed anywhere yet (build-time defaults apply): `VITE_BASE`
-(defaults to `/wpr-prep-sports/`), `VITE_SPONSOR_EMAIL` (defaults to
-`SITE.contactEmail` in `frontend/src/config/site.js` — set the repo
-variable only to point sponsorship mail somewhere else without a code
-change), `VITE_DATA_BASE` (defaults to same-origin `data/`).
+Not passed anywhere (build-time defaults apply): `VITE_SPONSOR_EMAIL`
+(defaults to `SITE.contactEmail` in `frontend/src/config/site.js` — set
+the repo variable only to point sponsorship mail somewhere else without
+a code change), `VITE_DATA_BASE` (defaults to same-origin `data/`).
 
 ## Incident runbook
 

@@ -28,6 +28,11 @@ export function summarizeTeam(teamGames, schoolId, { now = Date.now() } = {}) {
 
   for (const g of teamGames) {
     if (g.status !== "final") continue;
+    // WIAA posts forfeits as FINALS on their future scheduled date (e.g.
+    // a 1-0 credited six weeks out). Counting those today inflates the
+    // record and makes "Last" show a game that hasn't happened — skip
+    // finals still ahead of the clock; they count when their date passes.
+    if (new Date(g.date).getTime() > now) continue;
     const isHome = g.home.school_id === schoolId;
     const ours = isHome ? g.home.score : g.away.score;
     const theirs = isHome ? g.away.score : g.home.score;

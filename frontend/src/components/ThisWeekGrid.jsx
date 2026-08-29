@@ -57,6 +57,17 @@ function GameRow({ game, schoolIndex, allGames, sportConfig }) {
   const homeSchool = schoolFor(game.home, schoolIndex);
   const awaySchool = schoolFor(game.away, schoolIndex);
   const isFinal = game.status === "final";
+  // The dataset's live status is "in_progress" (models/schema.py) — the
+  // ticker shows these LIVE with scores; this grid must match or a
+  // Friday-night reader sees a hidden score next to a stale kickoff time.
+  const isLive = game.status === "in_progress";
+  // A scheduled game whose kickoff is well past (36h) with no result is
+  // likely postponed or unreported — showing its stale "7:00 PM" days
+  // later reads like a glitch. Live games keep their treatment.
+  const isStaleScheduled =
+    !isFinal &&
+    !isLive &&
+    Date.now() - new Date(game.date).getTime() > 36 * 60 * 60 * 1000;
 
   const homeWon = isFinal && (game.home.score ?? -1) > (game.away.score ?? -1);
   const awayWon = isFinal && (game.away.score ?? -1) > (game.home.score ?? -1);
@@ -71,7 +82,7 @@ function GameRow({ game, schoolIndex, allGames, sportConfig }) {
         school={awaySchool}
         score={game.away.score}
         won={awayWon}
-        showScore={isFinal}
+        showScore={isFinal || isLive}
       />
       <span className="game-row__at">at</span>
       <Side
@@ -79,10 +90,24 @@ function GameRow({ game, schoolIndex, allGames, sportConfig }) {
         school={homeSchool}
         score={game.home.score}
         won={homeWon}
-        showScore={isFinal}
+        showScore={isFinal || isLive}
       />
-      <Link to={`${sportPrefix}/game/${game.id}`} className="game-row__status game-row__details">
-        {isFinal ? "Final" : formatGameTime(game.date)}
+      <Link
+        to={`${sportPrefix}/game/${game.id}`}
+        className={`game-row__status game-row__details${isLive ? " game-row__status--live" : ""}`}
+        title={
+          isStaleScheduled
+            ? "No result reported — the game may have been postponed"
+            : undefined
+        }
+      >
+        {isFinal
+          ? "Final"
+          : isLive
+            ? "LIVE"
+            : isStaleScheduled
+              ? "No result"
+              : formatGameTime(game.date)}
         <span aria-hidden="true"> ›</span>
       </Link>
       {summary && <p className="game-row__summary">{summary}</p>}

@@ -14,6 +14,15 @@ name: Scrape Live
 #
 # Each fires the live scrape for every sport — sports that aren't
 # in-season return empty + no commit; cost is ~60s total wall time.
+#
+# CRON DELIVERY IS BEST-EFFORT: GitHub load-sheds scheduled runs at
+# peak times — Fri Aug 28 2026 the evening window got 2 of ~42 ticks,
+# i.e. live scores effectively didn't run during games. Two defenses:
+# the "Chain next live run" step below re-dispatches this workflow
+# while inside a game window (any single tick that fires sustains
+# coverage for the whole evening; workflow_dispatch is not load-shed
+# the way schedule is), and the Sentinel counts last night's runs and
+# alerts when delivery collapsed.
 
 on:
   schedule:
@@ -47,6 +56,9 @@ permissions:
 jobs:
   live:
     runs-on: ubuntu-latest
+    # A hung network read must not park a runner for the 360-minute
+    # default while holding the data-commits lane on a game night.
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v5
 
@@ -146,6 +158,41 @@ jobs:
           done
           echo "::error::deploy dispatch failed after 3 attempts"
           exit 1
+
+      # Cron self-defense: GitHub load-sheds `schedule` ticks exactly when
+      # Friday-night traffic peaks (see header). While we're inside a game
+      # window, re-dispatch this workflow so coverage continues without the
+      # scheduler. Guards: only when this wasn't a targeted manual run, only
+      # when the merges themselves worked, only inside the window (the chain
+      # dies at window end), and only when no other live run is queued or
+      # running (that one will chain instead — keeps exactly one chain).
+      # No sleep: the ~2-4 min of checkout/setup per run IS the cadence,
+      # and sleeping here would hold the data-commits lane hostage.
+      - name: Chain next live run
+        if: github.event.inputs.sport == '' && steps.scrape.outputs.failed == ''
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          day=$(date -u +%u)   # 1=Mon .. 7=Sun
+          hour=$((10#$(date -u +%H)))
+          in_window=false
+          # Mirrors the cron windows above, in UTC.
+          if [ "$hour" -eq 23 ] && [ "$day" -le 6 ]; then in_window=true; fi
+          if [ "$hour" -le 5 ] && [ "$day" -ne 1 ]; then in_window=true; fi
+          if [ "$hour" -ge 18 ] && [ "$hour" -le 22 ] && [ "$day" -eq 6 ]; then in_window=true; fi
+          if [ "$in_window" != "true" ]; then
+            echo "outside live window — chain ends here"
+            exit 0
+          fi
+          queued=$(gh run list --workflow=scrape-live.yml --status queued --json databaseId --jq 'length' || echo 0)
+          running=$(gh run list --workflow=scrape-live.yml --status in_progress --json databaseId \
+            --jq "[.[] | select(.databaseId != ${GITHUB_RUN_ID})] | length" || echo 0)
+          if [ "${queued:-0}" -gt 0 ] || [ "${running:-0}" -gt 0 ]; then
+            echo "another live run is pending — it will carry the chain"
+            exit 0
+          fi
+          echo "in game window — dispatching next live run"
+          gh workflow run scrape-live.yml --ref main || echo "::warning::chain dispatch failed — cron remains the fallback"
 
       # ---- Loud-failure tail (after commit/deploy so good data ships
       # first). The alert-issue action dedupes on an open issue with the

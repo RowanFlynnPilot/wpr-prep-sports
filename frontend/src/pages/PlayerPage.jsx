@@ -275,7 +275,10 @@ function GameLogTable({ entries, sportPrefix, schoolId, schoolIndex }) {
         const opp = isHome ? game.away : game.home;
         const ownScore = isHome ? game.home.score : game.away.score;
         const oppScore = isHome ? game.away.score : game.home.score;
-        const won = (ownScore ?? -1) > (oppScore ?? -1);
+        // Soccer draws are real — three states, not a red "L" for a tie.
+        const tied =
+          ownScore != null && oppScore != null && ownScore === oppScore;
+        const won = !tied && (ownScore ?? -1) > (oppScore ?? -1);
         const oppSchool = opp.school_id ? schoolIndex?.get?.(opp.school_id) : null;
         const oppTeam = {
           school_id: opp.school_id || "",
@@ -286,7 +289,7 @@ function GameLogTable({ entries, sportPrefix, schoolId, schoolIndex }) {
           <Link
             key={game.id}
             to={`${sportPrefix}/game/${game.id}`}
-            className={`game-log__row ${won ? "game-log__row--won" : "game-log__row--lost"}`}
+            className={`game-log__row ${won ? "game-log__row--won" : tied ? "" : "game-log__row--lost"}`}
           >
             <div className="game-log__date">
               {formatGameDate(game.date)}
@@ -297,7 +300,7 @@ function GameLogTable({ entries, sportPrefix, schoolId, schoolIndex }) {
               <span className="game-log__opp-name">{opp.name}</span>
             </div>
             <div className="game-log__result">
-              <span className="game-log__wl">{won ? "W" : "L"}</span>
+              <span className="game-log__wl">{won ? "W" : tied ? "T" : "L"}</span>
               <span className="game-log__score">
                 {ownScore ?? "—"}-{oppScore ?? "—"}
               </span>

@@ -658,7 +658,7 @@ _MP_URL_TEAMS_RE = re.compile(
 # away-vs-home — consumers must only ever ask "which slug is us, which
 # is the opponent", never infer home/away from position.
 _MP_URL_TEAMS_NEW_RE = re.compile(
-    r"/wi/[a-z-]+/game/(?P<away>[a-z0-9-]+)-vs-(?P<home>[a-z0-9-]+)/\d+-\d+-\d+/"
+    r"/wi/[a-z-]+/(?:game|match)/(?P<away>[a-z0-9-]+)-vs-(?P<home>[a-z0-9-]+)/\d+-\d+-\d+/"
 )
 
 
@@ -714,6 +714,19 @@ def _slugs_equivalent(a: str | None, b: str | None) -> bool:
     return longer.startswith(shorter + "-")
 
 
+# Known-ambiguous MP slugs the tolerant matcher would get WRONG — an
+# untracked school whose slug prefix-matches a tracked one (bare
+# "columbus" is Columbus HS, not Columbus Catholic), or a decorated slug
+# whose city prefix IS another school ("stevens-point-pacelli" starts
+# with SPASH's "stevens-point"). Pins win outright; denies never
+# tolerant-match (exact only).
+_MP_SLUG_PINS = {
+    "stevens-point-pacelli": "pacelli",
+    "stevens-point-area": "spash",
+}
+_MP_SLUG_TOLERANT_DENY = {"columbus"}
+
+
 def _resolve_mp_slug(slug: str | None, mp_slug_to_id: dict[str, str]) -> str:
     """Map a game-URL school slug to our school id, tolerating MP's
     slug decorations. Exact hit first; otherwise accept a UNIQUE
@@ -721,9 +734,14 @@ def _resolve_mp_slug(slug: str | None, mp_slug_to_id: dict[str, str]) -> str:
     ambiguity, and ambiguity means no attach."""
     if not slug:
         return ""
+    pinned = _MP_SLUG_PINS.get(slug)
+    if pinned:
+        return pinned if pinned in mp_slug_to_id.values() else ""
     exact = mp_slug_to_id.get(slug)
     if exact:
         return exact
+    if slug in _MP_SLUG_TOLERANT_DENY:
+        return ""
     hits = {sid for s, sid in mp_slug_to_id.items() if _slugs_equivalent(slug, s)}
     return hits.pop() if len(hits) == 1 else ""
 

@@ -3,7 +3,7 @@ Freshness + coverage sentinel. Catches the failure modes nothing else can:
 a scrape pipeline that LOOKS healthy (green runs) while a sport's data is
 actually unusable.
 
-Two independent checks, for every sport currently in season (month map
+Three independent checks, for every sport currently in season (month map
 below):
 
 1. FRESHNESS — fail when data/<sport>/meta.json's last_updated is older
@@ -27,6 +27,14 @@ below):
    Coverage climbs over weeks as WIAA publishes school by school, so the
    floor is generous — it flags "this isn't a season yet", not "this is
    incomplete".
+
+3. STATS COVERAGE — fail when a stats-wired sport has 25+ scored finals
+   and ZERO stat lines anywhere. Scores flow from WIAA independently of
+   stats, so a stats-source breakage (new markup, missing category map,
+   bot-walled source) is invisible to the two checks above — volleyball
+   opened its 2026 season with 141 finals and no stat line while every
+   run stayed green. Partial coverage never fires this; only total
+   absence does.
 
 Any input this can't interpret (missing manifest, unreadable games.json)
 is a skip, not a failure — the checks above own correctness.
@@ -79,6 +87,26 @@ IN_SEASON_MONTHS: dict[str, set[int]] = {
 }
 
 DEFAULT_MAX_AGE_HOURS = 168  # 7 days
+
+# Sports with a wired per-game stats source (MaxPreps/Bound/WPH). Soccer
+# is scores-only by design and never checked. A stats-wired sport with a
+# season well underway and LITERALLY ZERO stat lines is a pipeline
+# blackout, not upload lag — volleyball sat at 141 finals / 0 lines for
+# a week in Aug 2026 (MaxPreps' new layout had no volleyball category
+# map) and nothing alerted: the regression gate only sees deltas, and 0
+# stayed 0.
+STATS_SPORTS = {
+    "football",
+    "volleyball",
+    "boys_basketball",
+    "girls_basketball",
+    "boys_hockey",
+    "girls_hockey",
+}
+# Finals threshold before zero stat lines counts as a blackout. Generous:
+# coaches upload days late, and early-season weeks legitimately show
+# sparse coverage — but 25+ finals with not one line anywhere is broken.
+DEFAULT_MIN_FINALS_FOR_STATS = 25
 
 # Share of a sport's tracked roster that must appear in its games before we
 # call the dataset a season. Generous on purpose: WIAA publishes schedules
@@ -143,6 +171,37 @@ def check_coverage(sport: str, min_coverage: float) -> str | None:
     )
 
 
+def check_stats_coverage(sport: str, min_finals: int) -> str | None:
+    """Stats-blackout failure message for `sport`, or None when fine.
+
+    Only ever fires on TOTAL absence — partial coverage (some coaches
+    upload, some don't) is normal and never alerted on.
+    """
+    if sport not in STATS_SPORTS:
+        return None
+    games = _load_json(DATA_DIR / sport / "games.json")
+    if not isinstance(games, list):
+        return None
+    finals = [
+        g
+        for g in games
+        if isinstance(g, dict)
+        and g.get("status") == "final"
+        and (g.get("home") or {}).get("score") is not None
+    ]
+    with_lines = sum(1 for g in finals if g.get("stat_leaders"))
+    if len(finals) < min_finals:
+        return None
+    marker = "BLACKOUT" if with_lines == 0 else "ok"
+    print(f"{sport}: {with_lines}/{len(finals)} finals carry stat lines [{marker}]")
+    if with_lines > 0:
+        return None
+    return (
+        f"{sport}: {len(finals)} finals and ZERO stat lines — the stats "
+        f"pipeline (MaxPreps/Bound parser or merge) is dark for this sport"
+    )
+
+
 def _active_acks(today: date) -> tuple[dict[tuple[str, str], dict], list[str]]:
     """Unexpired acknowledgments keyed by (sport, check), plus log notes
     for entries that are expired or malformed. `until` is inclusive: an
@@ -156,7 +215,7 @@ def _active_acks(today: date) -> tuple[dict[tuple[str, str], dict], list[str]]:
         if not isinstance(entry, dict):
             continue
         sport, check = entry.get("sport"), entry.get("check")
-        if check not in ("freshness", "coverage") or not sport:
+        if check not in ("freshness", "coverage", "stats") or not sport:
             notes.append(f"sentinel_ack.json entry {entry!r} malformed — ignoring it")
             continue
         try:
@@ -205,6 +264,7 @@ def main() -> int:
     month = args.month or now.month
     stale: list[tuple[str, str]] = []  # (sport, message)
     thin: list[tuple[str, str]] = []
+    statless: list[tuple[str, str]] = []
     checked = 0
 
     for sport, months in sorted(IN_SEASON_MONTHS.items()):
@@ -247,6 +307,12 @@ def main() -> int:
             if gap:
                 thin.append((sport, gap))
 
+        # Independent of both: scores can flow perfectly while the stats
+        # pipeline is completely dark for a sport.
+        blackout = check_stats_coverage(sport, DEFAULT_MIN_FINALS_FOR_STATS)
+        if blackout:
+            statless.append((sport, blackout))
+
     if not checked and not stale and not thin:
         print(f"No sports in season for month {month} - nothing to check.")
         return 0
@@ -272,6 +338,7 @@ def main() -> int:
 
     stale_fail, stale_acked = _split(stale, "freshness")
     thin_fail, thin_acked = _split(thin, "coverage")
+    stats_fail, stats_acked = _split(statless, "stats")
 
     if stale_fail:
         print("\nFRESHNESS CHECK FAILED:")
@@ -300,9 +367,21 @@ def main() -> int:
             "live season."
         )
 
-    if stale_acked or thin_acked:
+    if stats_fail:
+        print("\nSTATS-COVERAGE CHECK FAILED:")
+        for s in stats_fail:
+            print(f"  x {s}")
+        print(
+            "\nScores are flowing but not one final carries a stat line — that's "
+            "a parser/merge blackout (source markup change, missing category map, "
+            "blocked source), not upload lag. Check the sport's stats source "
+            "(scraper/sources/) against a live box-score page. If genuinely "
+            "external and verified, ack with check 'stats'."
+        )
+
+    if stale_acked or thin_acked or stats_acked:
         print("\nACKNOWLEDGED (known conditions — reported, not failing the run):")
-        for msg, entry in stale_acked + thin_acked:
+        for msg, entry in stale_acked + thin_acked + stats_acked:
             print(f"  ~ {msg}")
             print(f"    acked until {entry['until']}: {entry.get('reason', 'no reason recorded')}")
 
@@ -317,10 +396,10 @@ def main() -> int:
         for n in ack_notes:
             print(f"  ! {n}")
 
-    if stale_fail or thin_fail:
+    if stale_fail or thin_fail or stats_fail:
         return 1
 
-    if stale_acked or thin_acked:
+    if stale_acked or thin_acked or stats_acked:
         print("\nRemaining conditions acknowledged - not failing the run.")
     else:
         print("\nAll in-season sports fresh, with usable coverage.")

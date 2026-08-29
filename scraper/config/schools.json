@@ -2568,7 +2568,10 @@
           "conference": "Northwoods-East 8"
         }
       ],
-      "aliases": [],
+      "aliases": [
+        "Bayfield/Washburn",
+        "Washburn/Bayfield"
+      ],
       "wiaa_org_id": 442,
       "bound_slug": null,
       "wph_team_id": null,

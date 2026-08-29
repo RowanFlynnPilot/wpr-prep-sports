@@ -42,10 +42,12 @@ function splitByPhase(games) {
   return { regular, playoff };
 }
 
-/** Adjective describing the overall arc, given the W-L and season state. */
-function arcTone(wins, losses, seasonComplete) {
-  const played = wins + losses;
+/** Adjective describing the overall arc, given the W-L-T and season state. */
+function arcTone(wins, losses, seasonComplete, ties = 0) {
+  const played = wins + losses + ties;
   if (played === 0) return seasonComplete ? "quiet" : "early";
+  // A 3-0-2 soccer side is unbeaten, not "perfect" — draws break perfection.
+  if (losses === 0 && ties > 0) return "unbeaten";
   if (losses === 0) return seasonComplete ? "undefeated" : "perfect";
   if (wins === 0) return seasonComplete ? "winless" : "rough";
   if (wins > losses && wins - losses >= 3) return seasonComplete ? "strong" : "strong";
@@ -244,7 +246,7 @@ export function seasonSummary({
   // writer would describe a 5-4 team that lost in Level 1. Fall back to all
   // finals only if no regular-season games are present (data oddity).
   const arcSource = regularFinals.length > 0 ? regularFinals : finals;
-  const { wins, losses, last } = arcFromFinals(arcSource, schoolId);
+  const { wins, losses, ties, last } = arcFromFinals(arcSource, schoolId);
   if (!last) return null;
 
   const oppSide = last.isHome ? last.game.away : last.game.home;
@@ -252,8 +254,8 @@ export function seasonSummary({
   const oppName = oppSchool?.name ?? oppSide?.name ?? "opponent";
 
   const schoolName = school?.name ?? "The team";
-  const played = wins + losses;
-  const tone = arcTone(wins, losses, seasonComplete);
+  const played = wins + losses + ties;
+  const tone = arcTone(wins, losses, seasonComplete, ties);
   const arc = arcPhrase(tone, seasonComplete, played);
   const tail = lastGameClause({
     last,

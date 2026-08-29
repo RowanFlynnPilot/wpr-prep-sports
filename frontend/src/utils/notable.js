@@ -41,7 +41,10 @@ export function buildNotable({ games, standings, seasonStats, sportConfig }) {
     ...detectCloseGames(games, sport),
     ...detectStateChampions(games, sport),
     ...detectBigGameAheadThisWeek(games, standings, sport),
-    ...detectSeasonStandouts(seasonStats, sport),
+    // Milestones read present-tense ("is averaging", "still climbing") —
+    // wall-clock gated like streaks, or a finished season's totals keep
+    // narrating all off-season.
+    ...(seasonLive ? detectSeasonStandouts(seasonStats, sport) : []),
   ];
   all.sort((a, b) => (b.priority ?? 0) - (a.priority ?? 0));
   // Cap loss-streak items at 1 — a parade of losses reads bleak even
@@ -280,12 +283,27 @@ function detectCloseGames(games, sport) {
   const loser = g.home.score > g.away.score ? g.away : g.home;
   const margin = Math.abs(g.home.score - g.away.score);
   const seed = hashSeed(`close-${g.id}`);
-  const variants = [
-    `${winner.name} edged ${loser.name} ${winner.score}-${loser.score} in a ${margin}-point thriller.`,
-    `${winner.name} survived ${loser.name} ${winner.score}-${loser.score} — decided by ${margin}.`,
-    `${winner.name} took ${loser.name} to the wire, winning ${winner.score}-${loser.score}.`,
-    `Just ${margin} ${margin === 1 ? "point" : "points"} separated ${winner.name} and ${loser.name} (${winner.score}-${loser.score}).`,
-  ];
+  // Sport-aware units: a volleyball "margin" is SETS (a 3-2 match is a
+  // five-setter, not a "1-point thriller"), and hockey/soccer play for
+  // goals, not points.
+  const goalSports = new Set([
+    "boys_hockey", "girls_hockey", "boys_soccer", "girls_soccer",
+  ]);
+  const unit = goalSports.has(sport) ? "goal" : "point";
+  const totalSets = (winner.score ?? 0) + (loser.score ?? 0);
+  const variants =
+    sport === "volleyball"
+      ? [
+          `${winner.name} outlasted ${loser.name} ${winner.score}-${loser.score} in ${totalSets} sets.`,
+          `${winner.name} survived a ${totalSets}-set battle with ${loser.name}, ${winner.score}-${loser.score}.`,
+          `${winner.name} took ${loser.name} the distance and won ${winner.score}-${loser.score}.`,
+        ]
+      : [
+          `${winner.name} edged ${loser.name} ${winner.score}-${loser.score} in a ${margin}-${unit} thriller.`,
+          `${winner.name} survived ${loser.name} ${winner.score}-${loser.score} — decided by ${margin}.`,
+          `${winner.name} took ${loser.name} to the wire, winning ${winner.score}-${loser.score}.`,
+          `Just ${margin} ${margin === 1 ? unit : `${unit}s`} separated ${winner.name} and ${loser.name} (${winner.score}-${loser.score}).`,
+        ];
   return [{
     id: `close-${g.id}`,
     headline: pick(seed, variants),
@@ -365,8 +383,9 @@ function detectBigGameAheadThisWeek(games, standings, sport) {
     // A preseason table is 0-0 rows in arbitrary order — "top-3" read
     // off it would crown opening-week matchups at random. Only trust a
     // table once someone in it has played.
+    // Rows carry overall_wins/overall_losses (no wins/losses/ties fields).
     const started = (s.rows ?? []).some(
-      (r) => (r.wins ?? 0) + (r.losses ?? 0) + (r.ties ?? 0) > 0,
+      (r) => (r.overall_wins ?? 0) + (r.overall_losses ?? 0) > 0,
     );
     if (!started) continue;
     (s.rows ?? []).slice(0, 3).forEach((r) => r.school_id && topIds.add(r.school_id));
@@ -411,7 +430,16 @@ function detectSeasonStandouts(seasonStats, sport) {
     if (!player || player === "Team") continue;
     const yds = asNum(s.YDS);
     const tds = asNum(s.TDS);
-    const pts = asNum(s.PTS) || asNum(s.PPG);
+    // Basketball PTS is a season TOTAL for girls (config/sports.js:
+    // "Girls basketball uses totals") — only PPG, or PTS/GP, may be
+    // phrased as an average. The old PTS-first read rendered "averaging
+    // 333.0 points per game".
+    const gp = asNum(s.GP);
+    const ppg =
+      asNum(s.PPG) ||
+      (Number.isFinite(asNum(s.PTS)) && Number.isFinite(gp) && gp > 0
+        ? asNum(s.PTS) / gp
+        : NaN);
     const seed = hashSeed(`mile-${row.school_id}-${player}-${row.category}`);
 
     if (row.category === "Passing" && Number.isFinite(yds) && yds >= 2000) {
@@ -437,11 +465,11 @@ function detectSeasonStandouts(seasonStats, sport) {
         `${player} is up to ${yds.toLocaleString()} receiving yards.`,
       ]), 28));
     }
-    if (row.category === "Basketball" && Number.isFinite(pts) && pts >= 25) {
+    if (row.category === "Basketball" && Number.isFinite(ppg) && ppg >= 25) {
       out.push(mileItem(row, sport, pick(seed, [
-        `${player} is averaging ${pts.toFixed(1)} points per game — one of the top scorers around.`,
-        `${player} pours it in nightly, averaging ${pts.toFixed(1)} per game.`,
-        `${player} is at ${pts.toFixed(1)} PPG and still climbing.`,
+        `${player} is averaging ${ppg.toFixed(1)} points per game — one of the top scorers around.`,
+        `${player} pours it in nightly, averaging ${ppg.toFixed(1)} per game.`,
+        `${player} is at ${ppg.toFixed(1)} PPG and still climbing.`,
       ]), 28));
     }
   }

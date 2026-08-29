@@ -109,7 +109,7 @@ def compute_power_rankings(
     def _bucket(school_id: str) -> dict:
         return teams.setdefault(
             school_id,
-            {"wins": 0, "losses": 0, "opponents": [], "margins": []},
+            {"wins": 0, "losses": 0, "ties": 0, "opponents": [], "margins": []},
         )
 
     for g in dataset.games:
@@ -127,6 +127,8 @@ def compute_power_rankings(
                 t["wins"] += 1
             elif g.away.score > g.home.score:
                 t["losses"] += 1
+            else:
+                t["ties"] += 1
             t["opponents"].append(g.away.school_id or None)
             t["margins"].append(capped_home)
 
@@ -136,12 +138,16 @@ def compute_power_rankings(
                 t["wins"] += 1
             elif g.home.score > g.away.score:
                 t["losses"] += 1
+            else:
+                t["ties"] += 1
             t["opponents"].append(g.home.school_id or None)
             t["margins"].append(-capped_home)
 
-    # Filter teams below the minimum.
+    # Filter teams below the minimum. Ties (soccer draws) are games
+    # played — a 1-2-2 team has 5 GP, not 3.
     for tid in list(teams.keys()):
-        if teams[tid]["wins"] + teams[tid]["losses"] < MIN_GAMES_PLAYED:
+        played = teams[tid]["wins"] + teams[tid]["losses"] + teams[tid]["ties"]
+        if played < MIN_GAMES_PLAYED:
             del teams[tid]
 
     # Too small a field to be a ranking rather than a restatement of the
@@ -157,10 +163,11 @@ def compute_power_rankings(
             )
         return dataset
 
-    # Pass 1: win percentages.
+    # Pass 1: win percentages. A draw counts as half a win (soccer),
+    # matching the conventional weighting.
     for t in teams.values():
-        gp = t["wins"] + t["losses"]
-        t["win_pct"] = t["wins"] / gp if gp > 0 else 0.0
+        gp = t["wins"] + t["losses"] + t["ties"]
+        t["win_pct"] = (t["wins"] + t["ties"] * 0.5) / gp if gp > 0 else 0.0
 
     # Pass 2: SOS (only tracked opponents contribute to avg). Teams
     # that played mostly untracked opponents fall back to .500 so the
@@ -185,6 +192,7 @@ def compute_power_rankings(
                 school_name=name_by_id.get(tid, tid),
                 wins=t["wins"],
                 losses=t["losses"],
+                ties=t["ties"],
                 win_pct=round(t["win_pct"], 4),
                 sos=round(t["sos"], 4),
                 avg_margin_capped=round(avg_margin, 2),

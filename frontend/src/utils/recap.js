@@ -44,6 +44,20 @@ function marginBands(sportConfig) {
   }
 }
 
+// WIAA records a forfeit as a 1-0 final (sometimes 2-0 in basketball).
+// In football that scoreline is impossible on the field, so it can only
+// mean a forfeit — and it must never reach the margin-band phrasing
+// ("squeaked past ... 1-0" shipped to the live grid, week 2 2026).
+// Hockey/soccer 1-0 and volleyball 2-0 are real results; only sports
+// where the notation can't be a real score qualify.
+function isForfeitFinal(sportConfig, winScore, lossScore) {
+  const id = sportConfig?.id ?? "";
+  if (id === "football") return winScore === 1 && lossScore === 0;
+  if (id.includes("basketball"))
+    return (winScore === 1 || winScore === 2) && lossScore === 0;
+  return false;
+}
+
 /** Returns a single sentence describing the game's result, or null if not final. */
 export function recapForGame(
   game,
@@ -96,9 +110,15 @@ export function recapForGame(
 
   // Result + margin descriptor (sport-relative thresholds)
   const bands = marginBands(sportConfig);
+  const forfeit =
+    !tied && isForfeitFinal(sportConfig, Math.max(own, opp), Math.min(own, opp));
   let resultPhrase;
   if (tied) {
     resultPhrase = `played to a ${own}-${opp} draw with ${oppLabel}`;
+  } else if (forfeit) {
+    resultPhrase = won
+      ? `took a forfeit win over ${oppLabel}`
+      : `forfeited to ${oppLabel}`;
   } else if (won) {
     if (Math.abs(margin) >= bands.blowout) {
       resultPhrase = `routed ${oppLabel} ${own}-${opp}`;
@@ -123,12 +143,19 @@ export function recapForGame(
   if (teamGames) {
     const record = recordThrough(teamGames, perspective, game.id);
     if (record) {
+      // Soccer draws are real: render W-L-T whenever ties exist, or the
+      // recap contradicts the team page one click away ("improved to
+      // 12-3" vs a true 12-3-1).
+      const rec =
+        record.ties > 0
+          ? `${record.wins}-${record.losses}-${record.ties}`
+          : `${record.wins}-${record.losses}`;
       if (won) {
-        recordPhrase = ` to improve to ${record.wins}-${record.losses}`;
+        recordPhrase = ` to improve to ${rec}`;
       } else if (tied) {
-        recordPhrase = ` (now ${record.wins}-${record.losses})`;
+        recordPhrase = ` (now ${rec})`;
       } else {
-        recordPhrase = ` and slipped to ${record.wins}-${record.losses}`;
+        recordPhrase = ` and slipped to ${rec}`;
       }
     }
   }
@@ -153,9 +180,12 @@ export function recapForGame(
   // Editorial framing for season-bookend games (last reg-season,
   // playoff exit, state title) — these override the standard opener
   // because they're the story, not just another game.
-  const bookend = buildBookendOpener({
-    teamGames, game, subject, oppLabel, own, opp, margin, won, tied, dateLabel, bands,
-  });
+  // A forfeit is never a season-bookend story — plain sentence only.
+  const bookend = forfeit
+    ? null
+    : buildBookendOpener({
+        teamGames, game, subject, oppLabel, own, opp, margin, won, tied, dateLabel, bands,
+      });
   const opener = bookend
     ?? `${subject} ${resultPhrase}${recordPhrase}${conferencePhrase} on ${dateLabel}.`;
   const headline = headlineStatLine(game, perspective, sportConfig);
@@ -246,6 +276,9 @@ export function gameSummaryLine(game, { sportConfig = null } = {}) {
   }
 
   const margin = winScore - lossScore;
+  if (isForfeitFinal(sportConfig, winScore, lossScore)) {
+    return `${winner.name} won by forfeit over ${loser.name}.`;
+  }
   // Margin "scale" depends on the sport — a 5-set diff means nothing
   // in football but a 3-set sweep is decisive in volleyball.
   const scoreLabel = sportConfig?.scoreLabel; // "set" for volleyball
@@ -423,6 +456,7 @@ function findPriorAppearance(contextGames, headline, schoolId, currentGame) {
 function recordThrough(games, schoolId, includeGameId) {
   let wins = 0,
     losses = 0,
+    ties = 0,
     found = false;
   // Games are sorted ascending by date in the source; we count finals up
   // to and including `includeGameId`.
@@ -436,12 +470,13 @@ function recordThrough(games, schoolId, includeGameId) {
     const opp = isHome ? g.away.score : g.home.score;
     if (own > opp) wins++;
     else if (own < opp) losses++;
+    else ties++;
     if (g.id === includeGameId) {
       found = true;
       break;
     }
   }
-  return found ? { wins, losses } : null;
+  return found ? { wins, losses, ties } : null;
 }
 
 function confFor(school, sport) {
@@ -495,7 +530,20 @@ function buildBookendOpener({
     }
   }
 
-  const isLastReg = !game.playoff && lastReg && game.id === lastReg.id;
+  // "Last regular-season game" must mean the SCHEDULE is exhausted, not
+  // merely that this is the team's most recent final — during the season
+  // every fresh result is the latest final, and week-2 blowouts were
+  // getting "closed out the regular season" copy (seen live 2026-08-29).
+  // Later-dated scheduled games (not stale postponed ones from the past)
+  // veto the season-ending framing.
+  const hasUpcomingReg = teamGames.some(
+    (g) =>
+      g.status !== "final" &&
+      !g.playoff &&
+      new Date(g.date) > new Date(game.date),
+  );
+  const isLastReg =
+    !game.playoff && !hasUpcomingReg && lastReg && game.id === lastReg.id;
   const isPlayoffExit = game.playoff && !won && lastOverall && game.id === lastOverall.id;
   const isStateTitle = game.playoff && won && STATE_TITLE_ROUNDS.has(game.playoff_round ?? "");
   const isPlayoffAdvance = game.playoff && won && !isStateTitle;

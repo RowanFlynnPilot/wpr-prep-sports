@@ -126,8 +126,13 @@ class StandingRow(BaseModel):
     name: str
     conference_wins: int = 0
     conference_losses: int = 0
+    # Soccer has real draws — counted here, NOT as losses (they were,
+    # until 2026-08-29; the frontend fix that made ties visible on team
+    # pages never reached the standings builder).
+    conference_ties: int = 0
     overall_wins: int = 0
     overall_losses: int = 0
+    overall_ties: int = 0
     points_for: Optional[int] = None
     points_against: Optional[int] = None
 
@@ -166,6 +171,7 @@ class PowerRanking(BaseModel):
     school_name: str
     wins: int
     losses: int
+    ties: int = 0  # soccer draws — count toward GP, half a win in W%
     win_pct: float  # 0..1
     sos: float  # 0..1, avg opponent W% (tracked opponents only)
     avg_margin_capped: float  # in score-units (points/sets/goals)

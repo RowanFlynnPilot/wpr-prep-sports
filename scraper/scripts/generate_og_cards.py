@@ -34,6 +34,9 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 DATA_DIR = REPO_ROOT / "data"
 OG_DIR = DATA_DIR / "og"
 
+# Every sport with a live dataset — add new sports here when they launch
+# (this list drifted once already: soccer shipped 2026-06 but only got
+# cards 2026-08, a full boys-soccer season-opening week without them).
 SPORTS = [
     "football",
     "boys_basketball",
@@ -41,6 +44,8 @@ SPORTS = [
     "volleyball",
     "boys_hockey",
     "girls_hockey",
+    "boys_soccer",
+    "girls_soccer",
 ]
 
 # Default window: include finals in the last 7 days + scheduled games in

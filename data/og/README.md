@@ -15,4 +15,4 @@ is cheap — only changed games are re-screenshot.
 Files are committed alongside `data/` json updates so the GitHub Pages
 deploy can serve them at:
 
-  `https://rowanflynnpilot.github.io/wpr-prep-sports/data/og/<sport>/<game-id>.png`
+  `https://sports.wausaupilotandreview.com/data/og/<sport>/<game-id>.png`

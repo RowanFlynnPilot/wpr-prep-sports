@@ -51,6 +51,10 @@ permissions:
 jobs:
   scrape:
     runs-on: ubuntu-latest
+    # A hung fetch (WIAA stall, npm registry, Playwright download) must
+    # not park a runner for the 360-minute default while holding the
+    # data-commits lane — on a Friday night that would outlast the slate.
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v5
 
@@ -239,6 +243,35 @@ jobs:
           done
           echo "::error::deploy dispatch failed after 3 attempts"
           exit 1
+
+      # Seed the live-score chain: GitHub load-sheds `schedule` ticks at
+      # peak times (Fri Aug 28 2026: live coverage got 2 of ~42 ticks), so
+      # scrape-live.yml re-dispatches itself while inside a game window.
+      # That chain needs a first spark — any full scrape that fires inside
+      # the window provides it. See scrape-live.yml's header.
+      - name: Seed live chain during game windows
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          day=$(date -u +%u)   # 1=Mon .. 7=Sun
+          hour=$((10#$(date -u +%H)))
+          in_window=false
+          # Mirrors scrape-live.yml's cron windows, in UTC.
+          if [ "$hour" -eq 23 ] && [ "$day" -le 6 ]; then in_window=true; fi
+          if [ "$hour" -le 5 ] && [ "$day" -ne 1 ]; then in_window=true; fi
+          if [ "$hour" -ge 18 ] && [ "$hour" -le 22 ] && [ "$day" -eq 6 ]; then in_window=true; fi
+          if [ "$in_window" != "true" ]; then
+            echo "outside live window — no seed needed"
+            exit 0
+          fi
+          pending=$(gh run list --workflow=scrape-live.yml --status queued --json databaseId --jq 'length' || echo 0)
+          running=$(gh run list --workflow=scrape-live.yml --status in_progress --json databaseId --jq 'length' || echo 0)
+          if [ "${pending:-0}" -gt 0 ] || [ "${running:-0}" -gt 0 ]; then
+            echo "live chain already active"
+            exit 0
+          fi
+          echo "in game window with no live chain — seeding one"
+          gh workflow run scrape-live.yml --ref main || echo "::warning::live-chain seed dispatch failed"
 
       # ---- Loud-failure tail. Ordered LAST so good data commits and
       # deploys before we make noise. Fires on: any earlier step failing

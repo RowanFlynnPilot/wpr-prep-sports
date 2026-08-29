@@ -12,6 +12,7 @@
  */
 
 import { topStatLines } from "./games.js";
+import { startOfSchoolWeek } from "./weeks.js";
 
 function asNum(v) {
   if (v == null) return NaN;
@@ -119,6 +120,14 @@ const SEVEN_DAYS = 7 * DAY_MS;
  */
 export function resolveOverridePotw(override, games) {
   if (!override) return null;
+  // Expiry is part of the override contract (see data/potw.json's
+  // _comment). fetchDataset filters expired overrides at fetch time,
+  // but a dashboard left open across the boundary — or any future
+  // caller passing the raw file — must not render one forever.
+  if (override.expires_at) {
+    const exp = new Date(override.expires_at).getTime();
+    if (Number.isFinite(exp) && exp <= Date.now()) return null;
+  }
   const { school_id, game_id, player_name } = override;
   if (!school_id || !game_id || !player_name) return null;
   const game = (games ?? []).find((g) => g.id === game_id);
@@ -161,19 +170,43 @@ export function pickPlayerOfWeek(
   );
   if (finals.length < MIN_STAT_GAMES_FOR_AUTO_PICK) return null;
 
-  // Anchor to the most-recent game; window is 7 days back from there.
-  const lastTs = anchor
-    ? new Date(anchor).getTime()
-    : finals.reduce(
-        (acc, g) => Math.max(acc, new Date(g.date).getTime()),
-        0,
-      );
-  const windowStart = lastTs - SEVEN_DAYS;
+  // Candidate pool = one SCHOOL WEEK (Mon-Sun), not a rolling 7 days.
+  // A rolling window anchored to the single newest box score produced a
+  // hybrid pool the day one week-2 upload landed (2026-08-29: 17 of 35
+  // week-1 games plus the lone week-2 game — and the excluded 18
+  // included the strongest week-1 lines). The newest week only takes
+  // over once it has enough coverage to be a real comparison; until
+  // then the previous, fully-covered week keeps the crown.
+  let pool;
+  if (anchor) {
+    // Explicit anchor (tests, archive renders): classic 7-day window.
+    const lastTs = new Date(anchor).getTime();
+    const windowStart = lastTs - SEVEN_DAYS;
+    pool = finals.filter((g) => {
+      const t = new Date(g.date).getTime();
+      return t >= windowStart && t <= lastTs + DAY_MS;
+    });
+  } else {
+    const MIN_WEEK_STAT_GAMES = 3;
+    const byWeek = new Map();
+    for (const g of finals) {
+      const key = startOfSchoolWeek(new Date(g.date)).getTime();
+      if (!byWeek.has(key)) byWeek.set(key, []);
+      byWeek.get(key).push(g);
+    }
+    const weekKeys = [...byWeek.keys()].sort((a, b) => b - a);
+    let chosen = weekKeys.find((k) => byWeek.get(k).length >= MIN_WEEK_STAT_GAMES);
+    if (chosen == null) {
+      // No week has real coverage — take the fullest (newest on ties).
+      chosen = weekKeys.reduce((best_, k) =>
+        byWeek.get(k).length > byWeek.get(best_).length ? k : best_,
+      weekKeys[0]);
+    }
+    pool = byWeek.get(chosen);
+  }
 
   let best = null;
-  for (const game of finals) {
-    const gameTs = new Date(game.date).getTime();
-    if (gameTs < windowStart || gameTs > lastTs + DAY_MS) continue;
+  for (const game of pool) {
     for (const line of topStatLines(game)) {
       if (!line.team_school_id) continue; // editorial focus: tracked schools only
       // Editorial radius (Shereen, 2026-08): Player of the Week features

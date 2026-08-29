@@ -112,6 +112,12 @@
   text-align: right;
   min-width: 4.5rem;
 }
+/* In-progress games: press-red pulsing LIVE, matching the ticker. */
+.game-row__status--live {
+  color: var(--brand);
+  font-weight: 700;
+  animation: pulse 1.5s ease-in-out infinite;
+}
 
 a.game-row__details {
   color: var(--accent-700);

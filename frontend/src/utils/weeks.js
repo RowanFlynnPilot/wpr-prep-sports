@@ -8,6 +8,12 @@
  * game in the same bucket.
  */
 
+/** Monday 00:00 (local clone) of the school week containing `d` —
+ * exported for Player of the Week's week bucketing. */
+export function startOfSchoolWeek(d) {
+  return startOfWeekISO(d);
+}
+
 function startOfWeekISO(d) {
   // Clone in Central time. We use UTC math here purely for stability —
   // the difference between "Monday in Central" and "Monday in UTC" is

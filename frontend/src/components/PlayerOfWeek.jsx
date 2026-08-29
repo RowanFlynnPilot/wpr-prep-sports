@@ -34,7 +34,8 @@ export default function PlayerOfWeek({ games, schoolIndex, sponsors, sportConfig
   const opponent = game.home.school_id === schoolId ? game.away : game.home;
   const ownScore = game.home.school_id === schoolId ? game.home.score : game.away.score;
   const oppScore = game.home.school_id === schoolId ? game.away.score : game.home.score;
-  const won = (ownScore ?? -1) > (oppScore ?? -1);
+  const tied = ownScore != null && oppScore != null && ownScore === oppScore;
+  const won = !tied && (ownScore ?? -1) > (oppScore ?? -1);
   const isHome = game.home.school_id === schoolId;
   // Pinned to the home zone like every other date on the page — the
   // viewer's locale must not relabel a Friday-night game "Saturday".
@@ -99,7 +100,7 @@ export default function PlayerOfWeek({ games, schoolIndex, sponsors, sportConfig
 
         <Link to={`${sportPrefix}/game/${game.id}`} className="potw__game">
           <span className="potw__game-result">
-            {won ? "W" : "L"} {ownScore}-{oppScore}
+            {won ? "W" : tied ? "T" : "L"} {ownScore}-{oppScore}
           </span>
           <span className="potw__game-opp">
             {isHome ? "vs" : "@"} {opponent.name}

@@ -284,9 +284,9 @@ export default function GamePage({ dataset, schoolIndex, sportConfig }) {
         ) : (
           <div className="game-stats__empty">
             <p>
-              Stats for this game haven&rsquo;t been reported to Bound yet, or this
-              matchup is outside the coverage area. The final score above is
-              authoritative.
+              Stats for this game haven&rsquo;t been reported by the coaches
+              yet &mdash; box scores usually land a day or two after the game.
+              The final score above is authoritative.
             </p>
           </div>
         )}
@@ -751,6 +751,9 @@ const CATEGORY_POS = {
 const REDUNDANT_KEYS = new Set([
   "KLS", "AST", "DIG", "BLK", "ACE",
   "BLK_BB", "FG_PCT", "RBD",
+  // Football (new-layout MaxPreps keeps raw headers alongside canon):
+  // rows were rendering "Car 24 · ATT 24" and "TD 4 · TDS 4".
+  "TDS", "ATT", "COMP",
 ]);
 
 function StatRow({ line, sportPrefix }) {
@@ -831,7 +834,7 @@ function hasReadableEquivalent(canon, stats) {
   // same value. Hide canonical only when one of these is present.
   const equivalents = {
     KLS: ["K"],
-    AST: ["Ast"],
+    AST: ["Ast", "Asst"],
     DIG: ["D"],
     BLK: ["Tot Blks"],
     ACE: ["A"],
@@ -839,6 +842,10 @@ function hasReadableEquivalent(canon, stats) {
     RBD: ["Reb"],
     BLK_BB: ["Blk"],
     FG_PCT: ["FG%"],
+    // Football (new-layout MaxPreps raw headers).
+    TDS: ["TD"],
+    ATT: ["Car", "Att"],
+    COMP: ["C", "Comp"],
   };
   return (equivalents[canon] ?? []).some((k) => k in stats);
 }

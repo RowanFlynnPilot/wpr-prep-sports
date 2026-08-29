@@ -31,6 +31,8 @@ permissions:
 jobs:
   digest:
     runs-on: ubuntu-latest
+    # Never hold the data-commits lane on a hang (Saturday scrape hours).
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v5
 
@@ -64,11 +66,22 @@ jobs:
             echo "pushed=false" >> "$GITHUB_OUTPUT"
           else
             git commit -m "data: weekly digest $(date -u +%Y-%m-%d)"
+            # Same rebase-retry semantics as the scrape workflows: digest
+            # only touches data/digest/, so a real conflict is near
+            # impossible — but a failed pull must not leave a rebase in
+            # progress burning the remaining attempts.
             for attempt in 1 2 3; do
               if git push; then break; fi
-              if [ "$attempt" = 3 ]; then exit 1; fi
+              if [ "$attempt" = 3 ]; then
+                echo "::error::push rejected 3x — see run log"
+                exit 1
+              fi
               echo "push rejected (attempt $attempt) — rebasing and retrying"
-              git pull --rebase
+              if ! git pull --rebase; then
+                git rebase --abort 2>/dev/null || true
+                echo "::error::git pull --rebase failed — conflict or network problem"
+                exit 1
+              fi
             done
             echo "pushed=true" >> "$GITHUB_OUTPUT"
           fi

@@ -213,7 +213,9 @@ function OffSeasonHero({
   );
 }
 function TeamRow({ team, school, won, showScore }) {
-  const ribbon = team.school_id ? "" : "Visitor";
+  // Untracked schools get no mascot line — the old "Visitor" filler
+  // mislabeled home teams (Marathon AT Crandon showed Crandon as
+  // "Visitor").
   return (
     <div className={`hero__team ${won ? "hero__team--won" : ""}`}>
       <TeamLogo team={team} school={school} size="xl" />
@@ -223,9 +225,6 @@ function TeamRow({ team, school, won, showScore }) {
         </h3>
         {school?.mascot && (
           <p className="hero__team-mascot">{school.mascot}</p>
-        )}
-        {!school?.mascot && ribbon && (
-          <p className="hero__team-mascot hero__team-mascot--muted">{ribbon}</p>
         )}
       </div>
       <div className="hero__score-wrap">

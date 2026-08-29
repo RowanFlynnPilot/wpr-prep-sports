@@ -51,15 +51,19 @@ export default function StandingsTable({
     for (const row of standing?.rows ?? []) {
       const sid = row.school_id;
       if (!sid) continue;
-      const last3 = games
-        .filter(
-          (g) =>
-            g.status === "final" &&
-            g.conference_game &&
-            (g.home.school_id === sid || g.away.school_id === sid) &&
-            g.home.score != null &&
-            g.away.score != null,
-        )
+      // Conference results preferred; before any conference play exists
+      // (volleyball tournament season, soccer non-conference Augusts)
+      // fall back to all finals — a 9-0 team showing "—" under "Last 3"
+      // reads broken next to a full Overall column.
+      const teamFinals = games.filter(
+        (g) =>
+          g.status === "final" &&
+          (g.home.school_id === sid || g.away.school_id === sid) &&
+          g.home.score != null &&
+          g.away.score != null,
+      );
+      const confFinals = teamFinals.filter((g) => g.conference_game);
+      const last3 = (confFinals.length > 0 ? confFinals : teamFinals)
         .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
         .slice(0, 3)
         .reverse()
@@ -87,8 +91,11 @@ export default function StandingsTable({
   const labels = recordLabels(sportConfig);
 
   // Any results in this table yet? Governs the leader pip below.
+  // Standings rows carry overall_wins/overall_losses — there are no
+  // wins/losses/ties fields (the guard shipped reading those and was
+  // silently always-false for a month).
   const tableStarted = standing.rows.some(
-    (r) => (r.wins ?? 0) + (r.losses ?? 0) + (r.ties ?? 0) > 0,
+    (r) => (r.overall_wins ?? 0) + (r.overall_losses ?? 0) > 0,
   );
 
   return (
@@ -165,8 +172,8 @@ export default function StandingsTable({
                     <TeamLogo team={stub} school={school} size="sm" />
                     <TeamLink team={stub}>{row.name}</TeamLink>
                   </td>
-                  <td className="num">{row.conference_wins}-{row.conference_losses}</td>
-                  <td className="num">{row.overall_wins}-{row.overall_losses}</td>
+                  <td className="num">{fmtRecord(row.conference_wins, row.conference_losses, row.conference_ties)}</td>
+                  <td className="num">{fmtRecord(row.overall_wins, row.overall_losses, row.overall_ties)}</td>
                   <td className="num points">{fmtInt(row.points_for)}</td>
                   <td className="num points">{fmtInt(row.points_against)}</td>
                   <td className="form">
@@ -211,15 +218,27 @@ function fmtInt(n) {
   return Number(n).toLocaleString("en-US");
 }
 
+// W-L, or W-L-T once a draw exists (soccer). Football tables never
+// show a phantom "-0" tail.
+function fmtRecord(wins, losses, ties) {
+  const t = ties ?? 0;
+  return t > 0 ? `${wins}-${losses}-${t}` : `${wins}-${losses}`;
+}
+
 function HoverCard({ row, school, conference, leaders, labels }) {
   if (!row) return null;
   const pf = row.points_for ?? 0;
   const pa = row.points_against ?? 0;
   const diff = pf - pa;
   const diffLabel = labels?.diff ?? "Point diff.";
-  const totalGames = row.overall_wins + row.overall_losses;
+  // Ties (soccer) count as half a win — the conventional weighting —
+  // so a 4-2-2 side reads 62%, not 67%.
+  const ties = row.overall_ties ?? 0;
+  const totalGames = row.overall_wins + row.overall_losses + ties;
   const winPct =
-    totalGames > 0 ? Math.round((row.overall_wins / totalGames) * 100) : null;
+    totalGames > 0
+      ? Math.round(((row.overall_wins + ties / 2) / totalGames) * 100)
+      : null;
 
   return (
     <div className="standings__hover" role="status" aria-live="polite">
@@ -232,11 +251,11 @@ function HoverCard({ row, school, conference, leaders, labels }) {
       <dl className="standings__hover-stats">
         <div>
           <dt>Overall</dt>
-          <dd>{row.overall_wins}-{row.overall_losses}{winPct != null && <span className="standings__hover-pct"> · {winPct}%</span>}</dd>
+          <dd>{fmtRecord(row.overall_wins, row.overall_losses, row.overall_ties)}{winPct != null && <span className="standings__hover-pct"> · {winPct}%</span>}</dd>
         </div>
         <div>
           <dt>{conference}</dt>
-          <dd>{row.conference_wins}-{row.conference_losses}</dd>
+          <dd>{fmtRecord(row.conference_wins, row.conference_losses, row.conference_ties)}</dd>
         </div>
         <div>
           <dt>{diffLabel}</dt>
