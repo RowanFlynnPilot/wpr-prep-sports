@@ -1,7 +1,7 @@
 {
   "sport": "volleyball",
   "season": "2026-27",
-  "generated_at": "2026-08-30T12:26:53.101632-05:00",
+  "generated_at": "2026-08-30T16:03:57.794674-05:00",
   "method": "WPR Power Index v1: 40% W%, 35% SOS, 25% margin (capped per sport)",
   "rankings": [
     {
@@ -60,13 +60,13 @@
       "rank": 5,
       "school_id": "hurley",
       "school_name": "Hurley",
-      "wins": 3,
+      "wins": 4,
       "losses": 0,
       "ties": 0,
       "win_pct": 1.0,
       "sos": 0.4,
-      "avg_margin_capped": 1.67,
-      "score": 73.44,
+      "avg_margin_capped": 1.75,
+      "score": 73.79,
       "movement": null
     },
     {
@@ -292,19 +292,6 @@
     },
     {
       "rank": 23,
-      "school_id": "northland-pines",
-      "school_name": "Northland Pines",
-      "wins": 2,
-      "losses": 2,
-      "ties": 0,
-      "win_pct": 0.5,
-      "sos": 0.5,
-      "avg_margin_capped": 0.0,
-      "score": 50.0,
-      "movement": null
-    },
-    {
-      "rank": 24,
       "school_id": "columbus-catholic",
       "school_name": "Columbus Catholic",
       "wins": 2,
@@ -317,7 +304,7 @@
       "movement": null
     },
     {
-      "rank": 25,
+      "rank": 24,
       "school_id": "rib-lake",
       "school_name": "Rib Lake",
       "wins": 1,
@@ -327,6 +314,19 @@
       "sos": 0.8333,
       "avg_margin_capped": -1.0,
       "score": 47.5,
+      "movement": null
+    },
+    {
+      "rank": 25,
+      "school_id": "northland-pines",
+      "school_name": "Northland Pines",
+      "wins": 3,
+      "losses": 2,
+      "ties": 0,
+      "win_pct": 0.6,
+      "sos": 0.2857,
+      "avg_margin_capped": 0.2,
+      "score": 47.33,
       "movement": null
     },
     {
@@ -422,6 +422,32 @@
     },
     {
       "rank": 33,
+      "school_id": "wausau-east",
+      "school_name": "Wausau East",
+      "wins": 2,
+      "losses": 5,
+      "ties": 0,
+      "win_pct": 0.2857,
+      "sos": 0.4222,
+      "avg_margin_capped": -0.57,
+      "score": 36.33,
+      "movement": null
+    },
+    {
+      "rank": 34,
+      "school_id": "colby",
+      "school_name": "Colby",
+      "wins": 1,
+      "losses": 2,
+      "ties": 0,
+      "win_pct": 0.3333,
+      "sos": 0.2857,
+      "avg_margin_capped": -0.67,
+      "score": 33.06,
+      "movement": null
+    },
+    {
+      "rank": 35,
       "school_id": "menominee-nation",
       "school_name": "Menominee Nation",
       "wins": 0,
@@ -434,7 +460,7 @@
       "movement": null
     },
     {
-      "rank": 34,
+      "rank": 36,
       "school_id": "bowler",
       "school_name": "Bowler",
       "wins": 0,

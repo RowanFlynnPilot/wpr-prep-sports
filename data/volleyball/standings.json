@@ -30,6 +30,18 @@
         "points_against": 9
       },
       {
+        "school_id": "wausau-east",
+        "name": "Wausau East",
+        "conference_wins": 0,
+        "conference_losses": 0,
+        "conference_ties": 0,
+        "overall_wins": 2,
+        "overall_losses": 5,
+        "overall_ties": 0,
+        "points_for": 6,
+        "points_against": 10
+      },
+      {
         "school_id": "wausau-west",
         "name": "Wausau West",
         "conference_wins": 0,
@@ -64,18 +76,6 @@
         "overall_ties": 0,
         "points_for": 2,
         "points_against": 3
-      },
-      {
-        "school_id": "wausau-east",
-        "name": "Wausau East",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "conference_ties": 0,
-        "overall_wins": 0,
-        "overall_losses": 1,
-        "overall_ties": 0,
-        "points_for": 0,
-        "points_against": 2
       }
     ]
   },
@@ -286,20 +286,20 @@
         "points_against": 8
       },
       {
-        "school_id": "rhinelander",
-        "name": "Rhinelander",
+        "school_id": "northland-pines",
+        "name": "Northland Pines",
         "conference_wins": 0,
         "conference_losses": 0,
         "conference_ties": 0,
-        "overall_wins": 2,
+        "overall_wins": 3,
         "overall_losses": 2,
         "overall_ties": 0,
-        "points_for": 5,
-        "points_against": 5
+        "points_for": 7,
+        "points_against": 6
       },
       {
-        "school_id": "northland-pines",
-        "name": "Northland Pines",
+        "school_id": "rhinelander",
+        "name": "Rhinelander",
         "conference_wins": 0,
         "conference_losses": 0,
         "conference_ties": 0,
@@ -366,16 +366,28 @@
         "points_against": 4
       },
       {
+        "school_id": "colby",
+        "name": "Colby",
+        "conference_wins": 0,
+        "conference_losses": 0,
+        "conference_ties": 0,
+        "overall_wins": 1,
+        "overall_losses": 2,
+        "overall_ties": 0,
+        "points_for": 2,
+        "points_against": 4
+      },
+      {
         "school_id": "abbotsford",
         "name": "Abbotsford",
         "conference_wins": 0,
         "conference_losses": 0,
         "conference_ties": 0,
         "overall_wins": 1,
-        "overall_losses": 0,
+        "overall_losses": 1,
         "overall_ties": 0,
         "points_for": 3,
-        "points_against": 0
+        "points_against": 2
       },
       {
         "school_id": "loyal",
@@ -412,18 +424,6 @@
         "overall_ties": 0,
         "points_for": 2,
         "points_against": 3
-      },
-      {
-        "school_id": "colby",
-        "name": "Colby",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "conference_ties": 0,
-        "overall_wins": 0,
-        "overall_losses": 1,
-        "overall_ties": 0,
-        "points_for": 0,
-        "points_against": 2
       },
       {
         "school_id": "owen-withee",

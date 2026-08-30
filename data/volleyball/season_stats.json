@@ -2985,6 +2985,287 @@
     }
   },
   {
+    "school_id": "colby",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Mckenzi Meyer",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "KLS": "6",
+      "ATT": "16",
+      "E": "2",
+      "SP": "3",
+      "AST": "1",
+      "EFF": ".250"
+    }
+  },
+  {
+    "school_id": "colby",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Cadence Meyer",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "KLS": "3",
+      "ATT": "13",
+      "E": "2",
+      "SP": "4",
+      "AST": "11",
+      "EFF": ".077"
+    }
+  },
+  {
+    "school_id": "colby",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Taebyn Lieders",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "KLS": "3",
+      "ATT": "4",
+      "E": "0",
+      "SP": "3",
+      "EFF": ".750"
+    }
+  },
+  {
+    "school_id": "colby",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Gabby Kaiser",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "KLS": "3",
+      "ATT": "11",
+      "E": "3",
+      "SP": "4",
+      "AST": "1",
+      "EFF": ".000"
+    }
+  },
+  {
+    "school_id": "colby",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Zoe Kaiser",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "KLS": "7",
+      "ATT": "40",
+      "E": "10",
+      "SP": "4",
+      "AST": "15",
+      "EFF": "-0.075"
+    }
+  },
+  {
+    "school_id": "colby",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Lillie Oestreich",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "KLS": "6",
+      "ATT": "29",
+      "E": "6",
+      "SP": "4",
+      "EFF": ".000"
+    }
+  },
+  {
+    "school_id": "colby",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Zoe Kaiser",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "ACE": "5",
+      "SP": "4"
+    }
+  },
+  {
+    "school_id": "colby",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Rylee Carr",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "ACE": "2",
+      "SP": "2"
+    }
+  },
+  {
+    "school_id": "colby",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Calleigh Cook",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "ACE": "3",
+      "SP": "4"
+    }
+  },
+  {
+    "school_id": "colby",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Gabby Kaiser",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "BLK": "2",
+      "SP": "4",
+      "DIG": "2"
+    }
+  },
+  {
+    "school_id": "colby",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Mckenzi Meyer",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "DIG": "5",
+      "SP": "2"
+    }
+  },
+  {
+    "school_id": "colby",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Cadence Meyer",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "DIG": "10",
+      "SP": "4"
+    }
+  },
+  {
+    "school_id": "colby",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Zoe Kaiser",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "DIG": "10",
+      "SP": "4",
+      "BLK": "1"
+    }
+  },
+  {
+    "school_id": "colby",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Rylee Carr",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "DIG": "5",
+      "SP": "4"
+    }
+  },
+  {
+    "school_id": "colby",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Calleigh Cook",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "DIG": "9",
+      "SP": "4"
+    }
+  },
+  {
+    "school_id": "colby",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Elizabeth Perez",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "DIG": "23",
+      "SP": "4"
+    }
+  },
+  {
+    "school_id": "colby",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Lillie Oestreich",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "DIG": "2",
+      "SP": "4",
+      "BLK": "1"
+    }
+  },
+  {
+    "school_id": "colby",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Ava Geiger",
+    "player_year": "FR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "AST": "1",
+      "SP": "3",
+      "KLS": "4",
+      "ATT": "16",
+      "E": "6",
+      "EFF": "-0.125"
+    }
+  },
+  {
     "school_id": "spencer",
     "sport": "volleyball",
     "category": "Volleyball Offense",
@@ -2993,13 +3274,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "KLS": "6",
-      "ATT": "16",
-      "E": "6",
-      "SP": "3",
-      "AST": "9",
-      "EFF": ".000"
+      "GP": "2",
+      "KLS": "7",
+      "ATT": "26",
+      "E": "12",
+      "SP": "6",
+      "AST": "17",
+      "EFF": "-0.192"
     }
   },
   {
@@ -3011,12 +3292,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "KLS": "12",
-      "ATT": "24",
-      "E": "4",
-      "SP": "3",
-      "EFF": ".333"
+      "GP": "2",
+      "KLS": "26",
+      "ATT": "62",
+      "E": "6",
+      "SP": "6",
+      "AST": "2",
+      "EFF": ".323"
     }
   },
   {
@@ -3028,11 +3310,12 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
+      "GP": "2",
       "KLS": "2",
       "ATT": "8",
       "E": "2",
-      "SP": "3",
+      "SP": "6",
+      "AST": "1",
       "EFF": ".000"
     }
   },
@@ -3045,12 +3328,12 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "KLS": "4",
-      "ATT": "8",
-      "E": "2",
-      "SP": "3",
-      "EFF": ".250"
+      "GP": "2",
+      "KLS": "8",
+      "ATT": "22",
+      "E": "6",
+      "SP": "6",
+      "EFF": ".091"
     }
   },
   {
@@ -3062,13 +3345,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "KLS": "5",
-      "ATT": "14",
+      "GP": "2",
+      "KLS": "6",
+      "ATT": "19",
       "E": "3",
-      "SP": "3",
+      "SP": "6",
       "AST": "1",
-      "EFF": ".143"
+      "EFF": ".158"
     }
   },
   {
@@ -3094,9 +3377,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "ACE": "2",
-      "SP": "3"
+      "GP": "2",
+      "ACE": "3",
+      "SP": "6"
     }
   },
   {
@@ -3108,9 +3391,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "ACE": "1",
-      "SP": "3"
+      "GP": "2",
+      "ACE": "3",
+      "SP": "6"
     }
   },
   {
@@ -3122,9 +3405,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "ACE": "3",
-      "SP": "3"
+      "GP": "2",
+      "ACE": "4",
+      "SP": "6"
     }
   },
   {
@@ -3136,9 +3419,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "ACE": "2",
-      "SP": "3"
+      "GP": "2",
+      "ACE": "4",
+      "SP": "6"
     }
   },
   {
@@ -3164,9 +3447,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "BLK": "1",
-      "SP": "3"
+      "GP": "2",
+      "BLK": "2",
+      "SP": "6",
+      "DIG": "2"
     }
   },
   {
@@ -3178,9 +3462,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
+      "GP": "2",
       "BLK": "1",
-      "SP": "3"
+      "SP": "6",
+      "DIG": "2"
     }
   },
   {
@@ -3192,10 +3477,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "BLK": "2",
-      "SP": "3",
-      "DIG": "1"
+      "GP": "2",
+      "BLK": "3",
+      "SP": "6",
+      "DIG": "3"
     }
   },
   {
@@ -3207,10 +3492,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "BLK": "1",
-      "SP": "3",
-      "DIG": "4"
+      "GP": "2",
+      "BLK": "2",
+      "SP": "6",
+      "DIG": "7"
     }
   },
   {
@@ -3222,9 +3507,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "DIG": "1",
-      "SP": "3"
+      "GP": "2",
+      "DIG": "8",
+      "SP": "6"
     }
   },
   {
@@ -3236,9 +3521,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "DIG": "10",
-      "SP": "3"
+      "GP": "2",
+      "DIG": "19",
+      "SP": "6"
     }
   },
   {
@@ -3250,9 +3535,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "DIG": "4",
-      "SP": "3"
+      "GP": "2",
+      "DIG": "9",
+      "SP": "6"
     }
   },
   {
@@ -3264,9 +3549,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "DIG": "4",
-      "SP": "3"
+      "GP": "2",
+      "DIG": "11",
+      "SP": "6"
     }
   },
   {
@@ -3278,9 +3563,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "DIG": "9",
-      "SP": "3"
+      "GP": "2",
+      "DIG": "16",
+      "SP": "6",
+      "BLK": "1"
     }
   },
   {
@@ -3306,9 +3592,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "AST": "2",
-      "SP": "3"
+      "GP": "2",
+      "AST": "4",
+      "SP": "6"
     }
   },
   {
@@ -3320,9 +3606,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "AST": "13",
-      "SP": "3"
+      "GP": "2",
+      "AST": "21",
+      "SP": "6"
     }
   },
   {
@@ -4515,6 +4801,24 @@
     }
   },
   {
+    "school_id": "spencer",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Caislyn Krause",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "KLS": "5",
+      "ATT": "10",
+      "E": "3",
+      "SP": "3",
+      "AST": "1",
+      "EFF": ".200"
+    }
+  },
+  {
     "school_id": "dc-everest",
     "sport": "volleyball",
     "category": "Volleyball Serving",
@@ -4540,6 +4844,76 @@
       "GP": "1",
       "ACE": "1",
       "SP": "3"
+    }
+  },
+  {
+    "school_id": "colby",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Taebyn Lieders",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "ACE": "2",
+      "SP": "2"
+    }
+  },
+  {
+    "school_id": "colby",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Ava Geiger",
+    "player_year": "FR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "BLK": "2",
+      "SP": "2"
+    }
+  },
+  {
+    "school_id": "colby",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Taebyn Lieders",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "DIG": "1",
+      "SP": "2"
+    }
+  },
+  {
+    "school_id": "colby",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Calleigh Cook",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "AST": "1",
+      "SP": "2"
+    }
+  },
+  {
+    "school_id": "colby",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Elizabeth Perez",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "AST": "1",
+      "SP": "2"
     }
   }
 ]
