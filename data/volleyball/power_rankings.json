@@ -1,7 +1,7 @@
 {
   "sport": "volleyball",
   "season": "2026-27",
-  "generated_at": "2026-08-30T16:03:57.794674-05:00",
+  "generated_at": "2026-08-30T18:29:17.826104-05:00",
   "method": "WPR Power Index v1: 40% W%, 35% SOS, 25% margin (capped per sport)",
   "rankings": [
     {
@@ -110,19 +110,6 @@
     },
     {
       "rank": 9,
-      "school_id": "wittenberg-birnamwood",
-      "school_name": "Wittenberg-Birnamwood",
-      "wins": 8,
-      "losses": 3,
-      "ties": 0,
-      "win_pct": 0.7273,
-      "sos": 0.5,
-      "avg_margin_capped": 1.09,
-      "score": 63.64,
-      "movement": -4
-    },
-    {
-      "rank": 10,
       "school_id": "chequamegon",
       "school_name": "Chequamegon",
       "wins": 2,
@@ -133,6 +120,19 @@
       "avg_margin_capped": -0.6,
       "score": 61.0,
       "movement": null
+    },
+    {
+      "rank": 10,
+      "school_id": "wittenberg-birnamwood",
+      "school_name": "Wittenberg-Birnamwood",
+      "wins": 8,
+      "losses": 3,
+      "ties": 0,
+      "win_pct": 0.7273,
+      "sos": 0.4167,
+      "avg_margin_capped": 1.09,
+      "score": 60.72,
+      "movement": -5
     },
     {
       "rank": 11,
@@ -305,6 +305,19 @@
     },
     {
       "rank": 24,
+      "school_id": "wisconsin-rapids",
+      "school_name": "Wisconsin Rapids Lincoln",
+      "wins": 1,
+      "losses": 2,
+      "ties": 0,
+      "win_pct": 0.3333,
+      "sos": 0.7273,
+      "avg_margin_capped": -0.67,
+      "score": 48.51,
+      "movement": null
+    },
+    {
+      "rank": 25,
       "school_id": "rib-lake",
       "school_name": "Rib Lake",
       "wins": 1,
@@ -314,19 +327,6 @@
       "sos": 0.8333,
       "avg_margin_capped": -1.0,
       "score": 47.5,
-      "movement": null
-    },
-    {
-      "rank": 25,
-      "school_id": "northland-pines",
-      "school_name": "Northland Pines",
-      "wins": 3,
-      "losses": 2,
-      "ties": 0,
-      "win_pct": 0.6,
-      "sos": 0.2857,
-      "avg_margin_capped": 0.2,
-      "score": 47.33,
       "movement": null
     },
     {
@@ -383,6 +383,19 @@
     },
     {
       "rank": 30,
+      "school_id": "northland-pines",
+      "school_name": "Northland Pines",
+      "wins": 3,
+      "losses": 3,
+      "ties": 0,
+      "win_pct": 0.5,
+      "sos": 0.2857,
+      "avg_margin_capped": -0.17,
+      "score": 41.81,
+      "movement": null
+    },
+    {
+      "rank": 31,
       "school_id": "black-river-falls",
       "school_name": "Black River Falls",
       "wins": 2,
@@ -395,7 +408,7 @@
       "movement": null
     },
     {
-      "rank": 31,
+      "rank": 32,
       "school_id": "rosholt",
       "school_name": "Rosholt",
       "wins": 1,
@@ -408,7 +421,7 @@
       "movement": null
     },
     {
-      "rank": 32,
+      "rank": 33,
       "school_id": "amherst",
       "school_name": "Amherst",
       "wins": 1,
@@ -421,20 +434,33 @@
       "movement": null
     },
     {
-      "rank": 33,
+      "rank": 34,
       "school_id": "wausau-east",
       "school_name": "Wausau East",
       "wins": 2,
       "losses": 5,
       "ties": 0,
       "win_pct": 0.2857,
-      "sos": 0.4222,
+      "sos": 0.375,
       "avg_margin_capped": -0.57,
-      "score": 36.33,
+      "score": 34.67,
       "movement": null
     },
     {
-      "rank": 34,
+      "rank": 35,
+      "school_id": "abbotsford",
+      "school_name": "Abbotsford",
+      "wins": 1,
+      "losses": 2,
+      "ties": 0,
+      "win_pct": 0.3333,
+      "sos": 0.2857,
+      "avg_margin_capped": -0.33,
+      "score": 34.44,
+      "movement": null
+    },
+    {
+      "rank": 36,
       "school_id": "colby",
       "school_name": "Colby",
       "wins": 1,
@@ -447,7 +473,7 @@
       "movement": null
     },
     {
-      "rank": 35,
+      "rank": 37,
       "school_id": "menominee-nation",
       "school_name": "Menominee Nation",
       "wins": 0,
@@ -460,7 +486,7 @@
       "movement": null
     },
     {
-      "rank": 36,
+      "rank": 38,
       "school_id": "bowler",
       "school_name": "Bowler",
       "wins": 0,

@@ -48,10 +48,10 @@
         "conference_losses": 0,
         "conference_ties": 0,
         "overall_wins": 1,
-        "overall_losses": 0,
+        "overall_losses": 1,
         "overall_ties": 0,
-        "points_for": 42,
-        "points_against": 14
+        "points_for": 57,
+        "points_against": 30
       },
       {
         "school_id": "northland-pines",
@@ -250,6 +250,18 @@
         "points_against": 14
       },
       {
+        "school_id": "shell-lake",
+        "name": "Shell Lake",
+        "conference_wins": 1,
+        "conference_losses": 0,
+        "conference_ties": 0,
+        "overall_wins": 2,
+        "overall_losses": 0,
+        "overall_ties": 0,
+        "points_for": 112,
+        "points_against": 28
+      },
+      {
         "school_id": "flambeau",
         "name": "Flambeau",
         "conference_wins": 1,
@@ -274,28 +286,16 @@
         "points_against": 83
       },
       {
-        "school_id": "shell-lake",
-        "name": "Shell Lake",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "conference_ties": 0,
-        "overall_wins": 1,
-        "overall_losses": 0,
-        "overall_ties": 0,
-        "points_for": 52,
-        "points_against": 22
-      },
-      {
         "school_id": "washburn",
         "name": "Washburn",
-        "conference_wins": 0,
-        "conference_losses": 0,
+        "conference_wins": 1,
+        "conference_losses": 1,
         "conference_ties": 0,
-        "overall_wins": 0,
-        "overall_losses": 1,
+        "overall_wins": 1,
+        "overall_losses": 2,
         "overall_ties": 0,
-        "points_for": 6,
-        "points_against": 40
+        "points_for": 13,
+        "points_against": 100
       },
       {
         "school_id": "athens",
@@ -322,18 +322,6 @@
         "points_against": 76
       },
       {
-        "school_id": "south-shore",
-        "name": "South Shore",
-        "conference_wins": 0,
-        "conference_losses": 1,
-        "conference_ties": 0,
-        "overall_wins": 0,
-        "overall_losses": 1,
-        "overall_ties": 0,
-        "points_for": 0,
-        "points_against": 1
-      },
-      {
         "school_id": "prentice",
         "name": "Prentice",
         "conference_wins": 0,
@@ -344,6 +332,18 @@
         "overall_ties": 0,
         "points_for": 28,
         "points_against": 67
+      },
+      {
+        "school_id": "south-shore",
+        "name": "South Shore",
+        "conference_wins": 0,
+        "conference_losses": 2,
+        "conference_ties": 0,
+        "overall_wins": 0,
+        "overall_losses": 2,
+        "overall_ties": 0,
+        "points_for": 0,
+        "points_against": 2
       }
     ]
   },
