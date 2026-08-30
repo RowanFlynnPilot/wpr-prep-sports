@@ -250,6 +250,18 @@
         "points_against": 2
       },
       {
+        "school_id": "merrill",
+        "name": "Merrill",
+        "conference_wins": 0,
+        "conference_losses": 0,
+        "conference_ties": 0,
+        "overall_wins": 4,
+        "overall_losses": 1,
+        "overall_ties": 0,
+        "points_for": 8,
+        "points_against": 2
+      },
+      {
         "school_id": "medford",
         "name": "Medford",
         "conference_wins": 0,
@@ -262,28 +274,16 @@
         "points_against": 6
       },
       {
-        "school_id": "merrill",
-        "name": "Merrill",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "conference_ties": 0,
-        "overall_wins": 3,
-        "overall_losses": 1,
-        "overall_ties": 0,
-        "points_for": 6,
-        "points_against": 2
-      },
-      {
         "school_id": "lakeland",
         "name": "Lakeland",
         "conference_wins": 0,
         "conference_losses": 0,
         "conference_ties": 0,
         "overall_wins": 3,
-        "overall_losses": 3,
+        "overall_losses": 4,
         "overall_ties": 0,
-        "points_for": 7,
-        "points_against": 6
+        "points_for": 8,
+        "points_against": 8
       },
       {
         "school_id": "rhinelander",
@@ -360,10 +360,10 @@
         "conference_losses": 0,
         "conference_ties": 0,
         "overall_wins": 2,
-        "overall_losses": 1,
+        "overall_losses": 2,
         "overall_ties": 0,
         "points_for": 5,
-        "points_against": 2
+        "points_against": 4
       },
       {
         "school_id": "abbotsford",
