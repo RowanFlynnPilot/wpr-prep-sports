@@ -598,16 +598,16 @@
         "points_against": 88
       },
       {
-        "school_id": "menominee-nation",
-        "name": "Menominee Nation",
-        "conference_wins": 0,
-        "conference_losses": 0,
+        "school_id": "bowler",
+        "name": "Bowler",
+        "conference_wins": 1,
+        "conference_losses": 1,
         "conference_ties": 0,
-        "overall_wins": 0,
-        "overall_losses": 0,
+        "overall_wins": 1,
+        "overall_losses": 1,
         "overall_ties": 0,
-        "points_for": 0,
-        "points_against": 0
+        "points_for": 1,
+        "points_against": 1
       },
       {
         "school_id": "wild-rose",
@@ -646,8 +646,8 @@
         "points_against": 96
       },
       {
-        "school_id": "bowler",
-        "name": "Bowler",
+        "school_id": "menominee-nation",
+        "name": "Menominee Nation",
         "conference_wins": 0,
         "conference_losses": 1,
         "conference_ties": 0,
