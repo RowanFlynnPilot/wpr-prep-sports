@@ -24,10 +24,10 @@
         "conference_losses": 0,
         "conference_ties": 0,
         "overall_wins": 1,
-        "overall_losses": 0,
+        "overall_losses": 1,
         "overall_ties": 0,
         "points_for": 6,
-        "points_against": 0
+        "points_against": 5
       },
       {
         "school_id": "spash",
@@ -152,10 +152,10 @@
         "conference_losses": 0,
         "conference_ties": 0,
         "overall_wins": 0,
-        "overall_losses": 0,
+        "overall_losses": 1,
         "overall_ties": 0,
-        "points_for": 0,
-        "points_against": 0
+        "points_for": 1,
+        "points_against": 3
       },
       {
         "school_id": "antigo",
@@ -178,6 +178,18 @@
     "division": null,
     "rows": [
       {
+        "school_id": "eau-claire-north",
+        "name": "Eau Claire North",
+        "conference_wins": 0,
+        "conference_losses": 0,
+        "conference_ties": 0,
+        "overall_wins": 2,
+        "overall_losses": 1,
+        "overall_ties": 0,
+        "points_for": 7,
+        "points_against": 5
+      },
+      {
         "school_id": "new-richmond",
         "name": "New Richmond",
         "conference_wins": 0,
@@ -188,18 +200,6 @@
         "overall_ties": 0,
         "points_for": 5,
         "points_against": 1
-      },
-      {
-        "school_id": "eau-claire-north",
-        "name": "Eau Claire North",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "conference_ties": 0,
-        "overall_wins": 1,
-        "overall_losses": 1,
-        "overall_ties": 0,
-        "points_for": 5,
-        "points_against": 5
       },
       {
         "school_id": "chippewa-falls",
