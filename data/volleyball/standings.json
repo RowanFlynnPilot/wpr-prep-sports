@@ -128,10 +128,10 @@
         "conference_losses": 0,
         "conference_ties": 0,
         "overall_wins": 2,
-        "overall_losses": 1,
+        "overall_losses": 2,
         "overall_ties": 0,
         "points_for": 4,
-        "points_against": 3
+        "points_against": 5
       },
       {
         "school_id": "chequamegon",
@@ -200,10 +200,10 @@
         "conference_losses": 0,
         "conference_ties": 0,
         "overall_wins": 1,
-        "overall_losses": 3,
+        "overall_losses": 4,
         "overall_ties": 0,
         "points_for": 3,
-        "points_against": 7
+        "points_against": 9
       },
       {
         "school_id": "edgar",
@@ -342,6 +342,18 @@
     "division": null,
     "rows": [
       {
+        "school_id": "abbotsford",
+        "name": "Abbotsford",
+        "conference_wins": 0,
+        "conference_losses": 0,
+        "conference_ties": 0,
+        "overall_wins": 3,
+        "overall_losses": 3,
+        "overall_ties": 0,
+        "points_for": 7,
+        "points_against": 8
+      },
+      {
         "school_id": "colby",
         "name": "Colby",
         "conference_wins": 0,
@@ -352,18 +364,6 @@
         "overall_ties": 0,
         "points_for": 5,
         "points_against": 12
-      },
-      {
-        "school_id": "abbotsford",
-        "name": "Abbotsford",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "conference_ties": 0,
-        "overall_wins": 2,
-        "overall_losses": 3,
-        "overall_ties": 0,
-        "points_for": 5,
-        "points_against": 7
       },
       {
         "school_id": "gilman",
