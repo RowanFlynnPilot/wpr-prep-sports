@@ -1,7 +1,7 @@
 {
   "sport": "volleyball",
   "season": "2026-27",
-  "generated_at": "2026-09-01T13:30:00.571304-05:00",
+  "generated_at": "2026-09-01T16:50:50.234589-05:00",
   "method": "WPR Power Index v1: 40% W%, 35% SOS, 25% margin (capped per sport)",
   "rankings": [
     {
@@ -45,6 +45,19 @@
     },
     {
       "rank": 4,
+      "school_id": "rice-lake",
+      "school_name": "Rice Lake",
+      "wins": 3,
+      "losses": 1,
+      "ties": 0,
+      "win_pct": 0.75,
+      "sos": 0.8333,
+      "avg_margin_capped": 1.0,
+      "score": 75.83,
+      "movement": null
+    },
+    {
+      "rank": 5,
       "school_id": "hudson",
       "school_name": "Hudson",
       "wins": 6,
@@ -54,10 +67,10 @@
       "sos": 0.7914,
       "avg_margin_capped": 1.0,
       "score": 74.37,
-      "movement": -1
+      "movement": -2
     },
     {
-      "rank": 5,
+      "rank": 6,
       "school_id": "hurley",
       "school_name": "Hurley",
       "wins": 4,
@@ -67,23 +80,23 @@
       "sos": 0.4,
       "avg_margin_capped": 1.75,
       "score": 73.79,
-      "movement": 0
+      "movement": -1
     },
     {
-      "rank": 6,
+      "rank": 7,
       "school_id": "chippewa-falls",
       "school_name": "Chippewa Falls",
       "wins": 10,
       "losses": 2,
       "ties": 0,
       "win_pct": 0.8333,
-      "sos": 0.6554,
+      "sos": 0.6673,
       "avg_margin_capped": 1.08,
-      "score": 73.29,
-      "movement": 10
+      "score": 73.7,
+      "movement": 9
     },
     {
-      "rank": 7,
+      "rank": 8,
       "school_id": "merrill",
       "school_name": "Merrill",
       "wins": 4,
@@ -93,20 +106,7 @@
       "sos": 1.0,
       "avg_margin_capped": 0.29,
       "score": 71.55,
-      "movement": -5
-    },
-    {
-      "rank": 8,
-      "school_id": "rice-lake",
-      "school_name": "Rice Lake",
-      "wins": 2,
-      "losses": 1,
-      "ties": 0,
-      "win_pct": 0.6667,
-      "sos": 0.8333,
-      "avg_margin_capped": 0.67,
-      "score": 71.11,
-      "movement": null
+      "movement": -6
     },
     {
       "rank": 9,
@@ -116,9 +116,9 @@
       "losses": 0,
       "ties": 0,
       "win_pct": 1.0,
-      "sos": 0.3304,
+      "sos": 0.3095,
       "avg_margin_capped": 1.5,
-      "score": 70.31,
+      "score": 69.58,
       "movement": -3
     },
     {
@@ -149,19 +149,6 @@
     },
     {
       "rank": 12,
-      "school_id": "lakeland",
-      "school_name": "Lakeland",
-      "wins": 3,
-      "losses": 5,
-      "ties": 0,
-      "win_pct": 0.375,
-      "sos": 1.0,
-      "avg_margin_capped": -0.25,
-      "score": 61.46,
-      "movement": -5
-    },
-    {
-      "rank": 13,
       "school_id": "chequamegon",
       "school_name": "Chequamegon",
       "wins": 2,
@@ -171,10 +158,10 @@
       "sos": 1.0,
       "avg_margin_capped": -0.6,
       "score": 61.0,
-      "movement": -3
+      "movement": -2
     },
     {
-      "rank": 14,
+      "rank": 13,
       "school_id": "wittenberg-birnamwood",
       "school_name": "Wittenberg-Birnamwood",
       "wins": 8,
@@ -184,10 +171,10 @@
       "sos": 0.4111,
       "avg_margin_capped": 1.09,
       "score": 60.53,
-      "movement": -6
+      "movement": -5
     },
     {
-      "rank": 15,
+      "rank": 14,
       "school_id": "shell-lake",
       "school_name": "Shell Lake",
       "wins": 2,
@@ -197,7 +184,20 @@
       "sos": 0.5,
       "avg_margin_capped": 0.67,
       "score": 59.44,
-      "movement": -3
+      "movement": -2
+    },
+    {
+      "rank": 15,
+      "school_id": "lakeland",
+      "school_name": "Lakeland",
+      "wins": 3,
+      "losses": 6,
+      "ties": 0,
+      "win_pct": 0.3333,
+      "sos": 1.0,
+      "avg_margin_capped": -0.44,
+      "score": 58.98,
+      "movement": -8
     },
     {
       "rank": 16,
@@ -428,9 +428,9 @@
       "losses": 3,
       "ties": 0,
       "win_pct": 0.5,
-      "sos": 0.3638,
+      "sos": 0.3562,
       "avg_margin_capped": -0.17,
-      "score": 44.54,
+      "score": 44.27,
       "movement": 1
     },
     {
@@ -526,6 +526,19 @@
     },
     {
       "rank": 41,
+      "school_id": "greenwood",
+      "school_name": "Greenwood",
+      "wins": 1,
+      "losses": 2,
+      "ties": 0,
+      "win_pct": 0.3333,
+      "sos": 0.5,
+      "avg_margin_capped": -1.0,
+      "score": 39.17,
+      "movement": null
+    },
+    {
+      "rank": 42,
       "school_id": "waupaca",
       "school_name": "Waupaca",
       "wins": 1,
@@ -535,10 +548,10 @@
       "sos": 0.5,
       "avg_margin_capped": -1.0,
       "score": 39.17,
-      "movement": -5
+      "movement": -6
     },
     {
-      "rank": 42,
+      "rank": 43,
       "school_id": "newman-catholic",
       "school_name": "Newman Catholic",
       "wins": 0,
@@ -548,10 +561,10 @@
       "sos": 1.0,
       "avg_margin_capped": -2.0,
       "score": 39.17,
-      "movement": -5
+      "movement": -6
     },
     {
-      "rank": 43,
+      "rank": 44,
       "school_id": "pacelli",
       "school_name": "Pacelli",
       "wins": 1,
@@ -561,10 +574,10 @@
       "sos": 0.5,
       "avg_margin_capped": -0.5,
       "score": 37.92,
-      "movement": -12
+      "movement": -13
     },
     {
-      "rank": 44,
+      "rank": 45,
       "school_id": "spencer",
       "school_name": "Spencer",
       "wins": 1,
@@ -577,7 +590,7 @@
       "movement": null
     },
     {
-      "rank": 45,
+      "rank": 46,
       "school_id": "wausau-east",
       "school_name": "Wausau East",
       "wins": 2,
@@ -587,10 +600,10 @@
       "sos": 0.3889,
       "avg_margin_capped": -0.57,
       "score": 35.16,
-      "movement": -7
+      "movement": -8
     },
     {
-      "rank": 46,
+      "rank": 47,
       "school_id": "colby",
       "school_name": "Colby",
       "wins": 2,
@@ -600,10 +613,10 @@
       "sos": 0.3512,
       "avg_margin_capped": -0.88,
       "score": 31.15,
-      "movement": -7
+      "movement": -8
     },
     {
-      "rank": 47,
+      "rank": 48,
       "school_id": "menominee-nation",
       "school_name": "Menominee Nation",
       "wins": 0,
@@ -613,10 +626,10 @@
       "sos": 0.75,
       "avg_margin_capped": -2.0,
       "score": 30.42,
-      "movement": -7
+      "movement": -8
     },
     {
-      "rank": 48,
+      "rank": 49,
       "school_id": "bowler",
       "school_name": "Bowler",
       "wins": 0,
@@ -626,7 +639,7 @@
       "sos": 0.5,
       "avg_margin_capped": -3.0,
       "score": 17.5,
-      "movement": -7
+      "movement": -8
     }
   ]
 }
