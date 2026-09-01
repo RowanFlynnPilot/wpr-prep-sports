@@ -5928,6 +5928,308 @@
     }
   },
   {
+    "school_id": "phillips",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Kaylin Cordier",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "KLS": "1",
+      "ATT": "3",
+      "E": "0",
+      "SP": "3",
+      "EFF": ".333"
+    }
+  },
+  {
+    "school_id": "phillips",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Chloe Esterholm",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "KLS": "2",
+      "ATT": "12",
+      "E": "1",
+      "SP": "3",
+      "AST": "2",
+      "EFF": ".083"
+    }
+  },
+  {
+    "school_id": "phillips",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Annaka Tobias",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "KLS": "15",
+      "ATT": "43",
+      "E": "2",
+      "SP": "3",
+      "EFF": ".302"
+    }
+  },
+  {
+    "school_id": "phillips",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Gabby Prostek",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "KLS": "4",
+      "ATT": "9",
+      "E": "2",
+      "SP": "3",
+      "AST": "2",
+      "EFF": ".222"
+    }
+  },
+  {
+    "school_id": "phillips",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Delaney Fore",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "KLS": "4",
+      "ATT": "7",
+      "E": "0",
+      "SP": "3",
+      "EFF": ".571"
+    }
+  },
+  {
+    "school_id": "phillips",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Mya Hertlein",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "KLS": "7",
+      "ATT": "15",
+      "E": "3",
+      "SP": "3",
+      "AST": "21",
+      "EFF": ".267"
+    }
+  },
+  {
+    "school_id": "phillips",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Mya Krawczyk",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "ACE": "1",
+      "SP": "3"
+    }
+  },
+  {
+    "school_id": "phillips",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Chloe Esterholm",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "ACE": "1",
+      "SP": "3"
+    }
+  },
+  {
+    "school_id": "phillips",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Annaka Tobias",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "ACE": "1",
+      "SP": "3"
+    }
+  },
+  {
+    "school_id": "phillips",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Mya Hertlein",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "ACE": "1",
+      "SP": "3"
+    }
+  },
+  {
+    "school_id": "phillips",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Mya Hertlein",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "BLK": "2",
+      "SP": "3",
+      "DIG": "11"
+    }
+  },
+  {
+    "school_id": "phillips",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Brielle Goll",
+    "player_year": "FR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "DIG": "1",
+      "SP": "3"
+    }
+  },
+  {
+    "school_id": "phillips",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Kaylin Cordier",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "DIG": "1",
+      "SP": "3"
+    }
+  },
+  {
+    "school_id": "phillips",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Chloe Esterholm",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "DIG": "6",
+      "SP": "3"
+    }
+  },
+  {
+    "school_id": "phillips",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Annaka Tobias",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "DIG": "16",
+      "SP": "3"
+    }
+  },
+  {
+    "school_id": "phillips",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Gabby Prostek",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "DIG": "5",
+      "SP": "3"
+    }
+  },
+  {
+    "school_id": "phillips",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Delaney Fore",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "DIG": "1",
+      "SP": "3"
+    }
+  },
+  {
+    "school_id": "phillips",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Layla Staroba",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "DIG": "22",
+      "SP": "3"
+    }
+  },
+  {
+    "school_id": "phillips",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Marlo Edwards",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "DIG": "3",
+      "SP": "3"
+    }
+  },
+  {
+    "school_id": "phillips",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Marlo Edwards",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "AST": "6",
+      "SP": "3"
+    }
+  },
+  {
     "school_id": "colby",
     "sport": "volleyball",
     "category": "Volleyball Defense",

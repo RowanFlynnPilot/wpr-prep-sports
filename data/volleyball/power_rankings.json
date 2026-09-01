@@ -1,7 +1,7 @@
 {
   "sport": "volleyball",
   "season": "2026-27",
-  "generated_at": "2026-08-31T15:04:36.404033-05:00",
+  "generated_at": "2026-08-31T18:51:23.423097-05:00",
   "method": "WPR Power Index v1: 40% W%, 35% SOS, 25% margin (capped per sport)",
   "rankings": [
     {
@@ -90,9 +90,9 @@
       "losses": 0,
       "ties": 0,
       "win_pct": 1.0,
-      "sos": 0.3571,
+      "sos": 0.3304,
       "avg_margin_capped": 1.5,
-      "score": 71.25,
+      "score": 70.31,
       "movement": -1
     },
     {
@@ -110,19 +110,6 @@
     },
     {
       "rank": 9,
-      "school_id": "lakeland",
-      "school_name": "Lakeland",
-      "wins": 3,
-      "losses": 4,
-      "ties": 0,
-      "win_pct": 0.4286,
-      "sos": 1.0,
-      "avg_margin_capped": 0.0,
-      "score": 64.64,
-      "movement": -2
-    },
-    {
-      "rank": 10,
       "school_id": "chippewa-falls",
       "school_name": "Chippewa Falls",
       "wins": 3,
@@ -132,10 +119,10 @@
       "sos": 0.7556,
       "avg_margin_capped": 0.2,
       "score": 63.78,
-      "movement": 6
+      "movement": 7
     },
     {
-      "rank": 11,
+      "rank": 10,
       "school_id": "wittenberg-birnamwood",
       "school_name": "Wittenberg-Birnamwood",
       "wins": 8,
@@ -145,7 +132,20 @@
       "sos": 0.4444,
       "avg_margin_capped": 1.09,
       "score": 61.69,
-      "movement": -3
+      "movement": -2
+    },
+    {
+      "rank": 11,
+      "school_id": "lakeland",
+      "school_name": "Lakeland",
+      "wins": 3,
+      "losses": 5,
+      "ties": 0,
+      "win_pct": 0.375,
+      "sos": 1.0,
+      "avg_margin_capped": -0.25,
+      "score": 61.46,
+      "movement": -4
     },
     {
       "rank": 12,
@@ -188,19 +188,6 @@
     },
     {
       "rank": 15,
-      "school_id": "wild-rose",
-      "school_name": "Wild Rose",
-      "wins": 2,
-      "losses": 1,
-      "ties": 0,
-      "win_pct": 0.6667,
-      "sos": 0.5,
-      "avg_margin_capped": 0.67,
-      "score": 59.44,
-      "movement": -2
-    },
-    {
-      "rank": 16,
       "school_id": "auburndale",
       "school_name": "Auburndale",
       "wins": 3,
@@ -213,7 +200,7 @@
       "movement": null
     },
     {
-      "rank": 17,
+      "rank": 16,
       "school_id": "rhinelander",
       "school_name": "Rhinelander",
       "wins": 2,
@@ -223,10 +210,10 @@
       "sos": 0.7273,
       "avg_margin_capped": 0.0,
       "score": 57.95,
-      "movement": -2
+      "movement": -1
     },
     {
-      "rank": 18,
+      "rank": 17,
       "school_id": "columbus-catholic",
       "school_name": "Columbus Catholic",
       "wins": 3,
@@ -236,10 +223,10 @@
       "sos": 0.5357,
       "avg_margin_capped": 0.6,
       "score": 57.75,
-      "movement": 6
+      "movement": 7
     },
     {
-      "rank": 19,
+      "rank": 18,
       "school_id": "athens",
       "school_name": "Athens",
       "wins": 4,
@@ -249,10 +236,10 @@
       "sos": 0.4683,
       "avg_margin_capped": 0.33,
       "score": 56.94,
-      "movement": 3
+      "movement": 4
     },
     {
-      "rank": 20,
+      "rank": 19,
       "school_id": "gilman",
       "school_name": "Gilman",
       "wins": 4,
@@ -262,10 +249,10 @@
       "sos": 0.5889,
       "avg_margin_capped": 0.0,
       "score": 55.97,
-      "movement": 9
+      "movement": 10
     },
     {
-      "rank": 21,
+      "rank": 20,
       "school_id": "tri-county",
       "school_name": "Tri-County",
       "wins": 2,
@@ -275,10 +262,10 @@
       "sos": 1.0,
       "avg_margin_capped": -0.71,
       "score": 55.95,
-      "movement": -4
+      "movement": -3
     },
     {
-      "rank": 22,
+      "rank": 21,
       "school_id": "dc-everest",
       "school_name": "D.C. Everest",
       "wins": 6,
@@ -288,10 +275,10 @@
       "sos": 0.4893,
       "avg_margin_capped": 0.5,
       "score": 55.71,
-      "movement": -4
+      "movement": -3
     },
     {
-      "rank": 23,
+      "rank": 22,
       "school_id": "medford",
       "school_name": "Medford",
       "wins": 3,
@@ -301,10 +288,10 @@
       "sos": 0.6127,
       "avg_margin_capped": 0.33,
       "score": 55.33,
-      "movement": -4
+      "movement": -3
     },
     {
-      "rank": 24,
+      "rank": 23,
       "school_id": "phillips",
       "school_name": "Phillips",
       "wins": 2,
@@ -317,7 +304,7 @@
       "movement": null
     },
     {
-      "rank": 25,
+      "rank": 24,
       "school_id": "pittsville",
       "school_name": "Pittsville",
       "wins": 3,
@@ -327,10 +314,10 @@
       "sos": 0.5,
       "avg_margin_capped": 0.33,
       "score": 51.39,
-      "movement": -5
+      "movement": -4
     },
     {
-      "rank": 26,
+      "rank": 25,
       "school_id": "marion",
       "school_name": "Marion",
       "wins": 3,
@@ -340,10 +327,10 @@
       "sos": 0.0,
       "avg_margin_capped": 2.0,
       "score": 50.83,
-      "movement": -5
+      "movement": -4
     },
     {
-      "rank": 27,
+      "rank": 26,
       "school_id": "stratford",
       "school_name": "Stratford",
       "wins": 7,
@@ -353,7 +340,20 @@
       "sos": 0.4167,
       "avg_margin_capped": 0.08,
       "score": 50.76,
-      "movement": -13
+      "movement": -12
+    },
+    {
+      "rank": 27,
+      "school_id": "wild-rose",
+      "school_name": "Wild Rose",
+      "wins": 2,
+      "losses": 2,
+      "ties": 0,
+      "win_pct": 0.5,
+      "sos": 0.5,
+      "avg_margin_capped": 0.0,
+      "score": 50.0,
+      "movement": -14
     },
     {
       "rank": 28,
