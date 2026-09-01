@@ -60,10 +60,10 @@
         "conference_losses": 0,
         "conference_ties": 0,
         "overall_wins": 1,
-        "overall_losses": 1,
+        "overall_losses": 2,
         "overall_ties": 0,
         "points_for": 2,
-        "points_against": 2
+        "points_against": 4
       },
       {
         "school_id": "spash",
@@ -304,10 +304,10 @@
         "conference_losses": 0,
         "conference_ties": 0,
         "overall_wins": 2,
-        "overall_losses": 2,
+        "overall_losses": 3,
         "overall_ties": 0,
         "points_for": 5,
-        "points_against": 5
+        "points_against": 7
       },
       {
         "school_id": "tomahawk",
@@ -354,6 +354,18 @@
         "points_against": 8
       },
       {
+        "school_id": "columbus-catholic",
+        "name": "Columbus Catholic",
+        "conference_wins": 0,
+        "conference_losses": 0,
+        "conference_ties": 0,
+        "overall_wins": 4,
+        "overall_losses": 3,
+        "overall_ties": 0,
+        "points_for": 9,
+        "points_against": 7
+      },
+      {
         "school_id": "abbotsford",
         "name": "Abbotsford",
         "conference_wins": 0,
@@ -364,18 +376,6 @@
         "overall_ties": 0,
         "points_for": 7,
         "points_against": 8
-      },
-      {
-        "school_id": "columbus-catholic",
-        "name": "Columbus Catholic",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "conference_ties": 0,
-        "overall_wins": 3,
-        "overall_losses": 2,
-        "overall_ties": 0,
-        "points_for": 7,
-        "points_against": 4
       },
       {
         "school_id": "colby",

@@ -329,12 +329,12 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "KLS": "6",
-      "ATT": "21",
+      "GP": "2",
+      "KLS": "7",
+      "ATT": "34",
       "E": "2",
-      "SP": "2",
-      "EFF": ".190"
+      "SP": "4",
+      "EFF": ".147"
     }
   },
   {
@@ -346,12 +346,12 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "KLS": "4",
-      "ATT": "10",
-      "E": "0",
-      "SP": "2",
-      "EFF": ".400"
+      "GP": "2",
+      "KLS": "7",
+      "ATT": "19",
+      "E": "1",
+      "SP": "4",
+      "EFF": ".316"
     }
   },
   {
@@ -363,13 +363,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "KLS": "6",
-      "ATT": "21",
+      "GP": "2",
+      "KLS": "12",
+      "ATT": "29",
       "E": "0",
-      "SP": "2",
+      "SP": "4",
       "AST": "1",
-      "EFF": ".286"
+      "EFF": ".414"
     }
   },
   {
@@ -398,13 +398,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "KLS": "2",
-      "ATT": "10",
-      "E": "0",
-      "SP": "2",
-      "AST": "8",
-      "EFF": ".200"
+      "GP": "2",
+      "KLS": "3",
+      "ATT": "15",
+      "E": "1",
+      "SP": "4",
+      "AST": "12",
+      "EFF": ".133"
     }
   },
   {
@@ -430,9 +430,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "ACE": "2",
-      "SP": "2"
+      "GP": "2",
+      "ACE": "5",
+      "SP": "4"
     }
   },
   {
@@ -444,9 +444,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "ACE": "2",
-      "SP": "2"
+      "GP": "2",
+      "ACE": "3",
+      "SP": "4"
     }
   },
   {
@@ -472,9 +472,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "DIG": "15",
-      "SP": "2"
+      "GP": "2",
+      "DIG": "26",
+      "SP": "4"
     }
   },
   {
@@ -486,9 +486,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "DIG": "3",
-      "SP": "2"
+      "GP": "2",
+      "DIG": "7",
+      "SP": "4"
     }
   },
   {
@@ -500,9 +500,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "DIG": "2",
-      "SP": "2"
+      "GP": "2",
+      "DIG": "5",
+      "SP": "4"
     }
   },
   {
@@ -514,9 +514,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "DIG": "3",
-      "SP": "2"
+      "GP": "2",
+      "DIG": "7",
+      "SP": "4"
     }
   },
   {
@@ -528,9 +528,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "DIG": "1",
-      "SP": "2"
+      "GP": "2",
+      "DIG": "3",
+      "SP": "4"
     }
   },
   {
@@ -542,9 +542,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "DIG": "4",
-      "SP": "2"
+      "GP": "2",
+      "DIG": "5",
+      "SP": "4"
     }
   },
   {
@@ -570,9 +570,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "DIG": "8",
-      "SP": "2"
+      "GP": "2",
+      "DIG": "15",
+      "SP": "4"
     }
   },
   {
@@ -584,9 +584,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "DIG": "3",
-      "SP": "1"
+      "GP": "2",
+      "DIG": "4",
+      "SP": "3"
     }
   },
   {
@@ -598,9 +598,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "DIG": "1",
-      "SP": "1"
+      "GP": "2",
+      "DIG": "2",
+      "SP": "3"
     }
   },
   {
@@ -612,9 +612,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "AST": "11",
-      "SP": "2"
+      "GP": "2",
+      "AST": "18",
+      "SP": "4"
     }
   },
   {
@@ -2369,6 +2369,65 @@
       "GP": "2",
       "AST": "2",
       "SP": "5"
+    }
+  },
+  {
+    "school_id": "wausau-west",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Nora Hintz",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "KLS": "1",
+      "ATT": "8",
+      "E": "0",
+      "SP": "1",
+      "EFF": ".125"
+    }
+  },
+  {
+    "school_id": "wausau-west",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Olivia Okeefe",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "ACE": "1",
+      "SP": "2"
+    }
+  },
+  {
+    "school_id": "wausau-west",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Nora Hintz",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "DIG": "2",
+      "SP": "1"
+    }
+  },
+  {
+    "school_id": "wausau-west",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Sophia Ngo",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "AST": "1",
+      "SP": "2"
     }
   },
   {
@@ -6540,6 +6599,268 @@
     }
   },
   {
+    "school_id": "pacelli",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Gwen Klasinski",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "KLS": "6",
+      "ATT": "43",
+      "E": "6",
+      "SP": "5",
+      "EFF": ".000"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Josi Williams",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "KLS": "1",
+      "ATT": "7",
+      "E": "0",
+      "SP": "3",
+      "EFF": ".143"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Leah Fenske",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "KLS": "14",
+      "ATT": "31",
+      "E": "4",
+      "SP": "5",
+      "EFF": ".323"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Jaedyn Zdroik",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "KLS": "8",
+      "ATT": "47",
+      "E": "10",
+      "SP": "5",
+      "AST": "2",
+      "EFF": "-0.043"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Peyton Zdroik",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "KLS": "6",
+      "ATT": "25",
+      "E": "4",
+      "SP": "5",
+      "AST": "26",
+      "EFF": ".080"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Avery Wavrunek",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "KLS": "6",
+      "ATT": "21",
+      "E": "2",
+      "SP": "5",
+      "EFF": ".190"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Peyton Zdroik",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "ACE": "2",
+      "SP": "5"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Josi Williams",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "BLK": "3",
+      "SP": "3",
+      "DIG": "8"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Jaedyn Zdroik",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "BLK": "1",
+      "SP": "5",
+      "DIG": "19"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Avery Wavrunek",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "BLK": "4",
+      "SP": "3",
+      "DIG": "1"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Lana Lutz",
+    "player_year": "FR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "DIG": "1",
+      "SP": "1"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Gwen Klasinski",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "DIG": "14",
+      "SP": "5",
+      "BLK": "1"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Leah Fenske",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "DIG": "6",
+      "SP": "5"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Aliyah Russell",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "DIG": "24",
+      "SP": "5"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Peyton Zdroik",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "DIG": "16",
+      "SP": "5"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Genna Hinker",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "DIG": "16",
+      "SP": "3"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Aliyah Russell",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "AST": "4",
+      "SP": "5"
+    }
+  },
+  {
     "school_id": "mosinee",
     "sport": "volleyball",
     "category": "Volleyball Serving",
@@ -6691,6 +7012,76 @@
     "stats": {
       "GP": "1",
       "AST": "1",
+      "SP": "2"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Jaedyn Zdroik",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "ACE": "1",
+      "SP": "2"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Aliyah Russell",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "ACE": "3",
+      "SP": "2"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Genna Hinker",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "ACE": "3",
+      "SP": "2"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Izzie Kluck",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "AST": "1",
+      "SP": "1"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Genna Hinker",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "AST": "2",
       "SP": "2"
     }
   },
