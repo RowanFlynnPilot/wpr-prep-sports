@@ -327,10 +327,10 @@
         "conference_wins": 0,
         "conference_losses": 2,
         "conference_ties": 0,
-        "overall_wins": 0,
+        "overall_wins": 1,
         "overall_losses": 3,
         "overall_ties": 0,
-        "points_for": 28,
+        "points_for": 29,
         "points_against": 67
       },
       {
@@ -562,6 +562,18 @@
     "division": null,
     "rows": [
       {
+        "school_id": "tri-county",
+        "name": "Tri-County",
+        "conference_wins": 2,
+        "conference_losses": 0,
+        "conference_ties": 0,
+        "overall_wins": 2,
+        "overall_losses": 1,
+        "overall_ties": 0,
+        "points_for": 51,
+        "points_against": 70
+      },
+      {
         "school_id": "almond-bancroft",
         "name": "Almond-Bancroft",
         "conference_wins": 1,
@@ -574,18 +586,6 @@
         "points_against": 81
       },
       {
-        "school_id": "tri-county",
-        "name": "Tri-County",
-        "conference_wins": 1,
-        "conference_losses": 0,
-        "conference_ties": 0,
-        "overall_wins": 1,
-        "overall_losses": 1,
-        "overall_ties": 0,
-        "points_for": 50,
-        "points_against": 70
-      },
-      {
         "school_id": "marion",
         "name": "Marion",
         "conference_wins": 1,
@@ -596,18 +596,6 @@
         "overall_ties": 0,
         "points_for": 44,
         "points_against": 88
-      },
-      {
-        "school_id": "bowler",
-        "name": "Bowler",
-        "conference_wins": 1,
-        "conference_losses": 1,
-        "conference_ties": 0,
-        "overall_wins": 1,
-        "overall_losses": 1,
-        "overall_ties": 0,
-        "points_for": 1,
-        "points_against": 1
       },
       {
         "school_id": "wild-rose",
@@ -644,6 +632,18 @@
         "overall_ties": 0,
         "points_for": 6,
         "points_against": 96
+      },
+      {
+        "school_id": "bowler",
+        "name": "Bowler",
+        "conference_wins": 0,
+        "conference_losses": 1,
+        "conference_ties": 0,
+        "overall_wins": 0,
+        "overall_losses": 1,
+        "overall_ties": 0,
+        "points_for": 0,
+        "points_against": 1
       },
       {
         "school_id": "menominee-nation",

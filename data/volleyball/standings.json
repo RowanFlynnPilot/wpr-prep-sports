@@ -86,6 +86,18 @@
     "division": null,
     "rows": [
       {
+        "school_id": "prentice",
+        "name": "Prentice",
+        "conference_wins": 0,
+        "conference_losses": 0,
+        "conference_ties": 0,
+        "overall_wins": 11,
+        "overall_losses": 1,
+        "overall_ties": 0,
+        "points_for": 23,
+        "points_against": 5
+      },
+      {
         "school_id": "stratford",
         "name": "Stratford",
         "conference_wins": 0,
@@ -98,8 +110,8 @@
         "points_against": 13
       },
       {
-        "school_id": "prentice",
-        "name": "Prentice",
+        "school_id": "marathon",
+        "name": "Marathon",
         "conference_wins": 0,
         "conference_losses": 0,
         "conference_ties": 0,
@@ -107,7 +119,7 @@
         "overall_losses": 1,
         "overall_ties": 0,
         "points_for": 13,
-        "points_against": 5
+        "points_against": 4
       },
       {
         "school_id": "athens",
@@ -120,18 +132,6 @@
         "overall_ties": 0,
         "points_for": 11,
         "points_against": 6
-      },
-      {
-        "school_id": "marathon",
-        "name": "Marathon",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "conference_ties": 0,
-        "overall_wins": 5,
-        "overall_losses": 1,
-        "overall_ties": 0,
-        "points_for": 11,
-        "points_against": 3
       },
       {
         "school_id": "auburndale",
@@ -316,10 +316,10 @@
         "conference_losses": 0,
         "conference_ties": 0,
         "overall_wins": 0,
-        "overall_losses": 1,
+        "overall_losses": 2,
         "overall_ties": 0,
         "points_for": 0,
-        "points_against": 2
+        "points_against": 4
       },
       {
         "school_id": "antigo",
@@ -328,10 +328,10 @@
         "conference_losses": 0,
         "conference_ties": 0,
         "overall_wins": 0,
-        "overall_losses": 1,
+        "overall_losses": 2,
         "overall_ties": 0,
         "points_for": 0,
-        "points_against": 2
+        "points_against": 4
       }
     ]
   },
@@ -348,10 +348,10 @@
         "conference_losses": 0,
         "conference_ties": 0,
         "overall_wins": 4,
-        "overall_losses": 4,
+        "overall_losses": 5,
         "overall_ties": 0,
         "points_for": 8,
-        "points_against": 11
+        "points_against": 13
       },
       {
         "school_id": "columbus-catholic",
