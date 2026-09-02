@@ -5987,6 +5987,159 @@
     }
   },
   {
+    "school_id": "pacelli",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Leah Fenske",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "KLS": "16",
+      "ATT": "42",
+      "E": "5",
+      "SP": "7",
+      "AST": "7",
+      "EFF": ".262"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Jaedyn Zdroik",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "KLS": "12",
+      "ATT": "75",
+      "E": "12",
+      "SP": "7",
+      "AST": "2",
+      "EFF": ".000"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Avery Wavrunek",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "KLS": "8",
+      "ATT": "24",
+      "E": "2",
+      "SP": "7",
+      "EFF": ".250"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Genna Hinker",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "ACE": "4",
+      "SP": "4"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Leah Fenske",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "DIG": "10",
+      "SP": "7"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Jaedyn Zdroik",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "DIG": "26",
+      "SP": "7",
+      "BLK": "1"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Aliyah Russell",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "DIG": "27",
+      "SP": "6"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Peyton Zdroik",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "DIG": "23",
+      "SP": "7"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Avery Wavrunek",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "DIG": "5",
+      "SP": "5",
+      "BLK": "4"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Genna Hinker",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "DIG": "13",
+      "SP": "5"
+    }
+  },
+  {
     "school_id": "phillips",
     "sport": "volleyball",
     "category": "Volleyball Offense",
@@ -6636,41 +6789,6 @@
     "school_id": "pacelli",
     "sport": "volleyball",
     "category": "Volleyball Offense",
-    "player_name": "Leah Fenske",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "KLS": "14",
-      "ATT": "31",
-      "E": "4",
-      "SP": "5",
-      "EFF": ".323"
-    }
-  },
-  {
-    "school_id": "pacelli",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Jaedyn Zdroik",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "KLS": "8",
-      "ATT": "47",
-      "E": "10",
-      "SP": "5",
-      "AST": "2",
-      "EFF": "-0.043"
-    }
-  },
-  {
-    "school_id": "pacelli",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
     "player_name": "Peyton Zdroik",
     "player_year": "SO",
     "position": null,
@@ -6683,23 +6801,6 @@
       "SP": "5",
       "AST": "26",
       "EFF": ".080"
-    }
-  },
-  {
-    "school_id": "pacelli",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Avery Wavrunek",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "KLS": "6",
-      "ATT": "21",
-      "E": "2",
-      "SP": "5",
-      "EFF": ".190"
     }
   },
   {
@@ -6735,36 +6836,6 @@
     "school_id": "pacelli",
     "sport": "volleyball",
     "category": "Volleyball Defense",
-    "player_name": "Jaedyn Zdroik",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "BLK": "1",
-      "SP": "5",
-      "DIG": "19"
-    }
-  },
-  {
-    "school_id": "pacelli",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Avery Wavrunek",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "1",
-      "BLK": "4",
-      "SP": "3",
-      "DIG": "1"
-    }
-  },
-  {
-    "school_id": "pacelli",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
     "player_name": "Lana Lutz",
     "player_year": "FR",
     "position": null,
@@ -6788,62 +6859,6 @@
       "DIG": "14",
       "SP": "5",
       "BLK": "1"
-    }
-  },
-  {
-    "school_id": "pacelli",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Leah Fenske",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "DIG": "6",
-      "SP": "5"
-    }
-  },
-  {
-    "school_id": "pacelli",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Aliyah Russell",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "DIG": "24",
-      "SP": "5"
-    }
-  },
-  {
-    "school_id": "pacelli",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Peyton Zdroik",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "DIG": "16",
-      "SP": "5"
-    }
-  },
-  {
-    "school_id": "pacelli",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Genna Hinker",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "DIG": "16",
-      "SP": "3"
     }
   },
   {
@@ -7154,20 +7169,6 @@
     "sport": "volleyball",
     "category": "Volleyball Serving",
     "player_name": "Aliyah Russell",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "1",
-      "ACE": "3",
-      "SP": "2"
-    }
-  },
-  {
-    "school_id": "pacelli",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Genna Hinker",
     "player_year": "JR",
     "position": null,
     "jersey": null,
