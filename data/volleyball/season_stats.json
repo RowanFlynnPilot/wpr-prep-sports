@@ -6336,6 +6336,21 @@
     "school_id": "pacelli",
     "sport": "volleyball",
     "category": "Volleyball Defense",
+    "player_name": "Gwen Klasinski",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "DIG": "17",
+      "SP": "7",
+      "BLK": "1"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
     "player_name": "Lana Lutz",
     "player_year": "FR",
     "position": null,
@@ -6861,6 +6876,23 @@
       "SP": "7",
       "AST": "2",
       "EFF": ".071"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Gwen Klasinski",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "KLS": "6",
+      "ATT": "43",
+      "E": "6",
+      "SP": "5",
+      "EFF": ".000"
     }
   },
   {
