@@ -72,10 +72,10 @@
         "conference_losses": 0,
         "conference_ties": 0,
         "overall_wins": 1,
-        "overall_losses": 0,
+        "overall_losses": 1,
         "overall_ties": 0,
         "points_for": 2,
-        "points_against": 1
+        "points_against": 3
       }
     ]
   },
@@ -98,6 +98,18 @@
         "points_against": 5
       },
       {
+        "school_id": "marathon",
+        "name": "Marathon",
+        "conference_wins": 0,
+        "conference_losses": 0,
+        "conference_ties": 0,
+        "overall_wins": 8,
+        "overall_losses": 1,
+        "overall_ties": 0,
+        "points_for": 17,
+        "points_against": 5
+      },
+      {
         "school_id": "stratford",
         "name": "Stratford",
         "conference_wins": 0,
@@ -108,18 +120,6 @@
         "overall_ties": 0,
         "points_for": 14,
         "points_against": 13
-      },
-      {
-        "school_id": "marathon",
-        "name": "Marathon",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "conference_ties": 0,
-        "overall_wins": 6,
-        "overall_losses": 1,
-        "overall_ties": 0,
-        "points_for": 13,
-        "points_against": 4
       },
       {
         "school_id": "athens",
@@ -144,6 +144,18 @@
         "overall_ties": 0,
         "points_for": 10,
         "points_against": 7
+      },
+      {
+        "school_id": "rib-lake",
+        "name": "Rib Lake",
+        "conference_wins": 0,
+        "conference_losses": 0,
+        "conference_ties": 0,
+        "overall_wins": 3,
+        "overall_losses": 5,
+        "overall_ties": 0,
+        "points_for": 8,
+        "points_against": 11
       },
       {
         "school_id": "edgar",
@@ -180,18 +192,6 @@
         "overall_ties": 0,
         "points_for": 4,
         "points_against": 9
-      },
-      {
-        "school_id": "rib-lake",
-        "name": "Rib Lake",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "conference_ties": 0,
-        "overall_wins": 2,
-        "overall_losses": 5,
-        "overall_ties": 0,
-        "points_for": 6,
-        "points_against": 11
       },
       {
         "school_id": "spencer",
@@ -274,6 +274,18 @@
         "points_against": 6
       },
       {
+        "school_id": "antigo",
+        "name": "Antigo",
+        "conference_wins": 0,
+        "conference_losses": 0,
+        "conference_ties": 0,
+        "overall_wins": 4,
+        "overall_losses": 3,
+        "overall_ties": 0,
+        "points_for": 8,
+        "points_against": 7
+      },
+      {
         "school_id": "medford",
         "name": "Medford",
         "conference_wins": 0,
@@ -304,22 +316,10 @@
         "conference_losses": 0,
         "conference_ties": 0,
         "overall_wins": 2,
-        "overall_losses": 3,
+        "overall_losses": 4,
         "overall_ties": 0,
         "points_for": 5,
-        "points_against": 7
-      },
-      {
-        "school_id": "antigo",
-        "name": "Antigo",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "conference_ties": 0,
-        "overall_wins": 1,
-        "overall_losses": 1,
-        "overall_ties": 0,
-        "points_for": 2,
-        "points_against": 2
+        "points_against": 9
       },
       {
         "school_id": "tomahawk",
@@ -390,6 +390,18 @@
         "points_against": 12
       },
       {
+        "school_id": "greenwood",
+        "name": "Greenwood",
+        "conference_wins": 0,
+        "conference_losses": 0,
+        "conference_ties": 0,
+        "overall_wins": 2,
+        "overall_losses": 4,
+        "overall_ties": 0,
+        "points_for": 5,
+        "points_against": 9
+      },
+      {
         "school_id": "loyal",
         "name": "Loyal",
         "conference_wins": 0,
@@ -414,8 +426,8 @@
         "points_against": 6
       },
       {
-        "school_id": "greenwood",
-        "name": "Greenwood",
+        "school_id": "owen-withee",
+        "name": "Owen-Withee",
         "conference_wins": 0,
         "conference_losses": 0,
         "conference_ties": 0,
@@ -424,18 +436,6 @@
         "overall_ties": 0,
         "points_for": 2,
         "points_against": 5
-      },
-      {
-        "school_id": "owen-withee",
-        "name": "Owen-Withee",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "conference_ties": 0,
-        "overall_wins": 0,
-        "overall_losses": 2,
-        "overall_ties": 0,
-        "points_for": 0,
-        "points_against": 4
       }
     ]
   }
