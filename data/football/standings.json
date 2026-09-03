@@ -470,18 +470,6 @@
         "points_against": 3
       },
       {
-        "school_id": "loyal",
-        "name": "Loyal",
-        "conference_wins": 1,
-        "conference_losses": 0,
-        "conference_ties": 0,
-        "overall_wins": 1,
-        "overall_losses": 1,
-        "overall_ties": 0,
-        "points_for": 57,
-        "points_against": 31
-      },
-      {
         "school_id": "weyauwega-fremont",
         "name": "Weyauwega-Fremont",
         "conference_wins": 0,
@@ -552,6 +540,18 @@
         "overall_ties": 0,
         "points_for": 30,
         "points_against": 42
+      },
+      {
+        "school_id": "loyal",
+        "name": "Loyal",
+        "conference_wins": 0,
+        "conference_losses": 1,
+        "conference_ties": 0,
+        "overall_wins": 0,
+        "overall_losses": 2,
+        "overall_ties": 0,
+        "points_for": 16,
+        "points_against": 25
       }
     ]
   },
