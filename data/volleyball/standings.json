@@ -48,10 +48,10 @@
         "conference_losses": 0,
         "conference_ties": 0,
         "overall_wins": 2,
-        "overall_losses": 2,
+        "overall_losses": 3,
         "overall_ties": 0,
-        "points_for": 5,
-        "points_against": 5
+        "points_for": 6,
+        "points_against": 7
       },
       {
         "school_id": "wisconsin-rapids",
@@ -110,6 +110,18 @@
         "points_against": 5
       },
       {
+        "school_id": "athens",
+        "name": "Athens",
+        "conference_wins": 0,
+        "conference_losses": 0,
+        "conference_ties": 0,
+        "overall_wins": 7,
+        "overall_losses": 5,
+        "overall_ties": 0,
+        "points_for": 16,
+        "points_against": 13
+      },
+      {
         "school_id": "stratford",
         "name": "Stratford",
         "conference_wins": 0,
@@ -120,18 +132,6 @@
         "overall_ties": 0,
         "points_for": 14,
         "points_against": 13
-      },
-      {
-        "school_id": "athens",
-        "name": "Athens",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "conference_ties": 0,
-        "overall_wins": 5,
-        "overall_losses": 2,
-        "overall_ties": 0,
-        "points_for": 11,
-        "points_against": 6
       },
       {
         "school_id": "auburndale",
@@ -316,10 +316,10 @@
         "conference_losses": 0,
         "conference_ties": 0,
         "overall_wins": 2,
-        "overall_losses": 4,
+        "overall_losses": 5,
         "overall_ties": 0,
         "points_for": 5,
-        "points_against": 9
+        "points_against": 11
       },
       {
         "school_id": "tomahawk",
