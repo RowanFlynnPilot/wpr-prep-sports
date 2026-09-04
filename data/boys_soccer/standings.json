@@ -88,14 +88,14 @@
       {
         "school_id": "northland-pines",
         "name": "Northland Pines",
-        "conference_wins": 1,
+        "conference_wins": 2,
         "conference_losses": 0,
         "conference_ties": 0,
-        "overall_wins": 3,
+        "overall_wins": 4,
         "overall_losses": 0,
         "overall_ties": 0,
-        "points_for": 19,
-        "points_against": 1
+        "points_for": 25,
+        "points_against": 2
       },
       {
         "school_id": "merrill",
@@ -161,13 +161,13 @@
         "school_id": "medford",
         "name": "Medford",
         "conference_wins": 0,
-        "conference_losses": 1,
+        "conference_losses": 2,
         "conference_ties": 0,
         "overall_wins": 0,
-        "overall_losses": 4,
+        "overall_losses": 5,
         "overall_ties": 0,
-        "points_for": 1,
-        "points_against": 12
+        "points_for": 2,
+        "points_against": 18
       }
     ]
   },
