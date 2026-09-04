@@ -1,7 +1,7 @@
 {
   "sport": "volleyball",
   "season": "2026-27",
-  "generated_at": "2026-09-04T13:26:10.371344-05:00",
+  "generated_at": "2026-09-04T16:31:15.598702-05:00",
   "method": "WPR Power Index v1: 40% W%, 35% SOS, 25% margin (capped per sport)",
   "rankings": [
     {
@@ -12,9 +12,9 @@
       "losses": 0,
       "ties": 0,
       "win_pct": 1.0,
-      "sos": 0.625,
+      "sos": 0.6667,
       "avg_margin_capped": 2.0,
-      "score": 82.71,
+      "score": 84.17,
       "movement": 0
     },
     {
@@ -97,16 +97,16 @@
     },
     {
       "rank": 8,
-      "school_id": "marathon",
-      "school_name": "Marathon",
-      "wins": 9,
-      "losses": 1,
+      "school_id": "merrill",
+      "school_name": "Merrill",
+      "wins": 6,
+      "losses": 3,
       "ties": 0,
-      "win_pct": 0.9,
-      "sos": 0.325,
-      "avg_margin_capped": 1.5,
-      "score": 66.12,
-      "movement": 3
+      "win_pct": 0.6667,
+      "sos": 0.6894,
+      "avg_margin_capped": 0.67,
+      "score": 66.07,
+      "movement": -6
     },
     {
       "rank": 9,
@@ -123,6 +123,19 @@
     },
     {
       "rank": 10,
+      "school_id": "marathon",
+      "school_name": "Marathon",
+      "wins": 9,
+      "losses": 2,
+      "ties": 0,
+      "win_pct": 0.8182,
+      "sos": 0.3933,
+      "avg_margin_capped": 1.27,
+      "score": 64.3,
+      "movement": 1
+    },
+    {
+      "rank": 11,
       "school_id": "marshfield",
       "school_name": "Marshfield",
       "wins": 9,
@@ -132,10 +145,10 @@
       "sos": 0.5437,
       "avg_margin_capped": 0.85,
       "score": 62.75,
-      "movement": -1
+      "movement": -2
     },
     {
-      "rank": 11,
+      "rank": 12,
       "school_id": "hurley",
       "school_name": "Hurley",
       "wins": 4,
@@ -145,36 +158,10 @@
       "sos": 0.5962,
       "avg_margin_capped": 0.5,
       "score": 62.12,
-      "movement": -6
-    },
-    {
-      "rank": 12,
-      "school_id": "merrill",
-      "school_name": "Merrill",
-      "wins": 5,
-      "losses": 3,
-      "ties": 0,
-      "win_pct": 0.625,
-      "sos": 0.625,
-      "avg_margin_capped": 0.62,
-      "score": 61.98,
-      "movement": -10
+      "movement": -7
     },
     {
       "rank": 13,
-      "school_id": "wittenberg-birnamwood",
-      "school_name": "Wittenberg-Birnamwood",
-      "wins": 8,
-      "losses": 4,
-      "ties": 0,
-      "win_pct": 0.6667,
-      "sos": 0.5339,
-      "avg_margin_capped": 0.75,
-      "score": 60.98,
-      "movement": -5
-    },
-    {
-      "rank": 14,
       "school_id": "columbus-catholic",
       "school_name": "Columbus Catholic",
       "wins": 4,
@@ -184,7 +171,20 @@
       "sos": 0.6825,
       "avg_margin_capped": 0.29,
       "score": 60.44,
-      "movement": 10
+      "movement": 11
+    },
+    {
+      "rank": 14,
+      "school_id": "wittenberg-birnamwood",
+      "school_name": "Wittenberg-Birnamwood",
+      "wins": 8,
+      "losses": 4,
+      "ties": 0,
+      "win_pct": 0.6667,
+      "sos": 0.5135,
+      "avg_margin_capped": 0.75,
+      "score": 60.26,
+      "movement": -6
     },
     {
       "rank": 15,
@@ -435,19 +435,6 @@
     },
     {
       "rank": 34,
-      "school_id": "phillips",
-      "school_name": "Phillips",
-      "wins": 2,
-      "losses": 4,
-      "ties": 0,
-      "win_pct": 0.3333,
-      "sos": 0.7058,
-      "avg_margin_capped": -0.83,
-      "score": 47.06,
-      "movement": null
-    },
-    {
-      "rank": 35,
       "school_id": "neillsville",
       "school_name": "Neillsville",
       "wins": 2,
@@ -457,6 +444,19 @@
       "sos": 0.6,
       "avg_margin_capped": -0.6,
       "score": 47.0,
+      "movement": null
+    },
+    {
+      "rank": 35,
+      "school_id": "phillips",
+      "school_name": "Phillips",
+      "wins": 2,
+      "losses": 4,
+      "ties": 0,
+      "win_pct": 0.3333,
+      "sos": 0.6853,
+      "avg_margin_capped": -0.83,
+      "score": 46.35,
       "movement": null
     },
     {
@@ -565,16 +565,16 @@
     },
     {
       "rank": 44,
-      "school_id": "rib-lake",
-      "school_name": "Rib Lake",
-      "wins": 3,
-      "losses": 7,
+      "school_id": "rhinelander",
+      "school_name": "Rhinelander",
+      "wins": 2,
+      "losses": 6,
       "ties": 0,
-      "win_pct": 0.3,
-      "sos": 0.4933,
-      "avg_margin_capped": -0.6,
-      "score": 39.27,
-      "movement": -18
+      "win_pct": 0.25,
+      "sos": 0.6111,
+      "avg_margin_capped": -1.12,
+      "score": 39.2,
+      "movement": -29
     },
     {
       "rank": 45,
@@ -591,16 +591,16 @@
     },
     {
       "rank": 46,
-      "school_id": "rhinelander",
-      "school_name": "Rhinelander",
-      "wins": 2,
-      "losses": 6,
+      "school_id": "rib-lake",
+      "school_name": "Rib Lake",
+      "wins": 3,
+      "losses": 7,
       "ties": 0,
-      "win_pct": 0.25,
-      "sos": 0.5972,
-      "avg_margin_capped": -1.12,
-      "score": 38.72,
-      "movement": -31
+      "win_pct": 0.3,
+      "sos": 0.477,
+      "avg_margin_capped": -0.6,
+      "score": 38.69,
+      "movement": -20
     },
     {
       "rank": 47,
@@ -643,19 +643,6 @@
     },
     {
       "rank": 50,
-      "school_id": "almond-bancroft",
-      "school_name": "Almond-Bancroft",
-      "wins": 0,
-      "losses": 4,
-      "ties": 0,
-      "win_pct": 0.0,
-      "sos": 0.8875,
-      "avg_margin_capped": -2.0,
-      "score": 35.23,
-      "movement": null
-    },
-    {
-      "rank": 51,
       "school_id": "waupaca",
       "school_name": "Waupaca",
       "wins": 1,
@@ -665,10 +652,10 @@
       "sos": 0.5,
       "avg_margin_capped": -1.25,
       "score": 34.79,
-      "movement": -15
+      "movement": -14
     },
     {
-      "rank": 52,
+      "rank": 51,
       "school_id": "menominee-nation",
       "school_name": "Menominee Nation",
       "wins": 0,
@@ -678,10 +665,10 @@
       "sos": 0.875,
       "avg_margin_capped": -2.0,
       "score": 34.79,
-      "movement": -12
+      "movement": -11
     },
     {
-      "rank": 53,
+      "rank": 52,
       "school_id": "wausau-east",
       "school_name": "Wausau East",
       "wins": 2,
@@ -691,10 +678,10 @@
       "sos": 0.4436,
       "avg_margin_capped": -0.88,
       "score": 34.38,
-      "movement": -15
+      "movement": -14
     },
     {
-      "rank": 54,
+      "rank": 53,
       "school_id": "greenwood",
       "school_name": "Greenwood",
       "wins": 2,
@@ -704,6 +691,19 @@
       "sos": 0.3083,
       "avg_margin_capped": -0.67,
       "score": 33.85,
+      "movement": null
+    },
+    {
+      "rank": 54,
+      "school_id": "almond-bancroft",
+      "school_name": "Almond-Bancroft",
+      "wins": 0,
+      "losses": 4,
+      "ties": 0,
+      "win_pct": 0.0,
+      "sos": 0.8466,
+      "avg_margin_capped": -2.0,
+      "score": 33.8,
       "movement": null
     },
     {
