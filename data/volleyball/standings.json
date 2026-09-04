@@ -91,11 +91,11 @@
         "conference_wins": 0,
         "conference_losses": 0,
         "conference_ties": 0,
-        "overall_wins": 11,
-        "overall_losses": 2,
+        "overall_wins": 12,
+        "overall_losses": 1,
         "overall_ties": 0,
-        "points_for": 24,
-        "points_against": 7
+        "points_for": 25,
+        "points_against": 6
       },
       {
         "school_id": "marathon",
@@ -110,6 +110,18 @@
         "points_against": 5
       },
       {
+        "school_id": "stratford",
+        "name": "Stratford",
+        "conference_wins": 0,
+        "conference_losses": 0,
+        "conference_ties": 0,
+        "overall_wins": 8,
+        "overall_losses": 5,
+        "overall_ties": 0,
+        "points_for": 17,
+        "points_against": 13
+      },
+      {
         "school_id": "athens",
         "name": "Athens",
         "conference_wins": 0,
@@ -119,18 +131,6 @@
         "overall_losses": 5,
         "overall_ties": 0,
         "points_for": 16,
-        "points_against": 13
-      },
-      {
-        "school_id": "stratford",
-        "name": "Stratford",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "conference_ties": 0,
-        "overall_wins": 7,
-        "overall_losses": 5,
-        "overall_ties": 0,
-        "points_for": 14,
         "points_against": 13
       },
       {

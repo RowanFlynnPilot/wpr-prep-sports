@@ -1,7 +1,7 @@
 {
   "sport": "football",
   "season": "2026-27",
-  "generated_at": "2026-09-04T09:12:34.353579-05:00",
+  "generated_at": "2026-09-04T13:17:43.308962-05:00",
   "method": "WPR Power Index v1: 40% W%, 35% SOS, 25% margin (capped per sport)",
   "rankings": [
     {
@@ -28,7 +28,7 @@
       "sos": 0.5,
       "avg_margin_capped": 16.67,
       "score": 77.44,
-      "movement": null
+      "movement": -1
     },
     {
       "rank": 3,
@@ -41,7 +41,7 @@
       "sos": 1.0,
       "avg_margin_capped": -3.67,
       "score": 72.53,
-      "movement": null
+      "movement": -1
     },
     {
       "rank": 4,
@@ -54,7 +54,7 @@
       "sos": 0.3333,
       "avg_margin_capped": 13.0,
       "score": 69.97,
-      "movement": null
+      "movement": -1
     },
     {
       "rank": 5,
@@ -67,7 +67,7 @@
       "sos": 1.0,
       "avg_margin_capped": -5.33,
       "score": 58.45,
-      "movement": null
+      "movement": -1
     },
     {
       "rank": 6,
@@ -80,23 +80,10 @@
       "sos": 0.75,
       "avg_margin_capped": 8.0,
       "score": 55.65,
-      "movement": null
+      "movement": -1
     },
     {
       "rank": 7,
-      "school_id": "rib-lake",
-      "school_name": "Rib Lake",
-      "wins": 2,
-      "losses": 1,
-      "ties": 0,
-      "win_pct": 0.6667,
-      "sos": 0.25,
-      "avg_margin_capped": -1.0,
-      "score": 47.47,
-      "movement": null
-    },
-    {
-      "rank": 8,
       "school_id": "chequamegon",
       "school_name": "Chequamegon",
       "wins": 3,
@@ -106,7 +93,20 @@
       "sos": 0.25,
       "avg_margin_capped": -5.2,
       "score": 42.93,
-      "movement": null
+      "movement": -1
+    },
+    {
+      "rank": 8,
+      "school_id": "rib-lake",
+      "school_name": "Rib Lake",
+      "wins": 3,
+      "losses": 2,
+      "ties": 0,
+      "win_pct": 0.6,
+      "sos": 0.25,
+      "avg_margin_capped": -5.8,
+      "score": 42.66,
+      "movement": -1
     },
     {
       "rank": 9,
@@ -119,7 +119,7 @@
       "sos": 0.5,
       "avg_margin_capped": -3.0,
       "score": 41.99,
-      "movement": null
+      "movement": 0
     },
     {
       "rank": 10,
@@ -129,10 +129,10 @@
       "losses": 3,
       "ties": 0,
       "win_pct": 0.25,
-      "sos": 0.6333,
+      "sos": 0.6,
       "avg_margin_capped": -7.25,
-      "score": 41.43,
-      "movement": null
+      "score": 40.26,
+      "movement": -2
     },
     {
       "rank": 11,
@@ -145,7 +145,7 @@
       "sos": 0.3333,
       "avg_margin_capped": -11.0,
       "score": 39.26,
-      "movement": null
+      "movement": -1
     },
     {
       "rank": 12,
@@ -158,7 +158,7 @@
       "sos": 0.5,
       "avg_margin_capped": -18.33,
       "score": 35.15,
-      "movement": null
+      "movement": -1
     }
   ]
 }

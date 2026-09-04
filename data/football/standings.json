@@ -214,6 +214,18 @@
     "division": null,
     "rows": [
       {
+        "school_id": "rib-lake",
+        "name": "Rib Lake",
+        "conference_wins": 3,
+        "conference_losses": 1,
+        "conference_ties": 0,
+        "overall_wins": 3,
+        "overall_losses": 2,
+        "overall_ties": 0,
+        "points_for": 81,
+        "points_against": 128
+      },
+      {
         "school_id": "hurley",
         "name": "Hurley",
         "conference_wins": 2,
@@ -236,18 +248,6 @@
         "overall_ties": 0,
         "points_for": 76,
         "points_against": 138
-      },
-      {
-        "school_id": "rib-lake",
-        "name": "Rib Lake",
-        "conference_wins": 2,
-        "conference_losses": 1,
-        "conference_ties": 0,
-        "overall_wins": 2,
-        "overall_losses": 1,
-        "overall_ties": 0,
-        "points_for": 53,
-        "points_against": 66
       },
       {
         "school_id": "shell-lake",
