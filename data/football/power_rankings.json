@@ -1,11 +1,24 @@
 {
   "sport": "football",
   "season": "2026-27",
-  "generated_at": "2026-09-04T04:30:22.616143-05:00",
+  "generated_at": "2026-09-04T09:12:34.353579-05:00",
   "method": "WPR Power Index v1: 40% W%, 35% SOS, 25% margin (capped per sport)",
   "rankings": [
     {
       "rank": 1,
+      "school_id": "assumption",
+      "school_name": "Assumption",
+      "wins": 3,
+      "losses": 0,
+      "ties": 0,
+      "win_pct": 1.0,
+      "sos": 0.5,
+      "avg_margin_capped": 19.0,
+      "score": 78.48,
+      "movement": null
+    },
+    {
+      "rank": 2,
       "school_id": "hurley",
       "school_name": "Hurley",
       "wins": 3,
@@ -18,7 +31,7 @@
       "movement": null
     },
     {
-      "rank": 2,
+      "rank": 3,
       "school_id": "tri-county",
       "school_name": "Tri-County",
       "wins": 2,
@@ -31,7 +44,7 @@
       "movement": null
     },
     {
-      "rank": 3,
+      "rank": 4,
       "school_id": "weyauwega-fremont",
       "school_name": "Weyauwega-Fremont",
       "wins": 3,
@@ -44,7 +57,7 @@
       "movement": null
     },
     {
-      "rank": 4,
+      "rank": 5,
       "school_id": "phillips",
       "school_name": "Phillips",
       "wins": 1,
@@ -57,7 +70,7 @@
       "movement": null
     },
     {
-      "rank": 5,
+      "rank": 6,
       "school_id": "iola-scandinavia",
       "school_name": "Iola-Scandinavia",
       "wins": 1,
@@ -67,19 +80,6 @@
       "sos": 0.75,
       "avg_margin_capped": 8.0,
       "score": 55.65,
-      "movement": null
-    },
-    {
-      "rank": 6,
-      "school_id": "chequamegon",
-      "school_name": "Chequamegon",
-      "wins": 3,
-      "losses": 1,
-      "ties": 0,
-      "win_pct": 0.75,
-      "sos": 0.25,
-      "avg_margin_capped": 0.5,
-      "score": 51.47,
       "movement": null
     },
     {
@@ -97,15 +97,15 @@
     },
     {
       "rank": 8,
-      "school_id": "prentice",
-      "school_name": "Prentice",
-      "wins": 1,
-      "losses": 3,
+      "school_id": "chequamegon",
+      "school_name": "Chequamegon",
+      "wins": 3,
+      "losses": 2,
       "ties": 0,
-      "win_pct": 0.25,
-      "sos": 0.7083,
-      "avg_margin_capped": -7.25,
-      "score": 44.06,
+      "win_pct": 0.6,
+      "sos": 0.25,
+      "avg_margin_capped": -5.2,
+      "score": 42.93,
       "movement": null
     },
     {
@@ -123,6 +123,19 @@
     },
     {
       "rank": 10,
+      "school_id": "prentice",
+      "school_name": "Prentice",
+      "wins": 1,
+      "losses": 3,
+      "ties": 0,
+      "win_pct": 0.25,
+      "sos": 0.6333,
+      "avg_margin_capped": -7.25,
+      "score": 41.43,
+      "movement": null
+    },
+    {
+      "rank": 11,
       "school_id": "marion",
       "school_name": "Marion",
       "wins": 2,
@@ -135,7 +148,7 @@
       "movement": null
     },
     {
-      "rank": 11,
+      "rank": 12,
       "school_id": "washburn",
       "school_name": "Washburn",
       "wins": 1,
