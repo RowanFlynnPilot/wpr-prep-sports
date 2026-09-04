@@ -54,18 +54,6 @@
         "points_against": 30
       },
       {
-        "school_id": "northland-pines",
-        "name": "Northland Pines",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "conference_ties": 0,
-        "overall_wins": 1,
-        "overall_losses": 1,
-        "overall_ties": 0,
-        "points_for": 37,
-        "points_against": 34
-      },
-      {
         "school_id": "mosinee",
         "name": "Mosinee",
         "conference_wins": 0,
@@ -112,6 +100,18 @@
         "overall_ties": 0,
         "points_for": 8,
         "points_against": 27
+      },
+      {
+        "school_id": "northland-pines",
+        "name": "Northland Pines",
+        "conference_wins": 0,
+        "conference_losses": 1,
+        "conference_ties": 0,
+        "overall_wins": 1,
+        "overall_losses": 2,
+        "overall_ties": 0,
+        "points_for": 53,
+        "points_against": 62
       }
     ]
   },
@@ -214,6 +214,18 @@
     "division": null,
     "rows": [
       {
+        "school_id": "hurley",
+        "name": "Hurley",
+        "conference_wins": 2,
+        "conference_losses": 0,
+        "conference_ties": 0,
+        "overall_wins": 3,
+        "overall_losses": 0,
+        "overall_ties": 0,
+        "points_for": 78,
+        "points_against": 20
+      },
+      {
         "school_id": "chequamegon",
         "name": "Chequamegon",
         "conference_wins": 2,
@@ -229,25 +241,13 @@
         "school_id": "rib-lake",
         "name": "Rib Lake",
         "conference_wins": 2,
-        "conference_losses": 0,
+        "conference_losses": 1,
         "conference_ties": 0,
         "overall_wins": 2,
-        "overall_losses": 0,
+        "overall_losses": 1,
         "overall_ties": 0,
-        "points_for": 47,
-        "points_against": 22
-      },
-      {
-        "school_id": "hurley",
-        "name": "Hurley",
-        "conference_wins": 1,
-        "conference_losses": 0,
-        "conference_ties": 0,
-        "overall_wins": 2,
-        "overall_losses": 0,
-        "overall_ties": 0,
-        "points_for": 56,
-        "points_against": 14
+        "points_for": 53,
+        "points_against": 66
       },
       {
         "school_id": "shell-lake",
@@ -277,13 +277,13 @@
         "school_id": "phillips",
         "name": "Phillips",
         "conference_wins": 1,
-        "conference_losses": 0,
+        "conference_losses": 1,
         "conference_ties": 0,
         "overall_wins": 1,
-        "overall_losses": 1,
+        "overall_losses": 2,
         "overall_ties": 0,
-        "points_for": 56,
-        "points_against": 83
+        "points_for": 62,
+        "points_against": 105
       },
       {
         "school_id": "washburn",
