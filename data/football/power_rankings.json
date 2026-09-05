@@ -1,7 +1,7 @@
 {
   "sport": "football",
   "season": "2026-27",
-  "generated_at": "2026-09-04T16:22:53.317839-05:00",
+  "generated_at": "2026-09-04T18:56:40.066315-05:00",
   "method": "WPR Power Index v1: 40% W%, 35% SOS, 25% margin (capped per sport)",
   "rankings": [
     {
@@ -32,19 +32,6 @@
     },
     {
       "rank": 3,
-      "school_id": "tri-county",
-      "school_name": "Tri-County",
-      "wins": 2,
-      "losses": 1,
-      "ties": 0,
-      "win_pct": 0.6667,
-      "sos": 1.0,
-      "avg_margin_capped": -3.67,
-      "score": 72.53,
-      "movement": -1
-    },
-    {
-      "rank": 4,
       "school_id": "weyauwega-fremont",
       "school_name": "Weyauwega-Fremont",
       "wins": 3,
@@ -54,10 +41,36 @@
       "sos": 0.3333,
       "avg_margin_capped": 13.0,
       "score": 69.97,
-      "movement": -1
+      "movement": 0
+    },
+    {
+      "rank": 4,
+      "school_id": "tri-county",
+      "school_name": "Tri-County",
+      "wins": 2,
+      "losses": 1,
+      "ties": 0,
+      "win_pct": 0.6667,
+      "sos": 0.8333,
+      "avg_margin_capped": -3.67,
+      "score": 66.7,
+      "movement": -2
     },
     {
       "rank": 5,
+      "school_id": "port-edwards",
+      "school_name": "Port Edwards",
+      "wins": 2,
+      "losses": 1,
+      "ties": 0,
+      "win_pct": 0.6667,
+      "sos": 0.5,
+      "avg_margin_capped": 10.0,
+      "score": 61.13,
+      "movement": null
+    },
+    {
+      "rank": 6,
       "school_id": "phillips",
       "school_name": "Phillips",
       "wins": 1,
@@ -67,10 +80,10 @@
       "sos": 1.0,
       "avg_margin_capped": -5.33,
       "score": 58.45,
-      "movement": -1
+      "movement": -2
     },
     {
-      "rank": 6,
+      "rank": 7,
       "school_id": "iola-scandinavia",
       "school_name": "Iola-Scandinavia",
       "wins": 1,
@@ -80,10 +93,23 @@
       "sos": 0.75,
       "avg_margin_capped": 8.0,
       "score": 55.65,
-      "movement": -1
+      "movement": -2
     },
     {
-      "rank": 7,
+      "rank": 8,
+      "school_id": "wild-rose",
+      "school_name": "Wild Rose",
+      "wins": 1,
+      "losses": 2,
+      "ties": 0,
+      "win_pct": 0.3333,
+      "sos": 0.6667,
+      "avg_margin_capped": -6.0,
+      "score": 46.49,
+      "movement": null
+    },
+    {
+      "rank": 9,
       "school_id": "chequamegon",
       "school_name": "Chequamegon",
       "wins": 3,
@@ -93,10 +119,10 @@
       "sos": 0.25,
       "avg_margin_capped": -5.2,
       "score": 42.93,
-      "movement": -1
+      "movement": -3
     },
     {
-      "rank": 8,
+      "rank": 10,
       "school_id": "rib-lake",
       "school_name": "Rib Lake",
       "wins": 3,
@@ -106,10 +132,10 @@
       "sos": 0.25,
       "avg_margin_capped": -5.8,
       "score": 42.66,
-      "movement": -1
+      "movement": -3
     },
     {
-      "rank": 9,
+      "rank": 11,
       "school_id": "northland-pines",
       "school_name": "Northland Pines",
       "wins": 1,
@@ -119,10 +145,10 @@
       "sos": 0.5,
       "avg_margin_capped": -3.0,
       "score": 41.99,
-      "movement": 0
+      "movement": -2
     },
     {
-      "rank": 10,
+      "rank": 12,
       "school_id": "prentice",
       "school_name": "Prentice",
       "wins": 1,
@@ -132,10 +158,10 @@
       "sos": 0.6,
       "avg_margin_capped": -7.25,
       "score": 40.26,
-      "movement": -2
+      "movement": -4
     },
     {
-      "rank": 11,
+      "rank": 13,
       "school_id": "marion",
       "school_name": "Marion",
       "wins": 2,
@@ -145,10 +171,10 @@
       "sos": 0.3333,
       "avg_margin_capped": -11.0,
       "score": 39.26,
-      "movement": -1
+      "movement": -3
     },
     {
-      "rank": 12,
+      "rank": 14,
       "school_id": "washburn",
       "school_name": "Washburn",
       "wins": 1,
@@ -158,7 +184,7 @@
       "sos": 0.5,
       "avg_margin_capped": -18.33,
       "score": 35.15,
-      "movement": -1
+      "movement": -3
     }
   ]
 }

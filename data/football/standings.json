@@ -598,28 +598,16 @@
         "points_against": 88
       },
       {
-        "school_id": "wild-rose",
-        "name": "Wild Rose",
-        "conference_wins": 0,
-        "conference_losses": 1,
-        "conference_ties": 0,
-        "overall_wins": 1,
-        "overall_losses": 1,
-        "overall_ties": 0,
-        "points_for": 84,
-        "points_against": 50
-      },
-      {
         "school_id": "port-edwards",
         "name": "Port Edwards",
-        "conference_wins": 0,
+        "conference_wins": 1,
         "conference_losses": 1,
         "conference_ties": 0,
-        "overall_wins": 1,
+        "overall_wins": 2,
         "overall_losses": 1,
         "overall_ties": 0,
-        "points_for": 92,
-        "points_against": 56
+        "points_for": 138,
+        "points_against": 84
       },
       {
         "school_id": "newman-catholic",
@@ -656,6 +644,18 @@
         "overall_ties": 0,
         "points_for": 0,
         "points_against": 1
+      },
+      {
+        "school_id": "wild-rose",
+        "name": "Wild Rose",
+        "conference_wins": 0,
+        "conference_losses": 2,
+        "conference_ties": 0,
+        "overall_wins": 1,
+        "overall_losses": 2,
+        "overall_ties": 0,
+        "points_for": 112,
+        "points_against": 96
       }
     ]
   },
