@@ -1,7 +1,7 @@
 {
   "sport": "football",
   "season": "2026-27",
-  "generated_at": "2026-09-05T07:36:27.601897-05:00",
+  "generated_at": "2026-09-05T10:57:20.745403-05:00",
   "method": "WPR Power Index v1: 40% W%, 35% SOS, 25% margin (capped per sport)",
   "rankings": [
     {
@@ -298,9 +298,9 @@
       "losses": 3,
       "ties": 0,
       "win_pct": 0.25,
-      "sos": 0.8333,
+      "sos": 0.8,
       "avg_margin_capped": 5.5,
-      "score": 54.12,
+      "score": 52.96,
       "movement": -18
     },
     {
@@ -474,19 +474,6 @@
     },
     {
       "rank": 37,
-      "school_id": "almond-bancroft",
-      "school_name": "Almond-Bancroft",
-      "wins": 1,
-      "losses": 2,
-      "ties": 0,
-      "win_pct": 0.3333,
-      "sos": 0.5833,
-      "avg_margin_capped": -12.0,
-      "score": 40.89,
-      "movement": null
-    },
-    {
-      "rank": 38,
       "school_id": "wausau-east",
       "school_name": "Wausau East",
       "wins": 2,
@@ -499,7 +486,7 @@
       "movement": null
     },
     {
-      "rank": 39,
+      "rank": 38,
       "school_id": "prentice",
       "school_name": "Prentice",
       "wins": 1,
@@ -509,10 +496,10 @@
       "sos": 0.6,
       "avg_margin_capped": -7.25,
       "score": 40.26,
-      "movement": -31
+      "movement": -30
     },
     {
-      "rank": 40,
+      "rank": 39,
       "school_id": "superior",
       "school_name": "Superior",
       "wins": 1,
@@ -522,6 +509,19 @@
       "sos": 0.4444,
       "avg_margin_capped": -4.0,
       "score": 39.6,
+      "movement": null
+    },
+    {
+      "rank": 40,
+      "school_id": "almond-bancroft",
+      "school_name": "Almond-Bancroft",
+      "wins": 1,
+      "losses": 2,
+      "ties": 0,
+      "win_pct": 0.3333,
+      "sos": 0.5333,
+      "avg_margin_capped": -12.0,
+      "score": 39.14,
       "movement": null
     },
     {
@@ -552,19 +552,6 @@
     },
     {
       "rank": 43,
-      "school_id": "marion",
-      "school_name": "Marion",
-      "wins": 2,
-      "losses": 2,
-      "ties": 0,
-      "win_pct": 0.5,
-      "sos": 0.2917,
-      "avg_margin_capped": -11.0,
-      "score": 37.8,
-      "movement": -33
-    },
-    {
-      "rank": 44,
       "school_id": "wittenberg-birnamwood",
       "school_name": "Wittenberg-Birnamwood",
       "wins": 1,
@@ -577,7 +564,7 @@
       "movement": null
     },
     {
-      "rank": 45,
+      "rank": 44,
       "school_id": "eau-claire-memorial",
       "school_name": "Eau Claire Memorial",
       "wins": 0,
@@ -588,6 +575,19 @@
       "avg_margin_capped": -28.0,
       "score": 35.0,
       "movement": null
+    },
+    {
+      "rank": 45,
+      "school_id": "marion",
+      "school_name": "Marion",
+      "wins": 2,
+      "losses": 3,
+      "ties": 0,
+      "win_pct": 0.4,
+      "sos": 0.2917,
+      "avg_margin_capped": -14.4,
+      "score": 32.28,
+      "movement": -35
     },
     {
       "rank": 46,

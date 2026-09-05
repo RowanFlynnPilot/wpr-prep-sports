@@ -226,16 +226,16 @@
         "points_against": 5
       },
       {
-        "school_id": "eau-claire-north",
-        "name": "Eau Claire North",
-        "conference_wins": 0,
+        "school_id": "rice-lake",
+        "name": "Rice Lake",
+        "conference_wins": 1,
         "conference_losses": 1,
         "conference_ties": 0,
         "overall_wins": 2,
-        "overall_losses": 2,
+        "overall_losses": 1,
         "overall_ties": 0,
-        "points_for": 7,
-        "points_against": 13
+        "points_for": 10,
+        "points_against": 5
       },
       {
         "school_id": "chippewa-falls",
@@ -250,18 +250,6 @@
         "points_against": 7
       },
       {
-        "school_id": "rice-lake",
-        "name": "Rice Lake",
-        "conference_wins": 0,
-        "conference_losses": 1,
-        "conference_ties": 0,
-        "overall_wins": 1,
-        "overall_losses": 1,
-        "overall_ties": 0,
-        "points_for": 7,
-        "points_against": 4
-      },
-      {
         "school_id": "river-falls",
         "name": "River Falls",
         "conference_wins": 0,
@@ -272,6 +260,18 @@
         "overall_ties": 0,
         "points_for": 0,
         "points_against": 10
+      },
+      {
+        "school_id": "eau-claire-north",
+        "name": "Eau Claire North",
+        "conference_wins": 0,
+        "conference_losses": 2,
+        "conference_ties": 0,
+        "overall_wins": 2,
+        "overall_losses": 3,
+        "overall_ties": 0,
+        "points_for": 8,
+        "points_against": 16
       }
     ]
   }

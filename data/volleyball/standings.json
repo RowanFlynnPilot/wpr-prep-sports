@@ -6,6 +6,18 @@
     "division": null,
     "rows": [
       {
+        "school_id": "dc-everest",
+        "name": "D.C. Everest",
+        "conference_wins": 1,
+        "conference_losses": 0,
+        "conference_ties": 0,
+        "overall_wins": 9,
+        "overall_losses": 4,
+        "overall_ties": 0,
+        "points_for": 21,
+        "points_against": 11
+      },
+      {
         "school_id": "marshfield",
         "name": "Marshfield",
         "conference_wins": 1,
@@ -16,18 +28,6 @@
         "overall_ties": 0,
         "points_for": 20,
         "points_against": 9
-      },
-      {
-        "school_id": "dc-everest",
-        "name": "D.C. Everest",
-        "conference_wins": 1,
-        "conference_losses": 0,
-        "conference_ties": 0,
-        "overall_wins": 7,
-        "overall_losses": 4,
-        "overall_ties": 0,
-        "points_for": 17,
-        "points_against": 11
       },
       {
         "school_id": "wausau-west",
