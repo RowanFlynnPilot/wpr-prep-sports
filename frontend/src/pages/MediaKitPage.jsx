@@ -438,6 +438,7 @@ function EmbedBuilder({ schools }) {
   const [schoolId, setSchoolId] = useState(() => sorted[0]?.id ?? "");
   const [sport, setSport] = useState("football");
   const [conference, setConference] = useState("");
+  const [conference2, setConference2] = useState("");
   const [copied, setCopied] = useState(false);
 
   // Conference names come from the manifest's per-sport memberships —
@@ -452,6 +453,12 @@ function EmbedBuilder({ schools }) {
     return [...names].sort((a, b) => a.localeCompare(b));
   }, [schools, sport]);
   const activeConf = conferences.includes(conference) ? conference : (conferences[0] ?? "");
+  // Optional second conference: the WPR football audience spans two
+  // (Wisconsin Valley + Great Northern), so the combined module is the
+  // natural article unit.
+  const activeConf2 =
+    conferences.includes(conference2) && conference2 !== activeConf ? conference2 : "";
+  const confSlugs = [activeConf, activeConf2].filter(Boolean).map(confSlugOf).join("+");
 
   // NO script tags in the snippet — not even an external src. WordPress
   // article saves go through the REST API, and the WAF rejects any post
@@ -462,11 +469,12 @@ function EmbedBuilder({ schools }) {
   // (see README); without it the fixed height keeps the module usable.
   const embedPath =
     mode === "conference"
-      ? `${sport}/embed/conference/${confSlugOf(activeConf)}`
+      ? `${sport}/embed/conference/${confSlugs}`
       : `${sport}/embed/${schoolId}`;
   // The conference module (scores + a full standings table) runs taller
-  // than the team card; both heights are pre-resize fallbacks.
-  const height = mode === "conference" ? 680 : 330;
+  // than the team card, and each extra conference adds a table; all
+  // heights are pre-resize fallbacks.
+  const height = mode === "conference" ? (activeConf2 ? 1080 : 680) : 330;
   const snippet = `<iframe
   src="${WIDGET_ORIGIN}#/${embedPath}"
   width="100%" height="${height}" frameborder="0" loading="lazy"
@@ -477,7 +485,7 @@ function EmbedBuilder({ schools }) {
       setCopied(true);
       trackEvent("mediakit-embed-copy", {
         mode,
-        target: mode === "conference" ? activeConf : schoolId,
+        target: mode === "conference" ? confSlugs : schoolId,
         sport,
       });
       setTimeout(() => setCopied(false), 2000);
@@ -516,16 +524,31 @@ function EmbedBuilder({ schools }) {
             </select>
           </label>
         ) : (
-          <label>
-            Conference
-            <select value={activeConf} onChange={(e) => setConference(e.target.value)}>
-              {conferences.map((c) => (
-                <option key={c} value={c}>
-                  {c}
-                </option>
-              ))}
-            </select>
-          </label>
+          <>
+            <label>
+              Conference
+              <select value={activeConf} onChange={(e) => setConference(e.target.value)}>
+                {conferences.map((c) => (
+                  <option key={c} value={c}>
+                    {c}
+                  </option>
+                ))}
+              </select>
+            </label>
+            <label>
+              + Conference (optional)
+              <select value={activeConf2} onChange={(e) => setConference2(e.target.value)}>
+                <option value="">—</option>
+                {conferences
+                  .filter((c) => c !== activeConf)
+                  .map((c) => (
+                    <option key={c} value={c}>
+                      {c}
+                    </option>
+                  ))}
+              </select>
+            </label>
+          </>
         )}
         <label>
           Sport

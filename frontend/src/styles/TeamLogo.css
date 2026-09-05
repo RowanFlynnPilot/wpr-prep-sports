@@ -22,6 +22,7 @@
   letter-spacing: 0.02em;
 }
 
+.team-logo--xs { width: 18px; height: 18px; font-size: 0.5rem; }
 .team-logo--sm { width: 24px; height: 24px; font-size: 0.65rem; }
 .team-logo--md { width: 40px; height: 40px; font-size: 0.95rem; }
 .team-logo--lg { width: 64px; height: 64px; font-size: 1.4rem; }

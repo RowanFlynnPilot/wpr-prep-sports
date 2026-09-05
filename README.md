@@ -204,20 +204,25 @@ these snippets per school.
 ### Per-conference embed (scores + standings module)
 
 The same idea for a whole conference: latest scores involving its teams
-plus the standings table, carrying that conference's
+(with logos) plus the standings table, carrying that conference's
 `standings:<conference>` sponsor slot. The conference segment is the
-slugified conference name from `data/<sport>/standings.json`:
+slugified conference name from `data/<sport>/standings.json`, and
+multiple conferences can be joined with `+` — each gets its own
+standings table (with its own sponsor slot) above one pooled scores
+list. The WPR football combo (Wausau East plays football in the Great
+Northern, everything else Wisconsin Valley):
 
 ```html
 <iframe
-  src="https://sports.wausaupilotandreview.com/#/football/embed/conference/wisconsin-valley"
-  width="100%" height="680" frameborder="0" loading="lazy"
+  src="https://sports.wausaupilotandreview.com/#/football/embed/conference/wisconsin-valley+great-northern"
+  width="100%" height="1080" frameborder="0" loading="lazy"
   style="border:0;display:block;max-width:640px;"
 ></iframe>
 ```
 
-The media-kit embed builder generates these too (Module → "Conference
-scores + standings").
+Single-conference form uses `height="680"`. The media-kit embed builder
+generates both (Module → "Conference scores + standings", with an
+optional second conference).
 
 ## Local development
 

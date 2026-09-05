@@ -169,7 +169,7 @@
 .embed-conf__score {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);
-  align-items: baseline;
+  align-items: center;
   gap: 0.55rem;
   padding: 0.3rem 0.55rem;
   background: var(--paper);
@@ -195,6 +195,21 @@
 }
 .embed-conf__score-line {
   font-variant-numeric: tabular-nums;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  min-width: 0;
+}
+.embed-conf__side {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  min-width: 0;
+}
+.embed-conf__at {
+  color: var(--muted);
+  font-size: 0.75rem;
 }
 .embed-conf__winner {
   font-weight: 700;
@@ -213,6 +228,12 @@
   vertical-align: middle;
 }
 
+.embed-conf__standings-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.6rem;
+}
 .embed-conf__standings table {
   width: 100%;
   border-collapse: collapse;
