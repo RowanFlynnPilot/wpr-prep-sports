@@ -142,3 +142,124 @@
   font-family: var(--font-body);
   color: var(--muted);
 }
+
+/* ---- Conference module (scores + standings) ---------------------- */
+
+.embed--conference {
+  border-top-color: var(--brand);
+}
+.embed__header--conf {
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+.embed-conf__heading {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-700);
+  margin: 0 0 0.35rem;
+}
+
+.embed-conf__scores {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.embed-conf__score {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: baseline;
+  gap: 0.55rem;
+  padding: 0.3rem 0.55rem;
+  background: var(--paper);
+  border: 1px solid var(--paper-2);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  transition: background var(--t-fast) var(--ease);
+}
+.embed-conf__score:hover {
+  background: var(--paper-2);
+}
+.embed-conf__score-date {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.68rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.embed-conf__score-line {
+  font-variant-numeric: tabular-nums;
+}
+.embed-conf__winner {
+  font-weight: 700;
+}
+.embed-conf__tag {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 0 0.3rem;
+  margin-left: 0.45rem;
+  vertical-align: middle;
+}
+
+.embed-conf__standings table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-body);
+  font-size: 0.84rem;
+  font-variant-numeric: tabular-nums;
+}
+.embed-conf__standings th {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-align: left;
+  padding: 0.25rem 0.4rem;
+  border-bottom: 1px solid var(--line);
+}
+.embed-conf__standings td {
+  padding: 0.3rem 0.4rem;
+  border-bottom: 1px solid var(--paper-2);
+}
+.embed-conf__standings tr:last-child td {
+  border-bottom: none;
+}
+.embed-conf__standings .num {
+  text-align: right;
+  white-space: nowrap;
+}
+.embed-conf__rank {
+  color: var(--muted);
+  font-family: var(--font-display);
+  font-weight: 600;
+}
+.embed-conf__team {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-width: 0;
+}
+.embed-conf__team a {
+  color: var(--ink);
+  text-decoration: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.embed-conf__team a:hover {
+  text-decoration: underline;
+}

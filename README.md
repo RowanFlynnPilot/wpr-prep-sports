@@ -201,6 +201,24 @@ article save gets 403'd (see above). The module renders at the fixed
 auto-resizes like everything else. The `#/sponsor` media kit generates
 these snippets per school.
 
+### Per-conference embed (scores + standings module)
+
+The same idea for a whole conference: latest scores involving its teams
+plus the standings table, carrying that conference's
+`standings:<conference>` sponsor slot. The conference segment is the
+slugified conference name from `data/<sport>/standings.json`:
+
+```html
+<iframe
+  src="https://sports.wausaupilotandreview.com/#/football/embed/conference/wisconsin-valley"
+  width="100%" height="680" frameborder="0" loading="lazy"
+  style="border:0;display:block;max-width:640px;"
+></iframe>
+```
+
+The media-kit embed builder generates these too (Module → "Conference
+scores + standings").
+
 ## Local development
 
 **Scraper:**

@@ -425,14 +425,33 @@ export default function MediaKitPage() {
 // so this doubles as the fulfillment tool for per-school sales.
 const WIDGET_ORIGIN = SITE.widgetOrigin;
 
+function confSlugOf(name) {
+  return (name || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+}
+
 function EmbedBuilder({ schools }) {
   const sorted = useMemo(
     () => [...schools].sort((a, b) => a.name.localeCompare(b.name)),
     [schools],
   );
+  const [mode, setMode] = useState("school"); // "school" | "conference"
   const [schoolId, setSchoolId] = useState(() => sorted[0]?.id ?? "");
   const [sport, setSport] = useState("football");
+  const [conference, setConference] = useState("");
   const [copied, setCopied] = useState(false);
+
+  // Conference names come from the manifest's per-sport memberships —
+  // the same names standings.json publishes.
+  const conferences = useMemo(() => {
+    const names = new Set();
+    for (const s of schools) {
+      for (const c of s.conferences ?? []) {
+        if (c.sport === sport && c.conference) names.add(c.conference);
+      }
+    }
+    return [...names].sort((a, b) => a.localeCompare(b));
+  }, [schools, sport]);
+  const activeConf = conferences.includes(conference) ? conference : (conferences[0] ?? "");
 
   // NO script tags in the snippet — not even an external src. WordPress
   // article saves go through the REST API, and the WAF rejects any post
@@ -441,40 +460,73 @@ function EmbedBuilder({ schools }) {
   // 2026-08-26: inline AND external-src variants both 403). Auto-resize
   // comes from the hosted embed.js installed ONCE site-wide on the host
   // (see README); without it the fixed height keeps the module usable.
+  const embedPath =
+    mode === "conference"
+      ? `${sport}/embed/conference/${confSlugOf(activeConf)}`
+      : `${sport}/embed/${schoolId}`;
+  // The conference module (scores + a full standings table) runs taller
+  // than the team card; both heights are pre-resize fallbacks.
+  const height = mode === "conference" ? 680 : 330;
   const snippet = `<iframe
-  src="${WIDGET_ORIGIN}#/${sport}/embed/${schoolId}"
-  width="100%" height="330" frameborder="0" loading="lazy"
+  src="${WIDGET_ORIGIN}#/${embedPath}"
+  width="100%" height="${height}" frameborder="0" loading="lazy"
   style="border:0;display:block;max-width:640px;"></iframe>`;
 
   const copy = () => {
     navigator.clipboard?.writeText(snippet).then(() => {
       setCopied(true);
-      trackEvent("mediakit-embed-copy", { school: schoolId, sport });
+      trackEvent("mediakit-embed-copy", {
+        mode,
+        target: mode === "conference" ? activeConf : schoolId,
+        sport,
+      });
       setTimeout(() => setCopied(false), 2000);
     });
   };
 
   return (
     <section className="mk-group mk-embed">
-      <h2 className="mk-group__title">Per-school embed builder</h2>
+      <h2 className="mk-group__title">Embed builder</h2>
       <p className="mk-embed__lede">
-        Drop a live team module into any {SITE.orgShort} story or sidebar —
-        record, last/next game, and that school&apos;s sponsor. Pick a team,
-        copy, paste into WordPress (Custom HTML block). The code is
-        article-safe: no scripts at all, so the editor&apos;s save
-        won&apos;t be rejected by security filters.
+        Drop a live module into any {SITE.orgShort} story or sidebar — a
+        team card (record, last/next game, that school&apos;s sponsor) or a
+        conference module (latest scores + standings, carrying the
+        conference&apos;s standings sponsor). Pick one, copy, paste into
+        WordPress (Custom HTML block). The code is article-safe: no
+        scripts at all, so the editor&apos;s save won&apos;t be rejected
+        by security filters.
       </p>
       <div className="mk-embed__controls">
         <label>
-          School
-          <select value={schoolId} onChange={(e) => setSchoolId(e.target.value)}>
-            {sorted.map((s) => (
-              <option key={s.id} value={s.id}>
-                {s.name}
-              </option>
-            ))}
+          Module
+          <select value={mode} onChange={(e) => setMode(e.target.value)}>
+            <option value="school">Team card</option>
+            <option value="conference">Conference scores + standings</option>
           </select>
         </label>
+        {mode === "school" ? (
+          <label>
+            School
+            <select value={schoolId} onChange={(e) => setSchoolId(e.target.value)}>
+              {sorted.map((s) => (
+                <option key={s.id} value={s.id}>
+                  {s.name}
+                </option>
+              ))}
+            </select>
+          </label>
+        ) : (
+          <label>
+            Conference
+            <select value={activeConf} onChange={(e) => setConference(e.target.value)}>
+              {conferences.map((c) => (
+                <option key={c} value={c}>
+                  {c}
+                </option>
+              ))}
+            </select>
+          </label>
+        )}
         <label>
           Sport
           <select value={sport} onChange={(e) => setSport(e.target.value)}>
@@ -495,11 +547,11 @@ function EmbedBuilder({ schools }) {
       <p className="mk-embed__preview-note">
         Live preview:{" "}
         <a
-          href={`${WIDGET_ORIGIN}#/${sport}/embed/${schoolId}`}
+          href={`${WIDGET_ORIGIN}#/${embedPath}`}
           target="_blank"
           rel="noopener noreferrer"
         >
-          {WIDGET_ORIGIN}#/{sport}/embed/{schoolId}
+          {WIDGET_ORIGIN}#/{embedPath}
         </a>
       </p>
     </section>

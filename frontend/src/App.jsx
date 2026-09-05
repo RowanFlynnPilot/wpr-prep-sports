@@ -12,6 +12,7 @@ import TeamPage from "./pages/TeamPage.jsx";
 import GamePage from "./pages/GamePage.jsx";
 import PlayerPage from "./pages/PlayerPage.jsx";
 import EmbedPage from "./pages/EmbedPage.jsx";
+import ConferenceEmbedPage from "./pages/ConferenceEmbedPage.jsx";
 import Skeleton from "./components/Skeleton.jsx";
 import NotFound from "./components/NotFound.jsx";
 
@@ -299,6 +300,19 @@ function SportShell() {
             dataset={dataset}
             schoolIndex={schoolIndex}
             sponsors={dataset.sponsors}
+            sportConfig={sportConfig}
+          />
+        }
+      />
+      {/* Chrome-free conference scores+standings module for article
+          embeds. Declared before /embed/:schoolId so the static
+          "conference" segment wins the match. */}
+      <Route
+        path="/embed/conference/:confSlug"
+        element={
+          <ConferenceEmbedPage
+            dataset={dataset}
+            schoolIndex={schoolIndex}
             sportConfig={sportConfig}
           />
         }
