@@ -1,7 +1,7 @@
 {
   "sport": "volleyball",
   "season": "2026-27",
-  "generated_at": "2026-09-05T11:05:39.295061-05:00",
+  "generated_at": "2026-09-05T13:17:00.406257-05:00",
   "method": "WPR Power Index v1: 40% W%, 35% SOS, 25% margin (capped per sport)",
   "rankings": [
     {
@@ -21,13 +21,13 @@
       "rank": 2,
       "school_id": "mosinee",
       "school_name": "Mosinee",
-      "wins": 12,
+      "wins": 14,
       "losses": 0,
       "ties": 0,
       "win_pct": 1.0,
       "sos": 0.4354,
-      "avg_margin_capped": 1.92,
-      "score": 75.73,
+      "avg_margin_capped": 1.93,
+      "score": 75.78,
       "movement": 2
     },
     {
@@ -643,19 +643,6 @@
     },
     {
       "rank": 50,
-      "school_id": "waupaca",
-      "school_name": "Waupaca",
-      "wins": 1,
-      "losses": 3,
-      "ties": 0,
-      "win_pct": 0.25,
-      "sos": 0.5,
-      "avg_margin_capped": -1.25,
-      "score": 34.79,
-      "movement": -14
-    },
-    {
-      "rank": 51,
       "school_id": "menominee-nation",
       "school_name": "Menominee Nation",
       "wins": 0,
@@ -665,10 +652,10 @@
       "sos": 0.875,
       "avg_margin_capped": -2.0,
       "score": 34.79,
-      "movement": -11
+      "movement": -10
     },
     {
-      "rank": 52,
+      "rank": 51,
       "school_id": "wausau-east",
       "school_name": "Wausau East",
       "wins": 2,
@@ -678,10 +665,10 @@
       "sos": 0.4436,
       "avg_margin_capped": -0.88,
       "score": 34.38,
-      "movement": -14
+      "movement": -13
     },
     {
-      "rank": 53,
+      "rank": 52,
       "school_id": "greenwood",
       "school_name": "Greenwood",
       "wins": 2,
@@ -694,7 +681,7 @@
       "movement": null
     },
     {
-      "rank": 54,
+      "rank": 53,
       "school_id": "almond-bancroft",
       "school_name": "Almond-Bancroft",
       "wins": 0,
@@ -707,7 +694,7 @@
       "movement": null
     },
     {
-      "rank": 55,
+      "rank": 54,
       "school_id": "spencer",
       "school_name": "Spencer",
       "wins": 1,
@@ -720,7 +707,7 @@
       "movement": null
     },
     {
-      "rank": 56,
+      "rank": 55,
       "school_id": "port-edwards",
       "school_name": "Port Edwards",
       "wins": 1,
@@ -733,7 +720,7 @@
       "movement": null
     },
     {
-      "rank": 57,
+      "rank": 56,
       "school_id": "loyal",
       "school_name": "Loyal",
       "wins": 1,
@@ -744,6 +731,19 @@
       "avg_margin_capped": -1.0,
       "score": 32.17,
       "movement": null
+    },
+    {
+      "rank": 57,
+      "school_id": "waupaca",
+      "school_name": "Waupaca",
+      "wins": 1,
+      "losses": 4,
+      "ties": 0,
+      "win_pct": 0.2,
+      "sos": 0.5,
+      "avg_margin_capped": -1.4,
+      "score": 32.17,
+      "movement": -21
     },
     {
       "rank": 58,
@@ -763,7 +763,7 @@
       "school_id": "newman-catholic",
       "school_name": "Newman Catholic",
       "wins": 0,
-      "losses": 4,
+      "losses": 5,
       "ties": 0,
       "win_pct": 0.0,
       "sos": 0.7,
