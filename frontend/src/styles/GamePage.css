@@ -566,6 +566,23 @@
   font-variant-numeric: tabular-nums;
   color: var(--ink);
 }
+/* The category's own stat leads the row and carries the weight; the
+   supporting columns read as context, not competition. */
+.stat-row__stat--lead .stat-row__stat-value {
+  font-size: 1.2rem;
+  color: var(--ink-hero);
+}
+.stat-row__stat--lead .stat-row__stat-label {
+  color: var(--ink);
+}
+.stat-row__more {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted-2);
+  align-self: baseline;
+}
 
 .team-stats__empty-note {
   padding: 1rem;

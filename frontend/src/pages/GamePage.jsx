@@ -465,8 +465,8 @@ function TeamStatsCard({ label, team, school, won, lines, score, showScore, othe
       {lines.length === 0 ? (
         <p className="team-stats__empty-note">
           {otherSideHasStats
-            ? "No box score submitted for this team — coaches input stats per-team on MaxPreps."
-            : "No stats reported for this team."}
+            ? "No box score from this team yet — each team's stats arrive as its coaches file them, usually within a day or two."
+            : "No stats reported for this team yet."}
         </p>
       ) : viewMode === "box" ? (
         <FullBoxScore
@@ -752,19 +752,44 @@ const REDUNDANT_KEYS = new Set([
   "KLS", "AST", "DIG", "BLK", "ACE",
   "BLK_BB", "FG_PCT", "RBD",
   // Football (new-layout MaxPreps keeps raw headers alongside canon):
-  // rows were rendering "Car 24 · ATT 24" and "TD 4 · TDS 4".
-  "TDS", "ATT", "COMP",
+  // rows were rendering "Car 24 · ATT 24", "TD 4 · TDS 4", and
+  // "Tot Tckls 10 · TKL 10".
+  "TDS", "ATT", "COMP", "TKL",
 ]);
+
+// Columns that are noise in the compact leaders view (they remain in the
+// full box-score table): a "100+ games" flag and a passer rating nobody
+// scans a Friday box for.
+const COMPACT_NOISE_KEYS = new Set(["100+", "QB RATE"]);
+// Supporting columns shown beside the lead stat before "+N more".
+const COMPACT_SUPPORT_MAX = 3;
 
 function StatRow({ line, sportPrefix }) {
   const stats = line.stats ?? {};
   const pos = line.position || CATEGORY_POS[line.category] || null;
   const caseDupes = caseDuplicateKeys(stats);
-  const visibleStats = Object.entries(stats).filter(([k]) => {
+  const cleaned = Object.entries(stats).filter(([k]) => {
     if (caseDupes.has(k)) return false;
+    if (COMPACT_NOISE_KEYS.has(k.toUpperCase())) return false;
     if (!REDUNDANT_KEYS.has(k)) return true;
     return !hasReadableEquivalent(k, stats);
   });
+  // The category's own stat leads the row. Sources put it anywhere in
+  // column order (a passing line read "C 18 · C% .600 · TD 3 · LNG 38 ·
+  // YDS 202 …" with the yards sixth), and the canonical key may have
+  // been hidden in favor of its readable spelling, so match either.
+  const leaderKey = LEADER_KEY_BY_CATEGORY[line.category];
+  const leadNames = new Set(
+    [leaderKey, ...(READABLE_EQUIVALENTS[leaderKey] ?? [])]
+      .filter(Boolean)
+      .map((k) => k.toUpperCase()),
+  );
+  const leadIndex = cleaned.findIndex(([k]) => leadNames.has(k.toUpperCase()));
+  const lead = leadIndex >= 0 ? cleaned[leadIndex] : null;
+  const support = cleaned.filter((_, i) => i !== leadIndex);
+  const shown = support.slice(0, lead ? COMPACT_SUPPORT_MAX : COMPACT_SUPPORT_MAX + 1);
+  const hiddenCount = support.length - shown.length;
+  const visibleStats = lead ? [lead, ...shown] : shown;
   // Player name links to profile when we have a school_id for them
   // (we can't build a profile route for untracked opponents).
   const NameWrap = line.team_school_id
@@ -789,12 +814,20 @@ function StatRow({ line, sportPrefix }) {
         </NameWrap>
       </div>
       <div className="stat-row__stats">
-        {visibleStats.map(([k, v]) => (
-          <span key={k} className="stat-row__stat">
+        {visibleStats.map(([k, v], i) => (
+          <span
+            key={k}
+            className={`stat-row__stat${lead && i === 0 ? " stat-row__stat--lead" : ""}`}
+          >
             <span className="stat-row__stat-label">{k}</span>
             <span className="stat-row__stat-value">{v}</span>
           </span>
         ))}
+        {hiddenCount > 0 && (
+          <span className="stat-row__more" title="Open the full box score for every column">
+            +{hiddenCount} more
+          </span>
+        )}
       </div>
     </li>
   );
@@ -829,23 +862,28 @@ function caseDuplicateKeys(stats) {
   return hidden;
 }
 
+// Canonical key → source-side column headers that carry the same value.
+// Drives both the compact de-dupe (hide the canonical when a readable
+// spelling is present) and lead-stat detection in StatRow.
+const READABLE_EQUIVALENTS = {
+  KLS: ["K"],
+  AST: ["Ast", "Asst"],
+  DIG: ["D"],
+  BLK: ["Tot Blks"],
+  ACE: ["A"],
+  // Basketball (MaxPreps/Bound merge).
+  RBD: ["Reb"],
+  BLK_BB: ["Blk"],
+  FG_PCT: ["FG%"],
+  // Football (new-layout MaxPreps raw headers).
+  TDS: ["TD"],
+  ATT: ["Car", "Att"],
+  COMP: ["C", "Comp"],
+  YDS: ["Yds"],
+  TKL: ["Tot Tckls", "Tkl"],
+  PTS: ["Pts"],
+};
+
 function hasReadableEquivalent(canon, stats) {
-  // Canonical → list of source-side column headers that would be the
-  // same value. Hide canonical only when one of these is present.
-  const equivalents = {
-    KLS: ["K"],
-    AST: ["Ast", "Asst"],
-    DIG: ["D"],
-    BLK: ["Tot Blks"],
-    ACE: ["A"],
-    // Basketball (MaxPreps/Bound merge).
-    RBD: ["Reb"],
-    BLK_BB: ["Blk"],
-    FG_PCT: ["FG%"],
-    // Football (new-layout MaxPreps raw headers).
-    TDS: ["TD"],
-    ATT: ["Car", "Att"],
-    COMP: ["C", "Comp"],
-  };
-  return (equivalents[canon] ?? []).some((k) => k in stats);
+  return (READABLE_EQUIVALENTS[canon] ?? []).some((k) => k in stats);
 }
