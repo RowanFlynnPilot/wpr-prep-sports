@@ -175,6 +175,8 @@
 }
 
 .section-tabs__icon {
+  display: inline-flex;
+  align-items: center;
   font-size: 1.05em;
   line-height: 1;
 }
@@ -190,13 +192,8 @@
   font-weight: 700;
 }
 
-/* Icons stay full-colour, matching the sport switcher one row above.
-   Desaturating them was tried and read as muddy grey blobs at this size —
-   the active state is carried by the label colour and the underline, which
-   is plenty. A touch of transparency on inactive tabs is all it needs. */
-.section-tabs__tab:not(.section-tabs__tab--active) .section-tabs__icon {
-  opacity: 0.75;
-}
+/* Icons are stroked in currentColor (components/Icon.jsx), so they take
+   the tab's muted/ink/red state with the label — no separate treatment. */
 
 @media (max-width: 640px) {
   .section-tabs__tab {
@@ -280,10 +277,10 @@
   white-space: nowrap;
 }
 .sport-switcher__icon {
+  display: inline-flex;
+  align-items: center;
   font-size: 1.15rem;
   line-height: 1;
-  /* Emoji color rendering varies by OS; this keeps spacing snug. */
-  filter: saturate(1.15);
 }
 .sport-switcher__tab:hover {
   color: #fff;
@@ -296,7 +293,6 @@
   border-bottom-color: var(--accent-on-dark);
   background: rgba(255, 255, 255, 0.06);
 }
-.sport-switcher__tab--active .sport-switcher__icon { filter: saturate(1.3); }
 .sport-switcher__tab--active:hover { border-bottom-color: var(--accent-on-dark); }
 .sport-switcher__label--short { display: none; }
 

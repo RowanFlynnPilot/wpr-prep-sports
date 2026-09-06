@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { SPORT_IDS, configFor } from "../config/sports.js";
+import Icon from "./Icon.jsx";
 
 /**
  * Strip in the masthead for switching between sports. Each entry is a
@@ -46,11 +47,11 @@ export default function SportSwitcher() {
                   (isActive ? " sport-switcher__tab--active" : "")
                 }
               >
-                {cfg.icon && (
-                  <span className="sport-switcher__icon" aria-hidden="true">
-                    {cfg.icon}
-                  </span>
-                )}
+                {/* Drawn icon keyed by sport id; cfg.icon (emoji) is kept
+                    in the config for the rasterized share cards only. */}
+                <span className="sport-switcher__icon" aria-hidden="true">
+                  <Icon name={cfg.id} />
+                </span>
                 <span className="sport-switcher__label" aria-hidden="true">
                   {cfg.label}
                 </span>

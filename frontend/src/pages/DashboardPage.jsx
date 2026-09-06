@@ -241,10 +241,10 @@ export default function DashboardPage({
   // are full-length everywhere — on a phone "Standings & Stats" wraps onto
   // a second line rather than being abbreviated away.
   const tabDefs = [
-    { id: "scores", label: "Scores", icon: "🆚", show: games.length > 0 },
-    { id: "schedule", label: "Schedule", icon: "📅", show: games.length > 0 },
-    { id: "standings", label: "Standings & Stats", icon: "📊", show: hasStatsTab },
-    { id: "spotlight", label: "Spotlight", icon: "⭐", show: hasSpotlightTab },
+    { id: "scores", label: "Scores", icon: "scores", show: games.length > 0 },
+    { id: "schedule", label: "Schedule", icon: "schedule", show: games.length > 0 },
+    { id: "standings", label: "Standings & Stats", icon: "standings", show: hasStatsTab },
+    { id: "spotlight", label: "Spotlight", icon: "spotlight", show: hasSpotlightTab },
   ];
   const tabs = tabDefs.filter((t) => t.show);
 

@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import Icon from "./Icon.jsx";
 
 /**
  * Secondary tab strip under the pinned hero on the dashboard. Switches
@@ -89,7 +90,7 @@ export default function SectionTabs({ tabs, active, onChange }) {
               >
                 {t.icon && (
                   <span className="section-tabs__icon" aria-hidden="true">
-                    {t.icon}
+                    <Icon name={t.icon} />
                   </span>
                 )}
                 {/* One label, wrapped onto two lines on narrow screens
