@@ -41,11 +41,16 @@
   background: rgba(255, 255, 255, 0.25);
 }
 
+/* The paper's name is the masthead: display size, heavy, tracking
+   tightened as it grows. It was 1rem/600 — quieter than the 0.7rem
+   pills beside it and the sport grid beneath it, so first-time readers
+   couldn't tell whose site this was. */
 .masthead__title {
   font-family: var(--font-display);
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
+  font-size: 1.45rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1;
   text-transform: uppercase;
   color: #fff;
   border-bottom: none;
@@ -422,7 +427,18 @@
     flex-wrap: wrap;
   }
   .masthead__brand-logo { height: 36px; width: 36px; }
-  .masthead__title { font-size: 0.85rem; }
+  /* Still the loudest thing on the bar; may break to two lines on the
+     narrowest phones rather than shrink back to pill size. */
+  .masthead__title {
+    font-size: 1.15rem;
+    white-space: normal;
+    line-height: 1.05;
+    /* Zero basis keeps it on the logo's row (flex-wrap lines up items
+       by max-content first, which shoved the name onto its own row);
+       it then fills the row and wraps its words if it must. */
+    flex: 1 1 0;
+    min-width: 0;
+  }
   .masthead__attribution {
     width: 100%;
     align-items: flex-start;
