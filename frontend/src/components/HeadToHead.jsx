@@ -38,7 +38,11 @@ export default function HeadToHead({ game, dataset }) {
     const homeKey = sideKey(game.home);
     let homeWins = 0;
     let awayWins = 0;
-    for (const m of meetings) {
+    // The current game counts once it's final — otherwise the line reads
+    // "Tomahawk leads 1-0" directly under a Wausau East win.
+    const thisFinal =
+      game.status === "final" && game.home.score != null && game.away.score != null;
+    for (const m of thisFinal ? [...meetings, game] : meetings) {
       const winner = winnerKey(m);
       if (winner === null) continue;
       if (winner === homeKey) homeWins++;

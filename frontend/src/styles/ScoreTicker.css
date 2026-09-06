@@ -92,9 +92,11 @@
   flex: 0 0 280px;
   scroll-snap-align: start;
   background: var(--card);
+  /* Hairline for structure; a shadow only when the card lifts on hover.
+     Border + resting shadow on every card was two elevation languages
+     stacked on one surface, hundreds of times per dashboard. */
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  box-shadow: var(--shadow-lift);
   padding: 0.85rem 0.95rem 0.95rem;
   transition: transform var(--t-fast) var(--ease),
               box-shadow var(--t-fast) var(--ease);
@@ -103,18 +105,15 @@
 /* Themed cards get a school-colored left rail via inset shadow so the
    accent doesn't push content around. */
 .card--themed {
-  box-shadow:
-    var(--shadow-lift),
-    inset 4px 0 0 var(--school-color, transparent);
+  box-shadow: inset 4px 0 0 var(--school-color, transparent);
 }
 .card:hover {
   transform: translateY(-1px);
-  box-shadow: 0 2px 4px rgba(14,15,18,0.08), 0 8px 24px rgba(14,15,18,0.07);
+  box-shadow: var(--shadow-lift);
 }
 .card--themed:hover {
   box-shadow:
-    0 2px 4px rgba(14,15,18,0.08),
-    0 8px 24px rgba(14,15,18,0.07),
+    var(--shadow-lift),
     inset 4px 0 0 var(--school-color, transparent);
 }
 

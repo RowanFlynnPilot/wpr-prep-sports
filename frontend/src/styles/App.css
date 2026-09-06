@@ -90,18 +90,15 @@
   background: currentColor;
   flex: 0 0 auto;
 }
+/* Brand-band hues only: fresh is quiet white, stale is the press red
+   that reads on chrome. Emerald/gold were the only non-brand colors in
+   the masthead. */
 .masthead__updated--fresh {
-  color: #4ade80; /* emerald-400 — pops on navy without being neon */
-}
-.masthead__updated--fresh .masthead__updated-dot {
-  box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.18);
+  color: rgba(255, 255, 255, 0.72);
 }
 .masthead__updated--stale {
-  color: #dba617; /* the site's warning gold */
-  background: rgba(219, 166, 23, 0.14);
-}
-.masthead__updated--stale .masthead__updated-dot {
-  box-shadow: 0 0 0 3px rgba(219, 166, 23, 0.28);
+  color: var(--accent-on-dark);
+  background: rgba(227, 93, 93, 0.14);
 }
 
 /* Sport switcher — second-row tab strip under the masthead. Sits inside

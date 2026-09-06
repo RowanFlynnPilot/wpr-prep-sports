@@ -39,11 +39,6 @@
 
 .power-row:first-child {
   border-top: none;
-  background: linear-gradient(
-    90deg,
-    rgba(255, 199, 44, 0.10) 0%,
-    rgba(255, 199, 44, 0) 60%
-  );
 }
 
 .power-row:hover {
@@ -109,12 +104,14 @@
 
 .power-row__bar {
   position: absolute;
-  inset: 0 auto 0 0;
+  inset: 0;
   background: var(--accent);
   opacity: 0.18;
   border-radius: var(--radius-sm) 0 0 var(--radius-sm);
   pointer-events: none;
-  transition: width 0.3s ease;
+  /* Scaled, not resized: transform stays off the layout thread. */
+  transform-origin: left center;
+  transition: transform var(--t-med) var(--ease);
 }
 
 .power-row:first-child .power-row__bar {

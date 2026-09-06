@@ -285,29 +285,10 @@
   max-width: 22ch;
 }
 
-/* On the team hero the toggle sits on the dark/colored band. */
-.team-hero .fav-toggle {
-  background: rgba(255, 255, 255, 0.12);
-  border-color: rgba(255, 255, 255, 0.4);
-  color: #ffffff;
-}
-
-.team-hero .fav-toggle:hover,
-.team-hero .fav-toggle:focus-visible {
-  background: rgba(255, 255, 255, 0.22);
-  border-color: #ffffff;
-  color: #ffffff;
-}
-
-.team-hero .fav-toggle--on {
-  background: #ffffff;
-  border-color: #ffffff;
-  color: var(--accent-700);
-}
-
-.team-hero .fav-toggle__notice {
-  color: #ffffff;
-}
+/* The team hero is a paper card (since the 2026-07 retheme); the toggle
+   uses its default styling there, matching the Share button beside it.
+   A dark-band override used to live here and rendered the Follow button
+   white-on-white — the page's only favorites entry point, invisible. */
 
 @media (max-width: 560px) {
   .favstrip__head {

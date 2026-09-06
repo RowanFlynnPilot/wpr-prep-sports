@@ -1,6 +1,20 @@
 /** Game selection helpers used by the Hero and Ticker. */
 
 const DAY_MS = 24 * 60 * 60 * 1000;
+// How long a home-region final leads the hero before the next preview
+// takes over: Saturday through Monday after a Friday slate.
+const RESULT_LEAD_MS = 72 * 60 * 60 * 1000;
+
+// WIAA records forfeits as 1-0 (basketball sometimes 2-0) finals —
+// impossible on-field scores in those sports. Same rule recap.js uses to
+// phrase them; soccer/hockey 1-0s are real games and never match here.
+function isForfeitScore(game) {
+  const hi = Math.max(game.home.score, game.away.score);
+  const lo = Math.min(game.home.score, game.away.score);
+  if (game.sport === "football") return hi === 1 && lo === 0;
+  if ((game.sport ?? "").includes("basketball")) return (hi === 1 || hi === 2) && lo === 0;
+  return false;
+}
 
 /**
  * Headline stat lines for a game — the first line per (team, category).
@@ -59,11 +73,45 @@ export function pickFeaturedGame(
   excludeId = null,
 ) {
   if (!games || games.length === 0) return null;
+  const nowTs = now.getTime();
+
+  // Lead with the RESULT for three days after a slate. The reader's
+  // Saturday-through-Monday question is "did we win?", not "who's next?"
+  // — the hero used to answer the second one all week, and Friday's
+  // home-region score sat thousands of pixels down the page. Among the
+  // most recent day's local finals, conference games first, then the
+  // closest margin. Falls through to the preview pick after 72 hours.
+  if (preferIds && preferIds.size > 0) {
+    const localSides = (g) =>
+      (preferIds.has(g.home.school_id) ? 1 : 0) + (preferIds.has(g.away.school_id) ? 1 : 0);
+    const recentLocal = games
+      .filter((g) => g.status === "final" && g.home.score != null && g.away.score != null)
+      // A forfeit is a result, not a story — never the lead.
+      .filter((g) => !isForfeitScore(g))
+      .filter((g) => localSides(g) > 0)
+      .map((g) => ({ g, ts: new Date(g.date).getTime() }))
+      .filter(({ ts }) => ts <= nowTs && nowTs - ts < RESULT_LEAD_MS);
+    if (recentLocal.length > 0) {
+      const days = recentLocal.map(({ g }) => g.date.slice(0, 10)).sort();
+      const latestDay = days[days.length - 1];
+      // Stakes first (conference game, both sides local), then the
+      // closest margin — the tightest local rivalry result leads.
+      const stakes = (g) => (g.conference_game ? 2 : 0) + (localSides(g) === 2 ? 1 : 0);
+      const lead = recentLocal
+        .filter(({ g }) => g.date.slice(0, 10) === latestDay)
+        .sort(
+          (a, b) =>
+            stakes(b.g) - stakes(a.g) ||
+            Math.abs(a.g.home.score - a.g.away.score) - Math.abs(b.g.home.score - b.g.away.score),
+        )[0];
+      if (lead) return lead.g;
+    }
+  }
 
   const upcoming = games
     .filter((g) => g.status === "scheduled")
     .map((g) => ({ g, ts: new Date(g.date).getTime() }))
-    .filter(({ ts }) => ts >= now.getTime() && ts - now.getTime() < 7 * DAY_MS)
+    .filter(({ ts }) => ts >= nowTs && ts - nowTs < 7 * DAY_MS)
     .sort((a, b) => a.ts - b.ts);
   if (upcoming.length > 0) {
     if (preferIds && preferIds.size > 0) {

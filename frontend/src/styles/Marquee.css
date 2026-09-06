@@ -1,25 +1,22 @@
-/* Game of the Week hero — magazine-style showcase above the dashboard
-   hero. Navy base with each team's color as an accent (top bar split
-   away|home, colored logo rings), both logos prominent. Inherits
-   --accent per sport; --away-color / --home-color set inline per game. */
+/* Game of the Week — a compact editorial strip on paper, under the black
+   hero lead. The two schools' colors carry it: a split top bar
+   (away|home) and colored logo rings. --away-color / --home-color are set
+   inline per game. Was a second black card competing with the hero. */
 
 .gotw {
   position: relative;
   display: block;
   text-decoration: none;
-  color: #fff;
+  color: var(--ink);
   border-bottom: none !important;
   border-radius: var(--radius);
   overflow: hidden;
-  background:
-    radial-gradient(120% 140% at 0% 0%, color-mix(in srgb, var(--away-color, #888) 22%, transparent) 0%, transparent 45%),
-    radial-gradient(120% 140% at 100% 0%, color-mix(in srgb, var(--home-color, #888) 22%, transparent) 0%, transparent 45%),
-    var(--chrome-hero);
-  padding: 0.9rem 1.1rem 0.8rem;
-  box-shadow: var(--shadow-lift);
+  background: var(--card);
+  border: 1px solid var(--line);
+  padding: 0.8rem 1.1rem 0.75rem;
   transition: transform var(--t-fast) var(--ease), box-shadow var(--t-fast) var(--ease);
 }
-.gotw:hover { transform: translateY(-2px); box-shadow: var(--shadow-hero); }
+.gotw:hover { transform: translateY(-1px); box-shadow: var(--shadow-lift); }
 
 /* Top accent bar — away color on the left half, home on the right. */
 .gotw__bar {
@@ -42,15 +39,13 @@
 }
 .gotw__eyebrow {
   font-family: var(--font-display);
-  font-size: 0.68rem;
+  font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--accent-700);
 }
 .gotw__sponsor { flex: 0 0 auto; }
-.gotw__sponsor .sponsor__label { color: rgba(255, 255, 255, 0.6); }
-.gotw__sponsor .sponsor__name { color: #fff; }
 
 .gotw__teams {
   display: grid;
@@ -78,23 +73,23 @@
   font-weight: 700;
   font-size: 1.05rem;
   line-height: 1.15;
-  color: #fff;
+  color: var(--ink-hero);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 .gotw__team-mascot {
   font-size: 0.72rem;
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--muted);
 }
-.gotw__team--won .gotw__team-name { color: var(--accent); }
+.gotw__team--won .gotw__team-name { color: var(--accent-700); }
 
 .gotw__score {
   font-family: var(--font-numeric, var(--font-display));
   font-weight: 700;
   font-size: 1.7rem;
   line-height: 1;
-  color: #fff;
+  color: var(--ink-hero);
   flex: 0 0 auto;
 }
 .gotw__team--won .gotw__score { color: var(--accent); }
@@ -105,7 +100,7 @@
   font-weight: 700;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.45);
+  color: var(--muted-2);
   flex: 0 0 auto;
 }
 
@@ -116,17 +111,17 @@
   gap: 0.75rem;
   margin-top: 0.7rem;
   padding-top: 0.55rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid var(--paper-2);
 }
 .gotw__when {
   font-family: var(--font-body);
   font-size: 0.78rem;
-  color: rgba(255, 255, 255, 0.65);
+  color: var(--muted);
   font-style: italic;
 }
 .gotw__round {
   font-style: normal;
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--ink);
   font-family: var(--font-display);
   font-size: 0.7rem;
   letter-spacing: 0.06em;
@@ -139,7 +134,7 @@
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--ink);
   transition: transform var(--t-fast) var(--ease);
 }
 .gotw:hover .gotw__cta { transform: translateX(3px); }

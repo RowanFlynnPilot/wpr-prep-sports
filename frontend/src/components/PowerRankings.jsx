@@ -217,7 +217,7 @@ function PowerRow({ row, topScore, sportPrefix, schoolIndex, suppressMovement })
         <span
           className="power-row__bar"
           aria-hidden="true"
-          style={{ width: `${widthPct}%`, background: accent }}
+          style={{ transform: `scaleX(${widthPct / 100})`, background: accent }}
         />
       </div>
     </li>

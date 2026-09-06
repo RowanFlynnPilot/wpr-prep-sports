@@ -1,6 +1,8 @@
 .hero {
   position: relative;
-  background: linear-gradient(180deg, var(--chrome-hero) 0%, #2b2b2b 100%);
+  /* The dashboard's one black lead — flat chrome, press-red rule on top.
+     The only surface that keeps a resting shadow: it floats above paper. */
+  background: var(--chrome-hero);
   color: #fff;
   padding: 1.75rem 1.75rem 2rem;
   border-radius: var(--radius);
@@ -8,12 +10,11 @@
   overflow: hidden;
 }
 .hero::before {
-  /* subtle stadium-light streak across the top */
   content: "";
   position: absolute;
   inset: 0 0 auto 0;
   height: 3px;
-  background: linear-gradient(90deg, var(--accent) 0%, transparent 60%);
+  background: var(--accent);
 }
 .hero--empty {
   background: var(--paper-2);

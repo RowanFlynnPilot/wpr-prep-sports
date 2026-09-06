@@ -3,7 +3,7 @@
   grid-template-columns: auto 1fr;
   align-items: center;
   gap: 1.25rem;
-  background: linear-gradient(180deg, var(--chrome-hero) 0%, #2b2b2b 100%);
+  background: var(--chrome-hero);
   color: #fff;
   padding: 1.5rem 1.75rem;
   border-radius: var(--radius);
@@ -28,7 +28,7 @@
 
 .player-page__pos {
   background: var(--accent);
-  color: var(--ink);
+  color: #fff; /* ink-on-red was 2.8:1 */
   padding: 0.18rem 0.5rem;
   border-radius: var(--radius-sm);
 }
@@ -290,7 +290,7 @@
 .game-log__stat-label {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 0.66rem;
+  font-size: 0.72rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--muted);

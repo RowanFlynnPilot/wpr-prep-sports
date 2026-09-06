@@ -1,9 +1,13 @@
+/* Player of the Week — on paper, not chrome. The dashboard keeps ONE
+   black lead (the featured-game hero); this card carries the school's
+   color as a rail and lets the athlete's name and stat line do the work.
+   Was a second black slab stacked under the hero. */
 .potw {
-  background: var(--chrome);
-  color: #fff;
+  background: var(--card);
+  color: var(--ink);
+  border: 1px solid var(--line);
   border-radius: var(--radius);
   overflow: hidden;
-  box-shadow: var(--shadow-lift);
   position: relative;
 }
 /* School-colored left rail — same pattern as scoreboard ticker cards. */
@@ -13,7 +17,7 @@
   left: 0;
   top: 0;
   bottom: 0;
-  width: 6px;
+  width: 4px;
   background: var(--school-color, var(--accent));
 }
 
@@ -23,7 +27,7 @@
   justify-content: space-between;
   gap: 0.75rem;
   padding: 0.75rem 1.1rem 0.65rem 1.4rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid var(--paper-2);
 }
 .potw__eyebrow {
   font-family: var(--font-display);
@@ -31,27 +35,11 @@
   font-size: 0.75rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--accent-700);
 }
 
-/* Funder credit in the header. The card is black chrome in both themes,
-   so the label goes light (the default --muted ink would dissolve into
-   it) and the lockup — dark text on white — sits on its own small white
-   plate instead of floating as a white rectangle with hard edges. */
-.potw .sponsor__label {
-  color: rgba(255, 255, 255, 0.72);
-}
-.potw .sponsor__logo {
-  max-height: 46px;
-  max-width: 210px;
-  background: #fff;
-  padding: 4px 9px;
-  border-radius: 5px;
-  box-sizing: content-box;
-}
-/* Narrow phones: let the credit wrap onto its own right-aligned row —
-   shrinking the plate enough to share 320px with the title made the
-   lockup illegible, and squeezing clipped it against the card edge. */
+/* Narrow phones: let the funder credit wrap onto its own right-aligned
+   row — squeezing it beside the title clipped the lockup. */
 @media (max-width: 400px) {
   .potw__header {
     flex-wrap: wrap;
@@ -87,15 +75,13 @@
   letter-spacing: 0.05em;
   color: #fff;
   background: var(--school-color, var(--muted-2));
-  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 0 3px var(--paper-2);
   flex: 0 0 auto;
 }
 .potw__avatar-logo {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  /* Most WIAA logos are darker on transparent — give them a white pad
-     so they read clearly inside the navy POTW header. */
   background: var(--card);
   padding: 4px;
 }
@@ -114,6 +100,7 @@
   letter-spacing: 0.01em;
   line-height: 1.1;
   margin: 0;
+  color: var(--ink-hero);
   display: inline-flex;
   flex-wrap: wrap;
   align-items: baseline;
@@ -125,12 +112,12 @@
   border-bottom: 1px solid transparent;
 }
 .potw__name-link:hover {
-  border-bottom-color: rgba(255, 255, 255, 0.55);
+  border-bottom-color: currentColor;
 }
 .potw__year {
   font-weight: 400;
   font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.55);
+  color: var(--muted);
   font-style: italic;
 }
 .potw__pos {
@@ -139,8 +126,8 @@
   font-size: 0.65rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--accent);
-  background: color-mix(in srgb, var(--accent) 18%, transparent);
+  color: var(--accent-700);
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
   padding: 0.2rem 0.45rem;
   border-radius: var(--radius-sm);
   margin-left: 0.2rem;
@@ -149,7 +136,7 @@
 .potw__school {
   font-family: var(--font-body);
   font-size: 0.82rem;
-  color: rgba(255, 255, 255, 0.75);
+  color: var(--muted);
   text-decoration: none;
   border-bottom: 1px solid transparent;
   transition: color var(--t-fast) var(--ease),
@@ -157,20 +144,21 @@
   align-self: flex-start;
 }
 .potw__school:hover {
-  color: #fff;
-  border-bottom-color: rgba(255, 255, 255, 0.45);
+  color: var(--ink);
+  border-bottom-color: currentColor;
 }
 .potw__mascot {
   font-style: italic;
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--muted-2);
 }
 
 .potw__line {
   margin: 0.3rem 0 0;
   font-family: var(--font-body);
   font-size: 1rem;
-  color: rgba(255, 255, 255, 0.92);
+  color: var(--ink);
   line-height: 1.4;
+  max-width: 70ch;
 }
 
 .potw__game {
@@ -179,19 +167,17 @@
   align-items: flex-end;
   gap: 0.15rem;
   text-align: right;
-  color: #fff;
+  color: var(--ink);
   text-decoration: none;
   padding: 0.5rem 0.7rem;
-  background: rgba(255, 255, 255, 0.06);
+  background: var(--paper-2);
   border-radius: var(--radius-sm);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  transition: background var(--t-fast) var(--ease),
-              border-color var(--t-fast) var(--ease);
+  border: 1px solid transparent;
+  transition: border-color var(--t-fast) var(--ease);
   flex: 0 0 auto;
 }
 .potw__game:hover {
-  background: rgba(255, 255, 255, 0.12);
-  border-color: var(--accent);
+  border-color: var(--school-color, var(--accent));
 }
 .potw__game-result {
   font-family: var(--font-numeric);
@@ -203,14 +189,14 @@
 .potw__game-opp {
   font-family: var(--font-body);
   font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--muted);
 }
 .potw__game-date {
   font-family: var(--font-display);
-  font-size: 0.65rem;
+  font-size: 0.72rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.55);
+  color: var(--muted-2);
 }
 
 @media (max-width: 720px) {

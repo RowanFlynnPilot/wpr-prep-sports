@@ -16,7 +16,7 @@
  * teams we cover. We layer on conference matchup, top-of-standings vs
  * top-of-standings, and proximity (next 14 days).
  */
-function scoreUpcoming(game, schoolsById, now) {
+function scoreUpcoming(game, schoolsById, now, homeRegionIds) {
   if (game.status !== "scheduled") return -Infinity;
   const ts = new Date(game.date).getTime();
   if (ts < now) return -Infinity;
@@ -30,6 +30,16 @@ function scoreUpcoming(game, schoolsById, now) {
   let score = 10;
   if (game.conference_game) score += 4;
   if (game.playoff) score += 8;
+  // Home-region stake outranks a generic conference tag: without this the
+  // Wausau paper's Game of the Week landed on Marion at Menominee Nation
+  // (first tied conference game in file order) over a Wausau West game.
+  if (homeRegionIds && homeRegionIds.size > 0) {
+    const localSides =
+      (homeRegionIds.has(game.home.school_id) ? 1 : 0) +
+      (homeRegionIds.has(game.away.school_id) ? 1 : 0);
+    if (localSides >= 1) score += 6;
+    if (localSides === 2) score += 3;
+  }
   // Prefer sooner games — same-week beats two-weeks-out by a tiebreaker.
   score += Math.max(0, 7 - daysOut) * 0.4;
   return score;
@@ -88,11 +98,17 @@ function scoreMarquee(game, schoolsById) {
  * first whistle, and the slot renders empty. Defaults to the wall clock so
  * callers that genuinely mean "today" need not pass it.
  */
-export function pickMarqueeGame({ games, schoolsById, offSeason, now = Date.now() }) {
+export function pickMarqueeGame({
+  games,
+  schoolsById,
+  offSeason,
+  now = Date.now(),
+  homeRegionIds = null,
+}) {
   if (!games || games.length === 0) return null;
 
   if (!offSeason) {
-    const best = bestBy(games, (g) => scoreUpcoming(g, schoolsById, now));
+    const best = bestBy(games, (g) => scoreUpcoming(g, schoolsById, now, homeRegionIds));
     if (!best || best.score === -Infinity) return null;
     return {
       kind: "upcoming",

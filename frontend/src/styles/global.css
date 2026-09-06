@@ -26,7 +26,9 @@
   --card:            #ffffff;          /* card surface (adapts in dark mode) */
   --line:            #dddddd;          /* hairline rules, same as the site */
   --muted:           #666666;
-  --muted-2:         #949494;
+  /* #767676 clears 4.5:1 on white; the #949494 it replaced sat at 3.03:1
+     under every rank number, "at"/"vs", count and eyebrow it carries. */
+  --muted-2:         #767676;
 
   /* Zebra stripes and row hovers. Tokenised because the literal these
      replaced was a warm cream mixed for the white card — carried into dark
@@ -183,7 +185,7 @@ a:hover { border-bottom-color: currentColor; }
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  background: #dc2626;
+  background: var(--accent);
   color: #fff;
   padding: 0.25rem 0.6rem;
   border-radius: 999px;

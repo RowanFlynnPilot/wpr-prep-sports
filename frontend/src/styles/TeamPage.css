@@ -60,15 +60,14 @@
   gap: 1.25rem;
   padding: 1.5rem;
   background: var(--card);
+  /* One edge language: hairline structure + the school's own rail. The
+     accent top bar and resting shadow this card also carried made four
+     competing edges on one surface. */
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  box-shadow: var(--shadow-lift);
-  border-top: 4px solid var(--accent);
 }
 
-/* When a school color is available, layer it as a left rail on top of the
-   existing top accent — gives the team page a touch of school identity
-   without overriding the sport accent. */
+/* School color as a left rail — the team page's identity mark. */
 .team-hero--colored {
   border-left: 4px solid var(--school-color);
 }

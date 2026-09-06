@@ -120,7 +120,9 @@
 }
 
 a.game-row__details {
-  color: var(--accent-700);
+  /* Ink, not press-red: red is reserved for winners, LIVE, and the
+     active nav so it still means something on a 41-row page. */
+  color: var(--muted);
   text-decoration: none;
   border-bottom: 1px solid transparent;
   transition: color var(--t-fast) var(--ease), border-color var(--t-fast) var(--ease);
@@ -211,8 +213,17 @@ a.game-row__details::after {
     grid-template-areas:
       "away at home"
       "status status status"
+      "summary summary summary"
       "recap recap recap";
     gap: 0.35rem 0.75rem;
+  }
+  /* The summary sentence must get its own area: with only status/recap
+     named, its desktop `grid-row: 2` landed it ON the status row and
+     "FINAL ›" printed over the result sentence a phone reader scans. */
+  .game-row__summary {
+    grid-area: summary;
+    grid-column: auto;
+    grid-row: auto;
   }
   /* Two teams share one phone-width row, leaving each name ~108px — not
      enough for "Wisconsin Rapids Lincoln", "Eau Claire Memorial" or

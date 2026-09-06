@@ -170,8 +170,9 @@ export default function DashboardPage({
         schoolsById: schoolIndex,
         offSeason,
         now: anchorNow.getTime(),
+        homeRegionIds: homeRegion,
       }),
-    [games, schoolIndex, offSeason, anchorNow],
+    [games, schoolIndex, offSeason, anchorNow, homeRegion],
   );
 
   // Hero pick, computed AFTER the marquee so it can avoid repeating it.
@@ -327,11 +328,11 @@ export default function DashboardPage({
       </SectionBoundary>
 
       {/* Pinned showcase — always visible above the tabs. Each pinned
-          section is fenced so one crashing can't take down the page. */}
-      <SectionBoundary label="marquee">
-        <Marquee pick={marquee} sportConfig={sportConfig} sponsors={sponsors} schoolIndex={schoolIndex} />
-      </SectionBoundary>
-
+          section is fenced so one crashing can't take down the page.
+          Order is editorial: the hero LEADS (the home-region result for
+          three days after a slate, the next local game otherwise) as the
+          page's one black card; the Game of the Week strip and Player of
+          the Week follow on paper. */}
       <SectionBoundary label="hero">
         <Hero
           game={featured}
@@ -343,6 +344,10 @@ export default function DashboardPage({
           nextSeasonStart={nextSeasonStart}
           daysToNext={daysToNext}
         />
+      </SectionBoundary>
+
+      <SectionBoundary label="marquee">
+        <Marquee pick={marquee} sportConfig={sportConfig} sponsors={sponsors} schoolIndex={schoolIndex} />
       </SectionBoundary>
 
       <SectionBoundary label="player-of-week">
