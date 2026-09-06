@@ -1,7 +1,7 @@
 {
   "sport": "volleyball",
   "season": "2026-27",
-  "generated_at": "2026-09-06T12:01:22.858648-05:00",
+  "generated_at": "2026-09-06T14:10:16.223403-05:00",
   "method": "WPR Power Index v1: 40% W%, 35% SOS, 25% margin (capped per sport)",
   "rankings": [
     {
@@ -168,13 +168,26 @@
       "losses": 4,
       "ties": 0,
       "win_pct": 0.6667,
-      "sos": 0.5045,
+      "sos": 0.5135,
       "avg_margin_capped": 0.75,
-      "score": 59.95,
+      "score": 60.26,
       "movement": -5
     },
     {
       "rank": 14,
+      "school_id": "auburndale",
+      "school_name": "Auburndale",
+      "wins": 7,
+      "losses": 3,
+      "ties": 0,
+      "win_pct": 0.7,
+      "sos": 0.4131,
+      "avg_margin_capped": 0.9,
+      "score": 58.71,
+      "movement": null
+    },
+    {
+      "rank": 15,
       "school_id": "dc-everest",
       "school_name": "D.C. Everest",
       "wins": 10,
@@ -184,20 +197,7 @@
       "sos": 0.4849,
       "avg_margin_capped": 0.6,
       "score": 58.64,
-      "movement": 4
-    },
-    {
-      "rank": 15,
-      "school_id": "auburndale",
-      "school_name": "Auburndale",
-      "wins": 7,
-      "losses": 3,
-      "ties": 0,
-      "win_pct": 0.7,
-      "sos": 0.4042,
-      "avg_margin_capped": 0.9,
-      "score": 58.4,
-      "movement": null
+      "movement": 3
     },
     {
       "rank": 16,
@@ -285,9 +285,9 @@
       "losses": 4,
       "ties": 0,
       "win_pct": 0.6923,
-      "sos": 0.3563,
+      "sos": 0.3615,
       "avg_margin_capped": 0.54,
-      "score": 54.91,
+      "score": 55.09,
       "movement": 3
     },
     {
@@ -539,6 +539,19 @@
     },
     {
       "rank": 42,
+      "school_id": "wisconsin-rapids",
+      "school_name": "Wisconsin Rapids Lincoln",
+      "wins": 2,
+      "losses": 5,
+      "ties": 0,
+      "win_pct": 0.2857,
+      "sos": 0.5703,
+      "avg_margin_capped": -0.71,
+      "score": 40.91,
+      "movement": -19
+    },
+    {
+      "rank": 43,
       "school_id": "wausau-west",
       "school_name": "Wausau West",
       "wins": 2,
@@ -551,7 +564,7 @@
       "movement": null
     },
     {
-      "rank": 43,
+      "rank": 44,
       "school_id": "eau-claire-north",
       "school_name": "Eau Claire North",
       "wins": 1,
@@ -561,10 +574,10 @@
       "sos": 0.8413,
       "avg_margin_capped": -1.44,
       "score": 40.37,
-      "movement": -13
+      "movement": -14
     },
     {
-      "rank": 44,
+      "rank": 45,
       "school_id": "wild-rose",
       "school_name": "Wild Rose",
       "wins": 2,
@@ -574,10 +587,10 @@
       "sos": 0.5,
       "avg_margin_capped": -0.83,
       "score": 39.86,
-      "movement": -31
+      "movement": -32
     },
     {
-      "rank": 45,
+      "rank": 46,
       "school_id": "rhinelander",
       "school_name": "Rhinelander",
       "wins": 2,
@@ -587,20 +600,7 @@
       "sos": 0.6037,
       "avg_margin_capped": -1.12,
       "score": 38.94,
-      "movement": -30
-    },
-    {
-      "rank": 46,
-      "school_id": "wisconsin-rapids",
-      "school_name": "Wisconsin Rapids Lincoln",
-      "wins": 2,
-      "losses": 6,
-      "ties": 0,
-      "win_pct": 0.25,
-      "sos": 0.5703,
-      "avg_margin_capped": -0.88,
-      "score": 38.81,
-      "movement": -23
+      "movement": -31
     },
     {
       "rank": 47,
@@ -779,9 +779,9 @@
       "losses": 7,
       "ties": 0,
       "win_pct": 0.2222,
-      "sos": 0.2625,
+      "sos": 0.2714,
       "avg_margin_capped": -1.0,
-      "score": 26.41,
+      "score": 26.72,
       "movement": -21
     },
     {
