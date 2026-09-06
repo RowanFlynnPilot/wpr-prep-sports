@@ -394,10 +394,16 @@ export default function DashboardPage({
               <div className="section-header">
                 <h2>{preseason ? "Opening Week" : "This Week"}</h2>
                 <span className="section-header__hint">
-                  {week.games.length} {week.games.length === 1 ? "game" : "games"} · grouped by day
+                  {week.games.length} {week.games.length === 1 ? "game" : "games"} · by day and conference
                 </span>
               </div>
-              <ThisWeekGrid week={week} schoolIndex={schoolIndex} allGames={games} sportConfig={sportConfig} />
+              <ThisWeekGrid
+                week={week}
+                schoolIndex={schoolIndex}
+                allGames={games}
+                sportConfig={sportConfig}
+                homeRegionIds={homeRegion}
+              />
             </section>
           )}
 

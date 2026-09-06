@@ -48,10 +48,67 @@
   color: var(--muted-2);
 }
 
-.week-day__games {
+.week-day__games,
+.week-conf__games {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+/* Conference sub-heads inside a day. Quiet label rows on paper: the
+   day header stays the loud one, the rows stay the content. */
+.week-conf__head {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0.45rem 1rem 0.35rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  background: var(--paper);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--paper-2);
+}
+.week-conf:first-child .week-conf__head {
+  border-top: none;
+}
+.week-conf__count {
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--muted-2);
+  font-variant-numeric: tabular-nums;
+}
+
+/* "Show N more games from other conferences" — one control per day,
+   full-width so it's a thumb target, not a text link. */
+.week-more {
+  display: block;
+  width: 100%;
+  min-height: 44px;
+  padding: 0.7rem 1rem;
+  background: var(--paper);
+  border: 0;
+  border-top: 1px solid var(--line);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-align: center;
+  cursor: pointer;
+  transition: background var(--t-fast) var(--ease);
+}
+.week-more:hover {
+  background: var(--row-tint-strong);
+}
+.week-more:focus-visible {
+  outline: none;
+  box-shadow: inset 0 0 0 2px var(--ink);
 }
 
 .game-row {
