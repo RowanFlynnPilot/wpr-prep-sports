@@ -150,8 +150,8 @@
   color: #15803d;
 }
 .power-row__move--down {
-  background: rgba(220, 38, 38, 0.13);
-  color: #b91c1c;
+  background: var(--loss-bg);
+  color: var(--loss);
 }
 .power-row__move--flat {
   background: var(--paper-2);

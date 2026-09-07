@@ -256,8 +256,8 @@
   color: #15803d;
 }
 .game-log__row--lost .game-log__wl {
-  background: rgba(220, 38, 38, 0.13);
-  color: #b91c1c;
+  background: var(--loss-bg);
+  color: var(--loss);
 }
 
 .game-log__score {

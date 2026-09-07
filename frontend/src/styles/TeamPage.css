@@ -124,12 +124,10 @@
 
 .season-summary {
   margin-top: 1.25rem;
-  padding: 1rem 1.25rem 1rem 1.5rem;
+  padding: 1rem 1.25rem;
   background: var(--card);
   border: 1px solid var(--line);
-  border-left: 4px solid var(--accent);
   border-radius: var(--radius);
-  box-shadow: var(--shadow-lift);
 }
 .season-summary__label {
   display: block;
@@ -141,6 +139,7 @@
   margin-bottom: 0.4rem;
 }
 .season-summary__body {
+  max-width: 75ch;
   font-family: var(--font-body);
   font-size: 1.05rem;
   line-height: 1.55;

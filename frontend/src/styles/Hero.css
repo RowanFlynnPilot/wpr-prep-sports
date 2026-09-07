@@ -180,7 +180,6 @@
   padding: 0.55rem 0.9rem;
   border-radius: var(--radius-sm);
   background: rgba(255, 255, 255, 0.07);
-  border-left: 3px solid var(--accent);
 }
 .hero-off__count {
   font-family: var(--font-numeric, var(--font-display));

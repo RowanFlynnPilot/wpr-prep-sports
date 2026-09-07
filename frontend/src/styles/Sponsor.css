@@ -112,9 +112,9 @@ a.sponsor:focus-visible .sponsor__name {
   width: 100%;
   height: auto;
   border-radius: var(--radius);
-  box-shadow: var(--shadow-lift);
   /* Hairline edge so light-background creatives (Wimmer's white strip)
-     read as a card on the light page instead of floating text. */
+     read as a card on the light page instead of floating text. No
+     shadow: on this page elevation belongs to the hero and to hover. */
   border: 1px solid var(--line);
 }
 .sponsor-banner a {

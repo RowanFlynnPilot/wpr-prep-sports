@@ -131,7 +131,7 @@
 .scoring-summary__strength {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 0.6rem;
+  font-size: 0.7rem;
   letter-spacing: 0.1em;
   padding: 0.12rem 0.35rem;
   border-radius: var(--radius-sm);
@@ -141,12 +141,13 @@
   background: color-mix(in srgb, var(--accent) 18%, transparent);
 }
 .scoring-summary__strength--sh {
-  color: #15803d;
-  background: rgba(22, 163, 74, 0.18);
+  color: var(--win);
+  background: var(--win-bg);
 }
+/* Empty-net: a plain tag — red is not a category here. */
 .scoring-summary__strength--en {
-  color: #b91c1c;
-  background: rgba(220, 38, 38, 0.15);
+  color: var(--muted);
+  background: var(--paper-2);
 }
 
 .scoring-summary__assists {
