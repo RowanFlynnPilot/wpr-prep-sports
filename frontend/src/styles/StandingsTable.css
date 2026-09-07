@@ -185,7 +185,10 @@
   font-size: 0.68rem;
   line-height: 1;
   letter-spacing: 0;
-  color: #fff;
+  /* --paper, not #fff: the dark theme lightens --win/--loss (#4ade80,
+     #b6bdc7), where white text sits under 2:1. Paper flips with the
+     theme, so the mark stays 5:1+ on both. */
+  color: var(--paper);
 }
 .standings__form-chip--w { background: var(--win); }
 .standings__form-chip--l { background: var(--loss); }
