@@ -1,7 +1,7 @@
 {
   "sport": "football",
   "season": "2026-27",
-  "generated_at": "2026-09-06T18:45:56.220090-05:00",
+  "generated_at": "2026-09-06T23:22:13.937027-05:00",
   "method": "WPR Power Index v1: 40% W%, 35% SOS, 25% margin (capped per sport)",
   "rankings": [
     {
@@ -708,6 +708,19 @@
     },
     {
       "rank": 55,
+      "school_id": "waupaca",
+      "school_name": "Waupaca",
+      "wins": 0,
+      "losses": 3,
+      "ties": 0,
+      "win_pct": 0.0,
+      "sos": 0.5,
+      "avg_margin_capped": -24.67,
+      "score": 18.99,
+      "movement": null
+    },
+    {
+      "rank": 56,
       "school_id": "antigo",
       "school_name": "Antigo",
       "wins": 0,
