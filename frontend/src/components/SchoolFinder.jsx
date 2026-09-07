@@ -30,7 +30,11 @@ export default function SchoolFinder({ className = "", placeholder = "Find your 
   const navigate = useNavigate();
   const [query, setQuery] = useState("");
   const [open, setOpen] = useState(false);
-  const [active, setActive] = useState(-1);
+  // The top match is always the active option, so Enter (or the iPad's
+  // "Go" key) opens it. It first shipped with nothing active until an
+  // arrow key was pressed, which meant typing "Wausau" and pressing Go
+  // did nothing at all — on the one path the component exists for.
+  const [active, setActive] = useState(0);
   const rootRef = useRef(null);
   const listId = useId();
 
@@ -56,20 +60,23 @@ export default function SchoolFinder({ className = "", placeholder = "Find your 
     trackEvent("school-find", { school: school.id, sport: sportId });
     setQuery("");
     setOpen(false);
-    setActive(-1);
+    setActive(0);
     navigate(`${sportPrefix}/team/${school.id}`);
   };
+
+  // Clamp in case the result list shrank under the active index.
+  const activeIdx = results.length ? Math.min(Math.max(active, 0), results.length - 1) : -1;
 
   const onKeyDown = (e) => {
     if (e.key === "ArrowDown") {
       e.preventDefault();
       setOpen(true);
-      setActive((i) => Math.min(i + 1, results.length - 1));
+      setActive(Math.min(activeIdx + 1, results.length - 1));
     } else if (e.key === "ArrowUp") {
       e.preventDefault();
-      setActive((i) => Math.max(i - 1, -1));
+      setActive(Math.max(activeIdx - 1, 0));
     } else if (e.key === "Enter") {
-      const pick = active >= 0 ? results[active] : results.length === 1 ? results[0] : null;
+      const pick = activeIdx >= 0 ? results[activeIdx] : null;
       if (pick) {
         e.preventDefault();
         go(pick);
@@ -77,7 +84,6 @@ export default function SchoolFinder({ className = "", placeholder = "Find your 
     } else if (e.key === "Escape") {
       if (open) {
         setOpen(false);
-        setActive(-1);
       } else if (query) {
         setQuery("");
       }
@@ -111,11 +117,11 @@ export default function SchoolFinder({ className = "", placeholder = "Find your 
         aria-expanded={hasList}
         aria-controls={hasList ? listId : undefined}
         aria-autocomplete="list"
-        aria-activedescendant={hasList && active >= 0 ? optId(active) : undefined}
+        aria-activedescendant={hasList && activeIdx >= 0 ? optId(activeIdx) : undefined}
         onChange={(e) => {
           setQuery(e.target.value);
           setOpen(true);
-          setActive(-1);
+          setActive(0);
         }}
         onFocus={() => setOpen(true)}
         onKeyDown={onKeyDown}
@@ -133,9 +139,9 @@ export default function SchoolFinder({ className = "", placeholder = "Find your 
                     key={s.id}
                     id={optId(i)}
                     role="option"
-                    aria-selected={i === active}
+                    aria-selected={i === activeIdx}
                     className={
-                      "school-finder__opt" + (i === active ? " school-finder__opt--active" : "")
+                      "school-finder__opt" + (i === activeIdx ? " school-finder__opt--active" : "")
                     }
                     onMouseDown={(e) => e.preventDefault()}
                     onMouseEnter={() => setActive(i)}
