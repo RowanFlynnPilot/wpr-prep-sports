@@ -1,15 +1,41 @@
-import { NavLink } from "react-router-dom";
+import { useId, useState } from "react";
+import { NavLink, useParams } from "react-router-dom";
 import { SPORT_IDS, configFor } from "../config/sports.js";
+import { SITE } from "../config/site.js";
 import Icon from "./Icon.jsx";
 
+const EXPANDED_KEY = `${SITE.storagePrefix}-sports-expanded`;
+
+function readExpanded() {
+  try {
+    return window.sessionStorage.getItem(EXPANDED_KEY) === "1";
+  } catch {
+    return false;
+  }
+}
+function writeExpanded(v) {
+  try {
+    window.sessionStorage.setItem(EXPANDED_KEY, v ? "1" : "0");
+  } catch {
+    /* session storage blocked — expansion just won't persist */
+  }
+}
+
+/** Sports whose data is refreshing this calendar month. */
+function inSeason(id, month) {
+  return (configFor(id)?.activeMonths ?? []).includes(month);
+}
+
 /**
- * Strip in the masthead for switching between sports. Each entry is a
- * NavLink so react-router applies the active class automatically when the
- * current URL is inside that sport.
+ * Strip in the masthead for switching between sports.
  *
- * The strip WRAPS rather than scrolls — with eight-plus sports we want
- * every one visible (no tabs hidden behind a scroll fade), so the entries
- * fill the row and wrap onto a second row as needed.
+ * In-season sports lead; the rest sit behind one "More sports" tab. In
+ * September that is three sports plus the tab in a single row, where
+ * eight chips had wrapped to two rows on desktop and three on a phone —
+ * with five of them leading to off-season countdown pages. The sport
+ * being viewed always stays visible even when out of season, so the
+ * active tab can never vanish from under the reader. Expansion persists
+ * for the session.
  *
  * These are NAVIGATION links, not tabs: each one changes the route and
  * loads a different sport's dataset, and there is no single panel they
@@ -23,12 +49,37 @@ import Icon from "./Icon.jsx";
  * switcher with a single immutable option.
  */
 export default function SportSwitcher() {
+  const { sport: activeSport } = useParams();
+  const [showAll, setShowAll] = useState(readExpanded);
+  const listId = useId();
   if (SPORT_IDS.length < 2) return null;
+
+  const month = new Date().getMonth();
+  const primary = SPORT_IDS.filter((id) => inSeason(id, month) || id === activeSport);
+  const rest = SPORT_IDS.filter((id) => !primary.includes(id));
+  // Nothing to fold away (every sport in season, or a one-sport tenant):
+  // plain strip, no toggle.
+  const foldable = rest.length > 0 && primary.length > 0;
+  const collapsed = foldable && !showAll;
+  const shown = collapsed ? primary : [...primary, ...rest];
+
+  const toggle = () => {
+    setShowAll((v) => {
+      writeExpanded(!v);
+      return !v;
+    });
+  };
 
   return (
     <nav className="sport-switcher" aria-label="Sport">
-      <ul className="sport-switcher__list">
-        {SPORT_IDS.map((id) => {
+      <ul
+        id={listId}
+        className={
+          "sport-switcher__list" + (collapsed ? " sport-switcher__list--collapsed" : "")
+        }
+        style={collapsed ? { "--switcher-cols": shown.length + 1 } : undefined}
+      >
+        {shown.map((id) => {
           const cfg = configFor(id);
           return (
             <li key={id} className="sport-switcher__item">
@@ -65,6 +116,35 @@ export default function SportSwitcher() {
             </li>
           );
         })}
+        {foldable && (
+          <li className="sport-switcher__item">
+            <button
+              type="button"
+              className="sport-switcher__tab sport-switcher__more"
+              aria-expanded={!collapsed}
+              aria-controls={listId}
+              aria-label={
+                collapsed
+                  ? `Show ${rest.length} more ${rest.length === 1 ? "sport" : "sports"} (off-season)`
+                  : "Show fewer sports"
+              }
+              onClick={toggle}
+            >
+              <span className="sport-switcher__icon" aria-hidden="true">
+                <Icon name="chevron" />
+              </span>
+              <span className="sport-switcher__label" aria-hidden="true">
+                {collapsed ? `${rest.length} more sports` : "Fewer sports"}
+              </span>
+              <span
+                className="sport-switcher__label sport-switcher__label--short"
+                aria-hidden="true"
+              >
+                {collapsed ? `+${rest.length} more` : "Fewer"}
+              </span>
+            </button>
+          </li>
+        )}
       </ul>
     </nav>
   );

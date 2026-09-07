@@ -37,6 +37,11 @@
   text-transform: uppercase;
   color: var(--accent-700);
 }
+.potw__eyebrow-week {
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
 
 /* Narrow phones: let the funder credit wrap onto its own right-aligned
    row — squeezing it beside the title clipped the lockup. */

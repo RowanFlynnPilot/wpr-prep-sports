@@ -301,6 +301,26 @@
 .sport-switcher__tab--active:hover { border-bottom-color: var(--accent-on-dark); }
 .sport-switcher__label--short { display: none; }
 
+/* In-season first: off-season sports fold behind one "More sports" tab,
+   so the strip is a single row (in-season count + 1) instead of two on
+   desktop and three on a phone. The component sets --switcher-cols. */
+.sport-switcher__list--collapsed {
+  grid-template-columns: repeat(var(--switcher-cols, 4), minmax(0, 1fr));
+}
+.sport-switcher__more {
+  border: 0;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.6);
+}
+.sport-switcher__more .sport-switcher__icon {
+  font-size: 1rem;
+  transition: transform var(--t-fast) var(--ease);
+}
+.sport-switcher__more[aria-expanded="true"] .sport-switcher__icon {
+  transform: rotate(180deg);
+}
+
 /* Main column rhythm — minmax(0,1fr) keeps a wide nowrap child (e.g. the
    hero score row) from blowing out the layout. */
 .app-main {
@@ -453,6 +473,12 @@
      its icon and pushed the whole page 43px wider than a 320px screen —
      every page scrolled sideways, not just this strip. */
   .sport-switcher__list { grid-template-columns: repeat(3, minmax(0, 1fr)); padding: 0; }
+  /* Collapsed strip on a phone: four 84px+ cells fit a 375px screen in one
+     row; a fifth (an off-season sport being viewed) wraps rather than
+     squeezing the labels. */
+  .sport-switcher__list--collapsed {
+    grid-template-columns: repeat(auto-fit, minmax(84px, 1fr));
+  }
   .sport-switcher__tab {
     padding: 0.6rem 0.5rem;
     font-size: 0.7rem;
@@ -522,7 +548,6 @@
   font-size: 0.85rem;
   color: var(--muted);
   background: var(--paper-2);
-  border-left: 3px solid var(--ink);
   border-radius: var(--radius-sm);
 }
 .archive-note strong {

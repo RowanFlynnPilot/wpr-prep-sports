@@ -55,6 +55,23 @@ export function formatGameDayDate(iso) {
   return DAY_AND_DATE.format(new Date(iso));
 }
 
+/**
+ * "Aug 24–30" or "Aug 31–Sep 6" for a school week starting at `startMs`
+ * (a local-midnight Monday from utils/weeks.js). Sampled at noon so a
+ * reader in another US zone still sees the home zone's Monday.
+ */
+export function formatWeekRange(startMs, days = 7) {
+  const NOON = 12 * 3_600_000;
+  const start = new Date(startMs + NOON);
+  const end = new Date(startMs + (days - 1) * 86_400_000 + NOON);
+  const part = (d, type) => DATE_MED.formatToParts(d).find((p) => p.type === type)?.value ?? "";
+  const m1 = part(start, "month");
+  const m2 = part(end, "month");
+  const d1 = part(start, "day");
+  const d2 = part(end, "day");
+  return m1 === m2 ? `${m1} ${d1}–${d2}` : `${m1} ${d1}–${m2} ${d2}`;
+}
+
 export function isFuture(iso, now = new Date()) {
   return new Date(iso).getTime() > now.getTime();
 }

@@ -8,12 +8,27 @@ const RESULT_LEAD_MS = 72 * 60 * 60 * 1000;
 // WIAA records forfeits as 1-0 (basketball sometimes 2-0) finals —
 // impossible on-field scores in those sports. Same rule recap.js uses to
 // phrase them; soccer/hockey 1-0s are real games and never match here.
-function isForfeitScore(game) {
-  const hi = Math.max(game.home.score, game.away.score);
-  const lo = Math.min(game.home.score, game.away.score);
+export function isForfeitScore(game) {
+  const h = game?.home?.score;
+  const a = game?.away?.score;
+  if (typeof h !== "number" || typeof a !== "number") return false;
+  const hi = Math.max(h, a);
+  const lo = Math.min(h, a);
   if (game.sport === "football") return hi === 1 && lo === 0;
   if ((game.sport ?? "").includes("basketball")) return (hi === 1 || hi === 2) && lo === 0;
   return false;
+}
+
+/**
+ * A scheduled game whose kickoff is well past (36h) with no result is
+ * postponed or unreported — its stale "7:00 PM" days later reads like a
+ * glitch, and "Upcoming" is simply false. Every surface that labels a
+ * game's status should agree on this, so it lives here.
+ */
+export const STALE_SCHEDULED_MS = 36 * 60 * 60 * 1000;
+export function isStaleScheduled(game, now = Date.now()) {
+  if (!game || game.status === "final" || game.status === "in_progress") return false;
+  return now - new Date(game.date).getTime() > STALE_SCHEDULED_MS;
 }
 
 /**

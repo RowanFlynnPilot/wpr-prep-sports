@@ -130,11 +130,19 @@
   font-size: 0.86rem;
   color: var(--ink);
   line-height: 1.4;
+  /* Rows span the full column; a sentence should not. */
+  max-width: 75ch;
+}
+/* Unreported game: the visible reason, where a tooltip used to be. */
+.game-row__summary--note {
+  font-style: italic;
+  color: var(--muted);
 }
 
 .game-row__recap {
   grid-column: 1 / -1;
   grid-row: 3;
+  max-width: 75ch;
   margin: 0.1rem 0 0;
   font-family: var(--font-body);
   font-style: italic;

@@ -259,7 +259,7 @@ export function playerLineForGame(game, { contextGames = null, sportConfig = nul
  * Returns a string ready to render, or null when the game isn't final
  * or the score is missing.
  */
-export function gameSummaryLine(game, { sportConfig = null } = {}) {
+export function gameSummaryLine(game, { sportConfig = null, omitScore = false } = {}) {
   if (!game || game.status !== "final") return null;
   const homeScore = game.home?.score;
   const awayScore = game.away?.score;
@@ -269,10 +269,14 @@ export function gameSummaryLine(game, { sportConfig = null } = {}) {
   const winScore = Math.max(homeScore, awayScore);
   const lossScore = Math.min(homeScore, awayScore);
   const seed = _seed(game.id ?? `${winner?.name}-${loser?.name}`);
+  // Rows that already show the numerals beside the names (the week grid,
+  // the ticker cards) ask for the sentence without the scoreline, so the
+  // score isn't printed twice in two inches.
+  const tail = (s) => (omitScore ? "" : ` ${s}`);
 
   // Tied — rare in our sports, but the schema allows it.
   if (!winner) {
-    return `${game.home.name} and ${game.away.name} tied ${homeScore}-${awayScore}.`;
+    return `${game.home.name} and ${game.away.name} tied${tail(`${homeScore}-${awayScore}`)}.`;
   }
 
   const margin = winScore - lossScore;
@@ -314,7 +318,7 @@ export function gameSummaryLine(game, { sportConfig = null } = {}) {
     }
   }
 
-  return `${winner.name} ${verb} ${loser.name} ${winScore}-${lossScore}.`;
+  return `${winner.name} ${verb} ${loser.name}${tail(`${winScore}-${lossScore}`)}.`;
 }
 
 /**

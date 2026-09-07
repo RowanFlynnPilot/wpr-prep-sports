@@ -178,6 +178,10 @@ export function pickPlayerOfWeek(
   // over once it has enough coverage to be a real comparison; until
   // then the previous, fully-covered week keeps the crown.
   let pool;
+  // Start of the school week the pick is drawn from (week mode only), so
+  // the card can say which week it is crowning — the Monday cadence
+  // below can hold a pick nine days past its games.
+  let weekStart = null;
   if (anchor) {
     // Explicit anchor (tests, archive renders): classic 7-day window.
     const lastTs = new Date(anchor).getTime();
@@ -214,6 +218,7 @@ export function pickPlayerOfWeek(
       weekKeys[0]);
     }
     pool = byWeek.get(chosen);
+    weekStart = chosen;
   }
 
   let best = null;
@@ -230,7 +235,7 @@ export function pickPlayerOfWeek(
       const score = scoreStatLine(line);
       if (score < minScore) continue;
       if (!best || score > best.score) {
-        best = { line, game, schoolId: line.team_school_id, score, source: "algorithm" };
+        best = { line, game, schoolId: line.team_school_id, score, source: "algorithm", weekStart };
       }
     }
   }

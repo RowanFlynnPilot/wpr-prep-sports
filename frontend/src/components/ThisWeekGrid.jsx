@@ -6,6 +6,7 @@ import { schoolFor } from "../utils/schools.js";
 import { groupByDay } from "../utils/weeks.js";
 import { formatGameDay, formatGameDate, formatGameTime } from "../utils/dates.js";
 import { gameSummaryLine, playerLineForGame } from "../utils/recap.js";
+import { isForfeitScore, isStaleScheduled } from "../utils/games.js";
 import { useSportPrefix } from "../utils/links.js";
 import { SITE } from "../config/site.js";
 
@@ -200,19 +201,22 @@ function GameRow({ game, schoolIndex, allGames, sportConfig }) {
   // ticker shows these LIVE with scores; this grid must match or a
   // Friday-night reader sees a hidden score next to a stale kickoff time.
   const isLive = game.status === "in_progress";
-  // A scheduled game whose kickoff is well past (36h) with no result is
-  // likely postponed or unreported — showing its stale "7:00 PM" days
-  // later reads like a glitch. Live games keep their treatment.
-  const isStaleScheduled =
-    !isFinal &&
-    !isLive &&
-    Date.now() - new Date(game.date).getTime() > 36 * 60 * 60 * 1000;
+  // A scheduled game whose kickoff is well past with no result is
+  // postponed or unreported (shared 36h rule in utils/games.js, so the
+  // ticker says the same thing). Live games keep their treatment.
+  const stale = isStaleScheduled(game);
+  // WIAA records a forfeit as a 1-0 final. Printed at score size that
+  // reads as a data error, so the score slot says FORFEIT instead and the
+  // winner keeps its bold.
+  const forfeit = isFinal && isForfeitScore(game);
 
   const homeWon = isFinal && (game.home.score ?? -1) > (game.away.score ?? -1);
   const awayWon = isFinal && (game.away.score ?? -1) > (game.home.score ?? -1);
-  const summary = gameSummaryLine(game, { sportConfig });
+  // Numerals sit beside the names, so the sentence skips the scoreline.
+  const summary = gameSummaryLine(game, { sportConfig, omitScore: true });
   const player = playerLineForGame(game, { contextGames: allGames, sportConfig });
   const playerSchool = player ? schoolIndex.get(player.schoolId) : null;
+  const showScore = (isFinal || isLive) && !forfeit;
 
   return (
     <li className="game-row">
@@ -221,7 +225,7 @@ function GameRow({ game, schoolIndex, allGames, sportConfig }) {
         school={awaySchool}
         score={game.away.score}
         won={awayWon}
-        showScore={isFinal || isLive}
+        showScore={showScore}
       />
       <span className="game-row__at">at</span>
       <Side
@@ -229,27 +233,30 @@ function GameRow({ game, schoolIndex, allGames, sportConfig }) {
         school={homeSchool}
         score={game.home.score}
         won={homeWon}
-        showScore={isFinal || isLive}
+        showScore={showScore}
       />
       <Link
         to={`${sportPrefix}/game/${game.id}`}
         className={`game-row__status game-row__details${isLive ? " game-row__status--live" : ""}`}
-        title={
-          isStaleScheduled
-            ? "No result reported — the game may have been postponed"
-            : undefined
-        }
       >
-        {isFinal
-          ? "Final"
-          : isLive
-            ? "LIVE"
-            : isStaleScheduled
-              ? "No result"
-              : formatGameTime(game.date)}
+        {forfeit
+          ? "Forfeit"
+          : isFinal
+            ? "Final"
+            : isLive
+              ? "LIVE"
+              : stale
+                ? "Not reported"
+                : formatGameTime(game.date)}
         <span aria-hidden="true"> ›</span>
       </Link>
       {summary && <p className="game-row__summary">{summary}</p>}
+      {stale && (
+        <p className="game-row__summary game-row__summary--note">
+          No score has been posted for this game yet — it may have been postponed, or
+          the result not reported.
+        </p>
+      )}
       {player && (
         <p className="game-row__recap">
           <span className="game-row__recap-team">

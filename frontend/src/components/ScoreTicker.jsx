@@ -5,6 +5,7 @@ import TeamLink from "./TeamLink.jsx";
 import { primaryColor, schoolFor } from "../utils/schools.js";
 import { formatGameShortDay, formatGameDate } from "../utils/dates.js";
 import { gameSummaryLine, playerLineForGame } from "../utils/recap.js";
+import { isForfeitScore, isStaleScheduled } from "../utils/games.js";
 import { useSportPrefix } from "../utils/links.js";
 
 /**
@@ -124,12 +125,19 @@ function GameCard({ game, schoolIndex, allGames, sportConfig }) {
   const homeSchool = schoolFor(game.home, schoolIndex);
   const awaySchool = schoolFor(game.away, schoolIndex);
   const isFinal = game.status === "final";
+  const isLive = game.status === "in_progress";
+  // Same rules as the week grid: a 1-0 football final is a forfeit, and a
+  // kickoff 36h gone with no score is "Not reported", never "Upcoming".
+  const forfeit = isFinal && isForfeitScore(game);
+  const stale = isStaleScheduled(game);
+  const showScore = (isFinal || isLive) && !forfeit;
 
   const homeScore = game.home.score;
   const awayScore = game.away.score;
   const homeWon = isFinal && (homeScore ?? -1) > (awayScore ?? -1);
   const awayWon = isFinal && (awayScore ?? -1) > (homeScore ?? -1);
-  const summary = gameSummaryLine(game, { sportConfig });
+  // Numerals sit on the card, so the sentence skips the scoreline.
+  const summary = gameSummaryLine(game, { sportConfig, omitScore: true });
   const player = playerLineForGame(game, { contextGames: allGames, sportConfig });
   const playerSchool = player ? schoolIndex.get(player.schoolId) : null;
 
@@ -147,21 +155,21 @@ function GameCard({ game, schoolIndex, allGames, sportConfig }) {
       <header className="card__header">
         <span className="card__day">{formatGameShortDay(game.date)}</span>
         <span className="card__date">{formatGameDate(game.date)}</span>
-        {game.status === "in_progress" ? (
+        {isLive ? (
           <span className="card__status card__status--in_progress card__status--live">
             <span className="card__live-dot" aria-hidden="true" />
             LIVE
           </span>
         ) : (
           <span className={`card__status card__status--${game.status}`}>
-            {isFinal ? "Final" : "Upcoming"}
+            {forfeit ? "Forfeit" : isFinal ? "Final" : stale ? "Not reported" : "Upcoming"}
           </span>
         )}
       </header>
 
       <ul className="card__teams">
-        <Row team={game.away} school={awaySchool} score={awayScore} won={awayWon} showScore={isFinal || game.status === "in_progress"} />
-        <Row team={game.home} school={homeSchool} score={homeScore} won={homeWon} showScore={isFinal || game.status === "in_progress"} />
+        <Row team={game.away} school={awaySchool} score={awayScore} won={awayWon} showScore={showScore} />
+        <Row team={game.home} school={homeSchool} score={homeScore} won={homeWon} showScore={showScore} />
       </ul>
 
       {summary && (

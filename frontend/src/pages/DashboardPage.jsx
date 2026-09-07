@@ -213,6 +213,16 @@ export default function DashboardPage({
   // misleading. The new month calendar covers the off-season gap.
   const showThisWeek = week?.isCurrent === true;
 
+  // The ticker used to repeat the week grid's games — on a Saturday both
+  // carried Friday's finals, and the tab was twice as long as its
+  // information. With the grid showing, the ticker holds only what the
+  // grid doesn't: earlier results, under a heading that says so.
+  const earlier = useMemo(() => {
+    if (!showThisWeek) return recent;
+    const inWeek = new Set((week?.games ?? []).map((g) => g.id));
+    return recent.filter((g) => !inWeek.has(g.id));
+  }, [recent, week, showThisWeek]);
+
   // --- Section tabs ---------------------------------------------------
   // Marquee + Hero + Player of the Week stay pinned above the tabs; the
   // rest of the dashboard is grouped into four tabs so the page isn't one
@@ -407,13 +417,17 @@ export default function DashboardPage({
             </section>
           )}
 
-          <section>
-            <div className="section-header">
-              <h2>{preseason ? "Season Openers" : "Recent Scores"}</h2>
-              <Sponsor slot="ticker" sponsors={sponsors} variant="inline" />
-            </div>
-            <ScoreTicker games={recent} schoolIndex={schoolIndex} allGames={games} sportConfig={sportConfig} />
-          </section>
+          {earlier.length > 0 && (
+            <section>
+              <div className="section-header">
+                <h2>
+                  {preseason ? "Season Openers" : showThisWeek ? "Earlier Results" : "Recent Scores"}
+                </h2>
+                <Sponsor slot="ticker" sponsors={sponsors} variant="inline" />
+              </div>
+              <ScoreTicker games={earlier} schoolIndex={schoolIndex} allGames={games} sportConfig={sportConfig} />
+            </section>
+          )}
 
           {SITE.features?.pickem && (
             <SectionBoundary label="pickem">

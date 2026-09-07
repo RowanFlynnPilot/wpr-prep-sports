@@ -5,7 +5,7 @@ import { pickPlayerOfWeek, resolveOverridePotw } from "../utils/playerOfWeek.js"
 import { homeRegionSchoolIds, initials, primaryColor } from "../utils/schools.js";
 import { useSportPrefix } from "../utils/links.js";
 import { displayPlayerName, playerProfileHref } from "../utils/players.js";
-import { formatGameDayDate } from "../utils/dates.js";
+import { formatGameDayDate, formatWeekRange } from "../utils/dates.js";
 
 /**
  * Player of the Week — highlights the standout performance from the
@@ -40,6 +40,9 @@ export default function PlayerOfWeek({ games, schoolIndex, sponsors, sportConfig
   // Pinned to the home zone like every other date on the page — the
   // viewer's locale must not relabel a Friday-night game "Saturday".
   const dateLabel = formatGameDayDate(game.date);
+  // Which week this is — the Monday cadence can hold a pick into the
+  // following weekend, and an unlabeled card then reads as stale.
+  const weekLabel = pick.weekStart ? formatWeekRange(pick.weekStart) : null;
 
   const schoolColor = school ? primaryColor(school) : null;
   const cardStyle = schoolColor ? { "--school-color": schoolColor } : undefined;
@@ -52,7 +55,10 @@ export default function PlayerOfWeek({ games, schoolIndex, sponsors, sportConfig
   return (
     <section className="potw" aria-label="Player of the Week" style={cardStyle}>
       <header className="potw__header">
-        <span className="potw__eyebrow">Player of the Week</span>
+        <span className="potw__eyebrow">
+          Player of the Week
+          {weekLabel && <span className="potw__eyebrow-week"> · Week of {weekLabel}</span>}
+        </span>
         <Sponsor slot="potw" sponsors={sponsors} variant="inline" />
       </header>
 
