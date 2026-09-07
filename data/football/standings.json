@@ -482,6 +482,18 @@
         "points_against": 20
       },
       {
+        "school_id": "marathon",
+        "name": "Marathon",
+        "conference_wins": 1,
+        "conference_losses": 0,
+        "conference_ties": 0,
+        "overall_wins": 3,
+        "overall_losses": 0,
+        "overall_ties": 0,
+        "points_for": 62,
+        "points_against": 35
+      },
+      {
         "school_id": "amherst",
         "name": "Amherst",
         "conference_wins": 1,
@@ -504,18 +516,6 @@
         "overall_ties": 0,
         "points_for": 56,
         "points_against": 31
-      },
-      {
-        "school_id": "marathon",
-        "name": "Marathon",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "conference_ties": 0,
-        "overall_wins": 2,
-        "overall_losses": 0,
-        "overall_ties": 0,
-        "points_for": 46,
-        "points_against": 35
       },
       {
         "school_id": "spencer",
