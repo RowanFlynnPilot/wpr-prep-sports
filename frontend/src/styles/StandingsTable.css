@@ -48,8 +48,8 @@
    form guide fell off entirely. Points for/against are the least-scanned
    pair here and the easiest to spare — dropping them brings the table to
    ~321px, so everything that remains fits with nothing hidden and nothing
-   to swipe for. Both columns come back at tablet width, and the hover card
-   still carries point differential where there's a pointer to hover with. */
+   to swipe for. Both columns come back at tablet width, and every row's
+   details panel carries PF/PA and the differential at any width. */
 @media (max-width: 540px) {
   .standings__table .points {
     display: none;
@@ -77,7 +77,8 @@
 }
 .standings__table thead th.num { text-align: right; }
 .standings__table thead th.rank { width: 2.1rem; text-align: center; padding-left: 0.4rem; padding-right: 0.3rem; }
-.standings__table thead th.form { width: 4.2rem; text-align: right; padding-right: 0.5rem; }
+.standings__table thead th.form { width: 4.4rem; text-align: right; padding-right: 0.5rem; }
+.standings__table thead th.more { width: 2.4rem; padding: 0; }
 
 .standings__table tbody td {
   padding: 0.55rem 0.5rem;
@@ -85,10 +86,13 @@
   font-variant-numeric: tabular-nums;
 }
 .standings__table tbody td.rank { padding-left: 0.4rem; padding-right: 0.3rem; }
-.standings__table tbody tr:nth-child(odd) td { background: var(--row-tint); }
+/* Striping is a class set by the component (odd rows), not nth-child —
+   an expanded details row would otherwise flip every stripe below it. */
+.standings__row--odd td { background: var(--row-tint); }
 .standings__table tbody tr:last-child td { border-bottom: none; }
-.standings__table tbody tr { transition: background var(--t-fast) var(--ease); }
-.standings__table tbody tr:hover td { background: color-mix(in srgb, var(--accent) 10%, transparent); cursor: pointer; }
+.standings__row { transition: background var(--t-fast) var(--ease); cursor: pointer; }
+.standings__row:hover td { background: color-mix(in srgb, var(--accent) 10%, transparent); }
+.standings__row--open td { background: var(--row-tint-strong); }
 
 .standings__table td.rank {
   text-align: center;
@@ -160,8 +164,10 @@
   box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 30%, transparent);
 }
 
-/* Recent-form chips — 3 mini W/L pills, one per recent conference game.
-   Oldest on the left, newest on the right. */
+/* Recent-form chips — 3 mini W/L/T marks, one per recent conference game.
+   Oldest on the left, newest on the right. One meaning per color: a win
+   is green, a loss is quiet slate (never red — red is the winner's and
+   LIVE's), a tie is a hollow ring. */
 .standings__form {
   display: inline-flex;
   gap: 2px;
@@ -171,174 +177,215 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
   border-radius: 3px;
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 0.6rem;
+  font-size: 0.68rem;
   line-height: 1;
   letter-spacing: 0;
   color: #fff;
 }
-/* One shade darker than the emerald-600/red-600/slate-500 they replaced.
-   The chip is 10px white text on a solid fill, which at those lighter
-   values sat around 3.3:1 — the label inside the chip was the least legible
-   text on the page, on the element most likely to be scanned at a glance.
-   These clear 5:1 and read identically in both themes, being self-coloured
-   badges rather than surface-dependent. */
-.standings__form-chip--w { background: #15803d; } /* emerald-700 */
-.standings__form-chip--l { background: #b91c1c; } /* red-700 */
-.standings__form-chip--t { background: #4b5563; } /* slate-600 */
+.standings__form-chip--w { background: var(--win); }
+.standings__form-chip--l { background: var(--loss); }
+.standings__form-chip--t {
+  background: transparent;
+  color: var(--muted);
+  box-shadow: inset 0 0 0 1px var(--muted-2);
+}
 .standings__form-empty {
   color: var(--muted-2);
   font-size: 0.85rem;
 }
 .standings__table td.form { text-align: right; padding-right: 0.5rem; }
 
-/* Hover preview overlay — slides up from the bottom of the standings card,
-   showing fuller season detail for whichever row the user is hovering. */
-.standings__hover {
-  position: absolute;
-  bottom: 0.6rem;
-  right: 0.6rem;
-  z-index: 5;
-  min-width: 220px;
-  max-width: calc(100% - 1.2rem);
-  background: var(--chrome);
-  color: #fff;
-  border-radius: var(--radius-sm);
-  padding: 0.7rem 0.85rem 0.75rem;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(0, 0, 0, 0.05);
+/* Details toggle — the row's one keyboard-reachable control. 36px hit
+   area inside a 2.4rem column; the chevron turns when the row is open. */
+.standings__table td.more { text-align: right; padding: 0.2rem 0.35rem 0.2rem 0; }
+.standings__toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  background: none;
+  color: var(--muted);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: color var(--t-fast) var(--ease), background var(--t-fast) var(--ease);
+}
+.standings__toggle .icon {
+  transition: transform var(--t-fast) var(--ease);
+}
+.standings__toggle:hover,
+.standings__toggle:focus-visible {
+  color: var(--ink);
+  background: var(--paper-2);
+}
+.standings__toggle[aria-expanded="true"] { color: var(--ink); }
+.standings__toggle[aria-expanded="true"] .icon { transform: rotate(180deg); }
+
+/* Details row — opens directly under its team on paper, so it reads as
+   part of the table rather than a card floating over it. */
+.standings__details-row td {
+  background: var(--paper-2);
+  padding: 0.75rem 0.85rem 0.85rem;
+  border-bottom: 1px solid var(--line);
+  font-variant-numeric: normal;
+}
+.standings__details {
+  display: grid;
+  gap: 0.6rem;
   font-family: var(--font-body);
-  animation: standings-hover-in 140ms var(--ease);
-  pointer-events: none;
 }
-@keyframes standings-hover-in {
-  from { opacity: 0; transform: translateY(8px); }
-  to   { opacity: 1; transform: translateY(0); }
+.standings__details-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
 }
-.standings__hover-name {
+.standings__details-name {
   font-family: var(--font-display);
   font-weight: 700;
   font-size: 0.95rem;
   text-transform: uppercase;
   letter-spacing: 0.04em;
   line-height: 1.1;
-  display: flex;
+  color: var(--ink);
+  display: inline-flex;
   align-items: baseline;
   gap: 0.5rem;
-  margin-bottom: 0.5rem;
-  padding-bottom: 0.4rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  flex-wrap: wrap;
 }
-.standings__hover-mascot {
+.standings__details-mascot {
   font-family: var(--font-body);
   font-style: italic;
   font-weight: 400;
-  font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.78rem;
+  color: var(--muted);
   text-transform: none;
   letter-spacing: 0;
 }
-.standings__hover-stats {
+a.standings__details-link {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+a.standings__details-link:hover,
+a.standings__details-link:focus-visible {
+  border-bottom-color: currentColor;
+}
+.standings__details-stats {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.25rem 0.65rem;
   margin: 0;
 }
-.standings__hover-stats > div {
+.standings__details-stats > div {
   display: flex;
   flex-direction: column;
+  min-width: 0;
 }
-.standings__hover-stats dt {
+.standings__details-stats dt {
   font-family: var(--font-display);
   font-weight: 500;
-  font-size: 0.62rem;
+  font-size: 0.72rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.55);
+  color: var(--muted);
   margin: 0;
-}
-.standings__hover-stats dd {
-  font-family: var(--font-numeric);
-  font-weight: 700;
-  font-size: 0.95rem;
-  font-variant-numeric: tabular-nums;
-  color: #fff;
-  margin: 0;
-  line-height: 1.2;
-}
-.standings__hover-stats dd.pos { color: #4ade80; }
-.standings__hover-stats dd.neg { color: #f87171; }
-.standings__hover-pct {
-  font-weight: 400;
-  font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.55);
-  margin-left: 0.15rem;
-}
-
-/* Season-leader list inside the hover overlay — one row per category,
-   compact line: [POS] Player (YR) ........... 1,037 YDS · 15 TD */
-.standings__hover-leaders {
-  list-style: none;
-  margin: 0.65rem 0 0;
-  padding: 0.55rem 0 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  display: grid;
-  gap: 0.3rem;
-  min-width: 280px;
-}
-.standings__hover-leaders li {
-  display: grid;
-  grid-template-columns: 1.75rem minmax(0, 1fr) auto;
-  align-items: baseline;
-  gap: 0.55rem;
-  font-family: var(--font-body);
-  font-size: 0.78rem;
-  color: rgba(255, 255, 255, 0.9);
-}
-.standings__hover-leader-pos {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 0.6rem;
-  letter-spacing: 0.1em;
-  text-align: center;
-  color: var(--accent);
-  background: color-mix(in srgb, var(--accent) 14%, transparent);
-  padding: 0.12rem 0.25rem;
-  border-radius: var(--radius-sm);
-}
-.standings__hover-leader-name {
-  font-family: var(--font-display);
-  font-weight: 500;
-  font-size: 0.8rem;
-  letter-spacing: 0.01em;
-  color: #fff;
-  line-height: 1.2;
   overflow-wrap: anywhere;
 }
-.standings__hover-leader-year {
-  font-family: var(--font-body);
-  font-weight: 400;
-  font-style: italic;
-  color: rgba(255, 255, 255, 0.55);
-  font-size: 0.72rem;
-}
-.standings__hover-leader-stats {
+.standings__details-stats dd {
   font-family: var(--font-numeric);
-  font-weight: 600;
-  font-size: 0.72rem;
+  font-weight: 700;
+  font-size: 1rem;
   font-variant-numeric: tabular-nums;
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--ink);
+  margin: 0;
+  line-height: 1.25;
+}
+.standings__details-stats dd.pos { color: var(--win); }
+.standings__details-pct {
+  font-weight: 400;
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin-left: 0.15rem;
   white-space: nowrap;
 }
 
-/* On narrow screens, anchor the hover full-width so it doesn't truncate. */
-@media (max-width: 480px) {
-  .standings__hover {
-    left: 0.6rem;
-    right: 0.6rem;
-    max-width: none;
+/* Season-leader list inside the details row — one line per category:
+   [POS] Player (YR) ........... 1,037 YDS · 15 TD */
+.standings__details-leaders {
+  list-style: none;
+  margin: 0.15rem 0 0;
+  padding: 0.55rem 0 0;
+  border-top: 1px solid var(--line);
+  display: grid;
+  gap: 0.3rem;
+}
+.standings__details-leaders li {
+  display: grid;
+  grid-template-columns: 1.9rem minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 0.55rem;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: var(--ink);
+}
+.standings__details-leader-pos {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-align: center;
+  color: var(--accent-700);
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  padding: 0.12rem 0.25rem;
+  border-radius: var(--radius-sm);
+}
+.standings__details-leader-name {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 0.84rem;
+  letter-spacing: 0.01em;
+  color: var(--ink);
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+.standings__details-leader-year {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--muted);
+  font-size: 0.74rem;
+}
+.standings__details-leader-stats {
+  font-family: var(--font-numeric);
+  font-weight: 600;
+  font-size: 0.78rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+/* Narrow phones: three stat columns still fit, but the leader rows'
+   stats wrap under the name instead of squeezing it. */
+@media (max-width: 420px) {
+  .standings__details-leaders li {
+    grid-template-columns: 1.9rem minmax(0, 1fr);
+  }
+  .standings__details-leader-stats {
+    grid-column: 2;
+    white-space: normal;
   }
 }
