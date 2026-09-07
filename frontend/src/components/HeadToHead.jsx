@@ -42,13 +42,17 @@ export default function HeadToHead({ game, dataset }) {
     // "Tomahawk leads 1-0" directly under a Wausau East win.
     const thisFinal =
       game.status === "final" && game.home.score != null && game.away.score != null;
-    for (const m of thisFinal ? [...meetings, game] : meetings) {
+    const counted = thisFinal ? [...meetings, game] : meetings;
+    for (const m of counted) {
       const winner = winnerKey(m);
       if (winner === null) continue;
       if (winner === homeKey) homeWins++;
       else awayWins++;
     }
-    return { homeWins, awayWins };
+    // The headline count and the series record must describe the same
+    // set — "1 meeting on record · Series tied 1-1" was counting the
+    // archive in one and archive-plus-tonight in the other.
+    return { homeWins, awayWins, count: counted.length };
   }, [meetings, game]);
 
   if (meetings.length === 0) return null;
@@ -65,7 +69,7 @@ export default function HeadToHead({ game, dataset }) {
       <div className="section-header">
         <h2>Head-to-Head</h2>
         <span className="section-header__hint">
-          {meetings.length} meeting{meetings.length === 1 ? "" : "s"} on
+          {series.count} meeting{series.count === 1 ? "" : "s"} on
           record · {seriesLine}
         </span>
       </div>

@@ -185,7 +185,16 @@ function GameCard({ game, schoolIndex, allGames, sportConfig }) {
         </p>
       )}
 
-      <Link to={`${sportPrefix}/game/${game.id}`} className="card__details">
+      <Link
+        to={`${sportPrefix}/game/${game.id}`}
+        className="card__details"
+        // Named by matchup so a link list isn't "Game details" ×20.
+        aria-label={
+          isFinal && !forfeit
+            ? `${game.away.name} ${awayScore ?? 0}, ${game.home.name} ${homeScore ?? 0}, game details`
+            : `${game.away.name} at ${game.home.name}, game details`
+        }
+      >
         Game details
         <span aria-hidden="true"> ›</span>
       </Link>

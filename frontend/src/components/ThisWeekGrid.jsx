@@ -217,6 +217,20 @@ function GameRow({ game, schoolIndex, allGames, sportConfig }) {
   const player = playerLineForGame(game, { contextGames: allGames, sportConfig });
   const playerSchool = player ? schoolIndex.get(player.schoolId) : null;
   const showScore = (isFinal || isLive) && !forfeit;
+  // The drill-in's visible text is only its status word, so 41 rows read
+  // "Final, Final, Not reported…" to a screen reader. Name each link by
+  // its matchup and score, the way the team page's schedule already does.
+  const matchup = `${game.away.name} at ${game.home.name}`;
+  const scoreline = `${game.away.name} ${game.away.score ?? 0}, ${game.home.name} ${game.home.score ?? 0}`;
+  const linkLabel = forfeit
+    ? `${matchup}, forfeit, game details`
+    : isFinal
+      ? `${scoreline}, final, game details`
+      : isLive
+        ? `${scoreline}, live, game details`
+        : stale
+          ? `${matchup}, not reported, game details`
+          : `${matchup}, ${formatGameTime(game.date)}, game details`;
 
   return (
     <li className="game-row">
@@ -238,6 +252,7 @@ function GameRow({ game, schoolIndex, allGames, sportConfig }) {
       <Link
         to={`${sportPrefix}/game/${game.id}`}
         className={`game-row__status game-row__details${isLive ? " game-row__status--live" : ""}`}
+        aria-label={linkLabel}
       >
         {forfeit
           ? "Forfeit"
