@@ -305,3 +305,80 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* ---- follow prompt ---------------------------------------------------- */
+/* Shown in the strip's slot while no school is followed. One line on
+   desktop; text then actions stack on phones. */
+
+.follow-prompt {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  margin: 0 0 1.25rem;
+  padding: 0.65rem 0.9rem;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.follow-prompt__star {
+  font-size: 1.3rem;
+  line-height: 1;
+  color: var(--accent-700);
+}
+.follow-prompt__text {
+  flex: 1 1 260px;
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  line-height: 1.4;
+  color: var(--ink);
+}
+.follow-prompt__actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.75rem;
+}
+.follow-prompt__find {
+  min-height: 40px;
+  padding: 0.45rem 0.95rem;
+  border-radius: 999px;
+  border: 1px solid var(--ink-hero);
+  background: var(--ink-hero);
+  color: var(--paper);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.follow-prompt__find:hover,
+.follow-prompt__find:focus-visible {
+  background: var(--ink);
+  border-color: var(--ink);
+}
+.follow-prompt__all {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.follow-prompt__dismiss {
+  min-height: 40px;
+  padding: 0.45rem 0.35rem;
+  border: none;
+  background: none;
+  color: var(--muted);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+.follow-prompt__dismiss:hover,
+.follow-prompt__dismiss:focus-visible {
+  color: var(--ink);
+  text-decoration: underline;
+}

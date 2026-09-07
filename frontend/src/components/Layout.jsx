@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Sponsor from "./Sponsor.jsx";
 import SportSwitcher from "./SportSwitcher.jsx";
+import SchoolFinder from "./SchoolFinder.jsx";
 import Footer from "./Footer.jsx";
 import { useSportPrefix } from "../utils/links.js";
 import {
@@ -58,6 +59,9 @@ export default function Layout({
         <Link to={sportPrefix} className="masthead__title">
           {SITE.titleLead} <em>{SITE.titleEm}</em>
         </Link>
+        {/* "Find your school" — renders only inside a sport route, where
+            there is a roster to search. */}
+        <SchoolFinder className="masthead__find" />
         <div className="masthead__attribution">
           <Sponsor slot="title" sponsors={sponsors} variant="compact" />
           <div className="masthead__meta-row">

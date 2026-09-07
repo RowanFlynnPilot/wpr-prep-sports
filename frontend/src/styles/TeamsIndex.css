@@ -1,0 +1,131 @@
+/* All schools A–Z (#/<sport>/teams). Dense directory: one card per
+   school with its color bar, logo, name, mascot · town · conference, and
+   a Follow button — the one place every school can be pinned without
+   first finding its team page. */
+
+.teams-index__head {
+  align-items: baseline;
+}
+.teams-index__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-h2);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  line-height: 1.05;
+  margin: 0;
+  color: var(--ink-hero);
+}
+.teams-index__sport {
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.teams-index__letters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin: 0.75rem 0 1.25rem;
+}
+.teams-index__letters button {
+  min-width: 2.25rem;
+  height: 2.25rem;
+  padding: 0 0.5rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--card);
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+.teams-index__letters button:hover,
+.teams-index__letters button:focus-visible {
+  background: var(--paper-2);
+}
+
+.teams-index__group {
+  margin-bottom: 1.35rem;
+}
+.teams-index__letter {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 0.3rem;
+  margin: 0 0 0.6rem;
+  scroll-margin-top: 0.75rem;
+}
+.teams-index__letter:focus {
+  outline: none;
+}
+
+.teams-index__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr));
+  gap: 0.5rem 0.75rem;
+}
+.teams-index__row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.45rem 0.65rem 0.45rem 0.55rem;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+}
+/* Same school-color bar the standings table uses beside each name. */
+.teams-index__bar {
+  flex: 0 0 auto;
+  width: 3px;
+  height: 26px;
+  border-radius: 2px;
+  background: var(--school-color, var(--muted-2));
+}
+.teams-index__main {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  column-gap: 0.55rem;
+  align-items: center;
+  color: inherit;
+  text-decoration: none;
+  border-bottom: none;
+}
+.teams-index__main .team-logo {
+  grid-row: 1 / span 2;
+}
+.teams-index__name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.15;
+  color: var(--ink);
+}
+.teams-index__main:hover .teams-index__name {
+  color: var(--accent-700);
+}
+.teams-index__sub {
+  grid-column: 2;
+  font-size: 0.74rem;
+  color: var(--muted);
+  line-height: 1.3;
+}
+.teams-index__row .fav-toggle-wrap {
+  flex: 0 0 auto;
+}
+
+.teams-index__others {
+  margin: 1.5rem 0 0;
+  font-size: 0.86rem;
+  color: var(--muted);
+  line-height: 1.5;
+  max-width: 75ch;
+}

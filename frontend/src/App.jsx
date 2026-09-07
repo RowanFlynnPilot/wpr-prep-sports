@@ -13,6 +13,7 @@ import GamePage from "./pages/GamePage.jsx";
 import PlayerPage from "./pages/PlayerPage.jsx";
 import EmbedPage from "./pages/EmbedPage.jsx";
 import ConferenceEmbedPage from "./pages/ConferenceEmbedPage.jsx";
+import TeamsIndexPage from "./pages/TeamsIndexPage.jsx";
 import Skeleton from "./components/Skeleton.jsx";
 import NotFound from "./components/NotFound.jsx";
 
@@ -22,6 +23,7 @@ import NotFound from "./components/NotFound.jsx";
 const MediaKitPage = lazy(() => import("./pages/MediaKitPage.jsx"));
 const OgCardPage = lazy(() => import("./pages/OgCardPage.jsx"));
 import { indexSchools } from "./utils/schools.js";
+import { SchoolsContext } from "./utils/schoolsContext.js";
 import { useAnalytics } from "./utils/analytics.js";
 import { notifyHostNavigated, useIframeHeightReporter } from "./utils/iframe.js";
 import { DEFAULT_SPORT, configFor, configForDataset, isKnownSport } from "./config/sports.js";
@@ -54,6 +56,7 @@ import "./styles/Embed.css";
 import "./styles/SeniorSpotlight.css";
 import "./styles/Favorites.css";
 import "./styles/Share.css";
+import "./styles/SchoolFinder.css";
 
 export default function App() {
   useIframeHeightReporter();
@@ -279,6 +282,7 @@ function SportShell() {
   // was retired in the 2026-07 retheme. data-sport stays for any
   // future sport-scoped styling.
   return (
+    <SchoolsContext.Provider value={{ schools: dataset.schools, schoolIndex, sportId: sport }}>
     <div className="sport-shell" data-sport={sport}>
     <Routes>
       <Route
@@ -299,6 +303,18 @@ function SportShell() {
           <TeamPage
             dataset={dataset}
             schoolIndex={schoolIndex}
+            sponsors={dataset.sponsors}
+            sportConfig={sportConfig}
+          />
+        }
+      />
+      {/* All schools A–Z — the browsable route to a team page, and the
+          one place every school can be followed. */}
+      <Route
+        path="/teams"
+        element={
+          <TeamsIndexPage
+            dataset={dataset}
             sponsors={dataset.sponsors}
             sportConfig={sportConfig}
           />
@@ -357,5 +373,6 @@ function SportShell() {
       />
     </Routes>
     </div>
+    </SchoolsContext.Provider>
   );
 }

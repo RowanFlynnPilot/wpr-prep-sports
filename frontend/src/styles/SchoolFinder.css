@@ -1,0 +1,146 @@
+/* School finder — the masthead combobox. Lives on the black brand band,
+   so the field is drawn in white at low alpha and the results pop is the
+   normal paper card floating below it. */
+
+.school-finder {
+  position: relative;
+  font-family: var(--font-body);
+}
+.school-finder__icon {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-flex;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.72);
+  pointer-events: none;
+}
+.school-finder__input {
+  width: 100%;
+  height: 40px;
+  padding: 0 0.85rem 0 2.25rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  font: inherit;
+  font-size: 0.9rem;
+  appearance: none;
+  -webkit-appearance: none;
+  transition: background var(--t-fast) var(--ease), border-color var(--t-fast) var(--ease);
+}
+.school-finder__input::placeholder {
+  color: rgba(255, 255, 255, 0.66);
+  opacity: 1;
+}
+.school-finder__input:hover {
+  border-color: rgba(255, 255, 255, 0.45);
+}
+.school-finder__input:focus-visible {
+  outline: 2px solid var(--accent-on-dark);
+  outline-offset: 1px;
+  background: rgba(255, 255, 255, 0.12);
+}
+/* WebKit's grey clear button clashes with white text on black; the
+   Escape key and selection both clear the field. */
+.school-finder__input::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.school-finder__pop {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  z-index: 40;
+  min-width: 280px;
+  background: var(--card);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-hero);
+  overflow: hidden;
+  text-align: left;
+}
+.school-finder__list {
+  list-style: none;
+  margin: 0;
+  padding: 0.25rem 0;
+  max-height: min(60vh, 420px);
+  overflow-y: auto;
+}
+.school-finder__opt {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  column-gap: 0.6rem;
+  align-items: center;
+  padding: 0.5rem 0.85rem;
+  cursor: pointer;
+}
+.school-finder__opt .team-logo {
+  grid-row: 1 / span 2;
+}
+.school-finder__opt--active {
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
+}
+.school-finder__opt-name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.98rem;
+  line-height: 1.15;
+  color: var(--ink);
+}
+.school-finder__opt-sub {
+  grid-column: 2;
+  font-size: 0.74rem;
+  color: var(--muted);
+  line-height: 1.3;
+}
+.school-finder__none {
+  margin: 0;
+  padding: 0.75rem 0.85rem;
+  font-size: 0.84rem;
+  color: var(--muted);
+  line-height: 1.4;
+}
+.school-finder__all {
+  display: block;
+  padding: 0.6rem 0.85rem;
+  border-top: 1px solid var(--line);
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: none;
+}
+.school-finder__all:hover,
+.school-finder__all:focus-visible {
+  background: var(--paper-2);
+  color: var(--ink);
+}
+
+/* Masthead placement: right-hand side on desktop, its own full row on
+   phones (44px tall, 16px text so iOS doesn't zoom the page on focus). */
+.masthead__find {
+  flex: 0 1 300px;
+  min-width: 0;
+  margin-left: auto;
+}
+.masthead__find + .masthead__attribution {
+  margin-left: 0;
+}
+@media (max-width: 640px) {
+  .masthead__find {
+    flex: 1 1 100%;
+    margin-left: 0;
+  }
+  .school-finder__input {
+    height: 44px;
+    font-size: 16px;
+  }
+}
