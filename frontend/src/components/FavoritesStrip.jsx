@@ -1,14 +1,12 @@
-import { useMemo, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useMemo } from "react";
+import { Link } from "react-router-dom";
 import TeamLogo from "./TeamLogo.jsx";
 import Sponsor from "./Sponsor.jsx";
-import { FINDER_INPUT_ID } from "./SchoolFinder.jsx";
 import { useSportPrefix } from "../utils/links.js";
 import { formatGameDate, formatGameTime } from "../utils/dates.js";
 import { teamGamesFor, summarizeTeam, conferenceStanding } from "../utils/teamSummary.js";
 import { useFavorites, toggleFavorite } from "../utils/favorites.js";
 import { trackEvent } from "../utils/analytics.js";
-import { SITE } from "../config/site.js";
 
 /**
  * "Your Teams" — the pinned strip above the dashboard.
@@ -50,11 +48,10 @@ export default function FavoritesStrip({ dataset, schoolIndex, sponsors, sportCo
     [favorites, schoolIndex, dataset.games, dataset.sport, dataset.standings, now],
   );
 
-  // No favorites yet: a one-line nudge toward the finder instead of
-  // nothing. Following is the feature built for this audience, and until
-  // now it could only be discovered from a team page the reader had
-  // already managed to reach.
-  if (cards.length === 0) return <FollowPrompt sportPrefix={sportPrefix} />;
+  // No favorites: nothing here. The nudge to follow a school is
+  // FollowPrompt, rendered below the hero so it never pushes the first
+  // score off a phone's first screen.
+  if (cards.length === 0) return null;
 
   return (
     <section className="favstrip" aria-label="Your teams">
@@ -162,77 +159,6 @@ function FavoriteCard({
         className="favcard__sponsor"
       />
     </li>
-  );
-}
-
-const DISMISS_KEY = `${SITE.storagePrefix}-follow-prompt-dismissed`;
-const DISMISS_FOR_MS = 30 * 86_400_000;
-
-function readDismissed() {
-  try {
-    const at = Number(window.localStorage.getItem(DISMISS_KEY));
-    return at > 0 && Date.now() - at < DISMISS_FOR_MS;
-  } catch {
-    return false;
-  }
-}
-
-/**
- * First-visit nudge shown where the "Your Teams" strip will appear once
- * the reader follows a school. "Find your school" moves focus into the
- * masthead finder (scrolling it into view on phones); the A–Z link is the
- * no-typing path. "Not now" hides it for 30 days on this device.
- */
-function FollowPrompt({ sportPrefix }) {
-  const navigate = useNavigate();
-  const [dismissed, setDismissed] = useState(readDismissed);
-  if (dismissed) return null;
-
-  const focusFinder = () => {
-    trackEvent("follow-prompt", { action: "find" });
-    const el = document.getElementById(FINDER_INPUT_ID);
-    if (!el) {
-      navigate(`${sportPrefix}/teams`);
-      return;
-    }
-    el.scrollIntoView?.({ block: "center", behavior: "smooth" });
-    el.focus({ preventScroll: true });
-  };
-  const dismiss = () => {
-    trackEvent("follow-prompt", { action: "dismiss" });
-    try {
-      window.localStorage.setItem(DISMISS_KEY, String(Date.now()));
-    } catch {
-      /* storage blocked — hide for this visit only */
-    }
-    setDismissed(true);
-  };
-
-  return (
-    <aside className="follow-prompt" aria-label="Follow your school">
-      <span className="follow-prompt__star" aria-hidden="true">
-        ☆
-      </span>
-      <p className="follow-prompt__text">
-        <strong>Follow your school.</strong> Their last result and next game pin to the top
-        of every sport on this device.
-      </p>
-      <div className="follow-prompt__actions">
-        <button type="button" className="follow-prompt__find" onClick={focusFinder}>
-          Find your school
-        </button>
-        <Link
-          to={`${sportPrefix}/teams`}
-          className="follow-prompt__all"
-          onClick={() => trackEvent("follow-prompt", { action: "index" })}
-        >
-          All schools A–Z
-        </Link>
-        <button type="button" className="follow-prompt__dismiss" onClick={dismiss}>
-          Not now
-        </button>
-      </div>
-    </aside>
   );
 }
 

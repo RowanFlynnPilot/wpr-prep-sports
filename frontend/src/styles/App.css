@@ -437,6 +437,47 @@
   grid-template-columns: repeat(auto-fit, minmax(min(480px, 100%), 1fr));
   gap: 1.25rem;
 }
+/* One conference selected: a lone table at full column width reads
+   sparse, so hold it to a comfortable table width. */
+.standings-grid--single {
+  grid-template-columns: minmax(0, 760px);
+}
+
+/* Conference chips above the standings grid. Same chip language as the
+   power-rankings division filter; a little taller here because it is the
+   tab's primary control and a thumb target. */
+.conf-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0 0 1rem;
+}
+.conf-filter__chip {
+  appearance: none;
+  min-height: 36px;
+  border: 1px solid var(--line);
+  background: var(--card);
+  color: var(--muted);
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  transition: color var(--t-fast) var(--ease), border-color var(--t-fast) var(--ease),
+              background var(--t-fast) var(--ease);
+}
+.conf-filter__chip:hover {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+.conf-filter__chip--active {
+  background: var(--chrome);
+  border-color: var(--ink);
+  color: #fff;
+}
 
 @media (max-width: 640px) {
   .app { padding: 1rem 0.75rem 3rem; }
@@ -459,10 +500,19 @@
     flex: 1 1 0;
     min-width: 0;
   }
+  /* One row on phones: sponsor credit left, updated pill + season on the
+     right — it had stacked into two rows above the sport strip. */
   .masthead__attribution {
     width: 100%;
-    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.35rem 0.75rem;
     text-align: left;
+  }
+  .masthead__meta-row {
+    margin-left: auto;
   }
   .sport-switcher {
     margin: -1.25rem -0.75rem 1.25rem;
@@ -478,6 +528,13 @@
      squeezing the labels. */
   .sport-switcher__list--collapsed {
     grid-template-columns: repeat(auto-fit, minmax(84px, 1fr));
+  }
+  /* Four cells at 375px are ~93px each; "Boys Soccer" plus its icon needs
+     the slack the desktop padding and tracking were spending. */
+  .sport-switcher__list--collapsed .sport-switcher__tab {
+    padding: 0.6rem 0.3rem;
+    gap: 0.3rem;
+    letter-spacing: 0.04em;
   }
   .sport-switcher__tab {
     padding: 0.6rem 0.5rem;

@@ -15,6 +15,9 @@ import Pickem from "../components/Pickem.jsx";
 import StandingsTable from "../components/StandingsTable.jsx";
 import StaleBanner from "../components/StaleBanner.jsx";
 import FavoritesStrip from "../components/FavoritesStrip.jsx";
+import FollowPrompt from "../components/FollowPrompt.jsx";
+import { useFavorites } from "../utils/favorites.js";
+import { conferenceFor } from "../utils/schoolSearch.js";
 import { isEmbedded } from "../utils/iframe.js";
 import Sponsor from "../components/Sponsor.jsx";
 import TopPerformers from "../components/TopPerformers.jsx";
@@ -275,6 +278,46 @@ export default function DashboardPage({
     );
   };
 
+  // --- Standings conference filter --------------------------------------
+  // Seven tables in fixed order was a 6,400px panel on a phone with no
+  // way in. One chip per conference; the default is the followed school's
+  // conference in this sport when one is set, otherwise everything. URL-
+  // synced (?conf=) so a sponsor or article link can land on one table.
+  const favorites = useFavorites();
+  const confNames = useMemo(
+    () => meaningfulStandings.map((s) => s.conference),
+    [meaningfulStandings],
+  );
+  const followedConf = useMemo(() => {
+    for (const id of favorites) {
+      const c = conferenceFor(schoolIndex.get(id), sportConfig?.id);
+      if (c && confNames.includes(c)) return c;
+    }
+    return null;
+  }, [favorites, schoolIndex, sportConfig?.id, confNames]);
+  const requestedConf = searchParams.get("conf");
+  const activeConf =
+    requestedConf === "all"
+      ? "all"
+      : confNames.includes(requestedConf)
+        ? requestedConf
+        : (followedConf ?? "all");
+  const setActiveConf = (c) => {
+    trackEvent("standings-filter", { conference: c, sport: sportConfig?.id ?? "unknown" });
+    setSearchParams(
+      (prev) => {
+        const next = new URLSearchParams(prev);
+        next.set("conf", c);
+        return next;
+      },
+      { replace: true },
+    );
+  };
+  const visibleStandings =
+    activeConf === "all"
+      ? meaningfulStandings
+      : meaningfulStandings.filter((s) => s.conference === activeConf);
+
   return (
     <Layout
       lastUpdated={lastUpdated}
@@ -354,6 +397,13 @@ export default function DashboardPage({
           nextSeasonStart={nextSeasonStart}
           daysToNext={daysToNext}
         />
+      </SectionBoundary>
+
+      {/* Follow nudge sits under the lead, not above it: on a phone it had
+          pushed the first score off screen one. Renders nothing once a
+          school is followed or after "Not now". */}
+      <SectionBoundary label="follow-prompt">
+        <FollowPrompt />
       </SectionBoundary>
 
       <SectionBoundary label="marquee">
@@ -470,8 +520,43 @@ export default function DashboardPage({
                   {sportConfig.label} · {sportConfig.season}
                 </span>
               </div>
-              <div className="standings-grid">
-                {meaningfulStandings.map((s) => (
+              {confNames.length > 1 && (
+                <div
+                  className="conf-filter"
+                  role="group"
+                  aria-label="Filter standings by conference"
+                >
+                  <button
+                    type="button"
+                    className={
+                      "conf-filter__chip" + (activeConf === "all" ? " conf-filter__chip--active" : "")
+                    }
+                    aria-pressed={activeConf === "all"}
+                    onClick={() => setActiveConf("all")}
+                  >
+                    All conferences
+                  </button>
+                  {confNames.map((c) => (
+                    <button
+                      key={c}
+                      type="button"
+                      className={
+                        "conf-filter__chip" + (activeConf === c ? " conf-filter__chip--active" : "")
+                      }
+                      aria-pressed={activeConf === c}
+                      onClick={() => setActiveConf(c)}
+                    >
+                      {c}
+                    </button>
+                  ))}
+                </div>
+              )}
+              <div
+                className={
+                  "standings-grid" + (visibleStandings.length === 1 ? " standings-grid--single" : "")
+                }
+              >
+                {visibleStandings.map((s) => (
                   <StandingsTable
                     key={`${s.conference}-${s.sport}`}
                     standing={s}
