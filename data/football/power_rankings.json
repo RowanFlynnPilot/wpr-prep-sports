@@ -1,7 +1,7 @@
 {
   "sport": "football",
   "season": "2026-27",
-  "generated_at": "2026-09-07T05:08:55.751508-05:00",
+  "generated_at": "2026-09-07T11:24:29.317491-05:00",
   "method": "WPR Power Index v1: 40% W%, 35% SOS, 25% margin (capped per sport)",
   "rankings": [
     {
@@ -292,19 +292,6 @@
     },
     {
       "rank": 23,
-      "school_id": "spencer",
-      "school_name": "Spencer",
-      "wins": 2,
-      "losses": 1,
-      "ties": 0,
-      "win_pct": 0.6667,
-      "sos": 0.5,
-      "avg_margin_capped": 0.33,
-      "score": 56.82,
-      "movement": 0
-    },
-    {
-      "rank": 24,
       "school_id": "iola-scandinavia",
       "school_name": "Iola-Scandinavia",
       "wins": 1,
@@ -314,10 +301,10 @@
       "sos": 0.8,
       "avg_margin_capped": 5.5,
       "score": 52.96,
-      "movement": 0
+      "movement": 1
     },
     {
-      "rank": 25,
+      "rank": 24,
       "school_id": "merrill",
       "school_name": "Merrill",
       "wins": 2,
@@ -327,10 +314,10 @@
       "sos": 0.3333,
       "avg_margin_capped": 4.67,
       "score": 52.92,
-      "movement": 0
+      "movement": 1
     },
     {
-      "rank": 26,
+      "rank": 25,
       "school_id": "rhinelander",
       "school_name": "Rhinelander",
       "wins": 2,
@@ -340,7 +327,20 @@
       "sos": 0.3333,
       "avg_margin_capped": 4.33,
       "score": 52.77,
-      "movement": 0
+      "movement": 1
+    },
+    {
+      "rank": 26,
+      "school_id": "spencer",
+      "school_name": "Spencer",
+      "wins": 2,
+      "losses": 1,
+      "ties": 0,
+      "win_pct": 0.6667,
+      "sos": 0.3333,
+      "avg_margin_capped": 0.33,
+      "score": 50.98,
+      "movement": -3
     },
     {
       "rank": 27,
@@ -643,6 +643,32 @@
     },
     {
       "rank": 50,
+      "school_id": "loyal",
+      "school_name": "Loyal",
+      "wins": 1,
+      "losses": 2,
+      "ties": 0,
+      "win_pct": 0.3333,
+      "sos": 0.0,
+      "avg_margin_capped": 6.33,
+      "score": 28.66,
+      "movement": null
+    },
+    {
+      "rank": 51,
+      "school_id": "auburndale",
+      "school_name": "Auburndale",
+      "wins": 0,
+      "losses": 3,
+      "ties": 0,
+      "win_pct": 0.0,
+      "sos": 0.5,
+      "avg_margin_capped": -10.67,
+      "score": 25.24,
+      "movement": null
+    },
+    {
+      "rank": 52,
       "school_id": "northland-pines",
       "school_name": "Northland Pines",
       "wins": 1,
@@ -652,10 +678,10 @@
       "sos": 0.0,
       "avg_margin_capped": -3.0,
       "score": 24.49,
-      "movement": 0
+      "movement": -2
     },
     {
-      "rank": 51,
+      "rank": 53,
       "school_id": "newman-catholic",
       "school_name": "Newman Catholic",
       "wins": 0,
@@ -665,10 +691,10 @@
       "sos": 0.6667,
       "avg_margin_capped": -28.0,
       "score": 23.33,
-      "movement": 0
+      "movement": -2
     },
     {
-      "rank": 52,
+      "rank": 54,
       "school_id": "pittsville",
       "school_name": "Pittsville",
       "wins": 0,
@@ -678,10 +704,10 @@
       "sos": 0.6667,
       "avg_margin_capped": -28.0,
       "score": 23.33,
-      "movement": 0
+      "movement": -2
     },
     {
-      "rank": 53,
+      "rank": 55,
       "school_id": "tomahawk",
       "school_name": "Tomahawk",
       "wins": 0,
@@ -691,10 +717,10 @@
       "sos": 0.5,
       "avg_margin_capped": -15.67,
       "score": 23.01,
-      "movement": 0
+      "movement": -2
     },
     {
-      "rank": 54,
+      "rank": 56,
       "school_id": "eau-claire-north",
       "school_name": "Eau Claire North",
       "wins": 0,
@@ -704,10 +730,10 @@
       "sos": 0.5556,
       "avg_margin_capped": -23.67,
       "score": 21.38,
-      "movement": 0
+      "movement": -2
     },
     {
-      "rank": 55,
+      "rank": 57,
       "school_id": "waupaca",
       "school_name": "Waupaca",
       "wins": 0,
@@ -717,10 +743,10 @@
       "sos": 0.5,
       "avg_margin_capped": -24.67,
       "score": 18.99,
-      "movement": null
+      "movement": -2
     },
     {
-      "rank": 56,
+      "rank": 58,
       "school_id": "antigo",
       "school_name": "Antigo",
       "wins": 0,
@@ -730,7 +756,7 @@
       "sos": 0.3333,
       "avg_margin_capped": -12.67,
       "score": 18.51,
-      "movement": -1
+      "movement": -2
     }
   ]
 }

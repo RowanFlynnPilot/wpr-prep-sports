@@ -402,18 +402,6 @@
         "points_against": 6
       },
       {
-        "school_id": "auburndale",
-        "name": "Auburndale",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "conference_ties": 0,
-        "overall_wins": 0,
-        "overall_losses": 2,
-        "overall_ties": 0,
-        "points_for": 25,
-        "points_against": 29
-      },
-      {
         "school_id": "abbotsford",
         "name": "Abbotsford",
         "conference_wins": 0,
@@ -436,6 +424,18 @@
         "overall_ties": 0,
         "points_for": 34,
         "points_against": 12
+      },
+      {
+        "school_id": "auburndale",
+        "name": "Auburndale",
+        "conference_wins": 0,
+        "conference_losses": 1,
+        "conference_ties": 0,
+        "overall_wins": 0,
+        "overall_losses": 3,
+        "overall_ties": 0,
+        "points_for": 31,
+        "points_against": 69
       },
       {
         "school_id": "pittsville",
@@ -494,6 +494,18 @@
         "points_against": 14
       },
       {
+        "school_id": "loyal",
+        "name": "Loyal",
+        "conference_wins": 1,
+        "conference_losses": 1,
+        "conference_ties": 0,
+        "overall_wins": 1,
+        "overall_losses": 2,
+        "overall_ties": 0,
+        "points_for": 56,
+        "points_against": 31
+      },
+      {
         "school_id": "marathon",
         "name": "Marathon",
         "conference_wins": 0,
@@ -540,18 +552,6 @@
         "overall_ties": 0,
         "points_for": 36,
         "points_against": 77
-      },
-      {
-        "school_id": "loyal",
-        "name": "Loyal",
-        "conference_wins": 0,
-        "conference_losses": 1,
-        "conference_ties": 0,
-        "overall_wins": 0,
-        "overall_losses": 2,
-        "overall_ties": 0,
-        "points_for": 16,
-        "points_against": 25
       }
     ]
   },
