@@ -25,6 +25,7 @@ import Marquee from "../components/Marquee.jsx";
 import SpiritStrip from "../components/SpiritStrip.jsx";
 import SeniorSpotlight from "../components/SeniorSpotlight.jsx";
 import PowerRankings from "../components/PowerRankings.jsx";
+import RegionalTop10 from "../components/RegionalTop10.jsx";
 import { pickFeaturedGame, tickerGames } from "../utils/games.js";
 import { homeRegionSchoolIds } from "../utils/schools.js";
 import { pickFeaturedWeek } from "../utils/weeks.js";
@@ -81,7 +82,7 @@ export default function DashboardPage({
   sportConfig,
   liveRefreshStalled = false,
 }) {
-  const { meta, schools, games, standings, seasonStats, spirit, potwOverride, powerRankings } = dataset;
+  const { meta, schools, games, standings, seasonStats, spirit, potwOverride, powerRankings, regionalTop10Override } = dataset;
 
   // "anchor now" is the content shim: pick games / ticker / featured-week
   // relative to a date clamped INTO the season window, so every section
@@ -509,9 +510,22 @@ export default function DashboardPage({
         </section>
       )}
 
-      {/* Tab: Standings & Stats — the league picture. */}
+      {/* Tab: Standings & Stats — the league picture. Leads with the
+          Central Wisconsin Ten (editorial poll, home-region cut) as the
+          artifact readers come back for; conference tables and the
+          algorithmic Power Rankings follow. */}
       {activeTab === "standings" && (
         <>
+          <SectionBoundary label="top-ten">
+            <RegionalTop10
+              dataset={dataset}
+              schoolIndex={schoolIndex}
+              sportConfig={sportConfig}
+              sponsors={sponsors}
+              override={regionalTop10Override}
+            />
+          </SectionBoundary>
+
           {meaningfulStandings.length > 0 && (
             <section>
               <div className="section-header">

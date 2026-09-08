@@ -46,19 +46,21 @@ export async function fetchDataset(sportId = DEFAULT_SPORT) {
   // dataset is picked up immediately without manual cache clears.
   const meta = await fetchJson(`${sportBase}/meta.json`, { noStore: true });
   const v = encodeURIComponent(meta.last_updated ?? Date.now());
-  const [schools, games, standings, sponsors, seasonStats, spirit, potwOverrides, powerRankingsRaw, spotlightsRaw] = await Promise.all([
+  const [schools, games, standings, sponsors, seasonStats, spirit, potwOverrides, powerRankingsRaw, spotlightsRaw, regionalTop10Overrides] = await Promise.all([
     fetchJson(`${DATA_BASE}/schools.json?v=${v}`),
     fetchJson(`${sportBase}/games.json?v=${v}`),
     fetchJson(`${sportBase}/standings.json?v=${v}`),
     // Sponsors, season_stats, spirit photos, the editor's PotW
-    // override, power rankings, and senior spotlights are all
-    // optional — the widget renders fine without any of them.
+    // override, power rankings, senior spotlights, and the editor's
+    // Central Wisconsin Ten overrides are all optional — the widget
+    // renders fine without any of them.
     fetchJsonOptional(`${DATA_BASE}/sponsors.json?v=${v}`),
     fetchJsonOptional(`${sportBase}/season_stats.json?v=${v}`),
     fetchJsonOptional(`${DATA_BASE}/spirit.json?v=${v}`),
     fetchJsonOptional(`${DATA_BASE}/potw.json?v=${v}`),
     fetchJsonOptional(`${sportBase}/power_rankings.json?v=${v}`),
     fetchJsonOptional(`${DATA_BASE}/spotlights.json?v=${v}`),
+    fetchJsonOptional(`${DATA_BASE}/regional_top10.json?v=${v}`),
   ]);
   // Spirit file is a wrapper { photos: [...] } so editors can park
   // metadata alongside the photo list. Normalize to a flat array here.
@@ -85,6 +87,14 @@ export async function fetchDataset(sportId = DEFAULT_SPORT) {
         generatedAt: powerRankingsRaw?.generated_at ?? null,
       };
 
+  // The editor's Central Wisconsin Ten override file is keyed by sport —
+  // pull just this sport's entry. Empty { entries: [] } and a missing
+  // sport key both fall through to the algorithmic poll.
+  const regionalTop10Override =
+    regionalTop10Overrides && typeof regionalTop10Overrides === "object"
+      ? regionalTop10Overrides[sportId] ?? null
+      : null;
+
   return {
     sport: sportId,
     // Non-null when the reader flipped to an archived season — pages
@@ -99,6 +109,7 @@ export async function fetchDataset(sportId = DEFAULT_SPORT) {
     spirit: spiritPhotos,
     potwOverride,
     powerRankings,
+    regionalTop10Override,
     // Wrapper { spotlights: [...] } so editors can park notes alongside.
     spotlights: Array.isArray(spotlightsRaw)
       ? spotlightsRaw

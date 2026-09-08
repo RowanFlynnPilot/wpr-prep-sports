@@ -1,0 +1,239 @@
+/* The Central Wisconsin Ten — a weekly hyperlocal poll.
+   Newspaper agate: no cards, one column, ruled dividers, tabular ranks,
+   an italic sentence per team. This is the widget's editorial voice on
+   paper. Sits inside the Standings & Stats tab as the counterpart to the
+   algorithmic Power Rankings. */
+
+.top-ten {
+  margin: 0 0 1.75rem;
+}
+
+.top-ten__masthead {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+  border-bottom: 3px double var(--ink);
+  padding-bottom: 0.65rem;
+  margin-bottom: 0.4rem;
+}
+.top-ten__title-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 0;
+}
+.top-ten__eyebrow {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.top-ten__title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.75rem;
+  line-height: 1;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: var(--ink-hero);
+  margin: 0;
+}
+.top-ten__title em {
+  font-style: normal;
+  color: var(--accent);
+}
+.top-ten__dateline {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.top-ten__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: none;
+}
+
+/* Each rank is one line of the poll: a big display digit, a small
+   movement chip, the school's logo, name/record/conference in a stacked
+   meta block, and a one-sentence italic lede that flows under it. */
+.top-ten__row {
+  display: grid;
+  grid-template-columns: 2.6rem auto 32px minmax(0, 1fr);
+  grid-template-areas:
+    "rank movement logo meta"
+    "lede lede lede lede";
+  align-items: center;
+  gap: 0.35rem 0.75rem;
+  padding: 0.85rem 0.35rem 0.85rem 0.4rem;
+  border-bottom: 1px solid var(--line);
+  position: relative;
+}
+.top-ten__row:last-child { border-bottom: none; }
+
+/* School-color rail on the left — identity, not decoration; same pattern
+   the team hero and standings use to make each school its own thing on
+   a monochrome page. */
+.top-ten__row::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.35rem;
+  bottom: 0.35rem;
+  width: 3px;
+  background: var(--school-color, transparent);
+  border-radius: 2px;
+}
+
+.top-ten__rank {
+  grid-area: rank;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 2.4rem;
+  line-height: 0.9;
+  color: var(--ink-hero);
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+  align-self: center;
+}
+
+/* Team logo sits between the movement chip and the meta block. */
+.top-ten__row > .team-logo {
+  grid-area: logo;
+  justify-self: center;
+  align-self: center;
+}
+
+.top-ten__meta {
+  grid-area: meta;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  min-width: 0;
+}
+.top-ten__meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.top-ten__name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.15rem;
+  line-height: 1.1;
+  color: var(--ink-hero);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color var(--t-fast) var(--ease), border-color var(--t-fast) var(--ease);
+}
+.top-ten__name:hover,
+.top-ten__name:focus-visible {
+  color: var(--accent-700);
+  border-bottom-color: currentColor;
+}
+.top-ten__ancillary {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.top-ten__lede {
+  grid-area: lede;
+  margin: 0.2rem 0 0;
+  padding-left: 0.35rem;
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--ink);
+  max-width: 68ch;
+}
+
+/* Movement chip: colored by direction. Newspaper poll convention is
+   ▲ up, ▼ down, — held, NEW debut. We reuse the same green/slate result
+   tokens as everywhere else so a Wausau reader learns them once. */
+.top-ten__movement {
+  grid-area: movement;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.15rem;
+  min-width: 2.3rem;
+  height: 1.35rem;
+  padding: 0 0.35rem;
+  border-radius: 3px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  justify-content: center;
+  color: var(--muted);
+  background: var(--paper-2);
+}
+.top-ten__movement--up {
+  color: var(--win);
+  background: var(--win-bg);
+}
+.top-ten__movement--down {
+  color: var(--loss);
+  background: var(--loss-bg);
+}
+.top-ten__movement--new {
+  color: var(--accent-700);
+  background: color-mix(in srgb, var(--accent) 14%, transparent);
+  letter-spacing: 0.08em;
+}
+.top-ten__movement--flat {
+  color: var(--muted-2);
+}
+.top-ten__movement-arrow {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.85em;
+  line-height: 1;
+}
+/* The chevron ships pointing down; rotate for the up direction. */
+.top-ten__movement-arrow--up { transform: rotate(180deg); }
+
+.top-ten__sponsor {
+  align-self: flex-start;
+  flex: 0 0 auto;
+}
+
+.top-ten__method {
+  margin: 0.65rem 0 0;
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--muted);
+  max-width: 68ch;
+}
+
+/* Narrow phones: rank digit stays big; logo drops under the rank so the
+   name has the full column; lede still flows the full width. */
+@media (max-width: 480px) {
+  .top-ten__row {
+    grid-template-columns: 2.1rem auto 28px minmax(0, 1fr);
+    gap: 0.3rem 0.55rem;
+    padding: 0.75rem 0.35rem;
+  }
+  .top-ten__rank { font-size: 2rem; }
+  .top-ten__name { font-size: 1.05rem; }
+  .top-ten__title { font-size: 1.45rem; }
+  .top-ten__masthead {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .top-ten__sponsor {
+    align-self: stretch;
+  }
+}

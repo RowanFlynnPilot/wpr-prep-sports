@@ -1,0 +1,11 @@
+{
+  "_doc": "Editor override for The Central Wisconsin Ten. Keyed by sport, values are { entries: [{ school_id, rank?, lede? }] }. rank pins the team's slot (1-based) and, if the school isn't in the algorithmic pool, pulls it in from anywhere. lede replaces the algorithmic sentence with your own. Missing overrides fall through cleanly — the poll runs on the WPR Power Index alone. Loaded via fetchJsonOptional in data/fetchDataset.js.",
+  "football": { "entries": [] },
+  "boys_basketball": { "entries": [] },
+  "girls_basketball": { "entries": [] },
+  "volleyball": { "entries": [] },
+  "boys_hockey": { "entries": [] },
+  "girls_hockey": { "entries": [] },
+  "boys_soccer": { "entries": [] },
+  "girls_soccer": { "entries": [] }
+}

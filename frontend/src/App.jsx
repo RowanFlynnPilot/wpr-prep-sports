@@ -57,6 +57,7 @@ import "./styles/SeniorSpotlight.css";
 import "./styles/Favorites.css";
 import "./styles/Share.css";
 import "./styles/SchoolFinder.css";
+import "./styles/RegionalTop10.css";
 
 export default function App() {
   useIframeHeightReporter();
