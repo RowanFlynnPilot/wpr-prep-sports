@@ -65,7 +65,14 @@ export default function GamePreview({ game, dataset, schoolIndex }) {
 
       {!lastMeeting && hasAnyTrackedSide(game) && (
         <p className="game-preview__no-meeting">
-          No prior meeting between these teams on record.
+          {/* SAME-SEASON scope only: this scan reads dataset.games, which
+              is the current season. HeadToHead below reads archived
+              history separately and can find meetings this line can't —
+              printing "No prior meeting between these teams on record"
+              contradicted the head-to-head panel showing a 2025-26 game
+              directly beneath it. Qualify to "this season" so both
+              statements can be true. */}
+          No prior meeting between these teams this season.
         </p>
       )}
     </section>
