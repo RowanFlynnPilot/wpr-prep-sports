@@ -286,14 +286,21 @@ export function pickPlayerOfWeek(
   }
 
   // Two-pass with the exclusion set. First try the normal threshold —
-  // an MVP-tier performance from someone new. If nobody qualifies (the
-  // week's headline_stats have been filed thinly and the biggest lines
-  // are all repeats), drop to a lower floor so the dashboard still
-  // crowns SOMEONE modest rather than showing an empty section. Cadence
-  // note: coaches upload stats over the days after a game, so a
-  // Monday-morning render of a Sunday-completed week may only have one
-  // or two box scores in — a lenient fallback keeps the card populated
-  // while more lines flow in.
+  // an MVP-tier performance (~200 rush yds, 3+ TDs, ~25 pt basketball,
+  // ~20 kills volleyball). If nobody qualifies (the week's headline
+  // stats have been filed thinly and the biggest lines are all
+  // repeats), fall back to a still-solid floor rather than nothing at
+  // all — but only for genuinely notable performances, not modest ones.
+  //
+  // The fallback shipped at 30 was too permissive: a 73-yard, 0-TD
+  // passing line scores 36 and would crown as Player of the Week, which
+  // reads as a stat-thin pick to a first-visit reader (run 11 flag).
+  // 60 is the current floor — needs ~2 TDs of any kind, 60+ rush yds,
+  // 15+ tackles, or a similar performance. Weeks where the top non-
+  // repeat can't clear 60 hide the card entirely — a quiet week
+  // shouldn't crown a modest line just to fill a slot. The editor
+  // override in data/potw.json remains the way to feature someone
+  // sooner when a genuine story sits below the algorithm's floor.
   const primary = pickTopLineIn(pool, {
     minScore,
     eligibleSchoolIds,
@@ -301,7 +308,7 @@ export function pickPlayerOfWeek(
     weekStart,
   });
   if (primary) return primary;
-  const FALLBACK_FLOOR = 30; // a real (non-zero) stat line, not a shutout row
+  const FALLBACK_FLOOR = 60;
   return pickTopLineIn(pool, {
     minScore: FALLBACK_FLOOR,
     eligibleSchoolIds,
