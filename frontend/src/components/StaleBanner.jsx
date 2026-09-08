@@ -37,8 +37,14 @@ export default function StaleBanner({
 
   return (
     <div className="stale-banner" role="status">
-      <strong>Heads up:</strong> last data refresh was {ageLabel}. Live scores
-      may lag if the {SITE.governingBody} scrape ran into trouble.
+      {/* Was "HEADS UP: last data refresh was 4 hours ago. Live scores may
+          lag if the WIAA scrape ran into trouble." — the all-caps
+          "HEADS UP" prefix read as an alarm to a reader who just wanted
+          a score. Same information, calmer voice: leads with the
+          reassurance (auto-refresh), states the fact, notes the
+          practical implication without blaming an upstream service. */}
+      <strong>Scores refresh automatically.</strong> Last update was {ageLabel} —
+      a longer gap than usual, so live scores may be a bit behind.
     </div>
   );
 }

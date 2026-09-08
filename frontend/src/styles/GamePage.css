@@ -66,8 +66,13 @@
   align-items: center;
   gap: 1rem;
   padding: 0.85rem 1rem;
-  border-radius: var(--radius-sm);
-  background: rgba(255, 255, 255, 0.04);
+  /* Was `background: rgba(255,255,255,0.04) + border-radius`, which
+     rendered as a rounded inner card inside the rounded hero card —
+     detector caught `nested-cards ×2` in run 7. Flat wrappers now; the
+     school-color inset rail on `--school-color` still marks each team,
+     and the won-team accent wash still fires below. */
+  background: transparent;
+  border-radius: 0;
   /* School-color left rail when manifest has a color — sits behind the
      won-team inset shadow so the wash from --school-color is the always-on
      identity cue and the accent gold marks the winner on top. */

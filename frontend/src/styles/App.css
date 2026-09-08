@@ -237,7 +237,17 @@
   justify-content: flex-end;
 }
 /* Tab panel fade-in — subtle premium feel on tab switch. */
-.tab-panel { animation: tab-fade var(--t-med) var(--ease); }
+.tab-panel {
+  /* Give the tab panel the same vertical rhythm as the main column —
+     sections inside a tab (Central Wisconsin Ten → Conference Standings
+     → Power Rankings → Top Performers) had no enforced spacing, so their
+     h2s docked to the block above them (detector's `heading-rhythm` hits
+     on Power Rankings and Top Performers in run 7). */
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 2.5rem;
+  animation: tab-fade var(--t-med) var(--ease);
+}
 @keyframes tab-fade {
   from { opacity: 0; transform: translateY(6px); }
   to { opacity: 1; transform: none; }
