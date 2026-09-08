@@ -52,6 +52,18 @@
   color: var(--muted);
 }
 
+/* One-line dek under the masthead — the first-time reader's answer to
+   "what is this?" without having to scroll to the agate method note. */
+.top-ten__dek {
+  margin: 0.1rem 0 0.6rem;
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 0.92rem;
+  line-height: 1.4;
+  color: var(--ink);
+  max-width: 68ch;
+}
+
 .top-ten__list {
   list-style: none;
   margin: 0;
@@ -165,6 +177,9 @@
   display: inline-flex;
   align-items: center;
   gap: 0.15rem;
+  /* A hairline of breathing room from the rank digit so "10 · ▼ 1"
+     doesn't blur into "ten one" at a glance. */
+  margin-left: 0.35rem;
   min-width: 2.3rem;
   height: 1.35rem;
   padding: 0 0.35rem;

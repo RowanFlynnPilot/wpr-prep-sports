@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useEffect, useMemo, useRef } from "react";
 import { useSearchParams } from "react-router-dom";
 import Layout from "../components/Layout.jsx";
 import SectionTabs, { tabId, panelId } from "../components/SectionTabs.jsx";
@@ -279,6 +279,27 @@ export default function DashboardPage({
     );
   };
 
+  // A shared link like #/football?tab=standings should LAND on the
+  // standings, not at the top of the hero. Without this scroll, the
+  // conference-chip permalinks + POTW deep-link + article "look at the
+  // standings" flows all left the reader three scrolls short of the
+  // panel they'd asked for on a phone. Mount only — this must not fight
+  // a click-driven tab switch (the reader is already looking at the tab
+  // bar in that case). `scroll-margin-top` on the anchor keeps the tab
+  // bar clear of the sticky masthead on hosts that add one.
+  const tabsAnchorRef = useRef(null);
+  const initialTabFromUrl = useRef(searchParams.get("tab"));
+  useEffect(() => {
+    if (!initialTabFromUrl.current) return;
+    // rAF so React has painted the panel by the time we measure the
+    // anchor's position; without this the scroll target reads as the
+    // pre-render layout on Chrome.
+    const id = requestAnimationFrame(() => {
+      tabsAnchorRef.current?.scrollIntoView({ block: "start", behavior: "auto" });
+    });
+    return () => cancelAnimationFrame(id);
+  }, []);
+
   // --- Standings conference filter --------------------------------------
   // Seven tables in fixed order was a 6,400px panel on a phone with no
   // way in. One chip per conference; the default is the followed school's
@@ -425,7 +446,9 @@ export default function DashboardPage({
           above the fold on most screens (data/sponsors.json "banner:mid"). */}
       <Sponsor slot="banner:mid" sponsors={sponsors} variant="banner" />
 
-      <SectionTabs tabs={tabs} active={activeTab} onChange={setActiveTab} />
+      <div ref={tabsAnchorRef}>
+        <SectionTabs tabs={tabs} active={activeTab} onChange={setActiveTab} />
+      </div>
 
       {activeTab && (
         <Sponsor

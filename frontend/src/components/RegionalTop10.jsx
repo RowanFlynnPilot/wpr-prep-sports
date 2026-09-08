@@ -56,6 +56,14 @@ export default function RegionalTop10({
         <Sponsor slot="top-ten" sponsors={sponsors} variant="inline" className="top-ten__sponsor" />
       </header>
 
+      {/* Dek: one line explaining what the artifact IS, before the reader
+          hits the first row. Detail lives in .top-ten__method at the end;
+          this is the up-top one-liner three critiques asked for. */}
+      <p className="top-ten__dek">
+        A weekly {poll.editorial ? "editor's" : "algorithm-plus-editor"} ranking of the {SITE.regionLabel}{" "}
+        schools that mattered most last week.
+      </p>
+
       <ol className="top-ten__list">
         {poll.teams.map((t) => (
           <TopTenRow

@@ -41,6 +41,20 @@
      tighter padding + smaller form chips. Keep `auto` as a safety net
      for the smallest mobile widths only. */
   overflow-x: auto;
+  position: relative;
+  /* Scroll shadow — only visible when there is actually content past the
+     right edge to reveal. `background-attachment: local` binds the "cover"
+     to the scrolling content, so it moves off-screen with the content and
+     stops masking the shadow when overflow exists; the shadow itself is
+     `scroll`, fixed to the wrap. No overflow = the cover sits exactly on
+     top of the shadow and neither is visible. This avoids the failure
+     mode of a persistent fade covering the details-toggle chevron on
+     tables that already fit. */
+  background:
+    linear-gradient(to left, var(--card), transparent 20px) right center / 22px 100% no-repeat,
+    linear-gradient(to left, rgba(0, 0, 0, 0.18), transparent) right center / 10px 100% no-repeat;
+  background-attachment: local, scroll;
+  background-color: var(--card);
 }
 
 /* Phones: the seven columns want 429–458px against roughly 350px of usable
