@@ -83,10 +83,14 @@
   font-weight: 700;
   font-size: 0.95rem;
   color: var(--ink-hero);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 100%;
+  /* Was `nowrap` + `text-overflow: ellipsis`, which truncated "Wisconsin
+     Rapids Lincoln" mid-word on the compressed strip (detector caught it
+     in run 6). Letting the name wrap grows the strip one line for that
+     game only — still much lighter than the pre-distill magazine card,
+     and the school name reads in full. */
+  white-space: normal;
+  overflow-wrap: anywhere;
+  line-height: 1.15;
 }
 .gotw__name--won {
   color: var(--accent-700);
