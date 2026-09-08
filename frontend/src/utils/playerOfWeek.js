@@ -1,10 +1,12 @@
 /**
  * Player of the Week selection.
  *
- * Scans finalized games in the most recent week with games (so the
- * section still shows something at the start of a new week before
- * Friday's games land), scores each game's stat_leaders by a per-
- * category heuristic, and returns the standout.
+ * Scans finalized games in the most recent COMPLETED school week
+ * (Mon–Sun) with at least MIN_WEEK_STAT_GAMES box scores, scores each
+ * game's stat_leaders by a per-category heuristic, and returns the
+ * standout. Prior-week winners are excluded so the same player doesn't
+ * crown twice in a season — the whole point of the feature is to
+ * spotlight different athletes week to week.
  *
  * Eligibility: stat_leaders with a non-empty team_school_id only —
  * keeps the editorial focus on central-WI schools rather than
@@ -159,6 +161,43 @@ export function resolveOverridePotw(override, games) {
 // bypasses this entirely — an explicit editorial pick always shows.
 const MIN_STAT_GAMES_FOR_AUTO_PICK = 10;
 
+/** Case-insensitive whitespace-normalized name key. */
+function normalizeName(name) {
+  return String(name || "").toLowerCase().trim().replace(/\s+/g, " ");
+}
+
+/**
+ * Score every stat line in `games`, return the highest-scoring entry
+ * that clears `minScore` and passes the region + exclusion filters.
+ * Returns null when nothing qualifies.
+ */
+function pickTopLineIn(games, { minScore, eligibleSchoolIds, excludeNames, source = "algorithm", weekStart = null }) {
+  let best = null;
+  for (const game of games) {
+    for (const line of topStatLines(game)) {
+      if (!line.team_school_id) continue; // editorial focus: tracked schools only
+      // Editorial radius (Shereen, 2026-08): Player of the Week features
+      // athletes within ~60 miles of Wausau. SITE.homeRegionCities is
+      // that radius as a city list — the same one the hero uses — so a
+      // Superior or Eau Claire line can lead the scoreboard without
+      // being crowned. null = no restriction (white-label tenants
+      // without a configured home region keep the whole-coverage pick).
+      if (eligibleSchoolIds && !eligibleSchoolIds.has(line.team_school_id)) continue;
+      // Prior-week winners are excluded so the same player doesn't crown
+      // twice in the same season — the whole point of the feature is
+      // spotlighting different athletes week to week. Editor override
+      // (data/potw.json) bypasses this: an explicit pick always wins.
+      if (excludeNames && excludeNames.has(normalizeName(line.player_name))) continue;
+      const score = scoreStatLine(line);
+      if (score < minScore) continue;
+      if (!best || score > best.score) {
+        best = { line, game, schoolId: line.team_school_id, score, source, weekStart };
+      }
+    }
+  }
+  return best;
+}
+
 export function pickPlayerOfWeek(
   games,
   { minScore = 80, anchor = null, eligibleSchoolIds = null } = {},
@@ -182,6 +221,11 @@ export function pickPlayerOfWeek(
   // the card can say which week it is crowning — the Monday cadence
   // below can hold a pick nine days past its games.
   let weekStart = null;
+  // Names of prior-week winners in the same season, computed in week
+  // mode below. Anchor mode (tests / archive renders) skips this — a
+  // single explicit window doesn't have "prior weeks" to inspect.
+  let priorWinnerNames = null;
+
   if (anchor) {
     // Explicit anchor (tests, archive renders): classic 7-day window.
     const lastTs = new Date(anchor).getTime();
@@ -219,25 +263,49 @@ export function pickPlayerOfWeek(
     }
     pool = byWeek.get(chosen);
     weekStart = chosen;
-  }
 
-  let best = null;
-  for (const game of pool) {
-    for (const line of topStatLines(game)) {
-      if (!line.team_school_id) continue; // editorial focus: tracked schools only
-      // Editorial radius (Shereen, 2026-08): Player of the Week features
-      // athletes within ~60 miles of Wausau. SITE.homeRegionCities is
-      // that radius as a city list — the same one the hero uses — so a
-      // Superior or Eau Claire line can lead the scoreboard without
-      // being crowned. null = no restriction (white-label tenants
-      // without a configured home region keep the whole-coverage pick).
-      if (eligibleSchoolIds && !eligibleSchoolIds.has(line.team_school_id)) continue;
-      const score = scoreStatLine(line);
-      if (score < minScore) continue;
-      if (!best || score > best.score) {
-        best = { line, game, schoolId: line.team_school_id, score, source: "algorithm", weekStart };
+    // Rerun the same algorithm on every EARLIER completed week and
+    // collect the top-pick names; the current week's scan skips anyone
+    // in that set. No-repeat rule (Rowan, 2026-09-08): Miles Waldvogel
+    // won week 1 with a 3-TD rushing line and would have won week 2
+    // outright too — but the whole point of the feature is spotlighting
+    // different athletes week to week. Editor override (data/potw.json)
+    // bypasses this and can still crown any player twice, deliberately.
+    priorWinnerNames = new Set();
+    for (const wk of weekKeys) {
+      if (wk >= chosen) continue;
+      const wkBest = pickTopLineIn(byWeek.get(wk), {
+        minScore,
+        eligibleSchoolIds,
+        excludeNames: null, // prior weeks pick without exclusion
+      });
+      if (wkBest?.line?.player_name) {
+        priorWinnerNames.add(normalizeName(wkBest.line.player_name));
       }
     }
   }
-  return best;
+
+  // Two-pass with the exclusion set. First try the normal threshold —
+  // an MVP-tier performance from someone new. If nobody qualifies (the
+  // week's headline_stats have been filed thinly and the biggest lines
+  // are all repeats), drop to a lower floor so the dashboard still
+  // crowns SOMEONE modest rather than showing an empty section. Cadence
+  // note: coaches upload stats over the days after a game, so a
+  // Monday-morning render of a Sunday-completed week may only have one
+  // or two box scores in — a lenient fallback keeps the card populated
+  // while more lines flow in.
+  const primary = pickTopLineIn(pool, {
+    minScore,
+    eligibleSchoolIds,
+    excludeNames: priorWinnerNames,
+    weekStart,
+  });
+  if (primary) return primary;
+  const FALLBACK_FLOOR = 30; // a real (non-zero) stat line, not a shutout row
+  return pickTopLineIn(pool, {
+    minScore: FALLBACK_FLOOR,
+    eligibleSchoolIds,
+    excludeNames: priorWinnerNames,
+    weekStart,
+  });
 }
