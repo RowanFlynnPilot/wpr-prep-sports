@@ -261,60 +261,64 @@ export default function GamePage({ dataset, schoolIndex, sportConfig }) {
       <SpiritGallery game={game} photos={dataset.spirit} />
 
       {/* Game Stats: full editorial section when stats are on file,
-          compact one-line note when they aren't. The empty case was a
-          full section with an h2 and a bordered box that read as broken
-          on ~200px of empty scroll (run 9 flagged it). Now the empty
-          case is a small pending-note; the recap above is the load-
-          bearing "final score is authoritative" signal. */}
-      {game.status !== "scheduled" && onGameCount > 0 && (
+          a proper empty-state card when they aren't. Both variants
+          share the same section-header h2 so the page's outline reads
+          the same either way, and the empty card is bounded (not the
+          ~200px of open scroll run 9 flagged) so it doesn't read as
+          broken. */}
+      {game.status !== "scheduled" && (
         <section>
           <div className="section-header">
             <h2>Game Stats</h2>
-            <span className="section-header__hint">
-              {onGameCount} stat leaders
-              {statsSourceLabel(game) ? ` · via ${statsSourceLabel(game)}` : ""}
-              {fullLines === null && (game.stat_line_count ?? 0) > statLines.length
-                ? " · loading full box score…"
-                : ""}
-            </span>
+            {onGameCount > 0 && (
+              <span className="section-header__hint">
+                {onGameCount} stat leaders
+                {statsSourceLabel(game) ? ` · via ${statsSourceLabel(game)}` : ""}
+                {fullLines === null && (game.stat_line_count ?? 0) > statLines.length
+                  ? " · loading full box score…"
+                  : ""}
+              </span>
+            )}
           </div>
 
-          <div className="game-stats">
-            <TeamStatsCard
-              label={game.away.name}
-              team={game.away}
-              school={awaySchool}
-              won={awayWon}
-              lines={statsByKey.get(keyForSide(game.away)) ?? []}
-              score={awayScore}
-              showScore={isFinal}
-              sportPrefix={sportPrefix}
-              otherSideHasStats={
-                (statsByKey.get(keyForSide(game.home)) ?? []).length > 0
-              }
+          {onGameCount > 0 ? (
+            <div className="game-stats">
+              <TeamStatsCard
+                label={game.away.name}
+                team={game.away}
+                school={awaySchool}
+                won={awayWon}
+                lines={statsByKey.get(keyForSide(game.away)) ?? []}
+                score={awayScore}
+                showScore={isFinal}
+                sportPrefix={sportPrefix}
+                otherSideHasStats={
+                  (statsByKey.get(keyForSide(game.home)) ?? []).length > 0
+                }
+              />
+              <TeamStatsCard
+                label={game.home.name}
+                team={game.home}
+                school={homeSchool}
+                won={homeWon}
+                lines={statsByKey.get(keyForSide(game.home)) ?? []}
+                score={homeScore}
+                showScore={isFinal}
+                sportPrefix={sportPrefix}
+                otherSideHasStats={
+                  (statsByKey.get(keyForSide(game.away)) ?? []).length > 0
+                }
+              />
+            </div>
+          ) : (
+            <StatsPending
+              forfeit={forfeit}
+              unreported={unreported}
+              away={game.away}
+              home={game.home}
             />
-            <TeamStatsCard
-              label={game.home.name}
-              team={game.home}
-              school={homeSchool}
-              won={homeWon}
-              lines={statsByKey.get(keyForSide(game.home)) ?? []}
-              score={homeScore}
-              showScore={isFinal}
-              sportPrefix={sportPrefix}
-              otherSideHasStats={
-                (statsByKey.get(keyForSide(game.away)) ?? []).length > 0
-              }
-            />
-          </div>
+          )}
         </section>
-      )}
-      {game.status !== "scheduled" && onGameCount === 0 && (
-        <p className="game-stats__pending" role="note">
-          Coaches haven&rsquo;t filed a box score for this game yet — one usually
-          lands a day or two after the game. The final score above is
-          authoritative.
-        </p>
       )}
 
       {/* Anchor banner — cross-sport full-creative surface for game pages
@@ -323,6 +327,54 @@ export default function GamePage({ dataset, schoolIndex, sportConfig }) {
           mid-dashboard slot); hidden until it's filled. */}
       <Sponsor slot="banner:game" sponsors={dataset.sponsors} variant="banner" />
     </Layout>
+  );
+}
+
+/**
+ * Empty state for the Game Stats section. Three variants:
+ *
+ *   forfeit    — the game was recorded as a forfeit, no play, no stats.
+ *   unreported — WIAA marked the game final without posting a score.
+ *   default    — a real final result, box score not filed yet.
+ *
+ * Each variant reserves the same shape (headline + one line of body +
+ * team-page action links when the teams are tracked) so the page's
+ * outline reads the same whether stats have landed or not.
+ */
+function StatsPending({ forfeit, unreported, away, home }) {
+  const variant = forfeit ? "forfeit" : unreported ? "unreported" : "pending";
+  const headline =
+    variant === "forfeit"
+      ? "No box score"
+      : variant === "unreported"
+        ? "Score not reported"
+        : "Box score pending";
+  const body =
+    variant === "forfeit"
+      ? "Recorded as a forfeit — no game was played, so no stats to file."
+      : variant === "unreported"
+        ? "WIAA marked this game final without posting a score. The team’s season totals may still fill in as coaches file later games."
+        : "Coaches usually file within a day or two of the final whistle. The final score above is authoritative in the meantime.";
+  const showTeamActions = Boolean(away?.school_id || home?.school_id);
+  return (
+    <div className={`stats-pending stats-pending--${variant}`} role="note">
+      <p className="stats-pending__headline">{headline}</p>
+      <p className="stats-pending__body">{body}</p>
+      {showTeamActions && (
+        <div className="stats-pending__actions">
+          {away?.school_id && (
+            <TeamLink team={away} className="stats-pending__action">
+              {away.name} season stats →
+            </TeamLink>
+          )}
+          {home?.school_id && (
+            <TeamLink team={home} className="stats-pending__action">
+              {home.name} season stats →
+            </TeamLink>
+          )}
+        </div>
+      )}
+    </div>
   );
 }
 

@@ -598,26 +598,56 @@
   text-align: center;
 }
 
-.game-stats__empty {
-  padding: 1.25rem;
-  border: 1px dashed var(--line);
+/* Empty state for the Game Stats section. Bounded card (not the ~200px
+   of blank scroll run 9 flagged) that reserves the section's shape,
+   sets expectations, and offers a way forward via team-page links. */
+.stats-pending {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--muted-2);
   border-radius: var(--radius);
-  color: var(--muted);
-  font-style: italic;
-  text-align: center;
+  padding: 1.1rem 1.25rem;
 }
-/* Compact pending-note that replaces the empty section when no box
-   score has been filed yet — one line of italic prose instead of a
-   full editorial section (run 9 flagged the empty section as ~200px
-   of scroll that read as broken). */
-.game-stats__pending {
-  margin: 0.5rem 0 0;
+.stats-pending--forfeit,
+.stats-pending--unreported {
+  border-left-color: var(--muted-2);
+}
+.stats-pending__headline {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.stats-pending__body {
+  margin: 0.4rem 0 0;
   font-family: var(--font-body);
-  font-style: italic;
   font-size: 0.9rem;
   line-height: 1.5;
   color: var(--muted);
   max-width: 68ch;
+}
+.stats-pending__actions {
+  margin-top: 0.85rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.85rem;
+}
+.stats-pending__action {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--link);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s ease;
+}
+.stats-pending__action:hover {
+  border-bottom-color: currentColor;
 }
 
 @media (max-width: 720px) {
