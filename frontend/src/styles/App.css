@@ -478,6 +478,18 @@
   border-color: var(--ink);
   color: #fff;
 }
+/* Disclosure toggle for the folded conferences. Lighter than a regular
+   chip so it reads as an affordance rather than a peer chip. */
+.conf-filter__chip--more {
+  color: var(--muted);
+  background: transparent;
+  border-style: dashed;
+}
+.conf-filter__chip--more:hover {
+  color: var(--ink);
+  border-color: var(--ink);
+  background: var(--paper-2);
+}
 
 @media (max-width: 640px) {
   .app { padding: 1rem 0.75rem 3rem; }

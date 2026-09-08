@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import Layout from "../components/Layout.jsx";
 import SectionTabs, { tabId, panelId } from "../components/SectionTabs.jsx";
@@ -306,10 +306,46 @@ export default function DashboardPage({
   // conference in this sport when one is set, otherwise everything. URL-
   // synced (?conf=) so a sponsor or article link can land on one table.
   const favorites = useFavorites();
-  const confNames = useMemo(
-    () => meaningfulStandings.map((s) => s.conference),
-    [meaningfulStandings],
-  );
+  // Chip order: home-region conferences lead. Same weight algorithm as
+  // ThisWeekGrid.confWeight — score each conference by its NEAREST
+  // home-region school's rank in SITE.homeRegionCities, member count as
+  // tiebreak. Wisconsin Valley and Great Northern rise to the front for
+  // a Wausau reader; a conference with no home-region school falls to
+  // the tail. Sorted once per render, memoized on inputs.
+  const confNames = useMemo(() => {
+    const conferences = meaningfulStandings.map((s) => s.conference);
+    if (!homeRegion || homeRegion.size === 0) return conferences;
+    const cities = SITE.homeRegionCities ?? [];
+    const best = new Map(); // conference -> { rank, count }
+    for (const id of homeRegion) {
+      const school = schoolIndex.get(id);
+      const conf = school?.conferences?.find?.((c) => c.sport === sportConfig?.id)?.conference;
+      if (!conf) continue;
+      let rank = cities.indexOf(school?.city);
+      if (rank < 0) rank = cities.length;
+      const cur = best.get(conf);
+      best.set(conf, {
+        rank: cur ? Math.min(cur.rank, rank) : rank,
+        count: (cur?.count ?? 0) + 1,
+      });
+    }
+    const weightOf = (conf) => {
+      const b = best.get(conf);
+      if (!b) return -1; // no home-region school → tail
+      return (cities.length + 1 - b.rank) * 1000 + b.count;
+    };
+    return [...conferences].sort(
+      (a, b) => weightOf(b) - weightOf(a) || a.localeCompare(b),
+    );
+  }, [meaningfulStandings, homeRegion, schoolIndex, sportConfig?.id]);
+  // Chip strip that stays reasonable at wider counts: show the top 5
+  // home-region conferences unfolded, the rest behind "More conferences ▾"
+  // (persistent for the session). At 5 or fewer, the toggle doesn't
+  // render.
+  const CHIP_FOLD_AT = 5;
+  const [confChipsExpanded, setConfChipsExpanded] = useState(false);
+  const visibleChipNames = confChipsExpanded ? confNames : confNames.slice(0, CHIP_FOLD_AT);
+  const hiddenChipCount = Math.max(0, confNames.length - CHIP_FOLD_AT);
   const followedConf = useMemo(() => {
     for (const id of favorites) {
       const c = conferenceFor(schoolIndex.get(id), sportConfig?.id);
@@ -573,7 +609,7 @@ export default function DashboardPage({
                   >
                     All conferences
                   </button>
-                  {confNames.map((c) => (
+                  {visibleChipNames.map((c) => (
                     <button
                       key={c}
                       type="button"
@@ -586,6 +622,27 @@ export default function DashboardPage({
                       {c}
                     </button>
                   ))}
+                  {hiddenChipCount > 0 && !confChipsExpanded && (
+                    <button
+                      type="button"
+                      className="conf-filter__chip conf-filter__chip--more"
+                      aria-expanded="false"
+                      aria-label={`Show ${hiddenChipCount} more conference${hiddenChipCount === 1 ? "" : "s"}`}
+                      onClick={() => setConfChipsExpanded(true)}
+                    >
+                      + {hiddenChipCount} more <span aria-hidden="true">▾</span>
+                    </button>
+                  )}
+                  {confChipsExpanded && hiddenChipCount > 0 && (
+                    <button
+                      type="button"
+                      className="conf-filter__chip conf-filter__chip--more"
+                      aria-expanded="true"
+                      onClick={() => setConfChipsExpanded(false)}
+                    >
+                      Fewer conferences <span aria-hidden="true">▴</span>
+                    </button>
+                  )}
                 </div>
               )}
               <div
