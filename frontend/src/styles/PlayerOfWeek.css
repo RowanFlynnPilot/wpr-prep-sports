@@ -58,6 +58,14 @@
   line-height: 1.35;
   color: var(--ink);
 }
+.potw__logo {
+  /* Small identity mark next to the name — the reader's fastest way
+     to know which school before parsing the school label. Aligned to
+     the name's baseline via `align-self`. */
+  align-self: center;
+  flex: 0 0 auto;
+  margin-right: -0.35rem;
+}
 .potw__name {
   font-family: var(--font-display);
   font-weight: 700;

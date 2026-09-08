@@ -1,6 +1,7 @@
 import { useMemo } from "react";
 import { Link } from "react-router-dom";
 import Sponsor from "./Sponsor.jsx";
+import TeamLogo from "./TeamLogo.jsx";
 import { pickPlayerOfWeek, resolveOverridePotw } from "../utils/playerOfWeek.js";
 import { homeRegionSchoolIds, primaryColor } from "../utils/schools.js";
 import { useSportPrefix } from "../utils/links.js";
@@ -76,6 +77,16 @@ export default function PlayerOfWeek({ games, schoolIndex, sponsors, sportConfig
       </header>
 
       <div className="potw__row">
+        {/* The school logo — the reader's fastest identity cue. Was
+            removed in the run-9 strip compression; run-10 feedback
+            surfaced it missing on mobile. Small (sm = 24px) so it fits
+            the strip without reintroducing the card shape. */}
+        <TeamLogo
+          team={{ school_id: schoolId, name: school?.name ?? schoolId, logo_url: school?.logo_url ?? null }}
+          school={school}
+          size="sm"
+          className="potw__logo"
+        />
         <Link
           to={playerHref}
           className="potw__name"
