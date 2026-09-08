@@ -1,18 +1,20 @@
-/* Player of the Week — on paper, not chrome. The dashboard keeps ONE
-   black lead (the featured-game hero); this card carries the school's
-   color as a rail and lets the athlete's name and stat line do the work.
-   Was a second black slab stacked under the hero. */
+/* Player of the Week — compressed strip on paper, matching the Marquee
+   shape. The previous magazine card treatment kept the pinned strip
+   reading as "three hero-shape cards" long after the Marquee distill
+   (nine critique runs of "dashboard density" flags). Now: eyebrow row
+   + one-line body with the school-color rail on the left. Full card
+   treatment lives on the player page for readers who click through. */
+
 .potw {
+  position: relative;
   background: var(--card);
   color: var(--ink);
   border: 1px solid var(--line);
-  border-radius: var(--radius);
+  border-radius: var(--radius-sm);
+  padding: 0.55rem 0.9rem 0.6rem 1.15rem;
   overflow: hidden;
-  position: relative;
 }
-/* School-colored left rail — same pattern as scoreboard ticker cards. */
-.potw::before {
-  content: "";
+.potw__bar {
   position: absolute;
   left: 0;
   top: 0;
@@ -21,19 +23,18 @@
   background: var(--school-color, var(--accent));
 }
 
-.potw__header {
+.potw__masthead {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: space-between;
   gap: 0.75rem;
-  padding: 0.75rem 1.1rem 0.65rem 1.4rem;
-  border-bottom: 1px solid var(--paper-2);
+  margin-bottom: 0.25rem;
 }
 .potw__eyebrow {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 0.75rem;
-  letter-spacing: 0.16em;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--accent-700);
 }
@@ -42,88 +43,40 @@
   letter-spacing: 0.08em;
   color: var(--muted);
 }
+.potw__sponsor { flex: 0 0 auto; }
 
-/* Narrow phones: let the funder credit wrap onto its own right-aligned
-   row — squeezing it beside the title clipped the lockup. */
-@media (max-width: 400px) {
-  .potw__header {
-    flex-wrap: wrap;
-  }
-  .potw .sponsor {
-    margin-left: auto;
-  }
-  .potw .sponsor__logo {
-    max-height: 34px;
-    max-width: 150px;
-  }
-}
-
-.potw__body {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  align-items: center;
-  gap: 1.1rem;
-  padding: 1.1rem 1.4rem;
-}
-
-.potw__avatar {
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 1.4rem;
-  letter-spacing: 0.05em;
-  color: #fff;
-  background: var(--school-color, var(--muted-2));
-  box-shadow: 0 0 0 3px var(--paper-2);
-  flex: 0 0 auto;
-}
-.potw__avatar-logo {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  background: var(--card);
-  padding: 4px;
-}
-
-.potw__meta {
-  min-width: 0;
+/* One row on desktop; wraps on narrow. Every element is a peer in the
+   flex flow, so the row grows one line only when a long stat sentence
+   or opponent name needs the room. */
+.potw__row {
   display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.2rem 0.75rem;
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  line-height: 1.35;
+  color: var(--ink);
 }
-
 .potw__name {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 1.4rem;
-  letter-spacing: 0.01em;
-  line-height: 1.1;
-  margin: 0;
+  font-size: 1.05rem;
   color: var(--ink-hero);
-  display: inline-flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 0.45rem;
-}
-.potw__name-link {
-  color: inherit;
   text-decoration: none;
   border-bottom: 1px solid transparent;
 }
-.potw__name-link:hover {
+.potw__name:hover,
+.potw__name:focus-visible {
+  color: var(--accent-700);
   border-bottom-color: currentColor;
 }
 .potw__year {
+  font-family: var(--font-body);
   font-weight: 400;
-  font-size: 0.95rem;
-  color: var(--muted);
   font-style: italic;
+  font-size: 0.85rem;
+  color: var(--muted);
 }
 .potw__pos {
   font-family: var(--font-display);
@@ -133,87 +86,102 @@
   text-transform: uppercase;
   color: var(--accent-700);
   background: color-mix(in srgb, var(--accent) 12%, transparent);
-  padding: 0.2rem 0.45rem;
+  padding: 0.15rem 0.4rem;
   border-radius: var(--radius-sm);
-  margin-left: 0.2rem;
+  align-self: center;
 }
-
 .potw__school {
-  font-family: var(--font-body);
-  font-size: 0.82rem;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
   color: var(--muted);
   text-decoration: none;
   border-bottom: 1px solid transparent;
-  transition: color var(--t-fast) var(--ease),
-              border-color var(--t-fast) var(--ease);
-  align-self: flex-start;
 }
-.potw__school:hover {
+.potw__school::before { content: "· "; color: var(--muted-2); }
+.potw__school:hover,
+.potw__school:focus-visible {
   color: var(--ink);
   border-bottom-color: currentColor;
 }
-.potw__mascot {
-  font-style: italic;
-  color: var(--muted-2);
-}
-
 .potw__line {
-  margin: 0.3rem 0 0;
   font-family: var(--font-body);
-  font-size: 1rem;
+  font-style: italic;
+  font-size: 0.9rem;
   color: var(--ink);
-  line-height: 1.4;
-  max-width: 70ch;
+  flex: 1 1 24ch;
+  min-width: 0;
 }
-
-.potw__game {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 0.15rem;
-  text-align: right;
+.potw__result {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  padding: 0.15rem 0.55rem;
+  border-radius: var(--radius-sm);
+  background: var(--paper-2);
   color: var(--ink);
   text-decoration: none;
-  padding: 0.5rem 0.7rem;
-  background: var(--paper-2);
-  border-radius: var(--radius-sm);
   border: 1px solid transparent;
-  transition: border-color var(--t-fast) var(--ease);
   flex: 0 0 auto;
+  transition: border-color var(--t-fast) var(--ease);
 }
-.potw__game:hover {
+.potw__result:hover,
+.potw__result:focus-visible {
   border-color: var(--school-color, var(--accent));
 }
-.potw__game-result {
-  font-family: var(--font-numeric);
-  font-weight: 700;
-  font-size: 1.1rem;
-  font-variant-numeric: tabular-nums;
+.potw__result-mark {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.78rem;
   letter-spacing: 0.02em;
 }
-.potw__game-opp {
+.potw__result--won .potw__result-mark { color: var(--accent); }
+.potw__result--loss .potw__result-mark { color: var(--loss); }
+.potw__result--tie .potw__result-mark { color: var(--tie); }
+.potw__result-score {
+  font-family: var(--font-numeric);
+  font-weight: 700;
+  font-size: 0.9rem;
+  font-variant-numeric: tabular-nums;
+}
+.potw__result-opp {
   font-family: var(--font-body);
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: var(--muted);
 }
-.potw__game-date {
+.potw__cta {
+  flex: 0 0 auto;
+  margin-left: auto;
   font-family: var(--font-display);
   font-size: 0.72rem;
-  letter-spacing: 0.12em;
+  font-weight: 700;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: var(--muted-2);
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: none;
+  transition: transform var(--t-fast) var(--ease);
+}
+.potw:hover .potw__cta {
+  transform: translateX(3px);
 }
 
-@media (max-width: 720px) {
-  .potw__body {
-    grid-template-columns: auto 1fr;
-    gap: 0.9rem;
+@media (max-width: 600px) {
+  .potw {
+    padding: 0.55rem 0.7rem 0.7rem 1rem;
   }
-  .potw__game {
-    grid-column: 1 / -1;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    text-align: left;
+  .potw__masthead {
+    flex-wrap: wrap;
+    gap: 0.35rem 0.75rem;
+  }
+  .potw__result-opp {
+    /* Save row space on phones; the opponent name still shows on the
+       player page click-through. */
+    display: none;
+  }
+  .potw__cta {
+    margin-left: 0;
   }
 }

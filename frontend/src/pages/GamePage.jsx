@@ -15,7 +15,7 @@ import ShareButton from "../components/ShareButton.jsx";
 import { schoolFor } from "../utils/schools.js";
 import { formatGameDay, formatGameDate, formatGameTime } from "../utils/dates.js";
 import { recapForGame } from "../utils/recap.js";
-import { isForfeitScore, isUnreportedFinal } from "../utils/games.js";
+import { humanizeVenue, isForfeitScore, isUnreportedFinal } from "../utils/games.js";
 import { useSportPrefix } from "../utils/links.js";
 import { displayPlayerName, playerProfileHref } from "../utils/players.js";
 import { SITE } from "../config/site.js";
@@ -186,7 +186,9 @@ export default function GamePage({ dataset, schoolIndex, sportConfig }) {
             {formatGameDay(game.date)} · {formatGameDate(game.date)}
             {!isFinal && <> · {formatGameTime(game.date)}</>}
           </span>
-          {game.venue && <span className="game-page__venue">{game.venue}</span>}
+          {game.venue && (
+            <span className="game-page__venue">{humanizeVenue(game.venue)}</span>
+          )}
           {contextLabel && (
             <span className="game-page__context">{contextLabel}</span>
           )}
@@ -258,17 +260,25 @@ export default function GamePage({ dataset, schoolIndex, sportConfig }) {
 
       <SpiritGallery game={game} photos={dataset.spirit} />
 
-      {game.status !== "scheduled" && (<section>
-        <div className="section-header">
-          <h2>Game Stats</h2>
-          <span className="section-header__hint">
-            {onGameCount
-              ? `${onGameCount} stat leaders${statsSourceLabel(game) ? ` · via ${statsSourceLabel(game)}` : ""}${fullLines === null && (game.stat_line_count ?? 0) > statLines.length ? " · loading full box score…" : ""}`
-              : "No stats available for this game"}
-          </span>
-        </div>
+      {/* Game Stats: full editorial section when stats are on file,
+          compact one-line note when they aren't. The empty case was a
+          full section with an h2 and a bordered box that read as broken
+          on ~200px of empty scroll (run 9 flagged it). Now the empty
+          case is a small pending-note; the recap above is the load-
+          bearing "final score is authoritative" signal. */}
+      {game.status !== "scheduled" && onGameCount > 0 && (
+        <section>
+          <div className="section-header">
+            <h2>Game Stats</h2>
+            <span className="section-header__hint">
+              {onGameCount} stat leaders
+              {statsSourceLabel(game) ? ` · via ${statsSourceLabel(game)}` : ""}
+              {fullLines === null && (game.stat_line_count ?? 0) > statLines.length
+                ? " · loading full box score…"
+                : ""}
+            </span>
+          </div>
 
-        {onGameCount > 0 ? (
           <div className="game-stats">
             <TeamStatsCard
               label={game.away.name}
@@ -297,16 +307,15 @@ export default function GamePage({ dataset, schoolIndex, sportConfig }) {
               }
             />
           </div>
-        ) : (
-          <div className="game-stats__empty">
-            <p>
-              Stats for this game haven&rsquo;t been reported by the coaches
-              yet &mdash; box scores usually land a day or two after the game.
-              The final score above is authoritative.
-            </p>
-          </div>
-        )}
-      </section>)}
+        </section>
+      )}
+      {game.status !== "scheduled" && onGameCount === 0 && (
+        <p className="game-stats__pending" role="note">
+          Coaches haven&rsquo;t filed a box score for this game yet — one usually
+          lands a day or two after the game. The final score above is
+          authoritative.
+        </p>
+      )}
 
       {/* Anchor banner — cross-sport full-creative surface for game pages
           (data/sponsors.json "banner:game"), the widget's highest-traffic

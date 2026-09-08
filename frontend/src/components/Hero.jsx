@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import TeamLogo from "./TeamLogo.jsx";
 import TeamLink from "./TeamLink.jsx";
 import { schoolFor } from "../utils/schools.js";
+import { humanizeVenue } from "../utils/games.js";
 import { useSportPrefix } from "../utils/links.js";
 import { formatGameDay, formatGameDate, formatGameTime } from "../utils/dates.js";
 import { recapForGame } from "../utils/recap.js";
@@ -119,7 +120,9 @@ export default function Hero({
           {formatGameDay(game.date)} · {formatGameDate(game.date)}
           {!isFinal && <> · {formatGameTime(game.date)}</>}
         </span>
-        {game.venue && <span className="hero__venue">{game.venue}</span>}
+        {game.venue && (
+          <span className="hero__venue">{humanizeVenue(game.venue)}</span>
+        )}
       </div>
 
       <div className="hero__matchup">

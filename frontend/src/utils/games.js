@@ -8,6 +8,17 @@ const RESULT_LEAD_MS = 72 * 60 * 60 * 1000;
 // WIAA records forfeits as 1-0 (basketball sometimes 2-0) finals —
 // impossible on-field scores in those sports. Same rule recap.js uses to
 // phrase them; soccer/hockey 1-0s are real games and never match here.
+/**
+ * WIAA venues arrive prefixed with "@" ("@Lakeland" = "at Lakeland"),
+ * which the frontend used to render verbatim — reading like a social
+ * handle rather than a stadium location. Strip the "@" and prepend
+ * "at". Non-"@" venues (a real stadium name) pass through unchanged.
+ */
+export function humanizeVenue(v) {
+  const s = String(v ?? "").trim();
+  return s.startsWith("@") ? `at ${s.slice(1)}` : s;
+}
+
 export function isForfeitScore(game) {
   const h = game?.home?.score;
   const a = game?.away?.score;

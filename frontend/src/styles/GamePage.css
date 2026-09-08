@@ -606,6 +606,19 @@
   font-style: italic;
   text-align: center;
 }
+/* Compact pending-note that replaces the empty section when no box
+   score has been filed yet — one line of italic prose instead of a
+   full editorial section (run 9 flagged the empty section as ~200px
+   of scroll that read as broken). */
+.game-stats__pending {
+  margin: 0.5rem 0 0;
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--muted);
+  max-width: 68ch;
+}
 
 @media (max-width: 720px) {
   .game-page__hero { padding: 1.25rem 1.25rem 1.5rem; }

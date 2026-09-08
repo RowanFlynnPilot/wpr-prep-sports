@@ -215,19 +215,27 @@
 /* Stale-data banner ------------------------------------------------------ */
 
 .stale-banner {
-  background: var(--banner-warn-bg);
-  border: 1px solid var(--banner-warn-line);
+  /* Was `--banner-warn-bg` (warm orange tint) with an uppercase
+     display-family strong tag — even after the calm rewrite the
+     opener read as an alert. Neutral paper background + sentence-case
+     strong. The information is a status note, not a warning. */
+  background: var(--paper-2);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--muted-2);
   border-radius: var(--radius-sm);
   padding: 0.7rem 1rem;
   font-size: 0.9rem;
-  color: var(--accent-700);
+  color: var(--muted);
   margin-bottom: 1.25rem;
 }
 .stale-banner strong {
-  font-family: var(--font-display);
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  /* Body-bold, not display-uppercase — the uppercase treatment was
+     what made "SCORES REFRESH AUTOMATICALLY." read as a shout. */
+  font-family: var(--font-body);
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--ink);
   margin-right: 0.4rem;
 }
 

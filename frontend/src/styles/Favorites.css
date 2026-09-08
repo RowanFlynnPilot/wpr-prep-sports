@@ -308,22 +308,30 @@
 
 /* ---- follow prompt ---------------------------------------------------- */
 /* One-line editorial nudge sitting under the hero when no school is
-   followed. Was a full-width bordered promotion band (five runs of "two
-   CTAs for the same intent" flags — the masthead finder does the same
-   job). Now reads as an editor's note in italic prose, actions inline as
-   plain-text links; visually recedes so the hero (and the finder above)
-   don't compete for attention. */
+   followed. The dismiss control moved out of the prose to a small × at
+   the row's right edge — the previous inline "· Dismiss" made the
+   sentence read as five separate clickable regions to a first-time
+   reader. Now: two inline links in the text, one × at the end.
+   Visually recedes so the hero (and the finder above) don't compete
+   for attention. */
 .follow-prompt {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
   margin: 0.35rem 0 1rem;
   padding: 0;
   background: none;
   border: none;
+  max-width: 68ch;
+}
+.follow-prompt__text {
+  flex: 1 1 auto;
+  margin: 0;
   font-family: var(--font-body);
   font-style: italic;
   font-size: 0.9rem;
   line-height: 1.5;
   color: var(--muted);
-  max-width: 68ch;
 }
 .follow-prompt__star {
   font-style: normal;
@@ -348,18 +356,28 @@
   border-bottom-color: currentColor;
 }
 .follow-prompt__dismiss {
-  font-family: var(--font-body);
-  font-style: italic;
-  font-size: inherit;
-  color: var(--muted-2);
-  background: none;
-  border: none;
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
   padding: 0;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  background: none;
+  color: var(--muted-2);
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  line-height: 1;
   cursor: pointer;
-  text-decoration: underline dotted;
-  text-underline-offset: 2px;
+  transition: color var(--t-fast) var(--ease), background var(--t-fast) var(--ease),
+              border-color var(--t-fast) var(--ease);
 }
 .follow-prompt__dismiss:hover,
 .follow-prompt__dismiss:focus-visible {
   color: var(--ink);
+  background: var(--paper-2);
+  border-color: var(--line);
+  outline: none;
 }

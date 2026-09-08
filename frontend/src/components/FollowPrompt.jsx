@@ -60,26 +60,33 @@ export default function FollowPrompt() {
   };
 
   return (
-    <p className="follow-prompt" role="note">
-      <span className="follow-prompt__star" aria-hidden="true">
-        ☆
-      </span>{" "}
-      <a href="#find-your-school" onClick={focusFinder} className="follow-prompt__find">
-        Find your school
-      </a>{" "}
-      or{" "}
-      <Link
-        to={`${sportPrefix}/teams`}
-        className="follow-prompt__all"
-        onClick={() => trackEvent("follow-prompt", { action: "index" })}
+    <div className="follow-prompt" role="note">
+      <p className="follow-prompt__text">
+        <span className="follow-prompt__star" aria-hidden="true">
+          ☆
+        </span>{" "}
+        <a href="#find-your-school" onClick={focusFinder} className="follow-prompt__find">
+          Find your school
+        </a>{" "}
+        or{" "}
+        <Link
+          to={`${sportPrefix}/teams`}
+          className="follow-prompt__all"
+          onClick={() => trackEvent("follow-prompt", { action: "index" })}
+        >
+          browse A–Z
+        </Link>{" "}
+        to pin its last result and next game to the top of every sport.
+      </p>
+      <button
+        type="button"
+        className="follow-prompt__dismiss"
+        onClick={dismiss}
+        aria-label="Dismiss this follow-your-school note"
+        title="Dismiss"
       >
-        browse A–Z
-      </Link>{" "}
-      to pin its last result and next game to the top of every sport.
-      {" · "}
-      <button type="button" className="follow-prompt__dismiss" onClick={dismiss}>
-        Dismiss
+        <span aria-hidden="true">×</span>
       </button>
-    </p>
+    </div>
   );
 }
