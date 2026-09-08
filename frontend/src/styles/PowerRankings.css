@@ -6,6 +6,16 @@
   font-style: italic;
 }
 
+/* Dotted underline on the acronym glossary — the browser's default is a
+   textDecoration none in most user-agent styles now, so tie an explicit
+   affordance to <abbr title>. */
+.power-rankings__lede abbr {
+  text-decoration: underline dotted;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  cursor: help;
+}
+
 .power-rankings__method {
   font-style: normal;
   font-family: var(--font-display);

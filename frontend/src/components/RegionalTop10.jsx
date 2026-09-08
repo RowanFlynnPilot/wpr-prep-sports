@@ -77,7 +77,15 @@ export default function RegionalTop10({
 
       <p className="top-ten__method">
         {poll.editorial ? "Editor's ballot" : "Algorithmic ballot"} · {poll.method}{" "}
-        A new poll lands each Monday morning.
+        A new poll lands each Monday morning. Movement chips read{" "}
+        <span className="top-ten__legend-chip top-ten__legend-chip--up" aria-hidden="true">▲ N</span>{" "}
+        up N rungs,{" "}
+        <span className="top-ten__legend-chip top-ten__legend-chip--down" aria-hidden="true">▼ N</span>{" "}
+        down N,{" "}
+        <span className="top-ten__legend-chip top-ten__legend-chip--flat" aria-hidden="true">—</span>{" "}
+        held rank, and{" "}
+        <span className="top-ten__legend-chip top-ten__legend-chip--new" aria-hidden="true">NEW</span>{" "}
+        first appearance.
       </p>
     </section>
   );

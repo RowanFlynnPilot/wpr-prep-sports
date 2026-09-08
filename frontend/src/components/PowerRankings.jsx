@@ -94,7 +94,15 @@ export default function PowerRankings({
 
       <p className="power-rankings__lede">
         Every tracked {sportConfig?.shortLabel?.toLowerCase() ?? ""} team,
-        ranked across conferences. {" "}
+        ranked across conferences. Weighted mix of{" "}
+        <abbr title="Win percentage — wins divided by games played, with a tie counting as half a win.">
+          W%
+        </abbr>
+        ,{" "}
+        <abbr title="Strength of Schedule — the average win percentage of every opponent this team has played.">
+          SOS
+        </abbr>
+        , and average scoring margin (capped so a lopsided blowout doesn&rsquo;t warp the table).{" "}
         <span className="power-rankings__method">
           {method ?? "Power Index"}
         </span>

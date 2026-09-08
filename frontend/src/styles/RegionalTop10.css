@@ -228,10 +228,38 @@
   font-family: var(--font-body);
   font-style: italic;
   font-size: 0.8rem;
-  line-height: 1.5;
+  line-height: 1.65;
   color: var(--muted);
   max-width: 68ch;
 }
+
+/* Inline legend chips inside the method note — the same sizing as the
+   row chips they mirror, so the reader learns the vocabulary once. */
+.top-ten__legend-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.15rem;
+  height: 1.15rem;
+  padding: 0 0.35rem;
+  border-radius: 3px;
+  font-family: var(--font-display);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.66rem;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  color: var(--muted);
+  background: var(--paper-2);
+  vertical-align: 0.05em;
+}
+.top-ten__legend-chip--up { color: var(--win); background: var(--win-bg); }
+.top-ten__legend-chip--down { color: var(--loss); background: var(--loss-bg); }
+.top-ten__legend-chip--new {
+  color: var(--accent-700);
+  background: color-mix(in srgb, var(--accent) 14%, transparent);
+  letter-spacing: 0.08em;
+}
+.top-ten__legend-chip--flat { color: var(--muted-2); }
 
 /* Narrow phones: rank digit stays big; logo drops under the rank so the
    name has the full column; lede still flows the full width. */
