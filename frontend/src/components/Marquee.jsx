@@ -96,7 +96,12 @@ export default function Marquee({ pick, sportConfig, sponsors, schoolIndex }) {
         />
 
         <span className="gotw__cta">
-          View {isFinal ? "game" : "preview"} <span aria-hidden="true">›</span>
+          {/* Distinct from the Hero's "View preview ›" one row above —
+              two adjacent CTAs saying the same thing read as the same
+              link and made the reader hesitate. Marquee is about the
+              matchup framing (a picked game of the week); Hero is
+              about the game itself. */}
+          See the matchup <span aria-hidden="true">›</span>
         </span>
       </div>
     </Link>
