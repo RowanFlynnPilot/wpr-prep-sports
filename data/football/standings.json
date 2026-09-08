@@ -576,13 +576,13 @@
       {
         "school_id": "marion",
         "name": "Marion",
-        "conference_wins": 1,
+        "conference_wins": 2,
         "conference_losses": 1,
         "conference_ties": 0,
-        "overall_wins": 2,
+        "overall_wins": 3,
         "overall_losses": 3,
         "overall_ties": 0,
-        "points_for": 50,
+        "points_for": 51,
         "points_against": 129
       },
       {
@@ -622,18 +622,6 @@
         "points_against": 1
       },
       {
-        "school_id": "menominee-nation",
-        "name": "Menominee Nation",
-        "conference_wins": 0,
-        "conference_losses": 1,
-        "conference_ties": 0,
-        "overall_wins": 0,
-        "overall_losses": 1,
-        "overall_ties": 0,
-        "points_for": 0,
-        "points_against": 1
-      },
-      {
         "school_id": "wild-rose",
         "name": "Wild Rose",
         "conference_wins": 0,
@@ -656,6 +644,18 @@
         "overall_ties": 0,
         "points_for": 12,
         "points_against": 164
+      },
+      {
+        "school_id": "menominee-nation",
+        "name": "Menominee Nation",
+        "conference_wins": 0,
+        "conference_losses": 2,
+        "conference_ties": 0,
+        "overall_wins": 0,
+        "overall_losses": 2,
+        "overall_ties": 0,
+        "points_for": 0,
+        "points_against": 2
       }
     ]
   },
