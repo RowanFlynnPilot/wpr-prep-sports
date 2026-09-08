@@ -80,18 +80,28 @@ def write_dataset(dataset: Dataset, out_dir: Path) -> None:
     rankings_path = sport_dir / "power_rankings.json"
     prev_path = sport_dir / "power_rankings_prev.json"
     if not dataset.power_rankings:
-        # Nothing to publish — REMOVE any existing file rather than leaving
-        # it. Skipping the write was meant to protect a hand-edited file,
-        # but a hand-edited power ranking isn't a thing, and what it
-        # actually protected was last season's table: on rollover the new
-        # season has no finals, computes nothing, and the old file survived.
-        # Football and volleyball were both serving 2025-26 rankings
-        # ("Gilman 12-0") under a 2026-27 heading with zero games played.
-        # The frontend fetches this optionally and hides the section when
-        # it 404s, so deleting is the honest empty state.
-        for stale in (rankings_path, prev_path):
-            if stale.exists():
-                stale.unlink()
+        # Nothing to publish — write an EMPTY placeholder so last season's
+        # rankings can't survive a rollover (Football and volleyball were
+        # both serving 2025-26 rankings under a 2026-27 heading with zero
+        # games played) AND the browser doesn't log a 404 for the optional
+        # file every dashboard load (boys/girls soccer + girls hockey were
+        # doing exactly that, one entry per view per StrictMode mount). The
+        # frontend's fetchJsonOptional already treats {rankings: []} the
+        # same as a missing file, so the empty state stays honest.
+        _write_json(
+            rankings_path,
+            {
+                "sport": sports[0].value,
+                "season": dataset.meta.season,
+                "generated_at": dataset.meta.last_updated.isoformat(),
+                "method": _POWER_RANKINGS_METHOD,
+                "rankings": [],
+            },
+        )
+        # prev is only read by the movement calculator, which already
+        # tolerates None — leaving nothing here is the right empty state.
+        if prev_path.exists():
+            prev_path.unlink()
     else:
         # Rotate the comparison snapshot if it's missing or from an
         # earlier calendar week. Done BEFORE writing the new file so
