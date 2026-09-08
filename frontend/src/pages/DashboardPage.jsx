@@ -569,22 +569,13 @@ export default function DashboardPage({
         </section>
       )}
 
-      {/* Tab: Standings & Stats — the league picture. Leads with the
-          Central Wisconsin Ten (editorial poll, home-region cut) as the
-          artifact readers come back for; conference tables and the
-          algorithmic Power Rankings follow. */}
+      {/* Tab: Standings & Stats — the league picture. A reader tapping a
+          tab named "Standings & Stats" is looking for their team's
+          conference position first; the Ten reads as editorial and reads
+          later. Order (post run-8): Conference Standings → Central
+          Wisconsin Ten → Power Rankings → Top Performers. */}
       {activeTab === "standings" && (
         <>
-          <SectionBoundary label="top-ten">
-            <RegionalTop10
-              dataset={dataset}
-              schoolIndex={schoolIndex}
-              sportConfig={sportConfig}
-              sponsors={sponsors}
-              override={regionalTop10Override}
-            />
-          </SectionBoundary>
-
           {meaningfulStandings.length > 0 && (
             <section>
               <div className="section-header">
@@ -664,6 +655,21 @@ export default function DashboardPage({
               </div>
             </section>
           )}
+
+          {/* Moved BELOW conference standings for tab semantic accuracy —
+              a reader who tapped "Standings & Stats" was landing on 10
+              rows of editorial poll instead of their team's rank. The
+              Ten stays as the editorial peak of the tab; standings
+              answer the tab's promise first. */}
+          <SectionBoundary label="top-ten">
+            <RegionalTop10
+              dataset={dataset}
+              schoolIndex={schoolIndex}
+              sportConfig={sportConfig}
+              sponsors={sponsors}
+              override={regionalTop10Override}
+            />
+          </SectionBoundary>
 
           <PowerRankings
             rankings={powerRankings?.rankings}
