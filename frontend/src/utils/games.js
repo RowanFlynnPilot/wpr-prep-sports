@@ -2,8 +2,14 @@
 
 const DAY_MS = 24 * 60 * 60 * 1000;
 // How long a home-region final leads the hero before the next preview
-// takes over: Saturday through Monday after a Friday slate.
-const RESULT_LEAD_MS = 72 * 60 * 60 * 1000;
+// takes over. Was 72h (Saturday through Monday after a Friday slate)
+// — which meant the hero silently switched to "Up Next Friday Sep 11"
+// on Tuesday morning, three days into the week the last Friday's
+// result was still the story. Extended to 5 days so Grandma Deb's
+// "did they win?" stays at the top of the page through Wednesday
+// evening; the next preview takes over Thursday, when the coming
+// Friday's game is about to be its own story.
+const RESULT_LEAD_MS = 5 * 24 * 60 * 60 * 1000;
 
 // WIAA records forfeits as 1-0 (basketball sometimes 2-0) finals —
 // impossible on-field scores in those sports. Same rule recap.js uses to
