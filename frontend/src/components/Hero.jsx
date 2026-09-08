@@ -1,6 +1,8 @@
+import { Link } from "react-router-dom";
 import TeamLogo from "./TeamLogo.jsx";
 import TeamLink from "./TeamLink.jsx";
 import { schoolFor } from "../utils/schools.js";
+import { useSportPrefix } from "../utils/links.js";
 import { formatGameDay, formatGameDate, formatGameTime } from "../utils/dates.js";
 import { recapForGame } from "../utils/recap.js";
 
@@ -23,6 +25,7 @@ export default function Hero({
   nextSeasonStart = null,
   daysToNext = null,
 }) {
+  const sportPrefix = useSportPrefix();
   if (offSeason) {
     return (
       <OffSeasonHero
@@ -82,8 +85,30 @@ export default function Hero({
     sportConfig,
   });
 
+  // The whole hero card is now a click target for the game page. Verified
+  // in run 7: the primary black card LOOKED interactive but was inert
+  // while the compressed Marquee below it — visually secondary — carried
+  // the only link. Tap discovery was inverted. Sibling overlay pattern
+  // (the same one .game-row__details uses in the This Week grid): a full
+  // Link element with an sr-only accessible name; visual cue rendered
+  // separately. The team-name links inside TeamRow keep working because
+  // they sit above the overlay via z-index.
+  const scoreline = isFinal
+    ? `${game.away.name} ${game.away.score ?? 0}, ${game.home.name} ${game.home.score ?? 0}`
+    : `${game.away.name} at ${game.home.name}`;
+  const detailsLabel = isFinal
+    ? `${scoreline}, ${eyebrow.toLowerCase()} — game details`
+    : `${scoreline} — game details`;
   return (
     <section className="hero" aria-label="Featured game">
+      <Link
+        to={`${sportPrefix}/game/${game.id}`}
+        className="hero__details"
+        aria-label={detailsLabel}
+      >
+        <span className="sr-only">Open game details</span>
+      </Link>
+
       <div className="hero__meta">
         {/* An <h2>, not a span: this is the hero section's heading, and
             without it the two team names (h3) sat directly under the page
@@ -116,6 +141,14 @@ export default function Hero({
       </div>
 
       {recap && <p className="hero__recap">{recap}</p>}
+
+      {/* Visual cue that the card is a link — mirrors the Marquee strip's
+          "View preview ›" so the two hero-adjacent surfaces read as the
+          same affordance. Decorative; the accessible name is on the overlay
+          Link above. */}
+      <span className="hero__cta" aria-hidden="true">
+        {isFinal ? "View game" : "View preview"} <span className="hero__cta-arrow">›</span>
+      </span>
     </section>
   );
 }

@@ -112,12 +112,69 @@
 }
 .hero__team--won .hero__score { color: var(--accent); }
 
+/* Whole-hero tap target -----------------------------------------------
+   The card LOOKED like the page's primary action for four critique runs
+   but was inert; the compressed Marquee below it carried the only link.
+   Overlay pattern (same as .game-row__details): a Link sibling of the
+   matchup, positioned absolute over the whole card, with the team-name
+   TeamLinks above it via z-index so they still reach their team pages. */
+a.hero__details {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  color: transparent;
+  border-bottom: none;
+  border-radius: var(--radius);
+}
+a.hero__details:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+.hero:hover .hero__cta-arrow {
+  transform: translateX(3px);
+}
+.hero__team-name,
+.hero__team-mascot,
+.hero__team-name a {
+  position: relative;
+  z-index: 2;
+}
+.hero__cta {
+  position: absolute;
+  right: 1.5rem;
+  bottom: 1.15rem;
+  z-index: 2;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.72);
+  pointer-events: none;
+}
+.hero__cta-arrow {
+  display: inline-block;
+  transition: transform var(--t-fast) var(--ease);
+}
+/* Narrow phones: put the cue on its own line, right-aligned under the
+   recap so it doesn't overlap the recap's last line. */
+@media (max-width: 480px) {
+  .hero__cta {
+    position: static;
+    display: block;
+    margin: 0.65rem 0 -0.35rem;
+    text-align: right;
+  }
+}
+
 .hero__recap {
   margin: 1.25rem 0 0;
   padding-top: 1rem;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   font-family: var(--font-body);
   font-style: italic;
+  position: relative;
+  z-index: 2;
   font-size: 0.95rem;
   line-height: 1.5;
   color: rgba(255, 255, 255, 0.85);
