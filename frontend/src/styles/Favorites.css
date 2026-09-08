@@ -307,78 +307,59 @@
 }
 
 /* ---- follow prompt ---------------------------------------------------- */
-/* Shown in the strip's slot while no school is followed. One line on
-   desktop; text then actions stack on phones. */
-
+/* One-line editorial nudge sitting under the hero when no school is
+   followed. Was a full-width bordered promotion band (five runs of "two
+   CTAs for the same intent" flags — the masthead finder does the same
+   job). Now reads as an editor's note in italic prose, actions inline as
+   plain-text links; visually recedes so the hero (and the finder above)
+   don't compete for attention. */
 .follow-prompt {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.5rem 1rem;
-  margin: 0 0 1.25rem;
-  padding: 0.65rem 0.9rem;
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
+  margin: 0.35rem 0 1rem;
+  padding: 0;
+  background: none;
+  border: none;
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--muted);
+  max-width: 68ch;
 }
 .follow-prompt__star {
-  font-size: 1.3rem;
-  line-height: 1;
+  font-style: normal;
   color: var(--accent-700);
+  margin-right: 0.15rem;
 }
-.follow-prompt__text {
-  flex: 1 1 260px;
-  margin: 0;
+.follow-prompt__find,
+.follow-prompt__all {
   font-family: var(--font-body);
-  font-size: 0.88rem;
-  line-height: 1.4;
+  font-style: italic;
   color: var(--ink);
-}
-.follow-prompt__actions {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.35rem 0.75rem;
-}
-.follow-prompt__find {
-  min-height: 40px;
-  padding: 0.45rem 0.95rem;
-  border-radius: 999px;
-  border: 1px solid var(--ink-hero);
-  background: var(--ink-hero);
-  color: var(--paper);
-  font-family: var(--font-display);
   font-weight: 600;
-  font-size: 0.8rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  cursor: pointer;
+  border-bottom: 1px solid var(--muted-2);
+  text-decoration: none;
+  padding-bottom: 0.05rem;
 }
 .follow-prompt__find:hover,
-.follow-prompt__find:focus-visible {
-  background: var(--ink);
-  border-color: var(--ink);
-}
-.follow-prompt__all {
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 0.8rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--ink);
+.follow-prompt__find:focus-visible,
+.follow-prompt__all:hover,
+.follow-prompt__all:focus-visible {
+  color: var(--accent-700);
+  border-bottom-color: currentColor;
 }
 .follow-prompt__dismiss {
-  min-height: 40px;
-  padding: 0.45rem 0.35rem;
-  border: none;
-  background: none;
-  color: var(--muted);
   font-family: var(--font-body);
-  font-size: 0.8rem;
+  font-style: italic;
+  font-size: inherit;
+  color: var(--muted-2);
+  background: none;
+  border: none;
+  padding: 0;
   cursor: pointer;
+  text-decoration: underline dotted;
+  text-underline-offset: 2px;
 }
 .follow-prompt__dismiss:hover,
 .follow-prompt__dismiss:focus-visible {
   color: var(--ink);
-  text-decoration: underline;
 }

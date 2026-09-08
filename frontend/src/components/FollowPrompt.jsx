@@ -19,12 +19,16 @@ function readDismissed() {
 }
 
 /**
- * One-line nudge to follow a school, shown while none is followed. It
- * sits BELOW the hero: it is an invitation, not the answer, and on a
- * phone it had pushed the first score off screen one. "Find your
- * school" moves focus into the masthead finder (scrolling it into view);
- * the A–Z link is the no-typing path. "Not now" hides it for 30 days on
- * this device. Renders nothing once a school is followed.
+ * One-line editorial nudge to follow a school, shown while none is
+ * followed. Sits BELOW the hero as a subtle hint at the finder already
+ * living in the masthead — a full-width promotional band here (five
+ * critique runs) read as a second CTA competing with the finder for the
+ * same intent.
+ *
+ * The main action is now a plain text link inline in the prose. "Find
+ * your school" focuses the masthead combobox (scrolling it into view on
+ * phones); "A–Z" is the no-typing path. "Dismiss" hides the nudge for
+ * 30 days on this device. Renders nothing once a school is followed.
  */
 export default function FollowPrompt() {
   const favorites = useFavorites();
@@ -33,7 +37,8 @@ export default function FollowPrompt() {
   const [dismissed, setDismissed] = useState(readDismissed);
   if (dismissed || favorites.length > 0) return null;
 
-  const focusFinder = () => {
+  const focusFinder = (e) => {
+    e.preventDefault();
     trackEvent("follow-prompt", { action: "find" });
     const el = document.getElementById(FINDER_INPUT_ID);
     if (!el) {
@@ -43,7 +48,8 @@ export default function FollowPrompt() {
     el.scrollIntoView?.({ block: "center", behavior: "smooth" });
     el.focus({ preventScroll: true });
   };
-  const dismiss = () => {
+  const dismiss = (e) => {
+    e.preventDefault();
     trackEvent("follow-prompt", { action: "dismiss" });
     try {
       window.localStorage.setItem(DISMISS_KEY, String(Date.now()));
@@ -54,29 +60,26 @@ export default function FollowPrompt() {
   };
 
   return (
-    <aside className="follow-prompt" aria-label="Follow your school">
+    <p className="follow-prompt" role="note">
       <span className="follow-prompt__star" aria-hidden="true">
         ☆
-      </span>
-      <p className="follow-prompt__text">
-        <strong>Follow your school.</strong> Their last result and next game pin to the top
-        of every sport on this device.
-      </p>
-      <div className="follow-prompt__actions">
-        <button type="button" className="follow-prompt__find" onClick={focusFinder}>
-          Find your school
-        </button>
-        <Link
-          to={`${sportPrefix}/teams`}
-          className="follow-prompt__all"
-          onClick={() => trackEvent("follow-prompt", { action: "index" })}
-        >
-          All schools A–Z
-        </Link>
-        <button type="button" className="follow-prompt__dismiss" onClick={dismiss}>
-          Not now
-        </button>
-      </div>
-    </aside>
+      </span>{" "}
+      <a href="#find-your-school" onClick={focusFinder} className="follow-prompt__find">
+        Find your school
+      </a>{" "}
+      or{" "}
+      <Link
+        to={`${sportPrefix}/teams`}
+        className="follow-prompt__all"
+        onClick={() => trackEvent("follow-prompt", { action: "index" })}
+      >
+        browse A–Z
+      </Link>{" "}
+      to pin its last result and next game to the top of every sport.
+      {" · "}
+      <button type="button" className="follow-prompt__dismiss" onClick={dismiss}>
+        Dismiss
+      </button>
+    </p>
   );
 }
