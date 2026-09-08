@@ -32,6 +32,24 @@ export function isStaleScheduled(game, now = Date.now()) {
 }
 
 /**
+ * WIAA occasionally marks a game "final" without posting a score — a
+ * dropped upload or a game recorded on paper only. The row is a real
+ * matchup but not a real result, so surfaces treat it like the stale-
+ * scheduled case: no numerals, no "Final" chip, no fabricated 0-0. Left
+ * unguarded, the game page rendered "TeamA null-null TeamB" and the aria-
+ * label announced "TeamA 0, TeamB 0, final".
+ */
+export function isUnreportedFinal(game) {
+  if (!game || game.status !== "final") return false;
+  return game.home?.score == null || game.away?.score == null;
+}
+
+/** Convenience: either of the two "no reliable score to show" states. */
+export function isNotReported(game, now = Date.now()) {
+  return isStaleScheduled(game, now) || isUnreportedFinal(game);
+}
+
+/**
  * Headline stat lines for a game — the first line per (team, category).
  * Post-split data carries these as `headline_stats` on the slim game;
  * pre-split data still has the full `stat_leaders` inline, whose first

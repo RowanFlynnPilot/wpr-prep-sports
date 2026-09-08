@@ -5,7 +5,7 @@ import TeamLink from "./TeamLink.jsx";
 import { primaryColor, schoolFor } from "../utils/schools.js";
 import { formatGameShortDay, formatGameDate } from "../utils/dates.js";
 import { gameSummaryLine, playerLineForGame } from "../utils/recap.js";
-import { isForfeitScore, isStaleScheduled } from "../utils/games.js";
+import { isForfeitScore, isStaleScheduled, isUnreportedFinal } from "../utils/games.js";
 import { useSportPrefix } from "../utils/links.js";
 
 /**
@@ -126,16 +126,19 @@ function GameCard({ game, schoolIndex, allGames, sportConfig }) {
   const awaySchool = schoolFor(game.away, schoolIndex);
   const isFinal = game.status === "final";
   const isLive = game.status === "in_progress";
-  // Same rules as the week grid: a 1-0 football final is a forfeit, and a
-  // kickoff 36h gone with no score is "Not reported", never "Upcoming".
-  const forfeit = isFinal && isForfeitScore(game);
-  const stale = isStaleScheduled(game);
-  const showScore = (isFinal || isLive) && !forfeit;
+  // Same three cases as the week grid: a 1-0 football final is a forfeit,
+  // a kickoff 36h gone with no score is "Not reported", and a "final"
+  // that WIAA marked without posting a score is also "Not reported"
+  // (never "Upcoming", never a 0-0 tie the aria-label used to fake).
+  const unreportedFinal = isUnreportedFinal(game);
+  const forfeit = isFinal && !unreportedFinal && isForfeitScore(game);
+  const notReported = isStaleScheduled(game) || unreportedFinal;
+  const showScore = (isFinal || isLive) && !forfeit && !unreportedFinal;
 
   const homeScore = game.home.score;
   const awayScore = game.away.score;
-  const homeWon = isFinal && (homeScore ?? -1) > (awayScore ?? -1);
-  const awayWon = isFinal && (awayScore ?? -1) > (homeScore ?? -1);
+  const homeWon = showScore && (homeScore ?? -1) > (awayScore ?? -1);
+  const awayWon = showScore && (awayScore ?? -1) > (homeScore ?? -1);
   // Numerals sit on the card, so the sentence skips the scoreline.
   const summary = gameSummaryLine(game, { sportConfig, omitScore: true });
   const player = playerLineForGame(game, { contextGames: allGames, sportConfig });
@@ -162,7 +165,13 @@ function GameCard({ game, schoolIndex, allGames, sportConfig }) {
           </span>
         ) : (
           <span className={`card__status card__status--${game.status}`}>
-            {forfeit ? "Forfeit" : isFinal ? "Final" : stale ? "Not reported" : "Upcoming"}
+            {forfeit
+              ? "Forfeit"
+              : notReported
+                ? "Not reported"
+                : isFinal
+                  ? "Final"
+                  : "Upcoming"}
           </span>
         )}
       </header>
@@ -190,8 +199,8 @@ function GameCard({ game, schoolIndex, allGames, sportConfig }) {
         className="card__details"
         // Named by matchup so a link list isn't "Game details" ×20.
         aria-label={
-          isFinal && !forfeit
-            ? `${game.away.name} ${awayScore ?? 0}, ${game.home.name} ${homeScore ?? 0}, game details`
+          showScore
+            ? `${game.away.name} ${awayScore}, ${game.home.name} ${homeScore}, game details`
             : `${game.away.name} at ${game.home.name}, game details`
         }
       >

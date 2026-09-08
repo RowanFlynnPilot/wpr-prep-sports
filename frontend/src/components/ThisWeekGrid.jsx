@@ -6,7 +6,7 @@ import { schoolFor } from "../utils/schools.js";
 import { groupByDay } from "../utils/weeks.js";
 import { formatGameDay, formatGameDate, formatGameTime } from "../utils/dates.js";
 import { gameSummaryLine, playerLineForGame } from "../utils/recap.js";
-import { isForfeitScore, isStaleScheduled } from "../utils/games.js";
+import { isForfeitScore, isStaleScheduled, isUnreportedFinal } from "../utils/games.js";
 import { useSportPrefix } from "../utils/links.js";
 import { SITE } from "../config/site.js";
 
@@ -204,32 +204,40 @@ function GameRow({ game, schoolIndex, allGames, sportConfig }) {
   // A scheduled game whose kickoff is well past with no result is
   // postponed or unreported (shared 36h rule in utils/games.js, so the
   // ticker says the same thing). Live games keep their treatment.
+  // "Not reported" covers both a stale-scheduled row (kickoff 36h gone,
+  // no result) and a final WIAA marked without posting a score. Every
+  // status word and every screen-reader label agrees on that.
   const stale = isStaleScheduled(game);
+  const unreportedFinal = isUnreportedFinal(game);
+  const notReported = stale || unreportedFinal;
   // WIAA records a forfeit as a 1-0 final. Printed at score size that
   // reads as a data error, so the score slot says FORFEIT instead and the
-  // winner keeps its bold.
-  const forfeit = isFinal && isForfeitScore(game);
+  // winner keeps its bold. An unreported final is neither a forfeit nor
+  // a real result — it takes the notReported path below.
+  const forfeit = isFinal && !unreportedFinal && isForfeitScore(game);
 
-  const homeWon = isFinal && (game.home.score ?? -1) > (game.away.score ?? -1);
-  const awayWon = isFinal && (game.away.score ?? -1) > (game.home.score ?? -1);
+  const homeWon = isFinal && !unreportedFinal && (game.home.score ?? -1) > (game.away.score ?? -1);
+  const awayWon = isFinal && !unreportedFinal && (game.away.score ?? -1) > (game.home.score ?? -1);
   // Numerals sit beside the names, so the sentence skips the scoreline.
   const summary = gameSummaryLine(game, { sportConfig, omitScore: true });
   const player = playerLineForGame(game, { contextGames: allGames, sportConfig });
   const playerSchool = player ? schoolIndex.get(player.schoolId) : null;
-  const showScore = (isFinal || isLive) && !forfeit;
+  const showScore = (isFinal || isLive) && !forfeit && !unreportedFinal;
   // The drill-in's visible text is only its status word, so 41 rows read
   // "Final, Final, Not reported…" to a screen reader. Name each link by
   // its matchup and score, the way the team page's schedule already does.
+  // Unreported finals fall through to the matchup form — "TeamA 0,
+  // TeamB 0" would announce a fake 0-0 tie.
   const matchup = `${game.away.name} at ${game.home.name}`;
-  const scoreline = `${game.away.name} ${game.away.score ?? 0}, ${game.home.name} ${game.home.score ?? 0}`;
+  const scoreline = `${game.away.name} ${game.away.score}, ${game.home.name} ${game.home.score}`;
   const linkLabel = forfeit
     ? `${matchup}, forfeit, game details`
-    : isFinal
-      ? `${scoreline}, final, game details`
-      : isLive
-        ? `${scoreline}, live, game details`
-        : stale
-          ? `${matchup}, not reported, game details`
+    : notReported
+      ? `${matchup}, not reported, game details`
+      : isFinal
+        ? `${scoreline}, final, game details`
+        : isLive
+          ? `${scoreline}, live, game details`
           : `${matchup}, ${formatGameTime(game.date)}, game details`;
 
   return (
@@ -256,17 +264,17 @@ function GameRow({ game, schoolIndex, allGames, sportConfig }) {
       >
         {forfeit
           ? "Forfeit"
-          : isFinal
-            ? "Final"
-            : isLive
-              ? "LIVE"
-              : stale
-                ? "Not reported"
+          : notReported
+            ? "Not reported"
+            : isFinal
+              ? "Final"
+              : isLive
+                ? "LIVE"
                 : formatGameTime(game.date)}
         <span aria-hidden="true"> ›</span>
       </Link>
       {summary && <p className="game-row__summary">{summary}</p>}
-      {stale && (
+      {notReported && (
         <p className="game-row__summary game-row__summary--note">
           No score has been posted for this game yet — it may have been postponed, or
           the result not reported.

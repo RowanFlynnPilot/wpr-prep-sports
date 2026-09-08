@@ -15,7 +15,7 @@ import ShareButton from "../components/ShareButton.jsx";
 import { schoolFor } from "../utils/schools.js";
 import { formatGameDay, formatGameDate, formatGameTime } from "../utils/dates.js";
 import { recapForGame } from "../utils/recap.js";
-import { isForfeitScore } from "../utils/games.js";
+import { isForfeitScore, isUnreportedFinal } from "../utils/games.js";
 import { useSportPrefix } from "../utils/links.js";
 import { displayPlayerName, playerProfileHref } from "../utils/players.js";
 import { SITE } from "../config/site.js";
@@ -94,12 +94,16 @@ export default function GamePage({ dataset, schoolIndex, sportConfig }) {
   const isFinal = game.status === "final";
   const homeScore = game.home.score;
   const awayScore = game.away.score;
-  const homeWon = isFinal && (homeScore ?? -1) > (awayScore ?? -1);
-  const awayWon = isFinal && (awayScore ?? -1) > (homeScore ?? -1);
   // WIAA's 1-0 forfeit notation is not a score; the page says so instead
-  // of printing it at hero size.
-  const forfeit = isFinal && isForfeitScore(game);
-  const showScore = (isFinal || game.status === "in_progress") && !forfeit;
+  // of printing it at hero size. WIAA also occasionally marks a game
+  // "final" without posting a score at all — same treatment: no numerals,
+  // "Not reported" chip, plain "at" separator (or the breadcrumb printed
+  // "TeamA null-null TeamB", verified on the 2026-01-02 hockey row).
+  const unreported = isUnreportedFinal(game);
+  const forfeit = isFinal && !unreported && isForfeitScore(game);
+  const showScore = (isFinal || game.status === "in_progress") && !forfeit && !unreported;
+  const homeWon = showScore && (homeScore ?? -1) > (awayScore ?? -1);
+  const awayWon = showScore && (awayScore ?? -1) > (homeScore ?? -1);
 
   const homeSchool = schoolFor(game.home, schoolIndex);
   const awaySchool = schoolFor(game.away, schoolIndex);
@@ -134,9 +138,10 @@ export default function GamePage({ dataset, schoolIndex, sportConfig }) {
       </Link>
       <span aria-hidden="true" className="breadcrumb__sep">·</span>
       <span className="breadcrumb__current">
-        {game.away.name} {isFinal && !forfeit ? `${awayScore}-${homeScore}` : forfeit ? "at" : "vs"}{" "}
+        {game.away.name}{" "}
+        {showScore ? `${awayScore}-${homeScore}` : forfeit || unreported ? "at" : "vs"}{" "}
         {game.home.name}
-        {forfeit ? " · forfeit" : ""}
+        {forfeit ? " · forfeit" : unreported ? " · not reported" : ""}
       </span>
     </>
   );
@@ -174,7 +179,7 @@ export default function GamePage({ dataset, schoolIndex, sportConfig }) {
             </span>
           ) : (
             <span className="eyebrow eyebrow--accent">
-              {forfeit ? "Forfeit" : isFinal ? "Final" : "Up Next"}
+              {unreported ? "Not reported" : forfeit ? "Forfeit" : isFinal ? "Final" : "Up Next"}
             </span>
           )}
           <span className="game-page__date">
@@ -192,11 +197,13 @@ export default function GamePage({ dataset, schoolIndex, sportConfig }) {
             className="game-page__share"
             route={`${sportPrefix}/game/${game.id}`}
             title={
-              isFinal && !forfeit
+              showScore
                 ? `${game.away.name} ${awayScore}, ${game.home.name} ${homeScore}`
                 : forfeit
                   ? `${game.away.name} at ${game.home.name} — forfeit`
-                  : `${game.away.name} at ${game.home.name}`
+                  : unreported
+                    ? `${game.away.name} at ${game.home.name} — not reported`
+                    : `${game.away.name} at ${game.home.name}`
             }
           />
         </div>
