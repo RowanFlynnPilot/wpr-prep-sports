@@ -72,10 +72,10 @@
         "conference_losses": 2,
         "conference_ties": 0,
         "overall_wins": 1,
-        "overall_losses": 4,
+        "overall_losses": 5,
         "overall_ties": 0,
         "points_for": 9,
-        "points_against": 13
+        "points_against": 23
       }
     ]
   },
@@ -178,6 +178,18 @@
     "division": null,
     "rows": [
       {
+        "school_id": "hudson",
+        "name": "Hudson",
+        "conference_wins": 2,
+        "conference_losses": 0,
+        "conference_ties": 0,
+        "overall_wins": 4,
+        "overall_losses": 0,
+        "overall_ties": 0,
+        "points_for": 25,
+        "points_against": 5
+      },
+      {
         "school_id": "new-richmond",
         "name": "New Richmond",
         "conference_wins": 1,
@@ -188,30 +200,6 @@
         "overall_ties": 0,
         "points_for": 13,
         "points_against": 4
-      },
-      {
-        "school_id": "hudson",
-        "name": "Hudson",
-        "conference_wins": 1,
-        "conference_losses": 0,
-        "conference_ties": 0,
-        "overall_wins": 3,
-        "overall_losses": 0,
-        "overall_ties": 0,
-        "points_for": 17,
-        "points_against": 5
-      },
-      {
-        "school_id": "menomonie",
-        "name": "Menomonie",
-        "conference_wins": 1,
-        "conference_losses": 0,
-        "conference_ties": 0,
-        "overall_wins": 2,
-        "overall_losses": 3,
-        "overall_ties": 0,
-        "points_for": 5,
-        "points_against": 10
       },
       {
         "school_id": "eau-claire-memorial",
@@ -236,6 +224,18 @@
         "overall_ties": 0,
         "points_for": 10,
         "points_against": 5
+      },
+      {
+        "school_id": "menomonie",
+        "name": "Menomonie",
+        "conference_wins": 1,
+        "conference_losses": 1,
+        "conference_ties": 0,
+        "overall_wins": 2,
+        "overall_losses": 4,
+        "overall_ties": 0,
+        "points_for": 5,
+        "points_against": 18
       },
       {
         "school_id": "chippewa-falls",

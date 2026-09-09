@@ -98,6 +98,18 @@
         "points_against": 13
       },
       {
+        "school_id": "edgar",
+        "name": "Edgar",
+        "conference_wins": 1,
+        "conference_losses": 0,
+        "conference_ties": 0,
+        "overall_wins": 4,
+        "overall_losses": 3,
+        "overall_ties": 0,
+        "points_for": 12,
+        "points_against": 8
+      },
+      {
         "school_id": "phillips",
         "name": "Phillips",
         "conference_wins": 1,
@@ -122,18 +134,6 @@
         "points_against": 6
       },
       {
-        "school_id": "auburndale",
-        "name": "Auburndale",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "conference_ties": 0,
-        "overall_wins": 11,
-        "overall_losses": 4,
-        "overall_ties": 0,
-        "points_for": 24,
-        "points_against": 11
-      },
-      {
         "school_id": "marathon",
         "name": "Marathon",
         "conference_wins": 0,
@@ -156,18 +156,6 @@
         "overall_ties": 0,
         "points_for": 17,
         "points_against": 13
-      },
-      {
-        "school_id": "edgar",
-        "name": "Edgar",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "conference_ties": 0,
-        "overall_wins": 3,
-        "overall_losses": 3,
-        "overall_ties": 0,
-        "points_for": 9,
-        "points_against": 6
       },
       {
         "school_id": "rib-lake",
@@ -216,6 +204,18 @@
         "overall_ties": 0,
         "points_for": 2,
         "points_against": 13
+      },
+      {
+        "school_id": "auburndale",
+        "name": "Auburndale",
+        "conference_wins": 0,
+        "conference_losses": 1,
+        "conference_ties": 0,
+        "overall_wins": 11,
+        "overall_losses": 5,
+        "overall_ties": 0,
+        "points_for": 26,
+        "points_against": 14
       },
       {
         "school_id": "chequamegon",
