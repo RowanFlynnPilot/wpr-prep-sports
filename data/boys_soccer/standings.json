@@ -6,6 +6,18 @@
     "division": null,
     "rows": [
       {
+        "school_id": "wisconsin-rapids",
+        "name": "Wisconsin Rapids Lincoln",
+        "conference_wins": 2,
+        "conference_losses": 0,
+        "conference_ties": 0,
+        "overall_wins": 3,
+        "overall_losses": 1,
+        "overall_ties": 0,
+        "points_for": 10,
+        "points_against": 7
+      },
+      {
         "school_id": "spash",
         "name": "SPASH",
         "conference_wins": 1,
@@ -18,28 +30,28 @@
         "points_against": 4
       },
       {
-        "school_id": "wisconsin-rapids",
-        "name": "Wisconsin Rapids Lincoln",
+        "school_id": "dc-everest",
+        "name": "D.C. Everest",
         "conference_wins": 1,
-        "conference_losses": 0,
+        "conference_losses": 1,
         "conference_ties": 0,
         "overall_wins": 2,
-        "overall_losses": 1,
+        "overall_losses": 2,
         "overall_ties": 0,
-        "points_for": 7,
+        "points_for": 9,
         "points_against": 6
       },
       {
         "school_id": "marshfield",
         "name": "Marshfield",
         "conference_wins": 1,
-        "conference_losses": 0,
+        "conference_losses": 1,
         "conference_ties": 0,
         "overall_wins": 1,
-        "overall_losses": 2,
+        "overall_losses": 3,
         "overall_ties": 0,
-        "points_for": 3,
-        "points_against": 17
+        "points_for": 4,
+        "points_against": 20
       },
       {
         "school_id": "wausau-east",
@@ -57,25 +69,13 @@
         "school_id": "wausau-west",
         "name": "Wausau West",
         "conference_wins": 0,
-        "conference_losses": 1,
+        "conference_losses": 2,
         "conference_ties": 0,
         "overall_wins": 1,
-        "overall_losses": 3,
+        "overall_losses": 4,
         "overall_ties": 0,
-        "points_for": 7,
-        "points_against": 9
-      },
-      {
-        "school_id": "dc-everest",
-        "name": "D.C. Everest",
-        "conference_wins": 0,
-        "conference_losses": 1,
-        "conference_ties": 0,
-        "overall_wins": 1,
-        "overall_losses": 2,
-        "overall_ties": 0,
-        "points_for": 5,
-        "points_against": 4
+        "points_for": 9,
+        "points_against": 13
       }
     ]
   },
@@ -88,26 +88,14 @@
       {
         "school_id": "northland-pines",
         "name": "Northland Pines",
-        "conference_wins": 2,
+        "conference_wins": 3,
         "conference_losses": 0,
         "conference_ties": 0,
-        "overall_wins": 4,
+        "overall_wins": 5,
         "overall_losses": 0,
         "overall_ties": 0,
-        "points_for": 25,
-        "points_against": 2
-      },
-      {
-        "school_id": "merrill",
-        "name": "Merrill",
-        "conference_wins": 1,
-        "conference_losses": 0,
-        "conference_ties": 0,
-        "overall_wins": 2,
-        "overall_losses": 1,
-        "overall_ties": 0,
-        "points_for": 6,
-        "points_against": 4
+        "points_for": 31,
+        "points_against": 3
       },
       {
         "school_id": "mosinee",
@@ -120,6 +108,18 @@
         "overall_ties": 0,
         "points_for": 12,
         "points_against": 11
+      },
+      {
+        "school_id": "merrill",
+        "name": "Merrill",
+        "conference_wins": 1,
+        "conference_losses": 1,
+        "conference_ties": 0,
+        "overall_wins": 2,
+        "overall_losses": 2,
+        "overall_ties": 0,
+        "points_for": 7,
+        "points_against": 10
       },
       {
         "school_id": "rhinelander",
