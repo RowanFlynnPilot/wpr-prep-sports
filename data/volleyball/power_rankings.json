@@ -1,7 +1,7 @@
 {
   "sport": "volleyball",
   "season": "2026-27",
-  "generated_at": "2026-09-09T23:10:35.790606-05:00",
+  "generated_at": "2026-09-10T04:43:50.781952-05:00",
   "method": "WPR Power Index v1: 40% W%, 35% SOS, 25% margin (capped per sport)",
   "rankings": [
     {
@@ -90,9 +90,9 @@
       "losses": 3,
       "ties": 0,
       "win_pct": 0.8235,
-      "sos": 0.4777,
+      "sos": 0.4767,
       "avg_margin_capped": 1.35,
-      "score": 67.8,
+      "score": 67.76,
       "movement": -1
     },
     {
@@ -207,9 +207,9 @@
       "losses": 5,
       "ties": 0,
       "win_pct": 0.6154,
-      "sos": 0.539,
+      "sos": 0.5373,
       "avg_margin_capped": 0.46,
-      "score": 57.9,
+      "score": 57.85,
       "movement": 0
     },
     {
@@ -220,9 +220,9 @@
       "losses": 5,
       "ties": 0,
       "win_pct": 0.6667,
-      "sos": 0.4648,
+      "sos": 0.4638,
       "avg_margin_capped": 0.47,
-      "score": 57.38,
+      "score": 57.34,
       "movement": 0
     },
     {
@@ -281,13 +281,13 @@
       "rank": 22,
       "school_id": "medford",
       "school_name": "Medford",
-      "wins": 5,
-      "losses": 4,
+      "wins": 6,
+      "losses": 5,
       "ties": 0,
-      "win_pct": 0.5556,
-      "sos": 0.4509,
-      "avg_margin_capped": 0.56,
-      "score": 52.82,
+      "win_pct": 0.5455,
+      "sos": 0.4632,
+      "avg_margin_capped": 0.64,
+      "score": 53.18,
       "movement": 2
     },
     {
@@ -298,9 +298,9 @@
       "losses": 6,
       "ties": 0,
       "win_pct": 0.4,
-      "sos": 0.6946,
+      "sos": 0.6926,
       "avg_margin_capped": -0.1,
-      "score": 52.4,
+      "score": 52.33,
       "movement": -1
     },
     {
@@ -331,19 +331,6 @@
     },
     {
       "rank": 26,
-      "school_id": "antigo",
-      "school_name": "Antigo",
-      "wins": 5,
-      "losses": 5,
-      "ties": 0,
-      "win_pct": 0.5,
-      "sos": 0.5178,
-      "avg_margin_capped": 0.0,
-      "score": 50.62,
-      "movement": 2
-    },
-    {
-      "rank": 27,
       "school_id": "chequamegon",
       "school_name": "Chequamegon",
       "wins": 3,
@@ -353,7 +340,20 @@
       "sos": 0.641,
       "avg_margin_capped": -0.43,
       "score": 50.29,
-      "movement": -8
+      "movement": -7
+    },
+    {
+      "rank": 27,
+      "school_id": "antigo",
+      "school_name": "Antigo",
+      "wins": 7,
+      "losses": 7,
+      "ties": 0,
+      "win_pct": 0.5,
+      "sos": 0.527,
+      "avg_margin_capped": -0.21,
+      "score": 50.05,
+      "movement": 1
     },
     {
       "rank": 28,
@@ -688,9 +688,9 @@
       "losses": 12,
       "ties": 0,
       "win_pct": 0.2,
-      "sos": 0.5069,
+      "sos": 0.506,
       "avg_margin_capped": -1.4,
-      "score": 32.41,
+      "score": 32.38,
       "movement": -5
     },
     {
@@ -831,9 +831,9 @@
       "losses": 4,
       "ties": 0,
       "win_pct": 0.0,
-      "sos": 0.4444,
+      "sos": 0.4394,
       "avg_margin_capped": -2.0,
-      "score": 19.72,
+      "score": 19.55,
       "movement": -1
     }
   ]
