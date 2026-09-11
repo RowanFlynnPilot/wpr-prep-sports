@@ -30,52 +30,52 @@
         "points_against": 15
       },
       {
-        "school_id": "wausau-east",
-        "name": "Wausau East",
-        "conference_wins": 0,
-        "conference_losses": 1,
-        "conference_ties": 0,
-        "overall_wins": 2,
-        "overall_losses": 11,
-        "overall_ties": 0,
-        "points_for": 6,
-        "points_against": 23
-      },
-      {
         "school_id": "wausau-west",
         "name": "Wausau West",
-        "conference_wins": 0,
+        "conference_wins": 1,
         "conference_losses": 1,
         "conference_ties": 0,
-        "overall_wins": 2,
+        "overall_wins": 3,
         "overall_losses": 4,
         "overall_ties": 0,
-        "points_for": 7,
+        "points_for": 10,
         "points_against": 10
       },
       {
         "school_id": "spash",
         "name": "SPASH",
-        "conference_wins": 0,
+        "conference_wins": 1,
         "conference_losses": 1,
         "conference_ties": 0,
-        "overall_wins": 2,
+        "overall_wins": 3,
         "overall_losses": 3,
         "overall_ties": 0,
-        "points_for": 6,
+        "points_for": 9,
         "points_against": 9
+      },
+      {
+        "school_id": "wausau-east",
+        "name": "Wausau East",
+        "conference_wins": 0,
+        "conference_losses": 2,
+        "conference_ties": 0,
+        "overall_wins": 2,
+        "overall_losses": 12,
+        "overall_ties": 0,
+        "points_for": 6,
+        "points_against": 26
       },
       {
         "school_id": "wisconsin-rapids",
         "name": "Wisconsin Rapids Lincoln",
         "conference_wins": 0,
-        "conference_losses": 1,
+        "conference_losses": 2,
         "conference_ties": 0,
         "overall_wins": 2,
-        "overall_losses": 6,
+        "overall_losses": 7,
         "overall_ties": 0,
         "points_for": 7,
-        "points_against": 15
+        "points_against": 18
       }
     ]
   },
@@ -115,11 +115,23 @@
         "conference_wins": 1,
         "conference_losses": 0,
         "conference_ties": 0,
-        "overall_wins": 3,
+        "overall_wins": 4,
         "overall_losses": 4,
         "overall_ties": 0,
-        "points_for": 7,
+        "points_for": 10,
         "points_against": 9
+      },
+      {
+        "school_id": "spencer",
+        "name": "Spencer",
+        "conference_wins": 1,
+        "conference_losses": 0,
+        "conference_ties": 0,
+        "overall_wins": 2,
+        "overall_losses": 5,
+        "overall_ties": 0,
+        "points_for": 8,
+        "points_against": 11
       },
       {
         "school_id": "prentice",
@@ -180,18 +192,6 @@
         "overall_ties": 0,
         "points_for": 6,
         "points_against": 5
-      },
-      {
-        "school_id": "spencer",
-        "name": "Spencer",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "conference_ties": 0,
-        "overall_wins": 1,
-        "overall_losses": 5,
-        "overall_ties": 0,
-        "points_for": 5,
-        "points_against": 11
       },
       {
         "school_id": "newman-catholic",
@@ -359,23 +359,11 @@
         "conference_wins": 0,
         "conference_losses": 0,
         "conference_ties": 0,
-        "overall_wins": 4,
+        "overall_wins": 5,
         "overall_losses": 6,
         "overall_ties": 0,
-        "points_for": 12,
+        "points_for": 14,
         "points_against": 13
-      },
-      {
-        "school_id": "neillsville",
-        "name": "Neillsville",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "conference_ties": 0,
-        "overall_wins": 3,
-        "overall_losses": 3,
-        "overall_ties": 0,
-        "points_for": 8,
-        "points_against": 10
       },
       {
         "school_id": "greenwood",
@@ -419,11 +407,11 @@
         "conference_wins": 0,
         "conference_losses": 1,
         "conference_ties": 0,
-        "overall_wins": 4,
+        "overall_wins": 5,
         "overall_losses": 8,
         "overall_ties": 0,
-        "points_for": 10,
-        "points_against": 18
+        "points_for": 12,
+        "points_against": 19
       },
       {
         "school_id": "abbotsford",
@@ -436,6 +424,18 @@
         "overall_ties": 0,
         "points_for": 7,
         "points_against": 28
+      },
+      {
+        "school_id": "neillsville",
+        "name": "Neillsville",
+        "conference_wins": 0,
+        "conference_losses": 1,
+        "conference_ties": 0,
+        "overall_wins": 3,
+        "overall_losses": 4,
+        "overall_ties": 0,
+        "points_for": 8,
+        "points_against": 13
       }
     ]
   }
