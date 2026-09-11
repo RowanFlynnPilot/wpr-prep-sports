@@ -214,6 +214,18 @@
     "division": null,
     "rows": [
       {
+        "school_id": "hurley",
+        "name": "Hurley",
+        "conference_wins": 3,
+        "conference_losses": 0,
+        "conference_ties": 0,
+        "overall_wins": 4,
+        "overall_losses": 0,
+        "overall_ties": 0,
+        "points_for": 79,
+        "points_against": 20
+      },
+      {
         "school_id": "rib-lake",
         "name": "Rib Lake",
         "conference_wins": 3,
@@ -224,18 +236,6 @@
         "overall_ties": 0,
         "points_for": 81,
         "points_against": 128
-      },
-      {
-        "school_id": "hurley",
-        "name": "Hurley",
-        "conference_wins": 2,
-        "conference_losses": 0,
-        "conference_ties": 0,
-        "overall_wins": 3,
-        "overall_losses": 0,
-        "overall_ties": 0,
-        "points_for": 78,
-        "points_against": 20
       },
       {
         "school_id": "shell-lake",
@@ -310,18 +310,6 @@
         "points_against": 163
       },
       {
-        "school_id": "prentice",
-        "name": "Prentice",
-        "conference_wins": 0,
-        "conference_losses": 2,
-        "conference_ties": 0,
-        "overall_wins": 1,
-        "overall_losses": 3,
-        "overall_ties": 0,
-        "points_for": 29,
-        "points_against": 66
-      },
-      {
         "school_id": "bruce",
         "name": "Bruce",
         "conference_wins": 0,
@@ -344,6 +332,18 @@
         "overall_ties": 0,
         "points_for": 0,
         "points_against": 2
+      },
+      {
+        "school_id": "prentice",
+        "name": "Prentice",
+        "conference_wins": 0,
+        "conference_losses": 3,
+        "conference_ties": 0,
+        "overall_wins": 1,
+        "overall_losses": 4,
+        "overall_ties": 0,
+        "points_for": 29,
+        "points_against": 67
       }
     ]
   },

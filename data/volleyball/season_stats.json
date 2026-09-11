@@ -2114,6 +2114,328 @@
     }
   },
   {
+    "school_id": "river-falls",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Charlie Cegielski",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "5",
+      "KLS": "28",
+      "ATT": "51",
+      "E": "8",
+      "SP": "11",
+      "AST": "1",
+      "EFF": ".392"
+    }
+  },
+  {
+    "school_id": "river-falls",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Brooke Dusek",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "5",
+      "KLS": "24",
+      "ATT": "65",
+      "E": "18",
+      "SP": "11",
+      "AST": "3",
+      "EFF": ".092"
+    }
+  },
+  {
+    "school_id": "river-falls",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Amelie Pankonin",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "5",
+      "KLS": "34",
+      "ATT": "73",
+      "E": "12",
+      "SP": "11",
+      "AST": "1",
+      "EFF": ".301"
+    }
+  },
+  {
+    "school_id": "river-falls",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Ryan Kealy",
+    "player_year": "FR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "KLS": "3",
+      "ATT": "9",
+      "E": "1",
+      "SP": "3",
+      "EFF": ".222"
+    }
+  },
+  {
+    "school_id": "river-falls",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Anika Schwartz",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "5",
+      "KLS": "8",
+      "ATT": "14",
+      "E": "2",
+      "SP": "11",
+      "AST": "57",
+      "EFF": ".429"
+    }
+  },
+  {
+    "school_id": "river-falls",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Charlie Cegielski",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "4",
+      "ACE": "6",
+      "SP": "9"
+    }
+  },
+  {
+    "school_id": "river-falls",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Amelie Pankonin",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "4",
+      "ACE": "8",
+      "SP": "9"
+    }
+  },
+  {
+    "school_id": "river-falls",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Brielle Dusek",
+    "player_year": "FR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "ACE": "4",
+      "SP": "7"
+    }
+  },
+  {
+    "school_id": "river-falls",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Cadence Novak",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "ACE": "5",
+      "SP": "6"
+    }
+  },
+  {
+    "school_id": "river-falls",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Charlie Cegielski",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "5",
+      "BLK": "6",
+      "SP": "11",
+      "DIG": "9"
+    }
+  },
+  {
+    "school_id": "river-falls",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Brooke Dusek",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "5",
+      "BLK": "3",
+      "SP": "11",
+      "DIG": "23"
+    }
+  },
+  {
+    "school_id": "river-falls",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Haley Matzek",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "4",
+      "BLK": "3",
+      "SP": "9",
+      "DIG": "3"
+    }
+  },
+  {
+    "school_id": "river-falls",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Raegan Skifter",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "5",
+      "BLK": "8",
+      "SP": "11",
+      "DIG": "3"
+    }
+  },
+  {
+    "school_id": "river-falls",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Amelie Pankonin",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "5",
+      "DIG": "27",
+      "SP": "11",
+      "BLK": "1"
+    }
+  },
+  {
+    "school_id": "river-falls",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Liliana Cudd",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "4",
+      "DIG": "11",
+      "SP": "9"
+    }
+  },
+  {
+    "school_id": "river-falls",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Brielle Dusek",
+    "player_year": "FR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "5",
+      "DIG": "28",
+      "SP": "11"
+    }
+  },
+  {
+    "school_id": "river-falls",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Cadence Novak",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "5",
+      "DIG": "23",
+      "SP": "11"
+    }
+  },
+  {
+    "school_id": "river-falls",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Ellory Hauk",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "5",
+      "DIG": "9",
+      "SP": "11"
+    }
+  },
+  {
+    "school_id": "river-falls",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Brielle Dusek",
+    "player_year": "FR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "AST": "3",
+      "SP": "7"
+    }
+  },
+  {
+    "school_id": "river-falls",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Cadence Novak",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "AST": "2",
+      "SP": "4"
+    }
+  },
+  {
+    "school_id": "river-falls",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Ellory Hauk",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "5",
+      "AST": "39",
+      "SP": "11",
+      "KLS": "2",
+      "ATT": "2",
+      "E": "0",
+      "EFF": "1.000"
+    }
+  },
+  {
     "school_id": "rib-lake",
     "sport": "volleyball",
     "category": "Volleyball Offense",
@@ -6461,77 +6783,6 @@
     "school_id": "river-falls",
     "sport": "volleyball",
     "category": "Volleyball Offense",
-    "player_name": "Charlie Cegielski",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "4",
-      "KLS": "24",
-      "ATT": "45",
-      "E": "8",
-      "SP": "9",
-      "AST": "1",
-      "EFF": ".356"
-    }
-  },
-  {
-    "school_id": "river-falls",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Brooke Dusek",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "4",
-      "KLS": "19",
-      "ATT": "58",
-      "E": "17",
-      "SP": "9",
-      "AST": "3",
-      "EFF": ".034"
-    }
-  },
-  {
-    "school_id": "river-falls",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Amelie Pankonin",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "4",
-      "KLS": "31",
-      "ATT": "65",
-      "E": "11",
-      "SP": "9",
-      "EFF": ".308"
-    }
-  },
-  {
-    "school_id": "river-falls",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Ellory Hauk",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "4",
-      "KLS": "2",
-      "ATT": "2",
-      "E": "0",
-      "SP": "9",
-      "AST": "35",
-      "EFF": "1.000"
-    }
-  },
-  {
-    "school_id": "river-falls",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
     "player_name": "Raegan Skifter",
     "player_year": "JR",
     "position": null,
@@ -6549,20 +6800,6 @@
     "school_id": "river-falls",
     "sport": "volleyball",
     "category": "Volleyball Serving",
-    "player_name": "Charlie Cegielski",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "3",
-      "ACE": "5",
-      "SP": "7"
-    }
-  },
-  {
-    "school_id": "river-falls",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
     "player_name": "Brooke Dusek",
     "player_year": "SR",
     "position": null,
@@ -6571,79 +6808,6 @@
       "GP": "3",
       "ACE": "5",
       "SP": "7"
-    }
-  },
-  {
-    "school_id": "river-falls",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Amelie Pankonin",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "3",
-      "ACE": "4",
-      "SP": "7"
-    }
-  },
-  {
-    "school_id": "river-falls",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Cadence Novak",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "ACE": "3",
-      "SP": "4"
-    }
-  },
-  {
-    "school_id": "river-falls",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Charlie Cegielski",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "4",
-      "BLK": "5",
-      "SP": "9",
-      "DIG": "8"
-    }
-  },
-  {
-    "school_id": "river-falls",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Amelie Pankonin",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "4",
-      "BLK": "1",
-      "SP": "9",
-      "DIG": "21"
-    }
-  },
-  {
-    "school_id": "river-falls",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Haley Matzek",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "3",
-      "BLK": "2",
-      "SP": "7",
-      "DIG": "2"
     }
   },
   {
@@ -6658,113 +6822,6 @@
       "GP": "2",
       "BLK": "7",
       "SP": "5"
-    }
-  },
-  {
-    "school_id": "river-falls",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Raegan Skifter",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "4",
-      "BLK": "6",
-      "SP": "9",
-      "DIG": "3"
-    }
-  },
-  {
-    "school_id": "river-falls",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Brooke Dusek",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "4",
-      "DIG": "23",
-      "SP": "9",
-      "BLK": "2"
-    }
-  },
-  {
-    "school_id": "river-falls",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Brielle Dusek",
-    "player_year": "FR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "4",
-      "DIG": "26",
-      "SP": "9"
-    }
-  },
-  {
-    "school_id": "river-falls",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Cadence Novak",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "4",
-      "DIG": "21",
-      "SP": "9"
-    }
-  },
-  {
-    "school_id": "river-falls",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Ellory Hauk",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "4",
-      "DIG": "8",
-      "SP": "9"
-    }
-  },
-  {
-    "school_id": "river-falls",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Anika Schwartz",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "4",
-      "AST": "49",
-      "SP": "9",
-      "KLS": "6",
-      "ATT": "11",
-      "E": "2",
-      "EFF": ".364"
-    }
-  },
-  {
-    "school_id": "river-falls",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Ryan Kealy",
-    "player_year": "FR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "1",
-      "KLS": "2",
-      "ATT": "6",
-      "E": "0",
-      "SP": "2",
-      "EFF": ".333"
     }
   },
   {
@@ -6824,20 +6881,6 @@
       "GP": "1",
       "BLK": "1",
       "SP": "2"
-    }
-  },
-  {
-    "school_id": "river-falls",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Liliana Cudd",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "3",
-      "DIG": "10",
-      "SP": "7"
     }
   },
   {
@@ -9304,48 +9347,6 @@
       "GP": "2",
       "ACE": "3",
       "SP": "5"
-    }
-  },
-  {
-    "school_id": "river-falls",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Brielle Dusek",
-    "player_year": "FR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "ACE": "2",
-      "SP": "5"
-    }
-  },
-  {
-    "school_id": "river-falls",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Brielle Dusek",
-    "player_year": "FR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "AST": "2",
-      "SP": "5"
-    }
-  },
-  {
-    "school_id": "river-falls",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Cadence Novak",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "1",
-      "AST": "1",
-      "SP": "2"
     }
   },
   {
