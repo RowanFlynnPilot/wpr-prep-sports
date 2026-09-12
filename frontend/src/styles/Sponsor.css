@@ -12,7 +12,7 @@
 .sponsor__label {
   font-family: var(--font-display);
   font-weight: 500;
-  font-size: 0.7rem;
+  font-size: var(--fs-label);
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--muted);
@@ -22,7 +22,7 @@
 .sponsor__name {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 0.85rem;
+  font-size: var(--fs-small);
   letter-spacing: 0.02em;
   color: var(--ink);
 }
@@ -43,11 +43,11 @@ a.sponsor:focus-visible .sponsor__name {
 /* Variant: compact — for the masthead. Inverts colors on the navy bg. */
 .sponsor--compact .sponsor__label {
   color: rgba(255, 255, 255, 0.55);
-  font-size: 0.65rem;
+  font-size: var(--fs-label);
 }
 .sponsor--compact .sponsor__name {
   color: #fff;
-  font-size: 0.8rem;
+  font-size: var(--fs-caption);
 }
 .sponsor--compact .sponsor__logo {
   max-height: 18px;
@@ -102,7 +102,7 @@ a.sponsor:focus-visible .sponsor__name {
   margin-bottom: 0.3rem;
   font-family: var(--font-display);
   font-weight: 500;
-  font-size: 0.72rem;
+  font-size: var(--fs-label);
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--muted-2);
@@ -144,7 +144,7 @@ a.sponsor:focus-visible .sponsor__name {
 .sponsor__placeholder-label {
   font-family: var(--font-display);
   font-weight: 500;
-  font-size: 0.6rem;
+  font-size: var(--fs-label);
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--accent-700);
@@ -155,7 +155,7 @@ a.sponsor:focus-visible .sponsor__name {
 }
 .sponsor__placeholder-key {
   font-family: ui-monospace, "SF Mono", Menlo, monospace;
-  font-size: 0.7rem;
+  font-size: var(--fs-label);
   color: var(--muted);
   background: transparent;
 }

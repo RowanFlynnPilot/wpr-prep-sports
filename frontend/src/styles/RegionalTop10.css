@@ -26,7 +26,7 @@
 .top-ten__eyebrow {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 0.72rem;
+  font-size: var(--fs-label);
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--muted);
@@ -34,7 +34,7 @@
 .top-ten__title {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 1.75rem;
+  font-size: var(--fs-h2);
   line-height: 1;
   letter-spacing: 0.01em;
   text-transform: uppercase;
@@ -48,7 +48,7 @@
 .top-ten__dateline {
   font-family: var(--font-body);
   font-style: italic;
-  font-size: 0.85rem;
+  font-size: var(--fs-small);
   color: var(--muted);
 }
 
@@ -58,7 +58,7 @@
   margin: 0.1rem 0 0.6rem;
   font-family: var(--font-body);
   font-style: italic;
-  font-size: 0.92rem;
+  font-size: var(--fs-ui);
   line-height: 1.4;
   color: var(--ink);
   max-width: 68ch;
@@ -106,7 +106,7 @@
   grid-area: rank;
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: 2.4rem;
+  font-size: var(--fs-display);
   line-height: 0.9;
   color: var(--ink-hero);
   font-variant-numeric: tabular-nums;
@@ -136,7 +136,7 @@
 .top-ten__name {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 1.15rem;
+  font-size: var(--fs-lead);
   line-height: 1.1;
   color: var(--ink-hero);
   text-decoration: none;
@@ -151,7 +151,7 @@
 .top-ten__ancillary {
   font-family: var(--font-display);
   font-weight: 500;
-  font-size: 0.72rem;
+  font-size: var(--fs-label);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--muted);
@@ -163,7 +163,7 @@
   padding-left: 0.35rem;
   font-family: var(--font-body);
   font-style: italic;
-  font-size: 0.9rem;
+  font-size: var(--fs-ui);
   line-height: 1.5;
   color: var(--ink);
   max-width: 68ch;
@@ -186,7 +186,7 @@
   border-radius: 3px;
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 0.72rem;
+  font-size: var(--fs-label);
   letter-spacing: 0.02em;
   line-height: 1;
   justify-content: center;
@@ -227,7 +227,7 @@
   margin: 0.65rem 0 0;
   font-family: var(--font-body);
   font-style: italic;
-  font-size: 0.8rem;
+  font-size: var(--fs-caption);
   line-height: 1.65;
   color: var(--muted);
   max-width: 68ch;
@@ -245,7 +245,7 @@
   font-family: var(--font-display);
   font-style: normal;
   font-weight: 700;
-  font-size: 0.66rem;
+  font-size: var(--fs-label);
   letter-spacing: 0.02em;
   line-height: 1;
   color: var(--muted);
@@ -269,9 +269,9 @@
     gap: 0.3rem 0.55rem;
     padding: 0.75rem 0.35rem;
   }
-  .top-ten__rank { font-size: 2rem; }
-  .top-ten__name { font-size: 1.05rem; }
-  .top-ten__title { font-size: 1.45rem; }
+  .top-ten__rank { font-size: var(--fs-h1); }
+  .top-ten__name { font-size: var(--fs-body); }
+  .top-ten__title { font-size: var(--fs-title); }
   .top-ten__masthead {
     flex-direction: column;
     gap: 0.5rem;

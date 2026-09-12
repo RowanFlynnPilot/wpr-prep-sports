@@ -68,15 +68,24 @@
   --font-body:       'Merriweather', Georgia, 'Times New Roman', serif;
   --font-numeric:    'Oswald', 'Roboto Mono', ui-monospace, monospace;
 
-  /* Scale */
-  --fs-eyebrow:      0.75rem;
+  /* Scale — every font-size in styles/ is one of these (OgCard.css is a
+     fixed-pixel raster and exempt). Steps sit at the modes of the sizes
+     the site had grown organically, so consolidating onto them moved
+     almost nothing visibly; sub-11px text rose to --fs-label. */
+  --fs-label:        0.72rem;   /* pills, column heads, stat labels, CTAs, tabs */
+  --fs-eyebrow:      0.75rem;   /* section kickers */
+  --fs-caption:      0.78rem;   /* hints, meta, italic notes */
+  --fs-small:        0.85rem;   /* secondary text in cards and tables */
+  --fs-ui:           0.95rem;   /* card titles, names, primary card text */
   --fs-body:         1rem;
   --fs-lead:         1.125rem;
   --fs-h3:           1.25rem;
+  --fs-title:        1.5rem;    /* boundary h2, hero team names, large glyphs */
   --fs-h2:           1.75rem;
   --fs-h1:           2.25rem;
+  --fs-display:      2.5rem;    /* team-page hero name */
   --fs-score:        clamp(2.5rem, 7vw, 4.25rem);
-  --fs-score-sm:     1.75rem;
+  --fs-score-sm:     var(--fs-h2);
 
   /* Layout */
   --radius:          10px;
@@ -218,7 +227,7 @@ a:hover { border-bottom-color: currentColor; }
   font-family: var(--font-display);
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  font-size: 0.9rem;
+  font-size: var(--fs-ui);
 }
 .error { color: var(--danger); }
 

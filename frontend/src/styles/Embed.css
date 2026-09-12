@@ -24,21 +24,21 @@
 .embed__title h1 {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 1.15rem;
+  font-size: var(--fs-lead);
   margin: 0;
   color: var(--ink);
   line-height: 1.1;
 }
 .embed__title p {
   font-family: var(--font-body);
-  font-size: 0.75rem;
+  font-size: var(--fs-eyebrow);
   color: var(--muted);
   margin: 0.1rem 0 0;
 }
 .embed__record {
   font-family: var(--font-numeric);
   font-weight: 700;
-  font-size: 1.25rem;
+  font-size: var(--fs-h3);
   font-variant-numeric: tabular-nums;
   color: var(--ink);
   text-align: right;
@@ -49,7 +49,7 @@
 .embed__rank {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 0.68rem;
+  font-size: var(--fs-label);
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--muted);
@@ -75,7 +75,7 @@
 .embed__game-label {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 0.68rem;
+  font-size: var(--fs-label);
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--accent-700);
@@ -83,14 +83,14 @@
 }
 .embed__game-detail {
   font-family: var(--font-body);
-  font-size: 0.88rem;
+  font-size: var(--fs-small);
 }
 .embed__won { color: var(--win); }
 .embed__lost { color: var(--loss); }
 .embed__tied { color: var(--muted); }
 .embed__when {
   color: var(--muted);
-  font-size: 0.8rem;
+  font-size: var(--fs-caption);
 }
 
 .embed__form {
@@ -106,7 +106,7 @@
   border-radius: var(--radius-sm);
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 0.7rem;
+  font-size: var(--fs-label);
   /* --paper, not #fff: dark mode lightens --win/--loss/--muted, so the
      readable text color flips with the theme. */
   color: var(--paper);
@@ -126,14 +126,14 @@
 .embed__footer a {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 0.8rem;
+  font-size: var(--fs-caption);
   letter-spacing: 0.03em;
   text-transform: uppercase;
 }
 .embed__credit {
   font-family: var(--font-body);
   font-style: italic;
-  font-size: 0.78rem;
+  font-size: var(--fs-caption);
   color: var(--muted-2);
   white-space: nowrap;
 }
@@ -154,7 +154,7 @@
 .embed-conf__heading {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 0.72rem;
+  font-size: var(--fs-label);
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--accent-700);
@@ -178,7 +178,7 @@
   text-decoration: none;
   color: var(--ink);
   font-family: var(--font-body);
-  font-size: 0.82rem;
+  font-size: var(--fs-caption);
   transition: background var(--t-fast) var(--ease);
 }
 .embed-conf__score:hover {
@@ -187,7 +187,7 @@
 .embed-conf__score-date {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 0.68rem;
+  font-size: var(--fs-label);
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--muted);
@@ -209,7 +209,7 @@
 }
 .embed-conf__at {
   color: var(--muted);
-  font-size: 0.75rem;
+  font-size: var(--fs-eyebrow);
 }
 .embed-conf__winner {
   font-weight: 700;
@@ -217,7 +217,7 @@
 .embed-conf__tag {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 0.7rem;
+  font-size: var(--fs-label);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--muted-2);
@@ -238,13 +238,13 @@
   width: 100%;
   border-collapse: collapse;
   font-family: var(--font-body);
-  font-size: 0.84rem;
+  font-size: var(--fs-small);
   font-variant-numeric: tabular-nums;
 }
 .embed-conf__standings th {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 0.7rem;
+  font-size: var(--fs-label);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--muted);

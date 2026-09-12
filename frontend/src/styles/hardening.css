@@ -50,7 +50,7 @@
   background: #991212;
   color: #ffffff;
   font-family: var(--font-display);
-  font-size: 0.9rem;
+  font-size: var(--fs-ui);
   font-weight: 600;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -91,7 +91,7 @@
   border: 1px dashed var(--line);
   border-radius: var(--radius);
   color: var(--muted);
-  font-size: 0.85rem;
+  font-size: var(--fs-small);
   padding: 0.9rem 1rem;
   margin: 0.75rem 0;
   text-align: center;
@@ -112,7 +112,7 @@
 }
 .not-found__title {
   font-family: var(--font-display);
-  font-size: 1.25rem;
+  font-size: var(--fs-h3);
   font-weight: 600;
   letter-spacing: 0.01em;
   line-height: 1.2;
@@ -120,7 +120,7 @@
 }
 .not-found__body {
   color: var(--muted);
-  font-size: 0.95rem;
+  font-size: var(--fs-ui);
   line-height: 1.5;
   margin: 0 0 1.1rem;
 }
@@ -134,7 +134,7 @@
 .not-found__primary {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 0.85rem;
+  font-size: var(--fs-small);
   letter-spacing: 0.04em;
   text-transform: uppercase;
   text-decoration: none;
@@ -150,7 +150,7 @@
 }
 .not-found__back {
   font-family: var(--font-display);
-  font-size: 0.85rem;
+  font-size: var(--fs-small);
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--link);
@@ -164,7 +164,7 @@
 .live-stall-note {
   background: var(--paper-2);
   color: var(--muted);
-  font-size: 0.8rem;
+  font-size: var(--fs-caption);
   padding: 0.5rem 0.75rem;
   margin: 0 0 0.75rem;
 }
@@ -183,7 +183,7 @@
 }
 .boundary h2 {
   font-family: var(--font-display);
-  font-size: 1.5rem;
+  font-size: var(--fs-title);
   text-transform: uppercase;
   letter-spacing: 0.02em;
   margin-bottom: 0.75rem;
@@ -195,7 +195,7 @@
 .boundary__reload {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: var(--fs-ui);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   background: var(--brand);
@@ -224,7 +224,7 @@
   border-left: 3px solid var(--muted-2);
   border-radius: var(--radius-sm);
   padding: 0.7rem 1rem;
-  font-size: 0.9rem;
+  font-size: var(--fs-ui);
   color: var(--muted);
   margin-bottom: 1.25rem;
 }
@@ -246,7 +246,7 @@
   border: 1px solid var(--banner-info-line);
   border-radius: var(--radius-sm);
   padding: 0.7rem 1rem;
-  font-size: 0.9rem;
+  font-size: var(--fs-ui);
   color: var(--banner-info-ink);
   margin-bottom: 1.25rem;
   line-height: 1.45;

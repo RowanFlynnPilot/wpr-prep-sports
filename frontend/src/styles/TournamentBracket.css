@@ -17,7 +17,7 @@
 }
 .bracket__meta {
   font-family: var(--font-body);
-  font-size: 0.85rem;
+  font-size: var(--fs-small);
   color: var(--muted);
 }
 
@@ -35,7 +35,7 @@
   cursor: pointer;
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 0.72rem;
+  font-size: var(--fs-label);
   letter-spacing: 0.06em;
   text-transform: uppercase;
   padding: 0.3rem 0.65rem;
@@ -60,7 +60,7 @@
 .bracket__empty {
   font-family: var(--font-body);
   font-style: italic;
-  font-size: 0.9rem;
+  font-size: var(--fs-ui);
   color: var(--muted);
   padding: 1rem;
   margin: 0;
@@ -90,7 +90,7 @@
 .bracket__journey-header .bracket__journey-cell {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 0.72rem;
+  font-size: var(--fs-label);
   letter-spacing: 0.1em;
   text-transform: uppercase;
   padding: 0.6rem 0.85rem;
@@ -135,7 +135,7 @@
 .bracket__journey-team {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 0.95rem;
+  font-size: var(--fs-ui);
   letter-spacing: 0.01em;
   color: var(--ink);
   text-decoration: none;
@@ -159,7 +159,7 @@
 .bracket__journey-mascot {
   font-family: var(--font-body);
   font-style: italic;
-  font-size: 0.78rem;
+  font-size: var(--fs-caption);
   color: var(--muted);
 }
 
@@ -168,7 +168,7 @@
   justify-content: center;
   color: var(--muted-2);
   font-family: var(--font-display);
-  font-size: 1rem;
+  font-size: var(--fs-body);
 }
 /* Tokens, not literals: the emerald-700/red-700 these replaced were mixed
    for the white card and left behind by the dark retheme, where they sank
@@ -200,13 +200,13 @@
 .bracket__journey-result {
   font-family: var(--font-numeric);
   font-weight: 700;
-  font-size: 0.95rem;
+  font-size: var(--fs-ui);
   font-variant-numeric: tabular-nums;
   letter-spacing: 0.02em;
 }
 .bracket__journey-opponent {
   font-family: var(--font-body);
-  font-size: 0.8rem;
+  font-size: var(--fs-caption);
   color: var(--muted);
   white-space: nowrap;
   overflow: hidden;
@@ -220,5 +220,5 @@
        horizontally rather than crushing the result text. */
     grid-template-columns: minmax(140px, 1.4fr) repeat(var(--round-count, 4), minmax(130px, 1fr));
   }
-  .bracket__journey-team { font-size: 0.88rem; }
+  .bracket__journey-team { font-size: var(--fs-small); }
 }

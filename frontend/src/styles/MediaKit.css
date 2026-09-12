@@ -24,7 +24,7 @@
   max-width: 18ch;
 }
 .mk-hero__sub {
-  font-size: 1.05rem;
+  font-size: var(--fs-body);
   color: var(--muted);
   max-width: 60ch;
   margin: 0 0 1.1rem;
@@ -36,7 +36,7 @@
   flex-wrap: wrap;
 }
 .mk-hero__contact {
-  font-size: 0.85rem;
+  font-size: var(--fs-small);
   color: var(--muted);
 }
 
@@ -50,14 +50,14 @@
   font-family: var(--font-display);
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  font-size: 0.9rem;
+  font-size: var(--fs-ui);
   padding: 0.6rem 1.1rem;
   border-radius: var(--radius-sm);
   text-decoration: none;
   transition: transform var(--t-fast) var(--ease), background var(--t-fast) var(--ease);
 }
 .mk-btn:hover { transform: translateY(-1px); background: var(--brand); }
-.mk-btn--lg { font-size: 1rem; padding: 0.75rem 1.4rem; }
+.mk-btn--lg { font-size: var(--fs-body); padding: 0.75rem 1.4rem; }
 
 /* Why-sponsor strip */
 /* Five is prime, so the column count has to be chosen rather than inferred.
@@ -148,14 +148,14 @@
   display: block;
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 0.98rem;
+  font-size: var(--fs-ui);
   letter-spacing: 0.01em;
   line-height: 1.25;
   color: var(--ink);
 }
 .mk-why__d {
   display: block;
-  font-size: 0.84rem;
+  font-size: var(--fs-small);
   line-height: 1.45;
   color: var(--muted);
   margin-top: 0.2rem;
@@ -178,7 +178,7 @@
 .mk-group { margin-bottom: 2.25rem; }
 .mk-group__title {
   font-family: var(--font-display);
-  font-size: 1.05rem;
+  font-size: var(--fs-body);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: var(--ink);
@@ -208,12 +208,12 @@
   gap: 0.5rem;
   margin-bottom: 0.7rem;
 }
-.mk-card__title { font-family: var(--font-display); font-size: 1.1rem; margin: 0; color: var(--ink); }
-.mk-card__blurb { font-size: 0.9rem; color: var(--muted); line-height: 1.5; margin: 0.7rem 0 0.9rem; flex: 1; }
+.mk-card__title { font-family: var(--font-display); font-size: var(--fs-lead); margin: 0; color: var(--ink); }
+.mk-card__blurb { font-size: var(--fs-ui); color: var(--muted); line-height: 1.5; margin: 0.7rem 0 0.9rem; flex: 1; }
 .mk-card__foot { display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; }
-.mk-card__fit { font-size: 0.78rem; color: var(--ink); font-weight: 600; }
+.mk-card__fit { font-size: var(--fs-caption); color: var(--ink); font-weight: 600; }
 .mk-card__count {
-  font-size: 0.72rem;
+  font-size: var(--fs-label);
   text-transform: uppercase;
   letter-spacing: 0.04em;
   color: var(--muted);
@@ -224,7 +224,7 @@
 
 /* Availability pills */
 .mk-pill {
-  font-size: 0.7rem;
+  font-size: var(--fs-label);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -245,7 +245,7 @@
   gap: 0.5rem;
   border-radius: var(--radius-sm);
   padding: 0.55rem 0.7rem;
-  font-size: 0.8rem;
+  font-size: var(--fs-caption);
   border: 1px dashed var(--line);
   background: var(--paper);
 }
@@ -253,7 +253,7 @@
   font-family: var(--font-display);
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  font-size: 0.7rem;
+  font-size: var(--fs-label);
   color: var(--muted);
 }
 .mk-preview__brand {
@@ -262,7 +262,7 @@
   border: 1px solid var(--accent);
   border-radius: var(--radius-sm);
   padding: 1px 8px;
-  font-size: 0.78rem;
+  font-size: var(--fs-caption);
 }
 .mk-preview--title,
 .mk-preview--marquee { background: var(--brand); border-color: var(--brand); }
@@ -285,7 +285,7 @@
   padding: 0.8rem 1rem;
 }
 .mk-package__title { display: block; font-family: var(--font-display); font-weight: 700; color: var(--ink); }
-.mk-package__note { display: block; font-size: 0.82rem; color: var(--muted); margin-top: 2px; }
+.mk-package__note { display: block; font-size: var(--fs-caption); color: var(--muted); margin-top: 2px; }
 
 /* Closing CTA */
 .mk-foot-cta {
@@ -296,7 +296,7 @@
 }
 .mk-foot-cta__title {
   font-family: var(--font-display);
-  font-size: 1.3rem;
+  font-size: var(--fs-h3);
   color: var(--ink-hero);
   margin: 0 0 1rem;
 }
@@ -307,7 +307,7 @@
 .mk-package__rate {
   font-family: var(--font-numeric);
   font-weight: 700;
-  font-size: 0.85rem;
+  font-size: var(--fs-small);
   color: var(--brand);
   background: var(--paper-2);
   border-radius: var(--radius-sm);
@@ -317,7 +317,7 @@
 
 .mk-embed__lede {
   font-family: var(--font-body);
-  font-size: 0.95rem;
+  font-size: var(--fs-ui);
   color: var(--muted);
   margin: 0 0 0.75rem;
   max-width: 60ch;
@@ -335,14 +335,14 @@
   gap: 0.25rem;
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 0.7rem;
+  font-size: var(--fs-label);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--muted);
 }
 .mk-embed__controls select {
   font-family: var(--font-body);
-  font-size: 0.9rem;
+  font-size: var(--fs-ui);
   color: var(--ink);
   background: var(--card);
   border: 1px solid var(--line);
@@ -356,13 +356,13 @@
   border-radius: var(--radius);
   padding: 0.85rem 1rem;
   overflow-x: auto;
-  font-size: 0.78rem;
+  font-size: var(--fs-caption);
   line-height: 1.5;
   margin: 0 0 0.5rem;
 }
 .mk-embed__preview-note {
   font-family: var(--font-body);
-  font-size: 0.8rem;
+  font-size: var(--fs-caption);
   color: var(--muted);
   margin: 0;
   overflow-wrap: anywhere;

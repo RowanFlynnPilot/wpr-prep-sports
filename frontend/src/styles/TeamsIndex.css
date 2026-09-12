@@ -37,7 +37,7 @@
   color: var(--ink);
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: var(--fs-ui);
   cursor: pointer;
 }
 .teams-index__letters button:hover,
@@ -51,7 +51,7 @@
 .teams-index__letter {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 0.85rem;
+  font-size: var(--fs-small);
   letter-spacing: 0.14em;
   color: var(--muted);
   border-bottom: 1px solid var(--line);
@@ -105,7 +105,7 @@
 .teams-index__name {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 1rem;
+  font-size: var(--fs-body);
   line-height: 1.15;
   color: var(--ink);
 }
@@ -114,7 +114,7 @@
 }
 .teams-index__sub {
   grid-column: 2;
-  font-size: 0.74rem;
+  font-size: var(--fs-eyebrow);
   color: var(--muted);
   line-height: 1.3;
 }
@@ -124,7 +124,7 @@
 
 .teams-index__others {
   margin: 1.5rem 0 0;
-  font-size: 0.86rem;
+  font-size: var(--fs-small);
   color: var(--muted);
   line-height: 1.5;
   max-width: 75ch;

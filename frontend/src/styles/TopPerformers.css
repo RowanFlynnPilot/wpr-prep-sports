@@ -27,7 +27,7 @@
 .top-card__title {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: var(--fs-ui);
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
@@ -66,7 +66,7 @@
 .top-card__name {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: var(--fs-ui);
   color: var(--ink);
   line-height: 1.2;
   text-decoration: none;
@@ -83,12 +83,12 @@
 .top-card__year {
   font-weight: 400;
   color: var(--muted);
-  font-size: 0.82rem;
+  font-size: var(--fs-caption);
 }
 .top-card__team {
   font-family: var(--font-body);
   font-style: italic;
-  font-size: 0.78rem;
+  font-size: var(--fs-caption);
   color: var(--muted);
   text-decoration: none;
   border-bottom: 1px solid transparent;
@@ -105,7 +105,7 @@
 .top-card__stats {
   font-family: var(--font-numeric);
   font-weight: 600;
-  font-size: 0.82rem;
+  font-size: var(--fs-caption);
   letter-spacing: 0.02em;
   font-variant-numeric: tabular-nums;
   color: var(--ink);

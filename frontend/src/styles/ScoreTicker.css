@@ -130,18 +130,18 @@
 .card__day {
   font-weight: 600;
   letter-spacing: 0.08em;
-  font-size: 0.8rem;
+  font-size: var(--fs-caption);
   color: var(--ink);
 }
 .card__date {
   font-weight: 400;
-  font-size: 0.75rem;
+  font-size: var(--fs-eyebrow);
   color: var(--muted);
 }
 .card__status {
   font-family: var(--font-display);
   font-weight: 500;
-  font-size: 0.7rem;
+  font-size: var(--fs-label);
   letter-spacing: 0.1em;
   text-transform: uppercase;
   padding: 0.15rem 0.5rem;
@@ -214,7 +214,7 @@
 .card__team-name {
   font-family: var(--font-display);
   font-weight: 500;
-  font-size: 0.95rem;
+  font-size: var(--fs-ui);
   line-height: 1.2;
   letter-spacing: 0.01em;
   color: var(--ink);
@@ -235,7 +235,7 @@
   margin-top: 0.6rem;
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 0.72rem;
+  font-size: var(--fs-label);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--accent-700);
@@ -279,7 +279,7 @@
   padding-top: 0.5rem;
   border-top: 1px solid var(--paper-2);
   font-family: var(--font-body);
-  font-size: 0.82rem;
+  font-size: var(--fs-caption);
   line-height: 1.35;
   color: var(--ink);
 }
@@ -288,7 +288,7 @@
   margin: 0.3rem 0 0;
   font-family: var(--font-body);
   font-style: italic;
-  font-size: 0.78rem;
+  font-size: var(--fs-caption);
   line-height: 1.4;
   color: var(--muted);
   /* Clamp to 3 lines so cards stay scannable; full text on hover via title attr. */
@@ -303,7 +303,7 @@
   font-style: normal;
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 0.7rem;
+  font-size: var(--fs-label);
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--ink);
@@ -311,7 +311,7 @@
 .card__team-score {
   font-family: var(--font-numeric);
   font-weight: 700;
-  font-size: 1.45rem;
+  font-size: var(--fs-title);
   font-variant-numeric: tabular-nums;
   color: var(--muted);
   min-width: 1.5ch;

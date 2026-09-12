@@ -4,7 +4,7 @@
   flex-wrap: wrap;
   gap: 0.6rem;
   font-family: var(--font-display);
-  font-size: 0.75rem;
+  font-size: var(--fs-eyebrow);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--muted);
@@ -80,7 +80,7 @@
 .team-hero__name {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 2.5rem;
+  font-size: var(--fs-display);
   letter-spacing: 0.01em;
   text-transform: uppercase;
   line-height: 1;
@@ -109,14 +109,14 @@
 .record-stat__num {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 1.75rem;
+  font-size: var(--fs-h2);
   font-variant-numeric: tabular-nums;
   color: var(--ink);
   line-height: 1;
 }
 .record-stat__label {
   font-family: var(--font-display);
-  font-size: 0.7rem;
+  font-size: var(--fs-label);
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--muted);
@@ -132,7 +132,7 @@
 .season-summary__label {
   display: block;
   font-family: var(--font-display);
-  font-size: 0.7rem;
+  font-size: var(--fs-label);
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--muted);
@@ -141,7 +141,7 @@
 .season-summary__body {
   max-width: 75ch;
   font-family: var(--font-body);
-  font-size: 1.05rem;
+  font-size: var(--fs-body);
   line-height: 1.55;
   color: var(--ink);
   margin: 0;
@@ -178,7 +178,7 @@
   border-bottom: 1px solid var(--line);
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 0.85rem;
+  font-size: var(--fs-small);
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--ink);
@@ -187,7 +187,7 @@
 .schedule-divider__count {
   font-family: var(--font-body);
   font-style: italic;
-  font-size: 0.78rem;
+  font-size: var(--fs-caption);
   letter-spacing: 0;
   text-transform: none;
   color: var(--muted);
@@ -213,7 +213,7 @@
   padding: 0.18rem 0.45rem;
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 0.62rem;
+  font-size: var(--fs-label);
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--accent-700);
@@ -238,7 +238,7 @@
   margin: 0.25rem 0 0;
   font-family: var(--font-body);
   font-style: italic;
-  font-size: 0.82rem;
+  font-size: var(--fs-caption);
   color: var(--muted);
   /* Cap sentence width so the italic recap doesn't run 151 characters
      across the desktop card (detector caught it in run 7). At 75ch the
@@ -261,13 +261,13 @@
 .schedule-row__day {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 0.85rem;
+  font-size: var(--fs-small);
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 .schedule-row__datelabel {
   font-family: var(--font-body);
-  font-size: 0.8rem;
+  font-size: var(--fs-caption);
   color: var(--muted);
 }
 
@@ -280,14 +280,14 @@
 .schedule-row__location {
   font-family: var(--font-body);
   font-style: italic;
-  font-size: 0.85rem;
+  font-size: var(--fs-small);
   color: var(--muted-2);
   width: 1.5rem;
 }
 .schedule-row__opponent {
   font-family: var(--font-display);
   font-weight: 500;
-  font-size: 1rem;
+  font-size: var(--fs-body);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -313,7 +313,7 @@ a.schedule-row__result--link:focus-visible {
   border-radius: 4px;
 }
 .schedule-row__outcome {
-  font-size: 0.85rem;
+  font-size: var(--fs-small);
   font-weight: 700;
   letter-spacing: 0.06em;
   padding: 0.1rem 0.45rem;
@@ -331,11 +331,11 @@ a.schedule-row__result--link:focus-visible {
 }
 .schedule-row__score {
   font-weight: 700;
-  font-size: 1.05rem;
+  font-size: var(--fs-body);
 }
 .schedule-row__time {
   font-family: var(--font-display);
-  font-size: 0.9rem;
+  font-size: var(--fs-ui);
   color: var(--muted);
 }
 
@@ -356,7 +356,7 @@ a.schedule-row__result--link:focus-visible {
     padding: 1rem 0 0;
     justify-content: space-around;
   }
-  .team-hero__name { font-size: 1.75rem; }
+  .team-hero__name { font-size: var(--fs-h2); }
 
   .schedule-row {
     grid-template-columns: 2rem 5.5rem minmax(0, 1fr);

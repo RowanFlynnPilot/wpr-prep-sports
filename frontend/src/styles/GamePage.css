@@ -26,13 +26,13 @@
 .game-page__date {
   font-weight: 500;
   letter-spacing: 0.04em;
-  font-size: 0.95rem;
+  font-size: var(--fs-ui);
   color: rgba(255, 255, 255, 0.85);
 }
 .game-page__venue {
   font-family: var(--font-body);
   font-style: italic;
-  font-size: 0.85rem;
+  font-size: var(--fs-small);
   color: rgba(255, 255, 255, 0.55);
 }
 .game-page__context {
@@ -41,7 +41,7 @@
   background: rgba(255, 255, 255, 0.06);
   border-radius: var(--radius-sm);
   font-family: var(--font-display);
-  font-size: 0.7rem;
+  font-size: var(--fs-label);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.85);
@@ -86,7 +86,7 @@
 .game-page__team-name {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 1.5rem;
+  font-size: var(--fs-title);
   text-transform: uppercase;
   letter-spacing: 0.01em;
   line-height: 1.05;
@@ -101,7 +101,7 @@
 .game-page__team-mascot {
   font-family: var(--font-body);
   font-style: italic;
-  font-size: 0.85rem;
+  font-size: var(--fs-small);
   color: rgba(255, 255, 255, 0.7);
   margin: 0.2rem 0 0;
 }
@@ -126,7 +126,7 @@
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.06);
   font-family: var(--font-display);
-  font-size: 0.9rem;
+  font-size: var(--fs-ui);
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.55);
@@ -138,7 +138,7 @@
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   font-family: var(--font-body);
   font-style: italic;
-  font-size: 0.95rem;
+  font-size: var(--fs-ui);
   line-height: 1.5;
   color: rgba(255, 255, 255, 0.85);
 }
@@ -175,7 +175,7 @@
 .team-stats__title h3 {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 1rem;
+  font-size: var(--fs-body);
   letter-spacing: 0.03em;
   text-transform: uppercase;
   margin: 0;
@@ -188,14 +188,14 @@
 .team-stats__title p {
   font-family: var(--font-body);
   font-style: italic;
-  font-size: 0.78rem;
+  font-size: var(--fs-caption);
   color: rgba(255, 255, 255, 0.7);
   margin: 0.1rem 0 0;
 }
 .team-stats__score {
   font-family: var(--font-numeric);
   font-weight: 700;
-  font-size: 1.6rem;
+  font-size: var(--fs-title);
   font-variant-numeric: tabular-nums;
   color: #fff;
 }
@@ -218,7 +218,7 @@
 .set-score-line__heading {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 0.72rem;
+  font-size: var(--fs-label);
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.7);
@@ -238,7 +238,7 @@
 .set-score-line__set-head {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 0.7rem;
+  font-size: var(--fs-label);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.55);
@@ -255,7 +255,7 @@
   display: block;
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 0.92rem;
+  font-size: var(--fs-ui);
   color: #fff;
   line-height: 1.1;
 }
@@ -263,14 +263,14 @@
   display: block;
   font-family: var(--font-body);
   font-style: italic;
-  font-size: 0.78rem;
+  font-size: var(--fs-caption);
   color: rgba(255, 255, 255, 0.55);
   margin-top: 0.1rem;
 }
 .set-score-line__set {
   font-family: var(--font-numeric);
   font-weight: 600;
-  font-size: 1rem;
+  font-size: var(--fs-body);
   text-align: center;
   padding: 0.4rem 0.5rem;
   color: rgba(255, 255, 255, 0.7);
@@ -303,7 +303,7 @@
   background: var(--paper);
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 0.72rem;
+  font-size: var(--fs-label);
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--muted);
@@ -312,7 +312,7 @@
 .team-stats__group-count {
   font-family: var(--font-numeric);
   font-weight: 600;
-  font-size: 0.7rem;
+  font-size: var(--fs-label);
   letter-spacing: 0;
   color: var(--muted-2);
   padding: 0.05rem 0.4rem;
@@ -331,7 +331,7 @@
   text-align: center;
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 0.78rem;
+  font-size: var(--fs-caption);
   letter-spacing: 0.06em;
   color: var(--accent);
   border-top: 1px solid var(--paper-2);
@@ -349,7 +349,7 @@
   text-align: center;
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 0.72rem;
+  font-size: var(--fs-label);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--accent);
@@ -391,7 +391,7 @@
   background: var(--paper);
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 0.72rem;
+  font-size: var(--fs-label);
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--muted);
@@ -406,7 +406,7 @@
   width: 100%;
   border-collapse: collapse;
   font-family: var(--font-numeric);
-  font-size: 0.82rem;
+  font-size: var(--fs-caption);
   font-variant-numeric: tabular-nums;
 }
 
@@ -421,7 +421,7 @@
   background: var(--card);
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 0.72rem;
+  font-size: var(--fs-label);
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--muted-2);
@@ -442,7 +442,7 @@
   text-align: left !important;
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 0.88rem;
+  font-size: var(--fs-small);
   color: var(--ink);
   min-width: 9rem;
   letter-spacing: 0;
@@ -501,7 +501,7 @@
   align-self: center;
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 0.7rem;
+  font-size: var(--fs-label);
   letter-spacing: 0.1em;
   text-align: center;
   color: var(--accent-700);
@@ -519,7 +519,7 @@
 .stat-row__name {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: var(--fs-ui);
   color: var(--ink);
   overflow-wrap: anywhere;
 }
@@ -534,11 +534,11 @@
 .stat-row__year {
   font-weight: 400;
   color: var(--muted);
-  font-size: 0.82rem;
+  font-size: var(--fs-caption);
 }
 .stat-row__category {
   font-family: var(--font-display);
-  font-size: 0.65rem;
+  font-size: var(--fs-label);
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--muted-2);
@@ -559,7 +559,7 @@
 .stat-row__stat-label {
   font-family: var(--font-display);
   font-weight: 500;
-  font-size: 0.72rem;
+  font-size: var(--fs-label);
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--muted);
@@ -567,14 +567,14 @@
 .stat-row__stat-value {
   font-family: var(--font-numeric);
   font-weight: 700;
-  font-size: 0.95rem;
+  font-size: var(--fs-ui);
   font-variant-numeric: tabular-nums;
   color: var(--ink);
 }
 /* The category's own stat leads the row and carries the weight; the
    supporting columns read as context, not competition. */
 .stat-row__stat--lead .stat-row__stat-value {
-  font-size: 1.2rem;
+  font-size: var(--fs-h3);
   color: var(--ink-hero);
 }
 .stat-row__stat--lead .stat-row__stat-label {
@@ -582,7 +582,7 @@
 }
 .stat-row__more {
   font-family: var(--font-display);
-  font-size: 0.72rem;
+  font-size: var(--fs-label);
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--muted-2);
@@ -616,7 +616,7 @@
   margin: 0;
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 0.95rem;
+  font-size: var(--fs-ui);
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--ink);
@@ -624,7 +624,7 @@
 .stats-pending__body {
   margin: 0.4rem 0 0;
   font-family: var(--font-body);
-  font-size: 0.9rem;
+  font-size: var(--fs-ui);
   line-height: 1.5;
   color: var(--muted);
   max-width: 68ch;
@@ -638,7 +638,7 @@
 .stats-pending__action {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 0.78rem;
+  font-size: var(--fs-caption);
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--link);
@@ -654,6 +654,6 @@
   .game-page__hero { padding: 1.25rem 1.25rem 1.5rem; }
   .game-page__matchup { grid-template-columns: 1fr; }
   .game-page__divider { justify-self: center; margin: -0.5rem 0; }
-  .game-page__team-name { font-size: 1.2rem; }
+  .game-page__team-name { font-size: var(--fs-h3); }
   .game-page__score { font-size: var(--fs-score-sm); }
 }

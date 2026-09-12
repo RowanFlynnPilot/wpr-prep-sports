@@ -19,12 +19,12 @@
   font-family: var(--font-display);
   font-weight: 600;
   letter-spacing: 0.04em;
-  font-size: 1.05rem;
+  font-size: var(--fs-body);
   text-transform: uppercase;
 }
 .season-leaders__hint {
   font-family: var(--font-body);
-  font-size: 0.78rem;
+  font-size: var(--fs-caption);
   font-style: italic;
   color: rgba(255, 255, 255, 0.7);
 }
@@ -54,7 +54,7 @@
 .season-leaders__name {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 1rem;
+  font-size: var(--fs-body);
   color: var(--ink);
   line-height: 1.2;
   overflow-wrap: anywhere;
@@ -80,11 +80,11 @@
 .season-leaders__year {
   font-weight: 400;
   color: var(--muted);
-  font-size: 0.85rem;
+  font-size: var(--fs-small);
 }
 .season-leaders__category {
   font-family: var(--font-display);
-  font-size: 0.7rem;
+  font-size: var(--fs-label);
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--muted-2);
@@ -93,7 +93,7 @@
 .season-leaders__stats {
   font-family: var(--font-numeric);
   font-weight: 600;
-  font-size: 0.85rem;
+  font-size: var(--fs-small);
   letter-spacing: 0.02em;
   font-variant-numeric: tabular-nums;
   color: var(--ink);
@@ -110,5 +110,5 @@
     row-gap: 0.15rem;
   }
   .season-leaders__player { grid-area: player; }
-  .season-leaders__stats { grid-area: stats; text-align: left; font-size: 0.8rem; }
+  .season-leaders__stats { grid-area: stats; text-align: left; font-size: var(--fs-caption); }
 }

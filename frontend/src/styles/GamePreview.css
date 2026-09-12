@@ -37,21 +37,21 @@
 .game-preview__team-text h3 {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 1rem;
+  font-size: var(--fs-body);
   margin: 0;
   color: var(--ink);
   line-height: 1.15;
 }
 .game-preview__team-text p {
   font-family: var(--font-body);
-  font-size: 0.78rem;
+  font-size: var(--fs-caption);
   color: var(--muted);
   margin: 0.1rem 0 0;
 }
 .game-preview__record {
   font-family: var(--font-numeric);
   font-weight: 700;
-  font-size: 1.15rem;
+  font-size: var(--fs-lead);
   font-variant-numeric: tabular-nums;
   color: var(--ink);
   padding: 0.15rem 0.5rem;
@@ -62,7 +62,7 @@
 .game-preview__untracked-note {
   font-family: var(--font-body);
   font-style: italic;
-  font-size: 0.82rem;
+  font-size: var(--fs-caption);
   color: var(--muted);
   margin: 0;
 }
@@ -88,7 +88,7 @@
 .game-preview__stat dt {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 0.72rem;
+  font-size: var(--fs-label);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--muted);
@@ -97,7 +97,7 @@
   margin: 0;
   font-family: var(--font-numeric);
   font-weight: 600;
-  font-size: 0.92rem;
+  font-size: var(--fs-ui);
   font-variant-numeric: tabular-nums;
   color: var(--ink);
 }
@@ -115,7 +115,7 @@
   border-radius: var(--radius-sm);
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 0.75rem;
+  font-size: var(--fs-eyebrow);
   letter-spacing: 0;
   /* --paper, not #fff: dark mode lightens --win/--loss/--muted, so the
      readable text color flips with the theme. */
@@ -134,7 +134,7 @@
 .game-preview__no-meeting {
   font-family: var(--font-body);
   font-style: italic;
-  font-size: 0.85rem;
+  font-size: var(--fs-small);
   color: var(--muted);
   margin: 0;
   padding: 0.4rem 0;
@@ -158,14 +158,14 @@
 .game-preview__last-meeting-label {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 0.72rem;
+  font-size: var(--fs-label);
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--accent);
 }
 .game-preview__last-meeting-detail {
   font-family: var(--font-body);
-  font-size: 0.95rem;
+  font-size: var(--fs-ui);
   color: var(--ink);
 }
 .game-preview__last-meeting-detail strong {

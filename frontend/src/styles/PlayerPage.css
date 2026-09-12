@@ -20,7 +20,7 @@
   gap: 0.55rem;
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 0.7rem;
+  font-size: var(--fs-label);
   letter-spacing: 0.14em;
   text-transform: uppercase;
   margin-bottom: 0.4rem;
@@ -40,7 +40,7 @@
 .player-page__name {
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: 2rem;
+  font-size: var(--fs-h1);
   margin: 0;
   line-height: 1.05;
   letter-spacing: 0.01em;
@@ -48,7 +48,7 @@
 
 .player-page__year {
   font-weight: 600;
-  font-size: 1.2rem;
+  font-size: var(--fs-h3);
   color: rgba(255, 255, 255, 0.7);
   margin-left: 0.5rem;
 }
@@ -58,7 +58,7 @@
   margin-top: 0.4rem;
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 1rem;
+  font-size: var(--fs-body);
   color: rgba(255, 255, 255, 0.85);
   text-decoration: none;
   border-bottom: 1px solid transparent;
@@ -108,7 +108,7 @@
 .player-season-card__header h3 {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 0.92rem;
+  font-size: var(--fs-ui);
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--ink);
@@ -118,7 +118,7 @@
 .player-season-card__gp {
   font-family: var(--font-body);
   font-style: italic;
-  font-size: 0.78rem;
+  font-size: var(--fs-caption);
   color: var(--muted);
 }
 
@@ -148,7 +148,7 @@
 .season-stat-block__label {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 0.7rem;
+  font-size: var(--fs-label);
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--muted);
@@ -157,7 +157,7 @@
 .season-stat-block__lead {
   font-family: var(--font-numeric);
   font-weight: 700;
-  font-size: 1.35rem;
+  font-size: var(--fs-title);
   line-height: 1.1;
   color: var(--ink);
   font-variant-numeric: tabular-nums;
@@ -171,7 +171,7 @@
 .season-stat-block__secondary {
   font-family: var(--font-numeric);
   font-weight: 500;
-  font-size: 0.82rem;
+  font-size: var(--fs-caption);
   color: var(--muted);
   font-variant-numeric: tabular-nums;
 }
@@ -206,7 +206,7 @@
 .game-log__date {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 0.78rem;
+  font-size: var(--fs-caption);
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--muted);
@@ -222,7 +222,7 @@
 .game-log__opp-loc {
   font-family: var(--font-body);
   font-style: italic;
-  font-size: 0.78rem;
+  font-size: var(--fs-caption);
   color: var(--muted);
   min-width: 1.4rem;
   text-align: right;
@@ -231,7 +231,7 @@
 .game-log__opp-name {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 0.92rem;
+  font-size: var(--fs-ui);
   color: var(--ink);
   white-space: nowrap;
   overflow: hidden;
@@ -247,7 +247,7 @@
 .game-log__wl {
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: 0.92rem;
+  font-size: var(--fs-ui);
   padding: 0.05rem 0.4rem;
   border-radius: var(--radius-sm);
 }
@@ -263,7 +263,7 @@
 .game-log__score {
   font-family: var(--font-numeric);
   font-weight: 700;
-  font-size: 0.92rem;
+  font-size: var(--fs-ui);
   color: var(--ink);
   font-variant-numeric: tabular-nums;
 }
@@ -283,14 +283,14 @@
   background: var(--paper);
   border-radius: var(--radius-sm);
   font-family: var(--font-numeric);
-  font-size: 0.78rem;
+  font-size: var(--fs-caption);
   font-variant-numeric: tabular-nums;
 }
 
 .game-log__stat-label {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 0.72rem;
+  font-size: var(--fs-label);
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--muted);

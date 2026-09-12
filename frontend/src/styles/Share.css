@@ -22,7 +22,7 @@
   min-height: 44px;
   padding: 0.32rem 0.9rem;
   font-family: var(--font-display);
-  font-size: 0.8rem;
+  font-size: var(--fs-caption);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -38,7 +38,7 @@
 }
 
 .share__icon {
-  font-size: 0.95rem;
+  font-size: var(--fs-ui);
   line-height: 1;
 }
 
@@ -60,7 +60,7 @@
   border-radius: var(--radius-sm);
   padding: 0.45rem 0.6rem;
   font-family: var(--font-body);
-  font-size: 0.8rem;
+  font-size: var(--fs-caption);
   /* The reader is about to copy this, so let them see the tail of it. */
   text-overflow: ellipsis;
 }

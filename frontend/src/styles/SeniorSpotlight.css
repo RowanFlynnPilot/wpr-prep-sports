@@ -33,7 +33,7 @@
   justify-content: center;
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: var(--fs-lead);
   color: var(--school-color);
   flex-shrink: 0;
 }
@@ -46,7 +46,7 @@
 .spotlight-sr__name {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 1rem;
+  font-size: var(--fs-body);
   margin: 0;
   color: var(--ink);
   display: flex;
@@ -57,12 +57,12 @@
 .spotlight-sr__year {
   font-weight: 500;
   color: var(--muted);
-  font-size: 0.85rem;
+  font-size: var(--fs-small);
 }
 .spotlight-sr__pos {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 0.68rem;
+  font-size: var(--fs-label);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: #fff;
@@ -72,26 +72,26 @@
 }
 .spotlight-sr__school {
   font-family: var(--font-body);
-  font-size: 0.78rem;
+  font-size: var(--fs-caption);
   color: var(--muted);
 }
 .spotlight-sr__blurb {
   font-family: var(--font-body);
-  font-size: 0.85rem;
+  font-size: var(--fs-small);
   color: var(--ink);
   margin: 0.35rem 0 0;
   line-height: 1.45;
 }
 .spotlight-sr__plans {
   font-family: var(--font-body);
-  font-size: 0.8rem;
+  font-size: var(--fs-caption);
   color: var(--muted);
   margin: 0.3rem 0 0;
 }
 .spotlight-sr__plans strong {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 0.7rem;
+  font-size: var(--fs-label);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--accent-700);

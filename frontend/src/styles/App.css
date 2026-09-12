@@ -47,7 +47,7 @@
    couldn't tell whose site this was. */
 .masthead__title {
   font-family: var(--font-display);
-  font-size: 1.45rem;
+  font-size: var(--fs-title);
   font-weight: 700;
   letter-spacing: 0.04em;
   line-height: 1;
@@ -69,7 +69,7 @@
   gap: 0.2rem;
   margin-left: auto;
   font-family: var(--font-body);
-  font-size: 0.8rem;
+  font-size: var(--fs-caption);
   color: rgba(255, 255, 255, 0.85);
   line-height: 1.3;
   text-align: right;
@@ -79,7 +79,7 @@
   align-items: center;
   gap: 0.4rem;
   font-family: var(--font-display);
-  font-size: 0.7rem;
+  font-size: var(--fs-label);
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -167,7 +167,7 @@
   gap: 0.45rem;
   /* Display face + uppercase to match the masthead and section headers. */
   font-family: var(--font-display);
-  font-size: 1rem;
+  font-size: var(--fs-body);
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -203,7 +203,7 @@
 @media (max-width: 640px) {
   .section-tabs__tab {
     padding: 0.7rem 0.3rem;
-    font-size: 0.82rem;
+    font-size: var(--fs-caption);
     letter-spacing: 0.03em;
     gap: 0.3rem;
   }
@@ -218,7 +218,7 @@
     flex-direction: column;
     gap: 0.2rem;
     padding: 0.55rem 0.2rem;
-    font-size: 0.72rem;
+    font-size: var(--fs-label);
     line-height: 1.15;
     /* Overrides the desktop nowrap so "Standings & Stats" can break. */
     white-space: normal;
@@ -229,7 +229,7 @@
        fit, which no current label does. */
     overflow-wrap: break-word;
   }
-  .section-tabs__icon { font-size: 1.15rem; }
+  .section-tabs__icon { font-size: var(--fs-lead); }
 }
 /* Sponsor line just under the active tab — one placement per view. */
 .section-tabs__sponsor {
@@ -278,7 +278,7 @@
   background: var(--brand);
   padding: 0.8rem 1.15rem;
   font-family: var(--font-display);
-  font-size: 0.92rem;
+  font-size: var(--fs-ui);
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -294,7 +294,7 @@
 .sport-switcher__icon {
   display: inline-flex;
   align-items: center;
-  font-size: 1.15rem;
+  font-size: var(--fs-lead);
   line-height: 1;
 }
 .sport-switcher__tab:hover {
@@ -324,7 +324,7 @@
   color: rgba(255, 255, 255, 0.6);
 }
 .sport-switcher__more .sport-switcher__icon {
-  font-size: 1rem;
+  font-size: var(--fs-body);
   transition: transform var(--t-fast) var(--ease);
 }
 .sport-switcher__more[aria-expanded="true"] .sport-switcher__icon {
@@ -355,7 +355,7 @@
 }
 .section-header__hint {
   font-family: var(--font-body);
-  font-size: 0.875rem;
+  font-size: var(--fs-small);
   color: var(--muted);
   font-style: italic;
 }
@@ -364,7 +364,7 @@
   text-align: center;
   margin-top: 2rem;
   color: var(--muted-2);
-  font-size: 0.75rem;
+  font-size: var(--fs-eyebrow);
   font-family: var(--font-display);
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -394,7 +394,7 @@
 }
 .site-footer__row--credit {
   font-family: var(--font-display);
-  font-size: 0.78rem;
+  font-size: var(--fs-caption);
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--ink);
@@ -426,12 +426,12 @@
 .site-footer__advertise:hover { text-decoration: underline; }
 .site-footer__row--stats {
   font-family: var(--font-body);
-  font-size: 0.78rem;
+  font-size: var(--fs-caption);
   color: var(--muted);
 }
 .site-footer__row--updated {
   font-family: var(--font-display);
-  font-size: 0.7rem;
+  font-size: var(--fs-label);
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--muted-2);
@@ -470,7 +470,7 @@
   color: var(--muted);
   cursor: pointer;
   font-family: var(--font-display);
-  font-size: 0.78rem;
+  font-size: var(--fs-caption);
   font-weight: 600;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -513,7 +513,7 @@
   /* Still the loudest thing on the bar; may break to two lines on the
      narrowest phones rather than shrink back to pill size. */
   .masthead__title {
-    font-size: 1.15rem;
+    font-size: var(--fs-lead);
     white-space: normal;
     line-height: 1.05;
     /* Zero basis keeps it on the logo's row (flex-wrap lines up items
@@ -560,13 +560,13 @@
   }
   .sport-switcher__tab {
     padding: 0.6rem 0.5rem;
-    font-size: 0.7rem;
+    font-size: var(--fs-label);
     letter-spacing: 0.06em;
   }
   /* Swap to the short label on narrow screens (Boys Basketball → Boys Hoops). */
   .sport-switcher__label { display: none; }
   .sport-switcher__label--short { display: inline; }
-  .section-header h2 { font-size: 1.25rem; }
+  .section-header h2 { font-size: var(--fs-h3); }
 }
 
 /* Narrowest handsets (360px and under is a large share of Android). Once the
@@ -594,7 +594,7 @@
 .masthead__season select {
   appearance: none;
   font-family: var(--font-display);
-  font-size: 0.7rem;
+  font-size: var(--fs-label);
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -624,7 +624,7 @@
   margin: 0 0 1.25rem;
   padding: 0.55rem 1rem;
   font-family: var(--font-body);
-  font-size: 0.85rem;
+  font-size: var(--fs-small);
   color: var(--muted);
   background: var(--paper-2);
   border-radius: var(--radius-sm);
@@ -641,7 +641,7 @@
   cursor: pointer;
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 0.72rem;
+  font-size: var(--fs-label);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--accent-700);

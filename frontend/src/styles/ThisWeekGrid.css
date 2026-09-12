@@ -30,19 +30,19 @@
 .week-day__name {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 1rem;
+  font-size: var(--fs-body);
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 .week-day__date {
   font-family: var(--font-body);
-  font-size: 0.85rem;
+  font-size: var(--fs-small);
   color: var(--muted);
 }
 .week-day__count {
   margin-left: auto;
   font-family: var(--font-display);
-  font-size: 0.7rem;
+  font-size: var(--fs-label);
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--muted-2);
@@ -65,7 +65,7 @@
   padding: 0.45rem 1rem 0.35rem;
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 0.72rem;
+  font-size: var(--fs-label);
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--muted);
@@ -95,7 +95,7 @@
   border-top: 1px solid var(--line);
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 0.78rem;
+  font-size: var(--fs-caption);
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--ink);
@@ -127,7 +127,7 @@
   grid-row: 2;
   margin: 0.15rem 0 0;
   font-family: var(--font-body);
-  font-size: 0.86rem;
+  font-size: var(--fs-small);
   color: var(--ink);
   line-height: 1.4;
   /* Rows span the full column; a sentence should not. */
@@ -146,7 +146,7 @@
   margin: 0.1rem 0 0;
   font-family: var(--font-body);
   font-style: italic;
-  font-size: 0.82rem;
+  font-size: var(--fs-caption);
   color: var(--muted);
   line-height: 1.45;
 }
@@ -155,7 +155,7 @@
   font-style: normal;
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 0.72rem;
+  font-size: var(--fs-label);
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--ink);
@@ -165,12 +165,12 @@
   font-family: var(--font-body);
   font-style: italic;
   color: var(--muted-2);
-  font-size: 0.8rem;
+  font-size: var(--fs-caption);
 }
 
 .game-row__status {
   font-family: var(--font-display);
-  font-size: 0.8rem;
+  font-size: var(--fs-caption);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--muted);
@@ -241,7 +241,7 @@ a.game-row__details::after {
 .game-side__name {
   font-family: var(--font-display);
   font-weight: 500;
-  font-size: 0.95rem;
+  font-size: var(--fs-ui);
   color: var(--ink);
   white-space: nowrap;
   overflow: hidden;
@@ -252,7 +252,7 @@ a.game-row__details::after {
 .game-side__score {
   font-family: var(--font-numeric);
   font-weight: 700;
-  font-size: 1.15rem;
+  font-size: var(--fs-lead);
   font-variant-numeric: tabular-nums;
   color: var(--muted);
   margin-left: auto;
@@ -311,7 +311,7 @@ a.game-row__details::after {
     text-align: left;
     min-width: 0;
     color: var(--muted-2);
-    font-size: 0.7rem;
+    font-size: var(--fs-label);
   }
   .game-row__recap {
     grid-area: recap;

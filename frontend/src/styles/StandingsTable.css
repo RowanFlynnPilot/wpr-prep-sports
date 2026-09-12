@@ -19,12 +19,12 @@
   font-family: var(--font-display);
   font-weight: 600;
   letter-spacing: 0.04em;
-  font-size: 1.05rem;
+  font-size: var(--fs-body);
   text-transform: uppercase;
 }
 .standings__hint {
   font-family: var(--font-body);
-  font-size: 0.78rem;
+  font-size: var(--fs-caption);
   font-style: italic;
   color: rgba(255, 255, 255, 0.7);
 }
@@ -74,13 +74,13 @@
   width: 100%;
   border-collapse: collapse;
   font-family: var(--font-body);
-  font-size: 0.9rem;
+  font-size: var(--fs-ui);
   table-layout: auto;
 }
 .standings__table thead th {
   font-family: var(--font-display);
   font-weight: 500;
-  font-size: 0.72rem;
+  font-size: var(--fs-label);
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--muted);
@@ -125,7 +125,7 @@
   gap: 0.55rem;
   font-family: var(--font-display);
   font-weight: 500;
-  font-size: 1rem;
+  font-size: var(--fs-body);
 }
 
 /* Small school-color bar next to the team name. Inline-block so it sits
@@ -196,7 +196,7 @@
   border-radius: 3px;
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 0.68rem;
+  font-size: var(--fs-label);
   line-height: 1;
   letter-spacing: 0;
   /* --paper, not #fff: the dark theme lightens --win/--loss (#4ade80,
@@ -213,7 +213,7 @@
 }
 .standings__form-empty {
   color: var(--muted-2);
-  font-size: 0.85rem;
+  font-size: var(--fs-small);
 }
 .standings__table td.form { text-align: right; padding-right: 0.5rem; }
 
@@ -230,7 +230,7 @@
   border-radius: 50%;
   background: none;
   color: var(--muted);
-  font-size: 1rem;
+  font-size: var(--fs-body);
   cursor: pointer;
   transition: color var(--t-fast) var(--ease), background var(--t-fast) var(--ease);
 }
@@ -268,7 +268,7 @@
 .standings__details-name {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 0.95rem;
+  font-size: var(--fs-ui);
   text-transform: uppercase;
   letter-spacing: 0.04em;
   line-height: 1.1;
@@ -282,7 +282,7 @@
   font-family: var(--font-body);
   font-style: italic;
   font-weight: 400;
-  font-size: 0.78rem;
+  font-size: var(--fs-caption);
   color: var(--muted);
   text-transform: none;
   letter-spacing: 0;
@@ -290,7 +290,7 @@
 a.standings__details-link {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 0.75rem;
+  font-size: var(--fs-eyebrow);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--ink);
@@ -315,7 +315,7 @@ a.standings__details-link:focus-visible {
 .standings__details-stats dt {
   font-family: var(--font-display);
   font-weight: 500;
-  font-size: 0.72rem;
+  font-size: var(--fs-label);
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--muted);
@@ -325,7 +325,7 @@ a.standings__details-link:focus-visible {
 .standings__details-stats dd {
   font-family: var(--font-numeric);
   font-weight: 700;
-  font-size: 1rem;
+  font-size: var(--fs-body);
   font-variant-numeric: tabular-nums;
   color: var(--ink);
   margin: 0;
@@ -334,7 +334,7 @@ a.standings__details-link:focus-visible {
 .standings__details-stats dd.pos { color: var(--win); }
 .standings__details-pct {
   font-weight: 400;
-  font-size: 0.78rem;
+  font-size: var(--fs-caption);
   color: var(--muted);
   margin-left: 0.15rem;
   white-space: nowrap;
@@ -356,13 +356,13 @@ a.standings__details-link:focus-visible {
   align-items: baseline;
   gap: 0.55rem;
   font-family: var(--font-body);
-  font-size: 0.8rem;
+  font-size: var(--fs-caption);
   color: var(--ink);
 }
 .standings__details-leader-pos {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 0.72rem;
+  font-size: var(--fs-label);
   letter-spacing: 0.1em;
   text-align: center;
   color: var(--accent-700);
@@ -373,7 +373,7 @@ a.standings__details-link:focus-visible {
 .standings__details-leader-name {
   font-family: var(--font-display);
   font-weight: 500;
-  font-size: 0.84rem;
+  font-size: var(--fs-small);
   letter-spacing: 0.01em;
   color: var(--ink);
   line-height: 1.2;
@@ -384,12 +384,12 @@ a.standings__details-link:focus-visible {
   font-weight: 400;
   font-style: italic;
   color: var(--muted);
-  font-size: 0.74rem;
+  font-size: var(--fs-eyebrow);
 }
 .standings__details-leader-stats {
   font-family: var(--font-numeric);
   font-weight: 600;
-  font-size: 0.78rem;
+  font-size: var(--fs-caption);
   font-variant-numeric: tabular-nums;
   color: var(--ink);
   white-space: nowrap;

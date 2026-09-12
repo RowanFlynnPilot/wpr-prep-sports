@@ -12,7 +12,7 @@
   top: 50%;
   transform: translateY(-50%);
   display: inline-flex;
-  font-size: 1rem;
+  font-size: var(--fs-body);
   color: rgba(255, 255, 255, 0.72);
   pointer-events: none;
 }
@@ -25,7 +25,7 @@
   background: rgba(255, 255, 255, 0.08);
   color: #fff;
   font: inherit;
-  font-size: 0.9rem;
+  font-size: var(--fs-ui);
   appearance: none;
   -webkit-appearance: none;
   transition: background var(--t-fast) var(--ease), border-color var(--t-fast) var(--ease);
@@ -88,20 +88,20 @@
 .school-finder__opt-name {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 0.98rem;
+  font-size: var(--fs-ui);
   line-height: 1.15;
   color: var(--ink);
 }
 .school-finder__opt-sub {
   grid-column: 2;
-  font-size: 0.74rem;
+  font-size: var(--fs-eyebrow);
   color: var(--muted);
   line-height: 1.3;
 }
 .school-finder__none {
   margin: 0;
   padding: 0.75rem 0.85rem;
-  font-size: 0.84rem;
+  font-size: var(--fs-small);
   color: var(--muted);
   line-height: 1.4;
 }
@@ -110,7 +110,7 @@
   padding: 0.6rem 0.85rem;
   border-top: 1px solid var(--line);
   font-family: var(--font-display);
-  font-size: 0.78rem;
+  font-size: var(--fs-caption);
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
