@@ -1,7 +1,7 @@
 {
   "sport": "football",
   "season": "2026-27",
-  "generated_at": "2026-09-12T09:01:11.027990-05:00",
+  "generated_at": "2026-09-12T11:57:30.559910-05:00",
   "method": "WPR Power Index v1: 40% W%, 35% SOS, 25% margin (capped per sport)",
   "rankings": [
     {
@@ -103,9 +103,9 @@
       "losses": 0,
       "ties": 0,
       "win_pct": 1.0,
-      "sos": 0.1458,
+      "sos": 0.125,
       "avg_margin_capped": 28.0,
-      "score": 70.1,
+      "score": 69.38,
       "movement": 3
     },
     {
@@ -162,6 +162,19 @@
     },
     {
       "rank": 13,
+      "school_id": "wausau-west",
+      "school_name": "Wausau West",
+      "wins": 4,
+      "losses": 0,
+      "ties": 0,
+      "win_pct": 1.0,
+      "sos": 0.1875,
+      "avg_margin_capped": 12.5,
+      "score": 64.64,
+      "movement": 5
+    },
+    {
+      "rank": 14,
       "school_id": "chippewa-falls",
       "school_name": "Chippewa Falls",
       "wins": 3,
@@ -171,20 +184,7 @@
       "sos": 0.375,
       "avg_margin_capped": 19.25,
       "score": 64.22,
-      "movement": -3
-    },
-    {
-      "rank": 14,
-      "school_id": "wausau-west",
-      "school_name": "Wausau West",
-      "wins": 3,
-      "losses": 0,
-      "ties": 0,
-      "win_pct": 1.0,
-      "sos": 0.1667,
-      "avg_margin_capped": 11.0,
-      "score": 63.24,
-      "movement": 4
+      "movement": -4
     },
     {
       "rank": 15,
@@ -194,9 +194,9 @@
       "losses": 1,
       "ties": 0,
       "win_pct": 0.75,
-      "sos": 0.4583,
+      "sos": 0.4375,
       "avg_margin_capped": 10.5,
-      "score": 63.23,
+      "score": 62.5,
       "movement": 2
     },
     {
@@ -461,19 +461,6 @@
     },
     {
       "rank": 36,
-      "school_id": "wisconsin-rapids",
-      "school_name": "Wisconsin Rapids Lincoln",
-      "wins": 1,
-      "losses": 2,
-      "ties": 0,
-      "win_pct": 0.3333,
-      "sos": 0.6667,
-      "avg_margin_capped": -12.0,
-      "score": 43.81,
-      "movement": -1
-    },
-    {
-      "rank": 37,
       "school_id": "lakeland",
       "school_name": "Lakeland",
       "wins": 1,
@@ -483,7 +470,20 @@
       "sos": 0.625,
       "avg_margin_capped": -1.5,
       "score": 43.71,
-      "movement": -8
+      "movement": -7
+    },
+    {
+      "rank": 37,
+      "school_id": "wisconsin-rapids",
+      "school_name": "Wisconsin Rapids Lincoln",
+      "wins": 1,
+      "losses": 3,
+      "ties": 0,
+      "win_pct": 0.25,
+      "sos": 0.75,
+      "avg_margin_capped": -13.25,
+      "score": 42.83,
+      "movement": -2
     },
     {
       "rank": 38,
@@ -578,19 +578,6 @@
     },
     {
       "rank": 45,
-      "school_id": "superior",
-      "school_name": "Superior",
-      "wins": 1,
-      "losses": 3,
-      "ties": 0,
-      "win_pct": 0.25,
-      "sos": 0.5208,
-      "avg_margin_capped": -4.0,
-      "score": 38.94,
-      "movement": -3
-    },
-    {
-      "rank": 46,
       "school_id": "marion",
       "school_name": "Marion",
       "wins": 3,
@@ -600,10 +587,10 @@
       "sos": 0.3333,
       "avg_margin_capped": -11.83,
       "score": 38.88,
-      "movement": 2
+      "movement": 3
     },
     {
-      "rank": 47,
+      "rank": 46,
       "school_id": "mosinee",
       "school_name": "Mosinee",
       "wins": 1,
@@ -613,7 +600,20 @@
       "sos": 0.5833,
       "avg_margin_capped": -10.25,
       "score": 38.34,
-      "movement": -3
+      "movement": -2
+    },
+    {
+      "rank": 47,
+      "school_id": "superior",
+      "school_name": "Superior",
+      "wins": 1,
+      "losses": 3,
+      "ties": 0,
+      "win_pct": 0.25,
+      "sos": 0.5,
+      "avg_margin_capped": -4.0,
+      "score": 38.21,
+      "movement": -5
     },
     {
       "rank": 48,
