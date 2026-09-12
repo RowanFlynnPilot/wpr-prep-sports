@@ -202,12 +202,27 @@ a.hero__details:focus-visible {
 }
 
 @media (max-width: 720px) {
-  .hero { padding: 1.25rem 1.25rem 1.5rem; }
+  /* Compact stack: on a phone the hero is the tallest thing between the
+     masthead and the first score row (critique run 12), so the two team
+     rows tighten — 56px logos instead of 88, half the padding, and no
+     "vs" puck between them (stacked rows already read as a matchup and
+     the venue line carries the "at"). ~140px shorter, nothing dropped. */
+  .hero { padding: 1rem 1.25rem 1.25rem; }
   .hero__matchup {
     grid-template-columns: 1fr;
+    gap: 0.5rem;
   }
-  .hero__divider { justify-self: center; margin: -0.5rem 0; }
-  .hero__team { grid-template-columns: auto 1fr auto; }
+  .hero__divider { display: none; }
+  .hero__team {
+    grid-template-columns: auto 1fr auto;
+    gap: 0.75rem;
+    padding: 0.5rem 0.75rem;
+  }
+  .hero .team-logo--xl {
+    width: 56px;
+    height: 56px;
+    font-size: var(--fs-h3);
+  }
   /* One step below the game page's name: this one is nowrap + ellipsis,
      and "D.C. Everest" overflowed its 360px column by 3px at --fs-h3. */
   .hero__team-name { font-size: var(--fs-lead); }
