@@ -285,7 +285,7 @@ function GameRow({ game, schoolIndex, allGames, sportConfig }) {
           <span className="game-row__recap-team">
             {playerSchool?.name ?? player.schoolId}
           </span>
-          {" — "}
+          {" · "}
           {player.text}
         </p>
       )}

@@ -486,15 +486,6 @@ export default function DashboardPage({
         <SectionTabs tabs={tabs} active={activeTab} onChange={setActiveTab} />
       </div>
 
-      {activeTab && (
-        <Sponsor
-          slot={`tab:${activeTab}`}
-          sponsors={sponsors}
-          variant="inline"
-          className="section-tabs__sponsor"
-        />
-      )}
-
       {/* Keyed wrapper: remounts on tab change so the panel fades in.
           role/aria wire it to the tab that controls it — without this the
           tablist announces tabs that control nothing. */}
@@ -734,6 +725,19 @@ export default function DashboardPage({
         </>
       )}
       </div>
+
+      {/* Per-tab sponsor sits at the END of the tab's content, not between
+          the tab bar and its panel — tapping "Standings" and getting an ad
+          before any standings was the interruption critique run 12 named.
+          Same slot key, same inventory; only the position moved. */}
+      {activeTab && (
+        <Sponsor
+          slot={`tab:${activeTab}`}
+          sponsors={sponsors}
+          variant="inline"
+          className="section-tabs__sponsor"
+        />
+      )}
 
       {/* Anchor banner — full-creative ad surface below every tab's
           content, so it never interrupts scores. A per-sport slot

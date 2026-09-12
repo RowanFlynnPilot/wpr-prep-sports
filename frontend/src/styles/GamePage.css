@@ -141,6 +141,8 @@
   font-size: var(--fs-ui);
   line-height: 1.5;
   color: rgba(255, 255, 255, 0.85);
+  max-width: 72ch;
+  text-wrap: pretty;
 }
 
 /* Stats grid — one card per team, side by side on desktop, stacked on narrow screens */

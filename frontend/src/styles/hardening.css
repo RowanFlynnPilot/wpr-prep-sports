@@ -268,6 +268,44 @@
   outline-offset: 2px;
 }
 
+/* Tap targets ------------------------------------------------------------ */
+
+/* Team names float above a whole-row / whole-card link, and a few small-
+   caps links stand alone (POTW school + CTA, follow note, footer). Their
+   text boxes are 19px tall — under the 24px WCAG 2.5.8 floor — and on a
+   phone the miss lands on the wrong destination. A pseudo-element grows
+   the pointer target ±5px without moving the text or its underline; the
+   existing z-index on overlaid team links carries to it. */
+.team-link,
+.potw__school,
+.potw__cta,
+.follow-prompt__find,
+.follow-prompt__all,
+.site-footer__brand,
+.site-footer__advertise {
+  position: relative;
+}
+.team-link::before,
+.potw__school::before,
+.potw__cta::before,
+.follow-prompt__find::before,
+.follow-prompt__all::before,
+.site-footer__brand::before,
+.site-footer__advertise::before {
+  content: "";
+  position: absolute;
+  inset: -0.3rem 0;
+}
+/* The week-grid and ticker team names clip overflow for their ellipsis /
+   line-clamp, which clips the pseudo-element too. Grow those boxes upward
+   with padding instead — layout-neutral via the matching negative margin,
+   and the hover underline (a bottom border) stays put. 19 + 6 = 25px. */
+.game-side__name,
+.card__team-name {
+  padding-top: 0.375rem;
+  margin-top: -0.375rem;
+}
+
 /* Horizontal scroll affordance ------------------------------------------- */
 
 /* On a phone the standings table runs past the right edge — between 10 and

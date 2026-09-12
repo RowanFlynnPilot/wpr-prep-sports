@@ -108,12 +108,6 @@ export default function StandingsTable({
           {sportConfig?.label ?? ""}
         </span>
       </header>
-      <Sponsor
-        slot={`standings:${standing.conference}`}
-        sponsors={sponsors}
-        variant="inline"
-        className="standings__sponsor"
-      />
 
       <div className="standings__table-wrap">
         <table className="standings__table">
@@ -243,6 +237,15 @@ export default function StandingsTable({
           </tbody>
         </table>
       </div>
+
+      {/* "Presented by" belongs after the table, not wedged between the
+          conference heading and its column headers (critique run 12). */}
+      <Sponsor
+        slot={`standings:${standing.conference}`}
+        sponsors={sponsors}
+        variant="inline"
+        className="standings__sponsor"
+      />
     </section>
   );
 }

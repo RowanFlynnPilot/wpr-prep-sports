@@ -177,6 +177,8 @@ a.hero__details:focus-visible {
   z-index: 2;
   font-size: var(--fs-ui);
   line-height: 1.5;
+  max-width: 72ch;
+  text-wrap: pretty;
   color: rgba(255, 255, 255, 0.85);
 }
 

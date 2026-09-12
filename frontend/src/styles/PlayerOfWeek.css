@@ -40,7 +40,10 @@
 }
 .potw__eyebrow-week {
   font-weight: 500;
-  letter-spacing: 0.08em;
+  /* A date range is data, not a label — leave it in sentence case so the
+     eyebrow isn't a 42-character run of caps. */
+  text-transform: none;
+  letter-spacing: 0.02em;
   color: var(--muted);
 }
 .potw__sponsor { flex: 0 0 auto; }

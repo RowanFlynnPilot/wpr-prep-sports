@@ -18,7 +18,7 @@ WPR. Below is the full menu of sponsorship surfaces, what to charge them as
 |---|---|---|---|
 | **Title sponsor** ("Central Wisconsin Sports Hub presented by …") | `title` | Aspirus Sports Medicine, Marshfield Clinic, credit union, orthopedic clinic | Highest-value single placement. Annual deal. |
 | **Scoreboard / score ticker presented by** | `ticker` | Pizza chain, sports bar, wings place | High visibility, repeat impressions during game weekends. |
-| **Section tabs** (Scores / Schedule / Standings & Stats / Spotlight) | `tab:<section>` | Broad local fit | One placement under each dashboard section tab — 4 discrete surfaces. |
+| **Section tabs** (Scores / Schedule / Standings & Stats / Spotlight) | `tab:<section>` | Broad local fit | One placement at the foot of each dashboard section tab's content — 4 discrete surfaces. |
 | **Standings presented by** (per conference) | `standings:<conference>` | Local bank, credit union | Sells 5× — Wisconsin Valley, Marawood, Great Northern, Cloverbelt, Big Rivers. |
 
 ## Per-school inventory — the underrated multiplier

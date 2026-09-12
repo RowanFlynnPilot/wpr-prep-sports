@@ -95,9 +95,11 @@
   border-top: 1px solid var(--line);
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: var(--fs-caption);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  font-size: var(--fs-small);
+  /* Sentence case: "Show 6 more games in the Wisconsin Valley" is a
+     41-character sentence, not a label — uppercase made it the hardest
+     line on the page to read. */
+  letter-spacing: 0.02em;
   color: var(--ink);
   text-align: center;
   cursor: pointer;

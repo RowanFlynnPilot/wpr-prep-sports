@@ -189,7 +189,7 @@ function GameCard({ game, schoolIndex, allGames, sportConfig }) {
           <span className="card__recap-team">
             {playerSchool?.name ?? player.schoolId}
           </span>
-          {" — "}
+          {" · "}
           {player.text}
         </p>
       )}

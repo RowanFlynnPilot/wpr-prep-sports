@@ -77,13 +77,6 @@ export default function HeadToHead({ game, dataset, schoolIndex }) {
         </span>
       </div>
 
-      <Sponsor
-        slot="rivalry"
-        sponsors={dataset.sponsors}
-        variant="inline"
-        className="h2h__sponsor"
-      />
-
       <ol className="h2h__list">
         {meetings.slice(0, SHOWN).map((m) => (
           <MeetingRow
@@ -99,6 +92,16 @@ export default function HeadToHead({ game, dataset, schoolIndex }) {
           Showing the last {SHOWN} of {meetings.length} meetings.
         </p>
       )}
+
+      {/* After the rows, not between the heading and its first row: a
+          sponsor at the section boundary is inventory, one inside the
+          section is an interruption (critique run 12). */}
+      <Sponsor
+        slot="rivalry"
+        sponsors={dataset.sponsors}
+        variant="inline"
+        className="h2h__sponsor"
+      />
     </section>
   );
 }
