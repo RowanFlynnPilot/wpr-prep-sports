@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import TeamLogo from "../components/TeamLogo.jsx";
 import Sponsor from "../components/Sponsor.jsx";
 import { formatGameDate, formatGameTime } from "../utils/dates.js";
+import { isForfeitScore } from "../utils/games.js";
 import { teamGamesFor, summarizeTeam, conferenceStanding } from "../utils/teamSummary.js";
 import { SITE, SITE_TITLE } from "../config/site.js";
 
@@ -130,6 +131,7 @@ function GameRow({ label, game, schoolId }) {
   const isFinal = game.status === "final";
   const won = isFinal && (us.score ?? -1) > (them.score ?? -1);
   const tied = isFinal && us.score != null && us.score === them.score;
+  const forfeit = isFinal && isForfeitScore(game);
   const gameUrl = `${FULL_WIDGET_URL}#/${game.sport}/game/${game.id}`;
 
   return (
@@ -145,7 +147,8 @@ function GameRow({ label, game, schoolId }) {
         {isFinal ? (
           <strong className={won ? "embed__won" : tied ? "embed__tied" : "embed__lost"}>
             {" "}
-            {won ? "W" : tied ? "T" : "L"} {us.score}-{them.score}
+            {won ? "W" : tied ? "T" : "L"}{" "}
+            {forfeit ? "forfeit" : `${us.score}-${them.score}`}
           </strong>
         ) : (
           <span className="embed__when">

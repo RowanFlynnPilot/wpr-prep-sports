@@ -11,9 +11,6 @@ const DAY_MS = 24 * 60 * 60 * 1000;
 // Friday's game is about to be its own story.
 const RESULT_LEAD_MS = 5 * 24 * 60 * 60 * 1000;
 
-// WIAA records forfeits as 1-0 (basketball sometimes 2-0) finals —
-// impossible on-field scores in those sports. Same rule recap.js uses to
-// phrase them; soccer/hockey 1-0s are real games and never match here.
 /**
  * WIAA venues arrive prefixed with "@" ("@Lakeland" = "at Lakeland"),
  * which the frontend used to render verbatim — reading like a social
@@ -25,14 +22,21 @@ export function humanizeVenue(v) {
   return s.startsWith("@") ? `at ${s.slice(1)}` : s;
 }
 
+// WIAA records forfeits as 1-0 or 2-0 finals in football and basketball
+// (2-0 football seen 2026-09-11: Rib Lake at Elcho/White Lake, a
+// called-off game posted as "W 2-0" with no marker) — implausible
+// on-field scores in those sports. Same rule recap.js uses to phrase
+// them; soccer/hockey 1-0s and volleyball 2-0s are real and never match.
 export function isForfeitScore(game) {
   const h = game?.home?.score;
   const a = game?.away?.score;
   if (typeof h !== "number" || typeof a !== "number") return false;
   const hi = Math.max(h, a);
   const lo = Math.min(h, a);
-  if (game.sport === "football") return hi === 1 && lo === 0;
-  if ((game.sport ?? "").includes("basketball")) return (hi === 1 || hi === 2) && lo === 0;
+  const sport = game.sport ?? "";
+  if (sport === "football" || sport.includes("basketball")) {
+    return (hi === 1 || hi === 2) && lo === 0;
+  }
   return false;
 }
 

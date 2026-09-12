@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import Sponsor from "./Sponsor.jsx";
 import { fetchHistory } from "../data/fetchDataset.js";
 import { formatGameDate } from "../utils/dates.js";
+import { isForfeitScore } from "../utils/games.js";
 
 const SHOWN = 5;
 
@@ -83,7 +84,7 @@ export default function HeadToHead({ game, dataset }) {
 
       <ol className="h2h__list">
         {meetings.slice(0, SHOWN).map((m) => (
-          <MeetingRow key={m.id ?? m.date} meeting={m} />
+          <MeetingRow key={m.id ?? m.date} meeting={m} sport={dataset.sport} />
         ))}
       </ol>
       {meetings.length > SHOWN && (
@@ -95,9 +96,11 @@ export default function HeadToHead({ game, dataset }) {
   );
 }
 
-function MeetingRow({ meeting }) {
+function MeetingRow({ meeting, sport }) {
   const homeWon = (meeting.home.score ?? -1) > (meeting.away.score ?? -1);
   const awayWon = (meeting.away.score ?? -1) > (meeting.home.score ?? -1);
+  // History rows are keyed by sport at the file level and don't carry it.
+  const forfeit = isForfeitScore({ ...meeting, sport });
   return (
     <li className="h2h__row">
       <span className="h2h__when">
@@ -106,12 +109,15 @@ function MeetingRow({ meeting }) {
       </span>
       <span className="h2h__score">
         <span className={"h2h__team" + (awayWon ? " h2h__team--won" : "")}>
-          {meeting.away.name} {meeting.away.score}
+          {meeting.away.name}
+          {!forfeit && ` ${meeting.away.score}`}
         </span>
         <span className="h2h__at">at</span>
         <span className={"h2h__team" + (homeWon ? " h2h__team--won" : "")}>
-          {meeting.home.name} {meeting.home.score}
+          {meeting.home.name}
+          {!forfeit && ` ${meeting.home.score}`}
         </span>
+        {forfeit && <span className="h2h__at">· forfeit</span>}
       </span>
       {meeting.playoff && (
         <span className="h2h__playoff">

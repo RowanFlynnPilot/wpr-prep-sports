@@ -9,6 +9,7 @@ import {
 } from "../utils/calendar.js";
 import { useSportPrefix } from "../utils/links.js";
 import { formatGameTime } from "../utils/dates.js";
+import { isForfeitScore, isUnreportedFinal } from "../utils/games.js";
 
 /**
  * Month-at-a-glance calendar. Each cell shows the day number and a count
@@ -148,7 +149,11 @@ function DaySheet({ dateIso, games, onClose }) {
               </span>
               <span className="month-cal__sheet-result">
                 {g.status === "final"
-                  ? `${g.away.score}-${g.home.score}`
+                  ? isUnreportedFinal(g)
+                    ? "Not reported"
+                    : isForfeitScore(g)
+                      ? "Forfeit"
+                      : `${g.away.score}-${g.home.score}`
                   : g.status === "in_progress"
                   ? "Live"
                   : timeFor(g.date)}

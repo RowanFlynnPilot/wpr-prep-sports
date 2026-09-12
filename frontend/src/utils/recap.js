@@ -44,16 +44,17 @@ function marginBands(sportConfig) {
   }
 }
 
-// WIAA records a forfeit as a 1-0 final (sometimes 2-0 in basketball).
-// In football that scoreline is impossible on the field, so it can only
-// mean a forfeit — and it must never reach the margin-band phrasing
+// WIAA records a forfeit as a 1-0 or 2-0 final in football and
+// basketball (2-0 football: Rib Lake at Elcho/White Lake, 2026-09-11,
+// a called-off game WIAA posted as "W 2-0" with no marker). Neither
+// scoreline is a plausible on-field result, so it can only mean a
+// forfeit — and it must never reach the margin-band phrasing
 // ("squeaked past ... 1-0" shipped to the live grid, week 2 2026).
 // Hockey/soccer 1-0 and volleyball 2-0 are real results; only sports
 // where the notation can't be a real score qualify.
 function isForfeitFinal(sportConfig, winScore, lossScore) {
   const id = sportConfig?.id ?? "";
-  if (id === "football") return winScore === 1 && lossScore === 0;
-  if (id.includes("basketball"))
+  if (id === "football" || id.includes("basketball"))
     return (winScore === 1 || winScore === 2) && lossScore === 0;
   return false;
 }

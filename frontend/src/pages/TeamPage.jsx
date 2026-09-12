@@ -9,6 +9,7 @@ import SeasonLeaders from "../components/SeasonLeaders.jsx";
 import StandingsTable from "../components/StandingsTable.jsx";
 import FavoriteButton from "../components/FavoriteButton.jsx";
 import { formatGameDay, formatGameDate, formatGameTime } from "../utils/dates.js";
+import { isForfeitScore } from "../utils/games.js";
 import { recapForGame } from "../utils/recap.js";
 import { seasonSummary } from "../utils/seasonSummary.js";
 import { useSportPrefix } from "../utils/links.js";
@@ -356,6 +357,7 @@ function ScheduleRow({ game, index, schoolId, schoolIndex, allTeamGames, sportPr
   const isFinal = game.status === "final";
   const won = isFinal && own != null && opp != null && own > opp;
   const lost = isFinal && own != null && opp != null && own < opp;
+  const forfeit = isFinal && isForfeitScore(game);
   const recap = recapForGame(game, {
     schoolsById: schoolIndex,
     teamGames: allTeamGames,
@@ -392,7 +394,9 @@ function ScheduleRow({ game, index, schoolId, schoolIndex, allTeamGames, sportPr
           "schedule-row__result schedule-row__result--link " +
           (won ? "schedule-row__result--win" : lost ? "schedule-row__result--loss" : "")
         }
-        aria-label={`Game details${isFinal ? `, final ${own}-${opp}` : ""}`}
+        aria-label={`Game details${
+          isFinal ? (forfeit ? ", forfeit" : `, final ${own}-${opp}`) : ""
+        }`}
       >
         {isFinal ? (
           <>
@@ -400,7 +404,7 @@ function ScheduleRow({ game, index, schoolId, schoolIndex, allTeamGames, sportPr
               {won ? "W" : lost ? "L" : "·"}
             </span>
             <span className="schedule-row__score">
-              {own}-{opp}
+              {forfeit ? "Forfeit" : `${own}-${opp}`}
             </span>
           </>
         ) : (
