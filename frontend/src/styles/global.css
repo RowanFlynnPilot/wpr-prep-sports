@@ -195,6 +195,10 @@ a:hover { border-bottom-color: currentColor; }
   margin: 0;
 }
 .eyebrow--accent { color: var(--accent-700); }
+/* On the black hero bands the light-theme --accent-700 (#991212) reads at
+   2.45:1 — the production embed is light. --accent-on-dark exists for this. */
+.hero .eyebrow--accent,
+.game-page__hero .eyebrow--accent { color: var(--accent-on-dark); }
 .eyebrow--live {
   display: inline-flex;
   align-items: center;

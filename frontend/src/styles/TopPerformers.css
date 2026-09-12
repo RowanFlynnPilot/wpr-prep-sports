@@ -99,7 +99,6 @@
 .top-card__team:focus-visible {
   color: var(--link);
   border-bottom-color: currentColor;
-  outline: none;
 }
 
 .top-card__stats {

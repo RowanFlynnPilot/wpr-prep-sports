@@ -198,7 +198,6 @@ a.game-row__details:hover,
 a.game-row__details:focus-visible {
   color: var(--ink);
   border-bottom-color: currentColor;
-  outline: none;
 }
 
 /* Whole-row tap target ----------------------------------------------------
@@ -271,7 +270,6 @@ a.game-row__details::after {
 .team-link:focus-visible {
   color: var(--link);
   border-bottom-color: currentColor;
-  outline: none;
 }
 
 @media (max-width: 600px) {

@@ -66,7 +66,9 @@ export default function TeamsIndexPage({ dataset, sponsors, sportConfig }) {
             All schools <span className="teams-index__sport">· {label}</span>
           </h1>
           <span className="section-header__hint">
-            {fielding.length} schools · follow one to pin it to the top of every sport
+            {fielding.length} schools field a {label.toLowerCase()} team
+            {others.length > 0 ? ` · ${others.length} more covered in other sports, listed below` : ""}
+            {" "}· follow one to pin it to the top of every sport
           </span>
         </header>
         <p className="sr-only">{SITE_TITLE}</p>

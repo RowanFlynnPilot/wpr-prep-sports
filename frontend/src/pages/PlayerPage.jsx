@@ -180,9 +180,12 @@ export default function PlayerPage({ dataset, schoolIndex, sportConfig }) {
             </span>
           </div>
           <div className="player-page__season">
-            {seasonRows.map((row) => (
-              <SeasonCard key={row.category} row={row} sportConfig={sportConfig} />
-            ))}
+            {[...seasonRows]
+              .filter((row) => rowVolume(row) > 0)
+              .sort((a, b) => rowVolume(b) - rowVolume(a))
+              .map((row) => (
+                <SeasonCard key={row.category} row={row} sportConfig={sportConfig} />
+              ))}
           </div>
         </section>
       )}
@@ -209,6 +212,17 @@ export default function PlayerPage({ dataset, schoolIndex, sportConfig }) {
       </section>
     </Layout>
   );
+}
+
+// Largest numeric value in a season row, games played excluded. Orders the
+// cards by what the player actually did — 577 rushing yards ahead of a
+// one-attempt passing line — and a row with no production at all
+// (0 YDS · 0 TD · 0/1) doesn't earn a card (critique run 13).
+function rowVolume(row) {
+  const values = Object.entries(row.stats ?? {})
+    .filter(([k]) => k !== "GP")
+    .map(([, v]) => parseFloat(String(v)) || 0);
+  return values.length ? Math.max(...values) : 0;
 }
 
 function SeasonCard({ row, sportConfig }) {
@@ -255,7 +269,10 @@ function SeasonCard({ row, sportConfig }) {
       <div className="player-season-card__blocks">
         {blocks.map((b) => (
           <div key={b.key} className="season-stat-block">
-            <span className="season-stat-block__label">{b.label}</span>
+            {/* With one block the label just repeats the card heading. */}
+            {blocks.length > 1 && (
+              <span className="season-stat-block__label">{b.label}</span>
+            )}
             <span className="season-stat-block__lead">{b.lead}</span>
             {b.secondary && (
               <span className="season-stat-block__secondary">{b.secondary}</span>

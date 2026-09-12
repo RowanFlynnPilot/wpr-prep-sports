@@ -195,7 +195,7 @@ export function recapForGame(
   const priorAppearance = contextGames
     ? findPriorAppearance(contextGames ?? teamGames, headline, perspective, game)
     : null;
-  const statSentence = formatStatLine(headline, priorAppearance, sportConfig);
+  const statSentence = forfeit ? null : formatStatLine(headline, priorAppearance, sportConfig);
   // Season-totals enrichment is opt-in (Hero only) because Bound's
   // season-stats reflect the moment of the scrape, not the moment of
   // each historical game — applying them to a Week 2 recap would
@@ -226,6 +226,18 @@ export function playerLineForGame(game, { contextGames = null, sportConfig = nul
   const home = game.home;
   const away = game.away;
   if (home.score == null || away.score == null) return null;
+  // A forfeit has no box score of its own; anything attached came from the
+  // team's replacement game that night (Rib Lake at Elcho/White Lake,
+  // 2026-09-11) and must never be narrated as this game's.
+  if (
+    isForfeitFinal(
+      sportConfig,
+      Math.max(home.score, away.score),
+      Math.min(home.score, away.score),
+    )
+  ) {
+    return null;
+  }
   const homeWon = home.score > away.score;
   const awayWon = away.score > home.score;
   // For ties we can't pick a winner — try home then away.

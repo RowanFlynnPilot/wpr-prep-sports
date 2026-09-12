@@ -246,7 +246,6 @@
 .card__details:focus-visible {
   color: var(--ink);
   border-bottom-color: currentColor;
-  outline: none;
 }
 
 /* Whole-card tap target — same reasoning as .game-row in ThisWeekGrid.css.

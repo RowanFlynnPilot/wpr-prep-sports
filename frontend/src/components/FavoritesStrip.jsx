@@ -133,10 +133,21 @@ function FavoriteCard({
         </div>
       </Link>
 
-      {hasGames && (summary.nextGame || summary.lastGame) && (
+      {/* Both, when both exist: the follow note promises "last result and
+          next game", and a card that showed only NEXT skipped the score the
+          reader followed the school to see (critique run 13). */}
+      {hasGames && summary.lastGame && (
         <GameLine
-          game={summary.nextGame ?? summary.lastGame}
-          isNext={Boolean(summary.nextGame)}
+          game={summary.lastGame}
+          isNext={false}
+          schoolId={schoolId}
+          sportPrefix={sportPrefix}
+        />
+      )}
+      {hasGames && summary.nextGame && (
+        <GameLine
+          game={summary.nextGame}
+          isNext
           schoolId={schoolId}
           sportPrefix={sportPrefix}
         />

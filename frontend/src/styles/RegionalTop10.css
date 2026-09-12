@@ -151,9 +151,8 @@
 .top-ten__ancillary {
   font-family: var(--font-display);
   font-weight: 500;
-  font-size: var(--fs-label);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  font-size: var(--fs-caption);
+  letter-spacing: 0.02em;
   color: var(--muted);
 }
 

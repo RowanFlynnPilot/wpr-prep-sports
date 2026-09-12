@@ -270,7 +270,7 @@ export default function GamePage({ dataset, schoolIndex, sportConfig }) {
         <section>
           <div className="section-header">
             <h2>Game Stats</h2>
-            {onGameCount > 0 && (
+            {onGameCount > 0 && !forfeit && (
               <span className="section-header__hint">
                 {onGameCount} stat leaders
                 {statsSourceLabel(game) ? ` · via ${statsSourceLabel(game)}` : ""}
@@ -281,7 +281,10 @@ export default function GamePage({ dataset, schoolIndex, sportConfig }) {
             )}
           </div>
 
-          {onGameCount > 0 ? (
+          {/* A forfeit never shows stats even if lines were attached: Bound's
+              page for a called-off game carries the replacement game's box
+              score (Rib Lake at Elcho/White Lake, 2026-09-11). */}
+          {onGameCount > 0 && !forfeit ? (
             <div className="game-stats">
               <TeamStatsCard
                 label={game.away.name}
@@ -290,7 +293,7 @@ export default function GamePage({ dataset, schoolIndex, sportConfig }) {
                 won={awayWon}
                 lines={statsByKey.get(keyForSide(game.away)) ?? []}
                 score={awayScore}
-                showScore={isFinal}
+                showScore={showScore}
                 sportPrefix={sportPrefix}
                 otherSideHasStats={
                   (statsByKey.get(keyForSide(game.home)) ?? []).length > 0
@@ -303,7 +306,7 @@ export default function GamePage({ dataset, schoolIndex, sportConfig }) {
                 won={homeWon}
                 lines={statsByKey.get(keyForSide(game.home)) ?? []}
                 score={homeScore}
-                showScore={isFinal}
+                showScore={showScore}
                 sportPrefix={sportPrefix}
                 otherSideHasStats={
                   (statsByKey.get(keyForSide(game.away)) ?? []).length > 0
