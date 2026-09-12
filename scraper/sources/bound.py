@@ -147,6 +147,32 @@ def find_game_ids(date: str, season: str = "2025-26", sport_abbr: str = "fb") ->
 # ---------------------------------------------------------------------------
 
 
+def card_stats(pairs: list[tuple[str, str]]) -> dict[str, str]:
+    """Collapse a leader card's ordered (label, value) pairs into a stats dict.
+
+    For a player who also led another category, Bound appends that
+    category as a cross-reference after the card's own stats — a
+    receiving card reads ``REC 1 · YDS 41 · TDS 0 · RUS 255 · TDS 5``.
+    Folding the pairs into a dict naively let the trailing TDS overwrite
+    the real one (Will Wojcik, 2026-09-04: 1 catch, "5 receiving TDs").
+    The cross-reference starts at the pair before the first repeated
+    label, so cut there; keep-first on any remaining repeat.
+    """
+    first_index: dict[str, int] = {}
+    cut = len(pairs)
+    for i, (key, _) in enumerate(pairs):
+        if key in first_index:
+            prev = pairs[i - 1][0] if i > 0 else None
+            lead_in_is_foreign = prev is not None and prev != key and first_index[prev] == i - 1
+            cut = i - 1 if lead_in_is_foreign else i
+            break
+        first_index[key] = i
+    stats: dict[str, str] = {}
+    for key, value in pairs[:cut]:
+        stats.setdefault(key, value)
+    return stats
+
+
 def fetch_game_stats(
     comp_id: str, season: str = "2025-26", sport_abbr: str = "fb"
 ) -> list[StatLine]:
@@ -208,7 +234,7 @@ def fetch_game_stats(
             player_year = player_part[split_idx + 1 :].strip()
 
         # Body div sits next to the h7; pull alternating <strong>K</strong> V pairs.
-        stats: dict[str, str] = {}
+        pairs: list[tuple[str, str]] = []
         body_div = h7.find_next_sibling("div")
         if body_div is not None:
             current_key: str | None = None
@@ -221,7 +247,7 @@ def fetch_game_stats(
                         kid.get_text(strip=True) if hasattr(kid, "get_text") else str(kid)
                     ).strip()
                     if current_key and text:
-                        stats[current_key] = text
+                        pairs.append((current_key, text))
                         current_key = None
 
         lines.append(
@@ -230,7 +256,7 @@ def fetch_game_stats(
                 category=category,
                 player_name=player_name,
                 player_year=player_year,
-                stats=stats,
+                stats=card_stats(pairs),
             )
         )
 
