@@ -261,9 +261,9 @@ function footballStandoutFormat(row, { seasonComplete }) {
 
   if (!Number.isFinite(yds) || yds <= 0) return null;
   const CAT_PHRASING = {
-    Passing:   { done: "finished the season throwing for", going: "has thrown for", noun: "yards" },
-    Rushing:   { done: "finished the season rushing for",  going: "has rushed for",  noun: "yards" },
-    Receiving: { done: "finished the season with",         going: "has piled up",    noun: "receiving yards" },
+    Passing:   { done: "finished the season throwing for", going: "has thrown for", gerund: "throwing for", noun: "yards" },
+    Rushing:   { done: "finished the season rushing for",  going: "has rushed for",  gerund: "rushing for",  noun: "yards" },
+    Receiving: { done: "finished the season with",         going: "has piled up",    gerund: "piling up",    noun: "receiving yards" },
   };
   const phrasing = CAT_PHRASING[row.category];
   if (!phrasing) return null;
@@ -278,7 +278,7 @@ function footballStandoutFormat(row, { seasonComplete }) {
     : "";
   return seasonComplete
     ? `${player} ${verb} ${yardsPhrase}${tdsClause}.`
-    : `${player} has been the bright spot, ${verb.replace(/^has /, "")} ${yardsPhrase}${tdsClause} so far this season.`;
+    : `${player} has been the bright spot, ${phrasing.gerund} ${yardsPhrase}${tdsClause} so far this season.`;
 }
 
 const FOOTBALL_STANDOUT = {

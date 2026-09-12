@@ -14,7 +14,7 @@ const SHOWN = 5;
  * scheduled AND final games. Archived meetings have no live game route,
  * so rows are plain (not links).
  */
-export default function HeadToHead({ game, dataset }) {
+export default function HeadToHead({ game, dataset, schoolIndex }) {
   const [history, setHistory] = useState(null);
   useEffect(() => {
     let cancelled = false;
@@ -50,10 +50,11 @@ export default function HeadToHead({ game, dataset }) {
       if (winner === homeKey) homeWins++;
       else awayWins++;
     }
-    // The headline count and the series record must describe the same
-    // set — "1 meeting on record · Series tied 1-1" was counting the
-    // archive in one and archive-plus-tonight in the other.
-    return { homeWins, awayWins, count: counted.length };
+    // The series record includes this game once it's final; the hint says
+    // so explicitly, and the headline count describes only the listed
+    // rows — "4 meetings on record" over three visible rows read as a
+    // data error (critique run 12).
+    return { homeWins, awayWins, includesThis: thisFinal };
   }, [meetings, game]);
 
   if (meetings.length === 0) return null;
@@ -70,8 +71,9 @@ export default function HeadToHead({ game, dataset }) {
       <div className="section-header">
         <h2>Head-to-Head</h2>
         <span className="section-header__hint">
-          {series.count} meeting{series.count === 1 ? "" : "s"} on
-          record · {seriesLine}
+          {meetings.length} previous meeting{meetings.length === 1 ? "" : "s"} ·{" "}
+          {seriesLine}
+          {series.includesThis ? " incl. this game" : ""}
         </span>
       </div>
 
@@ -84,7 +86,12 @@ export default function HeadToHead({ game, dataset }) {
 
       <ol className="h2h__list">
         {meetings.slice(0, SHOWN).map((m) => (
-          <MeetingRow key={m.id ?? m.date} meeting={m} sport={dataset.sport} />
+          <MeetingRow
+            key={m.id ?? m.date}
+            meeting={m}
+            sport={dataset.sport}
+            schoolIndex={schoolIndex}
+          />
         ))}
       </ol>
       {meetings.length > SHOWN && (
@@ -96,11 +103,14 @@ export default function HeadToHead({ game, dataset }) {
   );
 }
 
-function MeetingRow({ meeting, sport }) {
+function MeetingRow({ meeting, sport, schoolIndex }) {
   const homeWon = (meeting.home.score ?? -1) > (meeting.away.score ?? -1);
   const awayWon = (meeting.away.score ?? -1) > (meeting.home.score ?? -1);
   // History rows are keyed by sport at the file level and don't carry it.
   const forfeit = isForfeitScore({ ...meeting, sport });
+  // Archived rows keep WIAA's name ("Stevens Point"); the manifest's display
+  // name ("SPASH") is what the scorebug above prints for the same school.
+  const displayName = (side) => schoolIndex?.get?.(side.school_id)?.name ?? side.name;
   return (
     <li className="h2h__row">
       <span className="h2h__when">
@@ -109,12 +119,12 @@ function MeetingRow({ meeting, sport }) {
       </span>
       <span className="h2h__score">
         <span className={"h2h__team" + (awayWon ? " h2h__team--won" : "")}>
-          {meeting.away.name}
+          {displayName(meeting.away)}
           {!forfeit && ` ${meeting.away.score}`}
         </span>
         <span className="h2h__at">at</span>
         <span className={"h2h__team" + (homeWon ? " h2h__team--won" : "")}>
-          {meeting.home.name}
+          {displayName(meeting.home)}
           {!forfeit && ` ${meeting.home.score}`}
         </span>
         {forfeit && <span className="h2h__at">· forfeit</span>}

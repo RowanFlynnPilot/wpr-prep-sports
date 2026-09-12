@@ -255,7 +255,7 @@ export default function GamePage({ dataset, schoolIndex, sportConfig }) {
       <ScoringSummary game={game} schoolIndex={schoolIndex} />
 
       <SectionBoundary label="head-to-head">
-        <HeadToHead game={game} dataset={dataset} />
+        <HeadToHead game={game} dataset={dataset} schoolIndex={schoolIndex} />
       </SectionBoundary>
 
       <SpiritGallery game={game} photos={dataset.spirit} />
@@ -314,6 +314,7 @@ export default function GamePage({ dataset, schoolIndex, sportConfig }) {
             <StatsPending
               forfeit={forfeit}
               unreported={unreported}
+              date={game.date}
               away={game.away}
               home={game.home}
             />
@@ -330,31 +331,52 @@ export default function GamePage({ dataset, schoolIndex, sportConfig }) {
   );
 }
 
+// Past this age a missing box score isn't "pending" any more — a game
+// three weeks old that still promised stats "within a day or two" read as
+// a broken promise (critique run 12).
+const PENDING_WINDOW_MS = 7 * 24 * 60 * 60 * 1000;
+
+const STATS_PENDING_COPY = {
+  forfeit: [
+    "No box score",
+    "Recorded as a forfeit — no game was played, so no stats to file.",
+  ],
+  unreported: [
+    "Score not reported",
+    "WIAA marked this game final without posting a score. The team’s season totals may still fill in as coaches file later games.",
+  ],
+  stale: [
+    "No box score filed",
+    "Coaches didn’t file a box score for this game. The final score above stands.",
+  ],
+  pending: [
+    "Box score pending",
+    "Coaches usually file within a day or two of the final whistle. The final score above is authoritative in the meantime.",
+  ],
+};
+
 /**
- * Empty state for the Game Stats section. Three variants:
+ * Empty state for the Game Stats section. Four variants:
  *
  *   forfeit    — the game was recorded as a forfeit, no play, no stats.
  *   unreported — WIAA marked the game final without posting a score.
- *   default    — a real final result, box score not filed yet.
+ *   stale      — a real result more than a week old, no box score.
+ *   pending    — a recent real result, box score not filed yet.
  *
  * Each variant reserves the same shape (headline + one line of body +
  * team-page action links when the teams are tracked) so the page's
  * outline reads the same whether stats have landed or not.
  */
-function StatsPending({ forfeit, unreported, away, home }) {
-  const variant = forfeit ? "forfeit" : unreported ? "unreported" : "pending";
-  const headline =
-    variant === "forfeit"
-      ? "No box score"
-      : variant === "unreported"
-        ? "Score not reported"
-        : "Box score pending";
-  const body =
-    variant === "forfeit"
-      ? "Recorded as a forfeit — no game was played, so no stats to file."
-      : variant === "unreported"
-        ? "WIAA marked this game final without posting a score. The team’s season totals may still fill in as coaches file later games."
-        : "Coaches usually file within a day or two of the final whistle. The final score above is authoritative in the meantime.";
+function StatsPending({ forfeit, unreported, date, away, home }) {
+  const stale = Date.now() - new Date(date).getTime() > PENDING_WINDOW_MS;
+  const variant = forfeit
+    ? "forfeit"
+    : unreported
+      ? "unreported"
+      : stale
+        ? "stale"
+        : "pending";
+  const [headline, body] = STATS_PENDING_COPY[variant];
   const showTeamActions = Boolean(away?.school_id || home?.school_id);
   return (
     <div className={`stats-pending stats-pending--${variant}`} role="note">

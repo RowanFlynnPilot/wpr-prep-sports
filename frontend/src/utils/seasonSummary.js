@@ -12,6 +12,8 @@
  * yet, or no parseable scores).
  */
 
+import { isForfeitScore } from "./games.js";
+
 /** Walk a list of finals chronologically and compute W-L plus the last game. */
 function arcFromFinals(finals, schoolId) {
   let wins = 0;
@@ -88,23 +90,28 @@ function lastGameClause({ last, oppName, seasonComplete, wins, losses }) {
   const { own, opp } = last;
   const tied = own === opp;
   const won = own > opp;
+  // WIAA's 1-0 / 2-0 forfeit codes aren't scores; the game page already
+  // says "forfeit", and the summary said "a 2-0 win" under it.
+  const forfeit = isForfeitScore(last.game);
+  const result = forfeit
+    ? won
+      ? `a forfeit win over ${oppName}`
+      : `a forfeit loss to ${oppName}`
+    : tied
+      ? `a ${own}-${opp} draw against ${oppName}`
+      : won
+        ? `a ${own}-${opp} win over ${oppName}`
+        : `a ${own}-${opp} loss to ${oppName}`;
 
   // Mid-season — anchor the running record because the hero record is "now"
   // and the recap is naturally about trajectory.
   if (!seasonComplete) {
-    if (tied) {
-      return `with a ${own}-${opp} draw against ${oppName} (${wins}-${losses})`;
-    }
-    if (won) {
-      return `with a ${own}-${opp} win over ${oppName}, improving to ${wins}-${losses}`;
-    }
-    return `with a ${own}-${opp} loss to ${oppName}, falling to ${wins}-${losses}`;
+    if (tied) return `with ${result} (${wins}-${losses})`;
+    return `with ${result}, ${won ? "improving" : "falling"} to ${wins}-${losses}`;
   }
 
   // End-of-season — the hero shows the final record, so don't restate it.
-  if (tied) return `with a ${own}-${opp} draw against ${oppName}`;
-  if (won) return `with a ${own}-${opp} win over ${oppName}`;
-  return `with a ${own}-${opp} loss to ${oppName}`;
+  return `with ${result}`;
 }
 
 /**
