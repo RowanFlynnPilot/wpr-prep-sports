@@ -263,7 +263,7 @@
   display: block;
   font-family: var(--font-body);
   font-style: italic;
-  font-size: 0.72rem;
+  font-size: 0.78rem;
   color: rgba(255, 255, 255, 0.55);
   margin-top: 0.1rem;
 }
@@ -421,7 +421,7 @@
   background: var(--card);
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 0.66rem;
+  font-size: 0.72rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--muted-2);
