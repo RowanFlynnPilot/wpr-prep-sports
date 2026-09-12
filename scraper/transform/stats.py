@@ -32,6 +32,30 @@ from sources import bound, maxpreps, wph
 
 POLITE_DELAY_SECONDS = 0.4
 
+# WIAA codes a forfeit as a 1-0 or 2-0 final in football and basketball.
+# Bound's page for a called-off game lists each team's leaders from the
+# replacement game it played that night instead (Rib Lake at Elcho/White
+# Lake, 2026-09-11: Rib Lake's 66-26 win at Thorp surfaced as a box score
+# on the forfeit). Stat lines never belong on a forfeit-coded game.
+FORFEIT_CODE_SPORTS = {"football", "boys_basketball", "girls_basketball"}
+
+
+def is_forfeit_score(sport: str, home_score: int | None, away_score: int | None) -> bool:
+    if sport not in FORFEIT_CODE_SPORTS:
+        return False
+    if not isinstance(home_score, int) or not isinstance(away_score, int):
+        return False
+    hi, lo = max(home_score, away_score), min(home_score, away_score)
+    return lo == 0 and hi in (1, 2)
+
+
+def is_forfeit_final(game: Game) -> bool:
+    if game.status != GameStatus.FINAL:
+        return False
+    sport = getattr(game, "sport", None)
+    sport = getattr(sport, "value", sport)
+    return is_forfeit_score(str(sport), game.home.score, game.away.score)
+
 
 def merge_bound_stats(
     dataset: Dataset,
@@ -46,8 +70,11 @@ def merge_bound_stats(
     if not finals:
         return dataset
 
-    # Only chase Bound for games where at least one side is in our manifest.
-    targeted = [g for g in finals if g.home.school_id or g.away.school_id]
+    # Only chase Bound for games where at least one side is in our manifest,
+    # and never for a forfeit (see is_forfeit_final).
+    targeted = [
+        g for g in finals if (g.home.school_id or g.away.school_id) and not is_forfeit_final(g)
+    ]
     if not targeted:
         return dataset
 
@@ -215,7 +242,7 @@ def merge_maxpreps_stats(
     Games without a MaxPreps box score are left with whatever
     stat_leaders Bound already attached (often none for volleyball).
     """
-    finals = [g for g in dataset.games if g.status == GameStatus.FINAL]
+    finals = [g for g in dataset.games if g.status == GameStatus.FINAL and not is_forfeit_final(g)]
     if not finals:
         return dataset
 

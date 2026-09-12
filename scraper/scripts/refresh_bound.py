@@ -32,7 +32,11 @@ from models.schema import GameStatus  # noqa: E402
 from output.writer import load_prev_rankings, read_dataset, write_dataset  # noqa: E402
 from transform.normalize import build_name_index_for_manifest  # noqa: E402
 from transform.rankings import compute_power_rankings  # noqa: E402
-from transform.stats import merge_bound_stats, merge_maxpreps_stats  # noqa: E402
+from transform.stats import (  # noqa: E402
+    is_forfeit_final,
+    merge_bound_stats,
+    merge_maxpreps_stats,
+)
 
 DATA_DIR = REPO_ROOT / "data"
 BOUND_SPORT_ABBR = {
@@ -79,6 +83,9 @@ def refresh(sport: str, console: Console, manifest) -> bool:
     for g in ds.games:
         if g.status is GameStatus.FINAL and g.stat_leaders and g.date > horizon:
             console.print(f"[yellow]dropped stat lines from future-dated final {g.id}[/yellow]")
+            g.stat_leaders = []
+        elif g.stat_leaders and is_forfeit_final(g):
+            console.print(f"[yellow]dropped stat lines from forfeit {g.id}[/yellow]")
             g.stat_leaders = []
 
     replaced = sum(1 for g in ds.games if g.id in before and g.stat_leaders != before[g.id])

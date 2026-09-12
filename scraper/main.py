@@ -419,6 +419,17 @@ def main() -> int:
             )
             g.stat_leaders = []
 
+    # Same rule for forfeit-coded finals: the merges skip them, and this
+    # catches lines carried forward from before the rule existed.
+    from transform.stats import is_forfeit_final
+
+    for g in dataset.games:
+        if g.stat_leaders and is_forfeit_final(g):
+            console.print(
+                f"[yellow]dropped {len(g.stat_leaders)} stat line(s) from forfeit {g.id}[/yellow]"
+            )
+            g.stat_leaders = []
+
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     write_dataset(dataset, DATA_DIR)
     console.print(f"[green]Wrote dataset to {DATA_DIR}[/green]")
