@@ -1,7 +1,7 @@
 {
   "sport": "volleyball",
   "season": "2026-27",
-  "generated_at": "2026-09-11T22:31:09.403483-05:00",
+  "generated_at": "2026-09-12T01:44:52.235803-05:00",
   "method": "WPR Power Index v1: 40% W%, 35% SOS, 25% margin (capped per sport)",
   "rankings": [
     {
@@ -266,6 +266,19 @@
     },
     {
       "rank": 21,
+      "school_id": "weyauwega-fremont",
+      "school_name": "Weyauwega-Fremont",
+      "wins": 5,
+      "losses": 2,
+      "ties": 0,
+      "win_pct": 0.7143,
+      "sos": 0.3333,
+      "avg_margin_capped": 1.0,
+      "score": 56.9,
+      "movement": 2
+    },
+    {
+      "rank": 22,
       "school_id": "eau-claire-memorial",
       "school_name": "Eau Claire Memorial",
       "wins": 8,
@@ -275,10 +288,10 @@
       "sos": 0.4233,
       "avg_margin_capped": 0.58,
       "score": 56.41,
-      "movement": -10
+      "movement": -11
     },
     {
-      "rank": 22,
+      "rank": 23,
       "school_id": "columbus-catholic",
       "school_name": "Columbus Catholic",
       "wins": 5,
@@ -288,20 +301,7 @@
       "sos": 0.7007,
       "avg_margin_capped": 0.09,
       "score": 55.59,
-      "movement": 0
-    },
-    {
-      "rank": 23,
-      "school_id": "weyauwega-fremont",
-      "school_name": "Weyauwega-Fremont",
-      "wins": 4,
-      "losses": 2,
-      "ties": 0,
-      "win_pct": 0.6667,
-      "sos": 0.3333,
-      "avg_margin_capped": 0.83,
-      "score": 54.31,
-      "movement": 0
+      "movement": -1
     },
     {
       "rank": 24,
@@ -584,9 +584,9 @@
       "losses": 6,
       "ties": 0,
       "win_pct": 0.3333,
-      "sos": 0.5016,
+      "sos": 0.5206,
       "avg_margin_capped": -0.67,
-      "score": 40.61,
+      "score": 41.28,
       "movement": -5
     },
     {
