@@ -322,7 +322,7 @@
   padding: 0;
   background: none;
   border: none;
-  max-width: 68ch;
+  max-width: 60ch;
 }
 .follow-prompt__text {
   flex: 1 1 auto;

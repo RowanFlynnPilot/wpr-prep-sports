@@ -65,8 +65,12 @@
   align-items: center;
   gap: 1rem;
   padding: 0.85rem 1rem;
-  border-radius: var(--radius-sm);
-  background: rgba(255, 255, 255, 0.04);
+  /* Flat, like .game-page__team since run 7: a rounded tinted block
+     inside the rounded hero card read as a card-in-a-card (the overlay's
+     last nested-cards hit, run 12). The won-team wash + rail below still
+     mark the winner on a square band. */
+  border-radius: 0;
+  background: transparent;
   transition: background var(--t-med) var(--ease);
   min-width: 0;
 }
@@ -177,7 +181,7 @@ a.hero__details:focus-visible {
   z-index: 2;
   font-size: var(--fs-ui);
   line-height: 1.5;
-  max-width: 72ch;
+  max-width: 62ch;
   text-wrap: pretty;
   color: rgba(255, 255, 255, 0.85);
 }

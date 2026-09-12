@@ -139,7 +139,7 @@
   margin-bottom: 0.4rem;
 }
 .season-summary__body {
-  max-width: 75ch;
+  max-width: 62ch;
   font-family: var(--font-body);
   font-size: var(--fs-body);
   line-height: 1.55;
@@ -243,7 +243,7 @@
   /* Cap sentence width so the italic recap doesn't run 151 characters
      across the desktop card (detector caught it in run 7). At 75ch the
      line breaks at a comfortable reading measure. */
-  max-width: 75ch;
+  max-width: 62ch;
   line-height: 1.45;
 }
 

@@ -34,15 +34,17 @@
   font-family: var(--font-display);
   font-weight: 700;
   font-size: var(--fs-label);
+  color: var(--accent-700);
+}
+/* Only the label is a label: the date range beside it is data, so the
+   caps and tracking live on the inner span, not the whole eyebrow. */
+.potw__eyebrow-label {
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--accent-700);
 }
 .potw__eyebrow-week {
   font-weight: 500;
-  /* A date range is data, not a label — leave it in sentence case so the
-     eyebrow isn't a 42-character run of caps. */
-  text-transform: none;
+  font-size: var(--fs-caption);
   letter-spacing: 0.02em;
   color: var(--muted);
 }

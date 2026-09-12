@@ -70,7 +70,7 @@ export default function PlayerOfWeek({ games, schoolIndex, sponsors, sportConfig
 
       <header className="potw__masthead">
         <span className="potw__eyebrow">
-          Player of the Week
+          <span className="potw__eyebrow-label">Player of the Week</span>
           {weekLabel && <span className="potw__eyebrow-week"> · Week of {weekLabel}</span>}
         </span>
         <Sponsor slot="potw" sponsors={sponsors} variant="inline" className="potw__sponsor" />
