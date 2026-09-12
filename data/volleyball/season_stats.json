@@ -337,12 +337,12 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "7",
+      "GP": "8",
       "KLS": "6",
       "ATT": "14",
       "E": "0",
-      "SP": "16",
-      "AST": "43",
+      "SP": "18",
+      "AST": "49",
       "EFF": ".429"
     }
   },
@@ -355,13 +355,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "7",
-      "KLS": "42",
-      "ATT": "144",
-      "E": "39",
-      "SP": "16",
+      "GP": "8",
+      "KLS": "45",
+      "ATT": "157",
+      "E": "43",
+      "SP": "18",
       "AST": "6",
-      "EFF": ".021"
+      "EFF": ".013"
     }
   },
   {
@@ -373,13 +373,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "7",
-      "KLS": "24",
-      "ATT": "79",
-      "E": "14",
-      "SP": "16",
+      "GP": "8",
+      "KLS": "29",
+      "ATT": "91",
+      "E": "17",
+      "SP": "18",
       "AST": "1",
-      "EFF": ".127"
+      "EFF": ".132"
     }
   },
   {
@@ -391,12 +391,12 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "5",
-      "KLS": "11",
-      "ATT": "30",
-      "E": "3",
-      "SP": "10",
-      "EFF": ".267"
+      "GP": "6",
+      "KLS": "12",
+      "ATT": "34",
+      "E": "4",
+      "SP": "12",
+      "EFF": ".235"
     }
   },
   {
@@ -425,12 +425,12 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "KLS": "5",
-      "ATT": "24",
-      "E": "8",
-      "SP": "6",
-      "EFF": "-0.125"
+      "GP": "4",
+      "KLS": "6",
+      "ATT": "27",
+      "E": "9",
+      "SP": "7",
+      "EFF": "-0.111"
     }
   },
   {
@@ -456,9 +456,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "4",
-      "ACE": "7",
-      "SP": "9"
+      "GP": "5",
+      "ACE": "8",
+      "SP": "11"
     }
   },
   {
@@ -470,9 +470,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "5",
-      "ACE": "8",
-      "SP": "11"
+      "GP": "6",
+      "ACE": "13",
+      "SP": "13"
     }
   },
   {
@@ -513,9 +513,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "7",
-      "DIG": "35",
-      "SP": "16",
+      "GP": "8",
+      "DIG": "37",
+      "SP": "18",
       "BLK": "2"
     }
   },
@@ -542,9 +542,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "7",
-      "DIG": "37",
-      "SP": "16"
+      "GP": "8",
+      "DIG": "39",
+      "SP": "18"
     }
   },
   {
@@ -556,10 +556,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "7",
-      "DIG": "8",
-      "SP": "16",
-      "BLK": "4"
+      "GP": "8",
+      "DIG": "9",
+      "SP": "18",
+      "BLK": "6"
     }
   },
   {
@@ -600,9 +600,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "7",
-      "DIG": "49",
-      "SP": "16"
+      "GP": "8",
+      "DIG": "54",
+      "SP": "18"
     }
   },
   {
@@ -614,9 +614,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "7",
-      "AST": "42",
-      "SP": "15",
+      "GP": "8",
+      "AST": "46",
+      "SP": "17",
       "KLS": "3",
       "ATT": "9",
       "E": "3",
@@ -1822,10 +1822,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "DIG": "4",
-      "SP": "6",
-      "BLK": "1"
+      "GP": "4",
+      "DIG": "5",
+      "SP": "8",
+      "BLK": "3"
     }
   },
   {
@@ -1915,6 +1915,24 @@
       "GP": "1",
       "AST": "1",
       "SP": "2"
+    }
+  },
+  {
+    "school_id": "superior",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Audrey Lisdahl",
+    "player_year": "FR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "4",
+      "KLS": "6",
+      "ATT": "7",
+      "E": "0",
+      "SP": "9",
+      "AST": "1",
+      "EFF": ".857"
     }
   },
   {
@@ -6442,24 +6460,6 @@
       "ATT": "7",
       "E": "1",
       "EFF": ".286"
-    }
-  },
-  {
-    "school_id": "superior",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Audrey Lisdahl",
-    "player_year": "FR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "3",
-      "KLS": "4",
-      "ATT": "5",
-      "E": "0",
-      "SP": "7",
-      "AST": "1",
-      "EFF": ".800"
     }
   },
   {
