@@ -5198,6 +5198,23 @@
   {
     "school_id": "tri-county",
     "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Kelsey Flyte",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "KLS": "1",
+      "ATT": "2",
+      "E": "1",
+      "SP": "2",
+      "EFF": ".000"
+    }
+  },
+  {
+    "school_id": "tri-county",
+    "sport": "volleyball",
     "category": "Volleyball Serving",
     "player_name": "Lauren Wilkins",
     "player_year": "SR",
@@ -5235,23 +5252,6 @@
       "GP": "1",
       "DIG": "3",
       "SP": "3"
-    }
-  },
-  {
-    "school_id": "tri-county",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Kelsey Flyte",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "1",
-      "KLS": "1",
-      "ATT": "2",
-      "E": "1",
-      "SP": "2",
-      "EFF": ".000"
     }
   },
   {
@@ -5624,6 +5624,238 @@
       "ATT": "4",
       "E": "2",
       "EFF": "-0.250"
+    }
+  },
+  {
+    "school_id": "newman-catholic",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Enya Maccarthy",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "5",
+      "KLS": "20",
+      "ATT": "78",
+      "E": "17",
+      "SP": "11",
+      "AST": "1",
+      "EFF": ".038"
+    }
+  },
+  {
+    "school_id": "newman-catholic",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Lexi Rice",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "5",
+      "KLS": "7",
+      "ATT": "29",
+      "E": "11",
+      "SP": "11",
+      "AST": "48",
+      "EFF": "-0.138"
+    }
+  },
+  {
+    "school_id": "newman-catholic",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Madelyn Jankowski",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "KLS": "2",
+      "ATT": "4",
+      "E": "1",
+      "SP": "5",
+      "EFF": ".250"
+    }
+  },
+  {
+    "school_id": "newman-catholic",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Kate Kerns",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "5",
+      "KLS": "7",
+      "ATT": "53",
+      "E": "4",
+      "SP": "11",
+      "AST": "12",
+      "EFF": ".057"
+    }
+  },
+  {
+    "school_id": "newman-catholic",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Madison Keene",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "5",
+      "KLS": "30",
+      "ATT": "84",
+      "E": "23",
+      "SP": "11",
+      "AST": "1",
+      "EFF": ".083"
+    }
+  },
+  {
+    "school_id": "newman-catholic",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Lexi Rice",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "4",
+      "ACE": "5",
+      "SP": "9"
+    }
+  },
+  {
+    "school_id": "newman-catholic",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Brooke Thiel",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "4",
+      "ACE": "10",
+      "SP": "9"
+    }
+  },
+  {
+    "school_id": "newman-catholic",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Lexi Rice",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "5",
+      "BLK": "2",
+      "SP": "11",
+      "DIG": "22"
+    }
+  },
+  {
+    "school_id": "newman-catholic",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Madison Keene",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "5",
+      "BLK": "6",
+      "SP": "11",
+      "DIG": "23"
+    }
+  },
+  {
+    "school_id": "newman-catholic",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Eleanor Hodek",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "DIG": "2",
+      "SP": "2"
+    }
+  },
+  {
+    "school_id": "newman-catholic",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Stevie Chicka",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "5",
+      "DIG": "26",
+      "SP": "11"
+    }
+  },
+  {
+    "school_id": "newman-catholic",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Anna Carlson",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "5",
+      "DIG": "14",
+      "SP": "10"
+    }
+  },
+  {
+    "school_id": "newman-catholic",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Brooke Thiel",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "4",
+      "DIG": "13",
+      "SP": "9"
+    }
+  },
+  {
+    "school_id": "newman-catholic",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Madison Keene",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "ACE": "3",
+      "SP": "4"
+    }
+  },
+  {
+    "school_id": "newman-catholic",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Kate Kerns",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "4",
+      "DIG": "17",
+      "SP": "9",
+      "BLK": "3"
     }
   },
   {
@@ -6249,6 +6481,62 @@
     }
   },
   {
+    "school_id": "newman-catholic",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Enya Maccarthy",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "ACE": "1",
+      "SP": "2"
+    }
+  },
+  {
+    "school_id": "newman-catholic",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Anna Carlson",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "ACE": "1",
+      "SP": "1"
+    }
+  },
+  {
+    "school_id": "newman-catholic",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Kate Kerns",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "ACE": "3",
+      "SP": "5"
+    }
+  },
+  {
+    "school_id": "newman-catholic",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Enya Maccarthy",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "DIG": "7",
+      "SP": "7"
+    }
+  },
+  {
     "school_id": "tomahawk",
     "sport": "volleyball",
     "category": "Volleyball Offense",
@@ -6471,12 +6759,30 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "7",
-      "KLS": "25",
-      "ATT": "75",
-      "E": "10",
-      "SP": "15",
-      "EFF": ".200"
+      "GP": "8",
+      "KLS": "35",
+      "ATT": "99",
+      "E": "13",
+      "SP": "20",
+      "EFF": ".222"
+    }
+  },
+  {
+    "school_id": "auburndale",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Jalynn Scherr",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "6",
+      "KLS": "6",
+      "ATT": "18",
+      "E": "1",
+      "SP": "16",
+      "AST": "3",
+      "EFF": ".278"
     }
   },
   {
@@ -6488,13 +6794,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "7",
-      "KLS": "7",
-      "ATT": "32",
-      "E": "5",
-      "SP": "15",
-      "AST": "95",
-      "EFF": ".062"
+      "GP": "8",
+      "KLS": "11",
+      "ATT": "44",
+      "E": "7",
+      "SP": "20",
+      "AST": "137",
+      "EFF": ".091"
     }
   },
   {
@@ -6506,209 +6812,47 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "7",
-      "KLS": "16",
-      "ATT": "67",
-      "E": "16",
-      "SP": "15",
-      "EFF": ".000"
-    }
-  },
-  {
-    "school_id": "auburndale",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Abi Schmidt",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "7",
+      "GP": "8",
       "KLS": "18",
-      "ATT": "55",
-      "E": "9",
-      "SP": "15",
-      "EFF": ".164"
+      "ATT": "83",
+      "E": "19",
+      "SP": "19",
+      "EFF": "-0.012"
     }
   },
   {
     "school_id": "auburndale",
     "sport": "volleyball",
     "category": "Volleyball Offense",
-    "player_name": "Lily Ballenti",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "7",
-      "KLS": "52",
-      "ATT": "141",
-      "E": "23",
-      "SP": "15",
-      "AST": "4",
-      "EFF": ".206"
-    }
-  },
-  {
-    "school_id": "auburndale",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Lily Ballenti",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "5",
-      "ACE": "9",
-      "SP": "11"
-    }
-  },
-  {
-    "school_id": "auburndale",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Lanie Richardson",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "ACE": "3",
-      "SP": "4"
-    }
-  },
-  {
-    "school_id": "auburndale",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
     "player_name": "Abi Schmidt",
     "player_year": "SR",
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "5",
-      "BLK": "6",
-      "SP": "11",
-      "DIG": "5"
+      "GP": "8",
+      "KLS": "26",
+      "ATT": "78",
+      "E": "12",
+      "SP": "20",
+      "EFF": ".179"
     }
   },
   {
     "school_id": "auburndale",
     "sport": "volleyball",
-    "category": "Volleyball Defense",
+    "category": "Volleyball Offense",
     "player_name": "Lily Ballenti",
     "player_year": "SR",
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "7",
-      "BLK": "3",
-      "SP": "15",
-      "DIG": "46"
-    }
-  },
-  {
-    "school_id": "auburndale",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Jalynn Scherr",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "7",
-      "DIG": "21",
-      "SP": "15",
-      "BLK": "1"
-    }
-  },
-  {
-    "school_id": "auburndale",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Chesney Nagel",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "7",
-      "DIG": "43",
-      "SP": "15",
-      "BLK": "2"
-    }
-  },
-  {
-    "school_id": "auburndale",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Alexis Godard",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "6",
-      "DIG": "29",
-      "SP": "11"
-    }
-  },
-  {
-    "school_id": "auburndale",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Aubrey Richardson",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "3",
-      "DIG": "6",
-      "SP": "3"
-    }
-  },
-  {
-    "school_id": "auburndale",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Lanie Richardson",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "7",
-      "DIG": "65",
-      "SP": "15"
-    }
-  },
-  {
-    "school_id": "auburndale",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Jalynn Scherr",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "5",
-      "AST": "3",
-      "SP": "11",
-      "KLS": "5",
-      "ATT": "16",
-      "E": "1",
-      "EFF": ".250"
-    }
-  },
-  {
-    "school_id": "auburndale",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Lanie Richardson",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "6",
-      "AST": "14",
-      "SP": "13"
+      "GP": "8",
+      "KLS": "68",
+      "ATT": "197",
+      "E": "34",
+      "SP": "20",
+      "AST": "4",
+      "EFF": ".173"
     }
   },
   {
@@ -6734,9 +6878,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "5",
-      "ACE": "6",
-      "SP": "11"
+      "GP": "6",
+      "ACE": "8",
+      "SP": "16"
     }
   },
   {
@@ -6756,16 +6900,160 @@
   {
     "school_id": "auburndale",
     "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Lily Ballenti",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "6",
+      "ACE": "10",
+      "SP": "16"
+    }
+  },
+  {
+    "school_id": "auburndale",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Jalynn Scherr",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "8",
+      "DIG": "30",
+      "SP": "20",
+      "BLK": "1"
+    }
+  },
+  {
+    "school_id": "auburndale",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Chesney Nagel",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "8",
+      "DIG": "68",
+      "SP": "20",
+      "BLK": "5"
+    }
+  },
+  {
+    "school_id": "auburndale",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Aubrey Richardson",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "DIG": "6",
+      "SP": "3"
+    }
+  },
+  {
+    "school_id": "auburndale",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Lily Ballenti",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "8",
+      "DIG": "67",
+      "SP": "20",
+      "BLK": "4"
+    }
+  },
+  {
+    "school_id": "auburndale",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Lanie Richardson",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "8",
+      "DIG": "97",
+      "SP": "20"
+    }
+  },
+  {
+    "school_id": "auburndale",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Lanie Richardson",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "7",
+      "AST": "18",
+      "SP": "18"
+    }
+  },
+  {
+    "school_id": "auburndale",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Lanie Richardson",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "ACE": "3",
+      "SP": "4"
+    }
+  },
+  {
+    "school_id": "auburndale",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Abi Schmidt",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "6",
+      "BLK": "8",
+      "SP": "16",
+      "DIG": "11"
+    }
+  },
+  {
+    "school_id": "auburndale",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Alexis Godard",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "7",
+      "DIG": "53",
+      "SP": "16"
+    }
+  },
+  {
+    "school_id": "auburndale",
+    "sport": "volleyball",
     "category": "Volleyball Defense",
     "player_name": "Alana Steines",
     "player_year": "SR",
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "4",
-      "BLK": "6",
-      "SP": "9",
-      "DIG": "8"
+      "GP": "5",
+      "BLK": "13",
+      "SP": "14",
+      "DIG": "11"
     }
   },
   {
@@ -6777,55 +7065,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "5",
-      "BLK": "4",
-      "SP": "11",
-      "DIG": "4"
-    }
-  },
-  {
-    "school_id": "river-falls",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Raegan Skifter",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "4",
-      "KLS": "10",
-      "ATT": "25",
-      "E": "3",
-      "SP": "9",
-      "EFF": ".280"
-    }
-  },
-  {
-    "school_id": "river-falls",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Brooke Dusek",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "3",
-      "ACE": "5",
-      "SP": "7"
-    }
-  },
-  {
-    "school_id": "river-falls",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Anika Schwartz",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "BLK": "7",
-      "SP": "5"
+      "GP": "6",
+      "BLK": "5",
+      "SP": "15",
+      "DIG": "7"
     }
   },
   {
@@ -6843,6 +7086,23 @@
       "E": "4",
       "SP": "7",
       "EFF": ".261"
+    }
+  },
+  {
+    "school_id": "river-falls",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Raegan Skifter",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "4",
+      "KLS": "10",
+      "ATT": "25",
+      "E": "3",
+      "SP": "9",
+      "EFF": ".280"
     }
   },
   {
@@ -6913,6 +7173,34 @@
       "GP": "1",
       "AST": "1",
       "SP": "2"
+    }
+  },
+  {
+    "school_id": "river-falls",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Brooke Dusek",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "ACE": "5",
+      "SP": "7"
+    }
+  },
+  {
+    "school_id": "river-falls",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Anika Schwartz",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "BLK": "7",
+      "SP": "5"
     }
   },
   {
@@ -7985,6 +8273,37 @@
     }
   },
   {
+    "school_id": "newman-catholic",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Eleanor Hodek",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "KLS": "1",
+      "ATT": "8",
+      "E": "1",
+      "SP": "2",
+      "EFF": ".000"
+    }
+  },
+  {
+    "school_id": "newman-catholic",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Addy France",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "DIG": "1",
+      "SP": "1"
+    }
+  },
+  {
     "school_id": "colby",
     "sport": "volleyball",
     "category": "Volleyball Defense",
@@ -8495,21 +8814,6 @@
     }
   },
   {
-    "school_id": "rib-lake",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Maddie Rademacher",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "4",
-      "DIG": "5",
-      "SP": "9",
-      "BLK": "1"
-    }
-  },
-  {
     "school_id": "phillips",
     "sport": "volleyball",
     "category": "Volleyball Offense",
@@ -8539,6 +8843,21 @@
       "GP": "1",
       "ACE": "2",
       "SP": "2"
+    }
+  },
+  {
+    "school_id": "rib-lake",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Maddie Rademacher",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "4",
+      "DIG": "5",
+      "SP": "9",
+      "BLK": "1"
     }
   },
   {
@@ -9327,24 +9646,6 @@
   {
     "school_id": "prentice",
     "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Lauren Geiger",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "3",
-      "KLS": "6",
-      "ATT": "4",
-      "E": "1",
-      "SP": "8",
-      "AST": "1",
-      "EFF": "1.250"
-    }
-  },
-  {
-    "school_id": "prentice",
-    "sport": "volleyball",
     "category": "Volleyball Serving",
     "player_name": "Sofie Staroba",
     "player_year": "JR",
@@ -9369,6 +9670,24 @@
       "DIG": "1",
       "SP": "5",
       "BLK": "1"
+    }
+  },
+  {
+    "school_id": "prentice",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Lauren Geiger",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "KLS": "6",
+      "ATT": "4",
+      "E": "1",
+      "SP": "8",
+      "AST": "1",
+      "EFF": "1.250"
     }
   },
   {
@@ -10701,12 +11020,12 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "KLS": "1",
-      "ATT": "3",
+      "GP": "2",
+      "KLS": "4",
+      "ATT": "15",
       "E": "0",
-      "SP": "1",
-      "EFF": ".333"
+      "SP": "5",
+      "EFF": ".267"
     }
   },
   {
@@ -10718,12 +11037,12 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "4",
-      "KLS": "15",
-      "ATT": "56",
-      "E": "10",
-      "SP": "9",
-      "EFF": ".089"
+      "GP": "5",
+      "KLS": "25",
+      "ATT": "95",
+      "E": "17",
+      "SP": "14",
+      "EFF": ".084"
     }
   },
   {
@@ -10749,10 +11068,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "4",
-      "DIG": "12",
-      "SP": "9",
-      "BLK": "2"
+      "GP": "5",
+      "DIG": "18",
+      "SP": "14",
+      "BLK": "4"
     }
   },
   {
@@ -11398,6 +11717,54 @@
     }
   },
   {
+    "school_id": "newman-catholic",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Addy France",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "KLS": "1",
+      "ATT": "1",
+      "E": "0",
+      "SP": "2",
+      "EFF": "1.000"
+    }
+  },
+  {
+    "school_id": "newman-catholic",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Anna Carlson",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "KLS": "1",
+      "ATT": "3",
+      "E": "1",
+      "SP": "3",
+      "EFF": ".000"
+    }
+  },
+  {
+    "school_id": "newman-catholic",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Stevie Chicka",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "AST": "1",
+      "SP": "3"
+    }
+  },
+  {
     "school_id": "mosinee",
     "sport": "volleyball",
     "category": "Volleyball Offense",
@@ -11861,9 +12228,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "ACE": "1",
-      "SP": "3"
+      "GP": "2",
+      "ACE": "6",
+      "SP": "8"
     }
   },
   {
@@ -12489,6 +12856,20 @@
       "GP": "1",
       "AST": "3",
       "SP": "3"
+    }
+  },
+  {
+    "school_id": "auburndale",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Kendall Novotny",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "DIG": "3",
+      "SP": "4"
     }
   },
   {
