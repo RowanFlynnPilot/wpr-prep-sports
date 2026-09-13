@@ -90,7 +90,8 @@
   background: var(--paper);
 }
 .standings__table thead th.num { text-align: right; }
-.standings__table thead th.rank { width: 2.1rem; text-align: center; padding-left: 0.4rem; padding-right: 0.3rem; }
+/* Wide enough for "T-10" — tied rows print a shared rank. */
+.standings__table thead th.rank { width: 2.6rem; text-align: center; padding-left: 0.4rem; padding-right: 0.3rem; }
 .standings__table thead th.form { width: 4.4rem; text-align: right; padding-right: 0.5rem; }
 .standings__table thead th.more { width: 2.4rem; padding: 0; }
 
@@ -114,8 +115,15 @@
   font-weight: 700;
   color: var(--muted-2);
 }
-.standings__table tbody tr:first-child td.rank {
+/* Every co-leader's rank in press red, not just row one: two 3-0 teams
+   tied at the top both print "T-1". */
+.standings__table tbody tr:first-child td.rank,
+.standings__table tbody tr.standings__row--leader td.rank {
   color: var(--accent-700);
+}
+.standings__table td.rank--tied {
+  white-space: nowrap;
+  letter-spacing: 0;
 }
 .standings__table td.num { text-align: right; }
 

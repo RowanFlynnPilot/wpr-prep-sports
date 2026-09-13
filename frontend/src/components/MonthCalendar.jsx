@@ -6,10 +6,13 @@ import {
   buildMonthGrid,
   groupGamesByDate,
   pickFocusMonth,
+  pickInitialDay,
+  sortDayGames,
 } from "../utils/calendar.js";
 import { useSportPrefix } from "../utils/links.js";
 import { formatGameTime } from "../utils/dates.js";
 import { isForfeitScore, isUnreportedFinal } from "../utils/games.js";
+import { homeRegionSchoolIds } from "../utils/schools.js";
 
 /**
  * Month-at-a-glance calendar. Each cell shows the day number and a count
@@ -23,9 +26,14 @@ import { isForfeitScore, isUnreportedFinal } from "../utils/games.js";
 export default function MonthCalendar({ games, schoolIndex, sportConfig }) {
   const initial = useMemo(() => pickFocusMonth(games), [games]);
   const [focus, setFocus] = useState(initial);
-  const [selectedDay, setSelectedDay] = useState(null);
-
   const gamesByDate = useMemo(() => groupGamesByDate(games), [games]);
+  // Open with the nearest game day's sheet already showing; paging to
+  // another month clears it (the reader is choosing a day there).
+  const [selectedDay, setSelectedDay] = useState(() => pickInitialDay(gamesByDate, initial));
+  const homeRegion = useMemo(
+    () => homeRegionSchoolIds([...(schoolIndex?.values?.() ?? [])]),
+    [schoolIndex],
+  );
   const cells = useMemo(
     () => buildMonthGrid(focus.year, focus.month),
     [focus.year, focus.month],
@@ -43,7 +51,10 @@ export default function MonthCalendar({ games, schoolIndex, sportConfig }) {
     setSelectedDay(null);
   };
 
-  const selectedGames = selectedDay ? gamesByDate.get(selectedDay) ?? [] : [];
+  const selectedGames = useMemo(
+    () => (selectedDay ? sortDayGames(gamesByDate.get(selectedDay) ?? [], homeRegion) : []),
+    [selectedDay, gamesByDate, homeRegion],
+  );
 
   return (
     <div className="month-cal">
@@ -96,7 +107,13 @@ export default function MonthCalendar({ games, schoolIndex, sportConfig }) {
               onClick={() => isClickable && setSelectedDay(cell.iso)}
               disabled={!isClickable}
               aria-pressed={isSelected}
-              aria-label={`${cell.iso}${count ? ` — ${count} game${count === 1 ? "" : "s"}` : ""}`}
+              // Spoken date, not the ISO string: "2026-09-11" read as digits
+              // told a screen reader nothing (critique run 15).
+              aria-label={`${cell.date.toLocaleDateString(undefined, {
+                weekday: "long",
+                month: "long",
+                day: "numeric",
+              })}${count ? `, ${count} game${count === 1 ? "" : "s"}` : ", no games"}`}
             >
               <span className="month-cal__day-num">{cell.date.getDate()}</span>
               {count > 0 && (

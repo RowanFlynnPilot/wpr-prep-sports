@@ -358,9 +358,12 @@
     gap: 1.5rem;
   }
   /* The nudge goes above the hero, next to the masthead finder it
-     points at; on desktop it stays a quiet line under the black card. */
+     points at; on desktop it stays a quiet line under the black card.
+     A little inset: bare copy 12px from the viewport edge reads as
+     bleeding on a phone. */
   .lead > .follow-prompt {
     order: -1;
+    padding: 0 0.35rem;
   }
 }
 

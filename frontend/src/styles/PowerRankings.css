@@ -160,7 +160,9 @@
 }
 .power-row__move--flat {
   background: var(--paper-2);
-  color: var(--muted-2);
+  /* --muted on the chip: 5.0:1. --muted-2 measured 4.0:1 on #f0f0f0 at
+     11.5px (critique run 15), the same pair the game page fixed. */
+  color: var(--muted);
   font-weight: 500;
 }
 .power-row__move--new {

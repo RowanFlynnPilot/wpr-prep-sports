@@ -103,6 +103,39 @@ export function pickFocusMonth(games, now = new Date()) {
   return { year: Math.floor(target / 12), month: target % 12 };
 }
 
+/**
+ * The day the calendar opens with its sheet already showing, so the
+ * Schedule tab lands on games rather than on a grid of bare numbers
+ * (critique run 15): today if it has games, else the next game day in
+ * the focused month, else the last game day already played in it. Null
+ * when the month has no games.
+ */
+export function pickInitialDay(gamesByDate, focus, now = new Date()) {
+  const prefix = `${focus.year}-${String(focus.month + 1).padStart(2, "0")}-`;
+  const days = [...gamesByDate.keys()].filter((d) => d.startsWith(prefix)).sort();
+  if (days.length === 0) return null;
+  const today = toISOString(now);
+  if (days.includes(today)) return today;
+  const upcoming = days.find((d) => d > today);
+  return upcoming ?? days[days.length - 1];
+}
+
+/**
+ * Order for a day sheet: kickoff time, then games with a home-region
+ * school first, then the home team's name — so a 33-game Friday reads as
+ * a timetable instead of dataset order.
+ */
+export function sortDayGames(games, homeRegionIds) {
+  const local = (g) =>
+    homeRegionIds?.has?.(g.home?.school_id) || homeRegionIds?.has?.(g.away?.school_id) ? 0 : 1;
+  return [...(games ?? [])].sort(
+    (a, b) =>
+      new Date(a.date).getTime() - new Date(b.date).getTime() ||
+      local(a) - local(b) ||
+      String(a.home?.name ?? "").localeCompare(String(b.home?.name ?? "")),
+  );
+}
+
 /** Month names for the calendar header. */
 export const MONTH_NAMES = [
   "January", "February", "March", "April", "May", "June",

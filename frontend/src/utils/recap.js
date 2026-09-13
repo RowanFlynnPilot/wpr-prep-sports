@@ -138,8 +138,28 @@ export function recapForGame(
     }
   }
 
+  // Conference flavor — only if recorded on the game and (for derived
+  // standings) the opponent is also tracked.
+  let conferencePhrase = "";
+  let conferenceName = null;
+  if (game.conference || (ownSchool && oppSchool)) {
+    const ownConf = confFor(ownSchool, game.sport);
+    const oppConf = confFor(oppSchool, game.sport);
+    if (ownConf && ownConf === oppConf) {
+      conferenceName = ownConf;
+      conferencePhrase = ` in ${ownConf} action`;
+    }
+  }
+
   // Record context — only when teamGames is supplied so we know the
   // running record up to (and including) this game.
+  //
+  // A conference game prints BOTH records: "to improve to 1-2 overall
+  // (1-0 Great Northern)". The overall record alone followed by "in Great
+  // Northern action" read as a conference record, and sat 400px above a
+  // standings table that said otherwise (critique run 15). When every
+  // game so far has been conference play the two records are the same
+  // number, so the short form stays.
   let recordPhrase = "";
   if (teamGames) {
     const record = recordThrough(teamGames, perspective, game.id);
@@ -147,28 +167,31 @@ export function recapForGame(
       // Soccer draws are real: render W-L-T whenever ties exist, or the
       // recap contradicts the team page one click away ("improved to
       // 12-3" vs a true 12-3-1).
-      const rec =
-        record.ties > 0
-          ? `${record.wins}-${record.losses}-${record.ties}`
-          : `${record.wins}-${record.losses}`;
-      if (won) {
-        recordPhrase = ` to improve to ${rec}`;
-      } else if (tied) {
-        recordPhrase = ` (now ${rec})`;
-      } else {
-        recordPhrase = ` and slipped to ${rec}`;
+      const rec = fmtRecord(record);
+      let confRec = null;
+      if (conferenceName) {
+        const confRecord = recordThrough(
+          teamGames.filter((g) => g.conference_game),
+          perspective,
+          game.id,
+        );
+        if (confRecord && fmtRecord(confRecord) !== rec) confRec = fmtRecord(confRecord);
       }
-    }
-  }
-
-  // Conference flavor — only if recorded on the game and (for derived
-  // standings) the opponent is also tracked.
-  let conferencePhrase = "";
-  if (game.conference || (ownSchool && oppSchool)) {
-    const ownConf = confFor(ownSchool, game.sport);
-    const oppConf = confFor(oppSchool, game.sport);
-    if (ownConf && ownConf === oppConf) {
-      conferencePhrase = ` in ${ownConf} action`;
+      if (won) {
+        recordPhrase = confRec
+          ? ` to improve to ${rec} overall (${confRec} ${conferenceName})`
+          : ` to improve to ${rec}`;
+      } else if (tied) {
+        recordPhrase = confRec
+          ? ` (now ${rec} overall, ${confRec} ${conferenceName})`
+          : ` (now ${rec})`;
+      } else {
+        recordPhrase = confRec
+          ? ` and slipped to ${rec} overall (${confRec} ${conferenceName})`
+          : ` and slipped to ${rec}`;
+      }
+      // The parenthetical already names the conference.
+      if (confRec) conferencePhrase = "";
     }
   }
 
@@ -468,6 +491,13 @@ function findPriorAppearance(contextGames, headline, schoolId, currentGame) {
     if (match) return { line: match, date: g.date };
   }
   return null;
+}
+
+/** "W-L", or "W-L-T" once a tie exists. */
+function fmtRecord(record) {
+  return record.ties > 0
+    ? `${record.wins}-${record.losses}-${record.ties}`
+    : `${record.wins}-${record.losses}`;
 }
 
 function recordThrough(games, schoolId, includeGameId) {

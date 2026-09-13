@@ -206,7 +206,8 @@
   letter-spacing: 0.08em;
 }
 .top-ten__movement--flat {
-  color: var(--muted-2);
+  /* --muted, not --muted-2: 4.0:1 on the chip at 11.5px (critique run 15). */
+  color: var(--muted);
 }
 .top-ten__movement-arrow {
   display: inline-flex;
@@ -258,7 +259,7 @@
   background: color-mix(in srgb, var(--accent) 14%, transparent);
   letter-spacing: 0.08em;
 }
-.top-ten__legend-chip--flat { color: var(--muted-2); }
+.top-ten__legend-chip--flat { color: var(--muted); }
 
 /* Narrow phones: rank digit stays big; logo drops under the rank so the
    name has the full column; lede still flows the full width. */

@@ -98,6 +98,23 @@ export default function StandingsTable({
   const toggle = (id) => setExpanded((cur) => (cur === id ? null : id));
   const confSlug = slug(standing.conference);
 
+  // Shared ranks for rows tied on the scraper's sort keys (conference
+  // W-L-T, then overall wins). Hurley and Shell Lake were 3-0 apiece with
+  // Shell Lake ahead on every other column, and Hurley printed "#1" by
+  // stable-sort order alone (critique run 15). Tied rows show "T-1", the
+  // next rank is skipped, and the leader pip marks every co-leader. A
+  // preseason table is all 0-0 and gets plain ordinals, same as the pip.
+  const tieKey = (r) =>
+    `${r.conference_wins ?? 0}-${r.conference_losses ?? 0}-${r.conference_ties ?? 0}|${r.overall_wins ?? 0}`;
+  const displayRanks = [];
+  const tiedRanks = new Set();
+  standing.rows.forEach((r, i) => {
+    const sharesPrev = tableStarted && i > 0 && tieKey(standing.rows[i - 1]) === tieKey(r);
+    const rank = sharesPrev ? displayRanks[i - 1] : i + 1;
+    displayRanks.push(rank);
+    if (sharesPrev) tiedRanks.add(rank);
+  });
+
   return (
     <section className="standings">
       <header className="standings__header">
@@ -148,7 +165,9 @@ export default function StandingsTable({
               };
               // No leader pip on a preseason table — every row is 0-0 in
               // arbitrary order, and marking row 1 crowns someone at random.
-              const isLeader = idx === 0 && tableStarted;
+              const displayRank = displayRanks[idx];
+              const isTied = tiedRanks.has(displayRank);
+              const isLeader = displayRank === 1 && tableStarted;
               const isHighlight = highlightSchoolId && row.school_id === highlightSchoolId;
               const form = recentFormByTeam.get(row.school_id) ?? [];
               const schoolColor = school?.colors?.[0] ?? null;
@@ -174,11 +193,22 @@ export default function StandingsTable({
                       toggle(rowId);
                     }}
                   >
-                    <td className="rank">
+                    <td
+                      className={"rank" + (isTied ? " rank--tied" : "")}
+                      title={isTied ? "Tied on conference record and overall wins" : undefined}
+                    >
                       {isLeader && (
                         <span className="standings__leader-pip" aria-hidden="true" />
                       )}
-                      {idx + 1}
+                      {isTied ? (
+                        <>
+                          <span aria-hidden="true">T-</span>
+                          <span className="sr-only">Tied for </span>
+                          {displayRank}
+                        </>
+                      ) : (
+                        displayRank
+                      )}
                     </td>
                     <td className="team">
                       {schoolColor && (

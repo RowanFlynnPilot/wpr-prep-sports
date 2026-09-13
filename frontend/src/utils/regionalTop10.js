@@ -54,6 +54,32 @@ export function pickRegionalTop10({
   const inRegion = rankings.filter((r) => homeRegion.has(r.school_id));
   if (inRegion.length === 0) return null;
 
+  // Movement WITHIN the Ten. Each ranking row's `movement` is versus the
+  // full Power Index (~60 teams), and printing that beside a 1–10 rank
+  // produced chips no ten-slot list can contain ("up 8" at #3, nine of
+  // ten rising — critique run 15). Last week's in-region order is
+  // recoverable here: previous index rank = rank + movement, so sort the
+  // region by that, take the top `size`, and diff position against
+  // position. A team outside last week's cut (or with no history) is NEW.
+  const currentPos = new Map(
+    [...inRegion]
+      .sort((a, b) => (a.rank ?? 999) - (b.rank ?? 999))
+      .map((r, i) => [r.school_id, i + 1]),
+  );
+  const previousPos = new Map(
+    inRegion
+      .filter((r) => r.movement != null && r.rank != null)
+      .map((r) => ({ id: r.school_id, prev: r.rank + r.movement }))
+      .sort((a, b) => a.prev - b.prev)
+      .slice(0, size)
+      .map((r, i) => [r.id, i + 1]),
+  );
+  const movementInTen = (schoolId) => {
+    const prev = previousPos.get(schoolId);
+    const cur = currentPos.get(schoolId);
+    return prev == null || cur == null ? null : prev - cur;
+  };
+
   // Overrides: rank-pin one school (override.rank), replace its lede, or
   // both. Applied AFTER the algorithmic cut so an editor pin can promote
   // an unranked team into the list; anyone the editor demoted stays in
@@ -98,10 +124,11 @@ export function pickRegionalTop10({
     const conference = standingConference(standings, r.school_id, sportConfig?.id);
     const division = school?.wiaa_division?.[sportConfig?.id] ?? null;
 
-    // Movement is versus the ALGORITHMIC ranking, not the pinned order —
-    // a pin that moved a team up shouldn't be printed as "▲ 3" week over
-    // week. Ranks change only if the underlying power_rankings changed.
-    const movement = r.movement ?? null;
+    // Movement is versus the ALGORITHMIC in-region order, not the pinned
+    // order — a pin that moved a team up shouldn't be printed as "▲ 3"
+    // week over week. Ranks change only if the underlying power_rankings
+    // changed.
+    const movement = movementInTen(r.school_id);
 
     const lede = editorLede ?? algorithmicLede({
       schoolId: r.school_id,

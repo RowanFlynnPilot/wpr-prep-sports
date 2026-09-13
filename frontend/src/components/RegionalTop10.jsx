@@ -77,7 +77,8 @@ export default function RegionalTop10({
 
       <p className="top-ten__method">
         {poll.editorial ? "Editor's ballot" : "Algorithmic ballot"} · {poll.method}{" "}
-        A new poll lands each Monday morning. Movement chips read{" "}
+        A new poll lands each Monday morning. Movement is measured within this
+        poll, week over week:{" "}
         <span className="top-ten__legend-chip top-ten__legend-chip--up" aria-hidden="true">▲ N</span>{" "}
         up N rungs,{" "}
         <span className="top-ten__legend-chip top-ten__legend-chip--down" aria-hidden="true">▼ N</span>{" "}
