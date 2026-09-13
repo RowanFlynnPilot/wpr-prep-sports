@@ -1,7 +1,7 @@
 {
   "sport": "football",
   "season": "2026-27",
-  "generated_at": "2026-09-13T06:40:05.075629-05:00",
+  "generated_at": "2026-09-13T11:08:26.516254-05:00",
   "method": "WPR Power Index v1: 40% W%, 35% SOS, 25% margin (capped per sport)",
   "rankings": [
     {
@@ -169,8 +169,8 @@
       "ties": 0,
       "win_pct": 1.0,
       "sos": 0.1875,
-      "avg_margin_capped": 12.5,
-      "score": 64.64,
+      "avg_margin_capped": 11.75,
+      "score": 64.31,
       "movement": 5
     },
     {
@@ -494,8 +494,8 @@
       "ties": 0,
       "win_pct": 0.25,
       "sos": 0.75,
-      "avg_margin_capped": -13.25,
-      "score": 42.83,
+      "avg_margin_capped": -12.5,
+      "score": 43.17,
       "movement": -3
     },
     {
