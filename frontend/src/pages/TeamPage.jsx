@@ -159,11 +159,15 @@ export default function TeamPage({ dataset, schoolIndex, sponsors, sportConfig }
               <>
                 <div className="record-stat">
                   <span className="record-stat__num">{record.pointsFor.toLocaleString("en-US")}</span>
-                  <span className="record-stat__label">{labels.for}</span>
+                  <span className="record-stat__label">
+                    <abbr title={labels.forTitle}>{labels.for}</abbr>
+                  </span>
                 </div>
                 <div className="record-stat">
                   <span className="record-stat__num">{record.pointsAgainst.toLocaleString("en-US")}</span>
-                  <span className="record-stat__label">{labels.against}</span>
+                  <span className="record-stat__label">
+                    <abbr title={labels.againstTitle}>{labels.against}</abbr>
+                  </span>
                 </div>
               </>
             );

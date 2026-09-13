@@ -8,15 +8,8 @@
   text-wrap: pretty;
 }
 
-/* Dotted underline on the acronym glossary — the browser's default is a
-   textDecoration none in most user-agent styles now, so tie an explicit
-   affordance to <abbr title>. */
-.power-rankings__lede abbr {
-  text-decoration: underline dotted;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 2px;
-  cursor: help;
-}
+/* The lede's <abbr> glossary takes the site-wide dotted underline from
+   global.css `abbr[title]`; nothing extra needed here. */
 
 .power-rankings__method {
   font-style: normal;

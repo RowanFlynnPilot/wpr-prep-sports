@@ -63,6 +63,23 @@ export default function ScoreTicker({ games, schoolIndex, allGames = [], sportCo
     });
   }, []);
 
+  // The track is a named, focusable region: a keyboard reader lands on it
+  // once and pages with the arrow keys instead of tabbing through every
+  // card's links (critique run 14 counted the old rail as an unskippable
+  // tunnel inside a 329-tab page).
+  const onTrackKey = useCallback(
+    (e) => {
+      if (e.key === "ArrowRight") {
+        e.preventDefault();
+        scrollBy(1);
+      } else if (e.key === "ArrowLeft") {
+        e.preventDefault();
+        scrollBy(-1);
+      }
+    },
+    [scrollBy],
+  );
+
   if (!games || games.length === 0) {
     return (
       <div className="ticker ticker--empty">
@@ -92,7 +109,14 @@ export default function ScoreTicker({ games, schoolIndex, allGames = [], sportCo
         </svg>
       </button>
       <div className="ticker__viewport">
-        <div className="ticker__track" ref={trackRef}>
+        <div
+          className="ticker__track"
+          ref={trackRef}
+          role="region"
+          aria-label={`Earlier results, ${games.length} games, scroll sideways or use the arrow keys`}
+          tabIndex={0}
+          onKeyDown={onTrackKey}
+        >
           {games.map((g) => (
             <GameCard key={g.id} game={g} schoolIndex={schoolIndex} allGames={allGames} sportConfig={sportConfig} />
           ))}

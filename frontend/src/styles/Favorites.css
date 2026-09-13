@@ -360,8 +360,11 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 28px;
-  height: 28px;
+  /* 44px hit area (was 28px, a mis-tap on a phone); the negative margin
+     keeps the glyph sitting on the text line, not floating beside it. */
+  width: 44px;
+  height: 44px;
+  margin: -0.6rem -0.6rem -0.6rem 0;
   padding: 0;
   border: 1px solid transparent;
   border-radius: 50%;

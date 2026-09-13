@@ -316,7 +316,9 @@
   font-weight: 600;
   font-size: var(--fs-label);
   letter-spacing: 0;
-  color: var(--muted-2);
+  /* --muted on the chip: 5.0:1. --muted-2 measured 4.0:1 on #f0f0f0 at
+     11.5px, the one real contrast failure critique run 14 found. */
+  color: var(--muted);
   padding: 0.05rem 0.4rem;
   border-radius: var(--radius-sm);
   background: var(--paper-2);
@@ -658,4 +660,60 @@
   .game-page__divider { justify-self: center; margin: -0.5rem 0; }
   .game-page__team-name { font-size: var(--fs-h3); }
   .game-page__score { font-size: var(--fs-score-sm); }
+}
+
+/* "What do these abbreviations mean?" — collapsed under the two stat
+   cards. Every key the page uses, in the order it appears, with the
+   meaning it has in that key's own category. The recap layer was
+   written for a grandparent; this closes the gap to the stat layer. */
+.stat-glossary {
+  margin: 0.85rem 0 0;
+  font-family: var(--font-body);
+  font-size: var(--fs-small);
+  color: var(--muted);
+}
+.stat-glossary summary {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0.35rem 0;
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--fs-caption);
+  letter-spacing: 0.02em;
+  color: var(--ink);
+}
+.stat-glossary summary:hover {
+  color: var(--accent-700);
+}
+.stat-glossary summary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+.stat-glossary__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: 0.4rem 1.5rem;
+  margin: 0.25rem 0 0.5rem;
+  padding: 0;
+}
+.stat-glossary__item {
+  display: flex;
+  gap: 0.6rem;
+  align-items: baseline;
+}
+.stat-glossary dt {
+  flex: 0 0 3.75rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.stat-glossary dd {
+  margin: 0;
+  line-height: 1.4;
 }

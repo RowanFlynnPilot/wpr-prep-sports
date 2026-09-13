@@ -27,12 +27,16 @@ Python scraper → GitHub Actions cron → GitHub Pages static JSON → React/Vi
 - **Scraper** (`scraper/`): Python. WIAA is the schedule/score backbone;
   Bound, MaxPreps, and Wisconsin Prep Hockey layer in player stats;
   Halftime supplies live scores. Writes normalized JSON to `data/`.
-- **GitHub Actions** (`.github/workflows/`): Six workflows — `scrape.yml`
+- **GitHub Actions** (`.github/workflows/`): Seven workflows — `scrape.yml`
   (full scrape, season-aware cron), `scrape-live.yml` (10-min live-score
   merge during game windows, safe year-round), `deploy.yml` (builds the
   frontend and deploys to GitHub Pages), `digest.yml` (Saturday newsletter
-  export), `sentinel.yml` (daily freshness watchdog), and `tests.yml`
-  (scraper pytest on push/PR). A data-validation gate
+  export), `sentinel.yml` (daily freshness watchdog), `tests.yml`
+  (scraper pytest on push/PR), and `frontend-tests.yml` (Playwright
+  phone-width layout guard on frontend changes — asserts every score box
+  sits inside its container at 375px and no route scrolls sideways;
+  added after a grid bug hid scores for six days while every data gate
+  stayed green). A data-validation gate
   (`scraper/scripts/validate_data.py`) runs before every commit and
   includes a coverage-regression check vs git HEAD. **Failures open a
   GitHub issue labeled `ops-alert`** (create-only dedupe while one is
@@ -189,6 +193,7 @@ npm install
 npm run dev          # local dev server
 npm run build        # production build → dist/
 npm run preview      # preview production build locally
+npm run test:e2e     # Playwright phone-width layout guard (reuses a dev server on :5199)
 ```
 
 ## GitHub Actions

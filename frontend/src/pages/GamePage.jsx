@@ -18,6 +18,7 @@ import { recapForGame } from "../utils/recap.js";
 import { humanizeVenue, isForfeitScore, isUnreportedFinal } from "../utils/games.js";
 import { useSportPrefix } from "../utils/links.js";
 import { displayPlayerName, playerProfileHref } from "../utils/players.js";
+import { glossaryForLines, statTitle } from "../config/statGlossary.js";
 import { SITE } from "../config/site.js";
 
 /**
@@ -285,6 +286,7 @@ export default function GamePage({ dataset, schoolIndex, sportConfig }) {
               page for a called-off game carries the replacement game's box
               score (Rib Lake at Elcho/White Lake, 2026-09-11). */}
           {onGameCount > 0 && !forfeit ? (
+            <>
             <div className="game-stats">
               <TeamStatsCard
                 label={game.away.name}
@@ -313,6 +315,13 @@ export default function GamePage({ dataset, schoolIndex, sportConfig }) {
                 }
               />
             </div>
+            <StatGlossary
+              lines={[
+                ...(statsByKey.get(keyForSide(game.away)) ?? []),
+                ...(statsByKey.get(keyForSide(game.home)) ?? []),
+              ]}
+            />
+            </>
           ) : (
             <StatsPending
               forfeit={forfeit}
@@ -605,9 +614,15 @@ function TeamStatsCard({ label, team, school, won, lines, score, showScore, othe
               <div key={category} className="team-stats__group">
                 <h4 className="team-stats__group-header">
                   <span>{category}</span>
-                  <span className="team-stats__group-count">
-                    {groupLines.length}
-                  </span>
+                  {/* The count earns its chip only when there is a
+                      count: Bound publishes one leader per category, so
+                      "1" on every heading was noise a screen reader
+                      announced eight times over (critique run 14). */}
+                  {groupLines.length > 1 && (
+                    <span className="team-stats__group-count">
+                      {groupLines.length}
+                    </span>
+                  )}
                 </h4>
                 <ul className="team-stats__list">
                   {visible.map((line, idx) => (
@@ -731,7 +746,9 @@ function BoxCategoryTable({ category, lines, sportPrefix }) {
             <tr>
               <th scope="col" className="box-cat__col-name">Player</th>
               {columns.map((col) => (
-                <th key={col} scope="col">{col}</th>
+                <th key={col} scope="col">
+                  <StatKey k={col} category={category} />
+                </th>
               ))}
             </tr>
           </thead>
@@ -921,7 +938,9 @@ function StatRow({ line, sportPrefix }) {
             key={k}
             className={`stat-row__stat${lead && i === 0 ? " stat-row__stat--lead" : ""}`}
           >
-            <span className="stat-row__stat-label">{k}</span>
+            <span className="stat-row__stat-label">
+              <StatKey k={k} category={line.category} />
+            </span>
             <span className="stat-row__stat-value">{v}</span>
           </span>
         ))}
@@ -932,6 +951,42 @@ function StatRow({ line, sportPrefix }) {
         )}
       </div>
     </li>
+  );
+}
+
+/**
+ * A stat column key with its meaning in `title` when the glossary knows
+ * it ("TFL" → "Tackles for loss"), plain text when it doesn't. The
+ * category decides the meaning where keys collide ("A" is aces on a
+ * serving line, assists elsewhere).
+ */
+function StatKey({ k, category }) {
+  const { sport } = useParams();
+  const title = statTitle(k, { sportId: sport, category });
+  return title ? <abbr title={title}>{k}</abbr> : <>{k}</>;
+}
+
+/**
+ * "What do these abbreviations mean?" — collapsed by default under the
+ * two stat cards; every key the page actually uses, with the meaning
+ * the glossary gives it in that key's own category.
+ */
+function StatGlossary({ lines }) {
+  const { sport } = useParams();
+  const entries = useMemo(() => glossaryForLines(lines, sport), [lines, sport]);
+  if (entries.length === 0) return null;
+  return (
+    <details className="stat-glossary">
+      <summary>What do these abbreviations mean?</summary>
+      <dl className="stat-glossary__list">
+        {entries.map(({ key, title }) => (
+          <div key={`${key}|${title}`} className="stat-glossary__item">
+            <dt>{key}</dt>
+            <dd>{title}</dd>
+          </div>
+        ))}
+      </dl>
+    </details>
   );
 }
 

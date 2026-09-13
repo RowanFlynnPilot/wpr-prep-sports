@@ -239,3 +239,15 @@ a:hover { border-bottom-color: currentColor; }
 @media (prefers-reduced-motion: reduce) {
   * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
 }
+
+/* Abbreviations carry their expansion in `title` (stat keys on a box
+   score, PF/PA, the standings "Recent" header, the Power Rankings lede).
+   Browsers no longer draw anything for <abbr> by default; the dotted
+   underline is the visible cue that a meaning is one hover or long-press
+   away. Thin and offset so it clears descenders in both faces. */
+abbr[title] {
+  text-decoration: underline dotted;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  cursor: help;
+}

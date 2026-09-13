@@ -26,6 +26,10 @@ pnpm-debug.log*
 frontend/dist/
 frontend/.vite/
 
+# Playwright layout guard output (frontend/e2e)
+frontend/test-results/
+frontend/playwright-report/
+
 # Editors / agent tooling
 # .claude/ holds machine-local state: settings.local.json, launch.json with
 # absolute node paths, and scratch git worktrees. Nothing in it is portable.

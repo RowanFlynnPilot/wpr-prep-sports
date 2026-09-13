@@ -1053,7 +1053,22 @@ export function configForDataset(sportId, metaSeason) {
  */
 export function recordLabels(sportConfig) {
   if (sportConfig?.scoreLabel === "set") {
-    return { for: "Sets W", against: "Sets L", diff: "Set diff." };
+    return {
+      for: "Sets W",
+      against: "Sets L",
+      diff: "Set diff.",
+      forTitle: "Sets won",
+      againstTitle: "Sets lost",
+    };
   }
-  return { for: "PF", against: "PA", diff: "Point diff." };
+  // The titles feed <abbr> on every PF/PA — the team header, the
+  // standings columns, the expanded row — so a grandparent reading the
+  // table for the first time is told what the letters mean.
+  return {
+    for: "PF",
+    against: "PA",
+    diff: "Point diff.",
+    forTitle: "Points for (scored)",
+    againstTitle: "Points against (allowed)",
+  };
 }

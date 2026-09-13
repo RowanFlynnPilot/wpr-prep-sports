@@ -339,6 +339,31 @@
   gap: 2.5rem;
 }
 
+/* Hero + follow nudge travel as one grid item (DashboardPage `.lead`),
+   so the nudge can change places with the hero on a phone without
+   touching the rest of the column. */
+.lead {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1rem;
+}
+.lead > .follow-prompt {
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  /* Phone rhythm: 40px between every section was ~240px of air above
+     the first score on a 375px screen (critique run 14). */
+  .app-main {
+    gap: 1.5rem;
+  }
+  /* The nudge goes above the hero, next to the masthead finder it
+     points at; on desktop it stays a quiet line under the black card. */
+  .lead > .follow-prompt {
+    order: -1;
+  }
+}
+
 .section-header {
   display: flex;
   align-items: baseline;

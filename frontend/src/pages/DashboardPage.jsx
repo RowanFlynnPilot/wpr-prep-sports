@@ -75,6 +75,9 @@ function isMeaningfulTable(standing) {
   return (standing?.rows?.length ?? 0) >= 2;
 }
 
+/** Cards on the Earlier Results rail; the rest live in the Schedule tab. */
+const EARLIER_RESULTS_CAP = 12;
+
 export default function DashboardPage({
   dataset,
   schoolIndex,
@@ -226,6 +229,24 @@ export default function DashboardPage({
     const inWeek = new Set((week?.games ?? []).map((g) => g.id));
     return recent.filter((g) => !inWeek.has(g.id));
   }, [recent, week, showThisWeek]);
+
+  // The rail shows a dozen cards, not the whole three-week window: 84
+  // cards was 22 screens of sideways scroll with Superior–New Richmond
+  // weighted the same as Wausau East (critique run 14). Home-region games
+  // fill the rail first, the rest top it up, and the dozen re-sorts
+  // newest-first so it still reads as a timeline. The full window stays
+  // one tap away in the Schedule tab.
+  const earlierShown = useMemo(() => {
+    if (earlier.length <= EARLIER_RESULTS_CAP) return earlier;
+    const isLocal = (g) =>
+      homeRegion.has(g.home?.school_id) || homeRegion.has(g.away?.school_id);
+    const local = earlier.filter(isLocal);
+    const picked = [...local, ...earlier.filter((g) => !isLocal(g))].slice(
+      0,
+      EARLIER_RESULTS_CAP,
+    );
+    return picked.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  }, [earlier, homeRegion]);
 
   // --- Section tabs ---------------------------------------------------
   // Marquee + Hero + Player of the Week stay pinned above the tabs; the
@@ -444,25 +465,30 @@ export default function DashboardPage({
           three days after a slate, the next local game otherwise) as the
           page's one black card; the Game of the Week strip and Player of
           the Week follow on paper. */}
-      <SectionBoundary label="hero">
-        <Hero
-          game={featured}
-          schoolIndex={schoolIndex}
-          games={games}
-          seasonStats={seasonStats}
-          offSeason={offSeason}
-          sportConfig={sportConfig}
-          nextSeasonStart={nextSeasonStart}
-          daysToNext={daysToNext}
-        />
-      </SectionBoundary>
-
-      {/* Follow nudge sits under the lead, not above it: on a phone it had
-          pushed the first score off screen one. Renders nothing once a
-          school is followed or after "Not now". */}
-      <SectionBoundary label="follow-prompt">
-        <FollowPrompt />
-      </SectionBoundary>
+      {/* The lead: hero plus the follow nudge, as one grid item so the
+          nudge can flip above the hero on phones (App.css `.lead`). On a
+          phone the first score is two screens down whatever the order,
+          so the nudge earns its keep only by sitting next to the finder
+          it points at, under the masthead. On desktop it stays a quiet
+          line under the black card. Renders nothing once a school is
+          followed or after "Not now". */}
+      <div className="lead">
+        <SectionBoundary label="hero">
+          <Hero
+            game={featured}
+            schoolIndex={schoolIndex}
+            games={games}
+            seasonStats={seasonStats}
+            offSeason={offSeason}
+            sportConfig={sportConfig}
+            nextSeasonStart={nextSeasonStart}
+            daysToNext={daysToNext}
+          />
+        </SectionBoundary>
+        <SectionBoundary label="follow-prompt">
+          <FollowPrompt />
+        </SectionBoundary>
+      </div>
 
       <SectionBoundary label="marquee">
         <Marquee pick={marquee} sportConfig={sportConfig} sponsors={sponsors} schoolIndex={schoolIndex} />
@@ -526,7 +552,22 @@ export default function DashboardPage({
                 </h2>
                 <Sponsor slot="ticker" sponsors={sponsors} variant="inline" />
               </div>
-              <ScoreTicker games={earlier} schoolIndex={schoolIndex} allGames={games} sportConfig={sportConfig} />
+              <ScoreTicker games={earlierShown} schoolIndex={schoolIndex} allGames={games} sportConfig={sportConfig} />
+              {earlier.length > earlierShown.length && (
+                <button
+                  type="button"
+                  className="ticker__all"
+                  onClick={() => {
+                    setActiveTab("schedule");
+                    requestAnimationFrame(() => {
+                      tabsAnchorRef.current?.scrollIntoView({ block: "start" });
+                    });
+                  }}
+                >
+                  All {earlier.length} earlier results are in the Schedule
+                  <span aria-hidden="true"> ›</span>
+                </button>
+              )}
             </section>
           )}
 

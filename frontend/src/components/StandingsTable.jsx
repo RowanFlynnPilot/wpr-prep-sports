@@ -47,7 +47,7 @@ export default function StandingsTable({
   }, [seasonStats]);
 
   // Most recent 3 conference results per team, oldest → newest. Used for
-  // the "Last 3" form pill in each row. Computed BEFORE the empty-table
+  // the "Recent" form pill in each row. Computed BEFORE the empty-table
   // return below — a live refresh can shrink a table's rows on a mounted
   // instance, and a hook after a conditional return crashes React.
   const recentFormByTeam = useMemo(() => {
@@ -113,14 +113,26 @@ export default function StandingsTable({
         <table className="standings__table">
           <thead>
             <tr>
-              <th className="rank">#</th>
-              <th>Team</th>
-              <th className="num">Conf</th>
-              <th className="num">Overall</th>
-              <th className="num points">{labels.for}</th>
-              <th className="num points">{labels.against}</th>
-              <th className="form">Last 3</th>
-              <th className="more">
+              <th scope="col" className="rank">#</th>
+              <th scope="col">Team</th>
+              <th scope="col" className="num">Conf</th>
+              <th scope="col" className="num">Overall</th>
+              <th scope="col" className="num points">
+                <abbr title={labels.forTitle}>{labels.for}</abbr>
+              </th>
+              <th scope="col" className="num points">
+                <abbr title={labels.againstTitle}>{labels.against}</abbr>
+              </th>
+              {/* "Recent", not "Last 3": the chips are conference results
+                  only, so in September a 3-1 team shows two of them, and a
+                  header promising three read as missing data (critique run
+                  14). The cell's aria-label carries the real count. */}
+              <th scope="col" className="form">
+                <abbr title="Most recent conference results, oldest to newest, up to three">
+                  Recent
+                </abbr>
+              </th>
+              <th scope="col" className="more">
                 <span className="sr-only">Details</span>
               </th>
             </tr>
@@ -320,7 +332,10 @@ function DetailsPanel({ row, stub, school, conference, leaders, labels }) {
             {diff.toLocaleString("en-US")}
             <span className="standings__details-pct">
               {" "}
-              ({labels?.for ?? "PF"} {fmtInt(pf)} · {labels?.against ?? "PA"} {fmtInt(pa)})
+              (<abbr title={labels?.forTitle ?? "Points for"}>{labels?.for ?? "PF"}</abbr>{" "}
+              {fmtInt(pf)} ·{" "}
+              <abbr title={labels?.againstTitle ?? "Points against"}>{labels?.against ?? "PA"}</abbr>{" "}
+              {fmtInt(pa)})
             </span>
           </dd>
         </div>
