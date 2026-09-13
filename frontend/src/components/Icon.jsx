@@ -26,6 +26,11 @@ const PATHS = {
   scores: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M12 5v14M3 9.5h18"/>',
   schedule: '<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/>',
   standings: '<path d="M4 4v16h16"/><path d="M8 16V9M12 16V6M16 16v-4"/>',
+  // Podium: the Ten and the Power Index.
+  rankings: '<path d="M3 20h18"/><path d="M9 20v-9h6v9"/><path d="M3 20v-5h6M15 20V8h6v12"/>',
+  // Trophy: season leaders.
+  leaders:
+    '<path d="M8 4h8v5a4 4 0 0 1-8 0z"/><path d="M8 6H5a3 3 0 0 0 3 3M16 6h3a3 3 0 0 1-3 3"/><path d="M12 13v3M9 20h6M10 16h4v4"/>',
   spotlight:
     '<path d="M12 3.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.2-4.1 5.8-.8z"/>',
   // Chrome

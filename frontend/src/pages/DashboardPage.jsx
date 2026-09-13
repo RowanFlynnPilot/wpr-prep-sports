@@ -250,7 +250,7 @@ export default function DashboardPage({
 
   // --- Section tabs ---------------------------------------------------
   // Marquee + Hero + Player of the Week stay pinned above the tabs; the
-  // rest of the dashboard is grouped into four tabs so the page isn't one
+  // rest of the dashboard is grouped into six tabs so the page isn't one
   // long scroll. A tab only appears when it has content (no empty tabs
   // for coverage-in-progress or stat-less sports). The active tab is
   // URL-synced (?tab=) so deep links and sponsor links land on it.
@@ -265,20 +265,24 @@ export default function DashboardPage({
     () => standings.filter(isMeaningfulTable),
     [standings],
   );
-  const hasStatsTab =
-    meaningfulStandings.length > 0 ||
-    (powerRankings?.rankings?.length ?? 0) > 0 ||
-    (seasonStats?.length > 0 && hasPlayerRows(seasonStats)) ||
-    games.some((g) => g.playoff);
+  // "Standings & Stats" was four products in one panel: seven conference
+  // tables, the Ten, the full Power Index and four leader lists (critique
+  // run 16). Each is its own tab now; `?tab=standings` still lands on the
+  // conference tables, so article deep links and the sold tab:standings
+  // slot keep working.
+  const hasStandingsTab = meaningfulStandings.length > 0 || games.some((g) => g.playoff);
+  const hasRankingsTab = (powerRankings?.rankings?.length ?? 0) > 0;
+  const hasLeadersTab = seasonStats?.length > 0 && hasPlayerRows(seasonStats);
   const hasSpotlightTab = notableItems.length > 0 || (spirit?.length ?? 0) > 0;
 
-  // Icons echo the sport switcher's emoji treatment one row above. Labels
-  // are full-length everywhere — on a phone "Standings & Stats" wraps onto
-  // a second line rather than being abbreviated away.
+  // Icons echo the sport switcher's treatment one row above. Labels are
+  // one word each so six tabs fit a 375px strip without abbreviating.
   const tabDefs = [
     { id: "scores", label: "Scores", icon: "scores", show: games.length > 0 },
     { id: "schedule", label: "Schedule", icon: "schedule", show: games.length > 0 },
-    { id: "standings", label: "Standings & Stats", icon: "standings", show: hasStatsTab },
+    { id: "standings", label: "Standings", icon: "standings", show: hasStandingsTab },
+    { id: "rankings", label: "Rankings", icon: "rankings", show: hasRankingsTab },
+    { id: "leaders", label: "Leaders", icon: "leaders", show: hasLeadersTab },
     { id: "spotlight", label: "Spotlight", icon: "spotlight", show: hasSpotlightTab },
   ];
   const tabs = tabDefs.filter((t) => t.show);
@@ -601,11 +605,9 @@ export default function DashboardPage({
         </section>
       )}
 
-      {/* Tab: Standings & Stats — the league picture. A reader tapping a
-          tab named "Standings & Stats" is looking for their team's
-          conference position first; the Ten reads as editorial and reads
-          later. Order (post run-8): Conference Standings → Central
-          Wisconsin Ten → Power Rankings → Top Performers. */}
+      {/* Tab: Standings — the conference tables, plus the bracket once the
+          postseason starts. The Ten and the Power Index live on Rankings,
+          season leaders on Leaders. */}
       {activeTab === "standings" && (
         <>
           {meaningfulStandings.length > 0 && (
@@ -688,11 +690,28 @@ export default function DashboardPage({
             </section>
           )}
 
-          {/* Moved BELOW conference standings for tab semantic accuracy —
-              a reader who tapped "Standings & Stats" was landing on 10
-              rows of editorial poll instead of their team's rank. The
-              Ten stays as the editorial peak of the tab; standings
-              answer the tab's promise first. */}
+          {games.some((g) => g.playoff) && (
+            <section>
+              <div className="section-header">
+                <h2>Playoff Bracket</h2>
+                <span className="section-header__hint">{SITE.governingBody} tournament · {sportConfig.label}</span>
+              </div>
+              <SectionBoundary label="bracket">
+                <TournamentBracket
+                  games={games}
+                  schoolIndex={schoolIndex}
+                  sportConfig={sportConfig}
+                />
+              </SectionBoundary>
+            </section>
+          )}
+        </>
+      )}
+
+      {/* Tab: Rankings — the editorial Ten first, then the algorithmic
+          Power Index it is cut from. */}
+      {activeTab === "rankings" && (
+        <>
           <SectionBoundary label="top-ten">
             <RegionalTop10
               dataset={dataset}
@@ -710,38 +729,23 @@ export default function DashboardPage({
             sponsors={sponsors}
             sportConfig={sportConfig}
           />
-
-          {seasonStats && seasonStats.length > 0 && hasPlayerRows(seasonStats) && (
-            <section>
-              <div className="section-header">
-                <h2>Top Performers</h2>
-                <span className="section-header__hint">Season leaders across all tracked schools</span>
-              </div>
-              <TopPerformers
-                rows={seasonStats}
-                schoolIndex={schoolIndex}
-                sportConfig={sportConfig}
-                n={5}
-              />
-            </section>
-          )}
-
-          {games.some((g) => g.playoff) && (
-            <section>
-              <div className="section-header">
-                <h2>Playoff Bracket</h2>
-                <span className="section-header__hint">{SITE.governingBody} tournament · {sportConfig.label}</span>
-              </div>
-              <SectionBoundary label="bracket">
-                <TournamentBracket
-                  games={games}
-                  schoolIndex={schoolIndex}
-                  sportConfig={sportConfig}
-                />
-              </SectionBoundary>
-            </section>
-          )}
         </>
+      )}
+
+      {/* Tab: Leaders — season leaders across every tracked school. */}
+      {activeTab === "leaders" && hasLeadersTab && (
+        <section>
+          <div className="section-header">
+            <h2>Top Performers</h2>
+            <span className="section-header__hint">Season leaders across all tracked schools</span>
+          </div>
+          <TopPerformers
+            rows={seasonStats}
+            schoolIndex={schoolIndex}
+            sportConfig={sportConfig}
+            n={5}
+          />
+        </section>
       )}
 
       {/* Tab: Spotlight — editorial & community. */}

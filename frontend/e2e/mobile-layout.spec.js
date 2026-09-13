@@ -90,6 +90,22 @@ test.describe("phone layout guard", () => {
       .toBeLessThan(20);
   });
 
+  test("every section tab label fits its tab at phone width", async ({ page }) => {
+    await waitForDashboard(page);
+    const overflowing = await page.evaluate(() =>
+      [...document.querySelectorAll(".section-tabs__label")]
+        .filter((el) => el.scrollWidth > el.clientWidth + 1)
+        .map((el) => el.textContent.trim()),
+    );
+    expect(overflowing, "tab labels wider than their tab").toEqual([]);
+    const strip = await page.evaluate(() => {
+      const el = document.querySelector(".section-tabs");
+      return { scrollWidth: el.scrollWidth, clientWidth: el.clientWidth, tabs: el.querySelectorAll('[role="tab"]').length };
+    });
+    expect(strip.tabs).toBeGreaterThanOrEqual(2);
+    expect(strip.scrollWidth, "tab strip scrolls sideways").toBeLessThanOrEqual(strip.clientWidth + 1);
+  });
+
   test("dashboard, a game page and a team page never scroll sideways", async ({ page }) => {
     await waitForDashboard(page);
     const dash = await pageOverflow(page);

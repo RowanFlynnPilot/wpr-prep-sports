@@ -38,9 +38,16 @@ const INVENTORY = [
       },
       {
         title: "Section tabs",
-        blurb: "A placement under each of the four dashboard tabs — Scores, Schedule, Standings, Spotlight. Four discrete surfaces.",
+        blurb: "A placement under each of the six dashboard tabs — Scores, Schedule, Standings, Rankings, Leaders, Spotlight. Six discrete surfaces.",
         fit: "Any local business · rotate by category",
-        slots: ["tab:scores", "tab:schedule", "tab:standings", "tab:spotlight"],
+        slots: [
+          "tab:scores",
+          "tab:schedule",
+          "tab:standings",
+          "tab:rankings",
+          "tab:leaders",
+          "tab:spotlight",
+        ],
         rateKey: "tabs",
         preview: { label: "This view presented by", tone: "ticker" },
       },
