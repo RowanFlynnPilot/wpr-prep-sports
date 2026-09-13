@@ -1,7 +1,7 @@
 {
   "sport": "volleyball",
   "season": "2026-27",
-  "generated_at": "2026-09-13T11:16:41.836604-05:00",
+  "generated_at": "2026-09-13T14:28:16.930548-05:00",
   "method": "WPR Power Index v1: 40% W%, 35% SOS, 25% margin (capped per sport)",
   "rankings": [
     {
@@ -815,12 +815,12 @@
       "school_id": "bruce",
       "school_name": "Bruce",
       "wins": 0,
-      "losses": 6,
+      "losses": 7,
       "ties": 0,
       "win_pct": 0.0,
       "sos": 0.6143,
-      "avg_margin_capped": -1.5,
-      "score": 27.75,
+      "avg_margin_capped": -1.57,
+      "score": 27.45,
       "movement": -2
     },
     {
