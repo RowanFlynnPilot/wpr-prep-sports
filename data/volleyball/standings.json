@@ -30,6 +30,18 @@
         "points_against": 15
       },
       {
+        "school_id": "spash",
+        "name": "SPASH",
+        "conference_wins": 1,
+        "conference_losses": 1,
+        "conference_ties": 0,
+        "overall_wins": 11,
+        "overall_losses": 5,
+        "overall_ties": 0,
+        "points_for": 26,
+        "points_against": 13
+      },
+      {
         "school_id": "wausau-west",
         "name": "Wausau West",
         "conference_wins": 1,
@@ -40,18 +52,6 @@
         "overall_ties": 0,
         "points_for": 10,
         "points_against": 10
-      },
-      {
-        "school_id": "spash",
-        "name": "SPASH",
-        "conference_wins": 1,
-        "conference_losses": 1,
-        "conference_ties": 0,
-        "overall_wins": 3,
-        "overall_losses": 3,
-        "overall_ties": 0,
-        "points_for": 9,
-        "points_against": 9
       },
       {
         "school_id": "wausau-east",
@@ -103,11 +103,11 @@
         "conference_wins": 1,
         "conference_losses": 0,
         "conference_ties": 0,
-        "overall_wins": 4,
+        "overall_wins": 5,
         "overall_losses": 3,
         "overall_ties": 0,
-        "points_for": 12,
-        "points_against": 8
+        "points_for": 14,
+        "points_against": 9
       },
       {
         "school_id": "phillips",
@@ -151,11 +151,11 @@
         "conference_wins": 0,
         "conference_losses": 0,
         "conference_ties": 0,
-        "overall_wins": 10,
+        "overall_wins": 11,
         "overall_losses": 2,
         "overall_ties": 0,
-        "points_for": 24,
-        "points_against": 8
+        "points_for": 26,
+        "points_against": 9
       },
       {
         "school_id": "stratford",
@@ -175,11 +175,11 @@
         "conference_wins": 0,
         "conference_losses": 0,
         "conference_ties": 0,
-        "overall_wins": 5,
+        "overall_wins": 7,
         "overall_losses": 8,
         "overall_ties": 0,
-        "points_for": 13,
-        "points_against": 17
+        "points_for": 17,
+        "points_against": 18
       },
       {
         "school_id": "assumption",
@@ -255,11 +255,11 @@
         "conference_wins": 2,
         "conference_losses": 0,
         "conference_ties": 0,
-        "overall_wins": 11,
-        "overall_losses": 4,
+        "overall_wins": 13,
+        "overall_losses": 5,
         "overall_ties": 0,
-        "points_for": 25,
-        "points_against": 13
+        "points_for": 29,
+        "points_against": 15
       },
       {
         "school_id": "medford",
@@ -280,10 +280,10 @@
         "conference_losses": 1,
         "conference_ties": 0,
         "overall_wins": 9,
-        "overall_losses": 4,
+        "overall_losses": 5,
         "overall_ties": 0,
         "points_for": 21,
-        "points_against": 11
+        "points_against": 13
       },
       {
         "school_id": "rhinelander",
@@ -292,10 +292,10 @@
         "conference_losses": 1,
         "conference_ties": 0,
         "overall_wins": 4,
-        "overall_losses": 6,
+        "overall_losses": 7,
         "overall_ties": 0,
         "points_for": 10,
-        "points_against": 16
+        "points_against": 18
       },
       {
         "school_id": "antigo",
@@ -304,10 +304,10 @@
         "conference_losses": 2,
         "conference_ties": 0,
         "overall_wins": 7,
-        "overall_losses": 7,
+        "overall_losses": 9,
         "overall_ties": 0,
         "points_for": 16,
-        "points_against": 19
+        "points_against": 23
       },
       {
         "school_id": "lakeland",
@@ -316,10 +316,10 @@
         "conference_losses": 2,
         "conference_ties": 0,
         "overall_wins": 4,
-        "overall_losses": 9,
+        "overall_losses": 10,
         "overall_ties": 0,
         "points_for": 10,
-        "points_against": 20
+        "points_against": 22
       },
       {
         "school_id": "tomahawk",
@@ -328,10 +328,10 @@
         "conference_losses": 2,
         "conference_ties": 0,
         "overall_wins": 0,
-        "overall_losses": 5,
+        "overall_losses": 6,
         "overall_ties": 0,
         "points_for": 2,
-        "points_against": 12
+        "points_against": 14
       }
     ]
   },
@@ -359,11 +359,11 @@
         "conference_wins": 1,
         "conference_losses": 0,
         "conference_ties": 0,
-        "overall_wins": 4,
+        "overall_wins": 6,
         "overall_losses": 4,
         "overall_ties": 0,
-        "points_for": 9,
-        "points_against": 11
+        "points_for": 13,
+        "points_against": 12
       },
       {
         "school_id": "columbus-catholic",
@@ -384,10 +384,10 @@
         "conference_losses": 0,
         "conference_ties": 0,
         "overall_wins": 3,
-        "overall_losses": 5,
+        "overall_losses": 6,
         "overall_ties": 0,
-        "points_for": 7,
-        "points_against": 11
+        "points_for": 8,
+        "points_against": 13
       },
       {
         "school_id": "colby",
@@ -395,11 +395,11 @@
         "conference_wins": 0,
         "conference_losses": 1,
         "conference_ties": 0,
-        "overall_wins": 6,
-        "overall_losses": 8,
+        "overall_wins": 7,
+        "overall_losses": 10,
         "overall_ties": 0,
-        "points_for": 14,
-        "points_against": 19
+        "points_for": 17,
+        "points_against": 24
       },
       {
         "school_id": "abbotsford",
@@ -432,10 +432,10 @@
         "conference_losses": 1,
         "conference_ties": 0,
         "overall_wins": 1,
-        "overall_losses": 5,
+        "overall_losses": 7,
         "overall_ties": 0,
         "points_for": 4,
-        "points_against": 12
+        "points_against": 16
       }
     ]
   }

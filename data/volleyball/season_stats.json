@@ -1402,13 +1402,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "KLS": "10",
-      "ATT": "41",
-      "E": "5",
-      "SP": "9",
-      "AST": "1",
-      "EFF": ".122"
+      "GP": "4",
+      "KLS": "12",
+      "ATT": "52",
+      "E": "10",
+      "SP": "11",
+      "AST": "2",
+      "EFF": ".038"
     }
   },
   {
@@ -1420,13 +1420,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "KLS": "6",
-      "ATT": "32",
+      "GP": "3",
+      "KLS": "7",
+      "ATT": "43",
       "E": "5",
-      "SP": "7",
-      "AST": "2",
-      "EFF": ".031"
+      "SP": "9",
+      "AST": "3",
+      "EFF": ".047"
     }
   },
   {
@@ -1438,12 +1438,12 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
+      "GP": "4",
       "KLS": "2",
       "ATT": "7",
       "E": "0",
-      "SP": "9",
-      "AST": "43",
+      "SP": "11",
+      "AST": "52",
       "EFF": ".286"
     }
   },
@@ -1456,13 +1456,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "KLS": "13",
-      "ATT": "68",
-      "E": "11",
-      "SP": "9",
+      "GP": "4",
+      "KLS": "16",
+      "ATT": "79",
+      "E": "12",
+      "SP": "11",
       "AST": "1",
-      "EFF": ".029"
+      "EFF": ".051"
     }
   },
   {
@@ -1474,11 +1474,11 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "KLS": "3",
-      "ATT": "16",
-      "E": "3",
-      "SP": "5",
+      "GP": "3",
+      "KLS": "4",
+      "ATT": "21",
+      "E": "4",
+      "SP": "7",
       "AST": "1",
       "EFF": ".000"
     }
@@ -1492,13 +1492,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "KLS": "18",
-      "ATT": "69",
-      "E": "11",
-      "SP": "9",
+      "GP": "4",
+      "KLS": "22",
+      "ATT": "91",
+      "E": "14",
+      "SP": "11",
       "AST": "2",
-      "EFF": ".101"
+      "EFF": ".088"
     }
   },
   {
@@ -1552,9 +1552,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "DIG": "8",
-      "SP": "5"
+      "GP": "3",
+      "DIG": "10",
+      "SP": "7"
     }
   },
   {
@@ -1566,9 +1566,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "DIG": "16",
-      "SP": "9"
+      "GP": "4",
+      "DIG": "22",
+      "SP": "11"
     }
   },
   {
@@ -1595,9 +1595,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "DIG": "18",
-      "SP": "9",
+      "GP": "4",
+      "DIG": "20",
+      "SP": "11",
       "BLK": "2"
     }
   },
@@ -1610,9 +1610,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "DIG": "36",
-      "SP": "9",
+      "GP": "4",
+      "DIG": "46",
+      "SP": "11",
       "BLK": "1"
     }
   },
@@ -1639,9 +1639,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "DIG": "18",
-      "SP": "9"
+      "GP": "4",
+      "DIG": "22",
+      "SP": "11"
     }
   },
   {
@@ -1667,9 +1667,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "DIG": "26",
-      "SP": "9",
+      "GP": "4",
+      "DIG": "29",
+      "SP": "11",
       "BLK": "1"
     }
   },
@@ -3037,6 +3037,232 @@
     }
   },
   {
+    "school_id": "rhinelander",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Kylie Treder",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "4",
+      "KLS": "4",
+      "ATT": "11",
+      "E": "0",
+      "SP": "13",
+      "AST": "26",
+      "EFF": ".364"
+    }
+  },
+  {
+    "school_id": "rhinelander",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Ava Rathbun",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "4",
+      "KLS": "16",
+      "ATT": "68",
+      "E": "17",
+      "SP": "13",
+      "AST": "3",
+      "EFF": "-0.015"
+    }
+  },
+  {
+    "school_id": "rhinelander",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Olivia Ruetz",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "4",
+      "KLS": "12",
+      "ATT": "35",
+      "E": "6",
+      "SP": "13",
+      "EFF": ".171"
+    }
+  },
+  {
+    "school_id": "rhinelander",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Addy Wiczek",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "4",
+      "KLS": "8",
+      "ATT": "33",
+      "E": "9",
+      "SP": "13",
+      "AST": "7",
+      "EFF": "-0.030"
+    }
+  },
+  {
+    "school_id": "rhinelander",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Kaylee Steinmetz",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "KLS": "4",
+      "ATT": "12",
+      "E": "4",
+      "SP": "8",
+      "AST": "1",
+      "EFF": ".000"
+    }
+  },
+  {
+    "school_id": "rhinelander",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Mady Treder",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "4",
+      "BLK": "7",
+      "SP": "13",
+      "DIG": "3"
+    }
+  },
+  {
+    "school_id": "rhinelander",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Ava Rathbun",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "4",
+      "BLK": "1",
+      "SP": "13",
+      "DIG": "31"
+    }
+  },
+  {
+    "school_id": "rhinelander",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Kylie Treder",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "4",
+      "DIG": "17",
+      "SP": "13"
+    }
+  },
+  {
+    "school_id": "rhinelander",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Maddie Paulson",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "4",
+      "DIG": "46",
+      "SP": "13"
+    }
+  },
+  {
+    "school_id": "rhinelander",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Mckenzie Paulson",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "4",
+      "DIG": "29",
+      "SP": "13"
+    }
+  },
+  {
+    "school_id": "rhinelander",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Makenzy Mess",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "4",
+      "DIG": "24",
+      "SP": "13"
+    }
+  },
+  {
+    "school_id": "rhinelander",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Addy Wiczek",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "4",
+      "DIG": "7",
+      "SP": "13",
+      "BLK": "4"
+    }
+  },
+  {
+    "school_id": "rhinelander",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Maddie Paulson",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "4",
+      "AST": "4",
+      "SP": "13",
+      "KLS": "3",
+      "ATT": "15",
+      "E": "3",
+      "EFF": ".000"
+    }
+  },
+  {
+    "school_id": "rhinelander",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Mckenzie Paulson",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "4",
+      "AST": "28",
+      "SP": "13",
+      "KLS": "1",
+      "ATT": "4",
+      "E": "2",
+      "EFF": "-0.250"
+    }
+  },
+  {
     "school_id": "marathon",
     "sport": "volleyball",
     "category": "Volleyball Offense",
@@ -3147,14 +3373,14 @@
     "school_id": "marathon",
     "sport": "volleyball",
     "category": "Volleyball Serving",
-    "player_name": "Kate Love",
-    "player_year": "SR",
+    "player_name": "Brinly Stencil",
+    "player_year": "JR",
     "position": null,
     "jersey": null,
     "stats": {
       "GP": "2",
-      "ACE": "6",
-      "SP": "5"
+      "ACE": "3",
+      "SP": "6"
     }
   },
   {
@@ -3219,15 +3445,15 @@
     "school_id": "marathon",
     "sport": "volleyball",
     "category": "Volleyball Defense",
-    "player_name": "Chayce Westfall",
-    "player_year": "JR",
+    "player_name": "Maddie Jansen",
+    "player_year": "FR",
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "BLK": "4",
-      "SP": "8",
-      "DIG": "3"
+      "GP": "2",
+      "BLK": "1",
+      "SP": "5",
+      "DIG": "14"
     }
   },
   {
@@ -3277,29 +3503,15 @@
     "school_id": "marathon",
     "sport": "volleyball",
     "category": "Volleyball Defense",
-    "player_name": "Maddie Jansen",
-    "player_year": "FR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "DIG": "14",
-      "SP": "5",
-      "BLK": "1"
-    }
-  },
-  {
-    "school_id": "marathon",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Brinly Stencil",
+    "player_name": "Chayce Westfall",
     "player_year": "JR",
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "ACE": "3",
-      "SP": "6"
+      "GP": "3",
+      "DIG": "3",
+      "SP": "8",
+      "BLK": "4"
     }
   },
   {
@@ -3318,6 +3530,20 @@
       "ATT": "1",
       "E": "0",
       "EFF": "1.000"
+    }
+  },
+  {
+    "school_id": "marathon",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Kate Love",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "ACE": "6",
+      "SP": "5"
     }
   },
   {
@@ -5795,95 +6021,6 @@
     "school_id": "rhinelander",
     "sport": "volleyball",
     "category": "Volleyball Offense",
-    "player_name": "Kylie Treder",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "3",
-      "KLS": "2",
-      "ATT": "9",
-      "E": "0",
-      "SP": "11",
-      "AST": "23",
-      "EFF": ".222"
-    }
-  },
-  {
-    "school_id": "rhinelander",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Maddie Paulson",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "3",
-      "KLS": "3",
-      "ATT": "15",
-      "E": "3",
-      "SP": "11",
-      "AST": "3",
-      "EFF": ".000"
-    }
-  },
-  {
-    "school_id": "rhinelander",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Ava Rathbun",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "3",
-      "KLS": "13",
-      "ATT": "55",
-      "E": "15",
-      "SP": "11",
-      "AST": "3",
-      "EFF": "-0.036"
-    }
-  },
-  {
-    "school_id": "rhinelander",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Olivia Ruetz",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "3",
-      "KLS": "11",
-      "ATT": "33",
-      "E": "6",
-      "SP": "11",
-      "EFF": ".152"
-    }
-  },
-  {
-    "school_id": "rhinelander",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Addy Wiczek",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "3",
-      "KLS": "6",
-      "ATT": "27",
-      "E": "7",
-      "SP": "11",
-      "AST": "7",
-      "EFF": "-0.037"
-    }
-  },
-  {
-    "school_id": "rhinelander",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
     "player_name": "Vayda Ives",
     "player_year": "JR",
     "position": null,
@@ -5912,23 +6049,6 @@
       "E": "8",
       "SP": "11",
       "EFF": ".143"
-    }
-  },
-  {
-    "school_id": "rhinelander",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Kaylee Steinmetz",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "KLS": "3",
-      "ATT": "9",
-      "E": "2",
-      "SP": "6",
-      "EFF": ".111"
     }
   },
   {
@@ -6005,21 +6125,6 @@
     "school_id": "rhinelander",
     "sport": "volleyball",
     "category": "Volleyball Defense",
-    "player_name": "Mady Treder",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "3",
-      "BLK": "6",
-      "SP": "11",
-      "DIG": "3"
-    }
-  },
-  {
-    "school_id": "rhinelander",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
     "player_name": "Rhyan Adams",
     "player_year": "FR",
     "position": null,
@@ -6029,91 +6134,6 @@
       "BLK": "2",
       "SP": "11",
       "DIG": "4"
-    }
-  },
-  {
-    "school_id": "rhinelander",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Kylie Treder",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "3",
-      "DIG": "16",
-      "SP": "11"
-    }
-  },
-  {
-    "school_id": "rhinelander",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Maddie Paulson",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "3",
-      "DIG": "38",
-      "SP": "11"
-    }
-  },
-  {
-    "school_id": "rhinelander",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Mckenzie Paulson",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "3",
-      "DIG": "28",
-      "SP": "11"
-    }
-  },
-  {
-    "school_id": "rhinelander",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Ava Rathbun",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "3",
-      "DIG": "27",
-      "SP": "11"
-    }
-  },
-  {
-    "school_id": "rhinelander",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Makenzy Mess",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "3",
-      "DIG": "22",
-      "SP": "11"
-    }
-  },
-  {
-    "school_id": "rhinelander",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Addy Wiczek",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "3",
-      "DIG": "6",
-      "SP": "11",
-      "BLK": "4"
     }
   },
   {
@@ -6143,24 +6163,6 @@
       "GP": "2",
       "DIG": "3",
       "SP": "6"
-    }
-  },
-  {
-    "school_id": "rhinelander",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Mckenzie Paulson",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "3",
-      "AST": "24",
-      "SP": "11",
-      "KLS": "1",
-      "ATT": "4",
-      "E": "2",
-      "EFF": "-0.250"
     }
   },
   {
@@ -6493,13 +6495,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "5",
-      "KLS": "23",
-      "ATT": "55",
+      "GP": "6",
+      "KLS": "30",
+      "ATT": "68",
       "E": "12",
-      "SP": "16",
-      "AST": "71",
-      "EFF": ".200"
+      "SP": "19",
+      "AST": "76",
+      "EFF": ".265"
     }
   },
   {
@@ -6511,12 +6513,12 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "5",
-      "KLS": "21",
-      "ATT": "66",
+      "GP": "6",
+      "KLS": "22",
+      "ATT": "71",
       "E": "14",
-      "SP": "16",
-      "EFF": ".106"
+      "SP": "19",
+      "EFF": ".113"
     }
   },
   {
@@ -6528,13 +6530,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "5",
-      "KLS": "42",
-      "ATT": "104",
-      "E": "15",
-      "SP": "16",
-      "AST": "2",
-      "EFF": ".260"
+      "GP": "6",
+      "KLS": "52",
+      "ATT": "124",
+      "E": "18",
+      "SP": "19",
+      "AST": "4",
+      "EFF": ".274"
     }
   },
   {
@@ -6546,12 +6548,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "5",
-      "KLS": "38",
-      "ATT": "108",
-      "E": "12",
-      "SP": "16",
-      "EFF": ".241"
+      "GP": "6",
+      "KLS": "42",
+      "ATT": "127",
+      "E": "15",
+      "SP": "19",
+      "AST": "1",
+      "EFF": ".213"
     }
   },
   {
@@ -6563,12 +6566,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "5",
-      "KLS": "21",
-      "ATT": "59",
-      "E": "12",
-      "SP": "16",
-      "EFF": ".153"
+      "GP": "6",
+      "KLS": "25",
+      "ATT": "68",
+      "E": "14",
+      "SP": "19",
+      "AST": "1",
+      "EFF": ".162"
     }
   },
   {
@@ -6580,13 +6584,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "5",
-      "KLS": "13",
-      "ATT": "63",
-      "E": "14",
-      "SP": "16",
-      "AST": "61",
-      "EFF": "-0.016"
+      "GP": "6",
+      "KLS": "19",
+      "ATT": "76",
+      "E": "15",
+      "SP": "19",
+      "AST": "74",
+      "EFF": ".053"
     }
   },
   {
@@ -6598,9 +6602,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "ACE": "4",
-      "SP": "10"
+      "GP": "4",
+      "ACE": "6",
+      "SP": "13"
     }
   },
   {
@@ -6612,9 +6616,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "ACE": "5",
-      "SP": "10"
+      "GP": "4",
+      "ACE": "6",
+      "SP": "13"
     }
   },
   {
@@ -6640,9 +6644,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "5",
-      "DIG": "20",
-      "SP": "16"
+      "GP": "6",
+      "DIG": "24",
+      "SP": "19",
+      "BLK": "3"
     }
   },
   {
@@ -6654,9 +6659,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "5",
-      "DIG": "13",
-      "SP": "11"
+      "GP": "6",
+      "DIG": "14",
+      "SP": "14"
     }
   },
   {
@@ -6668,10 +6673,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
+      "GP": "4",
       "DIG": "3",
-      "SP": "8",
-      "BLK": "1"
+      "SP": "11",
+      "BLK": "3"
     }
   },
   {
@@ -6683,9 +6688,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "5",
-      "DIG": "54",
-      "SP": "16"
+      "GP": "6",
+      "DIG": "68",
+      "SP": "19"
     }
   },
   {
@@ -6697,10 +6702,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "5",
-      "DIG": "49",
-      "SP": "16",
-      "BLK": "1"
+      "GP": "6",
+      "DIG": "56",
+      "SP": "19",
+      "BLK": "2"
     }
   },
   {
@@ -6712,9 +6717,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "5",
-      "DIG": "39",
-      "SP": "16",
+      "GP": "6",
+      "DIG": "42",
+      "SP": "19",
       "BLK": "1"
     }
   },
@@ -6727,10 +6732,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "4",
+      "GP": "5",
       "DIG": "5",
-      "SP": "13",
-      "BLK": "2"
+      "SP": "16",
+      "BLK": "4"
     }
   },
   {
@@ -6742,9 +6747,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "5",
-      "DIG": "22",
-      "SP": "16"
+      "GP": "6",
+      "DIG": "30",
+      "SP": "19",
+      "BLK": "1"
     }
   },
   {
@@ -8118,9 +8124,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "4",
-      "ACE": "7",
-      "SP": "14"
+      "GP": "5",
+      "ACE": "10",
+      "SP": "17"
     }
   },
   {
@@ -8132,13 +8138,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "4",
-      "AST": "12",
-      "SP": "14",
-      "KLS": "2",
-      "ATT": "7",
+      "GP": "5",
+      "AST": "19",
+      "SP": "17",
+      "KLS": "3",
+      "ATT": "8",
       "E": "1",
-      "EFF": ".143"
+      "EFF": ".250"
     }
   },
   {
@@ -8987,6 +8993,34 @@
       "GP": "1",
       "AST": "1",
       "SP": "2"
+    }
+  },
+  {
+    "school_id": "edgar",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Addy Nowak",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "ACE": "1",
+      "SP": "3"
+    }
+  },
+  {
+    "school_id": "edgar",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Tenley Mauer",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "AST": "2",
+      "SP": "3"
     }
   },
   {
@@ -10395,6 +10429,20 @@
   {
     "school_id": "rosholt",
     "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Ashlyn Kunst",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "DIG": "9",
+      "SP": "8"
+    }
+  },
+  {
+    "school_id": "rosholt",
+    "sport": "volleyball",
     "category": "Volleyball Offense",
     "player_name": "Danika Moats",
     "player_year": "SR",
@@ -10434,20 +10482,6 @@
     "stats": {
       "GP": "2",
       "ACE": "2",
-      "SP": "6"
-    }
-  },
-  {
-    "school_id": "rosholt",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Ashlyn Kunst",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "DIG": "7",
       "SP": "6"
     }
   },
@@ -10696,6 +10730,294 @@
       "GP": "1",
       "AST": "1",
       "SP": "1"
+    }
+  },
+  {
+    "school_id": "pittsville",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Harper Abel",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "KLS": "7",
+      "ATT": "16",
+      "E": "3",
+      "SP": "3",
+      "AST": "4",
+      "EFF": ".250"
+    }
+  },
+  {
+    "school_id": "pittsville",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Brynlee Grimm",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "KLS": "1",
+      "ATT": "5",
+      "E": "1",
+      "SP": "3",
+      "AST": "1",
+      "EFF": ".000"
+    }
+  },
+  {
+    "school_id": "pittsville",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Jasmine Andres",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "KLS": "8",
+      "ATT": "37",
+      "E": "2",
+      "SP": "3",
+      "EFF": ".162"
+    }
+  },
+  {
+    "school_id": "pittsville",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Jenna Schiller",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "KLS": "4",
+      "ATT": "11",
+      "E": "1",
+      "SP": "3",
+      "AST": "1",
+      "EFF": ".273"
+    }
+  },
+  {
+    "school_id": "pittsville",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Halle Friday",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "KLS": "2",
+      "ATT": "21",
+      "E": "4",
+      "SP": "3",
+      "AST": "2",
+      "EFF": "-0.095"
+    }
+  },
+  {
+    "school_id": "pittsville",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Brynlee Grimm",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "ACE": "1",
+      "SP": "3"
+    }
+  },
+  {
+    "school_id": "pittsville",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Halle Friday",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "ACE": "1",
+      "SP": "3"
+    }
+  },
+  {
+    "school_id": "pittsville",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Harper Abel",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "BLK": "3",
+      "SP": "3",
+      "DIG": "7"
+    }
+  },
+  {
+    "school_id": "pittsville",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Jenna Schiller",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "BLK": "3",
+      "SP": "3"
+    }
+  },
+  {
+    "school_id": "pittsville",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Kamryn Knott",
+    "player_year": "FR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "BLK": "1",
+      "SP": "2",
+      "DIG": "1"
+    }
+  },
+  {
+    "school_id": "pittsville",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Halle Friday",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "BLK": "1",
+      "SP": "3",
+      "DIG": "10"
+    }
+  },
+  {
+    "school_id": "pittsville",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Sloane Withers",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "DIG": "6",
+      "SP": "3"
+    }
+  },
+  {
+    "school_id": "pittsville",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Brooklynn Okonek",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "DIG": "1",
+      "SP": "3"
+    }
+  },
+  {
+    "school_id": "pittsville",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Brynlee Grimm",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "DIG": "16",
+      "SP": "3"
+    }
+  },
+  {
+    "school_id": "pittsville",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Addy Elsasser",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "DIG": "5",
+      "SP": "3"
+    }
+  },
+  {
+    "school_id": "pittsville",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Jasmine Andres",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "DIG": "2",
+      "SP": "3"
+    }
+  },
+  {
+    "school_id": "pittsville",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Sloane Withers",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "AST": "1",
+      "SP": "3"
+    }
+  },
+  {
+    "school_id": "pittsville",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Addy Elsasser",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "AST": "12",
+      "SP": "3"
+    }
+  },
+  {
+    "school_id": "pittsville",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Kamryn Knott",
+    "player_year": "FR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "AST": "1",
+      "SP": "2"
     }
   },
   {
@@ -12019,35 +12341,17 @@
     "school_id": "spash",
     "sport": "volleyball",
     "category": "Volleyball Offense",
-    "player_name": "Kendall Woytasik",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "KLS": "3",
-      "ATT": "6",
-      "E": "0",
-      "SP": "6",
-      "AST": "52",
-      "EFF": ".500"
-    }
-  },
-  {
-    "school_id": "spash",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
     "player_name": "Nora Kruger",
     "player_year": "JR",
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "KLS": "20",
-      "ATT": "69",
-      "E": "14",
-      "SP": "6",
-      "EFF": ".087"
+      "GP": "3",
+      "KLS": "26",
+      "ATT": "81",
+      "E": "16",
+      "SP": "8",
+      "EFF": ".123"
     }
   },
   {
@@ -12059,12 +12363,12 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "KLS": "3",
-      "ATT": "11",
-      "E": "2",
-      "SP": "6",
-      "EFF": ".091"
+      "GP": "3",
+      "KLS": "5",
+      "ATT": "15",
+      "E": "3",
+      "SP": "8",
+      "EFF": ".133"
     }
   },
   {
@@ -12076,12 +12380,265 @@
     "position": null,
     "jersey": null,
     "stats": {
+      "GP": "3",
+      "KLS": "12",
+      "ATT": "34",
+      "E": "3",
+      "SP": "8",
+      "EFF": ".265"
+    }
+  },
+  {
+    "school_id": "spash",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Leah Awe",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "KLS": "24",
+      "ATT": "65",
+      "E": "8",
+      "SP": "8",
+      "EFF": ".246"
+    }
+  },
+  {
+    "school_id": "spash",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Lenna Mayer",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
       "GP": "2",
-      "KLS": "11",
-      "ATT": "27",
-      "E": "2",
-      "SP": "6",
-      "EFF": ".333"
+      "KLS": "2",
+      "ATT": "4",
+      "E": "0",
+      "SP": "5",
+      "EFF": ".500"
+    }
+  },
+  {
+    "school_id": "spash",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Amelia Glaeser",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "ACE": "4",
+      "SP": "5"
+    }
+  },
+  {
+    "school_id": "spash",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Kendall Woytasik",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "ACE": "8",
+      "SP": "8"
+    }
+  },
+  {
+    "school_id": "spash",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Nora Kruger",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "ACE": "9",
+      "SP": "8"
+    }
+  },
+  {
+    "school_id": "spash",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Annabell Ebel",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "ACE": "5",
+      "SP": "8"
+    }
+  },
+  {
+    "school_id": "spash",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Leah Awe",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "ACE": "2",
+      "SP": "5"
+    }
+  },
+  {
+    "school_id": "spash",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Lenna Mayer",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "ACE": "2",
+      "SP": "5"
+    }
+  },
+  {
+    "school_id": "spash",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Nora Kruger",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "BLK": "3",
+      "SP": "8",
+      "DIG": "33"
+    }
+  },
+  {
+    "school_id": "spash",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Elianna Harris",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "BLK": "2",
+      "SP": "8",
+      "DIG": "3"
+    }
+  },
+  {
+    "school_id": "spash",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Leah Awe",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "BLK": "6",
+      "SP": "8",
+      "DIG": "9"
+    }
+  },
+  {
+    "school_id": "spash",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Amelia Glaeser",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "DIG": "18",
+      "SP": "8"
+    }
+  },
+  {
+    "school_id": "spash",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Kendall Woytasik",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "DIG": "12",
+      "SP": "8",
+      "BLK": "1"
+    }
+  },
+  {
+    "school_id": "spash",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Charley Romano",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "DIG": "3",
+      "SP": "5",
+      "BLK": "1"
+    }
+  },
+  {
+    "school_id": "spash",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Annabell Ebel",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "DIG": "18",
+      "SP": "8"
+    }
+  },
+  {
+    "school_id": "spash",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Lenna Mayer",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "DIG": "46",
+      "SP": "8"
+    }
+  },
+  {
+    "school_id": "spash",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Kendall Woytasik",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "AST": "70",
+      "SP": "8",
+      "KLS": "3",
+      "ATT": "6",
+      "E": "0",
+      "EFF": ".500"
     }
   },
   {
@@ -12104,124 +12661,6 @@
   {
     "school_id": "spash",
     "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Leah Awe",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "KLS": "16",
-      "ATT": "50",
-      "E": "5",
-      "SP": "6",
-      "EFF": ".220"
-    }
-  },
-  {
-    "school_id": "spash",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Amelia Glaeser",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "1",
-      "ACE": "2",
-      "SP": "3"
-    }
-  },
-  {
-    "school_id": "spash",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Kendall Woytasik",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "ACE": "4",
-      "SP": "6"
-    }
-  },
-  {
-    "school_id": "spash",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Nora Kruger",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "ACE": "6",
-      "SP": "6"
-    }
-  },
-  {
-    "school_id": "spash",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Annabell Ebel",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "ACE": "3",
-      "SP": "6"
-    }
-  },
-  {
-    "school_id": "spash",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Nora Kruger",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "BLK": "1",
-      "SP": "6",
-      "DIG": "27"
-    }
-  },
-  {
-    "school_id": "spash",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Elianna Harris",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "BLK": "1",
-      "SP": "6",
-      "DIG": "2"
-    }
-  },
-  {
-    "school_id": "spash",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Charley Romano",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "1",
-      "BLK": "1",
-      "SP": "3",
-      "DIG": "2"
-    }
-  },
-  {
-    "school_id": "spash",
-    "sport": "volleyball",
     "category": "Volleyball Defense",
     "player_name": "Evalee Kraemer",
     "player_year": "SO",
@@ -12232,78 +12671,6 @@
       "BLK": "3",
       "SP": "6",
       "DIG": "1"
-    }
-  },
-  {
-    "school_id": "spash",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Leah Awe",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "BLK": "2",
-      "SP": "6",
-      "DIG": "8"
-    }
-  },
-  {
-    "school_id": "spash",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Amelia Glaeser",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "DIG": "16",
-      "SP": "6"
-    }
-  },
-  {
-    "school_id": "spash",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Kendall Woytasik",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "DIG": "8",
-      "SP": "6",
-      "BLK": "1"
-    }
-  },
-  {
-    "school_id": "spash",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Annabell Ebel",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "DIG": "16",
-      "SP": "6"
-    }
-  },
-  {
-    "school_id": "spash",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Lenna Mayer",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "DIG": "30",
-      "SP": "6"
     }
   },
   {
@@ -12825,51 +13192,6 @@
     "stats": {
       "GP": "1",
       "AST": "1",
-      "SP": "3"
-    }
-  },
-  {
-    "school_id": "spash",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Lenna Mayer",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "1",
-      "KLS": "1",
-      "ATT": "2",
-      "E": "0",
-      "SP": "3",
-      "EFF": ".500"
-    }
-  },
-  {
-    "school_id": "spash",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Leah Awe",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "1",
-      "ACE": "1",
-      "SP": "3"
-    }
-  },
-  {
-    "school_id": "spash",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Lenna Mayer",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "1",
-      "ACE": "1",
       "SP": "3"
     }
   },
