@@ -1384,13 +1384,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "KLS": "1",
-      "ATT": "2",
-      "E": "0",
-      "SP": "5",
+      "GP": "4",
+      "KLS": "9",
+      "ATT": "21",
+      "E": "3",
+      "SP": "9",
       "AST": "1",
-      "EFF": ".500"
+      "EFF": ".286"
     }
   },
   {
@@ -1402,13 +1402,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "4",
-      "KLS": "12",
-      "ATT": "52",
-      "E": "10",
-      "SP": "11",
-      "AST": "2",
-      "EFF": ".038"
+      "GP": "7",
+      "KLS": "18",
+      "ATT": "88",
+      "E": "21",
+      "SP": "19",
+      "AST": "6",
+      "EFF": "-0.034"
     }
   },
   {
@@ -1420,13 +1420,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "KLS": "7",
-      "ATT": "43",
-      "E": "5",
-      "SP": "9",
+      "GP": "5",
+      "KLS": "16",
+      "ATT": "65",
+      "E": "8",
+      "SP": "15",
       "AST": "3",
-      "EFF": ".047"
+      "EFF": ".123"
     }
   },
   {
@@ -1438,13 +1438,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "4",
-      "KLS": "2",
-      "ATT": "7",
-      "E": "0",
-      "SP": "11",
-      "AST": "52",
-      "EFF": ".286"
+      "GP": "7",
+      "KLS": "4",
+      "ATT": "14",
+      "E": "1",
+      "SP": "19",
+      "AST": "100",
+      "EFF": ".214"
     }
   },
   {
@@ -1456,13 +1456,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "4",
-      "KLS": "16",
-      "ATT": "79",
-      "E": "12",
-      "SP": "11",
+      "GP": "5",
+      "KLS": "25",
+      "ATT": "119",
+      "E": "21",
+      "SP": "15",
       "AST": "1",
-      "EFF": ".051"
+      "EFF": ".034"
     }
   },
   {
@@ -1474,13 +1474,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "KLS": "4",
-      "ATT": "21",
-      "E": "4",
-      "SP": "7",
+      "GP": "6",
+      "KLS": "12",
+      "ATT": "59",
+      "E": "14",
+      "SP": "14",
       "AST": "1",
-      "EFF": ".000"
+      "EFF": "-0.034"
     }
   },
   {
@@ -1492,13 +1492,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "4",
-      "KLS": "22",
-      "ATT": "91",
-      "E": "14",
-      "SP": "11",
-      "AST": "2",
-      "EFF": ".088"
+      "GP": "7",
+      "KLS": "36",
+      "ATT": "148",
+      "E": "22",
+      "SP": "19",
+      "AST": "4",
+      "EFF": ".095"
     }
   },
   {
@@ -1510,9 +1510,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "ACE": "6",
-      "SP": "9"
+      "GP": "5",
+      "ACE": "9",
+      "SP": "13"
     }
   },
   {
@@ -1538,9 +1538,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "ACE": "4",
-      "SP": "5"
+      "GP": "5",
+      "ACE": "8",
+      "SP": "13"
     }
   },
   {
@@ -1552,9 +1552,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "DIG": "10",
-      "SP": "7"
+      "GP": "4",
+      "DIG": "17",
+      "SP": "11"
     }
   },
   {
@@ -1566,9 +1566,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "4",
-      "DIG": "22",
-      "SP": "11"
+      "GP": "7",
+      "DIG": "42",
+      "SP": "19",
+      "BLK": "1"
     }
   },
   {
@@ -1580,9 +1581,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "DIG": "4",
-      "SP": "7",
+      "GP": "4",
+      "DIG": "5",
+      "SP": "10",
       "BLK": "1"
     }
   },
@@ -1595,9 +1596,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "4",
-      "DIG": "20",
-      "SP": "11",
+      "GP": "7",
+      "DIG": "53",
+      "SP": "19",
       "BLK": "2"
     }
   },
@@ -1610,18 +1611,18 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "4",
-      "DIG": "46",
-      "SP": "11",
-      "BLK": "1"
+      "GP": "7",
+      "DIG": "65",
+      "SP": "19",
+      "BLK": "2"
     }
   },
   {
     "school_id": "rosholt",
     "sport": "volleyball",
     "category": "Volleyball Defense",
-    "player_name": "Ruby Calhoun",
-    "player_year": "JR",
+    "player_name": "Aleigha Deacy",
+    "player_year": "FR",
     "position": null,
     "jersey": null,
     "stats": {
@@ -1639,9 +1640,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "4",
-      "DIG": "22",
-      "SP": "11"
+      "GP": "5",
+      "DIG": "34",
+      "SP": "15"
     }
   },
   {
@@ -1653,9 +1654,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "DIG": "4",
-      "SP": "5"
+      "GP": "5",
+      "DIG": "6",
+      "SP": "12",
+      "BLK": "2"
     }
   },
   {
@@ -1667,9 +1669,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "4",
-      "DIG": "29",
-      "SP": "11",
+      "GP": "7",
+      "DIG": "56",
+      "SP": "19",
       "BLK": "1"
     }
   },
@@ -2462,13 +2464,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "9",
-      "KLS": "70",
-      "ATT": "231",
-      "E": "48",
-      "SP": "21",
-      "AST": "4",
-      "EFF": ".095"
+      "GP": "11",
+      "KLS": "82",
+      "ATT": "273",
+      "E": "50",
+      "SP": "25",
+      "AST": "5",
+      "EFF": ".117"
     }
   },
   {
@@ -2480,12 +2482,12 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "4",
+      "GP": "5",
       "KLS": "4",
       "ATT": "10",
       "E": "0",
-      "SP": "10",
-      "AST": "5",
+      "SP": "12",
+      "AST": "7",
       "EFF": ".400"
     }
   },
@@ -2498,13 +2500,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "9",
-      "KLS": "59",
-      "ATT": "164",
-      "E": "34",
-      "SP": "21",
-      "AST": "14",
-      "EFF": ".152"
+      "GP": "11",
+      "KLS": "78",
+      "ATT": "215",
+      "E": "41",
+      "SP": "25",
+      "AST": "20",
+      "EFF": ".172"
     }
   },
   {
@@ -2516,13 +2518,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "9",
-      "KLS": "19",
-      "ATT": "75",
-      "E": "16",
-      "SP": "21",
+      "GP": "11",
+      "KLS": "27",
+      "ATT": "97",
+      "E": "19",
+      "SP": "25",
       "AST": "9",
-      "EFF": ".040"
+      "EFF": ".082"
     }
   },
   {
@@ -2534,9 +2536,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "6",
-      "ACE": "17",
-      "SP": "15"
+      "GP": "7",
+      "ACE": "21",
+      "SP": "17"
     }
   },
   {
@@ -2562,10 +2564,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "9",
-      "BLK": "17",
-      "SP": "21",
-      "DIG": "46"
+      "GP": "11",
+      "BLK": "21",
+      "SP": "25",
+      "DIG": "63"
     }
   },
   {
@@ -2577,9 +2579,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "9",
-      "DIG": "42",
-      "SP": "21",
+      "GP": "11",
+      "DIG": "46",
+      "SP": "25",
       "BLK": "7"
     }
   },
@@ -2592,9 +2594,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "9",
-      "DIG": "67",
-      "SP": "21",
+      "GP": "11",
+      "DIG": "77",
+      "SP": "25",
       "BLK": "2"
     }
   },
@@ -2607,9 +2609,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "7",
-      "DIG": "20",
-      "SP": "15"
+      "GP": "9",
+      "DIG": "29",
+      "SP": "18"
     }
   },
   {
@@ -2621,9 +2623,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "9",
-      "DIG": "38",
-      "SP": "21"
+      "GP": "11",
+      "DIG": "47",
+      "SP": "25"
     }
   },
   {
@@ -2635,10 +2637,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "9",
-      "DIG": "38",
-      "SP": "21",
-      "BLK": "1"
+      "GP": "11",
+      "DIG": "45",
+      "SP": "25",
+      "BLK": "3"
     }
   },
   {
@@ -2650,9 +2652,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "9",
-      "AST": "70",
-      "SP": "21",
+      "GP": "11",
+      "AST": "82",
+      "SP": "25",
       "KLS": "12",
       "ATT": "50",
       "E": "10",
@@ -2668,13 +2670,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "8",
-      "AST": "36",
-      "SP": "16",
-      "KLS": "3",
-      "ATT": "7",
+      "GP": "10",
+      "AST": "49",
+      "SP": "19",
+      "KLS": "4",
+      "ATT": "9",
       "E": "0",
-      "EFF": ".429"
+      "EFF": ".444"
     }
   },
   {
@@ -2704,12 +2706,12 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "KLS": "5",
-      "ATT": "28",
-      "E": "1",
-      "SP": "6",
-      "EFF": ".143"
+      "GP": "3",
+      "KLS": "10",
+      "ATT": "48",
+      "E": "4",
+      "SP": "10",
+      "EFF": ".125"
     }
   },
   {
@@ -2721,29 +2723,12 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "KLS": "5",
-      "ATT": "16",
-      "E": "1",
-      "SP": "4",
-      "EFF": ".250"
-    }
-  },
-  {
-    "school_id": "wausau-west",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Nora Hintz",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "KLS": "2",
-      "ATT": "14",
-      "E": "1",
-      "SP": "3",
-      "EFF": ".071"
+      "GP": "3",
+      "KLS": "6",
+      "ATT": "25",
+      "E": "4",
+      "SP": "6",
+      "EFF": ".080"
     }
   },
   {
@@ -2755,12 +2740,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "KLS": "20",
-      "ATT": "34",
-      "E": "0",
-      "SP": "6",
-      "EFF": ".588"
+      "GP": "3",
+      "KLS": "27",
+      "ATT": "66",
+      "E": "7",
+      "SP": "10",
+      "AST": "1",
+      "EFF": ".303"
     }
   },
   {
@@ -2772,13 +2758,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "KLS": "9",
-      "ATT": "23",
-      "E": "1",
-      "SP": "6",
-      "AST": "20",
-      "EFF": ".348"
+      "GP": "3",
+      "KLS": "12",
+      "ATT": "39",
+      "E": "4",
+      "SP": "10",
+      "AST": "34",
+      "EFF": ".205"
     }
   },
   {
@@ -2832,9 +2818,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "DIG": "22",
-      "SP": "6"
+      "GP": "3",
+      "DIG": "30",
+      "SP": "10"
     }
   },
   {
@@ -2846,9 +2832,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "DIG": "17",
-      "SP": "6"
+      "GP": "3",
+      "DIG": "24",
+      "SP": "10"
     }
   },
   {
@@ -2860,10 +2846,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "DIG": "3",
-      "SP": "6",
-      "BLK": "3"
+      "GP": "3",
+      "DIG": "5",
+      "SP": "10",
+      "BLK": "4"
     }
   },
   {
@@ -2875,9 +2861,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "DIG": "10",
-      "SP": "6"
+      "GP": "3",
+      "DIG": "16",
+      "SP": "10"
     }
   },
   {
@@ -2889,23 +2875,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "DIG": "2",
-      "SP": "2"
-    }
-  },
-  {
-    "school_id": "wausau-west",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Nora Hintz",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "1",
-      "DIG": "2",
-      "SP": "1"
+      "GP": "2",
+      "DIG": "3",
+      "SP": "4",
+      "BLK": "1"
     }
   },
   {
@@ -2917,10 +2890,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "DIG": "9",
-      "SP": "6",
-      "BLK": "1"
+      "GP": "3",
+      "DIG": "24",
+      "SP": "10",
+      "BLK": "2"
     }
   },
   {
@@ -2932,10 +2905,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "DIG": "14",
-      "SP": "6",
-      "BLK": "1"
+      "GP": "3",
+      "DIG": "31",
+      "SP": "10",
+      "BLK": "2"
     }
   },
   {
@@ -2947,9 +2920,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "DIG": "12",
-      "SP": "6"
+      "GP": "3",
+      "DIG": "13",
+      "SP": "8"
     }
   },
   {
@@ -2961,9 +2934,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "DIG": "1",
-      "SP": "2"
+      "GP": "2",
+      "DIG": "4",
+      "SP": "6",
+      "BLK": "1"
     }
   },
   {
@@ -2975,9 +2949,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "AST": "4",
-      "SP": "6"
+      "GP": "3",
+      "AST": "6",
+      "SP": "10"
     }
   },
   {
@@ -2989,9 +2963,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "AST": "23",
-      "SP": "6"
+      "GP": "3",
+      "AST": "35",
+      "SP": "10",
+      "KLS": "4",
+      "ATT": "4",
+      "E": "0",
+      "EFF": "1.000"
     }
   },
   {
@@ -4166,13 +4144,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "8",
-      "KLS": "7",
-      "ATT": "25",
+      "GP": "9",
+      "KLS": "8",
+      "ATT": "31",
       "E": "10",
-      "SP": "17",
+      "SP": "19",
       "AST": "8",
-      "EFF": "-0.120"
+      "EFF": "-0.065"
     }
   },
   {
@@ -4198,9 +4176,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "ACE": "3",
-      "SP": "4"
+      "GP": "3",
+      "ACE": "5",
+      "SP": "5"
     }
   },
   {
@@ -4212,10 +4190,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "6",
-      "BLK": "2",
-      "SP": "12",
-      "DIG": "7"
+      "GP": "7",
+      "BLK": "3",
+      "SP": "14",
+      "DIG": "14"
     }
   },
   {
@@ -4227,9 +4205,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "4",
-      "DIG": "15",
-      "SP": "7"
+      "GP": "5",
+      "DIG": "17",
+      "SP": "8"
     }
   },
   {
@@ -4241,9 +4219,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "4",
-      "AST": "20",
-      "SP": "7"
+      "GP": "5",
+      "AST": "23",
+      "SP": "8"
     }
   },
   {
@@ -9064,10 +9042,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "4",
-      "DIG": "5",
-      "SP": "9",
-      "BLK": "1"
+      "GP": "6",
+      "DIG": "7",
+      "SP": "12",
+      "BLK": "3"
     }
   },
   {
@@ -9079,9 +9057,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "ACE": "9",
-      "SP": "6"
+      "GP": "4",
+      "ACE": "10",
+      "SP": "8"
     }
   },
   {
@@ -9895,9 +9873,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "ACE": "5",
-      "SP": "6"
+      "GP": "5",
+      "ACE": "8",
+      "SP": "9"
     }
   },
   {
@@ -9909,12 +9887,12 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "KLS": "6",
-      "ATT": "11",
-      "E": "3",
-      "SP": "4",
-      "EFF": ".273"
+      "GP": "2",
+      "KLS": "18",
+      "ATT": "39",
+      "E": "5",
+      "SP": "8",
+      "EFF": ".333"
     }
   },
   {
@@ -9944,9 +9922,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "ACE": "5",
-      "SP": "4"
+      "GP": "2",
+      "ACE": "8",
+      "SP": "8"
     }
   },
   {
@@ -10014,10 +9992,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "BLK": "1",
-      "SP": "4",
-      "DIG": "4"
+      "GP": "2",
+      "BLK": "3",
+      "SP": "8",
+      "DIG": "17"
     }
   },
   {
@@ -10029,9 +10007,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "AST": "2",
-      "SP": "4"
+      "GP": "2",
+      "AST": "3",
+      "SP": "6"
     }
   },
   {
@@ -10435,9 +10413,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "DIG": "9",
-      "SP": "8"
+      "GP": "6",
+      "DIG": "25",
+      "SP": "16",
+      "BLK": "4"
     }
   },
   {
@@ -10466,9 +10445,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "ACE": "3",
-      "SP": "6"
+      "GP": "4",
+      "ACE": "6",
+      "SP": "12"
     }
   },
   {
@@ -10480,9 +10459,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "ACE": "2",
-      "SP": "6"
+      "GP": "3",
+      "ACE": "4",
+      "SP": "10"
     }
   },
   {
@@ -10508,9 +10487,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "DIG": "1",
-      "SP": "2"
+      "GP": "2",
+      "DIG": "2",
+      "SP": "4"
     }
   },
   {
@@ -10522,9 +10501,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "DIG": "1",
-      "SP": "1"
+      "GP": "2",
+      "DIG": "4",
+      "SP": "2"
     }
   },
   {
@@ -10550,9 +10529,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "ACE": "2",
-      "SP": "5"
+      "GP": "3",
+      "ACE": "3",
+      "SP": "7"
     }
   },
   {
@@ -12958,6 +12937,62 @@
     }
   },
   {
+    "school_id": "rosholt",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Aubree Dombrowski",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "ACE": "1",
+      "SP": "4"
+    }
+  },
+  {
+    "school_id": "rosholt",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Sophia Gagas",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "ACE": "4",
+      "SP": "6"
+    }
+  },
+  {
+    "school_id": "rosholt",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Morgan Nyman",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "ACE": "2",
+      "SP": "6"
+    }
+  },
+  {
+    "school_id": "rosholt",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Player 0",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "DIG": "1",
+      "SP": "1"
+    }
+  },
+  {
     "school_id": "bowler",
     "sport": "volleyball",
     "category": "Volleyball Offense",
@@ -13193,6 +13228,52 @@
       "GP": "1",
       "AST": "1",
       "SP": "3"
+    }
+  },
+  {
+    "school_id": "wausau-west",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Scarlett Vang",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "KLS": "2",
+      "ATT": "15",
+      "E": "2",
+      "SP": "3",
+      "EFF": ".000"
+    }
+  },
+  {
+    "school_id": "wausau-west",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Zoe Verstegen",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "ACE": "2",
+      "SP": "4"
+    }
+  },
+  {
+    "school_id": "wausau-west",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Scarlett Vang",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "BLK": "2",
+      "SP": "3",
+      "DIG": "2"
     }
   },
   {
@@ -13666,6 +13747,20 @@
     }
   },
   {
+    "school_id": "rib-lake",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Abby Packenham",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "ACE": "2",
+      "SP": "1"
+    }
+  },
+  {
     "school_id": "marion",
     "sport": "volleyball",
     "category": "Volleyball Offense",
@@ -13694,6 +13789,68 @@
       "GP": "1",
       "DIG": "3",
       "SP": "1"
+    }
+  },
+  {
+    "school_id": "rosholt",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Lia Kezeske",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "KLS": "1",
+      "ATT": "1",
+      "E": "0",
+      "SP": "1",
+      "EFF": "1.000"
+    }
+  },
+  {
+    "school_id": "rosholt",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Player 6",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "KLS": "1",
+      "ATT": "4",
+      "E": "2",
+      "SP": "1",
+      "EFF": "-0.250"
+    }
+  },
+  {
+    "school_id": "rosholt",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Player 6",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "DIG": "1",
+      "SP": "1"
+    }
+  },
+  {
+    "school_id": "rosholt",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Lily Flees",
+    "player_year": "FR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "DIG": "2",
+      "SP": "2"
     }
   }
 ]
