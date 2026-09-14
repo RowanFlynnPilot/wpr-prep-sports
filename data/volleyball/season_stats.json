@@ -4281,12 +4281,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "8",
-      "KLS": "33",
-      "ATT": "77",
-      "E": "19",
-      "SP": "18",
-      "EFF": ".182"
+      "GP": "12",
+      "KLS": "53",
+      "ATT": "121",
+      "E": "22",
+      "SP": "28",
+      "AST": "1",
+      "EFF": ".256"
     }
   },
   {
@@ -4298,13 +4299,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "4",
-      "KLS": "12",
-      "ATT": "31",
-      "E": "10",
-      "SP": "10",
-      "AST": "11",
-      "EFF": ".065"
+      "GP": "8",
+      "KLS": "26",
+      "ATT": "70",
+      "E": "14",
+      "SP": "20",
+      "AST": "23",
+      "EFF": ".171"
     }
   },
   {
@@ -4316,12 +4317,12 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "8",
-      "KLS": "15",
-      "ATT": "51",
-      "E": "8",
-      "SP": "16",
-      "EFF": ".137"
+      "GP": "11",
+      "KLS": "26",
+      "ATT": "76",
+      "E": "13",
+      "SP": "24",
+      "EFF": ".171"
     }
   },
   {
@@ -4333,9 +4334,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "4",
-      "ACE": "7",
-      "SP": "10"
+      "GP": "7",
+      "ACE": "11",
+      "SP": "18"
     }
   },
   {
@@ -4347,9 +4348,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "5",
-      "ACE": "5",
-      "SP": "10"
+      "GP": "7",
+      "ACE": "7",
+      "SP": "16"
     }
   },
   {
@@ -4361,9 +4362,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "4",
+      "GP": "5",
       "BLK": "5",
-      "SP": "7"
+      "SP": "8",
+      "DIG": "1"
     }
   },
   {
@@ -4375,10 +4377,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "8",
-      "BLK": "10",
-      "SP": "16",
-      "DIG": "3"
+      "GP": "9",
+      "BLK": "11",
+      "SP": "19",
+      "DIG": "5"
     }
   },
   {
@@ -4390,9 +4392,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "8",
-      "DIG": "38",
-      "SP": "18"
+      "GP": "11",
+      "DIG": "49",
+      "SP": "25"
     }
   },
   {
@@ -4404,9 +4406,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "DIG": "7",
-      "SP": "8"
+      "GP": "7",
+      "DIG": "14",
+      "SP": "18"
     }
   },
   {
@@ -4418,9 +4420,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "8",
-      "DIG": "85",
-      "SP": "18"
+      "GP": "12",
+      "DIG": "120",
+      "SP": "28"
     }
   },
   {
@@ -4432,10 +4434,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "4",
-      "DIG": "14",
-      "SP": "9",
-      "BLK": "1"
+      "GP": "8",
+      "DIG": "29",
+      "SP": "19",
+      "BLK": "2"
     }
   },
   {
@@ -4447,13 +4449,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "5",
-      "AST": "2",
-      "SP": "8",
-      "KLS": "10",
-      "ATT": "20",
+      "GP": "7",
+      "AST": "4",
+      "SP": "10",
+      "KLS": "11",
+      "ATT": "23",
       "E": "2",
-      "EFF": ".400"
+      "EFF": ".391"
     }
   },
   {
@@ -4465,31 +4467,29 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "4",
-      "AST": "36",
-      "SP": "9",
-      "KLS": "1",
-      "ATT": "1",
+      "GP": "8",
+      "AST": "79",
+      "SP": "19",
+      "KLS": "2",
+      "ATT": "3",
       "E": "0",
-      "EFF": "1.000"
+      "EFF": ".667"
     }
   },
   {
     "school_id": "stratford",
     "sport": "volleyball",
     "category": "Volleyball Offense",
-    "player_name": "Lexi Wiesman",
-    "player_year": null,
+    "player_name": "Lila Yoder",
+    "player_year": "SR",
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "KLS": "2",
-      "ATT": "4",
-      "E": "1",
-      "SP": "1",
-      "AST": "2",
-      "EFF": ".250"
+      "GP": "3",
+      "KLS": "1",
+      "E": "0",
+      "SP": "7",
+      "AST": "3"
     }
   },
   {
@@ -4501,13 +4501,29 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "6",
-      "KLS": "11",
-      "ATT": "35",
-      "E": "7",
-      "SP": "10",
-      "AST": "1",
-      "EFF": ".114"
+      "GP": "9",
+      "KLS": "14",
+      "ATT": "46",
+      "E": "12",
+      "SP": "15",
+      "AST": "4",
+      "EFF": ".043"
+    }
+  },
+  {
+    "school_id": "stratford",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Carly Pankratz",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "5",
+      "KLS": "1",
+      "E": "0",
+      "SP": "13",
+      "AST": "8"
     }
   },
   {
@@ -4519,13 +4535,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "KLS": "11",
-      "ATT": "39",
-      "E": "6",
-      "SP": "7",
-      "AST": "1",
-      "EFF": ".128"
+      "GP": "7",
+      "KLS": "26",
+      "ATT": "88",
+      "E": "19",
+      "SP": "17",
+      "AST": "3",
+      "EFF": ".080"
     }
   },
   {
@@ -4537,12 +4553,12 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "KLS": "9",
-      "ATT": "39",
-      "E": "6",
-      "SP": "7",
-      "EFF": ".077"
+      "GP": "5",
+      "KLS": "16",
+      "ATT": "57",
+      "E": "8",
+      "SP": "12",
+      "EFF": ".140"
     }
   },
   {
@@ -4550,27 +4566,104 @@
     "sport": "volleyball",
     "category": "Volleyball Serving",
     "player_name": "Dakota Knetter",
-    "player_year": null,
+    "player_year": "SR",
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "ACE": "2",
-      "SP": "2"
+      "GP": "4",
+      "ACE": "5",
+      "SP": "9"
     }
   },
   {
     "school_id": "stratford",
     "sport": "volleyball",
     "category": "Volleyball Serving",
+    "player_name": "Brye Shaw",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "ACE": "4",
+      "SP": "5"
+    }
+  },
+  {
+    "school_id": "stratford",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Lexi Wiesman",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "BLK": "2",
+      "SP": "1"
+    }
+  },
+  {
+    "school_id": "stratford",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Dakota Knetter",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "7",
+      "DIG": "26",
+      "SP": "17"
+    }
+  },
+  {
+    "school_id": "stratford",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Lexi Wiesman",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "KLS": "3",
+      "ATT": "6",
+      "E": "2",
+      "SP": "2",
+      "AST": "2",
+      "EFF": ".167"
+    }
+  },
+  {
+    "school_id": "stratford",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
     "player_name": "Reese Spindler",
     "player_year": "JR",
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "ACE": "1",
-      "SP": "1"
+      "GP": "5",
+      "KLS": "17",
+      "ATT": "50",
+      "E": "12",
+      "SP": "10",
+      "EFF": ".100"
+    }
+  },
+  {
+    "school_id": "stratford",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Lila Yoder",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "5",
+      "ACE": "15",
+      "SP": "13"
     }
   },
   {
@@ -4582,9 +4675,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "ACE": "6",
-      "SP": "7"
+      "GP": "5",
+      "ACE": "8",
+      "SP": "12"
     }
   },
   {
@@ -4596,51 +4689,22 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "5",
-      "BLK": "13",
-      "SP": "11",
-      "DIG": "1"
+      "GP": "7",
+      "BLK": "15",
+      "SP": "16",
+      "DIG": "2"
     }
   },
   {
     "school_id": "stratford",
     "sport": "volleyball",
     "category": "Volleyball Defense",
-    "player_name": "Maddy Kroening",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "4",
-      "BLK": "4",
-      "SP": "7",
-      "DIG": "3"
-    }
-  },
-  {
-    "school_id": "stratford",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Dakota Knetter",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "3",
-      "DIG": "7",
-      "SP": "7"
-    }
-  },
-  {
-    "school_id": "stratford",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Chloe Stueber",
+    "player_name": "Meg Marten",
     "player_year": "JR",
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "4",
+      "GP": "3",
       "DIG": "7",
       "SP": "7"
     }
@@ -4654,9 +4718,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "4",
-      "DIG": "4",
-      "SP": "8"
+      "GP": "6",
+      "DIG": "6",
+      "SP": "12"
     }
   },
   {
@@ -4664,41 +4728,70 @@
     "sport": "volleyball",
     "category": "Volleyball Defense",
     "player_name": "Brye Shaw",
-    "player_year": null,
+    "player_year": "SO",
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "DIG": "5",
-      "SP": "5"
+      "GP": "4",
+      "DIG": "7",
+      "SP": "9"
     }
   },
   {
     "school_id": "stratford",
     "sport": "volleyball",
     "category": "Volleyball Offense",
-    "player_name": "Lila Yoder",
-    "player_year": "SR",
+    "player_name": "Chloe Stueber",
+    "player_year": "JR",
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "AST": "1",
-      "SP": "2"
+      "GP": "5",
+      "AST": "30",
+      "SP": "8"
     }
   },
   {
     "school_id": "stratford",
     "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Carly Pankratz",
-    "player_year": "SR",
+    "category": "Volleyball Serving",
+    "player_name": "Reese Spindler",
+    "player_year": "JR",
     "position": null,
     "jersey": null,
     "stats": {
       "GP": "2",
-      "AST": "4",
-      "SP": "5"
+      "ACE": "3",
+      "SP": "3"
+    }
+  },
+  {
+    "school_id": "stratford",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Maddy Kroening",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "5",
+      "BLK": "4",
+      "SP": "9",
+      "DIG": "5"
+    }
+  },
+  {
+    "school_id": "stratford",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Chloe Stueber",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "5",
+      "DIG": "8",
+      "SP": "8"
     }
   },
   {
@@ -5031,26 +5124,12 @@
     "school_id": "stratford",
     "sport": "volleyball",
     "category": "Volleyball Serving",
-    "player_name": "Lila Yoder",
-    "player_year": "SR",
+    "player_name": "Chloe Stueber",
+    "player_year": "JR",
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "ACE": "8",
-      "SP": "8"
-    }
-  },
-  {
-    "school_id": "stratford",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Brye Shaw",
-    "player_year": null,
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "1",
+      "GP": "2",
       "ACE": "2",
       "SP": "3"
     }
@@ -7743,23 +7822,6 @@
   {
     "school_id": "stratford",
     "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Reese Spindler",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "3",
-      "KLS": "9",
-      "ATT": "29",
-      "E": "8",
-      "SP": "6",
-      "EFF": ".034"
-    }
-  },
-  {
-    "school_id": "stratford",
-    "sport": "volleyball",
     "category": "Volleyball Serving",
     "player_name": "Meg Marten",
     "player_year": "JR",
@@ -7769,20 +7831,6 @@
       "GP": "2",
       "ACE": "2",
       "SP": "4"
-    }
-  },
-  {
-    "school_id": "stratford",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Chloe Stueber",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "3",
-      "AST": "20",
-      "SP": "6"
     }
   },
   {
@@ -8914,20 +8962,6 @@
     }
   },
   {
-    "school_id": "stratford",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Meg Marten",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "DIG": "4",
-      "SP": "5"
-    }
-  },
-  {
     "school_id": "colby",
     "sport": "volleyball",
     "category": "Volleyball Serving",
@@ -9000,20 +9034,6 @@
       "DIG": "5",
       "SP": "9",
       "BLK": "1"
-    }
-  },
-  {
-    "school_id": "stratford",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Chloe Stueber",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "1",
-      "ACE": "1",
-      "SP": "2"
     }
   },
   {
