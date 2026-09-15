@@ -117,6 +117,46 @@ export async function fetchDataset(sportId = DEFAULT_SPORT) {
   };
 }
 
+/**
+ * The mini scoreboard's payload (mini.html): meta, schools, sponsors, and
+ * the scraper's mini.json — only the games near today, a few KB where the
+ * dashboard loads the whole season (boys basketball's games.json is 220 KB
+ * gzipped). The WPR homepage loads this on every view, so the size matters.
+ *
+ * Falls back to games.json when the feed is missing (a sport not scraped
+ * since the feed shipped, or the dev server before a local scrape) or older
+ * than MINI_FEED_MAX_AGE_MS. The feed spans 10 days back and 14 ahead of its
+ * write time, and the mini shows 6 back and 10 ahead, so after 4 days its
+ * window no longer covers the mini. Always the live season: the mini has no
+ * archive selector.
+ */
+const MINI_FEED_MAX_AGE_MS = 4 * 86_400_000;
+
+export async function fetchMiniDataset(sportId = DEFAULT_SPORT) {
+  const sportBase = `${DATA_BASE}/${sportId}`;
+  const meta = await fetchJson(`${sportBase}/meta.json`, { noStore: true });
+  const v = encodeURIComponent(meta.last_updated ?? Date.now());
+  const [schools, sponsors, feed] = await Promise.all([
+    fetchJson(`${DATA_BASE}/schools.json?v=${v}`),
+    fetchJsonOptional(`${DATA_BASE}/sponsors.json?v=${v}`),
+    fetchJsonOptional(`${sportBase}/mini.json?v=${v}`),
+  ]);
+  const writtenAt = Date.parse(feed?.generated_at ?? "");
+  const feedIsFresh =
+    Array.isArray(feed?.games) &&
+    Number.isFinite(writtenAt) &&
+    Date.now() - writtenAt <= MINI_FEED_MAX_AGE_MS;
+  const games = feedIsFresh ? feed.games : await fetchJson(`${sportBase}/games.json?v=${v}`);
+  return {
+    sport: sportId,
+    meta,
+    schools,
+    sponsors,
+    games,
+    source: feedIsFresh ? "mini" : "games",
+  };
+}
+
 function isOverrideExpired(o) {
   if (!o?.expires_at) return false;
   const ts = Date.parse(o.expires_at);

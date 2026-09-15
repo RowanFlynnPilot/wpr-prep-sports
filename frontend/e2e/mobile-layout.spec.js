@@ -52,7 +52,7 @@ async function pageOverflow(page) {
 }
 
 test.describe("phone layout guard", () => {
-  test("every This Week score is on screen inside its day card", async ({ page }) => {
+  test("every This Week team and score is on screen inside its day card", async ({ page }) => {
     await waitForDashboard(page);
     const rowCount = await page.locator(".game-row").count();
     test.skip(rowCount === 0, "no This Week rows in the current dataset (off-season or preseason)");
@@ -64,11 +64,15 @@ test.describe("phone layout guard", () => {
     );
     expect(collapsed, "rows whose team columns computed to 0px").toEqual([]);
 
-    const scores = await horizontalFit(page, ".game-side__score", ".week-day");
-    expect(scores.length, "no score boxes found in the week grid").toBeGreaterThan(0);
+    // Each team block (logo, name, and the score once there is one) must sit
+    // inside its day card. Measured on the block, not the score: early in
+    // the week every game is still scheduled and no score boxes exist yet
+    // (2026-09-15 — the score-only check found nothing to measure).
+    const sides = await horizontalFit(page, ".game-side", ".week-day");
+    expect(sides.length, "no team blocks found in the week grid").toBeGreaterThan(0);
     expect(
-      scores.filter((s) => !s.inside),
-      "scores rendered outside their day card",
+      sides.filter((s) => !s.inside),
+      "team names or scores rendered outside their day card",
     ).toEqual([]);
   });
 

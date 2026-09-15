@@ -15,6 +15,7 @@ writer (`scraper/output/writer.py`) splits them across files at dump time.
 | `data/<sport>/games.json` | Array of **slim** `Game` (headline stats only; compact JSON) |
 | `data/<sport>/boxscores/<game_id>.json` | `{ game_id, stat_leaders: StatLine[] }` — fetched on demand by game pages |
 | `data/<sport>/players/<school_id>.json` | `{ school_id, lines: [...] }` — per-school stat lines for player pages |
+| `data/<sport>/mini.json` | `{ sport, generated_at, window_days: {past, future}, games }` — games dated 10 days back to 14 ahead of `generated_at`, each trimmed to `id, sport, date, status, conference_game, playoff` plus `home`/`away` `{school_id, name, score, logo_url}`. Written alongside every games.json (full scrape and live merge); feeds the mini scoreboard (`frontend/mini.html`), which falls back to games.json when the feed is missing or more than 4 days old |
 | `data/<sport>/standings.json` | Array of `Standing` |
 | `data/<sport>/season_stats.json` | Array of `SeasonStat` |
 | `data/<sport>/power_rankings.json` | `{ sport, season, generated_at, method, rankings: PowerRanking[] }` |

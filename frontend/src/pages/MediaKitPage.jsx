@@ -4,6 +4,7 @@ import Layout from "../components/Layout.jsx";
 import { SPORT_IDS, configFor } from "../config/sports.js";
 import { trackEvent } from "../utils/analytics.js";
 import { SITE } from "../config/site.js";
+import { miniEmbedSnippet } from "../mini/embed.js";
 import "../styles/MediaKit.css";
 
 const DATA_BASE = `${import.meta.env.BASE_URL.replace(/\/$/, "")}/data`;
@@ -34,6 +35,14 @@ const INVENTORY = [
         fit: "Pizza · sports bar · wings",
         slots: ["ticker"],
         rateKey: "ticker",
+        preview: { label: "Scoreboard presented by", tone: "ticker" },
+      },
+      {
+        title: "Mini scoreboard",
+        blurb: `The compact scoreboard module built for the ${SITE.orgShort} homepage and sidebars — the latest local scores and next games, in front of readers who never open the full hub. Your name on its title line.`,
+        fit: "Auto dealer · bank · regional brand",
+        slots: ["mini"],
+        rateKey: "mini",
         preview: { label: "Scoreboard presented by", tone: "ticker" },
       },
       {
@@ -441,9 +450,10 @@ function EmbedBuilder({ schools }) {
     () => [...schools].sort((a, b) => a.name.localeCompare(b.name)),
     [schools],
   );
-  const [mode, setMode] = useState("school"); // "school" | "conference"
+  const [mode, setMode] = useState("school"); // "school" | "conference" | "mini"
   const [schoolId, setSchoolId] = useState(() => sorted[0]?.id ?? "");
   const [sport, setSport] = useState("football");
+  const [miniSports, setMiniSports] = useState("one"); // "one" | "in-season"
   const [conference, setConference] = useState("");
   const [conference2, setConference2] = useState("");
   const [copied, setCopied] = useState(false);
@@ -482,7 +492,17 @@ function EmbedBuilder({ schools }) {
   // than the team card, and each extra conference adds a table; all
   // heights are pre-resize fallbacks.
   const height = mode === "conference" ? (activeConf2 ? 1080 : 680) : 330;
-  const snippet = `<iframe
+  // The mini is its own page (mini.html), not a hash route, and its height
+  // is a measured maximum rather than a pre-resize fallback: see
+  // src/mini/embed.js.
+  const mini =
+    mode === "mini"
+      ? miniEmbedSnippet({ origin: WIDGET_ORIGIN, sport, switcher: miniSports === "in-season" })
+      : null;
+  const previewUrl = mini ? mini.src : `${WIDGET_ORIGIN}#/${embedPath}`;
+  const snippet = mini
+    ? mini.html
+    : `<iframe
   src="${WIDGET_ORIGIN}#/${embedPath}"
   width="100%" height="${height}" frameborder="0" loading="lazy"
   style="border:0;display:block;max-width:640px;"></iframe>`;
@@ -492,7 +512,14 @@ function EmbedBuilder({ schools }) {
       setCopied(true);
       trackEvent("mediakit-embed-copy", {
         mode,
-        target: mode === "conference" ? confSlugs : schoolId,
+        target:
+          mode === "conference"
+            ? confSlugs
+            : mode === "mini"
+              ? miniSports === "in-season"
+                ? "in-season"
+                : sport
+              : schoolId,
         sport,
       });
       setTimeout(() => setCopied(false), 2000);
@@ -503,13 +530,15 @@ function EmbedBuilder({ schools }) {
     <section className="mk-group mk-embed">
       <h2 className="mk-group__title">Embed builder</h2>
       <p className="mk-embed__lede">
-        Drop a live module into any {SITE.orgShort} story or sidebar — a
-        team card (record, last/next game, that school&apos;s sponsor) or a
-        conference module (latest scores + standings, carrying the
-        conference&apos;s standings sponsor). Pick one, copy, paste into
-        WordPress (Custom HTML block). The code is article-safe: no
-        scripts at all, so the editor&apos;s save won&apos;t be rejected
-        by security filters.
+        Drop a live module into any {SITE.orgShort} story, sidebar or the
+        homepage — a team card (record, last/next game, that school&apos;s
+        sponsor), a conference module (latest scores + standings, carrying
+        the conference&apos;s standings sponsor), or the mini scoreboard
+        (local scores and next games for one sport, or a switcher across
+        whatever is in season). Pick one, copy, paste into WordPress
+        (Custom HTML block). The code is article-safe: no scripts at all,
+        so the editor&apos;s save won&apos;t be rejected by security
+        filters.
       </p>
       <div className="mk-embed__controls">
         <label>
@@ -517,9 +546,18 @@ function EmbedBuilder({ schools }) {
           <select value={mode} onChange={(e) => setMode(e.target.value)}>
             <option value="school">Team card</option>
             <option value="conference">Conference scores + standings</option>
+            <option value="mini">Mini scoreboard (homepage / sidebar)</option>
           </select>
         </label>
-        {mode === "school" ? (
+        {mode === "mini" ? (
+          <label>
+            Sports shown
+            <select value={miniSports} onChange={(e) => setMiniSports(e.target.value)}>
+              <option value="one">One sport</option>
+              <option value="in-season">Switcher: every sport in season</option>
+            </select>
+          </label>
+        ) : mode === "school" ? (
           <label>
             School
             <select value={schoolId} onChange={(e) => setSchoolId(e.target.value)}>
@@ -557,16 +595,18 @@ function EmbedBuilder({ schools }) {
             </label>
           </>
         )}
-        <label>
-          Sport
-          <select value={sport} onChange={(e) => setSport(e.target.value)}>
-            {SPORT_IDS.map((id) => (
-              <option key={id} value={id}>
-                {configFor(id)?.label ?? id}
-              </option>
-            ))}
-          </select>
-        </label>
+        {!(mode === "mini" && miniSports === "in-season") && (
+          <label>
+            Sport
+            <select value={sport} onChange={(e) => setSport(e.target.value)}>
+              {SPORT_IDS.map((id) => (
+                <option key={id} value={id}>
+                  {configFor(id)?.label ?? id}
+                </option>
+              ))}
+            </select>
+          </label>
+        )}
         <button type="button" className="mk-btn" onClick={copy}>
           {copied ? "Copied!" : "Copy embed code"}
         </button>
@@ -576,12 +616,8 @@ function EmbedBuilder({ schools }) {
       </pre>
       <p className="mk-embed__preview-note">
         Live preview:{" "}
-        <a
-          href={`${WIDGET_ORIGIN}#/${embedPath}`}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {WIDGET_ORIGIN}#/{embedPath}
+        <a href={previewUrl} target="_blank" rel="noopener noreferrer">
+          {previewUrl}
         </a>
       </p>
     </section>

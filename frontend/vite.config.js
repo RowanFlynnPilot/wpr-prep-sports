@@ -36,7 +36,9 @@ function socialTags() {
   const tag = (attrs) => ({ tag: "meta", attrs, injectTo: "head" });
   return {
     name: "wpr-social-tags",
-    transformIndexHtml() {
+    transformIndexHtml(_html, ctx) {
+      // mini.html is an iframe module marked noindex; nobody shares it.
+      if (/mini\.html$/.test(ctx?.filename ?? ctx?.path ?? "")) return undefined;
       return [
         tag({ name: "description", content: SITE.shareDescription }),
         tag({ property: "og:type", content: "website" }),
@@ -102,6 +104,14 @@ export default defineConfig({
   build: {
     outDir: "dist",
     sourcemap: false,
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, "index.html"),
+        // The homepage/sidebar scoreboard — its own page so the WPR
+        // homepage loads a small bundle, not the dashboard (see README).
+        mini: resolve(__dirname, "mini.html"),
+      },
+    },
   },
   server: {
     port: 5173,

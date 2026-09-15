@@ -18,6 +18,10 @@ export const SITE = {
   orgShort: "WPR",
   orgHomeUrl: "https://wausaupilotandreview.com",
   orgSportsUrl: "https://wausaupilotandreview.com/category/sports/",
+  // The publisher page that embeds the full widget. The homepage mini
+  // scoreboard (mini.html) sends every tap here by default, so readers stay
+  // on the publisher's site; `?to=` on the mini's src overrides it.
+  hubUrl: "https://wausaupilotandreview.com/high-school-sports/",
   orgDomain: "wausaupilotandreview.com", // shown on OG share cards
   photoSubmitUrl: "https://wausaupilotandreview.com/submit-prep-sports-photo/",
   contactEmail: "weber.chris@wausaupilotandreview.com", // VITE_SPONSOR_EMAIL overrides

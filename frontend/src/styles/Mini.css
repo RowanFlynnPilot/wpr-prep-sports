@@ -1,0 +1,388 @@
+/* Mini scoreboard (mini.html) — the homepage/sidebar module.
+
+   Built for a fixed-height iframe from 300px wide up: every line is one
+   line (names ellipsize, labels never wrap), so the tallest possible mini
+   is a known height at any width and the README's snippet height covers
+   it. Same identity as the full widget — black chrome band, Oswald, one
+   press-red accent for the winner and LIVE — so a homepage reader who taps
+   through lands somewhere that is visibly the same product. */
+
+.mini {
+  display: flex;
+  flex-direction: column;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  font-family: var(--font-display);
+  color: var(--ink);
+}
+
+/* Embedded, the card fills the frame: the snippet height covers the
+   tallest possible mini, and on a quiet week (or with the sponsor slot
+   unsold) the spare room sits inside the card above the footer instead of
+   as blank iframe below it. Safe with auto-resize too — the frame starts at
+   the snippet height and content never exceeds it, so the reported height
+   is simply that height. */
+.mini--fill {
+  min-height: 100vh;
+}
+
+.mini a {
+  color: inherit;
+  border-bottom: none;
+}
+.mini a:focus-visible,
+.mini button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+}
+
+/* ---- Chrome band -------------------------------------------------- */
+
+.mini__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.1rem 0.75rem;
+  min-height: 44px;
+  padding: 0.45rem 0.85rem;
+  background: var(--chrome);
+  color: #fff;
+}
+.mini__brand {
+  min-width: 0;
+  font-weight: 700;
+  font-size: var(--fs-ui);
+  letter-spacing: 0.04em;
+  line-height: 1.1;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #fff;
+}
+.mini a.mini__brand {
+  color: #fff;
+}
+.mini__brand em {
+  font-style: normal;
+  color: var(--accent-on-dark);
+}
+.mini a.mini__brand:hover {
+  color: var(--accent-on-dark);
+}
+.mini a.mini__brand:focus-visible {
+  outline-offset: 2px;
+}
+.mini__sport {
+  font-weight: 600;
+  font-size: var(--fs-label);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  /* 10.6:1 on the black band. */
+  color: rgba(255, 255, 255, 0.78);
+}
+
+/* ---- Presenter strip (sponsor slot "mini") -------------------------- */
+
+/* One line, always: the label holds its width, a long sponsor name
+   ellipsizes, a logo is capped. That keeps the row a fixed height at any
+   width, which the published iframe height depends on. */
+.mini .mini__presenter.sponsor {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 36px;
+  padding: 0.25rem 0.85rem;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.mini__presenter .sponsor__label {
+  flex: 0 0 auto;
+}
+.mini__presenter .sponsor__name {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.mini__presenter.sponsor--inline .sponsor__logo {
+  max-height: 24px;
+  max-width: 120px;
+  padding: 2px 6px;
+}
+
+/* ---- Sport switcher (?sports=) ------------------------------------- */
+
+/* Same language as the dashboard's section tabs: muted labels, the chosen
+   one in press red over a red underline. Toggle buttons (aria-pressed), not
+   tabs — the whole module is the one panel. */
+.mini__sports {
+  display: flex;
+  border-bottom: 1px solid var(--line);
+}
+.mini__sport-btn {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  min-height: 44px;
+  margin-bottom: -1px;
+  padding: 0.3rem 0.35rem;
+  background: none;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--fs-label);
+  letter-spacing: 0.06em;
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: var(--muted);
+  transition: color var(--t-fast) var(--ease), background var(--t-fast) var(--ease);
+}
+.mini__sport-btn:hover {
+  color: var(--ink);
+  background: var(--paper-2);
+}
+.mini__sport-btn--on,
+.mini__sport-btn--on:hover {
+  color: var(--accent-700);
+  border-bottom-color: var(--accent);
+  font-weight: 700;
+  background: none;
+}
+.mini__sport-icon {
+  display: inline-flex;
+  font-size: 1.05em;
+}
+.mini__sport-label {
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+/* Four winter sports at sidebar width: the label keeps the room. */
+@media (max-width: 400px) {
+  .mini__sport-icon {
+    display: none;
+  }
+}
+
+/* ---- Games ---------------------------------------------------------- */
+
+.mini__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  padding: 0.6rem 0.6rem 0.45rem;
+}
+.mini__label {
+  margin: 0 0.25rem 0.2rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--fs-label);
+  letter-spacing: 0.12em;
+  line-height: 1.3;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--muted);
+}
+.mini__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.mini__list > li + li {
+  border-top: 1px solid var(--paper-2);
+}
+
+/* Score card: away over home, scores right-aligned, status spanning both. */
+.mini-game {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  column-gap: 0.65rem;
+  row-gap: 0.1rem;
+  padding: 0.4rem 0.3rem 0.4rem 0.25rem;
+  border-radius: var(--radius-sm);
+  transition: background var(--t-fast) var(--ease);
+}
+.mini-game--plain {
+  grid-template-columns: minmax(0, 1fr);
+}
+.mini a.mini-game:hover,
+.mini a.mini-next:hover {
+  background: var(--row-tint-strong);
+}
+.mini-game__team {
+  grid-column: 1;
+  display: grid;
+  grid-template-columns: 18px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.45rem;
+  font-weight: 500;
+  font-size: var(--fs-small);
+  line-height: 1.35;
+  color: var(--muted);
+}
+.mini-game__team--won {
+  font-weight: 700;
+  color: var(--ink);
+}
+.mini-game__name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.mini-game__score {
+  min-width: 1.6rem;
+  text-align: right;
+  font-family: var(--font-numeric);
+  font-size: var(--fs-ui);
+  font-variant-numeric: tabular-nums;
+}
+/* Red is the winner's, as on the dashboard. */
+.mini-game__team--won .mini-game__score {
+  color: var(--accent-700);
+}
+.mini-game__status {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.3rem;
+  min-width: 2.4rem;
+  font-weight: 600;
+  font-size: var(--fs-label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted-2);
+}
+.mini-game--live .mini-game__status {
+  font-weight: 700;
+  color: var(--accent-700);
+}
+.mini-game__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: mini-pulse 1.5s ease-in-out infinite;
+}
+@keyframes mini-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+
+/* Fixture row: one line, matchup ellipsizes before the time does. */
+.mini-next {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.6rem;
+  padding: 0.45rem 0.3rem 0.45rem 0.25rem;
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+  font-size: var(--fs-small);
+  line-height: 1.35;
+  transition: background var(--t-fast) var(--ease);
+}
+.mini-next__matchup {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.mini-next__at {
+  color: var(--muted-2);
+  text-transform: lowercase;
+}
+.mini-next__when {
+  flex: 0 0 auto;
+  font-weight: 600;
+  font-size: var(--fs-label);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+}
+
+.mini__empty {
+  margin: 0.35rem 0.25rem 0.5rem;
+  font-family: var(--font-body);
+  font-size: var(--fs-small);
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+/* ---- Footer --------------------------------------------------------- */
+
+.mini__foot {
+  display: flex;
+  align-items: center;
+  margin-top: auto;
+  padding: 0 0.85rem;
+  border-top: 1px solid var(--line);
+}
+.mini__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  min-height: 44px;
+  font-weight: 700;
+  font-size: var(--fs-caption);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.mini a.mini__cta:hover {
+  color: var(--accent-700);
+}
+
+/* ---- Loading -------------------------------------------------------- */
+
+.mini__skeleton {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.mini__label--ghost {
+  display: block;
+  width: 45%;
+  height: 0.7rem;
+  margin: 0.15rem 0.25rem 0.3rem;
+  border-radius: 3px;
+  background: var(--paper-2);
+}
+.mini-ghost {
+  display: block;
+  border-radius: var(--radius-sm);
+  background: var(--paper-2);
+  animation: mini-pulse 1.6s ease-in-out infinite;
+}
+.mini-ghost--card { height: 46px; }
+.mini-ghost--row { height: 28px; }
+.mini-ghost--row:first-of-type { margin-top: 0.4rem; }
+
+.mini .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

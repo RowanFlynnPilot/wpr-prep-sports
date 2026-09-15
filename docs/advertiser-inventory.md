@@ -18,6 +18,7 @@ WPR. Below is the full menu of sponsorship surfaces, what to charge them as
 |---|---|---|---|
 | **Title sponsor** ("Central Wisconsin Sports Hub presented by …") | `title` | Aspirus Sports Medicine, Marshfield Clinic, credit union, orthopedic clinic | Highest-value single placement. Annual deal. |
 | **Scoreboard / score ticker presented by** | `ticker` | Pizza chain, sports bar, wings place | High visibility, repeat impressions during game weekends. |
+| **Mini scoreboard presented by** (homepage / sidebar module) | `mini` | Auto dealer, bank, regional brand | One line under the title of the compact scoreboard module (`mini.html`), built for the WPR homepage and sidebars. Impressions = Plausible pageviews of `/mini.html`; clicks = `sponsor-click:mini`. Added 2026-09-15. |
 | **Section tabs** (Scores / Schedule / Standings / Rankings / Leaders / Spotlight) | `tab:<section>` | Broad local fit | One placement at the foot of each dashboard section tab's content — 6 discrete surfaces since 2026-09-13, when Standings & Stats split into Standings, Rankings (the Ten + Power Index) and Leaders. `?tab=standings` deep links still land on the conference tables. |
 | **Standings presented by** (per conference) | `standings:<conference>` | Local bank, credit union | Sells 5× — Wisconsin Valley, Marawood, Great Northern, Cloverbelt, Big Rivers. |
 

@@ -125,6 +125,14 @@ needs individual-sport modeling), then baseball/softball/track (spring).
   is complete, not broken; flipping the switch restores it everywhere.
 - Sponsor system: `data/sponsors.json` slots + `#/sponsor` media-kit page
   (see `docs/advertiser-inventory.md`)
+- **Mini scoreboard** (2026-09-15) — `frontend/mini.html`, a separate
+  lightweight Vite entry for the WPR homepage and sidebars: latest local
+  scores + next games for one sport (`?sport=`) or a switcher over sports
+  in season (`?sports=in-season`); taps open the hub page. Reads the
+  scraper's small `data/<sport>/mini.json` feed. Published iframe heights
+  (540/580) are measured maxima guarded by `e2e/mini.spec.js`; change the
+  layout and that test tells you if the snippet height still holds.
+  Snippets in the README and the media-kit builder; sponsor slot `mini`.
 - Per-school embeds (`#/<sport>/embed/<id>` + media-kit builder), Senior
   Spotlights, weekly digest, rivalry/head-to-head history, season archive
   selector, division filter chips (power rankings + bracket)
@@ -158,6 +166,7 @@ Canonical JSON written to `data/` (split per-sport layout since June 2026):
 - `data/<sport>/games.json` — slim games (headline stats only; full stat lines split out)
 - `data/<sport>/boxscores/<game_id>.json` — per-game stat leaders, fetched on demand
 - `data/<sport>/players/<school_id>.json` — per-school player lines, fetched on demand
+- `data/<sport>/mini.json` — games near today only (10 days back, 14 ahead), the mini scoreboard's feed; written with every games.json
 - `data/<sport>/standings.json`, `season_stats.json`, `power_rankings.json`
 - `data/{sponsors,potw,spirit}.json` — cross-sport editorial/sponsor config
 - `data/archive/<season>/` — archived seasons (shipped to Pages since
@@ -193,7 +202,8 @@ npm install
 npm run dev          # local dev server
 npm run build        # production build → dist/
 npm run preview      # preview production build locally
-npm run test:e2e     # Playwright phone-width layout guard (reuses a dev server on :5199)
+npm run test:e2e     # Playwright layout guard: dashboard + mini (reuses a dev server on :5199;
+                     # set E2E_PORT if 5199 is another project's server)
 ```
 
 ## GitHub Actions

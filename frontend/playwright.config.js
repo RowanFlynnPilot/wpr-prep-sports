@@ -10,8 +10,13 @@ import { defineConfig, devices } from "@playwright/test";
  * for are actually on screen.
  *
  * Local: `npm run test:e2e` reuses a dev server already on :5199 or
- * starts one. CI: .github/workflows/frontend-tests.yml.
+ * starts one. Set E2E_PORT when 5199 belongs to something else: the guard
+ * reuses whatever answers on the port, so another project's dev server
+ * there would be tested in this app's place. CI:
+ * .github/workflows/frontend-tests.yml.
  */
+const PORT = Number(process.env.E2E_PORT) || 5199;
+
 export default defineConfig({
   testDir: "./e2e",
   timeout: 60_000,
@@ -19,12 +24,12 @@ export default defineConfig({
   retries: process.env.CI ? 1 : 0,
   reporter: process.env.CI ? [["list"], ["html", { open: "never" }]] : "list",
   use: {
-    baseURL: "http://localhost:5199",
+    baseURL: `http://localhost:${PORT}`,
     trace: "retain-on-failure",
   },
   webServer: {
-    command: "node node_modules/vite/bin/vite.js --port 5199 --strictPort",
-    url: "http://localhost:5199/",
+    command: `node node_modules/vite/bin/vite.js --port ${PORT} --strictPort`,
+    url: `http://localhost:${PORT}/`,
     reuseExistingServer: true,
     timeout: 90_000,
   },

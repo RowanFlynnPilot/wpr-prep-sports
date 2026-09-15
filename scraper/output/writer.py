@@ -8,6 +8,8 @@ Layout (since the sport-switcher refactor + the payload split):
                            + stat_line_count instead)
 - <sport>/boxscores/<game_id>.json   (full stat_leaders, one per game)
 - <sport>/players/<school_id>.json   (per-school player game lines)
+- <sport>/mini.json       (games near today only — the homepage mini
+                           scoreboard's feed; see build_mini_feed)
 - <sport>/standings.json
 - <sport>/season_stats.json
 
@@ -154,6 +156,13 @@ def _write_split_games(sport_dir: Path, games: list[dict]) -> None:
                 )
 
     _write_json(sport_dir / "games.json", slim_games, compact=True)
+    # Every path that rewrites games.json (full scrape AND the live-score
+    # merge) passes through here, so the mini feed can never lag the scores.
+    _write_json(
+        sport_dir / "mini.json",
+        build_mini_feed(sport_dir.name, slim_games),
+        compact=True,
+    )
 
     for sid, rows in school_lines.items():
         players_dir.mkdir(parents=True, exist_ok=True)
@@ -167,6 +176,49 @@ def _write_split_games(sport_dir: Path, games: list[dict]) -> None:
     # (rescheduled ids, de-duped games) so stale data can't be fetched.
     _prune_dir(boxscore_dir, expected_boxscores)
     _prune_dir(players_dir, set(school_lines))
+
+
+# The homepage mini scoreboard (frontend/mini.html) shows only the games
+# around today, and the WPR homepage loads it on every view — so it reads
+# this few-KB window instead of the full games.json (boys basketball's is
+# 1.7 MB raw, 220 KB gzipped). The window is wider than what the mini
+# displays (finals from the last 6 days, fixtures in the next 10), which
+# keeps a feed valid for 4 days after it was written: off-season sports
+# scrape rarely, and the mini falls back to games.json once a feed is
+# older than that.
+MINI_FEED_PAST_DAYS = 10
+MINI_FEED_FUTURE_DAYS = 14
+_MINI_GAME_KEYS = ("id", "sport", "date", "status", "conference_game", "playoff")
+_MINI_SIDE_KEYS = ("school_id", "name", "score", "logo_url")
+
+
+def build_mini_feed(sport: str, games: list[dict], now: datetime | None = None) -> dict:
+    """Games dated within [now - PAST, now + FUTURE], trimmed to the fields
+    the mini renders, oldest first. `games` are slim or full dumps."""
+    now = now or datetime.now(timezone.utc)
+    lo = now - timedelta(days=MINI_FEED_PAST_DAYS)
+    hi = now + timedelta(days=MINI_FEED_FUTURE_DAYS)
+    picked: list[tuple[datetime, dict]] = []
+    for g in games:
+        try:
+            when = datetime.fromisoformat(str(g.get("date", "")).replace("Z", "+00:00"))
+        except ValueError:
+            continue
+        if when.tzinfo is None:
+            when = when.replace(tzinfo=timezone.utc)
+        if not (lo <= when <= hi):
+            continue
+        slim = {k: g[k] for k in _MINI_GAME_KEYS if k in g}
+        for side in ("home", "away"):
+            slim[side] = {k: (g.get(side) or {}).get(k) for k in _MINI_SIDE_KEYS}
+        picked.append((when, slim))
+    picked.sort(key=lambda pair: pair[0])
+    return {
+        "sport": sport,
+        "generated_at": now.isoformat().replace("+00:00", "Z"),
+        "window_days": {"past": MINI_FEED_PAST_DAYS, "future": MINI_FEED_FUTURE_DAYS},
+        "games": [g for _, g in picked],
+    }
 
 
 def _drop_exact_duplicates(lines: list[dict]) -> list[dict]:

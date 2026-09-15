@@ -70,11 +70,20 @@ Without analytics there is nothing to put in the media kit.
   - `season-view` (prop: `season`) — archive season selector use
   - `division-filter` (props: `sport`, `division`) — power-rankings
     division chip engagement
+  - `mini-click` (props: `sport`, `target`: `game` | `cta` | `brand`) —
+    a tap on the mini scoreboard that sends the reader to the hub page
+  - `mini-sport` (prop: `sport`) — the mini's in-season switcher
 
   To surface an event in the dashboard, add its name as a custom-event
   Goal in Plausible (sponsor-click goals can be added per-slot as slots
   sell). Sport switching needs no event — every sport is a hash route,
-  so it's already a pageview.
+  so it's already a pageview. (The mini is the exception: it is one page,
+  so its switcher fires `mini-sport`.)
+- **Mini scoreboard impressions** are pageviews of `/mini.html`. Once it
+  sits on the homepage it will outnumber every other page on this site by
+  a wide margin, so filter it out (Page is not `/mini.html`) when reading
+  widget engagement, and filter to it when reporting impressions for the
+  `mini` sponsor slot.
 
 ## Self-hosting note
 

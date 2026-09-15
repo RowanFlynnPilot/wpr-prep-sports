@@ -224,6 +224,66 @@ Single-conference form uses `height="680"`. The media-kit embed builder
 generates both (Module → "Conference scores + standings", with an
 optional second conference).
 
+### Mini scoreboard (homepage / sidebar)
+
+A compact scoreboard for the WPR homepage and sidebars: the latest local
+scores (up to four, live games first) and the next games (up to three) for
+one sport. Wausau-area schools lead, in the order of
+`SITE.homeRegionCities`, and a school a reader follows leads for them. It is
+its own lightweight page, `mini.html`, following the suite's mini
+convention (the Packers and Badgers trackers ship one too): no dashboard
+code, and a few-KB `mini.json` feed instead of a season of games, because
+the homepage loads it on every view. Every tap opens the high school sports
+page on the WPR site in the same tab.
+
+**One sport** (football here; any sport id works — `volleyball`,
+`boys_basketball`, `girls_hockey`, …):
+
+```html
+<iframe
+  src="https://sports.wausaupilotandreview.com/mini.html?sport=football"
+  width="100%" height="540" frameborder="0" loading="lazy"
+  title="Central Wisconsin Prep Sports scoreboard"
+  style="border:0;display:block;max-width:420px;margin:0 auto;"></iframe>
+```
+
+**Switcher across whatever is in season** — football, volleyball and boys
+soccer in the fall, basketball and hockey in winter, girls soccer in the
+spring — so a homepage placement never needs editing. Readers tap between
+sports and the mini remembers their choice:
+
+```html
+<iframe
+  src="https://sports.wausaupilotandreview.com/mini.html?sports=in-season"
+  width="100%" height="580" frameborder="0" loading="lazy"
+  title="Central Wisconsin Prep Sports scoreboard"
+  style="border:0;display:block;max-width:420px;margin:0 auto;"></iframe>
+```
+
+Parameters, all optional:
+
+| Parameter | Meaning |
+|---|---|
+| `sport=<id>` | The sport shown (default `football`). With a switcher, the tab it opens on. |
+| `sports=in-season` | Show a switcher over the sports in season this month. |
+| `sports=football,volleyball` | Show a switcher over a fixed list. |
+| `to=<url>` | Where taps land (default `https://wausaupilotandreview.com/high-school-sports/`). |
+
+The heights are not placeholders. Homepage and article blocks can't carry
+the resize script, so the frame renders at exactly this height, and each
+value is the tallest the mini can get (every slot full, the longest school
+names, a sold sponsor, 300px wide) plus a little air. On a quieter week the
+card stretches to fill the frame rather than leaving a gap. The Playwright
+guard (`frontend/e2e/mini.spec.js`) fails the build if a layout change ever
+outgrows them, and `src/mini/embed.js` holds the numbers the media-kit
+builder uses (Module → "Mini scoreboard").
+
+Taps go to the hub page's top, not to the specific game: that page's
+iframe `src` is fixed, so a game-specific URL would land on the dashboard
+anyway. Between seasons a single-sport mini says when the next season
+opens. The sponsor slot is `mini` ("Scoreboard presented by", one line
+under the title).
+
 ## Local development
 
 **Scraper:**
