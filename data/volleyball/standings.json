@@ -91,11 +91,23 @@
         "conference_wins": 1,
         "conference_losses": 0,
         "conference_ties": 0,
-        "overall_wins": 8,
+        "overall_wins": 9,
         "overall_losses": 6,
         "overall_ties": 0,
-        "points_for": 20,
+        "points_for": 23,
         "points_against": 15
+      },
+      {
+        "school_id": "rib-lake",
+        "name": "Rib Lake",
+        "conference_wins": 1,
+        "conference_losses": 0,
+        "conference_ties": 0,
+        "overall_wins": 9,
+        "overall_losses": 9,
+        "overall_ties": 0,
+        "points_for": 23,
+        "points_against": 22
       },
       {
         "school_id": "edgar",
@@ -134,18 +146,6 @@
         "points_against": 11
       },
       {
-        "school_id": "prentice",
-        "name": "Prentice",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "conference_ties": 0,
-        "overall_wins": 13,
-        "overall_losses": 1,
-        "overall_ties": 0,
-        "points_for": 27,
-        "points_against": 6
-      },
-      {
         "school_id": "marathon",
         "name": "Marathon",
         "conference_wins": 0,
@@ -168,18 +168,6 @@
         "overall_ties": 0,
         "points_for": 19,
         "points_against": 14
-      },
-      {
-        "school_id": "rib-lake",
-        "name": "Rib Lake",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "conference_ties": 0,
-        "overall_wins": 7,
-        "overall_losses": 8,
-        "overall_ties": 0,
-        "points_for": 17,
-        "points_against": 18
       },
       {
         "school_id": "assumption",
@@ -216,6 +204,18 @@
         "overall_ties": 0,
         "points_for": 34,
         "points_against": 20
+      },
+      {
+        "school_id": "prentice",
+        "name": "Prentice",
+        "conference_wins": 0,
+        "conference_losses": 1,
+        "conference_ties": 0,
+        "overall_wins": 13,
+        "overall_losses": 2,
+        "overall_ties": 0,
+        "points_for": 29,
+        "points_against": 9
       },
       {
         "school_id": "chequamegon",
