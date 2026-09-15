@@ -178,6 +178,18 @@
     "division": null,
     "rows": [
       {
+        "school_id": "new-richmond",
+        "name": "New Richmond",
+        "conference_wins": 2,
+        "conference_losses": 0,
+        "conference_ties": 0,
+        "overall_wins": 5,
+        "overall_losses": 0,
+        "overall_ties": 0,
+        "points_for": 15,
+        "points_against": 5
+      },
+      {
         "school_id": "hudson",
         "name": "Hudson",
         "conference_wins": 2,
@@ -187,30 +199,6 @@
         "overall_losses": 0,
         "overall_ties": 0,
         "points_for": 25,
-        "points_against": 5
-      },
-      {
-        "school_id": "new-richmond",
-        "name": "New Richmond",
-        "conference_wins": 1,
-        "conference_losses": 0,
-        "conference_ties": 0,
-        "overall_wins": 4,
-        "overall_losses": 0,
-        "overall_ties": 0,
-        "points_for": 13,
-        "points_against": 4
-      },
-      {
-        "school_id": "eau-claire-memorial",
-        "name": "Eau Claire Memorial",
-        "conference_wins": 1,
-        "conference_losses": 0,
-        "conference_ties": 0,
-        "overall_wins": 1,
-        "overall_losses": 2,
-        "overall_ties": 0,
-        "points_for": 4,
         "points_against": 5
       },
       {
@@ -248,6 +236,18 @@
         "overall_ties": 0,
         "points_for": 5,
         "points_against": 21
+      },
+      {
+        "school_id": "eau-claire-memorial",
+        "name": "Eau Claire Memorial",
+        "conference_wins": 1,
+        "conference_losses": 1,
+        "conference_ties": 0,
+        "overall_wins": 1,
+        "overall_losses": 5,
+        "overall_ties": 0,
+        "points_for": 11,
+        "points_against": 15
       },
       {
         "school_id": "eau-claire-north",

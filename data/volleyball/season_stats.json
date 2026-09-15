@@ -1138,12 +1138,12 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "4",
-      "KLS": "10",
-      "ATT": "58",
-      "E": "11",
-      "SP": "9",
-      "EFF": "-0.017"
+      "GP": "5",
+      "KLS": "13",
+      "ATT": "72",
+      "E": "14",
+      "SP": "12",
+      "EFF": "-0.014"
     }
   },
   {
@@ -1155,13 +1155,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "4",
-      "KLS": "6",
-      "ATT": "25",
-      "E": "2",
-      "SP": "9",
+      "GP": "5",
+      "KLS": "7",
+      "ATT": "32",
+      "E": "3",
+      "SP": "12",
       "AST": "1",
-      "EFF": ".160"
+      "EFF": ".125"
     }
   },
   {
@@ -1173,12 +1173,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "4",
-      "KLS": "17",
-      "ATT": "58",
-      "E": "10",
-      "SP": "9",
-      "EFF": ".121"
+      "GP": "5",
+      "KLS": "24",
+      "ATT": "73",
+      "E": "12",
+      "SP": "12",
+      "AST": "1",
+      "EFF": ".164"
     }
   },
   {
@@ -1190,12 +1191,12 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "KLS": "5",
-      "ATT": "22",
-      "E": "3",
-      "SP": "6",
-      "EFF": ".091"
+      "GP": "4",
+      "KLS": "8",
+      "ATT": "27",
+      "E": "4",
+      "SP": "9",
+      "EFF": ".148"
     }
   },
   {
@@ -1207,12 +1208,12 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "KLS": "4",
-      "ATT": "12",
-      "E": "2",
-      "SP": "7",
-      "EFF": ".167"
+      "GP": "4",
+      "KLS": "8",
+      "ATT": "22",
+      "E": "3",
+      "SP": "10",
+      "EFF": ".227"
     }
   },
   {
@@ -1224,12 +1225,12 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "4",
+      "GP": "5",
       "KLS": "2",
       "ATT": "8",
       "E": "1",
-      "SP": "9",
-      "AST": "23",
+      "SP": "12",
+      "AST": "33",
       "EFF": ".125"
     }
   },
@@ -1270,9 +1271,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "4",
-      "DIG": "19",
-      "SP": "8"
+      "GP": "5",
+      "DIG": "29",
+      "SP": "11"
     }
   },
   {
@@ -1284,9 +1285,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "4",
-      "DIG": "24",
-      "SP": "9",
+      "GP": "5",
+      "DIG": "31",
+      "SP": "12",
       "BLK": "1"
     }
   },
@@ -1299,9 +1300,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "DIG": "5",
-      "SP": "4"
+      "GP": "3",
+      "DIG": "9",
+      "SP": "7"
     }
   },
   {
@@ -1313,9 +1314,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "4",
-      "DIG": "15",
-      "SP": "9"
+      "GP": "5",
+      "DIG": "19",
+      "SP": "12",
+      "BLK": "1"
     }
   },
   {
@@ -1342,9 +1344,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "4",
-      "DIG": "8",
-      "SP": "9"
+      "GP": "5",
+      "DIG": "9",
+      "SP": "12"
     }
   },
   {
@@ -1370,9 +1372,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "AST": "13",
-      "SP": "4"
+      "GP": "3",
+      "AST": "18",
+      "SP": "7"
     }
   },
   {
@@ -1885,10 +1887,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "BLK": "2",
-      "SP": "7",
-      "DIG": "5"
+      "GP": "4",
+      "BLK": "4",
+      "SP": "10",
+      "DIG": "7"
     }
   },
   {
@@ -9312,6 +9314,48 @@
     }
   },
   {
+    "school_id": "eau-claire-north",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Imani Woodruff",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "ACE": "1",
+      "SP": "3"
+    }
+  },
+  {
+    "school_id": "eau-claire-north",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Toni Woodruff",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "ACE": "2",
+      "SP": "6"
+    }
+  },
+  {
+    "school_id": "eau-claire-north",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Kennedy Swentik",
+    "player_year": "FR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "DIG": "4",
+      "SP": "8"
+    }
+  },
+  {
     "school_id": "rice-lake",
     "sport": "volleyball",
     "category": "Volleyball Offense",
@@ -11094,34 +11138,6 @@
       "DIG": "1",
       "SP": "8",
       "BLK": "1"
-    }
-  },
-  {
-    "school_id": "eau-claire-north",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Toni Woodruff",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "1",
-      "ACE": "1",
-      "SP": "3"
-    }
-  },
-  {
-    "school_id": "eau-claire-north",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Kennedy Swentik",
-    "player_year": "FR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "DIG": "3",
-      "SP": "5"
     }
   },
   {
