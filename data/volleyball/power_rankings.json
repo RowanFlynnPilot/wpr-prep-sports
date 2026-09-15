@@ -1,7 +1,7 @@
 {
   "sport": "volleyball",
   "season": "2026-27",
-  "generated_at": "2026-09-15T13:15:37.690062-05:00",
+  "generated_at": "2026-09-15T17:15:53.269091-05:00",
   "method": "WPR Power Index v1: 40% W%, 35% SOS, 25% margin (capped per sport)",
   "rankings": [
     {
@@ -103,9 +103,9 @@
       "losses": 3,
       "ties": 0,
       "win_pct": 0.8333,
-      "sos": 0.4566,
+      "sos": 0.4664,
       "avg_margin_capped": 1.44,
-      "score": 67.83,
+      "score": 68.17,
       "movement": 0
     },
     {
@@ -142,9 +142,9 @@
       "losses": 2,
       "ties": 0,
       "win_pct": 0.8667,
-      "sos": 0.3031,
+      "sos": 0.3011,
       "avg_margin_capped": 1.33,
-      "score": 63.33,
+      "score": 63.26,
       "movement": -1
     },
     {
@@ -188,6 +188,45 @@
     },
     {
       "rank": 15,
+      "school_id": "wittenberg-birnamwood",
+      "school_name": "Wittenberg-Birnamwood",
+      "wins": 13,
+      "losses": 4,
+      "ties": 0,
+      "win_pct": 0.7647,
+      "sos": 0.3606,
+      "avg_margin_capped": 1.18,
+      "score": 60.61,
+      "movement": -1
+    },
+    {
+      "rank": 16,
+      "school_id": "spash",
+      "school_name": "SPASH",
+      "wins": 11,
+      "losses": 5,
+      "ties": 0,
+      "win_pct": 0.6875,
+      "sos": 0.4781,
+      "avg_margin_capped": 0.81,
+      "score": 60.12,
+      "movement": 13
+    },
+    {
+      "rank": 17,
+      "school_id": "auburndale",
+      "school_name": "Auburndale",
+      "wins": 14,
+      "losses": 7,
+      "ties": 0,
+      "win_pct": 0.6667,
+      "sos": 0.5194,
+      "avg_margin_capped": 0.67,
+      "score": 60.12,
+      "movement": -2
+    },
+    {
+      "rank": 18,
       "school_id": "edgar",
       "school_name": "Edgar",
       "wins": 5,
@@ -197,46 +236,7 @@
       "sos": 0.5625,
       "avg_margin_capped": 0.62,
       "score": 59.79,
-      "movement": 6
-    },
-    {
-      "rank": 16,
-      "school_id": "auburndale",
-      "school_name": "Auburndale",
-      "wins": 14,
-      "losses": 7,
-      "ties": 0,
-      "win_pct": 0.6667,
-      "sos": 0.5097,
-      "avg_margin_capped": 0.67,
-      "score": 59.78,
-      "movement": -1
-    },
-    {
-      "rank": 17,
-      "school_id": "spash",
-      "school_name": "SPASH",
-      "wins": 11,
-      "losses": 5,
-      "ties": 0,
-      "win_pct": 0.6875,
-      "sos": 0.4623,
-      "avg_margin_capped": 0.81,
-      "score": 59.56,
-      "movement": 12
-    },
-    {
-      "rank": 18,
-      "school_id": "wittenberg-birnamwood",
-      "school_name": "Wittenberg-Birnamwood",
-      "wins": 13,
-      "losses": 4,
-      "ties": 0,
-      "win_pct": 0.7647,
-      "sos": 0.318,
-      "avg_margin_capped": 1.18,
-      "score": 59.12,
-      "movement": -4
+      "movement": 3
     },
     {
       "rank": 19,
@@ -246,9 +246,9 @@
       "losses": 5,
       "ties": 0,
       "win_pct": 0.7222,
-      "sos": 0.3929,
+      "sos": 0.4064,
       "avg_margin_capped": 0.78,
-      "score": 58.38,
+      "score": 58.85,
       "movement": -2
     },
     {
@@ -363,9 +363,9 @@
       "losses": 5,
       "ties": 0,
       "win_pct": 0.5455,
-      "sos": 0.4403,
+      "sos": 0.4582,
       "avg_margin_capped": 0.64,
-      "score": 52.38,
+      "score": 53.01,
       "movement": 0
     },
     {
@@ -376,9 +376,9 @@
       "losses": 9,
       "ties": 0,
       "win_pct": 0.5,
-      "sos": 0.5319,
+      "sos": 0.5299,
       "avg_margin_capped": 0.06,
-      "score": 51.35,
+      "score": 51.28,
       "movement": 17
     },
     {
@@ -415,9 +415,9 @@
       "losses": 4,
       "ties": 0,
       "win_pct": 0.6,
-      "sos": 0.3877,
+      "sos": 0.3857,
       "avg_margin_capped": 0.1,
-      "score": 50.49,
+      "score": 50.42,
       "movement": 3
     },
     {
@@ -487,6 +487,19 @@
     },
     {
       "rank": 38,
+      "school_id": "wausau-west",
+      "school_name": "Wausau West",
+      "wins": 3,
+      "losses": 4,
+      "ties": 0,
+      "win_pct": 0.4286,
+      "sos": 0.4491,
+      "avg_margin_capped": 0.0,
+      "score": 45.36,
+      "movement": 0
+    },
+    {
+      "rank": 39,
       "school_id": "assumption",
       "school_name": "Assumption",
       "wins": 2,
@@ -496,10 +509,10 @@
       "sos": 0.3333,
       "avg_margin_capped": 0.25,
       "score": 45.21,
-      "movement": -2
+      "movement": -3
     },
     {
-      "rank": 39,
+      "rank": 40,
       "school_id": "iola-scandinavia",
       "school_name": "Iola-Scandinavia",
       "wins": 2,
@@ -509,20 +522,7 @@
       "sos": 0.561,
       "avg_margin_capped": -0.17,
       "score": 44.77,
-      "movement": 0
-    },
-    {
-      "rank": 40,
-      "school_id": "wausau-west",
-      "school_name": "Wausau West",
-      "wins": 3,
-      "losses": 4,
-      "ties": 0,
-      "win_pct": 0.4286,
-      "sos": 0.4276,
-      "avg_margin_capped": 0.0,
-      "score": 44.61,
-      "movement": -2
+      "movement": -1
     },
     {
       "rank": 41,
@@ -552,6 +552,19 @@
     },
     {
       "rank": 43,
+      "school_id": "rhinelander",
+      "school_name": "Rhinelander",
+      "wins": 4,
+      "losses": 7,
+      "ties": 0,
+      "win_pct": 0.3636,
+      "sos": 0.4892,
+      "avg_margin_capped": -0.73,
+      "score": 41.14,
+      "movement": 0
+    },
+    {
+      "rank": 44,
       "school_id": "menominee-nation",
       "school_name": "Menominee Nation",
       "wins": 1,
@@ -561,10 +574,10 @@
       "sos": 0.8407,
       "avg_margin_capped": -1.5,
       "score": 40.67,
-      "movement": 2
+      "movement": 1
     },
     {
-      "rank": 44,
+      "rank": 45,
       "school_id": "flambeau",
       "school_name": "Flambeau",
       "wins": 4,
@@ -574,20 +587,7 @@
       "sos": 0.4928,
       "avg_margin_capped": -0.58,
       "score": 40.65,
-      "movement": -4
-    },
-    {
-      "rank": 45,
-      "school_id": "rhinelander",
-      "school_name": "Rhinelander",
-      "wins": 4,
-      "losses": 7,
-      "ties": 0,
-      "win_pct": 0.3636,
-      "sos": 0.4654,
-      "avg_margin_capped": -0.73,
-      "score": 40.3,
-      "movement": -2
+      "movement": -5
     },
     {
       "rank": 46,
@@ -617,6 +617,19 @@
     },
     {
       "rank": 48,
+      "school_id": "wisconsin-rapids",
+      "school_name": "Wisconsin Rapids Lincoln",
+      "wins": 4,
+      "losses": 9,
+      "ties": 0,
+      "win_pct": 0.3077,
+      "sos": 0.54,
+      "avg_margin_capped": -0.92,
+      "score": 39.86,
+      "movement": 5
+    },
+    {
+      "rank": 49,
       "school_id": "menomonie",
       "school_name": "Menomonie",
       "wins": 5,
@@ -626,10 +639,10 @@
       "sos": 0.4789,
       "avg_margin_capped": -0.73,
       "score": 39.54,
-      "movement": 0
+      "movement": -1
     },
     {
-      "rank": 49,
+      "rank": 50,
       "school_id": "shell-lake",
       "school_name": "Shell Lake",
       "wins": 3,
@@ -639,10 +652,10 @@
       "sos": 0.5556,
       "avg_margin_capped": -1.1,
       "score": 39.36,
-      "movement": -7
+      "movement": -8
     },
     {
-      "rank": 50,
+      "rank": 51,
       "school_id": "rosholt",
       "school_name": "Rosholt",
       "wins": 4,
@@ -652,23 +665,23 @@
       "sos": 0.5215,
       "avg_margin_capped": -0.93,
       "score": 38.31,
-      "movement": 2
-    },
-    {
-      "rank": 51,
-      "school_id": "wisconsin-rapids",
-      "school_name": "Wisconsin Rapids Lincoln",
-      "wins": 2,
-      "losses": 8,
-      "ties": 0,
-      "win_pct": 0.2,
-      "sos": 0.656,
-      "avg_margin_capped": -1.3,
-      "score": 38.04,
-      "movement": 2
+      "movement": 1
     },
     {
       "rank": 52,
+      "school_id": "colby",
+      "school_name": "Colby",
+      "wins": 7,
+      "losses": 10,
+      "ties": 0,
+      "win_pct": 0.4118,
+      "sos": 0.3149,
+      "avg_margin_capped": -0.41,
+      "score": 38.28,
+      "movement": -1
+    },
+    {
+      "rank": 53,
       "school_id": "eau-claire-north",
       "school_name": "Eau Claire North",
       "wins": 1,
@@ -678,20 +691,7 @@
       "sos": 0.8206,
       "avg_margin_capped": -1.58,
       "score": 37.96,
-      "movement": 2
-    },
-    {
-      "rank": 53,
-      "school_id": "waupaca",
-      "school_name": "Waupaca",
-      "wins": 1,
-      "losses": 6,
-      "ties": 0,
-      "win_pct": 0.1429,
-      "sos": 0.7647,
-      "avg_margin_capped": -1.71,
-      "score": 37.84,
-      "movement": -6
+      "movement": 1
     },
     {
       "rank": 54,
@@ -708,19 +708,6 @@
     },
     {
       "rank": 55,
-      "school_id": "colby",
-      "school_name": "Colby",
-      "wins": 7,
-      "losses": 10,
-      "ties": 0,
-      "win_pct": 0.4118,
-      "sos": 0.297,
-      "avg_margin_capped": -0.41,
-      "score": 37.65,
-      "movement": -4
-    },
-    {
-      "rank": 56,
       "school_id": "wild-rose",
       "school_name": "Wild Rose",
       "wins": 3,
@@ -730,10 +717,10 @@
       "sos": 0.4491,
       "avg_margin_capped": -1.1,
       "score": 35.64,
-      "movement": 1
+      "movement": 2
     },
     {
-      "rank": 57,
+      "rank": 56,
       "school_id": "port-edwards",
       "school_name": "Port Edwards",
       "wins": 2,
@@ -743,23 +730,23 @@
       "sos": 0.401,
       "avg_margin_capped": -1.33,
       "score": 34.31,
-      "movement": -1
+      "movement": 0
     },
     {
-      "rank": 58,
+      "rank": 57,
       "school_id": "loyal",
       "school_name": "Loyal",
       "wins": 1,
-      "losses": 7,
+      "losses": 8,
       "ties": 0,
-      "win_pct": 0.125,
+      "win_pct": 0.1111,
       "sos": 0.6556,
-      "avg_margin_capped": -1.5,
-      "score": 34.19,
-      "movement": 1
+      "avg_margin_capped": -1.56,
+      "score": 33.41,
+      "movement": 2
     },
     {
-      "rank": 59,
+      "rank": 58,
       "school_id": "abbotsford",
       "school_name": "Abbotsford",
       "wins": 3,
@@ -769,10 +756,10 @@
       "sos": 0.5325,
       "avg_margin_capped": -1.4,
       "score": 33.31,
-      "movement": 1
+      "movement": 2
     },
     {
-      "rank": 60,
+      "rank": 59,
       "school_id": "black-river-falls",
       "school_name": "Black River Falls",
       "wins": 2,
@@ -782,10 +769,10 @@
       "sos": 0.5,
       "avg_margin_capped": -1.18,
       "score": 32.35,
-      "movement": -2
+      "movement": -1
     },
     {
-      "rank": 61,
+      "rank": 60,
       "school_id": "wausau-east",
       "school_name": "Wausau East",
       "wins": 3,
@@ -795,10 +782,10 @@
       "sos": 0.5293,
       "avg_margin_capped": -1.33,
       "score": 32.14,
-      "movement": 0
+      "movement": 1
     },
     {
-      "rank": 62,
+      "rank": 61,
       "school_id": "newman-catholic",
       "school_name": "Newman Catholic",
       "wins": 1,
@@ -808,10 +795,36 @@
       "sos": 0.5361,
       "avg_margin_capped": -1.43,
       "score": 31.02,
-      "movement": 0
+      "movement": 1
+    },
+    {
+      "rank": 62,
+      "school_id": "tomahawk",
+      "school_name": "Tomahawk",
+      "wins": 1,
+      "losses": 6,
+      "ties": 0,
+      "win_pct": 0.1429,
+      "sos": 0.5338,
+      "avg_margin_capped": -1.43,
+      "score": 30.94,
+      "movement": 3
     },
     {
       "rank": 63,
+      "school_id": "waupaca",
+      "school_name": "Waupaca",
+      "wins": 1,
+      "losses": 7,
+      "ties": 0,
+      "win_pct": 0.125,
+      "sos": 0.5362,
+      "avg_margin_capped": -1.62,
+      "score": 29.5,
+      "movement": -16
+    },
+    {
+      "rank": 64,
       "school_id": "bruce",
       "school_name": "Bruce",
       "wins": 0,
@@ -821,20 +834,7 @@
       "sos": 0.6,
       "avg_margin_capped": -1.57,
       "score": 26.95,
-      "movement": 0
-    },
-    {
-      "rank": 64,
-      "school_id": "tomahawk",
-      "school_name": "Tomahawk",
-      "wins": 0,
-      "losses": 6,
-      "ties": 0,
-      "win_pct": 0.0,
-      "sos": 0.5903,
-      "avg_margin_capped": -2.0,
-      "score": 24.83,
-      "movement": 1
+      "movement": -1
     },
     {
       "rank": 65,
