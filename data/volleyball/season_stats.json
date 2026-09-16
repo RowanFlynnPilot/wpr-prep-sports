@@ -3782,13 +3782,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "KLS": "15",
-      "ATT": "43",
-      "E": "11",
-      "SP": "7",
+      "GP": "5",
+      "KLS": "23",
+      "ATT": "66",
+      "E": "16",
+      "SP": "11",
       "AST": "1",
-      "EFF": ".093"
+      "EFF": ".106"
     }
   },
   {
@@ -3800,30 +3800,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "KLS": "13",
-      "ATT": "42",
-      "E": "9",
-      "SP": "7",
-      "EFF": ".095"
-    }
-  },
-  {
-    "school_id": "iola-scandinavia",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Emma Printz",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "3",
-      "KLS": "2",
-      "ATT": "8",
-      "E": "0",
-      "SP": "7",
-      "AST": "66",
-      "EFF": ".250"
+      "GP": "5",
+      "KLS": "22",
+      "ATT": "64",
+      "E": "16",
+      "SP": "11",
+      "AST": "3",
+      "EFF": ".094"
     }
   },
   {
@@ -3835,12 +3818,12 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "KLS": "12",
-      "ATT": "37",
-      "E": "10",
-      "SP": "7",
-      "EFF": ".054"
+      "GP": "5",
+      "KLS": "23",
+      "ATT": "62",
+      "E": "15",
+      "SP": "11",
+      "EFF": ".129"
     }
   },
   {
@@ -3852,13 +3835,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "KLS": "4",
-      "ATT": "9",
-      "E": "2",
-      "SP": "7",
+      "GP": "5",
+      "KLS": "6",
+      "ATT": "23",
+      "E": "5",
+      "SP": "11",
       "AST": "1",
-      "EFF": ".222"
+      "EFF": ".043"
     }
   },
   {
@@ -3870,27 +3853,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "KLS": "24",
-      "ATT": "61",
-      "E": "6",
-      "SP": "7",
-      "AST": "1",
-      "EFF": ".295"
-    }
-  },
-  {
-    "school_id": "iola-scandinavia",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Braelyn Jueds",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "ACE": "6",
-      "SP": "4"
+      "GP": "5",
+      "KLS": "39",
+      "ATT": "96",
+      "E": "7",
+      "SP": "11",
+      "AST": "3",
+      "EFF": ".333"
     }
   },
   {
@@ -3902,9 +3871,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "ACE": "7",
-      "SP": "7"
+      "GP": "5",
+      "ACE": "9",
+      "SP": "11"
     }
   },
   {
@@ -3916,37 +3885,24 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "ACE": "2",
-      "SP": "2"
+      "GP": "3",
+      "ACE": "5",
+      "SP": "6"
     }
   },
   {
     "school_id": "iola-scandinavia",
     "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Charlotte Isermann",
+    "category": "Volleyball Defense",
+    "player_name": "Cayleigh Woyak",
     "player_year": "SR",
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "ACE": "3",
-      "SP": "2"
-    }
-  },
-  {
-    "school_id": "iola-scandinavia",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Maggie Maus",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
       "GP": "3",
-      "ACE": "7",
-      "SP": "7"
+      "BLK": "2",
+      "SP": "7",
+      "DIG": "8"
     }
   },
   {
@@ -3958,9 +3914,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "DIG": "20",
-      "SP": "7",
+      "GP": "5",
+      "DIG": "26",
+      "SP": "11",
       "BLK": "3"
     }
   },
@@ -3973,9 +3929,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "DIG": "13",
-      "SP": "7",
+      "GP": "5",
+      "DIG": "15",
+      "SP": "11",
       "BLK": "1"
     }
   },
@@ -3988,23 +3944,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "DIG": "14",
-      "SP": "7"
-    }
-  },
-  {
-    "school_id": "iola-scandinavia",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Charlotte Isermann",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "3",
-      "DIG": "7",
-      "SP": "7"
+      "GP": "5",
+      "DIG": "30",
+      "SP": "11"
     }
   },
   {
@@ -4016,9 +3958,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "DIG": "9",
-      "SP": "7"
+      "GP": "4",
+      "DIG": "10",
+      "SP": "9"
     }
   },
   {
@@ -4030,9 +3972,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "DIG": "17",
-      "SP": "7"
+      "GP": "5",
+      "DIG": "25",
+      "SP": "11"
     }
   },
   {
@@ -4044,10 +3986,98 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "DIG": "22",
-      "SP": "7",
+      "GP": "5",
+      "DIG": "34",
+      "SP": "11",
       "BLK": "1"
+    }
+  },
+  {
+    "school_id": "iola-scandinavia",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Emma Printz",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "5",
+      "AST": "103",
+      "SP": "11",
+      "KLS": "2",
+      "ATT": "8",
+      "E": "0",
+      "EFF": ".250"
+    }
+  },
+  {
+    "school_id": "iola-scandinavia",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Ahnna Check",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "AST": "3",
+      "SP": "6"
+    }
+  },
+  {
+    "school_id": "iola-scandinavia",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Braelyn Jueds",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "ACE": "7",
+      "SP": "6"
+    }
+  },
+  {
+    "school_id": "iola-scandinavia",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Charlotte Isermann",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "ACE": "5",
+      "SP": "4"
+    }
+  },
+  {
+    "school_id": "iola-scandinavia",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Maggie Maus",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "4",
+      "ACE": "8",
+      "SP": "9"
+    }
+  },
+  {
+    "school_id": "iola-scandinavia",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Charlotte Isermann",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "4",
+      "DIG": "9",
+      "SP": "9"
     }
   },
   {
@@ -4065,21 +4095,6 @@
       "E": "6",
       "SP": "5",
       "EFF": "-0.133"
-    }
-  },
-  {
-    "school_id": "iola-scandinavia",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Cayleigh Woyak",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "BLK": "1",
-      "SP": "5",
-      "DIG": "5"
     }
   },
   {
@@ -4122,23 +4137,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "DIG": "4",
-      "SP": "2"
-    }
-  },
-  {
-    "school_id": "iola-scandinavia",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Ahnna Check",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "1",
-      "AST": "1",
-      "SP": "2"
+      "GP": "2",
+      "DIG": "5",
+      "SP": "4"
     }
   },
   {
@@ -11736,9 +11737,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "ACE": "2",
-      "SP": "3"
+      "GP": "2",
+      "ACE": "3",
+      "SP": "7"
     }
   },
   {
@@ -11750,9 +11751,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "ACE": "4",
-      "SP": "3"
+      "GP": "2",
+      "ACE": "6",
+      "SP": "7"
     }
   },
   {
@@ -11764,9 +11765,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "DIG": "15",
-      "SP": "3"
+      "GP": "2",
+      "DIG": "30",
+      "SP": "7"
     }
   },
   {
@@ -11778,9 +11779,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "DIG": "5",
-      "SP": "3"
+      "GP": "2",
+      "DIG": "8",
+      "SP": "7"
     }
   },
   {
@@ -11792,9 +11793,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "DIG": "4",
-      "SP": "3"
+      "GP": "2",
+      "DIG": "8",
+      "SP": "7"
     }
   },
   {
@@ -11806,9 +11807,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "DIG": "10",
-      "SP": "3"
+      "GP": "2",
+      "DIG": "22",
+      "SP": "7"
     }
   },
   {
@@ -11820,9 +11821,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "DIG": "8",
-      "SP": "3"
+      "GP": "2",
+      "DIG": "16",
+      "SP": "7"
     }
   },
   {
@@ -13996,6 +13997,79 @@
     }
   },
   {
+    "school_id": "iola-scandinavia",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Jenna Kurki",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "KLS": "2",
+      "ATT": "2",
+      "E": "0",
+      "SP": "1",
+      "EFF": "1.000"
+    }
+  },
+  {
+    "school_id": "iola-scandinavia",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Player 3",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "ACE": "1",
+      "SP": "2"
+    }
+  },
+  {
+    "school_id": "iola-scandinavia",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Player 3",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "DIG": "4",
+      "SP": "2"
+    }
+  },
+  {
+    "school_id": "iola-scandinavia",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Sophia Munoz",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "DIG": "1",
+      "SP": "1"
+    }
+  },
+  {
+    "school_id": "iola-scandinavia",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Player 3",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "AST": "2",
+      "SP": "2"
+    }
+  },
+  {
     "school_id": "rosholt",
     "sport": "volleyball",
     "category": "Volleyball Defense",
@@ -14084,6 +14158,48 @@
     "stats": {
       "GP": "1",
       "AST": "2",
+      "SP": "4"
+    }
+  },
+  {
+    "school_id": "chequamegon",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Abagail Brenholt",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "ACE": "1",
+      "SP": "4"
+    }
+  },
+  {
+    "school_id": "chequamegon",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Aly Nichols",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "ACE": "1",
+      "SP": "4"
+    }
+  },
+  {
+    "school_id": "chequamegon",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Jozlyn Nelson",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "DIG": "2",
       "SP": "4"
     }
   }
