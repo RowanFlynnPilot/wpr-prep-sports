@@ -1,7 +1,7 @@
 {
   "sport": "volleyball",
   "season": "2026-27",
-  "generated_at": "2026-09-15T17:15:53.269091-05:00",
+  "generated_at": "2026-09-15T19:22:53.693314-05:00",
   "method": "WPR Power Index v1: 40% W%, 35% SOS, 25% margin (capped per sport)",
   "rankings": [
     {
@@ -103,9 +103,9 @@
       "losses": 3,
       "ties": 0,
       "win_pct": 0.8333,
-      "sos": 0.4664,
+      "sos": 0.4698,
       "avg_margin_capped": 1.44,
-      "score": 68.17,
+      "score": 68.29,
       "movement": 0
     },
     {
@@ -298,9 +298,9 @@
       "losses": 7,
       "ties": 0,
       "win_pct": 0.6111,
-      "sos": 0.5212,
+      "sos": 0.525,
       "avg_margin_capped": 0.33,
-      "score": 56.57,
+      "score": 56.71,
       "movement": -7
     },
     {
@@ -337,9 +337,9 @@
       "losses": 6,
       "ties": 0,
       "win_pct": 0.6,
-      "sos": 0.4693,
+      "sos": 0.474,
       "avg_margin_capped": 0.53,
-      "score": 55.15,
+      "score": 55.31,
       "movement": -1
     },
     {
@@ -350,22 +350,22 @@
       "losses": 6,
       "ties": 0,
       "win_pct": 0.4545,
-      "sos": 0.6846,
+      "sos": 0.6922,
       "avg_margin_capped": 0.09,
-      "score": 55.02,
+      "score": 55.29,
       "movement": -3
     },
     {
       "rank": 28,
       "school_id": "medford",
       "school_name": "Medford",
-      "wins": 6,
+      "wins": 7,
       "losses": 5,
       "ties": 0,
-      "win_pct": 0.5455,
+      "win_pct": 0.5833,
       "sos": 0.4582,
-      "avg_margin_capped": 0.64,
-      "score": 53.01,
+      "avg_margin_capped": 0.67,
+      "score": 54.65,
       "movement": 0
     },
     {
@@ -467,9 +467,9 @@
       "losses": 10,
       "ties": 0,
       "win_pct": 0.4118,
-      "sos": 0.535,
+      "sos": 0.5476,
       "avg_margin_capped": -0.47,
-      "score": 45.74,
+      "score": 46.18,
       "movement": -5
     },
     {
@@ -734,6 +734,19 @@
     },
     {
       "rank": 57,
+      "school_id": "abbotsford",
+      "school_name": "Abbotsford",
+      "wins": 3,
+      "losses": 12,
+      "ties": 0,
+      "win_pct": 0.2,
+      "sos": 0.536,
+      "avg_margin_capped": -1.4,
+      "score": 33.43,
+      "movement": 3
+    },
+    {
+      "rank": 58,
       "school_id": "loyal",
       "school_name": "Loyal",
       "wins": 1,
@@ -743,20 +756,7 @@
       "sos": 0.6556,
       "avg_margin_capped": -1.56,
       "score": 33.41,
-      "movement": 2
-    },
-    {
-      "rank": 58,
-      "school_id": "abbotsford",
-      "school_name": "Abbotsford",
-      "wins": 3,
-      "losses": 12,
-      "ties": 0,
-      "win_pct": 0.2,
-      "sos": 0.5325,
-      "avg_margin_capped": -1.4,
-      "score": 33.31,
-      "movement": 2
+      "movement": 1
     },
     {
       "rank": 59,
@@ -786,6 +786,19 @@
     },
     {
       "rank": 61,
+      "school_id": "tomahawk",
+      "school_name": "Tomahawk",
+      "wins": 1,
+      "losses": 6,
+      "ties": 0,
+      "win_pct": 0.1429,
+      "sos": 0.5414,
+      "avg_margin_capped": -1.43,
+      "score": 31.21,
+      "movement": 4
+    },
+    {
+      "rank": 62,
       "school_id": "newman-catholic",
       "school_name": "Newman Catholic",
       "wins": 1,
@@ -795,20 +808,7 @@
       "sos": 0.5361,
       "avg_margin_capped": -1.43,
       "score": 31.02,
-      "movement": 1
-    },
-    {
-      "rank": 62,
-      "school_id": "tomahawk",
-      "school_name": "Tomahawk",
-      "wins": 1,
-      "losses": 6,
-      "ties": 0,
-      "win_pct": 0.1429,
-      "sos": 0.5338,
-      "avg_margin_capped": -1.43,
-      "score": 30.94,
-      "movement": 3
+      "movement": 0
     },
     {
       "rank": 63,
@@ -854,12 +854,12 @@
       "school_id": "south-shore",
       "school_name": "South Shore",
       "wins": 0,
-      "losses": 5,
+      "losses": 6,
       "ties": 0,
       "win_pct": 0.0,
       "sos": 0.5,
-      "avg_margin_capped": -2.2,
-      "score": 20.83,
+      "avg_margin_capped": -2.33,
+      "score": 20.28,
       "movement": 0
     }
   ]
