@@ -86,6 +86,18 @@
     "division": null,
     "rows": [
       {
+        "school_id": "rib-lake",
+        "name": "Rib Lake",
+        "conference_wins": 2,
+        "conference_losses": 0,
+        "conference_ties": 0,
+        "overall_wins": 11,
+        "overall_losses": 9,
+        "overall_ties": 0,
+        "points_for": 28,
+        "points_against": 24
+      },
+      {
         "school_id": "athens",
         "name": "Athens",
         "conference_wins": 2,
@@ -96,18 +108,6 @@
         "overall_ties": 0,
         "points_for": 26,
         "points_against": 15
-      },
-      {
-        "school_id": "rib-lake",
-        "name": "Rib Lake",
-        "conference_wins": 2,
-        "conference_losses": 0,
-        "conference_ties": 0,
-        "overall_wins": 10,
-        "overall_losses": 9,
-        "overall_ties": 0,
-        "points_for": 26,
-        "points_against": 23
       },
       {
         "school_id": "spencer",
@@ -163,10 +163,10 @@
         "conference_wins": 0,
         "conference_losses": 0,
         "conference_ties": 0,
-        "overall_wins": 11,
+        "overall_wins": 12,
         "overall_losses": 2,
         "overall_ties": 0,
-        "points_for": 26,
+        "points_for": 28,
         "points_against": 9
       },
       {
@@ -267,10 +267,10 @@
         "conference_wins": 2,
         "conference_losses": 1,
         "conference_ties": 0,
-        "overall_wins": 13,
+        "overall_wins": 14,
         "overall_losses": 6,
         "overall_ties": 0,
-        "points_for": 30,
+        "points_for": 32,
         "points_against": 18
       },
       {
@@ -354,28 +354,28 @@
         "points_against": 19
       },
       {
-        "school_id": "owen-withee",
-        "name": "Owen-Withee",
+        "school_id": "columbus-catholic",
+        "name": "Columbus Catholic",
         "conference_wins": 1,
         "conference_losses": 0,
         "conference_ties": 0,
-        "overall_wins": 6,
-        "overall_losses": 4,
-        "overall_ties": 0,
-        "points_for": 13,
-        "points_against": 12
-      },
-      {
-        "school_id": "columbus-catholic",
-        "name": "Columbus Catholic",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "conference_ties": 0,
-        "overall_wins": 6,
+        "overall_wins": 7,
         "overall_losses": 6,
         "overall_ties": 0,
-        "points_for": 16,
+        "points_for": 19,
         "points_against": 13
+      },
+      {
+        "school_id": "owen-withee",
+        "name": "Owen-Withee",
+        "conference_wins": 1,
+        "conference_losses": 1,
+        "conference_ties": 0,
+        "overall_wins": 6,
+        "overall_losses": 5,
+        "overall_ties": 0,
+        "points_for": 13,
+        "points_against": 15
       },
       {
         "school_id": "greenwood",
@@ -408,10 +408,10 @@
         "conference_losses": 1,
         "conference_ties": 0,
         "overall_wins": 4,
-        "overall_losses": 6,
+        "overall_losses": 7,
         "overall_ties": 0,
         "points_for": 10,
-        "points_against": 17
+        "points_against": 19
       },
       {
         "school_id": "abbotsford",
