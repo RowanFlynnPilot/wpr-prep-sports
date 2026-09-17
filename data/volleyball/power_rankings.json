@@ -1,7 +1,7 @@
 {
   "sport": "volleyball",
   "season": "2026-27",
-  "generated_at": "2026-09-17T02:41:53.577915-05:00",
+  "generated_at": "2026-09-17T08:31:02.177994-05:00",
   "method": "WPR Power Index v1: 40% W%, 35% SOS, 25% margin (capped per sport)",
   "rankings": [
     {
@@ -103,9 +103,9 @@
       "losses": 4,
       "ties": 0,
       "win_pct": 0.8095,
-      "sos": 0.5032,
+      "sos": 0.506,
       "avg_margin_capped": 1.24,
-      "score": 67.65,
+      "score": 67.75,
       "movement": 0
     },
     {
@@ -272,9 +272,9 @@
       "losses": 6,
       "ties": 0,
       "win_pct": 0.5385,
-      "sos": 0.6439,
+      "sos": 0.6486,
       "avg_margin_capped": 0.46,
-      "score": 58.5,
+      "score": 58.66,
       "movement": 3
     },
     {
@@ -337,9 +337,9 @@
       "losses": 7,
       "ties": 0,
       "win_pct": 0.6111,
-      "sos": 0.502,
+      "sos": 0.5053,
       "avg_margin_capped": 0.33,
-      "score": 55.9,
+      "score": 56.02,
       "movement": -10
     },
     {
@@ -383,29 +383,29 @@
     },
     {
       "rank": 30,
+      "school_id": "medford",
+      "school_name": "Medford",
+      "wins": 8,
+      "losses": 6,
+      "ties": 0,
+      "win_pct": 0.5714,
+      "sos": 0.4394,
+      "avg_margin_capped": 0.5,
+      "score": 52.82,
+      "movement": -2
+    },
+    {
+      "rank": 31,
       "school_id": "athens",
       "school_name": "Athens",
       "wins": 10,
       "losses": 9,
       "ties": 0,
       "win_pct": 0.5263,
-      "sos": 0.4808,
+      "sos": 0.4835,
       "avg_margin_capped": 0.26,
-      "score": 51.48,
-      "movement": -5
-    },
-    {
-      "rank": 31,
-      "school_id": "medford",
-      "school_name": "Medford",
-      "wins": 7,
-      "losses": 6,
-      "ties": 0,
-      "win_pct": 0.5385,
-      "sos": 0.4394,
-      "avg_margin_capped": 0.46,
-      "score": 51.34,
-      "movement": -3
+      "score": 51.57,
+      "movement": -6
     },
     {
       "rank": 32,
@@ -493,13 +493,26 @@
       "losses": 10,
       "ties": 0,
       "win_pct": 0.3333,
-      "sos": 0.6904,
+      "sos": 0.6951,
       "avg_margin_capped": -0.67,
-      "score": 47.22,
+      "score": 47.39,
       "movement": -5
     },
     {
       "rank": 39,
+      "school_id": "antigo",
+      "school_name": "Antigo",
+      "wins": 7,
+      "losses": 10,
+      "ties": 0,
+      "win_pct": 0.4118,
+      "sos": 0.5339,
+      "avg_margin_capped": -0.47,
+      "score": 45.7,
+      "movement": -8
+    },
+    {
+      "rank": 40,
       "school_id": "pittsville",
       "school_name": "Pittsville",
       "wins": 8,
@@ -509,20 +522,7 @@
       "sos": 0.4513,
       "avg_margin_capped": -0.17,
       "score": 45.38,
-      "movement": -2
-    },
-    {
-      "rank": 40,
-      "school_id": "antigo",
-      "school_name": "Antigo",
-      "wins": 7,
-      "losses": 10,
-      "ties": 0,
-      "win_pct": 0.4118,
-      "sos": 0.5229,
-      "avg_margin_capped": -0.47,
-      "score": 45.31,
-      "movement": -9
+      "movement": -3
     },
     {
       "rank": 41,
@@ -747,6 +747,19 @@
     },
     {
       "rank": 58,
+      "school_id": "abbotsford",
+      "school_name": "Abbotsford",
+      "wins": 3,
+      "losses": 13,
+      "ties": 0,
+      "win_pct": 0.1875,
+      "sos": 0.5233,
+      "avg_margin_capped": -1.5,
+      "score": 32.06,
+      "movement": 2
+    },
+    {
+      "rank": 59,
       "school_id": "wausau-east",
       "school_name": "Wausau East",
       "wins": 3,
@@ -756,20 +769,7 @@
       "sos": 0.5252,
       "avg_margin_capped": -1.33,
       "score": 31.99,
-      "movement": 3
-    },
-    {
-      "rank": 59,
-      "school_id": "abbotsford",
-      "school_name": "Abbotsford",
-      "wins": 3,
-      "losses": 13,
-      "ties": 0,
-      "win_pct": 0.1875,
-      "sos": 0.5205,
-      "avg_margin_capped": -1.5,
-      "score": 31.97,
-      "movement": 1
+      "movement": 2
     },
     {
       "rank": 60,
@@ -805,9 +805,9 @@
       "losses": 7,
       "ties": 0,
       "win_pct": 0.125,
-      "sos": 0.5512,
+      "sos": 0.5567,
       "avg_margin_capped": -1.62,
-      "score": 30.02,
+      "score": 30.21,
       "movement": 3
     },
     {
@@ -854,12 +854,12 @@
       "school_id": "south-shore",
       "school_name": "South Shore",
       "wins": 0,
-      "losses": 6,
+      "losses": 7,
       "ties": 0,
       "win_pct": 0.0,
       "sos": 0.5,
-      "avg_margin_capped": -2.33,
-      "score": 20.28,
+      "avg_margin_capped": -2.29,
+      "score": 20.48,
       "movement": 0
     }
   ]
