@@ -518,18 +518,6 @@
         "points_against": 85
       },
       {
-        "school_id": "spencer",
-        "name": "Spencer",
-        "conference_wins": 1,
-        "conference_losses": 1,
-        "conference_ties": 0,
-        "overall_wins": 3,
-        "overall_losses": 1,
-        "overall_ties": 0,
-        "points_for": 76,
-        "points_against": 70
-      },
-      {
         "school_id": "colby",
         "name": "Colby",
         "conference_wins": 1,
@@ -542,16 +530,28 @@
         "points_against": 70
       },
       {
-        "school_id": "wittenberg-birnamwood",
-        "name": "Wittenberg-Birnamwood",
-        "conference_wins": 0,
+        "school_id": "spencer",
+        "name": "Spencer",
+        "conference_wins": 1,
         "conference_losses": 2,
         "conference_ties": 0,
-        "overall_wins": 1,
+        "overall_wins": 3,
+        "overall_losses": 2,
+        "overall_ties": 0,
+        "points_for": 104,
+        "points_against": 126
+      },
+      {
+        "school_id": "wittenberg-birnamwood",
+        "name": "Wittenberg-Birnamwood",
+        "conference_wins": 1,
+        "conference_losses": 2,
+        "conference_ties": 0,
+        "overall_wins": 2,
         "overall_losses": 3,
         "overall_ties": 0,
-        "points_for": 42,
-        "points_against": 120
+        "points_for": 98,
+        "points_against": 148
       }
     ]
   },
