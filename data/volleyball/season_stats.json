@@ -10603,21 +10603,6 @@
   {
     "school_id": "rosholt",
     "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Ashlyn Kunst",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "7",
-      "DIG": "31",
-      "SP": "18",
-      "BLK": "6"
-    }
-  },
-  {
-    "school_id": "rosholt",
-    "sport": "volleyball",
     "category": "Volleyball Offense",
     "player_name": "Danika Moats",
     "player_year": "SR",
@@ -10658,6 +10643,21 @@
       "GP": "3",
       "ACE": "4",
       "SP": "10"
+    }
+  },
+  {
+    "school_id": "rosholt",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Ashlyn Kunst",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "7",
+      "DIG": "31",
+      "SP": "18",
+      "BLK": "6"
     }
   },
   {
@@ -12478,12 +12478,12 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "KLS": "26",
-      "ATT": "81",
-      "E": "16",
-      "SP": "8",
-      "EFF": ".123"
+      "GP": "4",
+      "KLS": "37",
+      "ATT": "113",
+      "E": "19",
+      "SP": "11",
+      "EFF": ".159"
     }
   },
   {
@@ -12495,12 +12495,12 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "KLS": "5",
-      "ATT": "15",
-      "E": "3",
-      "SP": "8",
-      "EFF": ".133"
+      "GP": "4",
+      "KLS": "8",
+      "ATT": "22",
+      "E": "5",
+      "SP": "11",
+      "EFF": ".136"
     }
   },
   {
@@ -12512,12 +12512,12 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "KLS": "12",
-      "ATT": "34",
-      "E": "3",
-      "SP": "8",
-      "EFF": ".265"
+      "GP": "4",
+      "KLS": "18",
+      "ATT": "49",
+      "E": "7",
+      "SP": "11",
+      "EFF": ".224"
     }
   },
   {
@@ -12529,12 +12529,12 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "KLS": "24",
-      "ATT": "65",
-      "E": "8",
-      "SP": "8",
-      "EFF": ".246"
+      "GP": "4",
+      "KLS": "28",
+      "ATT": "75",
+      "E": "9",
+      "SP": "11",
+      "EFF": ".253"
     }
   },
   {
@@ -12546,11 +12546,12 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
+      "GP": "3",
       "KLS": "2",
       "ATT": "4",
       "E": "0",
-      "SP": "5",
+      "SP": "8",
+      "AST": "2",
       "EFF": ".500"
     }
   },
@@ -12563,9 +12564,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "ACE": "4",
-      "SP": "5"
+      "GP": "3",
+      "ACE": "5",
+      "SP": "8"
     }
   },
   {
@@ -12577,9 +12578,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "ACE": "8",
-      "SP": "8"
+      "GP": "4",
+      "ACE": "10",
+      "SP": "11"
     }
   },
   {
@@ -12591,9 +12592,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "ACE": "9",
-      "SP": "8"
+      "GP": "4",
+      "ACE": "11",
+      "SP": "11"
     }
   },
   {
@@ -12601,6 +12602,34 @@
     "sport": "volleyball",
     "category": "Volleyball Serving",
     "player_name": "Annabell Ebel",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "4",
+      "ACE": "6",
+      "SP": "11"
+    }
+  },
+  {
+    "school_id": "spash",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Leah Awe",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "ACE": "3",
+      "SP": "8"
+    }
+  },
+  {
+    "school_id": "spash",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Lenna Mayer",
     "player_year": "SR",
     "position": null,
     "jersey": null,
@@ -12613,44 +12642,16 @@
   {
     "school_id": "spash",
     "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Leah Awe",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "ACE": "2",
-      "SP": "5"
-    }
-  },
-  {
-    "school_id": "spash",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Lenna Mayer",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "ACE": "2",
-      "SP": "5"
-    }
-  },
-  {
-    "school_id": "spash",
-    "sport": "volleyball",
     "category": "Volleyball Defense",
     "player_name": "Nora Kruger",
     "player_year": "JR",
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
+      "GP": "4",
       "BLK": "3",
-      "SP": "8",
-      "DIG": "33"
+      "SP": "11",
+      "DIG": "38"
     }
   },
   {
@@ -12662,10 +12663,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
+      "GP": "4",
       "BLK": "2",
-      "SP": "8",
-      "DIG": "3"
+      "SP": "11",
+      "DIG": "6"
     }
   },
   {
@@ -12677,10 +12678,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "BLK": "6",
-      "SP": "8",
-      "DIG": "9"
+      "GP": "4",
+      "BLK": "8",
+      "SP": "11",
+      "DIG": "15"
     }
   },
   {
@@ -12692,9 +12693,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "DIG": "18",
-      "SP": "8"
+      "GP": "4",
+      "DIG": "27",
+      "SP": "11"
     }
   },
   {
@@ -12706,9 +12707,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "DIG": "12",
-      "SP": "8",
+      "GP": "4",
+      "DIG": "14",
+      "SP": "11",
       "BLK": "1"
     }
   },
@@ -12721,9 +12722,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "DIG": "3",
-      "SP": "5",
+      "GP": "3",
+      "DIG": "5",
+      "SP": "8",
       "BLK": "1"
     }
   },
@@ -12736,9 +12737,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "DIG": "18",
-      "SP": "8"
+      "GP": "4",
+      "DIG": "23",
+      "SP": "11"
     }
   },
   {
@@ -12750,9 +12751,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "DIG": "46",
-      "SP": "8"
+      "GP": "4",
+      "DIG": "59",
+      "SP": "11"
     }
   },
   {
@@ -12764,11 +12765,11 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "AST": "70",
-      "SP": "8",
-      "KLS": "3",
-      "ATT": "6",
+      "GP": "4",
+      "AST": "92",
+      "SP": "11",
+      "KLS": "4",
+      "ATT": "8",
       "E": "0",
       "EFF": ".500"
     }
@@ -12782,12 +12783,12 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "KLS": "1",
-      "ATT": "7",
-      "E": "0",
-      "SP": "3",
-      "EFF": ".143"
+      "GP": "2",
+      "KLS": "2",
+      "ATT": "12",
+      "E": "1",
+      "SP": "6",
+      "EFF": ".083"
     }
   },
   {
@@ -14840,6 +14841,20 @@
       "GP": "1",
       "AST": "1",
       "SP": "4"
+    }
+  },
+  {
+    "school_id": "spash",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Annabell Ebel",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "AST": "1",
+      "SP": "3"
     }
   }
 ]

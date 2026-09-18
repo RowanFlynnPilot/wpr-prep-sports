@@ -366,28 +366,28 @@
         "points_against": 48
       },
       {
+        "school_id": "rosholt",
+        "name": "Rosholt",
+        "conference_wins": 3,
+        "conference_losses": 0,
+        "conference_ties": 0,
+        "overall_wins": 3,
+        "overall_losses": 2,
+        "overall_ties": 0,
+        "points_for": 146,
+        "points_against": 157
+      },
+      {
         "school_id": "pacelli",
         "name": "Pacelli",
         "conference_wins": 2,
-        "conference_losses": 0,
+        "conference_losses": 1,
         "conference_ties": 0,
         "overall_wins": 5,
-        "overall_losses": 0,
+        "overall_losses": 1,
         "overall_ties": 0,
-        "points_for": 144,
-        "points_against": 29
-      },
-      {
-        "school_id": "rosholt",
-        "name": "Rosholt",
-        "conference_wins": 2,
-        "conference_losses": 0,
-        "conference_ties": 0,
-        "overall_wins": 2,
-        "overall_losses": 2,
-        "overall_ties": 0,
-        "points_for": 126,
-        "points_against": 143
+        "points_for": 163,
+        "points_against": 49
       },
       {
         "school_id": "edgar",
@@ -402,16 +402,40 @@
         "points_against": 14
       },
       {
+        "school_id": "abbotsford",
+        "name": "Abbotsford",
+        "conference_wins": 1,
+        "conference_losses": 2,
+        "conference_ties": 0,
+        "overall_wins": 2,
+        "overall_losses": 3,
+        "overall_ties": 0,
+        "points_for": 66,
+        "points_against": 116
+      },
+      {
+        "school_id": "auburndale",
+        "name": "Auburndale",
+        "conference_wins": 1,
+        "conference_losses": 2,
+        "conference_ties": 0,
+        "overall_wins": 1,
+        "overall_losses": 4,
+        "overall_ties": 0,
+        "points_for": 73,
+        "points_against": 97
+      },
+      {
         "school_id": "pittsville",
         "name": "Pittsville",
         "conference_wins": 1,
-        "conference_losses": 1,
+        "conference_losses": 2,
         "conference_ties": 0,
         "overall_wins": 1,
-        "overall_losses": 3,
+        "overall_losses": 4,
         "overall_ties": 0,
         "points_for": 10,
-        "points_against": 129
+        "points_against": 164
       },
       {
         "school_id": "iola-scandinavia",
@@ -424,30 +448,6 @@
         "overall_ties": 0,
         "points_for": 86,
         "points_against": 22
-      },
-      {
-        "school_id": "abbotsford",
-        "name": "Abbotsford",
-        "conference_wins": 0,
-        "conference_losses": 2,
-        "conference_ties": 0,
-        "overall_wins": 1,
-        "overall_losses": 3,
-        "overall_ties": 0,
-        "points_for": 46,
-        "points_against": 97
-      },
-      {
-        "school_id": "auburndale",
-        "name": "Auburndale",
-        "conference_wins": 0,
-        "conference_losses": 2,
-        "conference_ties": 0,
-        "overall_wins": 0,
-        "overall_losses": 4,
-        "overall_ties": 0,
-        "points_for": 38,
-        "points_against": 97
       }
     ]
   },
@@ -574,18 +574,6 @@
         "points_against": 154
       },
       {
-        "school_id": "marion",
-        "name": "Marion",
-        "conference_wins": 2,
-        "conference_losses": 1,
-        "conference_ties": 0,
-        "overall_wins": 3,
-        "overall_losses": 3,
-        "overall_ties": 0,
-        "points_for": 51,
-        "points_against": 129
-      },
-      {
         "school_id": "almond-bancroft",
         "name": "Almond-Bancroft",
         "conference_wins": 2,
@@ -596,6 +584,18 @@
         "overall_ties": 0,
         "points_for": 120,
         "points_against": 175
+      },
+      {
+        "school_id": "marion",
+        "name": "Marion",
+        "conference_wins": 2,
+        "conference_losses": 2,
+        "conference_ties": 0,
+        "overall_wins": 3,
+        "overall_losses": 4,
+        "overall_ties": 0,
+        "points_for": 65,
+        "points_against": 149
       },
       {
         "school_id": "port-edwards",

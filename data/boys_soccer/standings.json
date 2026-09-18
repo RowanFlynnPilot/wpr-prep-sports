@@ -12,10 +12,10 @@
         "conference_losses": 0,
         "conference_ties": 0,
         "overall_wins": 5,
-        "overall_losses": 1,
+        "overall_losses": 2,
         "overall_ties": 0,
         "points_for": 13,
-        "points_against": 4
+        "points_against": 8
       },
       {
         "school_id": "wisconsin-rapids",
@@ -36,10 +36,10 @@
         "conference_losses": 1,
         "conference_ties": 0,
         "overall_wins": 4,
-        "overall_losses": 2,
+        "overall_losses": 3,
         "overall_ties": 0,
         "points_for": 19,
-        "points_against": 9
+        "points_against": 13
       },
       {
         "school_id": "marshfield",
@@ -59,10 +59,10 @@
         "conference_wins": 0,
         "conference_losses": 2,
         "conference_ties": 0,
-        "overall_wins": 4,
+        "overall_wins": 5,
         "overall_losses": 3,
         "overall_ties": 0,
-        "points_for": 14,
+        "points_for": 15,
         "points_against": 8
       },
       {
@@ -231,35 +231,35 @@
         "conference_wins": 1,
         "conference_losses": 2,
         "conference_ties": 0,
+        "overall_wins": 4,
+        "overall_losses": 5,
+        "overall_ties": 0,
+        "points_for": 18,
+        "points_against": 14
+      },
+      {
+        "school_id": "eau-claire-north",
+        "name": "Eau Claire North",
+        "conference_wins": 1,
+        "conference_losses": 3,
+        "conference_ties": 0,
         "overall_wins": 3,
         "overall_losses": 5,
         "overall_ties": 0,
-        "points_for": 13,
-        "points_against": 14
+        "points_for": 10,
+        "points_against": 24
       },
       {
         "school_id": "menomonie",
         "name": "Menomonie",
         "conference_wins": 1,
-        "conference_losses": 2,
-        "conference_ties": 0,
-        "overall_wins": 2,
-        "overall_losses": 6,
-        "overall_ties": 0,
-        "points_for": 6,
-        "points_against": 25
-      },
-      {
-        "school_id": "eau-claire-north",
-        "name": "Eau Claire North",
-        "conference_wins": 0,
         "conference_losses": 3,
         "conference_ties": 0,
         "overall_wins": 2,
-        "overall_losses": 5,
+        "overall_losses": 7,
         "overall_ties": 0,
-        "points_for": 8,
-        "points_against": 23
+        "points_for": 7,
+        "points_against": 27
       },
       {
         "school_id": "river-falls",
