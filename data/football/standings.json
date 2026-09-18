@@ -262,16 +262,16 @@
         "points_against": 105
       },
       {
-        "school_id": "washburn",
-        "name": "Washburn",
+        "school_id": "bruce",
+        "name": "Bruce",
         "conference_wins": 2,
-        "conference_losses": 1,
+        "conference_losses": 2,
         "conference_ties": 0,
-        "overall_wins": 2,
-        "overall_losses": 3,
+        "overall_wins": 3,
+        "overall_losses": 2,
         "overall_ties": 0,
-        "points_for": 87,
-        "points_against": 175
+        "points_for": 135,
+        "points_against": 182
       },
       {
         "school_id": "chequamegon",
@@ -286,6 +286,18 @@
         "points_against": 184
       },
       {
+        "school_id": "washburn",
+        "name": "Washburn",
+        "conference_wins": 2,
+        "conference_losses": 2,
+        "conference_ties": 0,
+        "overall_wins": 2,
+        "overall_losses": 4,
+        "overall_ties": 0,
+        "points_for": 139,
+        "points_against": 229
+      },
+      {
         "school_id": "athens",
         "name": "Athens",
         "conference_wins": 1,
@@ -296,18 +308,6 @@
         "overall_ties": 0,
         "points_for": 116,
         "points_against": 120
-      },
-      {
-        "school_id": "bruce",
-        "name": "Bruce",
-        "conference_wins": 1,
-        "conference_losses": 2,
-        "conference_ties": 0,
-        "overall_wins": 2,
-        "overall_losses": 2,
-        "overall_ties": 0,
-        "points_for": 81,
-        "points_against": 130
       },
       {
         "school_id": "flambeau",

@@ -1,7 +1,7 @@
 {
   "sport": "football",
   "season": "2026-27",
-  "generated_at": "2026-09-18T09:56:46.572383-05:00",
+  "generated_at": "2026-09-18T13:18:33.188197-05:00",
   "method": "WPR Power Index v1: 40% W%, 35% SOS, 25% margin (capped per sport)",
   "rankings": [
     {
@@ -32,19 +32,6 @@
     },
     {
       "rank": 3,
-      "school_id": "assumption",
-      "school_name": "Assumption",
-      "wins": 5,
-      "losses": 0,
-      "ties": 0,
-      "win_pct": 1.0,
-      "sos": 0.5,
-      "avg_margin_capped": 22.6,
-      "score": 80.09,
-      "movement": 1
-    },
-    {
-      "rank": 4,
       "school_id": "stratford",
       "school_name": "Stratford",
       "wins": 4,
@@ -54,7 +41,20 @@
       "sos": 0.5,
       "avg_margin_capped": 21.75,
       "score": 79.71,
-      "movement": -1
+      "movement": 0
+    },
+    {
+      "rank": 4,
+      "school_id": "assumption",
+      "school_name": "Assumption",
+      "wins": 5,
+      "losses": 0,
+      "ties": 0,
+      "win_pct": 1.0,
+      "sos": 0.4778,
+      "avg_margin_capped": 22.6,
+      "score": 79.31,
+      "movement": 0
     },
     {
       "rank": 5,
@@ -64,9 +64,9 @@
       "losses": 0,
       "ties": 0,
       "win_pct": 1.0,
-      "sos": 0.3833,
+      "sos": 0.3944,
       "avg_margin_capped": 28.0,
-      "score": 78.42,
+      "score": 78.81,
       "movement": 0
     },
     {
@@ -383,6 +383,19 @@
     },
     {
       "rank": 30,
+      "school_id": "bruce",
+      "school_name": "Bruce",
+      "wins": 3,
+      "losses": 2,
+      "ties": 0,
+      "win_pct": 0.6,
+      "sos": 0.4583,
+      "avg_margin_capped": -5.0,
+      "score": 50.31,
+      "movement": 3
+    },
+    {
+      "rank": 31,
       "school_id": "port-edwards",
       "school_name": "Port Edwards",
       "wins": 2,
@@ -392,10 +405,10 @@
       "sos": 0.45,
       "avg_margin_capped": 4.0,
       "score": 50.04,
-      "movement": 0
+      "movement": -1
     },
     {
-      "rank": 31,
+      "rank": 32,
       "school_id": "abbotsford",
       "school_name": "Abbotsford",
       "wins": 2,
@@ -405,10 +418,10 @@
       "sos": 0.6944,
       "avg_margin_capped": -7.2,
       "score": 49.59,
-      "movement": 11
+      "movement": 10
     },
     {
-      "rank": 32,
+      "rank": 33,
       "school_id": "iola-scandinavia",
       "school_name": "Iola-Scandinavia",
       "wins": 2,
@@ -418,10 +431,10 @@
       "sos": 0.5724,
       "avg_margin_capped": 8.0,
       "score": 49.44,
-      "movement": -4
+      "movement": -5
     },
     {
-      "rank": 33,
+      "rank": 34,
       "school_id": "wittenberg-birnamwood",
       "school_name": "Wittenberg-Birnamwood",
       "wins": 2,
@@ -431,10 +444,10 @@
       "sos": 0.6625,
       "avg_margin_capped": -7.8,
       "score": 48.21,
-      "movement": 12
+      "movement": 11
     },
     {
-      "rank": 34,
+      "rank": 35,
       "school_id": "almond-bancroft",
       "school_name": "Almond-Bancroft",
       "wins": 2,
@@ -444,10 +457,10 @@
       "sos": 0.5095,
       "avg_margin_capped": -5.5,
       "score": 47.88,
-      "movement": -3
+      "movement": -4
     },
     {
-      "rank": 35,
+      "rank": 36,
       "school_id": "river-falls",
       "school_name": "River Falls",
       "wins": 2,
@@ -457,32 +470,19 @@
       "sos": 0.5,
       "avg_margin_capped": -5.5,
       "score": 47.54,
-      "movement": -3
-    },
-    {
-      "rank": 36,
-      "school_id": "bruce",
-      "school_name": "Bruce",
-      "wins": 2,
-      "losses": 2,
-      "ties": 0,
-      "win_pct": 0.5,
-      "sos": 0.5,
-      "avg_margin_capped": -6.75,
-      "score": 46.99,
-      "movement": -3
+      "movement": -4
     },
     {
       "rank": 37,
       "school_id": "washburn",
       "school_name": "Washburn",
       "wins": 2,
-      "losses": 3,
+      "losses": 4,
       "ties": 0,
-      "win_pct": 0.4,
-      "sos": 0.6667,
-      "avg_margin_capped": -11.0,
-      "score": 46.92,
+      "win_pct": 0.3333,
+      "sos": 0.65,
+      "avg_margin_capped": -9.5,
+      "score": 44.34,
       "movement": -3
     },
     {
@@ -513,6 +513,19 @@
     },
     {
       "rank": 40,
+      "school_id": "chequamegon",
+      "school_name": "Chequamegon",
+      "wins": 3,
+      "losses": 3,
+      "ties": 0,
+      "win_pct": 0.5,
+      "sos": 0.4333,
+      "avg_margin_capped": -9.0,
+      "score": 43.65,
+      "movement": -1
+    },
+    {
+      "rank": 41,
       "school_id": "wisconsin-rapids",
       "school_name": "Wisconsin Rapids Lincoln",
       "wins": 1,
@@ -522,20 +535,7 @@
       "sos": 0.75,
       "avg_margin_capped": -12.5,
       "score": 43.17,
-      "movement": -2
-    },
-    {
-      "rank": 41,
-      "school_id": "chequamegon",
-      "school_name": "Chequamegon",
-      "wins": 3,
-      "losses": 3,
-      "ties": 0,
-      "win_pct": 0.5,
-      "sos": 0.4,
-      "avg_margin_capped": -9.0,
-      "score": 42.48,
-      "movement": -2
+      "movement": -3
     },
     {
       "rank": 42,
@@ -714,9 +714,9 @@
       "losses": 3,
       "ties": 0,
       "win_pct": 0.0,
-      "sos": 0.45,
+      "sos": 0.4667,
       "avg_margin_capped": -1.0,
-      "score": 27.8,
+      "score": 28.39,
       "movement": 1
     },
     {
