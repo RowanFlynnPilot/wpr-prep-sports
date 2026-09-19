@@ -24,10 +24,10 @@
         "conference_losses": 0,
         "conference_ties": 0,
         "overall_wins": 4,
-        "overall_losses": 1,
+        "overall_losses": 2,
         "overall_ties": 0,
-        "points_for": 11,
-        "points_against": 7
+        "points_for": 12,
+        "points_against": 9
       },
       {
         "school_id": "dc-everest",
@@ -91,10 +91,10 @@
         "conference_wins": 5,
         "conference_losses": 0,
         "conference_ties": 0,
-        "overall_wins": 8,
+        "overall_wins": 9,
         "overall_losses": 0,
         "overall_ties": 0,
-        "points_for": 43,
+        "points_for": 44,
         "points_against": 3
       },
       {
@@ -110,16 +110,28 @@
         "points_against": 8
       },
       {
+        "school_id": "rhinelander",
+        "name": "Rhinelander",
+        "conference_wins": 1,
+        "conference_losses": 2,
+        "conference_ties": 0,
+        "overall_wins": 2,
+        "overall_losses": 2,
+        "overall_ties": 0,
+        "points_for": 7,
+        "points_against": 14
+      },
+      {
         "school_id": "merrill",
         "name": "Merrill",
         "conference_wins": 1,
-        "conference_losses": 1,
+        "conference_losses": 2,
         "conference_ties": 0,
         "overall_wins": 2,
-        "overall_losses": 3,
+        "overall_losses": 4,
         "overall_ties": 0,
-        "points_for": 8,
-        "points_against": 13
+        "points_for": 10,
+        "points_against": 16
       },
       {
         "school_id": "mosinee",
@@ -156,18 +168,6 @@
         "overall_ties": 0,
         "points_for": 7,
         "points_against": 26
-      },
-      {
-        "school_id": "rhinelander",
-        "name": "Rhinelander",
-        "conference_wins": 0,
-        "conference_losses": 2,
-        "conference_ties": 0,
-        "overall_wins": 1,
-        "overall_losses": 2,
-        "overall_ties": 0,
-        "points_for": 4,
-        "points_against": 12
       }
     ]
   },
