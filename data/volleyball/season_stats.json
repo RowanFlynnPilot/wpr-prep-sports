@@ -4877,24 +4877,6 @@
     "school_id": "stratford",
     "sport": "volleyball",
     "category": "Volleyball Offense",
-    "player_name": "Lexi Wiesman",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "KLS": "3",
-      "ATT": "6",
-      "E": "2",
-      "SP": "2",
-      "AST": "2",
-      "EFF": ".167"
-    }
-  },
-  {
-    "school_id": "stratford",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
     "player_name": "Reese Spindler",
     "player_year": "JR",
     "position": null,
@@ -4912,14 +4894,14 @@
     "school_id": "stratford",
     "sport": "volleyball",
     "category": "Volleyball Serving",
-    "player_name": "Lila Yoder",
-    "player_year": "SR",
+    "player_name": "Reese Spindler",
+    "player_year": "JR",
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "6",
-      "ACE": "16",
-      "SP": "16"
+      "GP": "2",
+      "ACE": "3",
+      "SP": "3"
     }
   },
   {
@@ -4946,23 +4928,9 @@
     "jersey": null,
     "stats": {
       "GP": "8",
-      "BLK": "17",
+      "DIG": "2",
       "SP": "19",
-      "DIG": "2"
-    }
-  },
-  {
-    "school_id": "stratford",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Meg Marten",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "4",
-      "DIG": "8",
-      "SP": "10"
+      "BLK": "17"
     }
   },
   {
@@ -4977,6 +4945,52 @@
       "GP": "6",
       "DIG": "6",
       "SP": "12"
+    }
+  },
+  {
+    "school_id": "stratford",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Lexi Wiesman",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "KLS": "3",
+      "ATT": "6",
+      "E": "2",
+      "SP": "2",
+      "AST": "2",
+      "EFF": ".167"
+    }
+  },
+  {
+    "school_id": "stratford",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Lila Yoder",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "6",
+      "ACE": "16",
+      "SP": "16"
+    }
+  },
+  {
+    "school_id": "stratford",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Meg Marten",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "4",
+      "DIG": "8",
+      "SP": "10"
     }
   },
   {
@@ -5005,20 +5019,6 @@
       "GP": "5",
       "AST": "30",
       "SP": "8"
-    }
-  },
-  {
-    "school_id": "stratford",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Reese Spindler",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "ACE": "3",
-      "SP": "3"
     }
   },
   {

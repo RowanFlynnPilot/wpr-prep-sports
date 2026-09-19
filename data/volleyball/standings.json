@@ -170,18 +170,6 @@
         "points_against": 20
       },
       {
-        "school_id": "stratford",
-        "name": "Stratford",
-        "conference_wins": 1,
-        "conference_losses": 2,
-        "conference_ties": 0,
-        "overall_wins": 11,
-        "overall_losses": 7,
-        "overall_ties": 0,
-        "points_for": 24,
-        "points_against": 20
-      },
-      {
         "school_id": "prentice",
         "name": "Prentice",
         "conference_wins": 0,
@@ -216,6 +204,18 @@
         "overall_ties": 0,
         "points_for": 4,
         "points_against": 19
+      },
+      {
+        "school_id": "stratford",
+        "name": "Stratford",
+        "conference_wins": 0,
+        "conference_losses": 2,
+        "conference_ties": 0,
+        "overall_wins": 12,
+        "overall_losses": 8,
+        "overall_ties": 0,
+        "points_for": 26,
+        "points_against": 22
       },
       {
         "school_id": "chequamegon",
@@ -325,7 +325,7 @@
         "school_id": "tomahawk",
         "name": "Tomahawk",
         "conference_wins": 0,
-        "conference_losses": 4,
+        "conference_losses": 3,
         "conference_ties": 0,
         "overall_wins": 1,
         "overall_losses": 9,
@@ -359,10 +359,10 @@
         "conference_wins": 1,
         "conference_losses": 0,
         "conference_ties": 0,
-        "overall_wins": 7,
+        "overall_wins": 8,
         "overall_losses": 6,
         "overall_ties": 0,
-        "points_for": 19,
+        "points_for": 21,
         "points_against": 13
       },
       {
@@ -372,10 +372,10 @@
         "conference_losses": 1,
         "conference_ties": 0,
         "overall_wins": 6,
-        "overall_losses": 5,
+        "overall_losses": 6,
         "overall_ties": 0,
         "points_for": 13,
-        "points_against": 15
+        "points_against": 17
       },
       {
         "school_id": "neillsville",
