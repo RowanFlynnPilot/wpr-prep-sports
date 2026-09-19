@@ -19,6 +19,7 @@ import { humanizeVenue, isForfeitScore, isUnreportedFinal } from "../utils/games
 import { useSportPrefix } from "../utils/links.js";
 import { displayPlayerName, playerProfileHref } from "../utils/players.js";
 import { glossaryForLines, statTitle } from "../config/statGlossary.js";
+import { rotatedBannerSlot } from "../utils/sponsorRotation.js";
 import { SITE } from "../config/site.js";
 
 /**
@@ -338,7 +339,11 @@ export default function GamePage({ dataset, schoolIndex, sportConfig }) {
           (data/sponsors.json "banner:game"), the widget's highest-traffic
           deep links. Currently unsold (Rotographic moved to the
           mid-dashboard slot); hidden until it's filled. */}
-      <Sponsor slot="banner:game" sponsors={dataset.sponsors} variant="banner" />
+      <Sponsor
+        slot={rotatedBannerSlot(dataset.sponsors, "banner:game")}
+        sponsors={dataset.sponsors}
+        variant="banner"
+      />
     </Layout>
   );
 }

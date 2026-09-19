@@ -14,6 +14,7 @@ import { recapForGame } from "../utils/recap.js";
 import { seasonSummary } from "../utils/seasonSummary.js";
 import { useSportPrefix } from "../utils/links.js";
 import { recordLabels } from "../config/sports.js";
+import { rotatedBannerSlot } from "../utils/sponsorRotation.js";
 import { SITE, SITE_TITLE } from "../config/site.js";
 import ShareButton from "../components/ShareButton.jsx";
 
@@ -230,7 +231,7 @@ export default function TeamPage({ dataset, schoolIndex, sponsors, sportConfig }
       {/* Anchor banner — cross-sport full-creative surface on every team
           page (data/sponsors.json "banner:team"). The per-school card
           above stays independently sellable; this is the network buy. */}
-      <Sponsor slot="banner:team" sponsors={sponsors} variant="banner" />
+      <Sponsor slot={rotatedBannerSlot(sponsors, "banner:team")} sponsors={sponsors} variant="banner" />
     </Layout>
   );
 }

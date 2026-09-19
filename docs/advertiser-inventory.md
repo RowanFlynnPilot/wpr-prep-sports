@@ -22,6 +22,19 @@ WPR. Below is the full menu of sponsorship surfaces, what to charge them as
 | **Section tabs** (Scores / Schedule / Standings / Rankings / Leaders / Spotlight) | `tab:<section>` | Broad local fit | One placement at the foot of each dashboard section tab's content — 6 discrete surfaces since 2026-09-13, when Standings & Stats split into Standings, Rankings (the Ten + Power Index) and Leaders. `?tab=standings` deep links still land on the conference tables. |
 | **Standings presented by** (per conference) | `standings:<conference>` | Local bank, credit union | Sells 5× — Wisconsin Valley, Marawood, Great Northern, Cloverbelt, Big Rivers. |
 
+### Banner rotation (since 2026-09-19)
+
+The full-creative banner sponsors share every banner surface instead of
+each owning one. `rotation.banner` in `data/sponsors.json` lists the pooled
+slot keys (currently `banner:all` JARP, `banner:game` Rotographic,
+`banner:team` Wimmer). The dashboard's bottom banner steps to the next
+sponsor on each tab, game and team pages rotate too, and a random start per
+visit evens out the shares. **To add a banner sponsor:** fill an unsold
+banner slot (e.g. `banner:mid`) and add its key to the list. Clicks still
+report per sponsor (`sponsor-click:<slot>`). Delete the list to pin each
+sponsor to its own surface again. A sold `banner:<sport>` slot still
+overrides the dashboard foot for that sport.
+
 ## Per-school inventory — the underrated multiplier
 
 Each school's mini-page becomes its own ad surface. Sell **per school** to a

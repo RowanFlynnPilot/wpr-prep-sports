@@ -33,6 +33,7 @@ import { pickMarqueeGame } from "../utils/marquee.js";
 import { SPORT_IDS } from "../config/sports.js";
 import { trackEvent } from "../utils/analytics.js";
 import { SITE, SITE_TITLE } from "../config/site.js";
+import { rotatedBannerSlot } from "../utils/sponsorRotation.js";
 
 /** Heading label for a sport, falling back if the registry entry is thin. */
 function configLabelForHeading(sportConfig) {
@@ -793,7 +794,14 @@ export default function DashboardPage({
         slot={
           sponsors?.slots?.[`banner:${sportConfig?.id}`]?.name
             ? `banner:${sportConfig.id}`
-            : "banner:all"
+            : // Pooled banner sponsors take turns here, one step per tab,
+              // so the foot of the dashboard is not one sponsor on every
+              // tab (utils/sponsorRotation.js).
+              rotatedBannerSlot(
+                sponsors,
+                "banner:all",
+                Math.max(0, tabs.findIndex((t) => t.id === activeTab)),
+              )
         }
         sponsors={sponsors}
         variant="banner"
