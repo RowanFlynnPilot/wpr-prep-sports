@@ -197,13 +197,13 @@
         "school_id": "eau-claire-memorial",
         "name": "Eau Claire Memorial",
         "conference_wins": 0,
-        "conference_losses": 4,
+        "conference_losses": 5,
         "conference_ties": 0,
         "overall_wins": 0,
-        "overall_losses": 4,
+        "overall_losses": 5,
         "overall_ties": 0,
-        "points_for": 27,
-        "points_against": 180
+        "points_for": 41,
+        "points_against": 232
       }
     ]
   },
@@ -586,6 +586,18 @@
         "points_against": 149
       },
       {
+        "school_id": "port-edwards",
+        "name": "Port Edwards",
+        "conference_wins": 2,
+        "conference_losses": 2,
+        "conference_ties": 0,
+        "overall_wins": 3,
+        "overall_losses": 2,
+        "overall_ties": 0,
+        "points_for": 165,
+        "points_against": 124
+      },
+      {
         "school_id": "almond-bancroft",
         "name": "Almond-Bancroft",
         "conference_wins": 2,
@@ -596,18 +608,6 @@
         "overall_ties": 0,
         "points_for": 134,
         "points_against": 223
-      },
-      {
-        "school_id": "port-edwards",
-        "name": "Port Edwards",
-        "conference_wins": 1,
-        "conference_losses": 2,
-        "conference_ties": 0,
-        "overall_wins": 2,
-        "overall_losses": 2,
-        "overall_ties": 0,
-        "points_for": 164,
-        "points_against": 124
       },
       {
         "school_id": "wild-rose",
@@ -625,13 +625,13 @@
         "school_id": "bowler",
         "name": "Bowler",
         "conference_wins": 0,
-        "conference_losses": 1,
+        "conference_losses": 2,
         "conference_ties": 0,
         "overall_wins": 0,
-        "overall_losses": 1,
+        "overall_losses": 2,
         "overall_ties": 0,
         "points_for": 0,
-        "points_against": 1
+        "points_against": 2
       },
       {
         "school_id": "newman-catholic",
@@ -716,14 +716,14 @@
       {
         "school_id": "superior",
         "name": "Superior",
-        "conference_wins": 1,
+        "conference_wins": 2,
         "conference_losses": 3,
         "conference_ties": 0,
-        "overall_wins": 1,
+        "overall_wins": 2,
         "overall_losses": 3,
         "overall_ties": 0,
-        "points_for": 117,
-        "points_against": 131
+        "points_for": 169,
+        "points_against": 145
       },
       {
         "school_id": "menomonie",
