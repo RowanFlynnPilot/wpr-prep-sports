@@ -226,6 +226,18 @@
         "points_against": 64
       },
       {
+        "school_id": "shell-lake",
+        "name": "Shell Lake",
+        "conference_wins": 4,
+        "conference_losses": 0,
+        "conference_ties": 0,
+        "overall_wins": 5,
+        "overall_losses": 0,
+        "overall_ties": 0,
+        "points_for": 207,
+        "points_against": 40
+      },
+      {
         "school_id": "rib-lake",
         "name": "Rib Lake",
         "conference_wins": 4,
@@ -236,18 +248,6 @@
         "overall_ties": 0,
         "points_for": 140,
         "points_against": 206
-      },
-      {
-        "school_id": "shell-lake",
-        "name": "Shell Lake",
-        "conference_wins": 3,
-        "conference_losses": 0,
-        "conference_ties": 0,
-        "overall_wins": 4,
-        "overall_losses": 0,
-        "overall_ties": 0,
-        "points_for": 206,
-        "points_against": 40
       },
       {
         "school_id": "athens",
@@ -634,18 +634,6 @@
         "points_against": 2
       },
       {
-        "school_id": "newman-catholic",
-        "name": "Newman Catholic",
-        "conference_wins": 0,
-        "conference_losses": 3,
-        "conference_ties": 0,
-        "overall_wins": 0,
-        "overall_losses": 4,
-        "overall_ties": 0,
-        "points_for": 18,
-        "points_against": 222
-      },
-      {
         "school_id": "menominee-nation",
         "name": "Menominee Nation",
         "conference_wins": 0,
@@ -656,6 +644,18 @@
         "overall_ties": 0,
         "points_for": 0,
         "points_against": 3
+      },
+      {
+        "school_id": "newman-catholic",
+        "name": "Newman Catholic",
+        "conference_wins": 0,
+        "conference_losses": 4,
+        "conference_ties": 0,
+        "overall_wins": 0,
+        "overall_losses": 5,
+        "overall_ties": 0,
+        "points_for": 24,
+        "points_against": 250
       }
     ]
   },
