@@ -1,7 +1,7 @@
 {
   "sport": "football",
   "season": "2026-27",
-  "generated_at": "2026-09-19T15:57:23.761533-05:00",
+  "generated_at": "2026-09-20T06:11:02.882366-05:00",
   "method": "WPR Power Index v1: 40% W%, 35% SOS, 25% margin (capped per sport)",
   "rankings": [
     {
@@ -142,9 +142,9 @@
       "losses": 2,
       "ties": 0,
       "win_pct": 0.6,
-      "sos": 0.65,
+      "sos": 0.6667,
       "avg_margin_capped": 11.4,
-      "score": 64.34,
+      "score": 64.92,
       "movement": 12
     },
     {
@@ -266,19 +266,32 @@
     },
     {
       "rank": 21,
-      "school_id": "rhinelander",
-      "school_name": "Rhinelander",
+      "school_id": "port-edwards",
+      "school_name": "Port Edwards",
       "wins": 3,
-      "losses": 1,
+      "losses": 2,
       "ties": 0,
-      "win_pct": 0.75,
-      "sos": 0.4,
-      "avg_margin_capped": 4.75,
-      "score": 58.62,
-      "movement": 1
+      "win_pct": 0.6,
+      "sos": 0.5222,
+      "avg_margin_capped": 3.4,
+      "score": 56.3,
+      "movement": 9
     },
     {
       "rank": 22,
+      "school_id": "rhinelander",
+      "school_name": "Rhinelander",
+      "wins": 4,
+      "losses": 1,
+      "ties": 0,
+      "win_pct": 0.8,
+      "sos": 0.2667,
+      "avg_margin_capped": 5.0,
+      "score": 56.07,
+      "movement": 0
+    },
+    {
+      "rank": 23,
       "school_id": "river-falls",
       "school_name": "River Falls",
       "wins": 3,
@@ -288,20 +301,7 @@
       "sos": 0.56,
       "avg_margin_capped": -1.6,
       "score": 55.39,
-      "movement": 10
-    },
-    {
-      "rank": 23,
-      "school_id": "port-edwards",
-      "school_name": "Port Edwards",
-      "wins": 3,
-      "losses": 2,
-      "ties": 0,
-      "win_pct": 0.6,
-      "sos": 0.4889,
-      "avg_margin_capped": 3.4,
-      "score": 55.13,
-      "movement": 7
+      "movement": 9
     },
     {
       "rank": 24,
@@ -311,13 +311,26 @@
       "losses": 2,
       "ties": 0,
       "win_pct": 0.6,
-      "sos": 0.5029,
+      "sos": 0.5229,
       "avg_margin_capped": 1.2,
-      "score": 54.64,
+      "score": 55.34,
       "movement": 5
     },
     {
       "rank": 25,
+      "school_id": "tri-county",
+      "school_name": "Tri-County",
+      "wins": 4,
+      "losses": 2,
+      "ties": 0,
+      "win_pct": 0.6667,
+      "sos": 0.4667,
+      "avg_margin_capped": -0.83,
+      "score": 55.13,
+      "movement": 1
+    },
+    {
+      "rank": 26,
       "school_id": "dc-everest",
       "school_name": "D.C. Everest",
       "wins": 3,
@@ -327,20 +340,7 @@
       "sos": 0.52,
       "avg_margin_capped": -0.2,
       "score": 54.61,
-      "movement": 2
-    },
-    {
-      "rank": 26,
-      "school_id": "tri-county",
-      "school_name": "Tri-County",
-      "wins": 4,
-      "losses": 2,
-      "ties": 0,
-      "win_pct": 0.6667,
-      "sos": 0.4467,
-      "avg_margin_capped": -0.83,
-      "score": 54.43,
-      "movement": 0
+      "movement": 1
     },
     {
       "rank": 27,
@@ -396,6 +396,19 @@
     },
     {
       "rank": 31,
+      "school_id": "wild-rose",
+      "school_name": "Wild Rose",
+      "wins": 3,
+      "losses": 3,
+      "ties": 0,
+      "win_pct": 0.5,
+      "sos": 0.4667,
+      "avg_margin_capped": -0.17,
+      "score": 48.76,
+      "movement": 15
+    },
+    {
+      "rank": 32,
       "school_id": "wittenberg-birnamwood",
       "school_name": "Wittenberg-Birnamwood",
       "wins": 2,
@@ -405,10 +418,10 @@
       "sos": 0.6667,
       "avg_margin_capped": -7.8,
       "score": 48.35,
-      "movement": 14
+      "movement": 13
     },
     {
-      "rank": 32,
+      "rank": 33,
       "school_id": "merrill",
       "school_name": "Merrill",
       "wins": 3,
@@ -418,10 +431,10 @@
       "sos": 0.3333,
       "avg_margin_capped": -0.2,
       "score": 48.08,
-      "movement": 4
+      "movement": 3
     },
     {
-      "rank": 33,
+      "rank": 34,
       "school_id": "iola-scandinavia",
       "school_name": "Iola-Scandinavia",
       "wins": 2,
@@ -431,10 +444,10 @@
       "sos": 0.5937,
       "avg_margin_capped": 7.0,
       "score": 47.83,
-      "movement": -5
+      "movement": -6
     },
     {
-      "rank": 34,
+      "rank": 35,
       "school_id": "abbotsford",
       "school_name": "Abbotsford",
       "wins": 2,
@@ -444,10 +457,10 @@
       "sos": 0.6111,
       "avg_margin_capped": -7.2,
       "score": 46.67,
-      "movement": 8
+      "movement": 7
     },
     {
-      "rank": 35,
+      "rank": 36,
       "school_id": "rib-lake",
       "school_name": "Rib Lake",
       "wins": 4,
@@ -457,10 +470,10 @@
       "sos": 0.3393,
       "avg_margin_capped": -5.14,
       "score": 44.94,
-      "movement": 6
+      "movement": 5
     },
     {
-      "rank": 36,
+      "rank": 37,
       "school_id": "loyal",
       "school_name": "Loyal",
       "wins": 2,
@@ -470,10 +483,10 @@
       "sos": 0.4667,
       "avg_margin_capped": 0.0,
       "score": 44.83,
-      "movement": -1
+      "movement": -2
     },
     {
-      "rank": 37,
+      "rank": 38,
       "school_id": "washburn",
       "school_name": "Washburn",
       "wins": 2,
@@ -483,10 +496,10 @@
       "sos": 0.65,
       "avg_margin_capped": -9.5,
       "score": 44.34,
-      "movement": -3
+      "movement": -4
     },
     {
-      "rank": 38,
+      "rank": 39,
       "school_id": "almond-bancroft",
       "school_name": "Almond-Bancroft",
       "wins": 2,
@@ -496,10 +509,10 @@
       "sos": 0.5738,
       "avg_margin_capped": -10.0,
       "score": 44.12,
-      "movement": -7
+      "movement": -8
     },
     {
-      "rank": 39,
+      "rank": 40,
       "school_id": "superior",
       "school_name": "Superior",
       "wins": 2,
@@ -509,10 +522,10 @@
       "sos": 0.4,
       "avg_margin_capped": 2.4,
       "score": 43.57,
-      "movement": 9
+      "movement": 8
     },
     {
-      "rank": 40,
+      "rank": 41,
       "school_id": "flambeau",
       "school_name": "Flambeau",
       "wins": 2,
@@ -522,20 +535,7 @@
       "sos": 0.5,
       "avg_margin_capped": -6.4,
       "score": 43.14,
-      "movement": -16
-    },
-    {
-      "rank": 41,
-      "school_id": "wild-rose",
-      "school_name": "Wild Rose",
-      "wins": 2,
-      "losses": 3,
-      "ties": 0,
-      "win_pct": 0.4,
-      "sos": 0.4667,
-      "avg_margin_capped": -4.6,
-      "score": 42.78,
-      "movement": 5
+      "movement": -17
     },
     {
       "rank": 42,
@@ -623,9 +623,9 @@
       "losses": 4,
       "ties": 0,
       "win_pct": 0.2,
-      "sos": 0.5875,
+      "sos": 0.6,
       "avg_margin_capped": -10.8,
-      "score": 36.24,
+      "score": 36.68,
       "movement": -1
     },
     {
@@ -669,6 +669,19 @@
     },
     {
       "rank": 52,
+      "school_id": "menominee-nation",
+      "school_name": "Menominee Nation",
+      "wins": 0,
+      "losses": 3,
+      "ties": 0,
+      "win_pct": 0.0,
+      "sos": 0.5317,
+      "avg_margin_capped": -1.0,
+      "score": 30.66,
+      "movement": null
+    },
+    {
+      "rank": 53,
       "school_id": "eau-claire-north",
       "school_name": "Eau Claire North",
       "wins": 1,
@@ -678,20 +691,7 @@
       "sos": 0.48,
       "avg_margin_capped": -15.8,
       "score": 30.25,
-      "movement": 0
-    },
-    {
-      "rank": 53,
-      "school_id": "menominee-nation",
-      "school_name": "Menominee Nation",
-      "wins": 0,
-      "losses": 3,
-      "ties": 0,
-      "win_pct": 0.0,
-      "sos": 0.4984,
-      "avg_margin_capped": -1.0,
-      "score": 29.5,
-      "movement": null
+      "movement": -1
     },
     {
       "rank": 54,
@@ -760,6 +760,19 @@
     },
     {
       "rank": 59,
+      "school_id": "antigo",
+      "school_name": "Antigo",
+      "wins": 0,
+      "losses": 5,
+      "ties": 0,
+      "win_pct": 0.0,
+      "sos": 0.45,
+      "avg_margin_capped": -11.2,
+      "score": 23.25,
+      "movement": 1
+    },
+    {
+      "rank": 60,
       "school_id": "eau-claire-memorial",
       "school_name": "Eau Claire Memorial",
       "wins": 0,
@@ -769,20 +782,7 @@
       "sos": 0.6,
       "avg_margin_capped": -26.4,
       "score": 21.71,
-      "movement": -2
-    },
-    {
-      "rank": 60,
-      "school_id": "antigo",
-      "school_name": "Antigo",
-      "wins": 0,
-      "losses": 4,
-      "ties": 0,
-      "win_pct": 0.0,
-      "sos": 0.3333,
-      "avg_margin_capped": -12.5,
-      "score": 18.59,
-      "movement": 0
+      "movement": -3
     },
     {
       "rank": 61,
