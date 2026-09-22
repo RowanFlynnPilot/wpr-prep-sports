@@ -1,7 +1,7 @@
 {
   "sport": "volleyball",
   "season": "2026-27",
-  "generated_at": "2026-09-22T13:55:21.700879-05:00",
+  "generated_at": "2026-09-22T17:09:17.471978-05:00",
   "method": "WPR Power Index v1: 40% W%, 35% SOS, 25% margin (capped per sport)",
   "rankings": [
     {
@@ -51,9 +51,9 @@
       "losses": 2,
       "ties": 0,
       "win_pct": 0.9,
-      "sos": 0.4525,
+      "sos": 0.458,
       "avg_margin_capped": 1.65,
-      "score": 71.21,
+      "score": 71.4,
       "movement": 2
     },
     {
@@ -155,9 +155,9 @@
       "losses": 3,
       "ties": 0,
       "win_pct": 0.8235,
-      "sos": 0.3289,
+      "sos": 0.3345,
       "avg_margin_capped": 1.18,
-      "score": 61.86,
+      "score": 62.05,
       "movement": 1
     },
     {
@@ -298,9 +298,9 @@
       "losses": 11,
       "ties": 0,
       "win_pct": 0.5417,
-      "sos": 0.6004,
+      "sos": 0.5983,
       "avg_margin_capped": 0.17,
-      "score": 55.88,
+      "score": 55.8,
       "movement": 2
     },
     {
@@ -383,6 +383,19 @@
     },
     {
       "rank": 30,
+      "school_id": "amherst",
+      "school_name": "Amherst",
+      "wins": 13,
+      "losses": 8,
+      "ties": 0,
+      "win_pct": 0.619,
+      "sos": 0.3366,
+      "avg_margin_capped": 0.43,
+      "score": 50.83,
+      "movement": -1
+    },
+    {
+      "rank": 31,
       "school_id": "superior",
       "school_name": "Superior",
       "wins": 6,
@@ -392,20 +405,7 @@
       "sos": 0.6471,
       "avg_margin_capped": -0.13,
       "score": 50.59,
-      "movement": 0
-    },
-    {
-      "rank": 31,
-      "school_id": "amherst",
-      "school_name": "Amherst",
-      "wins": 13,
-      "losses": 8,
-      "ties": 0,
-      "win_pct": 0.619,
-      "sos": 0.3255,
-      "avg_margin_capped": 0.43,
-      "score": 50.44,
-      "movement": -2
+      "movement": -1
     },
     {
       "rank": 32,
@@ -441,9 +441,9 @@
       "losses": 10,
       "ties": 0,
       "win_pct": 0.4737,
-      "sos": 0.477,
+      "sos": 0.4843,
       "avg_margin_capped": -0.11,
-      "score": 47.7,
+      "score": 47.96,
       "movement": 5
     },
     {
@@ -545,9 +545,9 @@
       "losses": 8,
       "ties": 0,
       "win_pct": 0.4667,
-      "sos": 0.437,
+      "sos": 0.4341,
       "avg_margin_capped": -0.47,
-      "score": 44.52,
+      "score": 44.42,
       "movement": -5
     },
     {
@@ -565,29 +565,29 @@
     },
     {
       "rank": 44,
-      "school_id": "greenwood",
-      "school_name": "Greenwood",
+      "school_id": "tri-county",
+      "school_name": "Tri-County",
       "wins": 5,
-      "losses": 6,
+      "losses": 12,
       "ties": 0,
-      "win_pct": 0.4545,
-      "sos": 0.3803,
-      "avg_margin_capped": -0.18,
-      "score": 43.24,
-      "movement": -2
+      "win_pct": 0.2941,
+      "sos": 0.649,
+      "avg_margin_capped": -0.82,
+      "score": 43.55,
+      "movement": 1
     },
     {
       "rank": 45,
-      "school_id": "tri-county",
-      "school_name": "Tri-County",
-      "wins": 4,
-      "losses": 12,
+      "school_id": "greenwood",
+      "school_name": "Greenwood",
+      "wins": 6,
+      "losses": 8,
       "ties": 0,
-      "win_pct": 0.25,
-      "sos": 0.7041,
-      "avg_margin_capped": -0.94,
-      "score": 43.24,
-      "movement": 0
+      "win_pct": 0.4286,
+      "sos": 0.366,
+      "avg_margin_capped": -0.14,
+      "score": 41.86,
+      "movement": -3
     },
     {
       "rank": 46,
@@ -675,9 +675,9 @@
       "losses": 10,
       "ties": 0,
       "win_pct": 0.4118,
-      "sos": 0.342,
+      "sos": 0.3391,
       "avg_margin_capped": -0.71,
-      "score": 38.0,
+      "score": 37.9,
       "movement": 1
     },
     {
@@ -688,9 +688,9 @@
       "losses": 9,
       "ties": 0,
       "win_pct": 0.3077,
-      "sos": 0.4676,
+      "sos": 0.4633,
       "avg_margin_capped": -0.77,
-      "score": 37.97,
+      "score": 37.82,
       "movement": 1
     },
     {
@@ -766,9 +766,9 @@
       "losses": 19,
       "ties": 0,
       "win_pct": 0.1739,
-      "sos": 0.5473,
+      "sos": 0.5459,
       "avg_margin_capped": -1.39,
-      "score": 32.82,
+      "score": 32.76,
       "movement": -2
     },
     {

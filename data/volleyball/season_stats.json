@@ -1964,13 +1964,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "6",
-      "KLS": "28",
-      "ATT": "106",
-      "E": "18",
-      "SP": "14",
-      "AST": "37",
-      "EFF": ".094"
+      "GP": "7",
+      "KLS": "41",
+      "ATT": "142",
+      "E": "21",
+      "SP": "17",
+      "AST": "40",
+      "EFF": ".141"
     }
   },
   {
@@ -1982,12 +1982,12 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "6",
-      "KLS": "29",
-      "ATT": "120",
-      "E": "9",
-      "SP": "14",
-      "AST": "18",
+      "GP": "7",
+      "KLS": "34",
+      "ATT": "138",
+      "E": "11",
+      "SP": "17",
+      "AST": "22",
       "EFF": ".167"
     }
   },
@@ -2000,13 +2000,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "5",
-      "KLS": "17",
-      "ATT": "51",
-      "E": "8",
-      "SP": "11",
+      "GP": "6",
+      "KLS": "23",
+      "ATT": "63",
+      "E": "10",
+      "SP": "14",
       "AST": "1",
-      "EFF": ".176"
+      "EFF": ".206"
     }
   },
   {
@@ -2032,9 +2032,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "ACE": "3",
-      "SP": "7"
+      "GP": "4",
+      "ACE": "4",
+      "SP": "10"
     }
   },
   {
@@ -2046,9 +2046,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "ACE": "7",
-      "SP": "6"
+      "GP": "4",
+      "ACE": "8",
+      "SP": "9"
     }
   },
   {
@@ -2074,10 +2074,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "5",
-      "BLK": "2",
-      "SP": "12",
-      "DIG": "34"
+      "GP": "6",
+      "BLK": "3",
+      "SP": "15",
+      "DIG": "38"
     }
   },
   {
@@ -2089,9 +2089,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "5",
-      "DIG": "61",
-      "SP": "12"
+      "GP": "6",
+      "DIG": "75",
+      "SP": "15"
     }
   },
   {
@@ -2103,9 +2103,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "5",
-      "DIG": "36",
-      "SP": "12"
+      "GP": "6",
+      "DIG": "50",
+      "SP": "15"
     }
   },
   {
@@ -2117,9 +2117,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "5",
-      "DIG": "37",
-      "SP": "12"
+      "GP": "6",
+      "DIG": "41",
+      "SP": "15"
     }
   },
   {
@@ -2145,9 +2145,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "5",
-      "DIG": "11",
-      "SP": "12",
+      "GP": "6",
+      "DIG": "18",
+      "SP": "15",
       "BLK": "2"
     }
   },
@@ -3264,6 +3264,189 @@
     }
   },
   {
+    "school_id": "athens",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Ayva Haehlke",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "9",
+      "KLS": "16",
+      "ATT": "56",
+      "E": "5",
+      "SP": "18",
+      "AST": "3",
+      "EFF": ".196"
+    }
+  },
+  {
+    "school_id": "athens",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Brynley Louis",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "9",
+      "KLS": "41",
+      "ATT": "118",
+      "E": "16",
+      "SP": "18",
+      "AST": "2",
+      "EFF": ".212"
+    }
+  },
+  {
+    "school_id": "athens",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Jaelin Switlick",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "9",
+      "KLS": "38",
+      "ATT": "128",
+      "E": "18",
+      "SP": "18",
+      "AST": "4",
+      "EFF": ".156"
+    }
+  },
+  {
+    "school_id": "athens",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Brooklyn Hein",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "9",
+      "KLS": "20",
+      "ATT": "57",
+      "E": "13",
+      "SP": "18",
+      "AST": "2",
+      "EFF": ".123"
+    }
+  },
+  {
+    "school_id": "athens",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Karly Eckert",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "8",
+      "ACE": "17",
+      "SP": "16"
+    }
+  },
+  {
+    "school_id": "athens",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Kenzie Woller",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "6",
+      "ACE": "11",
+      "SP": "12"
+    }
+  },
+  {
+    "school_id": "athens",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Jaci Hart",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "7",
+      "DIG": "22",
+      "SP": "10"
+    }
+  },
+  {
+    "school_id": "athens",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Jaelin Switlick",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "9",
+      "DIG": "54",
+      "SP": "18",
+      "BLK": "2"
+    }
+  },
+  {
+    "school_id": "athens",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Karly Eckert",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "9",
+      "AST": "54",
+      "SP": "18",
+      "KLS": "34",
+      "ATT": "91",
+      "E": "11",
+      "EFF": ".253"
+    }
+  },
+  {
+    "school_id": "athens",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Kenzie Woller",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "9",
+      "AST": "73",
+      "SP": "18",
+      "KLS": "2",
+      "ATT": "8",
+      "E": "0",
+      "EFF": ".250"
+    }
+  },
+  {
+    "school_id": "athens",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Brinley Kornack",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "5",
+      "AST": "4",
+      "SP": "6",
+      "KLS": "2",
+      "ATT": "4",
+      "E": "0",
+      "EFF": ".500"
+    }
+  },
+  {
     "school_id": "marathon",
     "sport": "volleyball",
     "category": "Volleyball Offense",
@@ -4173,13 +4356,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "5",
-      "KLS": "8",
-      "ATT": "25",
-      "E": "1",
-      "SP": "12",
-      "AST": "17",
-      "EFF": ".280"
+      "GP": "6",
+      "KLS": "9",
+      "ATT": "36",
+      "E": "3",
+      "SP": "15",
+      "AST": "31",
+      "EFF": ".167"
     }
   },
   {
@@ -4205,9 +4388,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "DIG": "5",
-      "SP": "7"
+      "GP": "4",
+      "DIG": "8",
+      "SP": "10"
     }
   },
   {
@@ -7527,117 +7710,15 @@
   {
     "school_id": "athens",
     "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Ayva Haehlke",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "4",
-      "KLS": "7",
-      "ATT": "26",
-      "E": "1",
-      "SP": "7",
-      "EFF": ".231"
-    }
-  },
-  {
-    "school_id": "athens",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Karly Eckert",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "4",
-      "KLS": "12",
-      "ATT": "31",
-      "E": "2",
-      "SP": "7",
-      "AST": "17",
-      "EFF": ".323"
-    }
-  },
-  {
-    "school_id": "athens",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Brynley Louis",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "4",
-      "KLS": "18",
-      "ATT": "49",
-      "E": "5",
-      "SP": "7",
-      "EFF": ".265"
-    }
-  },
-  {
-    "school_id": "athens",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Jaelin Switlick",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "4",
-      "KLS": "8",
-      "ATT": "40",
-      "E": "6",
-      "SP": "7",
-      "AST": "1",
-      "EFF": ".050"
-    }
-  },
-  {
-    "school_id": "athens",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Brooklyn Hein",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "4",
-      "KLS": "9",
-      "ATT": "25",
-      "E": "5",
-      "SP": "7",
-      "AST": "1",
-      "EFF": ".160"
-    }
-  },
-  {
-    "school_id": "athens",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Karly Eckert",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "4",
-      "ACE": "7",
-      "SP": "7"
-    }
-  },
-  {
-    "school_id": "athens",
-    "sport": "volleyball",
     "category": "Volleyball Serving",
     "player_name": "Brynley Louis",
     "player_year": "SO",
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "ACE": "4",
-      "SP": "6"
+      "GP": "6",
+      "ACE": "9",
+      "SP": "13"
     }
   },
   {
@@ -7663,24 +7744,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "BLK": "5",
-      "SP": "6",
-      "DIG": "2"
-    }
-  },
-  {
-    "school_id": "athens",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Jaci Hart",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "4",
-      "DIG": "7",
-      "SP": "4"
+      "GP": "5",
+      "BLK": "8",
+      "SP": "12",
+      "DIG": "5"
     }
   },
   {
@@ -7692,9 +7759,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "DIG": "9",
-      "SP": "6",
+      "GP": "7",
+      "DIG": "31",
+      "SP": "16",
       "BLK": "1"
     }
   },
@@ -7707,23 +7774,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "DIG": "18",
-      "SP": "6"
-    }
-  },
-  {
-    "school_id": "athens",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Jaelin Switlick",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "4",
-      "DIG": "24",
-      "SP": "7"
+      "GP": "7",
+      "DIG": "51",
+      "SP": "16"
     }
   },
   {
@@ -7735,9 +7788,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "DIG": "4",
-      "SP": "6"
+      "GP": "7",
+      "DIG": "21",
+      "SP": "16"
     }
   },
   {
@@ -7749,9 +7802,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "DIG": "5",
-      "SP": "3"
+      "GP": "7",
+      "DIG": "13",
+      "SP": "10"
     }
   },
   {
@@ -7763,9 +7816,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "DIG": "14",
-      "SP": "6"
+      "GP": "7",
+      "DIG": "45",
+      "SP": "15"
     }
   },
   {
@@ -7777,23 +7830,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "DIG": "3",
-      "SP": "6"
-    }
-  },
-  {
-    "school_id": "athens",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Kenzie Woller",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
       "GP": "4",
-      "AST": "27",
-      "SP": "7"
+      "DIG": "4",
+      "SP": "9"
     }
   },
   {
@@ -7805,41 +7844,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "AST": "2",
-      "SP": "4"
-    }
-  },
-  {
-    "school_id": "athens",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Kenzie Woller",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "ACE": "3",
-      "SP": "3"
-    }
-  },
-  {
-    "school_id": "athens",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Brinley Kornack",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "AST": "1",
-      "SP": "2",
-      "KLS": "1",
-      "ATT": "3",
-      "E": "0",
-      "EFF": ".333"
+      "GP": "6",
+      "AST": "6",
+      "SP": "14",
+      "KLS": "10",
+      "ATT": "30",
+      "E": "5",
+      "EFF": ".167"
     }
   },
   {
@@ -10102,11 +10113,12 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
+      "GP": "4",
       "KLS": "1",
       "ATT": "1",
       "E": "0",
-      "SP": "2",
+      "SP": "9",
+      "AST": "4",
       "EFF": "1.000"
     }
   },
@@ -10119,9 +10131,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "ACE": "1",
-      "SP": "1"
+      "GP": "3",
+      "ACE": "5",
+      "SP": "6"
     }
   },
   {
@@ -10147,10 +10159,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "BLK": "1",
-      "SP": "2",
-      "DIG": "1"
+      "GP": "4",
+      "BLK": "4",
+      "SP": "9",
+      "DIG": "6"
     }
   },
   {
@@ -14389,6 +14401,65 @@
     }
   },
   {
+    "school_id": "tri-county",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Emily Lauer",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "KLS": "3",
+      "ATT": "6",
+      "E": "2",
+      "SP": "3",
+      "EFF": ".167"
+    }
+  },
+  {
+    "school_id": "tri-county",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Parker Thoren",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "ACE": "2",
+      "SP": "3"
+    }
+  },
+  {
+    "school_id": "tri-county",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Josey Boyd",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "DIG": "1",
+      "SP": "1"
+    }
+  },
+  {
+    "school_id": "tri-county",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Parker Thoren",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "DIG": "1",
+      "SP": "3"
+    }
+  },
+  {
     "school_id": "wausau-west",
     "sport": "volleyball",
     "category": "Volleyball Offense",
@@ -15140,6 +15211,23 @@
       "GP": "1",
       "BLK": "2",
       "SP": "2"
+    }
+  },
+  {
+    "school_id": "athens",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Jaci Hart",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "KLS": "2",
+      "ATT": "4",
+      "E": "2",
+      "SP": "4",
+      "EFF": ".000"
     }
   },
   {
@@ -16581,6 +16669,20 @@
       "GP": "1",
       "DIG": "2",
       "SP": "2"
+    }
+  },
+  {
+    "school_id": "athens",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Brinley Kornack",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "ACE": "5",
+      "SP": "5"
     }
   },
   {
