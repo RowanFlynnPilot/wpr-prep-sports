@@ -178,27 +178,27 @@
     "division": null,
     "rows": [
       {
+        "school_id": "new-richmond",
+        "name": "New Richmond",
+        "conference_wins": 4,
+        "conference_losses": 0,
+        "conference_ties": 0,
+        "overall_wins": 9,
+        "overall_losses": 1,
+        "overall_ties": 0,
+        "points_for": 28,
+        "points_against": 6
+      },
+      {
         "school_id": "hudson",
         "name": "Hudson",
         "conference_wins": 4,
         "conference_losses": 0,
         "conference_ties": 0,
-        "overall_wins": 6,
+        "overall_wins": 7,
         "overall_losses": 0,
         "overall_ties": 0,
-        "points_for": 36,
-        "points_against": 6
-      },
-      {
-        "school_id": "new-richmond",
-        "name": "New Richmond",
-        "conference_wins": 3,
-        "conference_losses": 0,
-        "conference_ties": 0,
-        "overall_wins": 7,
-        "overall_losses": 1,
-        "overall_ties": 0,
-        "points_for": 21,
+        "points_for": 40,
         "points_against": 6
       },
       {
@@ -265,13 +265,13 @@
         "school_id": "river-falls",
         "name": "River Falls",
         "conference_wins": 0,
-        "conference_losses": 3,
+        "conference_losses": 4,
         "conference_ties": 0,
-        "overall_wins": 0,
-        "overall_losses": 7,
+        "overall_wins": 1,
+        "overall_losses": 8,
         "overall_ties": 0,
-        "points_for": 0,
-        "points_against": 21
+        "points_for": 1,
+        "points_against": 25
       }
     ]
   }

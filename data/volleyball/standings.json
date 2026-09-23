@@ -134,18 +134,6 @@
         "points_against": 13
       },
       {
-        "school_id": "spencer",
-        "name": "Spencer",
-        "conference_wins": 2,
-        "conference_losses": 0,
-        "conference_ties": 0,
-        "overall_wins": 9,
-        "overall_losses": 6,
-        "overall_ties": 0,
-        "points_for": 23,
-        "points_against": 15
-      },
-      {
         "school_id": "phillips",
         "name": "Phillips",
         "conference_wins": 2,
@@ -158,15 +146,27 @@
         "points_against": 17
       },
       {
+        "school_id": "spencer",
+        "name": "Spencer",
+        "conference_wins": 2,
+        "conference_losses": 1,
+        "conference_ties": 0,
+        "overall_wins": 12,
+        "overall_losses": 10,
+        "overall_ties": 0,
+        "points_for": 31,
+        "points_against": 25
+      },
+      {
         "school_id": "auburndale",
         "name": "Auburndale",
         "conference_wins": 1,
         "conference_losses": 1,
         "conference_ties": 0,
-        "overall_wins": 20,
+        "overall_wins": 21,
         "overall_losses": 7,
         "overall_ties": 0,
-        "points_for": 47,
+        "points_for": 49,
         "points_against": 21
       },
       {
@@ -188,10 +188,10 @@
         "conference_losses": 1,
         "conference_ties": 0,
         "overall_wins": 2,
-        "overall_losses": 9,
+        "overall_losses": 10,
         "overall_ties": 0,
         "points_for": 8,
-        "points_against": 20
+        "points_against": 22
       },
       {
         "school_id": "newman-catholic",
@@ -223,11 +223,11 @@
         "conference_wins": 0,
         "conference_losses": 3,
         "conference_ties": 0,
-        "overall_wins": 9,
-        "overall_losses": 12,
+        "overall_wins": 8,
+        "overall_losses": 11,
         "overall_ties": 0,
-        "points_for": 22,
-        "points_against": 32
+        "points_for": 20,
+        "points_against": 30
       }
     ]
   },
@@ -252,26 +252,26 @@
       {
         "school_id": "merrill",
         "name": "Merrill",
-        "conference_wins": 3,
+        "conference_wins": 4,
         "conference_losses": 1,
         "conference_ties": 0,
-        "overall_wins": 13,
+        "overall_wins": 14,
         "overall_losses": 7,
         "overall_ties": 0,
-        "points_for": 30,
-        "points_against": 17
+        "points_for": 33,
+        "points_against": 19
       },
       {
         "school_id": "northland-pines",
         "name": "Northland Pines",
         "conference_wins": 2,
-        "conference_losses": 1,
+        "conference_losses": 2,
         "conference_ties": 0,
         "overall_wins": 15,
-        "overall_losses": 7,
+        "overall_losses": 8,
         "overall_ties": 0,
-        "points_for": 34,
-        "points_against": 21
+        "points_for": 36,
+        "points_against": 24
       },
       {
         "school_id": "medford",
@@ -327,11 +327,11 @@
         "conference_wins": 0,
         "conference_losses": 3,
         "conference_ties": 0,
-        "overall_wins": 1,
+        "overall_wins": 2,
         "overall_losses": 9,
         "overall_ties": 0,
-        "points_for": 4,
-        "points_against": 22
+        "points_for": 6,
+        "points_against": 23
       }
     ]
   },
@@ -341,6 +341,18 @@
     "conference": "Cloverbelt",
     "division": null,
     "rows": [
+      {
+        "school_id": "columbus-catholic",
+        "name": "Columbus Catholic",
+        "conference_wins": 3,
+        "conference_losses": 0,
+        "conference_ties": 0,
+        "overall_wins": 12,
+        "overall_losses": 7,
+        "overall_ties": 0,
+        "points_for": 31,
+        "points_against": 15
+      },
       {
         "school_id": "gilman",
         "name": "Gilman",
@@ -352,18 +364,6 @@
         "overall_ties": 0,
         "points_for": 28,
         "points_against": 20
-      },
-      {
-        "school_id": "columbus-catholic",
-        "name": "Columbus Catholic",
-        "conference_wins": 2,
-        "conference_losses": 0,
-        "conference_ties": 0,
-        "overall_wins": 11,
-        "overall_losses": 7,
-        "overall_ties": 0,
-        "points_for": 28,
-        "points_against": 15
       },
       {
         "school_id": "owen-withee",
