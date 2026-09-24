@@ -1,7 +1,7 @@
 {
   "sport": "volleyball",
   "season": "2026-27",
-  "generated_at": "2026-09-23T15:20:48.467962-05:00",
+  "generated_at": "2026-09-23T18:46:11.716990-05:00",
   "method": "WPR Power Index v1: 40% W%, 35% SOS, 25% margin (capped per sport)",
   "rankings": [
     {
@@ -38,9 +38,9 @@
       "losses": 2,
       "ties": 0,
       "win_pct": 0.8947,
-      "sos": 0.5335,
+      "sos": 0.5327,
       "avg_margin_capped": 1.68,
-      "score": 73.98,
+      "score": 73.95,
       "movement": 1
     },
     {
@@ -64,9 +64,9 @@
       "losses": 2,
       "ties": 0,
       "win_pct": 0.9,
-      "sos": 0.4624,
+      "sos": 0.4614,
       "avg_margin_capped": 1.65,
-      "score": 71.56,
+      "score": 71.53,
       "movement": 1
     },
     {
@@ -84,6 +84,19 @@
     },
     {
       "rank": 7,
+      "school_id": "chippewa-falls",
+      "school_name": "Chippewa Falls",
+      "wins": 16,
+      "losses": 6,
+      "ties": 0,
+      "win_pct": 0.7273,
+      "sos": 0.6796,
+      "avg_margin_capped": 0.91,
+      "score": 69.16,
+      "movement": 1
+    },
+    {
+      "rank": 8,
       "school_id": "marshfield",
       "school_name": "Marshfield",
       "wins": 18,
@@ -93,20 +106,7 @@
       "sos": 0.5374,
       "avg_margin_capped": 1.23,
       "score": 69.15,
-      "movement": 0
-    },
-    {
-      "rank": 8,
-      "school_id": "chippewa-falls",
-      "school_name": "Chippewa Falls",
-      "wins": 16,
-      "losses": 6,
-      "ties": 0,
-      "win_pct": 0.7273,
-      "sos": 0.679,
-      "avg_margin_capped": 0.91,
-      "score": 69.14,
-      "movement": 0
+      "movement": -1
     },
     {
       "rank": 9,
@@ -116,22 +116,22 @@
       "losses": 4,
       "ties": 0,
       "win_pct": 0.7778,
-      "sos": 0.5342,
+      "sos": 0.5349,
       "avg_margin_capped": 1.17,
-      "score": 67.17,
+      "score": 67.19,
       "movement": 0
     },
     {
       "rank": 10,
       "school_id": "auburndale",
       "school_name": "Auburndale",
-      "wins": 21,
+      "wins": 22,
       "losses": 7,
       "ties": 0,
-      "win_pct": 0.75,
-      "sos": 0.522,
+      "win_pct": 0.7586,
+      "sos": 0.4976,
       "avg_margin_capped": 1.0,
-      "score": 64.94,
+      "score": 64.43,
       "movement": 0
     },
     {
@@ -168,9 +168,9 @@
       "losses": 7,
       "ties": 0,
       "win_pct": 0.6316,
-      "sos": 0.597,
+      "sos": 0.5977,
       "avg_margin_capped": 0.84,
-      "score": 62.17,
+      "score": 62.19,
       "movement": 7
     },
     {
@@ -194,9 +194,9 @@
       "losses": 7,
       "ties": 0,
       "win_pct": 0.6667,
-      "sos": 0.5634,
+      "sos": 0.5628,
       "avg_margin_capped": 0.67,
-      "score": 61.66,
+      "score": 61.64,
       "movement": 1
     },
     {
@@ -233,9 +233,9 @@
       "losses": 8,
       "ties": 0,
       "win_pct": 0.7037,
-      "sos": 0.4319,
+      "sos": 0.4327,
       "avg_margin_capped": 0.96,
-      "score": 59.78,
+      "score": 59.8,
       "movement": 1
     },
     {
@@ -259,9 +259,9 @@
       "losses": 8,
       "ties": 0,
       "win_pct": 0.6,
-      "sos": 0.5874,
+      "sos": 0.5884,
       "avg_margin_capped": 0.2,
-      "score": 57.89,
+      "score": 57.93,
       "movement": 2
     },
     {
@@ -272,9 +272,9 @@
       "losses": 5,
       "ties": 0,
       "win_pct": 0.6429,
-      "sos": 0.4902,
+      "sos": 0.4893,
       "avg_margin_capped": 0.43,
-      "score": 57.16,
+      "score": 57.13,
       "movement": 0
     },
     {
@@ -311,9 +311,9 @@
       "losses": 11,
       "ties": 0,
       "win_pct": 0.56,
-      "sos": 0.561,
+      "sos": 0.563,
       "avg_margin_capped": 0.28,
-      "score": 55.7,
+      "score": 55.77,
       "movement": 1
     },
     {
@@ -324,9 +324,9 @@
       "losses": 7,
       "ties": 0,
       "win_pct": 0.6111,
-      "sos": 0.4437,
+      "sos": 0.4438,
       "avg_margin_capped": 0.61,
-      "score": 55.02,
+      "score": 55.03,
       "movement": -1
     },
     {
@@ -376,9 +376,9 @@
       "losses": 10,
       "ties": 0,
       "win_pct": 0.5455,
-      "sos": 0.4316,
+      "sos": 0.4326,
       "avg_margin_capped": 0.27,
-      "score": 50.56,
+      "score": 50.6,
       "movement": 6
     },
     {
@@ -389,9 +389,9 @@
       "losses": 8,
       "ties": 0,
       "win_pct": 0.5,
-      "sos": 0.4863,
+      "sos": 0.4871,
       "avg_margin_capped": 0.25,
-      "score": 50.56,
+      "score": 50.59,
       "movement": -2
     },
     {
@@ -415,9 +415,9 @@
       "losses": 12,
       "ties": 0,
       "win_pct": 0.5,
-      "sos": 0.4691,
+      "sos": 0.4696,
       "avg_margin_capped": 0.21,
-      "score": 49.78,
+      "score": 49.8,
       "movement": -1
     },
     {
@@ -519,9 +519,9 @@
       "losses": 8,
       "ties": 0,
       "win_pct": 0.3846,
-      "sos": 0.5693,
+      "sos": 0.5707,
       "avg_margin_capped": -0.69,
-      "score": 44.92,
+      "score": 44.97,
       "movement": 0
     },
     {
@@ -558,9 +558,9 @@
       "losses": 7,
       "ties": 0,
       "win_pct": 0.3636,
-      "sos": 0.5388,
+      "sos": 0.5379,
       "avg_margin_capped": -0.45,
-      "score": 44.01,
+      "score": 43.98,
       "movement": -2
     },
     {
@@ -636,9 +636,9 @@
       "losses": 10,
       "ties": 0,
       "win_pct": 0.3333,
-      "sos": 0.4862,
+      "sos": 0.4871,
       "avg_margin_capped": -0.73,
-      "score": 39.8,
+      "score": 39.83,
       "movement": -2
     },
     {
@@ -766,9 +766,9 @@
       "losses": 10,
       "ties": 0,
       "win_pct": 0.1667,
-      "sos": 0.5146,
+      "sos": 0.5164,
       "avg_margin_capped": -1.17,
-      "score": 32.32,
+      "score": 32.38,
       "movement": -4
     },
     {
@@ -792,9 +792,9 @@
       "losses": 16,
       "ties": 0,
       "win_pct": 0.2,
-      "sos": 0.478,
+      "sos": 0.4775,
       "avg_margin_capped": -1.25,
-      "score": 32.02,
+      "score": 32.0,
       "movement": -2
     },
     {
@@ -805,9 +805,9 @@
       "losses": 20,
       "ties": 0,
       "win_pct": 0.1667,
-      "sos": 0.5327,
+      "sos": 0.5332,
       "avg_margin_capped": -1.46,
-      "score": 31.74,
+      "score": 31.75,
       "movement": -5
     },
     {
@@ -815,12 +815,12 @@
       "school_id": "newman-catholic",
       "school_name": "Newman Catholic",
       "wins": 1,
-      "losses": 10,
+      "losses": 11,
       "ties": 0,
-      "win_pct": 0.0909,
-      "sos": 0.6113,
-      "avg_margin_capped": -1.64,
-      "score": 30.71,
+      "win_pct": 0.0833,
+      "sos": 0.6297,
+      "avg_margin_capped": -1.58,
+      "score": 31.28,
       "movement": -3
     },
     {
