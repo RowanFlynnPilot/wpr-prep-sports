@@ -1,7 +1,7 @@
 {
   "sport": "volleyball",
   "season": "2026-27",
-  "generated_at": "2026-09-24T14:11:19.927563-05:00",
+  "generated_at": "2026-09-24T17:23:08.747445-05:00",
   "method": "WPR Power Index v1: 40% W%, 35% SOS, 25% margin (capped per sport)",
   "rankings": [
     {
@@ -64,9 +64,9 @@
       "losses": 2,
       "ties": 0,
       "win_pct": 0.9,
-      "sos": 0.4636,
+      "sos": 0.4683,
       "avg_margin_capped": 1.65,
-      "score": 71.6,
+      "score": 71.77,
       "movement": 1
     },
     {
@@ -142,9 +142,9 @@
       "losses": 3,
       "ties": 0,
       "win_pct": 0.8333,
-      "sos": 0.3571,
+      "sos": 0.3613,
       "avg_margin_capped": 1.28,
-      "score": 63.65,
+      "score": 63.8,
       "movement": 2
     },
     {
@@ -324,9 +324,9 @@
       "losses": 7,
       "ties": 0,
       "win_pct": 0.6111,
-      "sos": 0.4475,
+      "sos": 0.4513,
       "avg_margin_capped": 0.61,
-      "score": 55.15,
+      "score": 55.29,
       "movement": -1
     },
     {
@@ -363,9 +363,9 @@
       "losses": 8,
       "ties": 0,
       "win_pct": 0.6364,
-      "sos": 0.3317,
+      "sos": 0.3412,
       "avg_margin_capped": 0.55,
-      "score": 51.84,
+      "score": 52.17,
       "movement": 1
     },
     {
@@ -409,19 +409,6 @@
     },
     {
       "rank": 32,
-      "school_id": "athens",
-      "school_name": "Athens",
-      "wins": 12,
-      "losses": 12,
-      "ties": 0,
-      "win_pct": 0.5,
-      "sos": 0.4655,
-      "avg_margin_capped": 0.21,
-      "score": 49.66,
-      "movement": -1
-    },
-    {
-      "rank": 33,
       "school_id": "lakeland",
       "school_name": "Lakeland",
       "wins": 8,
@@ -431,7 +418,20 @@
       "sos": 0.6512,
       "avg_margin_capped": -0.4,
       "score": 49.62,
-      "movement": 3
+      "movement": 4
+    },
+    {
+      "rank": 33,
+      "school_id": "athens",
+      "school_name": "Athens",
+      "wins": 13,
+      "losses": 13,
+      "ties": 0,
+      "win_pct": 0.5,
+      "sos": 0.4655,
+      "avg_margin_capped": 0.19,
+      "score": 49.59,
+      "movement": -2
     },
     {
       "rank": 34,
@@ -454,9 +454,9 @@
       "losses": 10,
       "ties": 0,
       "win_pct": 0.5,
-      "sos": 0.4364,
+      "sos": 0.4418,
       "avg_margin_capped": 0.0,
-      "score": 47.77,
+      "score": 47.96,
       "movement": 4
     },
     {
@@ -526,6 +526,19 @@
     },
     {
       "rank": 41,
+      "school_id": "tri-county",
+      "school_name": "Tri-County",
+      "wins": 6,
+      "losses": 13,
+      "ties": 0,
+      "win_pct": 0.3158,
+      "sos": 0.6468,
+      "avg_margin_capped": -0.84,
+      "score": 44.26,
+      "movement": 4
+    },
+    {
+      "rank": 42,
       "school_id": "rhinelander",
       "school_name": "Rhinelander",
       "wins": 8,
@@ -535,10 +548,10 @@
       "sos": 0.5201,
       "avg_margin_capped": -0.65,
       "score": 43.99,
-      "movement": -3
+      "movement": -4
     },
     {
-      "rank": 42,
+      "rank": 43,
       "school_id": "wausau-west",
       "school_name": "Wausau West",
       "wins": 4,
@@ -548,10 +561,10 @@
       "sos": 0.5379,
       "avg_margin_capped": -0.45,
       "score": 43.98,
-      "movement": -1
+      "movement": -2
     },
     {
-      "rank": 43,
+      "rank": 44,
       "school_id": "chequamegon",
       "school_name": "Chequamegon",
       "wins": 7,
@@ -561,20 +574,7 @@
       "sos": 0.4973,
       "avg_margin_capped": -0.61,
       "score": 42.91,
-      "movement": 3
-    },
-    {
-      "rank": 44,
-      "school_id": "tri-county",
-      "school_name": "Tri-County",
-      "wins": 5,
-      "losses": 13,
-      "ties": 0,
-      "win_pct": 0.2778,
-      "sos": 0.6468,
-      "avg_margin_capped": -0.94,
-      "score": 42.31,
-      "movement": 1
+      "movement": 2
     },
     {
       "rank": 45,
@@ -584,9 +584,9 @@
       "losses": 9,
       "ties": 0,
       "win_pct": 0.4,
-      "sos": 0.4071,
+      "sos": 0.4125,
       "avg_margin_capped": -0.27,
-      "score": 41.64,
+      "score": 41.83,
       "movement": -3
     },
     {
