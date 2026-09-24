@@ -6289,6 +6289,85 @@
     }
   },
   {
+    "school_id": "south-shore",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Allyson Golly",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "6",
+      "KLS": "17",
+      "ATT": "63",
+      "E": "20",
+      "SP": "6",
+      "AST": "1",
+      "EFF": "-0.048"
+    }
+  },
+  {
+    "school_id": "south-shore",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Rylee Dahlgren",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "7",
+      "KLS": "4",
+      "ATT": "10",
+      "E": "1",
+      "SP": "7",
+      "AST": "24",
+      "EFF": ".300"
+    }
+  },
+  {
+    "school_id": "south-shore",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Brooklyn Lehto",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "5",
+      "ACE": "5",
+      "SP": "5"
+    }
+  },
+  {
+    "school_id": "south-shore",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Allyson Golly",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "7",
+      "BLK": "15",
+      "SP": "7",
+      "DIG": "23"
+    }
+  },
+  {
+    "school_id": "south-shore",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Rylee Dahlgren",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "6",
+      "DIG": "41",
+      "SP": "6"
+    }
+  },
+  {
     "school_id": "almond-bancroft",
     "sport": "volleyball",
     "category": "Volleyball Offense",
@@ -6858,6 +6937,82 @@
       "GP": "2",
       "ACE": "3",
       "SP": "5"
+    }
+  },
+  {
+    "school_id": "south-shore",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Trinity Maki",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "ACE": "3",
+      "SP": "2"
+    }
+  },
+  {
+    "school_id": "south-shore",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Mya Peterson",
+    "player_year": "FR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "ACE": "1",
+      "SP": "1"
+    }
+  },
+  {
+    "school_id": "south-shore",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Trinity Maki",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "KLS": "3",
+      "ATT": "9",
+      "E": "2",
+      "SP": "3",
+      "EFF": ".111"
+    }
+  },
+  {
+    "school_id": "south-shore",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Josie Martinez",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "4",
+      "KLS": "4",
+      "ATT": "13",
+      "E": "3",
+      "SP": "4",
+      "EFF": ".077"
+    }
+  },
+  {
+    "school_id": "south-shore",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Rhyah Ray",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "ACE": "4",
+      "SP": "2"
     }
   },
   {
@@ -7514,6 +7669,20 @@
     "school_id": "edgar",
     "sport": "volleyball",
     "category": "Volleyball Defense",
+    "player_name": "Carina Seubert",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "10",
+      "DIG": "106",
+      "SP": "29"
+    }
+  },
+  {
+    "school_id": "edgar",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
     "player_name": "Shiloh Karlen",
     "player_year": "JR",
     "position": null,
@@ -7523,20 +7692,6 @@
       "DIG": "3",
       "SP": "17",
       "BLK": "6"
-    }
-  },
-  {
-    "school_id": "edgar",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Carina Seubert",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "10",
-      "DIG": "106",
-      "SP": "29"
     }
   },
   {
@@ -9228,13 +9383,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "6",
-      "KLS": "39",
-      "ATT": "129",
-      "E": "19",
-      "SP": "18",
-      "AST": "2",
-      "EFF": ".155"
+      "GP": "7",
+      "KLS": "45",
+      "ATT": "150",
+      "E": "23",
+      "SP": "20",
+      "AST": "4",
+      "EFF": ".147"
     }
   },
   {
@@ -9246,13 +9401,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "6",
-      "KLS": "42",
-      "ATT": "175",
+      "GP": "7",
+      "KLS": "53",
+      "ATT": "212",
       "E": "31",
-      "SP": "18",
-      "AST": "3",
-      "EFF": ".063"
+      "SP": "20",
+      "AST": "4",
+      "EFF": ".104"
     }
   },
   {
@@ -9264,12 +9419,12 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "6",
-      "KLS": "14",
-      "ATT": "50",
+      "GP": "7",
+      "KLS": "18",
+      "ATT": "55",
       "E": "5",
-      "SP": "18",
-      "EFF": ".180"
+      "SP": "20",
+      "EFF": ".236"
     }
   },
   {
@@ -9295,9 +9450,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "6",
-      "DIG": "58",
-      "SP": "18",
+      "GP": "7",
+      "DIG": "66",
+      "SP": "20",
       "BLK": "2"
     }
   },
@@ -9324,9 +9479,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "6",
-      "DIG": "18",
-      "SP": "16",
+      "GP": "7",
+      "DIG": "22",
+      "SP": "18",
       "BLK": "4"
     }
   },
@@ -9339,9 +9494,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "6",
-      "DIG": "30",
-      "SP": "18",
+      "GP": "7",
+      "DIG": "31",
+      "SP": "20",
       "BLK": "10"
     }
   },
@@ -9354,9 +9509,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "6",
-      "DIG": "70",
-      "SP": "18",
+      "GP": "7",
+      "DIG": "81",
+      "SP": "20",
       "BLK": "6"
     }
   },
@@ -9369,9 +9524,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "6",
-      "DIG": "52",
-      "SP": "17"
+      "GP": "7",
+      "DIG": "68",
+      "SP": "19"
     }
   },
   {
@@ -9383,10 +9538,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "6",
-      "DIG": "49",
-      "SP": "18",
-      "BLK": "3"
+      "GP": "7",
+      "DIG": "54",
+      "SP": "20",
+      "BLK": "4"
     }
   },
   {
@@ -9398,10 +9553,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "6",
+      "GP": "7",
       "DIG": "7",
-      "SP": "18",
-      "BLK": "11"
+      "SP": "20",
+      "BLK": "13"
     }
   },
   {
@@ -9413,9 +9568,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "6",
-      "DIG": "26",
-      "SP": "14"
+      "GP": "7",
+      "DIG": "33",
+      "SP": "16"
     }
   },
   {
@@ -9427,13 +9582,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "6",
-      "AST": "100",
-      "SP": "18",
-      "KLS": "12",
-      "ATT": "74",
-      "E": "9",
-      "EFF": ".041"
+      "GP": "7",
+      "AST": "118",
+      "SP": "20",
+      "KLS": "14",
+      "ATT": "85",
+      "E": "12",
+      "EFF": ".024"
     }
   },
   {
@@ -10127,13 +10282,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "5",
-      "KLS": "21",
-      "ATT": "97",
-      "E": "14",
-      "SP": "16",
-      "AST": "2",
-      "EFF": ".072"
+      "GP": "6",
+      "KLS": "24",
+      "ATT": "109",
+      "E": "15",
+      "SP": "18",
+      "AST": "5",
+      "EFF": ".083"
     }
   },
   {
@@ -10159,13 +10314,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "5",
-      "AST": "8",
-      "SP": "16",
-      "KLS": "2",
-      "ATT": "3",
+      "GP": "6",
+      "AST": "9",
+      "SP": "18",
+      "KLS": "3",
+      "ATT": "4",
       "E": "0",
-      "EFF": ".667"
+      "EFF": ".750"
     }
   },
   {
@@ -11274,9 +11429,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "ACE": "6",
-      "SP": "10"
+      "GP": "4",
+      "ACE": "7",
+      "SP": "12"
     }
   },
   {
@@ -11302,9 +11457,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "ACE": "2",
-      "SP": "8"
+      "GP": "3",
+      "ACE": "3",
+      "SP": "10"
     }
   },
   {
@@ -11870,6 +12025,198 @@
       "GP": "5",
       "DIG": "27",
       "SP": "12"
+    }
+  },
+  {
+    "school_id": "south-shore",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Rhyah Ray",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "KLS": "10",
+      "ATT": "38",
+      "E": "7",
+      "SP": "3",
+      "EFF": ".079"
+    }
+  },
+  {
+    "school_id": "south-shore",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Mya Peterson",
+    "player_year": "FR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "KLS": "5",
+      "ATT": "23",
+      "E": "7",
+      "SP": "3",
+      "EFF": "-0.087"
+    }
+  },
+  {
+    "school_id": "south-shore",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Allyson Golly",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "ACE": "4",
+      "SP": "2"
+    }
+  },
+  {
+    "school_id": "south-shore",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Molly Phillips",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "ACE": "7",
+      "SP": "2"
+    }
+  },
+  {
+    "school_id": "south-shore",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Rylee Dahlgren",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "ACE": "8",
+      "SP": "3"
+    }
+  },
+  {
+    "school_id": "south-shore",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Addisen Wehrman",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "ACE": "2",
+      "SP": "1"
+    }
+  },
+  {
+    "school_id": "south-shore",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Trinity Maki",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "4",
+      "DIG": "17",
+      "SP": "4"
+    }
+  },
+  {
+    "school_id": "south-shore",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Rhyah Ray",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "4",
+      "DIG": "16",
+      "SP": "4"
+    }
+  },
+  {
+    "school_id": "south-shore",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Molly Phillips",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "DIG": "15",
+      "SP": "3"
+    }
+  },
+  {
+    "school_id": "south-shore",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Josie Martinez",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "DIG": "3",
+      "SP": "2"
+    }
+  },
+  {
+    "school_id": "south-shore",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Evalina Delimat",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "DIG": "1",
+      "SP": "1"
+    }
+  },
+  {
+    "school_id": "south-shore",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Molly Phillips",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "AST": "7",
+      "SP": "3",
+      "KLS": "1",
+      "ATT": "11",
+      "E": "5",
+      "EFF": "-0.364"
+    }
+  },
+  {
+    "school_id": "south-shore",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Addisen Wehrman",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "DIG": "4",
+      "SP": "2"
     }
   },
   {
@@ -12812,9 +13159,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "ACE": "5",
-      "SP": "8"
+      "GP": "3",
+      "ACE": "8",
+      "SP": "10"
     }
   },
   {
@@ -14871,6 +15218,51 @@
       "GP": "1",
       "DIG": "1",
       "SP": "3"
+    }
+  },
+  {
+    "school_id": "south-shore",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Brooklyn Lehto",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "KLS": "1",
+      "ATT": "7",
+      "E": "1",
+      "SP": "1",
+      "EFF": ".000"
+    }
+  },
+  {
+    "school_id": "south-shore",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Brooklyn Lehto",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "DIG": "5",
+      "SP": "2"
+    }
+  },
+  {
+    "school_id": "south-shore",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Mya Peterson",
+    "player_year": "FR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "DIG": "4",
+      "SP": "2"
     }
   },
   {

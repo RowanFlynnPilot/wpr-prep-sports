@@ -1,7 +1,7 @@
 {
   "sport": "volleyball",
   "season": "2026-27",
-  "generated_at": "2026-09-23T18:46:11.716990-05:00",
+  "generated_at": "2026-09-24T05:03:42.723489-05:00",
   "method": "WPR Power Index v1: 40% W%, 35% SOS, 25% margin (capped per sport)",
   "rankings": [
     {
@@ -25,9 +25,9 @@
       "losses": 2,
       "ties": 0,
       "win_pct": 0.8462,
-      "sos": 0.642,
+      "sos": 0.6405,
       "avg_margin_capped": 1.62,
-      "score": 75.55,
+      "score": 75.49,
       "movement": 0
     },
     {
@@ -38,9 +38,9 @@
       "losses": 2,
       "ties": 0,
       "win_pct": 0.8947,
-      "sos": 0.5327,
+      "sos": 0.5315,
       "avg_margin_capped": 1.68,
-      "score": 73.95,
+      "score": 73.91,
       "movement": 1
     },
     {
@@ -77,9 +77,9 @@
       "losses": 3,
       "ties": 0,
       "win_pct": 0.7857,
-      "sos": 0.5771,
+      "sos": 0.5746,
       "avg_margin_capped": 1.43,
-      "score": 70.08,
+      "score": 69.99,
       "movement": -1
     },
     {
@@ -103,9 +103,9 @@
       "losses": 4,
       "ties": 0,
       "win_pct": 0.8182,
-      "sos": 0.5374,
+      "sos": 0.5364,
       "avg_margin_capped": 1.23,
-      "score": 69.15,
+      "score": 69.11,
       "movement": -1
     },
     {
@@ -220,9 +220,9 @@
       "losses": 6,
       "ties": 0,
       "win_pct": 0.6471,
-      "sos": 0.5857,
+      "sos": 0.5845,
       "avg_margin_capped": 0.59,
-      "score": 61.33,
+      "score": 61.29,
       "movement": -2
     },
     {
@@ -617,19 +617,6 @@
     },
     {
       "rank": 48,
-      "school_id": "eau-claire-north",
-      "school_name": "Eau Claire North",
-      "wins": 3,
-      "losses": 12,
-      "ties": 0,
-      "win_pct": 0.2,
-      "sos": 0.6986,
-      "avg_margin_capped": -1.13,
-      "score": 40.23,
-      "movement": 10
-    },
-    {
-      "rank": 49,
       "school_id": "wisconsin-rapids",
       "school_name": "Wisconsin Rapids Lincoln",
       "wins": 5,
@@ -639,7 +626,20 @@
       "sos": 0.4871,
       "avg_margin_capped": -0.73,
       "score": 39.83,
-      "movement": -2
+      "movement": -1
+    },
+    {
+      "rank": 49,
+      "school_id": "eau-claire-north",
+      "school_name": "Eau Claire North",
+      "wins": 3,
+      "losses": 13,
+      "ties": 0,
+      "win_pct": 0.1875,
+      "sos": 0.6986,
+      "avg_margin_capped": -1.19,
+      "score": 39.5,
+      "movement": 9
     },
     {
       "rank": 50,
@@ -792,9 +792,9 @@
       "losses": 16,
       "ties": 0,
       "win_pct": 0.2,
-      "sos": 0.4775,
+      "sos": 0.4767,
       "avg_margin_capped": -1.25,
-      "score": 32.0,
+      "score": 31.98,
       "movement": -2
     },
     {
