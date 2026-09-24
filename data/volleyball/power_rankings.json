@@ -1,7 +1,7 @@
 {
   "sport": "volleyball",
   "season": "2026-27",
-  "generated_at": "2026-09-24T05:03:42.723489-05:00",
+  "generated_at": "2026-09-24T10:03:42.944914-05:00",
   "method": "WPR Power Index v1: 40% W%, 35% SOS, 25% margin (capped per sport)",
   "rankings": [
     {
@@ -155,9 +155,9 @@
       "losses": 2,
       "ties": 0,
       "win_pct": 0.8667,
-      "sos": 0.2103,
+      "sos": 0.2048,
       "avg_margin_capped": 2.0,
-      "score": 62.86,
+      "score": 62.67,
       "movement": -1
     },
     {
@@ -285,26 +285,13 @@
       "losses": 7,
       "ties": 0,
       "win_pct": 0.6316,
-      "sos": 0.4783,
+      "sos": 0.4765,
       "avg_margin_capped": 0.42,
-      "score": 56.26,
+      "score": 56.19,
       "movement": 1
     },
     {
       "rank": 23,
-      "school_id": "weyauwega-fremont",
-      "school_name": "Weyauwega-Fremont",
-      "wins": 11,
-      "losses": 4,
-      "ties": 0,
-      "win_pct": 0.7333,
-      "sos": 0.2658,
-      "avg_margin_capped": 1.13,
-      "score": 55.86,
-      "movement": -5
-    },
-    {
-      "rank": 24,
       "school_id": "rib-lake",
       "school_name": "Rib Lake",
       "wins": 14,
@@ -314,7 +301,20 @@
       "sos": 0.563,
       "avg_margin_capped": 0.28,
       "score": 55.77,
-      "movement": 1
+      "movement": 2
+    },
+    {
+      "rank": 24,
+      "school_id": "weyauwega-fremont",
+      "school_name": "Weyauwega-Fremont",
+      "wins": 11,
+      "losses": 4,
+      "ties": 0,
+      "win_pct": 0.7333,
+      "sos": 0.2626,
+      "avg_margin_capped": 1.13,
+      "score": 55.75,
+      "movement": -6
     },
     {
       "rank": 25,
@@ -363,9 +363,9 @@
       "losses": 8,
       "ties": 0,
       "win_pct": 0.6364,
-      "sos": 0.3372,
+      "sos": 0.3317,
       "avg_margin_capped": 0.55,
-      "score": 52.03,
+      "score": 51.84,
       "movement": 1
     },
     {
@@ -415,9 +415,9 @@
       "losses": 12,
       "ties": 0,
       "win_pct": 0.5,
-      "sos": 0.4696,
+      "sos": 0.4683,
       "avg_margin_capped": 0.21,
-      "score": 49.8,
+      "score": 49.76,
       "movement": -1
     },
     {
@@ -454,9 +454,9 @@
       "losses": 10,
       "ties": 0,
       "win_pct": 0.5,
-      "sos": 0.4393,
+      "sos": 0.4364,
       "avg_margin_capped": 0.0,
-      "score": 47.88,
+      "score": 47.77,
       "movement": 4
     },
     {
@@ -480,9 +480,9 @@
       "losses": 8,
       "ties": 0,
       "win_pct": 0.5,
-      "sos": 0.4429,
+      "sos": 0.4408,
       "avg_margin_capped": -0.38,
-      "score": 46.44,
+      "score": 46.37,
       "movement": 0
     },
     {
@@ -545,9 +545,9 @@
       "losses": 12,
       "ties": 0,
       "win_pct": 0.4,
-      "sos": 0.5221,
+      "sos": 0.5201,
       "avg_margin_capped": -0.65,
-      "score": 44.06,
+      "score": 43.99,
       "movement": -4
     },
     {
@@ -623,9 +623,9 @@
       "losses": 10,
       "ties": 0,
       "win_pct": 0.3333,
-      "sos": 0.4871,
+      "sos": 0.485,
       "avg_margin_capped": -0.73,
-      "score": 39.83,
+      "score": 39.75,
       "movement": -1
     },
     {
@@ -643,32 +643,6 @@
     },
     {
       "rank": 50,
-      "school_id": "wild-rose",
-      "school_name": "Wild Rose",
-      "wins": 4,
-      "losses": 9,
-      "ties": 0,
-      "win_pct": 0.3077,
-      "sos": 0.5232,
-      "avg_margin_capped": -0.92,
-      "score": 39.27,
-      "movement": 1
-    },
-    {
-      "rank": 51,
-      "school_id": "colby",
-      "school_name": "Colby",
-      "wins": 7,
-      "losses": 11,
-      "ties": 0,
-      "win_pct": 0.3889,
-      "sos": 0.3617,
-      "avg_margin_capped": -0.44,
-      "score": 38.86,
-      "movement": 1
-    },
-    {
-      "rank": 52,
       "school_id": "menomonie",
       "school_name": "Menomonie",
       "wins": 5,
@@ -678,20 +652,46 @@
       "sos": 0.5317,
       "avg_margin_capped": -1.0,
       "score": 38.71,
-      "movement": -2
+      "movement": 0
     },
     {
-      "rank": 53,
+      "rank": 51,
+      "school_id": "wild-rose",
+      "school_name": "Wild Rose",
+      "wins": 4,
+      "losses": 10,
+      "ties": 0,
+      "win_pct": 0.2857,
+      "sos": 0.5232,
+      "avg_margin_capped": -1.0,
+      "score": 38.08,
+      "movement": 0
+    },
+    {
+      "rank": 52,
       "school_id": "rosholt",
       "school_name": "Rosholt",
       "wins": 5,
       "losses": 14,
       "ties": 0,
       "win_pct": 0.2632,
-      "sos": 0.5431,
+      "sos": 0.5391,
       "avg_margin_capped": -0.95,
-      "score": 38.09,
-      "movement": -4
+      "score": 37.95,
+      "movement": -3
+    },
+    {
+      "rank": 53,
+      "school_id": "colby",
+      "school_name": "Colby",
+      "wins": 7,
+      "losses": 12,
+      "ties": 0,
+      "win_pct": 0.3684,
+      "sos": 0.3617,
+      "avg_margin_capped": -0.47,
+      "score": 37.92,
+      "movement": -1
     },
     {
       "rank": 54,
@@ -792,9 +792,9 @@
       "losses": 16,
       "ties": 0,
       "win_pct": 0.2,
-      "sos": 0.4767,
+      "sos": 0.4742,
       "avg_margin_capped": -1.25,
-      "score": 31.98,
+      "score": 31.89,
       "movement": -2
     },
     {
@@ -805,9 +805,9 @@
       "losses": 20,
       "ties": 0,
       "win_pct": 0.1667,
-      "sos": 0.5332,
+      "sos": 0.5321,
       "avg_margin_capped": -1.46,
-      "score": 31.75,
+      "score": 31.71,
       "movement": -5
     },
     {
