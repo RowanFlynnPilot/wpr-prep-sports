@@ -62,7 +62,13 @@ for full endpoint and SSID details.
 - **Bound (`gobound.com`)** — per-game stat leaders + per-team season
   totals for football, boys/girls basketball. Solid central-WI coverage
   for those three sports. Effectively no coverage for volleyball
-  (2/1491 games in 2025-26).
+  (2/1491 games in 2025-26). **Blocks GitHub's runners** (every cron
+  scrape indexes 0 Bound games and carries old lines forward), so Bound
+  data reaches the site only through a local run: the Windows scheduled
+  task "WPR Prep Sports Bound refresh" runs
+  `scraper/scripts/local_bound_refresh.ps1` daily at 6:15 AM on Rowan's
+  machine (see `docs/operations.md`). If Player of the Week is stuck on
+  an old week, that job is the first thing to check.
 - **Wisconsin Prep Hockey (`wisconsinprephockey.net`)** — per-game stats
   + scoring summaries + rosters for boys hockey. Girls hockey deferred
   (co-op modeling problem — see `memory/hockey_stats_gap.md`).

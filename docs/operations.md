@@ -60,6 +60,54 @@ In-scraper guards (silent by design, they *prevent* damage):
   freezes stats instead of wiping them; seen for real 2026-07-08).
 - **Live no-downgrade** — live merges can't move a `final` game backwards.
 
+## Local Bound refresh (Windows scheduled task)
+
+Bound (gobound.com) answers GitHub's runners with a bot challenge, so
+every cron scrape logs `0 Bound games indexed` and carries the previous
+stat lines forward. Bound is the main football and basketball stat
+source (MaxPreps covered 18 of 152 football box scores in Sep 2026), so
+without a local run the box scores and Player of the Week freeze. That
+happened for twelve days in Sep 2026: week 5 had 2 of 39 finals with
+stats and the card held the prior week.
+
+`scraper/scripts/local_bound_refresh.ps1` closes the gap from Rowan's
+machine. It pulls `main`, re-runs the stat merges via
+`scripts/refresh_bound.py` (Bound, then MaxPreps layered on top) for the
+sports in season (football Aug–Nov, boys/girls basketball Nov–Mar), runs
+`validate_data.py`, and commits + pushes `data/` with the cron's
+rebase-retry. It skips itself if the checkout is not on `main` or
+`data/` has local edits, and a rebase conflict discards the refresh
+rather than the working tree. Log:
+`%LOCALAPPDATA%\wpr-prep-sports\bound-refresh.log`. A run takes about
+12 minutes for football (MaxPreps discovery dominates).
+
+Registered 2026-09-24 as **"WPR Prep Sports Bound refresh"**, daily at
+6:15 AM, run-when-available, allowed on battery, 1-hour limit:
+
+```powershell
+$action = New-ScheduledTaskAction -Execute 'powershell.exe' `
+  -Argument '-NoProfile -ExecutionPolicy Bypass -File "C:\Users\rpfly\Projects\wpr-prep-sports\scraper\scripts\local_bound_refresh.ps1"' `
+  -WorkingDirectory 'C:\Users\rpfly\Projects\wpr-prep-sports'
+$trigger = New-ScheduledTaskTrigger -Daily -At 6:15am
+$settings = New-ScheduledTaskSettingsSet -StartWhenAvailable -AllowStartIfOnBatteries `
+  -DontStopIfGoingOnBatteries -ExecutionTimeLimit (New-TimeSpan -Hours 1) -MultipleInstances IgnoreNew
+Register-ScheduledTask -TaskName "WPR Prep Sports Bound refresh" `
+  -Action $action -Trigger $trigger -Settings $settings -Force
+```
+
+Checks:
+
+```powershell
+Get-ScheduledTaskInfo -TaskName "WPR Prep Sports Bound refresh"   # last/next run, result
+Start-ScheduledTask   -TaskName "WPR Prep Sports Bound refresh"   # run it now
+Unregister-ScheduledTask -TaskName "WPR Prep Sports Bound refresh"  # remove it
+```
+
+If Player of the Week is stuck on an old week again: check the log's
+last line, then `git log --author=Rowan -- data/football/boxscores` to
+see when a local refresh last landed. The sentinel does not watch stat
+coverage, only `meta.last_updated`.
+
 ## Secrets & repo variables (complete inventory)
 
 | Name | Kind | Where set | Used by | Unset means |
