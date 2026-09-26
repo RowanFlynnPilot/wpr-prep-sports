@@ -1,7 +1,7 @@
 {
   "sport": "football",
   "season": "2026-27",
-  "generated_at": "2026-09-26T12:03:54.185729-05:00",
+  "generated_at": "2026-09-26T14:44:49.564215-05:00",
   "method": "WPR Power Index v1: 40% W%, 35% SOS, 25% margin (capped per sport)",
   "rankings": [
     {
@@ -136,6 +136,19 @@
     },
     {
       "rank": 11,
+      "school_id": "hurley",
+      "school_name": "Hurley",
+      "wins": 6,
+      "losses": 1,
+      "ties": 0,
+      "win_pct": 0.8571,
+      "sos": 0.4509,
+      "avg_margin_capped": 7.43,
+      "score": 65.88,
+      "movement": 4
+    },
+    {
+      "rank": 12,
       "school_id": "medford",
       "school_name": "Medford",
       "wins": 4,
@@ -145,10 +158,10 @@
       "sos": 0.575,
       "avg_margin_capped": 14.17,
       "score": 65.62,
-      "movement": 0
+      "movement": -1
     },
     {
-      "rank": 12,
+      "rank": 13,
       "school_id": "marshfield",
       "school_name": "Marshfield",
       "wins": 5,
@@ -158,10 +171,10 @@
       "sos": 0.3333,
       "avg_margin_capped": 17.67,
       "score": 65.39,
-      "movement": 1
+      "movement": 0
     },
     {
-      "rank": 13,
+      "rank": 14,
       "school_id": "weyauwega-fremont",
       "school_name": "Weyauwega-Fremont",
       "wins": 5,
@@ -171,10 +184,10 @@
       "sos": 0.5771,
       "avg_margin_capped": 8.14,
       "score": 64.91,
-      "movement": 5
+      "movement": 4
     },
     {
-      "rank": 14,
+      "rank": 15,
       "school_id": "owen-withee",
       "school_name": "Owen-Withee",
       "wins": 4,
@@ -184,20 +197,7 @@
       "sos": 0.619,
       "avg_margin_capped": 8.17,
       "score": 64.48,
-      "movement": 0
-    },
-    {
-      "rank": 15,
-      "school_id": "hurley",
-      "school_name": "Hurley",
-      "wins": 5,
-      "losses": 1,
-      "ties": 0,
-      "win_pct": 0.8333,
-      "sos": 0.4762,
-      "avg_margin_capped": 4.0,
-      "score": 64.29,
-      "movement": 0
+      "movement": -1
     },
     {
       "rank": 16,
@@ -259,9 +259,9 @@
       "losses": 3,
       "ties": 0,
       "win_pct": 0.5,
-      "sos": 0.754,
+      "sos": 0.744,
       "avg_margin_capped": -2.5,
-      "score": 57.77,
+      "score": 57.43,
       "movement": 7
     },
     {
@@ -311,9 +311,9 @@
       "losses": 2,
       "ties": 0,
       "win_pct": 0.7143,
-      "sos": 0.4048,
+      "sos": 0.4087,
       "avg_margin_capped": -0.57,
-      "score": 54.98,
+      "score": 55.12,
       "movement": 1
     },
     {
@@ -324,9 +324,9 @@
       "losses": 2,
       "ties": 0,
       "win_pct": 0.6667,
-      "sos": 0.4286,
+      "sos": 0.4152,
       "avg_margin_capped": -1.5,
-      "score": 53.5,
+      "score": 53.03,
       "movement": 4
     },
     {
@@ -448,19 +448,6 @@
     },
     {
       "rank": 35,
-      "school_id": "rib-lake",
-      "school_name": "Rib Lake",
-      "wins": 5,
-      "losses": 3,
-      "ties": 0,
-      "win_pct": 0.625,
-      "sos": 0.3214,
-      "avg_margin_capped": -3.5,
-      "score": 47.19,
-      "movement": 1
-    },
-    {
-      "rank": 36,
       "school_id": "wild-rose",
       "school_name": "Wild Rose",
       "wins": 3,
@@ -470,7 +457,20 @@
       "sos": 0.5012,
       "avg_margin_capped": -0.43,
       "score": 46.99,
-      "movement": -5
+      "movement": -4
+    },
+    {
+      "rank": 36,
+      "school_id": "rib-lake",
+      "school_name": "Rib Lake",
+      "wins": 5,
+      "losses": 3,
+      "ties": 0,
+      "win_pct": 0.625,
+      "sos": 0.2946,
+      "avg_margin_capped": -3.5,
+      "score": 46.25,
+      "movement": 0
     },
     {
       "rank": 37,
@@ -516,12 +516,12 @@
       "school_id": "chequamegon",
       "school_name": "Chequamegon",
       "wins": 3,
-      "losses": 4,
+      "losses": 5,
       "ties": 0,
-      "win_pct": 0.4286,
-      "sos": 0.5015,
-      "avg_margin_capped": -10.86,
-      "score": 42.35,
+      "win_pct": 0.375,
+      "sos": 0.5726,
+      "avg_margin_capped": -13.0,
+      "score": 41.74,
       "movement": 3
     },
     {
@@ -558,9 +558,9 @@
       "losses": 5,
       "ties": 1,
       "win_pct": 0.2143,
-      "sos": 0.629,
+      "sos": 0.619,
       "avg_margin_capped": -4.57,
-      "score": 41.04,
+      "score": 40.7,
       "movement": -1
     },
     {
