@@ -1,7 +1,7 @@
 {
   "sport": "volleyball",
   "season": "2026-27",
-  "generated_at": "2026-09-27T13:27:04.521413-05:00",
+  "generated_at": "2026-09-27T17:10:29.773928-05:00",
   "method": "WPR Power Index v1: 40% W%, 35% SOS, 25% margin (capped per sport)",
   "rankings": [
     {
@@ -12,9 +12,9 @@
       "losses": 2,
       "ties": 0,
       "win_pct": 0.8571,
-      "sos": 0.6447,
+      "sos": 0.6463,
       "avg_margin_capped": 1.71,
-      "score": 76.49,
+      "score": 76.55,
       "movement": 1
     },
     {
@@ -73,13 +73,13 @@
       "rank": 6,
       "school_id": "river-falls",
       "school_name": "River Falls",
-      "wins": 11,
+      "wins": 12,
       "losses": 3,
       "ties": 0,
-      "win_pct": 0.7857,
+      "win_pct": 0.8,
       "sos": 0.555,
-      "avg_margin_capped": 1.43,
-      "score": 69.31,
+      "avg_margin_capped": 1.4,
+      "score": 69.76,
       "movement": -1
     },
     {
@@ -103,9 +103,9 @@
       "losses": 7,
       "ties": 0,
       "win_pct": 0.6957,
-      "sos": 0.6943,
+      "sos": 0.6952,
       "avg_margin_capped": 0.74,
-      "score": 67.71,
+      "score": 67.74,
       "movement": 0
     },
     {
@@ -116,9 +116,9 @@
       "losses": 6,
       "ties": 0,
       "win_pct": 0.7778,
-      "sos": 0.5497,
+      "sos": 0.5507,
       "avg_margin_capped": 1.15,
-      "score": 67.64,
+      "score": 67.67,
       "movement": -2
     },
     {
@@ -649,9 +649,9 @@
       "losses": 13,
       "ties": 0,
       "win_pct": 0.2778,
-      "sos": 0.571,
+      "sos": 0.5728,
       "avg_margin_capped": -1.06,
-      "score": 39.2,
+      "score": 39.26,
       "movement": 0
     },
     {
@@ -662,9 +662,9 @@
       "losses": 15,
       "ties": 0,
       "win_pct": 0.1667,
-      "sos": 0.7215,
+      "sos": 0.7236,
       "avg_margin_capped": -1.28,
-      "score": 39.1,
+      "score": 39.17,
       "movement": 7
     },
     {
