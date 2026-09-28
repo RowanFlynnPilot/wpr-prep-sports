@@ -274,6 +274,18 @@
         "points_against": 25
       },
       {
+        "school_id": "lakeland",
+        "name": "Lakeland",
+        "conference_wins": 2,
+        "conference_losses": 2,
+        "conference_ties": 0,
+        "overall_wins": 9,
+        "overall_losses": 12,
+        "overall_ties": 0,
+        "points_for": 22,
+        "points_against": 28
+      },
+      {
         "school_id": "medford",
         "name": "Medford",
         "conference_wins": 2,
@@ -284,18 +296,6 @@
         "overall_ties": 0,
         "points_for": 22,
         "points_against": 18
-      },
-      {
-        "school_id": "lakeland",
-        "name": "Lakeland",
-        "conference_wins": 2,
-        "conference_losses": 2,
-        "conference_ties": 0,
-        "overall_wins": 8,
-        "overall_losses": 12,
-        "overall_ties": 0,
-        "points_for": 20,
-        "points_against": 28
       },
       {
         "school_id": "antigo",
@@ -342,6 +342,18 @@
     "division": null,
     "rows": [
       {
+        "school_id": "columbus-catholic",
+        "name": "Columbus Catholic",
+        "conference_wins": 3,
+        "conference_losses": 0,
+        "conference_ties": 0,
+        "overall_wins": 14,
+        "overall_losses": 7,
+        "overall_ties": 0,
+        "points_for": 35,
+        "points_against": 15
+      },
+      {
         "school_id": "gilman",
         "name": "Gilman",
         "conference_wins": 3,
@@ -352,18 +364,6 @@
         "overall_ties": 0,
         "points_for": 31,
         "points_against": 21
-      },
-      {
-        "school_id": "columbus-catholic",
-        "name": "Columbus Catholic",
-        "conference_wins": 3,
-        "conference_losses": 0,
-        "conference_ties": 0,
-        "overall_wins": 13,
-        "overall_losses": 7,
-        "overall_ties": 0,
-        "points_for": 33,
-        "points_against": 15
       },
       {
         "school_id": "colby",
