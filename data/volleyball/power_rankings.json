@@ -1,7 +1,7 @@
 {
   "sport": "volleyball",
   "season": "2026-27",
-  "generated_at": "2026-09-28T17:01:13.789377-05:00",
+  "generated_at": "2026-09-28T20:57:36.555972-05:00",
   "method": "WPR Power Index v1: 40% W%, 35% SOS, 25% margin (capped per sport)",
   "rankings": [
     {
@@ -129,9 +129,9 @@
       "losses": 7,
       "ties": 0,
       "win_pct": 0.7586,
-      "sos": 0.5025,
+      "sos": 0.5033,
       "avg_margin_capped": 1.0,
-      "score": 64.6,
+      "score": 64.63,
       "movement": 0
     },
     {
@@ -142,9 +142,9 @@
       "losses": 7,
       "ties": 0,
       "win_pct": 0.6667,
-      "sos": 0.5879,
+      "sos": 0.5904,
       "avg_margin_capped": 0.95,
-      "score": 63.71,
+      "score": 63.8,
       "movement": 0
     },
     {
@@ -266,6 +266,19 @@
     },
     {
       "rank": 21,
+      "school_id": "pacelli",
+      "school_name": "Pacelli",
+      "wins": 16,
+      "losses": 8,
+      "ties": 0,
+      "win_pct": 0.6667,
+      "sos": 0.4576,
+      "avg_margin_capped": 0.71,
+      "score": 58.13,
+      "movement": 4
+    },
+    {
+      "rank": 22,
       "school_id": "gilman",
       "school_name": "Gilman",
       "wins": 13,
@@ -275,20 +288,7 @@
       "sos": 0.4795,
       "avg_margin_capped": 0.5,
       "score": 57.36,
-      "movement": 0
-    },
-    {
-      "rank": 22,
-      "school_id": "pacelli",
-      "school_name": "Pacelli",
-      "wins": 15,
-      "losses": 8,
-      "ties": 0,
-      "win_pct": 0.6522,
-      "sos": 0.4576,
-      "avg_margin_capped": 0.65,
-      "score": 57.32,
-      "movement": 3
+      "movement": -1
     },
     {
       "rank": 23,
@@ -389,9 +389,9 @@
       "losses": 9,
       "ties": 0,
       "win_pct": 0.4706,
-      "sos": 0.5233,
+      "sos": 0.5259,
       "avg_margin_capped": 0.18,
-      "score": 50.37,
+      "score": 50.47,
       "movement": 0
     },
     {
@@ -493,9 +493,9 @@
       "losses": 13,
       "ties": 0,
       "win_pct": 0.4583,
-      "sos": 0.4333,
+      "sos": 0.4352,
       "avg_margin_capped": -0.08,
-      "score": 45.65,
+      "score": 45.72,
       "movement": 1
     },
     {
@@ -597,9 +597,9 @@
       "losses": 14,
       "ties": 0,
       "win_pct": 0.3,
-      "sos": 0.5868,
+      "sos": 0.5888,
       "avg_margin_capped": -0.9,
-      "score": 41.29,
+      "score": 41.36,
       "movement": 1
     },
     {
@@ -714,9 +714,9 @@
       "losses": 11,
       "ties": 0,
       "win_pct": 0.3889,
-      "sos": 0.3443,
+      "sos": 0.3458,
       "avg_margin_capped": -0.83,
-      "score": 36.63,
+      "score": 36.68,
       "movement": -1
     },
     {
@@ -740,9 +740,9 @@
       "losses": 22,
       "ties": 0,
       "win_pct": 0.2414,
-      "sos": 0.4954,
+      "sos": 0.4961,
       "avg_margin_capped": -1.17,
-      "score": 34.61,
+      "score": 34.63,
       "movement": 3
     },
     {
@@ -753,9 +753,9 @@
       "losses": 11,
       "ties": 0,
       "win_pct": 0.1538,
-      "sos": 0.5986,
+      "sos": 0.6002,
       "avg_margin_capped": -1.38,
-      "score": 33.83,
+      "score": 33.89,
       "movement": -1
     },
     {
@@ -854,12 +854,12 @@
       "school_id": "south-shore",
       "school_name": "South Shore",
       "wins": 0,
-      "losses": 11,
+      "losses": 12,
       "ties": 0,
       "win_pct": 0.0,
       "sos": 0.4286,
-      "avg_margin_capped": -2.18,
-      "score": 18.41,
+      "avg_margin_capped": -2.25,
+      "score": 18.12,
       "movement": 0
     }
   ]
