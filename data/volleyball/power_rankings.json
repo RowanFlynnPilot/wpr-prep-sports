@@ -1,7 +1,7 @@
 {
   "sport": "volleyball",
   "season": "2026-27",
-  "generated_at": "2026-09-29T15:51:09.018713-05:00",
+  "generated_at": "2026-09-29T19:29:02.917798-05:00",
   "method": "WPR Power Index v1: 40% W%, 35% SOS, 25% margin (capped per sport)",
   "rankings": [
     {
@@ -246,9 +246,9 @@
       "losses": 8,
       "ties": 0,
       "win_pct": 0.7143,
-      "sos": 0.4434,
+      "sos": 0.442,
       "avg_margin_capped": 1.04,
-      "score": 60.91,
+      "score": 60.86,
       "movement": -1
     },
     {
@@ -597,9 +597,9 @@
       "losses": 11,
       "ties": 0,
       "win_pct": 0.3529,
-      "sos": 0.5249,
+      "sos": 0.5236,
       "avg_margin_capped": -0.71,
-      "score": 42.05,
+      "score": 42.0,
       "movement": 3
     },
     {
@@ -760,19 +760,6 @@
     },
     {
       "rank": 59,
-      "school_id": "waupaca",
-      "school_name": "Waupaca",
-      "wins": 2,
-      "losses": 9,
-      "ties": 0,
-      "win_pct": 0.1818,
-      "sos": 0.5336,
-      "avg_margin_capped": -1.27,
-      "score": 33.15,
-      "movement": 2
-    },
-    {
-      "rank": 60,
       "school_id": "menominee-nation",
       "school_name": "Menominee Nation",
       "wins": 1,
@@ -782,7 +769,20 @@
       "sos": 0.7025,
       "avg_margin_capped": -1.91,
       "score": 32.77,
-      "movement": -1
+      "movement": 0
+    },
+    {
+      "rank": 60,
+      "school_id": "waupaca",
+      "school_name": "Waupaca",
+      "wins": 2,
+      "losses": 10,
+      "ties": 0,
+      "win_pct": 0.1667,
+      "sos": 0.5336,
+      "avg_margin_capped": -1.33,
+      "score": 32.29,
+      "movement": 1
     },
     {
       "rank": 61,
