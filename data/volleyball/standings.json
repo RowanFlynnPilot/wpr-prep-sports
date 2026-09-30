@@ -122,6 +122,18 @@
         "points_against": 18
       },
       {
+        "school_id": "marathon",
+        "name": "Marathon",
+        "conference_wins": 3,
+        "conference_losses": 1,
+        "conference_ties": 0,
+        "overall_wins": 22,
+        "overall_losses": 3,
+        "overall_ties": 0,
+        "points_for": 52,
+        "points_against": 12
+      },
+      {
         "school_id": "athens",
         "name": "Athens",
         "conference_wins": 3,
@@ -158,18 +170,6 @@
         "points_against": 23
       },
       {
-        "school_id": "marathon",
-        "name": "Marathon",
-        "conference_wins": 2,
-        "conference_losses": 1,
-        "conference_ties": 0,
-        "overall_wins": 21,
-        "overall_losses": 3,
-        "overall_ties": 0,
-        "points_for": 49,
-        "points_against": 12
-      },
-      {
         "school_id": "prentice",
         "name": "Prentice",
         "conference_wins": 2,
@@ -182,18 +182,6 @@
         "points_against": 16
       },
       {
-        "school_id": "assumption",
-        "name": "Assumption",
-        "conference_wins": 0,
-        "conference_losses": 1,
-        "conference_ties": 0,
-        "overall_wins": 2,
-        "overall_losses": 12,
-        "overall_ties": 0,
-        "points_for": 9,
-        "points_against": 27
-      },
-      {
         "school_id": "stratford",
         "name": "Stratford",
         "conference_wins": 0,
@@ -204,6 +192,18 @@
         "overall_ties": 0,
         "points_for": 26,
         "points_against": 24
+      },
+      {
+        "school_id": "assumption",
+        "name": "Assumption",
+        "conference_wins": 0,
+        "conference_losses": 2,
+        "conference_ties": 0,
+        "overall_wins": 2,
+        "overall_losses": 13,
+        "overall_ties": 0,
+        "points_for": 9,
+        "points_against": 30
       },
       {
         "school_id": "newman-catholic",
