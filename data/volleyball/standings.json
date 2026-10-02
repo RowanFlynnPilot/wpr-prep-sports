@@ -110,6 +110,18 @@
         "points_against": 31
       },
       {
+        "school_id": "spencer",
+        "name": "Spencer",
+        "conference_wins": 4,
+        "conference_losses": 2,
+        "conference_ties": 0,
+        "overall_wins": 14,
+        "overall_losses": 14,
+        "overall_ties": 0,
+        "points_for": 40,
+        "points_against": 36
+      },
+      {
         "school_id": "phillips",
         "name": "Phillips",
         "conference_wins": 3,
@@ -144,18 +156,6 @@
         "overall_ties": 0,
         "points_for": 35,
         "points_against": 33
-      },
-      {
-        "school_id": "spencer",
-        "name": "Spencer",
-        "conference_wins": 3,
-        "conference_losses": 2,
-        "conference_ties": 0,
-        "overall_wins": 13,
-        "overall_losses": 14,
-        "overall_ties": 0,
-        "points_for": 37,
-        "points_against": 35
       },
       {
         "school_id": "auburndale",
@@ -224,10 +224,10 @@
         "conference_losses": 4,
         "conference_ties": 0,
         "overall_wins": 10,
-        "overall_losses": 14,
+        "overall_losses": 16,
         "overall_ties": 0,
-        "points_for": 24,
-        "points_against": 39
+        "points_for": 25,
+        "points_against": 43
       }
     ]
   },
@@ -252,74 +252,74 @@
       {
         "school_id": "merrill",
         "name": "Merrill",
-        "conference_wins": 4,
+        "conference_wins": 5,
         "conference_losses": 1,
         "conference_ties": 0,
-        "overall_wins": 14,
+        "overall_wins": 15,
         "overall_losses": 7,
         "overall_ties": 0,
-        "points_for": 33,
+        "points_for": 36,
         "points_against": 19
       },
       {
         "school_id": "northland-pines",
         "name": "Northland Pines",
+        "conference_wins": 4,
+        "conference_losses": 2,
+        "conference_ties": 0,
+        "overall_wins": 22,
+        "overall_losses": 8,
+        "overall_ties": 0,
+        "points_for": 52,
+        "points_against": 26
+      },
+      {
+        "school_id": "antigo",
+        "name": "Antigo",
         "conference_wins": 3,
         "conference_losses": 2,
         "conference_ties": 0,
-        "overall_wins": 21,
-        "overall_losses": 8,
+        "overall_wins": 11,
+        "overall_losses": 13,
         "overall_ties": 0,
-        "points_for": 49,
-        "points_against": 26
+        "points_for": 29,
+        "points_against": 35
       },
       {
         "school_id": "lakeland",
         "name": "Lakeland",
         "conference_wins": 3,
-        "conference_losses": 2,
-        "conference_ties": 0,
-        "overall_wins": 10,
-        "overall_losses": 12,
-        "overall_ties": 0,
-        "points_for": 25,
-        "points_against": 28
-      },
-      {
-        "school_id": "antigo",
-        "name": "Antigo",
-        "conference_wins": 2,
-        "conference_losses": 2,
+        "conference_losses": 3,
         "conference_ties": 0,
         "overall_wins": 10,
         "overall_losses": 13,
         "overall_ties": 0,
-        "points_for": 26,
-        "points_against": 33
+        "points_for": 27,
+        "points_against": 31
       },
       {
         "school_id": "medford",
         "name": "Medford",
         "conference_wins": 2,
-        "conference_losses": 3,
+        "conference_losses": 4,
         "conference_ties": 0,
         "overall_wins": 8,
-        "overall_losses": 8,
+        "overall_losses": 9,
         "overall_ties": 0,
         "points_for": 22,
-        "points_against": 21
+        "points_against": 24
       },
       {
         "school_id": "rhinelander",
         "name": "Rhinelander",
         "conference_wins": 1,
-        "conference_losses": 4,
+        "conference_losses": 5,
         "conference_ties": 0,
         "overall_wins": 11,
-        "overall_losses": 18,
+        "overall_losses": 19,
         "overall_ties": 0,
         "points_for": 30,
-        "points_against": 46
+        "points_against": 49
       },
       {
         "school_id": "tomahawk",
@@ -402,18 +402,6 @@
         "points_against": 26
       },
       {
-        "school_id": "greenwood",
-        "name": "Greenwood",
-        "conference_wins": 0,
-        "conference_losses": 3,
-        "conference_ties": 0,
-        "overall_wins": 6,
-        "overall_losses": 11,
-        "overall_ties": 0,
-        "points_for": 17,
-        "points_against": 27
-      },
-      {
         "school_id": "loyal",
         "name": "Loyal",
         "conference_wins": 0,
@@ -436,6 +424,18 @@
         "overall_ties": 0,
         "points_for": 18,
         "points_against": 55
+      },
+      {
+        "school_id": "greenwood",
+        "name": "Greenwood",
+        "conference_wins": 0,
+        "conference_losses": 4,
+        "conference_ties": 0,
+        "overall_wins": 6,
+        "overall_losses": 12,
+        "overall_ties": 0,
+        "points_for": 18,
+        "points_against": 30
       }
     ]
   }
