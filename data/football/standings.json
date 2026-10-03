@@ -565,13 +565,13 @@
         "school_id": "tri-county",
         "name": "Tri-County",
         "conference_wins": 5,
-        "conference_losses": 0,
+        "conference_losses": 1,
         "conference_ties": 0,
         "overall_wins": 5,
-        "overall_losses": 3,
+        "overall_losses": 4,
         "overall_ties": 0,
-        "points_for": 156,
-        "points_against": 196
+        "points_for": 170,
+        "points_against": 222
       },
       {
         "school_id": "almond-bancroft",
@@ -586,6 +586,18 @@
         "points_against": 324
       },
       {
+        "school_id": "marion",
+        "name": "Marion",
+        "conference_wins": 3,
+        "conference_losses": 3,
+        "conference_ties": 0,
+        "overall_wins": 4,
+        "overall_losses": 6,
+        "overall_ties": 0,
+        "points_for": 117,
+        "points_against": 233
+      },
+      {
         "school_id": "port-edwards",
         "name": "Port Edwards",
         "conference_wins": 3,
@@ -596,18 +608,6 @@
         "overall_ties": 0,
         "points_for": 211,
         "points_against": 230
-      },
-      {
-        "school_id": "marion",
-        "name": "Marion",
-        "conference_wins": 2,
-        "conference_losses": 3,
-        "conference_ties": 0,
-        "overall_wins": 3,
-        "overall_losses": 6,
-        "overall_ties": 0,
-        "points_for": 91,
-        "points_against": 219
       },
       {
         "school_id": "wild-rose",
