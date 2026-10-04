@@ -1,7 +1,7 @@
 {
   "sport": "football",
   "season": "2026-27",
-  "generated_at": "2026-10-03T16:28:32.144314-05:00",
+  "generated_at": "2026-10-03T18:46:26.501343-05:00",
   "method": "WPR Power Index v1: 40% W%, 35% SOS, 25% margin (capped per sport)",
   "rankings": [
     {
@@ -155,9 +155,9 @@
       "losses": 2,
       "ties": 0,
       "win_pct": 0.7143,
-      "sos": 0.5524,
+      "sos": 0.5429,
       "avg_margin_capped": 15.0,
-      "score": 67.1,
+      "score": 66.77,
       "movement": 0
     },
     {
@@ -279,6 +279,19 @@
     },
     {
       "rank": 22,
+      "school_id": "merrill",
+      "school_name": "Merrill",
+      "wins": 5,
+      "losses": 2,
+      "ties": 0,
+      "win_pct": 0.7143,
+      "sos": 0.3429,
+      "avg_margin_capped": 4.57,
+      "score": 55.11,
+      "movement": 10
+    },
+    {
+      "rank": 23,
       "school_id": "phillips",
       "school_name": "Phillips",
       "wins": 3,
@@ -288,10 +301,10 @@
       "sos": 0.6759,
       "avg_margin_capped": -2.5,
       "score": 55.04,
-      "movement": -2
+      "movement": -3
     },
     {
-      "rank": 23,
+      "rank": 24,
       "school_id": "rosholt",
       "school_name": "Rosholt",
       "wins": 6,
@@ -301,10 +314,10 @@
       "sos": 0.3891,
       "avg_margin_capped": 1.33,
       "score": 53.38,
-      "movement": 7
+      "movement": 6
     },
     {
-      "rank": 24,
+      "rank": 25,
       "school_id": "wausau-east",
       "school_name": "Wausau East",
       "wins": 5,
@@ -314,20 +327,7 @@
       "sos": 0.3143,
       "avg_margin_capped": 2.29,
       "score": 53.09,
-      "movement": 3
-    },
-    {
-      "rank": 25,
-      "school_id": "rhinelander",
-      "school_name": "Rhinelander",
-      "wins": 4,
-      "losses": 2,
-      "ties": 0,
-      "win_pct": 0.6667,
-      "sos": 0.3214,
-      "avg_margin_capped": 1.83,
-      "score": 51.24,
-      "movement": -3
+      "movement": 2
     },
     {
       "rank": 26,
@@ -357,19 +357,6 @@
     },
     {
       "rank": 28,
-      "school_id": "merrill",
-      "school_name": "Merrill",
-      "wins": 4,
-      "losses": 2,
-      "ties": 0,
-      "win_pct": 0.6667,
-      "sos": 0.2857,
-      "avg_margin_capped": 0.67,
-      "score": 49.46,
-      "movement": 4
-    },
-    {
-      "rank": 29,
       "school_id": "wild-rose",
       "school_name": "Wild Rose",
       "wins": 5,
@@ -379,7 +366,20 @@
       "sos": 0.3704,
       "avg_margin_capped": 2.0,
       "score": 48.58,
-      "movement": 6
+      "movement": 7
+    },
+    {
+      "rank": 29,
+      "school_id": "rhinelander",
+      "school_name": "Rhinelander",
+      "wins": 4,
+      "losses": 3,
+      "ties": 0,
+      "win_pct": 0.5714,
+      "sos": 0.4,
+      "avg_margin_capped": -2.43,
+      "score": 48.27,
+      "movement": -7
     },
     {
       "rank": 30,
@@ -506,9 +506,9 @@
       "losses": 4,
       "ties": 0,
       "win_pct": 0.4286,
-      "sos": 0.4444,
+      "sos": 0.4286,
       "avg_margin_capped": -2.86,
-      "score": 43.92,
+      "score": 43.37,
       "movement": 8
     },
     {
@@ -552,6 +552,19 @@
     },
     {
       "rank": 43,
+      "school_id": "lakeland",
+      "school_name": "Lakeland",
+      "wins": 2,
+      "losses": 5,
+      "ties": 0,
+      "win_pct": 0.2857,
+      "sos": 0.5429,
+      "avg_margin_capped": -5.86,
+      "score": 40.31,
+      "movement": 5
+    },
+    {
+      "rank": 44,
       "school_id": "prentice",
       "school_name": "Prentice",
       "wins": 1,
@@ -561,20 +574,7 @@
       "sos": 0.6667,
       "avg_margin_capped": -5.17,
       "score": 40.19,
-      "movement": 0
-    },
-    {
-      "rank": 44,
-      "school_id": "lakeland",
-      "school_name": "Lakeland",
-      "wins": 2,
-      "losses": 5,
-      "ties": 0,
-      "win_pct": 0.2857,
-      "sos": 0.5333,
-      "avg_margin_capped": -5.86,
-      "score": 39.98,
-      "movement": 4
+      "movement": -1
     },
     {
       "rank": 45,
@@ -675,9 +675,9 @@
       "losses": 6,
       "ties": 0,
       "win_pct": 0.1429,
-      "sos": 0.5556,
+      "sos": 0.5476,
       "avg_margin_capped": -12.43,
-      "score": 32.11,
+      "score": 31.83,
       "movement": -3
     },
     {
@@ -779,9 +779,9 @@
       "losses": 7,
       "ties": 0,
       "win_pct": 0.0,
-      "sos": 0.5079,
+      "sos": 0.5,
       "avg_margin_capped": -10.29,
-      "score": 25.69,
+      "score": 25.41,
       "movement": -1
     },
     {
