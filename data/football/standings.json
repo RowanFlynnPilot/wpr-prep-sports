@@ -262,6 +262,18 @@
         "points_against": 133
       },
       {
+        "school_id": "phillips",
+        "name": "Phillips",
+        "conference_wins": 4,
+        "conference_losses": 2,
+        "conference_ties": 0,
+        "overall_wins": 5,
+        "overall_losses": 3,
+        "overall_ties": 0,
+        "points_for": 160,
+        "points_against": 170
+      },
+      {
         "school_id": "rib-lake",
         "name": "Rib Lake",
         "conference_wins": 4,
@@ -272,18 +284,6 @@
         "overall_ties": 0,
         "points_for": 190,
         "points_against": 282
-      },
-      {
-        "school_id": "phillips",
-        "name": "Phillips",
-        "conference_wins": 4,
-        "conference_losses": 2,
-        "conference_ties": 0,
-        "overall_wins": 4,
-        "overall_losses": 3,
-        "overall_ties": 0,
-        "points_for": 126,
-        "points_against": 152
       },
       {
         "school_id": "bruce",
@@ -487,11 +487,11 @@
         "conference_wins": 3,
         "conference_losses": 2,
         "conference_ties": 0,
-        "overall_wins": 3,
+        "overall_wins": 4,
         "overall_losses": 4,
         "overall_ties": 0,
-        "points_for": 78,
-        "points_against": 93
+        "points_for": 127,
+        "points_against": 99
       },
       {
         "school_id": "weyauwega-fremont",
