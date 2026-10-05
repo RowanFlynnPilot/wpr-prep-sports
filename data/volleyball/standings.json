@@ -23,11 +23,11 @@
         "conference_wins": 4,
         "conference_losses": 1,
         "conference_ties": 0,
-        "overall_wins": 18,
-        "overall_losses": 6,
+        "overall_wins": 19,
+        "overall_losses": 9,
         "overall_ties": 0,
-        "points_for": 45,
-        "points_against": 18
+        "points_for": 48,
+        "points_against": 25
       },
       {
         "school_id": "dc-everest",
@@ -134,6 +134,18 @@
         "points_against": 19
       },
       {
+        "school_id": "auburndale",
+        "name": "Auburndale",
+        "conference_wins": 3,
+        "conference_losses": 1,
+        "conference_ties": 0,
+        "overall_wins": 27,
+        "overall_losses": 8,
+        "overall_ties": 0,
+        "points_for": 63,
+        "points_against": 26
+      },
+      {
         "school_id": "marathon",
         "name": "Marathon",
         "conference_wins": 3,
@@ -158,18 +170,6 @@
         "points_against": 33
       },
       {
-        "school_id": "auburndale",
-        "name": "Auburndale",
-        "conference_wins": 2,
-        "conference_losses": 1,
-        "conference_ties": 0,
-        "overall_wins": 22,
-        "overall_losses": 7,
-        "overall_ties": 0,
-        "points_for": 52,
-        "points_against": 23
-      },
-      {
         "school_id": "prentice",
         "name": "Prentice",
         "conference_wins": 2,
@@ -182,18 +182,6 @@
         "points_against": 16
       },
       {
-        "school_id": "stratford",
-        "name": "Stratford",
-        "conference_wins": 0,
-        "conference_losses": 2,
-        "conference_ties": 0,
-        "overall_wins": 12,
-        "overall_losses": 9,
-        "overall_ties": 0,
-        "points_for": 26,
-        "points_against": 24
-      },
-      {
         "school_id": "assumption",
         "name": "Assumption",
         "conference_wins": 0,
@@ -204,6 +192,18 @@
         "overall_ties": 0,
         "points_for": 9,
         "points_against": 30
+      },
+      {
+        "school_id": "stratford",
+        "name": "Stratford",
+        "conference_wins": 0,
+        "conference_losses": 3,
+        "conference_ties": 0,
+        "overall_wins": 12,
+        "overall_losses": 10,
+        "overall_ties": 0,
+        "points_for": 27,
+        "points_against": 27
       },
       {
         "school_id": "newman-catholic",
@@ -408,10 +408,10 @@
         "conference_losses": 4,
         "conference_ties": 0,
         "overall_wins": 8,
-        "overall_losses": 22,
+        "overall_losses": 23,
         "overall_ties": 0,
         "points_for": 20,
-        "points_against": 53
+        "points_against": 55
       },
       {
         "school_id": "greenwood",

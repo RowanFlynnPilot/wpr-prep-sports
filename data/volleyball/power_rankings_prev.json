@@ -1,7 +1,7 @@
 {
   "sport": "volleyball",
   "season": "2026-27",
-  "generated_at": "2026-10-04T19:55:12.391224-05:00",
+  "generated_at": "2026-10-05T02:01:45.489209-05:00",
   "method": "WPR Power Index v1: 40% W%, 35% SOS, 25% margin (capped per sport)",
   "rankings": [
     {
@@ -12,9 +12,9 @@
       "losses": 2,
       "ties": 0,
       "win_pct": 0.8667,
-      "sos": 0.6526,
+      "sos": 0.6457,
       "avg_margin_capped": 1.8,
-      "score": 77.51,
+      "score": 77.27,
       "movement": 0
     },
     {
@@ -32,19 +32,6 @@
     },
     {
       "rank": 3,
-      "school_id": "mosinee",
-      "school_name": "Mosinee",
-      "wins": 20,
-      "losses": 2,
-      "ties": 0,
-      "win_pct": 0.9091,
-      "sos": 0.5025,
-      "avg_margin_capped": 1.77,
-      "score": 73.84,
-      "movement": 0
-    },
-    {
-      "rank": 4,
       "school_id": "river-falls",
       "school_name": "River Falls",
       "wins": 22,
@@ -54,10 +41,10 @@
       "sos": 0.5439,
       "avg_margin_capped": 1.46,
       "score": 71.47,
-      "movement": 2
+      "movement": 1
     },
     {
-      "rank": 5,
+      "rank": 4,
       "school_id": "marathon",
       "school_name": "Marathon",
       "wins": 22,
@@ -67,7 +54,20 @@
       "sos": 0.4449,
       "avg_margin_capped": 1.6,
       "score": 69.94,
-      "movement": 0
+      "movement": 1
+    },
+    {
+      "rank": 5,
+      "school_id": "mosinee",
+      "school_name": "Mosinee",
+      "wins": 21,
+      "losses": 4,
+      "ties": 0,
+      "win_pct": 0.84,
+      "sos": 0.5025,
+      "avg_margin_capped": 1.48,
+      "score": 69.85,
+      "movement": -2
     },
     {
       "rank": 6,
@@ -77,10 +77,10 @@
       "losses": 6,
       "ties": 0,
       "win_pct": 0.8182,
-      "sos": 0.5479,
+      "sos": 0.5439,
       "avg_margin_capped": 1.3,
-      "score": 69.83,
-      "movement": 3
+      "score": 69.69,
+      "movement": 0
     },
     {
       "rank": 7,
@@ -90,9 +90,9 @@
       "losses": 7,
       "ties": 0,
       "win_pct": 0.7407,
-      "sos": 0.674,
+      "sos": 0.6702,
       "avg_margin_capped": 0.96,
-      "score": 69.73,
+      "score": 69.6,
       "movement": 1
     },
     {
@@ -119,7 +119,7 @@
       "sos": 0.5801,
       "avg_margin_capped": 1.05,
       "score": 66.25,
-      "movement": -5
+      "movement": 0
     },
     {
       "rank": 10,
@@ -132,7 +132,7 @@
       "sos": 0.5158,
       "avg_margin_capped": 1.06,
       "score": 65.55,
-      "movement": 7
+      "movement": 0
     },
     {
       "rank": 11,
@@ -145,7 +145,7 @@
       "sos": 0.5098,
       "avg_margin_capped": 1.0,
       "score": 64.86,
-      "movement": -1
+      "movement": 0
     },
     {
       "rank": 12,
@@ -171,7 +171,7 @@
       "sos": 0.5945,
       "avg_margin_capped": 1.0,
       "score": 64.75,
-      "movement": -2
+      "movement": 0
     },
     {
       "rank": 14,
@@ -184,7 +184,7 @@
       "sos": 0.3587,
       "avg_margin_capped": 1.32,
       "score": 64.16,
-      "movement": -1
+      "movement": 0
     },
     {
       "rank": 15,
@@ -194,10 +194,10 @@
       "losses": 8,
       "ties": 0,
       "win_pct": 0.7333,
-      "sos": 0.5173,
+      "sos": 0.5127,
       "avg_margin_capped": 0.87,
-      "score": 63.55,
-      "movement": 4
+      "score": 63.39,
+      "movement": 0
     },
     {
       "rank": 16,
@@ -207,9 +207,9 @@
       "losses": 7,
       "ties": 0,
       "win_pct": 0.6818,
-      "sos": 0.5712,
+      "sos": 0.5666,
       "avg_margin_capped": 0.77,
-      "score": 62.99,
+      "score": 62.82,
       "movement": 0
     },
     {
@@ -223,7 +223,7 @@
       "sos": 0.5308,
       "avg_margin_capped": 0.79,
       "score": 62.71,
-      "movement": -2
+      "movement": 0
     },
     {
       "rank": 18,
@@ -236,7 +236,7 @@
       "sos": 0.1683,
       "avg_margin_capped": 2.06,
       "score": 62.26,
-      "movement": -4
+      "movement": 0
     },
     {
       "rank": 19,
@@ -249,7 +249,7 @@
       "sos": 0.4683,
       "avg_margin_capped": 0.85,
       "score": 60.11,
-      "movement": 6
+      "movement": 0
     },
     {
       "rank": 20,
@@ -262,7 +262,7 @@
       "sos": 0.4497,
       "avg_margin_capped": 0.9,
       "score": 59.56,
-      "movement": -2
+      "movement": 0
     },
     {
       "rank": 21,
@@ -275,7 +275,7 @@
       "sos": 0.5309,
       "avg_margin_capped": 0.58,
       "score": 58.76,
-      "movement": 3
+      "movement": 0
     },
     {
       "rank": 22,
@@ -301,7 +301,7 @@
       "sos": 0.4808,
       "avg_margin_capped": 0.5,
       "score": 56.86,
-      "movement": -2
+      "movement": 0
     },
     {
       "rank": 24,
@@ -314,7 +314,7 @@
       "sos": 0.5599,
       "avg_margin_capped": 0.36,
       "score": 56.44,
-      "movement": -1
+      "movement": 0
     },
     {
       "rank": 25,
@@ -327,7 +327,7 @@
       "sos": 0.6267,
       "avg_margin_capped": -0.15,
       "score": 53.79,
-      "movement": 1
+      "movement": 0
     },
     {
       "rank": 26,
@@ -340,7 +340,7 @@
       "sos": 0.4426,
       "avg_margin_capped": 0.4,
       "score": 53.66,
-      "movement": 3
+      "movement": 0
     },
     {
       "rank": 27,
@@ -353,7 +353,7 @@
       "sos": 0.3317,
       "avg_margin_capped": 0.63,
       "score": 52.0,
-      "movement": -7
+      "movement": 0
     },
     {
       "rank": 28,
@@ -366,7 +366,7 @@
       "sos": 0.5116,
       "avg_margin_capped": 0.22,
       "score": 51.33,
-      "movement": 2
+      "movement": 0
     },
     {
       "rank": 29,
@@ -376,10 +376,10 @@
       "losses": 13,
       "ties": 0,
       "win_pct": 0.4348,
-      "sos": 0.5818,
+      "sos": 0.5755,
       "avg_margin_capped": -0.17,
-      "score": 49.53,
-      "movement": -1
+      "score": 49.31,
+      "movement": 0
     },
     {
       "rank": 30,
@@ -389,10 +389,10 @@
       "losses": 10,
       "ties": 0,
       "win_pct": 0.4444,
-      "sos": 0.5516,
+      "sos": 0.5463,
       "avg_margin_capped": -0.22,
-      "score": 48.66,
-      "movement": -3
+      "score": 48.47,
+      "movement": 0
     },
     {
       "rank": 31,
@@ -418,7 +418,7 @@
       "sos": 0.36,
       "avg_margin_capped": 0.33,
       "score": 48.31,
-      "movement": 6
+      "movement": 0
     },
     {
       "rank": 33,
@@ -444,7 +444,7 @@
       "sos": 0.462,
       "avg_margin_capped": -0.14,
       "score": 48.1,
-      "movement": 8
+      "movement": -1
     },
     {
       "rank": 35,
@@ -457,7 +457,7 @@
       "sos": 0.4448,
       "avg_margin_capped": -0.11,
       "score": 47.62,
-      "movement": 2
+      "movement": 0
     },
     {
       "rank": 36,
@@ -470,7 +470,7 @@
       "sos": 0.6794,
       "avg_margin_capped": -0.75,
       "score": 47.32,
-      "movement": 9
+      "movement": 0
     },
     {
       "rank": 37,
@@ -483,7 +483,7 @@
       "sos": 0.4922,
       "avg_margin_capped": -0.25,
       "score": 47.02,
-      "movement": -5
+      "movement": 0
     },
     {
       "rank": 38,
@@ -496,7 +496,7 @@
       "sos": 0.4392,
       "avg_margin_capped": -0.04,
       "score": 46.91,
-      "movement": 1
+      "movement": 0
     },
     {
       "rank": 39,
@@ -509,23 +509,10 @@
       "sos": 0.4392,
       "avg_margin_capped": 0.0,
       "score": 46.82,
-      "movement": 7
+      "movement": 0
     },
     {
       "rank": 40,
-      "school_id": "superior",
-      "school_name": "Superior",
-      "wins": 9,
-      "losses": 17,
-      "ties": 0,
-      "win_pct": 0.3462,
-      "sos": 0.6155,
-      "avg_margin_capped": -0.42,
-      "score": 46.13,
-      "movement": -7
-    },
-    {
-      "rank": 41,
       "school_id": "neillsville",
       "school_name": "Neillsville",
       "wins": 7,
@@ -535,7 +522,20 @@
       "sos": 0.5757,
       "avg_margin_capped": -0.56,
       "score": 45.89,
-      "movement": -6
+      "movement": 1
+    },
+    {
+      "rank": 41,
+      "school_id": "superior",
+      "school_name": "Superior",
+      "wins": 9,
+      "losses": 17,
+      "ties": 0,
+      "win_pct": 0.3462,
+      "sos": 0.6069,
+      "avg_margin_capped": -0.42,
+      "score": 45.82,
+      "movement": -1
     },
     {
       "rank": 42,
@@ -548,7 +548,7 @@
       "sos": 0.5495,
       "avg_margin_capped": -0.5,
       "score": 44.65,
-      "movement": -6
+      "movement": 0
     },
     {
       "rank": 43,
@@ -561,7 +561,7 @@
       "sos": 0.443,
       "avg_margin_capped": -0.25,
       "score": 44.46,
-      "movement": 1
+      "movement": 0
     },
     {
       "rank": 44,
@@ -571,10 +571,10 @@
       "losses": 19,
       "ties": 0,
       "win_pct": 0.3667,
-      "sos": 0.5489,
+      "sos": 0.5456,
       "avg_margin_capped": -0.63,
-      "score": 43.74,
-      "movement": -1
+      "score": 43.62,
+      "movement": 0
     },
     {
       "rank": 45,
@@ -584,10 +584,10 @@
       "losses": 15,
       "ties": 0,
       "win_pct": 0.2857,
-      "sos": 0.6294,
+      "sos": 0.6217,
       "avg_margin_capped": -0.95,
-      "score": 41.99,
-      "movement": 6
+      "score": 41.72,
+      "movement": 0
     },
     {
       "rank": 46,
@@ -600,7 +600,7 @@
       "sos": 0.6527,
       "avg_margin_capped": -1.18,
       "score": 41.33,
-      "movement": -5
+      "movement": 0
     },
     {
       "rank": 47,
@@ -613,7 +613,7 @@
       "sos": 0.5663,
       "avg_margin_capped": -0.95,
       "score": 41.01,
-      "movement": 2
+      "movement": 0
     },
     {
       "rank": 48,
@@ -626,7 +626,7 @@
       "sos": 0.5888,
       "avg_margin_capped": -0.9,
       "score": 40.77,
-      "movement": -1
+      "movement": 0
     },
     {
       "rank": 49,
@@ -639,7 +639,7 @@
       "sos": 0.4967,
       "avg_margin_capped": -0.83,
       "score": 40.23,
-      "movement": -9
+      "movement": 0
     },
     {
       "rank": 50,
@@ -652,7 +652,7 @@
       "sos": 0.4441,
       "avg_margin_capped": -0.67,
       "score": 38.6,
-      "movement": -2
+      "movement": 0
     },
     {
       "rank": 51,
@@ -665,7 +665,7 @@
       "sos": 0.5801,
       "avg_margin_capped": -1.17,
       "score": 36.83,
-      "movement": 5
+      "movement": 0
     },
     {
       "rank": 52,
@@ -678,7 +678,7 @@
       "sos": 0.5097,
       "avg_margin_capped": -1.1,
       "score": 36.42,
-      "movement": 8
+      "movement": 0
     },
     {
       "rank": 53,
@@ -691,23 +691,10 @@
       "sos": 0.4487,
       "avg_margin_capped": -0.89,
       "score": 36.35,
-      "movement": -1
+      "movement": 0
     },
     {
       "rank": 54,
-      "school_id": "newman-catholic",
-      "school_name": "Newman Catholic",
-      "wins": 3,
-      "losses": 12,
-      "ties": 0,
-      "win_pct": 0.2,
-      "sos": 0.6022,
-      "avg_margin_capped": -1.27,
-      "score": 36.3,
-      "movement": 3
-    },
-    {
-      "rank": 55,
       "school_id": "flambeau",
       "school_name": "Flambeau",
       "wins": 4,
@@ -717,10 +704,10 @@
       "sos": 0.4543,
       "avg_margin_capped": -0.86,
       "score": 36.26,
-      "movement": 0
+      "movement": 1
     },
     {
-      "rank": 56,
+      "rank": 55,
       "school_id": "menomonie",
       "school_name": "Menomonie",
       "wins": 5,
@@ -730,7 +717,20 @@
       "sos": 0.5282,
       "avg_margin_capped": -1.15,
       "score": 36.19,
-      "movement": -6
+      "movement": 1
+    },
+    {
+      "rank": 56,
+      "school_id": "newman-catholic",
+      "school_name": "Newman Catholic",
+      "wins": 3,
+      "losses": 12,
+      "ties": 0,
+      "win_pct": 0.2,
+      "sos": 0.5959,
+      "avg_margin_capped": -1.27,
+      "score": 36.08,
+      "movement": -2
     },
     {
       "rank": 57,
@@ -743,7 +743,7 @@
       "sos": 0.5125,
       "avg_margin_capped": -1.12,
       "score": 35.75,
-      "movement": -4
+      "movement": 0
     },
     {
       "rank": 58,
@@ -756,7 +756,7 @@
       "sos": 0.344,
       "avg_margin_capped": -0.89,
       "score": 35.55,
-      "movement": -4
+      "movement": 0
     },
     {
       "rank": 59,
@@ -769,7 +769,7 @@
       "sos": 0.5027,
       "avg_margin_capped": -1.19,
       "score": 35.15,
-      "movement": 2
+      "movement": 0
     },
     {
       "rank": 60,
@@ -782,7 +782,7 @@
       "sos": 0.711,
       "avg_margin_capped": -1.88,
       "score": 34.25,
-      "movement": 2
+      "movement": 0
     },
     {
       "rank": 61,
@@ -795,7 +795,7 @@
       "sos": 0.5143,
       "avg_margin_capped": -1.38,
       "score": 32.42,
-      "movement": -3
+      "movement": 0
     },
     {
       "rank": 62,
@@ -808,7 +808,7 @@
       "sos": 0.5595,
       "avg_margin_capped": -1.4,
       "score": 31.58,
-      "movement": 2
+      "movement": 0
     },
     {
       "rank": 63,
@@ -821,7 +821,7 @@
       "sos": 0.6759,
       "avg_margin_capped": -2.0,
       "score": 31.16,
-      "movement": -4
+      "movement": 0
     },
     {
       "rank": 64,
@@ -831,10 +831,10 @@
       "losses": 16,
       "ties": 0,
       "win_pct": 0.1111,
-      "sos": 0.5625,
+      "sos": 0.5575,
       "avg_margin_capped": -1.83,
-      "score": 28.99,
-      "movement": -1
+      "score": 28.82,
+      "movement": 0
     },
     {
       "rank": 65,
