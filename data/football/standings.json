@@ -312,26 +312,26 @@
       {
         "school_id": "chequamegon",
         "name": "Chequamegon",
-        "conference_wins": 1,
+        "conference_wins": 2,
         "conference_losses": 5,
         "conference_ties": 0,
-        "overall_wins": 2,
+        "overall_wins": 3,
         "overall_losses": 6,
         "overall_ties": 0,
-        "points_for": 103,
+        "points_for": 104,
         "points_against": 334
       },
       {
         "school_id": "prentice",
         "name": "Prentice",
         "conference_wins": 0,
-        "conference_losses": 5,
+        "conference_losses": 6,
         "conference_ties": 0,
         "overall_wins": 1,
-        "overall_losses": 6,
+        "overall_losses": 7,
         "overall_ties": 0,
         "points_for": 29,
-        "points_against": 69
+        "points_against": 70
       },
       {
         "school_id": "south-shore",
@@ -586,6 +586,18 @@
         "points_against": 324
       },
       {
+        "school_id": "port-edwards",
+        "name": "Port Edwards",
+        "conference_wins": 4,
+        "conference_losses": 3,
+        "conference_ties": 0,
+        "overall_wins": 5,
+        "overall_losses": 4,
+        "overall_ties": 0,
+        "points_for": 213,
+        "points_against": 230
+      },
+      {
         "school_id": "marion",
         "name": "Marion",
         "conference_wins": 3,
@@ -596,18 +608,6 @@
         "overall_ties": 0,
         "points_for": 117,
         "points_against": 233
-      },
-      {
-        "school_id": "port-edwards",
-        "name": "Port Edwards",
-        "conference_wins": 3,
-        "conference_losses": 3,
-        "conference_ties": 0,
-        "overall_wins": 4,
-        "overall_losses": 4,
-        "overall_ties": 0,
-        "points_for": 211,
-        "points_against": 230
       },
       {
         "school_id": "wild-rose",
@@ -634,18 +634,6 @@
         "points_against": 348
       },
       {
-        "school_id": "menominee-nation",
-        "name": "Menominee Nation",
-        "conference_wins": 0,
-        "conference_losses": 5,
-        "conference_ties": 0,
-        "overall_wins": 0,
-        "overall_losses": 5,
-        "overall_ties": 0,
-        "points_for": 0,
-        "points_against": 5
-      },
-      {
         "school_id": "bowler",
         "name": "Bowler",
         "conference_wins": 0,
@@ -656,6 +644,18 @@
         "overall_ties": 0,
         "points_for": 0,
         "points_against": 6
+      },
+      {
+        "school_id": "menominee-nation",
+        "name": "Menominee Nation",
+        "conference_wins": 0,
+        "conference_losses": 6,
+        "conference_ties": 0,
+        "overall_wins": 0,
+        "overall_losses": 6,
+        "overall_ties": 0,
+        "points_for": 0,
+        "points_against": 7
       }
     ]
   },
