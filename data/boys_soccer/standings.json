@@ -112,13 +112,13 @@
       {
         "school_id": "merrill",
         "name": "Merrill",
-        "conference_wins": 4,
+        "conference_wins": 5,
         "conference_losses": 4,
         "conference_ties": 0,
-        "overall_wins": 6,
+        "overall_wins": 7,
         "overall_losses": 7,
         "overall_ties": 0,
-        "points_for": 30,
+        "points_for": 36,
         "points_against": 27
       },
       {
@@ -134,18 +134,6 @@
         "points_against": 27
       },
       {
-        "school_id": "antigo",
-        "name": "Antigo",
-        "conference_wins": 2,
-        "conference_losses": 6,
-        "conference_ties": 0,
-        "overall_wins": 5,
-        "overall_losses": 10,
-        "overall_ties": 0,
-        "points_for": 33,
-        "points_against": 33
-      },
-      {
         "school_id": "mosinee",
         "name": "Mosinee",
         "conference_wins": 2,
@@ -156,6 +144,18 @@
         "overall_ties": 0,
         "points_for": 19,
         "points_against": 29
+      },
+      {
+        "school_id": "antigo",
+        "name": "Antigo",
+        "conference_wins": 2,
+        "conference_losses": 7,
+        "conference_ties": 0,
+        "overall_wins": 5,
+        "overall_losses": 11,
+        "overall_ties": 0,
+        "points_for": 33,
+        "points_against": 39
       },
       {
         "school_id": "medford",
