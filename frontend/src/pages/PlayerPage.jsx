@@ -17,6 +17,7 @@ import {
   resolvePlayerYear,
 } from "../utils/players.js";
 import { formatStatsLine } from "../utils/seasonStats.js";
+import { reconcileSeasonTotals } from "../utils/reconcileSeasonTotals.js";
 
 /**
  * Player profile — season totals (split by raw category) + a game-by-
@@ -61,7 +62,7 @@ export default function PlayerPage({ dataset, schoolIndex, sportConfig }) {
     [schoolLines, dataset.seasonStats, schoolId, slug],
   );
 
-  const seasonRows = useMemo(
+  const rawSeasonRows = useMemo(
     () =>
       playerName
         ? findPlayerSeasonStats(
@@ -81,6 +82,14 @@ export default function PlayerPage({ dataset, schoolIndex, sportConfig }) {
         : [],
     [schoolLines, dataset.games, playerName],
   );
+
+  // A season total can never read smaller than the game log beneath it
+  // (utils/reconcileSeasonTotals.js: the season file can lag the lines).
+  const seasonRows = useMemo(
+    () => reconcileSeasonTotals(rawSeasonRows, gameLog, dataset.sport),
+    [rawSeasonRows, gameLog, dataset.sport],
+  );
+  const reconciled = seasonRows.some((r) => r.reconciled);
 
   const position = useMemo(
     () =>
@@ -176,7 +185,9 @@ export default function PlayerPage({ dataset, schoolIndex, sportConfig }) {
           <div className="section-header">
             <h2>Season Totals</h2>
             <span className="section-header__hint">
-              {sportConfig?.season}
+              {reconciled
+                ? `${sportConfig?.season} · updated from the game log`
+                : sportConfig?.season}
             </span>
           </div>
           <div className="player-page__season">

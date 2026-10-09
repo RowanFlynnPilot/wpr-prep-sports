@@ -8,27 +8,26 @@
  * football window so existing callers keep working during the
  * phase-1 refactor.
  */
-import { SITE } from "../config/site.js";
+import { isDataBehind } from "../utils/freshness.js";
 
 const FOOTBALL_FALLBACK_MONTHS = [7, 8, 9, 10];
 
 export default function StaleBanner({
   lastUpdatedIso,
   activeMonths = FOOTBALL_FALLBACK_MONTHS,
+  games = [],
   now = new Date(),
 }) {
   if (!lastUpdatedIso) return null;
   const last = new Date(lastUpdatedIso);
   const ageHours = (now.getTime() - last.getTime()) / 3_600_000;
 
-  const month = now.getMonth();
-  const inSeason = activeMonths.includes(month);
-
-  // Off-season, stale is the expected state — no banner. (Previously a
-  // 48h off-season threshold existed but was masked by the live cron
-  // bumping last_updated nightly; that no-op write is gone now.)
-  if (!inSeason) return null;
-  if (ageHours <= 4) return null;
+  // Off-season, stale is the expected state — no banner. In season, an
+  // old file is only a problem once a game has kicked off since it was
+  // written (utils/freshness.js): at 5 p.m. on a Friday the morning
+  // scrape is six hours old and nothing is behind yet. The old age-only
+  // test warned readers before every slate (critique run 17).
+  if (!isDataBehind({ lastUpdated: last, games, activeMonths, now })) return null;
 
   const ageLabel =
     ageHours >= 24

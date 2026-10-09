@@ -33,9 +33,11 @@ from output.writer import load_prev_rankings, read_dataset, write_dataset  # noq
 from transform.normalize import build_name_index_for_manifest  # noqa: E402
 from transform.rankings import compute_power_rankings  # noqa: E402
 from transform.stats import (  # noqa: E402
+    aggregate_volleyball_season_stats,
     is_forfeit_final,
     merge_bound_stats,
     merge_maxpreps_stats,
+    merge_team_season_stats,
 )
 
 DATA_DIR = REPO_ROOT / "data"
@@ -63,6 +65,25 @@ def refresh(sport: str, console: Console, manifest) -> bool:
         season=ds.meta.season,
         console=console,
     )
+    # Season totals too. Bound's per-team season pages are the source for
+    # football and basketball, and CI can't reach them either, so without
+    # this step the totals froze at the last full local run while the
+    # per-game lines kept moving: a player page showed 454 passing yards
+    # above a game log that summed to 854 (2026-10-09). An empty fetch
+    # (Bound blocking this machine too) keeps what's on disk.
+    prior_season = list(ds.season_stats)
+    if sport != "volleyball":
+        ds = merge_team_season_stats(
+            ds,
+            manifest=manifest,
+            sport=sport,
+            sport_abbr=BOUND_SPORT_ABBR[sport],
+            season=ds.meta.season,
+            console=console,
+        )
+        if not ds.season_stats and prior_season:
+            console.print("[yellow]season stats came back empty; keeping the previous file[/yellow]")
+            ds.season_stats = prior_season
     ds = merge_maxpreps_stats(
         ds,
         manifest=manifest,
@@ -70,6 +91,8 @@ def refresh(sport: str, console: Console, manifest) -> bool:
         season=ds.meta.season,
         console=console,
     )
+    if sport == "volleyball":
+        ds = aggregate_volleyball_season_stats(ds, console=console)
 
     carried = 0
     for g in ds.games:

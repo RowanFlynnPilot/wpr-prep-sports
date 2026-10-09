@@ -19,6 +19,7 @@ import FollowPrompt from "../components/FollowPrompt.jsx";
 import { useFavorites } from "../utils/favorites.js";
 import { conferenceFor } from "../utils/schoolSearch.js";
 import { isEmbedded } from "../utils/iframe.js";
+import { isDataBehind } from "../utils/freshness.js";
 import Sponsor from "../components/Sponsor.jsx";
 import TopPerformers from "../components/TopPerformers.jsx";
 import Marquee from "../components/Marquee.jsx";
@@ -205,16 +206,18 @@ export default function DashboardPage({
       })
     : null;
 
-  // Same threshold as StaleBanner: 4 hours in-season, 48 hours off-season.
-  const dataStale = useMemo(() => {
-    if (!meta?.last_updated) return false;
-    const ageHours =
-      (Date.now() - new Date(meta.last_updated).getTime()) / 3_600_000;
-    const inSeason = (sportConfig?.activeMonths ?? []).includes(
-      new Date().getMonth(),
-    );
-    return ageHours > (inSeason ? 4 : 48);
-  }, [meta?.last_updated, sportConfig?.activeMonths]);
+  // Same test as StaleBanner (utils/freshness.js): old AND a game has
+  // started since the file was written. Age alone turned the masthead
+  // pill red every game-day afternoon before kickoff.
+  const dataStale = useMemo(
+    () =>
+      isDataBehind({
+        lastUpdated: meta?.last_updated,
+        games,
+        activeMonths: sportConfig?.activeMonths,
+      }),
+    [meta?.last_updated, games, sportConfig?.activeMonths],
+  );
 
   // Only show the "This Week" section when we're actually in a week that
   // has games — the prior off-season fallback ("Week of Oct 17") read as
@@ -427,6 +430,7 @@ export default function DashboardPage({
         <StaleBanner
           lastUpdatedIso={meta?.last_updated}
           activeMonths={sportConfig?.activeMonths}
+          games={games}
         />
       )}
 
