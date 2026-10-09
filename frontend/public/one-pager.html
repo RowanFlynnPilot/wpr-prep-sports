@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>Sponsor the Prep Sports Hub — Wausau Pilot &amp; Review</title>
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Courier+Prime:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Chris's leave-behind for the Central Wisconsin Prep Sports Hub, in the family of the Happy Hour
+         spotlight one-pager. One Letter page: print or save to PDF from the browser, or send the URL
+         (sports.wausaupilotandreview.com/one-pager.html). The phone holds a real capture of the live
+         dashboard (one-pager/phone.png, Oct. 9, 2026) so it can't drift from the product; recapture it
+         when the season or the layout changes. Every claim is one Chris can defend: hub counts are the live
+         dataset's, site reach is WPR's own media kit, sold slots are read off data/sponsors.json. The rate
+         boxes are "$––" until set: fill them from data/pricing.json's suggested tiers and remove the DRAFT
+         ribbon in the same edit. The hub's own design system: Oswald, Merriweather, black, press red. -->
+    <style>
+      :root {
+        --ink: #111111;
+        --ink-soft: #666666;
+        --paper: #ffffff;
+        --wash: #f7f7f7;
+        --line: #dddddd;
+        --red: #cc1818;
+        --red-deep: #9e1313;
+        --red-tint: #faecec;
+        --amber: #8a6119;
+        --amber-tint: #f6edda;
+        --head: Oswald, 'Arial Narrow', sans-serif;
+        --body: Merriweather, Georgia, serif;
+        --mono: 'Courier Prime', 'Courier New', monospace;
+      }
+      * { box-sizing: border-box; margin: 0; }
+      html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      body { background: var(--wash); color: var(--ink); font-family: var(--body); font-size: 12px; line-height: 1.5; }
+      a { color: inherit; }
+
+      .sheet {
+        max-width: 8.5in;
+        margin: 24px auto;
+        background: var(--paper);
+        padding: 0.3in 0.55in 0;
+        box-shadow: 0 1px 2px rgba(17, 17, 17, 0.08), 0 12px 32px -16px rgba(17, 17, 17, 0.25);
+        overflow: hidden;
+      }
+
+      /* WPR flag: seal + wordmark, thick-over-thin rule */
+      .flag { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+      .flag-brand { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+      .flag-brand .seal { width: 50px; height: 50px; flex: none; border-radius: 50%; }
+      .wordmark { display: block; height: 22px; width: auto; }
+      .tagline { display: block; font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--ink-soft); margin-top: 6px; }
+      .flag-note { font-family: var(--head); font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-soft); text-align: right; line-height: 1.35; }
+      .flag-note strong { display: block; color: var(--ink); font-weight: 600; font-size: 14px; }
+      .rule { height: 8px; border-top: 4px solid var(--ink); border-bottom: 1px solid var(--ink); margin: 8px 0 0; }
+
+      .draft { background: var(--amber-tint); color: var(--amber); border: 1px dashed var(--amber); border-radius: 6px; font-family: var(--mono); font-size: 11px; text-align: center; padding: 2px 10px; margin-top: 6px; }
+
+      /* Hero: the pitch on the left, the hub where readers meet it on the right */
+      .hero { display: grid; grid-template-columns: 1fr 220px; gap: 24px; align-items: center; margin-top: 6px; }
+      h1 { font-family: var(--head); font-weight: 700; font-size: 40px; line-height: 0.98; letter-spacing: 0.005em; text-transform: uppercase; text-wrap: balance; }
+      h1 em { font-style: normal; color: var(--red); }
+      .dek { font-family: var(--body); font-style: italic; font-weight: 300; font-size: 15px; line-height: 1.4; color: var(--ink-soft); margin-top: 8px; max-width: 38ch; }
+      .problem { margin-top: 8px; max-width: 50ch; }
+      .proof { margin-top: 10px; padding-top: 8px; border-top: 1px solid var(--line); font-size: 13px; line-height: 1.45; max-width: 46ch; }
+      .proof strong { font-family: var(--head); font-weight: 700; font-size: 17px; color: var(--ink); letter-spacing: 0.01em; }
+
+      /* The phone — drawn in CSS, holding the real dashboard */
+      .phone { width: 220px; padding: 8px; border-radius: 34px; background: var(--ink); box-shadow: 0 2px 4px rgba(17, 17, 17, 0.12), 0 24px 40px -20px rgba(17, 17, 17, 0.45); }
+      .screen { position: relative; isolation: isolate; height: 262px; overflow: hidden; border-radius: 26px; background: #111; }
+      .screen img { display: block; width: 100%; height: auto; }
+      .island { position: absolute; top: 8px; left: 50%; width: 70px; height: 19px; margin-left: -35px; border-radius: 10px; background: var(--ink); z-index: 2; }
+      .phone-caption { font-family: var(--mono); font-size: 10px; color: var(--ink-soft); text-align: center; margin-top: 6px; }
+
+      /* Three reasons, marked on top in red like every hub card */
+      .reasons { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 10px; }
+      .reason { border-top: 3px solid var(--red); padding-top: 6px; }
+      h2 { font-family: var(--head); font-weight: 600; font-size: 15px; line-height: 1.15; text-transform: uppercase; letter-spacing: 0.01em; margin-bottom: 4px; }
+      .reason p { font-size: 11px; }
+      .reason code { font-family: var(--mono); font-size: 11px; color: var(--red-deep); }
+
+      /* The inventory: what can carry a name, and what already does */
+      .menu { margin-top: 11px; border-top: 2px solid var(--ink); }
+      .menu-head { display: flex; justify-content: space-between; align-items: baseline; padding: 4px 0 2px; }
+      .menu-head h2 { margin: 0; }
+      .menu-head span { font-family: var(--mono); font-size: 10.5px; color: var(--ink-soft); }
+      .menu table { width: 100%; border-collapse: collapse; font-size: 11px; }
+      .menu th { text-align: left; font-family: var(--head); font-weight: 500; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft); padding: 2px 0 4px; border-bottom: 1px solid var(--line); }
+      .menu td { padding: 3px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+      .menu td.name { font-family: var(--head); font-weight: 600; font-size: 12.5px; letter-spacing: 0.01em; white-space: nowrap; padding-right: 12px; }
+      .menu td.rate { text-align: right; font-family: var(--head); font-weight: 600; font-size: 12.5px; white-space: nowrap; }
+      .sold { display: inline-block; font-family: var(--head); font-weight: 600; font-size: 9.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--red-deep); background: var(--red-tint); padding: 2px 6px; border-radius: 3px; }
+      .open { display: inline-block; font-family: var(--head); font-weight: 600; font-size: 9.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft); border: 1px dashed var(--ink-soft); padding: 1px 6px; border-radius: 3px; }
+
+      /* How it works: three steps in a quieter panel */
+      .how { margin-top: 8px; background: var(--wash); border: 1px solid var(--line); padding: 6px 12px; }
+      .steps { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+      .steps li { font-size: 10px; line-height: 1.35; display: flex; gap: 8px; align-items: flex-start; }
+      .steps h3 { font-family: var(--head); font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: 0.02em; }
+      .step-num { display: inline-grid; flex: none; place-items: center; width: 20px; height: 20px; border-radius: 50%; background: var(--ink); color: #fff; font-family: var(--head); font-weight: 600; font-size: 11.5px; }
+
+      /* The ask: a full-width band at the foot of the sheet */
+      .book { display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center; margin: 8px -0.55in 0; padding: 9px 0.55in; background: var(--ink); color: #fff; }
+      .book-title { font-family: var(--head); font-weight: 700; font-size: 22px; line-height: 1.05; text-transform: uppercase; }
+      .book-title em { font-style: normal; color: #ff6b6b; }
+      .book-who { margin-top: 4px; font-size: 12px; color: #ddd; }
+      .book-who a { font-weight: 700; color: #fff; text-decoration-color: rgba(255, 255, 255, 0.5); text-underline-offset: 2px; }
+      .price { background: var(--red); color: #fff; padding: 8px 18px 9px; text-align: center; }
+      .price-num { font-family: var(--head); font-weight: 700; font-size: 24px; line-height: 1; }
+      .price-unit { font-family: var(--head); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; margin-top: 3px; }
+
+      footer { display: flex; gap: 12px; align-items: center; padding: 7px 0 0.16in; font-family: var(--mono); font-size: 9.5px; line-height: 1.5; color: var(--ink-soft); }
+      footer img { width: 34px; height: 34px; flex: none; border-radius: 50%; }
+      .nowrap { white-space: nowrap; }
+
+      @page { size: letter; margin: 0; }
+      @media print {
+        body { background: #fff; }
+        .sheet { margin: 0; box-shadow: none; }
+      }
+      @media (max-width: 700px) {
+        .sheet { margin: 0; padding: 20px 16px 0; box-shadow: none; }
+        .flag { flex-direction: column; align-items: flex-start; }
+        .flag-note { text-align: left; }
+        .hero, .reasons, .steps, .book { grid-template-columns: 1fr; }
+        .hero { gap: 24px; }
+        h1 { font-size: 36px; }
+        .phone { margin: 0 auto; }
+        .menu td.name { white-space: normal; }
+        .book { margin: 20px -16px 0; padding: 18px 16px; }
+        .price { justify-self: start; }
+        footer { padding-bottom: 20px; }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="sheet">
+      <header class="flag">
+        <a class="flag-brand" href="https://wausaupilotandreview.com/">
+          <img class="seal" src="./one-pager/seal.png" alt="" width="56" height="56" />
+          <span>
+            <img class="wordmark" src="./one-pager/wordmark.png" alt="Wausau Pilot &amp; Review" width="172" height="22" />
+            <span class="tagline">Where Locals Look First For News</span>
+          </span>
+        </a>
+        <p class="flag-note"><strong>Prep Sports Hub</strong>Sponsorships, 2026–27 season</p>
+      </header>
+      <div class="rule"></div>
+
+      <p class="draft">Draft: set the rates and delete this ribbon before sharing</p>
+
+      <section class="hero">
+        <div>
+          <h1>Put your name on <em>Friday night.</em></h1>
+          <p class="dek">Sponsor the Central Wisconsin Prep Sports Hub, the scoreboard 67 schools’ families check on game night.</p>
+          <p class="problem">
+            Parents, grandparents and alums look up the score before the bus is back. They look it up on the
+            hub at wausaupilotandreview.com, not on a feed that decides who sees it. Your name sits on the page
+            they came for, as a line of credit, not a banner they scroll past.
+          </p>
+          <p class="proof">
+            <strong>67 schools</strong> · <strong>8 sports</strong> · <strong>10 conferences</strong> ·
+            <strong>3,100+</strong> box scores on record, on a site with <strong>1.4 million</strong> page views a month.
+          </p>
+        </div>
+        <figure>
+          <div class="phone" role="img" aria-label="The football dashboard of the Prep Sports Hub on a phone: the night's hero game, Game of the Week and Player of the Week">
+            <div class="screen">
+              <span class="island"></span>
+              <img src="./one-pager/phone.png" alt="" width="1170" height="2532" />
+            </div>
+          </div>
+          <figcaption class="phone-caption">The football dashboard, Oct. 9, 2026</figcaption>
+        </figure>
+      </section>
+
+      <section class="reasons">
+        <div class="reason">
+          <h2>Where the fans already are</h2>
+          <p>Live scores every 10 minutes on game nights; standings, box scores and a recap of every final by morning. Readers come back every week of the season.</p>
+        </div>
+        <div class="reason">
+          <h2>Your name, not a banner</h2>
+          <p>A credit on the surface itself: <code>Scoreboard presented by</code>, <code>Player of the Week made possible by</code>, <code>Edgar coverage brought to you by</code>.</p>
+        </div>
+        <div class="reason">
+          <h2>Counted per placement</h2>
+          <p>Every sponsor line links to you and is counted on its own, with privacy-friendly analytics. Renewals run on your numbers.</p>
+        </div>
+      </section>
+
+      <section class="menu">
+        <div class="menu-head">
+          <h2>What can carry your name</h2>
+          <span>Sold placements as of Oct. 9, 2026 · sports.wausaupilotandreview.com/#/sponsor</span>
+        </div>
+        <table>
+          <thead>
+            <tr><th>Placement</th><th>Where it shows</th><th>Status</th><th style="text-align:right">Rate</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="name">Title sponsor</td><td>Masthead of every page, every sport</td><td><span class="open">Open</span></td><td class="rate">$––/season</td></tr>
+            <tr><td class="name">Scoreboard</td><td>Above the scores, every sport</td><td><span class="sold">Sold · Wimmer Real Estate</span></td><td class="rate">—</td></tr>
+            <tr><td class="name">Player of the Week</td><td>The week’s standout, every sport</td><td><span class="sold">Sold · Greenheck Foundation</span></td><td class="rate">—</td></tr>
+            <tr><td class="name">Mini scoreboard</td><td>The homepage and sidebar scoreboard</td><td><span class="open">Open</span></td><td class="rate">$––/mo</td></tr>
+            <tr><td class="name">Conference standings</td><td>One conference’s tables, all its sports</td><td><span class="open">5 open</span></td><td class="rate">$––/mo each</td></tr>
+            <tr><td class="name">A school’s page</td><td>One school’s schedule, results and stats</td><td><span class="open">67 open</span></td><td class="rate">$––/mo</td></tr>
+            <tr><td class="name">Banner rotation</td><td>Dashboard foot, game pages, team pages</td><td><span class="sold">JARP · Rotographic</span> <span class="open">1 open</span></td><td class="rate">$––/mo</td></tr>
+            <tr><td class="name">Game of the Week</td><td>The marquee matchup, per sport</td><td><span class="open">Open</span></td><td class="rate">$––/mo</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="how">
+        <ol class="steps" aria-label="How it works">
+          <li>
+            <span class="step-num">1</span>
+            <span><h3>Pick the surface</h3>Or the school: the dentist by Edgar, the bank by Marathon. Season packages bundle a sport or a conference.</span>
+          </li>
+          <li>
+            <span class="step-num">2</span>
+            <span><h3>Send a logo and a link</h3>One file and one web address. We set the credit line; you approve it.</span>
+          </li>
+          <li>
+            <span class="step-num">3</span>
+            <span><h3>Live by the next update</h3>It shows on every visit, and we report its impressions and clicks to you.</span>
+          </li>
+        </ol>
+      </section>
+
+      <section class="book">
+        <div>
+          <p class="book-title">Book a <em>placement</em></p>
+          <p class="book-who">
+            Chris Weber,
+            <a href="mailto:weber.chris@wausaupilotandreview.com?subject=Prep%20Sports%20Hub%20sponsorship">weber.chris@wausaupilotandreview.com</a>,
+            <a class="nowrap" href="tel:+17153015539">715-301-5539</a>
+          </p>
+        </div>
+        <div class="price">
+          <p class="price-num">from $––</p>
+          <p class="price-unit">per month or per season</p>
+        </div>
+      </section>
+
+      <footer>
+        <img src="./one-pager/seal.png" alt="" width="34" height="34" />
+        <p>
+          Wausau Pilot &amp; Review · 715-301-5539 · a nonprofit newsroom; sponsorships support free local journalism and never influence coverage.<br />
+          Hub counts: live dataset, Oct. 9, 2026 · Site reach: 2026–27 media kit, wausaupilotandreview.com/sponsorship-and-advertising
+        </p>
+      </footer>
+    </main>
+  </body>
+</html>
