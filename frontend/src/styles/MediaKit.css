@@ -56,7 +56,10 @@
   text-decoration: none;
   transition: transform var(--t-fast) var(--ease), background var(--t-fast) var(--ease);
 }
-.mk-btn:hover { transform: translateY(-1px); background: var(--brand); }
+@media (hover: hover) and (pointer: fine) {
+  .mk-btn:hover { transform: translateY(-1px); background: var(--brand);
+  }
+}
 .mk-btn--lg { font-size: var(--fs-body); padding: 0.75rem 1.4rem; }
 
 /* Why-sponsor strip */
@@ -99,8 +102,7 @@
   }
   .mk-why__item:nth-child(5) {
     grid-column: span 2;
-  }
-}
+  }}
 
 .mk-why__item {
   display: flex;
@@ -117,9 +119,11 @@
   box-shadow: var(--shadow-lift);
   transition: transform var(--t-fast) var(--ease), box-shadow var(--t-fast) var(--ease);
 }
-.mk-why__item:hover {
+@media (hover: hover) and (pointer: fine) {
+  .mk-why__item:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-hero);
+  }
 }
 
 /* Tinted disc behind the glyph. Gives the icon a fixed footprint so the
@@ -171,8 +175,7 @@
   .mk-why__item:nth-child(n + 4),
   .mk-why__item:nth-child(5) {
     grid-column: span 1;
-  }
-}
+  }}
 
 /* Inventory groups */
 .mk-group { margin-bottom: 2.25rem; }
@@ -200,7 +203,10 @@
   flex-direction: column;
   transition: box-shadow var(--t-fast) var(--ease), transform var(--t-fast) var(--ease);
 }
-.mk-card:hover { box-shadow: var(--shadow-lift); transform: translateY(-2px); }
+@media (hover: hover) and (pointer: fine) {
+  .mk-card:hover { box-shadow: var(--shadow-lift); transform: translateY(-2px);
+  }
+}
 .mk-card__head {
   display: flex;
   align-items: center;

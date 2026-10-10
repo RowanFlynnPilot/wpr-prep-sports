@@ -42,19 +42,23 @@
   border-radius: 999px;
   transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
 }
-.bracket__filter-chip:hover {
+@media (hover: hover) and (pointer: fine) {
+  .bracket__filter-chip:hover {
   border-color: var(--accent);
   color: var(--accent);
+  }
 }
 .bracket__filter-chip--active {
   background: var(--chrome);
   border-color: var(--ink);
   color: #fff;
 }
-.bracket__filter-chip--active:hover {
+@media (hover: hover) and (pointer: fine) {
+  .bracket__filter-chip--active:hover {
   background: var(--accent);
   color: var(--ink);
   border-color: var(--accent);
+  }
 }
 
 .bracket__empty {
@@ -104,7 +108,10 @@
   transition: background var(--t-fast) var(--ease);
 }
 .bracket__journey-row:nth-child(even) { background: var(--row-tint); }
-.bracket__journey-row:hover { background: color-mix(in srgb, var(--accent) 6%, transparent); }
+@media (hover: hover) and (pointer: fine) {
+  .bracket__journey-row:hover { background: color-mix(in srgb, var(--accent) 6%, transparent);
+  }
+}
 .bracket__journey-row:last-child { border-bottom: none; }
 
 /* Still-alive team — accent rail on the left */
@@ -147,7 +154,10 @@
   align-items: center;
   gap: 0.5rem;
 }
-.bracket__journey-team:hover { border-bottom-color: currentColor; }
+@media (hover: hover) and (pointer: fine) {
+  .bracket__journey-team:hover { border-bottom-color: currentColor;
+  }
+}
 .bracket__journey-trophy {
   display: inline-block;
   margin-right: 0.4rem;
@@ -193,9 +203,11 @@
   transition: border-color var(--t-fast) var(--ease),
               background var(--t-fast) var(--ease);
 }
-.bracket__journey-game:hover {
+@media (hover: hover) and (pointer: fine) {
+  .bracket__journey-game:hover {
   background: var(--card);
   border-color: var(--accent);
+  }
 }
 .bracket__journey-result {
   font-family: var(--font-numeric);
@@ -220,5 +232,4 @@
        horizontally rather than crushing the result text. */
     grid-template-columns: minmax(140px, 1.4fr) repeat(var(--round-count, 4), minmax(130px, 1fr));
   }
-  .bracket__journey-team { font-size: var(--fs-small); }
-}
+  .bracket__journey-team { font-size: var(--fs-small); }}

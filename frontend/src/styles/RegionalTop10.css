@@ -143,10 +143,16 @@
   border-bottom: 1px solid transparent;
   transition: color var(--t-fast) var(--ease), border-color var(--t-fast) var(--ease);
 }
-.top-ten__name:hover,
 .top-ten__name:focus-visible {
   color: var(--accent-700);
   border-bottom-color: currentColor;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .top-ten__name:hover {
+  color: var(--accent-700);
+  border-bottom-color: currentColor;
+  }
 }
 .top-ten__ancillary {
   font-family: var(--font-display);
@@ -278,5 +284,4 @@
   }
   .top-ten__sponsor {
     align-self: stretch;
-  }
-}
+  }}

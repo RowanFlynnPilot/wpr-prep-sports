@@ -31,10 +31,16 @@
     color var(--t-fast) var(--ease);
 }
 
-.share__btn:hover,
 .share__btn:focus-visible {
   border-color: var(--accent);
   color: var(--accent-700);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .share__btn:hover {
+  border-color: var(--accent);
+  color: var(--accent-700);
+  }
 }
 
 .share__icon {
@@ -74,8 +80,7 @@
 @media (max-width: 600px) {
   .game-page__share {
     margin-left: 0;
-  }
-}
+  }}
 
 /* Team hero: Follow and Share as a pair. Wraps rather than squeezing,
    since both carry words and the school name above them is already long. */

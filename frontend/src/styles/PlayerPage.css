@@ -63,9 +63,11 @@
   text-decoration: none;
   border-bottom: 1px solid transparent;
 }
-.player-page__school:hover {
+@media (hover: hover) and (pointer: fine) {
+  .player-page__school:hover {
   border-bottom-color: var(--accent);
   color: var(--accent);
+  }
 }
 
 .player-page__mascot {
@@ -199,8 +201,10 @@
 .game-log__row:first-child {
   border-top: none;
 }
-.game-log__row:hover {
+@media (hover: hover) and (pointer: fine) {
+  .game-log__row:hover {
   background: var(--row-tint-strong);
+  }
 }
 
 .game-log__date {
@@ -328,5 +332,4 @@
   .game-log__date { grid-area: date; }
   .game-log__opp { grid-area: opp; }
   .game-log__result { grid-area: result; }
-  .game-log__stats { grid-area: stats; justify-content: flex-start; }
-}
+  .game-log__stats { grid-area: stats; justify-content: flex-start; }}

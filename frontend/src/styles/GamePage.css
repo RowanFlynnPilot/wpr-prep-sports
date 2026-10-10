@@ -96,7 +96,10 @@
   color: #fff;
   border-bottom-color: transparent;
 }
-.game-page__team-name a:hover { color: var(--accent); border-bottom-color: currentColor; }
+@media (hover: hover) and (pointer: fine) {
+  .game-page__team-name a:hover { color: var(--accent); border-bottom-color: currentColor;
+  }
+}
 
 .game-page__team-mascot {
   font-family: var(--font-body);
@@ -186,7 +189,10 @@
   color: #fff;
   border-bottom-color: transparent;
 }
-.team-stats__title h3 a:hover { color: var(--accent); border-bottom-color: currentColor; }
+@media (hover: hover) and (pointer: fine) {
+  .team-stats__title h3 a:hover { color: var(--accent); border-bottom-color: currentColor;
+  }
+}
 .team-stats__title p {
   font-family: var(--font-body);
   font-style: italic;
@@ -359,9 +365,11 @@
   color: var(--accent);
   transition: background 0.15s ease;
 }
-.team-stats__view-toggle:hover {
+@media (hover: hover) and (pointer: fine) {
+  .team-stats__view-toggle:hover {
   background: var(--accent);
   color: #fff;
+  }
 }
 .team-stats__view-toggle--back {
   margin: 0.5rem;
@@ -371,10 +379,12 @@
   border-color: var(--line);
   color: var(--muted);
 }
-.team-stats__view-toggle--back:hover {
+@media (hover: hover) and (pointer: fine) {
+  .team-stats__view-toggle--back:hover {
   background: var(--chrome);
   border-color: var(--ink);
   color: #fff;
+  }
 }
 
 /* ---- Full box-score view (per-category tables) ---- */
@@ -438,8 +448,10 @@
   border-top: 1px solid var(--paper-2);
 }
 
-.box-cat__table tbody tr:hover {
+@media (hover: hover) and (pointer: fine) {
+  .box-cat__table tbody tr:hover {
   background: var(--row-tint);
+  }
 }
 
 .box-cat__col-name {
@@ -457,9 +469,11 @@
   text-decoration: none;
   border-bottom: 1px solid transparent;
 }
-.box-cat__name-link:hover {
+@media (hover: hover) and (pointer: fine) {
+  .box-cat__name-link:hover {
   color: var(--accent);
   border-bottom-color: var(--accent);
+  }
 }
 
 .box-cat__year {
@@ -468,9 +482,11 @@
   font-style: italic;
   color: var(--muted);
 }
-.team-stats__expand:hover {
+@media (hover: hover) and (pointer: fine) {
+  .team-stats__expand:hover {
   background: var(--row-tint-strong);
   text-decoration: underline;
+  }
 }
 .team-stats__expand--collapse {
   color: var(--muted);
@@ -488,7 +504,10 @@
   border-top: 1px solid var(--paper-2);
 }
 .stat-row:first-child { border-top: none; }
-.stat-row:hover { background: var(--row-tint); }
+@media (hover: hover) and (pointer: fine) {
+  .stat-row:hover { background: var(--row-tint);
+  }
+}
 
 /* When the sport doesn't expose position (basketball, volleyball,
    hockey skaters) drop the pos column so the player block isn't
@@ -531,9 +550,11 @@
   text-decoration: none;
   border-bottom: 1px solid transparent;
 }
-.stat-row__name--link:hover {
+@media (hover: hover) and (pointer: fine) {
+  .stat-row__name--link:hover {
   color: var(--accent);
   border-bottom-color: var(--accent);
+  }
 }
 .stat-row__year {
   font-weight: 400;
@@ -650,8 +671,10 @@
   border-bottom: 1px solid transparent;
   transition: border-color 0.15s ease;
 }
-.stats-pending__action:hover {
+@media (hover: hover) and (pointer: fine) {
+  .stats-pending__action:hover {
   border-bottom-color: currentColor;
+  }
 }
 
 @media (max-width: 720px) {
@@ -659,8 +682,7 @@
   .game-page__matchup { grid-template-columns: 1fr; }
   .game-page__divider { justify-self: center; margin: -0.5rem 0; }
   .game-page__team-name { font-size: var(--fs-h3); }
-  .game-page__score { font-size: var(--fs-score-sm); }
-}
+  .game-page__score { font-size: var(--fs-score-sm); }}
 
 /* "What do these abbreviations mean?" — collapsed under the two stat
    cards. Every key the page uses, in the order it appears, with the
@@ -684,8 +706,10 @@
   letter-spacing: 0.02em;
   color: var(--ink);
 }
-.stat-glossary summary:hover {
+@media (hover: hover) and (pointer: fine) {
+  .stat-glossary summary:hover {
   color: var(--accent-700);
+  }
 }
 .stat-glossary summary:focus-visible {
   outline: 2px solid var(--accent);

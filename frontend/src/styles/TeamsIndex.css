@@ -40,9 +40,14 @@
   font-size: var(--fs-ui);
   cursor: pointer;
 }
-.teams-index__letters button:hover,
 .teams-index__letters button:focus-visible {
   background: var(--paper-2);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .teams-index__letters button:hover {
+  background: var(--paper-2);
+  }
 }
 
 .teams-index__group {
@@ -109,8 +114,10 @@
   line-height: 1.15;
   color: var(--ink);
 }
-.teams-index__main:hover .teams-index__name {
+@media (hover: hover) and (pointer: fine) {
+  .teams-index__main:hover .teams-index__name {
   color: var(--accent-700);
+  }
 }
 .teams-index__sub {
   grid-column: 2;

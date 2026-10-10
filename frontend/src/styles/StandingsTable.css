@@ -67,8 +67,7 @@
 @media (max-width: 540px) {
   .standings__table .points {
     display: none;
-  }
-}
+  }}
 
 .standings__table {
   width: 100%;
@@ -106,7 +105,10 @@
 .standings__row--odd td { background: var(--row-tint); }
 .standings__table tbody tr:last-child td { border-bottom: none; }
 .standings__row { transition: background var(--t-fast) var(--ease); cursor: pointer; }
-.standings__row:hover td { background: color-mix(in srgb, var(--accent) 10%, transparent); }
+@media (hover: hover) and (pointer: fine) {
+  .standings__row:hover td { background: color-mix(in srgb, var(--accent) 10%, transparent);
+  }
+}
 .standings__row--open td { background: var(--row-tint-strong); }
 
 .standings__table td.rank {
@@ -157,12 +159,14 @@
     transparent 18%
   );
 }
-.standings__row--leader:hover td {
+@media (hover: hover) and (pointer: fine) {
+  .standings__row--leader:hover td {
   background: linear-gradient(
     to right,
     color-mix(in srgb, var(--accent) 18%, transparent) 0,
     color-mix(in srgb, var(--accent) 10%, transparent) 18%
   );
+  }
 }
 /* The viewed team's own row, when this table is shown on its team page. */
 .standings__row--highlight td {
@@ -172,8 +176,10 @@
 .standings__row--highlight td:first-child {
   box-shadow: inset 3px 0 0 var(--accent);
 }
-.standings__row--highlight:hover td {
+@media (hover: hover) and (pointer: fine) {
+  .standings__row--highlight:hover td {
   background: color-mix(in srgb, var(--accent) 20%, transparent);
+  }
 }
 .standings__leader-pip {
   display: inline-block;
@@ -245,10 +251,16 @@
 .standings__toggle .icon {
   transition: transform var(--t-fast) var(--ease);
 }
-.standings__toggle:hover,
 .standings__toggle:focus-visible {
   color: var(--ink);
   background: var(--paper-2);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .standings__toggle:hover {
+  color: var(--ink);
+  background: var(--paper-2);
+  }
 }
 .standings__toggle[aria-expanded="true"] { color: var(--ink); }
 .standings__toggle[aria-expanded="true"] .icon { transform: rotate(180deg); }
@@ -305,9 +317,14 @@ a.standings__details-link {
   text-decoration: none;
   border-bottom: 1px solid transparent;
 }
-a.standings__details-link:hover,
 a.standings__details-link:focus-visible {
   border-bottom-color: currentColor;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  a.standings__details-link:hover {
+  border-bottom-color: currentColor;
+  }
 }
 .standings__details-stats {
   display: grid;
@@ -412,5 +429,48 @@ a.standings__details-link:focus-visible {
   .standings__details-leader-stats {
     grid-column: 2;
     white-space: normal;
+  }}
+
+/* Narrow phones (critique run 17): the seven remaining columns measured
+   372–401px inside a 350px wrap, so the Details chevron sat half off the
+   edge and the leader pip wrapped under its rank. The row itself is the
+   disclosure (tap anywhere), so the chevron column collapses here — the
+   button stays in the document for keyboards, visually hidden — the Recent
+   column shows the newest two results instead of three, and the cells
+   give back a little padding. */
+@media (max-width: 420px) {
+  .standings__table thead th,
+  .standings__table tbody td {
+    padding-left: 0.35rem;
+    padding-right: 0.35rem;
   }
-}
+  .standings__table td.rank,
+  .standings__table thead th.rank {
+    white-space: nowrap;
+    width: 2.1rem;
+    padding-left: 0.3rem;
+    padding-right: 0.2rem;
+  }
+  .standings__table thead th.form { width: 3rem; }
+  .standings__form-chip:nth-last-child(n + 3) { display: none; }
+  .standings__table thead th.more,
+  .standings__table td.more {
+    width: 0;
+    padding: 0;
+  }
+  .standings__toggle {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+  .standings__toggle:focus-visible {
+    position: static;
+    width: 36px;
+    height: 36px;
+    clip: auto;
+    clip-path: none;
+  }}

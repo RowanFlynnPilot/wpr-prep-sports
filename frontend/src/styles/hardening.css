@@ -32,8 +32,7 @@
 
 @keyframes skeleton-shimmer {
   0% { background-position: 100% 0; }
-  100% { background-position: -100% 0; }
-}
+  100% { background-position: -100% 0; }}
 
 /* Skip link — off-screen until focused, then pinned top-left. Uses the
    accent so it reads as deliberate UI rather than a rendering bug when it
@@ -144,9 +143,14 @@
   /* 44px tall so it clears the touch-target floor on a phone. */
   padding: 0.75rem 1.1rem;
 }
-.not-found__primary:hover,
 .not-found__primary:focus-visible {
   background: var(--brand);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .not-found__primary:hover {
+  background: var(--brand);
+  }
 }
 .not-found__back {
   font-family: var(--font-display);
@@ -206,7 +210,10 @@
   cursor: pointer;
   transition: background var(--t-fast) var(--ease);
 }
-.boundary__reload:hover { background: var(--brand-700); }
+@media (hover: hover) and (pointer: fine) {
+  .boundary__reload:hover { background: var(--brand-700);
+  }
+}
 .boundary__reload:focus-visible {
   outline: 3px solid var(--accent);
   outline-offset: 2px;

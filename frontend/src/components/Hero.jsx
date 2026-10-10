@@ -6,6 +6,7 @@ import { humanizeVenue } from "../utils/games.js";
 import { useSportPrefix } from "../utils/links.js";
 import { formatGameDay, formatGameDate, formatGameTime } from "../utils/dates.js";
 import { recapForGame } from "../utils/recap.js";
+import { slateSummary, todayWord } from "../utils/gameDay.js";
 
 /**
  * Featured-game hero. Shows the most "important" recent or upcoming game
@@ -25,6 +26,10 @@ export default function Hero({
   sportConfig = null,
   nextSeasonStart = null,
   daysToNext = null,
+  // Game day (utils/gameDay.js): the slate's state when the hero is
+  // leading with tonight's Game of the Week, else null.
+  tonight = null,
+  gotwLabel = null,
 }) {
   const sportPrefix = useSportPrefix();
   if (offSeason) {
@@ -54,7 +59,11 @@ export default function Hero({
   const awaySchool = schoolFor(game.away, schoolIndex);
 
   const isFinal = game.status === "final";
-  const eyebrow = isFinal ? "Final" : game.status === "in_progress" ? "Live" : "Up Next";
+  // On game day the lead is tonight's Game of the Week, and the eyebrow
+  // says so: "Tonight · Game of the Week", then "Live · …", then "Final · …".
+  const state = isFinal ? "Final" : game.status === "in_progress" ? "Live" : tonight ? todayWord(game.date) : "Up Next";
+  const eyebrow = tonight && gotwLabel ? `${state} · ${gotwLabel}` : state;
+  const slateLine = tonight ? slateSummary(tonight) : "";
 
   const homeWon = isFinal && (game.home.score ?? 0) > (game.away.score ?? 0);
   const awayWon = isFinal && (game.away.score ?? 0) > (game.home.score ?? 0);
@@ -123,6 +132,7 @@ export default function Hero({
         {game.venue && (
           <span className="hero__venue">{humanizeVenue(game.venue)}</span>
         )}
+        {slateLine && <span className="hero__slate">{slateLine}</span>}
       </div>
 
       <div className="hero__matchup">

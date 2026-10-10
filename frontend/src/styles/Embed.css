@@ -68,9 +68,11 @@
   color: var(--ink);
   transition: background var(--t-fast) var(--ease);
 }
-.embed__game:hover {
+@media (hover: hover) and (pointer: fine) {
+  .embed__game:hover {
   background: var(--paper-2);
   border-bottom-color: var(--paper-2);
+  }
 }
 .embed__game-label {
   font-family: var(--font-display);
@@ -181,8 +183,10 @@
   font-size: var(--fs-caption);
   transition: background var(--t-fast) var(--ease);
 }
-.embed-conf__score:hover {
+@media (hover: hover) and (pointer: fine) {
+  .embed-conf__score:hover {
   background: var(--paper-2);
+  }
 }
 .embed-conf__score-date {
   font-family: var(--font-display);
@@ -281,6 +285,8 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.embed-conf__team a:hover {
+@media (hover: hover) and (pointer: fine) {
+  .embed-conf__team a:hover {
   text-decoration: underline;
+  }
 }

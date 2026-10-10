@@ -28,7 +28,6 @@
   gap: 0.85rem;
   overflow-x: auto;
   scroll-snap-type: x proximity;
-  scroll-behavior: smooth;
   scroll-padding-inline: 0.25rem;
   padding: 0.25rem 0.25rem 1rem;
   margin: 0 -0.25rem;
@@ -37,6 +36,9 @@
   -ms-overflow-style: none;
 }
 .ticker__track::-webkit-scrollbar { display: none; }
+/* Smooth paging only for readers who have not asked for reduced motion. */
+@media (prefers-reduced-motion: no-preference) {
+  .ticker__track { scroll-behavior: smooth; }}
 
 /* Floating circular arrow buttons paginate by one card width. They sit
    slightly inset from the ticker's edges so they don't overlap content. */
@@ -63,9 +65,11 @@
     opacity var(--t-med) var(--ease),
     transform var(--t-fast) var(--ease);
 }
-.ticker__arrow:hover {
+@media (hover: hover) and (pointer: fine) {
+  .ticker__arrow:hover {
   background: var(--chrome);
   color: var(--accent);
+  }
 }
 .ticker__arrow:focus-visible {
   outline: 3px solid var(--accent);
@@ -94,8 +98,7 @@
   .ticker__viewport {
     -webkit-mask-image: none;
             mask-image: none;
-  }
-}
+  }}
 
 .card {
   flex: 0 0 280px;
@@ -116,14 +119,18 @@
 .card--themed {
   box-shadow: inset 4px 0 0 var(--school-color, transparent);
 }
-.card:hover {
+@media (hover: hover) and (pointer: fine) {
+  .card:hover {
   transform: translateY(-1px);
   box-shadow: var(--shadow-lift);
+  }
 }
-.card--themed:hover {
+@media (hover: hover) and (pointer: fine) {
+  .card--themed:hover {
   box-shadow:
     var(--shadow-lift),
     inset 4px 0 0 var(--school-color, transparent);
+  }
 }
 
 .card__header {
@@ -183,8 +190,7 @@
 }
 @keyframes live-pulse {
   0%, 100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.3); opacity: 0.6; }
-}
+  50% { transform: scale(1.3); opacity: 0.6; }}
 .card__status--scheduled {
   background: color-mix(in srgb, var(--accent) 15%, transparent);
   color: var(--accent-700);
@@ -192,8 +198,7 @@
 
 @keyframes pulse {
   0%, 100% { opacity: 1; }
-  50%      { opacity: 0.65; }
-}
+  50%      { opacity: 0.65; }}
 
 .card__teams {
   list-style: none;
@@ -251,10 +256,16 @@
   border-bottom: 1px solid transparent;
   transition: color var(--t-fast) var(--ease), border-color var(--t-fast) var(--ease);
 }
-.card__details:hover,
 .card__details:focus-visible {
   color: var(--ink);
   border-bottom-color: currentColor;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .card__details:hover {
+  color: var(--ink);
+  border-bottom-color: currentColor;
+  }
 }
 
 /* Whole-card tap target — same reasoning as .game-row in ThisWeekGrid.css.
@@ -359,8 +370,10 @@
   cursor: pointer;
   transition: background var(--t-fast) var(--ease);
 }
-.ticker__all:hover {
+@media (hover: hover) and (pointer: fine) {
+  .ticker__all:hover {
   background: var(--row-tint-strong);
+  }
 }
 .ticker__all:focus-visible {
   outline: 2px solid var(--accent);

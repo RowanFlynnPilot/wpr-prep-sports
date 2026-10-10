@@ -10,8 +10,10 @@
   color: var(--accent);
   text-decoration: none;
 }
-.spirit-submit-link:hover {
+@media (hover: hover) and (pointer: fine) {
+  .spirit-submit-link:hover {
   text-decoration: underline;
+  }
 }
 
 /* ---- Per-game gallery ---- */
@@ -51,8 +53,10 @@
   display: block;
   transition: transform 0.25s ease;
 }
-.spirit-gallery__thumb:hover img {
+@media (hover: hover) and (pointer: fine) {
+  .spirit-gallery__thumb:hover img {
   transform: scale(1.04);
+  }
 }
 
 .spirit-gallery__caption {
@@ -114,8 +118,10 @@
   display: block;
   transition: transform 0.25s ease;
 }
-.spirit-strip__thumb:hover img {
+@media (hover: hover) and (pointer: fine) {
+  .spirit-strip__thumb:hover img {
   transform: scale(1.04);
+  }
 }
 
 .spirit-strip__school {
@@ -178,8 +184,10 @@
   line-height: 1;
   cursor: pointer;
 }
-.spirit-lightbox__close:hover {
+@media (hover: hover) and (pointer: fine) {
+  .spirit-lightbox__close:hover {
   background: rgba(0, 0, 0, 0.8);
+  }
 }
 
 .spirit-lightbox__meta {

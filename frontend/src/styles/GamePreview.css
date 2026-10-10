@@ -13,8 +13,7 @@
 @media (max-width: 640px) {
   .game-preview__teams {
     grid-template-columns: 1fr;
-  }
-}
+  }}
 
 .game-preview__team {
   --school-color: var(--ink);
@@ -152,8 +151,10 @@
   color: inherit;
   transition: background 0.15s ease;
 }
-.game-preview__last-meeting:hover {
+@media (hover: hover) and (pointer: fine) {
+  .game-preview__last-meeting:hover {
   background: var(--paper-2);
+  }
 }
 .game-preview__last-meeting-label {
   font-family: var(--font-display);

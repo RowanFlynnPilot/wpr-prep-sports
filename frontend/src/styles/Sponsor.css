@@ -35,9 +35,14 @@
   object-fit: contain;
 }
 
-a.sponsor:hover .sponsor__name,
 a.sponsor:focus-visible .sponsor__name {
   color: var(--accent-700);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  a.sponsor:hover .sponsor__name {
+  color: var(--accent-700);
+  }
 }
 
 /* Variant: compact — for the masthead. Inverts colors on the navy bg. */

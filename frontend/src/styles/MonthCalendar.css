@@ -41,9 +41,11 @@
   cursor: pointer;
   transition: background var(--t-fast) var(--ease), color var(--t-fast) var(--ease);
 }
-.month-cal__nav:hover {
+@media (hover: hover) and (pointer: fine) {
+  .month-cal__nav:hover {
   background: rgba(255, 255, 255, 0.15);
   color: #fff;
+  }
 }
 
 .month-cal__weekdays {
@@ -92,8 +94,10 @@
 .month-cal__cell--has-games {
   cursor: pointer;
 }
-.month-cal__cell--has-games:hover {
+@media (hover: hover) and (pointer: fine) {
+  .month-cal__cell--has-games:hover {
   background: color-mix(in srgb, var(--accent) 8%, transparent);
+  }
 }
 .month-cal__cell--today {
   background: color-mix(in srgb, var(--accent) 12%, transparent);
@@ -168,7 +172,10 @@
   cursor: pointer;
   padding: 0 0.3rem;
 }
-.month-cal__sheet-close:hover { color: var(--ink); }
+@media (hover: hover) and (pointer: fine) {
+  .month-cal__sheet-close:hover { color: var(--ink);
+  }
+}
 
 .month-cal__sheet-list {
   list-style: none;
@@ -191,9 +198,11 @@
   transition: background var(--t-fast) var(--ease),
               border-color var(--t-fast) var(--ease);
 }
-.month-cal__sheet-link:hover {
+@media (hover: hover) and (pointer: fine) {
+  .month-cal__sheet-link:hover {
   background: color-mix(in srgb, var(--accent) 8%, transparent);
   border-color: var(--accent);
+  }
 }
 .month-cal__sheet-matchup {
   font-family: var(--font-display);
@@ -222,5 +231,4 @@
   .month-cal__grid { grid-auto-rows: minmax(44px, auto); }
   .month-cal__cell { padding: 0.3rem; min-height: 44px; }
   .month-cal__day-num { font-size: var(--fs-caption); }
-  .month-cal__count { min-width: 1.2rem; height: 1rem; font-size: var(--fs-label); }
-}
+  .month-cal__count { min-width: 1.2rem; height: 1rem; font-size: var(--fs-label); }}

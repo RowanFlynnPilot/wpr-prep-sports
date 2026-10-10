@@ -45,7 +45,8 @@ export default function FollowPrompt() {
       navigate(`${sportPrefix}/teams`);
       return;
     }
-    el.scrollIntoView?.({ block: "center", behavior: "smooth" });
+    const reduce = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
+    el.scrollIntoView?.({ block: "center", behavior: reduce ? "auto" : "smooth" });
     el.focus({ preventScroll: true });
   };
   const dismiss = (e) => {

@@ -10,6 +10,7 @@ import StandingsTable from "../components/StandingsTable.jsx";
 import FavoriteButton from "../components/FavoriteButton.jsx";
 import { formatGameDay, formatGameDate, formatGameTime } from "../utils/dates.js";
 import { isForfeitScore } from "../utils/games.js";
+import { todaysGameFor, todayWord } from "../utils/gameDay.js";
 import { recapForGame } from "../utils/recap.js";
 import { seasonSummary } from "../utils/seasonSummary.js";
 import { useSportPrefix } from "../utils/links.js";
@@ -39,6 +40,11 @@ export default function TeamPage({ dataset, schoolIndex, sponsors, sportConfig }
   );
 
   const record = useMemo(() => computeRecord(teamGames, schoolId), [teamGames, schoolId]);
+  // Game day (utils/gameDay.js): this school's game today, for the
+  // "Tonight · vs Chippewa Falls · 7:00 PM" line under the name. Critique
+  // run 17 found the Friday-evening team page saying nothing about that
+  // night's kickoff, eight rows down in the schedule.
+  const todayGame = useMemo(() => todaysGameFor(teamGames, schoolId), [teamGames, schoolId]);
 
   const seasonStatsForSchool = useMemo(
     () => (dataset.seasonStats ?? []).filter((r) => r.school_id === schoolId),
@@ -124,6 +130,24 @@ export default function TeamPage({ dataset, schoolIndex, sponsors, sportConfig }
           <p className="team-hero__mascot">
             {school.mascot} · {school.city}
           </p>
+          {todayGame && (() => {
+            const isHome = todayGame.home.school_id === schoolId;
+            const opp = isHome ? todayGame.away : todayGame.home;
+            const own = isHome ? todayGame.home.score : todayGame.away.score;
+            const theirs = isHome ? todayGame.away.score : todayGame.home.score;
+            const when = todayWord(todayGame.date);
+            const label =
+              todayGame.status === "final"
+                ? `${when} · ${own > theirs ? "W" : own < theirs ? "L" : "T"} ${own}-${theirs} ${isHome ? "vs" : "at"} ${opp.name}`
+                : todayGame.status === "in_progress"
+                  ? `Live · ${isHome ? "vs" : "at"} ${opp.name} · ${own ?? 0}-${theirs ?? 0}`
+                  : `${when} · ${isHome ? "vs" : "at"} ${opp.name} · ${formatGameTime(todayGame.date)}`;
+            return (
+              <Link to={`${sportPrefix}/game/${todayGame.id}`} className="team-hero__tonight">
+                {label} <span aria-hidden="true">›</span>
+              </Link>
+            );
+          })()}
           <span className="team-hero__actions">
             <FavoriteButton schoolId={schoolId} schoolName={school.name} />
             <ShareButton

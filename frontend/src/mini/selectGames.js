@@ -37,7 +37,7 @@ const STARTED_GRACE_MS = 4 * HOUR_MS;
 const dayOf = (g) => String(g.date).slice(0, 10);
 const timeOf = (g) => new Date(g.date).getTime();
 
-export function selectMiniGames(games, { now = Date.now(), cityRank, followedIds } = {}) {
+export function selectMiniGames(games, { now = Date.now(), cityRank, followedIds, pinnedId = null } = {}) {
   const rank = cityRank ?? new Map();
   const followed = new Set(followedIds ?? []);
   const localSides = (g) =>
@@ -81,8 +81,15 @@ export function selectMiniGames(games, { now = Date.now(), cityRank, followedIds
       Math.abs(a.home.score - a.away.score) - Math.abs(b.home.score - b.away.score) ||
       String(a.home?.name).localeCompare(String(b.home?.name)),
   );
+  // The dashboard's Game of the Week leads "Up next" (critique run 17: the
+  // mini's three slots skipped it on a Friday afternoon).
+  // ...but only on its own day: next Friday's pick must not jump ahead
+  // of tonight's games.
+  const firstDay = upcoming.map(dayOf).sort()[0];
+  const pinned = (g) => flag(pinnedId != null && g.id === pinnedId && dayOf(g) === firstDay);
   upcoming.sort(
     (a, b) =>
+      pinned(b) - pinned(a) ||
       byInterest(a, b) ||
       dayOf(a).localeCompare(dayOf(b)) ||
       byNearness(a, b) ||

@@ -108,10 +108,12 @@
   text-align: left;
   min-width: 0;
 }
-.pickem__team:hover {
+@media (hover: hover) and (pointer: fine) {
+  .pickem__team:hover {
   background: var(--card);
   border-color: var(--school-color, var(--accent));
   transform: translateY(-1px);
+  }
 }
 .pickem__team--picked {
   background: var(--school-color, var(--accent));
@@ -174,8 +176,7 @@
     grid-column: 1 / -1;
     flex-direction: row;
     gap: 0.5rem;
-  }
-}
+  }}
 
 /* --- Community layer (renders only when the Pick'em API is on) ------- */
 

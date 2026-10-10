@@ -17,9 +17,11 @@
   overflow: hidden;
   transition: background var(--t-fast) var(--ease), border-color var(--t-fast) var(--ease);
 }
-.gotw:hover {
+@media (hover: hover) and (pointer: fine) {
+  .gotw:hover {
   background: var(--paper-2);
   border-color: var(--ink);
+  }
 }
 .gotw:focus-visible {
   outline: 3px solid var(--accent);
@@ -147,8 +149,10 @@
   color: var(--ink);
   transition: transform var(--t-fast) var(--ease);
 }
-.gotw:hover .gotw__cta {
+@media (hover: hover) and (pointer: fine) {
+  .gotw:hover .gotw__cta {
   transform: translateX(3px);
+  }
 }
 
 /* Narrow viewports: matchup on one line, meta on the next. Keeps the
@@ -187,5 +191,4 @@
     font-size: var(--fs-ui);
     max-width: 8em;
   }
-  .gotw__score { font-size: var(--fs-ui); }
-}
+  .gotw__score { font-size: var(--fs-ui); }}

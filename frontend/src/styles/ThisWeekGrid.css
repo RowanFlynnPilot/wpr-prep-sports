@@ -105,8 +105,10 @@
   cursor: pointer;
   transition: background var(--t-fast) var(--ease);
 }
-.week-more:hover {
+@media (hover: hover) and (pointer: fine) {
+  .week-more:hover {
   background: var(--row-tint-strong);
+  }
 }
 .week-more:focus-visible {
   outline: none;
@@ -122,7 +124,10 @@
   border-top: 1px solid var(--paper-2);
 }
 .game-row:first-child { border-top: none; }
-.game-row:hover { background: var(--row-tint); }
+@media (hover: hover) and (pointer: fine) {
+  .game-row:hover { background: var(--row-tint);
+  }
+}
 
 .game-row__summary {
   grid-column: 1 / -1;
@@ -194,10 +199,16 @@ a.game-row__details {
   border-bottom: 1px solid transparent;
   transition: color var(--t-fast) var(--ease), border-color var(--t-fast) var(--ease);
 }
-a.game-row__details:hover,
 a.game-row__details:focus-visible {
   color: var(--ink);
   border-bottom-color: currentColor;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  a.game-row__details:hover {
+  color: var(--ink);
+  border-bottom-color: currentColor;
+  }
 }
 
 /* Whole-row tap target ----------------------------------------------------
@@ -266,10 +277,16 @@ a.game-row__details::after {
   border-bottom: 1px solid transparent;
   transition: border-color var(--t-fast) var(--ease), color var(--t-fast) var(--ease);
 }
-.team-link:hover,
 .team-link:focus-visible {
   color: var(--link);
   border-bottom-color: currentColor;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .team-link:hover {
+  color: var(--link);
+  border-bottom-color: currentColor;
+  }
 }
 
 @media (max-width: 600px) {
@@ -325,5 +342,4 @@ a.game-row__details::after {
   .week-day {
     overflow-x: auto;
     overflow-y: hidden;
-  }
-}
+  }}

@@ -23,7 +23,10 @@
   border-bottom: none !important;
   transition: transform var(--t-fast) var(--ease);
 }
-.masthead__brand:hover { transform: scale(1.04); }
+@media (hover: hover) and (pointer: fine) {
+  .masthead__brand:hover { transform: scale(1.04);
+  }
+}
 .masthead__brand-logo {
   display: block;
   height: 44px;
@@ -56,7 +59,10 @@
   border-bottom: none;
   white-space: nowrap;
 }
-.masthead__title:hover { color: var(--accent-on-dark); border-bottom: none; }
+@media (hover: hover) and (pointer: fine) {
+  .masthead__title:hover { color: var(--accent-on-dark); border-bottom: none;
+  }
+}
 .masthead__title em {
   font-style: normal;
   color: var(--accent-on-dark);
@@ -186,9 +192,11 @@
   line-height: 1;
 }
 
-.section-tabs__tab:hover {
+@media (hover: hover) and (pointer: fine) {
+  .section-tabs__tab:hover {
   color: var(--ink);
   background: var(--paper-2);
+  }
 }
 
 .section-tabs__tab--active {
@@ -206,8 +214,7 @@
     font-size: var(--fs-caption);
     letter-spacing: 0.03em;
     gap: 0.3rem;
-  }
-}
+  }}
 
 /* Phone widths: four tabs plus icon and label won't sit on one line at
    375px (the commonest handset), so stack the icon above the label and let
@@ -229,8 +236,7 @@
        fit, which no current label does. */
     overflow-wrap: break-word;
   }
-  .section-tabs__icon { font-size: var(--fs-lead); }
-}
+  .section-tabs__icon { font-size: var(--fs-lead); }}
 /* Sponsor line just under the active tab — one placement per view. */
 .section-tabs__sponsor {
   margin: -0.75rem 0 1.25rem;
@@ -250,11 +256,9 @@
 }
 @keyframes tab-fade {
   from { opacity: 0; transform: translateY(6px); }
-  to { opacity: 1; transform: none; }
-}
+  to { opacity: 1; transform: none; }}
 @media (prefers-reduced-motion: reduce) {
-  .tab-panel { animation: none; }
-}
+  .tab-panel { animation: none; }}
 .sport-switcher__list {
   /* Even grid so all sports show in balanced rows (4 per row → two tidy
      rows for eight sports) instead of a horizontal scroll. */
@@ -297,10 +301,12 @@
   font-size: var(--fs-lead);
   line-height: 1;
 }
-.sport-switcher__tab:hover {
+@media (hover: hover) and (pointer: fine) {
+  .sport-switcher__tab:hover {
   color: #fff;
   background: rgba(255, 255, 255, 0.04);
   border-bottom: 3px solid transparent;
+  }
 }
 .sport-switcher__tab--active {
   color: #fff;
@@ -308,7 +314,10 @@
   border-bottom-color: var(--accent-on-dark);
   background: rgba(255, 255, 255, 0.06);
 }
-.sport-switcher__tab--active:hover { border-bottom-color: var(--accent-on-dark); }
+@media (hover: hover) and (pointer: fine) {
+  .sport-switcher__tab--active:hover { border-bottom-color: var(--accent-on-dark);
+  }
+}
 .sport-switcher__label--short { display: none; }
 
 /* In-season first: off-season sports fold behind one "More sports" tab,
@@ -364,8 +373,7 @@
   .lead > .follow-prompt {
     order: -1;
     padding: 0 0.35rem;
-  }
-}
+  }}
 
 .section-header {
   display: flex;
@@ -441,7 +449,10 @@
   width: auto;
   display: inline-block;
 }
-.site-footer__brand:hover { color: var(--accent-700); }
+@media (hover: hover) and (pointer: fine) {
+  .site-footer__brand:hover { color: var(--accent-700);
+  }
+}
 .site-footer__tag {
   font-weight: 400;
   color: var(--muted);
@@ -451,7 +462,10 @@
   text-decoration: none;
   font-weight: 600;
 }
-.site-footer__advertise:hover { text-decoration: underline; }
+@media (hover: hover) and (pointer: fine) {
+  .site-footer__advertise:hover { text-decoration: underline;
+  }
+}
 .site-footer__row--stats {
   font-family: var(--font-body);
   font-size: var(--fs-caption);
@@ -507,9 +521,11 @@
   transition: color var(--t-fast) var(--ease), border-color var(--t-fast) var(--ease),
               background var(--t-fast) var(--ease);
 }
-.conf-filter__chip:hover {
+@media (hover: hover) and (pointer: fine) {
+  .conf-filter__chip:hover {
   border-color: var(--ink);
   color: var(--ink);
+  }
 }
 .conf-filter__chip--active {
   background: var(--chrome);
@@ -523,10 +539,12 @@
   background: transparent;
   border-style: dashed;
 }
-.conf-filter__chip--more:hover {
+@media (hover: hover) and (pointer: fine) {
+  .conf-filter__chip--more:hover {
   color: var(--ink);
   border-color: var(--ink);
   background: var(--paper-2);
+  }
 }
 
 @media (max-width: 640px) {
@@ -594,8 +612,7 @@
   /* Swap to the short label on narrow screens (Boys Basketball → Boys Hoops). */
   .sport-switcher__label { display: none; }
   .sport-switcher__label--short { display: inline; }
-  .section-header h2 { font-size: var(--fs-h3); }
-}
+  .section-header h2 { font-size: var(--fs-h3); }}
 
 /* Narrowest handsets (360px and under is a large share of Android). Once the
    columns are allowed to shrink, an icon sitting beside the label leaves it
@@ -609,8 +626,7 @@
     gap: 0.15rem;
     padding: 0.5rem 0.25rem;
     line-height: 1.1;
-  }
-}
+  }}
 
 /* --- Season selector + archive-view notice ---------------------------- */
 
@@ -636,8 +652,10 @@
   background-repeat: no-repeat;
   background-position: right 0.55rem center;
 }
-.masthead__season select:hover {
+@media (hover: hover) and (pointer: fine) {
+  .masthead__season select:hover {
   background-color: rgba(255, 255, 255, 0.12);
+  }
 }
 .masthead__season option {
   color: #1e1e1e;
@@ -674,6 +692,8 @@
   text-transform: uppercase;
   color: var(--accent-700);
 }
-.archive-note__back:hover {
+@media (hover: hover) and (pointer: fine) {
+  .archive-note__back:hover {
   text-decoration: underline;
+  }
 }

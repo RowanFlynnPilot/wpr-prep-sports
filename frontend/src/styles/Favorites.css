@@ -58,8 +58,10 @@
   transition: box-shadow var(--t-fast) var(--ease);
 }
 
-.favcard:hover {
+@media (hover: hover) and (pointer: fine) {
+  .favcard:hover {
   box-shadow: var(--shadow-hero);
+  }
 }
 
 /* A favorite that doesn't field a team in the sport being viewed. Kept
@@ -92,10 +94,16 @@
   z-index: 3;
 }
 
-.favcard__remove:hover,
 .favcard__remove:focus-visible {
   color: var(--accent);
   background: var(--paper-2);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .favcard__remove:hover {
+  color: var(--accent);
+  background: var(--paper-2);
+  }
 }
 
 .favcard__main {
@@ -123,8 +131,10 @@
   white-space: nowrap;
 }
 
-.favcard__main:hover .favcard__name {
+@media (hover: hover) and (pointer: fine) {
+  .favcard__main:hover .favcard__name {
   text-decoration: underline;
+  }
 }
 
 .favcard__sub {
@@ -147,8 +157,10 @@
   color: var(--ink);
 }
 
-.favcard__game:hover .favcard__game-detail {
+@media (hover: hover) and (pointer: fine) {
+  .favcard__game:hover .favcard__game-detail {
   text-decoration: underline;
+  }
 }
 
 .favcard__game-label {
@@ -252,10 +264,16 @@
   transition: background var(--t-fast) var(--ease), border-color var(--t-fast) var(--ease);
 }
 
-.fav-toggle:hover,
 .fav-toggle:focus-visible {
   border-color: var(--accent);
   color: var(--accent-700);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .fav-toggle:hover {
+  border-color: var(--accent);
+  color: var(--accent-700);
+  }
 }
 
 .fav-toggle--on {
@@ -264,11 +282,18 @@
   color: #ffffff;
 }
 
-.fav-toggle--on:hover,
 .fav-toggle--on:focus-visible {
   background: var(--accent-700);
   border-color: var(--accent-700);
   color: #ffffff;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .fav-toggle--on:hover {
+  background: var(--accent-700);
+  border-color: var(--accent-700);
+  color: #ffffff;
+  }
 }
 
 .fav-toggle__star {
@@ -303,8 +328,7 @@
 
   .favstrip__list {
     grid-template-columns: 1fr;
-  }
-}
+  }}
 
 /* ---- follow prompt ---------------------------------------------------- */
 /* One-line editorial nudge sitting under the hero when no school is
@@ -348,12 +372,18 @@
   text-decoration: none;
   padding-bottom: 0.05rem;
 }
-.follow-prompt__find:hover,
 .follow-prompt__find:focus-visible,
-.follow-prompt__all:hover,
 .follow-prompt__all:focus-visible {
   color: var(--accent-700);
   border-bottom-color: currentColor;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .follow-prompt__find:hover,
+  .follow-prompt__all:hover {
+  color: var(--accent-700);
+  border-bottom-color: currentColor;
+  }
 }
 .follow-prompt__dismiss {
   flex: 0 0 auto;
@@ -377,10 +407,18 @@
   transition: color var(--t-fast) var(--ease), background var(--t-fast) var(--ease),
               border-color var(--t-fast) var(--ease);
 }
-.follow-prompt__dismiss:hover,
 .follow-prompt__dismiss:focus-visible {
   color: var(--ink);
   background: var(--paper-2);
   border-color: var(--line);
   outline: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .follow-prompt__dismiss:hover {
+  color: var(--ink);
+  background: var(--paper-2);
+  border-color: var(--line);
+  outline: none;
+  }
 }

@@ -179,7 +179,10 @@ a {
   border-bottom: 1px solid transparent;
   transition: border-color var(--t-fast) var(--ease);
 }
-a:hover { border-bottom-color: currentColor; }
+@media (hover: hover) and (pointer: fine) {
+  a:hover { border-bottom-color: currentColor;
+  }
+}
 
 /* Utility: SCREAMING newspaper-y eyebrow text */
 .eyebrow {
@@ -220,8 +223,7 @@ a:hover { border-bottom-color: currentColor; }
 }
 @keyframes live-pulse-page {
   0%, 100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.4); opacity: 0.5; }
-}
+  50% { transform: scale(1.4); opacity: 0.5; }}
 
 /* Loading / error states */
 .loading, .error {
@@ -237,8 +239,7 @@ a:hover { border-bottom-color: currentColor; }
 
 /* Reduce motion */
 @media (prefers-reduced-motion: reduce) {
-  * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
-}
+  * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }}
 
 /* Abbreviations carry their expansion in `title` (stat keys on a box
    score, PF/PA, the standings "Recent" header, the Power Rankings lede).
@@ -251,3 +252,27 @@ abbr[title] {
   text-underline-offset: 2px;
   cursor: help;
 }
+
+/* Touch (critique run 17 technical audit). No blue tap flash; no 300ms
+   double-tap delay on controls; a press state so a tap answers before
+   the page does; horizontal rails keep their overscroll to themselves so
+   a swipe past the end of the ticker can't trigger the browser's
+   back-navigation gesture. Hover styles are gated behind a real pointer
+   in each stylesheet (@media (hover: hover) and (pointer: fine)) so a
+   tapped card does not stay lifted. */
+html { -webkit-tap-highlight-color: transparent; }
+a, button, select, summary, [role="tab"], [role="button"] { touch-action: manipulation; }
+.card:active,
+.game-row:active,
+.gotw:active,
+.potw:active,
+.ticker__card:active { opacity: 0.86; }
+button:active:not(:disabled),
+[role="tab"]:active { transform: scale(0.97); }
+.ticker__track,
+.standings__table-wrap,
+.section-tabs__list,
+.sport-switcher { overscroll-behavior-x: contain; }
+@media (pointer: coarse) {
+  /* iOS zooms the page when a focused control's text is under 16px. */
+  .masthead__season select { font-size: 16px; }}

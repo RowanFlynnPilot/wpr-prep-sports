@@ -44,7 +44,10 @@
   transition: background var(--t-fast) var(--ease);
 }
 .notable__item:first-child { border-top: none; }
-.notable__item:hover { background: color-mix(in srgb, var(--accent) 6%, transparent); }
+@media (hover: hover) and (pointer: fine) {
+  .notable__item:hover { background: color-mix(in srgb, var(--accent) 6%, transparent);
+  }
+}
 
 /* School-color rail on the left when the headline is tied to a team. */
 .notable__item::before {
@@ -65,7 +68,10 @@
   text-decoration: none;
   color: var(--ink);
 }
-.notable__link:hover .notable__headline { color: var(--accent-700); }
+@media (hover: hover) and (pointer: fine) {
+  .notable__link:hover .notable__headline { color: var(--accent-700);
+  }
+}
 
 .notable__headline {
   font-family: var(--font-display);

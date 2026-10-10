@@ -34,8 +34,10 @@
   color: rgba(255, 255, 255, 0.66);
   opacity: 1;
 }
-.school-finder__input:hover {
+@media (hover: hover) and (pointer: fine) {
+  .school-finder__input:hover {
   border-color: rgba(255, 255, 255, 0.45);
+  }
 }
 .school-finder__input:focus-visible {
   outline: 2px solid var(--accent-on-dark);
@@ -118,10 +120,16 @@
   text-decoration: none;
   border-bottom: none;
 }
-.school-finder__all:hover,
 .school-finder__all:focus-visible {
   background: var(--paper-2);
   color: var(--ink);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .school-finder__all:hover {
+  background: var(--paper-2);
+  color: var(--ink);
+  }
 }
 
 /* Masthead placement: right-hand side on desktop, its own full row on
@@ -142,5 +150,4 @@
   .school-finder__input {
     height: 44px;
     font-size: 16px;
-  }
-}
+  }}

@@ -12,6 +12,7 @@ import { isEmbedded, useIframeHeightReporter } from "../utils/iframe.js";
 import { trackEvent, useAnalytics } from "../utils/analytics.js";
 import { readMiniParams } from "./params.js";
 import { MINI_RESULTS, MINI_UPCOMING, selectMiniGames } from "./selectGames.js";
+import { pickMarqueeGame } from "../utils/marquee.js";
 
 /**
  * The mini scoreboard — a compact, fixed-height module for the publisher's
@@ -193,9 +194,16 @@ function MiniGames({ data, sport, destination }) {
     }
     return rank;
   }, [data.schools]);
+  // The same Game of the Week the dashboard features, pinned to the top
+  // of "Up next" so the homepage and the hub agree on the night's game.
+  const gotwId = useMemo(() => {
+    const homeRegionIds = new Set(cityRank.keys());
+    const pick = pickMarqueeGame({ games: data.games, schoolsById: schoolIndex, offSeason: false, now: Date.now(), homeRegionIds });
+    return pick?.game?.id ?? null;
+  }, [data.games, schoolIndex, cityRank]);
   const picked = useMemo(
-    () => selectMiniGames(data.games, { now: Date.now(), cityRank, followedIds: favorites }),
-    [data.games, cityRank, favorites],
+    () => selectMiniGames(data.games, { now: Date.now(), cityRank, followedIds: favorites, pinnedId: gotwId }),
+    [data.games, cityRank, favorites, gotwId],
   );
   const cfg = configFor(sport);
   const onGame = () => trackEvent("mini-click", { sport, target: "game" });

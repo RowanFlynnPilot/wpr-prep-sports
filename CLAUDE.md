@@ -139,6 +139,13 @@ needs individual-sport modeling), then baseball/softball/track (spring).
   (540/580) are measured maxima guarded by `e2e/mini.spec.js`; change the
   layout and that test tells you if the snippet height still holds.
   Snippets in the README and the media-kit builder; sponsor slot `mini`.
+- **Game-day mode** (2026-10-09, `frontend/src/utils/gameDay.js`) — from
+  noon on a day with 3+ games in a sport, the hero leads with tonight's
+  Game of the Week (or the best local game on the slate) plus the
+  night's count, the marquee strip steps aside unless its slot is sold,
+  team pages show a "Tonight · vs X · 7:00 PM" line, and the mini pins
+  the Game of the Week. Stale-data warnings fire only once a game has
+  started since the file was written (`utils/freshness.js`).
 - Per-school embeds (`#/<sport>/embed/<id>` + media-kit builder), Senior
   Spotlights, weekly digest, rivalry/head-to-head history, season archive
   selector, division filter chips (power rankings + bracket)
@@ -246,6 +253,12 @@ at `/high-school-sports/` since 2026-08.
 Frontend must be responsive and resize-friendly inside an iframe — use
 `postMessage` height reporting if needed (see `wpr-woodchucks-widget` for
 prior art).
+
+**Host-side to-dos (as of 2026-10-09, `docs/wordpress-host-fixes.md`):**
+the live page still runs the iframe at a fixed `height="1400"` with no
+`embed.js` installed, a sidebar widget loads the full dashboard instead
+of `mini.html`, and Cloudflare's Google tag gateway injects 210KB into
+every widget load. All three are WordPress/Cloudflare changes, not code.
 
 ## Why this project exists (for context when making product calls)
 

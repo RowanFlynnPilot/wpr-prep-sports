@@ -46,8 +46,10 @@
   border-top: none;
 }
 
-.power-row:hover {
+@media (hover: hover) and (pointer: fine) {
+  .power-row:hover {
   background: var(--row-tint);
+  }
 }
 
 .power-row__rank {
@@ -78,9 +80,11 @@
   border-bottom: 1px solid transparent;
 }
 
-.power-row__name:hover {
+@media (hover: hover) and (pointer: fine) {
+  .power-row__name:hover {
   border-bottom-color: var(--accent);
   color: var(--accent);
+  }
 }
 
 .power-row__meta {
@@ -191,9 +195,11 @@
   transition: background 0.15s ease;
 }
 
-.power-rankings__expand:hover {
+@media (hover: hover) and (pointer: fine) {
+  .power-rankings__expand:hover {
   background: var(--row-tint-strong);
   text-decoration: underline;
+  }
 }
 
 .power-rankings__expand--collapse {
@@ -213,8 +219,7 @@
     min-width: 1.5rem;
     padding: 0 0.25rem;
     font-size: var(--fs-label);
-  }
-}
+  }}
 
 /* Division filter chips — same visual language as the bracket's
    conference chips (TournamentBracket.css). */
@@ -239,9 +244,11 @@
   border-radius: 999px;
   transition: border-color var(--t-fast) var(--ease), color var(--t-fast) var(--ease);
 }
-.power-rankings__chip:hover {
+@media (hover: hover) and (pointer: fine) {
+  .power-rankings__chip:hover {
   border-color: var(--accent);
   color: var(--accent);
+  }
 }
 .power-rankings__chip--active {
   background: var(--chrome);

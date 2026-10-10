@@ -86,7 +86,10 @@
   position: relative;
 }
 .scoring-summary__goal:first-child { border-top: none; }
-.scoring-summary__goal:hover { background: var(--row-tint); }
+@media (hover: hover) and (pointer: fine) {
+  .scoring-summary__goal:hover { background: var(--row-tint);
+  }
+}
 
 .scoring-summary__time {
   font-family: var(--font-numeric);
@@ -195,5 +198,4 @@
     grid-column: 1 / -1;
     margin-top: 0.25rem;
     justify-content: flex-end;
-  }
-}
+  }}

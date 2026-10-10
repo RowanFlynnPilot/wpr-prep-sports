@@ -134,8 +134,10 @@ a.hero__details:focus-visible {
   outline: 3px solid var(--accent);
   outline-offset: 2px;
 }
-.hero:hover .hero__cta-arrow {
+@media (hover: hover) and (pointer: fine) {
+  .hero:hover .hero__cta-arrow {
   transform: translateX(3px);
+  }
 }
 .hero__team-name,
 .hero__team-mascot,
@@ -168,8 +170,7 @@ a.hero__details:focus-visible {
     display: block;
     margin: 0.65rem 0 -0.35rem;
     text-align: right;
-  }
-}
+  }}
 
 .hero__recap {
   margin: 1.25rem 0 0;
@@ -226,8 +227,7 @@ a.hero__details:focus-visible {
   /* One step below the game page's name: this one is nowrap + ellipsis,
      and "D.C. Everest" overflowed its 360px column by 3px at --fs-h3. */
   .hero__team-name { font-size: var(--fs-lead); }
-  .hero__score { font-size: var(--fs-score-sm); }
-}
+  .hero__score { font-size: var(--fs-score-sm); }}
 
 /* Off-season hero — countdown card + small "last game played" retro tile.
    Two-column on desktop, stacked on mobile. Inherits .hero's dark
@@ -344,5 +344,15 @@ a.hero__details:focus-visible {
     gap: 1.25rem;
   }
   .hero-off__headline { font-size: var(--fs-title); }
-  .hero-off__count { font-size: var(--fs-h3); }
+  .hero-off__count { font-size: var(--fs-h3); }}
+
+/* Game day: the night's count beside the date ("37 games tonight · 3 live"),
+   set apart from the date by the press red so the hero reads as a slate
+   lead, not one more result. */
+.hero__slate {
+  flex-basis: 100%;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  font-size: var(--fs-small);
+  color: var(--accent-on-dark);
 }

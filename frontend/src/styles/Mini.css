@@ -70,8 +70,10 @@
   font-style: normal;
   color: var(--accent-on-dark);
 }
-.mini a.mini__brand:hover {
+@media (hover: hover) and (pointer: fine) {
+  .mini a.mini__brand:hover {
   color: var(--accent-on-dark);
+  }
 }
 .mini a.mini__brand:focus-visible {
   outline-offset: 2px;
@@ -150,16 +152,26 @@
   color: var(--muted);
   transition: color var(--t-fast) var(--ease), background var(--t-fast) var(--ease);
 }
-.mini__sport-btn:hover {
+@media (hover: hover) and (pointer: fine) {
+  .mini__sport-btn:hover {
   color: var(--ink);
   background: var(--paper-2);
+  }
 }
-.mini__sport-btn--on,
-.mini__sport-btn--on:hover {
+.mini__sport-btn--on {
   color: var(--accent-700);
   border-bottom-color: var(--accent);
   font-weight: 700;
   background: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .mini__sport-btn--on:hover {
+  color: var(--accent-700);
+  border-bottom-color: var(--accent);
+  font-weight: 700;
+  background: none;
+  }
 }
 .mini__sport-icon {
   display: inline-flex;
@@ -173,8 +185,7 @@
 @media (max-width: 400px) {
   .mini__sport-icon {
     display: none;
-  }
-}
+  }}
 
 /* ---- Games ---------------------------------------------------------- */
 
@@ -220,9 +231,11 @@
 .mini-game--plain {
   grid-template-columns: minmax(0, 1fr);
 }
-.mini a.mini-game:hover,
-.mini a.mini-next:hover {
+@media (hover: hover) and (pointer: fine) {
+  .mini a.mini-game:hover,
+  .mini a.mini-next:hover {
   background: var(--row-tint-strong);
+  }
 }
 .mini-game__team {
   grid-column: 1;
@@ -282,8 +295,7 @@
 }
 @keyframes mini-pulse {
   0%, 100% { opacity: 1; }
-  50% { opacity: 0.35; }
-}
+  50% { opacity: 0.35; }}
 
 /* Fixture row: one line, matchup ellipsizes before the time does. */
 .mini-next {
@@ -346,8 +358,10 @@
   text-transform: uppercase;
   white-space: nowrap;
 }
-.mini a.mini__cta:hover {
+@media (hover: hover) and (pointer: fine) {
+  .mini a.mini__cta:hover {
   color: var(--accent-700);
+  }
 }
 
 /* ---- Loading -------------------------------------------------------- */

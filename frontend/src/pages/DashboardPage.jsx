@@ -20,6 +20,7 @@ import { useFavorites } from "../utils/favorites.js";
 import { conferenceFor } from "../utils/schoolSearch.js";
 import { isEmbedded } from "../utils/iframe.js";
 import { isDataBehind } from "../utils/freshness.js";
+import { gameDayState, pickTonightGame } from "../utils/gameDay.js";
 import Sponsor from "../components/Sponsor.jsx";
 import TopPerformers from "../components/TopPerformers.jsx";
 import Marquee from "../components/Marquee.jsx";
@@ -191,10 +192,29 @@ export default function DashboardPage({
   // the marquee's id sends the hero to the next home-region game that day
   // instead (opening night: the marquee takes Wausau West at Menomonie,
   // the hero takes D.C. Everest at Chippewa Falls).
-  const featured = useMemo(
+  const featuredPick = useMemo(
     () => pickFeaturedGame(games, anchorNow, homeRegion, marquee?.game?.id ?? null),
     [games, anchorNow, homeRegion, marquee],
   );
+
+  // Game day (utils/gameDay.js): from noon on a slate day the hero leads
+  // with tonight's Game of the Week and the night's count instead of the
+  // last result, and the marquee strip steps aside unless its sponsor
+  // slot is sold (a paid strip stays, even if it repeats the hero).
+  const gameDay = useMemo(() => gameDayState(games, anchorNow), [games, anchorNow]);
+  const tonightGame = useMemo(
+    () =>
+      gameDay.isGameDay && !offSeason && !dataset.archiveSeason
+        ? pickTonightGame(gameDay.slate, homeRegion, marquee?.game ?? null)
+        : null,
+    [gameDay, offSeason, dataset.archiveSeason, homeRegion, marquee],
+  );
+  const heroTonight = !!tonightGame;
+  const heroIsMarquee = heroTonight && marquee?.game?.id === tonightGame.id;
+  const featured = heroTonight ? tonightGame : featuredPick;
+  const marqueeSold = !!sponsors?.slots?.[`marquee:${dataset.sport}`]?.name;
+  // The strip steps aside only when the hero is showing its very game.
+  const showMarquee = !heroIsMarquee || marqueeSold;
 
   const lastUpdated = meta?.last_updated
     ? new Date(meta.last_updated).toLocaleString(undefined, {
@@ -492,6 +512,8 @@ export default function DashboardPage({
             sportConfig={sportConfig}
             nextSeasonStart={nextSeasonStart}
             daysToNext={daysToNext}
+            tonight={heroTonight ? gameDay : null}
+            gotwLabel={heroIsMarquee ? marquee.eyebrow : null}
           />
         </SectionBoundary>
         <SectionBoundary label="follow-prompt">
@@ -499,9 +521,11 @@ export default function DashboardPage({
         </SectionBoundary>
       </div>
 
-      <SectionBoundary label="marquee">
-        <Marquee pick={marquee} sportConfig={sportConfig} sponsors={sponsors} schoolIndex={schoolIndex} />
-      </SectionBoundary>
+      {showMarquee && (
+        <SectionBoundary label="marquee">
+          <Marquee pick={marquee} sportConfig={sportConfig} sponsors={sponsors} schoolIndex={schoolIndex} />
+        </SectionBoundary>
+      )}
 
       <SectionBoundary label="player-of-week">
         <PlayerOfWeek

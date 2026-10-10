@@ -6,8 +6,7 @@
 @media (max-width: 720px) {
   .top-performers {
     grid-template-columns: minmax(0, 1fr);
-  }
-}
+  }}
 
 .top-card {
   background: var(--card);
@@ -48,7 +47,10 @@
   transition: background var(--t-fast) var(--ease);
 }
 .top-card__row:first-child { border-top: none; }
-.top-card__row:hover { background: var(--row-tint); }
+@media (hover: hover) and (pointer: fine) {
+  .top-card__row:hover { background: var(--row-tint);
+  }
+}
 .top-card__row:first-child .top-card__rank { color: var(--accent-700); }
 
 .top-card__rank {
@@ -76,9 +78,11 @@
      rather than ellipsis-truncate; keep "(SR)" attached to the name. */
   overflow-wrap: anywhere;
 }
-.top-card__name:hover {
+@media (hover: hover) and (pointer: fine) {
+  .top-card__name:hover {
   color: var(--accent);
   border-bottom-color: var(--accent);
+  }
 }
 .top-card__year {
   font-weight: 400;
@@ -95,10 +99,16 @@
   transition: color var(--t-fast) var(--ease), border-color var(--t-fast) var(--ease);
   align-self: flex-start;
 }
-.top-card__team:hover,
 .top-card__team:focus-visible {
   color: var(--link);
   border-bottom-color: currentColor;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .top-card__team:hover {
+  color: var(--link);
+  border-bottom-color: currentColor;
+  }
 }
 
 .top-card__stats {
