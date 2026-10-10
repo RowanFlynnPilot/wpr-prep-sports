@@ -5199,13 +5199,13 @@
     "position": null,
     "jersey": "1",
     "stats": {
-      "C/ATT": "27/59",
-      "PCT": "45.8%",
-      "YDS": "450",
-      "YPC": "16.7",
+      "C/ATT": "31/67",
+      "PCT": "46.3%",
+      "YDS": "514",
+      "YPC": "16.6",
       "TDS": "7",
       "INT": "3",
-      "RTG": "138.8",
+      "RTG": "136.2",
       "TD LG": "30",
       "LONG": "37"
     }
@@ -5239,15 +5239,15 @@
     "position": null,
     "jersey": "12",
     "stats": {
-      "C/ATT": "0/1",
-      "PCT": "0.0%",
-      "YDS": "0",
-      "YPC": "0.0",
+      "C/ATT": "5/8",
+      "PCT": "62.5%",
+      "YDS": "27",
+      "YPC": "5.4",
       "TDS": "0",
-      "INT": "0",
-      "RTG": "0.0",
+      "INT": "2",
+      "RTG": "40.8",
       "TD LG": "0",
-      "LONG": "0"
+      "LONG": "11"
     }
   },
   {
@@ -5259,13 +5259,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "C/ATT": "28/61",
-      "PCT": "45.9%",
-      "YDS": "492",
-      "YPC": "17.6",
+      "C/ATT": "37/76",
+      "PCT": "48.7%",
+      "YDS": "583",
+      "YPC": "15.8",
       "TDS": "7",
-      "INT": "3",
-      "RTG": "141.7",
+      "INT": "5",
+      "RTG": "130.4",
       "TD LG": "30",
       "LONG": "42"
     }
@@ -5279,9 +5279,9 @@
     "position": null,
     "jersey": "1",
     "stats": {
-      "CAR": "39",
-      "YDS": "214",
-      "YPC": "5.5",
+      "CAR": "42",
+      "YDS": "219",
+      "YPC": "5.2",
       "TDS": "4",
       "TD LG": "45",
       "LONG": "45"
@@ -5296,9 +5296,9 @@
     "position": null,
     "jersey": "2",
     "stats": {
-      "CAR": "65",
-      "YDS": "336",
-      "YPC": "5.2",
+      "CAR": "68",
+      "YDS": "337",
+      "YPC": "5.0",
       "TDS": "5",
       "TD LG": "33",
       "LONG": "33"
@@ -5330,10 +5330,10 @@
     "position": null,
     "jersey": "5",
     "stats": {
-      "CAR": "76",
-      "YDS": "401",
-      "YPC": "5.3",
-      "TDS": "6",
+      "CAR": "94",
+      "YDS": "482",
+      "YPC": "5.1",
+      "TDS": "7",
       "TD LG": "20",
       "LONG": "30"
     }
@@ -5398,12 +5398,12 @@
     "position": null,
     "jersey": "12",
     "stats": {
-      "CAR": "15",
-      "YDS": "183",
-      "YPC": "12.2",
+      "CAR": "32",
+      "YDS": "324",
+      "YPC": "10.1",
       "TDS": "4",
       "TD LG": "50",
-      "LONG": "50"
+      "LONG": "55"
     }
   },
   {
@@ -5449,12 +5449,29 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "CAR": "276",
-      "YDS": "1746",
-      "YPC": "6.3",
-      "TDS": "24",
+      "CAR": "317",
+      "YDS": "1974",
+      "YPC": "6.2",
+      "TDS": "25",
       "TD LG": "88",
       "LONG": "88"
+    }
+  },
+  {
+    "school_id": "athens",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Garrett Frahm",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "1",
+    "stats": {
+      "REC": "1",
+      "YDS": "11",
+      "YPC": "11.0",
+      "TDS": "0",
+      "TD LG": "0",
+      "LONG": "11"
     }
   },
   {
@@ -5466,12 +5483,12 @@
     "position": null,
     "jersey": "2",
     "stats": {
-      "REC": "1",
-      "YDS": "13",
-      "YPC": "13.0",
+      "REC": "4",
+      "YDS": "59",
+      "YPC": "14.8",
       "TDS": "0",
       "TD LG": "0",
-      "LONG": "13"
+      "LONG": "33"
     }
   },
   {
@@ -5483,9 +5500,9 @@
     "position": null,
     "jersey": "5",
     "stats": {
-      "REC": "2",
-      "YDS": "46",
-      "YPC": "23.0",
+      "REC": "3",
+      "YDS": "49",
+      "YPC": "16.3",
       "TDS": "0",
       "TD LG": "0",
       "LONG": "42"
@@ -5517,9 +5534,9 @@
     "position": null,
     "jersey": "12",
     "stats": {
-      "REC": "10",
-      "YDS": "214",
-      "YPC": "21.4",
+      "REC": "11",
+      "YDS": "221",
+      "YPC": "20.1",
       "TDS": "5",
       "TD LG": "25",
       "LONG": "37"
@@ -5534,12 +5551,29 @@
     "position": null,
     "jersey": "15",
     "stats": {
-      "REC": "2",
-      "YDS": "23",
-      "YPC": "11.5",
+      "REC": "4",
+      "YDS": "44",
+      "YPC": "11.0",
       "TDS": "0",
       "TD LG": "0",
-      "LONG": "10"
+      "LONG": "14"
+    }
+  },
+  {
+    "school_id": "athens",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Connor Ebben",
+    "player_year": "SO",
+    "position": null,
+    "jersey": "24",
+    "stats": {
+      "REC": "1",
+      "YDS": "3",
+      "YPC": "3.0",
+      "TDS": "0",
+      "TD LG": "0",
+      "LONG": "3"
     }
   },
   {
@@ -5551,9 +5585,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "REC": "28",
-      "YDS": "492",
-      "YPC": "17.6",
+      "REC": "37",
+      "YDS": "583",
+      "YPC": "15.8",
       "TDS": "7",
       "TD LG": "30",
       "LONG": "42"
@@ -8044,15 +8078,15 @@
     "position": null,
     "jersey": "10",
     "stats": {
-      "C/ATT": "65/97",
-      "PCT": "67.0%",
-      "YDS": "869",
-      "YPC": "13.4",
-      "TDS": "8",
-      "INT": "1",
-      "RTG": "167.4",
-      "TD LG": "67",
-      "LONG": "35"
+      "C/ATT": "80/128",
+      "PCT": "62.5%",
+      "YDS": "1117",
+      "YPC": "14.0",
+      "TDS": "10",
+      "INT": "2",
+      "RTG": "158.5",
+      "TD LG": "76",
+      "LONG": "76"
     }
   },
   {
@@ -8104,15 +8138,15 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "C/ATT": "68/102",
-      "PCT": "66.7%",
-      "YDS": "899",
-      "YPC": "13.2",
-      "TDS": "9",
-      "INT": "1",
-      "RTG": "167.9",
-      "TD LG": "67",
-      "LONG": "35"
+      "C/ATT": "83/133",
+      "PCT": "62.4%",
+      "YDS": "1147",
+      "YPC": "13.8",
+      "TDS": "11",
+      "INT": "2",
+      "RTG": "159.1",
+      "TD LG": "76",
+      "LONG": "76"
     }
   },
   {
@@ -8124,9 +8158,9 @@
     "position": null,
     "jersey": "2",
     "stats": {
-      "CAR": "6",
-      "YDS": "111",
-      "YPC": "18.5",
+      "CAR": "9",
+      "YDS": "117",
+      "YPC": "13.0",
       "TDS": "1",
       "TD LG": "22",
       "LONG": "8"
@@ -8141,9 +8175,9 @@
     "position": null,
     "jersey": "3",
     "stats": {
-      "CAR": "14",
-      "YDS": "62",
-      "YPC": "4.4",
+      "CAR": "19",
+      "YDS": "98",
+      "YPC": "5.2",
       "TDS": "0",
       "TD LG": "0",
       "LONG": "12"
@@ -8175,12 +8209,12 @@
     "position": null,
     "jersey": "10",
     "stats": {
-      "CAR": "74",
-      "YDS": "247",
-      "YPC": "3.3",
+      "CAR": "80",
+      "YDS": "277",
+      "YPC": "3.5",
       "TDS": "4",
       "TD LG": "13",
-      "LONG": "12"
+      "LONG": "21"
     }
   },
   {
@@ -8192,10 +8226,10 @@
     "position": null,
     "jersey": "21",
     "stats": {
-      "CAR": "107",
-      "YDS": "637",
-      "YPC": "6.0",
-      "TDS": "8",
+      "CAR": "129",
+      "YDS": "745",
+      "YPC": "5.8",
+      "TDS": "9",
       "TD LG": "75",
       "LONG": "24"
     }
@@ -8260,10 +8294,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "CAR": "228",
-      "YDS": "1166",
+      "CAR": "264",
+      "YDS": "1346",
       "YPC": "5.1",
-      "TDS": "16",
+      "TDS": "17",
       "TD LG": "75",
       "LONG": "24"
     }
@@ -8277,9 +8311,9 @@
     "position": null,
     "jersey": "2",
     "stats": {
-      "REC": "10",
-      "YDS": "79",
-      "YPC": "7.9",
+      "REC": "13",
+      "YDS": "102",
+      "YPC": "7.8",
       "TDS": "0",
       "TD LG": "0",
       "LONG": "17"
@@ -8311,9 +8345,9 @@
     "position": null,
     "jersey": "4",
     "stats": {
-      "REC": "7",
-      "YDS": "118",
-      "YPC": "16.9",
+      "REC": "9",
+      "YDS": "136",
+      "YPC": "15.1",
       "TDS": "0",
       "TD LG": "0",
       "LONG": "34"
@@ -8345,9 +8379,9 @@
     "position": null,
     "jersey": "8",
     "stats": {
-      "REC": "28",
-      "YDS": "423",
-      "YPC": "15.1",
+      "REC": "33",
+      "YDS": "459",
+      "YPC": "13.9",
       "TDS": "7",
       "TD LG": "67",
       "LONG": "33"
@@ -8396,9 +8430,9 @@
     "position": null,
     "jersey": "13",
     "stats": {
-      "REC": "8",
-      "YDS": "116",
-      "YPC": "14.5",
+      "REC": "11",
+      "YDS": "147",
+      "YPC": "13.4",
       "TDS": "0",
       "TD LG": "0",
       "LONG": "18"
@@ -8413,11 +8447,11 @@
     "position": null,
     "jersey": "21",
     "stats": {
-      "REC": "3",
-      "YDS": "20",
-      "YPC": "6.7",
-      "TDS": "0",
-      "TD LG": "0",
+      "REC": "4",
+      "YDS": "96",
+      "YPC": "24.0",
+      "TDS": "1",
+      "TD LG": "76",
       "LONG": "4"
     }
   },
@@ -8430,11 +8464,11 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "REC": "4",
-      "YDS": "88",
-      "YPC": "22.0",
-      "TDS": "2",
-      "TD LG": "22",
+      "REC": "5",
+      "YDS": "152",
+      "YPC": "30.4",
+      "TDS": "3",
+      "TD LG": "64",
       "LONG": "35"
     }
   },
@@ -8447,11 +8481,11 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "REC": "68",
-      "YDS": "899",
-      "YPC": "13.2",
-      "TDS": "9",
-      "TD LG": "67",
+      "REC": "83",
+      "YDS": "1147",
+      "YPC": "13.8",
+      "TDS": "11",
+      "TD LG": "76",
       "LONG": "35"
     }
   },
@@ -17920,13 +17954,13 @@
     "position": null,
     "jersey": "17",
     "stats": {
-      "C/ATT": "33/61",
-      "PCT": "54.1%",
-      "YDS": "430",
-      "YPC": "13.0",
+      "C/ATT": "34/62",
+      "PCT": "54.8%",
+      "YDS": "433",
+      "YPC": "12.7",
       "TDS": "1",
       "INT": "2",
-      "RTG": "112.2",
+      "RTG": "112.4",
       "TD LG": "22",
       "LONG": "46"
     }
@@ -17940,13 +17974,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "C/ATT": "34/62",
-      "PCT": "54.8%",
-      "YDS": "446",
-      "YPC": "13.1",
+      "C/ATT": "35/63",
+      "PCT": "55.6%",
+      "YDS": "449",
+      "YPC": "12.8",
       "TDS": "1",
       "INT": "2",
-      "RTG": "114.1",
+      "RTG": "114.3",
       "TD LG": "22",
       "LONG": "46"
     }
@@ -17977,10 +18011,10 @@
     "position": null,
     "jersey": "1",
     "stats": {
-      "CAR": "43",
-      "YDS": "419",
-      "YPC": "9.7",
-      "TDS": "3",
+      "CAR": "48",
+      "YDS": "500",
+      "YPC": "10.4",
+      "TDS": "5",
       "TD LG": "55",
       "LONG": "55"
     }
@@ -17994,10 +18028,10 @@
     "position": null,
     "jersey": "3",
     "stats": {
-      "CAR": "62",
-      "YDS": "559",
-      "YPC": "9.0",
-      "TDS": "8",
+      "CAR": "67",
+      "YDS": "700",
+      "YPC": "10.4",
+      "TDS": "11",
       "TD LG": "67",
       "LONG": "67"
     }
@@ -18011,12 +18045,29 @@
     "position": null,
     "jersey": "7",
     "stats": {
-      "CAR": "3",
-      "YDS": "27",
-      "YPC": "9.0",
+      "CAR": "4",
+      "YDS": "31",
+      "YPC": "7.8",
       "TDS": "0",
       "TD LG": "0",
       "LONG": "8"
+    }
+  },
+  {
+    "school_id": "chippewa-falls",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Bo Ashley",
+    "player_year": "JR",
+    "position": null,
+    "jersey": "10",
+    "stats": {
+      "CAR": "1",
+      "YDS": "-2",
+      "YPC": "-2.0",
+      "TDS": "0",
+      "TD LG": "0",
+      "LONG": "0"
     }
   },
   {
@@ -18028,9 +18079,9 @@
     "position": null,
     "jersey": "11",
     "stats": {
-      "CAR": "7",
-      "YDS": "49",
-      "YPC": "7.0",
+      "CAR": "9",
+      "YDS": "58",
+      "YPC": "6.4",
       "TDS": "0",
       "TD LG": "0",
       "LONG": "9"
@@ -18045,12 +18096,12 @@
     "position": null,
     "jersey": "13",
     "stats": {
-      "CAR": "6",
-      "YDS": "42",
-      "YPC": "7.0",
+      "CAR": "8",
+      "YDS": "59",
+      "YPC": "7.4",
       "TDS": "0",
       "TD LG": "0",
-      "LONG": "6"
+      "LONG": "9"
     }
   },
   {
@@ -18062,9 +18113,9 @@
     "position": null,
     "jersey": "14",
     "stats": {
-      "CAR": "17",
-      "YDS": "132",
-      "YPC": "7.8",
+      "CAR": "21",
+      "YDS": "153",
+      "YPC": "7.3",
       "TDS": "3",
       "TD LG": "46",
       "LONG": "18"
@@ -18096,9 +18147,9 @@
     "position": null,
     "jersey": "17",
     "stats": {
-      "CAR": "10",
-      "YDS": "24",
-      "YPC": "2.4",
+      "CAR": "11",
+      "YDS": "28",
+      "YPC": "2.5",
       "TDS": "0",
       "TD LG": "0",
       "LONG": "4"
@@ -18113,9 +18164,9 @@
     "position": null,
     "jersey": "21",
     "stats": {
-      "CAR": "3",
-      "YDS": "34",
-      "YPC": "11.3",
+      "CAR": "4",
+      "YDS": "47",
+      "YPC": "11.8",
       "TDS": "0",
       "TD LG": "0",
       "LONG": "22"
@@ -18130,9 +18181,9 @@
     "position": null,
     "jersey": "23",
     "stats": {
-      "CAR": "13",
-      "YDS": "79",
-      "YPC": "6.1",
+      "CAR": "15",
+      "YDS": "86",
+      "YPC": "5.7",
       "TDS": "1",
       "TD LG": "3",
       "LONG": "17"
@@ -18147,9 +18198,9 @@
     "position": null,
     "jersey": "26",
     "stats": {
-      "CAR": "4",
-      "YDS": "80",
-      "YPC": "20.0",
+      "CAR": "6",
+      "YDS": "102",
+      "YPC": "17.0",
       "TDS": "2",
       "TD LG": "31",
       "LONG": "24"
@@ -18181,8 +18232,8 @@
     "position": null,
     "jersey": "37",
     "stats": {
-      "CAR": "100",
-      "YDS": "686",
+      "CAR": "105",
+      "YDS": "728",
       "YPC": "6.9",
       "TDS": "6",
       "TD LG": "25",
@@ -18215,10 +18266,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "CAR": "287",
-      "YDS": "2217",
-      "YPC": "7.7",
-      "TDS": "26",
+      "CAR": "318",
+      "YDS": "2576",
+      "YPC": "8.1",
+      "TDS": "31",
       "TD LG": "67",
       "LONG": "67"
     }
@@ -18232,12 +18283,12 @@
     "position": null,
     "jersey": "1",
     "stats": {
-      "REC": "1",
-      "YDS": "12",
-      "YPC": "12.0",
+      "REC": "2",
+      "YDS": "15",
+      "YPC": "7.5",
       "TDS": "0",
       "TD LG": "0",
-      "LONG": "0"
+      "LONG": "3"
     }
   },
   {
@@ -18368,9 +18419,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "REC": "34",
-      "YDS": "446",
-      "YPC": "13.1",
+      "REC": "35",
+      "YDS": "449",
+      "YPC": "12.8",
       "TDS": "1",
       "TD LG": "22",
       "LONG": "46"
@@ -18400,8 +18451,8 @@
     "position": null,
     "jersey": "1",
     "stats": {
-      "TOT": "19",
-      "SOLO": "12",
+      "TOT": "26",
+      "SOLO": "17",
       "TFL": "1",
       "SACKS": "0.0"
     }
@@ -18415,8 +18466,8 @@
     "position": null,
     "jersey": "2",
     "stats": {
-      "TOT": "56",
-      "SOLO": "32",
+      "TOT": "69",
+      "SOLO": "42",
       "TFL": "3",
       "SACKS": "1.0"
     }
@@ -18460,8 +18511,8 @@
     "position": null,
     "jersey": "6",
     "stats": {
-      "TOT": "2",
-      "SOLO": "1",
+      "TOT": "3",
+      "SOLO": "2",
       "TFL": "0",
       "SACKS": "0.0"
     }
@@ -18475,8 +18526,8 @@
     "position": null,
     "jersey": "7",
     "stats": {
-      "TOT": "1",
-      "SOLO": "1",
+      "TOT": "3",
+      "SOLO": "2",
       "TFL": "0",
       "SACKS": "0.0"
     }
@@ -18490,8 +18541,8 @@
     "position": null,
     "jersey": "8",
     "stats": {
-      "TOT": "23",
-      "SOLO": "12",
+      "TOT": "26",
+      "SOLO": "14",
       "TFL": "2",
       "SACKS": "0.0"
     }
@@ -18505,10 +18556,10 @@
     "position": null,
     "jersey": "9",
     "stats": {
-      "TOT": "28",
-      "SOLO": "13",
-      "TFL": "2",
-      "SACKS": "1.0"
+      "TOT": "38",
+      "SOLO": "17",
+      "TFL": "3",
+      "SACKS": "2.0"
     }
   },
   {
@@ -18530,13 +18581,28 @@
     "school_id": "chippewa-falls",
     "sport": "football",
     "category": "Defense",
+    "player_name": "Beau Hediger",
+    "player_year": "JR",
+    "position": null,
+    "jersey": "13",
+    "stats": {
+      "TOT": "1",
+      "SOLO": "1",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "chippewa-falls",
+    "sport": "football",
+    "category": "Defense",
     "player_name": "Deegan McInnis",
     "player_year": "JR",
     "position": null,
     "jersey": "14",
     "stats": {
-      "TOT": "24",
-      "SOLO": "9",
+      "TOT": "26",
+      "SOLO": "11",
       "TFL": "5",
       "SACKS": "3.0"
     }
@@ -18565,8 +18631,8 @@
     "position": null,
     "jersey": "16",
     "stats": {
-      "TOT": "8",
-      "SOLO": "4",
+      "TOT": "10",
+      "SOLO": "5",
       "TFL": "0",
       "SACKS": "0.0"
     }
@@ -18580,8 +18646,8 @@
     "position": null,
     "jersey": "18",
     "stats": {
-      "TOT": "1",
-      "SOLO": "1",
+      "TOT": "3",
+      "SOLO": "3",
       "TFL": "0",
       "SACKS": "0.0"
     }
@@ -18625,9 +18691,9 @@
     "position": null,
     "jersey": "22",
     "stats": {
-      "TOT": "27",
+      "TOT": "30",
       "SOLO": "10",
-      "TFL": "4",
+      "TFL": "5",
       "SACKS": "4.0"
     }
   },
@@ -18670,8 +18736,8 @@
     "position": null,
     "jersey": "25",
     "stats": {
-      "TOT": "1",
-      "SOLO": "1",
+      "TOT": "2",
+      "SOLO": "2",
       "TFL": "0",
       "SACKS": "0.0"
     }
@@ -18715,7 +18781,7 @@
     "position": null,
     "jersey": "30",
     "stats": {
-      "TOT": "32",
+      "TOT": "34",
       "SOLO": "22",
       "TFL": "6",
       "SACKS": "3.0"
@@ -18760,7 +18826,7 @@
     "position": null,
     "jersey": "45",
     "stats": {
-      "TOT": "35",
+      "TOT": "39",
       "SOLO": "9",
       "TFL": "1",
       "SACKS": "0.0"
@@ -18775,10 +18841,25 @@
     "position": null,
     "jersey": "52",
     "stats": {
-      "TOT": "35",
-      "SOLO": "10",
+      "TOT": "38",
+      "SOLO": "12",
       "TFL": "3",
       "SACKS": "1.0"
+    }
+  },
+  {
+    "school_id": "chippewa-falls",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Braden Ashley",
+    "player_year": "JR",
+    "position": null,
+    "jersey": "55",
+    "stats": {
+      "TOT": "1",
+      "SOLO": "0",
+      "TFL": "0",
+      "SACKS": "0.0"
     }
   },
   {
@@ -18790,9 +18871,9 @@
     "position": null,
     "jersey": "62",
     "stats": {
-      "TOT": "13",
+      "TOT": "14",
       "SOLO": "3",
-      "TFL": "3",
+      "TFL": "4",
       "SACKS": "0.0"
     }
   },
@@ -18865,8 +18946,8 @@
     "position": null,
     "jersey": "80",
     "stats": {
-      "TOT": "8",
-      "SOLO": "5",
+      "TOT": "9",
+      "SOLO": "6",
       "TFL": "0",
       "SACKS": "0.0"
     }
@@ -18895,10 +18976,10 @@
     "position": null,
     "jersey": "94",
     "stats": {
-      "TOT": "24",
-      "SOLO": "8",
-      "TFL": "4",
-      "SACKS": "1.0"
+      "TOT": "27",
+      "SOLO": "10",
+      "TFL": "5",
+      "SACKS": "2.0"
     }
   },
   {
@@ -18910,10 +18991,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "TOT": "502",
-      "SOLO": "223",
-      "TFL": "43",
-      "SACKS": "18.0"
+      "TOT": "564",
+      "SOLO": "258",
+      "TFL": "47",
+      "SACKS": "20.0"
     }
   },
   {
@@ -22443,13 +22524,13 @@
     "position": null,
     "jersey": "3",
     "stats": {
-      "C/ATT": "11/19",
-      "PCT": "57.9%",
-      "YDS": "88",
-      "YPC": "8.0",
-      "TDS": "2",
+      "C/ATT": "13/26",
+      "PCT": "50.0%",
+      "YDS": "118",
+      "YPC": "9.1",
+      "TDS": "3",
       "INT": "1",
-      "RTG": "121.0",
+      "RTG": "118.5",
       "TD LG": "17",
       "LONG": "17"
     }
@@ -22503,13 +22584,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "C/ATT": "14/24",
-      "PCT": "58.3%",
-      "YDS": "168",
-      "YPC": "12.0",
-      "TDS": "3",
+      "C/ATT": "16/31",
+      "PCT": "51.6%",
+      "YDS": "198",
+      "YPC": "12.4",
+      "TDS": "4",
       "INT": "2",
-      "RTG": "141.7",
+      "RTG": "134.9",
       "TD LG": "32",
       "LONG": "32"
     }
@@ -22523,10 +22604,10 @@
     "position": null,
     "jersey": "3",
     "stats": {
-      "CAR": "60",
-      "YDS": "576",
-      "YPC": "9.6",
-      "TDS": "12",
+      "CAR": "78",
+      "YDS": "792",
+      "YPC": "10.2",
+      "TDS": "15",
       "TD LG": "58",
       "LONG": "54"
     }
@@ -22540,9 +22621,9 @@
     "position": null,
     "jersey": "6",
     "stats": {
-      "CAR": "1",
-      "YDS": "9",
-      "YPC": "9.0",
+      "CAR": "2",
+      "YDS": "10",
+      "YPC": "5.0",
       "TDS": "0",
       "TD LG": "0",
       "LONG": "0"
@@ -22557,10 +22638,10 @@
     "position": null,
     "jersey": "7",
     "stats": {
-      "CAR": "78",
-      "YDS": "695",
-      "YPC": "8.9",
-      "TDS": "9",
+      "CAR": "85",
+      "YDS": "784",
+      "YPC": "9.2",
+      "TDS": "10",
       "TD LG": "68",
       "LONG": "68"
     }
@@ -22676,12 +22757,29 @@
     "position": null,
     "jersey": "33",
     "stats": {
-      "CAR": "88",
-      "YDS": "794",
+      "CAR": "96",
+      "YDS": "861",
       "YPC": "9.0",
       "TDS": "9",
       "TD LG": "53",
       "LONG": "54"
+    }
+  },
+  {
+    "school_id": "assumption",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Brennan Mohrbacher",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "65",
+    "stats": {
+      "CAR": "1",
+      "YDS": "3",
+      "YPC": "3.0",
+      "TDS": "0",
+      "TD LG": "0",
+      "LONG": "0"
     }
   },
   {
@@ -22693,10 +22791,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "CAR": "283",
-      "YDS": "2606",
-      "YPC": "9.2",
-      "TDS": "41",
+      "CAR": "318",
+      "YDS": "2982",
+      "YPC": "9.4",
+      "TDS": "45",
       "TD LG": "68",
       "LONG": "68"
     }
@@ -22727,9 +22825,9 @@
     "position": null,
     "jersey": "6",
     "stats": {
-      "REC": "6",
-      "YDS": "95",
-      "YPC": "15.8",
+      "REC": "7",
+      "YDS": "110",
+      "YPC": "15.7",
       "TDS": "2",
       "TD LG": "32",
       "LONG": "32"
@@ -22756,15 +22854,32 @@
     "school_id": "assumption",
     "sport": "football",
     "category": "Receiving",
+    "player_name": "Camden Martin",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "33",
+    "stats": {
+      "REC": "1",
+      "YDS": "15",
+      "YPC": "15.0",
+      "TDS": "1",
+      "TD LG": "15",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "assumption",
+    "sport": "football",
+    "category": "Receiving",
     "player_name": "Team",
     "player_year": null,
     "position": null,
     "jersey": null,
     "stats": {
-      "REC": "14",
-      "YDS": "168",
-      "YPC": "12.0",
-      "TDS": "3",
+      "REC": "16",
+      "YDS": "198",
+      "YPC": "12.4",
+      "TDS": "4",
       "TD LG": "32",
       "LONG": "32"
     }
@@ -22778,8 +22893,8 @@
     "position": null,
     "jersey": "2",
     "stats": {
-      "TOT": "42",
-      "SOLO": "27",
+      "TOT": "44",
+      "SOLO": "28",
       "TFL": "6",
       "SACKS": "2.0"
     }
@@ -22823,10 +22938,10 @@
     "position": null,
     "jersey": "7",
     "stats": {
-      "TOT": "73",
-      "SOLO": "47",
-      "TFL": "4",
-      "SACKS": "0.0"
+      "TOT": "76",
+      "SOLO": "49",
+      "TFL": "5",
+      "SACKS": "1.0"
     }
   },
   {
@@ -22838,8 +22953,8 @@
     "position": null,
     "jersey": "8",
     "stats": {
-      "TOT": "43",
-      "SOLO": "30",
+      "TOT": "46",
+      "SOLO": "32",
       "TFL": "0",
       "SACKS": "0.0"
     }
@@ -22853,8 +22968,8 @@
     "position": null,
     "jersey": "9",
     "stats": {
-      "TOT": "36",
-      "SOLO": "26",
+      "TOT": "41",
+      "SOLO": "31",
       "TFL": "0",
       "SACKS": "0.0"
     }
@@ -22898,10 +23013,10 @@
     "position": null,
     "jersey": "20",
     "stats": {
-      "TOT": "16",
-      "SOLO": "7",
-      "TFL": "1",
-      "SACKS": "0.0"
+      "TOT": "20",
+      "SOLO": "11",
+      "TFL": "3",
+      "SACKS": "1.0"
     }
   },
   {
@@ -22928,8 +23043,8 @@
     "position": null,
     "jersey": "23",
     "stats": {
-      "TOT": "34",
-      "SOLO": "22",
+      "TOT": "36",
+      "SOLO": "24",
       "TFL": "0",
       "SACKS": "0.0"
     }
@@ -22973,8 +23088,8 @@
     "position": null,
     "jersey": "33",
     "stats": {
-      "TOT": "46",
-      "SOLO": "29",
+      "TOT": "54",
+      "SOLO": "36",
       "TFL": "0",
       "SACKS": "0.0"
     }
@@ -23018,8 +23133,8 @@
     "position": null,
     "jersey": "55",
     "stats": {
-      "TOT": "54",
-      "SOLO": "41",
+      "TOT": "58",
+      "SOLO": "45",
       "TFL": "7",
       "SACKS": "2.0"
     }
@@ -23048,9 +23163,9 @@
     "position": null,
     "jersey": "65",
     "stats": {
-      "TOT": "43",
-      "SOLO": "31",
-      "TFL": "10",
+      "TOT": "46",
+      "SOLO": "33",
+      "TFL": "11",
       "SACKS": "3.0"
     }
   },
@@ -23108,7 +23223,7 @@
     "position": null,
     "jersey": "76",
     "stats": {
-      "TOT": "17",
+      "TOT": "18",
       "SOLO": "11",
       "TFL": "5",
       "SACKS": "1.0"
@@ -23123,10 +23238,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "TOT": "497",
-      "SOLO": "327",
-      "TFL": "47",
-      "SACKS": "13.0"
+      "TOT": "532",
+      "SOLO": "356",
+      "TFL": "51",
+      "SACKS": "15.0"
     }
   },
   {
@@ -25527,13 +25642,13 @@
     "position": null,
     "jersey": "9",
     "stats": {
-      "C/ATT": "30/49",
-      "PCT": "61.2%",
-      "YDS": "474",
-      "YPC": "15.8",
-      "TDS": "6",
-      "INT": "3",
-      "RTG": "170.6",
+      "C/ATT": "32/54",
+      "PCT": "59.3%",
+      "YDS": "496",
+      "YPC": "15.5",
+      "TDS": "7",
+      "INT": "4",
+      "RTG": "164.4",
       "TD LG": "46",
       "LONG": "0"
     }
@@ -25587,13 +25702,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "C/ATT": "37/59",
-      "PCT": "62.7%",
-      "YDS": "578",
-      "YPC": "15.6",
-      "TDS": "7",
-      "INT": "3",
-      "RTG": "174.0",
+      "C/ATT": "39/64",
+      "PCT": "60.9%",
+      "YDS": "600",
+      "YPC": "15.4",
+      "TDS": "8",
+      "INT": "4",
+      "RTG": "168.4",
       "TD LG": "56",
       "LONG": "0"
     }
@@ -25624,10 +25739,10 @@
     "position": null,
     "jersey": "5",
     "stats": {
-      "CAR": "120",
-      "YDS": "1572",
-      "YPC": "13.1",
-      "TDS": "28",
+      "CAR": "139",
+      "YDS": "1872",
+      "YPC": "13.5",
+      "TDS": "32",
       "TD LG": "92",
       "LONG": "0"
     }
@@ -25675,9 +25790,9 @@
     "position": null,
     "jersey": "9",
     "stats": {
-      "CAR": "53",
-      "YDS": "336",
-      "YPC": "6.3",
+      "CAR": "67",
+      "YDS": "426",
+      "YPC": "6.4",
       "TDS": "5",
       "TD LG": "0",
       "LONG": "0"
@@ -25777,10 +25892,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "CAR": "218",
-      "YDS": "2153",
-      "YPC": "9.9",
-      "TDS": "35",
+      "CAR": "251",
+      "YDS": "2543",
+      "YPC": "10.1",
+      "TDS": "39",
       "TD LG": "92",
       "LONG": "0"
     }
@@ -25811,10 +25926,10 @@
     "position": null,
     "jersey": "3",
     "stats": {
-      "REC": "9",
-      "YDS": "147",
-      "YPC": "16.3",
-      "TDS": "2",
+      "REC": "11",
+      "YDS": "169",
+      "YPC": "15.4",
+      "TDS": "3",
       "TD LG": "0",
       "LONG": "0"
     }
@@ -25947,10 +26062,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "REC": "37",
-      "YDS": "578",
-      "YPC": "15.6",
-      "TDS": "7",
+      "REC": "39",
+      "YDS": "600",
+      "YPC": "15.4",
+      "TDS": "8",
       "TD LG": "0",
       "LONG": "0"
     }
@@ -25964,8 +26079,8 @@
     "position": null,
     "jersey": "2",
     "stats": {
-      "TOT": "32",
-      "SOLO": "19",
+      "TOT": "40",
+      "SOLO": "23",
       "TFL": "2",
       "SACKS": "0.0"
     }
@@ -25979,9 +26094,9 @@
     "position": null,
     "jersey": "3",
     "stats": {
-      "TOT": "24",
-      "SOLO": "18",
-      "TFL": "1",
+      "TOT": "32",
+      "SOLO": "25",
+      "TFL": "2",
       "SACKS": "0.0"
     }
   },
@@ -25994,8 +26109,8 @@
     "position": null,
     "jersey": "4",
     "stats": {
-      "TOT": "19",
-      "SOLO": "15",
+      "TOT": "22",
+      "SOLO": "17",
       "TFL": "0",
       "SACKS": "0.0"
     }
@@ -26009,10 +26124,10 @@
     "position": null,
     "jersey": "5",
     "stats": {
-      "TOT": "34",
-      "SOLO": "26",
-      "TFL": "12",
-      "SACKS": "0.0"
+      "TOT": "41",
+      "SOLO": "31",
+      "TFL": "13",
+      "SACKS": "1.0"
     }
   },
   {
@@ -26024,8 +26139,8 @@
     "position": null,
     "jersey": "6",
     "stats": {
-      "TOT": "4",
-      "SOLO": "4",
+      "TOT": "9",
+      "SOLO": "8",
       "TFL": "0",
       "SACKS": "0.0"
     }
@@ -26039,8 +26154,8 @@
     "position": null,
     "jersey": "7",
     "stats": {
-      "TOT": "16",
-      "SOLO": "13",
+      "TOT": "20",
+      "SOLO": "16",
       "TFL": "1",
       "SACKS": "1.0"
     }
@@ -26054,8 +26169,8 @@
     "position": null,
     "jersey": "8",
     "stats": {
-      "TOT": "20",
-      "SOLO": "15",
+      "TOT": "25",
+      "SOLO": "19",
       "TFL": "2",
       "SACKS": "1.0"
     }
@@ -26084,8 +26199,8 @@
     "position": null,
     "jersey": "11",
     "stats": {
-      "TOT": "11",
-      "SOLO": "11",
+      "TOT": "15",
+      "SOLO": "13",
       "TFL": "1",
       "SACKS": "0.0"
     }
@@ -26129,8 +26244,8 @@
     "position": null,
     "jersey": "18",
     "stats": {
-      "TOT": "10",
-      "SOLO": "2",
+      "TOT": "21",
+      "SOLO": "10",
       "TFL": "0",
       "SACKS": "0.0"
     }
@@ -26159,8 +26274,8 @@
     "position": null,
     "jersey": "39",
     "stats": {
-      "TOT": "6",
-      "SOLO": "5",
+      "TOT": "7",
+      "SOLO": "6",
       "TFL": "0",
       "SACKS": "0.0"
     }
@@ -26249,9 +26364,9 @@
     "position": null,
     "jersey": "60",
     "stats": {
-      "TOT": "44",
-      "SOLO": "32",
-      "TFL": "7",
+      "TOT": "56",
+      "SOLO": "41",
+      "TFL": "9",
       "SACKS": "1.0"
     }
   },
@@ -26339,10 +26454,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "TOT": "301",
-      "SOLO": "213",
-      "TFL": "43",
-      "SACKS": "6.0"
+      "TOT": "369",
+      "SOLO": "262",
+      "TFL": "47",
+      "SACKS": "7.0"
     }
   },
   {
