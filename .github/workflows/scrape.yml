@@ -54,7 +54,7 @@ jobs:
     # A hung fetch (WIAA stall, npm registry, Playwright download) must
     # not park a runner for the 360-minute default while holding the
     # data-commits lane — on a Friday night that would outlast the slate.
-    timeout-minutes: 45
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v5
 
@@ -80,13 +80,24 @@ jobs:
           # space-separated).
           SPORTS: ${{ github.event.inputs.sport || 'football volleyball boys_soccer' }}
           SEASON: ${{ github.event.inputs.season || '2026-27' }}
+          # The Friday-night 15-minute cron exists to post scores while the
+          # games are on. Stats (Bound, MaxPreps) take 30+ minutes a run and
+          # twice overran the job on 2026-10-09, so that window runs
+          # scores-only; the hourly cron and the daily local refresh carry
+          # the stats. Existing stat lines are kept either way.
+          SCHEDULE: ${{ github.event.schedule }}
         run: |
           FAILED=""
           PARTIAL=""
+          EXTRA=""
+          if [ "$SCHEDULE" = "*/15 0-5 * 1-3,8-12 6" ]; then
+            EXTRA="--no-stats"
+            echo "Friday-night window: scores only (--no-stats)"
+          fi
           for sport in $SPORTS; do
             echo "::group::scraping $sport"
             rc=0
-            python main.py --sport "$sport" --season "$SEASON" || rc=$?
+            python main.py --sport "$sport" --season "$SEASON" $EXTRA || rc=$?
             if [ "$rc" -eq 0 ]; then
               echo "ok: $sport"
             elif [ "$rc" -eq 3 ]; then

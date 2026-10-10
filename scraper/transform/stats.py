@@ -22,6 +22,7 @@ from __future__ import annotations
 
 import re
 import time
+from datetime import datetime, timezone
 from typing import Iterable
 
 from rich.console import Console
@@ -31,6 +32,11 @@ from models.schema import Dataset, Game, GameStatus, Goal, SeasonStat, Sport, St
 from sources import bound, maxpreps, wph
 
 POLITE_DELAY_SECONDS = 0.4
+# MaxPreps re-fetch window (see merge_maxpreps_stats): recent games are
+# re-read every run, older unfilled games for a while longer, hard cap per run.
+MAXPREPS_REFETCH_DAYS = 14
+MAXPREPS_BACKFILL_DAYS = 35
+MAXPREPS_MAX_BOXES = 400
 
 # WIAA codes a forfeit as a 1-0 or 2-0 final in football and basketball.
 # Bound's page for a called-off game lists each team's leaders from the
@@ -354,12 +360,42 @@ def merge_maxpreps_stats(
                 continue
             url_index.setdefault(mp_game.box_score_url, (our_game, mp_game, school.id))
 
+    # Bound the fetch. Every box score used to be re-fetched every run so
+    # late coach uploads would land, and by October volleyball had 1,134 of
+    # them: the full scrape ran past its 45-minute limit twice on a Friday
+    # night (2026-10-09), was cancelled, and committed nothing, so readers
+    # had no finals. Re-fetch only games from the last MAXPREPS_REFETCH_DAYS
+    # (uploads keep arriving for about two weeks), plus older games that
+    # still have no lines within MAXPREPS_BACKFILL_DAYS, newest first, and
+    # never more than MAXPREPS_MAX_BOXES in one run. Skipped games keep the
+    # lines they already have (the caller carries them forward).
+    now = datetime.now(timezone.utc)
+
+    def _age_days(g: Game) -> float:
+        d = g.date if g.date.tzinfo else g.date.replace(tzinfo=timezone.utc)
+        return (now - d).total_seconds() / 86400
+
+    def _wanted(g: Game) -> bool:
+        age = _age_days(g)
+        if age <= MAXPREPS_REFETCH_DAYS:
+            return True
+        return not g.stat_leaders and age <= MAXPREPS_BACKFILL_DAYS
+
+    discovered = len(url_index)
+    url_items = sorted(
+        ((u, v) for u, v in url_index.items() if _wanted(v[0])),
+        key=lambda kv: kv[1][0].date,
+        reverse=True,
+    )[:MAXPREPS_MAX_BOXES]
     if console:
-        console.print(f"  [dim]{len(url_index)} unique box scores to fetch[/dim]")
+        console.print(
+            f"  [dim]{discovered} unique box scores discovered, {len(url_items)} to fetch "
+            f"(last {MAXPREPS_REFETCH_DAYS} days, unfilled to {MAXPREPS_BACKFILL_DAYS}, cap {MAXPREPS_MAX_BOXES})[/dim]"
+        )
 
     matched = 0
     stat_lines_total = 0
-    for url, (game, _mp_game, _school_id) in url_index.items():
+    for url, (game, _mp_game, _school_id) in url_items:
         try:
             box = maxpreps.fetch_box_score(url, sport_path=sport_path)
         except Exception as e:  # noqa: BLE001
