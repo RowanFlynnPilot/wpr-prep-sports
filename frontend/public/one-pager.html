@@ -121,6 +121,7 @@
 
       @page { size: letter; margin: 0; }
       @media print {
+        html { zoom: 0.965; } /* the sheet measures a hair under 11in on screen; keep print to one page */
         body { background: #fff; }
         .sheet { margin: 0; box-shadow: none; }
       }
