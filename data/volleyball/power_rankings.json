@@ -1,7 +1,7 @@
 {
   "sport": "volleyball",
   "season": "2026-27",
-  "generated_at": "2026-10-11T03:50:20.679915-05:00",
+  "generated_at": "2026-10-11T10:44:00.543299-05:00",
   "method": "WPR Power Index v1: 40% W%, 35% SOS, 25% margin (capped per sport)",
   "rankings": [
     {
@@ -103,9 +103,9 @@
       "losses": 8,
       "ties": 0,
       "win_pct": 0.7838,
-      "sos": 0.5505,
+      "sos": 0.5499,
       "avg_margin_capped": 1.35,
-      "score": 68.75,
+      "score": 68.73,
       "movement": 5
     },
     {
@@ -181,9 +181,9 @@
       "losses": 10,
       "ties": 0,
       "win_pct": 0.7059,
-      "sos": 0.5363,
+      "sos": 0.5356,
       "avg_margin_capped": 0.85,
-      "score": 63.06,
+      "score": 63.04,
       "movement": 1
     },
     {
@@ -220,9 +220,9 @@
       "losses": 7,
       "ties": 0,
       "win_pct": 0.7742,
-      "sos": 0.4004,
+      "sos": 0.3997,
       "avg_margin_capped": 1.1,
-      "score": 62.05,
+      "score": 62.03,
       "movement": -3
     },
     {
@@ -285,9 +285,9 @@
       "losses": 13,
       "ties": 0,
       "win_pct": 0.5938,
-      "sos": 0.5412,
+      "sos": 0.5405,
       "avg_margin_capped": 0.44,
-      "score": 57.01,
+      "score": 56.99,
       "movement": 2
     },
     {
@@ -298,9 +298,9 @@
       "losses": 12,
       "ties": 0,
       "win_pct": 0.6,
-      "sos": 0.5442,
+      "sos": 0.5434,
       "avg_margin_capped": 0.2,
-      "score": 56.38,
+      "score": 56.35,
       "movement": -1
     },
     {
@@ -311,9 +311,9 @@
       "losses": 11,
       "ties": 0,
       "win_pct": 0.6071,
-      "sos": 0.4873,
+      "sos": 0.4866,
       "avg_margin_capped": 0.36,
-      "score": 55.33,
+      "score": 55.31,
       "movement": -1
     },
     {
@@ -389,9 +389,9 @@
       "losses": 15,
       "ties": 0,
       "win_pct": 0.5,
-      "sos": 0.4643,
+      "sos": 0.4638,
       "avg_margin_capped": 0.23,
-      "score": 49.72,
+      "score": 49.7,
       "movement": 3
     },
     {
@@ -402,9 +402,9 @@
       "losses": 14,
       "ties": 0,
       "win_pct": 0.5172,
-      "sos": 0.4773,
+      "sos": 0.4766,
       "avg_margin_capped": -0.1,
-      "score": 49.46,
+      "score": 49.44,
       "movement": 3
     },
     {
@@ -441,9 +441,9 @@
       "losses": 16,
       "ties": 0,
       "win_pct": 0.5294,
-      "sos": 0.4013,
+      "sos": 0.4006,
       "avg_margin_capped": 0.29,
-      "score": 48.95,
+      "score": 48.92,
       "movement": -2
     },
     {
@@ -480,9 +480,9 @@
       "losses": 14,
       "ties": 0,
       "win_pct": 0.44,
-      "sos": 0.5612,
+      "sos": 0.5601,
       "avg_margin_capped": -0.4,
-      "score": 48.08,
+      "score": 48.04,
       "movement": 3
     },
     {
@@ -506,9 +506,9 @@
       "losses": 15,
       "ties": 0,
       "win_pct": 0.5,
-      "sos": 0.4032,
+      "sos": 0.4021,
       "avg_margin_capped": 0.1,
-      "score": 47.03,
+      "score": 46.99,
       "movement": -1
     },
     {
@@ -552,19 +552,6 @@
     },
     {
       "rank": 43,
-      "school_id": "loyal",
-      "school_name": "Loyal",
-      "wins": 9,
-      "losses": 17,
-      "ties": 0,
-      "win_pct": 0.3462,
-      "sos": 0.5725,
-      "avg_margin_capped": -0.69,
-      "score": 43.5,
-      "movement": 8
-    },
-    {
-      "rank": 44,
       "school_id": "eau-claire-north",
       "school_name": "Eau Claire North",
       "wins": 10,
@@ -574,7 +561,20 @@
       "sos": 0.5971,
       "avg_margin_capped": -0.84,
       "score": 42.81,
-      "movement": 1
+      "movement": 2
+    },
+    {
+      "rank": 44,
+      "school_id": "loyal",
+      "school_name": "Loyal",
+      "wins": 9,
+      "losses": 18,
+      "ties": 0,
+      "win_pct": 0.3333,
+      "sos": 0.5725,
+      "avg_margin_capped": -0.74,
+      "score": 42.78,
+      "movement": 7
     },
     {
       "rank": 45,
@@ -688,9 +688,9 @@
       "losses": 15,
       "ties": 0,
       "win_pct": 0.3182,
-      "sos": 0.4434,
+      "sos": 0.4424,
       "avg_margin_capped": -0.86,
-      "score": 37.15,
+      "score": 37.11,
       "movement": -3
     },
     {
