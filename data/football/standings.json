@@ -18,6 +18,18 @@
         "points_against": 69
       },
       {
+        "school_id": "wausau-east",
+        "name": "Wausau East",
+        "conference_wins": 5,
+        "conference_losses": 1,
+        "conference_ties": 0,
+        "overall_wins": 6,
+        "overall_losses": 2,
+        "overall_ties": 0,
+        "points_for": 163,
+        "points_against": 162
+      },
+      {
         "school_id": "merrill",
         "name": "Merrill",
         "conference_wins": 5,
@@ -28,18 +40,6 @@
         "overall_ties": 0,
         "points_for": 188,
         "points_against": 155
-      },
-      {
-        "school_id": "wausau-east",
-        "name": "Wausau East",
-        "conference_wins": 4,
-        "conference_losses": 1,
-        "conference_ties": 0,
-        "overall_wins": 5,
-        "overall_losses": 2,
-        "overall_ties": 0,
-        "points_for": 138,
-        "points_against": 141
       },
       {
         "school_id": "northland-pines",
@@ -69,13 +69,13 @@
         "school_id": "rhinelander",
         "name": "Rhinelander",
         "conference_wins": 2,
-        "conference_losses": 3,
+        "conference_losses": 4,
         "conference_ties": 0,
         "overall_wins": 4,
-        "overall_losses": 3,
+        "overall_losses": 4,
         "overall_ties": 0,
-        "points_for": 157,
-        "points_against": 188
+        "points_for": 178,
+        "points_against": 213
       },
       {
         "school_id": "lakeland",
