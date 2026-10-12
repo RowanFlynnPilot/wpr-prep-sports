@@ -1,7 +1,7 @@
 {
   "sport": "volleyball",
   "season": "2026-27",
-  "generated_at": "2026-10-11T15:21:02.167032-05:00",
+  "generated_at": "2026-10-11T19:36:01.238233-05:00",
   "method": "WPR Power Index v1: 40% W%, 35% SOS, 25% margin (capped per sport)",
   "rankings": [
     {
@@ -207,9 +207,9 @@
       "losses": 9,
       "ties": 0,
       "win_pct": 0.7097,
-      "sos": 0.5248,
+      "sos": 0.526,
       "avg_margin_capped": 0.81,
-      "score": 62.62,
+      "score": 62.66,
       "movement": 5
     },
     {
@@ -220,9 +220,9 @@
       "losses": 7,
       "ties": 0,
       "win_pct": 0.7742,
-      "sos": 0.4006,
+      "sos": 0.402,
       "avg_margin_capped": 1.1,
-      "score": 62.06,
+      "score": 62.11,
       "movement": -3
     },
     {
@@ -285,9 +285,9 @@
       "losses": 13,
       "ties": 0,
       "win_pct": 0.5938,
-      "sos": 0.5405,
+      "sos": 0.5419,
       "avg_margin_capped": 0.44,
-      "score": 56.99,
+      "score": 57.04,
       "movement": 2
     },
     {
@@ -311,9 +311,9 @@
       "losses": 11,
       "ties": 0,
       "win_pct": 0.6071,
-      "sos": 0.4866,
+      "sos": 0.4896,
       "avg_margin_capped": 0.36,
-      "score": 55.31,
+      "score": 55.41,
       "movement": -1
     },
     {
@@ -415,9 +415,9 @@
       "losses": 14,
       "ties": 0,
       "win_pct": 0.5172,
-      "sos": 0.4766,
+      "sos": 0.478,
       "avg_margin_capped": -0.1,
-      "score": 49.44,
+      "score": 49.49,
       "movement": 2
     },
     {
@@ -571,9 +571,9 @@
       "losses": 21,
       "ties": 0,
       "win_pct": 0.3226,
-      "sos": 0.5928,
+      "sos": 0.5947,
       "avg_margin_capped": -0.84,
-      "score": 42.66,
+      "score": 42.72,
       "movement": 1
     },
     {
@@ -675,13 +675,26 @@
       "losses": 23,
       "ties": 0,
       "win_pct": 0.3235,
-      "sos": 0.4695,
+      "sos": 0.4708,
       "avg_margin_capped": -0.85,
-      "score": 38.32,
+      "score": 38.36,
       "movement": -3
     },
     {
       "rank": 53,
+      "school_id": "greenwood",
+      "school_name": "Greenwood",
+      "wins": 7,
+      "losses": 15,
+      "ties": 0,
+      "win_pct": 0.3182,
+      "sos": 0.4444,
+      "avg_margin_capped": -0.86,
+      "score": 37.18,
+      "movement": -3
+    },
+    {
+      "rank": 54,
       "school_id": "rosholt",
       "school_name": "Rosholt",
       "wins": 8,
@@ -691,20 +704,7 @@
       "sos": 0.4528,
       "avg_margin_capped": -0.85,
       "score": 37.13,
-      "movement": 0
-    },
-    {
-      "rank": 54,
-      "school_id": "greenwood",
-      "school_name": "Greenwood",
-      "wins": 7,
-      "losses": 15,
-      "ties": 0,
-      "win_pct": 0.3182,
-      "sos": 0.4424,
-      "avg_margin_capped": -0.86,
-      "score": 37.11,
-      "movement": -4
+      "movement": -1
     },
     {
       "rank": 55,
@@ -760,6 +760,19 @@
     },
     {
       "rank": 59,
+      "school_id": "flambeau",
+      "school_name": "Flambeau",
+      "wins": 5,
+      "losses": 18,
+      "ties": 0,
+      "win_pct": 0.2174,
+      "sos": 0.4973,
+      "avg_margin_capped": -1.09,
+      "score": 34.07,
+      "movement": -5
+    },
+    {
+      "rank": 60,
       "school_id": "wausau-east",
       "school_name": "Wausau East",
       "wins": 5,
@@ -769,10 +782,10 @@
       "sos": 0.5466,
       "avg_margin_capped": -1.48,
       "score": 32.87,
-      "movement": 2
+      "movement": 1
     },
     {
-      "rank": 60,
+      "rank": 61,
       "school_id": "menominee-nation",
       "school_name": "Menominee Nation",
       "wins": 1,
@@ -782,10 +795,10 @@
       "sos": 0.7472,
       "avg_margin_capped": -2.06,
       "score": 32.56,
-      "movement": 3
+      "movement": 2
     },
     {
-      "rank": 61,
+      "rank": 62,
       "school_id": "almond-bancroft",
       "school_name": "Almond-Bancroft",
       "wins": 5,
@@ -795,20 +808,7 @@
       "sos": 0.5217,
       "avg_margin_capped": -1.52,
       "score": 32.43,
-      "movement": -15
-    },
-    {
-      "rank": 62,
-      "school_id": "flambeau",
-      "school_name": "Flambeau",
-      "wins": 4,
-      "losses": 17,
-      "ties": 0,
-      "win_pct": 0.1905,
-      "sos": 0.4973,
-      "avg_margin_capped": -1.24,
-      "score": 32.37,
-      "movement": -8
+      "movement": -16
     },
     {
       "rank": 63,
@@ -831,9 +831,9 @@
       "losses": 20,
       "ties": 0,
       "win_pct": 0.2,
-      "sos": 0.4371,
+      "sos": 0.4405,
       "avg_margin_capped": -1.16,
-      "score": 30.97,
+      "score": 31.08,
       "movement": 1
     },
     {
