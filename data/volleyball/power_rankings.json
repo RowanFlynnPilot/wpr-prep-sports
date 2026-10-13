@@ -1,7 +1,7 @@
 {
   "sport": "volleyball",
   "season": "2026-27",
-  "generated_at": "2026-10-12T12:54:50.668662-05:00",
+  "generated_at": "2026-10-12T19:43:21.147018-05:00",
   "method": "WPR Power Index v1: 40% W%, 35% SOS, 25% margin (capped per sport)",
   "rankings": [
     {
@@ -188,19 +188,6 @@
     },
     {
       "rank": 15,
-      "school_id": "marion",
-      "school_name": "Marion",
-      "wins": 21,
-      "losses": 2,
-      "ties": 0,
-      "win_pct": 0.913,
-      "sos": 0.146,
-      "avg_margin_capped": 2.04,
-      "score": 62.65,
-      "movement": 0
-    },
-    {
-      "rank": 16,
       "school_id": "phillips",
       "school_name": "Phillips",
       "wins": 22,
@@ -210,7 +197,20 @@
       "sos": 0.5256,
       "avg_margin_capped": 0.81,
       "score": 62.64,
-      "movement": 0
+      "movement": 1
+    },
+    {
+      "rank": 16,
+      "school_id": "marion",
+      "school_name": "Marion",
+      "wins": 21,
+      "losses": 2,
+      "ties": 0,
+      "win_pct": 0.913,
+      "sos": 0.1436,
+      "avg_margin_capped": 2.04,
+      "score": 62.56,
+      "movement": -1
     },
     {
       "rank": 17,
@@ -363,9 +363,9 @@
       "losses": 10,
       "ties": 0,
       "win_pct": 0.6,
-      "sos": 0.3438,
+      "sos": 0.3422,
       "avg_margin_capped": 0.48,
-      "score": 50.53,
+      "score": 50.48,
       "movement": 0
     },
     {
@@ -376,9 +376,9 @@
       "losses": 16,
       "ties": 0,
       "win_pct": 0.4839,
-      "sos": 0.517,
+      "sos": 0.5149,
       "avg_margin_capped": 0.0,
-      "score": 49.95,
+      "score": 49.88,
       "movement": 0
     },
     {
@@ -441,9 +441,9 @@
       "losses": 16,
       "ties": 0,
       "win_pct": 0.5294,
-      "sos": 0.4006,
+      "sos": 0.3997,
       "avg_margin_capped": 0.29,
-      "score": 48.92,
+      "score": 48.89,
       "movement": 0
     },
     {
@@ -454,9 +454,9 @@
       "losses": 16,
       "ties": 0,
       "win_pct": 0.4483,
-      "sos": 0.5301,
+      "sos": 0.5294,
       "avg_margin_capped": -0.07,
-      "score": 48.7,
+      "score": 48.67,
       "movement": 0
     },
     {
@@ -561,7 +561,7 @@
       "sos": 0.5949,
       "avg_margin_capped": -0.84,
       "score": 42.73,
-      "movement": 1
+      "movement": 0
     },
     {
       "rank": 44,
@@ -571,10 +571,10 @@
       "losses": 20,
       "ties": 0,
       "win_pct": 0.375,
-      "sos": 0.4811,
+      "sos": 0.4785,
       "avg_margin_capped": -0.41,
-      "score": 42.65,
-      "movement": 1
+      "score": 42.55,
+      "movement": 0
     },
     {
       "rank": 45,
@@ -587,7 +587,7 @@
       "sos": 0.5725,
       "avg_margin_capped": -0.79,
       "score": 42.12,
-      "movement": -2
+      "movement": 0
     },
     {
       "rank": 46,
@@ -623,10 +623,10 @@
       "losses": 23,
       "ties": 0,
       "win_pct": 0.3235,
-      "sos": 0.5235,
+      "sos": 0.523,
       "avg_margin_capped": -0.85,
-      "score": 40.21,
-      "movement": 1
+      "score": 40.19,
+      "movement": 0
     },
     {
       "rank": 49,
@@ -639,7 +639,7 @@
       "sos": 0.4491,
       "avg_margin_capped": -0.61,
       "score": 39.98,
-      "movement": -1
+      "movement": 0
     },
     {
       "rank": 50,
@@ -656,19 +656,6 @@
     },
     {
       "rank": 51,
-      "school_id": "wild-rose",
-      "school_name": "Wild Rose",
-      "wins": 8,
-      "losses": 15,
-      "ties": 0,
-      "win_pct": 0.3478,
-      "sos": 0.437,
-      "avg_margin_capped": -0.65,
-      "score": 38.99,
-      "movement": 0
-    },
-    {
-      "rank": 52,
       "school_id": "chequamegon",
       "school_name": "Chequamegon",
       "wins": 11,
@@ -678,7 +665,20 @@
       "sos": 0.4714,
       "avg_margin_capped": -0.85,
       "score": 38.39,
-      "movement": 0
+      "movement": 1
+    },
+    {
+      "rank": 52,
+      "school_id": "wild-rose",
+      "school_name": "Wild Rose",
+      "wins": 8,
+      "losses": 16,
+      "ties": 0,
+      "win_pct": 0.3333,
+      "sos": 0.437,
+      "avg_margin_capped": -0.67,
+      "score": 38.35,
+      "movement": -1
     },
     {
       "rank": 53,
@@ -701,9 +701,9 @@
       "losses": 18,
       "ties": 0,
       "win_pct": 0.3077,
-      "sos": 0.4528,
+      "sos": 0.4509,
       "avg_margin_capped": -0.85,
-      "score": 37.13,
+      "score": 37.06,
       "movement": 0
     },
     {
@@ -727,9 +727,9 @@
       "losses": 13,
       "ties": 0,
       "win_pct": 0.381,
-      "sos": 0.3503,
+      "sos": 0.3492,
       "avg_margin_capped": -0.81,
-      "score": 36.63,
+      "score": 36.59,
       "movement": 0
     },
     {
@@ -792,9 +792,9 @@
       "losses": 20,
       "ties": 0,
       "win_pct": 0.2,
-      "sos": 0.5217,
+      "sos": 0.5203,
       "avg_margin_capped": -1.52,
-      "score": 32.43,
+      "score": 32.38,
       "movement": 1
     },
     {

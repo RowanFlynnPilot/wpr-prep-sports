@@ -1,1701 +1,5 @@
 [
   {
-    "school_id": "chequamegon",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Abagail Brenholt",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "4",
-      "KLS": "1",
-      "ATT": "2",
-      "E": "0",
-      "SP": "11",
-      "AST": "4",
-      "EFF": ".500"
-    }
-  },
-  {
-    "school_id": "chequamegon",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Aly Nichols",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "5",
-      "KLS": "20",
-      "ATT": "67",
-      "E": "11",
-      "SP": "13",
-      "EFF": ".134"
-    }
-  },
-  {
-    "school_id": "chequamegon",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Gretchen Eder",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "5",
-      "KLS": "23",
-      "ATT": "69",
-      "E": "4",
-      "SP": "13",
-      "EFF": ".275"
-    }
-  },
-  {
-    "school_id": "chequamegon",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Jalen Brunell",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "5",
-      "KLS": "6",
-      "ATT": "14",
-      "E": "1",
-      "SP": "13",
-      "AST": "61",
-      "EFF": ".357"
-    }
-  },
-  {
-    "school_id": "chequamegon",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Kaydence Mckuen",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "5",
-      "KLS": "15",
-      "ATT": "59",
-      "E": "13",
-      "SP": "13",
-      "EFF": ".034"
-    }
-  },
-  {
-    "school_id": "chequamegon",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Cc Johnson",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "4",
-      "KLS": "4",
-      "ATT": "20",
-      "E": "0",
-      "SP": "11",
-      "AST": "1",
-      "EFF": ".200"
-    }
-  },
-  {
-    "school_id": "chequamegon",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Rachel Santiago",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "3",
-      "KLS": "3",
-      "ATT": "15",
-      "E": "5",
-      "SP": "8",
-      "EFF": "-0.133"
-    }
-  },
-  {
-    "school_id": "chequamegon",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Abagail Brenholt",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "ACE": "3",
-      "SP": "7"
-    }
-  },
-  {
-    "school_id": "chequamegon",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Aly Nichols",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "ACE": "6",
-      "SP": "6"
-    }
-  },
-  {
-    "school_id": "chequamegon",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Jozlyn Nelson",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "ACE": "2",
-      "SP": "3"
-    }
-  },
-  {
-    "school_id": "chequamegon",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Gretchen Eder",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "ACE": "5",
-      "SP": "6"
-    }
-  },
-  {
-    "school_id": "chequamegon",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Jalen Brunell",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "4",
-      "ACE": "9",
-      "SP": "11"
-    }
-  },
-  {
-    "school_id": "chequamegon",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Gretchen Eder",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "5",
-      "BLK": "11",
-      "SP": "13",
-      "DIG": "10"
-    }
-  },
-  {
-    "school_id": "chequamegon",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Cc Johnson",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "3",
-      "BLK": "2",
-      "SP": "9",
-      "DIG": "4"
-    }
-  },
-  {
-    "school_id": "chequamegon",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Rachel Santiago",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "3",
-      "BLK": "1",
-      "SP": "7",
-      "DIG": "2"
-    }
-  },
-  {
-    "school_id": "chequamegon",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Abagail Brenholt",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "5",
-      "DIG": "69",
-      "SP": "13"
-    }
-  },
-  {
-    "school_id": "chequamegon",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Aly Nichols",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "5",
-      "DIG": "21",
-      "SP": "13"
-    }
-  },
-  {
-    "school_id": "chequamegon",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Jozlyn Nelson",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "5",
-      "DIG": "13",
-      "SP": "7"
-    }
-  },
-  {
-    "school_id": "chequamegon",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Jalen Brunell",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "5",
-      "DIG": "19",
-      "SP": "13",
-      "BLK": "2"
-    }
-  },
-  {
-    "school_id": "chequamegon",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Kaydence Mckuen",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "5",
-      "DIG": "26",
-      "SP": "13"
-    }
-  },
-  {
-    "school_id": "chequamegon",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Mia Singer",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "3",
-      "DIG": "6",
-      "SP": "5"
-    }
-  },
-  {
-    "school_id": "athens",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Ayva Haehlke",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "4",
-      "KLS": "14",
-      "ATT": "60",
-      "E": "8",
-      "SP": "16",
-      "AST": "3",
-      "EFF": ".100"
-    }
-  },
-  {
-    "school_id": "athens",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Karly Eckert",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "4",
-      "KLS": "30",
-      "ATT": "108",
-      "E": "18",
-      "SP": "16",
-      "AST": "50",
-      "EFF": ".111"
-    }
-  },
-  {
-    "school_id": "athens",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Brynley Louis",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "4",
-      "KLS": "33",
-      "ATT": "114",
-      "E": "16",
-      "SP": "16",
-      "AST": "4",
-      "EFF": ".149"
-    }
-  },
-  {
-    "school_id": "athens",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Jaelin Switlick",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "4",
-      "KLS": "38",
-      "ATT": "133",
-      "E": "23",
-      "SP": "16",
-      "AST": "3",
-      "EFF": ".113"
-    }
-  },
-  {
-    "school_id": "athens",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Kenzie Woller",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "4",
-      "KLS": "1",
-      "ATT": "6",
-      "E": "0",
-      "SP": "16",
-      "AST": "59",
-      "EFF": ".167"
-    }
-  },
-  {
-    "school_id": "athens",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Brooklyn Hein",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "4",
-      "KLS": "13",
-      "ATT": "44",
-      "E": "10",
-      "SP": "16",
-      "AST": "1",
-      "EFF": ".068"
-    }
-  },
-  {
-    "school_id": "athens",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Brinley Kornack",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "3",
-      "KLS": "6",
-      "ATT": "26",
-      "E": "0",
-      "SP": "10",
-      "AST": "6",
-      "EFF": ".231"
-    }
-  },
-  {
-    "school_id": "athens",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Autumn Diethelm",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "KLS": "3",
-      "ATT": "16",
-      "E": "6",
-      "SP": "5",
-      "AST": "3",
-      "EFF": "-0.188"
-    }
-  },
-  {
-    "school_id": "athens",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Jaci Hart",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "4",
-      "ACE": "6",
-      "SP": "16"
-    }
-  },
-  {
-    "school_id": "athens",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Karly Eckert",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "4",
-      "ACE": "11",
-      "SP": "16"
-    }
-  },
-  {
-    "school_id": "athens",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Kenzie Woller",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "4",
-      "ACE": "8",
-      "SP": "16"
-    }
-  },
-  {
-    "school_id": "athens",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Brinley Kornack",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "1",
-      "ACE": "1",
-      "SP": "2"
-    }
-  },
-  {
-    "school_id": "athens",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Ayva Haehlke",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "4",
-      "BLK": "7",
-      "SP": "16",
-      "DIG": "11"
-    }
-  },
-  {
-    "school_id": "athens",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Brooklyn Hein",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "4",
-      "BLK": "3",
-      "SP": "16",
-      "DIG": "6"
-    }
-  },
-  {
-    "school_id": "athens",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Jaci Hart",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "4",
-      "DIG": "37",
-      "SP": "16"
-    }
-  },
-  {
-    "school_id": "athens",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Karly Eckert",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "4",
-      "DIG": "46",
-      "SP": "16",
-      "BLK": "2"
-    }
-  },
-  {
-    "school_id": "athens",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Brynley Louis",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "4",
-      "DIG": "64",
-      "SP": "16",
-      "BLK": "1"
-    }
-  },
-  {
-    "school_id": "athens",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Jaelin Switlick",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "4",
-      "DIG": "46",
-      "SP": "16",
-      "BLK": "2"
-    }
-  },
-  {
-    "school_id": "athens",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Kenzie Woller",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "4",
-      "DIG": "19",
-      "SP": "16"
-    }
-  },
-  {
-    "school_id": "athens",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Brinley Kornack",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "4",
-      "DIG": "5",
-      "SP": "13",
-      "BLK": "2"
-    }
-  },
-  {
-    "school_id": "athens",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Brooklyn Westfall",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "4",
-      "DIG": "38",
-      "SP": "15"
-    }
-  },
-  {
-    "school_id": "athens",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Autumn Diethelm",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "1",
-      "DIG": "1",
-      "SP": "3"
-    }
-  },
-  {
-    "school_id": "athens",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Brooklyn Westfall",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "AST": "2",
-      "SP": "7",
-      "KLS": "2",
-      "ATT": "3",
-      "E": "0",
-      "EFF": ".667"
-    }
-  },
-  {
-    "school_id": "port-edwards",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Claire Duckart",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "KLS": "3",
-      "ATT": "11",
-      "SP": "6",
-      "AST": "7",
-      "E": "3",
-      "EFF": ".000"
-    }
-  },
-  {
-    "school_id": "port-edwards",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Ella Bender",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "1",
-      "KLS": "2",
-      "ATT": "9",
-      "E": "1",
-      "SP": "3",
-      "EFF": ".111"
-    }
-  },
-  {
-    "school_id": "port-edwards",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Aubreigh Martinson",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "KLS": "4",
-      "ATT": "17",
-      "E": "4",
-      "SP": "7",
-      "EFF": ".000"
-    }
-  },
-  {
-    "school_id": "port-edwards",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Ellise Irwin",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "KLS": "16",
-      "ATT": "40",
-      "E": "7",
-      "SP": "7",
-      "EFF": ".225"
-    }
-  },
-  {
-    "school_id": "port-edwards",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Emma Baumgart",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "KLS": "4",
-      "ATT": "25",
-      "E": "4",
-      "SP": "7",
-      "EFF": ".000"
-    }
-  },
-  {
-    "school_id": "port-edwards",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Mckenzy Smith",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "KLS": "11",
-      "ATT": "49",
-      "E": "11",
-      "SP": "7",
-      "AST": "22",
-      "EFF": ".000"
-    }
-  },
-  {
-    "school_id": "port-edwards",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Makenzie Mykisen",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "KLS": "1",
-      "ATT": "2",
-      "SP": "4",
-      "AST": "10",
-      "EFF": ".500"
-    }
-  },
-  {
-    "school_id": "port-edwards",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Brooke Altman",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "1",
-      "KLS": "1",
-      "ATT": "5",
-      "E": "1",
-      "SP": "3",
-      "EFF": ".000"
-    }
-  },
-  {
-    "school_id": "port-edwards",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Mckenzy Smith",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "ACE": "3",
-      "SP": "7"
-    }
-  },
-  {
-    "school_id": "port-edwards",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Makenzie Mykisen",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "1",
-      "ACE": "1",
-      "SP": "2"
-    }
-  },
-  {
-    "school_id": "port-edwards",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Ellise Irwin",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "BLK": "10",
-      "SP": "7",
-      "DIG": "4"
-    }
-  },
-  {
-    "school_id": "port-edwards",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Mckenzy Smith",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "BLK": "5",
-      "SP": "7",
-      "DIG": "25"
-    }
-  },
-  {
-    "school_id": "port-edwards",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Claire Duckart",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "DIG": "6",
-      "SP": "6",
-      "BLK": "3"
-    }
-  },
-  {
-    "school_id": "port-edwards",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Ella Bender",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "1",
-      "DIG": "2",
-      "SP": "3"
-    }
-  },
-  {
-    "school_id": "port-edwards",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Aubreigh Martinson",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "DIG": "7",
-      "SP": "7",
-      "BLK": "2"
-    }
-  },
-  {
-    "school_id": "port-edwards",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Kaelyn Green",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "DIG": "13",
-      "SP": "5"
-    }
-  },
-  {
-    "school_id": "port-edwards",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Valedia Hernandez",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "DIG": "10",
-      "SP": "6"
-    }
-  },
-  {
-    "school_id": "port-edwards",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Emma Baumgart",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "DIG": "3",
-      "SP": "7",
-      "BLK": "5"
-    }
-  },
-  {
-    "school_id": "port-edwards",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Makenzie Mykisen",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "DIG": "7",
-      "SP": "4"
-    }
-  },
-  {
-    "school_id": "port-edwards",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Brooke Altman",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "DIG": "3",
-      "SP": "4",
-      "BLK": "1"
-    }
-  },
-  {
-    "school_id": "port-edwards",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Hayden Kleifgen",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "DIG": "30",
-      "SP": "7"
-    }
-  },
-  {
-    "school_id": "port-edwards",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Hayden Kleifgen",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "AST": "3",
-      "SP": "7"
-    }
-  },
-  {
-    "school_id": "colby",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Mckenzi Meyer",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "KLS": "8",
-      "ATT": "37",
-      "E": "6",
-      "SP": "6",
-      "AST": "1",
-      "EFF": ".054"
-    }
-  },
-  {
-    "school_id": "colby",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Cadence Meyer",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "KLS": "12",
-      "ATT": "24",
-      "E": "2",
-      "SP": "6",
-      "AST": "24",
-      "EFF": ".417"
-    }
-  },
-  {
-    "school_id": "colby",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Taebyn Lieders",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "KLS": "10",
-      "ATT": "18",
-      "E": "3",
-      "SP": "5",
-      "EFF": ".389"
-    }
-  },
-  {
-    "school_id": "colby",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Ava Geiger",
-    "player_year": "FR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "1",
-      "KLS": "2",
-      "ATT": "8",
-      "E": "2",
-      "SP": "3",
-      "AST": "1",
-      "EFF": ".000"
-    }
-  },
-  {
-    "school_id": "colby",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Gabby Kaiser",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "KLS": "7",
-      "ATT": "18",
-      "E": "2",
-      "SP": "5",
-      "EFF": ".278"
-    }
-  },
-  {
-    "school_id": "colby",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Zoe Kaiser",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "KLS": "10",
-      "ATT": "38",
-      "E": "3",
-      "SP": "6",
-      "AST": "32",
-      "EFF": ".184"
-    }
-  },
-  {
-    "school_id": "colby",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Lillie Oestreich",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "KLS": "15",
-      "ATT": "55",
-      "E": "10",
-      "SP": "6",
-      "EFF": ".091"
-    }
-  },
-  {
-    "school_id": "colby",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Mckenzi Meyer",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "1",
-      "ACE": "4",
-      "SP": "3"
-    }
-  },
-  {
-    "school_id": "colby",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Cadence Meyer",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "ACE": "2",
-      "SP": "6"
-    }
-  },
-  {
-    "school_id": "colby",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Zoe Kaiser",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "1",
-      "ACE": "1",
-      "SP": "3"
-    }
-  },
-  {
-    "school_id": "colby",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Rylee Carr",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "ACE": "7",
-      "SP": "6"
-    }
-  },
-  {
-    "school_id": "colby",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Jada Voelker",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "ACE": "5",
-      "SP": "6"
-    }
-  },
-  {
-    "school_id": "colby",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Cadence Meyer",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "BLK": "1",
-      "SP": "6",
-      "DIG": "21"
-    }
-  },
-  {
-    "school_id": "colby",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Taebyn Lieders",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "BLK": "3",
-      "SP": "5",
-      "DIG": "4"
-    }
-  },
-  {
-    "school_id": "colby",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Gabby Kaiser",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "BLK": "2",
-      "SP": "5",
-      "DIG": "2"
-    }
-  },
-  {
-    "school_id": "colby",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Zoe Kaiser",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "BLK": "2",
-      "SP": "6",
-      "DIG": "14"
-    }
-  },
-  {
-    "school_id": "colby",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Lillie Oestreich",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "BLK": "1",
-      "SP": "6",
-      "DIG": "7"
-    }
-  },
-  {
-    "school_id": "colby",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Mckenzi Meyer",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "DIG": "22",
-      "SP": "6"
-    }
-  },
-  {
-    "school_id": "colby",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Rylee Carr",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "DIG": "28",
-      "SP": "6"
-    }
-  },
-  {
-    "school_id": "colby",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Calleigh Cook",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "DIG": "15",
-      "SP": "6"
-    }
-  },
-  {
-    "school_id": "colby",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Elizabeth Perez",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "1",
-      "DIG": "1",
-      "SP": "1"
-    }
-  },
-  {
-    "school_id": "colby",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Jada Voelker",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "DIG": "4",
-      "SP": "6"
-    }
-  },
-  {
-    "school_id": "colby",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Rylee Carr",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "AST": "5",
-      "SP": "6"
-    }
-  },
-  {
-    "school_id": "menomonie",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Jai Hasse",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "4",
-      "KLS": "10",
-      "ATT": "35",
-      "E": "5",
-      "SP": "10",
-      "EFF": ".143"
-    }
-  },
-  {
-    "school_id": "menomonie",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Mya Romsos",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "6",
-      "KLS": "25",
-      "ATT": "80",
-      "E": "26",
-      "SP": "20",
-      "EFF": "-0.013"
-    }
-  },
-  {
-    "school_id": "menomonie",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Jordan Ohman",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "6",
-      "KLS": "50",
-      "ATT": "125",
-      "E": "23",
-      "SP": "19",
-      "EFF": ".216"
-    }
-  },
-  {
-    "school_id": "menomonie",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Gracie Miller",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "6",
-      "KLS": "16",
-      "ATT": "81",
-      "E": "24",
-      "SP": "20",
-      "EFF": "-0.099"
-    }
-  },
-  {
-    "school_id": "menomonie",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Morgan Fanetti",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "6",
-      "KLS": "38",
-      "ATT": "117",
-      "E": "31",
-      "SP": "20",
-      "EFF": ".060"
-    }
-  },
-  {
-    "school_id": "menomonie",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Mariana Ramirez",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "5",
-      "KLS": "23",
-      "ATT": "46",
-      "E": "5",
-      "SP": "17",
-      "EFF": ".391"
-    }
-  },
-  {
-    "school_id": "menomonie",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Jasaiah Lor",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "6",
-      "ACE": "9",
-      "SP": "18"
-    }
-  },
-  {
-    "school_id": "menomonie",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Elsa Elliott",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "ACE": "2",
-      "SP": "8"
-    }
-  },
-  {
-    "school_id": "menomonie",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Mya Romsos",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "ACE": "5",
-      "SP": "8"
-    }
-  },
-  {
-    "school_id": "menomonie",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Hannah Tireman",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "4",
-      "ACE": "7",
-      "SP": "14"
-    }
-  },
-  {
-    "school_id": "menomonie",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Gracie Miller",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "BLK": "1",
-      "SP": "6",
-      "DIG": "7"
-    }
-  },
-  {
-    "school_id": "menomonie",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Mariana Ramirez",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "4",
-      "BLK": "8",
-      "SP": "15",
-      "DIG": "5"
-    }
-  },
-  {
-    "school_id": "menomonie",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Jasaiah Lor",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "5",
-      "DIG": "34",
-      "SP": "16",
-      "BLK": "5"
-    }
-  },
-  {
-    "school_id": "menomonie",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Jai Hasse",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "3",
-      "DIG": "5",
-      "SP": "8"
-    }
-  },
-  {
-    "school_id": "menomonie",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Elsa Elliott",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "4",
-      "DIG": "24",
-      "SP": "13"
-    }
-  },
-  {
-    "school_id": "menomonie",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Mya Romsos",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "5",
-      "DIG": "23",
-      "SP": "17",
-      "BLK": "3"
-    }
-  },
-  {
-    "school_id": "menomonie",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Jordan Ohman",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "6",
-      "DIG": "16",
-      "SP": "19",
-      "BLK": "1"
-    }
-  },
-  {
-    "school_id": "menomonie",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Hannah Tireman",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "5",
-      "DIG": "24",
-      "SP": "17"
-    }
-  },
-  {
-    "school_id": "menomonie",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Morgan Fanetti",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "6",
-      "DIG": "15",
-      "SP": "20",
-      "BLK": "3"
-    }
-  },
-  {
-    "school_id": "menomonie",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Hannah Tireman",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "6",
-      "AST": "75",
-      "SP": "19"
-    }
-  },
-  {
-    "school_id": "menomonie",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Sophia Mcnally",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "4",
-      "AST": "53",
-      "SP": "14"
-    }
-  },
-  {
     "school_id": "rosholt",
     "sport": "volleyball",
     "category": "Volleyball Offense",
@@ -3592,13 +1896,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "KLS": "4",
-      "ATT": "16",
-      "E": "1",
-      "SP": "8",
-      "AST": "37",
-      "EFF": ".188"
+      "GP": "5",
+      "KLS": "6",
+      "ATT": "29",
+      "E": "4",
+      "SP": "15",
+      "AST": "82",
+      "EFF": ".069"
     }
   },
   {
@@ -3610,12 +1914,12 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "KLS": "17",
-      "ATT": "59",
-      "E": "15",
-      "SP": "8",
-      "EFF": ".034"
+      "GP": "5",
+      "KLS": "34",
+      "ATT": "111",
+      "E": "28",
+      "SP": "15",
+      "EFF": ".054"
     }
   },
   {
@@ -3627,11 +1931,11 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "KLS": "5",
-      "ATT": "25",
-      "E": "7",
-      "SP": "6",
+      "GP": "4",
+      "KLS": "12",
+      "ATT": "50",
+      "E": "16",
+      "SP": "13",
       "AST": "1",
       "EFF": "-0.080"
     }
@@ -3662,13 +1966,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "KLS": "7",
-      "ATT": "26",
-      "E": "5",
-      "SP": "8",
+      "GP": "5",
+      "KLS": "10",
+      "ATT": "54",
+      "E": "11",
+      "SP": "15",
       "AST": "1",
-      "EFF": ".077"
+      "EFF": "-0.019"
     }
   },
   {
@@ -3680,13 +1984,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "KLS": "12",
-      "ATT": "81",
-      "E": "17",
-      "SP": "8",
-      "AST": "1",
-      "EFF": "-0.062"
+      "GP": "5",
+      "KLS": "27",
+      "ATT": "145",
+      "E": "35",
+      "SP": "15",
+      "AST": "2",
+      "EFF": "-0.055"
     }
   },
   {
@@ -3698,9 +2002,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "ACE": "4",
-      "SP": "6"
+      "GP": "3",
+      "ACE": "6",
+      "SP": "10"
     }
   },
   {
@@ -3726,9 +2030,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "ACE": "8",
-      "SP": "5"
+      "GP": "3",
+      "ACE": "9",
+      "SP": "9"
     }
   },
   {
@@ -3740,9 +2044,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "ACE": "5",
-      "SP": "8"
+      "GP": "5",
+      "ACE": "10",
+      "SP": "15"
     }
   },
   {
@@ -3782,10 +2086,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "BLK": "1",
-      "SP": "8",
-      "DIG": "23"
+      "GP": "5",
+      "BLK": "3",
+      "SP": "15",
+      "DIG": "41"
     }
   },
   {
@@ -3811,10 +2115,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "BLK": "5",
-      "SP": "8",
-      "DIG": "1"
+      "GP": "5",
+      "BLK": "9",
+      "SP": "15",
+      "DIG": "2"
     }
   },
   {
@@ -3826,9 +2130,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "DIG": "10",
-      "SP": "8"
+      "GP": "5",
+      "DIG": "32",
+      "SP": "15"
     }
   },
   {
@@ -3840,9 +2144,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "DIG": "15",
-      "SP": "8",
+      "GP": "5",
+      "DIG": "30",
+      "SP": "15",
       "BLK": "1"
     }
   },
@@ -3869,10 +2173,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "DIG": "20",
-      "SP": "8",
-      "BLK": "2"
+      "GP": "5",
+      "DIG": "60",
+      "SP": "15",
+      "BLK": "3"
     }
   },
   {
@@ -3884,9 +2188,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "DIG": "7",
-      "SP": "4"
+      "GP": "3",
+      "DIG": "8",
+      "SP": "6"
     }
   },
   {
@@ -3912,9 +2216,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "DIG": "20",
-      "SP": "8"
+      "GP": "5",
+      "DIG": "42",
+      "SP": "15"
     }
   },
   {
@@ -8978,6 +7282,108 @@
     "school_id": "menomonie",
     "sport": "volleyball",
     "category": "Volleyball Offense",
+    "player_name": "Jai Hasse",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "KLS": "7",
+      "ATT": "25",
+      "E": "3",
+      "SP": "8",
+      "EFF": ".160"
+    }
+  },
+  {
+    "school_id": "menomonie",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Mya Romsos",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "5",
+      "KLS": "21",
+      "ATT": "58",
+      "E": "17",
+      "SP": "17",
+      "EFF": ".069"
+    }
+  },
+  {
+    "school_id": "menomonie",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Jordan Ohman",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "5",
+      "KLS": "43",
+      "ATT": "107",
+      "E": "20",
+      "SP": "16",
+      "EFF": ".215"
+    }
+  },
+  {
+    "school_id": "menomonie",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Gracie Miller",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "5",
+      "KLS": "13",
+      "ATT": "62",
+      "E": "22",
+      "SP": "17",
+      "EFF": "-0.145"
+    }
+  },
+  {
+    "school_id": "menomonie",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Morgan Fanetti",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "5",
+      "KLS": "31",
+      "ATT": "88",
+      "E": "20",
+      "SP": "17",
+      "EFF": ".125"
+    }
+  },
+  {
+    "school_id": "menomonie",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Mariana Ramirez",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "4",
+      "KLS": "17",
+      "ATT": "40",
+      "E": "5",
+      "SP": "14",
+      "EFF": ".300"
+    }
+  },
+  {
+    "school_id": "menomonie",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
     "player_name": "Myranda Creaser",
     "player_year": "FR",
     "position": null,
@@ -8996,6 +7402,20 @@
     "school_id": "menomonie",
     "sport": "volleyball",
     "category": "Volleyball Serving",
+    "player_name": "Jasaiah Lor",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "5",
+      "ACE": "8",
+      "SP": "15"
+    }
+  },
+  {
+    "school_id": "menomonie",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
     "player_name": "Jordan Ohman",
     "player_year": "SR",
     "position": null,
@@ -9004,6 +7424,20 @@
       "GP": "3",
       "ACE": "6",
       "SP": "12"
+    }
+  },
+  {
+    "school_id": "menomonie",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Hannah Tireman",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "ACE": "6",
+      "SP": "11"
     }
   },
   {
@@ -9032,6 +7466,95 @@
       "GP": "3",
       "ACE": "7",
       "SP": "9"
+    }
+  },
+  {
+    "school_id": "menomonie",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Mya Romsos",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "4",
+      "BLK": "3",
+      "SP": "14",
+      "DIG": "21"
+    }
+  },
+  {
+    "school_id": "menomonie",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Mariana Ramirez",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "BLK": "6",
+      "SP": "12",
+      "DIG": "5"
+    }
+  },
+  {
+    "school_id": "menomonie",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Jasaiah Lor",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "4",
+      "DIG": "23",
+      "SP": "13",
+      "BLK": "5"
+    }
+  },
+  {
+    "school_id": "menomonie",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Jordan Ohman",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "5",
+      "DIG": "10",
+      "SP": "16",
+      "BLK": "1"
+    }
+  },
+  {
+    "school_id": "menomonie",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Hannah Tireman",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "4",
+      "DIG": "18",
+      "SP": "14"
+    }
+  },
+  {
+    "school_id": "menomonie",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Morgan Fanetti",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "5",
+      "DIG": "14",
+      "SP": "17",
+      "BLK": "3"
     }
   },
   {
@@ -9074,6 +7597,34 @@
       "GP": "4",
       "DIG": "22",
       "SP": "14"
+    }
+  },
+  {
+    "school_id": "menomonie",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Hannah Tireman",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "5",
+      "AST": "61",
+      "SP": "16"
+    }
+  },
+  {
+    "school_id": "menomonie",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Sophia Mcnally",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "AST": "37",
+      "SP": "11"
     }
   },
   {
@@ -9408,7 +7959,7 @@
     "stats": {
       "GP": "4",
       "AST": "4",
-      "SP": "10",
+      "SP": "11",
       "KLS": "2",
       "ATT": "4",
       "E": "1",
@@ -10372,6 +8923,41 @@
     "school_id": "port-edwards",
     "sport": "volleyball",
     "category": "Volleyball Offense",
+    "player_name": "Claire Duckart",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "KLS": "2",
+      "ATT": "7",
+      "E": "3",
+      "SP": "4",
+      "AST": "5",
+      "EFF": "-0.143"
+    }
+  },
+  {
+    "school_id": "port-edwards",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Aubreigh Martinson",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "KLS": "2",
+      "ATT": "11",
+      "E": "3",
+      "SP": "4",
+      "EFF": "-0.091"
+    }
+  },
+  {
+    "school_id": "port-edwards",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
     "player_name": "Kaelyn Green",
     "player_year": "SO",
     "position": null,
@@ -10382,6 +8968,58 @@
       "ATT": "3",
       "SP": "3",
       "EFF": ".333"
+    }
+  },
+  {
+    "school_id": "port-edwards",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Ellise Irwin",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "KLS": "10",
+      "ATT": "22",
+      "E": "3",
+      "SP": "4",
+      "EFF": ".318"
+    }
+  },
+  {
+    "school_id": "port-edwards",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Emma Baumgart",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "KLS": "3",
+      "ATT": "13",
+      "E": "1",
+      "SP": "4",
+      "EFF": ".154"
+    }
+  },
+  {
+    "school_id": "port-edwards",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Mckenzy Smith",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "KLS": "7",
+      "ATT": "29",
+      "E": "6",
+      "SP": "4",
+      "AST": "16",
+      "EFF": ".034"
     }
   },
   {
@@ -10407,6 +9045,20 @@
     "category": "Volleyball Serving",
     "player_name": "Valedia Hernandez",
     "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "ACE": "1",
+      "SP": "4"
+    }
+  },
+  {
+    "school_id": "port-edwards",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Mckenzy Smith",
+    "player_year": "JR",
     "position": null,
     "jersey": null,
     "stats": {
@@ -10447,6 +9099,95 @@
     "school_id": "port-edwards",
     "sport": "volleyball",
     "category": "Volleyball Defense",
+    "player_name": "Claire Duckart",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "BLK": "3",
+      "SP": "4",
+      "DIG": "4"
+    }
+  },
+  {
+    "school_id": "port-edwards",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Aubreigh Martinson",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "BLK": "2",
+      "SP": "4",
+      "DIG": "6"
+    }
+  },
+  {
+    "school_id": "port-edwards",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Ellise Irwin",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "BLK": "8",
+      "SP": "4",
+      "DIG": "4"
+    }
+  },
+  {
+    "school_id": "port-edwards",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Emma Baumgart",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "BLK": "5",
+      "SP": "4",
+      "DIG": "2"
+    }
+  },
+  {
+    "school_id": "port-edwards",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Mckenzy Smith",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "BLK": "4",
+      "SP": "4",
+      "DIG": "14"
+    }
+  },
+  {
+    "school_id": "port-edwards",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Brooke Altman",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "BLK": "1",
+      "SP": "1"
+    }
+  },
+  {
+    "school_id": "port-edwards",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
     "player_name": "Evelyn Tranel",
     "player_year": "JR",
     "position": null,
@@ -10456,6 +9197,90 @@
       "BLK": "3",
       "SP": "4",
       "DIG": "9"
+    }
+  },
+  {
+    "school_id": "port-edwards",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Kaelyn Green",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "DIG": "9",
+      "SP": "3"
+    }
+  },
+  {
+    "school_id": "port-edwards",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Valedia Hernandez",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "DIG": "5",
+      "SP": "4"
+    }
+  },
+  {
+    "school_id": "port-edwards",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Makenzie Mykisen",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "DIG": "2",
+      "SP": "2"
+    }
+  },
+  {
+    "school_id": "port-edwards",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Hayden Kleifgen",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "DIG": "15",
+      "SP": "4"
+    }
+  },
+  {
+    "school_id": "port-edwards",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Makenzie Mykisen",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "AST": "7",
+      "SP": "2"
+    }
+  },
+  {
+    "school_id": "port-edwards",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Hayden Kleifgen",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "AST": "2",
+      "SP": "4"
     }
   },
   {
@@ -13477,9 +12302,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "ACE": "3",
-      "SP": "5"
+      "GP": "3",
+      "ACE": "4",
+      "SP": "8"
     }
   },
   {
@@ -13505,13 +12330,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "AST": "3",
-      "SP": "5",
-      "KLS": "1",
-      "ATT": "1",
+      "GP": "4",
+      "AST": "4",
+      "SP": "12",
+      "KLS": "2",
+      "ATT": "8",
       "E": "0",
-      "EFF": "1.000"
+      "EFF": ".250"
     }
   },
   {
@@ -14285,6 +13110,177 @@
   {
     "school_id": "athens",
     "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Ayva Haehlke",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "KLS": "13",
+      "ATT": "53",
+      "E": "7",
+      "SP": "13",
+      "AST": "2",
+      "EFF": ".113"
+    }
+  },
+  {
+    "school_id": "athens",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Karly Eckert",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "KLS": "22",
+      "ATT": "91",
+      "E": "15",
+      "SP": "13",
+      "AST": "38",
+      "EFF": ".077"
+    }
+  },
+  {
+    "school_id": "athens",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Brynley Louis",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "KLS": "23",
+      "ATT": "96",
+      "E": "14",
+      "SP": "13",
+      "AST": "3",
+      "EFF": ".094"
+    }
+  },
+  {
+    "school_id": "athens",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Jaelin Switlick",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "KLS": "28",
+      "ATT": "113",
+      "E": "21",
+      "SP": "13",
+      "AST": "2",
+      "EFF": ".062"
+    }
+  },
+  {
+    "school_id": "athens",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Brooklyn Hein",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "KLS": "11",
+      "ATT": "33",
+      "E": "7",
+      "SP": "13",
+      "AST": "1",
+      "EFF": ".121"
+    }
+  },
+  {
+    "school_id": "athens",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Brinley Kornack",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "KLS": "5",
+      "ATT": "25",
+      "E": "0",
+      "SP": "8",
+      "AST": "5",
+      "EFF": ".200"
+    }
+  },
+  {
+    "school_id": "athens",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Brooklyn Westfall",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "KLS": "2",
+      "ATT": "3",
+      "E": "0",
+      "SP": "5",
+      "AST": "1",
+      "EFF": ".667"
+    }
+  },
+  {
+    "school_id": "athens",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Autumn Diethelm",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "KLS": "1",
+      "ATT": "7",
+      "E": "3",
+      "SP": "2",
+      "EFF": "-0.286"
+    }
+  },
+  {
+    "school_id": "athens",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Jaci Hart",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "ACE": "4",
+      "SP": "13"
+    }
+  },
+  {
+    "school_id": "athens",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Karly Eckert",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "ACE": "6",
+      "SP": "13"
+    }
+  },
+  {
+    "school_id": "athens",
+    "sport": "volleyball",
     "category": "Volleyball Serving",
     "player_name": "Brynley Louis",
     "player_year": "SO",
@@ -14293,6 +13289,20 @@
     "stats": {
       "GP": "3",
       "ACE": "7",
+      "SP": "13"
+    }
+  },
+  {
+    "school_id": "athens",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Kenzie Woller",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "ACE": "6",
       "SP": "13"
     }
   },
@@ -14313,6 +13323,138 @@
   {
     "school_id": "athens",
     "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Ayva Haehlke",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "BLK": "6",
+      "SP": "13",
+      "DIG": "10"
+    }
+  },
+  {
+    "school_id": "athens",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Brynley Louis",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "BLK": "1",
+      "SP": "13",
+      "DIG": "54"
+    }
+  },
+  {
+    "school_id": "athens",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Jaci Hart",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "DIG": "31",
+      "SP": "13"
+    }
+  },
+  {
+    "school_id": "athens",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Karly Eckert",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "DIG": "38",
+      "SP": "13",
+      "BLK": "2"
+    }
+  },
+  {
+    "school_id": "athens",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Jaelin Switlick",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "DIG": "39",
+      "SP": "13",
+      "BLK": "2"
+    }
+  },
+  {
+    "school_id": "athens",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Kenzie Woller",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "DIG": "15",
+      "SP": "13"
+    }
+  },
+  {
+    "school_id": "athens",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Brooklyn Hein",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "DIG": "4",
+      "SP": "13",
+      "BLK": "1"
+    }
+  },
+  {
+    "school_id": "athens",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Brinley Kornack",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "DIG": "3",
+      "SP": "11",
+      "BLK": "2"
+    }
+  },
+  {
+    "school_id": "athens",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Brooklyn Westfall",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "DIG": "36",
+      "SP": "13"
+    }
+  },
+  {
+    "school_id": "athens",
+    "sport": "volleyball",
     "category": "Volleyball Offense",
     "player_name": "Jaci Hart",
     "player_year": "JR",
@@ -14322,6 +13464,20 @@
       "GP": "1",
       "AST": "1",
       "SP": "5"
+    }
+  },
+  {
+    "school_id": "athens",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Kenzie Woller",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "AST": "46",
+      "SP": "13"
     }
   },
   {
@@ -15062,6 +14218,75 @@
     "school_id": "chequamegon",
     "sport": "volleyball",
     "category": "Volleyball Offense",
+    "player_name": "Aly Nichols",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "4",
+      "KLS": "16",
+      "ATT": "57",
+      "E": "11",
+      "SP": "9",
+      "EFF": ".088"
+    }
+  },
+  {
+    "school_id": "chequamegon",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Gretchen Eder",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "4",
+      "KLS": "12",
+      "ATT": "51",
+      "E": "4",
+      "SP": "9",
+      "EFF": ".157"
+    }
+  },
+  {
+    "school_id": "chequamegon",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Jalen Brunell",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "4",
+      "KLS": "5",
+      "ATT": "11",
+      "E": "1",
+      "SP": "9",
+      "AST": "37",
+      "EFF": ".364"
+    }
+  },
+  {
+    "school_id": "chequamegon",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Kaydence Mckuen",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "4",
+      "KLS": "6",
+      "ATT": "39",
+      "E": "9",
+      "SP": "9",
+      "EFF": "-0.077"
+    }
+  },
+  {
+    "school_id": "chequamegon",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
     "player_name": "Mia Singer",
     "player_year": "SR",
     "position": null,
@@ -15079,6 +14304,51 @@
   {
     "school_id": "chequamegon",
     "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Rachel Santiago",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "KLS": "2",
+      "ATT": "8",
+      "E": "3",
+      "SP": "4",
+      "EFF": "-0.125"
+    }
+  },
+  {
+    "school_id": "chequamegon",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Abagail Brenholt",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "ACE": "1",
+      "SP": "3"
+    }
+  },
+  {
+    "school_id": "chequamegon",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Jalen Brunell",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "ACE": "3",
+      "SP": "7"
+    }
+  },
+  {
+    "school_id": "chequamegon",
+    "sport": "volleyball",
     "category": "Volleyball Serving",
     "player_name": "Mia Singer",
     "player_year": "SR",
@@ -15088,6 +14358,153 @@
       "GP": "1",
       "ACE": "1",
       "SP": "2"
+    }
+  },
+  {
+    "school_id": "chequamegon",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Gretchen Eder",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "4",
+      "BLK": "7",
+      "SP": "9",
+      "DIG": "6"
+    }
+  },
+  {
+    "school_id": "chequamegon",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Jalen Brunell",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "4",
+      "BLK": "2",
+      "SP": "9",
+      "DIG": "16"
+    }
+  },
+  {
+    "school_id": "chequamegon",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Cc Johnson",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "BLK": "1",
+      "SP": "5",
+      "DIG": "2"
+    }
+  },
+  {
+    "school_id": "chequamegon",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Abagail Brenholt",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "4",
+      "DIG": "49",
+      "SP": "9"
+    }
+  },
+  {
+    "school_id": "chequamegon",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Aly Nichols",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "4",
+      "DIG": "18",
+      "SP": "9"
+    }
+  },
+  {
+    "school_id": "chequamegon",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Jozlyn Nelson",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "4",
+      "DIG": "12",
+      "SP": "5"
+    }
+  },
+  {
+    "school_id": "chequamegon",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Kaydence Mckuen",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "4",
+      "DIG": "21",
+      "SP": "9"
+    }
+  },
+  {
+    "school_id": "chequamegon",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Mia Singer",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "DIG": "5",
+      "SP": "3"
+    }
+  },
+  {
+    "school_id": "chequamegon",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Abagail Brenholt",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "AST": "4",
+      "SP": "7"
+    }
+  },
+  {
+    "school_id": "chequamegon",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Cc Johnson",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "AST": "1",
+      "SP": "7",
+      "KLS": "3",
+      "ATT": "12",
+      "E": "0",
+      "EFF": ".250"
     }
   },
   {
@@ -15641,6 +15058,34 @@
     }
   },
   {
+    "school_id": "menomonie",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Elsa Elliott",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "DIG": "13",
+      "SP": "10"
+    }
+  },
+  {
+    "school_id": "menomonie",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Gracie Miller",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "DIG": "2",
+      "SP": "3"
+    }
+  },
+  {
     "school_id": "shell-lake",
     "sport": "volleyball",
     "category": "Volleyball Serving",
@@ -15929,9 +15374,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
+      "GP": "3",
       "AST": "1",
-      "SP": "3"
+      "SP": "10",
+      "KLS": "6",
+      "ATT": "26",
+      "E": "4",
+      "EFF": ".077"
     }
   },
   {
@@ -15946,6 +15395,139 @@
       "GP": "1",
       "AST": "1",
       "SP": "2"
+    }
+  },
+  {
+    "school_id": "colby",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Mckenzi Meyer",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "KLS": "4",
+      "ATT": "20",
+      "E": "1",
+      "SP": "3",
+      "AST": "1",
+      "EFF": ".150"
+    }
+  },
+  {
+    "school_id": "colby",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Cadence Meyer",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "KLS": "6",
+      "ATT": "12",
+      "E": "0",
+      "SP": "3",
+      "AST": "12",
+      "EFF": ".500"
+    }
+  },
+  {
+    "school_id": "colby",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Taebyn Lieders",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "KLS": "5",
+      "ATT": "12",
+      "E": "2",
+      "SP": "3",
+      "EFF": ".250"
+    }
+  },
+  {
+    "school_id": "colby",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Gabby Kaiser",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "KLS": "4",
+      "ATT": "9",
+      "E": "1",
+      "SP": "3",
+      "EFF": ".333"
+    }
+  },
+  {
+    "school_id": "colby",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Zoe Kaiser",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "KLS": "5",
+      "ATT": "22",
+      "E": "2",
+      "SP": "3",
+      "AST": "15",
+      "EFF": ".136"
+    }
+  },
+  {
+    "school_id": "colby",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Lillie Oestreich",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "KLS": "7",
+      "ATT": "22",
+      "E": "3",
+      "SP": "3",
+      "EFF": ".182"
+    }
+  },
+  {
+    "school_id": "colby",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Cadence Meyer",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "ACE": "1",
+      "SP": "3"
+    }
+  },
+  {
+    "school_id": "colby",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Rylee Carr",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "ACE": "2",
+      "SP": "3"
     }
   },
   {
@@ -15966,6 +15548,20 @@
     "school_id": "colby",
     "sport": "volleyball",
     "category": "Volleyball Serving",
+    "player_name": "Jada Voelker",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "ACE": "3",
+      "SP": "3"
+    }
+  },
+  {
+    "school_id": "colby",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
     "player_name": "Player 19",
     "player_year": null,
     "position": null,
@@ -15974,6 +15570,134 @@
       "GP": "1",
       "ACE": "1",
       "SP": "1"
+    }
+  },
+  {
+    "school_id": "colby",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Gabby Kaiser",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "BLK": "1",
+      "SP": "3",
+      "DIG": "2"
+    }
+  },
+  {
+    "school_id": "colby",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Zoe Kaiser",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "BLK": "1",
+      "SP": "3",
+      "DIG": "7"
+    }
+  },
+  {
+    "school_id": "colby",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Mckenzi Meyer",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "DIG": "10",
+      "SP": "3"
+    }
+  },
+  {
+    "school_id": "colby",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Cadence Meyer",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "DIG": "15",
+      "SP": "3"
+    }
+  },
+  {
+    "school_id": "colby",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Taebyn Lieders",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "DIG": "4",
+      "SP": "3"
+    }
+  },
+  {
+    "school_id": "colby",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Rylee Carr",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "DIG": "15",
+      "SP": "3"
+    }
+  },
+  {
+    "school_id": "colby",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Calleigh Cook",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "DIG": "10",
+      "SP": "3"
+    }
+  },
+  {
+    "school_id": "colby",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Lillie Oestreich",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "DIG": "5",
+      "SP": "3"
+    }
+  },
+  {
+    "school_id": "colby",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Jada Voelker",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "DIG": "2",
+      "SP": "3"
     }
   },
   {
@@ -16005,6 +15729,48 @@
     }
   },
   {
+    "school_id": "colby",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Rylee Carr",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "AST": "2",
+      "SP": "3"
+    }
+  },
+  {
+    "school_id": "menomonie",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Elsa Elliott",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "ACE": "1",
+      "SP": "5"
+    }
+  },
+  {
+    "school_id": "menomonie",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Mya Romsos",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "ACE": "3",
+      "SP": "5"
+    }
+  },
+  {
     "school_id": "menomonie",
     "sport": "volleyball",
     "category": "Volleyball Defense",
@@ -16016,6 +15782,20 @@
       "GP": "2",
       "DIG": "5",
       "SP": "5"
+    }
+  },
+  {
+    "school_id": "menomonie",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Jai Hasse",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "DIG": "2",
+      "SP": "6"
     }
   },
   {
@@ -17110,6 +16890,20 @@
     "school_id": "chequamegon",
     "sport": "volleyball",
     "category": "Volleyball Serving",
+    "player_name": "Gretchen Eder",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "ACE": "1",
+      "SP": "2"
+    }
+  },
+  {
+    "school_id": "chequamegon",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
     "player_name": "Kaydence Mckuen",
     "player_year": "SR",
     "position": null,
@@ -17573,6 +17367,34 @@
       "GP": "1",
       "DIG": "8",
       "SP": "2"
+    }
+  },
+  {
+    "school_id": "chequamegon",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Jozlyn Nelson",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "ACE": "1",
+      "SP": "1"
+    }
+  },
+  {
+    "school_id": "chequamegon",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Rachel Santiago",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "DIG": "2",
+      "SP": "3"
     }
   },
   {
@@ -19042,6 +18864,35 @@
     }
   },
   {
+    "school_id": "tomahawk",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Jada Troutman",
+    "player_year": "FR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "DIG": "3",
+      "SP": "7",
+      "BLK": "1"
+    }
+  },
+  {
+    "school_id": "tomahawk",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Ella Pierce",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "AST": "1",
+      "SP": "4"
+    }
+  },
+  {
     "school_id": "dc-everest",
     "sport": "volleyball",
     "category": "Volleyball Offense",
@@ -19381,6 +19232,20 @@
       "E": "1",
       "SP": "1",
       "EFF": ".000"
+    }
+  },
+  {
+    "school_id": "chequamegon",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Aly Nichols",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "ACE": "1",
+      "SP": "2"
     }
   },
   {
