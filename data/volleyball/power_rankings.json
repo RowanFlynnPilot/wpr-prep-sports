@@ -1,7 +1,7 @@
 {
   "sport": "volleyball",
   "season": "2026-27",
-  "generated_at": "2026-10-12T19:43:21.147018-05:00",
+  "generated_at": "2026-10-13T02:47:21.605447-05:00",
   "method": "WPR Power Index v1: 40% W%, 35% SOS, 25% margin (capped per sport)",
   "rankings": [
     {
@@ -12,9 +12,9 @@
       "losses": 4,
       "ties": 0,
       "win_pct": 0.875,
-      "sos": 0.6773,
+      "sos": 0.6802,
       "avg_margin_capped": 1.66,
-      "score": 78.1,
+      "score": 78.21,
       "movement": 0
     },
     {
@@ -25,9 +25,9 @@
       "losses": 6,
       "ties": 0,
       "win_pct": 0.8333,
-      "sos": 0.6142,
+      "sos": 0.6183,
       "avg_margin_capped": 1.33,
-      "score": 72.89,
+      "score": 73.03,
       "movement": 0
     },
     {
@@ -47,13 +47,13 @@
       "rank": 4,
       "school_id": "mosinee",
       "school_name": "Mosinee",
-      "wins": 25,
+      "wins": 26,
       "losses": 4,
       "ties": 0,
-      "win_pct": 0.8621,
-      "sos": 0.4967,
-      "avg_margin_capped": 1.69,
-      "score": 71.41,
+      "win_pct": 0.8667,
+      "sos": 0.5049,
+      "avg_margin_capped": 1.73,
+      "score": 72.06,
       "movement": 0
     },
     {
@@ -64,22 +64,22 @@
       "losses": 9,
       "ties": 0,
       "win_pct": 0.775,
-      "sos": 0.6459,
+      "sos": 0.6464,
       "avg_margin_capped": 1.15,
-      "score": 70.9,
+      "score": 70.92,
       "movement": 0
     },
     {
       "rank": 6,
       "school_id": "new-richmond",
       "school_name": "New Richmond",
-      "wins": 21,
+      "wins": 22,
       "losses": 5,
       "ties": 0,
-      "win_pct": 0.8077,
-      "sos": 0.5807,
-      "avg_margin_capped": 1.12,
-      "score": 69.78,
+      "win_pct": 0.8148,
+      "sos": 0.5837,
+      "avg_margin_capped": 1.11,
+      "score": 70.15,
       "movement": 0
     },
     {
@@ -90,9 +90,9 @@
       "losses": 7,
       "ties": 0,
       "win_pct": 0.8108,
-      "sos": 0.5307,
+      "sos": 0.5291,
       "avg_margin_capped": 1.38,
-      "score": 69.25,
+      "score": 69.19,
       "movement": 0
     },
     {
@@ -116,9 +116,9 @@
       "losses": 7,
       "ties": 0,
       "win_pct": 0.7742,
-      "sos": 0.5761,
+      "sos": 0.5794,
       "avg_margin_capped": 1.19,
-      "score": 68.6,
+      "score": 68.72,
       "movement": 0
     },
     {
@@ -129,9 +129,9 @@
       "losses": 7,
       "ties": 0,
       "win_pct": 0.7667,
-      "sos": 0.55,
+      "sos": 0.549,
       "avg_margin_capped": 1.1,
-      "score": 67.0,
+      "score": 66.97,
       "movement": 0
     },
     {
@@ -168,9 +168,9 @@
       "losses": 7,
       "ties": 0,
       "win_pct": 0.7586,
-      "sos": 0.5184,
+      "sos": 0.5179,
       "avg_margin_capped": 1.07,
-      "score": 65.44,
+      "score": 65.42,
       "movement": 0
     },
     {
@@ -181,9 +181,9 @@
       "losses": 10,
       "ties": 0,
       "win_pct": 0.7059,
-      "sos": 0.5368,
+      "sos": 0.5363,
       "avg_margin_capped": 0.85,
-      "score": 63.08,
+      "score": 63.06,
       "movement": 0
     },
     {
@@ -207,9 +207,9 @@
       "losses": 2,
       "ties": 0,
       "win_pct": 0.913,
-      "sos": 0.1436,
+      "sos": 0.1414,
       "avg_margin_capped": 2.04,
-      "score": 62.56,
+      "score": 62.48,
       "movement": -1
     },
     {
@@ -233,9 +233,9 @@
       "losses": 9,
       "ties": 0,
       "win_pct": 0.6786,
-      "sos": 0.5153,
+      "sos": 0.5165,
       "avg_margin_capped": 0.82,
-      "score": 61.1,
+      "score": 61.14,
       "movement": 0
     },
     {
@@ -259,9 +259,9 @@
       "losses": 10,
       "ties": 0,
       "win_pct": 0.6429,
-      "sos": 0.548,
+      "sos": 0.5476,
       "avg_margin_capped": 0.64,
-      "score": 60.07,
+      "score": 60.06,
       "movement": 0
     },
     {
@@ -269,12 +269,12 @@
       "school_id": "spash",
       "school_name": "SPASH",
       "wins": 21,
-      "losses": 11,
+      "losses": 12,
       "ties": 0,
-      "win_pct": 0.6562,
-      "sos": 0.5115,
-      "avg_margin_capped": 0.75,
-      "score": 59.78,
+      "win_pct": 0.6364,
+      "sos": 0.5312,
+      "avg_margin_capped": 0.64,
+      "score": 59.2,
       "movement": 0
     },
     {
@@ -298,9 +298,9 @@
       "losses": 12,
       "ties": 0,
       "win_pct": 0.6,
-      "sos": 0.5452,
+      "sos": 0.5461,
       "avg_margin_capped": 0.2,
-      "score": 56.42,
+      "score": 56.45,
       "movement": 0
     },
     {
@@ -350,7 +350,7 @@
       "losses": 17,
       "ties": 0,
       "win_pct": 0.4516,
-      "sos": 0.6366,
+      "sos": 0.6368,
       "avg_margin_capped": -0.29,
       "score": 51.64,
       "movement": 0
@@ -363,9 +363,9 @@
       "losses": 10,
       "ties": 0,
       "win_pct": 0.6,
-      "sos": 0.3422,
+      "sos": 0.3407,
       "avg_margin_capped": 0.48,
-      "score": 50.48,
+      "score": 50.43,
       "movement": 0
     },
     {
@@ -376,9 +376,9 @@
       "losses": 16,
       "ties": 0,
       "win_pct": 0.4839,
-      "sos": 0.5149,
+      "sos": 0.513,
       "avg_margin_capped": 0.0,
-      "score": 49.88,
+      "score": 49.81,
       "movement": 0
     },
     {
@@ -389,9 +389,9 @@
       "losses": 15,
       "ties": 0,
       "win_pct": 0.5,
-      "sos": 0.4637,
+      "sos": 0.4645,
       "avg_margin_capped": 0.23,
-      "score": 49.7,
+      "score": 49.73,
       "movement": 0
     },
     {
@@ -402,9 +402,9 @@
       "losses": 19,
       "ties": 0,
       "win_pct": 0.4412,
-      "sos": 0.5827,
+      "sos": 0.5839,
       "avg_margin_capped": -0.24,
-      "score": 49.56,
+      "score": 49.6,
       "movement": 0
     },
     {
@@ -428,9 +428,9 @@
       "losses": 13,
       "ties": 0,
       "win_pct": 0.48,
-      "sos": 0.4936,
+      "sos": 0.4938,
       "avg_margin_capped": 0.08,
-      "score": 49.31,
+      "score": 49.32,
       "movement": 0
     },
     {
@@ -441,9 +441,9 @@
       "losses": 16,
       "ties": 0,
       "win_pct": 0.5294,
-      "sos": 0.3997,
+      "sos": 0.3999,
       "avg_margin_capped": 0.29,
-      "score": 48.89,
+      "score": 48.9,
       "movement": 0
     },
     {
@@ -454,9 +454,9 @@
       "losses": 16,
       "ties": 0,
       "win_pct": 0.4483,
-      "sos": 0.5294,
+      "sos": 0.5288,
       "avg_margin_capped": -0.07,
-      "score": 48.67,
+      "score": 48.65,
       "movement": 0
     },
     {
@@ -467,9 +467,9 @@
       "losses": 18,
       "ties": 0,
       "win_pct": 0.4706,
-      "sos": 0.5029,
+      "sos": 0.5008,
       "avg_margin_capped": -0.12,
-      "score": 48.43,
+      "score": 48.36,
       "movement": 0
     },
     {
@@ -489,13 +489,13 @@
       "rank": 38,
       "school_id": "pittsville",
       "school_name": "Pittsville",
-      "wins": 15,
+      "wins": 16,
       "losses": 15,
       "ties": 0,
-      "win_pct": 0.5,
-      "sos": 0.402,
-      "avg_margin_capped": 0.1,
-      "score": 46.99,
+      "win_pct": 0.5161,
+      "sos": 0.3952,
+      "avg_margin_capped": 0.19,
+      "score": 47.78,
       "movement": 0
     },
     {
@@ -519,9 +519,9 @@
       "losses": 17,
       "ties": 0,
       "win_pct": 0.3704,
-      "sos": 0.5867,
+      "sos": 0.5872,
       "avg_margin_capped": -0.41,
-      "score": 46.15,
+      "score": 46.17,
       "movement": 0
     },
     {
@@ -532,7 +532,7 @@
       "losses": 17,
       "ties": 0,
       "win_pct": 0.4138,
-      "sos": 0.5286,
+      "sos": 0.5289,
       "avg_margin_capped": -0.45,
       "score": 45.69,
       "movement": 0
@@ -558,9 +558,9 @@
       "losses": 21,
       "ties": 0,
       "win_pct": 0.3226,
-      "sos": 0.5949,
+      "sos": 0.5978,
       "avg_margin_capped": -0.84,
-      "score": 42.73,
+      "score": 42.83,
       "movement": 0
     },
     {
@@ -571,9 +571,9 @@
       "losses": 20,
       "ties": 0,
       "win_pct": 0.375,
-      "sos": 0.4785,
+      "sos": 0.4775,
       "avg_margin_capped": -0.41,
-      "score": 42.55,
+      "score": 42.52,
       "movement": 0
     },
     {
@@ -584,9 +584,9 @@
       "losses": 19,
       "ties": 0,
       "win_pct": 0.3214,
-      "sos": 0.5725,
+      "sos": 0.5738,
       "avg_margin_capped": -0.79,
-      "score": 42.12,
+      "score": 42.17,
       "movement": 0
     },
     {
@@ -610,9 +610,9 @@
       "losses": 20,
       "ties": 0,
       "win_pct": 0.3103,
-      "sos": 0.5879,
+      "sos": 0.5869,
       "avg_margin_capped": -1.07,
-      "score": 41.04,
+      "score": 41.0,
       "movement": 0
     },
     {
@@ -623,9 +623,9 @@
       "losses": 23,
       "ties": 0,
       "win_pct": 0.3235,
-      "sos": 0.523,
+      "sos": 0.5218,
       "avg_margin_capped": -0.85,
-      "score": 40.19,
+      "score": 40.15,
       "movement": 0
     },
     {
@@ -649,9 +649,9 @@
       "losses": 20,
       "ties": 0,
       "win_pct": 0.2857,
-      "sos": 0.5483,
+      "sos": 0.5485,
       "avg_margin_capped": -0.86,
-      "score": 39.55,
+      "score": 39.56,
       "movement": 0
     },
     {
@@ -662,26 +662,39 @@
       "losses": 23,
       "ties": 0,
       "win_pct": 0.3235,
-      "sos": 0.4714,
+      "sos": 0.4728,
       "avg_margin_capped": -0.85,
-      "score": 38.39,
+      "score": 38.44,
       "movement": 1
     },
     {
       "rank": 52,
-      "school_id": "wild-rose",
-      "school_name": "Wild Rose",
-      "wins": 8,
-      "losses": 16,
+      "school_id": "menomonie",
+      "school_name": "Menomonie",
+      "wins": 7,
+      "losses": 19,
       "ties": 0,
-      "win_pct": 0.3333,
-      "sos": 0.437,
-      "avg_margin_capped": -0.67,
-      "score": 38.35,
-      "movement": -1
+      "win_pct": 0.2692,
+      "sos": 0.5403,
+      "avg_margin_capped": -1.04,
+      "score": 37.85,
+      "movement": 5
     },
     {
       "rank": 53,
+      "school_id": "wild-rose",
+      "school_name": "Wild Rose",
+      "wins": 8,
+      "losses": 17,
+      "ties": 0,
+      "win_pct": 0.32,
+      "sos": 0.4431,
+      "avg_margin_capped": -0.76,
+      "score": 37.64,
+      "movement": -2
+    },
+    {
+      "rank": 54,
       "school_id": "greenwood",
       "school_name": "Greenwood",
       "wins": 7,
@@ -691,23 +704,23 @@
       "sos": 0.4429,
       "avg_margin_capped": -0.86,
       "score": 37.13,
-      "movement": 0
+      "movement": -1
     },
     {
-      "rank": 54,
+      "rank": 55,
       "school_id": "rosholt",
       "school_name": "Rosholt",
       "wins": 8,
       "losses": 18,
       "ties": 0,
       "win_pct": 0.3077,
-      "sos": 0.4509,
+      "sos": 0.4502,
       "avg_margin_capped": -0.85,
-      "score": 37.06,
-      "movement": 0
+      "score": 37.04,
+      "movement": -1
     },
     {
-      "rank": 55,
+      "rank": 56,
       "school_id": "abbotsford",
       "school_name": "Abbotsford",
       "wins": 10,
@@ -717,33 +730,20 @@
       "sos": 0.5001,
       "avg_margin_capped": -1.03,
       "score": 36.83,
-      "movement": 0
+      "movement": -1
     },
     {
-      "rank": 56,
+      "rank": 57,
       "school_id": "port-edwards",
       "school_name": "Port Edwards",
       "wins": 8,
       "losses": 13,
       "ties": 0,
       "win_pct": 0.381,
-      "sos": 0.3492,
+      "sos": 0.3506,
       "avg_margin_capped": -0.81,
-      "score": 36.59,
-      "movement": 0
-    },
-    {
-      "rank": 57,
-      "school_id": "menomonie",
-      "school_name": "Menomonie",
-      "wins": 6,
-      "losses": 19,
-      "ties": 0,
-      "win_pct": 0.24,
-      "sos": 0.5397,
-      "avg_margin_capped": -1.16,
-      "score": 36.16,
-      "movement": 0
+      "score": 36.64,
+      "movement": -1
     },
     {
       "rank": 58,
@@ -792,9 +792,9 @@
       "losses": 20,
       "ties": 0,
       "win_pct": 0.2,
-      "sos": 0.5203,
+      "sos": 0.5206,
       "avg_margin_capped": -1.52,
-      "score": 32.38,
+      "score": 32.39,
       "movement": 1
     },
     {
@@ -805,9 +805,9 @@
       "losses": 24,
       "ties": 0,
       "win_pct": 0.1724,
-      "sos": 0.5348,
+      "sos": 0.5343,
       "avg_margin_capped": -1.48,
-      "score": 31.93,
+      "score": 31.92,
       "movement": -2
     },
     {
@@ -818,9 +818,9 @@
       "losses": 28,
       "ties": 0,
       "win_pct": 0.1765,
-      "sos": 0.5261,
+      "sos": 0.5268,
       "avg_margin_capped": -1.62,
-      "score": 31.23,
+      "score": 31.26,
       "movement": 0
     },
     {
@@ -844,9 +844,9 @@
       "losses": 23,
       "ties": 0,
       "win_pct": 0.1481,
-      "sos": 0.5206,
+      "sos": 0.5219,
       "avg_margin_capped": -1.52,
-      "score": 30.32,
+      "score": 30.36,
       "movement": 0
     },
     {
