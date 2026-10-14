@@ -1,279 +1,5 @@
 [
   {
-    "school_id": "iola-scandinavia",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Braelyn Jueds",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "KLS": "12",
-      "ATT": "45",
-      "E": "8",
-      "SP": "7",
-      "AST": "2",
-      "EFF": ".089"
-    }
-  },
-  {
-    "school_id": "iola-scandinavia",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Ruby Maus",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "KLS": "16",
-      "ATT": "46",
-      "E": "12",
-      "SP": "7",
-      "AST": "1",
-      "EFF": ".087"
-    }
-  },
-  {
-    "school_id": "iola-scandinavia",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Charlotte Isermann",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "KLS": "14",
-      "ATT": "56",
-      "E": "10",
-      "SP": "7",
-      "AST": "1",
-      "EFF": ".071"
-    }
-  },
-  {
-    "school_id": "iola-scandinavia",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Natalie Koss",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "KLS": "8",
-      "ATT": "38",
-      "E": "2",
-      "SP": "7",
-      "EFF": ".158"
-    }
-  },
-  {
-    "school_id": "iola-scandinavia",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Maggie Maus",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "KLS": "27",
-      "ATT": "77",
-      "E": "6",
-      "SP": "7",
-      "AST": "2",
-      "EFF": ".273"
-    }
-  },
-  {
-    "school_id": "iola-scandinavia",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Braelyn Jueds",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "1",
-      "ACE": "2",
-      "SP": "4"
-    }
-  },
-  {
-    "school_id": "iola-scandinavia",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Ruby Maus",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "ACE": "6",
-      "SP": "7"
-    }
-  },
-  {
-    "school_id": "iola-scandinavia",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Emma Printz",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "ACE": "3",
-      "SP": "7"
-    }
-  },
-  {
-    "school_id": "iola-scandinavia",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Charlotte Isermann",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "ACE": "3",
-      "SP": "7"
-    }
-  },
-  {
-    "school_id": "iola-scandinavia",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Braelyn Jueds",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "BLK": "4",
-      "SP": "7",
-      "DIG": "26"
-    }
-  },
-  {
-    "school_id": "iola-scandinavia",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Ruby Maus",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "BLK": "2",
-      "SP": "7",
-      "DIG": "23"
-    }
-  },
-  {
-    "school_id": "iola-scandinavia",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Natalie Koss",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "BLK": "2",
-      "SP": "7",
-      "DIG": "6"
-    }
-  },
-  {
-    "school_id": "iola-scandinavia",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Addison Grimm",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "DIG": "20",
-      "SP": "7"
-    }
-  },
-  {
-    "school_id": "iola-scandinavia",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Emma Printz",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "DIG": "20",
-      "SP": "7"
-    }
-  },
-  {
-    "school_id": "iola-scandinavia",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Charlotte Isermann",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "DIG": "23",
-      "SP": "7"
-    }
-  },
-  {
-    "school_id": "iola-scandinavia",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Ahnna Check",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "DIG": "13",
-      "SP": "7"
-    }
-  },
-  {
-    "school_id": "iola-scandinavia",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Maggie Maus",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "DIG": "26",
-      "SP": "7"
-    }
-  },
-  {
-    "school_id": "iola-scandinavia",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Emma Printz",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "AST": "66",
-      "SP": "7"
-    }
-  },
-  {
     "school_id": "wausau-west",
     "sport": "volleyball",
     "category": "Volleyball Offense",
@@ -3334,12 +3060,12 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "KLS": "1",
-      "ATT": "6",
-      "E": "0",
-      "SP": "1",
-      "EFF": ".167"
+      "GP": "2",
+      "KLS": "3",
+      "ATT": "11",
+      "E": "2",
+      "SP": "3",
+      "EFF": ".091"
     }
   },
   {
@@ -3351,48 +3077,48 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "KLS": "8",
-      "ATT": "45",
-      "E": "6",
-      "SP": "6",
-      "EFF": ".044"
-    }
-  },
-  {
-    "school_id": "amherst",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Zoe Dambroski",
-    "player_year": "FR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "KLS": "2",
-      "ATT": "8",
-      "E": "1",
-      "SP": "6",
-      "AST": "47",
-      "EFF": ".125"
-    }
-  },
-  {
-    "school_id": "amherst",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Hollie Singer",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "KLS": "6",
-      "ATT": "47",
+      "GP": "3",
+      "KLS": "10",
+      "ATT": "54",
       "E": "8",
-      "SP": "6",
+      "SP": "9",
+      "EFF": ".037"
+    }
+  },
+  {
+    "school_id": "amherst",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Zoe Dambroski",
+    "player_year": "FR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "KLS": "5",
+      "ATT": "13",
+      "E": "1",
+      "SP": "10",
+      "AST": "77",
+      "EFF": ".308"
+    }
+  },
+  {
+    "school_id": "amherst",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Hollie Singer",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "KLS": "12",
+      "ATT": "62",
+      "E": "9",
+      "SP": "10",
       "AST": "2",
-      "EFF": "-0.043"
+      "EFF": ".048"
     }
   },
   {
@@ -3404,12 +3130,12 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "KLS": "28",
-      "ATT": "89",
-      "E": "5",
-      "SP": "6",
-      "EFF": ".258"
+      "GP": "3",
+      "KLS": "47",
+      "ATT": "115",
+      "E": "8",
+      "SP": "10",
+      "EFF": ".339"
     }
   },
   {
@@ -3421,12 +3147,12 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "KLS": "8",
-      "ATT": "35",
-      "E": "10",
-      "SP": "6",
-      "EFF": "-0.057"
+      "GP": "3",
+      "KLS": "12",
+      "ATT": "44",
+      "E": "11",
+      "SP": "9",
+      "EFF": ".023"
     }
   },
   {
@@ -3438,9 +3164,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "ACE": "4",
-      "SP": "6"
+      "GP": "3",
+      "ACE": "6",
+      "SP": "10"
     }
   },
   {
@@ -3452,9 +3178,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "ACE": "1",
-      "SP": "4"
+      "GP": "2",
+      "ACE": "2",
+      "SP": "8"
     }
   },
   {
@@ -3480,9 +3206,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "ACE": "4",
-      "SP": "6"
+      "GP": "3",
+      "ACE": "7",
+      "SP": "10"
     }
   },
   {
@@ -3508,10 +3234,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
+      "GP": "3",
       "BLK": "3",
-      "SP": "6",
-      "DIG": "40"
+      "SP": "10",
+      "DIG": "50"
     }
   },
   {
@@ -3523,9 +3249,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "DIG": "32",
-      "SP": "6"
+      "GP": "3",
+      "DIG": "41",
+      "SP": "10"
     }
   },
   {
@@ -3537,9 +3263,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "DIG": "4",
-      "SP": "6"
+      "GP": "3",
+      "DIG": "8",
+      "SP": "9"
     }
   },
   {
@@ -3551,9 +3277,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "DIG": "2",
-      "SP": "5"
+      "GP": "3",
+      "DIG": "3",
+      "SP": "8"
     }
   },
   {
@@ -3565,9 +3291,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "DIG": "22",
-      "SP": "6"
+      "GP": "3",
+      "DIG": "26",
+      "SP": "10"
     }
   },
   {
@@ -3579,9 +3305,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "DIG": "15",
-      "SP": "6"
+      "GP": "3",
+      "DIG": "19",
+      "SP": "10"
     }
   },
   {
@@ -3593,9 +3319,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "DIG": "9",
-      "SP": "6"
+      "GP": "3",
+      "DIG": "15",
+      "SP": "9"
     }
   },
   {
@@ -3607,9 +3333,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "DIG": "4",
-      "SP": "5"
+      "GP": "3",
+      "DIG": "7",
+      "SP": "8"
     }
   },
   {
@@ -3621,9 +3347,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "DIG": "21",
-      "SP": "6"
+      "GP": "3",
+      "DIG": "26",
+      "SP": "9"
     }
   },
   {
@@ -3635,9 +3361,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "AST": "2",
-      "SP": "6"
+      "GP": "3",
+      "AST": "3",
+      "SP": "10"
     }
   },
   {
@@ -4929,569 +4655,6 @@
       "ATT": "1",
       "E": "0",
       "EFF": "1.000"
-    }
-  },
-  {
-    "school_id": "menominee-nation",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Taylesia Pamonicutt",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "1",
-      "KLS": "3",
-      "ATT": "11",
-      "E": "2",
-      "SP": "3",
-      "EFF": ".091"
-    }
-  },
-  {
-    "school_id": "menominee-nation",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Kyleigh Corn",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "1",
-      "KLS": "3",
-      "ATT": "9",
-      "E": "0",
-      "SP": "3",
-      "EFF": ".333"
-    }
-  },
-  {
-    "school_id": "menominee-nation",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Melinda Dodge",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "1",
-      "KLS": "1",
-      "ATT": "2",
-      "E": "0",
-      "SP": "3",
-      "AST": "8",
-      "EFF": ".500"
-    }
-  },
-  {
-    "school_id": "menominee-nation",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Harmony Doud",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "1",
-      "KLS": "2",
-      "ATT": "14",
-      "E": "5",
-      "SP": "3",
-      "EFF": "-0.214"
-    }
-  },
-  {
-    "school_id": "menominee-nation",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Angel Sanapaw",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "1",
-      "KLS": "6",
-      "ATT": "15",
-      "E": "0",
-      "SP": "3",
-      "EFF": ".400"
-    }
-  },
-  {
-    "school_id": "menominee-nation",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Neveah Pecore",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "1",
-      "ACE": "1",
-      "SP": "3"
-    }
-  },
-  {
-    "school_id": "menominee-nation",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Taylesia Pamonicutt",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "1",
-      "ACE": "1",
-      "SP": "3"
-    }
-  },
-  {
-    "school_id": "menominee-nation",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Harmony Doud",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "1",
-      "ACE": "2",
-      "SP": "3"
-    }
-  },
-  {
-    "school_id": "menominee-nation",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Taylesia Pamonicutt",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "1",
-      "BLK": "7",
-      "SP": "3",
-      "DIG": "2"
-    }
-  },
-  {
-    "school_id": "menominee-nation",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Harmony Doud",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "1",
-      "BLK": "3",
-      "SP": "3"
-    }
-  },
-  {
-    "school_id": "menominee-nation",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Cecelia Grignon",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "1",
-      "BLK": "2",
-      "SP": "3",
-      "DIG": "7"
-    }
-  },
-  {
-    "school_id": "menominee-nation",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Tiyanna Waukau",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "1",
-      "DIG": "6",
-      "SP": "3"
-    }
-  },
-  {
-    "school_id": "menominee-nation",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Neveah Pecore",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "1",
-      "DIG": "4",
-      "SP": "3"
-    }
-  },
-  {
-    "school_id": "menominee-nation",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Melinda Dodge",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "1",
-      "DIG": "6",
-      "SP": "3"
-    }
-  },
-  {
-    "school_id": "menominee-nation",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Angel Sanapaw",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "1",
-      "DIG": "2",
-      "SP": "3"
-    }
-  },
-  {
-    "school_id": "menominee-nation",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Cecelia Grignon",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "1",
-      "AST": "1",
-      "SP": "3"
-    }
-  },
-  {
-    "school_id": "columbus-catholic",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Cardyn Blenker",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "KLS": "9",
-      "ATT": "23",
-      "E": "4",
-      "SP": "6",
-      "AST": "2",
-      "EFF": ".217"
-    }
-  },
-  {
-    "school_id": "columbus-catholic",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Izzy Holz",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "KLS": "15",
-      "ATT": "33",
-      "E": "7",
-      "SP": "6",
-      "EFF": ".242"
-    }
-  },
-  {
-    "school_id": "columbus-catholic",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Kenly Hilgemann",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "KLS": "15",
-      "ATT": "26",
-      "E": "1",
-      "SP": "6",
-      "AST": "34",
-      "EFF": ".538"
-    }
-  },
-  {
-    "school_id": "columbus-catholic",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Abby Kibbel",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "KLS": "26",
-      "ATT": "41",
-      "E": "5",
-      "SP": "6",
-      "AST": "2",
-      "EFF": ".512"
-    }
-  },
-  {
-    "school_id": "columbus-catholic",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Maddie Bernick",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "KLS": "3",
-      "ATT": "9",
-      "E": "3",
-      "SP": "5",
-      "EFF": ".000"
-    }
-  },
-  {
-    "school_id": "columbus-catholic",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Xoey Bluth",
-    "player_year": "FR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "KLS": "11",
-      "ATT": "23",
-      "E": "4",
-      "SP": "6",
-      "EFF": ".304"
-    }
-  },
-  {
-    "school_id": "columbus-catholic",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Sophie Wilczek",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "1",
-      "ACE": "2",
-      "SP": "3"
-    }
-  },
-  {
-    "school_id": "columbus-catholic",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Izzy Holz",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "ACE": "6",
-      "SP": "6"
-    }
-  },
-  {
-    "school_id": "columbus-catholic",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Kenly Hilgemann",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "ACE": "4",
-      "SP": "6"
-    }
-  },
-  {
-    "school_id": "columbus-catholic",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Abby Kibbel",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "ACE": "4",
-      "SP": "6"
-    }
-  },
-  {
-    "school_id": "columbus-catholic",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Cardyn Blenker",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "BLK": "2",
-      "SP": "6",
-      "DIG": "14"
-    }
-  },
-  {
-    "school_id": "columbus-catholic",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Kenly Hilgemann",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "BLK": "4",
-      "SP": "6",
-      "DIG": "9"
-    }
-  },
-  {
-    "school_id": "columbus-catholic",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Abby Kibbel",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "BLK": "6",
-      "SP": "6",
-      "DIG": "8"
-    }
-  },
-  {
-    "school_id": "columbus-catholic",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Gwen Wieland",
-    "player_year": "FR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "BLK": "1",
-      "SP": "3",
-      "DIG": "1"
-    }
-  },
-  {
-    "school_id": "columbus-catholic",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Maddie Bernick",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "BLK": "3",
-      "SP": "5",
-      "DIG": "1"
-    }
-  },
-  {
-    "school_id": "columbus-catholic",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Xoey Bluth",
-    "player_year": "FR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "BLK": "2",
-      "SP": "6",
-      "DIG": "6"
-    }
-  },
-  {
-    "school_id": "columbus-catholic",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Sophie Wilczek",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "DIG": "7",
-      "SP": "6"
-    }
-  },
-  {
-    "school_id": "columbus-catholic",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Lucy Walther",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "1",
-      "DIG": "2",
-      "SP": "1"
-    }
-  },
-  {
-    "school_id": "columbus-catholic",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Izzy Holz",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "DIG": "13",
-      "SP": "6"
-    }
-  },
-  {
-    "school_id": "columbus-catholic",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Liv Becerra",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "DIG": "14",
-      "SP": "6"
-    }
-  },
-  {
-    "school_id": "columbus-catholic",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Sophie Wilczek",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "AST": "34",
-      "SP": "6"
     }
   },
   {
@@ -17248,6 +16411,74 @@
     "school_id": "iola-scandinavia",
     "sport": "volleyball",
     "category": "Volleyball Offense",
+    "player_name": "Braelyn Jueds",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "KLS": "5",
+      "ATT": "13",
+      "E": "1",
+      "SP": "3",
+      "EFF": ".308"
+    }
+  },
+  {
+    "school_id": "iola-scandinavia",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Ruby Maus",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "KLS": "7",
+      "ATT": "17",
+      "E": "5",
+      "SP": "3",
+      "EFF": ".118"
+    }
+  },
+  {
+    "school_id": "iola-scandinavia",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Charlotte Isermann",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "KLS": "7",
+      "ATT": "24",
+      "E": "4",
+      "SP": "3",
+      "EFF": ".125"
+    }
+  },
+  {
+    "school_id": "iola-scandinavia",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Natalie Koss",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "KLS": "2",
+      "ATT": "6",
+      "E": "0",
+      "SP": "3",
+      "EFF": ".333"
+    }
+  },
+  {
+    "school_id": "iola-scandinavia",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
     "player_name": "Kinley Wilson",
     "player_year": "SR",
     "position": null,
@@ -17259,6 +16490,66 @@
       "E": "0",
       "SP": "1",
       "EFF": ".333"
+    }
+  },
+  {
+    "school_id": "iola-scandinavia",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Maggie Maus",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "KLS": "8",
+      "ATT": "30",
+      "E": "2",
+      "SP": "3",
+      "AST": "1",
+      "EFF": ".200"
+    }
+  },
+  {
+    "school_id": "iola-scandinavia",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Ruby Maus",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "ACE": "2",
+      "SP": "3"
+    }
+  },
+  {
+    "school_id": "iola-scandinavia",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Emma Printz",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "ACE": "1",
+      "SP": "3"
+    }
+  },
+  {
+    "school_id": "iola-scandinavia",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Charlotte Isermann",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "ACE": "1",
+      "SP": "3"
     }
   },
   {
@@ -17279,6 +16570,36 @@
     "school_id": "iola-scandinavia",
     "sport": "volleyball",
     "category": "Volleyball Defense",
+    "player_name": "Braelyn Jueds",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "BLK": "2",
+      "SP": "3",
+      "DIG": "10"
+    }
+  },
+  {
+    "school_id": "iola-scandinavia",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Ruby Maus",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "BLK": "1",
+      "SP": "3",
+      "DIG": "5"
+    }
+  },
+  {
+    "school_id": "iola-scandinavia",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
     "player_name": "Emma Grimm",
     "player_year": "FR",
     "position": null,
@@ -17287,6 +16608,104 @@
       "GP": "1",
       "DIG": "1",
       "SP": "1"
+    }
+  },
+  {
+    "school_id": "iola-scandinavia",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Addison Grimm",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "DIG": "10",
+      "SP": "3"
+    }
+  },
+  {
+    "school_id": "iola-scandinavia",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Emma Printz",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "DIG": "4",
+      "SP": "3"
+    }
+  },
+  {
+    "school_id": "iola-scandinavia",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Charlotte Isermann",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "DIG": "9",
+      "SP": "3"
+    }
+  },
+  {
+    "school_id": "iola-scandinavia",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Natalie Koss",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "DIG": "2",
+      "SP": "3"
+    }
+  },
+  {
+    "school_id": "iola-scandinavia",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Ahnna Check",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "DIG": "9",
+      "SP": "3"
+    }
+  },
+  {
+    "school_id": "iola-scandinavia",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Maggie Maus",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "DIG": "9",
+      "SP": "3"
+    }
+  },
+  {
+    "school_id": "iola-scandinavia",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Emma Printz",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "AST": "23",
+      "SP": "3"
     }
   },
   {
@@ -17397,6 +16816,76 @@
     "school_id": "columbus-catholic",
     "sport": "volleyball",
     "category": "Volleyball Offense",
+    "player_name": "Cardyn Blenker",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "KLS": "2",
+      "ATT": "11",
+      "E": "4",
+      "SP": "3",
+      "AST": "2",
+      "EFF": "-0.182"
+    }
+  },
+  {
+    "school_id": "columbus-catholic",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Izzy Holz",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "KLS": "6",
+      "ATT": "15",
+      "E": "1",
+      "SP": "3",
+      "EFF": ".333"
+    }
+  },
+  {
+    "school_id": "columbus-catholic",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Kenly Hilgemann",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "KLS": "9",
+      "ATT": "12",
+      "E": "0",
+      "SP": "3",
+      "AST": "17",
+      "EFF": ".750"
+    }
+  },
+  {
+    "school_id": "columbus-catholic",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Abby Kibbel",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "KLS": "14",
+      "ATT": "21",
+      "E": "2",
+      "SP": "3",
+      "EFF": ".571"
+    }
+  },
+  {
+    "school_id": "columbus-catholic",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
     "player_name": "Brynn Polga",
     "player_year": "FR",
     "position": null,
@@ -17408,6 +16897,82 @@
       "E": "0",
       "SP": "1",
       "EFF": ".500"
+    }
+  },
+  {
+    "school_id": "columbus-catholic",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Maddie Bernick",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "KLS": "2",
+      "ATT": "3",
+      "E": "1",
+      "SP": "2",
+      "EFF": ".333"
+    }
+  },
+  {
+    "school_id": "columbus-catholic",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Xoey Bluth",
+    "player_year": "FR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "KLS": "5",
+      "ATT": "11",
+      "E": "4",
+      "SP": "3",
+      "EFF": ".091"
+    }
+  },
+  {
+    "school_id": "columbus-catholic",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Izzy Holz",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "ACE": "3",
+      "SP": "3"
+    }
+  },
+  {
+    "school_id": "columbus-catholic",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Kenly Hilgemann",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "ACE": "1",
+      "SP": "3"
+    }
+  },
+  {
+    "school_id": "columbus-catholic",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Abby Kibbel",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "ACE": "1",
+      "SP": "3"
     }
   },
   {
@@ -17428,6 +16993,80 @@
     "school_id": "columbus-catholic",
     "sport": "volleyball",
     "category": "Volleyball Defense",
+    "player_name": "Cardyn Blenker",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "BLK": "1",
+      "SP": "3",
+      "DIG": "5"
+    }
+  },
+  {
+    "school_id": "columbus-catholic",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Kenly Hilgemann",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "BLK": "2",
+      "SP": "3",
+      "DIG": "6"
+    }
+  },
+  {
+    "school_id": "columbus-catholic",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Abby Kibbel",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "BLK": "3",
+      "SP": "3",
+      "DIG": "2"
+    }
+  },
+  {
+    "school_id": "columbus-catholic",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Maddie Bernick",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "BLK": "1",
+      "SP": "2"
+    }
+  },
+  {
+    "school_id": "columbus-catholic",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Xoey Bluth",
+    "player_year": "FR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "BLK": "1",
+      "SP": "3",
+      "DIG": "2"
+    }
+  },
+  {
+    "school_id": "columbus-catholic",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
     "player_name": "Player 1",
     "player_year": null,
     "position": null,
@@ -17442,6 +17081,20 @@
     "school_id": "columbus-catholic",
     "sport": "volleyball",
     "category": "Volleyball Defense",
+    "player_name": "Sophie Wilczek",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "DIG": "5",
+      "SP": "3"
+    }
+  },
+  {
+    "school_id": "columbus-catholic",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
     "player_name": "Sydney Willman",
     "player_year": "JR",
     "position": null,
@@ -17450,6 +17103,62 @@
       "GP": "1",
       "DIG": "1",
       "SP": "2"
+    }
+  },
+  {
+    "school_id": "columbus-catholic",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Izzy Holz",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "DIG": "6",
+      "SP": "3"
+    }
+  },
+  {
+    "school_id": "columbus-catholic",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Gwen Wieland",
+    "player_year": "FR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "DIG": "1",
+      "SP": "2"
+    }
+  },
+  {
+    "school_id": "columbus-catholic",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Liv Becerra",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "DIG": "10",
+      "SP": "3"
+    }
+  },
+  {
+    "school_id": "columbus-catholic",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Sophie Wilczek",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "AST": "16",
+      "SP": "3"
     }
   },
   {
@@ -18812,9 +18521,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "ACE": "1",
-      "SP": "2"
+      "GP": "2",
+      "ACE": "2",
+      "SP": "5"
     }
   },
   {
@@ -19020,6 +18729,20 @@
       "GP": "1",
       "ACE": "3",
       "SP": "3"
+    }
+  },
+  {
+    "school_id": "amherst",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Sophia Bablitch",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "AST": "1",
+      "SP": "2"
     }
   }
 ]
