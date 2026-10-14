@@ -2564,373 +2564,6 @@
     }
   },
   {
-    "school_id": "chippewa-falls",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Hannah Cull",
-    "player_year": "FR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "5",
-      "KLS": "15",
-      "ATT": "42",
-      "E": "11",
-      "SP": "6",
-      "EFF": ".095"
-    }
-  },
-  {
-    "school_id": "chippewa-falls",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Avrie Knorn",
-    "player_year": "FR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "8",
-      "KLS": "51",
-      "ATT": "134",
-      "E": "26",
-      "SP": "19",
-      "AST": "7",
-      "EFF": ".187"
-    }
-  },
-  {
-    "school_id": "chippewa-falls",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Camryn Wedemeyer",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "7",
-      "KLS": "21",
-      "ATT": "57",
-      "E": "15",
-      "SP": "11",
-      "EFF": ".105"
-    }
-  },
-  {
-    "school_id": "chippewa-falls",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Makenna Wood",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "8",
-      "KLS": "46",
-      "ATT": "106",
-      "E": "13",
-      "SP": "19",
-      "AST": "3",
-      "EFF": ".311"
-    }
-  },
-  {
-    "school_id": "chippewa-falls",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Emma Hoepner",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "7",
-      "KLS": "22",
-      "ATT": "48",
-      "E": "7",
-      "SP": "17",
-      "AST": "1",
-      "EFF": ".312"
-    }
-  },
-  {
-    "school_id": "chippewa-falls",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Barrett Boisvert",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "8",
-      "KLS": "27",
-      "ATT": "53",
-      "E": "7",
-      "SP": "19",
-      "AST": "143",
-      "EFF": ".377"
-    }
-  },
-  {
-    "school_id": "chippewa-falls",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Jade Raedel",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "8",
-      "KLS": "40",
-      "ATT": "111",
-      "E": "11",
-      "SP": "19",
-      "AST": "1",
-      "EFF": ".261"
-    }
-  },
-  {
-    "school_id": "chippewa-falls",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Ilah Sinz",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "5",
-      "ACE": "14",
-      "SP": "12"
-    }
-  },
-  {
-    "school_id": "chippewa-falls",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Jaydyn Krueger",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "8",
-      "ACE": "11",
-      "SP": "19"
-    }
-  },
-  {
-    "school_id": "chippewa-falls",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Brynn Von Haden",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "7",
-      "ACE": "14",
-      "SP": "16"
-    }
-  },
-  {
-    "school_id": "chippewa-falls",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Avrie Knorn",
-    "player_year": "FR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "4",
-      "ACE": "11",
-      "SP": "9"
-    }
-  },
-  {
-    "school_id": "chippewa-falls",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Emma Hoepner",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "ACE": "4",
-      "SP": "6"
-    }
-  },
-  {
-    "school_id": "chippewa-falls",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Barrett Boisvert",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "4",
-      "ACE": "5",
-      "SP": "10"
-    }
-  },
-  {
-    "school_id": "chippewa-falls",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Avrie Knorn",
-    "player_year": "FR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "8",
-      "BLK": "4",
-      "SP": "19",
-      "DIG": "32"
-    }
-  },
-  {
-    "school_id": "chippewa-falls",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Makenna Wood",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "8",
-      "BLK": "10",
-      "SP": "19",
-      "DIG": "11"
-    }
-  },
-  {
-    "school_id": "chippewa-falls",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Emma Hoepner",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "7",
-      "BLK": "14",
-      "SP": "17",
-      "DIG": "8"
-    }
-  },
-  {
-    "school_id": "chippewa-falls",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Barrett Boisvert",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "8",
-      "BLK": "9",
-      "SP": "19",
-      "DIG": "37"
-    }
-  },
-  {
-    "school_id": "chippewa-falls",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Jade Raedel",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "5",
-      "BLK": "9",
-      "SP": "12",
-      "DIG": "5"
-    }
-  },
-  {
-    "school_id": "chippewa-falls",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Ilah Sinz",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "8",
-      "DIG": "88",
-      "SP": "19"
-    }
-  },
-  {
-    "school_id": "chippewa-falls",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Jaydyn Krueger",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "8",
-      "DIG": "43",
-      "SP": "19"
-    }
-  },
-  {
-    "school_id": "chippewa-falls",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Brynn Von Haden",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "7",
-      "DIG": "20",
-      "SP": "17"
-    }
-  },
-  {
-    "school_id": "chippewa-falls",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Ilah Sinz",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "8",
-      "AST": "16",
-      "SP": "19"
-    }
-  },
-  {
-    "school_id": "chippewa-falls",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Jaydyn Krueger",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "AST": "3",
-      "SP": "5"
-    }
-  },
-  {
-    "school_id": "chippewa-falls",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Brynn Von Haden",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "6",
-      "AST": "13",
-      "SP": "15"
-    }
-  },
-  {
     "school_id": "newman-catholic",
     "sport": "volleyball",
     "category": "Volleyball Offense",
@@ -5376,6 +5009,258 @@
   {
     "school_id": "chippewa-falls",
     "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Hannah Cull",
+    "player_year": "FR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "4",
+      "KLS": "14",
+      "ATT": "37",
+      "E": "10",
+      "SP": "5",
+      "EFF": ".108"
+    }
+  },
+  {
+    "school_id": "chippewa-falls",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Avrie Knorn",
+    "player_year": "FR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "7",
+      "KLS": "41",
+      "ATT": "112",
+      "E": "23",
+      "SP": "16",
+      "AST": "7",
+      "EFF": ".161"
+    }
+  },
+  {
+    "school_id": "chippewa-falls",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Makenna Wood",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "7",
+      "KLS": "39",
+      "ATT": "93",
+      "E": "11",
+      "SP": "16",
+      "AST": "3",
+      "EFF": ".301"
+    }
+  },
+  {
+    "school_id": "chippewa-falls",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Emma Hoepner",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "6",
+      "KLS": "17",
+      "ATT": "40",
+      "E": "5",
+      "SP": "14",
+      "AST": "1",
+      "EFF": ".300"
+    }
+  },
+  {
+    "school_id": "chippewa-falls",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Barrett Boisvert",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "7",
+      "KLS": "23",
+      "ATT": "47",
+      "E": "6",
+      "SP": "16",
+      "AST": "116",
+      "EFF": ".362"
+    }
+  },
+  {
+    "school_id": "chippewa-falls",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Jade Raedel",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "7",
+      "KLS": "37",
+      "ATT": "98",
+      "E": "9",
+      "SP": "16",
+      "AST": "1",
+      "EFF": ".286"
+    }
+  },
+  {
+    "school_id": "chippewa-falls",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Jaydyn Krueger",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "7",
+      "ACE": "9",
+      "SP": "16"
+    }
+  },
+  {
+    "school_id": "chippewa-falls",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Emma Hoepner",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "ACE": "1",
+      "SP": "3"
+    }
+  },
+  {
+    "school_id": "chippewa-falls",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Makenna Wood",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "7",
+      "BLK": "9",
+      "SP": "16",
+      "DIG": "8"
+    }
+  },
+  {
+    "school_id": "chippewa-falls",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Emma Hoepner",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "6",
+      "BLK": "12",
+      "SP": "14",
+      "DIG": "7"
+    }
+  },
+  {
+    "school_id": "chippewa-falls",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Barrett Boisvert",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "7",
+      "BLK": "8",
+      "SP": "16",
+      "DIG": "32"
+    }
+  },
+  {
+    "school_id": "chippewa-falls",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Jade Raedel",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "4",
+      "BLK": "8",
+      "SP": "9",
+      "DIG": "5"
+    }
+  },
+  {
+    "school_id": "chippewa-falls",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Ilah Sinz",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "7",
+      "DIG": "76",
+      "SP": "16"
+    }
+  },
+  {
+    "school_id": "chippewa-falls",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Jaydyn Krueger",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "7",
+      "DIG": "36",
+      "SP": "16"
+    }
+  },
+  {
+    "school_id": "chippewa-falls",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Brynn Von Haden",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "6",
+      "DIG": "15",
+      "SP": "14"
+    }
+  },
+  {
+    "school_id": "chippewa-falls",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Avrie Knorn",
+    "player_year": "FR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "7",
+      "DIG": "25",
+      "SP": "16",
+      "BLK": "3"
+    }
+  },
+  {
+    "school_id": "chippewa-falls",
+    "sport": "volleyball",
     "category": "Volleyball Defense",
     "player_name": "Camryn Wedemeyer",
     "player_year": "SO",
@@ -5386,6 +5271,34 @@
       "DIG": "1",
       "SP": "2",
       "BLK": "1"
+    }
+  },
+  {
+    "school_id": "chippewa-falls",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Ilah Sinz",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "7",
+      "AST": "14",
+      "SP": "16"
+    }
+  },
+  {
+    "school_id": "chippewa-falls",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Brynn Von Haden",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "5",
+      "AST": "10",
+      "SP": "12"
     }
   },
   {
@@ -16769,6 +16682,37 @@
   {
     "school_id": "chippewa-falls",
     "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Camryn Wedemeyer",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "6",
+      "KLS": "15",
+      "ATT": "44",
+      "E": "12",
+      "SP": "9",
+      "EFF": ".068"
+    }
+  },
+  {
+    "school_id": "chippewa-falls",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Brynn Von Haden",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "6",
+      "ACE": "12",
+      "SP": "13"
+    }
+  },
+  {
+    "school_id": "chippewa-falls",
+    "sport": "volleyball",
     "category": "Volleyball Serving",
     "player_name": "Mya Johnson",
     "player_year": "SR",
@@ -16783,6 +16727,20 @@
   {
     "school_id": "chippewa-falls",
     "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Barrett Boisvert",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "ACE": "3",
+      "SP": "7"
+    }
+  },
+  {
+    "school_id": "chippewa-falls",
+    "sport": "volleyball",
     "category": "Volleyball Defense",
     "player_name": "Mya Johnson",
     "player_year": "SR",
@@ -16792,6 +16750,34 @@
       "GP": "3",
       "DIG": "5",
       "SP": "6"
+    }
+  },
+  {
+    "school_id": "chippewa-falls",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Jaydyn Krueger",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "AST": "2",
+      "SP": "2"
+    }
+  },
+  {
+    "school_id": "chippewa-falls",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Ilah Sinz",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "4",
+      "ACE": "11",
+      "SP": "9"
     }
   },
   {
@@ -17449,6 +17435,20 @@
       "GP": "2",
       "DIG": "2",
       "SP": "3"
+    }
+  },
+  {
+    "school_id": "chippewa-falls",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Avrie Knorn",
+    "player_year": "FR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "ACE": "7",
+      "SP": "6"
     }
   },
   {

@@ -42,6 +42,18 @@
         "points_against": 20
       },
       {
+        "school_id": "wausau-west",
+        "name": "Wausau West",
+        "conference_wins": 3,
+        "conference_losses": 4,
+        "conference_ties": 0,
+        "overall_wins": 5,
+        "overall_losses": 9,
+        "overall_ties": 0,
+        "points_for": 33,
+        "points_against": 37
+      },
+      {
         "school_id": "wausau-east",
         "name": "Wausau East",
         "conference_wins": 2,
@@ -54,28 +66,16 @@
         "points_against": 18
       },
       {
-        "school_id": "wausau-west",
-        "name": "Wausau West",
-        "conference_wins": 2,
-        "conference_losses": 4,
-        "conference_ties": 0,
-        "overall_wins": 4,
-        "overall_losses": 9,
-        "overall_ties": 0,
-        "points_for": 25,
-        "points_against": 37
-      },
-      {
         "school_id": "marshfield",
         "name": "Marshfield",
         "conference_wins": 1,
-        "conference_losses": 8,
+        "conference_losses": 9,
         "conference_ties": 0,
         "overall_wins": 3,
-        "overall_losses": 13,
+        "overall_losses": 14,
         "overall_ties": 0,
         "points_for": 8,
-        "points_against": 58
+        "points_against": 66
       }
     ]
   },
@@ -88,14 +88,14 @@
       {
         "school_id": "northland-pines",
         "name": "Northland Pines",
-        "conference_wins": 10,
+        "conference_wins": 11,
         "conference_losses": 0,
         "conference_ties": 0,
-        "overall_wins": 16,
+        "overall_wins": 17,
         "overall_losses": 0,
         "overall_ties": 0,
-        "points_for": 68,
-        "points_against": 7
+        "points_for": 72,
+        "points_against": 8
       },
       {
         "school_id": "lakeland",
@@ -125,13 +125,13 @@
         "school_id": "rhinelander",
         "name": "Rhinelander",
         "conference_wins": 3,
-        "conference_losses": 3,
+        "conference_losses": 4,
         "conference_ties": 0,
         "overall_wins": 4,
-        "overall_losses": 6,
+        "overall_losses": 7,
         "overall_ties": 0,
-        "points_for": 14,
-        "points_against": 28
+        "points_for": 15,
+        "points_against": 32
       },
       {
         "school_id": "mosinee",
