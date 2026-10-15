@@ -358,7 +358,7 @@
     "conferences": [
       {
         "sport": "football",
-        "conference": "Northwoods-East 8"
+        "conference": "North Central-East 8"
       },
       {
         "sport": "boys_basketball",
@@ -466,7 +466,7 @@
     "conferences": [
       {
         "sport": "football",
-        "conference": "Central Wisconsin-8"
+        "conference": "North Central-East 8"
       },
       {
         "sport": "boys_basketball",
@@ -485,7 +485,7 @@
       "boys_basketball": "D5",
       "football": "8P-D1",
       "girls_basketball": "D5",
-      "volleyball": "D5"
+      "volleyball": "D4"
     },
     "athletics_url": null
   },
@@ -1246,7 +1246,7 @@
     "conferences": [
       {
         "sport": "football",
-        "conference": "Marawood/CWC"
+        "conference": "North Central-East 8"
       },
       {
         "sport": "boys_basketball",
@@ -1263,7 +1263,7 @@
     ],
     "wiaa_division": {
       "boys_basketball": "D5",
-      "football": "D7",
+      "football": "8P-D1",
       "girls_basketball": "D5",
       "volleyball": "D5"
     },
@@ -1404,7 +1404,7 @@
     "conferences": [
       {
         "sport": "football",
-        "conference": "Marawood/CWC"
+        "conference": "Central Wisconsin-8"
       }
     ],
     "wiaa_division": {},
@@ -1458,7 +1458,7 @@
     "conferences": [
       {
         "sport": "football",
-        "conference": "Northwoods-East 8"
+        "conference": "Northwoods-West 8"
       }
     ],
     "wiaa_division": {
@@ -1479,7 +1479,7 @@
     "conferences": [
       {
         "sport": "football",
-        "conference": "Northwoods-East 8"
+        "conference": "Northwoods-West 8"
       }
     ],
     "wiaa_division": {
@@ -1609,7 +1609,8 @@
     "wiaa_division": {
       "boys_basketball": "D5",
       "girls_basketball": "D5",
-      "volleyball": "D5"
+      "volleyball": "D5",
+      "football": "8P-D1"
     },
     "athletics_url": null
   },
@@ -1629,7 +1630,9 @@
         "conference": "Central Wisconsin-8"
       }
     ],
-    "wiaa_division": {},
+    "wiaa_division": {
+      "football": "8P-D1"
+    },
     "athletics_url": null
   },
   {
@@ -1728,7 +1731,9 @@
         "conference": "Central Wisconsin-8"
       }
     ],
-    "wiaa_division": {},
+    "wiaa_division": {
+      "football": "8P-D1"
+    },
     "athletics_url": null
   },
   {
@@ -1944,7 +1949,7 @@
       },
       {
         "sport": "football",
-        "conference": "CWC-Large"
+        "conference": "Marawood/CWC"
       }
     ],
     "wiaa_division": {
@@ -1982,7 +1987,7 @@
     "wiaa_division": {
       "boys_basketball": "D4",
       "girls_basketball": "D4",
-      "volleyball": "D4"
+      "volleyball": "D3"
     },
     "athletics_url": null
   },
@@ -2008,12 +2013,17 @@
       {
         "sport": "volleyball",
         "conference": "Cloverbelt"
+      },
+      {
+        "sport": "football",
+        "conference": "North Central-East 8"
       }
     ],
     "wiaa_division": {
       "boys_basketball": "D5",
       "girls_basketball": "D5",
-      "volleyball": "D5"
+      "volleyball": "D5",
+      "football": "8P-D1"
     },
     "athletics_url": null
   },
@@ -2039,12 +2049,17 @@
       {
         "sport": "volleyball",
         "conference": "Cloverbelt"
+      },
+      {
+        "sport": "football",
+        "conference": "North Central-East 8"
       }
     ],
     "wiaa_division": {
       "boys_basketball": "D5",
       "girls_basketball": "D5",
-      "volleyball": "D5"
+      "volleyball": "D5",
+      "football": "8P-D1"
     },
     "athletics_url": null
   },
@@ -2142,7 +2157,7 @@
     "conferences": [
       {
         "sport": "football",
-        "conference": "Northwoods-East 8"
+        "conference": "Northwoods-West 8"
       }
     ],
     "wiaa_division": {},
@@ -2161,7 +2176,7 @@
     "conferences": [
       {
         "sport": "football",
-        "conference": "Northwoods-East 8"
+        "conference": "Northwoods-West 8"
       }
     ],
     "wiaa_division": {},
@@ -2180,7 +2195,66 @@
     "conferences": [
       {
         "sport": "football",
-        "conference": "Northwoods-East 8"
+        "conference": "Northwoods-West 8"
+      }
+    ],
+    "wiaa_division": {},
+    "athletics_url": null
+  },
+  {
+    "id": "cornell",
+    "name": "Cornell",
+    "full_name": "Cornell High School",
+    "mascot": "Chiefs",
+    "city": "Cornell",
+    "colors": [
+      "#7F1D1D",
+      "#FBBF24"
+    ],
+    "conferences": [
+      {
+        "sport": "football",
+        "conference": "North Central-East 8"
+      }
+    ],
+    "wiaa_division": {},
+    "athletics_url": null
+  },
+  {
+    "id": "thorp",
+    "name": "Thorp",
+    "full_name": "Thorp High School",
+    "mascot": "Cardinals",
+    "city": "Thorp",
+    "colors": [
+      "#B91C1C",
+      "#000000"
+    ],
+    "conferences": [
+      {
+        "sport": "football",
+        "conference": "North Central-East 8"
+      }
+    ],
+    "wiaa_division": {
+      "football": "8P-D1"
+    },
+    "athletics_url": null
+  },
+  {
+    "id": "alma-center-lincoln",
+    "name": "Alma Center Lincoln",
+    "full_name": "Lincoln High School (Alma Center)",
+    "mascot": "Hornets",
+    "city": "Alma Center",
+    "colors": [
+      "#000000",
+      "#FACC15"
+    ],
+    "conferences": [
+      {
+        "sport": "football",
+        "conference": "North Central-East 8"
       }
     ],
     "wiaa_division": {},

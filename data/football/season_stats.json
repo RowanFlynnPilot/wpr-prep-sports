@@ -1312,8 +1312,8 @@
     "position": null,
     "jersey": "3",
     "stats": {
-      "TOT": "26",
-      "SOLO": "16",
+      "TOT": "28",
+      "SOLO": "18",
       "TFL": "0",
       "SACKS": "0.0"
     }
@@ -1327,8 +1327,8 @@
     "position": null,
     "jersey": "4",
     "stats": {
-      "TOT": "32",
-      "SOLO": "19",
+      "TOT": "33",
+      "SOLO": "20",
       "TFL": "0",
       "SACKS": "0.0"
     }
@@ -1342,7 +1342,7 @@
     "position": null,
     "jersey": "6",
     "stats": {
-      "TOT": "2",
+      "TOT": "6",
       "SOLO": "1",
       "TFL": "0",
       "SACKS": "0.0"
@@ -1357,8 +1357,8 @@
     "position": null,
     "jersey": "7",
     "stats": {
-      "TOT": "26",
-      "SOLO": "13",
+      "TOT": "28",
+      "SOLO": "14",
       "TFL": "2",
       "SACKS": "0.0"
     }
@@ -1372,9 +1372,9 @@
     "position": null,
     "jersey": "11",
     "stats": {
-      "TOT": "44",
-      "SOLO": "21",
-      "TFL": "5",
+      "TOT": "48",
+      "SOLO": "22",
+      "TFL": "6",
       "SACKS": "1.0"
     }
   },
@@ -1417,8 +1417,8 @@
     "position": null,
     "jersey": "16",
     "stats": {
-      "TOT": "47",
-      "SOLO": "21",
+      "TOT": "56",
+      "SOLO": "25",
       "TFL": "0",
       "SACKS": "0.0"
     }
@@ -1447,7 +1447,7 @@
     "position": null,
     "jersey": "21",
     "stats": {
-      "TOT": "25",
+      "TOT": "26",
       "SOLO": "15",
       "TFL": "0",
       "SACKS": "0.0"
@@ -1492,10 +1492,25 @@
     "position": null,
     "jersey": "24",
     "stats": {
-      "TOT": "35",
+      "TOT": "37",
       "SOLO": "14",
       "TFL": "2",
       "SACKS": "1.0"
+    }
+  },
+  {
+    "school_id": "wausau-west",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Wilhelm Raduechel",
+    "player_year": "JR",
+    "position": null,
+    "jersey": "25",
+    "stats": {
+      "TOT": "1",
+      "SOLO": "1",
+      "TFL": "0",
+      "SACKS": "0.0"
     }
   },
   {
@@ -1537,8 +1552,8 @@
     "position": null,
     "jersey": "32",
     "stats": {
-      "TOT": "11",
-      "SOLO": "3",
+      "TOT": "14",
+      "SOLO": "5",
       "TFL": "0",
       "SACKS": "0.0"
     }
@@ -1567,8 +1582,8 @@
     "position": null,
     "jersey": "42",
     "stats": {
-      "TOT": "1",
-      "SOLO": "1",
+      "TOT": "4",
+      "SOLO": "2",
       "TFL": "0",
       "SACKS": "0.0"
     }
@@ -1597,8 +1612,8 @@
     "position": null,
     "jersey": "56",
     "stats": {
-      "TOT": "6",
-      "SOLO": "2",
+      "TOT": "7",
+      "SOLO": "3",
       "TFL": "1",
       "SACKS": "0.0"
     }
@@ -1612,8 +1627,8 @@
     "position": null,
     "jersey": "61",
     "stats": {
-      "TOT": "7",
-      "SOLO": "5",
+      "TOT": "9",
+      "SOLO": "6",
       "TFL": "2",
       "SACKS": "0.0"
     }
@@ -1627,8 +1642,8 @@
     "position": null,
     "jersey": "65",
     "stats": {
-      "TOT": "8",
-      "SOLO": "3",
+      "TOT": "9",
+      "SOLO": "4",
       "TFL": "0",
       "SACKS": "0.0"
     }
@@ -1687,9 +1702,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "TOT": "374",
-      "SOLO": "187",
-      "TFL": "29",
+      "TOT": "410",
+      "SOLO": "203",
+      "TFL": "30",
       "SACKS": "4.0"
     }
   },
@@ -2633,6 +2648,757 @@
       "SOLO": "263",
       "TFL": "47",
       "SACKS": "13.0"
+    }
+  },
+  {
+    "school_id": "black-river-falls",
+    "sport": "football",
+    "category": "Passing",
+    "player_name": "Braylon Backaus",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "1",
+    "stats": {
+      "C/ATT": "109/191",
+      "PCT": "57.1%",
+      "YDS": "1624",
+      "YPC": "14.9",
+      "TDS": "16",
+      "INT": "12",
+      "RTG": "143.6",
+      "TD LG": "87",
+      "LONG": "45"
+    }
+  },
+  {
+    "school_id": "black-river-falls",
+    "sport": "football",
+    "category": "Passing",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "C/ATT": "109/191",
+      "PCT": "57.1%",
+      "YDS": "1624",
+      "YPC": "14.9",
+      "TDS": "16",
+      "INT": "12",
+      "RTG": "143.6",
+      "TD LG": "87",
+      "LONG": "45"
+    }
+  },
+  {
+    "school_id": "black-river-falls",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Braylon Backaus",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "1",
+    "stats": {
+      "CAR": "82",
+      "YDS": "270",
+      "YPC": "3.3",
+      "TDS": "4",
+      "TD LG": "1",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "black-river-falls",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Lyric Krpata",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "3",
+    "stats": {
+      "CAR": "7",
+      "YDS": "37",
+      "YPC": "5.3",
+      "TDS": "0",
+      "TD LG": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "black-river-falls",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Huston Arnaud",
+    "player_year": "JR",
+    "position": null,
+    "jersey": "8",
+    "stats": {
+      "CAR": "51",
+      "YDS": "202",
+      "YPC": "4.0",
+      "TDS": "3",
+      "TD LG": "2",
+      "LONG": "12"
+    }
+  },
+  {
+    "school_id": "black-river-falls",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Parker McCormick",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "11",
+    "stats": {
+      "CAR": "3",
+      "YDS": "7",
+      "YPC": "2.3",
+      "TDS": "0",
+      "TD LG": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "black-river-falls",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Tucker Peterson",
+    "player_year": "FR",
+    "position": null,
+    "jersey": "21",
+    "stats": {
+      "CAR": "3",
+      "YDS": "15",
+      "YPC": "5.0",
+      "TDS": "0",
+      "TD LG": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "black-river-falls",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Rylie Dobson",
+    "player_year": "JR",
+    "position": null,
+    "jersey": "30",
+    "stats": {
+      "CAR": "82",
+      "YDS": "321",
+      "YPC": "3.9",
+      "TDS": "5",
+      "TD LG": "17",
+      "LONG": "22"
+    }
+  },
+  {
+    "school_id": "black-river-falls",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "24/2, Trey Babcock",
+    "player_year": "FR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "CAR": "1",
+      "YDS": "33",
+      "YPC": "33.0",
+      "TDS": "0",
+      "TD LG": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "black-river-falls",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "23/32, Brayden Dahl",
+    "player_year": "FR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "CAR": "2",
+      "YDS": "18",
+      "YPC": "9.0",
+      "TDS": "0",
+      "TD LG": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "black-river-falls",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "CAR": "231",
+      "YDS": "903",
+      "YPC": "3.9",
+      "TDS": "12",
+      "TD LG": "17",
+      "LONG": "22"
+    }
+  },
+  {
+    "school_id": "black-river-falls",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Ryan Gunderson",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "5",
+    "stats": {
+      "REC": "26",
+      "YDS": "299",
+      "YPC": "11.5",
+      "TDS": "3",
+      "TD LG": "31",
+      "LONG": "33"
+    }
+  },
+  {
+    "school_id": "black-river-falls",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Mason Meimann",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "6",
+    "stats": {
+      "REC": "36",
+      "YDS": "735",
+      "YPC": "20.4",
+      "TDS": "9",
+      "TD LG": "87",
+      "LONG": "87"
+    }
+  },
+  {
+    "school_id": "black-river-falls",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Ben Breining",
+    "player_year": "JR",
+    "position": null,
+    "jersey": "7",
+    "stats": {
+      "REC": "19",
+      "YDS": "209",
+      "YPC": "11.0",
+      "TDS": "1",
+      "TD LG": "10",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "black-river-falls",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Huston Arnaud",
+    "player_year": "JR",
+    "position": null,
+    "jersey": "8",
+    "stats": {
+      "REC": "6",
+      "YDS": "24",
+      "YPC": "4.0",
+      "TDS": "0",
+      "TD LG": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "black-river-falls",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Will Rahmlow",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "16",
+    "stats": {
+      "REC": "10",
+      "YDS": "136",
+      "YPC": "13.6",
+      "TDS": "1",
+      "TD LG": "26",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "black-river-falls",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Rylie Dobson",
+    "player_year": "JR",
+    "position": null,
+    "jersey": "30",
+    "stats": {
+      "REC": "6",
+      "YDS": "41",
+      "YPC": "6.8",
+      "TDS": "0",
+      "TD LG": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "black-river-falls",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Tony Van Riper",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "60",
+    "stats": {
+      "REC": "1",
+      "YDS": "4",
+      "YPC": "4.0",
+      "TDS": "0",
+      "TD LG": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "black-river-falls",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "24/2, Trey Babcock",
+    "player_year": "FR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "REC": "5",
+      "YDS": "176",
+      "YPC": "35.2",
+      "TDS": "2",
+      "TD LG": "66",
+      "LONG": "30"
+    }
+  },
+  {
+    "school_id": "black-river-falls",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "REC": "109",
+      "YDS": "1624",
+      "YPC": "14.9",
+      "TDS": "16",
+      "TD LG": "87",
+      "LONG": "87"
+    }
+  },
+  {
+    "school_id": "black-river-falls",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Braylon Backaus",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "1",
+    "stats": {
+      "TOT": "26",
+      "SOLO": "16",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "black-river-falls",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Lyric Krpata",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "3",
+    "stats": {
+      "TOT": "2",
+      "SOLO": "0",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "black-river-falls",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Ryan Gunderson",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "5",
+    "stats": {
+      "TOT": "35",
+      "SOLO": "14",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "black-river-falls",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Mason Meimann",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "6",
+    "stats": {
+      "TOT": "36",
+      "SOLO": "14",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "black-river-falls",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Ben Breining",
+    "player_year": "JR",
+    "position": null,
+    "jersey": "7",
+    "stats": {
+      "TOT": "23",
+      "SOLO": "7",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "black-river-falls",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Huston Arnaud",
+    "player_year": "JR",
+    "position": null,
+    "jersey": "8",
+    "stats": {
+      "TOT": "24",
+      "SOLO": "12",
+      "TFL": "1",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "black-river-falls",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Parker McCormick",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "11",
+    "stats": {
+      "TOT": "53",
+      "SOLO": "10",
+      "TFL": "2",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "black-river-falls",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Jordan Calverley",
+    "player_year": "JR",
+    "position": null,
+    "jersey": "14",
+    "stats": {
+      "TOT": "8",
+      "SOLO": "2",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "black-river-falls",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Carter Sylvester",
+    "player_year": "JR",
+    "position": null,
+    "jersey": "15",
+    "stats": {
+      "TOT": "47",
+      "SOLO": "11",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "black-river-falls",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Will Rahmlow",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "16",
+    "stats": {
+      "TOT": "12",
+      "SOLO": "1",
+      "TFL": "1",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "black-river-falls",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Tucker Peterson",
+    "player_year": "FR",
+    "position": null,
+    "jersey": "21",
+    "stats": {
+      "TOT": "2",
+      "SOLO": "1",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "black-river-falls",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Asher Todd",
+    "player_year": "JR",
+    "position": null,
+    "jersey": "22",
+    "stats": {
+      "TOT": "43",
+      "SOLO": "13",
+      "TFL": "2",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "black-river-falls",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Auston Taylor",
+    "player_year": "JR",
+    "position": null,
+    "jersey": "28",
+    "stats": {
+      "TOT": "33",
+      "SOLO": "10",
+      "TFL": "9",
+      "SACKS": "0.5"
+    }
+  },
+  {
+    "school_id": "black-river-falls",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Rylie Dobson",
+    "player_year": "JR",
+    "position": null,
+    "jersey": "30",
+    "stats": {
+      "TOT": "27",
+      "SOLO": "6",
+      "TFL": "1",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "black-river-falls",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Hudson Moe",
+    "player_year": "FR",
+    "position": null,
+    "jersey": "42",
+    "stats": {
+      "TOT": "3",
+      "SOLO": "1",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "black-river-falls",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Andrew Bird",
+    "player_year": "JR",
+    "position": null,
+    "jersey": "44",
+    "stats": {
+      "TOT": "45",
+      "SOLO": "7",
+      "TFL": "11",
+      "SACKS": "1.5"
+    }
+  },
+  {
+    "school_id": "black-river-falls",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Chris Blazek",
+    "player_year": "JR",
+    "position": null,
+    "jersey": "45",
+    "stats": {
+      "TOT": "4",
+      "SOLO": "2",
+      "TFL": "2",
+      "SACKS": "1.0"
+    }
+  },
+  {
+    "school_id": "black-river-falls",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Ben Bresee",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "52",
+    "stats": {
+      "TOT": "20",
+      "SOLO": "9",
+      "TFL": "4",
+      "SACKS": "2.0"
+    }
+  },
+  {
+    "school_id": "black-river-falls",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Andrew Gunderson",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "55",
+    "stats": {
+      "TOT": "71",
+      "SOLO": "25",
+      "TFL": "12",
+      "SACKS": "2.5"
+    }
+  },
+  {
+    "school_id": "black-river-falls",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Xander Chamberlain",
+    "player_year": "JR",
+    "position": null,
+    "jersey": "57",
+    "stats": {
+      "TOT": "17",
+      "SOLO": "4",
+      "TFL": "2",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "black-river-falls",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Silas Hake-Gregerson",
+    "player_year": "JR",
+    "position": null,
+    "jersey": "58",
+    "stats": {
+      "TOT": "30",
+      "SOLO": "5",
+      "TFL": "6",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "black-river-falls",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Nathan Gronski",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "75",
+    "stats": {
+      "TOT": "2",
+      "SOLO": "2",
+      "TFL": "2",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "black-river-falls",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Garrett Spaude",
+    "player_year": "JR",
+    "position": null,
+    "jersey": "76",
+    "stats": {
+      "TOT": "2",
+      "SOLO": "0",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "black-river-falls",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Blazin Rosebeck",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "78",
+    "stats": {
+      "TOT": "1",
+      "SOLO": "0",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "black-river-falls",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "70/75, Jet Schultz",
+    "player_year": "FR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "TOT": "3",
+      "SOLO": "3",
+      "TFL": "2",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "black-river-falls",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "23/32, Brayden Dahl",
+    "player_year": "FR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "TOT": "2",
+      "SOLO": "2",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "black-river-falls",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "TOT": "571",
+      "SOLO": "177",
+      "TFL": "57",
+      "SACKS": "7.5"
     }
   },
   {
@@ -5791,8 +6557,8 @@
     "position": null,
     "jersey": "1",
     "stats": {
-      "TOT": "36",
-      "SOLO": "20",
+      "TOT": "55",
+      "SOLO": "27",
       "TFL": "0",
       "SACKS": "0.0"
     }
@@ -5806,8 +6572,8 @@
     "position": null,
     "jersey": "2",
     "stats": {
-      "TOT": "34",
-      "SOLO": "19",
+      "TOT": "41",
+      "SOLO": "20",
       "TFL": "2",
       "SACKS": "0.0"
     }
@@ -5836,8 +6602,8 @@
     "position": null,
     "jersey": "5",
     "stats": {
-      "TOT": "23",
-      "SOLO": "16",
+      "TOT": "27",
+      "SOLO": "17",
       "TFL": "1",
       "SACKS": "0.0"
     }
@@ -5911,8 +6677,8 @@
     "position": null,
     "jersey": "11",
     "stats": {
-      "TOT": "13",
-      "SOLO": "6",
+      "TOT": "18",
+      "SOLO": "8",
       "TFL": "0",
       "SACKS": "0.0"
     }
@@ -5926,8 +6692,8 @@
     "position": null,
     "jersey": "12",
     "stats": {
-      "TOT": "30",
-      "SOLO": "19",
+      "TOT": "34",
+      "SOLO": "20",
       "TFL": "0",
       "SACKS": "0.0"
     }
@@ -5941,7 +6707,7 @@
     "position": null,
     "jersey": "15",
     "stats": {
-      "TOT": "12",
+      "TOT": "13",
       "SOLO": "5",
       "TFL": "0",
       "SACKS": "0.0"
@@ -5986,8 +6752,8 @@
     "position": null,
     "jersey": "22",
     "stats": {
-      "TOT": "28",
-      "SOLO": "19",
+      "TOT": "33",
+      "SOLO": "20",
       "TFL": "5",
       "SACKS": "1.0"
     }
@@ -6001,8 +6767,8 @@
     "position": null,
     "jersey": "24",
     "stats": {
-      "TOT": "30",
-      "SOLO": "16",
+      "TOT": "34",
+      "SOLO": "17",
       "TFL": "3",
       "SACKS": "0.0"
     }
@@ -6016,8 +6782,8 @@
     "position": null,
     "jersey": "25",
     "stats": {
-      "TOT": "32",
-      "SOLO": "19",
+      "TOT": "39",
+      "SOLO": "20",
       "TFL": "0",
       "SACKS": "0.0"
     }
@@ -6031,8 +6797,8 @@
     "position": null,
     "jersey": "32",
     "stats": {
-      "TOT": "33",
-      "SOLO": "19",
+      "TOT": "40",
+      "SOLO": "21",
       "TFL": "7",
       "SACKS": "1.0"
     }
@@ -6091,8 +6857,8 @@
     "position": null,
     "jersey": "68",
     "stats": {
-      "TOT": "22",
-      "SOLO": "11",
+      "TOT": "25",
+      "SOLO": "12",
       "TFL": "5",
       "SACKS": "0.0"
     }
@@ -6106,8 +6872,8 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "TOT": "380",
-      "SOLO": "218",
+      "TOT": "446",
+      "SOLO": "236",
       "TFL": "24",
       "SACKS": "2.0"
     }
@@ -12505,9 +13271,9 @@
     "position": null,
     "jersey": "21",
     "stats": {
-      "CAR": "3",
-      "YDS": "30",
-      "YPC": "10.0",
+      "CAR": "5",
+      "YDS": "35",
+      "YPC": "7.0",
       "TDS": "0",
       "TD LG": "0",
       "LONG": "0"
@@ -12556,9 +13322,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "CAR": "268",
-      "YDS": "1193",
-      "YPC": "4.5",
+      "CAR": "270",
+      "YDS": "1198",
+      "YPC": "4.4",
       "TDS": "12",
       "TD LG": "11",
       "LONG": "0"
@@ -12871,14 +13637,29 @@
     "school_id": "tomahawk",
     "sport": "football",
     "category": "Defense",
+    "player_name": "Jax Westlund",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "21",
+    "stats": {
+      "TOT": "1",
+      "SOLO": "1",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "tomahawk",
+    "sport": "football",
+    "category": "Defense",
     "player_name": "Zander Zehner",
     "player_year": "SR",
     "position": null,
     "jersey": "32",
     "stats": {
-      "TOT": "45",
-      "SOLO": "25",
-      "TFL": "2",
+      "TOT": "46",
+      "SOLO": "26",
+      "TFL": "3",
       "SACKS": "1.0"
     }
   },
@@ -13013,7 +13794,7 @@
     "stats": {
       "TOT": "94",
       "SOLO": "50",
-      "TFL": "4",
+      "TFL": "5",
       "SACKS": "1.0"
     }
   },
@@ -13086,9 +13867,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "TOT": "568",
-      "SOLO": "323",
-      "TFL": "24",
+      "TOT": "570",
+      "SOLO": "325",
+      "TFL": "26",
       "SACKS": "4.0"
     }
   },
@@ -37551,6 +38332,2318 @@
       "SOLO": "155",
       "TFL": "29",
       "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "northland-pines",
+    "sport": "football",
+    "category": "Passing",
+    "player_name": "Will Dickman",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "14",
+    "stats": {
+      "C/ATT": "8/19",
+      "PCT": "42.1%",
+      "YDS": "110",
+      "YPC": "13.8",
+      "TDS": "3",
+      "INT": "2",
+      "RTG": "121.8",
+      "TD LG": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "northland-pines",
+    "sport": "football",
+    "category": "Passing",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "C/ATT": "8/19",
+      "PCT": "42.1%",
+      "YDS": "110",
+      "YPC": "13.8",
+      "TDS": "3",
+      "INT": "2",
+      "RTG": "121.8",
+      "TD LG": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "northland-pines",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Nate Stoltman",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "6",
+    "stats": {
+      "CAR": "3",
+      "YDS": "-1",
+      "YPC": "-0.3",
+      "TDS": "0",
+      "TD LG": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "northland-pines",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Conrad Droby",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "10",
+    "stats": {
+      "CAR": "19",
+      "YDS": "96",
+      "YPC": "5.1",
+      "TDS": "1",
+      "TD LG": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "northland-pines",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Will Dickman",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "14",
+    "stats": {
+      "CAR": "7",
+      "YDS": "32",
+      "YPC": "4.6",
+      "TDS": "1",
+      "TD LG": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "northland-pines",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Tucker Brock",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "22",
+    "stats": {
+      "CAR": "18",
+      "YDS": "84",
+      "YPC": "4.7",
+      "TDS": "0",
+      "TD LG": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "northland-pines",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Mason Nagy",
+    "player_year": "SO",
+    "position": null,
+    "jersey": "24",
+    "stats": {
+      "CAR": "11",
+      "YDS": "62",
+      "YPC": "5.6",
+      "TDS": "0",
+      "TD LG": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "northland-pines",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Bodie Bakken",
+    "player_year": "SO",
+    "position": null,
+    "jersey": "30",
+    "stats": {
+      "CAR": "8",
+      "YDS": "44",
+      "YPC": "5.5",
+      "TDS": "0",
+      "TD LG": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "northland-pines",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "CAR": "66",
+      "YDS": "317",
+      "YPC": "4.8",
+      "TDS": "2",
+      "TD LG": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "northland-pines",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Bryan Droby",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "3",
+    "stats": {
+      "REC": "1",
+      "YDS": "11",
+      "YPC": "11.0",
+      "TDS": "1",
+      "TD LG": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "northland-pines",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Nate Stoltman",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "6",
+    "stats": {
+      "REC": "1",
+      "YDS": "13",
+      "YPC": "13.0",
+      "TDS": "1",
+      "TD LG": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "northland-pines",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Conrad Droby",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "10",
+    "stats": {
+      "REC": "3",
+      "YDS": "52",
+      "YPC": "17.3",
+      "TDS": "1",
+      "TD LG": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "northland-pines",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Layk Evenson-Mortag",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "11",
+    "stats": {
+      "REC": "1",
+      "YDS": "4",
+      "YPC": "4.0",
+      "TDS": "0",
+      "TD LG": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "northland-pines",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Noah Duffek",
+    "player_year": "JR",
+    "position": null,
+    "jersey": "18",
+    "stats": {
+      "REC": "1",
+      "YDS": "11",
+      "YPC": "11.0",
+      "TDS": "0",
+      "TD LG": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "northland-pines",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Mikayon Harris",
+    "player_year": "JR",
+    "position": null,
+    "jersey": "19",
+    "stats": {
+      "REC": "1",
+      "YDS": "19",
+      "YPC": "19.0",
+      "TDS": "0",
+      "TD LG": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "northland-pines",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "REC": "8",
+      "YDS": "110",
+      "YPC": "13.8",
+      "TDS": "3",
+      "TD LG": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "northland-pines",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "TOT": "0",
+      "SOLO": "0",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "owen-withee",
+    "sport": "football",
+    "category": "Passing",
+    "player_name": "Isaiah Pyrchalla",
+    "player_year": "SO",
+    "position": null,
+    "jersey": "2",
+    "stats": {
+      "C/ATT": "6/20",
+      "PCT": "30.0%",
+      "YDS": "72",
+      "YPC": "12.0",
+      "TDS": "2",
+      "INT": "1",
+      "RTG": "83.2",
+      "TD LG": "26",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "owen-withee",
+    "sport": "football",
+    "category": "Passing",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "C/ATT": "6/20",
+      "PCT": "30.0%",
+      "YDS": "72",
+      "YPC": "12.0",
+      "TDS": "2",
+      "INT": "1",
+      "RTG": "83.2",
+      "TD LG": "26",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "owen-withee",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Isaiah Pyrchalla",
+    "player_year": "SO",
+    "position": null,
+    "jersey": "2",
+    "stats": {
+      "CAR": "35",
+      "YDS": "215",
+      "YPC": "6.1",
+      "TDS": "6",
+      "TD LG": "36",
+      "LONG": "36"
+    }
+  },
+  {
+    "school_id": "owen-withee",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Talon Mueller",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "5",
+    "stats": {
+      "CAR": "143",
+      "YDS": "850",
+      "YPC": "5.9",
+      "TDS": "16",
+      "TD LG": "58",
+      "LONG": "50"
+    }
+  },
+  {
+    "school_id": "owen-withee",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Clay Mueller",
+    "player_year": "SO",
+    "position": null,
+    "jersey": "6",
+    "stats": {
+      "CAR": "80",
+      "YDS": "782",
+      "YPC": "9.8",
+      "TDS": "10",
+      "TD LG": "56",
+      "LONG": "44"
+    }
+  },
+  {
+    "school_id": "owen-withee",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Nolan Petersen",
+    "player_year": "SO",
+    "position": null,
+    "jersey": "7",
+    "stats": {
+      "CAR": "1",
+      "YDS": "3",
+      "YPC": "3.0",
+      "TDS": "0",
+      "TD LG": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "owen-withee",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Troy Sherwood",
+    "player_year": "JR",
+    "position": null,
+    "jersey": "22",
+    "stats": {
+      "CAR": "24",
+      "YDS": "145",
+      "YPC": "6.0",
+      "TDS": "4",
+      "TD LG": "15",
+      "LONG": "19"
+    }
+  },
+  {
+    "school_id": "owen-withee",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Bryher Churkey",
+    "player_year": "FR",
+    "position": null,
+    "jersey": "23",
+    "stats": {
+      "CAR": "14",
+      "YDS": "78",
+      "YPC": "5.6",
+      "TDS": "2",
+      "TD LG": "24",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "owen-withee",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Chase Purgett",
+    "player_year": "FR",
+    "position": null,
+    "jersey": "25",
+    "stats": {
+      "CAR": "6",
+      "YDS": "114",
+      "YPC": "19.0",
+      "TDS": "3",
+      "TD LG": "45",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "owen-withee",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Easton Ruggles",
+    "player_year": "SO",
+    "position": null,
+    "jersey": "34",
+    "stats": {
+      "CAR": "4",
+      "YDS": "4",
+      "YPC": "1.0",
+      "TDS": "0",
+      "TD LG": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "owen-withee",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "CAR": "307",
+      "YDS": "2188",
+      "YPC": "7.1",
+      "TDS": "41",
+      "TD LG": "58",
+      "LONG": "50"
+    }
+  },
+  {
+    "school_id": "owen-withee",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Talon Mueller",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "5",
+    "stats": {
+      "REC": "1",
+      "YDS": "0",
+      "YPC": "0.0",
+      "TDS": "0",
+      "TD LG": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "owen-withee",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Clay Mueller",
+    "player_year": "SO",
+    "position": null,
+    "jersey": "6",
+    "stats": {
+      "REC": "2",
+      "YDS": "40",
+      "YPC": "20.0",
+      "TDS": "1",
+      "TD LG": "28",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "owen-withee",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Tegan Treankler",
+    "player_year": "SO",
+    "position": null,
+    "jersey": "10",
+    "stats": {
+      "REC": "1",
+      "YDS": "8",
+      "YPC": "8.0",
+      "TDS": "1",
+      "TD LG": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "owen-withee",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Crandon Dallman",
+    "player_year": "JR",
+    "position": null,
+    "jersey": "27",
+    "stats": {
+      "REC": "2",
+      "YDS": "24",
+      "YPC": "12.0",
+      "TDS": "0",
+      "TD LG": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "owen-withee",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "REC": "6",
+      "YDS": "72",
+      "YPC": "12.0",
+      "TDS": "2",
+      "TD LG": "28",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "owen-withee",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Isaiah Pyrchalla",
+    "player_year": "SO",
+    "position": null,
+    "jersey": "2",
+    "stats": {
+      "TOT": "16",
+      "SOLO": "7",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "owen-withee",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Talon Mueller",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "5",
+    "stats": {
+      "TOT": "100",
+      "SOLO": "77",
+      "TFL": "2",
+      "SACKS": "2.0"
+    }
+  },
+  {
+    "school_id": "owen-withee",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Clay Mueller",
+    "player_year": "SO",
+    "position": null,
+    "jersey": "6",
+    "stats": {
+      "TOT": "56",
+      "SOLO": "48",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "owen-withee",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Nolan Petersen",
+    "player_year": "SO",
+    "position": null,
+    "jersey": "7",
+    "stats": {
+      "TOT": "4",
+      "SOLO": "1",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "owen-withee",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Will Simenson",
+    "player_year": "SO",
+    "position": null,
+    "jersey": "8",
+    "stats": {
+      "TOT": "47",
+      "SOLO": "37",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "owen-withee",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Tegan Treankler",
+    "player_year": "SO",
+    "position": null,
+    "jersey": "10",
+    "stats": {
+      "TOT": "59",
+      "SOLO": "47",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "owen-withee",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Joe Graham",
+    "player_year": "FR",
+    "position": null,
+    "jersey": "18",
+    "stats": {
+      "TOT": "3",
+      "SOLO": "2",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "owen-withee",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Troy Sherwood",
+    "player_year": "JR",
+    "position": null,
+    "jersey": "22",
+    "stats": {
+      "TOT": "42",
+      "SOLO": "35",
+      "TFL": "1",
+      "SACKS": "1.0"
+    }
+  },
+  {
+    "school_id": "owen-withee",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Bryher Churkey",
+    "player_year": "FR",
+    "position": null,
+    "jersey": "23",
+    "stats": {
+      "TOT": "5",
+      "SOLO": "5",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "owen-withee",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Chase Purgett",
+    "player_year": "FR",
+    "position": null,
+    "jersey": "25",
+    "stats": {
+      "TOT": "11",
+      "SOLO": "10",
+      "TFL": "2",
+      "SACKS": "2.0"
+    }
+  },
+  {
+    "school_id": "owen-withee",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Crandon Dallman",
+    "player_year": "JR",
+    "position": null,
+    "jersey": "27",
+    "stats": {
+      "TOT": "43",
+      "SOLO": "27",
+      "TFL": "3",
+      "SACKS": "3.0"
+    }
+  },
+  {
+    "school_id": "owen-withee",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Aron Sanchez",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "33",
+    "stats": {
+      "TOT": "31",
+      "SOLO": "22",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "owen-withee",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Gabe Baures",
+    "player_year": "FR",
+    "position": null,
+    "jersey": "48",
+    "stats": {
+      "TOT": "1",
+      "SOLO": "1",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "owen-withee",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Jordon Wulff",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "52",
+    "stats": {
+      "TOT": "33",
+      "SOLO": "23",
+      "TFL": "1",
+      "SACKS": "1.0"
+    }
+  },
+  {
+    "school_id": "owen-withee",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Carter Shelton",
+    "player_year": "SO",
+    "position": null,
+    "jersey": "55",
+    "stats": {
+      "TOT": "4",
+      "SOLO": "1",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "owen-withee",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Aschton Paczkowski",
+    "player_year": "JR",
+    "position": null,
+    "jersey": "74",
+    "stats": {
+      "TOT": "11",
+      "SOLO": "6",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "owen-withee",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Nash Gruetzmacher",
+    "player_year": "FR",
+    "position": null,
+    "jersey": "87",
+    "stats": {
+      "TOT": "8",
+      "SOLO": "5",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "owen-withee",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "TOT": "474",
+      "SOLO": "354",
+      "TFL": "9",
+      "SACKS": "9.0"
+    }
+  },
+  {
+    "school_id": "gilman",
+    "sport": "football",
+    "category": "Passing",
+    "player_name": "Cullen Noonan",
+    "player_year": "SO",
+    "position": null,
+    "jersey": "5",
+    "stats": {
+      "C/ATT": "0/1",
+      "PCT": "0.0%",
+      "YDS": "0",
+      "YPC": "0.0",
+      "TDS": "0",
+      "INT": "0",
+      "RTG": "0.0",
+      "TD LG": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "gilman",
+    "sport": "football",
+    "category": "Passing",
+    "player_name": "Logan Halida",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "14",
+    "stats": {
+      "C/ATT": "26/35",
+      "PCT": "74.3%",
+      "YDS": "437",
+      "YPC": "16.8",
+      "TDS": "4",
+      "INT": "0",
+      "RTG": "216.9",
+      "TD LG": "52",
+      "LONG": "52"
+    }
+  },
+  {
+    "school_id": "gilman",
+    "sport": "football",
+    "category": "Passing",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "C/ATT": "26/36",
+      "PCT": "72.2%",
+      "YDS": "437",
+      "YPC": "16.8",
+      "TDS": "4",
+      "INT": "0",
+      "RTG": "210.9",
+      "TD LG": "52",
+      "LONG": "52"
+    }
+  },
+  {
+    "school_id": "gilman",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Max Pockat",
+    "player_year": "JR",
+    "position": null,
+    "jersey": "2",
+    "stats": {
+      "CAR": "20",
+      "YDS": "73",
+      "YPC": "3.6",
+      "TDS": "1",
+      "TD LG": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "gilman",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Cullen Noonan",
+    "player_year": "SO",
+    "position": null,
+    "jersey": "5",
+    "stats": {
+      "CAR": "5",
+      "YDS": "-2",
+      "YPC": "-0.4",
+      "TDS": "0",
+      "TD LG": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "gilman",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Logan Halida",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "14",
+    "stats": {
+      "CAR": "59",
+      "YDS": "464",
+      "YPC": "7.9",
+      "TDS": "13",
+      "TD LG": "58",
+      "LONG": "23"
+    }
+  },
+  {
+    "school_id": "gilman",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Cade Kowalczyk",
+    "player_year": "SO",
+    "position": null,
+    "jersey": "21",
+    "stats": {
+      "CAR": "14",
+      "YDS": "94",
+      "YPC": "6.7",
+      "TDS": "1",
+      "TD LG": "28",
+      "LONG": "28"
+    }
+  },
+  {
+    "school_id": "gilman",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Kolby Keepers",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "23",
+    "stats": {
+      "CAR": "40",
+      "YDS": "296",
+      "YPC": "7.4",
+      "TDS": "7",
+      "TD LG": "53",
+      "LONG": "53"
+    }
+  },
+  {
+    "school_id": "gilman",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Dax Steinbach",
+    "player_year": "SO",
+    "position": null,
+    "jersey": "25",
+    "stats": {
+      "CAR": "29",
+      "YDS": "202",
+      "YPC": "7.0",
+      "TDS": "3",
+      "TD LG": "21",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "gilman",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Lucas Halida",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "32",
+    "stats": {
+      "CAR": "63",
+      "YDS": "623",
+      "YPC": "9.9",
+      "TDS": "9",
+      "TD LG": "75",
+      "LONG": "61"
+    }
+  },
+  {
+    "school_id": "gilman",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Trevin Duellman",
+    "player_year": "JR",
+    "position": null,
+    "jersey": "34",
+    "stats": {
+      "CAR": "52",
+      "YDS": "623",
+      "YPC": "12.0",
+      "TDS": "11",
+      "TD LG": "53",
+      "LONG": "36"
+    }
+  },
+  {
+    "school_id": "gilman",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Sawyer Nichols",
+    "player_year": "FR",
+    "position": null,
+    "jersey": "44",
+    "stats": {
+      "CAR": "7",
+      "YDS": "38",
+      "YPC": "5.4",
+      "TDS": "0",
+      "TD LG": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "gilman",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Connor Nichols",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "52",
+    "stats": {
+      "CAR": "1",
+      "YDS": "1",
+      "YPC": "1.0",
+      "TDS": "1",
+      "TD LG": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "gilman",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Elijah Madlon",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "54",
+    "stats": {
+      "CAR": "1",
+      "YDS": "1",
+      "YPC": "1.0",
+      "TDS": "1",
+      "TD LG": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "gilman",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Isaac Arneson",
+    "player_year": "FR",
+    "position": null,
+    "jersey": "56",
+    "stats": {
+      "CAR": "2",
+      "YDS": "6",
+      "YPC": "3.0",
+      "TDS": "0",
+      "TD LG": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "gilman",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Andy Copenhaver",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "78",
+    "stats": {
+      "CAR": "2",
+      "YDS": "8",
+      "YPC": "4.0",
+      "TDS": "1",
+      "TD LG": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "gilman",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "CAR": "295",
+      "YDS": "2427",
+      "YPC": "8.2",
+      "TDS": "48",
+      "TD LG": "75",
+      "LONG": "61"
+    }
+  },
+  {
+    "school_id": "gilman",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "James Wojcik",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "3",
+    "stats": {
+      "REC": "3",
+      "YDS": "89",
+      "YPC": "29.7",
+      "TDS": "2",
+      "TD LG": "52",
+      "LONG": "52"
+    }
+  },
+  {
+    "school_id": "gilman",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Wyatt Orth",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "4",
+    "stats": {
+      "REC": "1",
+      "YDS": "9",
+      "YPC": "9.0",
+      "TDS": "1",
+      "TD LG": "0",
+      "LONG": "9"
+    }
+  },
+  {
+    "school_id": "gilman",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Beau Pockat",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "16",
+    "stats": {
+      "REC": "8",
+      "YDS": "210",
+      "YPC": "26.2",
+      "TDS": "1",
+      "TD LG": "2",
+      "LONG": "45"
+    }
+  },
+  {
+    "school_id": "gilman",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Kolby Keepers",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "23",
+    "stats": {
+      "REC": "2",
+      "YDS": "7",
+      "YPC": "3.5",
+      "TDS": "0",
+      "TD LG": "0",
+      "LONG": "6"
+    }
+  },
+  {
+    "school_id": "gilman",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Lucas Halida",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "32",
+    "stats": {
+      "REC": "8",
+      "YDS": "67",
+      "YPC": "8.4",
+      "TDS": "0",
+      "TD LG": "0",
+      "LONG": "13"
+    }
+  },
+  {
+    "school_id": "gilman",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Trevin Duellman",
+    "player_year": "JR",
+    "position": null,
+    "jersey": "34",
+    "stats": {
+      "REC": "1",
+      "YDS": "16",
+      "YPC": "16.0",
+      "TDS": "0",
+      "TD LG": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "gilman",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Jossiah Jackson",
+    "player_year": "JR",
+    "position": null,
+    "jersey": "88",
+    "stats": {
+      "REC": "3",
+      "YDS": "39",
+      "YPC": "13.0",
+      "TDS": "0",
+      "TD LG": "0",
+      "LONG": "14"
+    }
+  },
+  {
+    "school_id": "gilman",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "REC": "26",
+      "YDS": "437",
+      "YPC": "16.8",
+      "TDS": "4",
+      "TD LG": "52",
+      "LONG": "52"
+    }
+  },
+  {
+    "school_id": "gilman",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Max Pockat",
+    "player_year": "JR",
+    "position": null,
+    "jersey": "2",
+    "stats": {
+      "TOT": "12",
+      "SOLO": "11",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "gilman",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "James Wojcik",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "3",
+    "stats": {
+      "TOT": "5",
+      "SOLO": "2",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "gilman",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Wyatt Orth",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "4",
+    "stats": {
+      "TOT": "5",
+      "SOLO": "5",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "gilman",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Cullen Noonan",
+    "player_year": "SO",
+    "position": null,
+    "jersey": "5",
+    "stats": {
+      "TOT": "2",
+      "SOLO": "2",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "gilman",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Logan Halida",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "14",
+    "stats": {
+      "TOT": "18",
+      "SOLO": "14",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "gilman",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Beau Pockat",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "16",
+    "stats": {
+      "TOT": "21",
+      "SOLO": "19",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "gilman",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Mayland Stuner",
+    "player_year": "SO",
+    "position": null,
+    "jersey": "18",
+    "stats": {
+      "TOT": "3",
+      "SOLO": "3",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "gilman",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Aiden Westaby",
+    "player_year": "JR",
+    "position": null,
+    "jersey": "20",
+    "stats": {
+      "TOT": "1",
+      "SOLO": "0",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "gilman",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Cade Kowalczyk",
+    "player_year": "SO",
+    "position": null,
+    "jersey": "21",
+    "stats": {
+      "TOT": "6",
+      "SOLO": "5",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "gilman",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Kolby Keepers",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "23",
+    "stats": {
+      "TOT": "62",
+      "SOLO": "53",
+      "TFL": "0",
+      "SACKS": "10.0"
+    }
+  },
+  {
+    "school_id": "gilman",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Gavyn Winger",
+    "player_year": "SO",
+    "position": null,
+    "jersey": "24",
+    "stats": {
+      "TOT": "4",
+      "SOLO": "4",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "gilman",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Dax Steinbach",
+    "player_year": "SO",
+    "position": null,
+    "jersey": "25",
+    "stats": {
+      "TOT": "28",
+      "SOLO": "25",
+      "TFL": "0",
+      "SACKS": "2.0"
+    }
+  },
+  {
+    "school_id": "gilman",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Henry Syryczuk",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "26",
+    "stats": {
+      "TOT": "45",
+      "SOLO": "36",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "gilman",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Lucas Halida",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "32",
+    "stats": {
+      "TOT": "33",
+      "SOLO": "27",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "gilman",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Jaxson Webster",
+    "player_year": "JR",
+    "position": null,
+    "jersey": "33",
+    "stats": {
+      "TOT": "14",
+      "SOLO": "14",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "gilman",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Trevin Duellman",
+    "player_year": "JR",
+    "position": null,
+    "jersey": "34",
+    "stats": {
+      "TOT": "47",
+      "SOLO": "42",
+      "TFL": "0",
+      "SACKS": "2.0"
+    }
+  },
+  {
+    "school_id": "gilman",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Sawyer Nichols",
+    "player_year": "FR",
+    "position": null,
+    "jersey": "44",
+    "stats": {
+      "TOT": "2",
+      "SOLO": "2",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "gilman",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Wyatt Stephens",
+    "player_year": "SO",
+    "position": null,
+    "jersey": "50",
+    "stats": {
+      "TOT": "5",
+      "SOLO": "4",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "gilman",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Connor Nichols",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "52",
+    "stats": {
+      "TOT": "11",
+      "SOLO": "9",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "gilman",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Elijah Madlon",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "54",
+    "stats": {
+      "TOT": "2",
+      "SOLO": "2",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "gilman",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Brycen Madlon",
+    "player_year": "FR",
+    "position": null,
+    "jersey": "72",
+    "stats": {
+      "TOT": "3",
+      "SOLO": "3",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "gilman",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Andy Copenhaver",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "78",
+    "stats": {
+      "TOT": "5",
+      "SOLO": "5",
+      "TFL": "0",
+      "SACKS": "1.0"
+    }
+  },
+  {
+    "school_id": "gilman",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Taydyn Angell",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "85",
+    "stats": {
+      "TOT": "29",
+      "SOLO": "26",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "gilman",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Jossiah Jackson",
+    "player_year": "JR",
+    "position": null,
+    "jersey": "88",
+    "stats": {
+      "TOT": "6",
+      "SOLO": "4",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "gilman",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "TOT": "369",
+      "SOLO": "317",
+      "TFL": "0",
+      "SACKS": "15.0"
+    }
+  },
+  {
+    "school_id": "shell-lake",
+    "sport": "football",
+    "category": "Passing",
+    "player_name": "Boden Marker",
+    "player_year": "SO",
+    "position": null,
+    "jersey": "4",
+    "stats": {
+      "C/ATT": "1/3",
+      "PCT": "33.3%",
+      "YDS": "-2",
+      "YPC": "-2.0",
+      "TDS": "0",
+      "INT": "2",
+      "RTG": "-105.6",
+      "TD LG": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "shell-lake",
+    "sport": "football",
+    "category": "Passing",
+    "player_name": "Alex Marcoux",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "10",
+    "stats": {
+      "C/ATT": "27/37",
+      "PCT": "73.0%",
+      "YDS": "641",
+      "YPC": "23.7",
+      "TDS": "9",
+      "INT": "1",
+      "RTG": "293.4",
+      "TD LG": "0",
+      "LONG": "83"
+    }
+  },
+  {
+    "school_id": "shell-lake",
+    "sport": "football",
+    "category": "Passing",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "C/ATT": "28/40",
+      "PCT": "70.0%",
+      "YDS": "639",
+      "YPC": "22.8",
+      "TDS": "9",
+      "INT": "3",
+      "RTG": "263.4",
+      "TD LG": "0",
+      "LONG": "83"
+    }
+  },
+  {
+    "school_id": "shell-lake",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Liam Russell",
+    "player_year": "JR",
+    "position": null,
+    "jersey": "2",
+    "stats": {
+      "CAR": "22",
+      "YDS": "237",
+      "YPC": "10.8",
+      "TDS": "2",
+      "TD LG": "0",
+      "LONG": "61"
+    }
+  },
+  {
+    "school_id": "shell-lake",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Curtis Mullenix",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "3",
+    "stats": {
+      "CAR": "1",
+      "YDS": "-5",
+      "YPC": "-5.0",
+      "TDS": "0",
+      "TD LG": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "shell-lake",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Boden Marker",
+    "player_year": "SO",
+    "position": null,
+    "jersey": "4",
+    "stats": {
+      "CAR": "16",
+      "YDS": "121",
+      "YPC": "7.6",
+      "TDS": "1",
+      "TD LG": "0",
+      "LONG": "35"
+    }
+  },
+  {
+    "school_id": "shell-lake",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Brennan Shafer",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "5",
+    "stats": {
+      "CAR": "30",
+      "YDS": "329",
+      "YPC": "11.0",
+      "TDS": "10",
+      "TD LG": "0",
+      "LONG": "36"
+    }
+  },
+  {
+    "school_id": "shell-lake",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Parker Kelley",
+    "player_year": "JR",
+    "position": null,
+    "jersey": "7",
+    "stats": {
+      "CAR": "6",
+      "YDS": "25",
+      "YPC": "4.2",
+      "TDS": "0",
+      "TD LG": "0",
+      "LONG": "10"
+    }
+  },
+  {
+    "school_id": "shell-lake",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Preston Kelley",
+    "player_year": "SO",
+    "position": null,
+    "jersey": "8",
+    "stats": {
+      "CAR": "5",
+      "YDS": "56",
+      "YPC": "11.2",
+      "TDS": "1",
+      "TD LG": "0",
+      "LONG": "25"
+    }
+  },
+  {
+    "school_id": "shell-lake",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Alex Marcoux",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "10",
+    "stats": {
+      "CAR": "77",
+      "YDS": "765",
+      "YPC": "9.9",
+      "TDS": "14",
+      "TD LG": "0",
+      "LONG": "58"
+    }
+  },
+  {
+    "school_id": "shell-lake",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Skyler Shafer",
+    "player_year": "SO",
+    "position": null,
+    "jersey": "12",
+    "stats": {
+      "CAR": "8",
+      "YDS": "30",
+      "YPC": "3.8",
+      "TDS": "0",
+      "TD LG": "0",
+      "LONG": "8"
+    }
+  },
+  {
+    "school_id": "shell-lake",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Emerson Russell",
+    "player_year": "FR",
+    "position": null,
+    "jersey": "14",
+    "stats": {
+      "CAR": "2",
+      "YDS": "1",
+      "YPC": "0.5",
+      "TDS": "0",
+      "TD LG": "0",
+      "LONG": "3"
+    }
+  },
+  {
+    "school_id": "shell-lake",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Parker Klein",
+    "player_year": "SO",
+    "position": null,
+    "jersey": "17",
+    "stats": {
+      "CAR": "1",
+      "YDS": "8",
+      "YPC": "8.0",
+      "TDS": "0",
+      "TD LG": "0",
+      "LONG": "8"
+    }
+  },
+  {
+    "school_id": "shell-lake",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "CAR": "168",
+      "YDS": "1567",
+      "YPC": "9.3",
+      "TDS": "28",
+      "TD LG": "0",
+      "LONG": "61"
+    }
+  },
+  {
+    "school_id": "shell-lake",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Liam Russell",
+    "player_year": "JR",
+    "position": null,
+    "jersey": "2",
+    "stats": {
+      "REC": "3",
+      "YDS": "86",
+      "YPC": "28.7",
+      "TDS": "2",
+      "TD LG": "0",
+      "LONG": "58"
+    }
+  },
+  {
+    "school_id": "shell-lake",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Curtis Mullenix",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "3",
+    "stats": {
+      "REC": "16",
+      "YDS": "293",
+      "YPC": "18.3",
+      "TDS": "4",
+      "TD LG": "0",
+      "LONG": "83"
+    }
+  },
+  {
+    "school_id": "shell-lake",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Brennan Shafer",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "5",
+    "stats": {
+      "REC": "8",
+      "YDS": "262",
+      "YPC": "32.8",
+      "TDS": "3",
+      "TD LG": "0",
+      "LONG": "66"
+    }
+  },
+  {
+    "school_id": "shell-lake",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Parker Klein",
+    "player_year": "SO",
+    "position": null,
+    "jersey": "17",
+    "stats": {
+      "REC": "1",
+      "YDS": "-2",
+      "YPC": "-2.0",
+      "TDS": "0",
+      "TD LG": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "shell-lake",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "REC": "28",
+      "YDS": "639",
+      "YPC": "22.8",
+      "TDS": "9",
+      "TD LG": "0",
+      "LONG": "83"
+    }
+  },
+  {
+    "school_id": "shell-lake",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Liam Russell",
+    "player_year": "JR",
+    "position": null,
+    "jersey": "2",
+    "stats": {
+      "TOT": "43",
+      "SOLO": "27",
+      "TFL": "2",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "shell-lake",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Curtis Mullenix",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "3",
+    "stats": {
+      "TOT": "24",
+      "SOLO": "13",
+      "TFL": "5",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "shell-lake",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Boden Marker",
+    "player_year": "SO",
+    "position": null,
+    "jersey": "4",
+    "stats": {
+      "TOT": "21",
+      "SOLO": "12",
+      "TFL": "1",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "shell-lake",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Brennan Shafer",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "5",
+    "stats": {
+      "TOT": "29",
+      "SOLO": "24",
+      "TFL": "5",
+      "SACKS": "1.0"
+    }
+  },
+  {
+    "school_id": "shell-lake",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Parker Kelley",
+    "player_year": "JR",
+    "position": null,
+    "jersey": "7",
+    "stats": {
+      "TOT": "37",
+      "SOLO": "23",
+      "TFL": "7",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "shell-lake",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Preston Kelley",
+    "player_year": "SO",
+    "position": null,
+    "jersey": "8",
+    "stats": {
+      "TOT": "36",
+      "SOLO": "26",
+      "TFL": "5",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "shell-lake",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Alex Marcoux",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "10",
+    "stats": {
+      "TOT": "36",
+      "SOLO": "26",
+      "TFL": "1",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "shell-lake",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Jackson Marcoux",
+    "player_year": "FR",
+    "position": null,
+    "jersey": "11",
+    "stats": {
+      "TOT": "9",
+      "SOLO": "3",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "shell-lake",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Skyler Shafer",
+    "player_year": "SO",
+    "position": null,
+    "jersey": "12",
+    "stats": {
+      "TOT": "3",
+      "SOLO": "3",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "shell-lake",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Chase Kidder",
+    "player_year": "JR",
+    "position": null,
+    "jersey": "13",
+    "stats": {
+      "TOT": "18",
+      "SOLO": "12",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "shell-lake",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Parker Klein",
+    "player_year": "SO",
+    "position": null,
+    "jersey": "17",
+    "stats": {
+      "TOT": "3",
+      "SOLO": "2",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "shell-lake",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Bryant Frankhauser",
+    "player_year": "JR",
+    "position": null,
+    "jersey": "20",
+    "stats": {
+      "TOT": "1",
+      "SOLO": "0",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "shell-lake",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Karsten Stevenson",
+    "player_year": "JR",
+    "position": null,
+    "jersey": "21",
+    "stats": {
+      "TOT": "8",
+      "SOLO": "5",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "shell-lake",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Jonah Milleon",
+    "player_year": "SO",
+    "position": null,
+    "jersey": "22",
+    "stats": {
+      "TOT": "14",
+      "SOLO": "7",
+      "TFL": "3",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "shell-lake",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Charles Murray",
+    "player_year": "FR",
+    "position": null,
+    "jersey": "24",
+    "stats": {
+      "TOT": "2",
+      "SOLO": "0",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "shell-lake",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Cory Capen",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "33",
+    "stats": {
+      "TOT": "34",
+      "SOLO": "20",
+      "TFL": "7",
+      "SACKS": "1.0"
+    }
+  },
+  {
+    "school_id": "shell-lake",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Conner Vanderhoof",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "42",
+    "stats": {
+      "TOT": "21",
+      "SOLO": "8",
+      "TFL": "1",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "shell-lake",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "James Steines",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "44",
+    "stats": {
+      "TOT": "6",
+      "SOLO": "2",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "shell-lake",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Brycen Allen",
+    "player_year": "SO",
+    "position": null,
+    "jersey": "73",
+    "stats": {
+      "TOT": "6",
+      "SOLO": "3",
+      "TFL": "1",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "shell-lake",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Antonio Mckelton",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "76",
+    "stats": {
+      "TOT": "1",
+      "SOLO": "0",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "shell-lake",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Jameson Buckridge",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "79",
+    "stats": {
+      "TOT": "28",
+      "SOLO": "11",
+      "TFL": "4",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "shell-lake",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "TOT": "380",
+      "SOLO": "227",
+      "TFL": "42",
+      "SACKS": "2.0"
     }
   }
 ]

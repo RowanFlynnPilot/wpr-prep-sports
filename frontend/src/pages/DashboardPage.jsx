@@ -673,7 +673,7 @@ export default function DashboardPage({
         <section>
           <div className="section-header">
             <h2>Schedule</h2>
-            <span className="section-header__hint">Month at a glance · click a day for details</span>
+            <span className="section-header__hint">Month at a glance · pick a day for details</span>
           </div>
           <MonthCalendar
             key={sportConfig.id}
