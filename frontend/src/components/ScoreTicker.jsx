@@ -5,7 +5,7 @@ import TeamLink from "./TeamLink.jsx";
 import { primaryColor, schoolFor } from "../utils/schools.js";
 import { formatGameShortDay, formatGameDate } from "../utils/dates.js";
 import { gameSummaryLine, playerLineForGame } from "../utils/recap.js";
-import { isForfeitScore, isStaleScheduled, isUnreportedFinal } from "../utils/games.js";
+import { isForfeitScore, isScorePending, isStaleScheduled, isUnreportedFinal } from "../utils/games.js";
 import { useSportPrefix } from "../utils/links.js";
 
 /**
@@ -157,6 +157,8 @@ function GameCard({ game, schoolIndex, allGames, sportConfig }) {
   const unreportedFinal = isUnreportedFinal(game);
   const forfeit = isFinal && !unreportedFinal && isForfeitScore(game);
   const notReported = isStaleScheduled(game) || unreportedFinal;
+  // Played, no score yet: "Score pending", not a stale kickoff time.
+  const pending = isScorePending(game);
   const showScore = (isFinal || isLive) && !forfeit && !unreportedFinal;
 
   const homeScore = game.home.score;
@@ -195,7 +197,9 @@ function GameCard({ game, schoolIndex, allGames, sportConfig }) {
                 ? "Not reported"
                 : isFinal
                   ? "Final"
-                  : "Upcoming"}
+                  : pending
+                    ? "Score pending"
+                    : "Upcoming"}
           </span>
         )}
       </header>

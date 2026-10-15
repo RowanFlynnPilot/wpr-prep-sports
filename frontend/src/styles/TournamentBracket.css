@@ -76,8 +76,18 @@
    adapts to whichever rounds the sport actually has (e.g. 4 for
    football, 5 for basketball). */
 .bracket__journey {
+  /* A real <table> laid out as rows of CSS grid. `display: block` here and
+     on the row groups opts out of table layout; the component restates
+     the table roles so the semantics survive the display change. */
   display: block;
   overflow-x: auto;
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.bracket__journey > thead,
+.bracket__journey > tbody {
+  display: block;
 }
 
 .bracket__journey-header,
@@ -85,6 +95,13 @@
   display: grid;
   grid-template-columns: minmax(160px, 1.4fr) repeat(var(--round-count, 4), minmax(140px, 1fr));
   border-bottom: 1px solid var(--paper-2);
+}
+/* Reset the UA's th/td defaults so cells read exactly as the divs did. */
+.bracket__journey th,
+.bracket__journey td {
+  text-align: left;
+  vertical-align: top;
+  font-weight: inherit;
 }
 
 .bracket__journey-header {
@@ -107,7 +124,9 @@
 .bracket__journey-row {
   transition: background var(--t-fast) var(--ease);
 }
-.bracket__journey-row:nth-child(even) { background: var(--row-tint); }
+/* odd, not even: the rows now sit in their own <tbody>, without the header
+   row ahead of them, so the first data row keeps the tint it always had. */
+.bracket__journey-row:nth-child(odd) { background: var(--row-tint); }
 @media (hover: hover) and (pointer: fine) {
   .bracket__journey-row:hover { background: color-mix(in srgb, var(--accent) 6%, transparent);
   }

@@ -11,7 +11,7 @@ import {
 } from "../utils/calendar.js";
 import { useSportPrefix } from "../utils/links.js";
 import { formatGameTime } from "../utils/dates.js";
-import { isForfeitScore, isUnreportedFinal } from "../utils/games.js";
+import { isForfeitScore, isScorePending, isUnreportedFinal } from "../utils/games.js";
 import { homeRegionSchoolIds } from "../utils/schools.js";
 
 /**
@@ -173,7 +173,9 @@ function DaySheet({ dateIso, games, onClose }) {
                       : `${g.away.score}-${g.home.score}`
                   : g.status === "in_progress"
                   ? "Live"
-                  : timeFor(g.date)}
+                  : isScorePending(g)
+                    ? "Score pending"
+                    : timeFor(g.date)}
               </span>
             </Link>
           </li>

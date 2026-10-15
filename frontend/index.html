@@ -14,14 +14,65 @@
     <!-- Letter-free mark, so a white-label tenant can keep it. Swapping it is
          one file; see docs/white-label.md. -->
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
-    <meta name="theme-color" content="#111111" />
+    <!-- Production renders the light theme (--paper is #ffffff), so the
+         browser chrome should match the page ground, not the old dark value. -->
+    <meta name="theme-color" content="#ffffff" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Fonts are self-hosted (public/fonts/, @font-face in styles/global.css)
+         — no Google Fonts round trip, no Cloudflare Fonts rewrite. Preload only
+         the two faces above the fold; Merriweather 700 and italic load on
+         first use. -->
     <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href="/fonts/oswald-latin-wght.woff2"
+      crossorigin
     />
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href="/fonts/merriweather-latin-400.woff2"
+      crossorigin
+    />
+
+    <!-- Vite's `base` (BASE_PATH repo var; "/" on the custom domain,
+         "/wpr-prep-sports/" by default), exposed so the prefetch below can
+         build the same data URL src/data/fetchDataset.js does. %BASE_URL% is
+         replaced by Vite's HTML env substitution at build time. -->
+    <meta name="wpr-data-base" content="%BASE_URL%" />
+
+    <!-- Start the dataset's first request (meta.json) now, so it overlaps the
+         JS download instead of waiting for the bundles to parse. Computes the
+         exact URL fetchDataset() would — <base>/data[/archive/<season>]/
+         <sport>/meta.json, season from ?season= or the sessionStorage key
+         utils/season.js writes — and parks the in-flight fetch on
+         window.__wprMetaPrefetch = { sport, url, promise } for fetchDataset
+         to adopt when its URL matches. Blocking on purpose: it must run
+         before the module script is even requested. -->
+    <script>
+      (function () {
+        try {
+          var sport = (location.hash.match(/^#\/([a-z_]+)/) || [])[1] || "football";
+          // Legacy #/team/… and #/game/… redirect to the default sport;
+          // #/card/… and #/sponsor don't load a sport dataset first.
+          if (sport === "team" || sport === "game") sport = "football";
+          if (sport === "card" || sport === "sponsor") return;
+          var meta = document.querySelector('meta[name="wpr-data-base"]');
+          var base = ((meta && meta.content) || "/").replace(/\/$/, "");
+          var q = /[?&]season=([^&#]*)/.exec(location.search);
+          var season = q ? decodeURIComponent(q[1]) : sessionStorage.getItem("wpr-season-view");
+          var dir = /^\d{4}-\d{2}$/.test(season || "") ? "/archive/" + season : "";
+          var url = base + "/data" + dir + "/" + sport + "/meta.json";
+          window.__wprMetaPrefetch = {
+            sport: sport,
+            url: url,
+            promise: fetch(url, { cache: "no-store" }),
+          };
+        } catch (e) {}
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

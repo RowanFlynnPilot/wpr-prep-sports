@@ -48,7 +48,7 @@ export const SITE = {
   shareDescription:
     "Live scores, full schedules, conference standings, and player stats for " +
     "central Wisconsin high school sports — football, basketball, volleyball, " +
-    "hockey, and soccer across 67 schools.",
+    "hockey, and soccer across 70 schools.",
   // 1200x630 share image in frontend/public/. Regenerate after a rebrand
   // with `python scraper/scripts/generate_site_card.py`.
   shareImage: "og-card.png",

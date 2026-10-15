@@ -70,6 +70,14 @@ export function useIframeHeightReporter() {
       // zero resize messages and left thousands of pixels of blank below the
       // content. html and body carry no height rule, so the body box is true
       // content height and falls as well as rises.
+      //
+      // Hold off while the loading skeleton is on screen. The first message
+      // used to report the ~1,300px skeleton and the next one ~4,100px of
+      // real dashboard, so the host page jumped twice on every load. The
+      // host's own placeholder height holds until content renders; the
+      // ResizeObserver below fires again when the skeleton is replaced.
+      // (No body data-loading flag exists; `.skeleton` is the only marker.)
+      if (document.querySelector(".skeleton")) return;
       const h = Math.ceil(document.body.getBoundingClientRect().height);
       if (h === lastHeight || h === 0) return;
       lastHeight = h;

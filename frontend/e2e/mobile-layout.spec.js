@@ -132,3 +132,47 @@ test.describe("phone layout guard", () => {
     }
   });
 });
+
+/**
+ * Standings tab at phone width. At 375px the Details chevron is visually
+ * hidden (the whole row is the tap target), so a reader needs the
+ * "Tap a team" hint under the table instead; and the table itself must
+ * stay inside its 350px wrap rather than scrolling off the right edge
+ * (critique run 17 measured 372–401px before the column diet).
+ */
+test.describe("standings at phone width", () => {
+  test("rows advertise that they expand, and the table fits", async ({ page }) => {
+    await page.goto("/?theme=light#/football?tab=standings");
+    await page.locator(".section-tabs").first().waitFor({ timeout: 30_000 });
+    const tables = page.locator(".standings__table");
+    test.skip((await tables.count()) === 0, "no standings tables in the current dataset");
+
+    const measured = await page.evaluate(() => {
+      const bigEnough = (el) => {
+        const r = el.getBoundingClientRect();
+        return r.width >= 24 && r.height >= 24;
+      };
+      const visible = (el) => {
+        if (!el) return false;
+        const cs = getComputedStyle(el);
+        const r = el.getBoundingClientRect();
+        return cs.display !== "none" && cs.visibility !== "hidden" && r.width > 0 && r.height > 0;
+      };
+      return [...document.querySelectorAll(".standings")].map((section) => ({
+        conference: section.querySelector(".standings__header h3")?.textContent.trim() ?? "?",
+        toggles: section.querySelectorAll(".standings__toggle").length,
+        allTogglesTappable: [...section.querySelectorAll(".standings__toggle")].every(bigEnough),
+        hintVisible: visible(section.querySelector(".standings__tap-hint")),
+        tableWidth: Math.round(section.querySelector(".standings__table").getBoundingClientRect().width),
+      }));
+    });
+    expect(measured.length).toBeGreaterThan(0);
+    for (const t of measured) {
+      expect(
+        t.allTogglesTappable || t.hintVisible,
+        `${t.conference}: details toggles under 24px and no "Tap a team" hint shown`,
+      ).toBe(true);
+      expect(t.tableWidth, `${t.conference}: standings table wider than its wrap`).toBeLessThanOrEqual(350);
+    }
+  });
+});

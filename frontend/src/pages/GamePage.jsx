@@ -15,7 +15,7 @@ import ShareButton from "../components/ShareButton.jsx";
 import { schoolFor } from "../utils/schools.js";
 import { formatGameDay, formatGameDate, formatGameTime } from "../utils/dates.js";
 import { recapForGame } from "../utils/recap.js";
-import { humanizeVenue, isForfeitScore, isUnreportedFinal } from "../utils/games.js";
+import { humanizeVenue, isForfeitScore, isScorePending, isUnreportedFinal } from "../utils/games.js";
 import { useSportPrefix } from "../utils/links.js";
 import { displayPlayerName, playerProfileHref } from "../utils/players.js";
 import { glossaryForLines, statTitle } from "../config/statGlossary.js";
@@ -102,7 +102,13 @@ export default function GamePage({ dataset, schoolIndex, sportConfig }) {
   // "Not reported" chip, plain "at" separator (or the breadcrumb printed
   // "TeamA null-null TeamB", verified on the 2026-01-02 hockey row).
   const unreported = isUnreportedFinal(game);
+  // Played, score not posted yet (kickoff + 3h to 36h): the chip says so
+  // and the preview speaks in the past tense instead of "tonight".
+  const pending = isScorePending(game);
   const forfeit = isFinal && !unreported && isForfeitScore(game);
+  // Past the pending window a missing team box score is not coming "within
+  // a day or two"; the per-team note says so (critique run 18).
+  const boxScoreStale = Date.now() - new Date(game.date).getTime() > PENDING_WINDOW_MS;
   const showScore = (isFinal || game.status === "in_progress") && !forfeit && !unreported;
   const homeWon = showScore && (homeScore ?? -1) > (awayScore ?? -1);
   const awayWon = showScore && (awayScore ?? -1) > (homeScore ?? -1);
@@ -181,7 +187,7 @@ export default function GamePage({ dataset, schoolIndex, sportConfig }) {
             </span>
           ) : (
             <span className="eyebrow eyebrow--accent">
-              {unreported ? "Not reported" : forfeit ? "Forfeit" : isFinal ? "Final" : "Up Next"}
+              {unreported ? "Not reported" : forfeit ? "Forfeit" : isFinal ? "Final" : pending ? "Score pending" : "Up Next"}
             </span>
           )}
           <span className="game-page__date">
@@ -252,7 +258,7 @@ export default function GamePage({ dataset, schoolIndex, sportConfig }) {
         className="game-page__sponsor"
       />
 
-      <GamePreview game={game} dataset={dataset} schoolIndex={schoolIndex} />
+      <GamePreview game={game} dataset={dataset} schoolIndex={schoolIndex} pending={pending} />
 
       <ScoringSummary game={game} schoolIndex={schoolIndex} />
 
@@ -298,6 +304,7 @@ export default function GamePage({ dataset, schoolIndex, sportConfig }) {
                 score={awayScore}
                 showScore={showScore}
                 sportPrefix={sportPrefix}
+                boxScoreStale={boxScoreStale}
                 otherSideHasStats={
                   (statsByKey.get(keyForSide(game.home)) ?? []).length > 0
                 }
@@ -311,6 +318,7 @@ export default function GamePage({ dataset, schoolIndex, sportConfig }) {
                 score={homeScore}
                 showScore={showScore}
                 sportPrefix={sportPrefix}
+                boxScoreStale={boxScoreStale}
                 otherSideHasStats={
                   (statsByKey.get(keyForSide(game.away)) ?? []).length > 0
                 }
@@ -530,7 +538,7 @@ const LEADER_KEY_BY_CATEGORY = {
   "Hockey Saves": "SV",
 };
 
-function TeamStatsCard({ label, team, school, won, lines, score, showScore, otherSideHasStats, sportPrefix }) {
+function TeamStatsCard({ label, team, school, won, lines, score, showScore, otherSideHasStats, boxScoreStale = false, sportPrefix }) {
   // Per-category expand toggle. State lives on the card (one card per
   // team) so each side can be expanded independently.
   const [expanded, setExpanded] = useState({});
@@ -581,8 +589,12 @@ function TeamStatsCard({ label, team, school, won, lines, score, showScore, othe
       {lines.length === 0 ? (
         <p className="team-stats__empty-note">
           {otherSideHasStats
-            ? "No box score from this team yet — each team's stats arrive as its coaches file them, usually within a day or two."
-            : "No stats reported for this team yet."}
+            ? boxScoreStale
+              ? "No box score from this team. Its coaches didn't file one for this game; the final score above stands."
+              : "No box score from this team yet — each team's stats arrive as its coaches file them, usually within a day or two."
+            : boxScoreStale
+              ? "No stats were filed for this team."
+              : "No stats reported for this team yet."}
         </p>
       ) : viewMode === "box" ? (
         <FullBoxScore

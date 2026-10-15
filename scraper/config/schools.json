@@ -216,7 +216,7 @@
       ],
       "aliases": [],
       "wiaa_org_id": 42,
-      "bound_slug": null,
+      "bound_slug": "blackriver",
       "wph_team_id": null,
       "wph_team_id_girls": 9389653,
       "maxpreps_slug": null,
@@ -420,7 +420,7 @@
       "conferences": [
         {
           "sport": "football",
-          "conference": "Northwoods-East 8"
+          "conference": "North Central-East 8"
         },
         {
           "sport": "boys_basketball",
@@ -546,7 +546,7 @@
       "conferences": [
         {
           "sport": "football",
-          "conference": "Central Wisconsin-8"
+          "conference": "North Central-East 8"
         },
         {
           "sport": "boys_basketball",
@@ -572,7 +572,7 @@
         "boys_basketball": "D5",
         "football": "8P-D1",
         "girls_basketball": "D5",
-        "volleyball": "D5"
+        "volleyball": "D4"
       }
     },
     {
@@ -1451,7 +1451,7 @@
       "conferences": [
         {
           "sport": "football",
-          "conference": "Marawood/CWC"
+          "conference": "North Central-East 8"
         },
         {
           "sport": "boys_basketball",
@@ -1475,7 +1475,7 @@
       "athletics_url": null,
       "wiaa_division": {
         "boys_basketball": "D5",
-        "football": "D7",
+        "football": "8P-D1",
         "girls_basketball": "D5",
         "volleyball": "D5"
       }
@@ -1653,7 +1653,7 @@
       "conferences": [
         {
           "sport": "football",
-          "conference": "Marawood/CWC"
+          "conference": "Central Wisconsin-8"
         }
       ],
       "aliases": [],
@@ -1719,7 +1719,7 @@
       "conferences": [
         {
           "sport": "football",
-          "conference": "Northwoods-East 8"
+          "conference": "Northwoods-West 8"
         }
       ],
       "aliases": [],
@@ -1746,7 +1746,7 @@
       "conferences": [
         {
           "sport": "football",
-          "conference": "Northwoods-East 8"
+          "conference": "Northwoods-West 8"
         }
       ],
       "aliases": [],
@@ -1909,7 +1909,8 @@
       "wiaa_division": {
         "boys_basketball": "D5",
         "girls_basketball": "D5",
-        "volleyball": "D5"
+        "volleyball": "D5",
+        "football": "8P-D1"
       }
     },
     {
@@ -1935,7 +1936,9 @@
       "wph_team_id_girls": null,
       "maxpreps_slug": "wild-rose/wild-rose-wildcats",
       "athletics_url": null,
-      "wiaa_division": {}
+      "wiaa_division": {
+        "football": "8P-D1"
+      }
     },
     {
       "id": "almond-bancroft",
@@ -2066,9 +2069,11 @@
       "bound_slug": "portedward",
       "wph_team_id": null,
       "wph_team_id_girls": null,
-      "maxpreps_slug": null,
+      "maxpreps_slug": "port-edwards/port-edwards-blackhawks",
       "athletics_url": null,
-      "wiaa_division": {}
+      "wiaa_division": {
+        "football": "8P-D1"
+      }
     },
     {
       "id": "tri-county",
@@ -2254,7 +2259,7 @@
         "northland pines co-op"
       ],
       "wiaa_org_id": 303,
-      "bound_slug": null,
+      "bound_slug": "northlandp",
       "wph_team_id": null,
       "wph_team_id_girls": 9389646,
       "maxpreps_slug": "eagle-river/northland-pines-eagles",
@@ -2321,7 +2326,7 @@
         },
         {
           "sport": "football",
-          "conference": "CWC-Large"
+          "conference": "Marawood/CWC"
         }
       ],
       "aliases": [
@@ -2374,7 +2379,7 @@
       "wiaa_division": {
         "boys_basketball": "D4",
         "girls_basketball": "D4",
-        "volleyball": "D4"
+        "volleyball": "D3"
       }
     },
     {
@@ -2399,11 +2404,15 @@
         {
           "sport": "volleyball",
           "conference": "Cloverbelt"
+        },
+        {
+          "sport": "football",
+          "conference": "North Central-East 8"
         }
       ],
       "aliases": [],
       "wiaa_org_id": 322,
-      "bound_slug": null,
+      "bound_slug": "owenwithee",
       "wph_team_id": null,
       "wph_team_id_girls": null,
       "maxpreps_slug": "owen/owen-withee-blackhawks",
@@ -2411,7 +2420,8 @@
       "wiaa_division": {
         "boys_basketball": "D5",
         "girls_basketball": "D5",
-        "volleyball": "D5"
+        "volleyball": "D5",
+        "football": "8P-D1"
       }
     },
     {
@@ -2436,11 +2446,15 @@
         {
           "sport": "volleyball",
           "conference": "Cloverbelt"
+        },
+        {
+          "sport": "football",
+          "conference": "North Central-East 8"
         }
       ],
       "aliases": [],
       "wiaa_org_id": 139,
-      "bound_slug": null,
+      "bound_slug": "gilman",
       "wph_team_id": null,
       "wph_team_id_girls": null,
       "maxpreps_slug": "gilman/gilman-pirates",
@@ -2448,7 +2462,8 @@
       "wiaa_division": {
         "boys_basketball": "D5",
         "girls_basketball": "D5",
-        "volleyball": "D5"
+        "volleyball": "D5",
+        "football": "8P-D1"
       }
     },
     {
@@ -2565,7 +2580,7 @@
       "conferences": [
         {
           "sport": "football",
-          "conference": "Northwoods-East 8"
+          "conference": "Northwoods-West 8"
         }
       ],
       "aliases": [
@@ -2593,12 +2608,12 @@
       "conferences": [
         {
           "sport": "football",
-          "conference": "Northwoods-East 8"
+          "conference": "Northwoods-West 8"
         }
       ],
       "aliases": [],
       "wiaa_org_id": 394,
-      "bound_slug": null,
+      "bound_slug": "shelllake",
       "wph_team_id": null,
       "wph_team_id_girls": null,
       "maxpreps_slug": "shell-lake/shell-lake-lakers",
@@ -2618,7 +2633,7 @@
       "conferences": [
         {
           "sport": "football",
-          "conference": "Northwoods-East 8"
+          "conference": "Northwoods-West 8"
         }
       ],
       "aliases": [],
@@ -2627,6 +2642,86 @@
       "wph_team_id": null,
       "wph_team_id_girls": null,
       "maxpreps_slug": "port-wing/south-shore-cardinals",
+      "athletics_url": null,
+      "wiaa_division": {}
+    },
+    {
+      "id": "cornell",
+      "name": "Cornell",
+      "full_name": "Cornell High School",
+      "mascot": "Chiefs",
+      "city": "Cornell",
+      "colors": [
+        "#7F1D1D",
+        "#FBBF24"
+      ],
+      "conferences": [
+        {
+          "sport": "football",
+          "conference": "North Central-East 8"
+        }
+      ],
+      "aliases": [],
+      "wiaa_org_id": 86,
+      "bound_slug": null,
+      "wph_team_id": null,
+      "wph_team_id_girls": null,
+      "maxpreps_slug": null,
+      "athletics_url": null,
+      "wiaa_division": {}
+    },
+    {
+      "id": "thorp",
+      "name": "Thorp",
+      "full_name": "Thorp High School",
+      "mascot": "Cardinals",
+      "city": "Thorp",
+      "colors": [
+        "#B91C1C",
+        "#000000"
+      ],
+      "conferences": [
+        {
+          "sport": "football",
+          "conference": "North Central-East 8"
+        }
+      ],
+      "aliases": [],
+      "wiaa_org_id": 423,
+      "bound_slug": null,
+      "wph_team_id": null,
+      "wph_team_id_girls": null,
+      "maxpreps_slug": null,
+      "athletics_url": null,
+      "wiaa_division": {
+        "football": "8P-D1"
+      }
+    },
+    {
+      "id": "alma-center-lincoln",
+      "name": "Alma Center Lincoln",
+      "full_name": "Lincoln High School (Alma Center)",
+      "mascot": "Hornets",
+      "city": "Alma Center",
+      "colors": [
+        "#000000",
+        "#FACC15"
+      ],
+      "conferences": [
+        {
+          "sport": "football",
+          "conference": "North Central-East 8"
+        }
+      ],
+      "aliases": [
+        "lincoln (alma center)",
+        "alma center"
+      ],
+      "wiaa_org_id": 208,
+      "bound_slug": null,
+      "wph_team_id": null,
+      "wph_team_id_girls": null,
+      "maxpreps_slug": null,
       "athletics_url": null,
       "wiaa_division": {}
     }

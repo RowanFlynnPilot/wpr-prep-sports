@@ -6,7 +6,7 @@ import { schoolFor } from "../utils/schools.js";
 import { groupByDay } from "../utils/weeks.js";
 import { formatGameDay, formatGameDate, formatGameTime } from "../utils/dates.js";
 import { gameSummaryLine, playerLineForGame } from "../utils/recap.js";
-import { isForfeitScore, isStaleScheduled, isUnreportedFinal } from "../utils/games.js";
+import { isForfeitScore, isScorePending, isStaleScheduled, isUnreportedFinal } from "../utils/games.js";
 import { useSportPrefix } from "../utils/links.js";
 import { SITE } from "../config/site.js";
 
@@ -210,6 +210,9 @@ function GameRow({ game, schoolIndex, allGames, sportConfig }) {
   const stale = isStaleScheduled(game);
   const unreportedFinal = isUnreportedFinal(game);
   const notReported = stale || unreportedFinal;
+  // Kickoff a few hours gone, no score yet: the row says "Score pending"
+  // instead of a tip time that reads like tonight (critique run 18).
+  const pending = isScorePending(game);
   // WIAA records a forfeit as a 1-0 final. Printed at score size that
   // reads as a data error, so the score slot says FORFEIT instead and the
   // winner keeps its bold. An unreported final is neither a forfeit nor
@@ -234,6 +237,8 @@ function GameRow({ game, schoolIndex, allGames, sportConfig }) {
     ? `${matchup}, forfeit, game details`
     : notReported
       ? `${matchup}, not reported, game details`
+      : pending
+        ? `${matchup}, played, score pending, game details`
       : isFinal
         ? `${scoreline}, final, game details`
         : isLive
@@ -270,7 +275,9 @@ function GameRow({ game, schoolIndex, allGames, sportConfig }) {
               ? "Final"
               : isLive
                 ? "LIVE"
-                : formatGameTime(game.date)}
+                : pending
+                  ? "Score pending"
+                  : formatGameTime(game.date)}
         <span aria-hidden="true"> ›</span>
       </Link>
       {summary && <p className="game-row__summary">{summary}</p>}

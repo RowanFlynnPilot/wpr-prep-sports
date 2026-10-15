@@ -6,7 +6,7 @@ Persistent project context for Claude Code. Read this first.
 
 An embeddable widget for **Wausau Pilot & Review** (WPR) covering central Wisconsin
 high school sports: schedules, scores, standings, and player stats. Launched May
-2026; as of mid-2026 it tracks **67 schools** and **8 live sports** (football,
+2026; as of mid-2026 it tracks **70 schools** and **8 live sports** (football,
 boys/girls basketball, volleyball, boys/girls hockey, boys/girls soccer) across
 7+ conferences modeled per-sport. Embedded into the WPR WordPress site via iframe
 from GitHub Pages.
@@ -146,6 +146,17 @@ needs individual-sport modeling), then baseball/softball/track (spring).
   team pages show a "Tonight · vs X · 7:00 PM" line, and the mini pins
   the Game of the Week. Stale-data warnings fire only once a game has
   started since the file was written (`utils/freshness.js`).
+- **Midweek results-first + "Score pending"** (2026-10-14, review run 18) —
+  Monday through Thursday, while the current week has no finals and game
+  day hasn't begun, the Scores tab leads with a "Last Week" block of the
+  home region's finals (`utils/weeks.js` `previousWeekResults`), carrying
+  the Scoreboard sponsor; the Earlier Results rail then holds only older
+  games. A scheduled game between kickoff + 3 h and the 36 h "Not reported"
+  line reads "Score pending" everywhere (`utils/games.js`
+  `isScorePending`) and its preview speaks in the past tense. The marquee
+  picker caps the playoff bonus for games off the week's main slate day.
+  Fonts are self-hosted (`frontend/public/fonts/`) and index.html starts
+  the meta.json fetch before the bundles load (`window.__wprMetaPrefetch`).
 - Per-school embeds (`#/<sport>/embed/<id>` + media-kit builder), Senior
   Spotlights, weekly digest, rivalry/head-to-head history, season archive
   selector, division filter chips (power rankings + bracket)

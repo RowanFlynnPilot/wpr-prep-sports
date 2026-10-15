@@ -280,6 +280,11 @@ export default function StandingsTable({
         </table>
       </div>
 
+      {/* Narrow phones hide the Details chevron (the row is the tap target)
+          and nothing else said the rows expand. CSS shows this line at
+          ≤420px only; the sr-only button above still serves keyboards. */}
+      <p className="standings__tap-hint">Tap a team for its season details</p>
+
       {/* "Presented by" belongs after the table, not wedged between the
           conference heading and its column headers (critique run 12). */}
       <Sponsor

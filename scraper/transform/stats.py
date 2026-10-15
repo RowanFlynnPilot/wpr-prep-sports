@@ -660,6 +660,16 @@ def _attach_set_scores(
         return
     sets = min(len(home_scores), len(away_scores))
     game.set_scores = [{"home": home_scores[i], "away": away_scores[i]} for i in range(sets)]
+    # WIAA occasionally posts a match score no volleyball match can have
+    # (a 4-0 over four listed sets, i.e. 3-1). When the posted score is
+    # impossible, the set tally is the better witness. A merely different
+    # but possible score (2-0 vs three sets) is left alone: that case is
+    # usually a tournament day's sets cross-attached to the wrong match.
+    home_won = sum(1 for h, a in zip(home_scores[:sets], away_scores[:sets]) if h > a)
+    away_won = sets - home_won - sum(1 for h, a in zip(home_scores[:sets], away_scores[:sets]) if h == a)
+    posted = (game.home.score, game.away.score)
+    if all(isinstance(v, int) for v in posted) and max(posted) > 3 and max(home_won, away_won) == 3:
+        game.home.score, game.away.score = home_won, away_won
 
 
 def _match_team_scores(

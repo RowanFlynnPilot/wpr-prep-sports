@@ -18,6 +18,7 @@ import {
 } from "../utils/players.js";
 import { formatStatsLine } from "../utils/seasonStats.js";
 import { reconcileSeasonTotals } from "../utils/reconcileSeasonTotals.js";
+import useDocumentTitle from "../utils/useDocumentTitle.js";
 
 /**
  * Player profile — season totals (split by raw category) + a game-by-
@@ -91,6 +92,23 @@ export default function PlayerPage({ dataset, schoolIndex, sportConfig }) {
   );
   const reconciled = seasonRows.some((r) => r.reconciled);
 
+  // Season totals can legitimately run past the game log when some of the
+  // team's games never got a box score (724 rushing yards over a log of 481
+  // across 5 logged games of 9 played). Count the gap so the hint explains
+  // it instead of leaving the two sections to contradict each other.
+  const coverage = useMemo(
+    () => boxScoreCoverage(dataset.games, schoolLines, schoolId, gameLog),
+    [dataset.games, schoolLines, schoolId, gameLog],
+  );
+
+  const school = schoolIndex?.get?.(schoolId);
+  useDocumentTitle(
+    playerName
+      ? [playerName, [school?.name ?? schoolId, sportConfig?.label].filter(Boolean).join(" ")]
+          .join(" · ")
+      : null,
+  );
+
   const position = useMemo(
     () =>
       playerName
@@ -128,7 +146,6 @@ export default function PlayerPage({ dataset, schoolIndex, sportConfig }) {
     return <Navigate to={`${sportPrefix}/team/${schoolId}`} replace />;
   }
 
-  const school = schoolIndex?.get?.(schoolId);
   const teamForLogo = {
     school_id: schoolId,
     name: school?.name ?? schoolId,
@@ -185,9 +202,7 @@ export default function PlayerPage({ dataset, schoolIndex, sportConfig }) {
           <div className="section-header">
             <h2>Season Totals</h2>
             <span className="section-header__hint">
-              {reconciled
-                ? `${sportConfig?.season} · updated from the game log`
-                : sportConfig?.season}
+              {seasonTotalsHint(sportConfig?.season, reconciled, coverage)}
             </span>
           </div>
           <div className="player-page__season">
@@ -460,6 +475,49 @@ function leaderValueText(line) {
     if (v != null && v !== "") return `${v} ${k}`;
   }
   return "—";
+}
+
+// How much of the team's season the game log can account for. `played`
+// is the school's final games this season; `unlogged` is how many of
+// those the player's log doesn't cover; `noBoxScore` is how many had no
+// stat lines for the school at all (never scraped / never uploaded).
+function boxScoreCoverage(games, schoolLines, schoolId, gameLog) {
+  const finals = (games ?? []).filter(
+    (g) =>
+      g.status === "final" &&
+      (g.home?.school_id === schoolId || g.away?.school_id === schoolId),
+  );
+  const finalIds = new Set(finals.map((g) => g.id));
+  const withBox = new Set();
+  for (const l of schoolLines ?? []) {
+    if (finalIds.has(l.game_id)) withBox.add(l.game_id);
+  }
+  const played = finals.length;
+  return {
+    played,
+    unlogged: Math.max(0, played - (gameLog?.length ?? 0)),
+    noBoxScore: Math.max(0, played - withBox.size),
+  };
+}
+
+// Hint beside the Season Totals header. The season label, then why the
+// totals may not match the log beneath them: the totals were raised to
+// meet the log, and/or games the log can't show. "Without a box score"
+// only when every unlogged game really has none for the team — if the
+// player just didn't make the leaders in some of them, say that instead.
+function seasonTotalsHint(season, reconciled, coverage) {
+  const parts = [season].filter(Boolean);
+  if (reconciled) parts.push("updated from the game log");
+  const n = coverage?.unlogged ?? 0;
+  if (n > 0) {
+    const games = `${n} game${n === 1 ? "" : "s"}`;
+    parts.push(
+      coverage.noBoxScore === n
+        ? `includes ${games} without a box score`
+        : `includes ${games} not in the game log`,
+    );
+  }
+  return parts.join(" · ");
 }
 
 // Hint shown next to the Game Log header. When we know the player's

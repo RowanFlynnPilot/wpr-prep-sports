@@ -88,7 +88,11 @@ Registered 2026-09-24 as **"WPR Prep Sports Bound refresh"**, daily at
 $action = New-ScheduledTaskAction -Execute 'powershell.exe' `
   -Argument '-NoProfile -ExecutionPolicy Bypass -File "C:\Users\rpfly\Projects\wpr-prep-sports\scraper\scripts\local_bound_refresh.ps1"' `
   -WorkingDirectory 'C:\Users\rpfly\Projects\wpr-prep-sports'
-$trigger = New-ScheduledTaskTrigger -Daily -At 6:15am
+$trigger = @((New-ScheduledTaskTrigger -Daily -At 6:15am), (New-ScheduledTaskTrigger -Daily -At 12:15pm))
+# Two triggers: StartWhenAvailable only catches runs missed while the
+# machine was OFF. A laptop asleep at 6:15 skips the day (seen 2026-10-14,
+# NumberOfMissedRuns 1), so a 12:15 run covers it; the script exits without
+# a commit when nothing changed, so the second run is free on normal days.
 $settings = New-ScheduledTaskSettingsSet -StartWhenAvailable -AllowStartIfOnBatteries `
   -DontStopIfGoingOnBatteries -ExecutionTimeLimit (New-TimeSpan -Hours 1) -MultipleInstances IgnoreNew
 Register-ScheduledTask -TaskName "WPR Prep Sports Bound refresh" `

@@ -53,6 +53,20 @@ export function isStaleScheduled(game, now = Date.now()) {
 }
 
 /**
+ * Between kickoff plus a few hours and the 36h "Not reported" line, a
+ * scheduled game with no score is neither upcoming nor unreported: it was
+ * played and the result hasn't reached WIAA yet. Left as "7:00 PM", ten
+ * Tuesday volleyball matches read as tonight's games on Wednesday night
+ * (critique run 18). Surfaces say "Score pending" and use the past tense.
+ */
+export const PENDING_AFTER_MS = 3 * 60 * 60 * 1000;
+export function isScorePending(game, now = Date.now()) {
+  if (!game || game.status !== "scheduled") return false;
+  const age = now - new Date(game.date).getTime();
+  return age > PENDING_AFTER_MS && age <= STALE_SCHEDULED_MS;
+}
+
+/**
  * WIAA occasionally marks a game "final" without posting a score — a
  * dropped upload or a game recorded on paper only. The row is a real
  * matchup but not a real result, so surfaces treat it like the stale-

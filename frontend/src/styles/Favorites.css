@@ -407,11 +407,12 @@
   transition: color var(--t-fast) var(--ease), background var(--t-fast) var(--ease),
               border-color var(--t-fast) var(--ease);
 }
+/* No `outline: none` here: the paper-2 ground this swaps in is ~1.1:1
+   against the card, so the global focus ring is the only visible focus. */
 .follow-prompt__dismiss:focus-visible {
   color: var(--ink);
   background: var(--paper-2);
   border-color: var(--line);
-  outline: none;
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -419,6 +420,5 @@
   color: var(--ink);
   background: var(--paper-2);
   border-color: var(--line);
-  outline: none;
   }
 }

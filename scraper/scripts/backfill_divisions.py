@@ -197,6 +197,10 @@ def apply_to_manifest(divisions: dict[str, dict[str, str]]) -> tuple[int, int]:
             for sport, by_school in sorted(divisions.items())
             if school["id"] in by_school
         }
+        # Merge over what is already on file: a sport whose brackets have not
+        # posted yet (basketball in October) keeps last season's division
+        # instead of being wiped (review 2026-10-14 lost 34 basketball rows).
+        per_sport = {**(school.get("wiaa_division") or {}), **per_sport}
         if school.get("wiaa_division") != per_sport:
             touched += 1
         school["wiaa_division"] = per_sport

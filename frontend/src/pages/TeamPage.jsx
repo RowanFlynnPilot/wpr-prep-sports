@@ -18,11 +18,17 @@ import { recordLabels } from "../config/sports.js";
 import { rotatedBannerSlot } from "../utils/sponsorRotation.js";
 import { SITE, SITE_TITLE } from "../config/site.js";
 import ShareButton from "../components/ShareButton.jsx";
+import useDocumentTitle from "../utils/useDocumentTitle.js";
 
 export default function TeamPage({ dataset, schoolIndex, sponsors, sportConfig }) {
   const { schoolId } = useParams();
   const sportPrefix = useSportPrefix();
   const school = schoolIndex.get(schoolId);
+  // "Edgar Football" in the tab and history; null (title untouched) until
+  // the school resolves. Unconditional — it sits above the NotFound return.
+  useDocumentTitle(
+    school ? `${school.name} ${sportConfig?.label ?? ""}`.trim() : null,
+  );
   // The unknown-school guard lives AFTER the hooks — the router keeps this
   // component instance mounted when only :schoolId changes, so returning
   // before the hooks on a bad id changes the hook count mid-lifecycle and
@@ -228,7 +234,7 @@ export default function TeamPage({ dataset, schoolIndex, sponsors, sportConfig }
         )}
       </section>
 
-      {conferenceStanding && (
+      {conferenceStanding ? (
         <section>
           <div className="section-header">
             <h2>Conference Standings</h2>
@@ -246,6 +252,24 @@ export default function TeamPage({ dataset, schoolIndex, sponsors, sportConfig }
             highlightSchoolId={schoolId}
           />
         </section>
+      ) : (
+        // Finals on the schedule but no standings row anywhere: the school
+        // plays this sport in a conference the hub does not model (Gilman
+        // and Black River Falls football). Say so, rather than leaving a
+        // silent gap where every other team page has a table.
+        teamGames.some((g) => g.status === "final") && (
+          <section>
+            <div className="section-header">
+              <h2>Conference Standings</h2>
+              <span className="section-header__hint">{sportConfig?.label}</span>
+            </div>
+            <p className="team-standings-note">
+              {school.name} plays {(sportConfig?.label ?? "this sport").toLowerCase()} in a
+              conference the hub doesn&rsquo;t track yet. Schedule and results above are
+              complete.
+            </p>
+          </section>
+        )
       )}
 
       <SeasonLeaders rows={seasonStatsForSchool} sportConfig={sportConfig} />

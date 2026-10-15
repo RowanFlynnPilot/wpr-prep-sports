@@ -34,11 +34,15 @@ export default function Marquee({ pick, sportConfig, sponsors, schoolIndex }) {
   };
 
   return (
+    /* No aria-label: the link's name comes from its content. The old
+       "<eyebrow>: Away versus Home" label failed Lighthouse's
+       label-content-name-mismatch, which requires the accessible name to
+       contain ALL of the visible text (date, sponsor line, CTA included),
+       so no hand-written label or aria-labelledby subset can pass it. */
     <Link
       to={`${sportPrefix}/game/${game.id}`}
       className="gotw"
       style={style}
-      aria-label={`${eyebrow}: ${game.away.name} versus ${game.home.name}`}
       data-kind={kind}
     >
       <div className="gotw__bar" aria-hidden="true" />
@@ -61,7 +65,9 @@ export default function Marquee({ pick, sportConfig, sponsors, schoolIndex }) {
               </span>
             )}
           </span>
-          <span className="gotw__vs" aria-hidden="true">
+          {/* The en dash between two final scores is noise to a reader;
+              "at" is the word that makes an upcoming matchup make sense. */}
+          <span className="gotw__vs" aria-hidden={isFinal ? "true" : undefined}>
             {isFinal ? "–" : "at"}
           </span>
           <TeamLogo

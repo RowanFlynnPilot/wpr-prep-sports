@@ -2,7 +2,13 @@ import { useMemo } from "react";
 import { Link } from "react-router-dom";
 import TeamLogo from "./TeamLogo.jsx";
 import { schoolFor } from "../utils/schools.js";
-import { formatGameDate } from "../utils/dates.js";
+import { formatGameDate, formatGameDay } from "../utils/dates.js";
+
+// formatGameDay is the eyebrow's uppercase form; a sentence wants "Tuesday".
+const titleCaseDay = (iso) => {
+  const d = formatGameDay(iso);
+  return d.charAt(0) + d.slice(1).toLowerCase();
+};
 import { useSportPrefix } from "../utils/links.js";
 
 /**
@@ -11,7 +17,7 @@ import { useSportPrefix } from "../utils/links.js";
  * and the last meeting between these two teams. Drives pre-game traffic
  * the same way a newspaper preview column does.
  */
-export default function GamePreview({ game, dataset, schoolIndex }) {
+export default function GamePreview({ game, dataset, schoolIndex, pending = false }) {
   const sportPrefix = useSportPrefix();
   const gameTime = new Date(game.date).getTime();
 
@@ -38,7 +44,9 @@ export default function GamePreview({ game, dataset, schoolIndex }) {
       <div className="section-header">
         <h2>Preview</h2>
         <span className="section-header__hint">
-          Headed into {game.conference_game ? "this conference matchup" : "tonight's matchup"}
+          {pending
+            ? `Played ${titleCaseDay(game.date)} · score not posted yet`
+            : `Headed into ${game.conference_game ? "this conference matchup" : "tonight's matchup"}`}
         </span>
       </div>
 

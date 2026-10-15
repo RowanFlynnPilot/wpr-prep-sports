@@ -16,7 +16,7 @@
  * teams we cover. We layer on conference matchup, top-of-standings vs
  * top-of-standings, and proximity (next 14 days).
  */
-function scoreUpcoming(game, schoolsById, now, homeRegionIds) {
+function scoreUpcoming(game, schoolsById, now, homeRegionIds, slateDay = null) {
   if (game.status !== "scheduled") return -Infinity;
   const ts = new Date(game.date).getTime();
   if (ts < now) return -Infinity;
@@ -29,7 +29,10 @@ function scoreUpcoming(game, schoolsById, now, homeRegionIds) {
 
   let score = 10;
   if (game.conference_game) score += 4;
-  if (game.playoff) score += 8;
+  // The playoff bonus belongs to the main slate's night. Uncapped, a
+  // Saturday 8-player Level 1 game (28.7) outscored four tied Friday
+  // locals (25.0) the week the playoffs began (critique run 18).
+  if (game.playoff) score += slateDay && game.date.slice(0, 10) !== slateDay ? 2 : 8;
   // Home-region stake outranks a generic conference tag: without this the
   // Wausau paper's Game of the Week landed on Marion at Menominee Nation
   // (first tied conference game in file order) over a Wausau West game.
@@ -108,7 +111,8 @@ export function pickMarqueeGame({
   if (!games || games.length === 0) return null;
 
   if (!offSeason) {
-    const best = bestBy(games, (g) => scoreUpcoming(g, schoolsById, now, homeRegionIds));
+    const slateDay = mainSlateDay(games, now);
+    const best = bestBy(games, (g) => scoreUpcoming(g, schoolsById, now, homeRegionIds, slateDay));
     if (!best || best.score === -Infinity) return null;
     return {
       kind: "upcoming",
@@ -127,6 +131,27 @@ export function pickMarqueeGame({
     eyebrow: bestEyebrow(best.item),
     headline: matchupHeadline(best.item, { withScore: true }),
   };
+}
+
+/**
+ * The day in the coming week with the most scheduled games (three or more),
+ * earliest day on a tie: Friday for football, a weeknight for volleyball.
+ * Null when no day reaches three.
+ */
+function mainSlateDay(games, now) {
+  const counts = new Map();
+  for (const g of games) {
+    if (g.status !== "scheduled") continue;
+    const ts = new Date(g.date).getTime();
+    if (!(ts >= now && ts - now < 7 * 86_400_000)) continue;
+    const day = g.date.slice(0, 10);
+    counts.set(day, (counts.get(day) ?? 0) + 1);
+  }
+  let best = null;
+  for (const [day, n] of [...counts.entries()].sort(([a], [b]) => a.localeCompare(b))) {
+    if (n >= 3 && (best === null || n > best.n)) best = { day, n };
+  }
+  return best?.day ?? null;
 }
 
 function bestEyebrow(game) {

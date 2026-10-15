@@ -44,8 +44,11 @@ function splitByPhase(games) {
   return { regular, playoff };
 }
 
-/** Adjective describing the overall arc, given the W-L-T and season state. */
-function arcTone(wins, losses, seasonComplete, ties = 0) {
+/**
+ * Adjective describing the overall arc, given the W-L-T and season state.
+ * Exported for tests.
+ */
+export function arcTone(wins, losses, seasonComplete, ties = 0) {
   const played = wins + losses + ties;
   if (played === 0) return seasonComplete ? "quiet" : "early";
   // A 3-0-2 soccer side is unbeaten, not "perfect" — draws break perfection.
@@ -59,25 +62,82 @@ function arcTone(wins, losses, seasonComplete, ties = 0) {
   return "up-and-down";
 }
 
-/** Phrase that introduces the season arc (varies by mid- vs end-of-season). */
-function arcPhrase(tone, seasonComplete, played) {
+const SMALL_NUMBERS = [
+  "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine",
+];
+
+/** Newspaper style: spell out one through nine, digits from 10 up. */
+function numberWord(n) {
+  return SMALL_NUMBERS[n] ?? String(n);
+}
+
+/** "8-1", or "4-0-2" once a draw is on the books. */
+function recordString(wins, losses, ties = 0) {
+  return ties > 0 ? `${wins}-${losses}-${ties}` : `${wins}-${losses}`;
+}
+
+/**
+ * Phrase that introduces the season arc. Varies by mid- vs end-of-season
+ * and, mid-season, by how deep into the season the team is — "rolled to
+ * a strong start" was still printing for an 8-1 team in week 9 and a
+ * 23-7 volleyball side. Three mid-season stages, by games played:
+ *
+ *   1–3   "start" wording       — stayed perfect / is off to a 2-1 start
+ *   4–6   neutral through-N     — has won five of six games / is 4-2 through six games
+ *   7+    season wording        — is having a strong season at 8-1
+ *
+ * Returns { phrase, statesRecord }. When the phrase already carries the
+ * record, the caller's last-game clause must not repeat it ("...at 8-1
+ * with a 28-7 win, improving to 8-1"). Exported for tests.
+ */
+export function arcPhrase(tone, seasonComplete, played, wins = 0, losses = 0, ties = 0) {
+  const say = (phrase, statesRecord = false) => ({ phrase, statesRecord });
   if (seasonComplete) {
     const article = startsWithVowelSound(tone) ? "an" : "a";
-    return `finished ${article} ${tone} season`;
+    return say(`finished ${article} ${tone} season`);
   }
   // Mid-season — only one game played reads weirdly with "continues"
   if (played <= 1) {
-    if (tone === "perfect") return "opened the season with a win";
-    if (tone === "rough") return "opened the season with a loss";
-    return "opened the season";
+    if (tone === "perfect") return say("opened the season with a win");
+    if (tone === "rough") return say("opened the season with a loss");
+    return say("opened the season");
   }
-  if (tone === "perfect") return "stayed perfect";
-  if (tone === "rough") return "continues a rough start to the season";
-  if (tone === "winless") return "is still searching for its first win";
-  if (tone === "strong") return "rolled to a strong start";
-  if (tone === "winning") return "kept a winning record going";
-  if (tone === "up-and-down") return "stayed up and down on the season";
-  return "extended a mixed start to the season";
+
+  const rec = recordString(wins, losses, ties);
+  const n = numberWord(played);
+  const games = `${n} games`;
+
+  // Stage 1 — the first three games are still a "start".
+  if (played <= 3) {
+    if (tone === "perfect") return say("stayed perfect");
+    if (tone === "unbeaten") return say(`is unbeaten through ${games}`);
+    if (tone === "rough") return say("continues a rough start to the season");
+    if (tone === "winless") return say("is still searching for its first win");
+    if (tone === "strong") return say("rolled to a strong start");
+    if (tone === "winning" || tone === "promising") return say(`is off to a ${rec} start`, true);
+    if (tone === "up-and-down") return say(`is ${rec} to start the season`, true);
+    return say("extended a mixed start to the season");
+  }
+
+  // Stage 2 — four to six games: neutral, record-through-N wording.
+  if (played <= 6) {
+    if (tone === "perfect") return say(`is a perfect ${rec} through ${games}`, true);
+    if (tone === "unbeaten") return say(`is unbeaten at ${rec} through ${games}`, true);
+    if (tone === "strong") return say(`has won ${numberWord(wins)} of ${games}`, true);
+    if (wins === 0) return say(`is still looking for a first win through ${games}`);
+    return say(`is ${rec} through ${games}`, true);
+  }
+
+  // Stage 3 — seven or more: this is a season now, not a start.
+  if (tone === "perfect") return say(`is still perfect at ${rec}`, true);
+  if (tone === "unbeaten") return say(`is still unbeaten at ${rec}`, true);
+  if (wins === 0) return say("is still searching for a first win");
+  if (tone === "rough" || tone === "tough") return say(`is having a tough season at ${rec}`, true);
+  if (tone === "strong") return say(`is having a strong season at ${rec}`, true);
+  if (tone === "winning" || tone === "promising") {
+    return say(`has kept a winning record at ${rec}`, true);
+  }
+  return say(`is ${rec} on the season`, true);
 }
 
 function startsWithVowelSound(word) {
@@ -85,7 +145,7 @@ function startsWithVowelSound(word) {
 }
 
 /** Sentence describing the most-recent regular-season game. */
-function lastGameClause({ last, oppName, seasonComplete, wins, losses }) {
+function lastGameClause({ last, oppName, seasonComplete, wins, losses, recordStated = false }) {
   if (!last) return "";
   const { own, opp } = last;
   const tied = own === opp;
@@ -104,8 +164,11 @@ function lastGameClause({ last, oppName, seasonComplete, wins, losses }) {
         : `a ${own}-${opp} loss to ${oppName}`;
 
   // Mid-season — anchor the running record because the hero record is "now"
-  // and the recap is naturally about trajectory.
+  // and the recap is naturally about trajectory. When the arc phrase has
+  // already stated the record ("is having a strong season at 8-1"), hang
+  // the last game off it with "after" instead of restating the record.
   if (!seasonComplete) {
+    if (recordStated) return `after ${result}`;
     if (tied) return `with ${result} (${wins}-${losses})`;
     return `with ${result}, ${won ? "improving" : "falling"} to ${wins}-${losses}`;
   }
@@ -263,13 +326,21 @@ export function seasonSummary({
   const schoolName = school?.name ?? "The team";
   const played = wins + losses + ties;
   const tone = arcTone(wins, losses, seasonComplete, ties);
-  const arc = arcPhrase(tone, seasonComplete, played);
+  const { phrase: arc, statesRecord } = arcPhrase(
+    tone,
+    seasonComplete,
+    played,
+    wins,
+    losses,
+    ties,
+  );
   const tail = lastGameClause({
     last,
     oppName,
     seasonComplete,
     wins,
     losses,
+    recordStated: statesRecord,
   });
 
   // Phrase "finished a {tone} regular season" instead of "season" when the

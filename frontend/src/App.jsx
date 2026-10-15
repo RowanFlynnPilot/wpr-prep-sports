@@ -170,6 +170,9 @@ function SportShell() {
   const [dataset, setDataset] = useState(null);
   const [error, setError] = useState(null);
   const [refreshFailures, setRefreshFailures] = useState(0);
+  // The 60 s live refresh swapped scores silently; a polite status line
+  // tells screen-reader users the board moved (critique run 18).
+  const [refreshedAt, setRefreshedAt] = useState(null);
 
   useEffect(() => {
     if (!valid) return;
@@ -207,6 +210,7 @@ function SportShell() {
           if (cancelled) return;
           setDataset(d);
           setRefreshFailures(0);
+          setRefreshedAt(Date.now());
         })
         .catch((e) => {
           if (cancelled) return;
@@ -285,6 +289,11 @@ function SportShell() {
   return (
     <SchoolsContext.Provider value={{ schools: dataset.schools, schoolIndex, sportId: sport }}>
     <div className="sport-shell" data-sport={sport}>
+    <p className="sr-only" role="status">
+      {refreshedAt
+        ? `Scores updated ${new Date(refreshedAt).toLocaleTimeString([], { hour: "numeric", minute: "2-digit" })}`
+        : ""}
+    </p>
     <Routes>
       <Route
         path="/"

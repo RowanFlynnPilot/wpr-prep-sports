@@ -66,6 +66,26 @@ export function pickFeaturedWeek(games, now = new Date()) {
   return { start: weekStart, end: weekEnd, games: weekGames, isCurrent: false };
 }
 
+/**
+ * The school week before the one containing `now`, reduced to its finals:
+ * the midweek "Last Week" block on the dashboard. Monday through Thursday
+ * the current week has no results yet, so the most-asked question ("did we
+ * win Friday?") is answered here instead of four screens down the page
+ * (critique run 18). Null when that week had no finals.
+ */
+export function previousWeekResults(games, now = new Date()) {
+  const currentStart = startOfWeekISO(now);
+  const start = new Date(currentStart);
+  start.setDate(start.getDate() - 7);
+  const finals = (games ?? []).filter((g) => {
+    if (g.status !== "final") return false;
+    const t = new Date(g.date).getTime();
+    return t >= start.getTime() && t < currentStart.getTime();
+  });
+  if (finals.length === 0) return null;
+  return { start, end: currentStart, games: finals, isCurrent: false };
+}
+
 /** Group games by ISO date string (yyyy-mm-dd). */
 export function groupByDay(games) {
   const map = new Map();

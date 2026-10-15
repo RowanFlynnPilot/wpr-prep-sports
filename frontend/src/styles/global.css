@@ -1,4 +1,52 @@
 /* =========================================================================
+   Web fonts — self-hosted from public/fonts/ (2026-10-14). These replaced
+   the Google Fonts <link> in index.html/mini.html: Cloudflare Fonts was
+   rewriting that link into three variable WOFF2s (~230 KB) that nothing
+   preloaded, so on Slow 4G the first font byte arrived after 2 s and the
+   italic after 4 s. Latin subset only (the unicode-range below is Google's
+   own latin block); Oswald stays variable (wght 400–700, 21 KB), the
+   Merriweather faces are static instances cut from Google's v33 variable
+   file with fontTools (48–51 KB each) — only 400/700 upright and 400 italic
+   are set anywhere in styles/, so 700 italic is not shipped (a browser would
+   synthesize it). index.html preloads Oswald + Merriweather 400 upright,
+   the two faces above the fold; 700 and italic load on first use.
+   Paths are root-absolute public-dir URLs: Vite prefixes `base` at build.
+   ========================================================================= */
+
+@font-face {
+  font-family: "Oswald";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("/fonts/oswald-latin-wght.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Merriweather";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/merriweather-latin-400.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Merriweather";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/merriweather-latin-700.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Merriweather";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/merriweather-latin-400italic.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* =========================================================================
    Design tokens — matched to wausaupilotandreview.com's live theme
    (Newspack; verified 2026-07-02: primary #000, secondary #666, white
    body, hairline #ddd rules, Oswald headings + Merriweather body). The

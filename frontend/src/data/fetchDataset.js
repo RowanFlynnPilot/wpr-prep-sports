@@ -38,13 +38,39 @@ function sportBaseFor(sportId) {
     : `${DATA_BASE}/archive/${season}/${sportId}`;
 }
 
+/**
+ * meta.json gates every other request (its timestamp is the cache key), so
+ * index.html starts that fetch in a blocking inline script before the JS
+ * bundles download and parks the promise on window.__wprMetaPrefetch. On a
+ * slow phone connection that overlap is worth about 1.5 s of first paint
+ * (critique run 18). Used once, for the live season and the sport the page
+ * opened on; everything else (refreshes, sport switches, archives) fetches
+ * normally.
+ */
+async function fetchMeta(sportId, sportBase) {
+  const early = typeof window !== "undefined" ? window.__wprMetaPrefetch : null;
+  // Adopt the early response only for the exact URL this call would fetch:
+  // the inline script mirrors the season logic, but a URL match is the
+  // gate, not a sport match (VITE_DATA_BASE is not reflected in the page).
+  if (early && early.url === `${sportBase}/meta.json` && early.sport === sportId) {
+    window.__wprMetaPrefetch = null;
+    try {
+      const res = await early.promise;
+      if (res && res.ok) return await res.json();
+    } catch {
+      // fall through to the ordinary fetch
+    }
+  }
+  return fetchJson(`${sportBase}/meta.json`, { noStore: true });
+}
+
 export async function fetchDataset(sportId = DEFAULT_SPORT) {
   const sportBase = sportBaseFor(sportId);
 
   // Bust browser cache when the meta.json timestamp changes. We fetch meta
   // first; subsequent requests carry ?v=<timestamp> so a freshly-scraped
   // dataset is picked up immediately without manual cache clears.
-  const meta = await fetchJson(`${sportBase}/meta.json`, { noStore: true });
+  const meta = await fetchMeta(sportId, sportBase);
   const v = encodeURIComponent(meta.last_updated ?? Date.now());
   const [schools, games, standings, sponsors, seasonStats, spirit, potwOverrides, powerRankingsRaw, spotlightsRaw, regionalTop10Overrides] = await Promise.all([
     fetchJson(`${DATA_BASE}/schools.json?v=${v}`),

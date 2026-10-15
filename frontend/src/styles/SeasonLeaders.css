@@ -15,7 +15,7 @@
   color: #fff;
   border-bottom: 3px solid var(--accent);
 }
-.season-leaders__header h3 {
+.season-leaders__header h2 {
   font-family: var(--font-display);
   font-weight: 600;
   letter-spacing: 0.04em;

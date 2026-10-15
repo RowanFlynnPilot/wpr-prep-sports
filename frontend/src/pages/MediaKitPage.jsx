@@ -12,6 +12,17 @@ const DATA_BASE = `${import.meta.env.BASE_URL.replace(/\/$/, "")}/data`;
 // Where ad-ops wants inquiries to land. Override at build time.
 const CONTACT_EMAIL = import.meta.env.VITE_SPONSOR_EMAIL || SITE.contactEmail;
 
+// The dashboard's section tabs, in display order. These mirror `tabDefs` in
+// pages/DashboardPage.jsx one-for-one (each tab's sponsor slot is
+// `tab:<id>`); that list is built inside the component, so the ids live
+// here too. The dashboard only shows a tab when the sport has content for
+// it — soccer, with no player stats, runs without Leaders — so the rate
+// card describes the full set on football and says fewer elsewhere.
+const DASHBOARD_TABS = ["scores", "schedule", "standings", "rankings", "leaders", "spotlight"];
+const tabLabel = (id) => id.charAt(0).toUpperCase() + id.slice(1);
+const COUNT_WORDS = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
+const TAB_COUNT_WORD = COUNT_WORDS[DASHBOARD_TABS.length] ?? String(DASHBOARD_TABS.length);
+
 // Inventory taxonomy — mirrors docs/advertiser-inventory.md, rendered as a
 // living sales page so WPR can send one link instead of a PDF. `slots`
 // names the sponsors.json keys that back each surface (when present) so
@@ -47,16 +58,9 @@ const INVENTORY = [
       },
       {
         title: "Section tabs",
-        blurb: "A placement under each of the six dashboard tabs — Scores, Schedule, Standings, Rankings, Leaders, Spotlight. Six discrete surfaces.",
+        blurb: `A placement under each dashboard tab — ${DASHBOARD_TABS.map(tabLabel).join(", ")} — ${TAB_COUNT_WORD} surfaces on football, fewer where a sport has no stats.`,
         fit: "Any local business · rotate by category",
-        slots: [
-          "tab:scores",
-          "tab:schedule",
-          "tab:standings",
-          "tab:rankings",
-          "tab:leaders",
-          "tab:spotlight",
-        ],
+        slots: DASHBOARD_TABS.map((id) => `tab:${id}`),
         rateKey: "tabs",
         preview: { label: "This view presented by", tone: "ticker" },
       },
@@ -126,7 +130,7 @@ const INVENTORY = [
       },
       {
         title: "Season Banner — Team Pages",
-        blurb: "Your full creative on all 67 team pages, all sports — where families check their school's schedule and roster.",
+        blurb: "Your full creative on all 70 team pages, all sports — where families check their school's schedule and roster.",
         fit: "Real estate · bank · orthodontist",
         slots: ["banner:team"],
         rateKey: "banner-team",

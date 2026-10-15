@@ -8,13 +8,16 @@
     <meta name="robots" content="noindex" />
     <title>Prep sports scoreboard — Wausau Pilot &amp; Review</title>
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <!-- Only the faces the mini sets: Oswald for labels, names and scores,
-         Merriweather for the empty-state sentence. -->
+    <!-- Fonts are self-hosted (public/fonts/, @font-face in styles/global.css,
+         which the mini imports). Preload only Oswald — labels, names and
+         scores; Merriweather is just the empty-state sentence and loads on
+         first use. -->
     <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Merriweather:wght@400&display=swap"
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href="/fonts/oswald-latin-wght.woff2"
+      crossorigin
     />
   </head>
   <body>

@@ -88,9 +88,18 @@
   letter-spacing: 0.01em;
   line-height: 1.05;
   margin: 0;
-  white-space: nowrap;
+  /* Two lines, then an ellipsis. The single nowrap line cut
+     "WITTENBERG-BIRNA…" where the second line had room; the name's grid
+     column is minmax(0, 1fr), so the score column keeps its width and
+     the row centers on the taller text. Words only break at spaces and
+     hyphens (no overflow-wrap: anywhere) and balance across the two lines. */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
   overflow: hidden;
-  text-overflow: ellipsis;
+  overflow-wrap: normal;
+  text-wrap: balance;
 }
 .hero__team-mascot {
   font-family: var(--font-body);

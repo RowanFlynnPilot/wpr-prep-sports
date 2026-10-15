@@ -8,7 +8,7 @@
 
 ## Current coverage at a glance
 
-- **67 schools** tracked (21 in the core Wisconsin Valley / Marawood footprint,
+- **70 schools** tracked (21 in the core Wisconsin Valley / Marawood footprint,
   the rest added to complete conference standings and co-op coverage)
 - **8 sports live**: football, boys/girls basketball, volleyball, boys/girls
   hockey, boys/girls soccer
@@ -20,7 +20,7 @@
 
 | Sport | Conferences |
 |---|---|
-| Football | Wisconsin Valley, Big Rivers, Great Northern, Marawood/CWC, CWC-Large, Central Wisconsin-8, Northwoods-East 8 |
+| Football | Wisconsin Valley, Big Rivers, Great Northern, Marawood/CWC, CWC-Large, Central Wisconsin-8, North Central-East 8, Northwoods-East 8, Northwoods-West 8 |
 | Boys basketball | Wisconsin Valley, Marawood, Great Northern, Cloverbelt |
 | Girls basketball | Wisconsin Valley, Marawood, Great Northern, Cloverbelt |
 | Volleyball | Wisconsin Valley, Marawood, Great Northern, Cloverbelt |

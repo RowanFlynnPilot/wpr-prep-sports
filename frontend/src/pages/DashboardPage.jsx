@@ -30,7 +30,8 @@ import PowerRankings from "../components/PowerRankings.jsx";
 import RegionalTop10 from "../components/RegionalTop10.jsx";
 import { pickFeaturedGame, tickerGames } from "../utils/games.js";
 import { homeRegionSchoolIds } from "../utils/schools.js";
-import { pickFeaturedWeek } from "../utils/weeks.js";
+import { pickFeaturedWeek, previousWeekResults } from "../utils/weeks.js";
+import { formatWeekRange } from "../utils/dates.js";
 import { pickMarqueeGame } from "../utils/marquee.js";
 import { SPORT_IDS } from "../config/sports.js";
 import { trackEvent } from "../utils/analytics.js";
@@ -244,15 +245,34 @@ export default function DashboardPage({
   // misleading. The new month calendar covers the off-season gap.
   const showThisWeek = week?.isCurrent === true;
 
+  // Monday through Thursday the current week has no finals yet, so the
+  // tab opened on 31 fixtures and last Friday's results sat four screens
+  // down, under the sold Scoreboard sponsor (critique run 18). Until the
+  // week produces a result, or game day begins at noon, last week's
+  // home-region finals lead the tab, grouped the way This Week is, with
+  // the Scoreboard sponsor on their header.
+  const weekHasResults = (week?.games ?? []).some((g) => g.status === "final");
+  const lastWeek = useMemo(() => {
+    if (!showThisWeek || weekHasResults || heroTonight || offSeason) return null;
+    const prev = previousWeekResults(games, anchorNow);
+    if (!prev) return null;
+    const isLocal = (g) =>
+      homeRegion.has(g.home?.school_id) || homeRegion.has(g.away?.school_id);
+    const local = prev.games.filter(isLocal);
+    return { ...prev, total: prev.games.length, games: local.length > 0 ? local : prev.games };
+  }, [showThisWeek, weekHasResults, heroTonight, offSeason, games, anchorNow, homeRegion]);
+
   // The ticker used to repeat the week grid's games — on a Saturday both
   // carried Friday's finals, and the tab was twice as long as its
   // information. With the grid showing, the ticker holds only what the
   // grid doesn't: earlier results, under a heading that says so.
   const earlier = useMemo(() => {
     if (!showThisWeek) return recent;
-    const inWeek = new Set((week?.games ?? []).map((g) => g.id));
+    const inWeek = new Set(
+      [...(week?.games ?? []), ...(lastWeek?.games ?? [])].map((g) => g.id),
+    );
     return recent.filter((g) => !inWeek.has(g.id));
-  }, [recent, week, showThisWeek]);
+  }, [recent, week, showThisWeek, lastWeek]);
 
   // The rail shows a dozen cards, not the whole three-week window: 84
   // cards was 22 screens of sideways scroll with Superior–New Richmond
@@ -559,6 +579,36 @@ export default function DashboardPage({
       {/* Tab: Scores — the live scoreboard. */}
       {activeTab === "scores" && (
         <>
+          {lastWeek && (
+            <section>
+              <div className="section-header">
+                <h2>Last Week</h2>
+                <Sponsor slot="ticker" sponsors={sponsors} variant="inline" />
+              </div>
+              <ThisWeekGrid
+                week={lastWeek}
+                schoolIndex={schoolIndex}
+                allGames={games}
+                sportConfig={sportConfig}
+                homeRegionIds={homeRegion}
+              />
+              <button
+                type="button"
+                className="ticker__all"
+                onClick={() => {
+                  setActiveTab("schedule");
+                  requestAnimationFrame(() => {
+                    tabsAnchorRef.current?.scrollIntoView({ block: "start" });
+                  });
+                }}
+              >
+                {lastWeek.games.length < lastWeek.total
+                  ? `All ${lastWeek.total} results from ${formatWeekRange(lastWeek.start.getTime())} are in the Schedule`
+                  : `${formatWeekRange(lastWeek.start.getTime())} · more in the Schedule`}
+              </button>
+            </section>
+          )}
+
           {showThisWeek && (
             <section>
               <div className="section-header">
@@ -583,7 +633,7 @@ export default function DashboardPage({
                 <h2>
                   {preseason ? "Season Openers" : showThisWeek ? "Earlier Results" : "Recent Scores"}
                 </h2>
-                <Sponsor slot="ticker" sponsors={sponsors} variant="inline" />
+                {!lastWeek && <Sponsor slot="ticker" sponsors={sponsors} variant="inline" />}
               </div>
               <ScoreTicker games={earlierShown} schoolIndex={schoolIndex} allGames={games} sportConfig={sportConfig} />
               {earlier.length > earlierShown.length && (

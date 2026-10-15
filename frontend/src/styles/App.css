@@ -652,6 +652,13 @@
   background-repeat: no-repeat;
   background-position: right 0.55rem center;
 }
+/* iOS zooms the page when a focused control's text is under 16px.
+   global.css carries the same rule, but this file lands later in the
+   bundle, so the --fs-label above (11.52px) was winning on phones. A raw
+   px on purpose: the threshold is the OS's, not the type scale's. */
+@media (pointer: coarse) {
+  .masthead__season select { font-size: 16px; }
+}
 @media (hover: hover) and (pointer: fine) {
   .masthead__season select:hover {
   background-color: rgba(255, 255, 255, 0.12);

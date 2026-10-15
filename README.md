@@ -1,7 +1,7 @@
 # wpr-prep-sports
 
 Central Wisconsin High School Sports Hub — schedules, scores, standings, and
-player stats for **67 schools across 8 sports** (football, boys/girls
+player stats for **70 schools across 8 sports** (football, boys/girls
 basketball, volleyball, boys/girls hockey, boys/girls soccer) in the
 Wisconsin Valley, Marawood, Great Northern, Cloverbelt, Big Rivers,
 CWC, and Northwoods conferences.

@@ -1,20 +1,26 @@
 import { useEffect, useMemo, useState } from "react";
+import { Link } from "react-router-dom";
 import Sponsor from "./Sponsor.jsx";
 import { fetchHistory } from "../data/fetchDataset.js";
 import { formatGameDate } from "../utils/dates.js";
 import { isForfeitScore } from "../utils/games.js";
+import { useSportPrefix } from "../utils/links.js";
 
 const SHOWN = 5;
 
 /**
- * Head-to-head history between the two teams on a game page, sourced
- * from archived seasons (data/history/<sport>.json). Complements
- * GamePreview's same-season "last meeting": this is the multi-season
- * series — "Edgar leads the all-time series 3-1" — and it renders for
- * scheduled AND final games. Archived meetings have no live game route,
- * so rows are plain (not links).
+ * Head-to-head history between the two teams on a game page: archived
+ * seasons (data/history/<sport>.json) plus this season's other finals
+ * between the same two sides (dataset.games). Complements GamePreview's
+ * same-season "last meeting" — this is the full series, "Edgar leads
+ * 3-1" — and it renders for scheduled AND final games. Counting only
+ * the archive left a volleyball page saying "1 previous meeting · Edgar
+ * leads 1-0" beside a preview of a September meeting it ignored.
+ * Archived meetings have no live game route, so those rows are plain;
+ * this season's link to their game pages.
  */
 export default function HeadToHead({ game, dataset, schoolIndex }) {
+  const sportPrefix = useSportPrefix();
   const [history, setHistory] = useState(null);
   useEffect(() => {
     let cancelled = false;
@@ -26,13 +32,41 @@ export default function HeadToHead({ game, dataset, schoolIndex }) {
     };
   }, [dataset.sport, dataset.meta?.last_updated]);
 
+  // This season's other final meetings between the two sides, newest
+  // first. Only games before this one count as "previous" — a postponed
+  // fixture can sit behind a later meeting that already has a score.
+  const seasonMeetings = useMemo(() => {
+    if (!game) return [];
+    const key = matchupKey(game);
+    const thisTime = new Date(game.date).getTime();
+    return (dataset.games ?? [])
+      .filter(
+        (g) =>
+          g.id !== game.id &&
+          g.status === "final" &&
+          g.home?.score != null &&
+          g.away?.score != null &&
+          matchupKey(g) === key &&
+          (!Number.isFinite(thisTime) || new Date(g.date).getTime() < thisTime),
+      )
+      .map((g) => ({ ...g, live: true }))
+      .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  }, [dataset.games, game]);
+
   const meetings = useMemo(() => {
-    if (!history?.matchups || !game) return [];
-    const key = [sideKey(game.home), sideKey(game.away)].sort().join("|");
+    if (!game) return [];
     // The current dataset's season may itself be archived (off-season),
-    // so this exact game can appear in its own history — drop it.
-    return (history.matchups[key] ?? []).filter((m) => m.id !== game.id);
-  }, [history, game]);
+    // so this game — and this season's other meetings — can appear in
+    // the history file too. Drop the duplicates; the live rows win
+    // because they can link to a game page.
+    const seen = new Set([game.id, ...seasonMeetings.map((m) => m.id)]);
+    const archived = (history?.matchups?.[matchupKey(game)] ?? []).filter(
+      (m) => !seen.has(m.id),
+    );
+    return [...seasonMeetings, ...archived].sort(
+      (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
+    );
+  }, [history, game, seasonMeetings]);
 
   const series = useMemo(() => {
     if (!game) return null;
@@ -84,6 +118,7 @@ export default function HeadToHead({ game, dataset, schoolIndex }) {
             meeting={m}
             sport={dataset.sport}
             schoolIndex={schoolIndex}
+            href={m.live && m.id ? `${sportPrefix}/game/${m.id}` : null}
           />
         ))}
       </ol>
@@ -106,7 +141,7 @@ export default function HeadToHead({ game, dataset, schoolIndex }) {
   );
 }
 
-function MeetingRow({ meeting, sport, schoolIndex }) {
+function MeetingRow({ meeting, sport, schoolIndex, href = null }) {
   const homeWon = (meeting.home.score ?? -1) > (meeting.away.score ?? -1);
   const awayWon = (meeting.away.score ?? -1) > (meeting.home.score ?? -1);
   // History rows are keyed by sport at the file level and don't carry it.
@@ -114,13 +149,17 @@ function MeetingRow({ meeting, sport, schoolIndex }) {
   // Archived rows keep WIAA's name ("Stevens Point"); the manifest's display
   // name ("SPASH") is what the scorebug above prints for the same school.
   const displayName = (side) => schoolIndex?.get?.(side.school_id)?.name ?? side.name;
+  // This season's meetings have a game page; the score is the link so the
+  // row keeps its grid (the <li> is the grid container).
+  const Score = href ? Link : "span";
+  const scoreProps = href ? { to: href } : {};
   return (
     <li className="h2h__row">
       <span className="h2h__when">
         <span className="h2h__season">{meeting.season}</span>
         <span className="h2h__date">{formatGameDate(meeting.date)}</span>
       </span>
-      <span className="h2h__score">
+      <Score className="h2h__score" {...scoreProps}>
         <span className={"h2h__team" + (awayWon ? " h2h__team--won" : "")}>
           {displayName(meeting.away)}
           {!forfeit && ` ${meeting.away.score}`}
@@ -131,7 +170,7 @@ function MeetingRow({ meeting, sport, schoolIndex }) {
           {!forfeit && ` ${meeting.home.score}`}
         </span>
         {forfeit && <span className="h2h__at">· forfeit</span>}
-      </span>
+      </Score>
       {meeting.playoff && (
         <span className="h2h__playoff">
           {meeting.playoff_round ?? "Playoffs"}
@@ -139,6 +178,11 @@ function MeetingRow({ meeting, sport, schoolIndex }) {
       )}
     </li>
   );
+}
+
+/** Order-insensitive key for the pair of sides in a game. */
+function matchupKey(game) {
+  return [sideKey(game.home), sideKey(game.away)].sort().join("|");
 }
 
 // Mirrors side_key() in scraper/scripts/build_history.py — keep in sync.

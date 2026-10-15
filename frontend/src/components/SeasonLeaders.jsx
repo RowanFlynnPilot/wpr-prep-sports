@@ -25,7 +25,7 @@ export default function SeasonLeaders({ rows, sportConfig }) {
   return (
     <section className="season-leaders">
       <header className="season-leaders__header">
-        <h3>Season Leaders</h3>
+        <h2>Season Leaders</h2>
         <span className="season-leaders__hint">
           {sportConfig?.season ?? ""} totals
         </span>

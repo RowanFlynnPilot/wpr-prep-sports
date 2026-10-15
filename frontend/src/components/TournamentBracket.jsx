@@ -149,30 +149,52 @@ export default function TournamentBracket({ games, schoolIndex, sportConfig }) {
           No tracked teams match this filter in the tournament this season.
         </p>
       ) : (
-        <div
+        /* A real table: the grid used to be divs carrying role="row" and
+           role="columnheader" with no role="table" above them, so axe
+           reported every row as an orphan (aria-required-parent) and the
+           table-less rows as missing their cells. The CSS keeps each row
+           as a CSS grid, and because changing `display` on table elements
+           drops their implicit roles in Chrome and Safari, the roles are
+           restated explicitly on the real elements. */
+        <table
           className="bracket__journey"
+          role="table"
+          aria-label={`Tournament results by round, ${journeys.length} ${journeys.length === 1 ? "team" : "teams"}`}
           style={{ "--round-count": rounds.length }}
         >
-          <div className="bracket__journey-header" role="row">
-            <div className="bracket__journey-cell bracket__journey-cell--team" role="columnheader">
-              Team
-            </div>
-            {rounds.map((r) => (
-              <div key={r} className="bracket__journey-cell bracket__journey-cell--round" role="columnheader">
-                {r}
-              </div>
-            ))}
-          </div>
+          <thead role="rowgroup">
+            <tr className="bracket__journey-header" role="row">
+              <th
+                scope="col"
+                role="columnheader"
+                className="bracket__journey-cell bracket__journey-cell--team"
+              >
+                Team
+              </th>
+              {rounds.map((r) => (
+                <th
+                  key={r}
+                  scope="col"
+                  role="columnheader"
+                  className="bracket__journey-cell bracket__journey-cell--round"
+                >
+                  {r}
+                </th>
+              ))}
+            </tr>
+          </thead>
 
-          {journeys.map((j) => (
-            <JourneyRow
-              key={j.schoolId}
-              journey={j}
-              rounds={rounds}
-              lastRound={lastRound}
-            />
-          ))}
-        </div>
+          <tbody role="rowgroup">
+            {journeys.map((j) => (
+              <JourneyRow
+                key={j.schoolId}
+                journey={j}
+                rounds={rounds}
+                lastRound={lastRound}
+              />
+            ))}
+          </tbody>
+        </table>
       )}
     </div>
   );
@@ -210,7 +232,7 @@ function JourneyRow({ journey, rounds, lastRound }) {
   const stateChamp = stillAlive && STATE_TITLE_ROUNDS.has(finalGame?.round ?? "");
 
   return (
-    <div
+    <tr
       className={
         "bracket__journey-row" +
         (stateChamp ? " bracket__journey-row--champ" : "") +
@@ -218,7 +240,7 @@ function JourneyRow({ journey, rounds, lastRound }) {
       }
       role="row"
     >
-      <div className="bracket__journey-cell bracket__journey-cell--team">
+      <th scope="row" role="rowheader" className="bracket__journey-cell bracket__journey-cell--team">
         <div className="bracket__journey-team-row">
           <TeamLogo
             team={{
@@ -244,23 +266,25 @@ function JourneyRow({ journey, rounds, lastRound }) {
         {journey.school?.mascot && (
           <span className="bracket__journey-mascot">{journey.school.mascot}</span>
         )}
-      </div>
+      </th>
       {rounds.map((r) => {
         const entry = byRound.get(r);
         if (!entry) {
           return (
-            <div
+            <td
               key={r}
+              role="cell"
               className="bracket__journey-cell bracket__journey-cell--empty"
-              aria-label={`${r}: did not play`}
             >
               <span aria-hidden="true">—</span>
-            </div>
+              <span className="sr-only">Did not play</span>
+            </td>
           );
         }
         return (
-          <div
+          <td
             key={r}
+            role="cell"
             className={
               "bracket__journey-cell bracket__journey-cell--game" +
               (entry.won ? " bracket__journey-cell--won" : "") +
@@ -280,9 +304,9 @@ function JourneyRow({ journey, rounds, lastRound }) {
                 {entry.isHome ? "vs" : "@"} {entry.opponent.name}
               </span>
             </Link>
-          </div>
+          </td>
         );
       })}
-    </div>
+    </tr>
   );
 }

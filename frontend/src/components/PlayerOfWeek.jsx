@@ -52,10 +52,17 @@ export default function PlayerOfWeek({ games, schoolIndex, sponsors, sportConfig
 
   const schoolColor = school ? primaryColor(school) : null;
   const style = schoolColor ? { "--school-color": schoolColor } : undefined;
-  // Editor-supplied headline wins; otherwise format the algorithmic stat line.
+  // Editor-supplied headline wins; otherwise format the algorithmic stat
+  // line. The algorithmic line opens with the player ("RB Braxten Steinert
+  // (SR) rushed for…") and the name link beside it already says who, so
+  // the strip printed the name twice — drop that prefix and start the line
+  // at the verb. Editor headlines are left exactly as written.
   const formatted =
     line.headline
-    ?? sportConfig?.stats?.gameLine?.format?.(line, { tone: "default" })
+    ?? stripPlayerPrefix(
+      sportConfig?.stats?.gameLine?.format?.(line, { tone: "default" }),
+      line.player_name,
+    )
     ?? null;
 
   const playerHref = playerProfileHref(sportPrefix, schoolId, line.player_name);
@@ -128,4 +135,27 @@ export default function PlayerOfWeek({ games, schoolIndex, sponsors, sportConfig
       </div>
     </section>
   );
+}
+
+/**
+ * Strip "[POS ]Player Name[ (YR)] " from the front of a formatted stat
+ * line and capitalise what follows, so "RB Braxten Steinert (SR) rushed
+ * for 216 yards." becomes "Rushed for 216 yards." Leaves the line alone
+ * when it doesn't open with this player's name. Exported for tests.
+ */
+export function stripPlayerPrefix(formatted, playerName) {
+  if (!formatted) return formatted ?? null;
+  const name = displayPlayerName(playerName);
+  if (!name) return formatted;
+  const pattern = new RegExp(
+    `^(?:[A-Z]{1,3}\\s+)?${escapeRegExp(name)}(?:\\s+\\([^)]*\\))?\\s+(\\S)`,
+  );
+  const m = pattern.exec(formatted);
+  if (!m) return formatted;
+  const rest = formatted.slice(m.index + m[0].length - 1);
+  return rest.charAt(0).toUpperCase() + rest.slice(1);
+}
+
+function escapeRegExp(s) {
+  return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }

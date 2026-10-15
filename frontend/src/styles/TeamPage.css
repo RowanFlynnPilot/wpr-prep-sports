@@ -167,6 +167,23 @@
   text-align: center;
 }
 
+/* Stands in for the standings table when the school plays this sport in
+   a conference the hub does not model (Gilman and Black River Falls
+   football). Plain muted note on a hairline card, not an error state. */
+.team-standings-note {
+  margin: 0;
+  padding: 0.85rem 1rem;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: var(--fs-small);
+  line-height: 1.5;
+  color: var(--muted);
+  max-width: 62ch;
+}
+
 .team-schedule {
   list-style: none;
   margin: 0;
@@ -295,7 +312,8 @@
   font-family: var(--font-body);
   font-style: italic;
   font-size: var(--fs-small);
-  color: var(--muted-2);
+  /* --muted: --muted-2 measured 4.31:1 on the zebra tint. */
+  color: var(--muted);
   width: 1.5rem;
 }
 .schedule-row__opponent {
