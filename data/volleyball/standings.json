@@ -20,50 +20,50 @@
       {
         "school_id": "marshfield",
         "name": "Marshfield",
-        "conference_wins": 7,
+        "conference_wins": 8,
         "conference_losses": 2,
         "conference_ties": 0,
-        "overall_wins": 31,
+        "overall_wins": 32,
         "overall_losses": 7,
         "overall_ties": 0,
-        "points_for": 76,
+        "points_for": 79,
         "points_against": 22
       },
       {
         "school_id": "spash",
         "name": "SPASH",
-        "conference_wins": 6,
+        "conference_wins": 7,
         "conference_losses": 3,
         "conference_ties": 0,
-        "overall_wins": 21,
+        "overall_wins": 22,
         "overall_losses": 12,
         "overall_ties": 0,
-        "points_for": 55,
+        "points_for": 58,
         "points_against": 34
       },
       {
         "school_id": "wausau-west",
         "name": "Wausau West",
         "conference_wins": 4,
-        "conference_losses": 5,
+        "conference_losses": 6,
         "conference_ties": 0,
         "overall_wins": 16,
-        "overall_losses": 18,
+        "overall_losses": 19,
         "overall_ties": 0,
         "points_for": 42,
-        "points_against": 46
+        "points_against": 49
       },
       {
         "school_id": "wisconsin-rapids",
         "name": "Wisconsin Rapids Lincoln",
         "conference_wins": 2,
-        "conference_losses": 7,
+        "conference_losses": 8,
         "conference_ties": 0,
         "overall_wins": 9,
-        "overall_losses": 20,
+        "overall_losses": 21,
         "overall_ties": 0,
         "points_for": 25,
-        "points_against": 56
+        "points_against": 59
       },
       {
         "school_id": "wausau-east",
@@ -104,10 +104,10 @@
         "conference_losses": 0,
         "conference_ties": 0,
         "overall_wins": 19,
-        "overall_losses": 13,
+        "overall_losses": 14,
         "overall_ties": 0,
         "points_for": 49,
-        "points_against": 35
+        "points_against": 38
       },
       {
         "school_id": "spencer",
@@ -127,10 +127,10 @@
         "conference_wins": 4,
         "conference_losses": 1,
         "conference_ties": 0,
-        "overall_wins": 26,
+        "overall_wins": 27,
         "overall_losses": 3,
         "overall_ties": 0,
-        "points_for": 64,
+        "points_for": 67,
         "points_against": 15
       },
       {
@@ -151,10 +151,10 @@
         "conference_wins": 3,
         "conference_losses": 2,
         "conference_ties": 0,
-        "overall_wins": 26,
+        "overall_wins": 28,
         "overall_losses": 9,
         "overall_ties": 0,
-        "points_for": 62,
+        "points_for": 68,
         "points_against": 29
       },
       {
@@ -164,10 +164,10 @@
         "conference_losses": 2,
         "conference_ties": 0,
         "overall_wins": 24,
-        "overall_losses": 7,
+        "overall_losses": 8,
         "overall_ties": 0,
         "points_for": 59,
-        "points_against": 25
+        "points_against": 28
       },
       {
         "school_id": "athens",
@@ -256,10 +256,10 @@
         "conference_losses": 3,
         "conference_ties": 0,
         "overall_wins": 24,
-        "overall_losses": 10,
+        "overall_losses": 11,
         "overall_ties": 0,
-        "points_for": 60,
-        "points_against": 31
+        "points_for": 62,
+        "points_against": 34
       },
       {
         "school_id": "merrill",
@@ -274,6 +274,18 @@
         "points_against": 32
       },
       {
+        "school_id": "medford",
+        "name": "Medford",
+        "conference_wins": 6,
+        "conference_losses": 5,
+        "conference_ties": 0,
+        "overall_wins": 13,
+        "overall_losses": 14,
+        "overall_ties": 0,
+        "points_for": 39,
+        "points_against": 37
+      },
+      {
         "school_id": "lakeland",
         "name": "Lakeland",
         "conference_wins": 5,
@@ -284,18 +296,6 @@
         "overall_ties": 0,
         "points_for": 42,
         "points_against": 50
-      },
-      {
-        "school_id": "medford",
-        "name": "Medford",
-        "conference_wins": 5,
-        "conference_losses": 5,
-        "conference_ties": 0,
-        "overall_wins": 12,
-        "overall_losses": 14,
-        "overall_ties": 0,
-        "points_for": 36,
-        "points_against": 37
       },
       {
         "school_id": "antigo",
