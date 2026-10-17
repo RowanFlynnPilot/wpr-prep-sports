@@ -1,255 +1,237 @@
-# Central Wisconsin Prep Sports Weekly — week of Oct 3–Oct 9, 2026
+# Central Wisconsin Prep Sports Weekly — week of Oct 10–Oct 16, 2026
 
 The week in central Wisconsin high school sports, from the [WPR scoreboard](https://sports.wausaupilotandreview.com/).
 
-## Football — 38 games
+## Football — 22 games
 
-**Saturday, October 3**
+**Friday, October 16**
 
-- [Rhinelander 0, Merrill 37](https://sports.wausaupilotandreview.com/#/football/game/football-2026-10-03-rhinelander-at-merrill) — The Bluejays routed Rhinelander 37-0 to improve to 5-2 overall (4-1 Great Northern) on Saturday, Oct 3. RB Kanin Jahnke (SR) rushed for 168 yards and 2 TDs on 23 carries (7.3 YPC).
+- [Merrill 14, Wausau East 21](https://sports.wausaupilotandreview.com/#/football/game/football-2026-10-16-merrill-at-wausau-east) — The Lumberjacks squeaked past Merrill 21-14 in the regular-season finale on Friday, Oct 16.
+- [Wausau West 3, Eau Claire North 14](https://sports.wausaupilotandreview.com/#/football/game/football-2026-10-16-wausau-west-at-eau-claire-north) — The Huskies capped the regular season with a 14-3 win over Wausau West on Friday, Oct 16.
+- [Wisconsin Rapids Lincoln 35, D.C. Everest 51](https://sports.wausaupilotandreview.com/#/football/game/football-2026-10-16-wisconsin-rapids-at-dc-everest) — The Evergreens capped the regular season with a 51-35 win over Wisconsin Rapids Lincoln on Friday, Oct 16.
+- [Arcadia 18, Black River Falls 19](https://sports.wausaupilotandreview.com/#/football/game/football-2026-10-16-arcadia-at-black-river-falls) — The Tigers edged Arcadia 19-18 on Friday, Oct 16 to cap the regular season.
+- [New Richmond 49, Marshfield 28](https://sports.wausaupilotandreview.com/#/football/game/football-2026-10-16-new-richmond-at-marshfield) — The Tigers ended the regular season on a high note, blasting Marshfield 49-28 on Friday, Oct 16.
+- [Eau Claire Memorial 0, SPASH 35](https://sports.wausaupilotandreview.com/#/football/game/football-2026-10-16-eau-claire-memorial-at-spash) — The Panthers closed out the regular season strong with a 35-0 drubbing of Eau Claire Memorial on Friday, Oct 16.
+- [Edgar 35, Abbotsford 0](https://sports.wausaupilotandreview.com/#/football/game/football-2026-10-16-edgar-at-abbotsford) — The Wildcats wrapped the regular season with a 35-0 blowout of Abbotsford on Friday, Oct 16.
+- [Marathon 35, Spencer 7](https://sports.wausaupilotandreview.com/#/football/game/football-2026-10-16-marathon-at-spencer) — The Raiders put a bow on the regular season by routing Spencer 35-7 on Friday, Oct 16.
+- [Northland Pines 6, Stratford 45](https://sports.wausaupilotandreview.com/#/football/game/football-2026-10-16-northland-pines-at-stratford) — The Tigers ended the regular season on a high note, blasting Northland Pines 45-6 on Friday, Oct 16.
+- [Tomahawk 6, Mosinee 3](https://sports.wausaupilotandreview.com/#/football/game/football-2026-10-16-tomahawk-at-mosinee) — The Hatchets squeaked past Mosinee 6-3 in the regular-season finale on Friday, Oct 16.
+- [Colby 29, Weyauwega-Fremont 31](https://sports.wausaupilotandreview.com/#/football/game/football-2026-10-16-colby-at-weyauwega-fremont) — The Warhawks squeaked past Colby 31-29 in the regular-season finale on Friday, Oct 16. QB Carter Birdyshaw (SR) threw for 285 yards and 2 TDs.
+- [Rhinelander 27, Lakeland 14](https://sports.wausaupilotandreview.com/#/football/game/football-2026-10-16-rhinelander-at-lakeland) — The Hodags finished the regular season by beating Lakeland 27-14 on Friday, Oct 16.
+- [Antigo 6, Medford 48](https://sports.wausaupilotandreview.com/#/football/game/football-2026-10-16-antigo-at-medford) — The Raiders put a bow on the regular season by routing Antigo 48-6 on Friday, Oct 16. RB Carson Ingersoll (SR) rushed for 83 yards and 3 TDs on 6 carries (13.8 YPC).
+- [Chippewa Falls 28, Hudson 31](https://sports.wausaupilotandreview.com/#/football/game/football-2026-10-16-chippewa-falls-at-hudson) — The Raiders held off Chippewa Falls 31-28 on Friday, Oct 16 to close the regular season.
+- [Superior 22, Rice Lake 40](https://sports.wausaupilotandreview.com/#/football/game/football-2026-10-16-superior-at-rice-lake) — The Warriors closed the regular season with a 40-22 win over Superior on Friday, Oct 16.
+- [Pepin/Alma 42, Auburndale 7](https://sports.wausaupilotandreview.com/#/football/game/football-2026-10-16-pepin-alma-at-auburndale) — The Eagles limped to the playoffs after a 42-7 loss to Pepin/Alma on Friday, Oct 16.
+- [Iola-Scandinavia 0, Auburndale 1](https://sports.wausaupilotandreview.com/#/football/game/football-2026-10-16-iola-scandinavia-at-auburndale) — The Eagles took a forfeit win over Iola-Scandinavia to improve to 3-7 overall (3-4 Marawood/CWC) on Friday, Oct 16.
+- [Pacelli 0, Fall Creek 41](https://sports.wausaupilotandreview.com/#/football/game/football-2026-10-16-pacelli-at-fall-creek) — The Cardinals fell to Fall Creek 41-0 on Friday, Oct 16.
+- [Pittsville 0, Loyal 41](https://sports.wausaupilotandreview.com/#/football/game/football-2026-10-16-pittsville-at-loyal) — The Greyhounds wrapped the regular season with a 41-0 blowout of Pittsville on Friday, Oct 16.
+- [Wittenberg-Birnamwood 15, Amherst 49](https://sports.wausaupilotandreview.com/#/football/game/football-2026-10-16-wittenberg-birnamwood-at-amherst) — The Falcons closed out the regular season strong with a 49-15 drubbing of Wittenberg-Birnamwood on Friday, Oct 16. RB Ayden Nerdahl (SR) rushed for 140 yards and 5 TDs on 19 carries (7.4 YPC).
+- [River Falls 35, Menomonie 7](https://sports.wausaupilotandreview.com/#/football/game/football-2026-10-16-river-falls-at-menomonie) — The Wildcats put a bow on the regular season by routing Menomonie 35-7 on Friday, Oct 16.
+- [Little Chute 54, Waupaca 14](https://sports.wausaupilotandreview.com/#/football/game/football-2026-10-16-little-chute-at-waupaca) — The Comets limped to the playoffs after a 54-14 loss to Little Chute on Friday, Oct 16.
 
-**Thursday, October 8**
+**Power Rankings top 5:** 1. Amherst (9-0) · 2. Gilman (9-0) · 3. New Richmond (9-0) · 4. Shell Lake (9-1) · 5. Assumption (8-1)
 
-- [Loyal 35, Pacelli 0](https://sports.wausaupilotandreview.com/#/football/game/football-2026-10-08-loyal-at-pacelli) — The Greyhounds ended the regular season on a high note, blasting Pacelli 35-0 on Thursday, Oct 8.
-- [Washburn 0, Northwood/Solon Springs 42](https://sports.wausaupilotandreview.com/#/football/game/football-2026-10-08-washburn-at-northwood-solon-springs) — The Castle Guards fell to Northwood/Solon Springs 42-0 on Thursday, Oct 8.
+## Volleyball — 145 games
 
-**Friday, October 9**
+**Saturday, October 10**
 
-- [Menominee Nation 0, Port Edwards 1](https://sports.wausaupilotandreview.com/#/football/game/football-2026-10-09-menominee-nation-at-port-edwards) — The Blackhawks took a forfeit win over Menominee Nation to improve to 5-4 overall (4-3 Central Wisconsin-8) on Friday, Oct 9.
-- [Chippewa Falls 41, Wausau West 0](https://sports.wausaupilotandreview.com/#/football/game/football-2026-10-09-chippewa-falls-at-wausau-west) — The Cardinals ended the regular season on a high note, blasting Wausau West 41-0 on Friday, Oct 9. RB Talen Shilts (SR) rushed for 141 yards and 3 TDs on 5 carries (28.2 YPC).
-- [D.C. Everest 28, Eau Claire Memorial 6](https://sports.wausaupilotandreview.com/#/football/game/football-2026-10-09-dc-everest-at-eau-claire-memorial) — The Evergreens ended the regular season on a high note, blasting Eau Claire Memorial 28-6 on Friday, Oct 9.
-- [Luther 38, Black River Falls 24](https://sports.wausaupilotandreview.com/#/football/game/football-2026-10-09-luther-at-black-river-falls) — The Tigers closed the regular season with a 38-24 loss to Luther on Friday, Oct 9.
-- [Marshfield 22, SPASH 30](https://sports.wausaupilotandreview.com/#/football/game/football-2026-10-09-marshfield-at-spash) — The Panthers closed the regular season with a 30-22 win over Marshfield on Friday, Oct 9.
-- [Eau Claire North 28, Wisconsin Rapids Lincoln 3](https://sports.wausaupilotandreview.com/#/football/game/football-2026-10-09-eau-claire-north-at-wisconsin-rapids) — The Huskies put a bow on the regular season by routing Wisconsin Rapids Lincoln 28-3 on Friday, Oct 9.
-- [Owen-Withee 36, Athens 6](https://sports.wausaupilotandreview.com/#/football/game/football-2026-10-09-owen-withee-at-athens) — The Blackhawks ended the regular season on a high note, blasting Athens 36-6 on Friday, Oct 9.
-- [Auburndale 0, Edgar 49](https://sports.wausaupilotandreview.com/#/football/game/football-2026-10-09-auburndale-at-edgar) — The Wildcats wrapped the regular season with a 49-0 blowout of Auburndale on Friday, Oct 9.
-- [Marathon 34, Wittenberg-Birnamwood 14](https://sports.wausaupilotandreview.com/#/football/game/football-2026-10-09-marathon-at-wittenberg-birnamwood) — The Raiders closed the regular season with a 34-14 win over Wittenberg-Birnamwood on Friday, Oct 9.
-- [Assumption 43, Newman Catholic 13](https://sports.wausaupilotandreview.com/#/football/game/football-2026-10-09-assumption-at-newman-catholic) — The Wolves closed out the regular season strong with a 43-13 drubbing of Newman Catholic on Friday, Oct 9. RB Braxten Steinert (SR) rushed for 216 yards and 3 TDs on 18 carries (12.0 YPC).
-- [Amherst 35, Stratford 21](https://sports.wausaupilotandreview.com/#/football/game/football-2026-10-09-amherst-at-stratford) — The Falcons closed the regular season with a 35-21 win over Stratford on Friday, Oct 9. RB Ayden Nerdahl (SR) rushed for 300 yards and 4 TDs on 19 carries (15.8 YPC).
-- [Spencer 20, Colby 6](https://sports.wausaupilotandreview.com/#/football/game/football-2026-10-09-spencer-at-colby) — The Rockets capped the regular season with a 20-6 win over Colby on Friday, Oct 9.
-- [Medford 35, Mosinee 0](https://sports.wausaupilotandreview.com/#/football/game/football-2026-10-09-medford-at-mosinee) — The Raiders wrapped the regular season with a 35-0 blowout of Mosinee on Friday, Oct 9.
-- [Abbotsford 26, Pittsville 6](https://sports.wausaupilotandreview.com/#/football/game/football-2026-10-09-abbotsford-at-pittsville) — The Falcons closed the regular season with a 26-6 win over Pittsville on Friday, Oct 9.
-- [Merrill 21, Tomahawk 20](https://sports.wausaupilotandreview.com/#/football/game/football-2026-10-09-merrill-at-tomahawk) — The Bluejays edged Tomahawk 21-20 on Friday, Oct 9 to cap the regular season.
-- [Lakeland 27, Antigo 6](https://sports.wausaupilotandreview.com/#/football/game/football-2026-10-09-lakeland-at-antigo) — The Thunderbirds closed out the regular season strong with a 27-6 drubbing of Antigo on Friday, Oct 9.
-- [Menomonie 21, New Richmond 49](https://sports.wausaupilotandreview.com/#/football/game/football-2026-10-09-menomonie-at-new-richmond) — The Tigers put a bow on the regular season by routing Menomonie 49-21 on Friday, Oct 9.
-- [Rice Lake 8, River Falls 24](https://sports.wausaupilotandreview.com/#/football/game/football-2026-10-09-rice-lake-at-river-falls) — The Wildcats finished the regular season by beating Rice Lake 24-8 on Friday, Oct 9.
-- [Neillsville/Granton 1, Iola-Scandinavia 0](https://sports.wausaupilotandreview.com/#/football/game/football-2026-10-09-neillsville-granton-at-iola-scandinavia) — The Thunderbirds forfeited to Neillsville/Granton and slipped to 3-8 on Friday, Oct 9.
-- [Weyauwega-Fremont 23, Crivitz 41](https://sports.wausaupilotandreview.com/#/football/game/football-2026-10-09-weyauwega-fremont-at-crivitz) — The Warhawks lost to Crivitz 41-23 on Friday, Oct 9.
-- [Tri-County 6, Rosholt 38](https://sports.wausaupilotandreview.com/#/football/game/football-2026-10-09-tri-county-at-rosholt) — The Hornets ended the regular season on a high note, blasting Tri-County 38-6 on Friday, Oct 9.
-- [Chequamegon 1, Prentice 0](https://sports.wausaupilotandreview.com/#/football/game/football-2026-10-09-chequamegon-at-prentice) — The Screaming Eagles took a forfeit win over Prentice to improve to 3-6 overall (2-5 Northwoods-East 8) on Friday, Oct 9.
-- [Winter/Birchwood 0, Flambeau 77](https://sports.wausaupilotandreview.com/#/football/game/football-2026-10-09-winter-birchwood-at-flambeau) — The Falcons closed out the regular season strong with a 77-0 drubbing of Winter/Birchwood on Friday, Oct 9.
-- [Bruce 58, Mellen Co-op 22](https://sports.wausaupilotandreview.com/#/football/game/football-2026-10-09-bruce-at-mellen-co-op) — The Red Raiders put a bow on the regular season by routing Mellen Co-op 58-22 on Friday, Oct 9.
-- [Three Lakes/Phelps 22, Hurley 26](https://sports.wausaupilotandreview.com/#/football/game/football-2026-10-09-three-lakes-phelps-at-hurley) — The NorthStars edged Three Lakes/Phelps 26-22 on Friday, Oct 9 to cap the regular season.
-- [Chequamegon 12, Green Bay N.E.W. Lutheran/Providence Academy (Green Bay) 58](https://sports.wausaupilotandreview.com/#/football/game/football-2026-10-09-chequamegon-at-green-bay-n-e-w-lutheran-providence-academy-green-bay) — The Screaming Eagles fell to Green Bay N.E.W. Lutheran/Providence Academy (Green Bay) 58-12 on Friday, Oct 9.
-- [Rib Lake 40, Phillips 34](https://sports.wausaupilotandreview.com/#/football/game/football-2026-10-09-rib-lake-at-phillips) — The Redmen held off Phillips 40-34 on Friday, Oct 9 to close the regular season.
-- [Wild Rose 44, Marion 60](https://sports.wausaupilotandreview.com/#/football/game/football-2026-10-09-wild-rose-at-marion) — The Mustangs closed the regular season with a 60-44 win over Wild Rose on Friday, Oct 9.
-- [Almond-Bancroft 14, De Soto 40](https://sports.wausaupilotandreview.com/#/football/game/football-2026-10-09-almond-bancroft-at-de-soto) — The Eagles fell to De Soto 40-14 on Friday, Oct 9.
-- [Almond-Bancroft 1, Bowler 0](https://sports.wausaupilotandreview.com/#/football/game/football-2026-10-09-almond-bancroft-at-bowler) — The Eagles took a forfeit win over Bowler to improve to 5-5 overall (5-2 Central Wisconsin-8) on Friday, Oct 9.
-- [Crandon 0, Northland Pines 17](https://sports.wausaupilotandreview.com/#/football/game/football-2026-10-09-crandon-at-northland-pines) — The Eagles closed the regular season with a 17-0 win over Crandon on Friday, Oct 9.
-- [Waupaca 6, Fox Valley Lutheran 70](https://sports.wausaupilotandreview.com/#/football/game/football-2026-10-09-waupaca-at-fox-valley-lutheran) — The Comets fell to Fox Valley Lutheran 70-6 on Friday, Oct 9.
-- [Gilman 1, Alma Center Lincoln 0](https://sports.wausaupilotandreview.com/#/football/game/football-2026-10-09-gilman-at-alma-center-lincoln) — The Pirates took a forfeit win over Alma Center Lincoln to improve to 8-0 on Friday, Oct 9.
-- [Gilman 40, Shell Lake 0](https://sports.wausaupilotandreview.com/#/football/game/football-2026-10-09-gilman-at-shell-lake) — The Pirates routed Shell Lake 40-0 to improve to 9-0 on Friday, Oct 9.
-- [Shell Lake 1, South Shore 0](https://sports.wausaupilotandreview.com/#/football/game/football-2026-10-09-shell-lake-at-south-shore) — The Lakers took a forfeit win over South Shore to improve to 9-1 overall (7-0 Northwoods-East 8) on Friday, Oct 9.
+- [Flambeau 0, Gilman 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-flambeau-at-gilman) — The Pirates beat Flambeau 2-0 to improve to 15-10 on Saturday, Oct 10.
+- [Phillips 2, Owen-Withee 0](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-phillips-at-owen-withee) — The Loggers beat Owen-Withee 2-0 to improve to 19-9 on Saturday, Oct 10.
+- [Tomahawk 0, Mosinee 3](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-tomahawk-at-mosinee) — The Indians routed Tomahawk 3-0 to improve to 23-4 overall (8-0 Great Northern) on Saturday, Oct 10.
+- [Tomahawk 0, Medford 3](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-tomahawk-at-medford) — The Raiders routed Tomahawk 3-0 to improve to 11-12 overall (4-4 Great Northern) on Saturday, Oct 10.
+- [Rhinelander 0, Merrill 3](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-rhinelander-at-merrill) — The Bluejays routed Rhinelander 3-0 to improve to 18-8 overall (7-1 Great Northern) on Saturday, Oct 10.
+- [Lakeland 3, Medford 1](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-lakeland-at-medford) — The Thunderbirds beat Medford 3-1 to improve to 14-18 overall (4-4 Great Northern) on Saturday, Oct 10.
+- [West De Pere 2, Chippewa Falls 1](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-west-de-pere-at-chippewa-falls) — The Cardinals dropped a tight one to West De Pere 2-1 and slipped to 28-8 on Saturday, Oct 10.
+- [Unity 0, Rice Lake 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-unity-at-rice-lake) — The Warriors beat Unity 2-0 to improve to 22-6 on Saturday, Oct 10.
+- [Owen-Withee 2, Butternut 1](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-owen-withee-at-butternut) — The Blackhawks edged Butternut 2-1 to improve to 13-14 on Saturday, Oct 10.
+- [Alma Center Lincoln 1, Gilman 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-alma-center-lincoln-at-gilman) — The Pirates edged Alma Center Lincoln 2-1 to improve to 16-10 on Saturday, Oct 10.
+- [Princeton (MN) 1, River Falls 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-princeton-mn-at-river-falls) — The Wildcats edged Princeton (MN) 2-1 to improve to 29-5 on Saturday, Oct 10.
+- [McDonell Catholic 2, Eau Claire Memorial 0](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-mcdonell-catholic-at-eau-claire-memorial) — The Old Abes lost to McDonell Catholic 2-0 and slipped to 13-15 on Saturday, Oct 10.
+- [Phillips 2, Butternut 0](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-phillips-at-butternut) — The Loggers beat Butternut 2-0 to improve to 20-9 on Saturday, Oct 10.
+- [Augusta 1, Phillips 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-augusta-at-phillips) — The Loggers edged Augusta 2-1 to improve to 21-9 on Saturday, Oct 10.
+- [Stillwater (MN) 2, River Falls 1](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-stillwater-mn-at-river-falls) — The Wildcats dropped a tight one to Stillwater (MN) 2-1 and slipped to 29-6 on Saturday, Oct 10.
+- [West De Pere 2, Chippewa Falls 0](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-west-de-pere-at-chippewa-falls-2) — The Cardinals lost to West De Pere 2-0 and slipped to 28-9 on Saturday, Oct 10.
+- [Phillips 2, Gilman 1](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-phillips-at-gilman) — The Loggers edged Gilman 2-1 to improve to 22-9 on Saturday, Oct 10.
+- [Northland Pines 0, Mosinee 3](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-northland-pines-at-mosinee) — The Indians routed Northland Pines 3-0 to improve to 24-4 overall (9-0 Great Northern) on Saturday, Oct 10.
+- [Tomahawk 3, Rhinelander 1](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-tomahawk-at-rhinelander) — The Hatchets finished the regular season by beating Rhinelander 3-1 on Saturday, Oct 10. Lexi Palmer (FR) set 35 assists (8.8 per set).
+- [Antigo 1, Medford 3](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-antigo-at-medford) — The Raiders beat Antigo 3-1 to improve to 12-13 overall (5-5 Great Northern) on Saturday, Oct 10.
+- [Lakeland 3, Merrill 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-lakeland-at-merrill) — The Thunderbirds edged Merrill 3-2 to improve to 15-18 overall (5-4 Great Northern) on Saturday, Oct 10.
+- [Green Bay Southwest 1, Waupaca 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-green-bay-southwest-at-waupaca) — The Comets edged Green Bay Southwest 2-1 to improve to 10-16 on Saturday, Oct 10.
+- [Rogers (MN) 1, River Falls 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-rogers-mn-at-river-falls) — The Wildcats edged Rogers (MN) 2-1 to improve to 30-6 on Saturday, Oct 10.
+- [Wausau East 0, SPASH 3](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-wausau-east-at-spash) — The Panthers routed Wausau East 3-0 to improve to 20-10 overall (5-2 Wisconsin Valley) on Saturday, Oct 10. Kendall Woytasik (SR) set 27 assists (9.0 per set).
+- [Wausau West 3, Wausau East 1](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-wausau-west-at-wausau-east) — The Warriors beat Wausau East 3-1 to improve to 16-16 overall (4-3 Wisconsin Valley) on Saturday, Oct 10. Carlee Bloom (SR) pounded 10 kills (23 ATT, .391 EFF).
+- [Wisconsin Rapids Lincoln 3, Wausau East 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-wisconsin-rapids-at-wausau-east) — The Red Raiders edged Wausau East 3-2 to improve to 9-18 overall (2-5 Wisconsin Valley) on Saturday, Oct 10.
+- [Wausau West 0, SPASH 3](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-wausau-west-at-spash) — The Panthers routed Wausau West 3-0 to improve to 21-10 overall (6-2 Wisconsin Valley) on Saturday, Oct 10.
+- [D.C. Everest 3, Wausau West 0](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-dc-everest-at-wausau-west) — The Evergreens routed Wausau West 3-0 to improve to 20-7 overall (6-1 Wisconsin Valley) on Saturday, Oct 10.
+- [Marshfield 2, D.C. Everest 3](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-marshfield-at-dc-everest) — The Evergreens edged Marshfield 3-2 to improve to 21-7 overall (7-1 Wisconsin Valley) on Saturday, Oct 10.
+- [D.C. Everest 3, Wisconsin Rapids Lincoln 0](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-dc-everest-at-wisconsin-rapids) — The Evergreens routed Wisconsin Rapids Lincoln 3-0 to improve to 22-7 overall (8-1 Wisconsin Valley) on Saturday, Oct 10.
+- [Marshfield 3, SPASH 0](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-marshfield-at-spash) — The Tigers routed SPASH 3-0 to improve to 29-7 overall (6-2 Wisconsin Valley) on Saturday, Oct 10.
+- [Marshfield 3, Wisconsin Rapids Lincoln 0](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-marshfield-at-wisconsin-rapids) — The Tigers routed Wisconsin Rapids Lincoln 3-0 to improve to 30-7 overall (7-2 Wisconsin Valley) on Saturday, Oct 10.
+- [Lakeland 0, Mosinee 3](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-lakeland-at-mosinee) — The Indians routed Lakeland 3-0 to improve to 25-4 overall (10-0 Great Northern) on Saturday, Oct 10.
+- [Augusta 2, Abbotsford 0](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-augusta-at-abbotsford) — The Falcons lost to Augusta 2-0 and slipped to 9-24 on Saturday, Oct 10.
+- [Alma Center Lincoln 2, Abbotsford 0](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-alma-center-lincoln-at-abbotsford) — The Hornets beat Abbotsford 2-0 to improve to 3-16 on Saturday, Oct 10.
+- [Cornell 1, Abbotsford 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-cornell-at-abbotsford) — The Falcons edged Cornell 2-1 to improve to 10-25 on Saturday, Oct 10.
+- [Owen-Withee 2, Abbotsford 1](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-owen-withee-at-abbotsford) — The Blackhawks edged Abbotsford 2-1 to improve to 14-14 in Cloverbelt action on Saturday, Oct 10.
+- [Rhinelander 1, Antigo 3](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-rhinelander-at-antigo) — The Red Robins beat Rhinelander 3-1 to improve to 12-16 overall (4-5 Great Northern) on Saturday, Oct 10.
+- [Northland Pines 3, Merrill 1](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-northland-pines-at-merrill) — The Eagles beat Merrill 3-1 to improve to 23-10 overall (6-3 Great Northern) on Saturday, Oct 10.
+- [Northland Pines 3, Antigo 0](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-northland-pines-at-antigo) — The Eagles routed Antigo 3-0 to improve to 24-10 overall (7-3 Great Northern) on Saturday, Oct 10.
+- [Rice Lake 2, Eau Claire Memorial 1](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-rice-lake-at-eau-claire-memorial) — The Warriors edged Eau Claire Memorial 2-1 to improve to 23-6 on Saturday, Oct 10.
+- [Stanley-Boyd 0, Eau Claire Memorial 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-stanley-boyd-at-eau-claire-memorial) — The Old Abes beat Stanley-Boyd 2-0 to improve to 14-16 on Saturday, Oct 10.
+- [Prescott 2, Eau Claire Memorial 1](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-prescott-at-eau-claire-memorial) — The Old Abes dropped a tight one to Prescott 2-1 and slipped to 14-17 on Saturday, Oct 10.
+- [Pulaski 0, Chippewa Falls 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-pulaski-at-chippewa-falls) — The Cardinals beat Pulaski 2-0 to improve to 29-9 on Saturday, Oct 10.
+- [De Pere 0, Chippewa Falls 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-de-pere-at-chippewa-falls) — The Cardinals beat De Pere 2-0 to improve to 30-9 on Saturday, Oct 10.
+- [Kaukauna 0, Chippewa Falls 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-kaukauna-at-chippewa-falls) — The Cardinals beat Kaukauna 2-0 to improve to 31-9 on Saturday, Oct 10.
+- [Forest Lake 0, Hudson 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-forest-lake-at-hudson) — The Raiders beat Forest Lake 2-0 to improve to 26-4 on Saturday, Oct 10.
+- [Owatonna (MN) 0, Hudson 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-owatonna-mn-at-hudson) — The Raiders beat Owatonna (MN) 2-0 to improve to 27-4 on Saturday, Oct 10.
+- [Cannon Falls (MN) 0, Hudson 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-cannon-falls-mn-at-hudson) — The Raiders beat Cannon Falls (MN) 2-0 to improve to 28-4 on Saturday, Oct 10.
+- [Rice Lake 1, McDonell Catholic 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-rice-lake-at-mcdonell-catholic) — The Warriors dropped a tight one to McDonell Catholic 2-1 on Saturday, Oct 10.
+- [Altoona 0, Rice Lake 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-altoona-at-rice-lake) — The Warriors beat Altoona 2-0 to improve to 24-7 on Saturday, Oct 10.
+- [Amherst 0, Menasha 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-amherst-at-menasha) — The Falcons lost to Menasha 2-0 on Saturday, Oct 10.
+- [Amherst 1, Badger 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-amherst-at-badger) — The Falcons dropped a tight one to Badger 2-1 on Saturday, Oct 10.
+- [Amherst 0, West Salem 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-amherst-at-west-salem) — The Falcons lost to West Salem 2-0 on Saturday, Oct 10.
+- [Amherst 0, Wisconsin Dells 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-amherst-at-wisconsin-dells) — The Falcons lost to Wisconsin Dells 2-0 on Saturday, Oct 10.
+- [Amherst 0, Cuba City 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-amherst-at-cuba-city) — The Falcons lost to Cuba City 2-0 on Saturday, Oct 10.
+- [Weyauwega-Fremont 2, Waupaca 1](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-weyauwega-fremont-at-waupaca) — The Warhawks edged Waupaca 2-1 to improve to 14-8 on Saturday, Oct 10.
+- [Weyauwega-Fremont 2, Notre Dame 0](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-weyauwega-fremont-at-notre-dame) — The Warhawks beat Notre Dame 2-0 to improve to 15-8 on Saturday, Oct 10.
+- [Weyauwega-Fremont 0, Notre Dame 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-weyauwega-fremont-at-notre-dame-2) — The Warhawks lost to Notre Dame 2-0 on Saturday, Oct 10.
+- [Weyauwega-Fremont 1, Wrightstown 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-weyauwega-fremont-at-wrightstown) — The Warhawks dropped a tight one to Wrightstown 2-1 on Saturday, Oct 10.
+- [Flambeau 1, Butternut 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-flambeau-at-butternut) — The Falcons dropped a tight one to Butternut 2-1 on Saturday, Oct 10.
+- [Alma Center Lincoln 2, Flambeau 1](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-alma-center-lincoln-at-flambeau) — The Hornets edged Flambeau 2-1 to improve to 4-16 on Saturday, Oct 10.
+- [Cornell 0, Flambeau 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-cornell-at-flambeau) — The Falcons beat Cornell 2-0 to improve to 5-19 on Saturday, Oct 10.
+- [Chequamegon 1, Menomonie 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-chequamegon-at-menomonie) — The Mustangs edged Chequamegon 2-1 to improve to 5-17 on Saturday, Oct 10.
+- [Chequamegon 0, Colfax 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-chequamegon-at-colfax) — The Screaming Eagles lost to Colfax 2-0 on Saturday, Oct 10.
+- [Chequamegon 0, Grantsburg 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-chequamegon-at-grantsburg) — The Screaming Eagles lost to Grantsburg 2-0 on Saturday, Oct 10.
+- [Chequamegon 2, Northwood 0](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-chequamegon-at-northwood) — The Screaming Eagles beat Northwood 2-0 to improve to 11-23 on Saturday, Oct 10.
+- [Phelps 0, Marion 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-phelps-at-marion) — The Mustangs beat Phelps 2-0 to improve to 18-2 on Saturday, Oct 10.
+- [Lac Courte Oreilles 0, Marion 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-lac-courte-oreilles-at-marion) — The Mustangs beat Lac Courte Oreilles 2-0 to improve to 19-2 on Saturday, Oct 10.
+- [Marion 2, Elcho 1](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-marion-at-elcho) — The Mustangs edged Elcho 2-1 to improve to 20-2 on Saturday, Oct 10.
+- [Menominee Nation 0, Marion 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-menominee-nation-at-marion) — The Mustangs beat Menominee Nation 2-0 to improve to 21-2 on Saturday, Oct 10.
+- [Menominee Nation 1, Phelps 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-menominee-nation-at-phelps) — The Eagles dropped a tight one to Phelps 2-1 on Saturday, Oct 10.
+- [Menominee Nation 0, Lac Courte Oreilles 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-menominee-nation-at-lac-courte-oreilles) — The Eagles lost to Lac Courte Oreilles 2-0 on Saturday, Oct 10.
+- [Tri-County 2, Gresham 1](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-tri-county-at-gresham) — The Penguins edged Gresham 2-1 on Saturday, Oct 10 to cap the regular season.
+- [Tri-County 2, Northland Lutheran 0](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-tri-county-at-northland-lutheran) — The Penguins beat Northland Lutheran 2-0 to improve to 11-20 on Saturday, Oct 10.
+- [Oneida Nation 0, Tri-County 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-oneida-nation-at-tri-county) — The Penguins beat Oneida Nation 2-0 to improve to 12-20 on Saturday, Oct 10.
+- [Menomonie 0, Chetek-Weyerhaeuser 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-menomonie-at-chetek-weyerhaeuser) — The Mustangs lost to Chetek-Weyerhaeuser 2-0 on Saturday, Oct 10.
+- [Northwood 0, Menomonie 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-northwood-at-menomonie) — The Mustangs beat Northwood 2-0 to improve to 6-18 on Saturday, Oct 10.
+- [Menomonie 0, Cadott 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-menomonie-at-cadott) — The Mustangs lost to Cadott 2-0 on Saturday, Oct 10.
+- [Wrightstown 2, Waupaca 1](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-wrightstown-at-waupaca) — The Comets dropped a tight one to Wrightstown 2-1 and slipped to 10-18 on Saturday, Oct 10.
+- [Loyal 2, Melrose-Mindoro 0](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-loyal-at-melrose-mindoro) — The Greyhounds beat Melrose-Mindoro 2-0 to improve to 9-16 on Saturday, Oct 10.
+- [Loyal 0, Whitehall 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-loyal-at-whitehall) — The Greyhounds lost to Whitehall 2-0 on Saturday, Oct 10.
+- [Loyal 0, Osseo-Fairchild 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-loyal-at-osseo-fairchild) — The Greyhounds lost to Osseo-Fairchild 2-0 on Saturday, Oct 10.
+- [Loyal 0, Durand-Arkansaw 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-loyal-at-durand-arkansaw) — The Greyhounds lost to Durand-Arkansaw 2-0 on Saturday, Oct 10.
+- [Neillsville 2, Osseo-Fairchild 0](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-neillsville-at-osseo-fairchild) — The Warriors beat Osseo-Fairchild 2-0 to improve to 9-13 on Saturday, Oct 10.
+- [Melrose-Mindoro 0, Neillsville 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-melrose-mindoro-at-neillsville) — The Warriors beat Melrose-Mindoro 2-0 to improve to 10-13 on Saturday, Oct 10.
+- [Neillsville 1, Whitehall 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-neillsville-at-whitehall) — The Warriors dropped a tight one to Whitehall 2-1 on Saturday, Oct 10.
+- [Neillsville 2, Durand-Arkansaw 0](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-neillsville-at-durand-arkansaw) — The Warriors beat Durand-Arkansaw 2-0 to improve to 11-14 on Saturday, Oct 10.
+- [Owen-Withee 2, Alma Center Lincoln 0](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-owen-withee-at-alma-center-lincoln) — The Blackhawks beat Alma Center Lincoln 2-0 to improve to 15-14 on Saturday, Oct 10.
+- [Augusta 1, Gilman 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-augusta-at-gilman) — The Pirates edged Augusta 2-1 to improve to 17-11 on Saturday, Oct 10.
+- [Winter 2, Mellen 0](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-winter-at-mellen) — The Granite Diggers lost to Winter 2-0 and slipped to 8-13 on Saturday, Oct 10.
+- [Washburn 2, Mellen 0](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-washburn-at-mellen) — The Castle Guards beat Mellen 2-0 to improve to 8-11 on Saturday, Oct 10.
+- [Winter 2, Washburn 0](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-winter-at-washburn) — The Castle Guards lost to Winter 2-0 and slipped to 8-12 on Saturday, Oct 10.
+- [Cornell 0, Butternut 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-cornell-at-butternut) — The Chiefs lost to Butternut 2-0 on Saturday, Oct 10.
+- [Cornell 0, Augusta 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-10-cornell-at-augusta) — The Chiefs lost to Augusta 2-0 on Saturday, Oct 10.
 
-**Power Rankings top 5:** 1. Gilman (9-0) · 2. Amherst (8-0) · 3. New Richmond (8-0) · 4. Assumption (8-1) · 5. Shell Lake (9-1)
+**Monday, October 12**
 
-## Volleyball — 132 games
+- [Wild Rose 0, Pittsville 3](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-12-wild-rose-at-pittsville) — The Panthers routed Wild Rose 3-0 to improve to 16-15 on Monday, Oct 12.
+- [SPASH 0, Mosinee 3](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-12-spash-at-mosinee) — The Indians routed SPASH 3-0 to improve to 26-4 on Monday, Oct 12.
+- [New Richmond 3, Somerset 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-12-new-richmond-at-somerset) — The Tigers edged Somerset 3-2 to improve to 22-5 on Monday, Oct 12.
+- [Regis 1, Menomonie 3](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-12-regis-at-menomonie) — The Mustangs beat Regis 3-1 to improve to 7-19 on Monday, Oct 12.
 
-**Saturday, October 3**
+**Tuesday, October 13**
 
-- [Abbotsford 0, Colby 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-03-abbotsford-at-colby) — The Hornets beat Abbotsford 2-0 to improve to 17-14 in Cloverbelt action on Saturday, Oct 3.
-- [Winona (MN) 0, Marshfield 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-03-winona-mn-at-marshfield) — The Tigers beat Winona (MN) 2-0 to improve to 24-6 on Saturday, Oct 3.
-- [Eau Claire North 1, Clear Lake 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-03-eau-claire-north-at-clear-lake) — The Huskies dropped a tight one to Clear Lake 2-1 on Saturday, Oct 3.
-- [Osceola 0, Hudson 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-03-osceola-at-hudson) — The Raiders beat Osceola 2-0 to improve to 20-2 on Saturday, Oct 3.
-- [Butternut 1, Hurley 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-03-butternut-at-hurley) — The NorthStars edged Butternut 2-1 to improve to 14-4 on Saturday, Oct 3.
-- [Oshkosh West 0, Mosinee 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-03-oshkosh-west-at-mosinee) — The Indians beat Oshkosh West 2-0 to improve to 20-2 on Saturday, Oct 3.
-- [Wausau West 0, Prairie Farm/Clayton 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-03-wausau-west-at-prairie-farm-clayton) — The Warriors lost to Prairie Farm/Clayton 2-0 on Saturday, Oct 3.
-- [Edgar 2, Osceola 0](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-03-edgar-at-osceola) — The Wildcats beat Osceola 2-0 to improve to 20-5 on Saturday, Oct 3.
-- [Cedar Grove-Belgium 0, Chippewa Falls 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-03-cedar-grove-belgium-at-chippewa-falls) — The Cardinals beat Cedar Grove-Belgium 2-0 to improve to 23-7 on Saturday, Oct 3.
-- [Mosinee 2, Fox Valley Lutheran 1](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-03-mosinee-at-fox-valley-lutheran) — The Indians edged Fox Valley Lutheran 2-1 to improve to 21-2 on Saturday, Oct 3.
-- [Marshfield 2, Hayward 0](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-03-marshfield-at-hayward) — The Tigers beat Hayward 2-0 to improve to 25-6 on Saturday, Oct 3.
-- [Chippewa Falls 2, Lodi 1](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-03-chippewa-falls-at-lodi) — The Cardinals edged Lodi 2-1 to improve to 24-7 on Saturday, Oct 3.
-- [Unity 0, New Richmond 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-03-unity-at-new-richmond) — The Tigers beat Unity 2-0 to improve to 18-4 on Saturday, Oct 3.
-- [Weyauwega-Fremont 2, Wauwatosa West 1](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-03-weyauwega-fremont-at-wauwatosa-west) — The Warhawks edged Wauwatosa West 2-1 to improve to 13-5 on Saturday, Oct 3.
-- [Flambeau 0, Clear Lake 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-03-flambeau-at-clear-lake) — The Falcons lost to Clear Lake 2-0 on Saturday, Oct 3.
-- [Wausau West 1, Osceola 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-03-wausau-west-at-osceola) — The Warriors dropped a tight one to Osceola 2-1 on Saturday, Oct 3.
-- [Auburndale 2, Lodi 0](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-03-auburndale-at-lodi) — The Eagles beat Lodi 2-0 to improve to 23-7 on Saturday, Oct 3.
-- [Lake Holcombe 0, Hurley 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-03-lake-holcombe-at-hurley) — The NorthStars beat Lake Holcombe 2-0 to improve to 15-4 on Saturday, Oct 3.
-- [Oconomowoc 2, Mosinee 0](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-03-oconomowoc-at-mosinee) — The Indians lost to Oconomowoc 2-0 and slipped to 21-3 on Saturday, Oct 3.
-- [Unity 2, Superior 0](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-03-unity-at-superior) — The Spartans lost to Unity 2-0 and slipped to 8-14 on Saturday, Oct 3.
-- [SPASH 1, Appleton East 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-03-spash-at-appleton-east) — The Panthers dropped a tight one to Appleton East 2-1 on Saturday, Oct 3.
-- [Unity 2, Eau Claire North 0](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-03-unity-at-eau-claire-north) — The Huskies lost to Unity 2-0 and slipped to 8-19 on Saturday, Oct 3.
-- [Wausau West 2, Prairie Farm/Clayton 1](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-03-wausau-west-at-prairie-farm-clayton-2) — The Warriors edged Prairie Farm/Clayton 2-1 to improve to 14-14 on Saturday, Oct 3.
-- [Winter 1, Hurley 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-03-winter-at-hurley) — The NorthStars edged Winter 2-1 to improve to 16-4 on Saturday, Oct 3.
-- [Wausau West 0, West Salem 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-03-wausau-west-at-west-salem) — The Warriors lost to West Salem 2-0 on Saturday, Oct 3.
-- [Wausau West 0, Barron 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-03-wausau-west-at-barron) — The Warriors lost to Barron 2-0 on Saturday, Oct 3.
-- [Chequamegon 0, Black River Falls 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-03-chequamegon-at-black-river-falls) — The Tigers beat Chequamegon 2-0 to improve to 13-14 on Saturday, Oct 3.
-- [Abbotsford 0, Black River Falls 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-03-abbotsford-at-black-river-falls) — The Tigers beat Abbotsford 2-0 to improve to 14-14 on Saturday, Oct 3.
-- [Black River Falls 2, Colby 1](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-03-black-river-falls-at-colby) — The Tigers edged Colby 2-1 to improve to 15-14 on Saturday, Oct 3.
-- [Marshfield 2, Saint Ambrose 0](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-03-marshfield-at-saint-ambrose) — The Tigers beat Saint Ambrose 2-0 to improve to 26-6 on Saturday, Oct 3.
-- [Marshfield 2, Eau Claire Memorial 0](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-03-marshfield-at-eau-claire-memorial) — The Tigers beat Eau Claire Memorial 2-0 to improve to 27-6 on Saturday, Oct 3.
-- [SPASH 0, Neenah 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-03-spash-at-neenah) — The Panthers lost to Neenah 2-0 on Saturday, Oct 3.
-- [SPASH 2, Oshkosh West 1](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-03-spash-at-oshkosh-west) — The Panthers edged Oshkosh West 2-1 to improve to 19-8 on Saturday, Oct 3.
-- [SPASH 0, Brookfield East 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-03-spash-at-brookfield-east) — The Panthers lost to Brookfield East 2-0 on Saturday, Oct 3.
-- [Edgar 0, Barron 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-03-edgar-at-barron) — The Wildcats lost to Barron 2-0 on Saturday, Oct 3.
-- [Edgar 0, Hudson 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-03-edgar-at-hudson) — The Raiders beat Edgar 2-0 to improve to 21-2 on Saturday, Oct 3.
-- [West Salem 0, Edgar 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-03-west-salem-at-edgar) — The Wildcats beat West Salem 2-0 to improve to 21-7 on Saturday, Oct 3.
-- [Saint Croix Falls 0, Edgar 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-03-saint-croix-falls-at-edgar) — The Wildcats beat Saint Croix Falls 2-0 to improve to 22-7 on Saturday, Oct 3.
-- [Mosinee 0, Neenah 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-03-mosinee-at-neenah) — The Indians lost to Neenah 2-0 on Saturday, Oct 3.
-- [Chequamegon 0, Colby 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-03-chequamegon-at-colby) — The Hornets beat Chequamegon 2-0 to improve to 18-15 on Saturday, Oct 3.
-- [Abbotsford 2, Chequamegon 0](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-03-abbotsford-at-chequamegon) — The Falcons beat Chequamegon 2-0 to improve to 8-23 on Saturday, Oct 3.
-- [Saint Ambrose 2, Medford 1](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-03-saint-ambrose-at-medford) — The Raiders dropped a tight one to Saint Ambrose 2-1 and slipped to 8-10 on Saturday, Oct 3.
-- [Altoona 0, Medford 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-03-altoona-at-medford) — The Raiders beat Altoona 2-0 to improve to 9-10 on Saturday, Oct 3.
-- [Medford 0, Eau Claire Memorial 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-03-medford-at-eau-claire-memorial) — The Old Abes beat Medford 2-0 to improve to 11-13 on Saturday, Oct 3.
-- [Mondovi 2, Medford 1](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-03-mondovi-at-medford) — The Raiders dropped a tight one to Mondovi 2-1 and slipped to 9-12 on Saturday, Oct 3.
-- [Flambeau 0, Eau Claire North 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-03-flambeau-at-eau-claire-north) — The Huskies beat Flambeau 2-0 to improve to 9-19 on Saturday, Oct 3.
-- [Superior 1, Eau Claire North 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-03-superior-at-eau-claire-north) — The Huskies edged Superior 2-1 to improve to 10-19 on Saturday, Oct 3.
-- [Altoona 0, Eau Claire Memorial 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-03-altoona-at-eau-claire-memorial) — The Old Abes beat Altoona 2-0 to improve to 12-13 on Saturday, Oct 3.
-- [Mondovi 0, Eau Claire Memorial 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-03-mondovi-at-eau-claire-memorial) — The Old Abes beat Mondovi 2-0 to improve to 13-13 on Saturday, Oct 3.
-- [Richland Center 0, Chippewa Falls 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-03-richland-center-at-chippewa-falls) — The Cardinals beat Richland Center 2-0 to improve to 25-7 on Saturday, Oct 3.
-- [Chippewa Falls 2, Auburndale 0](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-03-chippewa-falls-at-auburndale) — The Cardinals beat Auburndale 2-0 to improve to 26-7 on Saturday, Oct 3.
-- [Chippewa Falls 2, Catholic Central 0](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-03-chippewa-falls-at-catholic-central) — The Cardinals beat Catholic Central 2-0 to improve to 27-7 on Saturday, Oct 3.
-- [Barron 2, Hudson 1](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-03-barron-at-hudson) — The Raiders dropped a tight one to Barron 2-1 and slipped to 21-3 on Saturday, Oct 3.
-- [West Salem 1, Hudson 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-03-west-salem-at-hudson) — The Raiders edged West Salem 2-1 to improve to 22-3 on Saturday, Oct 3.
-- [Saint Croix Falls 1, Hudson 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-03-saint-croix-falls-at-hudson) — The Raiders edged Saint Croix Falls 2-1 to improve to 23-3 on Saturday, Oct 3.
-- [Grantsburg 0, New Richmond 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-03-grantsburg-at-new-richmond) — The Tigers beat Grantsburg 2-0 to improve to 19-4 on Saturday, Oct 3.
-- [Cadott 0, New Richmond 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-03-cadott-at-new-richmond) — The Tigers beat Cadott 2-0 to improve to 20-4 on Saturday, Oct 3.
-- [Clear Lake 2, New Richmond 0](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-03-clear-lake-at-new-richmond) — The Tigers lost to Clear Lake 2-0 and slipped to 20-5 on Saturday, Oct 3.
-- [Richland Center 0, Auburndale 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-03-richland-center-at-auburndale) — The Eagles beat Richland Center 2-0 to improve to 24-8 on Saturday, Oct 3.
-- [Belleville 0, Auburndale 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-03-belleville-at-auburndale) — The Eagles beat Belleville 2-0 to improve to 25-8 on Saturday, Oct 3. Chesney Nagel (SR) set 23 assists (11.5 per set).
-- [Nekoosa 0, Auburndale 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-03-nekoosa-at-auburndale) — The Eagles beat Nekoosa 2-0 to improve to 26-8 on Saturday, Oct 3.
-- [Weyauwega-Fremont 0, Janesville Craig 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-03-weyauwega-fremont-at-janesville-craig) — The Warhawks lost to Janesville Craig 2-0 on Saturday, Oct 3.
-- [Weyauwega-Fremont 0, Cedarburg 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-03-weyauwega-fremont-at-cedarburg) — The Warhawks lost to Cedarburg 2-0 on Saturday, Oct 3.
-- [Flambeau 0, Somerset 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-03-flambeau-at-somerset) — The Falcons lost to Somerset 2-0 on Saturday, Oct 3.
-- [Calumet Copper Island Academy (MI) 0, Hurley 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-03-calumet-copper-island-academy-mi-at-hurley) — The NorthStars beat Calumet Copper Island Academy (MI) 2-0 to improve to 17-4 on Saturday, Oct 3.
-- [Crandon 2, Almond-Bancroft 1](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-03-crandon-at-almond-bancroft) — The Eagles dropped a tight one to Crandon 2-1 and slipped to 5-16 on Saturday, Oct 3.
-- [Pembine/Goodman 3, Almond-Bancroft 0](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-03-pembine-goodman-at-almond-bancroft) — The Eagles fell to Pembine/Goodman 3-0 and slipped to 5-17 on Saturday, Oct 3.
-- [White Lake 2, Almond-Bancroft 0](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-03-white-lake-at-almond-bancroft) — The Eagles lost to White Lake 2-0 and slipped to 5-18 on Saturday, Oct 3.
-- [Superior 0, Grantsburg 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-03-superior-at-grantsburg) — The Spartans lost to Grantsburg 2-0 on Saturday, Oct 3.
-- [Superior 2, Somerset 0](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-03-superior-at-somerset) — The Spartans beat Somerset 2-0 to improve to 9-16 on Saturday, Oct 3.
-- [Mellen 1, Winter 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-03-mellen-at-winter) — The Granite Diggers dropped a tight one to Winter 2-1 on Saturday, Oct 3.
-- [Ironwood (MI) 2, Mellen 1](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-03-ironwood-mi-at-mellen) — The Granite Diggers dropped a tight one to Ironwood (MI) 2-1 and slipped to 8-10 on Saturday, Oct 3.
-- [Shell Lake 2, Amery 0](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-03-shell-lake-at-amery) — The Lakers beat Amery 2-0 to improve to 9-16 on Saturday, Oct 3.
-- [Shell Lake 0, Spring Valley 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-03-shell-lake-at-spring-valley) — The Lakers lost to Spring Valley 2-0 on Saturday, Oct 3.
-- [Glenwood City 0, Shell Lake 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-03-glenwood-city-at-shell-lake) — The Lakers beat Glenwood City 2-0 to improve to 10-17 on Saturday, Oct 3.
-- [Shell Lake 2, Siren 0](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-03-shell-lake-at-siren) — The Lakers beat Siren 2-0 to improve to 11-17 on Saturday, Oct 3.
+- [Athens 3, Newman Catholic 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-13-athens-at-newman-catholic) — The Bluejays held off Newman Catholic 3-2 on Tuesday, Oct 13 to close the regular season.
+- [Rhinelander 1, Hurley 3](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-13-rhinelander-at-hurley) — The NorthStars beat Rhinelander 3-1 to improve to 20-4 on Tuesday, Oct 13.
+- [Shiocton 3, Iola-Scandinavia 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-13-shiocton-at-iola-scandinavia) — The Thunderbirds dropped a tight one to Shiocton 3-2 and slipped to 15-11 on Tuesday, Oct 13.
+- [Wittenberg-Birnamwood 3, Weyauwega-Fremont 0](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-13-wittenberg-birnamwood-at-weyauwega-fremont) — The Chargers routed Weyauwega-Fremont 3-0 to improve to 23-9 on Tuesday, Oct 13.
+- [Wausau East 0, Antigo 3](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-13-wausau-east-at-antigo) — The Red Robins routed Wausau East 3-0 to improve to 13-17 on Tuesday, Oct 13.
+- [Medford 0, D.C. Everest 3](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-13-medford-at-dc-everest) — The Evergreens routed Medford 3-0 to improve to 23-7 on Tuesday, Oct 13.
+- [Viroqua 3, Black River Falls 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-13-viroqua-at-black-river-falls) — The Tigers dropped a tight one to Viroqua 3-2 and slipped to 15-16 on Tuesday, Oct 13.
+- [Mosinee 0, Marshfield 3](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-13-mosinee-at-marshfield) — The Tigers routed Mosinee 3-0 to improve to 31-7 on Tuesday, Oct 13.
+- [Phillips 1, Marathon 3](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-13-phillips-at-marathon) — The Raiders beat Phillips 3-1 to improve to 26-3 in Marawood action on Tuesday, Oct 13.
+- [Abbotsford 2, Stratford 3](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-13-abbotsford-at-stratford) — The Tigers squeaked past Abbotsford 3-2 in the regular-season finale on Tuesday, Oct 13.
+- [Stanley-Boyd 3, Spencer 0](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-13-stanley-boyd-at-spencer) — The Rockets stumbled into the postseason with a 3-0 loss to Stanley-Boyd on Tuesday, Oct 13.
+- [New Richmond 0, Hudson 3](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-13-new-richmond-at-hudson) — The Raiders ended the regular season on a high note, blasting New Richmond 3-0 on Tuesday, Oct 13.
+- [Rice Lake 1, River Falls 3](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-13-rice-lake-at-river-falls) — The Wildcats closed the regular season with a 3-1 win over Rice Lake on Tuesday, Oct 13.
+- [Prentice 0, Auburndale 3](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-13-prentice-at-auburndale) — The Eagles routed Prentice 3-0 to improve to 27-9 in Marawood action on Tuesday, Oct 13.
+- [Chequamegon 3, Assumption 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-13-chequamegon-at-assumption) — The Screaming Eagles held off Assumption 3-2 on Tuesday, Oct 13 to close the regular season.
+- [Amherst 3, Menominee Nation 0](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-13-amherst-at-menominee-nation) — The Falcons closed out the regular season strong with a 3-0 drubbing of Menominee Nation on Tuesday, Oct 13.
+- [Almond-Bancroft 0, Rosholt 3](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-13-almond-bancroft-at-rosholt) — The Hornets routed Almond-Bancroft 3-0 to improve to 9-18 on Tuesday, Oct 13.
+- [Flambeau 3, Northwood 0](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-13-flambeau-at-northwood) — The Falcons put a bow on the regular season by routing Northwood 3-0 on Tuesday, Oct 13.
+- [Gresham 3, Bowler 0](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-13-gresham-at-bowler) — The Panthers stumbled into the postseason with a 3-0 loss to Gresham on Tuesday, Oct 13.
+- [Tigerton 0, Marion 3](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-13-tigerton-at-marion) — The Mustangs ended the regular season on a high note, blasting Tigerton 3-0 on Tuesday, Oct 13.
+- [Regis 0, Loyal 3](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-13-regis-at-loyal) — The Greyhounds put a bow on the regular season by routing Regis 3-0 on Tuesday, Oct 13.
+- [Cadott 3, Neillsville 0](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-13-cadott-at-neillsville) — The Warriors stumbled into the postseason with a 3-0 loss to Cadott on Tuesday, Oct 13.
+- [Bloomer 3, Owen-Withee 1](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-13-bloomer-at-owen-withee) — The Blackhawks closed the regular season with a 3-1 loss to Bloomer on Tuesday, Oct 13.
+- [Fall Creek 3, Gilman 1](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-13-fall-creek-at-gilman) — The Pirates dropped the regular-season finale to Fall Creek 3-1 on Tuesday, Oct 13.
+- [Thorp 0, Greenwood 3](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-13-thorp-at-greenwood) — The Indians put a bow on the regular season by routing Thorp 3-0 on Tuesday, Oct 13.
+- [Birchwood 0, Cornell 3](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-13-birchwood-at-cornell) — The Chiefs put a bow on the regular season by routing Birchwood 3-0 on Tuesday, Oct 13.
+- [Shell Lake 0, Webster 3](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-13-shell-lake-at-webster) — The Lakers fell to Webster 3-0 on Tuesday, Oct 13.
+- [Alma Center Lincoln 0, Osseo-Fairchild 3](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-13-alma-center-lincoln-at-osseo-fairchild) — The Hornets fell to Osseo-Fairchild 3-0 on Tuesday, Oct 13.
 
-**Monday, October 5**
+**Thursday, October 15**
 
-- [Hurley 3, South Shore 0](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-05-hurley-at-south-shore) — The NorthStars routed South Shore 3-0 to improve to 18-4 on Monday, Oct 5.
-- [Prentice 3, Cornell 0](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-05-prentice-at-cornell) — The Buccaneers routed Cornell 3-0 to improve to 23-7 on Monday, Oct 5. Hannah Gladson (JR) pounded 14 kills (25 ATT, .360 EFF).
-- [Bruce 1, Luck 3](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-05-bruce-at-luck) — The Red Raiders lost to Luck 3-1 on Monday, Oct 5.
-- [Mellen 1, Mercer 3](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-05-mellen-at-mercer) — The Granite Diggers lost to Mercer 3-1 on Monday, Oct 5.
-- [Drummond 3, Washburn 1](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-05-drummond-at-washburn) — The Castle Guards lost to Drummond 3-1 and slipped to 7-10 on Monday, Oct 5. Ella Hunt (SO) set 32 assists (8.0 per set).
+- [D.C. Everest 3, Wausau East 0](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-15-dc-everest-at-wausau-east) — The Evergreens put a bow on the regular season by routing Wausau East 3-0 on Thursday, Oct 15. Tatum Arndt (JR) set 28 assists (9.3 per set).
+- [Wausau West 0, Marshfield 3](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-15-wausau-west-at-marshfield) — The Tigers ended the regular season on a high note, blasting Wausau West 3-0 on Thursday, Oct 15.
+- [Black River Falls 3, Westby 0](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-15-black-river-falls-at-westby) — The Tigers closed out the regular season strong with a 3-0 drubbing of Westby on Thursday, Oct 15.
+- [SPASH 3, Wisconsin Rapids Lincoln 0](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-15-spash-at-wisconsin-rapids) — The Panthers ended the regular season on a high note, blasting Wisconsin Rapids Lincoln 3-0 on Thursday, Oct 15. Kendall Woytasik (SR) set 27 assists (9.0 per set).
+- [Rib Lake 0, Marathon 3](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-15-rib-lake-at-marathon) — The Raiders ended the regular season on a high note, blasting Rib Lake 3-0 on Thursday, Oct 15.
+- [Waupaca 0, Medford 3](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-15-waupaca-at-medford) — The Raiders wrapped the regular season with a 3-0 blowout of Waupaca on Thursday, Oct 15.
+- [Antigo 2, Wittenberg-Birnamwood 3](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-15-antigo-at-wittenberg-birnamwood) — The Chargers held off Antigo 3-2 on Thursday, Oct 15 to close the regular season.
+- [Menomonie 0, Chippewa Falls 3](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-15-menomonie-at-chippewa-falls) — The Cardinals wrapped the regular season with a 3-0 blowout of Menomonie on Thursday, Oct 15.
+- [Pittsville 0, Auburndale 3](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-15-pittsville-at-auburndale) — The Eagles ended the regular season on a high note, blasting Pittsville 3-0 on Thursday, Oct 15.
+- [Assumption 3, Wild Rose 1](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-15-assumption-at-wild-rose) — The Wolves closed the regular season with a 3-1 win over Wild Rose on Thursday, Oct 15.
+- [Iola-Scandinavia 3, Rosholt 0](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-15-iola-scandinavia-at-rosholt) — The Thunderbirds closed out the regular season strong with a 3-0 drubbing of Rosholt on Thursday, Oct 15.
+- [Weyauwega-Fremont 0, Saint Mary Catholic 3](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-15-weyauwega-fremont-at-saint-mary-catholic) — The Warhawks fell to Saint Mary Catholic 3-0 on Thursday, Oct 15.
+- [Hurley 3, Butternut 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-15-hurley-at-butternut) — The NorthStars squeaked past Butternut 3-2 in the regular-season finale on Thursday, Oct 15.
+- [Manawa 3, Port Edwards 0](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-15-manawa-at-port-edwards) — The Blackhawks stumbled into the postseason with a 3-0 loss to Manawa on Thursday, Oct 15.
+- [Northland Pines 2, Wabeno/Laona 3](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-15-northland-pines-at-wabeno-laona) — The Eagles dropped a tight one to Wabeno/Laona 3-2 on Thursday, Oct 15.
+- [South Shore 0, Mellen 3](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-15-south-shore-at-mellen) — The Granite Diggers ended the regular season on a high note, blasting South Shore 3-0 on Thursday, Oct 15.
+- [Lac Courte Oreilles 0, Washburn 3](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-15-lac-courte-oreilles-at-washburn) — The Castle Guards put a bow on the regular season by routing Lac Courte Oreilles 3-0 on Thursday, Oct 15.
+- [Cochrane-Fountain City 3, Alma Center Lincoln 1](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-15-cochrane-fountain-city-at-alma-center-lincoln) — The Hornets finished the regular season with a 3-1 setback to Cochrane-Fountain City on Thursday, Oct 15.
 
-**Tuesday, October 6**
+**Power Rankings top 5:** 1. Hudson (29-4) · 2. River Falls (31-6) · 3. Marathon (27-3) · 4. Mosinee (26-5) · 5. Chippewa Falls (32-9)
 
-- [Iola-Scandinavia 3, Bonduel 0](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-06-iola-scandinavia-at-bonduel) — The Thunderbirds routed Bonduel 3-0 to improve to 15-9 on Tuesday, Oct 6.
-- [Marshfield 3, Wausau East 0](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-06-marshfield-at-wausau-east) — The Tigers put a bow on the regular season by routing Wausau East 3-0 on Tuesday, Oct 6.
-- [Wausau West 3, Wisconsin Rapids Lincoln 0](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-06-wausau-west-at-wisconsin-rapids) — The Warriors closed out the regular season strong with a 3-0 drubbing of Wisconsin Rapids Lincoln on Tuesday, Oct 6. Sophia Ngo (SR) dug up 15 balls (5.0 per set).
-- [SPASH 1, D.C. Everest 3](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-06-spash-at-dc-everest) — The Evergreens beat SPASH 3-1 to improve to 18-7 overall (5-1 Wisconsin Valley) on Tuesday, Oct 6.
-- [Black River Falls 0, Luther 3](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-06-black-river-falls-at-luther) — The Tigers fell to Luther 3-0 on Tuesday, Oct 6.
-- [Athens 2, Prentice 3](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-06-athens-at-prentice) — The Buccaneers held off Athens 3-2 on Tuesday, Oct 6 to close the regular season.
-- [Edgar 3, Assumption 0](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-06-edgar-at-assumption) — The Wildcats ended the regular season on a high note, blasting Assumption 3-0 on Tuesday, Oct 6. Makita Ellenbecker (SR) set 30 assists (10.0 per set).
-- [Marathon 3, Auburndale 1](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-06-marathon-at-auburndale) — The Raiders beat Auburndale 3-1 to improve to 24-3 overall (4-1 Marawood) on Tuesday, Oct 6.
-- [Stratford 1, Newman Catholic 3](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-06-stratford-at-newman-catholic) — The Cardinals beat Stratford 3-1 to improve to 8-19 overall (2-3 Marawood) on Tuesday, Oct 6.
-- [Owen-Withee 0, Spencer 3](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-06-owen-withee-at-spencer) — The Rockets ended the regular season on a high note, blasting Owen-Withee 3-0 on Tuesday, Oct 6.
-- [Mosinee 3, Antigo 0](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-06-mosinee-at-antigo) — The Indians put a bow on the regular season by routing Antigo 3-0 on Tuesday, Oct 6.
-- [Colby 0, Columbus Catholic 3](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-06-colby-at-columbus-catholic) — The Dons routed Colby 3-0 to improve to 28-8 overall (6-0 Cloverbelt) on Tuesday, Oct 6.
-- [Abbotsford 3, Chequamegon 1](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-06-abbotsford-at-chequamegon) — The Falcons finished the regular season by beating Chequamegon 3-1 on Tuesday, Oct 6. Emily Gonzales (SR) dug up 15 balls (3.8 per set).
-- [Northland Pines 3, Tomahawk 0](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-06-northland-pines-at-tomahawk) — The Eagles ended the regular season on a high note, blasting Tomahawk 3-0 on Tuesday, Oct 6.
-- [Medford 3, Rhinelander 0](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-06-medford-at-rhinelander) — The Raiders closed out the regular season strong with a 3-0 drubbing of Rhinelander on Tuesday, Oct 6.
-- [Merrill 3, Lakeland 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-06-merrill-at-lakeland) — The Bluejays edged Lakeland 3-2 to improve to 17-7 overall (6-1 Great Northern) on Tuesday, Oct 6.
-- [Superior 3, Eau Claire North 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-06-superior-at-eau-claire-north) — The Spartans squeaked past Eau Claire North 3-2 in the regular-season finale on Tuesday, Oct 6.
-- [Pacelli 3, Almond-Bancroft 0](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-06-pacelli-at-almond-bancroft) — The Cardinals routed Almond-Bancroft 3-0 to improve to 19-8 on Tuesday, Oct 6.
-- [Pittsville 3, Port Edwards 0](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-06-pittsville-at-port-edwards) — The Panthers routed Port Edwards 3-0 to improve to 14-15 on Tuesday, Oct 6. Harper Abel (SO) dug up 15 balls (5.0 per set).
-- [Wittenberg-Birnamwood 3, Amherst 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-06-wittenberg-birnamwood-at-amherst) — The Chargers edged Amherst 3-2 to improve to 21-9 on Tuesday, Oct 6.
-- [Weyauwega-Fremont 1, Manawa 3](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-06-weyauwega-fremont-at-manawa) — The Warhawks lost to Manawa 3-1 on Tuesday, Oct 6. Ebbrielle Thoma Loehrke (SR) pounded 13 kills (44 ATT, .114 EFF).
-- [Phillips 1, Rib Lake 3](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-06-phillips-at-rib-lake) — The Redmen closed the regular season with a 3-1 win over Phillips on Tuesday, Oct 6.
-- [Tri-County 3, Wild Rose 1](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-06-tri-county-at-wild-rose) — The Penguins beat Wild Rose 3-1 to improve to 8-20 on Tuesday, Oct 6. Elli Rettler (SO) pounded 13 kills (46 ATT, .196 EFF).
-- [Bowler 0, Northland Lutheran 3](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-06-bowler-at-northland-lutheran) — The Panthers fell to Northland Lutheran 3-0 on Tuesday, Oct 6.
-- [Menominee Nation 0, Shiocton 3](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-06-menominee-nation-at-shiocton) — The Eagles fell to Shiocton 3-0 on Tuesday, Oct 6.
-- [Waupaca 1, Little Chute 3](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-06-waupaca-at-little-chute) — The Comets lost to Little Chute 3-1 on Tuesday, Oct 6.
-- [Gilman 2, Loyal 3](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-06-gilman-at-loyal) — The Greyhounds edged Gilman 3-2 to improve to 7-16 overall (1-5 Cloverbelt) on Tuesday, Oct 6.
-- [Greenwood 1, Neillsville 3](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-06-greenwood-at-neillsville) — The Warriors beat Greenwood 3-1 to improve to 8-12 overall (2-4 Cloverbelt) on Tuesday, Oct 6.
-- [Siren 0, Shell Lake 3](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-06-siren-at-shell-lake) — The Lakers put a bow on the regular season by routing Siren 3-0 on Tuesday, Oct 6.
-- [White Lake 1, Marion 3](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-06-white-lake-at-marion) — The Mustangs beat White Lake 3-1 to improve to 16-2 on Tuesday, Oct 6.
+## Boys Soccer — 27 games
 
-**Thursday, October 8**
+**Saturday, October 10**
 
-- [Tri-County 3, Faith Christian Academy (Wausau) 0](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-08-tri-county-at-faith-christian-academy-wausau) — The Penguins put a bow on the regular season by routing Faith Christian Academy (Wausau) 3-0 on Thursday, Oct 8.
-- [Newman Catholic 0, D.C. Everest 3](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-08-newman-catholic-at-dc-everest) — The Evergreens closed out the regular season strong with a 3-0 drubbing of Newman Catholic on Thursday, Oct 8.
-- [Pacelli 1, Marathon 3](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-08-pacelli-at-marathon) — The Raiders capped the regular season with a 3-1 win over Pacelli on Thursday, Oct 8.
-- [Merrill 2, Stratford 3](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-08-merrill-at-stratford) — The Tigers held off Merrill 3-2 on Thursday, Oct 8 to close the regular season.
-- [Wittenberg-Birnamwood 3, Tomahawk 0](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-08-wittenberg-birnamwood-at-tomahawk) — The Chargers wrapped the regular season with a 3-0 blowout of Tomahawk on Thursday, Oct 8.
-- [Chippewa Falls 3, Eau Claire North 0](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-08-chippewa-falls-at-eau-claire-north) — The Cardinals put a bow on the regular season by routing Eau Claire North 3-0 on Thursday, Oct 8.
-- [Eau Claire Memorial 0, Rice Lake 3](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-08-eau-claire-memorial-at-rice-lake) — The Warriors wrapped the regular season with a 3-0 blowout of Eau Claire Memorial on Thursday, Oct 8.
-- [River Falls 1, Hudson 3](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-08-river-falls-at-hudson) — The Raiders closed the regular season with a 3-1 win over River Falls on Thursday, Oct 8.
-- [Menomonie 1, New Richmond 3](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-08-menomonie-at-new-richmond) — The Tigers finished the regular season by beating Menomonie 3-1 on Thursday, Oct 8.
-- [Assumption 0, Pittsville 3](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-08-assumption-at-pittsville) — The Panthers ended the regular season on a high note, blasting Assumption 3-0 on Thursday, Oct 8.
-- [Iola-Scandinavia 1, Saint Mary Catholic 3](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-08-iola-scandinavia-at-saint-mary-catholic) — The Thunderbirds lost to Saint Mary Catholic 3-1 on Thursday, Oct 8.
-- [Weyauwega-Fremont 3, New London 0](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-08-weyauwega-fremont-at-new-london) — The Warhawks ended the regular season on a high note, blasting New London 3-0 on Thursday, Oct 8.
-- [Bruce 3, Birchwood 0](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-08-bruce-at-birchwood) — The Red Raiders put a bow on the regular season by routing Birchwood 3-0 on Thursday, Oct 8.
-- [Washburn 0, Hurley 3](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-08-washburn-at-hurley) — The NorthStars put a bow on the regular season by routing Washburn 3-0 on Thursday, Oct 8.
-- [Almond-Bancroft 0, Manawa 3](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-08-almond-bancroft-at-manawa) — The Eagles fell to Manawa 3-0 on Thursday, Oct 8.
-- [Loyal 3, Greenwood 0](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-08-loyal-at-greenwood) — The Greyhounds closed out the regular season strong with a 3-0 drubbing of Greenwood on Thursday, Oct 8.
-- [Neillsville 0, Owen-Withee 3](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-08-neillsville-at-owen-withee) — The Blackhawks put a bow on the regular season by routing Neillsville 3-0 on Thursday, Oct 8.
-- [Columbus Catholic 3, Gilman 0](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-08-columbus-catholic-at-gilman) — The Dons closed out the regular season strong with a 3-0 drubbing of Gilman on Thursday, Oct 8.
-- [Solon Springs 3, Mellen 2](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-08-solon-springs-at-mellen) — The Granite Diggers dropped the regular-season finale to Solon Springs 3-2 on Thursday, Oct 8.
-- [South Shore 1, Lac Courte Oreilles 3](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-08-south-shore-at-lac-courte-oreilles) — The Cardinals lost to Lac Courte Oreilles 3-1 on Thursday, Oct 8.
-- [Marion 3, Gresham 0](https://sports.wausaupilotandreview.com/#/volleyball/game/volleyball-2026-10-08-marion-at-gresham) — The Mustangs put a bow on the regular season by routing Gresham 3-0 on Thursday, Oct 8. Myah Malueg (SO) set 20 assists (6.7 per set).
+- [Amherst 2, Aquinas 1](https://sports.wausaupilotandreview.com/#/boys_soccer/game/boys_soccer-2026-10-10-amherst-at-aquinas) — The Falcons edged Aquinas 2-1 to improve to 13-2 on Saturday, Oct 10.
+- [Wausau West 2, Appleton North 5](https://sports.wausaupilotandreview.com/#/boys_soccer/game/boys_soccer-2026-10-10-wausau-west-at-appleton-north) — The Warriors lost to Appleton North 5-2 on Saturday, Oct 10.
+- [D.C. Everest 1, Hortonville 2](https://sports.wausaupilotandreview.com/#/boys_soccer/game/boys_soccer-2026-10-10-dc-everest-at-hortonville) — The Evergreens dropped a tight one to Hortonville 2-1 on Saturday, Oct 10.
+- [Altoona 6, Menomonie 1](https://sports.wausaupilotandreview.com/#/boys_soccer/game/boys_soccer-2026-10-10-altoona-at-menomonie) — The Mustangs fell to Altoona 6-1 and slipped to 4-12 on Saturday, Oct 10.
 
-**Power Rankings top 5:** 1. Hudson (24-3) · 2. River Falls (26-5) · 3. Chippewa Falls (28-7) · 4. Marathon (25-3) · 5. Mosinee (22-4)
+**Monday, October 12**
 
-## Boys Soccer — 33 games
+- [Northland Lutheran 3, Tri-County 2](https://sports.wausaupilotandreview.com/#/boys_soccer/game/boys_soccer-2026-10-12-northland-lutheran-at-tri-county) — The Penguins dropped a tight one to Northland Lutheran 3-2 and slipped to 7-6 on Monday, Oct 12.
+- [Bowler 2, Newman Catholic 5](https://sports.wausaupilotandreview.com/#/boys_soccer/game/boys_soccer-2026-10-12-bowler-at-newman-catholic) — The Cardinals beat Bowler 5-2 to improve to 2-11 on Monday, Oct 12.
+- [Unity/Saint Croix Falls 0, New Richmond 8](https://sports.wausaupilotandreview.com/#/boys_soccer/game/boys_soccer-2026-10-12-unity-saint-croix-falls-at-new-richmond) — The Tigers routed Unity/Saint Croix Falls 8-0 to improve to 15-3 on Monday, Oct 12.
+- [Barron 2, Menomonie 1](https://sports.wausaupilotandreview.com/#/boys_soccer/game/boys_soccer-2026-10-12-barron-at-menomonie) — The Mustangs dropped the regular-season finale to Barron 2-1 on Monday, Oct 12.
 
-**Saturday, October 3**
+**Tuesday, October 13**
 
-- [Eau Claire North 1, Wisconsin Rapids Lincoln 3](https://sports.wausaupilotandreview.com/#/boys_soccer/game/boys_soccer-2026-10-03-eau-claire-north-at-wisconsin-rapids) — The Red Raiders beat Eau Claire North 3-1 to improve to 7-3 on Saturday, Oct 3.
-- [Tomah 1, Marshfield 2](https://sports.wausaupilotandreview.com/#/boys_soccer/game/boys_soccer-2026-10-03-tomah-at-marshfield) — The Tigers edged Tomah 2-1 to improve to 3-10 on Saturday, Oct 3.
-- [Superior 4, Wisconsin Rapids Lincoln 1](https://sports.wausaupilotandreview.com/#/boys_soccer/game/boys_soccer-2026-10-03-superior-at-wisconsin-rapids) — The Spartans beat Wisconsin Rapids Lincoln 4-1 to improve to 12-2 on Saturday, Oct 3.
-- [Medford 0, Altoona 3](https://sports.wausaupilotandreview.com/#/boys_soccer/game/boys_soccer-2026-10-03-medford-at-altoona) — The Raiders lost to Altoona 3-0 on Saturday, Oct 3.
-- [Superior 5, Eau Claire North 0](https://sports.wausaupilotandreview.com/#/boys_soccer/game/boys_soccer-2026-10-03-superior-at-eau-claire-north) — The Spartans routed Eau Claire North 5-0 to improve to 13-2 on Saturday, Oct 3.
-- [New Richmond 7, Sparta 0](https://sports.wausaupilotandreview.com/#/boys_soccer/game/boys_soccer-2026-10-03-new-richmond-at-sparta) — The Tigers routed Sparta 7-0 to improve to 13-2 on Saturday, Oct 3.
-- [River Falls 0, Onalaska 4](https://sports.wausaupilotandreview.com/#/boys_soccer/game/boys_soccer-2026-10-03-river-falls-at-onalaska) — The Wildcats fell to Onalaska 4-0 on Saturday, Oct 3.
+- [Rhinelander 1, Northland Pines 4](https://sports.wausaupilotandreview.com/#/boys_soccer/game/boys_soccer-2026-10-13-rhinelander-at-northland-pines) — The Eagles beat Rhinelander 4-1 to improve to 17-0 overall (11-0 Great Northern) on Tuesday, Oct 13.
+- [Waupaca 0, Freedom 10](https://sports.wausaupilotandreview.com/#/boys_soccer/game/boys_soccer-2026-10-13-waupaca-at-freedom) — The Comets fell to Freedom 10-0 on Tuesday, Oct 13.
+- [Coulee Christian/Providence Academy (La Crosse) 0, Columbus Catholic 6](https://sports.wausaupilotandreview.com/#/boys_soccer/game/boys_soccer-2026-10-13-coulee-christian-providence-academy-la-crosse-at-columbus-catholic) — The Dons routed Coulee Christian/Providence Academy (La Crosse) 6-0 to improve to 14-3 on Tuesday, Oct 13.
+- [Spooner/Shell Lake 2, Washburn 3](https://sports.wausaupilotandreview.com/#/boys_soccer/game/boys_soccer-2026-10-13-spooner-shell-lake-at-washburn) — The Castle Guards edged Spooner/Shell Lake 3-2 to improve to 8-6 on Tuesday, Oct 13.
+- [Eau Claire North 3, River Falls 0](https://sports.wausaupilotandreview.com/#/boys_soccer/game/boys_soccer-2026-10-13-eau-claire-north-at-river-falls) — The Huskies capped the regular season with a 3-0 win over River Falls on Tuesday, Oct 13.
+- [Adams-Friendship 0, Tri-County 9](https://sports.wausaupilotandreview.com/#/boys_soccer/game/boys_soccer-2026-10-13-adams-friendship-at-tri-county) — The Penguins ended the regular season on a high note, blasting Adams-Friendship 9-0 on Tuesday, Oct 13.
+- [Wausau West 8, Marshfield 0](https://sports.wausaupilotandreview.com/#/boys_soccer/game/boys_soccer-2026-10-13-wausau-west-at-marshfield) — The Warriors wrapped the regular season with a 8-0 blowout of Marshfield on Tuesday, Oct 13.
+- [SPASH 4, Wisconsin Rapids Lincoln 1](https://sports.wausaupilotandreview.com/#/boys_soccer/game/boys_soccer-2026-10-13-spash-at-wisconsin-rapids) — The Panthers capped the regular season with a 4-1 win over Wisconsin Rapids Lincoln on Tuesday, Oct 13.
+- [Mosinee 2, Medford 6](https://sports.wausaupilotandreview.com/#/boys_soccer/game/boys_soccer-2026-10-13-mosinee-at-medford) — The Raiders wrapped the regular season with a 6-2 blowout of Mosinee on Tuesday, Oct 13.
+- [New Richmond 5, Chippewa Falls 2](https://sports.wausaupilotandreview.com/#/boys_soccer/game/boys_soccer-2026-10-13-new-richmond-at-chippewa-falls) — The Tigers beat Chippewa Falls 5-2 to improve to 16-3 overall (6-1 Big Rivers) on Tuesday, Oct 13.
+- [Rice Lake 0, Hudson 1](https://sports.wausaupilotandreview.com/#/boys_soccer/game/boys_soccer-2026-10-13-rice-lake-at-hudson) — The Raiders held off Rice Lake 1-0 on Tuesday, Oct 13 to close the regular season.
 
-**Monday, October 5**
+**Thursday, October 15**
 
-- [Tri-County 9, Gresham/Bowler 0](https://sports.wausaupilotandreview.com/#/boys_soccer/game/boys_soccer-2026-10-05-tri-county-at-gresham-bowler) — The Penguins routed Gresham/Bowler 9-0 to improve to 6-5 on Monday, Oct 5.
-- [Northland Lutheran 1, Columbus Catholic 3](https://sports.wausaupilotandreview.com/#/boys_soccer/game/boys_soccer-2026-10-05-northland-lutheran-at-columbus-catholic) — The Dons capped the regular season with a 3-1 win over Northland Lutheran on Monday, Oct 5.
-- [Newman Catholic 1, Pacelli/Iola-Scandinavia 9](https://sports.wausaupilotandreview.com/#/boys_soccer/game/boys_soccer-2026-10-05-newman-catholic-at-pacelli-iola-scandinavia) — The Cardinals fell to Pacelli/Iola-Scandinavia 9-1 on Monday, Oct 5.
-- [Antigo 0, Merrill 6](https://sports.wausaupilotandreview.com/#/boys_soccer/game/boys_soccer-2026-10-05-antigo-at-merrill) — The Bluejays routed Antigo 6-0 to improve to 7-7 overall (5-4 Great Northern) on Monday, Oct 5.
-- [Amherst 1, Arcadia 2](https://sports.wausaupilotandreview.com/#/boys_soccer/game/boys_soccer-2026-10-05-amherst-at-arcadia) — The Falcons dropped a tight one to Arcadia 2-1 on Monday, Oct 5.
-
-**Tuesday, October 6**
-
-- [Eau Claire North 1, Chippewa Falls 3](https://sports.wausaupilotandreview.com/#/boys_soccer/game/boys_soccer-2026-10-06-eau-claire-north-at-chippewa-falls) — The Cardinals closed the regular season with a 3-1 win over Eau Claire North on Tuesday, Oct 6.
-- [Clintonville 0, Waupaca 5](https://sports.wausaupilotandreview.com/#/boys_soccer/game/boys_soccer-2026-10-06-clintonville-at-waupaca) — The Comets routed Clintonville 5-0 to improve to 4-6 on Tuesday, Oct 6.
-- [Marshfield 0, D.C. Everest 5](https://sports.wausaupilotandreview.com/#/boys_soccer/game/boys_soccer-2026-10-06-marshfield-at-dc-everest) — The Evergreens routed Marshfield 5-0 to improve to 8-7 overall (5-1 Wisconsin Valley) on Tuesday, Oct 6.
-- [Lakeland 4, Mosinee 0](https://sports.wausaupilotandreview.com/#/boys_soccer/game/boys_soccer-2026-10-06-lakeland-at-mosinee) — The Thunderbirds routed Mosinee 4-0 to improve to 11-2 overall (7-2 Great Northern) on Tuesday, Oct 6.
-- [Rhinelander 4, Medford 3](https://sports.wausaupilotandreview.com/#/boys_soccer/game/boys_soccer-2026-10-06-rhinelander-at-medford) — The Hodags edged Medford 4-3 to improve to 4-5 overall (3-2 Great Northern) on Tuesday, Oct 6.
-- [Rice Lake 0, Eau Claire Memorial 8](https://sports.wausaupilotandreview.com/#/boys_soccer/game/boys_soccer-2026-10-06-rice-lake-at-eau-claire-memorial) — The Old Abes wrapped the regular season with a 8-0 blowout of Rice Lake on Tuesday, Oct 6.
-- [Hudson 8, River Falls 0](https://sports.wausaupilotandreview.com/#/boys_soccer/game/boys_soccer-2026-10-06-hudson-at-river-falls) — The Raiders closed out the regular season strong with a 8-0 drubbing of River Falls on Tuesday, Oct 6.
-- [New Richmond 5, Menomonie 0](https://sports.wausaupilotandreview.com/#/boys_soccer/game/boys_soccer-2026-10-06-new-richmond-at-menomonie) — The Tigers put a bow on the regular season by routing Menomonie 5-0 on Tuesday, Oct 6.
-
-**Thursday, October 8**
-
-- [Northland Pines 6, Antigo 0](https://sports.wausaupilotandreview.com/#/boys_soccer/game/boys_soccer-2026-10-08-northland-pines-at-antigo) — The Eagles closed out the regular season strong with a 6-0 drubbing of Antigo on Thursday, Oct 8.
-- [Superior 4, Hayward 0](https://sports.wausaupilotandreview.com/#/boys_soccer/game/boys_soccer-2026-10-08-superior-at-hayward) — The Spartans put a bow on the regular season by routing Hayward 4-0 on Thursday, Oct 8.
-- [Waupaca 1, Kewaskum 5](https://sports.wausaupilotandreview.com/#/boys_soccer/game/boys_soccer-2026-10-08-waupaca-at-kewaskum) — The Comets fell to Kewaskum 5-1 on Thursday, Oct 8.
-- [Wausau East 3, Wausau West 0](https://sports.wausaupilotandreview.com/#/boys_soccer/game/boys_soccer-2026-10-08-wausau-east-at-wausau-west) — The Lumberjacks capped the regular season with a 3-0 win over Wausau West on Thursday, Oct 8.
-- [D.C. Everest 3, Wisconsin Rapids Lincoln 0](https://sports.wausaupilotandreview.com/#/boys_soccer/game/boys_soccer-2026-10-08-dc-everest-at-wisconsin-rapids) — The Evergreens closed the regular season with a 3-0 win over Wisconsin Rapids Lincoln on Thursday, Oct 8.
-- [SPASH 3, Marshfield 0](https://sports.wausaupilotandreview.com/#/boys_soccer/game/boys_soccer-2026-10-08-spash-at-marshfield) — The Panthers closed the regular season with a 3-0 win over Marshfield on Thursday, Oct 8.
-- [Tri-County 2, Newman Catholic 0](https://sports.wausaupilotandreview.com/#/boys_soccer/game/boys_soccer-2026-10-08-tri-county-at-newman-catholic) — The Penguins capped the regular season with a 2-0 win over Newman Catholic on Thursday, Oct 8.
-- [Merrill 1, Rhinelander 0](https://sports.wausaupilotandreview.com/#/boys_soccer/game/boys_soccer-2026-10-08-merrill-at-rhinelander) — The Bluejays squeaked past Rhinelander 1-0 in the regular-season finale on Thursday, Oct 8.
-- [Medford 1, Lakeland 9](https://sports.wausaupilotandreview.com/#/boys_soccer/game/boys_soccer-2026-10-08-medford-at-lakeland) — The Thunderbirds closed out the regular season strong with a 9-1 drubbing of Medford on Thursday, Oct 8.
-
-**Friday, October 9**
-
-- [Menomonie 2, Marshfield 1](https://sports.wausaupilotandreview.com/#/boys_soccer/game/boys_soccer-2026-10-09-menomonie-at-marshfield) — The Mustangs held off Marshfield 2-1 on Friday, Oct 9 to close the regular season.
-- [Eau Claire North 0, Arcadia 3](https://sports.wausaupilotandreview.com/#/boys_soccer/game/boys_soccer-2026-10-09-eau-claire-north-at-arcadia) — The Huskies lost to Arcadia 3-0 on Friday, Oct 9.
-- [Unity/Saint Croix Falls 0, Rice Lake 8](https://sports.wausaupilotandreview.com/#/boys_soccer/game/boys_soccer-2026-10-09-unity-saint-croix-falls-at-rice-lake) — The Warriors ended the regular season on a high note, blasting Unity/Saint Croix Falls 8-0 on Friday, Oct 9.
-- [River Falls 3, Somerset 4](https://sports.wausaupilotandreview.com/#/boys_soccer/game/boys_soccer-2026-10-09-river-falls-at-somerset) — The Wildcats dropped a tight one to Somerset 4-3 on Friday, Oct 9.
+- [Newman Catholic 0, Northland Lutheran 8](https://sports.wausaupilotandreview.com/#/boys_soccer/game/boys_soccer-2026-10-15-newman-catholic-at-northland-lutheran) — The Cardinals fell to Northland Lutheran 8-0 on Thursday, Oct 15.
+- [Columbus Catholic 13, Gresham/Bowler 0](https://sports.wausaupilotandreview.com/#/boys_soccer/game/boys_soccer-2026-10-15-columbus-catholic-at-gresham-bowler) — The Dons wrapped the regular season with a 13-0 blowout of Gresham/Bowler on Thursday, Oct 15.
+- [Washburn 4, Unity/Saint Croix Falls 0](https://sports.wausaupilotandreview.com/#/boys_soccer/game/boys_soccer-2026-10-15-washburn-at-unity-saint-croix-falls) — The Castle Guards ended the regular season on a high note, blasting Unity/Saint Croix Falls 4-0 on Thursday, Oct 15.
+- [Merrill 6, Mosinee 2](https://sports.wausaupilotandreview.com/#/boys_soccer/game/boys_soccer-2026-10-15-merrill-at-mosinee) — The Bluejays wrapped the regular season with a 6-2 blowout of Mosinee on Thursday, Oct 15.
+- [Northland Pines 2, Lakeland 1](https://sports.wausaupilotandreview.com/#/boys_soccer/game/boys_soccer-2026-10-15-northland-pines-at-lakeland) — The Eagles squeaked past Lakeland 2-1 in the regular-season finale on Thursday, Oct 15.
+- [Somerset 1, New Richmond 3](https://sports.wausaupilotandreview.com/#/boys_soccer/game/boys_soccer-2026-10-15-somerset-at-new-richmond) — The Tigers finished the regular season by beating Somerset 3-1 on Thursday, Oct 15.
+- [Rice Lake 2, Osceola 0](https://sports.wausaupilotandreview.com/#/boys_soccer/game/boys_soccer-2026-10-15-rice-lake-at-osceola) — The Warriors closed the regular season with a 2-0 win over Osceola on Thursday, Oct 15.
+- [Pacelli/Iola-Scandinavia 0, Amherst 1](https://sports.wausaupilotandreview.com/#/boys_soccer/game/boys_soccer-2026-10-15-pacelli-iola-scandinavia-at-amherst) — The Falcons squeaked past Pacelli/Iola-Scandinavia 1-0 in the regular-season finale on Thursday, Oct 15.
 
 ---
 
