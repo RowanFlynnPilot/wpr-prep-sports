@@ -1,7 +1,7 @@
 {
   "sport": "volleyball",
   "season": "2026-27",
-  "generated_at": "2026-10-17T14:22:38.743765-05:00",
+  "generated_at": "2026-10-18T06:03:02.430467-05:00",
   "method": "WPR Power Index v1: 40% W%, 35% SOS, 25% margin (capped per sport)",
   "rankings": [
     {
@@ -116,9 +116,9 @@
       "losses": 8,
       "ties": 0,
       "win_pct": 0.75,
-      "sos": 0.5978,
+      "sos": 0.5967,
       "avg_margin_capped": 1.09,
-      "score": 67.98,
+      "score": 67.94,
       "movement": 0
     },
     {
@@ -207,9 +207,9 @@
       "losses": 10,
       "ties": 0,
       "win_pct": 0.6875,
-      "sos": 0.542,
+      "sos": 0.5414,
       "avg_margin_capped": 0.72,
-      "score": 61.96,
+      "score": 61.94,
       "movement": 0
     },
     {
@@ -347,12 +347,12 @@
       "school_id": "shell-lake",
       "school_name": "Shell Lake",
       "wins": 12,
-      "losses": 18,
+      "losses": 19,
       "ties": 0,
-      "win_pct": 0.4,
+      "win_pct": 0.3871,
       "sos": 0.7188,
-      "avg_margin_capped": -0.53,
-      "score": 51.43,
+      "avg_margin_capped": -0.58,
+      "score": 50.72,
       "movement": -1
     },
     {

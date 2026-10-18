@@ -6,6 +6,18 @@
     "division": null,
     "rows": [
       {
+        "school_id": "spash",
+        "name": "SPASH",
+        "conference_wins": 7,
+        "conference_losses": 1,
+        "conference_ties": 0,
+        "overall_wins": 10,
+        "overall_losses": 5,
+        "overall_ties": 0,
+        "points_for": 34,
+        "points_against": 18
+      },
+      {
         "school_id": "dc-everest",
         "name": "D.C. Everest",
         "conference_wins": 6,
@@ -18,28 +30,16 @@
         "points_against": 34
       },
       {
-        "school_id": "spash",
-        "name": "SPASH",
-        "conference_wins": 6,
-        "conference_losses": 1,
-        "conference_ties": 0,
-        "overall_wins": 9,
-        "overall_losses": 5,
-        "overall_ties": 0,
-        "points_for": 32,
-        "points_against": 18
-      },
-      {
         "school_id": "wisconsin-rapids",
         "name": "Wisconsin Rapids Lincoln",
         "conference_wins": 3,
-        "conference_losses": 3,
+        "conference_losses": 4,
         "conference_ties": 0,
         "overall_wins": 7,
-        "overall_losses": 6,
+        "overall_losses": 7,
         "overall_ties": 0,
         "points_for": 23,
-        "points_against": 24
+        "points_against": 26
       },
       {
         "school_id": "wausau-west",
@@ -59,11 +59,11 @@
         "conference_wins": 2,
         "conference_losses": 3,
         "conference_ties": 0,
-        "overall_wins": 8,
+        "overall_wins": 9,
         "overall_losses": 5,
         "overall_ties": 0,
-        "points_for": 23,
-        "points_against": 18
+        "points_for": 26,
+        "points_against": 19
       },
       {
         "school_id": "marshfield",

@@ -1,825 +1,5 @@
 [
   {
-    "school_id": "wausau-west",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Carlee Bloom",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "7",
-      "KLS": "39",
-      "ATT": "106",
-      "E": "16",
-      "SP": "21",
-      "AST": "1",
-      "EFF": ".217"
-    }
-  },
-  {
-    "school_id": "wausau-west",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Ali Mccorison",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "3",
-      "KLS": "5",
-      "ATT": "21",
-      "E": "5",
-      "SP": "8",
-      "EFF": ".000"
-    }
-  },
-  {
-    "school_id": "wausau-west",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Ella Bohlin",
-    "player_year": null,
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "7",
-      "KLS": "42",
-      "ATT": "141",
-      "E": "19",
-      "SP": "21",
-      "EFF": ".163"
-    }
-  },
-  {
-    "school_id": "wausau-west",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Mercy Kelly",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "7",
-      "KLS": "47",
-      "ATT": "154",
-      "E": "28",
-      "SP": "21",
-      "EFF": ".123"
-    }
-  },
-  {
-    "school_id": "wausau-west",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Ava Ngo",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "7",
-      "KLS": "3",
-      "ATT": "14",
-      "E": "3",
-      "SP": "21",
-      "AST": "108",
-      "EFF": ".000"
-    }
-  },
-  {
-    "school_id": "wausau-west",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Zoe Verstegen",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "5",
-      "KLS": "13",
-      "ATT": "55",
-      "E": "11",
-      "SP": "12",
-      "AST": "1",
-      "EFF": ".036"
-    }
-  },
-  {
-    "school_id": "wausau-west",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Scarlett Vang",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "6",
-      "KLS": "12",
-      "ATT": "68",
-      "E": "10",
-      "SP": "16",
-      "EFF": ".029"
-    }
-  },
-  {
-    "school_id": "wausau-west",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Sophia Ngo",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "6",
-      "ACE": "9",
-      "SP": "18"
-    }
-  },
-  {
-    "school_id": "wausau-west",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Olivia Okeefe",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "5",
-      "ACE": "7",
-      "SP": "15"
-    }
-  },
-  {
-    "school_id": "wausau-west",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Ella Bohlin",
-    "player_year": null,
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "4",
-      "ACE": "6",
-      "SP": "12"
-    }
-  },
-  {
-    "school_id": "wausau-west",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Mercy Kelly",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "6",
-      "ACE": "21",
-      "SP": "19"
-    }
-  },
-  {
-    "school_id": "wausau-west",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Ava Ngo",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "5",
-      "ACE": "15",
-      "SP": "15"
-    }
-  },
-  {
-    "school_id": "marshfield",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Kendra Charron",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "1",
-      "KLS": "1",
-      "ATT": "9",
-      "E": "2",
-      "SP": "4",
-      "EFF": "-0.111"
-    }
-  },
-  {
-    "school_id": "marshfield",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Angela Barnhardt",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "1",
-      "KLS": "3",
-      "ATT": "19",
-      "E": "3",
-      "SP": "5",
-      "AST": "1",
-      "EFF": ".000"
-    }
-  },
-  {
-    "school_id": "marshfield",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Paige Schlagenhaft",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "KLS": "4",
-      "ATT": "18",
-      "E": "2",
-      "SP": "7",
-      "AST": "18",
-      "EFF": ".111"
-    }
-  },
-  {
-    "school_id": "marshfield",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Lily Adler",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "KLS": "10",
-      "ATT": "37",
-      "E": "6",
-      "SP": "7",
-      "AST": "1",
-      "EFF": ".108"
-    }
-  },
-  {
-    "school_id": "marshfield",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Oriah Harris",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "KLS": "10",
-      "ATT": "33",
-      "E": "2",
-      "SP": "7",
-      "EFF": ".242"
-    }
-  },
-  {
-    "school_id": "marshfield",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Maria Biederwolf",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "KLS": "16",
-      "ATT": "61",
-      "E": "7",
-      "SP": "7",
-      "AST": "2",
-      "EFF": ".148"
-    }
-  },
-  {
-    "school_id": "marshfield",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Abby Cera",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "KLS": "28",
-      "ATT": "88",
-      "E": "5",
-      "SP": "7",
-      "AST": "1",
-      "EFF": ".261"
-    }
-  },
-  {
-    "school_id": "marshfield",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Jazlyn Kurth",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "ACE": "7",
-      "SP": "7"
-    }
-  },
-  {
-    "school_id": "marshfield",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Natalie Delany",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "1",
-      "ACE": "1",
-      "SP": "5"
-    }
-  },
-  {
-    "school_id": "marshfield",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Angela Barnhardt",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "ACE": "13",
-      "SP": "7"
-    }
-  },
-  {
-    "school_id": "marshfield",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Maria Biederwolf",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "ACE": "4",
-      "SP": "7"
-    }
-  },
-  {
-    "school_id": "marshfield",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Abby Cera",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "1",
-      "ACE": "1",
-      "SP": "5"
-    }
-  },
-  {
-    "school_id": "marshfield",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Noralee Pohl",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "1",
-      "ACE": "3",
-      "SP": "5"
-    }
-  },
-  {
-    "school_id": "marshfield",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Jazlyn Kurth",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "BLK": "1",
-      "SP": "7",
-      "DIG": "38"
-    }
-  },
-  {
-    "school_id": "marshfield",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Natalie Delany",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "BLK": "3",
-      "SP": "7",
-      "DIG": "18"
-    }
-  },
-  {
-    "school_id": "marshfield",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Paige Schlagenhaft",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "BLK": "2",
-      "SP": "7",
-      "DIG": "1"
-    }
-  },
-  {
-    "school_id": "marshfield",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Ava Heeg",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "1",
-      "BLK": "2",
-      "SP": "2",
-      "DIG": "1"
-    }
-  },
-  {
-    "school_id": "marshfield",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Angela Barnhardt",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "DIG": "17",
-      "SP": "7"
-    }
-  },
-  {
-    "school_id": "marshfield",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Lily Adler",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "DIG": "5",
-      "SP": "7",
-      "BLK": "3"
-    }
-  },
-  {
-    "school_id": "marshfield",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Oriah Harris",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "DIG": "5",
-      "SP": "7",
-      "BLK": "7"
-    }
-  },
-  {
-    "school_id": "marshfield",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Maria Biederwolf",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "DIG": "35",
-      "SP": "7",
-      "BLK": "1"
-    }
-  },
-  {
-    "school_id": "marshfield",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Abby Cera",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "DIG": "36",
-      "SP": "7",
-      "BLK": "5"
-    }
-  },
-  {
-    "school_id": "marshfield",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Noralee Pohl",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "DIG": "6",
-      "SP": "7"
-    }
-  },
-  {
-    "school_id": "marshfield",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Jazlyn Kurth",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "AST": "6",
-      "SP": "7"
-    }
-  },
-  {
-    "school_id": "marshfield",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Natalie Delany",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "AST": "35",
-      "SP": "7"
-    }
-  },
-  {
-    "school_id": "marshfield",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Ava Heeg",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "1",
-      "AST": "1",
-      "SP": "2"
-    }
-  },
-  {
-    "school_id": "prentice",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Hannah Gladson",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "5",
-      "KLS": "50",
-      "ATT": "123",
-      "E": "30",
-      "SP": "12",
-      "AST": "2",
-      "EFF": ".163"
-    }
-  },
-  {
-    "school_id": "prentice",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Leah Lord",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "5",
-      "KLS": "55",
-      "ATT": "141",
-      "E": "15",
-      "SP": "12",
-      "AST": "4",
-      "EFF": ".284"
-    }
-  },
-  {
-    "school_id": "prentice",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Maddy Freeman",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "5",
-      "KLS": "13",
-      "ATT": "35",
-      "E": "7",
-      "SP": "12",
-      "EFF": ".171"
-    }
-  },
-  {
-    "school_id": "prentice",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Hannah Gladson",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "3",
-      "ACE": "8",
-      "SP": "7"
-    }
-  },
-  {
-    "school_id": "prentice",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Leah Lord",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "4",
-      "ACE": "6",
-      "SP": "10"
-    }
-  },
-  {
-    "school_id": "prentice",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Maddy Freeman",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "4",
-      "ACE": "8",
-      "SP": "10"
-    }
-  },
-  {
-    "school_id": "prentice",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Sofie Staroba",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "4",
-      "ACE": "6",
-      "SP": "10"
-    }
-  },
-  {
-    "school_id": "prentice",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Riley Gillett",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "5",
-      "BLK": "10",
-      "SP": "9",
-      "DIG": "4"
-    }
-  },
-  {
-    "school_id": "prentice",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Lauren Geiger",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "BLK": "4",
-      "SP": "4",
-      "DIG": "1"
-    }
-  },
-  {
-    "school_id": "prentice",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Hannah Gladson",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "5",
-      "DIG": "36",
-      "SP": "12",
-      "BLK": "1"
-    }
-  },
-  {
-    "school_id": "prentice",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Piper Heikkinen",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "5",
-      "DIG": "60",
-      "SP": "12"
-    }
-  },
-  {
-    "school_id": "prentice",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Leah Lord",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "5",
-      "DIG": "47",
-      "SP": "12",
-      "BLK": "2"
-    }
-  },
-  {
-    "school_id": "prentice",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Maddy Freeman",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "5",
-      "DIG": "38",
-      "SP": "12",
-      "BLK": "2"
-    }
-  },
-  {
-    "school_id": "prentice",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Sofie Staroba",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "4",
-      "DIG": "20",
-      "SP": "9"
-    }
-  },
-  {
-    "school_id": "prentice",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Sofie Staroba",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "5",
-      "AST": "102",
-      "SP": "12",
-      "KLS": "1",
-      "ATT": "2",
-      "E": "0",
-      "EFF": ".500"
-    }
-  },
-  {
     "school_id": "northland-pines",
     "sport": "volleyball",
     "category": "Volleyball Offense",
@@ -5133,6 +4313,42 @@
     "school_id": "prentice",
     "sport": "volleyball",
     "category": "Volleyball Offense",
+    "player_name": "Hannah Gladson",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "4",
+      "KLS": "42",
+      "ATT": "102",
+      "E": "23",
+      "SP": "10",
+      "AST": "2",
+      "EFF": ".186"
+    }
+  },
+  {
+    "school_id": "prentice",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Leah Lord",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "4",
+      "KLS": "48",
+      "ATT": "123",
+      "E": "12",
+      "SP": "10",
+      "AST": "4",
+      "EFF": ".293"
+    }
+  },
+  {
+    "school_id": "prentice",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
     "player_name": "Riley Gillett",
     "player_year": "SO",
     "position": null,
@@ -5144,6 +4360,23 @@
       "E": "7",
       "SP": "8",
       "EFF": ".000"
+    }
+  },
+  {
+    "school_id": "prentice",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Maddy Freeman",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "4",
+      "KLS": "9",
+      "ATT": "26",
+      "E": "4",
+      "SP": "10",
+      "EFF": ".192"
     }
   },
   {
@@ -5167,6 +4400,78 @@
   {
     "school_id": "prentice",
     "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Leah Lord",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "ACE": "5",
+      "SP": "8"
+    }
+  },
+  {
+    "school_id": "prentice",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Maddy Freeman",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "ACE": "7",
+      "SP": "8"
+    }
+  },
+  {
+    "school_id": "prentice",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Sofie Staroba",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "ACE": "5",
+      "SP": "8"
+    }
+  },
+  {
+    "school_id": "prentice",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Leah Lord",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "4",
+      "BLK": "2",
+      "SP": "10",
+      "DIG": "41"
+    }
+  },
+  {
+    "school_id": "prentice",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Riley Gillett",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "4",
+      "BLK": "9",
+      "SP": "8",
+      "DIG": "4"
+    }
+  },
+  {
+    "school_id": "prentice",
+    "sport": "volleyball",
     "category": "Volleyball Defense",
     "player_name": "Rayne Klinger",
     "player_year": "SR",
@@ -5182,6 +4487,21 @@
     "school_id": "prentice",
     "sport": "volleyball",
     "category": "Volleyball Defense",
+    "player_name": "Hannah Gladson",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "4",
+      "DIG": "29",
+      "SP": "10",
+      "BLK": "1"
+    }
+  },
+  {
+    "school_id": "prentice",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
     "player_name": "Luca Blomberg",
     "player_year": "SR",
     "position": null,
@@ -5190,6 +4510,67 @@
       "GP": "2",
       "DIG": "4",
       "SP": "5"
+    }
+  },
+  {
+    "school_id": "prentice",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Piper Heikkinen",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "4",
+      "DIG": "50",
+      "SP": "10"
+    }
+  },
+  {
+    "school_id": "prentice",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Maddy Freeman",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "4",
+      "DIG": "30",
+      "SP": "10",
+      "BLK": "2"
+    }
+  },
+  {
+    "school_id": "prentice",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Sofie Staroba",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "DIG": "16",
+      "SP": "7"
+    }
+  },
+  {
+    "school_id": "prentice",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Sofie Staroba",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "4",
+      "AST": "87",
+      "SP": "10",
+      "KLS": "1",
+      "ATT": "2",
+      "E": "0",
+      "EFF": ".500"
     }
   },
   {
@@ -5589,6 +4970,21 @@
   {
     "school_id": "prentice",
     "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Lauren Geiger",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "BLK": "3",
+      "SP": "2",
+      "DIG": "1"
+    }
+  },
+  {
+    "school_id": "prentice",
+    "sport": "volleyball",
     "category": "Volleyball Offense",
     "player_name": "Rayne Klinger",
     "player_year": "SR",
@@ -5601,6 +4997,20 @@
       "E": "0",
       "SP": "1",
       "EFF": ".600"
+    }
+  },
+  {
+    "school_id": "prentice",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Hannah Gladson",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "ACE": "7",
+      "SP": "5"
     }
   },
   {
@@ -10207,6 +9617,121 @@
   {
     "school_id": "wausau-west",
     "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Carlee Bloom",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "6",
+      "KLS": "29",
+      "ATT": "80",
+      "E": "12",
+      "SP": "18",
+      "AST": "1",
+      "EFF": ".212"
+    }
+  },
+  {
+    "school_id": "wausau-west",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Ella Bohlin",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "6",
+      "KLS": "33",
+      "ATT": "115",
+      "E": "15",
+      "SP": "18",
+      "EFF": ".157"
+    }
+  },
+  {
+    "school_id": "wausau-west",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Mercy Kelly",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "6",
+      "KLS": "42",
+      "ATT": "129",
+      "E": "23",
+      "SP": "18",
+      "EFF": ".147"
+    }
+  },
+  {
+    "school_id": "wausau-west",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Zoe Verstegen",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "4",
+      "KLS": "11",
+      "ATT": "42",
+      "E": "8",
+      "SP": "10",
+      "AST": "1",
+      "EFF": ".071"
+    }
+  },
+  {
+    "school_id": "wausau-west",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Scarlett Vang",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "5",
+      "KLS": "7",
+      "ATT": "54",
+      "E": "9",
+      "SP": "13",
+      "EFF": "-0.037"
+    }
+  },
+  {
+    "school_id": "wausau-west",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Sophia Ngo",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "5",
+      "ACE": "8",
+      "SP": "15"
+    }
+  },
+  {
+    "school_id": "wausau-west",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Mercy Kelly",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "5",
+      "ACE": "15",
+      "SP": "16"
+    }
+  },
+  {
+    "school_id": "wausau-west",
+    "sport": "volleyball",
     "category": "Volleyball Serving",
     "player_name": "Emerylis Yang",
     "player_year": "JR",
@@ -10332,6 +9857,24 @@
       "GP": "6",
       "DIG": "38",
       "SP": "18"
+    }
+  },
+  {
+    "school_id": "wausau-west",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Ava Ngo",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "6",
+      "AST": "108",
+      "SP": "18",
+      "KLS": "2",
+      "ATT": "4",
+      "E": "0",
+      "EFF": ".500"
     }
   },
   {
@@ -13148,6 +12691,34 @@
   {
     "school_id": "wausau-west",
     "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Ella Bohlin",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "ACE": "5",
+      "SP": "9"
+    }
+  },
+  {
+    "school_id": "wausau-west",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Ava Ngo",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "4",
+      "ACE": "10",
+      "SP": "12"
+    }
+  },
+  {
+    "school_id": "wausau-west",
+    "sport": "volleyball",
     "category": "Volleyball Defense",
     "player_name": "Scarlett Vang",
     "player_year": "SO",
@@ -13502,6 +13073,291 @@
       "GP": "1",
       "AST": "7",
       "SP": "1"
+    }
+  },
+  {
+    "school_id": "marshfield",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Paige Schlagenhaft",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "KLS": "2",
+      "ATT": "9",
+      "E": "1",
+      "SP": "2",
+      "EFF": ".111"
+    }
+  },
+  {
+    "school_id": "marshfield",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Lily Adler",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "KLS": "1",
+      "ATT": "11",
+      "E": "2",
+      "SP": "2",
+      "AST": "1",
+      "EFF": "-0.091"
+    }
+  },
+  {
+    "school_id": "marshfield",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Oriah Harris",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "KLS": "2",
+      "ATT": "4",
+      "E": "1",
+      "SP": "2",
+      "EFF": ".250"
+    }
+  },
+  {
+    "school_id": "marshfield",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Maria Biederwolf",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "KLS": "5",
+      "ATT": "13",
+      "E": "1",
+      "SP": "2",
+      "EFF": ".308"
+    }
+  },
+  {
+    "school_id": "marshfield",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Abby Cera",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "KLS": "10",
+      "ATT": "30",
+      "E": "2",
+      "SP": "2",
+      "EFF": ".267"
+    }
+  },
+  {
+    "school_id": "marshfield",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Jazlyn Kurth",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "ACE": "4",
+      "SP": "2"
+    }
+  },
+  {
+    "school_id": "marshfield",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Angela Barnhardt",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "ACE": "2",
+      "SP": "2"
+    }
+  },
+  {
+    "school_id": "marshfield",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Maria Biederwolf",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "ACE": "3",
+      "SP": "2"
+    }
+  },
+  {
+    "school_id": "marshfield",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Natalie Delany",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "BLK": "2",
+      "SP": "2",
+      "DIG": "5"
+    }
+  },
+  {
+    "school_id": "marshfield",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Paige Schlagenhaft",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "BLK": "1",
+      "SP": "2"
+    }
+  },
+  {
+    "school_id": "marshfield",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Lily Adler",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "BLK": "3",
+      "SP": "2"
+    }
+  },
+  {
+    "school_id": "marshfield",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Oriah Harris",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "BLK": "7",
+      "SP": "2"
+    }
+  },
+  {
+    "school_id": "marshfield",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Maria Biederwolf",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "BLK": "1",
+      "SP": "2",
+      "DIG": "7"
+    }
+  },
+  {
+    "school_id": "marshfield",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Abby Cera",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "BLK": "5",
+      "SP": "2",
+      "DIG": "14"
+    }
+  },
+  {
+    "school_id": "marshfield",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Jazlyn Kurth",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "DIG": "8",
+      "SP": "2"
+    }
+  },
+  {
+    "school_id": "marshfield",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Angela Barnhardt",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "DIG": "3",
+      "SP": "2"
+    }
+  },
+  {
+    "school_id": "marshfield",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Noralee Pohl",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "DIG": "3",
+      "SP": "2"
+    }
+  },
+  {
+    "school_id": "marshfield",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Jazlyn Kurth",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "AST": "3",
+      "SP": "2"
+    }
+  },
+  {
+    "school_id": "marshfield",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Natalie Delany",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "AST": "13",
+      "SP": "2"
     }
   },
   {
@@ -14901,6 +14757,23 @@
   {
     "school_id": "wausau-west",
     "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Ali Mccorison",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "KLS": "4",
+      "ATT": "15",
+      "E": "4",
+      "SP": "6",
+      "EFF": ".000"
+    }
+  },
+  {
+    "school_id": "wausau-west",
+    "sport": "volleyball",
     "category": "Volleyball Serving",
     "player_name": "Carlee Bloom",
     "player_year": "SR",
@@ -14910,6 +14783,20 @@
       "GP": "1",
       "ACE": "2",
       "SP": "3"
+    }
+  },
+  {
+    "school_id": "wausau-west",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Olivia Okeefe",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "4",
+      "ACE": "6",
+      "SP": "13"
     }
   },
   {
