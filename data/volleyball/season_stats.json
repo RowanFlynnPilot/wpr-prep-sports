@@ -1,374 +1,5 @@
 [
   {
-    "school_id": "northland-pines",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Eden Smith",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "3",
-      "KLS": "1",
-      "ATT": "3",
-      "E": "0",
-      "SP": "8",
-      "AST": "7",
-      "EFF": ".333"
-    }
-  },
-  {
-    "school_id": "northland-pines",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Alyssa Kevilus",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "5",
-      "KLS": "57",
-      "ATT": "165",
-      "E": "24",
-      "SP": "16",
-      "EFF": ".200"
-    }
-  },
-  {
-    "school_id": "northland-pines",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Sophia Kusick",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "5",
-      "KLS": "17",
-      "ATT": "53",
-      "E": "5",
-      "SP": "15",
-      "AST": "1",
-      "EFF": ".226"
-    }
-  },
-  {
-    "school_id": "northland-pines",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Kami Neff",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "5",
-      "KLS": "42",
-      "ATT": "120",
-      "E": "21",
-      "SP": "16",
-      "AST": "2",
-      "EFF": ".175"
-    }
-  },
-  {
-    "school_id": "northland-pines",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Alexia Stenberg",
-    "player_year": "FR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "KLS": "2",
-      "ATT": "8",
-      "E": "4",
-      "SP": "2",
-      "EFF": "-0.250"
-    }
-  },
-  {
-    "school_id": "northland-pines",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Tatum Fisher",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "5",
-      "KLS": "12",
-      "ATT": "33",
-      "E": "4",
-      "SP": "16",
-      "AST": "1",
-      "EFF": ".242"
-    }
-  },
-  {
-    "school_id": "northland-pines",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Ava Kube",
-    "player_year": "FR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "3",
-      "KLS": "3",
-      "ATT": "4",
-      "E": "0",
-      "SP": "3",
-      "EFF": ".750"
-    }
-  },
-  {
-    "school_id": "northland-pines",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Lexi Maillette",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "ACE": "3",
-      "SP": "7"
-    }
-  },
-  {
-    "school_id": "northland-pines",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Alyssa Kevilus",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "1",
-      "ACE": "1",
-      "SP": "2"
-    }
-  },
-  {
-    "school_id": "northland-pines",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Adi Thompson",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "1",
-      "ACE": "1",
-      "SP": "1"
-    }
-  },
-  {
-    "school_id": "northland-pines",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Sophia Kusick",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "3",
-      "ACE": "3",
-      "SP": "10"
-    }
-  },
-  {
-    "school_id": "northland-pines",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Kami Neff",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "4",
-      "ACE": "9",
-      "SP": "11"
-    }
-  },
-  {
-    "school_id": "northland-pines",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Payton Sullivan",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "3",
-      "ACE": "5",
-      "SP": "10"
-    }
-  },
-  {
-    "school_id": "northland-pines",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Lyla Lederer",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "ACE": "2",
-      "SP": "5"
-    }
-  },
-  {
-    "school_id": "northland-pines",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Eden Smith",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "4",
-      "DIG": "52",
-      "SP": "11"
-    }
-  },
-  {
-    "school_id": "northland-pines",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Lexi Maillette",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "3",
-      "DIG": "17",
-      "SP": "10"
-    }
-  },
-  {
-    "school_id": "northland-pines",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Alyssa Kevilus",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "5",
-      "DIG": "27",
-      "SP": "16",
-      "BLK": "4"
-    }
-  },
-  {
-    "school_id": "northland-pines",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Kami Neff",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "5",
-      "DIG": "61",
-      "SP": "16",
-      "BLK": "1"
-    }
-  },
-  {
-    "school_id": "northland-pines",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Payton Sullivan",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "5",
-      "DIG": "35",
-      "SP": "16",
-      "BLK": "4"
-    }
-  },
-  {
-    "school_id": "northland-pines",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Alexia Stenberg",
-    "player_year": "FR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "3",
-      "DIG": "3",
-      "SP": "4"
-    }
-  },
-  {
-    "school_id": "northland-pines",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Natalie Kohn",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "5",
-      "DIG": "11",
-      "SP": "15",
-      "BLK": "7"
-    }
-  },
-  {
-    "school_id": "northland-pines",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Lyla Lederer",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "5",
-      "DIG": "12",
-      "SP": "14"
-    }
-  },
-  {
-    "school_id": "northland-pines",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Payton Sullivan",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "5",
-      "AST": "93",
-      "SP": "16",
-      "KLS": "6",
-      "ATT": "24",
-      "E": "5",
-      "EFF": ".042"
-    }
-  },
-  {
-    "school_id": "northland-pines",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Lyla Lederer",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "5",
-      "AST": "36",
-      "SP": "14"
-    }
-  },
-  {
     "school_id": "eau-claire-memorial",
     "sport": "volleyball",
     "category": "Volleyball Offense",
@@ -1468,13 +1099,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "5",
-      "KLS": "29",
-      "ATT": "111",
-      "E": "21",
-      "SP": "13",
+      "GP": "6",
+      "KLS": "34",
+      "ATT": "133",
+      "E": "24",
+      "SP": "15",
       "AST": "2",
-      "EFF": ".072"
+      "EFF": ".075"
     }
   },
   {
@@ -1486,12 +1117,12 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "5",
-      "KLS": "30",
-      "ATT": "95",
+      "GP": "6",
+      "KLS": "36",
+      "ATT": "116",
       "E": "10",
-      "SP": "13",
-      "EFF": ".211"
+      "SP": "15",
+      "EFF": ".224"
     }
   },
   {
@@ -1545,10 +1176,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "4",
+      "GP": "5",
       "BLK": "3",
-      "SP": "9",
-      "DIG": "2"
+      "SP": "10",
+      "DIG": "3"
     }
   },
   {
@@ -1560,10 +1191,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "5",
+      "GP": "6",
       "BLK": "4",
-      "SP": "13",
-      "DIG": "11"
+      "SP": "15",
+      "DIG": "13"
     }
   },
   {
@@ -1575,10 +1206,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "4",
-      "BLK": "6",
-      "SP": "10",
-      "DIG": "6"
+      "GP": "5",
+      "BLK": "7",
+      "SP": "12",
+      "DIG": "7"
     }
   },
   {
@@ -1604,9 +1235,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "5",
-      "DIG": "20",
-      "SP": "13"
+      "GP": "6",
+      "DIG": "24",
+      "SP": "15"
     }
   },
   {
@@ -1618,9 +1249,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "5",
-      "DIG": "41",
-      "SP": "13",
+      "GP": "6",
+      "DIG": "46",
+      "SP": "15",
       "BLK": "1"
     }
   },
@@ -1633,9 +1264,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "5",
-      "DIG": "8",
-      "SP": "13"
+      "GP": "6",
+      "DIG": "9",
+      "SP": "15"
     }
   },
   {
@@ -1647,9 +1278,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "DIG": "10",
-      "SP": "3"
+      "GP": "4",
+      "DIG": "15",
+      "SP": "5"
     }
   },
   {
@@ -1661,9 +1292,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "5",
-      "DIG": "32",
-      "SP": "13",
+      "GP": "6",
+      "DIG": "37",
+      "SP": "15",
       "BLK": "2"
     }
   },
@@ -1676,9 +1307,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "5",
-      "DIG": "21",
-      "SP": "13"
+      "GP": "6",
+      "DIG": "24",
+      "SP": "15"
     }
   },
   {
@@ -1690,9 +1321,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "5",
-      "AST": "39",
-      "SP": "13"
+      "GP": "6",
+      "AST": "42",
+      "SP": "15"
     }
   },
   {
@@ -1722,9 +1353,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "AST": "5",
-      "SP": "2"
+      "GP": "3",
+      "AST": "10",
+      "SP": "4"
     }
   },
   {
@@ -5378,6 +5009,129 @@
     "school_id": "northland-pines",
     "sport": "volleyball",
     "category": "Volleyball Offense",
+    "player_name": "Alyssa Kevilus",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "4",
+      "KLS": "48",
+      "ATT": "150",
+      "E": "21",
+      "SP": "14",
+      "EFF": ".180"
+    }
+  },
+  {
+    "school_id": "northland-pines",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Sophia Kusick",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "4",
+      "KLS": "15",
+      "ATT": "46",
+      "E": "5",
+      "SP": "13",
+      "AST": "1",
+      "EFF": ".217"
+    }
+  },
+  {
+    "school_id": "northland-pines",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Kami Neff",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "4",
+      "KLS": "36",
+      "ATT": "109",
+      "E": "19",
+      "SP": "14",
+      "AST": "2",
+      "EFF": ".156"
+    }
+  },
+  {
+    "school_id": "northland-pines",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Payton Sullivan",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "4",
+      "KLS": "6",
+      "ATT": "24",
+      "E": "5",
+      "SP": "14",
+      "AST": "83",
+      "EFF": ".042"
+    }
+  },
+  {
+    "school_id": "northland-pines",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Alexia Stenberg",
+    "player_year": "FR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "KLS": "1",
+      "ATT": "2",
+      "E": "1",
+      "SP": "1",
+      "EFF": ".000"
+    }
+  },
+  {
+    "school_id": "northland-pines",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Tatum Fisher",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "4",
+      "KLS": "11",
+      "ATT": "32",
+      "E": "4",
+      "SP": "14",
+      "AST": "1",
+      "EFF": ".219"
+    }
+  },
+  {
+    "school_id": "northland-pines",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Ava Kube",
+    "player_year": "FR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "KLS": "2",
+      "ATT": "3",
+      "E": "0",
+      "SP": "2",
+      "EFF": ".667"
+    }
+  },
+  {
+    "school_id": "northland-pines",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
     "player_name": "Natalie Kohn",
     "player_year": "SR",
     "position": null,
@@ -5408,6 +5162,20 @@
   {
     "school_id": "northland-pines",
     "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Kami Neff",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "ACE": "6",
+      "SP": "9"
+    }
+  },
+  {
+    "school_id": "northland-pines",
+    "sport": "volleyball",
     "category": "Volleyball Defense",
     "player_name": "Sophia Kusick",
     "player_year": "JR",
@@ -5418,6 +5186,93 @@
       "BLK": "8",
       "SP": "13",
       "DIG": "9"
+    }
+  },
+  {
+    "school_id": "northland-pines",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Payton Sullivan",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "4",
+      "BLK": "4",
+      "SP": "14",
+      "DIG": "33"
+    }
+  },
+  {
+    "school_id": "northland-pines",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Eden Smith",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "DIG": "39",
+      "SP": "9"
+    }
+  },
+  {
+    "school_id": "northland-pines",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Lexi Maillette",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "DIG": "14",
+      "SP": "8"
+    }
+  },
+  {
+    "school_id": "northland-pines",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Alyssa Kevilus",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "4",
+      "DIG": "25",
+      "SP": "14",
+      "BLK": "4"
+    }
+  },
+  {
+    "school_id": "northland-pines",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Kami Neff",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "4",
+      "DIG": "56",
+      "SP": "14",
+      "BLK": "1"
+    }
+  },
+  {
+    "school_id": "northland-pines",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Alexia Stenberg",
+    "player_year": "FR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "DIG": "2",
+      "SP": "3"
     }
   },
   {
@@ -5450,6 +5305,49 @@
     }
   },
   {
+    "school_id": "northland-pines",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Natalie Kohn",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "4",
+      "DIG": "10",
+      "SP": "14",
+      "BLK": "7"
+    }
+  },
+  {
+    "school_id": "northland-pines",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Lyla Lederer",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "4",
+      "DIG": "11",
+      "SP": "12"
+    }
+  },
+  {
+    "school_id": "northland-pines",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Lyla Lederer",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "4",
+      "AST": "31",
+      "SP": "12"
+    }
+  },
+  {
     "school_id": "shell-lake",
     "sport": "volleyball",
     "category": "Volleyball Offense",
@@ -5458,12 +5356,12 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
+      "GP": "4",
       "KLS": "5",
       "ATT": "21",
       "E": "4",
-      "SP": "8",
-      "AST": "1",
+      "SP": "10",
+      "AST": "2",
       "EFF": ".048"
     }
   },
@@ -8357,6 +8255,34 @@
   {
     "school_id": "northland-pines",
     "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Sophia Kusick",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "ACE": "2",
+      "SP": "8"
+    }
+  },
+  {
+    "school_id": "northland-pines",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Lyla Lederer",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "ACE": "1",
+      "SP": "3"
+    }
+  },
+  {
+    "school_id": "northland-pines",
+    "sport": "volleyball",
     "category": "Volleyball Defense",
     "player_name": "Lilyan Burnham",
     "player_year": "FR",
@@ -8366,6 +8292,20 @@
       "GP": "3",
       "DIG": "17",
       "SP": "8"
+    }
+  },
+  {
+    "school_id": "northland-pines",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Eden Smith",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "AST": "5",
+      "SP": "6"
     }
   },
   {
@@ -9559,9 +9499,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "AST": "2",
-      "SP": "9",
+      "GP": "4",
+      "AST": "3",
+      "SP": "11",
       "KLS": "1",
       "ATT": "1",
       "E": "0",
@@ -16686,6 +16626,20 @@
     }
   },
   {
+    "school_id": "northland-pines",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Payton Sullivan",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "ACE": "4",
+      "SP": "8"
+    }
+  },
+  {
     "school_id": "tomahawk",
     "sport": "volleyball",
     "category": "Volleyball Offense",
@@ -18850,6 +18804,20 @@
     "school_id": "northland-pines",
     "sport": "volleyball",
     "category": "Volleyball Serving",
+    "player_name": "Lexi Maillette",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "ACE": "1",
+      "SP": "5"
+    }
+  },
+  {
+    "school_id": "northland-pines",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
     "player_name": "Tatum Fisher",
     "player_year": "SR",
     "position": null,
@@ -18858,6 +18826,20 @@
       "GP": "1",
       "ACE": "1",
       "SP": "5"
+    }
+  },
+  {
+    "school_id": "shell-lake",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Elana Granzin",
+    "player_year": "FR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "AST": "1",
+      "SP": "2"
     }
   }
 ]

@@ -1,7 +1,7 @@
 {
   "sport": "volleyball",
   "season": "2026-27",
-  "generated_at": "2026-10-19T01:11:52.655165-05:00",
+  "generated_at": "2026-10-19T08:05:14.052960-05:00",
   "method": "WPR Power Index v1: 40% W%, 35% SOS, 25% margin (capped per sport)",
   "rankings": [
     {
@@ -116,9 +116,9 @@
       "losses": 8,
       "ties": 0,
       "win_pct": 0.75,
-      "sos": 0.5967,
+      "sos": 0.5947,
       "avg_margin_capped": 1.09,
-      "score": 67.94,
+      "score": 67.87,
       "movement": 0
     },
     {
@@ -194,9 +194,9 @@
       "losses": 10,
       "ties": 0,
       "win_pct": 0.6875,
-      "sos": 0.5414,
+      "sos": 0.5404,
       "avg_margin_capped": 0.72,
-      "score": 61.94,
+      "score": 61.91,
       "movement": 1
     },
     {
@@ -344,19 +344,6 @@
     },
     {
       "rank": 27,
-      "school_id": "shell-lake",
-      "school_name": "Shell Lake",
-      "wins": 12,
-      "losses": 19,
-      "ties": 0,
-      "win_pct": 0.3871,
-      "sos": 0.7188,
-      "avg_margin_capped": -0.58,
-      "score": 50.72,
-      "movement": 0
-    },
-    {
-      "rank": 28,
       "school_id": "medford",
       "school_name": "Medford",
       "wins": 13,
@@ -366,7 +353,20 @@
       "sos": 0.498,
       "avg_margin_capped": 0.07,
       "score": 49.5,
-      "movement": 0
+      "movement": 1
+    },
+    {
+      "rank": 28,
+      "school_id": "shell-lake",
+      "school_name": "Shell Lake",
+      "wins": 12,
+      "losses": 21,
+      "ties": 0,
+      "win_pct": 0.3636,
+      "sos": 0.7188,
+      "avg_margin_capped": -0.67,
+      "score": 49.42,
+      "movement": -1
     },
     {
       "rank": 29,
