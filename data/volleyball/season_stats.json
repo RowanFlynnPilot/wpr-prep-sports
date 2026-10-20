@@ -7020,12 +7020,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "KLS": "9",
-      "ATT": "64",
-      "E": "19",
-      "SP": "6",
-      "EFF": "-0.156"
+      "GP": "3",
+      "KLS": "26",
+      "ATT": "122",
+      "E": "29",
+      "SP": "11",
+      "AST": "1",
+      "EFF": "-0.025"
     }
   },
   {
@@ -7037,13 +7038,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "KLS": "3",
-      "ATT": "8",
-      "E": "2",
-      "SP": "6",
-      "AST": "28",
-      "EFF": ".125"
+      "GP": "3",
+      "KLS": "7",
+      "ATT": "19",
+      "E": "3",
+      "SP": "11",
+      "AST": "78",
+      "EFF": ".211"
     }
   },
   {
@@ -7055,13 +7056,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "KLS": "8",
-      "ATT": "30",
-      "E": "5",
-      "SP": "6",
-      "AST": "2",
-      "EFF": ".100"
+      "GP": "3",
+      "KLS": "21",
+      "ATT": "70",
+      "E": "8",
+      "SP": "11",
+      "AST": "3",
+      "EFF": ".186"
     }
   },
   {
@@ -7073,12 +7074,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "KLS": "14",
-      "ATT": "35",
-      "E": "8",
-      "SP": "6",
-      "EFF": ".171"
+      "GP": "3",
+      "KLS": "42",
+      "ATT": "100",
+      "E": "22",
+      "SP": "11",
+      "AST": "2",
+      "EFF": ".200"
     }
   },
   {
@@ -7090,9 +7092,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "ACE": "1",
-      "SP": "3"
+      "GP": "2",
+      "ACE": "2",
+      "SP": "8"
     }
   },
   {
@@ -7146,9 +7148,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "BLK": "1",
-      "SP": "2"
+      "GP": "2",
+      "BLK": "3",
+      "SP": "6",
+      "DIG": "1"
     }
   },
   {
@@ -7160,10 +7163,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "BLK": "2",
-      "SP": "6",
-      "DIG": "12"
+      "GP": "3",
+      "BLK": "4",
+      "SP": "11",
+      "DIG": "33"
     }
   },
   {
@@ -7175,10 +7178,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "BLK": "4",
-      "SP": "6",
-      "DIG": "7"
+      "GP": "3",
+      "BLK": "9",
+      "SP": "11",
+      "DIG": "35"
     }
   },
   {
@@ -7190,10 +7193,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "DIG": "10",
-      "SP": "6",
-      "BLK": "3"
+      "GP": "3",
+      "DIG": "16",
+      "SP": "11",
+      "BLK": "11"
     }
   },
   {
@@ -7205,9 +7208,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "DIG": "8",
-      "SP": "6",
+      "GP": "3",
+      "DIG": "24",
+      "SP": "11",
       "BLK": "1"
     }
   },
@@ -7220,9 +7223,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "DIG": "7",
-      "SP": "3"
+      "GP": "2",
+      "DIG": "36",
+      "SP": "8"
     }
   },
   {
@@ -7234,9 +7237,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "DIG": "4",
-      "SP": "4"
+      "GP": "3",
+      "DIG": "6",
+      "SP": "5"
     }
   },
   {
@@ -7248,9 +7251,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "DIG": "6",
-      "SP": "6"
+      "GP": "3",
+      "DIG": "12",
+      "SP": "11"
     }
   },
   {
@@ -7276,9 +7279,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "AST": "1",
-      "SP": "2"
+      "GP": "2",
+      "AST": "2",
+      "SP": "5"
     }
   },
   {
@@ -15726,11 +15729,11 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "KLS": "1",
-      "ATT": "4",
+      "GP": "2",
+      "KLS": "2",
+      "ATT": "8",
       "E": "0",
-      "SP": "2",
+      "SP": "6",
       "EFF": ".250"
     }
   },
@@ -15743,9 +15746,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "ACE": "1",
-      "SP": "3"
+      "GP": "2",
+      "ACE": "2",
+      "SP": "4"
     }
   },
   {
@@ -15757,9 +15760,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "ACE": "1",
-      "SP": "3"
+      "GP": "2",
+      "ACE": "2",
+      "SP": "8"
     }
   },
   {
@@ -15785,10 +15788,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "BLK": "1",
-      "SP": "2",
-      "DIG": "1"
+      "GP": "2",
+      "BLK": "2",
+      "SP": "5",
+      "DIG": "2"
     }
   },
   {
@@ -18265,6 +18268,20 @@
       "GP": "1",
       "AST": "10",
       "SP": "3"
+    }
+  },
+  {
+    "school_id": "newman-catholic",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Stevie Chicka",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "AST": "1",
+      "SP": "5"
     }
   },
   {
