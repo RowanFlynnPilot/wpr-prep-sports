@@ -1,7 +1,7 @@
 {
   "sport": "volleyball",
   "season": "2026-27",
-  "generated_at": "2026-10-19T20:26:56.351913-05:00",
+  "generated_at": "2026-10-20T05:07:28.077999-05:00",
   "method": "WPR Power Index v1: 40% W%, 35% SOS, 25% margin (capped per sport)",
   "rankings": [
     {
@@ -181,9 +181,9 @@
       "losses": 2,
       "ties": 0,
       "win_pct": 0.9167,
-      "sos": 0.134,
+      "sos": 0.1324,
       "avg_margin_capped": 2.08,
-      "score": 62.54,
+      "score": 62.48,
       "movement": 0
     },
     {
@@ -753,9 +753,9 @@
       "losses": 14,
       "ties": 0,
       "win_pct": 0.3636,
-      "sos": 0.3498,
+      "sos": 0.3494,
       "avg_margin_capped": -0.91,
-      "score": 35.5,
+      "score": 35.49,
       "movement": 0
     },
     {
@@ -773,19 +773,6 @@
     },
     {
       "rank": 60,
-      "school_id": "bowler",
-      "school_name": "Bowler",
-      "wins": 2,
-      "losses": 18,
-      "ties": 0,
-      "win_pct": 0.1,
-      "sos": 0.7323,
-      "avg_margin_capped": -2.05,
-      "score": 33.59,
-      "movement": 0
-    },
-    {
-      "rank": 61,
       "school_id": "flambeau",
       "school_name": "Flambeau",
       "wins": 6,
@@ -795,7 +782,20 @@
       "sos": 0.4345,
       "avg_margin_capped": -0.96,
       "score": 33.31,
-      "movement": 0
+      "movement": 1
+    },
+    {
+      "rank": 61,
+      "school_id": "bowler",
+      "school_name": "Bowler",
+      "wins": 2,
+      "losses": 19,
+      "ties": 0,
+      "win_pct": 0.0952,
+      "sos": 0.7323,
+      "avg_margin_capped": -2.1,
+      "score": 33.21,
+      "movement": -1
     },
     {
       "rank": 62,
