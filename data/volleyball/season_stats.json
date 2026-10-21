@@ -1,544 +1,5 @@
 [
   {
-    "school_id": "abbotsford",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Campbell Brodhagen",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "10",
-      "KLS": "13",
-      "ATT": "62",
-      "E": "11",
-      "SP": "28",
-      "AST": "178",
-      "EFF": ".032"
-    }
-  },
-  {
-    "school_id": "abbotsford",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Jaidyn Malzahn",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "7",
-      "KLS": "12",
-      "ATT": "54",
-      "E": "14",
-      "SP": "18",
-      "AST": "1",
-      "EFF": "-0.037"
-    }
-  },
-  {
-    "school_id": "abbotsford",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Lauryn Harris",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "10",
-      "KLS": "120",
-      "ATT": "399",
-      "E": "58",
-      "SP": "28",
-      "AST": "1",
-      "EFF": ".155"
-    }
-  },
-  {
-    "school_id": "abbotsford",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Marilyn Hammock",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "4",
-      "KLS": "22",
-      "ATT": "75",
-      "E": "15",
-      "SP": "10",
-      "EFF": ".093"
-    }
-  },
-  {
-    "school_id": "abbotsford",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Campbell Brodhagen",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "7",
-      "ACE": "23",
-      "SP": "19"
-    }
-  },
-  {
-    "school_id": "abbotsford",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Lauryn Harris",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "7",
-      "ACE": "14",
-      "SP": "20"
-    }
-  },
-  {
-    "school_id": "abbotsford",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Marilyn Hammock",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "4",
-      "ACE": "5",
-      "SP": "9"
-    }
-  },
-  {
-    "school_id": "abbotsford",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Ella Schreiber",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "9",
-      "ACE": "20",
-      "SP": "26"
-    }
-  },
-  {
-    "school_id": "abbotsford",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Mia Bonilla",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "3",
-      "ACE": "4",
-      "SP": "7"
-    }
-  },
-  {
-    "school_id": "abbotsford",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Kinsely Kalepp",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "5",
-      "ACE": "8",
-      "SP": "14"
-    }
-  },
-  {
-    "school_id": "abbotsford",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Campbell Brodhagen",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "10",
-      "BLK": "6",
-      "SP": "28",
-      "DIG": "75"
-    }
-  },
-  {
-    "school_id": "abbotsford",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Marilyn Hammock",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "5",
-      "BLK": "1",
-      "SP": "12",
-      "DIG": "29"
-    }
-  },
-  {
-    "school_id": "abbotsford",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Kinsely Kalepp",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "9",
-      "BLK": "4",
-      "SP": "26",
-      "DIG": "25"
-    }
-  },
-  {
-    "school_id": "abbotsford",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Emily Gonzales",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "9",
-      "DIG": "78",
-      "SP": "25"
-    }
-  },
-  {
-    "school_id": "abbotsford",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Jaidyn Malzahn",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "8",
-      "DIG": "11",
-      "SP": "20",
-      "BLK": "4"
-    }
-  },
-  {
-    "school_id": "abbotsford",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Lauryn Harris",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "10",
-      "DIG": "107",
-      "SP": "28",
-      "BLK": "3"
-    }
-  },
-  {
-    "school_id": "abbotsford",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Ella Schreiber",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "10",
-      "DIG": "85",
-      "SP": "28"
-    }
-  },
-  {
-    "school_id": "pittsville",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Harper Abel",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "4",
-      "KLS": "21",
-      "ATT": "52",
-      "E": "6",
-      "SP": "11",
-      "AST": "30",
-      "EFF": ".288"
-    }
-  },
-  {
-    "school_id": "pittsville",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Brooklynn Okonek",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "KLS": "2",
-      "ATT": "6",
-      "E": "0",
-      "SP": "5",
-      "AST": "1",
-      "EFF": ".333"
-    }
-  },
-  {
-    "school_id": "pittsville",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Addy Elsasser",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "4",
-      "KLS": "4",
-      "ATT": "6",
-      "E": "0",
-      "SP": "11",
-      "AST": "18",
-      "EFF": ".667"
-    }
-  },
-  {
-    "school_id": "pittsville",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Jenna Schiller",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "KLS": "4",
-      "ATT": "17",
-      "E": "0",
-      "SP": "5",
-      "EFF": ".235"
-    }
-  },
-  {
-    "school_id": "pittsville",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Kendall Knott",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "4",
-      "KLS": "10",
-      "ATT": "46",
-      "E": "8",
-      "SP": "11",
-      "AST": "3",
-      "EFF": ".043"
-    }
-  },
-  {
-    "school_id": "pittsville",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Brynlee Grimm",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "3",
-      "ACE": "5",
-      "SP": "8"
-    }
-  },
-  {
-    "school_id": "pittsville",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Addy Elsasser",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "3",
-      "ACE": "4",
-      "SP": "8"
-    }
-  },
-  {
-    "school_id": "pittsville",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Harper Abel",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "4",
-      "BLK": "3",
-      "SP": "11",
-      "DIG": "35"
-    }
-  },
-  {
-    "school_id": "pittsville",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Jenna Schiller",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "BLK": "3",
-      "SP": "5"
-    }
-  },
-  {
-    "school_id": "pittsville",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Sloane Withers",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "4",
-      "DIG": "16",
-      "SP": "11"
-    }
-  },
-  {
-    "school_id": "pittsville",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Brooklynn Okonek",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "4",
-      "DIG": "22",
-      "SP": "10",
-      "BLK": "1"
-    }
-  },
-  {
-    "school_id": "pittsville",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Brynlee Grimm",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "4",
-      "DIG": "79",
-      "SP": "11"
-    }
-  },
-  {
-    "school_id": "pittsville",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Addy Elsasser",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "4",
-      "DIG": "17",
-      "SP": "11",
-      "BLK": "1"
-    }
-  },
-  {
-    "school_id": "pittsville",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Brynnley Hoogesteger",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "3",
-      "DIG": "7",
-      "SP": "7",
-      "BLK": "1"
-    }
-  },
-  {
-    "school_id": "pittsville",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Kamryn Knott",
-    "player_year": "FR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "3",
-      "DIG": "4",
-      "SP": "8",
-      "BLK": "1"
-    }
-  },
-  {
-    "school_id": "pittsville",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Evie Becker",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "1",
-      "DIG": "1",
-      "SP": "2"
-    }
-  },
-  {
-    "school_id": "pittsville",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Kendall Knott",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "DIG": "3",
-      "SP": "5",
-      "BLK": "1"
-    }
-  },
-  {
-    "school_id": "pittsville",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
-    "player_name": "Kamryn Knott",
-    "player_year": "FR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "3",
-      "AST": "3",
-      "SP": "8",
-      "KLS": "2",
-      "ATT": "4",
-      "E": "1",
-      "EFF": ".250"
-    }
-  },
-  {
     "school_id": "shell-lake",
     "sport": "volleyball",
     "category": "Volleyball Offense",
@@ -3397,6 +2858,59 @@
     "school_id": "abbotsford",
     "sport": "volleyball",
     "category": "Volleyball Offense",
+    "player_name": "Jaidyn Malzahn",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "6",
+      "KLS": "10",
+      "ATT": "47",
+      "E": "12",
+      "SP": "15",
+      "AST": "1",
+      "EFF": "-0.043"
+    }
+  },
+  {
+    "school_id": "abbotsford",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Lauryn Harris",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "9",
+      "KLS": "115",
+      "ATT": "373",
+      "E": "54",
+      "SP": "25",
+      "AST": "1",
+      "EFF": ".164"
+    }
+  },
+  {
+    "school_id": "abbotsford",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Marilyn Hammock",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "KLS": "18",
+      "ATT": "56",
+      "E": "12",
+      "SP": "7",
+      "EFF": ".107"
+    }
+  },
+  {
+    "school_id": "abbotsford",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
     "player_name": "Kinsely Kalepp",
     "player_year": "JR",
     "position": null,
@@ -3427,6 +2941,106 @@
   {
     "school_id": "abbotsford",
     "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Campbell Brodhagen",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "6",
+      "ACE": "21",
+      "SP": "16"
+    }
+  },
+  {
+    "school_id": "abbotsford",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Lauryn Harris",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "6",
+      "ACE": "12",
+      "SP": "17"
+    }
+  },
+  {
+    "school_id": "abbotsford",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Marilyn Hammock",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "ACE": "4",
+      "SP": "6"
+    }
+  },
+  {
+    "school_id": "abbotsford",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Kinsely Kalepp",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "4",
+      "ACE": "6",
+      "SP": "11"
+    }
+  },
+  {
+    "school_id": "abbotsford",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Jaidyn Malzahn",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "7",
+      "BLK": "4",
+      "SP": "17",
+      "DIG": "10"
+    }
+  },
+  {
+    "school_id": "abbotsford",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Kinsely Kalepp",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "8",
+      "BLK": "3",
+      "SP": "23",
+      "DIG": "20"
+    }
+  },
+  {
+    "school_id": "abbotsford",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Emily Gonzales",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "8",
+      "DIG": "75",
+      "SP": "22"
+    }
+  },
+  {
+    "school_id": "abbotsford",
+    "sport": "volleyball",
     "category": "Volleyball Defense",
     "player_name": "Amaya Mendoza",
     "player_year": "FR",
@@ -3436,6 +3050,96 @@
       "GP": "3",
       "DIG": "6",
       "SP": "7"
+    }
+  },
+  {
+    "school_id": "abbotsford",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Campbell Brodhagen",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "9",
+      "DIG": "68",
+      "SP": "25",
+      "BLK": "5"
+    }
+  },
+  {
+    "school_id": "abbotsford",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Lauryn Harris",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "9",
+      "DIG": "100",
+      "SP": "25",
+      "BLK": "3"
+    }
+  },
+  {
+    "school_id": "abbotsford",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Marilyn Hammock",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "4",
+      "DIG": "18",
+      "SP": "9"
+    }
+  },
+  {
+    "school_id": "abbotsford",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Ella Schreiber",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "9",
+      "DIG": "76",
+      "SP": "25"
+    }
+  },
+  {
+    "school_id": "abbotsford",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Campbell Brodhagen",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "9",
+      "AST": "167",
+      "SP": "25",
+      "KLS": "12",
+      "ATT": "58",
+      "E": "11",
+      "EFF": ".017"
+    }
+  },
+  {
+    "school_id": "abbotsford",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Ella Schreiber",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "8",
+      "ACE": "17",
+      "SP": "23"
     }
   },
   {
@@ -3472,6 +3176,20 @@
       "SP": "16",
       "AST": "1",
       "EFF": ".226"
+    }
+  },
+  {
+    "school_id": "abbotsford",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Mia Bonilla",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "ACE": "3",
+      "SP": "4"
     }
   },
   {
@@ -4419,6 +4137,42 @@
     "school_id": "pittsville",
     "sport": "volleyball",
     "category": "Volleyball Offense",
+    "player_name": "Harper Abel",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "KLS": "16",
+      "ATT": "35",
+      "E": "4",
+      "SP": "9",
+      "AST": "27",
+      "EFF": ".343"
+    }
+  },
+  {
+    "school_id": "pittsville",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Addy Elsasser",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "KLS": "3",
+      "ATT": "4",
+      "E": "0",
+      "SP": "9",
+      "AST": "14",
+      "EFF": ".750"
+    }
+  },
+  {
+    "school_id": "pittsville",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
     "player_name": "Brynnley Hoogesteger",
     "player_year": "SO",
     "position": null,
@@ -4430,6 +4184,42 @@
       "E": "5",
       "SP": "5",
       "EFF": ".103"
+    }
+  },
+  {
+    "school_id": "pittsville",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Kamryn Knott",
+    "player_year": "FR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "KLS": "2",
+      "ATT": "4",
+      "E": "1",
+      "SP": "6",
+      "AST": "1",
+      "EFF": ".250"
+    }
+  },
+  {
+    "school_id": "pittsville",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Kendall Knott",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "KLS": "9",
+      "ATT": "39",
+      "E": "8",
+      "SP": "9",
+      "AST": "2",
+      "EFF": ".026"
     }
   },
   {
@@ -4477,6 +4267,152 @@
   {
     "school_id": "pittsville",
     "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Brynlee Grimm",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "ACE": "4",
+      "SP": "6"
+    }
+  },
+  {
+    "school_id": "pittsville",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Harper Abel",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "BLK": "2",
+      "SP": "9",
+      "DIG": "30"
+    }
+  },
+  {
+    "school_id": "pittsville",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Brynnley Hoogesteger",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "BLK": "1",
+      "SP": "5",
+      "DIG": "6"
+    }
+  },
+  {
+    "school_id": "pittsville",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Kamryn Knott",
+    "player_year": "FR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "BLK": "1",
+      "SP": "6",
+      "DIG": "2"
+    }
+  },
+  {
+    "school_id": "pittsville",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Kendall Knott",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "BLK": "1",
+      "SP": "3",
+      "DIG": "2"
+    }
+  },
+  {
+    "school_id": "pittsville",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Sloane Withers",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "DIG": "12",
+      "SP": "9"
+    }
+  },
+  {
+    "school_id": "pittsville",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Brooklynn Okonek",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "DIG": "17",
+      "SP": "8",
+      "BLK": "1"
+    }
+  },
+  {
+    "school_id": "pittsville",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Brynlee Grimm",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "DIG": "61",
+      "SP": "9"
+    }
+  },
+  {
+    "school_id": "pittsville",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Addy Elsasser",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "DIG": "16",
+      "SP": "9",
+      "BLK": "1"
+    }
+  },
+  {
+    "school_id": "pittsville",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Brooklynn Okonek",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "AST": "1",
+      "SP": "3"
+    }
+  },
+  {
+    "school_id": "pittsville",
+    "sport": "volleyball",
     "category": "Volleyball Offense",
     "player_name": "Brynlee Grimm",
     "player_year": "SO",
@@ -4490,6 +4426,20 @@
       "ATT": "1",
       "E": "0",
       "EFF": "1.000"
+    }
+  },
+  {
+    "school_id": "pittsville",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Addy Elsasser",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "ACE": "2",
+      "SP": "6"
     }
   },
   {
@@ -15480,6 +15430,23 @@
     "school_id": "pittsville",
     "sport": "volleyball",
     "category": "Volleyball Offense",
+    "player_name": "Jenna Schiller",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "KLS": "2",
+      "ATT": "8",
+      "E": "0",
+      "SP": "3",
+      "EFF": ".250"
+    }
+  },
+  {
+    "school_id": "pittsville",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
     "player_name": "Halle Friday",
     "player_year": "SR",
     "position": null,
@@ -15505,6 +15472,20 @@
     "stats": {
       "GP": "1",
       "ACE": "1",
+      "SP": "3"
+    }
+  },
+  {
+    "school_id": "pittsville",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Jenna Schiller",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "BLK": "1",
       "SP": "3"
     }
   },
