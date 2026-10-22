@@ -1,7 +1,7 @@
 {
   "sport": "volleyball",
   "season": "2026-27",
-  "generated_at": "2026-10-21T18:22:05.107106-05:00",
+  "generated_at": "2026-10-22T05:11:21.241956-05:00",
   "method": "WPR Power Index v1: 40% W%, 35% SOS, 25% margin (capped per sport)",
   "rankings": [
     {
@@ -103,9 +103,9 @@
       "losses": 8,
       "ties": 0,
       "win_pct": 0.7838,
-      "sos": 0.552,
+      "sos": 0.5513,
       "avg_margin_capped": 1.35,
-      "score": 68.8,
+      "score": 68.78,
       "movement": 0
     },
     {
@@ -324,9 +324,9 @@
       "losses": 12,
       "ties": 0,
       "win_pct": 0.5862,
-      "sos": 0.4476,
+      "sos": 0.447,
       "avg_margin_capped": 0.28,
-      "score": 52.77,
+      "score": 52.74,
       "movement": 0
     },
     {
@@ -402,9 +402,9 @@
       "losses": 16,
       "ties": 0,
       "win_pct": 0.5,
-      "sos": 0.4469,
+      "sos": 0.4463,
       "avg_margin_capped": 0.22,
-      "score": 49.05,
+      "score": 49.03,
       "movement": 3
     },
     {
@@ -422,19 +422,6 @@
     },
     {
       "rank": 33,
-      "school_id": "colby",
-      "school_name": "Colby",
-      "wins": 18,
-      "losses": 16,
-      "ties": 0,
-      "win_pct": 0.5294,
-      "sos": 0.3933,
-      "avg_margin_capped": 0.29,
-      "score": 48.67,
-      "movement": -1
-    },
-    {
-      "rank": 34,
       "school_id": "amherst",
       "school_name": "Amherst",
       "wins": 17,
@@ -444,10 +431,10 @@
       "sos": 0.411,
       "avg_margin_capped": 0.18,
       "score": 48.25,
-      "movement": -1
+      "movement": 0
     },
     {
-      "rank": 35,
+      "rank": 34,
       "school_id": "wausau-west",
       "school_name": "Wausau West",
       "wins": 16,
@@ -457,7 +444,20 @@
       "sos": 0.5207,
       "avg_margin_capped": -0.2,
       "score": 48.18,
-      "movement": 0
+      "movement": 1
+    },
+    {
+      "rank": 35,
+      "school_id": "colby",
+      "school_name": "Colby",
+      "wins": 18,
+      "losses": 17,
+      "ties": 0,
+      "win_pct": 0.5143,
+      "sos": 0.3933,
+      "avg_margin_capped": 0.23,
+      "score": 47.79,
+      "movement": -3
     },
     {
       "rank": 36,
@@ -467,9 +467,9 @@
       "losses": 15,
       "ties": 0,
       "win_pct": 0.5,
-      "sos": 0.4551,
+      "sos": 0.4544,
       "avg_margin_capped": -0.17,
-      "score": 47.74,
+      "score": 47.71,
       "movement": 1
     },
     {
@@ -480,9 +480,9 @@
       "losses": 16,
       "ties": 0,
       "win_pct": 0.5,
-      "sos": 0.4221,
+      "sos": 0.421,
       "avg_margin_capped": 0.09,
-      "score": 47.67,
+      "score": 47.62,
       "movement": -1
     },
     {
@@ -493,9 +493,9 @@
       "losses": 16,
       "ties": 0,
       "win_pct": 0.5152,
-      "sos": 0.4067,
+      "sos": 0.4036,
       "avg_margin_capped": 0.0,
-      "score": 47.34,
+      "score": 47.23,
       "movement": 1
     },
     {
@@ -545,9 +545,9 @@
       "losses": 16,
       "ties": 0,
       "win_pct": 0.4074,
-      "sos": 0.5626,
+      "sos": 0.5601,
       "avg_margin_capped": -0.56,
-      "score": 46.17,
+      "score": 46.09,
       "movement": -4
     },
     {
@@ -597,9 +597,9 @@
       "losses": 20,
       "ties": 0,
       "win_pct": 0.3333,
-      "sos": 0.5466,
+      "sos": 0.5455,
       "avg_margin_capped": -0.7,
-      "score": 42.05,
+      "score": 42.01,
       "movement": -2
     },
     {
@@ -610,9 +610,9 @@
       "losses": 21,
       "ties": 0,
       "win_pct": 0.3,
-      "sos": 0.5914,
+      "sos": 0.5907,
       "avg_margin_capped": -1.13,
-      "score": 40.48,
+      "score": 40.45,
       "movement": 0
     },
     {
@@ -636,9 +636,9 @@
       "losses": 15,
       "ties": 0,
       "win_pct": 0.375,
-      "sos": 0.4195,
+      "sos": 0.4186,
       "avg_margin_capped": -0.58,
-      "score": 39.75,
+      "score": 39.72,
       "movement": 3
     },
     {
@@ -688,9 +688,9 @@
       "losses": 24,
       "ties": 0,
       "win_pct": 0.3333,
-      "sos": 0.452,
+      "sos": 0.4513,
       "avg_margin_capped": -0.83,
-      "score": 38.18,
+      "score": 38.16,
       "movement": -2
     },
     {
@@ -727,9 +727,9 @@
       "losses": 28,
       "ties": 0,
       "win_pct": 0.2632,
-      "sos": 0.4875,
+      "sos": 0.4865,
       "avg_margin_capped": -1.08,
-      "score": 35.59,
+      "score": 35.56,
       "movement": 1
     },
     {
@@ -740,9 +740,9 @@
       "losses": 19,
       "ties": 0,
       "win_pct": 0.2963,
-      "sos": 0.426,
+      "sos": 0.425,
       "avg_margin_capped": -0.89,
-      "score": 35.56,
+      "score": 35.52,
       "movement": -1
     },
     {
@@ -805,9 +805,9 @@
       "losses": 26,
       "ties": 0,
       "win_pct": 0.1613,
-      "sos": 0.5406,
+      "sos": 0.5393,
       "avg_margin_capped": -1.58,
-      "score": 31.29,
+      "score": 31.24,
       "movement": 0
     },
     {
