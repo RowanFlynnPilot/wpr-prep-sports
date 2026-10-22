@@ -36778,13 +36778,13 @@
     "position": null,
     "jersey": "12",
     "stats": {
-      "C/ATT": "69/105",
-      "PCT": "65.7%",
-      "YDS": "1166",
-      "YPC": "16.9",
-      "TDS": "17",
-      "INT": "9",
-      "RTG": "195.3",
+      "C/ATT": "90/148",
+      "PCT": "60.8%",
+      "YDS": "1394",
+      "YPC": "15.5",
+      "TDS": "20",
+      "INT": "12",
+      "RTG": "168.3",
       "TD LG": "80",
       "LONG": "56"
     }
@@ -36798,13 +36798,13 @@
     "position": null,
     "jersey": "14",
     "stats": {
-      "C/ATT": "0/3",
-      "PCT": "0.0%",
-      "YDS": "0",
-      "YPC": "0.0",
+      "C/ATT": "1/5",
+      "PCT": "20.0%",
+      "YDS": "5",
+      "YPC": "5.0",
       "TDS": "0",
       "INT": "0",
-      "RTG": "0.0",
+      "RTG": "28.4",
       "TD LG": "0",
       "LONG": "0"
     }
@@ -36818,13 +36818,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "C/ATT": "69/108",
-      "PCT": "63.9%",
-      "YDS": "1166",
-      "YPC": "16.9",
-      "TDS": "17",
-      "INT": "9",
-      "RTG": "189.9",
+      "C/ATT": "91/153",
+      "PCT": "59.5%",
+      "YDS": "1399",
+      "YPC": "15.4",
+      "TDS": "20",
+      "INT": "12",
+      "RTG": "163.7",
       "TD LG": "80",
       "LONG": "56"
     }
@@ -36838,9 +36838,9 @@
     "position": null,
     "jersey": "3",
     "stats": {
-      "CAR": "19",
-      "YDS": "102",
-      "YPC": "5.4",
+      "CAR": "22",
+      "YDS": "104",
+      "YPC": "4.7",
       "TDS": "1",
       "TD LG": "1",
       "LONG": "22"
@@ -36872,9 +36872,9 @@
     "position": null,
     "jersey": "12",
     "stats": {
-      "CAR": "101",
-      "YDS": "694",
-      "YPC": "6.9",
+      "CAR": "114",
+      "YDS": "749",
+      "YPC": "6.6",
       "TDS": "6",
       "TD LG": "67",
       "LONG": "67"
@@ -36889,9 +36889,9 @@
     "position": null,
     "jersey": "42",
     "stats": {
-      "CAR": "32",
-      "YDS": "280",
-      "YPC": "8.8",
+      "CAR": "35",
+      "YDS": "293",
+      "YPC": "8.4",
       "TDS": "3",
       "TD LG": "71",
       "LONG": "41"
@@ -36906,12 +36906,29 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "CAR": "155",
-      "YDS": "1083",
-      "YPC": "7.0",
+      "CAR": "174",
+      "YDS": "1153",
+      "YPC": "6.6",
       "TDS": "11",
       "TD LG": "71",
       "LONG": "67"
+    }
+  },
+  {
+    "school_id": "port-edwards",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Vinny Striegel",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "2",
+    "stats": {
+      "REC": "1",
+      "YDS": "10",
+      "YPC": "10.0",
+      "TDS": "0",
+      "TD LG": "0",
+      "LONG": "0"
     }
   },
   {
@@ -36923,10 +36940,10 @@
     "position": null,
     "jersey": "3",
     "stats": {
-      "REC": "26",
-      "YDS": "350",
-      "YPC": "13.5",
-      "TDS": "5",
+      "REC": "35",
+      "YDS": "407",
+      "YPC": "11.6",
+      "TDS": "7",
       "TD LG": "80",
       "LONG": "34"
     }
@@ -36940,9 +36957,9 @@
     "position": null,
     "jersey": "5",
     "stats": {
-      "REC": "28",
-      "YDS": "586",
-      "YPC": "20.9",
+      "REC": "32",
+      "YDS": "656",
+      "YPC": "20.5",
       "TDS": "8",
       "TD LG": "64",
       "LONG": "56"
@@ -36957,12 +36974,29 @@
     "position": null,
     "jersey": "7",
     "stats": {
-      "REC": "11",
-      "YDS": "128",
-      "YPC": "11.6",
-      "TDS": "2",
+      "REC": "15",
+      "YDS": "188",
+      "YPC": "12.5",
+      "TDS": "3",
       "TD LG": "16",
       "LONG": "33"
+    }
+  },
+  {
+    "school_id": "port-edwards",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Parker Polubinsky",
+    "player_year": "SO",
+    "position": null,
+    "jersey": "8",
+    "stats": {
+      "REC": "1",
+      "YDS": "5",
+      "YPC": "5.0",
+      "TDS": "0",
+      "TD LG": "0",
+      "LONG": "0"
     }
   },
   {
@@ -36974,9 +37008,9 @@
     "position": null,
     "jersey": "42",
     "stats": {
-      "REC": "4",
-      "YDS": "102",
-      "YPC": "25.5",
+      "REC": "7",
+      "YDS": "133",
+      "YPC": "19.0",
       "TDS": "2",
       "TD LG": "56",
       "LONG": "41"
@@ -36991,10 +37025,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "REC": "69",
-      "YDS": "1166",
-      "YPC": "16.9",
-      "TDS": "17",
+      "REC": "91",
+      "YDS": "1399",
+      "YPC": "15.4",
+      "TDS": "20",
       "TD LG": "80",
       "LONG": "56"
     }
@@ -37008,8 +37042,8 @@
     "position": null,
     "jersey": "2",
     "stats": {
-      "TOT": "19",
-      "SOLO": "6",
+      "TOT": "22",
+      "SOLO": "8",
       "TFL": "0",
       "SACKS": "0.0"
     }
@@ -37023,9 +37057,9 @@
     "position": null,
     "jersey": "3",
     "stats": {
-      "TOT": "117",
-      "SOLO": "72",
-      "TFL": "13",
+      "TOT": "139",
+      "SOLO": "87",
+      "TFL": "14",
       "SACKS": "0.5"
     }
   },
@@ -37038,8 +37072,8 @@
     "position": null,
     "jersey": "5",
     "stats": {
-      "TOT": "90",
-      "SOLO": "62",
+      "TOT": "97",
+      "SOLO": "66",
       "TFL": "3",
       "SACKS": "0.0"
     }
@@ -37083,8 +37117,8 @@
     "position": null,
     "jersey": "9",
     "stats": {
-      "TOT": "35",
-      "SOLO": "23",
+      "TOT": "37",
+      "SOLO": "24",
       "TFL": "1",
       "SACKS": "0.0"
     }
@@ -37143,8 +37177,8 @@
     "position": null,
     "jersey": "21",
     "stats": {
-      "TOT": "11",
-      "SOLO": "4",
+      "TOT": "15",
+      "SOLO": "7",
       "TFL": "4",
       "SACKS": "1.0"
     }
@@ -37228,6 +37262,21 @@
     "school_id": "port-edwards",
     "sport": "football",
     "category": "Defense",
+    "player_name": "Carter Doran",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "80",
+    "stats": {
+      "TOT": "1",
+      "SOLO": "0",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "port-edwards",
+    "sport": "football",
+    "category": "Defense",
     "player_name": "Jackson Haase",
     "player_year": "JR",
     "position": null,
@@ -37263,9 +37312,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "TOT": "395",
-      "SOLO": "248",
-      "TFL": "28",
+      "TOT": "434",
+      "SOLO": "273",
+      "TFL": "29",
       "SACKS": "2.0"
     }
   },
