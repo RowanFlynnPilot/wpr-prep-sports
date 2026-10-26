@@ -1236,12 +1236,12 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "KLS": "4",
-      "ATT": "35",
-      "E": "8",
-      "SP": "11",
-      "EFF": "-0.114"
+      "GP": "4",
+      "KLS": "5",
+      "ATT": "49",
+      "E": "10",
+      "SP": "14",
+      "EFF": "-0.102"
     }
   },
   {
@@ -1253,13 +1253,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "KLS": "11",
-      "ATT": "37",
-      "E": "3",
-      "SP": "11",
+      "GP": "4",
+      "KLS": "17",
+      "ATT": "47",
+      "E": "4",
+      "SP": "14",
       "AST": "1",
-      "EFF": ".216"
+      "EFF": ".277"
     }
   },
   {
@@ -1271,13 +1271,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "KLS": "53",
-      "ATT": "115",
-      "E": "22",
-      "SP": "11",
+      "GP": "4",
+      "KLS": "65",
+      "ATT": "142",
+      "E": "26",
+      "SP": "14",
       "AST": "2",
-      "EFF": ".270"
+      "EFF": ".275"
     }
   },
   {
@@ -1289,13 +1289,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "KLS": "18",
-      "ATT": "67",
-      "E": "7",
-      "SP": "11",
-      "AST": "59",
-      "EFF": ".164"
+      "GP": "4",
+      "KLS": "20",
+      "ATT": "93",
+      "E": "12",
+      "SP": "14",
+      "AST": "74",
+      "EFF": ".086"
     }
   },
   {
@@ -1324,13 +1324,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "KLS": "8",
-      "ATT": "28",
-      "E": "2",
-      "SP": "11",
+      "GP": "4",
+      "KLS": "10",
+      "ATT": "33",
+      "E": "3",
+      "SP": "14",
       "AST": "2",
-      "EFF": ".214"
+      "EFF": ".212"
     }
   },
   {
@@ -1356,9 +1356,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "ACE": "2",
-      "SP": "8"
+      "GP": "3",
+      "ACE": "3",
+      "SP": "11"
     }
   },
   {
@@ -1398,10 +1398,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "BLK": "2",
-      "SP": "11",
-      "DIG": "14"
+      "GP": "4",
+      "BLK": "3",
+      "SP": "14",
+      "DIG": "18"
     }
   },
   {
@@ -1428,9 +1428,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "DIG": "12",
-      "SP": "11"
+      "GP": "4",
+      "DIG": "17",
+      "SP": "14"
     }
   },
   {
@@ -1442,9 +1442,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "DIG": "27",
-      "SP": "10"
+      "GP": "4",
+      "DIG": "34",
+      "SP": "13"
     }
   },
   {
@@ -1456,9 +1456,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "DIG": "44",
-      "SP": "11"
+      "GP": "4",
+      "DIG": "51",
+      "SP": "14"
     }
   },
   {
@@ -1470,9 +1470,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "DIG": "12",
-      "SP": "10"
+      "GP": "4",
+      "DIG": "15",
+      "SP": "13"
     }
   },
   {
@@ -1484,9 +1484,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "DIG": "7",
-      "SP": "8"
+      "GP": "3",
+      "DIG": "8",
+      "SP": "11"
     }
   },
   {
@@ -1498,9 +1498,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "DIG": "23",
-      "SP": "11"
+      "GP": "4",
+      "DIG": "28",
+      "SP": "14"
     }
   },
   {
@@ -1512,9 +1512,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "DIG": "4",
-      "SP": "8"
+      "GP": "3",
+      "DIG": "5",
+      "SP": "11"
     }
   },
   {
@@ -1540,9 +1540,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "AST": "40",
-      "SP": "11"
+      "GP": "4",
+      "AST": "46",
+      "SP": "14",
+      "KLS": "1",
+      "ATT": "1",
+      "E": "0",
+      "EFF": "1.000"
     }
   },
   {
@@ -1554,9 +1558,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "AST": "3",
-      "SP": "8"
+      "GP": "3",
+      "AST": "5",
+      "SP": "11"
     }
   },
   {
@@ -4805,12 +4809,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "KLS": "11",
-      "ATT": "42",
-      "E": "3",
-      "SP": "6",
-      "EFF": ".190"
+      "GP": "3",
+      "KLS": "16",
+      "ATT": "51",
+      "E": "4",
+      "SP": "8",
+      "AST": "2",
+      "EFF": ".235"
     }
   },
   {
@@ -4822,12 +4827,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "KLS": "14",
-      "ATT": "42",
-      "E": "2",
-      "SP": "6",
-      "EFF": ".286"
+      "GP": "3",
+      "KLS": "19",
+      "ATT": "52",
+      "E": "3",
+      "SP": "9",
+      "AST": "1",
+      "EFF": ".308"
     }
   },
   {
@@ -4839,13 +4845,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "KLS": "3",
-      "ATT": "9",
-      "E": "2",
-      "SP": "6",
-      "AST": "47",
-      "EFF": ".111"
+      "GP": "3",
+      "KLS": "4",
+      "ATT": "16",
+      "E": "3",
+      "SP": "9",
+      "AST": "63",
+      "EFF": ".062"
     }
   },
   {
@@ -4857,13 +4863,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "KLS": "3",
-      "ATT": "18",
-      "E": "1",
-      "SP": "6",
-      "AST": "3",
-      "EFF": ".111"
+      "GP": "3",
+      "KLS": "6",
+      "ATT": "25",
+      "E": "2",
+      "SP": "9",
+      "AST": "4",
+      "EFF": ".160"
     }
   },
   {
@@ -4875,13 +4881,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "KLS": "9",
-      "ATT": "25",
+      "GP": "3",
+      "KLS": "15",
+      "ATT": "38",
       "E": "1",
-      "SP": "6",
+      "SP": "9",
       "AST": "1",
-      "EFF": ".320"
+      "EFF": ".368"
     }
   },
   {
@@ -4911,12 +4917,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "KLS": "15",
-      "ATT": "43",
+      "GP": "3",
+      "KLS": "19",
+      "ATT": "53",
       "E": "9",
-      "SP": "6",
-      "EFF": ".140"
+      "SP": "9",
+      "AST": "1",
+      "EFF": ".189"
     }
   },
   {
@@ -4928,9 +4935,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "ACE": "5",
-      "SP": "6"
+      "GP": "3",
+      "ACE": "8",
+      "SP": "9"
     }
   },
   {
@@ -4942,9 +4949,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "ACE": "8",
-      "SP": "6"
+      "GP": "3",
+      "ACE": "9",
+      "SP": "9"
     }
   },
   {
@@ -4970,9 +4977,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "ACE": "4",
-      "SP": "6"
+      "GP": "3",
+      "ACE": "7",
+      "SP": "9"
     }
   },
   {
@@ -4984,9 +4991,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "ACE": "4",
-      "SP": "6"
+      "GP": "3",
+      "ACE": "7",
+      "SP": "9"
     }
   },
   {
@@ -4998,9 +5005,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "BLK": "5",
-      "SP": "6",
+      "GP": "3",
+      "BLK": "6",
+      "SP": "8",
       "DIG": "1"
     }
   },
@@ -5013,9 +5020,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "DIG": "3",
-      "SP": "6",
+      "GP": "3",
+      "DIG": "5",
+      "SP": "9",
       "BLK": "5"
     }
   },
@@ -5028,9 +5035,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "DIG": "5",
-      "SP": "6"
+      "GP": "3",
+      "DIG": "7",
+      "SP": "9"
     }
   },
   {
@@ -5042,9 +5049,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "DIG": "16",
-      "SP": "6"
+      "GP": "3",
+      "DIG": "24",
+      "SP": "9"
     }
   },
   {
@@ -5056,9 +5063,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "DIG": "1",
-      "SP": "6",
+      "GP": "3",
+      "DIG": "5",
+      "SP": "9",
       "BLK": "2"
     }
   },
@@ -5071,9 +5078,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "DIG": "4",
-      "SP": "6"
+      "GP": "3",
+      "DIG": "9",
+      "SP": "9",
+      "BLK": "1"
     }
   },
   {
@@ -5085,9 +5093,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "DIG": "31",
-      "SP": "6"
+      "GP": "3",
+      "DIG": "38",
+      "SP": "9"
     }
   },
   {
@@ -5099,9 +5107,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "DIG": "10",
-      "SP": "6"
+      "GP": "3",
+      "DIG": "17",
+      "SP": "9"
     }
   },
   {
@@ -5127,9 +5135,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "AST": "1",
-      "SP": "6",
+      "GP": "3",
+      "AST": "2",
+      "SP": "9",
       "KLS": "1",
       "ATT": "1",
       "E": "0",
@@ -8447,12 +8455,12 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
+      "GP": "4",
       "KLS": "10",
       "ATT": "23",
       "E": "5",
-      "SP": "10",
-      "AST": "2",
+      "SP": "12",
+      "AST": "3",
       "EFF": ".217"
     }
   },
@@ -8465,13 +8473,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "KLS": "15",
-      "ATT": "44",
-      "E": "13",
-      "SP": "10",
-      "AST": "1",
-      "EFF": ".045"
+      "GP": "4",
+      "KLS": "22",
+      "ATT": "57",
+      "E": "15",
+      "SP": "12",
+      "AST": "2",
+      "EFF": ".123"
     }
   },
   {
@@ -8483,13 +8491,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "KLS": "14",
-      "ATT": "64",
-      "E": "19",
-      "SP": "10",
-      "AST": "2",
-      "EFF": "-0.078"
+      "GP": "4",
+      "KLS": "18",
+      "ATT": "72",
+      "E": "22",
+      "SP": "12",
+      "AST": "3",
+      "EFF": "-0.056"
     }
   },
   {
@@ -8501,12 +8509,12 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
+      "GP": "4",
       "KLS": "3",
       "ATT": "7",
       "E": "2",
-      "SP": "10",
-      "AST": "69",
+      "SP": "12",
+      "AST": "88",
       "EFF": ".143"
     }
   },
@@ -8519,13 +8527,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "KLS": "14",
-      "ATT": "58",
-      "E": "13",
-      "SP": "10",
+      "GP": "4",
+      "KLS": "19",
+      "ATT": "71",
+      "E": "16",
+      "SP": "12",
       "AST": "2",
-      "EFF": ".017"
+      "EFF": ".042"
     }
   },
   {
@@ -8537,13 +8545,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "KLS": "36",
-      "ATT": "95",
-      "E": "22",
-      "SP": "10",
-      "AST": "2",
-      "EFF": ".147"
+      "GP": "4",
+      "KLS": "47",
+      "ATT": "111",
+      "E": "24",
+      "SP": "12",
+      "AST": "3",
+      "EFF": ".207"
     }
   },
   {
@@ -8555,9 +8563,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "ACE": "6",
-      "SP": "10"
+      "GP": "4",
+      "ACE": "7",
+      "SP": "12"
     }
   },
   {
@@ -8569,9 +8577,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "ACE": "2",
-      "SP": "7"
+      "GP": "3",
+      "ACE": "4",
+      "SP": "9"
     }
   },
   {
@@ -8583,9 +8591,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "ACE": "8",
-      "SP": "10"
+      "GP": "4",
+      "ACE": "9",
+      "SP": "12"
     }
   },
   {
@@ -8611,10 +8619,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
+      "GP": "4",
       "BLK": "3",
-      "SP": "10",
-      "DIG": "15"
+      "SP": "12",
+      "DIG": "17"
     }
   },
   {
@@ -8626,10 +8634,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
+      "GP": "4",
       "BLK": "5",
-      "SP": "10",
-      "DIG": "23"
+      "SP": "12",
+      "DIG": "28"
     }
   },
   {
@@ -8641,10 +8649,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "BLK": "5",
-      "SP": "10",
-      "DIG": "11"
+      "GP": "4",
+      "BLK": "6",
+      "SP": "12",
+      "DIG": "14"
     }
   },
   {
@@ -8656,10 +8664,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
+      "GP": "4",
       "BLK": "6",
-      "SP": "10",
-      "DIG": "19"
+      "SP": "12",
+      "DIG": "22"
     }
   },
   {
@@ -8671,10 +8679,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "BLK": "13",
-      "SP": "10",
-      "DIG": "21"
+      "GP": "4",
+      "BLK": "14",
+      "SP": "12",
+      "DIG": "26"
     }
   },
   {
@@ -8714,9 +8722,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "DIG": "23",
-      "SP": "10",
+      "GP": "4",
+      "DIG": "29",
+      "SP": "12",
       "BLK": "2"
     }
   },
@@ -10495,12 +10503,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "KLS": "2",
-      "ATT": "9",
-      "E": "1",
-      "SP": "2",
-      "EFF": ".111"
+      "GP": "2",
+      "KLS": "3",
+      "ATT": "15",
+      "E": "2",
+      "SP": "5",
+      "AST": "20",
+      "EFF": ".067"
     }
   },
   {
@@ -10512,13 +10521,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "KLS": "1",
-      "ATT": "11",
+      "GP": "2",
+      "KLS": "5",
+      "ATT": "22",
       "E": "2",
-      "SP": "2",
+      "SP": "5",
       "AST": "1",
-      "EFF": "-0.091"
+      "EFF": ".136"
     }
   },
   {
@@ -10530,12 +10539,12 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "KLS": "2",
-      "ATT": "4",
-      "E": "1",
-      "SP": "2",
-      "EFF": ".250"
+      "GP": "2",
+      "KLS": "5",
+      "ATT": "15",
+      "E": "4",
+      "SP": "5",
+      "EFF": ".067"
     }
   },
   {
@@ -10547,12 +10556,12 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "KLS": "5",
-      "ATT": "13",
-      "E": "1",
-      "SP": "2",
-      "EFF": ".308"
+      "GP": "2",
+      "KLS": "19",
+      "ATT": "46",
+      "E": "4",
+      "SP": "5",
+      "EFF": ".326"
     }
   },
   {
@@ -10564,12 +10573,12 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "KLS": "10",
-      "ATT": "30",
-      "E": "2",
-      "SP": "2",
-      "EFF": ".267"
+      "GP": "2",
+      "KLS": "26",
+      "ATT": "61",
+      "E": "5",
+      "SP": "5",
+      "EFF": ".344"
     }
   },
   {
@@ -10581,9 +10590,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "ACE": "4",
-      "SP": "2"
+      "GP": "2",
+      "ACE": "6",
+      "SP": "5"
     }
   },
   {
@@ -10623,10 +10632,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "BLK": "2",
-      "SP": "2",
-      "DIG": "5"
+      "GP": "2",
+      "BLK": "4",
+      "SP": "5",
+      "DIG": "11"
     }
   },
   {
@@ -10638,9 +10647,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "BLK": "1",
-      "SP": "2"
+      "GP": "2",
+      "BLK": "2",
+      "SP": "5",
+      "DIG": "4"
     }
   },
   {
@@ -10652,9 +10662,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "BLK": "3",
-      "SP": "2"
+      "GP": "2",
+      "BLK": "6",
+      "SP": "5"
     }
   },
   {
@@ -10666,9 +10676,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
+      "GP": "2",
       "BLK": "7",
-      "SP": "2"
+      "SP": "5",
+      "DIG": "3"
     }
   },
   {
@@ -10680,10 +10691,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
+      "GP": "2",
       "BLK": "1",
-      "SP": "2",
-      "DIG": "7"
+      "SP": "5",
+      "DIG": "20"
     }
   },
   {
@@ -10695,10 +10706,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "BLK": "5",
-      "SP": "2",
-      "DIG": "14"
+      "GP": "2",
+      "BLK": "7",
+      "SP": "5",
+      "DIG": "18"
     }
   },
   {
@@ -10710,9 +10721,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "DIG": "8",
-      "SP": "2"
+      "GP": "2",
+      "DIG": "25",
+      "SP": "5"
     }
   },
   {
@@ -10724,9 +10735,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "DIG": "3",
-      "SP": "2"
+      "GP": "2",
+      "DIG": "12",
+      "SP": "5"
     }
   },
   {
@@ -10752,9 +10763,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "AST": "3",
-      "SP": "2"
+      "GP": "2",
+      "AST": "9",
+      "SP": "5"
     }
   },
   {
@@ -10766,9 +10777,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "AST": "13",
-      "SP": "2"
+      "GP": "2",
+      "AST": "27",
+      "SP": "5",
+      "KLS": "3",
+      "ATT": "8",
+      "E": "2",
+      "EFF": ".125"
     }
   },
   {
@@ -14710,9 +14725,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "ACE": "8",
-      "SP": "8"
+      "GP": "3",
+      "ACE": "9",
+      "SP": "11"
     }
   },
   {
@@ -15532,10 +15547,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
+      "GP": "2",
       "BLK": "3",
-      "SP": "3",
-      "DIG": "2"
+      "SP": "6",
+      "DIG": "3"
     }
   },
   {
@@ -16630,9 +16645,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "ACE": "7",
-      "SP": "7"
+      "GP": "3",
+      "ACE": "10",
+      "SP": "9"
     }
   },
   {
@@ -16703,6 +16718,20 @@
       "GP": "1",
       "BLK": "1",
       "SP": "1"
+    }
+  },
+  {
+    "school_id": "rice-lake",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Addison Schmidt",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "ACE": "8",
+      "SP": "6"
     }
   },
   {
@@ -17182,6 +17211,38 @@
     }
   },
   {
+    "school_id": "marion",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Annika Jannusch",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "KLS": "2",
+      "ATT": "5",
+      "E": "0",
+      "SP": "3",
+      "AST": "1",
+      "EFF": ".400"
+    }
+  },
+  {
+    "school_id": "marion",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Mckayla Taylor",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "ACE": "1",
+      "SP": "3"
+    }
+  },
+  {
     "school_id": "wild-rose",
     "sport": "volleyball",
     "category": "Volleyball Offense",
@@ -17640,9 +17701,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "ACE": "3",
-      "SP": "5"
+      "GP": "2",
+      "ACE": "4",
+      "SP": "8"
     }
   },
   {
@@ -17654,9 +17715,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "BLK": "3",
-      "SP": "5",
+      "GP": "2",
+      "BLK": "5",
+      "SP": "8",
       "DIG": "1"
     }
   },
@@ -17686,20 +17747,6 @@
       "GP": "1",
       "DIG": "2",
       "SP": "2"
-    }
-  },
-  {
-    "school_id": "rice-lake",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Addison Schmidt",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "1",
-      "ACE": "6",
-      "SP": "4"
     }
   },
   {
@@ -18913,6 +18960,80 @@
       "GP": "1",
       "AST": "1",
       "SP": "4"
+    }
+  },
+  {
+    "school_id": "marshfield",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Kendra Charron",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "KLS": "1",
+      "ATT": "7",
+      "E": "0",
+      "SP": "3",
+      "EFF": ".143"
+    }
+  },
+  {
+    "school_id": "marshfield",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Natalie Delany",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "ACE": "3",
+      "SP": "3"
+    }
+  },
+  {
+    "school_id": "marshfield",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Paige Schlagenhaft",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "ACE": "1",
+      "SP": "3"
+    }
+  },
+  {
+    "school_id": "marshfield",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Kendra Charron",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "BLK": "1",
+      "SP": "3",
+      "DIG": "3"
+    }
+  },
+  {
+    "school_id": "marshfield",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Angela Barnhardt",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "AST": "1",
+      "SP": "3"
     }
   },
   {
