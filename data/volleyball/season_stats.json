@@ -2223,12 +2223,12 @@
     "jersey": null,
     "stats": {
       "GP": "2",
-      "KLS": "13",
-      "ATT": "37",
-      "E": "4",
+      "KLS": "11",
+      "ATT": "36",
+      "E": "5",
       "SP": "7",
-      "AST": "27",
-      "EFF": ".243"
+      "AST": "28",
+      "EFF": ".167"
     }
   },
   {
@@ -2242,11 +2242,11 @@
     "stats": {
       "GP": "2",
       "KLS": "11",
-      "ATT": "42",
-      "E": "4",
+      "ATT": "43",
+      "E": "5",
       "SP": "6",
       "AST": "1",
-      "EFF": ".167"
+      "EFF": ".140"
     }
   },
   {
@@ -2258,12 +2258,12 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "KLS": "7",
-      "ATT": "17",
+      "GP": "1",
+      "KLS": "5",
+      "ATT": "9",
       "E": "1",
-      "SP": "7",
-      "EFF": ".353"
+      "SP": "3",
+      "EFF": ".444"
     }
   },
   {
@@ -2276,11 +2276,11 @@
     "jersey": null,
     "stats": {
       "GP": "2",
-      "KLS": "27",
-      "ATT": "63",
+      "KLS": "26",
+      "ATT": "65",
       "E": "10",
       "SP": "7",
-      "EFF": ".270"
+      "EFF": ".246"
     }
   },
   {
@@ -2294,10 +2294,10 @@
     "stats": {
       "GP": "2",
       "KLS": "21",
-      "ATT": "47",
-      "E": "13",
+      "ATT": "48",
+      "E": "15",
       "SP": "7",
-      "EFF": ".170"
+      "EFF": ".125"
     }
   },
   {
@@ -2339,62 +2339,6 @@
     "school_id": "marathon",
     "sport": "volleyball",
     "category": "Volleyball Serving",
-    "player_name": "Brinly Stencil",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "ACE": "4",
-      "SP": "7"
-    }
-  },
-  {
-    "school_id": "marathon",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Kate Love",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "ACE": "3",
-      "SP": "6"
-    }
-  },
-  {
-    "school_id": "marathon",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Mayven Schneider",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "ACE": "9",
-      "SP": "7"
-    }
-  },
-  {
-    "school_id": "marathon",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Laila Weitz",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "ACE": "5",
-      "SP": "7"
-    }
-  },
-  {
-    "school_id": "marathon",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
     "player_name": "Kamrie Myszka",
     "player_year": "SO",
     "position": null,
@@ -2422,20 +2366,6 @@
   {
     "school_id": "marathon",
     "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Rehgan Martin",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "1",
-      "ACE": "1",
-      "SP": "3"
-    }
-  },
-  {
-    "school_id": "marathon",
-    "sport": "volleyball",
     "category": "Volleyball Defense",
     "player_name": "Brinly Stencil",
     "player_year": "JR",
@@ -2445,7 +2375,7 @@
       "GP": "2",
       "BLK": "2",
       "SP": "7",
-      "DIG": "6"
+      "DIG": "5"
     }
   },
   {
@@ -2458,9 +2388,9 @@
     "jersey": null,
     "stats": {
       "GP": "2",
-      "BLK": "5",
+      "BLK": "4",
       "SP": "7",
-      "DIG": "20"
+      "DIG": "21"
     }
   },
   {
@@ -2473,9 +2403,9 @@
     "jersey": null,
     "stats": {
       "GP": "2",
-      "BLK": "5",
+      "BLK": "4",
       "SP": "7",
-      "DIG": "4"
+      "DIG": "3"
     }
   },
   {
@@ -2487,9 +2417,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "DIG": "1",
-      "SP": "1"
+      "GP": "2",
+      "DIG": "2",
+      "SP": "2"
     }
   },
   {
@@ -2502,7 +2432,7 @@
     "jersey": null,
     "stats": {
       "GP": "2",
-      "DIG": "28",
+      "DIG": "30",
       "SP": "6"
     }
   },
@@ -2516,7 +2446,7 @@
     "jersey": null,
     "stats": {
       "GP": "2",
-      "DIG": "28",
+      "DIG": "23",
       "SP": "7"
     }
   },
@@ -2530,7 +2460,7 @@
     "jersey": null,
     "stats": {
       "GP": "2",
-      "DIG": "26",
+      "DIG": "27",
       "SP": "7",
       "BLK": "1"
     }
@@ -2559,7 +2489,7 @@
     "jersey": null,
     "stats": {
       "GP": "2",
-      "DIG": "13",
+      "DIG": "12",
       "SP": "7",
       "BLK": "2"
     }
@@ -2574,7 +2504,7 @@
     "jersey": null,
     "stats": {
       "GP": "2",
-      "AST": "55",
+      "AST": "52",
       "SP": "7",
       "KLS": "9",
       "ATT": "26",
@@ -12966,6 +12896,48 @@
       "GP": "1",
       "ACE": "11",
       "SP": "3"
+    }
+  },
+  {
+    "school_id": "marathon",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Kate Love",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "ACE": "1",
+      "SP": "3"
+    }
+  },
+  {
+    "school_id": "marathon",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Mayven Schneider",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "ACE": "4",
+      "SP": "4"
+    }
+  },
+  {
+    "school_id": "marathon",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Laila Weitz",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "ACE": "4",
+      "SP": "4"
     }
   },
   {
