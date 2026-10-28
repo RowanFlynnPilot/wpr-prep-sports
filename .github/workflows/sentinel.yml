@@ -17,6 +17,8 @@ permissions:
   issues: write
   # actions: read lets the cron-delivery check count last night's runs.
   actions: read
+  # pages: read lets the site check read the custom-domain certificate state.
+  pages: read
 
 jobs:
   freshness:
@@ -70,6 +72,62 @@ jobs:
             exit 1
           fi
 
+      # Is the site readers load actually up? Every data check stays green
+      # while the hub itself is unreachable: on 2026-10-24 GitHub Pages'
+      # certificate for the custom domain expired (renewal fails while the
+      # record is Cloudflare-proxied: "bad_authz"), Cloudflare answered 526,
+      # and the WordPress iframe showed "refused to connect" for four days.
+      # Fails on a non-200 from the hub or the mini, and warns 14 days ahead
+      # of the Pages certificate's expiry or on a bad certificate state.
+      - name: Check the public site and its certificate
+        id: site
+        if: always()
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          fail=0
+          for path in "/" "/mini.html?sport=football" "/data/football/meta.json"; do
+            code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 20 "https://sports.wausaupilotandreview.com${path}")
+            echo "https://sports.wausaupilotandreview.com${path} -> ${code}"
+            if [ "$code" != "200" ]; then
+              echo "::error::${path} returned ${code} (526 = Cloudflare rejected the origin certificate)"
+              fail=1
+            fi
+          done
+          cert=$(gh api "repos/${{ github.repository }}/pages" --jq '.https_certificate | "\(.state) \(.expires_at)"' || echo "unknown unknown")
+          state=${cert% *}; expires=${cert#* }
+          echo "Pages certificate: state=${state} expires=${expires}"
+          if [ "$expires" != "unknown" ] && [ "$expires" != "null" ]; then
+            days=$(( ( $(date -u -d "$expires" +%s) - $(date -u +%s) ) / 86400 ))
+            echo "days to expiry: ${days}"
+            if [ "$days" -lt 14 ]; then
+              echo "::error::GitHub Pages certificate expires in ${days} days and is in state '${state}'"
+              fail=1
+            fi
+          fi
+          if [ "$state" != "approved" ] && [ "$state" != "issued" ] && [ "$state" != "unknown" ]; then
+            echo "::warning::GitHub Pages certificate state is '${state}'"
+          fi
+          exit $fail
+
+      - name: Open ops alert (site down or certificate)
+        if: always() && steps.site.outcome == 'failure'
+        uses: ./.github/actions/alert-issue
+        with:
+          title: "Ops alert: public site unreachable or certificate expiring"
+          body: |
+            The hub at https://sports.wausaupilotandreview.com returned an error, or
+            GitHub Pages' certificate for the custom domain is within 14 days of
+            expiring. Readers on the WPR site see "refused to connect" in the iframe.
+
+            **Run:** ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+
+            Most likely cause: the Pages certificate could not renew because the DNS
+            record is Cloudflare-proxied, and Cloudflare's SSL mode is Full (strict),
+            so it rejects the expired origin certificate (HTTP 526). Fix and
+            background: docs/operations.md, "Site down: Cloudflare 526".
+
       - name: Open ops alert (stale/thin data)
         if: always() && steps.fresh.outcome == 'failure'
         uses: ./.github/actions/alert-issue
@@ -111,7 +169,7 @@ jobs:
             Actions incidents. Triage: docs/operations.md.
 
       - name: Fail run if any check failed
-        if: always() && (steps.fresh.outcome == 'failure' || steps.cronwatch.outcome == 'failure')
+        if: always() && (steps.fresh.outcome == 'failure' || steps.cronwatch.outcome == 'failure' || steps.site.outcome == 'failure')
         run: |
-          echo "::error::sentinel checks failed — freshness: ${{ steps.fresh.outcome }}, cron delivery: ${{ steps.cronwatch.outcome }}"
+          echo "::error::sentinel checks failed — freshness: ${{ steps.fresh.outcome }}, cron delivery: ${{ steps.cronwatch.outcome }}, site: ${{ steps.site.outcome }}"
           exit 1

@@ -202,3 +202,36 @@ python scripts/validate_data.py      # full data gate incl. regression vs HEAD
 python scripts/check_freshness.py --month 9   # simulate September's sentinel
 python tests/capture_fixtures.py     # refresh saved WIAA fixtures (3 requests)
 ```
+
+## Site down: Cloudflare 526
+
+**Symptom:** the WPR page shows "sports.wausaupilotandreview.com refused to
+connect" in the iframe; `curl -I https://sports.wausaupilotandreview.com/`
+returns `526`. Data commits and deploys keep succeeding, so nothing else alerts
+(the sentinel's site check does, since 2026-10-28).
+
+**Cause (2026-10-24 outage, 4 days):** GitHub Pages issues the custom domain's
+Let's Encrypt certificate itself and renews it every ~90 days, but only while
+DNS points at GitHub. The `sports` record is Cloudflare-proxied (orange cloud),
+so renewal failed (`gh api repos/RowanFlynnPilot/wpr-prep-sports/pages --jq
+.https_certificate` showed `state: bad_authz`) and the certificate expired. With
+Cloudflare's SSL mode at Full (strict), Cloudflare refuses an expired origin
+certificate and answers 526.
+
+**Fix (Cloudflare dashboard, wausaupilotandreview.com zone), either:**
+
+1. *Keep the proxy (recommended, durable):* Rules → Configuration Rules → Create
+   rule "Prep sports origin SSL": hostname equals `sports.wausaupilotandreview.com`
+   → SSL: **Full** (not strict). Traffic stays encrypted to GitHub; Cloudflare just
+   stops validating GitHub's certificate. Takes effect in seconds and survives
+   future expiries.
+2. *Let GitHub renew:* DNS → the `sports` CNAME → switch to **DNS only** (grey
+   cloud). Then re-trigger the certificate from the repo (remove and re-add the
+   custom domain in Settings → Pages, or `gh api -X PUT
+   repos/RowanFlynnPilot/wpr-prep-sports/pages -f cname=sports.wausaupilotandreview.com`)
+   and wait for `state: approved`. Until it issues, browsers see the expired
+   certificate directly, so do option 1 first if readers are affected. Note the
+   proxy is what made the iframe same-site for favorites; grey cloud keeps the same
+   hostname, so that still holds.
+
+Verify: `curl -s -o /dev/null -w '%{http_code}' https://sports.wausaupilotandreview.com/` → 200.
