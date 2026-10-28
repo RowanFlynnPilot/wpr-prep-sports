@@ -77,8 +77,8 @@ jobs:
       # certificate for the custom domain expired (renewal fails while the
       # record is Cloudflare-proxied: "bad_authz"), Cloudflare answered 526,
       # and the WordPress iframe showed "refused to connect" for four days.
-      # Fails on a non-200 from the hub or the mini, and warns 14 days ahead
-      # of the Pages certificate's expiry or on a bad certificate state.
+      # Fails on a non-200 from the hub, the mini or a data file; only warns
+      # about the Pages certificate (see the note inside the step).
       - name: Check the public site and its certificate
         id: site
         if: always()
@@ -101,9 +101,12 @@ jobs:
           if [ "$expires" != "unknown" ] && [ "$expires" != "null" ]; then
             days=$(( ( $(date -u -d "$expires" +%s) - $(date -u +%s) ) / 86400 ))
             echo "days to expiry: ${days}"
+            # Warning only: since 2026-10-28 Cloudflare reaches GitHub in SSL
+            # "Full" mode (Configuration Rule "Prep sports hub - origin SSL Full"),
+            # which accepts an expired origin certificate, and GitHub cannot renew
+            # while the record is proxied. The HTTP checks above are the alarm.
             if [ "$days" -lt 14 ]; then
-              echo "::error::GitHub Pages certificate expires in ${days} days and is in state '${state}'"
-              fail=1
+              echo "::warning::GitHub Pages certificate expires in ${days} days (state '${state}'); harmless while the Cloudflare SSL Full rule is in place"
             fi
           fi
           if [ "$state" != "approved" ] && [ "$state" != "issued" ] && [ "$state" != "unknown" ]; then

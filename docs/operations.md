@@ -235,3 +235,10 @@ certificate and answers 526.
    hostname, so that still holds.
 
 Verify: `curl -s -o /dev/null -w '%{http_code}' https://sports.wausaupilotandreview.com/` → 200.
+
+**Resolved 2026-10-28** with option 1: Configuration Rule "Prep sports hub – origin
+SSL Full" is live on the wausaupilotandreview.com zone. GitHub's certificate stays
+expired behind it (renewal can't run while proxied), which Full mode accepts, so the
+sentinel reports the certificate as a warning only and alerts on HTTP failures. If
+that rule is ever deleted or the zone's mode is tightened, the site goes down again
+the same way.
