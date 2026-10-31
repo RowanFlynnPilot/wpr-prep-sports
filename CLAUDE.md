@@ -157,6 +157,22 @@ needs individual-sport modeling), then baseball/softball/track (spring).
   picker caps the playoff bonus for games off the week's main slate day.
   Fonts are self-hosted (`frontend/public/fonts/`) and index.html starts
   the meta.json fetch before the bundles load (`window.__wprMetaPrefetch`).
+- **Postseason + in-season rules** (2026-10-31, postseason review) — on
+  playoff weeks (an upcoming playoff game, or one less than seven days
+  old) the Playoff Bracket leads the Standings tab; journeys sort alive
+  teams first (`utils/bracket.js` `alive`) and the toolbar says how many
+  are still alive. Football's "Level 4" is the 11-player state semifinal;
+  only an 8P-division team's Level 4 is a title (bracket trophy and
+  `utils/recap.js` wording both check `wiaa_division.football`). A sport
+  is in season when its month is active AND `nextSeasonStart` has passed
+  AND `seasonEnd` (fall sports: the day after state) has not
+  (`utils/inSeason.js`, used by the mini and the sport strip), so Nov 1
+  no longer flips four empty winter sports ahead of volleyball and
+  soccer. Season dates parse as local dates (`utils/dates.js`
+  `localDate`); the old fixed -05:00 offset put November countdowns a day
+  early. Football divisions come from WIAA's placement PDFs
+  (`scraper/scripts/divisions_from_wiaa_sheets.py`) plus the bracket
+  backfill for 8-player.
 - Per-school embeds (`#/<sport>/embed/<id>` + media-kit builder), Senior
   Spotlights, weekly digest, rivalry/head-to-head history, season archive
   selector, division filter chips (power rankings + bracket)

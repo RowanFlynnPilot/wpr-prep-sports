@@ -60,6 +60,17 @@ export function formatGameDayDate(iso) {
  * (a local-midnight Monday from utils/weeks.js). Sampled at noon so a
  * reader in another US zone still sees the home zone's Monday.
  */
+/**
+ * A plain YYYY-MM-DD as a local Date at the given hour. Season-start dates
+ * were parsed with a fixed -05:00 offset, which is summer time; in November
+ * (standard time) every winter countdown landed a day early.
+ */
+export function localDate(iso, hour = 0) {
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso ?? "");
+  if (!m) return null;
+  return new Date(Number(m[1]), Number(m[2]) - 1, Number(m[3]), hour);
+}
+
 export function formatWeekRange(startMs, days = 7) {
   const NOON = 12 * 3_600_000;
   const start = new Date(startMs + NOON);

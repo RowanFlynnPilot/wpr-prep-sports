@@ -167,6 +167,10 @@ test.describe("standings at phone width", () => {
       }));
     });
     expect(measured.length).toBeGreaterThan(0);
+    // The bracket's journey table once leaked its scroll width into the
+    // document (609px at 375), which the Scores-tab check never saw.
+    const docWidth = await page.evaluate(() => document.documentElement.scrollWidth);
+    expect(docWidth, "standings tab widens the document").toBeLessThanOrEqual(375);
     for (const t of measured) {
       expect(
         t.allTogglesTappable || t.hintVisible,

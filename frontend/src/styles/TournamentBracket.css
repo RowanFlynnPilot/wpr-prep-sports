@@ -75,12 +75,20 @@
    Round count is set as --round-count on the container so the grid
    adapts to whichever rounds the sport actually has (e.g. 4 for
    football, 5 for basketball). */
+.bracket__journey-wrap {
+  /* The "Did not play" sr-only spans are position:absolute; without a
+     positioned ancestor they escaped the scroll box and widened the page
+     to 609px at 375 (postseason review, 2026-10-31). */
+  position: relative;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+}
 .bracket__journey {
   /* A real <table> laid out as rows of CSS grid. `display: block` here and
      on the row groups opts out of table layout; the component restates
      the table roles so the semantics survive the display change. */
   display: block;
-  overflow-x: auto;
   width: 100%;
   border-collapse: collapse;
   border-spacing: 0;

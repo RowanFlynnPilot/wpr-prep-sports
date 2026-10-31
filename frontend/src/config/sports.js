@@ -874,6 +874,8 @@ export const SPORTS = {
     /** Accent color emitted as --accent on the SportShell wrapper. */
     /** Approximate next-season opener — used for off-season countdowns. */
     nextSeasonStart: "2026-08-21",
+    /** Day after the state finals; the sport leaves the in-season lists then. */
+    seasonEnd: "2026-11-21",
     stats: {
       categories: FOOTBALL_STAT_CATEGORIES,
       standout: FOOTBALL_STANDOUT,
@@ -962,6 +964,7 @@ export const SPORTS = {
     // so PF/PA don't read as points. See TeamPage record block.
     scoreLabel: "set",
     nextSeasonStart: "2026-08-19",
+    seasonEnd: "2026-11-08", // state Nov 5-7
     stats: {
       categories: VOLLEYBALL_STAT_CATEGORIES,
       standout: VOLLEYBALL_STANDOUT,
@@ -977,6 +980,7 @@ export const SPORTS = {
     activeMonths: [7, 8, 9, 10], // fall: Aug–Oct, state early Nov
     hasSeasonStats: false,
     nextSeasonStart: "2026-08-18",
+    seasonEnd: "2026-11-08", // state Nov 5-7
     stats: {
       categories: SOCCER_STAT_CATEGORIES,
       standout: null,

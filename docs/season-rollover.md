@@ -82,3 +82,6 @@ off-season just burn scrape minutes; sports missing from it go stale.)
   the first scrape so standings group correctly.
 - Next summer, set `nextSeasonStart` (2027-28) dates in
   `frontend/src/config/sports.js` when WIAA publishes them.
+- Each fall, set the fall sports' `seasonEnd` (the day after their state
+  finals) in the same file; `utils/inSeason.js` uses it with `nextSeasonStart`
+  to decide which sports the mini and the sport strip show as in season.

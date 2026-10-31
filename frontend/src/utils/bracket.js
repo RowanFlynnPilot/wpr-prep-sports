@@ -119,11 +119,19 @@ export function buildTeamJourneys(games, schoolIndex) {
   const journeys = [...journeyBySchool.entries()].map(([schoolId, entries]) => {
     entries.sort((a, b) => a.roundIndex - b.roundIndex);
     const school = schoolIndex?.get?.(schoolId) ?? null;
-    return { schoolId, school, games: entries };
+    // Alive = the journey's last game is still to be played, or was won.
+    // A team with a scheduled next round and a TBD opponent is alive even
+    // though nothing is final yet (Gilman the morning after Level 3).
+    const last = entries[entries.length - 1];
+    const alive = !!last && (!last.isFinal || last.won);
+    return { schoolId, school, games: entries, alive };
   });
 
   // Sort: most rounds played first, then last-round-won (still alive) above eliminated.
   journeys.sort((a, b) => {
+    // Alive teams first: with Level 3 off-screen at 375px, an eliminated
+    // team sorted between two alive ones looked unbeaten.
+    if (a.alive !== b.alive) return a.alive ? -1 : 1;
     if (a.games.length !== b.games.length) return b.games.length - a.games.length;
     const aLast = a.games[a.games.length - 1];
     const bLast = b.games[b.games.length - 1];

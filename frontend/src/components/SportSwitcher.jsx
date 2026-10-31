@@ -1,4 +1,5 @@
 import { useId, useState } from "react";
+import { sportInSeason } from "../utils/inSeason.js";
 import { NavLink, useParams } from "react-router-dom";
 import { SPORT_IDS, configFor } from "../config/sports.js";
 import { SITE } from "../config/site.js";
@@ -21,9 +22,10 @@ function writeExpanded(v) {
   }
 }
 
-/** Sports whose data is refreshing this calendar month. */
-function inSeason(id, month) {
-  return (configFor(id)?.activeMonths ?? []).includes(month);
+/** Sports whose season is running: active month and the opener has passed. */
+function inSeason(id, month, now = new Date()) {
+  void month;
+  return sportInSeason(id, now);
 }
 
 /**

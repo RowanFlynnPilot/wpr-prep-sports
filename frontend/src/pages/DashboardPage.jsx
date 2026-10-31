@@ -31,7 +31,7 @@ import RegionalTop10 from "../components/RegionalTop10.jsx";
 import { pickFeaturedGame, tickerGames } from "../utils/games.js";
 import { homeRegionSchoolIds } from "../utils/schools.js";
 import { pickFeaturedWeek, previousWeekResults } from "../utils/weeks.js";
-import { formatWeekRange } from "../utils/dates.js";
+import { formatWeekRange, localDate } from "../utils/dates.js";
 import { pickMarqueeGame } from "../utils/marquee.js";
 import { SPORT_IDS } from "../config/sports.js";
 import { trackEvent } from "../utils/analytics.js";
@@ -161,8 +161,8 @@ export default function DashboardPage({
 
   const nextSeasonStart = useMemo(() => {
     if (!offSeason || !sportConfig?.nextSeasonStart) return null;
-    const d = new Date(`${sportConfig.nextSeasonStart}T00:00:00-05:00`);
-    return Number.isNaN(d.getTime()) ? null : d;
+    const d = localDate(sportConfig.nextSeasonStart);
+    return d && !Number.isNaN(d.getTime()) ? d : null;
   }, [offSeason, sportConfig]);
 
   const daysToNext = useMemo(() => {
@@ -315,6 +315,28 @@ export default function DashboardPage({
   // conference tables, so article deep links and the sold tab:standings
   // slot keep working.
   const hasStandingsTab = meaningfulStandings.length > 0 || games.some((g) => g.playoff);
+
+  // Postseason: once playoff games exist that are upcoming or less than a
+  // week old, the bracket outranks the conference tables on the Standings
+  // tab (it sat 5,476 px down the tab on a playoff weekend, below nine
+  // finished tables). The rest of the year the tables lead.
+  const postseason = useMemo(() => {
+    const now = new Date(anchorNow).getTime();
+    return games.some(
+      (g) => g.playoff && (g.status !== "final" || now - new Date(g.date).getTime() < 7 * 86_400_000),
+    );
+  }, [games, anchorNow]);
+  const bracketSection = games.some((g) => g.playoff) ? (
+    <section>
+      <div className="section-header">
+        <h2>Playoff Bracket</h2>
+        <span className="section-header__hint">{SITE.governingBody} tournament · {sportConfig.label}</span>
+      </div>
+      <SectionBoundary label="bracket">
+        <TournamentBracket games={games} schoolIndex={schoolIndex} sportConfig={sportConfig} />
+      </SectionBoundary>
+    </section>
+  ) : null;
   const hasRankingsTab = (powerRankings?.rankings?.length ?? 0) > 0;
   const hasLeadersTab = seasonStats?.length > 0 && hasPlayerRows(seasonStats);
   const hasSpotlightTab = notableItems.length > 0 || (spirit?.length ?? 0) > 0;
@@ -689,6 +711,7 @@ export default function DashboardPage({
           season leaders on Leaders. */}
       {activeTab === "standings" && (
         <>
+          {postseason && bracketSection}
           {meaningfulStandings.length > 0 && (
             <section>
               <div className="section-header">
@@ -769,21 +792,7 @@ export default function DashboardPage({
             </section>
           )}
 
-          {games.some((g) => g.playoff) && (
-            <section>
-              <div className="section-header">
-                <h2>Playoff Bracket</h2>
-                <span className="section-header__hint">{SITE.governingBody} tournament · {sportConfig.label}</span>
-              </div>
-              <SectionBoundary label="bracket">
-                <TournamentBracket
-                  games={games}
-                  schoolIndex={schoolIndex}
-                  sportConfig={sportConfig}
-                />
-              </SectionBoundary>
-            </section>
-          )}
+          {!postseason && bracketSection}
         </>
       )}
 

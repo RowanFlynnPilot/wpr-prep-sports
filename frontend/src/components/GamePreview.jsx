@@ -46,7 +46,13 @@ export default function GamePreview({ game, dataset, schoolIndex, pending = fals
         <span className="section-header__hint">
           {pending
             ? `Played ${titleCaseDay(game.date)} · score not posted yet`
-            : `Headed into ${game.conference_game ? "this conference matchup" : "tonight's matchup"}`}
+            : `Headed into ${
+                game.conference_game
+                  ? "this conference matchup"
+                  : new Date(game.date).toDateString() === new Date().toDateString()
+                    ? "tonight's matchup"
+                    : `${titleCaseDay(game.date)}'s matchup`
+              }`}
         </span>
       </div>
 
@@ -116,7 +122,9 @@ function PreviewTeamCard({ side, school, summary }) {
 
       {!isTracked && (
         <p className="game-preview__untracked-note">
-          Opponent outside coverage — record and form unavailable.
+          {/^tbd$/i.test(side.name ?? "")
+            ? "Opponent to be decided by the other bracket game."
+            : "Opponent outside coverage — record and form unavailable."}
         </p>
       )}
 

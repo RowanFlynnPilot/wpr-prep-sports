@@ -423,3 +423,13 @@ a.schedule-row__result--link:focus-visible {
   min-height: 32px;
 }
 .team-hero__tonight:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* Playoff rows on phones: the round pill (nowrap, up to 139px) was starving the
+   opponent's name to 0px inside the matchup cell and running past the row
+   (postseason review, 2026-10-31: Marathon's sectional final read "vs [logo]").
+   The pill drops to its own line under the name instead. */
+@media (max-width: 480px) {
+  .schedule-row__matchup { flex-wrap: wrap; }
+  .schedule-row__opponent { min-width: 0; overflow-wrap: anywhere; }
+  .schedule-row__round { flex-basis: 100%; margin-left: 0; width: max-content; }
+}

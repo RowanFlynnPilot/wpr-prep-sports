@@ -14,13 +14,13 @@
  * `sport` picks the opening tab when it's in the switcher's list; a sport
  * that isn't (football in January) yields to the list's first entry.
  */
-import { DEFAULT_SPORT, SPORT_IDS, configFor, isKnownSport } from "../config/sports.js";
+import { DEFAULT_SPORT, SPORT_IDS, isKnownSport } from "../config/sports.js";
+import { sportInSeason } from "../utils/inSeason.js";
 import { SITE } from "../config/site.js";
 
-/** Sports whose season is running this calendar month, in registry order. */
+/** Sports whose season is running (active month and opener passed), in registry order. */
 export function inSeasonSports(now = new Date()) {
-  const month = now.getMonth();
-  return SPORT_IDS.filter((id) => (configFor(id).activeMonths ?? []).includes(month));
+  return SPORT_IDS.filter((id) => sportInSeason(id, now));
 }
 
 /** Resolve the mini's settings from a query string. */

@@ -97,8 +97,13 @@ export default function TournamentBracket({ games, schoolIndex, sportConfig }) {
     <div className="bracket">
       <div className="bracket__toolbar">
         <span className="bracket__meta">
-          {journeys.length} of {allJourneys.length}{" "}
-          {allJourneys.length === 1 ? "team" : "teams"} in the tournament
+          {journeys.length === allJourneys.length
+            ? `${allJourneys.length} tracked ${allJourneys.length === 1 ? "team" : "teams"} made the playoffs`
+            : `${journeys.length} of ${allJourneys.length} playoff teams shown`}
+          {" · "}
+          {journeys.filter((j) => j.alive).length === 0
+            ? "none still alive"
+            : `${journeys.filter((j) => j.alive).length} still alive`}
         </span>
         {conferences.length > 1 && (
           <div
@@ -156,6 +161,10 @@ export default function TournamentBracket({ games, schoolIndex, sportConfig }) {
            as a CSS grid, and because changing `display` on table elements
            drops their implicit roles in Chrome and Safari, the roles are
            restated explicitly on the real elements. */
+        /* The wrapper owns the sideways scroll. overflow-x on the block-displayed
+           <table> itself let its 660px of rounds leak into the document width
+           (609px at a 375px viewport, so the whole page panned). */
+        <div className="bracket__journey-wrap">
         <table
           className="bracket__journey"
           role="table"
@@ -195,6 +204,7 @@ export default function TournamentBracket({ games, schoolIndex, sportConfig }) {
             ))}
           </tbody>
         </table>
+        </div>
       )}
     </div>
   );
@@ -217,19 +227,24 @@ function FilterChip({ label, active, onClick }) {
 // champion gold treatment. Football tops out at Level 4 (Camp Randall);
 // other sports use explicitly state-named rounds. Sectional Final
 // winners are "advancing to state" but not champions.
-const STATE_TITLE_ROUNDS = new Set([
-  "Level 4",
-  "State Final",
-  "State Championship",
-]);
+// 11-player football's Level 4 is the state semifinal (Camp Randall is a
+// week later and the scraper files it separately); 8-player's 16-team
+// bracket ends at Level 4, so only an 8P-division team's Level 4 is a title.
+const STATE_TITLE_ROUNDS = new Set(["State Final", "State Championship"]);
+function isTitleRound(round, journey) {
+  if (STATE_TITLE_ROUNDS.has(round)) return true;
+  const div = String(journey.school?.wiaa_division?.football ?? "");
+  return round === "Level 4" && div.startsWith("8P");
+}
 
 function JourneyRow({ journey, rounds, lastRound }) {
   void lastRound;
   const sportPrefix = useSportPrefix();
   const byRound = new Map(journey.games.map((g) => [g.round, g]));
   const finalGame = journey.games[journey.games.length - 1];
-  const stillAlive = finalGame?.won && finalGame?.isFinal;
-  const stateChamp = stillAlive && STATE_TITLE_ROUNDS.has(finalGame?.round ?? "");
+  const stillAlive = journey.alive;
+  // A scheduled title game is not a title: the trophy waits for a final win.
+  const stateChamp = !!finalGame?.isFinal && !!finalGame?.won && isTitleRound(finalGame?.round ?? "", journey);
 
   return (
     <tr
@@ -301,7 +316,11 @@ function JourneyRow({ journey, rounds, lastRound }) {
                   : "Upcoming"}
               </span>
               <span className="bracket__journey-opponent">
-                {entry.isHome ? "vs" : "@"} {entry.opponent.name}
+                {/* WIAA lists the next round's opponent as "TBD" until the
+                    other game ends; "vs TBD" read like a team name. */}
+                {/^tbd$/i.test(entry.opponent.name ?? "")
+                  ? "opponent TBD"
+                  : `${entry.isHome ? "vs" : "@"} ${entry.opponent.name}`}
               </span>
             </Link>
           </td>

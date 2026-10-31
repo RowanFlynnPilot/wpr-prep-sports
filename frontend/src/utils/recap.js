@@ -209,6 +209,7 @@ export function recapForGame(
     ? null
     : buildBookendOpener({
         teamGames, game, subject, oppLabel, own, opp, margin, won, tied, dateLabel, bands,
+        eightPlayer: String(ownSchool?.wiaa_division?.football ?? "").startsWith("8P"),
       });
   const opener = bookend
     ?? `${subject} ${resultPhrase}${recordPhrase}${conferencePhrase} on ${dateLabel}.`;
@@ -540,8 +541,11 @@ function confFor(school, sport) {
  * ------------------------------------------------------------------ */
 
 // Rounds that end the playoff run for a winner (= state champion).
+// Football's "Level 4" is only a title for 8-player (a 16-team bracket ends
+// there); for 11-player it is the state semifinal, so it is decided per team
+// below from the school's WIAA division (postseason review, 2026-10-31).
 const STATE_TITLE_ROUNDS = new Set([
-  "Level 4", "State Final", "State Championship",
+  "State Final", "State Championship",
 ]);
 
 // Tiny deterministic 0..1 hash — same key always picks the same
@@ -561,6 +565,7 @@ function _pick(seed, choices) {
 function buildBookendOpener({
   teamGames, game, subject, oppLabel, own, opp, margin, won, tied, dateLabel,
   bands = { blowout: BLOWOUT_MARGIN, close: CLOSE_MARGIN },
+  eightPlayer = false,
 }) {
   if (!teamGames || teamGames.length === 0) return null;
   if (tied) return null; // tied games keep the default framing
@@ -592,7 +597,8 @@ function buildBookendOpener({
   const isLastReg =
     !game.playoff && !hasUpcomingReg && lastReg && game.id === lastReg.id;
   const isPlayoffExit = game.playoff && !won && lastOverall && game.id === lastOverall.id;
-  const isStateTitle = game.playoff && won && STATE_TITLE_ROUNDS.has(game.playoff_round ?? "");
+  const isStateTitle =
+    game.playoff && won && isStateTitleRound(game.playoff_round ?? "", eightPlayer);
   const isPlayoffAdvance = game.playoff && won && !isStateTitle;
 
   const seed = _seed(game.id ?? `${dateLabel}-${oppLabel}`);
@@ -627,7 +633,7 @@ function buildBookendOpener({
 
   // 2. Playoff exit — season ends.
   if (isPlayoffExit) {
-    const roundLabel = playoffRoundLabel(game);
+    const roundLabel = playoffRoundLabel(game, eightPlayer);
     if (Math.abs(margin) <= bands.close) {
       return _pick(seed, [
         `${subject}' season ended in heartbreak — a ${lossScore} ${roundLabel} loss to ${oppLabel} on ${dateLabel}.`,
@@ -690,7 +696,7 @@ function buildBookendOpener({
 
   // 4. Playoff advancement (won, not the state title) — adds drive.
   if (isPlayoffAdvance) {
-    const roundLabel = playoffRoundLabel(game);
+    const roundLabel = playoffRoundLabel(game, eightPlayer);
     // Wins in a "Final" round (Regional Final, Sectional Final, etc.)
     // ARE wins for that round's title — frame as winning a championship,
     // not just advancing.
@@ -757,9 +763,13 @@ function buildBookendOpener({
  * "Sectional title"). null for non-final rounds + for State Final /
  * Level 4 which are handled by the isStateTitle branch.
  */
+function isStateTitleRound(round, eightPlayer = false) {
+  return STATE_TITLE_ROUNDS.has(round) || (round === "Level 4" && eightPlayer);
+}
+
 function roundTitleName(game) {
   const r = (game.playoff_round || "").trim();
-  if (STATE_TITLE_ROUNDS.has(r)) return null;
+  if (STATE_TITLE_ROUNDS.has(r) || r === "Level 4") return null;
   // "Regional Final" → "Regional title". Same shape: "Sectional Final" →
   // "Sectional title". Only matches when the round name ends in "Final".
   const m = /^(.*?)\s+Final$/.exec(r);
@@ -769,14 +779,15 @@ function roundTitleName(game) {
   return `${stage} title`;
 }
 
-function playoffRoundLabel(game) {
+function playoffRoundLabel(game, eightPlayer = false) {
   const r = game.playoff_round;
   if (!r) return "playoff";
-  // Football: "Level 1" reads better as "first round" / "Level 4" → "state championship game"
+  // Football: "Level 1" reads better as "first round"; Level 4 is the state
+  // semifinal for 11-player and the championship game for 8-player.
   if (r === "Level 1") return "first round";
   if (r === "Level 2") return "second round";
   if (r === "Level 3") return "third round";
-  if (r === "Level 4") return "state championship game";
+  if (r === "Level 4") return eightPlayer ? "state championship game" : "state semifinal";
   // basketball/volleyball/hockey — round name reads cleanly as-is
   return r;
 }
