@@ -19,10 +19,11 @@ on:
         # hit the wipe guard (0 games scraped + existing data → no
         # write) and the 2025-26 datasets stay live. They roll over
         # automatically the day WIAA publishes. Add winter sports to
-        # this list in November.
+        # this list in November (done 2026-10-31; drop football, volleyball,
+        # boys_soccer once their state tournaments end, ~Nov 21).
         description: "Space-separated sport id(s) to scrape. Defaults to in-season sports."
         required: false
-        default: "football volleyball boys_soccer"
+        default: "football volleyball boys_soccer boys_basketball girls_basketball boys_hockey girls_hockey"
       season:
         description: "Season identifier"
         required: false
@@ -78,7 +79,7 @@ jobs:
           # in-season sport (see the workflow_dispatch comment above).
           # On manual dispatch the user can pass a single id (or several
           # space-separated).
-          SPORTS: ${{ github.event.inputs.sport || 'football volleyball boys_soccer' }}
+          SPORTS: ${{ github.event.inputs.sport || 'football volleyball boys_soccer boys_basketball girls_basketball boys_hockey girls_hockey' }}
           SEASON: ${{ github.event.inputs.season || '2026-27' }}
           # The Friday-night 15-minute cron exists to post scores while the
           # games are on. Stats (Bound, MaxPreps) take 30+ minutes a run and
