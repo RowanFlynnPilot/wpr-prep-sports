@@ -95,6 +95,33 @@ export function topStatLines(game) {
   return game?.headline_stats ?? game?.stat_leaders ?? [];
 }
 
+/** The winning and losing sides of a scored final, or null for a tie / no score. */
+function finalSides(game) {
+  if (game?.status !== "final") return null;
+  const h = game.home?.score;
+  const a = game.away?.score;
+  if (typeof h !== "number" || typeof a !== "number" || h === a) return null;
+  return h > a ? { winner: game.home, loser: game.away } : { winner: game.away, loser: game.home };
+}
+
+/** A playoff final a tracked team won (it advances). */
+export function isTrackedPlayoffWin(game) {
+  if (!game?.playoff) return false;
+  return !!finalSides(game)?.winner?.school_id;
+}
+
+/**
+ * A playoff final that ended a tracked team's season and nothing else: the
+ * loser is tracked, the winner isn't. (When both are tracked the game is
+ * also somebody's win, and the hero tells it that way.) The hero's eyebrow
+ * reads "Season over" for these instead of "Final".
+ */
+export function isTrackedElimination(game) {
+  if (!game?.playoff) return false;
+  const sides = finalSides(game);
+  return !!sides?.loser?.school_id && !sides.winner?.school_id;
+}
+
 /** Most recent final between two TRACKED schools (both have school_id). */
 function isRivalryFinal(g) {
   return (
@@ -133,15 +160,60 @@ function isRivalryFinal(g) {
  * without this they pick the same one and the page's two biggest slots
  * carry one matchup. Only ever skips that single game, and only while
  * another local one exists on the day.
+ *
+ * `postseason` (utils/postseason.js `active`): on playoff weeks the result
+ * that leads is a WIN by a tracked team, not the closest local margin. The
+ * margin rule alone led the hero with Stratford's 9-0 Level 2 loss on the
+ * morning Edgar won 56-18 and Gilman 55-0 (2026-10-31): a season ending is
+ * news, but a team still alive is the story readers come back for. Wins
+ * whose winner is in the home region rank first, then any tracked winner
+ * with a local side, then any tracked winner; the most recent day, then
+ * the closest margin, decides within a tier. With no tracked win in the
+ * window the old rule runs, and an elimination can still lead (the hero
+ * then says "Season over").
  */
 export function pickFeaturedGame(
   games,
   now = new Date(),
   preferIds = null,
   excludeId = null,
+  { postseason = false } = {},
 ) {
   if (!games || games.length === 0) return null;
   const nowTs = now.getTime();
+
+  if (postseason) {
+    const local = (side) => !!preferIds?.has?.(side?.school_id);
+    const winnerOf = (g) => (g.home.score > g.away.score ? g.home : g.away);
+    const tier = (g) => {
+      if (local(winnerOf(g))) return 2;
+      return local(g.home) || local(g.away) ? 1 : 0;
+    };
+    // A win only leads while it is the winner's latest result: Tuesday's
+    // regional win is not the story once Thursday's sectional ended it.
+    const latestFinal = new Map();
+    for (const g of games) {
+      if (!g.playoff || g.status !== "final") continue;
+      for (const side of [g.home, g.away]) {
+        const id = side?.school_id;
+        const ts = new Date(g.date).getTime();
+        if (id && !(latestFinal.get(id) >= ts)) latestFinal.set(id, ts);
+      }
+    }
+    const wins = games
+      .filter(isTrackedPlayoffWin)
+      .filter((g) => !isForfeitScore(g))
+      .map((g) => ({ g, ts: new Date(g.date).getTime() }))
+      .filter(({ g, ts }) => latestFinal.get(winnerOf(g).school_id) === ts)
+      .filter(({ ts }) => ts <= nowTs && nowTs - ts < RESULT_LEAD_MS)
+      .sort(
+        (a, b) =>
+          tier(b.g) - tier(a.g) ||
+          b.g.date.slice(0, 10).localeCompare(a.g.date.slice(0, 10)) ||
+          Math.abs(a.g.home.score - a.g.away.score) - Math.abs(b.g.home.score - b.g.away.score),
+      );
+    if (wins.length > 0) return wins[0].g;
+  }
 
   // Lead with the RESULT for three days after a slate. The reader's
   // Saturday-through-Monday question is "did we win?", not "who's next?"

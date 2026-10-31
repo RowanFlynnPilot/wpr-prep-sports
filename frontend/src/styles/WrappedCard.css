@@ -1,0 +1,800 @@
+/*
+ * Season Wrapped card — 1080×1920 (story) and 1200×630 (og).
+ *
+ * A fixed-pixel raster like OgCard.css: literal sizes and colours, no
+ * theme tokens, so the PNG the generator screenshots is the same card a
+ * reader sees in the hub whatever their OS colour scheme. Newsprint
+ * look — white paper, black ink, hairline #ddd rules, Oswald display,
+ * Merriweather body, one press-red accent (winner / eyebrow), and the
+ * school's own colour as the top band and logo ring.
+ *
+ * The .wrapped-page styles below the card are hub chrome and DO use the
+ * tokens: they sit on the widget's own paper, not in the image.
+ */
+
+.wrapped-card {
+  --paper: #ffffff;
+  --ink: #000000;
+  --ink-2: #1e1e1e;
+  --muted: #666666;
+  --muted-2: #767676;
+  --line: #dddddd;
+  --red: #cc1818;
+  --red-on-dark: #e35d5d;
+  --chrome: #000000;
+  --loss-bg: #e5e7eb;
+  --loss-ink: #4b5563;
+  --display: "Oswald", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+  --body: "Merriweather", Georgia, "Times New Roman", serif;
+  --school-color: #1f2937;
+
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--paper);
+  color: var(--ink-2);
+  font-family: var(--body);
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+.wrapped-card *,
+.wrapped-card *::before,
+.wrapped-card *::after {
+  box-sizing: border-box;
+}
+.wrapped-card h1,
+.wrapped-card p,
+.wrapped-card ol {
+  margin: 0;
+  padding: 0;
+}
+.wrapped-card ol {
+  list-style: none;
+}
+
+/* School colour band along the top, with a thin ink rule under it. */
+.wrapped-card__band {
+  flex: 0 0 auto;
+  height: 22px;
+  background: var(--school-color);
+  border-bottom: 3px solid var(--ink);
+}
+
+/* Shared type roles ---------------------------------------------------- */
+
+.wrapped-card__eyebrow,
+.wrapped-card__kicker,
+.wrapped-card__label {
+  font-family: var(--display);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  line-height: 1.1;
+}
+.wrapped-card__eyebrow {
+  color: var(--red);
+}
+.wrapped-card__kicker {
+  display: block;
+  color: var(--muted);
+}
+.wrapped-card__label {
+  color: var(--muted);
+}
+
+.wrapped-card__num {
+  display: block;
+  font-family: var(--display);
+  font-weight: 700;
+  line-height: 0.95;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+.wrapped-card__num-sep {
+  color: var(--muted-2);
+  font-weight: 400;
+  margin: 0 0.06em;
+}
+.wrapped-card__split {
+  display: block;
+  font-family: var(--body);
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* Head ------------------------------------------------------------------ */
+
+.wrapped-card__head {
+  display: flex;
+  align-items: center;
+}
+.wrapped-card__logo.team-logo {
+  flex: 0 0 auto;
+  background: #fff;
+  box-shadow: 0 0 0 6px var(--school-color), 0 0 0 9px var(--paper);
+}
+.wrapped-card__ident {
+  min-width: 0;
+}
+.wrapped-card__school {
+  font-family: var(--display);
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 0.98;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+.wrapped-card__sub {
+  font-family: var(--body);
+  font-style: italic;
+  color: var(--muted);
+}
+
+/* Record ---------------------------------------------------------------- */
+
+.wrapped-card__record {
+  display: flex;
+  align-items: flex-end;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.wrapped-card__stat {
+  min-width: 0;
+}
+.wrapped-card__stat--lead .wrapped-card__num {
+  color: var(--red);
+}
+
+/* Playoffs — the one dark block, so the postseason result is the first
+   thing a thumb lands on in a feed. */
+.wrapped-card__playoff {
+  background: var(--chrome);
+  color: #fff;
+}
+.wrapped-card__playoff .wrapped-card__kicker {
+  color: var(--red-on-dark);
+}
+.wrapped-card__playoff-line {
+  font-family: var(--display);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.05;
+  text-wrap: balance;
+}
+.wrapped-card__playoff-detail {
+  display: block;
+  font-family: var(--body);
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+/* Leaders --------------------------------------------------------------- */
+
+.wrapped-card__leader {
+  display: flex;
+  align-items: baseline;
+  border-bottom: 1px solid var(--line);
+}
+.wrapped-card__leader:last-child {
+  border-bottom: 0;
+}
+.wrapped-card__leader-stat {
+  flex: 0 0 auto;
+  font-family: var(--display);
+  font-weight: 700;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+  white-space: nowrap;
+}
+.wrapped-card__leader-who {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+.wrapped-card__leader-name {
+  font-family: var(--display);
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.wrapped-card__leader-year {
+  font-weight: 400;
+  color: var(--muted);
+}
+.wrapped-card__leader-cat {
+  font-family: var(--body);
+  color: var(--muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Notable games --------------------------------------------------------- */
+
+.wrapped-card__games {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.wrapped-card__game {
+  min-width: 0;
+}
+.wrapped-card__game-line {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.wrapped-card__outcome {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--display);
+  font-weight: 700;
+  line-height: 1;
+  border-radius: 6px;
+  flex: 0 0 auto;
+}
+.wrapped-card__outcome--W {
+  background: var(--red);
+  color: #fff;
+}
+.wrapped-card__outcome--L,
+.wrapped-card__outcome--T {
+  background: var(--loss-bg);
+  color: var(--loss-ink);
+}
+.wrapped-card__game-score {
+  font-family: var(--display);
+  font-weight: 700;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+.wrapped-card__game-opp {
+  font-family: var(--display);
+  font-weight: 500;
+  color: var(--ink-2);
+  line-height: 1.1;
+  min-width: 0;
+}
+.wrapped-card__game-meta {
+  display: block;
+  font-family: var(--body);
+  color: var(--muted-2);
+}
+
+/* Footer ---------------------------------------------------------------- */
+
+.wrapped-card__foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 2px solid var(--ink);
+}
+.wrapped-card__pub {
+  display: inline-flex;
+  align-items: center;
+  min-width: 0;
+}
+.wrapped-card__pub-logo {
+  border-radius: 999px;
+  background: #fff;
+  object-fit: contain;
+  display: block;
+  flex: 0 0 auto;
+  box-shadow: 0 0 0 1px var(--line);
+}
+.wrapped-card__pub-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.wrapped-card__pub-name {
+  font-family: var(--display);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--ink);
+  line-height: 1.1;
+}
+.wrapped-card__pub-title {
+  font-family: var(--body);
+  color: var(--muted);
+  line-height: 1.2;
+}
+.wrapped-card__url {
+  font-family: var(--display);
+  font-weight: 600;
+  color: var(--red);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+/* ======================================================================
+   STORY — 1080 × 1920
+   ====================================================================== */
+
+.wrapped-card--story {
+  width: 1080px;
+  height: 1920px;
+  padding: 0 0 56px;
+}
+.wrapped-card--story > :not(.wrapped-card__band):not(.wrapped-card__playoff) {
+  padding-left: 72px;
+  padding-right: 72px;
+}
+
+.wrapped-card--story .wrapped-card__head {
+  gap: 40px;
+  padding-top: 52px;
+  padding-bottom: 40px;
+}
+.wrapped-card--story .wrapped-card__logo.team-logo {
+  width: 216px;
+  height: 216px;
+  font-size: 88px;
+}
+.wrapped-card--story .wrapped-card__eyebrow {
+  font-size: 30px;
+}
+.wrapped-card--story .wrapped-card__school {
+  margin-top: 14px;
+  font-size: 108px;
+}
+.wrapped-card--story .wrapped-card__sub {
+  margin-top: 18px;
+  font-size: 32px;
+}
+
+.wrapped-card--story .wrapped-card__record {
+  gap: 48px;
+  padding-top: 36px;
+  padding-bottom: 36px;
+}
+.wrapped-card--story .wrapped-card__num {
+  font-size: 100px;
+}
+.wrapped-card--story .wrapped-card__stat--lead .wrapped-card__num {
+  font-size: 152px;
+}
+.wrapped-card--story .wrapped-card__label {
+  display: block;
+  margin-top: 16px;
+  font-size: 26px;
+}
+.wrapped-card--story .wrapped-card__split {
+  margin-top: 10px;
+  font-size: 26px;
+}
+.wrapped-card--story .wrapped-card__stat--pts {
+  margin-left: auto;
+  text-align: right;
+}
+
+.wrapped-card--story .wrapped-card__playoff {
+  margin: 0;
+  padding: 36px 72px 40px;
+}
+.wrapped-card--story .wrapped-card__kicker {
+  font-size: 26px;
+}
+.wrapped-card--story .wrapped-card__playoff-line {
+  margin-top: 14px;
+  font-size: 58px;
+}
+.wrapped-card--story .wrapped-card__playoff-detail {
+  margin-top: 12px;
+  font-size: 28px;
+}
+
+/* The body gets whatever height the blocks above leave; the footer is
+   pinned below it, and anything that still won't fit is clipped here
+   rather than drawn over the footer. */
+.wrapped-card--story .wrapped-card__body {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 36px;
+  padding-top: 40px;
+  padding-bottom: 28px;
+  overflow: hidden;
+}
+.wrapped-card--story .wrapped-card__leader-list {
+  margin-top: 6px;
+}
+.wrapped-card--story .wrapped-card__leader {
+  gap: 32px;
+  padding: 18px 0;
+}
+.wrapped-card--story .wrapped-card__leader-stat {
+  font-size: 64px;
+  min-width: 280px;
+}
+.wrapped-card--story .wrapped-card__leader-name {
+  font-size: 42px;
+}
+.wrapped-card--story .wrapped-card__leader-cat {
+  margin-top: 6px;
+  font-size: 26px;
+}
+
+.wrapped-card--story .wrapped-card__games {
+  gap: 48px;
+  padding-top: 4px;
+}
+.wrapped-card--story .wrapped-card__game-line {
+  margin-top: 14px;
+  gap: 16px;
+}
+.wrapped-card--story .wrapped-card__outcome {
+  width: 56px;
+  height: 56px;
+  font-size: 36px;
+}
+.wrapped-card--story .wrapped-card__game-score {
+  font-size: 60px;
+}
+.wrapped-card--story .wrapped-card__game-opp {
+  font-size: 34px;
+  flex-basis: 100%;
+}
+.wrapped-card--story .wrapped-card__game-meta {
+  margin-top: 8px;
+  font-size: 26px;
+}
+
+.wrapped-card--story .wrapped-card__foot {
+  flex: 0 0 auto;
+  margin-top: auto;
+  padding-top: 28px;
+  gap: 40px;
+}
+.wrapped-card--story .wrapped-card__pub {
+  gap: 22px;
+}
+.wrapped-card--story .wrapped-card__pub-logo {
+  width: 76px;
+  height: 76px;
+}
+.wrapped-card--story .wrapped-card__pub-name {
+  font-size: 27px;
+  white-space: nowrap;
+}
+.wrapped-card--story .wrapped-card__pub-title {
+  margin-top: 6px;
+  font-size: 23px;
+  white-space: nowrap;
+}
+.wrapped-card--story .wrapped-card__url {
+  font-size: 24px;
+}
+
+/* ======================================================================
+   OG — 1200 × 630. Two columns: identity + record left, postseason,
+   leaders and notable games right. Compact by necessity; the leaders
+   collapse to single lines and the game blocks sit side by side.
+   ====================================================================== */
+
+.wrapped-card--og {
+  width: 1200px;
+  height: 630px;
+  padding: 0 0 26px;
+  display: grid;
+  grid-template-columns: 560px 1fr;
+  grid-template-rows: auto auto 1fr auto auto;
+  grid-template-areas:
+    "band band"
+    "head playoff"
+    "record body"
+    "record body"
+    "foot foot";
+  column-gap: 44px;
+}
+.wrapped-card--og .wrapped-card__band {
+  grid-area: band;
+  height: 14px;
+  border-bottom-width: 2px;
+}
+.wrapped-card--og .wrapped-card__head {
+  grid-area: head;
+  gap: 26px;
+  padding: 30px 0 22px 48px;
+}
+.wrapped-card--og .wrapped-card__logo.team-logo {
+  width: 136px;
+  height: 136px;
+  font-size: 56px;
+  box-shadow: 0 0 0 4px var(--school-color), 0 0 0 6px var(--paper);
+}
+.wrapped-card--og .wrapped-card__eyebrow {
+  font-size: 18px;
+}
+.wrapped-card--og .wrapped-card__school {
+  margin-top: 8px;
+  font-size: 56px;
+}
+.wrapped-card--og .wrapped-card__sub {
+  margin-top: 8px;
+  font-size: 18px;
+}
+
+.wrapped-card--og .wrapped-card__record {
+  grid-area: record;
+  align-self: start;
+  flex-wrap: wrap;
+  gap: 18px 40px;
+  margin-left: 48px;
+  padding: 22px 0 0;
+  border-bottom: 0;
+}
+.wrapped-card--og .wrapped-card__num {
+  font-size: 56px;
+}
+.wrapped-card--og .wrapped-card__stat--lead .wrapped-card__num {
+  font-size: 96px;
+}
+.wrapped-card--og .wrapped-card__label {
+  display: block;
+  margin-top: 8px;
+  font-size: 15px;
+}
+.wrapped-card--og .wrapped-card__split {
+  margin-top: 4px;
+  font-size: 15px;
+}
+.wrapped-card--og .wrapped-card__stat--pts {
+  flex-basis: 100%;
+}
+
+.wrapped-card--og .wrapped-card__playoff {
+  grid-area: playoff;
+  margin: 30px 48px 0 0;
+  padding: 18px 26px 20px;
+}
+.wrapped-card--og .wrapped-card__kicker {
+  font-size: 15px;
+}
+.wrapped-card--og .wrapped-card__playoff-line {
+  margin-top: 8px;
+  font-size: 30px;
+}
+.wrapped-card--og .wrapped-card__playoff-detail {
+  margin-top: 6px;
+  font-size: 16px;
+}
+
+.wrapped-card--og .wrapped-card__body {
+  grid-area: body;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-right: 48px;
+  padding-top: 20px;
+  overflow: hidden;
+}
+.wrapped-card--og .wrapped-card__leader-list {
+  margin-top: 4px;
+}
+.wrapped-card--og .wrapped-card__leader {
+  gap: 16px;
+  padding: 7px 0;
+}
+.wrapped-card--og .wrapped-card__leader-stat {
+  font-size: 30px;
+  min-width: 128px;
+}
+.wrapped-card--og .wrapped-card__leader-who {
+  flex-direction: row;
+  align-items: baseline;
+  gap: 10px;
+  min-width: 0;
+}
+.wrapped-card--og .wrapped-card__leader-name {
+  font-size: 22px;
+}
+.wrapped-card--og .wrapped-card__leader-cat {
+  font-size: 15px;
+}
+
+.wrapped-card--og .wrapped-card__games {
+  gap: 24px;
+}
+.wrapped-card--og .wrapped-card__game-line {
+  margin-top: 8px;
+  gap: 10px;
+}
+.wrapped-card--og .wrapped-card__outcome {
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+  border-radius: 4px;
+}
+.wrapped-card--og .wrapped-card__game-score {
+  font-size: 32px;
+}
+.wrapped-card--og .wrapped-card__game-opp {
+  font-size: 20px;
+}
+.wrapped-card--og .wrapped-card__game-meta {
+  margin-top: 4px;
+  font-size: 15px;
+}
+
+.wrapped-card--og .wrapped-card__foot {
+  grid-area: foot;
+  margin: 0 48px;
+  padding-top: 14px;
+  gap: 24px;
+}
+.wrapped-card--og .wrapped-card__pub {
+  gap: 14px;
+}
+.wrapped-card--og .wrapped-card__pub-logo {
+  width: 44px;
+  height: 44px;
+}
+.wrapped-card--og .wrapped-card__pub-name {
+  font-size: 17px;
+}
+.wrapped-card--og .wrapped-card__pub-title {
+  margin-top: 2px;
+  font-size: 14px;
+}
+.wrapped-card--og .wrapped-card__url {
+  font-size: 19px;
+}
+
+/* Loading / error — card-sized so the generator's element crop holds. */
+.wrapped-card--loading,
+.wrapped-card--error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 12px;
+  font-family: var(--display);
+  font-size: 32px;
+  color: var(--muted);
+}
+.wrapped-card--error strong {
+  color: var(--ink);
+  font-size: 40px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* ======================================================================
+   Capture mode (?capture=1): nothing but the card, at native size.
+   ====================================================================== */
+
+html:has(.wrapped-capture),
+body:has(.wrapped-capture),
+#root:has(.wrapped-capture) {
+  margin: 0;
+  padding: 0;
+  background: #f0f0f0;
+}
+.wrapped-capture {
+  display: inline-block;
+}
+
+/* ======================================================================
+   Hub page — what a reader sees at #/<sport>/card/wrapped/<school>.
+   Theme tokens here; this chrome is the widget's, not the image's.
+   ====================================================================== */
+
+.wrapped-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.75rem 16px 2rem;
+  color: var(--ink);
+}
+
+.wrapped-page__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 1rem;
+}
+.wrapped-page__back {
+  font-family: var(--font-display);
+  font-size: var(--fs-small);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--link);
+  text-decoration: none;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.wrapped-page__back:hover,
+.wrapped-page__back:focus-visible {
+  color: var(--accent-700);
+}
+.wrapped-page__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.wrapped-page__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: var(--card);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  min-height: 44px;
+  padding: 0.32rem 0.9rem;
+  font-family: var(--font-display);
+  font-size: var(--fs-caption);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: border-color var(--t-fast) var(--ease), color var(--t-fast) var(--ease);
+}
+.wrapped-page__btn:hover,
+.wrapped-page__btn:focus-visible {
+  border-color: var(--accent);
+  color: var(--accent-700);
+}
+.wrapped-page__btn--quiet {
+  color: var(--muted);
+}
+
+.wrapped-page__manual {
+  margin: 0 0 1rem;
+}
+.wrapped-page__url {
+  width: 100%;
+  max-width: 28rem;
+  background: var(--paper-2);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 0.45rem 0.6rem;
+  font-family: var(--font-body);
+  font-size: var(--fs-caption);
+}
+
+/* The card is laid out at its native pixel size and scaled to fit; the
+   stage takes the scaled box so nothing below it floats up. */
+.wrapped-page__stage {
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08), 0 8px 28px rgba(0, 0, 0, 0.12);
+}
+.wrapped-page__stage .wrapped-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scale(var(--wrapped-scale, 1));
+  transform-origin: top left;
+}
+
+.wrapped-page__hint {
+  margin: 1rem auto 0;
+  max-width: 40rem;
+  text-align: center;
+  font-size: var(--fs-caption);
+  color: var(--muted);
+  font-style: italic;
+}

@@ -82,6 +82,14 @@
   color: var(--muted-2);
   font-variant-numeric: tabular-nums;
 }
+/* Playoff round heads ("Level 3 · 4 games") read in ink: on a playoff
+   night the round is the news, a conference name is only filing. */
+.week-conf--round .week-conf__head {
+  color: var(--ink);
+}
+.week-conf__sep {
+  color: var(--muted-2);
+}
 
 /* "Show N more games from other conferences" — one control per day,
    full-width so it's a thumb target, not a text link. */
@@ -175,6 +183,38 @@
   font-size: var(--fs-caption);
 }
 
+/* Status cell: optional round chip + the drill-in link, right-aligned on
+   desktop. Not positioned, so the link's stretched ::after still anchors
+   to the row. */
+.game-row__end {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  min-width: 0;
+}
+
+/* Playoff round chip ("L3", "Sect. Final"). Same pill shape and type as
+   the team page's .schedule-row__round, but ink on paper: in this grid
+   press-red is reserved for winners and LIVE. */
+.game-row__round {
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
+  padding: 0.12rem 0.4rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-label);
+  line-height: 1.2;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+}
+
 .game-row__status {
   font-family: var(--font-display);
   font-size: var(--fs-caption);
@@ -260,6 +300,7 @@ a.game-row__details::after {
   text-overflow: ellipsis;
 }
 .game-side--won .game-side__name { font-weight: 700; }
+.game-side--tbd .game-side__name { color: var(--muted); }
 
 .game-side__score {
   font-family: var(--font-numeric);
@@ -308,11 +349,14 @@ a.game-row__details::after {
      swallowed all 294px, both team columns computed to 0px, and the day
      card's overflow clip hid the home score. Never reintroduce named
      areas here without assigning every one of them. */
-  .game-row__status,
+  .game-row__end,
   .game-row__summary,
   .game-row__recap {
     grid-column: 1 / -1;
     grid-row: auto;
+  }
+  .game-row__end {
+    justify-content: flex-start;
   }
   /* Two teams share one phone-width row, leaving each name ~108px — not
      enough for "Wisconsin Rapids Lincoln", "Eau Claire Memorial" or

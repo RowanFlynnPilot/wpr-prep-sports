@@ -72,7 +72,7 @@ export async function fetchDataset(sportId = DEFAULT_SPORT) {
   // dataset is picked up immediately without manual cache clears.
   const meta = await fetchMeta(sportId, sportBase);
   const v = encodeURIComponent(meta.last_updated ?? Date.now());
-  const [schools, games, standings, sponsors, seasonStats, spirit, potwOverrides, powerRankingsRaw, spotlightsRaw, regionalTop10Overrides] = await Promise.all([
+  const [schools, games, standings, sponsors, seasonStats, spirit, potwOverrides, powerRankingsRaw, spotlightsRaw, regionalTop10Overrides, allAreaRaw] = await Promise.all([
     fetchJson(`${DATA_BASE}/schools.json?v=${v}`),
     fetchJson(`${sportBase}/games.json?v=${v}`),
     fetchJson(`${sportBase}/standings.json?v=${v}`),
@@ -87,6 +87,9 @@ export async function fetchDataset(sportId = DEFAULT_SPORT) {
     fetchJsonOptional(`${sportBase}/power_rankings.json?v=${v}`),
     fetchJsonOptional(`${DATA_BASE}/spotlights.json?v=${v}`),
     fetchJsonOptional(`${DATA_BASE}/regional_top10.json?v=${v}`),
+    // Editorial All-Area teams (#/<sport>/all-area), keyed by sport then
+    // season. Optional like the rest of the editorial files.
+    fetchJsonOptional(`${DATA_BASE}/all_area.json?v=${v}`),
   ]);
   // Spirit file is a wrapper { photos: [...] } so editors can park
   // metadata alongside the photo list. Normalize to a flat array here.
@@ -121,6 +124,11 @@ export async function fetchDataset(sportId = DEFAULT_SPORT) {
       ? regionalTop10Overrides[sportId] ?? null
       : null;
 
+  // all_area.json is keyed by sport then season ({ football: { "2026-27":
+  // {...} } }). Pull this sport's seasons map; keys that start with an
+  // underscore (_comment, _example) are documentation, never entries.
+  const allArea = allAreaEntriesFor(allAreaRaw, sportId);
+
   return {
     sport: sportId,
     // Non-null when the reader flipped to an archived season — pages
@@ -136,6 +144,8 @@ export async function fetchDataset(sportId = DEFAULT_SPORT) {
     potwOverride,
     powerRankings,
     regionalTop10Override,
+    // { "<season>": entry } for this sport, or {} when nothing is filed.
+    allArea,
     // Wrapper { spotlights: [...] } so editors can park notes alongside.
     spotlights: Array.isArray(spotlightsRaw)
       ? spotlightsRaw
@@ -181,6 +191,25 @@ export async function fetchMiniDataset(sportId = DEFAULT_SPORT) {
     games,
     source: feedIsFresh ? "mini" : "games",
   };
+}
+
+/**
+ * This sport's All-Area entries from the cross-sport all_area.json:
+ * { "<season>": entry }. Underscore-prefixed keys at either level are
+ * editor notes/examples and are skipped, so a filled-in `_example`
+ * never reaches the page. Exported for tests.
+ */
+export function allAreaEntriesFor(raw, sportId) {
+  if (!raw || typeof raw !== "object" || Array.isArray(raw)) return {};
+  const bySeason = raw[sportId];
+  if (!bySeason || typeof bySeason !== "object" || Array.isArray(bySeason)) return {};
+  const out = {};
+  for (const [season, entry] of Object.entries(bySeason)) {
+    if (season.startsWith("_")) continue;
+    if (!entry || typeof entry !== "object" || Array.isArray(entry)) continue;
+    out[season] = entry;
+  }
+  return out;
 }
 
 function isOverrideExpired(o) {

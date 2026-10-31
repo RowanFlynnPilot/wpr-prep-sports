@@ -1,3 +1,5 @@
+import { playoffRoundsInOrder } from "./bracket.js";
+
 /**
  * Week selection: pick the current school week if it has games, else fall
  * back to the most-recent week with games (so the "This Week" section is
@@ -98,4 +100,57 @@ export function groupByDay(games) {
     ([a], [b]) => a.localeCompare(b),
   );
   return sorted;
+}
+
+/**
+ * Split one day's games for the week grid: playoff games grouped by round
+ * in bracket order (utils/bracket.js), regular-season games left as they
+ * were for the conference buckets. In October a playoff Friday used to
+ * file "Marshfield at Monona Grove" under "Wisconsin Valley" with no
+ * round anywhere on the row.
+ *
+ * Within a round, home-region games lead, then games with more tracked
+ * sides, then kickoff time; ties keep schedule-file order. A playoff game
+ * with no round name groups under "Playoffs", after the named rounds.
+ *
+ * Returns { rounds: [{ round, games }], regular: [game] }.
+ */
+export function splitPlayoffRounds(games, homeRegionIds = null) {
+  const byRound = new Map();
+  const regular = [];
+  for (const g of games ?? []) {
+    if (!g.playoff) {
+      regular.push(g);
+      continue;
+    }
+    const r = g.playoff_round || "Playoffs";
+    if (!byRound.has(r)) byRound.set(r, []);
+    byRound.get(r).push(g);
+  }
+  const order = playoffRoundsInOrder(games);
+  const rank = (r) => {
+    const i = order.indexOf(r);
+    return i < 0 ? order.length : i;
+  };
+  const local = (g) =>
+    homeRegionIds
+      ? (homeRegionIds.has(g.home.school_id) ? 1 : 0) + (homeRegionIds.has(g.away.school_id) ? 1 : 0)
+      : 0;
+  const tracked = (g) => (g.home.school_id ? 1 : 0) + (g.away.school_id ? 1 : 0);
+  const rounds = [...byRound.entries()]
+    .sort(([a], [b]) => rank(a) - rank(b) || a.localeCompare(b))
+    .map(([round, list]) => ({
+      round,
+      games: list
+        .map((g, i) => ({ g, i }))
+        .sort(
+          (a, b) =>
+            local(b.g) - local(a.g) ||
+            tracked(b.g) - tracked(a.g) ||
+            new Date(a.g.date).getTime() - new Date(b.g.date).getTime() ||
+            a.i - b.i,
+        )
+        .map(({ g }) => g),
+    }));
+  return { rounds, regular };
 }

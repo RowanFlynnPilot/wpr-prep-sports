@@ -30,6 +30,10 @@ export default function Hero({
   // leading with tonight's Game of the Week, else null.
   tonight = null,
   gotwLabel = null,
+  // Postseason: the featured final ended a tracked team's season (a
+  // playoff loss to an untracked side, utils/games.isTrackedElimination).
+  // The eyebrow says so instead of a bare "Final"; the recap already does.
+  seasonOver = false,
 }) {
   const sportPrefix = useSportPrefix();
   if (offSeason) {
@@ -61,7 +65,7 @@ export default function Hero({
   const isFinal = game.status === "final";
   // On game day the lead is tonight's Game of the Week, and the eyebrow
   // says so: "Tonight · Game of the Week", then "Live · …", then "Final · …".
-  const state = isFinal ? "Final" : game.status === "in_progress" ? "Live" : tonight ? todayWord(game.date) : "Up Next";
+  const state = isFinal ? (seasonOver ? "Season over" : "Final") : game.status === "in_progress" ? "Live" : tonight ? todayWord(game.date) : "Up Next";
   const eyebrow = tonight && gotwLabel ? `${state} · ${gotwLabel}` : state;
   const slateLine = tonight ? slateSummary(tonight) : "";
 
@@ -124,7 +128,9 @@ export default function Hero({
             without it the two team names (h3) sat directly under the page
             h1 — a level skip that leaves screen-reader users navigating a
             broken outline. Styling is unchanged; .eyebrow carries it. */}
-        <h2 className="eyebrow eyebrow--accent">{eyebrow}</h2>
+        <h2 className={`eyebrow ${seasonOver && isFinal ? "hero__eyebrow--over" : "eyebrow--accent"}`}>
+          {eyebrow}
+        </h2>
         <span className="hero__date">
           {formatGameDay(game.date)} · {formatGameDate(game.date)}
           {!isFinal && <> · {formatGameTime(game.date)}</>}
@@ -266,7 +272,16 @@ function TeamRow({ team, school, won, showScore }) {
     <div className={`hero__team ${won ? "hero__team--won" : ""}`}>
       <TeamLogo team={team} school={school} size="xl" />
       <div className="hero__team-text">
-        <h3 className="hero__team-name">
+        <h3
+          className={
+            "hero__team-name" +
+            // One step down when any single word is long: the grid column
+            // beside the score cannot wrap "PARDEEVILLE" or "WITTENBERG-BIRNAMWOOD".
+            (Math.max(0, ...String(team.name ?? "").split(/[\s-]+/).map((w) => w.length)) >= 10
+              ? " hero__team-name--long"
+              : "")
+          }
+        >
           <TeamLink team={team}>{team.name}</TeamLink>
         </h3>
         {school?.mascot && (

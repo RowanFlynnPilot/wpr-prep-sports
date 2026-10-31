@@ -112,6 +112,40 @@ last line, then `git log --author=Rowan -- data/football/boxscores` to
 see when a local refresh last landed. The sentinel does not watch stat
 coverage, only `meta.last_updated`.
 
+## Before state week
+
+State semifinals and finals reach the site only through WIAA's
+state-tournament pages (school schedules stop at Level 4 / Sectional
+Final; see docs/data-sources.md, "State-tournament games"). The hourly
+scrape fetches them automatically once a sport's series has started.
+Before each state week (2026: volleyball and boys soccer Nov 5-7,
+football Nov 19-20, 8-player football one week after its Level 4):
+
+1. **Keep the sport in the cron list** (`scrape.yml` `SPORTS`) until its
+   state final is over: football through Nov 20, volleyball and boys
+   soccer through Nov 7. Dropping a sport early freezes it before the
+   title game.
+2. **When the field is set** (the night of the sectional final / Level 4),
+   check the sport's tournament page (e.g.
+   `https://www.wiaawi.org/sports/girls-volleyball/girls-volleyball-tournament`)
+   for pairings. Then run
+   `python main.py --sport volleyball --season 2026-27 --dry-run --no-stats`
+   and look for the `WIAA state pages: N ... state game(s)` line. N > 0
+   once WIAA has typed the pairings; a tracked school's game then
+   appears in the dataset as "State Semifinal" etc.
+3. **During the games**, live scores do not cover state games (ScoreCenter
+   has no state round). Finals appear after WIAA types them onto the
+   tournament page; check the next hourly scrape.
+4. **If a tracked team's state game is missing or wrong** (the prose
+   changed shape, or WIAA is slow), add it to `data/state_games.json`
+   (schema in docs/data-sources.md), commit, and let the next scrape
+   merge it. Then capture fresh fixtures
+   (`python tests/capture_fixtures.py --state`) and fix the parser in
+   `sources/wiaa_state.py` so the override isn't needed next time.
+5. **After the season**, the block moves to the sport's `-state-archive`
+   page. The code reads both pages, so later scrapes of that season keep
+   the games.
+
 ## Secrets & repo variables (complete inventory)
 
 | Name | Kind | Where set | Used by | Unset means |

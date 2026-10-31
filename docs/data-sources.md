@@ -65,6 +65,84 @@ always reflects the *current* season even when the grid is historical.
 - Logos hosted on the same CDN: `schools.wiaawi.org/Upload/School/Logo/Logo_<uuid>.jpg`. Linkable directly.
 - Live in-game reporting tool used by schools: `http://halftime.wiaawi.org` — evaluate for Friday-night live updates in v2.
 
+### State-tournament games — `www.wiaawi.org` sport pages (`sources/wiaa_state.py`)
+
+**School schedules never list state games.** `Directory/Schedule/Index`
+ends at the last series round: Edgar's 2025 football schedule
+(TeamID 128267) stops at the Nov 14 "WIAA Tournament - Level4" win over
+Mondovi, with no row for the Nov 20 D6 final (Darlington 42, Edgar 18).
+Gilman's 8-player schedule stops at its Nov 8 Level 4 (a semifinal; the
+8-player title game was Nov 15), and volleyball/soccer/basketball/hockey
+schedules stop at "Sectional Final". ScoreCenter `GameResultsList`
+stops at the same place (`Global/GetTournRounds` lists rounds 1-4 for
+football, 1-5 for volleyball/soccer), and the tournaments.wiaawi.org
+bracket files end in "State Qualifier" slots and stop updating on the
+Level 4 / sectional night. Until 2026-10-31 no season in `data/` held a
+state game.
+
+The state games exist only as hand-typed prose on two WIAA pages per
+sport (paths in `wiaa_state.STATE_PAGES`; the slugs are irregular, e.g.
+`-state-archive` vs `-state-archives`):
+
+| Page | What it holds |
+|---|---|
+| `/sports/<sport>/<sport>-tournament` | The current season's "Tournament Schedule & Results" block: placeholders ("#2 Seed vs. #7 Seed") until the field is set, then pairings, then results. The hero's `<time datetime>` gives the year. |
+| `/sports/<sport>/<sport>-state-archive(s)` | One accordion per year ("2025 Tournament Results"). The current block lands here after the season. |
+
+`main.collect_state_games` fetches both (2 requests per tournament,
+1 s apart; football has two tournaments, 11- and 8-player) only once
+some tracked schedule has a tournament row, and the normalizer merges
+the games for tracked schools with `playoff: true` and a round from the
+frontend's `ROUND_ORDER`: "State Quarterfinal", "State Semifinal",
+"State Final" (soccer's "Final"), "State Championship" (everything
+WIAA calls "Championship", plus every 11-player football game at Camp
+Randall). These games are neutral-site, so home/away is canonical
+(anchors sorted alphabetically, first = away) to keep the id stable
+from pairing to final. A game a school schedule did list is merged
+into that row instead of being duplicated.
+
+**Manual override: `data/state_games.json`.** If the prose changes shape
+or WIAA posts late, add the game by hand. The file is optional (absent
+= no overrides). Its rows win over parsed rows for the same day and
+pair, unless the override is scoreless and the parsed row has a score.
+
+```json
+{
+  "games": [
+    {
+      "sport": "volleyball",
+      "season": "2026-27",
+      "round": "State Semifinal",
+      "date": "2026-11-05",
+      "time": "9 a.m.",
+      "home": "newman-catholic",
+      "away": "Florence",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [[25, 20], [20, 25], [25, 18], [25, 22]],
+      "venue": "Resch Center, Green Bay, Wis.",
+      "division": "5",
+      "note": "OT"
+    }
+  ]
+}
+```
+
+| Field | Required | Notes |
+|---|---|---|
+| `sport`, `season` | yes | as passed to `main.py --sport/--season` |
+| `round` | yes | `State Quarterfinal`, `State Semifinal`, `State Final` or `State Championship` |
+| `date` | yes | ISO date, local |
+| `home`, `away` | yes | manifest id (`newman-catholic`) or WIAA display name |
+| `time` | no | "9 a.m." / "7:30 PM"; default 7 PM |
+| `home_score`, `away_score` | no | both or neither; sets won for volleyball |
+| `set_scores` | no | volleyball, `[home, away]` per set |
+| `venue`, `division`, `note` | no | |
+
+`home`/`away` only pair the scores with the teams; the published
+orientation is still the canonical one. A malformed row is skipped with
+a printed warning, never failing the scrape.
+
 ## 2. Bound — `gobound.com` (deferred — needs JS rendering)
 
 CLAUDE.md originally listed Bound as primary. Inspection on 2026-05-22 showed

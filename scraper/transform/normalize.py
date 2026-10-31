@@ -95,8 +95,15 @@ def build_dataset(
     raw_team_schedules: list[dict],
     sport: str,
     season: str,
+    state_games: list | None = None,
 ) -> Dataset:
-    """Combine the manifest with raw per-team schedules into a Dataset."""
+    """Combine the manifest with raw per-team schedules into a Dataset.
+
+    `state_games` are `sources.wiaa_state.StateGame` rows (WIAA's state-
+    tournament pages + data/state_games.json). School schedules never list
+    state-level games, so these are merged in before standings are built —
+    a state final counts toward the overall record like any other game.
+    """
     sport_enum = Sport(sport)
 
     schools_out = _schools_to_model(manifest)
@@ -174,6 +181,18 @@ def build_dataset(
                     games[game.id] = game
                 elif ex_scored and in_scored:
                     _warn_if_scores_disagree(existing, game)
+
+    if state_games:
+        _merge_state_games(
+            games,
+            state_games_to_games(
+                state_games,
+                sport=sport_enum,
+                season=season,
+                name_to_id=name_to_id,
+                id_to_name=id_to_name,
+            ),
+        )
 
     games_list = sorted(games.values(), key=lambda g: g.date)
     standings = _build_standings(
@@ -385,6 +404,103 @@ def _raw_to_game(
         playoff=playoff,
         playoff_round=playoff_round,
     )
+
+
+def _side_anchor(side: TeamScore) -> str:
+    return side.school_id or _slugify(side.name)
+
+
+def state_games_to_games(
+    rows: Iterable,
+    *,
+    sport: Sport,
+    season: str,
+    name_to_id: dict[str, str],
+    id_to_name: dict[str, str],
+) -> list[Game]:
+    """
+    StateGame rows (sources/wiaa_state.py) -> Game models, tracked games only.
+
+    State games are neutral-site and WIAA lists the WINNER first on result
+    lines but the higher seed first on the pre-game schedule, so neither
+    order is stable. Orientation is therefore canonical: the two anchors
+    (school id, else slugified name) sorted, first = away, second = home.
+    That keeps the game id identical from "scheduled" to "final", which the
+    boxscore files and favorites key on. Sides may be manifest ids (the
+    manual override file) or WIAA display names.
+    """
+    out: list[Game] = []
+    for r in rows:
+        sides = []
+        for name, score in ((r.team_a, r.score_a), (r.team_b, r.score_b)):
+            sid = name if name in id_to_name else _resolve_school_id(name, name_to_id)
+            display = id_to_name.get(sid, name) if sid else name
+            sides.append((sid, display, score))
+        if not sides[0][0] and not sides[1][0]:
+            continue
+        anchors = [sid or _slugify(display) for sid, display, _ in sides]
+        flip = anchors[0] > anchors[1]
+        away, home = (sides[1], sides[0]) if flip else (sides[0], sides[1])
+        date_iso = r.date.isoformat()
+        dt = _parse_datetime(date_iso, r.time)
+        if dt is None:
+            continue
+        scored = away[2] is not None and home[2] is not None
+        set_scores = [
+            {"away": b, "home": a} if flip else {"away": a, "home": b} for a, b in r.set_scores
+        ]
+        away_anchor, home_anchor = sorted(anchors)
+        out.append(
+            Game(
+                id=f"{sport.value}-{date_iso}-{away_anchor}-at-{home_anchor}",
+                sport=sport,
+                season=season,
+                date=dt,
+                home=TeamScore(school_id=home[0], name=home[1], score=home[2] if scored else None),
+                away=TeamScore(school_id=away[0], name=away[1], score=away[2] if scored else None),
+                status=GameStatus.FINAL if scored else GameStatus.SCHEDULED,
+                venue=r.venue,
+                sources=["wiaa"],
+                playoff=True,
+                playoff_round=r.round,
+                set_scores=set_scores,
+            )
+        )
+    return out
+
+
+def _merge_state_games(games: dict[str, Game], state: list[Game]) -> None:
+    """
+    Fold state games into the schedule-built `games` dict in place. A state
+    game that some school schedule DID list (same day, same two teams, any
+    orientation) keeps the schedule row's id and gains the state round, plus
+    the state score if the schedule row had none; otherwise it is added.
+    """
+    index = {
+        (g.date.date(), frozenset((_side_anchor(g.home), _side_anchor(g.away)))): gid
+        for gid, g in games.items()
+    }
+    for sg in state:
+        key = (sg.date.date(), frozenset((_side_anchor(sg.home), _side_anchor(sg.away))))
+        gid = index.get(key)
+        if gid is None:
+            games[sg.id] = sg
+            index[key] = sg.id
+            continue
+        ex = games[gid]
+        update: dict = {"playoff": True, "playoff_round": sg.playoff_round}
+        if not ex.venue and sg.venue:
+            update["venue"] = sg.venue
+        ex_scored = ex.home.score is not None and ex.away.score is not None
+        sg_scored = sg.home.score is not None and sg.away.score is not None
+        if sg_scored and not ex_scored:
+            same = _side_anchor(ex.home) == _side_anchor(sg.home)
+            home_pts = sg.home.score if same else sg.away.score
+            away_pts = sg.away.score if same else sg.home.score
+            update["home"] = ex.home.model_copy(update={"score": home_pts})
+            update["away"] = ex.away.model_copy(update={"score": away_pts})
+            update["status"] = GameStatus.FINAL
+        games[gid] = ex.model_copy(update=update)
 
 
 def _parse_datetime(date_iso: str, time_str: str | None) -> datetime | None:

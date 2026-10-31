@@ -69,6 +69,20 @@ page.
 | **Senior Spotlight** | "Senior Spotlight presented by ___" | `spotlight:senior` | **Shipped** (`data/spotlights.json`, see `docs/spotlights.md`) | Photo studio, tux rental, college consultant |
 | **Head-to-Head history** (multi-season series on game pages) | "Head-to-head presented by ___" | `rivalry` | **Shipped** (2025-26 archive distilled via `build_history.py`) | Sports bar, auto dealer, community bank |
 | **Weekly Roundup** (Saturday digest for the WPR newsletter) | "Weekly Roundup presented by ___" | `digest` | **Shipped** (`npm run digest` / digest.yml cron → `data/digest/latest.html`) | Grocery, bank, regional brand |
+| **Road to State** (playoff strip at the top of the Scores tab — every local team still alive, level by level) | "Road to State presented by ___" | `road` | **Shipped** (slot + media-kit row 2026-10-31; the strip itself ships with the postseason work) | Bank, credit union, auto dealer, sports bar |
+| **All-Area Team** (season-ending honors page per sport: Player/Coach of the Year, first team, second team, honorable mention) | "All-Area Team presented by ___" | `all-area` | **Shipped** 2026-10-31 (`#/<sport>/all-area`, `data/all_area.json`, see `docs/all-area.md`). One slot, every sport's page; sell per season or per sport by swapping the name at announcement time. | Orthodontist, sports medicine, trophy & engraving shop |
+
+### Season-arc slots (added 2026-10-31)
+
+Two placements follow the calendar rather than a page: **`road`** runs
+only while the playoff strip has teams alive on it (roughly the third
+week of October through the state finals in football; each sport's
+tournament window otherwise), and **`all-area`** runs from the day the
+editor's `published` date in `data/all_area.json` arrives until the next
+season's team replaces it. Both ship empty; both show Available on the
+`#/sponsor` media kit until `name` is set. The All-Area page is reached
+from `#/<sport>/all-area` — link it from the announcement story, and the
+sponsor line rides along under the headline on every visit.
 
 ## Annual / seasonal packages
 

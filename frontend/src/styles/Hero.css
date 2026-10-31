@@ -45,6 +45,12 @@
   font-size: var(--fs-ui);
   color: rgba(255, 255, 255, 0.85);
 }
+/* "Season over" — a playoff loss that ended a tracked team's run. Red
+   belongs to the winner and LIVE, so this eyebrow steps down to the
+   hero's quiet white instead of the accent. */
+.hero .hero__eyebrow--over {
+  color: rgba(255, 255, 255, 0.78);
+}
 .hero__venue {
   font-family: var(--font-body);
   font-style: italic;
@@ -98,9 +104,15 @@
   -webkit-line-clamp: 2;
   line-clamp: 2;
   overflow: hidden;
-  overflow-wrap: normal;
+  /* A single word wider than the column ("PARDEEVILLE" beside a two-digit
+     score at 1280) was clipped mid-word. Long names drop a step (the JSX
+     adds --long), and as a last resort a word may hyphenate or break
+     rather than be cut. */
+  overflow-wrap: break-word; /* not "anywhere": that would let the grid column collapse */
+  hyphens: auto;
   text-wrap: balance;
 }
+.hero__team-name--long { font-size: var(--fs-h3); }
 .hero__team-mascot {
   font-family: var(--font-body);
   font-style: italic;

@@ -227,14 +227,12 @@ function FilterChip({ label, active, onClick }) {
 // champion gold treatment. Football tops out at Level 4 (Camp Randall);
 // other sports use explicitly state-named rounds. Sectional Final
 // winners are "advancing to state" but not champions.
-// 11-player football's Level 4 is the state semifinal (Camp Randall is a
-// week later and the scraper files it separately); 8-player's 16-team
-// bracket ends at Level 4, so only an 8P-division team's Level 4 is a title.
+// Football's Level 4 is a state semifinal for 11- and 8-player alike (the
+// 8-player final is a separate "State Championship" row a week later, now
+// ingested from WIAA's tournament pages). Only state-named finals are titles.
 const STATE_TITLE_ROUNDS = new Set(["State Final", "State Championship"]);
-function isTitleRound(round, journey) {
-  if (STATE_TITLE_ROUNDS.has(round)) return true;
-  const div = String(journey.school?.wiaa_division?.football ?? "");
-  return round === "Level 4" && div.startsWith("8P");
+function isTitleRound(round) {
+  return STATE_TITLE_ROUNDS.has(round);
 }
 
 function JourneyRow({ journey, rounds, lastRound }) {
@@ -244,7 +242,7 @@ function JourneyRow({ journey, rounds, lastRound }) {
   const finalGame = journey.games[journey.games.length - 1];
   const stillAlive = journey.alive;
   // A scheduled title game is not a title: the trophy waits for a final win.
-  const stateChamp = !!finalGame?.isFinal && !!finalGame?.won && isTitleRound(finalGame?.round ?? "", journey);
+  const stateChamp = !!finalGame?.isFinal && !!finalGame?.won && isTitleRound(finalGame?.round ?? "");
 
   return (
     <tr

@@ -17,8 +17,13 @@ export default function StaleBanner({
   activeMonths = FOOTBALL_FALLBACK_MONTHS,
   games = [],
   now = new Date(),
+  offSeason = false,
 }) {
-  if (!lastUpdatedIso) return null;
+  // Off-season (the dashboard's own test: last game > 14 days ago) is
+  // always silent. The month gate below already covers most of the gap,
+  // but a winter sport's activeMonths start Nov 1 while its opener is
+  // mid-November; nothing in a finished season's file can be "behind".
+  if (offSeason || !lastUpdatedIso) return null;
   const last = new Date(lastUpdatedIso);
   const ageHours = (now.getTime() - last.getTime()) / 3_600_000;
 

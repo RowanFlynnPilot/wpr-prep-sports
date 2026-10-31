@@ -14,6 +14,7 @@ import PlayerPage from "./pages/PlayerPage.jsx";
 import EmbedPage from "./pages/EmbedPage.jsx";
 import ConferenceEmbedPage from "./pages/ConferenceEmbedPage.jsx";
 import TeamsIndexPage from "./pages/TeamsIndexPage.jsx";
+import AllAreaPage from "./pages/AllAreaPage.jsx";
 import Skeleton from "./components/Skeleton.jsx";
 import NotFound from "./components/NotFound.jsx";
 
@@ -22,6 +23,17 @@ import NotFound from "./components/NotFound.jsx";
 // moves with them (imported inside each page component).
 const MediaKitPage = lazy(() => import("./pages/MediaKitPage.jsx"));
 const OgCardPage = lazy(() => import("./pages/OgCardPage.jsx"));
+// The season-wrapped share card is another generator target. Resolved
+// through import.meta.glob rather than a bare dynamic import so the build
+// still succeeds while that page is being written: an unmatched glob is
+// an empty object, and the route then renders nothing instead of failing
+// the whole bundle. Once pages/WrappedCardPage.jsx exists it is picked up
+// automatically (restart the dev server; the build sees it on its own).
+const WRAPPED_CARD_MODULES = import.meta.glob("./pages/WrappedCardPage.jsx");
+const WrappedCardPage = lazy(() => {
+  const load = WRAPPED_CARD_MODULES["./pages/WrappedCardPage.jsx"];
+  return load ? load() : Promise.resolve({ default: () => null });
+});
 import { indexSchools } from "./utils/schools.js";
 import { SchoolsContext } from "./utils/schoolsContext.js";
 import { useAnalytics } from "./utils/analytics.js";
@@ -83,6 +95,17 @@ export default function App() {
           from the UI. Bypasses SportShell so the screenshot only captures
           the card with no widget chrome around it. Null fallback is safe:
           the generator waits for [data-og-ready], not first paint. */}
+      {/* Season-wrapped share card for one school — same generator contract
+          as the game card (no chrome, waits for [data-og-ready]). The static
+          "wrapped" segment outranks :sport, so this never shadows a game. */}
+      <Route
+        path="/card/wrapped/:sport/:schoolId"
+        element={
+          <Suspense fallback={null}>
+            <WrappedCardPage />
+          </Suspense>
+        }
+      />
       <Route
         path="/card/:sport/:gameId"
         element={
@@ -328,6 +351,30 @@ function SportShell() {
             sponsors={dataset.sponsors}
             sportConfig={sportConfig}
           />
+        }
+      />
+      {/* The editorial All-Area team — data/all_area.json, newest published
+          entry for this sport; an empty state until the editor files one. */}
+      <Route
+        path="/all-area"
+        element={
+          <AllAreaPage
+            dataset={dataset}
+            schoolIndex={schoolIndex}
+            sponsors={dataset.sponsors}
+            sportConfig={sportConfig}
+          />
+        }
+      />
+      {/* Season Wrapped card at the sport-prefixed address the team page links
+          to (#/football/card/wrapped/edgar); the top-level /card/wrapped route
+          serves the PNG generator and bare links. */}
+      <Route
+        path="/card/wrapped/:schoolId"
+        element={
+          <Suspense fallback={null}>
+            <WrappedCardPage dataset={dataset} schoolIndex={schoolIndex} sportConfig={sportConfig} />
+          </Suspense>
         }
       />
       {/* Chrome-free conference scores+standings module for article

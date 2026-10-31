@@ -190,6 +190,23 @@ const INVENTORY = [
         slots: ["spotlight:senior"],
         preview: { label: "Senior Spotlight presented by", tone: "feature" },
       },
+      {
+        title: "Road to State",
+        blurb: "The playoff strip at the top of the Scores tab — every local team still alive, level by level, through the state tournament. The widget's biggest weeks of the year, under one name.",
+        fit: "Bank · credit union · auto dealer · sports bar",
+        rateKey: "road",
+        slots: ["road"],
+        preview: { label: "Road to State presented by", tone: "feature" },
+      },
+      {
+        title: "All-Area Team",
+        blurb: "The season-ending honors page — Player and Coach of the Year, first team, second team, honorable mention. The page families screenshot and frame; your name sits under the headline.",
+        fit: "Orthodontist · sports medicine · trophy & engraving shop",
+        rateKey: "all-area",
+        slots: ["all-area"],
+        countLabel: "per sport",
+        preview: { label: "All-Area Team presented by", tone: "feature" },
+      },
     ],
   },
   {

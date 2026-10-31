@@ -6,7 +6,8 @@ saves the raw responses under tests/fixtures/. Run on demand — never in
 CI — when WIAA changes markup or at the start of a season:
 
   cd scraper
-  python tests/capture_fixtures.py
+  python tests/capture_fixtures.py          # directory/schedule (3 requests)
+  python tests/capture_fixtures.py --state  # state-tournament pages (6 requests)
 
 The tests assert structural invariants (rows parse, dates are ISO,
 names are non-empty), not exact game lists, so refreshed fixtures don't
@@ -33,7 +34,52 @@ SPORT = "football"
 DELAY = 1.0
 
 
+# (fixture name, page path) for `--state`, trimmed with
+# wiaa_state.trim_page_for_fixture so each file holds only what the parsers read.
+STATE_FIXTURES = [
+    ("wiaa_state_football_archive.html", "/sports/football/football-state-archive"),
+    (
+        "wiaa_state_football_8p_archive.html",
+        "/sports/8-player-football/8-player-football-state-archive",
+    ),
+    (
+        "wiaa_state_volleyball_archive.html",
+        "/sports/girls-volleyball/girls-volleyball-state-archive",
+    ),
+    ("wiaa_state_boys_soccer_archive.html", "/sports/boys-soccer/boys-soccer-state-archive"),
+    (
+        "wiaa_state_volleyball_tournament.html",
+        "/sports/girls-volleyball/girls-volleyball-tournament",
+    ),
+    ("wiaa_state_football_tournament.html", "/sports/football/football-tournament"),
+]
+
+
+def capture_state() -> int:
+    """Refresh the state-tournament page fixtures. The archive tests assert
+    real 2025 results, so once newer years stack on top, bump `keep_years`
+    (or move the expected scores forward) to keep 2025 in the trimmed file."""
+    from sources import wiaa_state
+
+    FIXTURE_DIR.mkdir(exist_ok=True)
+    with httpx.Client(
+        timeout=25.0, follow_redirects=True, headers={"User-Agent": wiaa_state.USER_AGENT}
+    ) as client:
+        for i, (name, path) in enumerate(STATE_FIXTURES, 1):
+            print(f"{i}/{len(STATE_FIXTURES)} {path}")
+            r = client.get(wiaa_state.BASE_URL + path)
+            r.raise_for_status()
+            (FIXTURE_DIR / name).write_text(
+                wiaa_state.trim_page_for_fixture(r.text), encoding="utf-8"
+            )
+            time.sleep(DELAY)
+    print(f"state fixtures written to {FIXTURE_DIR}")
+    return 0
+
+
 def main() -> int:
+    if "--state" in sys.argv[1:]:
+        return capture_state()
     FIXTURE_DIR.mkdir(exist_ok=True)
     manifest = load_manifest()
     school = next((s for s in manifest.schools if s.id == SCHOOL_ID), None)

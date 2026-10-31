@@ -5,7 +5,8 @@ without network access. Refresh with:
 
 ```bash
 cd scraper
-python tests/capture_fixtures.py
+python tests/capture_fixtures.py          # WIAA directory/schedule fixtures
+python tests/capture_fixtures.py --state  # WIAA state-tournament page fixtures
 ```
 
 Refresh when WIAA changes markup (a fixture test failing after a refresh
@@ -19,6 +20,8 @@ shouldn't require changing any test.
 | `wiaa_directory_school.html` | `Directory/School/GetDirectorySchool` | `parse_team_entries_html` (SSID/TeamID rows) |
 | `wiaa_schedule.html` | `Directory/Schedule/Index` | `parse_team_schedule_html` (game rows) |
 | `wiaa_schedule.meta.json` | — | which school/sport/TeamID the schedule fixture came from |
+| `wiaa_state_*_archive.html` | `www.wiaawi.org/sports/<sport>/<sport>-state-archive` (trimmed to the newest two year accordions) | `wiaa_state.parse_archive_page`: real 2025 state results for football (11-player, 8-player), volleyball, boys soccer |
+| `wiaa_state_*_tournament.html` | `www.wiaawi.org/sports/<sport>/<sport>-tournament` (trimmed to hero + schedule block) | `wiaa_state.parse_tournament_page`: the 2026 pre-tournament placeholder page; tests fill in the placeholder lines |
 
 Still TODO (capture when their seasons resume): Bound team page,
 MaxPreps box score, Wisconsin Prep Hockey game page — their parsers

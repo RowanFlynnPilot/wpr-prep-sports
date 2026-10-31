@@ -1,0 +1,191 @@
+/* =========================================================================
+   Off-season recap — "How 2025–26 ended" on the Scores tab between a
+   sport's last final and the next schedule landing. Paper surface, hairline
+   rules, one red mark (the champion tag: red belongs to the winner).
+   ========================================================================= */
+
+.offseason-recap {
+  margin-bottom: 2rem;
+}
+
+.offseason-recap__kicker,
+.offseason-recap__conf-name {
+  font-size: var(--fs-ui);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin: 0 0 0.5rem;
+}
+
+/* --- Tournament ------------------------------------------------------- */
+.offseason-recap__state {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--card);
+  padding: 0.85rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.offseason-recap__state-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.offseason-recap__state-row {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  grid-template-areas:
+    "logo team result"
+    "logo detail detail";
+  align-items: center;
+  column-gap: 0.6rem;
+  row-gap: 0.1rem;
+  padding: 0.55rem 0;
+  border-top: 1px solid var(--line);
+}
+.offseason-recap__state-row:first-child {
+  border-top: 0;
+  padding-top: 0.15rem;
+}
+.offseason-recap__state-row > .team-logo,
+.offseason-recap__state-row > :first-child {
+  grid-area: logo;
+  align-self: start;
+}
+
+.offseason-recap__state-team {
+  grid-area: team;
+  min-width: 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--fs-ui);
+  overflow-wrap: anywhere;
+}
+/* Tap target: the name link stretches to 44px tall. */
+.offseason-recap__state-team .team-link,
+.offseason-recap__team .team-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+.offseason-recap__state-result {
+  grid-area: result;
+  font-family: var(--font-display);
+  font-size: var(--fs-label);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  white-space: nowrap;
+}
+.offseason-recap__state-result--champ {
+  color: var(--accent-700);
+}
+
+.offseason-recap__state-detail {
+  grid-area: detail;
+  font-family: var(--font-body);
+  font-size: var(--fs-small);
+  color: var(--muted);
+}
+
+.offseason-recap__none {
+  margin: 0 0 0.35rem;
+  font-family: var(--font-body);
+  font-size: var(--fs-ui);
+}
+
+.offseason-recap__note {
+  margin: 0.5rem 0 0;
+  font-family: var(--font-body);
+  font-size: var(--fs-caption);
+  font-style: italic;
+  color: var(--muted);
+}
+
+/* --- Conference finals ------------------------------------------------ */
+.offseason-recap__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+  gap: 1rem;
+}
+
+.offseason-recap__conf {
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--card);
+  padding: 0.85rem 1rem 0.5rem;
+}
+
+.offseason-recap__table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: auto;
+}
+.offseason-recap__table th {
+  font-family: var(--font-display);
+  font-size: var(--fs-label);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-align: left;
+  padding: 0 0 0.25rem;
+  border-bottom: 1px solid var(--line);
+}
+.offseason-recap__table td {
+  padding: 0;
+  border-bottom: 1px solid var(--line);
+  vertical-align: middle;
+}
+.offseason-recap__table tr:last-child td {
+  border-bottom: 0;
+}
+.offseason-recap__table .num {
+  text-align: right;
+  font-family: var(--font-numeric);
+  font-variant-numeric: tabular-nums;
+  font-size: var(--fs-small);
+  white-space: nowrap;
+  padding-left: 0.6rem;
+}
+.offseason-recap__overall {
+  color: var(--muted);
+}
+
+.offseason-recap__rank {
+  width: 1.5rem;
+  font-family: var(--font-numeric);
+  font-size: var(--fs-small);
+  color: var(--muted-2);
+}
+
+.offseason-recap__team {
+  font-family: var(--font-display);
+  font-size: var(--fs-ui);
+  overflow-wrap: anywhere;
+}
+
+.offseason-recap__champ {
+  display: inline-block;
+  margin-left: 0.4rem;
+  font-family: var(--font-display);
+  font-size: var(--fs-label);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-700);
+  white-space: nowrap;
+}
+
+/* --- Next season ------------------------------------------------------ */
+.offseason-recap__next {
+  margin: 1rem 0 0;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--line);
+  font-family: var(--font-body);
+  font-size: var(--fs-small);
+  color: var(--muted);
+}

@@ -161,9 +161,11 @@ needs individual-sport modeling), then baseball/softball/track (spring).
   playoff weeks (an upcoming playoff game, or one less than seven days
   old) the Playoff Bracket leads the Standings tab; journeys sort alive
   teams first (`utils/bracket.js` `alive`) and the toolbar says how many
-  are still alive. Football's "Level 4" is the 11-player state semifinal;
-  only an 8P-division team's Level 4 is a title (bracket trophy and
-  `utils/recap.js` wording both check `wiaa_division.football`). A sport
+  are still alive. Football's "Level 4" is a state semifinal for 11- and
+  8-player alike; titles are the "State Final" / "State Championship" rows
+  that `scraper/sources/wiaa_state.py` reads from WIAA's tournament and
+  state-archive pages (school schedules and ScoreCenter stop one round
+  short), with `data/state_games.json` as a manual override. A sport
   is in season when its month is active AND `nextSeasonStart` has passed
   AND `seasonEnd` (fall sports: the day after state) has not
   (`utils/inSeason.js`, used by the mini and the sport strip), so Nov 1
@@ -173,6 +175,23 @@ needs individual-sport modeling), then baseball/softball/track (spring).
   early. Football divisions come from WIAA's placement PDFs
   (`scraper/scripts/divisions_from_wiaa_sheets.py`) plus the bracket
   backfill for 8-player.
+- **Postseason surfaces** (2026-10-31) — `utils/postseason.js` is the one
+  view of the playoffs (alive/eliminated per tracked team, next game,
+  rounds). **Road to State** (`components/RoadToState.jsx`, sponsor slot
+  `road`) leads the Scores tab while any tracked team is alive; the hero
+  prefers a tracked team's playoff win over an elimination and says
+  "Season over" when only an elimination remains; This Week groups
+  playoff games by round with a round chip; Game of the Week allows one
+  untracked or TBD side in the postseason; team pages carry a season-state
+  banner ("Still alive · Level 4 · Fri Nov 6", "Season over · 9-2 · Lost
+  Level 2 to Wrightstown 9-0") plus a **Season Wrapped** share card
+  (`pages/WrappedCardPage.jsx`, `#/<sport>/card/wrapped/<id>` and
+  `#/card/wrapped/<sport>/<id>`, PNGs via
+  `scraper/scripts/generate_wrapped_cards.py`, docs/wrapped-cards.md).
+  **All-Area team** page (`#/<sport>/all-area`, editorial
+  `data/all_area.json`, slot `all-area`, docs/all-area.md). Off-season
+  sport pages lead with "How <season> ended" (`components/OffSeasonRecap.jsx`)
+  and the masthead pill reads "<season> final".
 - Per-school embeds (`#/<sport>/embed/<id>` + media-kit builder), Senior
   Spotlights, weekly digest, rivalry/head-to-head history, season archive
   selector, division filter chips (power rankings + bracket)

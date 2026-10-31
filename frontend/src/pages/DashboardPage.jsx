@@ -28,7 +28,10 @@ import SpiritStrip from "../components/SpiritStrip.jsx";
 import SeniorSpotlight from "../components/SeniorSpotlight.jsx";
 import PowerRankings from "../components/PowerRankings.jsx";
 import RegionalTop10 from "../components/RegionalTop10.jsx";
-import { pickFeaturedGame, tickerGames } from "../utils/games.js";
+import RoadToState from "../components/RoadToState.jsx";
+import OffSeasonRecap from "../components/OffSeasonRecap.jsx";
+import { isTrackedElimination, pickFeaturedGame, tickerGames } from "../utils/games.js";
+import { postseasonState } from "../utils/postseason.js";
 import { homeRegionSchoolIds } from "../utils/schools.js";
 import { pickFeaturedWeek, previousWeekResults } from "../utils/weeks.js";
 import { formatWeekRange, localDate } from "../utils/dates.js";
@@ -165,6 +168,20 @@ export default function DashboardPage({
     return d && !Number.isNaN(d.getTime()) ? d : null;
   }, [offSeason, sportConfig]);
 
+  // Off-season with last season still in the dataset (every off-season:
+  // the scraper rolls a sport over only once WIAA posts the new
+  // schedules, and new-season games put the page back in preseason).
+  // The Scores tab then leads with how that season ended instead of a
+  // "This Week" over its final March slate, and the masthead pill reads
+  // "2025–26 final" rather than a summer scrape timestamp.
+  const finishedSeason = offSeason ? (sportConfig?.season ?? null) : null;
+  const nextSeasonLabel = useMemo(() => {
+    const m = /^(\d{4})\D+(\d{2,4})$/.exec(finishedSeason ?? "");
+    if (!m) return null;
+    const start = Number(m[1]) + 1;
+    return `${start}–${String(start + 1).slice(-2)}`;
+  }, [finishedSeason]);
+
   const daysToNext = useMemo(() => {
     if (!nextSeasonStart) return null;
     return Math.max(0, Math.ceil((nextSeasonStart - Date.now()) / 86_400_000));
@@ -186,6 +203,16 @@ export default function DashboardPage({
     [games, schoolIndex, offSeason, anchorNow, homeRegion],
   );
 
+  // Postseason (utils/postseason.js): one view of who is alive, shared by
+  // the Road to State strip, the hero's playoff-week preference and the
+  // Standings tab's bracket-first order. Active from the first scheduled
+  // playoff game until a week after the last final.
+  const postseasonInfo = useMemo(
+    () => postseasonState(games, schoolIndex, anchorNow.getTime()),
+    [games, schoolIndex, anchorNow],
+  );
+  const postseason = postseasonInfo.active;
+
   // Hero pick, computed AFTER the marquee so it can avoid repeating it.
   // Both cards want the best local game on the next slate, so left alone
   // they land on the same one and the top of the page shows the same
@@ -194,8 +221,11 @@ export default function DashboardPage({
   // instead (opening night: the marquee takes Wausau West at Menomonie,
   // the hero takes D.C. Everest at Chippewa Falls).
   const featuredPick = useMemo(
-    () => pickFeaturedGame(games, anchorNow, homeRegion, marquee?.game?.id ?? null),
-    [games, anchorNow, homeRegion, marquee],
+    () =>
+      pickFeaturedGame(games, anchorNow, homeRegion, marquee?.game?.id ?? null, {
+        postseason,
+      }),
+    [games, anchorNow, homeRegion, marquee, postseason],
   );
 
   // Game day (utils/gameDay.js): from noon on a slate day the hero leads
@@ -213,6 +243,10 @@ export default function DashboardPage({
   const heroTonight = !!tonightGame;
   const heroIsMarquee = heroTonight && marquee?.game?.id === tonightGame.id;
   const featured = heroTonight ? tonightGame : featuredPick;
+  // On a playoff week the hero prefers a tracked team's win; when the only
+  // result left to lead with ended a tracked team's season, its eyebrow
+  // reads "Season over". Game day keeps its own eyebrow.
+  const heroSeasonOver = !heroTonight && isTrackedElimination(featured);
   const marqueeSold = !!sponsors?.slots?.[`marquee:${dataset.sport}`]?.name;
   // The strip steps aside only when the hero is showing its very game.
   const showMarquee = !heroIsMarquee || marqueeSold;
@@ -267,12 +301,14 @@ export default function DashboardPage({
   // information. With the grid showing, the ticker holds only what the
   // grid doesn't: earlier results, under a heading that says so.
   const earlier = useMemo(() => {
-    if (!showThisWeek) return recent;
+    // Off-season the recap replaces This Week, so the rail carries the
+    // season's final games itself.
+    if (!showThisWeek || finishedSeason) return recent;
     const inWeek = new Set(
       [...(week?.games ?? []), ...(lastWeek?.games ?? [])].map((g) => g.id),
     );
     return recent.filter((g) => !inWeek.has(g.id));
-  }, [recent, week, showThisWeek, lastWeek]);
+  }, [recent, week, showThisWeek, lastWeek, finishedSeason]);
 
   // The rail shows a dozen cards, not the whole three-week window: 84
   // cards was 22 screens of sideways scroll with Superior–New Richmond
@@ -316,16 +352,11 @@ export default function DashboardPage({
   // slot keep working.
   const hasStandingsTab = meaningfulStandings.length > 0 || games.some((g) => g.playoff);
 
-  // Postseason: once playoff games exist that are upcoming or less than a
-  // week old, the bracket outranks the conference tables on the Standings
-  // tab (it sat 5,476 px down the tab on a playoff weekend, below nine
-  // finished tables). The rest of the year the tables lead.
-  const postseason = useMemo(() => {
-    const now = new Date(anchorNow).getTime();
-    return games.some(
-      (g) => g.playoff && (g.status !== "final" || now - new Date(g.date).getTime() < 7 * 86_400_000),
-    );
-  }, [games, anchorNow]);
+  // Postseason (`postseason`, above): once playoff games exist that are
+  // upcoming or less than a week old, the bracket outranks the conference
+  // tables on the Standings tab (it sat 5,476 px down the tab on a playoff
+  // weekend, below nine finished tables). The rest of the year the tables
+  // lead.
   const bracketSection = games.some((g) => g.playoff) ? (
     <section>
       <div className="section-header">
@@ -471,6 +502,7 @@ export default function DashboardPage({
     <Layout
       lastUpdated={lastUpdated}
       dataStale={dataStale}
+      seasonFinal={finishedSeason ?? (dataset.archiveSeason ? sportConfig?.season : null)}
       sponsors={sponsors}
       footerStats={{
         sports: SPORT_IDS.length,
@@ -493,6 +525,7 @@ export default function DashboardPage({
           lastUpdatedIso={meta?.last_updated}
           activeMonths={sportConfig?.activeMonths}
           games={games}
+          offSeason={offSeason}
         />
       )}
 
@@ -556,6 +589,7 @@ export default function DashboardPage({
             daysToNext={daysToNext}
             tonight={heroTonight ? gameDay : null}
             gotwLabel={heroIsMarquee ? marquee.eyebrow : null}
+            seasonOver={heroSeasonOver}
           />
         </SectionBoundary>
         <SectionBoundary label="follow-prompt">
@@ -566,6 +600,32 @@ export default function DashboardPage({
       {showMarquee && (
         <SectionBoundary label="marquee">
           <Marquee pick={marquee} sportConfig={sportConfig} sponsors={sponsors} schoolIndex={schoolIndex} />
+        </SectionBoundary>
+      )}
+
+      {/* Road to State — the tracked teams still alive in the bracket and
+          where each plays next, while the postseason is on. Scores tab
+          only: on Standings the bracket itself leads. Renders nothing
+          outside the postseason or once every tracked team is out. */}
+      {activeTab === "scores" && !offSeason && (
+        <SectionBoundary label="road-to-state">
+          <RoadToState
+            state={postseasonInfo}
+            homeRegion={homeRegion}
+            sponsors={sponsors}
+            sportConfig={sportConfig}
+            now={anchorNow.getTime()}
+            onShowBracket={
+              hasStandingsTab
+                ? () => {
+                    setActiveTab("standings");
+                    requestAnimationFrame(() => {
+                      tabsAnchorRef.current?.scrollIntoView({ block: "start" });
+                    });
+                  }
+                : null
+            }
+          />
         </SectionBoundary>
       )}
 
@@ -631,7 +691,22 @@ export default function DashboardPage({
             </section>
           )}
 
-          {showThisWeek && (
+          {finishedSeason && (
+            <SectionBoundary label="offseason-recap">
+              <OffSeasonRecap
+                seasonLabel={finishedSeason}
+                nextSeasonLabel={nextSeasonLabel}
+                nextSeasonStart={nextSeasonStart}
+                standings={[...meaningfulStandings].sort(
+                  (a, b) => confNames.indexOf(a.conference) - confNames.indexOf(b.conference),
+                )}
+                games={games}
+                schoolIndex={schoolIndex}
+              />
+            </SectionBoundary>
+          )}
+
+          {showThisWeek && !finishedSeason && (
             <section>
               <div className="section-header">
                 <h2>{preseason ? "Opening Week" : "This Week"}</h2>
@@ -653,7 +728,13 @@ export default function DashboardPage({
             <section>
               <div className="section-header">
                 <h2>
-                  {preseason ? "Season Openers" : showThisWeek ? "Earlier Results" : "Recent Scores"}
+                  {finishedSeason
+                    ? `Final results of ${finishedSeason}`
+                    : preseason
+                      ? "Season Openers"
+                      : showThisWeek
+                        ? "Earlier Results"
+                        : "Recent Scores"}
                 </h2>
                 {!lastWeek && <Sponsor slot="ticker" sponsors={sponsors} variant="inline" />}
               </div>
@@ -669,7 +750,7 @@ export default function DashboardPage({
                     });
                   }}
                 >
-                  All {earlier.length} earlier results are in the Schedule
+                  All {earlier.length} {finishedSeason ? "final" : "earlier"} results are in the Schedule
                   <span aria-hidden="true"> ›</span>
                 </button>
               )}

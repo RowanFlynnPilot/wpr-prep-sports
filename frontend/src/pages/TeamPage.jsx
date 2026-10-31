@@ -8,11 +8,16 @@ import Sponsor from "../components/Sponsor.jsx";
 import SeasonLeaders from "../components/SeasonLeaders.jsx";
 import StandingsTable from "../components/StandingsTable.jsx";
 import FavoriteButton from "../components/FavoriteButton.jsx";
-import { formatGameDay, formatGameDate, formatGameTime } from "../utils/dates.js";
+import {
+  formatGameDay,
+  formatGameDate,
+  formatGameTime,
+  formatGameShortDay,
+} from "../utils/dates.js";
 import { isForfeitScore } from "../utils/games.js";
 import { todaysGameFor, todayWord } from "../utils/gameDay.js";
 import { recapForGame } from "../utils/recap.js";
-import { seasonSummary } from "../utils/seasonSummary.js";
+import { seasonSummary, seasonState } from "../utils/seasonSummary.js";
 import { useSportPrefix } from "../utils/links.js";
 import { recordLabels } from "../config/sports.js";
 import { rotatedBannerSlot } from "../utils/sponsorRotation.js";
@@ -66,6 +71,22 @@ export default function TeamPage({ dataset, schoolIndex, sponsors, sportConfig }
         (s.rows ?? []).some((r) => r.school_id === schoolId),
       ) ?? null,
     [dataset.standings, schoolId],
+  );
+
+  // Where the season stands (utils/seasonSummary.js seasonState): still
+  // alive and when the next round is, out and to whom, or over. Without
+  // it, Gilman's page read 9-0 / 3-0 with nothing saying it plays Level 4
+  // next Friday, and Stratford's looked mid-season a day after its exit.
+  const seasonNow = useMemo(
+    () =>
+      seasonState({
+        teamGames,
+        allGames: dataset.games,
+        schoolId,
+        schoolsById: schoolIndex,
+        sportConfig,
+      }),
+    [teamGames, dataset.games, schoolId, schoolIndex, sportConfig],
   );
 
   const summary = useMemo(
@@ -206,6 +227,16 @@ export default function TeamPage({ dataset, schoolIndex, sponsors, sportConfig }
         </div>
       </section>
 
+      {seasonNow && (
+        <SeasonStateBanner
+          state={seasonNow}
+          record={record}
+          schoolId={schoolId}
+          schoolIndex={schoolIndex}
+          sportPrefix={sportPrefix}
+        />
+      )}
+
       {summary && (
         <section className="season-summary" aria-label="Season summary">
           <span className="season-summary__label">Season Summary</span>
@@ -281,6 +312,94 @@ export default function TeamPage({ dataset, schoolIndex, sponsors, sportConfig }
           above stays independently sellable; this is the network buy. */}
       <Sponsor slot={rotatedBannerSlot(sponsors, "banner:team")} sponsors={sponsors} variant="banner" />
     </Layout>
+  );
+}
+
+/** "9-2", or "4-1-2" once a draw is on the books. */
+function recordText(wins, losses, ties) {
+  return ties > 0 ? `${wins}-${losses}-${ties}` : `${wins}-${losses}`;
+}
+
+/** "Fri Nov 6" in the home zone. */
+function shortDayDate(iso) {
+  // Same day as the hero's "Today · vs X" line: say "Today" (or "Tonight"
+  // from 5 PM) instead of repeating the date.
+  if (new Date(iso).toDateString() === new Date().toDateString()) return todayWord(iso);
+  const day = formatGameShortDay(iso);
+  return `${day.charAt(0)}${day.slice(1).toLowerCase()} ${formatGameDate(iso)}`;
+}
+
+/**
+ * One line under the hero: "Still alive · Level 4 · Fri Nov 6 · vs
+ * opponent TBD", "Season over · 9-2 · Lost Level 2 to Wrightstown 9-0",
+ * or "Season over · 3-6". Over seasons get a "Share this season" link to
+ * the wrapped card.
+ */
+function SeasonStateBanner({ state, record, schoolId, schoolIndex, sportPrefix }) {
+  const overall = recordText(record.wins, record.losses, record.ties);
+  const nameOf = (side) =>
+    (side?.school_id ? schoolIndex.get(side.school_id)?.name : null) ?? side?.name ?? "opponent";
+  const gameLink = (game, text) => (
+    <Link to={`${sportPrefix}/game/${game.id}`} className="season-state__link">
+      <span className="season-state__linktext">{text}</span> <span aria-hidden="true">›</span>
+    </Link>
+  );
+
+  let status;
+  let detail = null;
+  if (state.kind === "alive") {
+    status = "Still alive";
+    const where = state.opponent
+      ? `${state.isHome ? "vs" : "at"} ${nameOf(state.opponent)}`
+      : `${state.isHome === false ? "at" : "vs"} opponent TBD`;
+    const when = state.live ? "Live now" : shortDayDate(state.game.date);
+    detail = gameLink(state.game, `${state.round} · ${when} · ${where}`);
+  } else if (state.kind === "alive-tba") {
+    status = "Still alive";
+    const last = state.lastEntry;
+    detail = (
+      <>
+        {last?.game ? gameLink(last.game, `won ${last.round}`) : <span>won {last?.round}</span>}
+        <span>next round TBA</span>
+      </>
+    );
+  } else {
+    status = state.kind === "champion" ? "State champions" : "Season over";
+    const last = state.lastEntry;
+    let outcome = null;
+    if (last?.game) {
+      const opp = nameOf(last.opponent);
+      const forfeit = isForfeitScore(last.game);
+      const high = Math.max(last.ownScore, last.oppScore);
+      const low = Math.min(last.ownScore, last.oppScore);
+      outcome =
+        state.kind === "champion"
+          ? `Won ${last.round} over ${opp} ${forfeit ? "by forfeit" : `${high}-${low}`}`
+          : last.ownScore === last.oppScore && !forfeit
+            ? `Out in ${last.round} vs ${opp} ${high}-${low}`
+            : `Lost ${last.round} to ${opp} ${forfeit ? "by forfeit" : `${high}-${low}`}`;
+    }
+    detail = (
+      <>
+        <span className="season-state__record">{overall}</span>
+        {outcome && gameLink(last.game, outcome)}
+      </>
+    );
+  }
+
+  const over = state.kind === "eliminated" || state.kind === "complete" || state.kind === "champion";
+  return (
+    <div className="season-state-wrap">
+      <p className="season-state">
+        <span className="season-state__status">{status}</span>
+        {detail}
+      </p>
+      {over && (
+        <Link to={`${sportPrefix}/card/wrapped/${schoolId}`} className="season-state__share">
+          Share this season <span aria-hidden="true">›</span>
+        </Link>
+      )}
+    </div>
   );
 }
 

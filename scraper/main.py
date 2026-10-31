@@ -23,8 +23,13 @@ from rich.console import Console
 from config.loader import ensure_org_ids, load_manifest, save_manifest
 from models.schema import GameStatus
 from output.writer import load_prev_rankings, read_dataset, write_dataset
-from sources import wiaa, wph
-from transform.normalize import CENTRAL, build_dataset, build_name_index_for_manifest
+from sources import wiaa, wiaa_state, wph
+from transform.normalize import (
+    CENTRAL,
+    _parse_playoff_label,
+    build_dataset,
+    build_name_index_for_manifest,
+)
 from transform.live import merge_live_scores
 from transform.rankings import compute_power_rankings
 from transform.stats import (
@@ -83,6 +88,36 @@ def parse_args() -> argparse.Namespace:
         ),
     )
     return parser.parse_args()
+
+
+STATE_OVERRIDES_PATH = DATA_DIR / "state_games.json"
+
+
+def collect_state_games(sport: str, season: str, raw_schedules: list[dict]) -> list:
+    """
+    State-tournament games for this sport/season. WIAA's school schedules
+    stop at the last series round (Level 4 / Sectional Final), so state
+    semifinals and finals come from the WIAA state-tournament pages
+    (sources/wiaa_state.py), plus any editor rows in data/state_games.json.
+
+    The pages are only fetched once the series has started — some tracked
+    schedule carries a tournament row — so preseason and regular-season
+    scrapes spend no requests on them (and can't pick up last season's
+    results still sitting on a not-yet-rolled-over tournament page). The
+    override file is always read; its rows already name sport + season.
+    """
+    overrides = wiaa_state.load_state_overrides(STATE_OVERRIDES_PATH, sport, season)
+    in_postseason = any(
+        _parse_playoff_label(g.get("label"))[0]
+        for sched in raw_schedules
+        for g in sched.get("games", [])
+    )
+    fetched = []
+    if in_postseason and sport in wiaa_state.STATE_PAGES:
+        fetched = wiaa_state.fetch_state_games(sport, season, console=console)
+    if overrides:
+        console.print(f"  {len(overrides)} state game(s) from {STATE_OVERRIDES_PATH.name}")
+    return wiaa_state.merge_state_rows(overrides, fetched)
 
 
 def main() -> int:
@@ -221,11 +256,14 @@ def main() -> int:
             )
             return 1
 
+    state_games = collect_state_games(args.sport, args.season, raw_schedules)
+
     dataset = build_dataset(
         manifest=manifest,
         raw_team_schedules=raw_schedules,
         sport=args.sport,
         season=args.season,
+        state_games=state_games,
     )
 
     console.print(

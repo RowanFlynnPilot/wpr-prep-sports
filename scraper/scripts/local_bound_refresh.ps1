@@ -57,7 +57,10 @@ if (-not (Test-Path $py)) { Log "abort: scraper venv missing at $py"; exit 1 }
 
 $branch = (git rev-parse --abbrev-ref HEAD).Trim()
 if ($branch -ne 'main') { Log "skip: checkout is on '$branch', not main"; exit 0 }
-if (git status --porcelain -- data) { Log "skip: data/ has uncommitted local changes"; exit 0 }
+# Tracked edits only: untracked files under data/ are leftovers of a discarded
+# refresh (an aborted rebase restores tracked files but not new ones) and
+# blocked every run from Oct 27 to Oct 31 2026; the run below overwrites them.
+if (git status --porcelain --untracked-files=no -- data) { Log "skip: data/ has uncommitted local changes"; exit 0 }
 
 Log "start: $($Sport -join ' ')"
 if ((Native 'git pull -q --ff-only origin main') -ne 0) { Log "abort: git pull --ff-only failed (diverged checkout or offline)"; exit 1 }
@@ -84,6 +87,7 @@ for ($attempt = 1; $attempt -le 3; $attempt++) {
     Native 'git rebase --abort' | Out-Null
     git reset -q --mixed HEAD~1
     git checkout -q -- data
+    git clean -fdq -- data
     Native 'git pull -q --ff-only origin main' | Out-Null
     Log "abort: rebase conflict; refresh discarded (next run redoes it)"
     exit 1

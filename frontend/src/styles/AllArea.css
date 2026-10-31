@@ -1,0 +1,318 @@
+/* All-Area team (#/<sport>/all-area). A printed honors list: Player and
+   Coach of the Year as two cards, then first team, second team and
+   honorable mention as rows carrying the school's color bar + logo the
+   way the standings and the A–Z index do. Single press-red accent on
+   the eyebrow; everything else is ink / muted / hairlines. */
+
+.all-area {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* ---- header ---- */
+
+.all-area__head {
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--ink);
+}
+.all-area__eyebrow {
+  margin-bottom: 0.4rem;
+}
+.all-area__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-h1);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  line-height: 1.02;
+  margin: 0 0 0.55rem;
+  color: var(--ink-hero);
+  text-wrap: balance;
+}
+.all-area__byline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 1rem;
+  min-height: 1.5rem;
+}
+.all-area__published {
+  font-family: var(--font-body);
+  font-size: var(--fs-caption);
+  font-style: italic;
+  color: var(--muted);
+}
+.all-area__intro {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: 1.55;
+  color: var(--ink);
+  max-width: 64ch;
+  margin: 0.85rem 0 0;
+}
+
+/* ---- Player / Coach of the Year ---- */
+
+.all-area__honors {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+  gap: 0.85rem;
+}
+.all-area__honor {
+  --school-color: var(--brand);
+  position: relative;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.85rem;
+  align-items: start;
+  padding: 1rem 1rem 1rem 1.15rem;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lift);
+  overflow: hidden;
+}
+.all-area__honor-bar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 5px;
+  background: var(--school-color);
+}
+.all-area__honor-logo {
+  margin-top: 0.15rem;
+}
+.all-area__honor-body {
+  min-width: 0;
+}
+.all-area__honor-kind {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: var(--fs-eyebrow);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 0.25rem;
+}
+.all-area__honor-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-title);
+  line-height: 1.1;
+  margin: 0;
+  color: var(--ink-hero);
+  overflow-wrap: anywhere;
+}
+.all-area__honor-name a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+.all-area__honor-meta {
+  font-weight: 500;
+  font-size: var(--fs-ui);
+  color: var(--muted);
+  white-space: nowrap;
+}
+.all-area__honor-school {
+  margin: 0.2rem 0 0;
+  font-family: var(--font-display);
+  font-size: var(--fs-ui);
+  font-weight: 500;
+}
+.all-area__honor-school a {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: none;
+}
+.all-area__honor-line {
+  margin: 0.55rem 0 0;
+  font-family: var(--font-body);
+  font-size: var(--fs-small);
+  line-height: 1.5;
+  color: var(--ink);
+}
+
+/* ---- first / second team, honorable mention ---- */
+
+.all-area__team-head {
+  align-items: baseline;
+}
+.all-area__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr));
+  gap: 0.5rem 0.75rem;
+}
+.all-area__row {
+  --school-color: var(--muted-2);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-width: 0;
+  padding: 0.5rem 0.65rem 0.5rem 0.55rem;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+}
+.all-area__row-bar {
+  flex: 0 0 auto;
+  width: 3px;
+  height: 28px;
+  border-radius: 2px;
+  background: var(--school-color);
+}
+.all-area__row-logo {
+  flex: 0 0 auto;
+}
+.all-area__row-main {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+.all-area__row-top {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.45rem;
+  min-width: 0;
+}
+.all-area__pos {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--fs-label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  min-width: 2.2em;
+}
+.all-area__name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--fs-body);
+  line-height: 1.15;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: none;
+  overflow-wrap: anywhere;
+}
+.all-area__year {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: var(--fs-label);
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+.all-area__row-sub {
+  font-size: var(--fs-eyebrow);
+  line-height: 1.35;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+.all-area__school {
+  color: var(--muted);
+  text-decoration: none;
+  border-bottom: none;
+}
+.all-area__line {
+  color: var(--muted);
+}
+
+/* Honorable mention: same rows, tighter and without a stat line. */
+.all-area__list--compact {
+  grid-template-columns: repeat(auto-fill, minmax(min(240px, 100%), 1fr));
+  gap: 0.4rem 0.6rem;
+}
+.all-area__list--compact .all-area__row {
+  padding: 0.35rem 0.55rem 0.35rem 0.5rem;
+}
+.all-area__list--compact .all-area__row-bar {
+  height: 22px;
+}
+.all-area__list--compact .all-area__name {
+  font-size: var(--fs-ui);
+}
+
+/* ---- empty state ---- */
+
+.all-area__empty {
+  padding: 1.5rem 1rem 1.6rem;
+  text-align: center;
+  background: var(--paper-2);
+  border-radius: var(--radius);
+}
+.all-area__empty-title {
+  font-family: var(--font-display);
+  font-size: var(--fs-h3);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin: 0 0 0.35rem;
+  color: var(--ink-hero);
+}
+.all-area__empty-text {
+  font-family: var(--font-body);
+  font-size: var(--fs-small);
+  line-height: 1.55;
+  color: var(--muted);
+  max-width: 44ch;
+  margin: 0 auto 0.9rem;
+}
+.all-area__empty-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  min-height: 44px;
+  padding: 0 1rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--fs-ui);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  border: 1px solid var(--ink);
+  border-radius: var(--radius-sm);
+}
+
+/* ---- hover (mouse only) ---- */
+
+@media (hover: hover) and (pointer: fine) {
+  .all-area__honor-name a:hover,
+  .all-area__name:hover {
+    color: var(--accent-700);
+  }
+  .all-area__honor-school a:hover,
+  .all-area__school:hover {
+    color: var(--ink);
+    border-bottom: 1px solid currentColor;
+  }
+  .all-area__empty-cta:hover {
+    background: var(--ink);
+    color: var(--paper);
+  }
+}
+
+/* ---- phone ---- */
+
+@media (max-width: 480px) {
+  .all-area__title {
+    font-size: var(--fs-h2);
+  }
+  .all-area__honor {
+    grid-template-columns: auto minmax(0, 1fr);
+    padding: 0.85rem 0.85rem 0.85rem 1rem;
+  }
+  .all-area__honor-name {
+    font-size: var(--fs-h3);
+  }
+  .all-area__honor-meta {
+    white-space: normal;
+  }
+}

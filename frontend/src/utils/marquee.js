@@ -9,14 +9,57 @@
  *   null                                            // nothing worth highlighting
  */
 
+import { isTbdSide } from "./postseason.js";
+import { formatGameDate, formatGameShortDay } from "./dates.js";
+
+const DAY_MS = 86_400_000;
+
+// Round depth for the postseason tiebreak: a Level 4 game outranks a
+// Level 3 game when everything else is equal.
+const ROUND_DEPTH = [
+  /level\s*1\b/, /level\s*2\b/, /level\s*3\b/, /level\s*4\b/,
+  /^regional/, /^sectional/, /quarterfinal/, /semifinal/, /final|championship/,
+];
+
+function roundDepth(round) {
+  if (!round) return 0;
+  const r = round.toLowerCase();
+  if (r.startsWith("state")) {
+    if (r.includes("quarterfinal")) return 7;
+    if (r.includes("semifinal")) return 8;
+    return 9;
+  }
+  const i = ROUND_DEPTH.findIndex((re) => re.test(r));
+  return i < 0 ? 0 : i + 1;
+}
+
+/**
+ * True when any playoff game is still to be played within 14 days of
+ * `now`: the window in which the Game of the Week may feature a playoff
+ * game with only one tracked side. By Level 2 almost every remaining
+ * opponent is from outside the coverage area (Lomira, West De Pere,
+ * Grantsburg) or still TBD, and the both-sides-tracked rule left the
+ * strip empty for the whole postseason.
+ */
+function inPostseason(games, now) {
+  return games.some((g) => {
+    if (!g.playoff || g.status !== "scheduled") return false;
+    const ts = new Date(g.date).getTime();
+    return ts >= now && ts - now <= 14 * DAY_MS;
+  });
+}
+
 /**
  * Score an upcoming game's "stakes". Higher = more pitchable.
  *
  * Both teams in our manifest is the floor: a featured game has to involve
  * teams we cover. We layer on conference matchup, top-of-standings vs
  * top-of-standings, and proximity (next 14 days).
+ *
+ * Postseason exception: a playoff game with ONE tracked side qualifies
+ * (the other side untracked or TBD), a little below a both-tracked game.
  */
-function scoreUpcoming(game, schoolsById, now, homeRegionIds, slateDay = null) {
+function scoreUpcoming(game, schoolsById, now, homeRegionIds, slateDay = null, postseason = false) {
   if (game.status !== "scheduled") return -Infinity;
   const ts = new Date(game.date).getTime();
   if (ts < now) return -Infinity;
@@ -25,14 +68,22 @@ function scoreUpcoming(game, schoolsById, now, homeRegionIds, slateDay = null) {
 
   const homeTracked = !!game.home.school_id && schoolsById.has(game.home.school_id);
   const awayTracked = !!game.away.school_id && schoolsById.has(game.away.school_id);
-  if (!homeTracked || !awayTracked) return -Infinity;
+  const bothTracked = homeTracked && awayTracked;
+  const oneSidePlayoff = postseason && game.playoff && (homeTracked || awayTracked);
+  if (!bothTracked && !oneSidePlayoff) return -Infinity;
 
-  let score = 10;
+  let score = bothTracked ? 10 : 8;
+  // A named opponent is a better pitch than "opponent TBD".
+  if (isTbdSide(game.home) || isTbdSide(game.away)) score -= 1;
   if (game.conference_game) score += 4;
   // The playoff bonus belongs to the main slate's night. Uncapped, a
   // Saturday 8-player Level 1 game (28.7) outscored four tied Friday
   // locals (25.0) the week the playoffs began (critique run 18).
-  if (game.playoff) score += slateDay && game.date.slice(0, 10) !== slateDay ? 2 : 8;
+  if (game.playoff) {
+    score += slateDay && game.date.slice(0, 10) !== slateDay ? 2 : 8;
+    // Deeper round breaks a tie, never outweighs a home-region side.
+    score += roundDepth(game.playoff_round) * 0.25;
+  }
   // Home-region stake outranks a generic conference tag: without this the
   // Wausau paper's Game of the Week landed on Marion at Menominee Nation
   // (first tied conference game in file order) over a Wausau West game.
@@ -112,13 +163,21 @@ export function pickMarqueeGame({
 
   if (!offSeason) {
     const slateDay = mainSlateDay(games, now);
-    const best = bestBy(games, (g) => scoreUpcoming(g, schoolsById, now, homeRegionIds, slateDay));
+    const postseason = inPostseason(games, now);
+    const best = bestBy(games, (g) =>
+      scoreUpcoming(g, schoolsById, now, homeRegionIds, slateDay, postseason),
+    );
     if (!best || best.score === -Infinity) return null;
+    const g = best.item;
     return {
       kind: "upcoming",
-      game: best.item,
-      eyebrow: best.item.playoff ? "Playoff matchup" : "Game of the Week",
-      headline: matchupHeadline(best.item),
+      game: g,
+      eyebrow: g.playoff
+        ? g.playoff_round
+          ? `Playoff matchup · ${g.playoff_round}`
+          : "Playoff matchup"
+        : "Game of the Week",
+      headline: matchupHeadline(g),
     };
   }
 
@@ -169,6 +228,14 @@ function bestEyebrow(game) {
 function matchupHeadline(game, { withScore = false } = {}) {
   const home = game.home;
   const away = game.away;
+  // Bracket placeholder: lead with the team we know ("Gilman vs opponent
+  // TBD · Fri Nov 6"); "TBD at Gilman" reads like a typo.
+  if (!withScore && (isTbdSide(home) || isTbdSide(away))) {
+    const known = isTbdSide(home) ? away : home;
+    const day = formatGameShortDay(game.date);
+    const when = `${day.charAt(0)}${day.slice(1).toLowerCase()} ${formatGameDate(game.date)}`;
+    return `${isTbdSide(known) ? "TBD" : known.name} vs opponent TBD · ${when}`;
+  }
   if (!withScore) {
     return `${away.name} at ${home.name}`;
   }

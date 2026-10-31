@@ -4,6 +4,7 @@ import TeamLogo from "./TeamLogo.jsx";
 import { schoolFor, primaryColor } from "../utils/schools.js";
 import { useSportPrefix } from "../utils/links.js";
 import { formatGameDay, formatGameDate } from "../utils/dates.js";
+import { isTbdSide } from "../utils/postseason.js";
 
 /**
  * Game of the Week — a compressed marquee strip on paper, under the
@@ -28,9 +29,16 @@ export default function Marquee({ pick, sportConfig, sponsors, schoolIndex }) {
   const homeWon = isFinal && (game.home.score ?? -1) > (game.away.score ?? -1);
 
   const dateBits = `${formatGameDay(game.date)} · ${formatGameDate(game.date)}`;
+  // A bracket placeholder ("TBD") is not a team: no logo, no WIAA
+  // no_logo.jpg, and its half of the color bar takes the known team's
+  // color so the strip doesn't carry a stray slate block.
+  const awayTbd = isTbdSide(game.away);
+  const homeTbd = isTbdSide(game.home);
+  const awayColor = primaryColor(awaySchool);
+  const homeColor = primaryColor(homeSchool);
   const style = {
-    "--away-color": primaryColor(awaySchool),
-    "--home-color": primaryColor(homeSchool),
+    "--away-color": awayTbd ? homeColor : awayColor,
+    "--home-color": homeTbd ? awayColor : homeColor,
   };
 
   return (
@@ -50,14 +58,20 @@ export default function Marquee({ pick, sportConfig, sponsors, schoolIndex }) {
         <span className="gotw__eyebrow">{eyebrow}</span>
 
         <span className="gotw__matchup">
-          <TeamLogo
-            team={game.away}
-            school={awaySchool}
-            size="xs"
-            className="gotw__logo gotw__logo--away"
-          />
-          <span className={"gotw__name" + (awayWon ? " gotw__name--won" : "")}>
-            {game.away.name}
+          {!awayTbd && (
+            <TeamLogo
+              team={game.away}
+              school={awaySchool}
+              size="xs"
+              className="gotw__logo gotw__logo--away"
+            />
+          )}
+          <span
+            className={
+              "gotw__name" + (awayWon ? " gotw__name--won" : "") + (awayTbd ? " gotw__name--tbd" : "")
+            }
+          >
+            {awayTbd ? "Opponent TBD" : game.away.name}
             {isFinal && (
               <span className="gotw__score">
                 {" "}
@@ -70,14 +84,20 @@ export default function Marquee({ pick, sportConfig, sponsors, schoolIndex }) {
           <span className="gotw__vs" aria-hidden={isFinal ? "true" : undefined}>
             {isFinal ? "–" : "at"}
           </span>
-          <TeamLogo
-            team={game.home}
-            school={homeSchool}
-            size="xs"
-            className="gotw__logo gotw__logo--home"
-          />
-          <span className={"gotw__name" + (homeWon ? " gotw__name--won" : "")}>
-            {game.home.name}
+          {!homeTbd && (
+            <TeamLogo
+              team={game.home}
+              school={homeSchool}
+              size="xs"
+              className="gotw__logo gotw__logo--home"
+            />
+          )}
+          <span
+            className={
+              "gotw__name" + (homeWon ? " gotw__name--won" : "") + (homeTbd ? " gotw__name--tbd" : "")
+            }
+          >
+            {homeTbd ? "Opponent TBD" : game.home.name}
             {isFinal && (
               <span className="gotw__score">
                 {" "}
@@ -87,12 +107,9 @@ export default function Marquee({ pick, sportConfig, sponsors, schoolIndex }) {
           </span>
         </span>
 
-        <span className="gotw__when">
-          {dateBits}
-          {game.playoff_round && (
-            <> · <span className="gotw__round">{game.playoff_round}</span></>
-          )}
-        </span>
+        {/* The round lives in the eyebrow ("Playoff matchup · Level 3"); it
+            was printed again here. */}
+        <span className="gotw__when">{dateBits}</span>
 
         <Sponsor
           slot={`marquee:${sportConfig?.id ?? "default"}`}

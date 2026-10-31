@@ -433,3 +433,94 @@ a.schedule-row__result--link:focus-visible {
   .schedule-row__opponent { min-width: 0; overflow-wrap: anywhere; }
   .schedule-row__round { flex-basis: 100%; margin-left: 0; width: max-content; }
 }
+
+/* Season state, right under the hero: still alive and when the next
+   round is, or out and to whom. Press-red rail in the hero's own edge
+   language; calm type, ink on card, one red. */
+.season-state-wrap {
+  margin-top: 0.75rem;
+}
+.season-state {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 0.5rem;
+  row-gap: 0.1rem;
+  margin: 0;
+  min-height: 44px;
+  padding: 0.35rem 1rem;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius);
+  font-family: var(--font-display);
+  font-size: var(--fs-ui);
+  line-height: 1.35;
+  color: var(--ink);
+  min-width: 0;
+}
+.season-state__status {
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+/* Separators ride on the item they precede, so a wrap never strands a
+   "·" at the end of a line. The link's underline lives on its text span. */
+.season-state > * + *::before {
+  content: "·";
+  display: inline-block;
+  margin-right: 0.5rem;
+  color: var(--muted);
+  text-decoration: none;
+}
+.season-state__record {
+  font-variant-numeric: tabular-nums;
+}
+.season-state__link,
+.season-state__share {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  min-height: 44px;
+  min-width: 0;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: none;
+  overflow-wrap: anywhere;
+}
+.season-state__link { font-variant-numeric: tabular-nums; }
+.season-state__linktext {
+  text-decoration: underline;
+  text-decoration-color: var(--muted-2);
+  text-underline-offset: 0.2em;
+}
+.season-state__share {
+  margin-top: 0.15rem;
+  padding: 0 0.1rem;
+  font-family: var(--font-display);
+  font-size: var(--fs-small);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.season-state__link:focus-visible,
+.season-state__share:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+@media (hover: hover) and (pointer: fine) {
+  .season-state__link:hover .season-state__linktext { text-decoration-color: currentColor; }
+  .season-state__share:hover { color: var(--ink); }
+}
+
+/* The share link already carries 44px of air under the banner. */
+.season-state-wrap + .season-summary { margin-top: 0.75rem; }
+
+/* Phones: the status reads as the banner's label, the detail as its line. */
+@media (max-width: 480px) {
+  .season-state { padding-top: 0.55rem; }
+  .season-state__status { flex-basis: 100%; font-size: var(--fs-small); }
+  .season-state__status + *::before { content: none; }
+}

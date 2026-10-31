@@ -3,14 +3,38 @@ import { Link } from "react-router-dom";
 import TeamLogo from "./TeamLogo.jsx";
 import TeamLink from "./TeamLink.jsx";
 import { schoolFor } from "../utils/schools.js";
-import { groupByDay } from "../utils/weeks.js";
+import { groupByDay, splitPlayoffRounds } from "../utils/weeks.js";
 import { formatGameDay, formatGameDate, formatGameTime } from "../utils/dates.js";
 import { gameSummaryLine, playerLineForGame } from "../utils/recap.js";
 import { isForfeitScore, isScorePending, isStaleScheduled, isUnreportedFinal } from "../utils/games.js";
 import { useSportPrefix } from "../utils/links.js";
 import { SITE } from "../config/site.js";
+import { isTbdSide } from "../utils/postseason.js";
 
 const OTHER_GROUP = "Other games";
+
+// Row chip for a playoff round: short enough to sit beside the kickoff
+// time on a 375px row. The full round name is in the group heading and
+// in the drill-in link's accessible name, so the chip is aria-hidden.
+const ROUND_CHIP = {
+  Regional: "Regional",
+  "Regional Semifinal": "Reg. Semi",
+  "Regional Final": "Reg. Final",
+  Sectional: "Sectional",
+  "Sectional Semifinal": "Sect. Semi",
+  "Sectional Final": "Sect. Final",
+  "State Quarterfinal": "State QF",
+  "State Semifinal": "State Semi",
+  "State Final": "State Final",
+  "State Championship": "State Final",
+};
+
+function roundChip(round) {
+  if (!round) return "Playoff";
+  const level = /^level\s*(\d+)$/i.exec(round);
+  if (level) return `L${level[1]}`;
+  return ROUND_CHIP[round] ?? round;
+}
 
 function conferenceOf(school, sport) {
   return school?.conferences?.find?.((c) => c.sport === sport)?.conference ?? null;
@@ -42,6 +66,10 @@ function gameConference(game, schoolIndex, sport, homeRegionIds) {
  * collapsed behind one "show more" control. A 35-game Friday used to be
  * one undivided list in schedule-file order; a Wausau reader scrolled
  * past twenty rows of other people's games to find their own.
+ *
+ * Playoff games group by round instead ("Level 3 · 4 games"), in bracket
+ * order, ahead of any regular-season conference groups that day and
+ * never behind the "show more" fold (utils/weeks.js splitPlayoffRounds).
  */
 export default function ThisWeekGrid({
   week,
@@ -107,10 +135,18 @@ export default function ThisWeekGrid({
   return (
     <div className="week">
       {days.map(([day, games]) => {
-        // Bucket the day's games by conference, then order: home-region
-        // weight desc, then name; "Other games" last.
+        // Playoff games by round, bracket order; they always show.
+        const { rounds, regular } = splitPlayoffRounds(games, homeRegionIds);
+        const roundGroups = rounds.map(({ round, games: list }) => ({
+          key: `round:${round}`,
+          label: round,
+          round: true,
+          games: list,
+        }));
+        // Bucket the day's regular-season games by conference, then order:
+        // home-region weight desc, then name; "Other games" last.
         const buckets = new Map();
-        for (const g of games) {
+        for (const g of regular) {
           const conf = grouping
             ? gameConference(g, schoolIndex, sport, homeRegionIds)
             : OTHER_GROUP;
@@ -119,6 +155,8 @@ export default function ThisWeekGrid({
         }
         const groups = [...buckets.entries()]
           .map(([conference, list]) => ({
+            key: `conf:${conference}`,
+            label: conference,
             conference,
             games: list,
             weight: conference === OTHER_GROUP ? -1 : (confWeight.get(conference) ?? 0),
@@ -129,12 +167,16 @@ export default function ThisWeekGrid({
           );
         const homeGroups = groups.filter((gr) => gr.weight > 0);
         const restGroups = groups.filter((gr) => gr.weight <= 0);
-        // Only collapse when there is a home section to lead with.
-        const collapsible = homeGroups.length > 0 && restGroups.length > 0;
+        // Only collapse when there is a section to lead with: a round or a
+        // home-region conference.
+        const collapsible =
+          roundGroups.length + homeGroups.length > 0 && restGroups.length > 0;
         const expanded = !collapsible || expandedDays.has(day);
-        const visible = expanded ? groups : homeGroups;
+        const visible = [...roundGroups, ...(expanded ? groups : homeGroups)];
         const hiddenCount = restGroups.reduce((n, gr) => n + gr.games.length, 0);
-        const showHeads = groups.length > 1;
+        // A round heading always shows: on an all-playoff Friday it is the
+        // only place the round is spelled out.
+        const showHeads = roundGroups.length > 0 || groups.length > 1;
 
         return (
           <section key={day} className="week-day">
@@ -148,10 +190,18 @@ export default function ThisWeekGrid({
 
             <ul className="week-day__games">
               {visible.map((group) => (
-                <li key={group.conference} className="week-conf">
+                <li
+                  key={group.key}
+                  className={`week-conf${group.round ? " week-conf--round" : ""}`}
+                >
                   {showHeads && (
                     <h4 className="week-conf__head">
-                      <span>{group.conference}</span>
+                      <span>{group.label}</span>
+                      {group.round && (
+                        <span className="week-conf__sep" aria-hidden="true">
+                          ·
+                        </span>
+                      )}
                       <span className="week-conf__count">
                         {group.games.length} game{group.games.length === 1 ? "" : "s"}
                       </span>
@@ -231,8 +281,15 @@ function GameRow({ game, schoolIndex, allGames, sportConfig }) {
   // its matchup and score, the way the team page's schedule already does.
   // Unreported finals fall through to the matchup form — "TeamA 0,
   // TeamB 0" would announce a fake 0-0 tie.
-  const matchup = `${game.away.name} at ${game.home.name}`;
-  const scoreline = `${game.away.name} ${game.away.score}, ${game.home.name} ${game.home.score}`;
+  // Playoff rows name the round in the label too ("Lomira at Edgar,
+  // Level 3 playoff, 7:00 PM"), since the visible chip is aria-hidden.
+  const roundBit = game.playoff
+    ? `, ${game.playoff_round ? `${game.playoff_round} playoff` : "playoff"}`
+    : "";
+  const awayName = isTbdSide(game.away) ? "Opponent TBD" : game.away.name;
+  const homeName = isTbdSide(game.home) ? "Opponent TBD" : game.home.name;
+  const matchup = `${awayName} at ${homeName}${roundBit}`;
+  const scoreline = `${game.away.name} ${game.away.score}, ${game.home.name} ${game.home.score}${roundBit}`;
   const linkLabel = forfeit
     ? `${matchup}, forfeit, game details`
     : notReported
@@ -262,6 +319,15 @@ function GameRow({ game, schoolIndex, allGames, sportConfig }) {
         won={homeWon}
         showScore={showScore}
       />
+      {/* Status cell: the round chip (playoff rows) and the drill-in.
+          One grid item either way, so the phone layout's auto-placement
+          is the same for every row. */}
+      <span className="game-row__end">
+      {game.playoff && (
+        <span className="game-row__round" aria-hidden="true">
+          {roundChip(game.playoff_round)}
+        </span>
+      )}
       <Link
         to={`${sportPrefix}/game/${game.id}`}
         className={`game-row__status game-row__details${isLive ? " game-row__status--live" : ""}`}
@@ -280,6 +346,7 @@ function GameRow({ game, schoolIndex, allGames, sportConfig }) {
                   : formatGameTime(game.date)}
         <span aria-hidden="true"> ›</span>
       </Link>
+      </span>
       {summary && <p className="game-row__summary">{summary}</p>}
       {notReported && (
         <p className="game-row__summary game-row__summary--note">
@@ -301,6 +368,15 @@ function GameRow({ game, schoolIndex, allGames, sportConfig }) {
 }
 
 function Side({ team, school, score, won, showScore }) {
+  // Bracket placeholder: say so, with no logo (WIAA's no_logo.jpg) and
+  // no team link.
+  if (isTbdSide(team)) {
+    return (
+      <span className="game-side game-side--tbd">
+        <span className="game-side__name">Opponent TBD</span>
+      </span>
+    );
+  }
   return (
     <span className={`game-side ${won ? "game-side--won" : ""}`}>
       <TeamLogo team={team} school={school} size="sm" />

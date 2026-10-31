@@ -1,0 +1,52 @@
+{
+  "_comment": "Editorial All-Area teams, keyed by sport then season (data/all_area.json → #/<sport>/all-area). The frontend shows the newest entry for the sport whose `published` date (YYYY-MM-DD, local) has arrived; until then the page shows 'The All-Area team is announced after the state tournament.' Keys that start with an underscore are ignored. Player entries: { player_name, school_id, position?, year?, line? } — the name links to the player page when that player has stat lines this season, otherwise it renders as plain text. coach_of_year: { name, school_id, line? }. sponsor_slot names the data/sponsors.json slot that runs under the title (default 'all-area'). See docs/all-area.md.",
+  "_example": {
+    "football": {
+      "2026-27": {
+        "title": "2026 All-Area Football Team",
+        "published": "2026-11-23",
+        "intro": "Chosen by the Wausau Pilot & Review sports desk from season statistics, coaches' nominations and all-conference voting across the Wisconsin Valley, Great Northern and Marawood.",
+        "sponsor_slot": "all-area",
+        "player_of_year": {
+          "player_name": "Jane Doe",
+          "school_id": "wausau-east",
+          "position": "QB",
+          "year": "SR",
+          "line": "2,400 passing yards and 28 touchdowns for the Valley champions."
+        },
+        "coach_of_year": {
+          "name": "Pat Example",
+          "school_id": "edgar",
+          "line": "Took a team picked fifth in the Marawood to a Level 3 playoff game."
+        },
+        "first_team": [
+          {
+            "player_name": "Jane Doe",
+            "school_id": "wausau-east",
+            "position": "QB",
+            "year": "SR",
+            "line": "2,400 yards, 28 TD, 4 INT"
+          }
+        ],
+        "second_team": [
+          {
+            "player_name": "Sam Example",
+            "school_id": "stratford",
+            "position": "RB",
+            "year": "JR",
+            "line": "1,350 rushing yards, 17 TD"
+          }
+        ],
+        "honorable_mention": [
+          {
+            "player_name": "Alex Example",
+            "school_id": "mosinee",
+            "position": "WR",
+            "year": "SO",
+            "line": null
+          }
+        ]
+      }
+    }
+  }
+}

@@ -97,6 +97,11 @@
 .gotw__name--won {
   color: var(--accent-700);
 }
+/* Bracket placeholder: a real word, not a team, so it reads quieter. */
+.gotw__name--tbd {
+  font-weight: 500;
+  color: var(--muted);
+}
 .gotw__score {
   font-family: var(--font-numeric, var(--font-display));
   font-weight: 800;
@@ -124,14 +129,6 @@
   color: var(--muted);
   flex: 0 0 auto;
   white-space: nowrap;
-}
-.gotw__round {
-  font-style: normal;
-  color: var(--ink);
-  font-family: var(--font-display);
-  font-size: var(--fs-label);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
 }
 
 .gotw__sponsor {

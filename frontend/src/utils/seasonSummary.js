@@ -5,14 +5,112 @@
  * has to be backed by data we scraped. No invented stats, no embellishment.
  *
  * Auto-detects mid-season vs end-of-season:
- *   - mid-season if any game on the schedule isn't yet `final`
- *   - end-of-season once every game is final
+ *   - mid-season while any game is still to be played (upcoming, live, or
+ *     score pending), or while the team is alive in the playoffs — then
+ *     the playoff run leads and the record counts playoff games
+ *   - end-of-season once nothing is left to play
  *
  * Returns null when we have nothing scoreable to summarize (no finals
  * yet, or no parseable scores).
  */
 
-import { isForfeitScore } from "./games.js";
+import { isForfeitScore, isStaleScheduled } from "./games.js";
+import { teamPostseason, isTbdSide } from "./postseason.js";
+import { buildTeamJourneys } from "./bracket.js";
+import { localDate } from "./dates.js";
+
+const DAY_MS = 86_400_000;
+
+/** A game that still counts as ahead of the team: upcoming, live, or played with the score pending. */
+function stillToPlay(g, now) {
+  return g.status !== "final" && !isStaleScheduled(g, now);
+}
+
+/** State rounds that end a season with a win. */
+function isTitleRound(round) {
+  return /^state\s+(championship|final)$/i.test(round ?? "");
+}
+
+/** "a 55-0" / "an 8-0" / "an 11-7": the article follows the spoken number. */
+function aScore(own) {
+  return /^(8|11$|18$|11\d\d$|18\d\d$)/.test(String(own)) ? "an" : "a";
+}
+
+/**
+ * Where one team's season stands, for the team page's banner and the
+ * summary's lead. Pure: pass `now` to pin it.
+ *
+ *   { kind: "alive", round, game, isHome, opponent|null (TBD), live }
+ *   { kind: "alive-tba", lastEntry }   won its last round, next one not scheduled yet
+ *   { kind: "champion", lastEntry }    won a state title round
+ *   { kind: "eliminated", lastEntry }  lost its last playoff game
+ *   { kind: "complete" }               regular season done, no playoff games
+ *   null                               still in the regular season (or nothing played)
+ *
+ * The postseason helper's window closes a week after the sport's last
+ * final, so outside it the team's own bracket journey stands in; an
+ * eliminated team keeps its banner after the state finals are a week old.
+ */
+export function seasonState({
+  teamGames,
+  allGames,
+  schoolId,
+  schoolsById,
+  sportConfig,
+  now = Date.now(),
+}) {
+  if (!schoolId || !teamGames || teamGames.length === 0) return null;
+  const finals = teamGames.filter((g) => g.status === "final");
+  if (finals.length === 0) return null;
+  const end = sportConfig?.seasonEnd ? localDate(sportConfig.seasonEnd) : null;
+  const seasonEnded = !!end && now >= end.getTime();
+
+  let entry = teamPostseason(allGames ?? teamGames, schoolId, schoolsById, now);
+  if (!entry && teamGames.some((g) => g.playoff)) {
+    const j = buildTeamJourneys(teamGames, schoolsById).find((x) => x.schoolId === schoolId);
+    if (j) {
+      const next = j.games.find((e) => e.game.status !== "final") ?? null;
+      entry = {
+        alive: j.alive,
+        nextGame: next?.game ?? null,
+        nextRound: next?.round ?? null,
+        nextIsHome: next ? next.isHome : null,
+        nextOpponent: next?.opponent ?? null,
+        lastEntry: j.games[j.games.length - 1] ?? null,
+      };
+    }
+  }
+
+  if (entry) {
+    if (!entry.alive) return { kind: "eliminated", lastEntry: entry.lastEntry };
+    if (entry.nextGame) {
+      return {
+        kind: "alive",
+        round: entry.nextRound,
+        game: entry.nextGame,
+        isHome: entry.nextIsHome,
+        opponent: isTbdSide(entry.nextOpponent) ? null : entry.nextOpponent,
+        live: entry.nextGame.status === "in_progress",
+      };
+    }
+    if (isTitleRound(entry.lastEntry?.round)) {
+      return { kind: "champion", lastEntry: entry.lastEntry };
+    }
+    // Won its last round with nothing scheduled: alive until the sport's
+    // season is over; after that it's a data gap, not a title.
+    if (!seasonEnded) return { kind: "alive-tba", lastEntry: entry.lastEntry };
+    return { kind: "complete" };
+  }
+
+  // No playoff games: the season is over once the last game on the
+  // schedule is final, nothing is left to play, and either the sport has
+  // wrapped or that last game is more than a week old.
+  if (teamGames[teamGames.length - 1].status !== "final") return null;
+  if (teamGames.some((g) => stillToPlay(g, now))) return null;
+  const lastFinalMs = Math.max(...finals.map((g) => new Date(g.date).getTime()));
+  if (seasonEnded || now - lastFinalMs > 7 * DAY_MS) return { kind: "complete" };
+  return null;
+}
 
 /** Walk a list of finals chronologically and compute W-L plus the last game. */
 function arcFromFinals(finals, schoolId) {
@@ -158,10 +256,10 @@ function lastGameClause({ last, oppName, seasonComplete, wins, losses, recordSta
       ? `a forfeit win over ${oppName}`
       : `a forfeit loss to ${oppName}`
     : tied
-      ? `a ${own}-${opp} draw against ${oppName}`
+      ? `${aScore(own)} ${own}-${opp} draw against ${oppName}`
       : won
-        ? `a ${own}-${opp} win over ${oppName}`
-        : `a ${own}-${opp} loss to ${oppName}`;
+        ? `${aScore(own)} ${own}-${opp} win over ${oppName}`
+        : `${aScore(opp)} ${opp}-${own} loss to ${oppName}`; // winner's score first
 
   // Mid-season — anchor the running record because the hero record is "now"
   // and the recap is naturally about trajectory. When the arc phrase has
@@ -200,13 +298,13 @@ function playoffClause({ playoffGames, schoolId, schoolsById }) {
 
   // Champions: every playoff game a win AND last round is championship.
   if (losses === 0 && /championship/i.test(lastRound)) {
-    return `and captured the WIAA state championship with a ${last.own}-${last.opp} win over ${oppName}`;
+    return `and captured the WIAA state championship with ${aScore(last.own)} ${last.own}-${last.opp} win over ${oppName}`;
   }
 
   // Unbeaten in playoffs but didn't reach championship (data gap / state run still in progress).
   if (losses === 0 && wins > 0) {
     const roundPhrase = roundDisplay(lastRound);
-    return `and ran through ${wins} WIAA playoff game${wins === 1 ? "" : "s"} unbeaten, last beating ${oppName} ${last.own}-${last.opp} in ${roundPhrase}`;
+    return `and ran through ${numberWord(wins)} WIAA playoff game${wins === 1 ? "" : "s"} unbeaten, last beating ${oppName} ${last.own}-${last.opp} in ${roundPhrase}`;
   }
 
   // Played at least one playoff game and lost the last one.
@@ -215,7 +313,7 @@ function playoffClause({ playoffGames, schoolId, schoolsById }) {
     if (wins === 0) {
       return `before falling to ${oppName} ${last.opp}-${last.own} in ${roundPhrase}`;
     }
-    return `before winning ${wins} WIAA playoff game${wins === 1 ? "" : "s"} and falling to ${oppName} ${last.opp}-${last.own} in ${roundPhrase}`;
+    return `before winning ${numberWord(wins)} WIAA playoff game${wins === 1 ? "" : "s"} and falling to ${oppName} ${last.opp}-${last.own} in ${roundPhrase}`;
   }
 
   // Last playoff game was a win but earlier ones weren't — uncommon, but
@@ -286,6 +384,41 @@ function standoutClause(standout, sportConfig, seasonComplete) {
 }
 
 /**
+ * Lead sentence for a team still alive in the playoffs, or null to fall
+ * back to the running-arc wording:
+ *   "Gilman is 12-0 and still alive after a 55-0 Level 3 win over Athens."
+ *   "Athens is 7-2 heading into the Level 1 playoffs after a 28-7 win over Colby."
+ */
+function aliveOpener({ finals, playoffFinals, schoolId, schoolName, nameOf, state }) {
+  const all = arcFromFinals(finals, schoolId);
+  if (!all.last) return null;
+  const rec = recordString(all.wins, all.losses, all.ties);
+  const lastPlayoff = arcFromFinals(playoffFinals, schoolId).last;
+  if (lastPlayoff && lastPlayoff.own > lastPlayoff.opp) {
+    const g = lastPlayoff.game;
+    const opp = nameOf(lastPlayoff.isHome ? g.away : g.home);
+    const round = g.playoff_round && g.playoff_round !== "Playoff" ? g.playoff_round : "playoff";
+    const win = isForfeitScore(g)
+      ? `a ${round} forfeit win over ${opp}`
+      : `${aScore(lastPlayoff.own)} ${lastPlayoff.own}-${lastPlayoff.opp} ${round} win over ${opp}`;
+    return `${schoolName} is ${rec} and still alive after ${win}.`;
+  }
+  if (!lastPlayoff && state.kind === "alive") {
+    const l = all.last;
+    const tail = lastGameClause({
+      last: l,
+      oppName: nameOf(l.isHome ? l.game.away : l.game.home),
+      seasonComplete: false,
+      wins: all.wins,
+      losses: all.losses,
+      recordStated: true,
+    });
+    return `${schoolName} is ${rec} heading into ${roundDisplay(state.round)} ${tail}.`;
+  }
+  return null;
+}
+
+/**
  * Build the full season summary string for one team, or null.
  */
 export function seasonSummary({
@@ -301,29 +434,45 @@ export function seasonSummary({
   const finals = teamGames.filter((g) => g.status === "final");
   if (finals.length === 0) return null;
 
-  // The season is "complete" when no scheduled games remain in the future.
-  // We can't require `finals.length === teamGames.length` because WIAA
-  // sometimes leaves cancelled/postponed games on the schedule with
+  // The season is "complete" when no games remain to be played. We can't
+  // require `finals.length === teamGames.length` because WIAA sometimes
+  // leaves cancelled/postponed games on the schedule with
   // status="scheduled" forever, which would otherwise pin the prose into
-  // mid-season tone months after the actual season ended.
+  // mid-season tone months after the actual season ended. A game played
+  // with its score still pending counts as still to play.
   const now = Date.now();
-  const seasonComplete = !teamGames.some(
-    (g) => g.status !== "final" && new Date(g.date).getTime() > now,
-  );
+  const state = seasonState({ teamGames, schoolId, schoolsById, sportConfig, now });
+  const playoffAlive = state?.kind === "alive" || state?.kind === "alive-tba";
+  const seasonComplete = !playoffAlive && !teamGames.some((g) => stillToPlay(g, now));
   const { regular: regularFinals, playoff: playoffFinals } = splitByPhase(finals);
+  const schoolName = school?.name ?? "The team";
+  const nameOf = (side) =>
+    (side?.school_id ? schoolsById?.get(side.school_id)?.name : null) ?? side?.name ?? "opponent";
 
-  // Tone is driven by the regular-season arc — that's how a coach or beat
-  // writer would describe a 5-4 team that lost in Level 1. Fall back to all
-  // finals only if no regular-season games are present (data oddity).
-  const arcSource = regularFinals.length > 0 ? regularFinals : finals;
+  // Still alive in the playoffs: the record counts every final, playoffs
+  // included, and the playoff run leads. "Still perfect at 9-0 after a
+  // 40-0 win over Shell Lake" was printing for a 12-0 Gilman three
+  // playoff wins later.
+  if (playoffAlive) {
+    const opener = aliveOpener({ finals, playoffFinals, schoolId, schoolName, nameOf, state });
+    if (opener) {
+      const all = arcFromFinals(finals, schoolId);
+      const played = all.wins + all.losses + all.ties;
+      const standout = pickStandout(seasonStatsForSchool ?? [], sportConfig, false, played);
+      const player = standoutClause(standout, sportConfig, false);
+      return player ? `${opener} ${player}` : opener;
+    }
+  }
+
+  // Once the season is over, tone is driven by the regular-season arc —
+  // that's how a coach or beat writer would describe a 5-4 team that lost
+  // in Level 1. Mid-season the record is the running one, every final.
+  // Fall back to all finals if no regular-season games are present.
+  const arcSource = seasonComplete && regularFinals.length > 0 ? regularFinals : finals;
   const { wins, losses, ties, last } = arcFromFinals(arcSource, schoolId);
   if (!last) return null;
 
-  const oppSide = last.isHome ? last.game.away : last.game.home;
-  const oppSchool = oppSide?.school_id ? schoolsById?.get(oppSide.school_id) : null;
-  const oppName = oppSchool?.name ?? oppSide?.name ?? "opponent";
-
-  const schoolName = school?.name ?? "The team";
+  const oppName = nameOf(last.isHome ? last.game.away : last.game.home);
   const played = wins + losses + ties;
   const tone = arcTone(wins, losses, seasonComplete, ties);
   const { phrase: arc, statesRecord } = arcPhrase(

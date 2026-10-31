@@ -11,6 +11,7 @@ import {
 } from "../utils/season.js";
 import { trackEvent } from "../utils/analytics.js";
 import { SITE } from "../config/site.js";
+import { formatSeasonLabel } from "../config/sports.js";
 
 // Self-hosted under frontend/public so we don't depend on the publisher's
 // CDN (which previously rendered blank in some browsers / iframe contexts).
@@ -28,10 +29,18 @@ export default function Layout({
   footerStats,
   lastUpdated,
   dataStale = false,
+  seasonFinal = null,
   breadcrumb,
   sponsors,
 }) {
   const sportPrefix = useSportPrefix();
+  // A finished season on screen — the off-season gap before WIAA posts the
+  // next schedule, or the archive view — has no meaningful "Updated" time:
+  // the July scrape timestamp over March games read as a broken feed. The
+  // pill names the season instead ("2025–26 final"), same treatment.
+  const archived = selectedSeason() !== "live";
+  const finalLabel =
+    seasonFinal ?? (archived ? formatSeasonLabel(selectedSeason()) : null);
   return (
     <div className="app">
       {/* First tab stop. Without it a keyboard or switch user re-traverses
@@ -65,7 +74,15 @@ export default function Layout({
         <div className="masthead__attribution">
           <Sponsor slot="title" sponsors={sponsors} variant="compact" />
           <div className="masthead__meta-row">
-            {lastUpdated && (
+            {finalLabel ? (
+              <div
+                className="masthead__updated masthead__updated--fresh"
+                title={`Final ${finalLabel} results — this season is complete`}
+              >
+                <span className="masthead__updated-dot" aria-hidden="true" />
+                {finalLabel} final
+              </div>
+            ) : lastUpdated && (
               <div
                 className={
                   "masthead__updated" +
