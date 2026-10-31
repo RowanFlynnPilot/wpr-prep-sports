@@ -47,8 +47,12 @@
 3. **Bump `scrape.yml` season default** to the new season id.
 4. **Refresh `nextSeasonStart` dates** in
    `frontend/src/config/sports.js` once WIAA publishes calendars.
-5. **Re-run `scripts/backfill_divisions.py`** once fall brackets post
-   (October) — divisions are enrollment-based and re-cut yearly.
+5. **Football divisions, two steps (October):** `python scripts/divisions_from_wiaa_sheets.py
+   --year 2026 --write` reads WIAA's seven 11-player divisional-placement PDFs
+   (every placed team, playoff or not), then `scripts/backfill_divisions.py --season
+   2026-27` fills the 8-player divisions and the other sports from the brackets.
+   Both merge into `wiaa_division` without touching other sports. Divisions are
+   enrollment-based and re-cut yearly.
 
 ## Per-season sport-list maintenance
 

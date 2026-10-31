@@ -5,3 +5,4 @@ pytest==8.4.1
 # Formatter/linter. Settings live in scraper/ruff.toml, so `ruff format` and
 # `ruff check` need no flags — see the note there about the 88-vs-100 trap.
 ruff==0.15.21
+pypdf>=5.0
