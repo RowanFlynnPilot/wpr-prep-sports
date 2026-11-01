@@ -1,7 +1,7 @@
 {
   "sport": "football",
   "season": "2026-27",
-  "generated_at": "2026-10-31T13:27:22.498910-05:00",
+  "generated_at": "2026-10-31T21:05:42.205546-05:00",
   "method": "WPR Power Index v1: 40% W%, 35% SOS, 25% margin (capped per sport)",
   "rankings": [
     {
@@ -12,9 +12,9 @@
       "losses": 0,
       "ties": 0,
       "win_pct": 1.0,
-      "sos": 0.5351,
+      "sos": 0.5366,
       "avg_margin_capped": 25.75,
-      "score": 82.72,
+      "score": 82.78,
       "movement": 0
     },
     {
@@ -86,13 +86,13 @@
       "rank": 7,
       "school_id": "owen-withee",
       "school_name": "Owen-Withee",
-      "wins": 9,
+      "wins": 10,
       "losses": 2,
       "ties": 0,
-      "win_pct": 0.8182,
+      "win_pct": 0.8333,
       "sos": 0.5213,
-      "avg_margin_capped": 13.91,
-      "score": 69.68,
+      "avg_margin_capped": 13.5,
+      "score": 70.11,
       "movement": 1
     },
     {
@@ -103,9 +103,9 @@
       "losses": 2,
       "ties": 0,
       "win_pct": 0.8182,
-      "sos": 0.5266,
+      "sos": 0.5293,
       "avg_margin_capped": 13.45,
-      "score": 69.66,
+      "score": 69.76,
       "movement": 1
     },
     {
@@ -168,9 +168,9 @@
       "losses": 4,
       "ties": 0,
       "win_pct": 0.6364,
-      "sos": 0.5969,
+      "sos": 0.5986,
       "avg_margin_capped": 2.18,
-      "score": 59.82,
+      "score": 59.88,
       "movement": 1
     },
     {
@@ -298,9 +298,9 @@
       "losses": 5,
       "ties": 0,
       "win_pct": 0.5,
-      "sos": 0.5692,
+      "sos": 0.5708,
       "avg_margin_capped": 0.4,
-      "score": 52.6,
+      "score": 52.66,
       "movement": 0
     },
     {
@@ -389,9 +389,9 @@
       "losses": 5,
       "ties": 0,
       "win_pct": 0.5,
-      "sos": 0.4374,
+      "sos": 0.4391,
       "avg_margin_capped": -5.4,
-      "score": 45.4,
+      "score": 45.46,
       "movement": 3
     },
     {
@@ -441,9 +441,9 @@
       "losses": 6,
       "ties": 0,
       "win_pct": 0.25,
-      "sos": 0.5727,
+      "sos": 0.5749,
       "avg_margin_capped": 4.75,
-      "score": 44.66,
+      "score": 44.74,
       "movement": 0
     },
     {
@@ -558,9 +558,9 @@
       "losses": 6,
       "ties": 0,
       "win_pct": 0.4545,
-      "sos": 0.4227,
+      "sos": 0.4246,
       "avg_margin_capped": -11.64,
-      "score": 40.28,
+      "score": 40.35,
       "movement": 0
     },
     {
@@ -779,9 +779,9 @@
       "losses": 7,
       "ties": 0,
       "win_pct": 0.125,
-      "sos": 0.5905,
+      "sos": 0.5927,
       "avg_margin_capped": -22.62,
-      "score": 28.07,
+      "score": 28.14,
       "movement": 0
     },
     {
@@ -792,9 +792,9 @@
       "losses": 8,
       "ties": 0,
       "win_pct": 0.1111,
-      "sos": 0.5548,
+      "sos": 0.5565,
       "avg_margin_capped": -22.22,
-      "score": 26.44,
+      "score": 26.5,
       "movement": 0
     },
     {
