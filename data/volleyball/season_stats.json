@@ -10319,12 +10319,12 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "4",
+      "GP": "5",
       "KLS": "15",
       "ATT": "31",
       "E": "6",
-      "SP": "10",
-      "AST": "77",
+      "SP": "12",
+      "AST": "103",
       "EFF": ".290"
     }
   },
@@ -10337,12 +10337,12 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "KLS": "6",
-      "ATT": "21",
+      "GP": "4",
+      "KLS": "9",
+      "ATT": "29",
       "E": "2",
-      "SP": "7",
-      "EFF": ".190"
+      "SP": "9",
+      "EFF": ".241"
     }
   },
   {
@@ -10354,13 +10354,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "4",
-      "KLS": "32",
-      "ATT": "77",
-      "E": "11",
-      "SP": "10",
+      "GP": "5",
+      "KLS": "40",
+      "ATT": "104",
+      "E": "15",
+      "SP": "12",
       "AST": "1",
-      "EFF": ".273"
+      "EFF": ".240"
     }
   },
   {
@@ -10372,13 +10372,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "4",
-      "KLS": "30",
-      "ATT": "74",
-      "E": "8",
-      "SP": "10",
+      "GP": "5",
+      "KLS": "37",
+      "ATT": "98",
+      "E": "13",
+      "SP": "12",
       "AST": "2",
-      "EFF": ".297"
+      "EFF": ".245"
     }
   },
   {
@@ -10390,9 +10390,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "ACE": "3",
-      "SP": "7"
+      "GP": "4",
+      "ACE": "4",
+      "SP": "9"
     }
   },
   {
@@ -10418,9 +10418,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "ACE": "5",
-      "SP": "7"
+      "GP": "4",
+      "ACE": "6",
+      "SP": "9"
     }
   },
   {
@@ -10432,9 +10432,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "ACE": "4",
-      "SP": "7"
+      "GP": "4",
+      "ACE": "7",
+      "SP": "9"
     }
   },
   {
@@ -10446,9 +10446,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "4",
-      "DIG": "16",
-      "SP": "10",
+      "GP": "5",
+      "DIG": "22",
+      "SP": "12",
       "BLK": "2"
     }
   },
@@ -10461,9 +10461,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "4",
-      "DIG": "15",
-      "SP": "8"
+      "GP": "5",
+      "DIG": "21",
+      "SP": "10"
     }
   },
   {
@@ -10475,9 +10475,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "4",
-      "DIG": "31",
-      "SP": "10"
+      "GP": "5",
+      "DIG": "42",
+      "SP": "12"
     }
   },
   {
@@ -10504,9 +10504,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "4",
-      "DIG": "18",
-      "SP": "10"
+      "GP": "5",
+      "DIG": "25",
+      "SP": "12"
     }
   },
   {
@@ -10518,10 +10518,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "4",
-      "DIG": "14",
-      "SP": "9",
-      "BLK": "2"
+      "GP": "5",
+      "DIG": "16",
+      "SP": "11",
+      "BLK": "4"
     }
   },
   {
@@ -10551,12 +10551,12 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "KLS": "6",
-      "ATT": "26",
+      "GP": "4",
+      "KLS": "9",
+      "ATT": "35",
       "E": "5",
-      "SP": "8",
-      "EFF": ".038"
+      "SP": "10",
+      "EFF": ".114"
     }
   },
   {
@@ -10568,13 +10568,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "KLS": "7",
-      "ATT": "26",
-      "E": "8",
-      "SP": "7",
-      "AST": "1",
-      "EFF": "-0.038"
+      "GP": "4",
+      "KLS": "14",
+      "ATT": "43",
+      "E": "10",
+      "SP": "9",
+      "AST": "2",
+      "EFF": ".093"
     }
   },
   {
@@ -10586,10 +10586,38 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "3",
-      "DIG": "10",
-      "SP": "8",
+      "GP": "4",
+      "DIG": "17",
+      "SP": "10",
       "BLK": "1"
+    }
+  },
+  {
+    "school_id": "edgar",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Tenley Mauer",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "ACE": "6",
+      "SP": "5"
+    }
+  },
+  {
+    "school_id": "edgar",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Naquene Ellenbecker",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "ACE": "14",
+      "SP": "8"
     }
   },
   {
@@ -12269,34 +12297,6 @@
       "E": "0",
       "SP": "1",
       "EFF": "1.000"
-    }
-  },
-  {
-    "school_id": "edgar",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Tenley Mauer",
-    "player_year": "JR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "1",
-      "ACE": "4",
-      "SP": "3"
-    }
-  },
-  {
-    "school_id": "edgar",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Naquene Ellenbecker",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "ACE": "13",
-      "SP": "6"
     }
   },
   {
@@ -15568,12 +15568,12 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "KLS": "6",
-      "ATT": "20",
-      "E": "4",
-      "SP": "4",
-      "EFF": ".100"
+      "GP": "2",
+      "KLS": "8",
+      "ATT": "30",
+      "E": "6",
+      "SP": "7",
+      "EFF": ".067"
     }
   },
   {
@@ -15585,13 +15585,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "KLS": "4",
-      "ATT": "16",
+      "GP": "3",
+      "KLS": "5",
+      "ATT": "22",
       "E": "5",
-      "SP": "7",
+      "SP": "10",
       "AST": "2",
-      "EFF": "-0.062"
+      "EFF": ".000"
     }
   },
   {
@@ -15603,13 +15603,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "KLS": "17",
-      "ATT": "45",
+      "GP": "3",
+      "KLS": "27",
+      "ATT": "64",
       "E": "9",
-      "SP": "8",
+      "SP": "11",
       "AST": "1",
-      "EFF": ".178"
+      "EFF": ".281"
     }
   },
   {
@@ -15621,12 +15621,12 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "KLS": "47",
-      "ATT": "88",
-      "E": "13",
-      "SP": "8",
-      "EFF": ".386"
+      "GP": "3",
+      "KLS": "57",
+      "ATT": "114",
+      "E": "17",
+      "SP": "11",
+      "EFF": ".351"
     }
   },
   {
@@ -15656,12 +15656,12 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "KLS": "9",
-      "ATT": "29",
-      "E": "5",
-      "SP": "8",
-      "EFF": ".138"
+      "GP": "3",
+      "KLS": "13",
+      "ATT": "42",
+      "E": "8",
+      "SP": "11",
+      "EFF": ".119"
     }
   },
   {
@@ -15701,9 +15701,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "ACE": "5",
-      "SP": "8"
+      "GP": "3",
+      "ACE": "7",
+      "SP": "11"
     }
   },
   {
@@ -15715,9 +15715,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "ACE": "4",
-      "SP": "8"
+      "GP": "3",
+      "ACE": "5",
+      "SP": "11"
     }
   },
   {
@@ -15743,9 +15743,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "1",
-      "ACE": "1",
-      "SP": "5"
+      "GP": "2",
+      "ACE": "3",
+      "SP": "8"
     }
   },
   {
@@ -15757,10 +15757,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "BLK": "5",
-      "SP": "5",
-      "DIG": "11"
+      "GP": "3",
+      "BLK": "6",
+      "SP": "8",
+      "DIG": "13"
     }
   },
   {
@@ -15772,10 +15772,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
+      "GP": "3",
       "BLK": "1",
-      "SP": "7",
-      "DIG": "17"
+      "SP": "10",
+      "DIG": "23"
     }
   },
   {
@@ -15787,10 +15787,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
+      "GP": "3",
       "BLK": "10",
-      "SP": "8",
-      "DIG": "2"
+      "SP": "11",
+      "DIG": "3"
     }
   },
   {
@@ -15802,10 +15802,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "BLK": "11",
-      "SP": "8",
-      "DIG": "13"
+      "GP": "3",
+      "BLK": "13",
+      "SP": "11",
+      "DIG": "14"
     }
   },
   {
@@ -15832,9 +15832,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "DIG": "4",
-      "SP": "3"
+      "GP": "3",
+      "DIG": "5",
+      "SP": "4"
     }
   },
   {
@@ -15846,9 +15846,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "DIG": "52",
-      "SP": "8"
+      "GP": "3",
+      "DIG": "61",
+      "SP": "11"
     }
   },
   {
@@ -15860,9 +15860,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "DIG": "20",
-      "SP": "8",
+      "GP": "3",
+      "DIG": "24",
+      "SP": "11",
       "BLK": "2"
     }
   },
@@ -15889,9 +15889,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "DIG": "9",
-      "SP": "6"
+      "GP": "3",
+      "DIG": "11",
+      "SP": "8"
     }
   },
   {
@@ -15903,10 +15903,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "DIG": "41",
-      "SP": "8",
-      "BLK": "3"
+      "GP": "3",
+      "DIG": "47",
+      "SP": "11",
+      "BLK": "4"
     }
   },
   {
@@ -15936,13 +15936,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "GP": "2",
-      "AST": "78",
-      "SP": "8",
-      "KLS": "2",
-      "ATT": "2",
+      "GP": "3",
+      "AST": "103",
+      "SP": "11",
+      "KLS": "3",
+      "ATT": "4",
       "E": "0",
-      "EFF": "1.000"
+      "EFF": ".750"
     }
   },
   {
@@ -19673,6 +19673,20 @@
       "GP": "1",
       "ACE": "2",
       "SP": "5"
+    }
+  },
+  {
+    "school_id": "dc-everest",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Emery Wiesman",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "ACE": "1",
+      "SP": "3"
     }
   },
   {
