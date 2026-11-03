@@ -9442,18 +9442,38 @@
     "school_id": "stratford",
     "sport": "football",
     "category": "Passing",
+    "player_name": "Drew Bluhm",
+    "player_year": "SO",
+    "position": null,
+    "jersey": "2",
+    "stats": {
+      "C/ATT": "1/1",
+      "PCT": "100.0%",
+      "YDS": "13",
+      "YPC": "13.0",
+      "TDS": "0",
+      "INT": "0",
+      "RTG": "209.2",
+      "TD LG": "0",
+      "LONG": "13"
+    }
+  },
+  {
+    "school_id": "stratford",
+    "sport": "football",
+    "category": "Passing",
     "player_name": "Kolton Haupt",
     "player_year": "SR",
     "position": null,
     "jersey": "10",
     "stats": {
-      "C/ATT": "97/152",
-      "PCT": "63.8%",
-      "YDS": "1391",
-      "YPC": "14.3",
+      "C/ATT": "109/171",
+      "PCT": "63.7%",
+      "YDS": "1473",
+      "YPC": "13.5",
       "TDS": "16",
       "INT": "3",
-      "RTG": "171.5",
+      "RTG": "163.5",
       "TD LG": "76",
       "LONG": "76"
     }
@@ -9507,13 +9527,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "C/ATT": "101/160",
-      "PCT": "63.1%",
-      "YDS": "1433",
-      "YPC": "14.2",
+      "C/ATT": "114/180",
+      "PCT": "63.3%",
+      "YDS": "1528",
+      "YPC": "13.4",
       "TDS": "17",
       "INT": "3",
-      "RTG": "169.7",
+      "RTG": "162.5",
       "TD LG": "76",
       "LONG": "76"
     }
@@ -9527,9 +9547,9 @@
     "position": null,
     "jersey": "2",
     "stats": {
-      "CAR": "12",
-      "YDS": "146",
-      "YPC": "12.2",
+      "CAR": "14",
+      "YDS": "139",
+      "YPC": "9.9",
       "TDS": "1",
       "TD LG": "22",
       "LONG": "23"
@@ -9544,9 +9564,9 @@
     "position": null,
     "jersey": "3",
     "stats": {
-      "CAR": "23",
-      "YDS": "127",
-      "YPC": "5.5",
+      "CAR": "25",
+      "YDS": "133",
+      "YPC": "5.3",
       "TDS": "1",
       "TD LG": "1",
       "LONG": "12"
@@ -9578,9 +9598,9 @@
     "position": null,
     "jersey": "10",
     "stats": {
-      "CAR": "96",
-      "YDS": "366",
-      "YPC": "3.8",
+      "CAR": "109",
+      "YDS": "394",
+      "YPC": "3.6",
       "TDS": "5",
       "TD LG": "13",
       "LONG": "21"
@@ -9612,9 +9632,9 @@
     "position": null,
     "jersey": "21",
     "stats": {
-      "CAR": "148",
-      "YDS": "876",
-      "YPC": "5.9",
+      "CAR": "158",
+      "YDS": "920",
+      "YPC": "5.8",
       "TDS": "11",
       "TD LG": "75",
       "LONG": "24"
@@ -9680,9 +9700,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "CAR": "331",
-      "YDS": "1733",
-      "YPC": "5.2",
+      "CAR": "358",
+      "YDS": "1804",
+      "YPC": "5.0",
       "TDS": "21",
       "TD LG": "75",
       "LONG": "24"
@@ -9714,9 +9734,9 @@
     "position": null,
     "jersey": "3",
     "stats": {
-      "REC": "5",
-      "YDS": "45",
-      "YPC": "9.0",
+      "REC": "8",
+      "YDS": "54",
+      "YPC": "6.8",
       "TDS": "0",
       "TD LG": "0",
       "LONG": "19"
@@ -9731,9 +9751,9 @@
     "position": null,
     "jersey": "4",
     "stats": {
-      "REC": "10",
-      "YDS": "168",
-      "YPC": "16.8",
+      "REC": "12",
+      "YDS": "181",
+      "YPC": "15.1",
       "TDS": "0",
       "TD LG": "0",
       "LONG": "34"
@@ -9765,9 +9785,9 @@
     "position": null,
     "jersey": "8",
     "stats": {
-      "REC": "45",
-      "YDS": "674",
-      "YPC": "15.0",
+      "REC": "52",
+      "YDS": "734",
+      "YPC": "14.1",
       "TDS": "12",
       "TD LG": "67",
       "LONG": "65"
@@ -9867,9 +9887,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "REC": "8",
-      "YDS": "165",
-      "YPC": "20.6",
+      "REC": "9",
+      "YDS": "178",
+      "YPC": "19.8",
       "TDS": "4",
       "TD LG": "64",
       "LONG": "35"
@@ -9884,9 +9904,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "REC": "101",
-      "YDS": "1433",
-      "YPC": "14.2",
+      "REC": "114",
+      "YDS": "1528",
+      "YPC": "13.4",
       "TDS": "17",
       "TD LG": "76",
       "LONG": "65"
@@ -9901,9 +9921,9 @@
     "position": null,
     "jersey": "2",
     "stats": {
-      "TOT": "20",
-      "SOLO": "13",
-      "TFL": "3",
+      "TOT": "23",
+      "SOLO": "15",
+      "TFL": "4",
       "SACKS": "1.0"
     }
   },
@@ -9916,8 +9936,8 @@
     "position": null,
     "jersey": "3",
     "stats": {
-      "TOT": "46",
-      "SOLO": "29",
+      "TOT": "49",
+      "SOLO": "32",
       "TFL": "5",
       "SACKS": "3.0"
     }
@@ -9931,10 +9951,10 @@
     "position": null,
     "jersey": "4",
     "stats": {
-      "TOT": "78",
-      "SOLO": "42",
-      "TFL": "15",
-      "SACKS": "4.0"
+      "TOT": "87",
+      "SOLO": "48",
+      "TFL": "17",
+      "SACKS": "5.0"
     }
   },
   {
@@ -9976,8 +9996,8 @@
     "position": null,
     "jersey": "8",
     "stats": {
-      "TOT": "19",
-      "SOLO": "11",
+      "TOT": "24",
+      "SOLO": "13",
       "TFL": "0",
       "SACKS": "0.0"
     }
@@ -9991,8 +10011,8 @@
     "position": null,
     "jersey": "9",
     "stats": {
-      "TOT": "20",
-      "SOLO": "11",
+      "TOT": "25",
+      "SOLO": "14",
       "TFL": "0",
       "SACKS": "0.0"
     }
@@ -10006,8 +10026,8 @@
     "position": null,
     "jersey": "10",
     "stats": {
-      "TOT": "34",
-      "SOLO": "16",
+      "TOT": "39",
+      "SOLO": "20",
       "TFL": "0",
       "SACKS": "0.0"
     }
@@ -10066,9 +10086,9 @@
     "position": null,
     "jersey": "21",
     "stats": {
-      "TOT": "74",
-      "SOLO": "34",
-      "TFL": "8",
+      "TOT": "80",
+      "SOLO": "39",
+      "TFL": "9",
       "SACKS": "1.0"
     }
   },
@@ -10106,14 +10126,29 @@
     "school_id": "stratford",
     "sport": "football",
     "category": "Defense",
+    "player_name": "Lucas Bornbach",
+    "player_year": "FR",
+    "position": null,
+    "jersey": "24",
+    "stats": {
+      "TOT": "1",
+      "SOLO": "1",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "stratford",
+    "sport": "football",
+    "category": "Defense",
     "player_name": "32/62, John Mews",
     "player_year": "SR",
     "position": null,
     "jersey": null,
     "stats": {
-      "TOT": "42",
-      "SOLO": "16",
-      "TFL": "7",
+      "TOT": "48",
+      "SOLO": "20",
+      "TFL": "8",
       "SACKS": "2.0"
     }
   },
@@ -10141,8 +10176,8 @@
     "position": null,
     "jersey": "51",
     "stats": {
-      "TOT": "7",
-      "SOLO": "5",
+      "TOT": "8",
+      "SOLO": "6",
       "TFL": "1",
       "SACKS": "0.0"
     }
@@ -10156,8 +10191,8 @@
     "position": null,
     "jersey": "53",
     "stats": {
-      "TOT": "76",
-      "SOLO": "36",
+      "TOT": "82",
+      "SOLO": "40",
       "TFL": "12",
       "SACKS": "2.0"
     }
@@ -10171,8 +10206,8 @@
     "position": null,
     "jersey": "55",
     "stats": {
-      "TOT": "22",
-      "SOLO": "7",
+      "TOT": "26",
+      "SOLO": "11",
       "TFL": "1",
       "SACKS": "0.0"
     }
@@ -10186,9 +10221,9 @@
     "position": null,
     "jersey": "59",
     "stats": {
-      "TOT": "30",
-      "SOLO": "14",
-      "TFL": "9",
+      "TOT": "36",
+      "SOLO": "16",
+      "TFL": "10",
       "SACKS": "4.0"
     }
   },
@@ -10201,8 +10236,8 @@
     "position": null,
     "jersey": "63",
     "stats": {
-      "TOT": "25",
-      "SOLO": "11",
+      "TOT": "32",
+      "SOLO": "16",
       "TFL": "9",
       "SACKS": "1.0"
     }
@@ -10216,8 +10251,8 @@
     "position": null,
     "jersey": "64",
     "stats": {
-      "TOT": "6",
-      "SOLO": "1",
+      "TOT": "7",
+      "SOLO": "2",
       "TFL": "1",
       "SACKS": "0.0"
     }
@@ -10291,10 +10326,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "TOT": "563",
-      "SOLO": "275",
-      "TFL": "76",
-      "SACKS": "21.0"
+      "TOT": "631",
+      "SOLO": "322",
+      "TFL": "82",
+      "SACKS": "22.0"
     }
   },
   {
@@ -38127,13 +38162,13 @@
     "position": null,
     "jersey": "12",
     "stats": {
-      "C/ATT": "39/70",
-      "PCT": "55.7%",
-      "YDS": "605",
-      "YPC": "15.5",
-      "TDS": "3",
-      "INT": "1",
-      "RTG": "139.6",
+      "C/ATT": "50/88",
+      "PCT": "56.8%",
+      "YDS": "779",
+      "YPC": "15.6",
+      "TDS": "4",
+      "INT": "2",
+      "RTG": "141.6",
       "TD LG": "0",
       "LONG": "0"
     }
@@ -38167,13 +38202,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "C/ATT": "71/135",
-      "PCT": "52.6%",
-      "YDS": "1096",
-      "YPC": "15.4",
-      "TDS": "8",
-      "INT": "4",
-      "RTG": "134.4",
+      "C/ATT": "82/153",
+      "PCT": "53.6%",
+      "YDS": "1270",
+      "YPC": "15.5",
+      "TDS": "9",
+      "INT": "5",
+      "RTG": "136.2",
       "TD LG": "89",
       "LONG": "0"
     }
@@ -38187,9 +38222,9 @@
     "position": null,
     "jersey": "0",
     "stats": {
-      "CAR": "12",
-      "YDS": "58",
-      "YPC": "4.8",
+      "CAR": "15",
+      "YDS": "64",
+      "YPC": "4.3",
       "TDS": "1",
       "TD LG": "0",
       "LONG": "25"
@@ -38233,14 +38268,31 @@
     "school_id": "river-falls",
     "sport": "football",
     "category": "Rushing",
+    "player_name": "Nolan Hoepfl",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "5",
+    "stats": {
+      "CAR": "1",
+      "YDS": "7",
+      "YPC": "7.0",
+      "TDS": "1",
+      "TD LG": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "river-falls",
+    "sport": "football",
+    "category": "Rushing",
     "player_name": "Max Helminiak",
     "player_year": "SR",
     "position": null,
     "jersey": "9",
     "stats": {
-      "CAR": "68",
-      "YDS": "310",
-      "YPC": "4.6",
+      "CAR": "72",
+      "YDS": "313",
+      "YPC": "4.3",
       "TDS": "3",
       "TD LG": "0",
       "LONG": "0"
@@ -38255,9 +38307,9 @@
     "position": null,
     "jersey": "12",
     "stats": {
-      "CAR": "63",
-      "YDS": "175",
-      "YPC": "2.8",
+      "CAR": "70",
+      "YDS": "186",
+      "YPC": "2.7",
       "TDS": "3",
       "TD LG": "0",
       "LONG": "54"
@@ -38289,10 +38341,10 @@
     "position": null,
     "jersey": "25",
     "stats": {
-      "CAR": "11",
-      "YDS": "41",
-      "YPC": "3.7",
-      "TDS": "0",
+      "CAR": "13",
+      "YDS": "45",
+      "YPC": "3.5",
+      "TDS": "1",
       "TD LG": "0",
       "LONG": "0"
     }
@@ -38323,8 +38375,8 @@
     "position": null,
     "jersey": "32",
     "stats": {
-      "CAR": "218",
-      "YDS": "1114",
+      "CAR": "231",
+      "YDS": "1188",
       "YPC": "5.1",
       "TDS": "11",
       "TD LG": "57",
@@ -38340,10 +38392,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "CAR": "400",
-      "YDS": "1734",
+      "CAR": "430",
+      "YDS": "1839",
       "YPC": "4.3",
-      "TDS": "19",
+      "TDS": "21",
       "TD LG": "57",
       "LONG": "57"
     }
@@ -38357,9 +38409,9 @@
     "position": null,
     "jersey": "0",
     "stats": {
-      "REC": "36",
-      "YDS": "633",
-      "YPC": "17.6",
+      "REC": "40",
+      "YDS": "723",
+      "YPC": "18.1",
       "TDS": "3",
       "TD LG": "38",
       "LONG": "38"
@@ -38374,10 +38426,10 @@
     "position": null,
     "jersey": "1",
     "stats": {
-      "REC": "10",
-      "YDS": "178",
-      "YPC": "17.8",
-      "TDS": "2",
+      "REC": "12",
+      "YDS": "199",
+      "YPC": "16.6",
+      "TDS": "3",
       "TD LG": "89",
       "LONG": "0"
     }
@@ -38408,9 +38460,9 @@
     "position": null,
     "jersey": "8",
     "stats": {
-      "REC": "10",
-      "YDS": "126",
-      "YPC": "12.6",
+      "REC": "11",
+      "YDS": "150",
+      "YPC": "13.6",
       "TDS": "1",
       "TD LG": "0",
       "LONG": "0"
@@ -38425,9 +38477,9 @@
     "position": null,
     "jersey": "9",
     "stats": {
-      "REC": "1",
-      "YDS": "31",
-      "YPC": "31.0",
+      "REC": "2",
+      "YDS": "35",
+      "YPC": "17.5",
       "TDS": "0",
       "TD LG": "0",
       "LONG": "31"
@@ -38476,9 +38528,9 @@
     "position": null,
     "jersey": "17",
     "stats": {
-      "REC": "1",
-      "YDS": "11",
-      "YPC": "11.0",
+      "REC": "2",
+      "YDS": "21",
+      "YPC": "10.5",
       "TDS": "0",
       "TD LG": "0",
       "LONG": "0"
@@ -38493,10 +38545,27 @@
     "position": null,
     "jersey": "32",
     "stats": {
-      "REC": "6",
-      "YDS": "56",
-      "YPC": "9.3",
+      "REC": "7",
+      "YDS": "71",
+      "YPC": "10.1",
       "TDS": "2",
+      "TD LG": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "river-falls",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Chase Radloff",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "88",
+    "stats": {
+      "REC": "1",
+      "YDS": "10",
+      "YPC": "10.0",
+      "TDS": "0",
       "TD LG": "0",
       "LONG": "0"
     }
@@ -38510,10 +38579,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "REC": "71",
-      "YDS": "1096",
-      "YPC": "15.4",
-      "TDS": "8",
+      "REC": "82",
+      "YDS": "1270",
+      "YPC": "15.5",
+      "TDS": "9",
       "TD LG": "89",
       "LONG": "38"
     }
