@@ -114,6 +114,12 @@ coverage, only `meta.last_updated`.
 
 ## Before state week
 
+Since 2026-11-05 the 10-minute live cron also refreshes the state pages while a
+sport has playoff games in its dataset (`refresh_state_games` in
+`transform/normalize.py`), so state scores land within minutes of WIAA posting
+them instead of waiting for the hourly scrape. The hourly scrape remains the
+source for new pairings and anything the live path did not catch.
+
 State semifinals and finals reach the site only through WIAA's
 state-tournament pages (school schedules stop at Level 4 / Sectional
 Final; see docs/data-sources.md, "State-tournament games"). The hourly

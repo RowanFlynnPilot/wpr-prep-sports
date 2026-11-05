@@ -20,6 +20,7 @@ from config.loader import load_manifest
 from models.schema import GameStatus, Sport
 from sources import wiaa_state as ws
 from transform.normalize import (
+    refresh_state_games,
     _merge_state_games,
     build_dataset,
     build_name_index_for_manifest,
@@ -526,3 +527,30 @@ def test_collect_state_games_only_fetches_in_postseason(monkeypatch, tmp_path):
     series = [{"games": [{"label": "WIAA Tournament - Level1"}]}]
     main.collect_state_games("football", "2026-27", series)
     assert calls == ["football"]
+
+
+def test_refresh_state_games_scores_a_pending_state_game(manifest):
+    """Live mode: a scheduled state game in the dataset gains its score (and the
+    standings count it) when WIAA's tournament page posts the result."""
+    import dataclasses
+
+    final = _edgar_final()
+    pending = dataclasses.replace(final, score_a=None, score_b=None, set_scores=[])
+    ds = build_dataset(
+        manifest=manifest,
+        raw_team_schedules=_edgar_schedule(),
+        sport="football",
+        season="2025-26",
+        state_games=[pending],
+    )
+    before = next(g for g in ds.games if g.playoff_round == "State Championship")
+    assert before.status != GameStatus.FINAL
+
+    changed = refresh_state_games(ds, manifest, [final], sport="football", season="2025-26")
+    assert changed == 1
+    after = next(g for g in ds.games if g.playoff_round == "State Championship")
+    assert after.status == GameStatus.FINAL
+    row = next(r for s in ds.standings for r in s.rows if r.school_id == "edgar")
+    assert (row.overall_wins, row.overall_losses) == (1, 1)
+    # Idempotent: the same rows again change nothing.
+    assert refresh_state_games(ds, manifest, [final], sport="football", season="2025-26") == 0

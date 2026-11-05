@@ -469,6 +469,47 @@ def state_games_to_games(
     return out
 
 
+def refresh_state_games(dataset, manifest, state_rows, *, sport: str, season: str) -> int:
+    """
+    Fold WIAA state-tournament rows into an existing dataset in place (the
+    live cron's path: a full scrape rebuilds from schedules instead). Returns
+    how many games changed, and rebuilds standings when a result landed so
+    overall records count the state game like any other.
+    """
+    if not state_rows:
+        return 0
+    sport_enum = Sport(sport)
+    name_to_id = _build_name_index(manifest)
+    id_to_name = {s.id: s.name for s in manifest.schools}
+    games = {g.id: g for g in dataset.games}
+    before = {
+        gid: (g.status, g.home.score, g.away.score, g.playoff_round) for gid, g in games.items()
+    }
+    _merge_state_games(
+        games,
+        state_games_to_games(
+            state_rows,
+            sport=sport_enum,
+            season=season,
+            name_to_id=name_to_id,
+            id_to_name=id_to_name,
+        ),
+    )
+    changed = [
+        gid
+        for gid, g in games.items()
+        if before.get(gid) != (g.status, g.home.score, g.away.score, g.playoff_round)
+    ]
+    if not changed:
+        return 0
+    dataset.games = sorted(games.values(), key=lambda g: (g.date, g.id))
+    if any(games[gid].status == GameStatus.FINAL for gid in changed):
+        dataset.standings = _build_standings(
+            dataset.games, manifest=manifest, sport=sport_enum, season=season
+        )
+    return len(changed)
+
+
 def _merge_state_games(games: dict[str, Game], state: list[Game]) -> None:
     """
     Fold state games into the schedule-built `games` dict in place. A state

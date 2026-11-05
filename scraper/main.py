@@ -29,6 +29,7 @@ from transform.normalize import (
     _parse_playoff_label,
     build_dataset,
     build_name_index_for_manifest,
+    refresh_state_games,
 )
 from transform.live import merge_live_scores
 from transform.rankings import compute_power_rankings
@@ -149,6 +150,21 @@ def main() -> int:
             manifest=manifest,
             console=console,
         )
+        # State-tournament sessions: WIAA's tournament page is the only
+        # source of state scores and the hourly scrape can trail a session
+        # by an hour (volleyball state, 2026-11-05). While the dataset holds
+        # playoff games and the sport has state pages, refresh them here too.
+        if args.sport in wiaa_state.STATE_PAGES and any(g.playoff for g in dataset.games):
+            state_rows = wiaa_state.merge_state_rows(
+                wiaa_state.load_state_overrides(STATE_OVERRIDES_PATH, args.sport, args.season),
+                wiaa_state.fetch_state_games(args.sport, args.season, console=console),
+            )
+            state_updates = refresh_state_games(
+                dataset, manifest, state_rows, sport=args.sport, season=args.season
+            )
+            if state_updates:
+                console.print(f"  {state_updates} state game(s) updated from WIAA state pages")
+            live_updates += state_updates
         # Zero updates → leave the dataset untouched. Off-season this keeps
         # the live cron from producing timestamp-only commits + deploys;
         # in-season freshness is covered by the hourly full scrape.

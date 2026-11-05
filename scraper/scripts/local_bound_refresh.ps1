@@ -63,35 +63,44 @@ if ($branch -ne 'main') { Log "skip: checkout is on '$branch', not main"; exit 0
 if (git status --porcelain --untracked-files=no -- data) { Log "skip: data/ has uncommitted local changes"; exit 0 }
 
 Log "start: $($Sport -join ' ')"
-if ((Native 'git pull -q --ff-only origin main') -ne 0) { Log "abort: git pull --ff-only failed (diverged checkout or offline)"; exit 1 }
+# Two rounds: the 5:15 run starts the minute the hourly CI scrape pushes, so a
+# rebase conflict on the first push is routine (seen daily 2026-11-05). Instead
+# of discarding the refresh until tomorrow, pull again and redo it once.
+for ($round = 1; $round -le 2; $round++) {
+  if ($round -gt 1) { Log "round ${round}: re-pulling and redoing the refresh" }
+  if ((Native 'git pull -q --ff-only origin main') -ne 0) { Log "abort: git pull --ff-only failed (diverged checkout or offline)"; exit 1 }
 
-$sportArgs = ($Sport | ForEach-Object { "--sport $_" }) -join ' '
-Set-Location (Join-Path $repo 'scraper')
-if ((Native "`"$py`" scripts\refresh_bound.py $sportArgs") -ne 0) { Log "abort: refresh_bound.py failed"; Set-Location $repo; git checkout -q -- data; exit 1 }
-if ((Native "`"$py`" scripts\validate_data.py") -ne 0) { Log "abort: validate_data.py failed; discarding this refresh"; Set-Location $repo; git checkout -q -- data; exit 1 }
-Set-Location $repo
+  $sportArgs = ($Sport | ForEach-Object { "--sport $_" }) -join ' '
+  Set-Location (Join-Path $repo 'scraper')
+  if ((Native "`"$py`" scripts\refresh_bound.py $sportArgs") -ne 0) { Log "abort: refresh_bound.py failed"; Set-Location $repo; git checkout -q -- data; git clean -fdq -- data; exit 1 }
+  if ((Native "`"$py`" scripts\validate_data.py") -ne 0) { Log "abort: validate_data.py failed; discarding this refresh"; Set-Location $repo; git checkout -q -- data; git clean -fdq -- data; exit 1 }
+  Set-Location $repo
 
-git add -- data
-git diff --cached --quiet
-if ($LASTEXITCODE -eq 0) { Log "done: no stat changes"; exit 0 }
+  git add -- data
+  git diff --cached --quiet
+  if ($LASTEXITCODE -eq 0) { Log "done: no stat changes"; exit 0 }
 
-$stamp = Get-Date -Format 'yyyy-MM-ddTHH:mm'
-git commit -q -m "data: local Bound refresh $stamp ($($Sport -join ' '))"
-for ($attempt = 1; $attempt -le 3; $attempt++) {
-  if ((Native 'git push -q origin main') -eq 0) { Log "done: pushed $(git rev-parse --short HEAD)"; exit 0 }
-  Log "push rejected (attempt $attempt): rebasing"
-  if ((Native 'git pull --rebase origin main') -ne 0) {
-    # A conflict means the cron rewrote the same files since we pulled.
-    # This refresh is superseded: drop the commit, restore data/ to
-    # origin, leave any other local edits alone. Tomorrow's run redoes it.
-    Native 'git rebase --abort' | Out-Null
-    git reset -q --mixed HEAD~1
-    git checkout -q -- data
-    git clean -fdq -- data
-    Native 'git pull -q --ff-only origin main' | Out-Null
-    Log "abort: rebase conflict; refresh discarded (next run redoes it)"
-    exit 1
+  $stamp = Get-Date -Format 'yyyy-MM-ddTHH:mm'
+  git commit -q -m "data: local Bound refresh $stamp ($($Sport -join ' '))"
+  $conflict = $false
+  for ($attempt = 1; $attempt -le 3; $attempt++) {
+    if ((Native 'git push -q origin main') -eq 0) { Log "done: pushed $(git rev-parse --short HEAD)"; exit 0 }
+    Log "push rejected (attempt $attempt): rebasing"
+    if ((Native 'git pull --rebase origin main') -ne 0) {
+      # A conflict means the cron rewrote the same files since we pulled.
+      # Drop the commit, restore data/ to origin, and (round 1) try the
+      # whole refresh again on top of the cron's data.
+      Native 'git rebase --abort' | Out-Null
+      git reset -q --mixed HEAD~1
+      git checkout -q -- data
+      git clean -fdq -- data
+      Native 'git pull -q --ff-only origin main' | Out-Null
+      $conflict = $true
+      break
+    }
   }
+  if (-not $conflict) { Log "abort: push rejected three times; commit left in place for the next run to carry"; exit 1 }
+  Log "rebase conflict on round ${round}"
 }
-Log "abort: push rejected three times; commit left in place for the next run to carry"
+Log "abort: rebase conflict twice; refresh discarded (next run redoes it)"
 exit 1
