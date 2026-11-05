@@ -29,6 +29,10 @@ on:
     - cron: "*/10 23 * * 1,2,3,4,5,6"  # Mon-Sat evening UTC (CT weeknight + Sat)
     - cron: "*/10 0-5 * * 0,2,3,4,5,6" # early UTC = CT late evening, Sun covers Sat night
     - cron: "*/10 18-22 * * 6"         # Saturday afternoon UTC (tournament)
+    # State tournaments play daytime sessions on weekdays (volleyball and
+    # boys soccer Nov 5-7, football Nov 19-20) and the live run now refreshes
+    # WIAA's state pages, so November 5-21 gets an 8 AM-4 PM CT window too.
+    - cron: "*/10 14-22 5-21 11 *"
   workflow_dispatch:
     inputs:
       sport:
