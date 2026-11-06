@@ -74,7 +74,11 @@ export function selectMiniGames(games, { now = Date.now(), cityRank, followedIds
       live.push(g);
     } else if (g.status === "final") {
       if (isUnreportedFinal(g) || isForfeitScore(g)) continue;
-      if (t <= now && now - t <= RESULT_WINDOW_MS) finals.push(g);
+      // A final is a result even when its listed start is still ahead:
+      // WIAA re-dates a state game to a 7:00 PM default once the score
+      // posts, and an 11:30 AM semifinal vanished from the mini all
+      // afternoon (2026-11-05).
+      if (t - now <= 86_400_000 && now - t <= RESULT_WINDOW_MS) finals.push(g);
     } else if (g.status === "scheduled") {
       if (isStaleScheduled(g, now)) continue;
       if (isUnderway(g, now)) underway.push(g);
@@ -90,8 +94,13 @@ export function selectMiniGames(games, { now = Date.now(), cityRank, followedIds
 
   live.sort((a, b) => byInterest(a, b) || byNearness(a, b) || timeOf(a) - timeOf(b));
   underway.sort((a, b) => byInterest(a, b) || byNearness(a, b) || timeOf(a) - timeOf(b));
+  // A tracked team's state-tournament result leads whatever the region:
+  // on volleyball state day the mini showed Saturday's regional finals
+  // while Columbus Catholic's semifinal sat below the fold (2026-11-05).
+  const isState = (g) => g.playoff && /^state/i.test(g.playoff_round ?? "");
   finals.sort(
     (a, b) =>
+      flag(isState(b)) - flag(isState(a)) ||
       byInterest(a, b) ||
       dayOf(b).localeCompare(dayOf(a)) ||
       byNearness(a, b) ||

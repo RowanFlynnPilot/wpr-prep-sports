@@ -192,6 +192,26 @@ needs individual-sport modeling), then baseball/softball/track (spring).
   `data/all_area.json`, slot `all-area`, docs/all-area.md). Off-season
   sport pages lead with "How <season> ended" (`components/OffSeasonRecap.jsx`)
   and the masthead pill reads "<season> final".
+- **State-day mode** (2026-11-05, volleyball state review) — game-day mode
+  also turns on, at any hour, from an hour before the first playoff game
+  dated today (`utils/gameDay.js`; hero eyebrow "State tournament today" /
+  "Playoffs tonight"); a scheduled game whose start has passed reads
+  "Underway" for 3 h (`utils/games.js` `isUnderway`), then "Score pending";
+  the dashboard clock is capped at the END of the last game's day. The
+  shared postseason view (`utils/postseason.js`) now separates
+  `champions` (final win in a title round) from alive/eliminated, labels
+  rounds (`roundLabel`: Level 4 → "State semifinal (Level 4)") and detects
+  neutral sites (`isNeutralSite`: venue names neither school → "vs" +
+  venue, never "@ Heritage Christian"). WIAA records soccer shootouts as
+  draws; `utils/bracket.js` resolves the winner from the later round and
+  every surface reads "W 4-4 (PK)". The mini feed carries `playoff_round`
+  and `venue`; a state result leads the mini's results whatever the
+  region. Scraper: live mode takes the season from meta.json (the CLI
+  default once pulled the 2025 state finals into 2026-27 files) and
+  `state_games_to_games` drops rows outside the season's Aug 1 – Jul 1
+  window; a state game keeps its start time after WIAA drops it from the
+  result line (`known_start_times`, `data/state_games.json` can pin one).
+  Season Wrapped PNGs render in `scrape.yml`'s OG-card step.
 - Per-school embeds (`#/<sport>/embed/<id>` + media-kit builder), Senior
   Spotlights, weekly digest, rivalry/head-to-head history, season archive
   selector, division filter chips (power rankings + bracket)
