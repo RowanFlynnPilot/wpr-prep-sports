@@ -155,13 +155,17 @@ def main() -> int:
         # source of state scores and the hourly scrape can trail a session
         # by an hour (volleyball state, 2026-11-05). While the dataset holds
         # playoff games and the sport has state pages, refresh them here too.
+        # The season is the dataset's, never the CLI default: the live cron
+        # passes no --season, and the stale default once pulled the 2025
+        # state finals into the 2026-27 files (2026-11-05).
+        season = dataset.meta.season or args.season
         if args.sport in wiaa_state.STATE_PAGES and any(g.playoff for g in dataset.games):
             state_rows = wiaa_state.merge_state_rows(
-                wiaa_state.load_state_overrides(STATE_OVERRIDES_PATH, args.sport, args.season),
-                wiaa_state.fetch_state_games(args.sport, args.season, console=console),
+                wiaa_state.load_state_overrides(STATE_OVERRIDES_PATH, args.sport, season),
+                wiaa_state.fetch_state_games(args.sport, season, console=console),
             )
             state_updates = refresh_state_games(
-                dataset, manifest, state_rows, sport=args.sport, season=args.season
+                dataset, manifest, state_rows, sport=args.sport, season=season
             )
             if state_updates:
                 console.print(f"  {state_updates} state game(s) updated from WIAA state pages")

@@ -23,7 +23,7 @@ Responsibilities:
 from __future__ import annotations
 
 import re
-from datetime import datetime
+from datetime import date, datetime
 from typing import Iterable
 from zoneinfo import ZoneInfo
 
@@ -412,6 +412,17 @@ def _side_anchor(side: TeamScore) -> str:
     return side.school_id or _slugify(side.name)
 
 
+def season_window(season: str) -> tuple[date, date] | None:
+    """[Aug 1 of the season's first year, Jul 1 of the next): the dates a
+    "2026-27" game can carry — fall practice opens in August and the spring
+    soccer state final is mid-June. None when the label isn't "YYYY-YY"."""
+    m = re.match(r"^(\d{4})-\d{2}$", season or "")
+    if not m:
+        return None
+    start = int(m.group(1))
+    return date(start, 8, 1), date(start + 1, 7, 1)
+
+
 def known_start_times(games: Iterable[Game]) -> dict:
     """(date_iso, frozenset(anchors)) -> datetime for every game, the lookup
     state_games_to_games uses to keep a start time WIAA has since dropped."""
@@ -447,7 +458,13 @@ def state_games_to_games(
     manual override file) or WIAA display names.
     """
     out: list[Game] = []
+    window = season_window(season)
     for r in rows:
+        # A row from another season's page (the archive block, or a state
+        # fetch made for a stale season label) never belongs in this file:
+        # it would hand a school last year's title and an extra win.
+        if window and not (window[0] <= r.date < window[1]):
+            continue
         sides = []
         for name, score in ((r.team_a, r.score_a), (r.team_b, r.score_b)):
             sid = name if name in id_to_name else _resolve_school_id(name, name_to_id)

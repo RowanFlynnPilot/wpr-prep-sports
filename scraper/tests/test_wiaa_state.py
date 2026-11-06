@@ -606,3 +606,22 @@ def test_state_games_keep_known_start_time_from_previous_dataset(manifest):
     assert final.status == GameStatus.FINAL
     assert (final.date.hour, final.date.minute) == (11, 30)
     assert final.id == game.id
+
+
+def test_state_rows_outside_the_season_window_are_dropped(manifest):
+    """A 2025 archive row must never land in a 2026-27 file, whatever season
+    label the fetch was made for (live run, 2026-11-05)."""
+    import dataclasses
+
+    last_year = _edgar_final()  # dated 2025-11-20
+    ds = build_dataset(
+        manifest=manifest,
+        raw_team_schedules=_edgar_schedule(),
+        sport="football",
+        season="2026-27",
+        state_games=[last_year],
+    )
+    assert not any(g.playoff_round == "State Championship" for g in ds.games)
+    assert refresh_state_games(ds, manifest, [last_year], sport="football", season="2026-27") == 0
+    this_year = dataclasses.replace(last_year, date=date(2026, 11, 19))
+    assert refresh_state_games(ds, manifest, [this_year], sport="football", season="2026-27") == 1
