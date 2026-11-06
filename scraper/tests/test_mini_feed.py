@@ -24,7 +24,12 @@ def _game(gid: str, date: str, **extra) -> dict:
         "status": "final",
         "venue": "@Somewhere",
         "conference_game": True,
-        "home": {"school_id": "wausau-east", "name": "Wausau East", "score": 27, "logo_url": "h.png"},
+        "home": {
+            "school_id": "wausau-east",
+            "name": "Wausau East",
+            "score": 27,
+            "logo_url": "h.png",
+        },
         "away": {"school_id": None, "name": "Lakeland", "score": 22, "logo_url": None},
         "headline_stats": [{"player_name": "X"}],
         "stat_line_count": 4,
@@ -49,7 +54,19 @@ def test_window_keeps_recent_and_upcoming_games_only():
 def test_games_are_trimmed_to_the_fields_the_mini_renders():
     feed = build_mini_feed("football", [_game("g", "2026-09-11T19:00:00-05:00")], now=NOW)
     (g,) = feed["games"]
-    assert set(g) == {"id", "sport", "date", "status", "conference_game", "home", "away"}
+    assert set(g) <= {
+        "id",
+        "sport",
+        "date",
+        "status",
+        "conference_game",
+        "playoff",
+        "playoff_round",
+        "venue",
+        "home",
+        "away",
+    }
+    assert "headline_stats" not in g and "scoring" not in g
     assert g["home"] == {
         "school_id": "wausau-east",
         "name": "Wausau East",

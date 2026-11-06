@@ -188,7 +188,16 @@ def _write_split_games(sport_dir: Path, games: list[dict]) -> None:
 # older than that.
 MINI_FEED_PAST_DAYS = 10
 MINI_FEED_FUTURE_DAYS = 14
-_MINI_GAME_KEYS = ("id", "sport", "date", "status", "conference_game", "playoff")
+_MINI_GAME_KEYS = (
+    "id",
+    "sport",
+    "date",
+    "status",
+    "conference_game",
+    "playoff",
+    "playoff_round",  # the mini labels playoff rows ("State semifinal (Level 4)")
+    "venue",  # neutral-site rows read "vs" + venue (state week, 2026-11-05)
+)
 _MINI_SIDE_KEYS = ("school_id", "name", "score", "logo_url")
 
 
