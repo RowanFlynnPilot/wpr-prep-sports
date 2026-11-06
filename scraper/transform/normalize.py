@@ -96,6 +96,7 @@ def build_dataset(
     sport: str,
     season: str,
     state_games: list | None = None,
+    known_times: dict | None = None,
 ) -> Dataset:
     """Combine the manifest with raw per-team schedules into a Dataset.
 
@@ -191,6 +192,7 @@ def build_dataset(
                 season=season,
                 name_to_id=name_to_id,
                 id_to_name=id_to_name,
+                known_times=known_times,
             ),
         )
 
@@ -410,6 +412,15 @@ def _side_anchor(side: TeamScore) -> str:
     return side.school_id or _slugify(side.name)
 
 
+def known_start_times(games: Iterable[Game]) -> dict:
+    """(date_iso, frozenset(anchors)) -> datetime for every game, the lookup
+    state_games_to_games uses to keep a start time WIAA has since dropped."""
+    return {
+        (g.date.date().isoformat(), frozenset((_side_anchor(g.home), _side_anchor(g.away)))): g.date
+        for g in games
+    }
+
+
 def state_games_to_games(
     rows: Iterable,
     *,
@@ -417,9 +428,15 @@ def state_games_to_games(
     season: str,
     name_to_id: dict[str, str],
     id_to_name: dict[str, str],
+    known_times: dict | None = None,
 ) -> list[Game]:
     """
     StateGame rows (sources/wiaa_state.py) -> Game models, tracked games only.
+
+    `known_times` maps (date_iso, frozenset(anchors)) -> datetime from the
+    previous dataset: WIAA removes a line's start time once it carries a
+    result, so a scored row without a time keeps the time the scheduled
+    row had instead of falling back to the 7:00 PM default.
 
     State games are neutral-site and WIAA lists the WINNER first on result
     lines but the higher seed first on the pre-game schedule, so neither
@@ -442,7 +459,11 @@ def state_games_to_games(
         flip = anchors[0] > anchors[1]
         away, home = (sides[1], sides[0]) if flip else (sides[0], sides[1])
         date_iso = r.date.isoformat()
-        dt = _parse_datetime(date_iso, r.time)
+        dt = None
+        if not r.time and known_times:
+            dt = known_times.get((date_iso, frozenset(anchors)))
+        if dt is None:
+            dt = _parse_datetime(date_iso, r.time)
         if dt is None:
             continue
         scored = away[2] is not None and home[2] is not None

@@ -105,6 +105,10 @@ into that row instead of being duplicated.
 or WIAA posts late, add the game by hand. The file is optional (absent
 = no overrides). Its rows win over parsed rows for the same day and
 pair, unless the override is scoreless and the parsed row has a score.
+A start time known from either row survives the merge, so a scoreless
+override with only a `time` pins the start time of a game WIAA has already
+scored (its result lines drop the time). Team names must match WIAA's
+display names ("Columbus Catholic"), not manifest ids.
 
 ```json
 {

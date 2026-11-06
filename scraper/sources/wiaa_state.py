@@ -48,7 +48,7 @@ from __future__ import annotations
 import json
 import re
 import time
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
 from datetime import date
 from pathlib import Path
 from typing import Any
@@ -450,14 +450,20 @@ def _key(g: StateGame) -> tuple:
 
 def merge_state_rows(*sources: list[StateGame]) -> list[StateGame]:
     """Union of row lists, one row per (date, pair). Earlier sources win,
-    except that a scored row always replaces a scoreless one."""
+    except that a scored row always replaces a scoreless one. A start time
+    known from either row survives the merge: WIAA drops the time from a
+    line once it carries a result, so the scored row usually has none."""
     merged: dict[tuple, StateGame] = {}
     for rows in sources:
         for g in rows:
             k = _key(g)
             prev = merged.get(k)
-            if prev is None or (prev.score_a is None and g.score_a is not None):
+            if prev is None:
                 merged[k] = g
+            elif prev.score_a is None and g.score_a is not None:
+                merged[k] = replace(g, time=g.time or prev.time)
+            elif prev.time is None and g.time:
+                merged[k] = replace(prev, time=g.time)
     return sorted(merged.values(), key=lambda g: (g.date, g.time or "", g.team_a))
 
 

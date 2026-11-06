@@ -25,6 +25,7 @@ from transform.normalize import (
     build_dataset,
     build_name_index_for_manifest,
     state_games_to_games,
+    known_start_times,
 )
 
 
@@ -554,3 +555,54 @@ def test_refresh_state_games_scores_a_pending_state_game(manifest):
     assert (row.overall_wins, row.overall_losses) == (1, 1)
     # Idempotent: the same rows again change nothing.
     assert refresh_state_games(ds, manifest, [final], sport="football", season="2025-26") == 0
+
+
+def test_merge_state_rows_keeps_time_when_result_replaces_schedule():
+    """WIAA drops the start time from a line once it carries a result, so the
+    scored row inherits the scheduled row's time instead of losing it."""
+    import dataclasses
+
+    final = _edgar_final()
+    scheduled = dataclasses.replace(
+        final, score_a=None, score_b=None, set_scores=[], time="11:30AM"
+    )
+    scored = dataclasses.replace(final, time=None)
+    merged = ws.merge_state_rows([scheduled], [scored])
+    assert len(merged) == 1
+    assert merged[0].score_a == final.score_a
+    assert merged[0].time == "11:30AM"
+    # A later source with a time fills a timeless earlier row too.
+    merged = ws.merge_state_rows([scored], [scheduled])
+    assert merged[0].score_a == final.score_a and merged[0].time == "11:30AM"
+
+
+def test_state_games_keep_known_start_time_from_previous_dataset(manifest):
+    """Full scrape: a result row with no time keeps the start time the previous
+    dataset held for that game rather than the 7:00 PM default."""
+    import dataclasses
+
+    scheduled = dataclasses.replace(
+        _edgar_final(), score_a=None, score_b=None, set_scores=[], time="11:30AM"
+    )
+    before = build_dataset(
+        manifest=manifest,
+        raw_team_schedules=_edgar_schedule(),
+        sport="football",
+        season="2025-26",
+        state_games=[scheduled],
+    )
+    game = next(g for g in before.games if g.playoff_round == "State Championship")
+    assert (game.date.hour, game.date.minute) == (11, 30)
+
+    after = build_dataset(
+        manifest=manifest,
+        raw_team_schedules=_edgar_schedule(),
+        sport="football",
+        season="2025-26",
+        state_games=[dataclasses.replace(_edgar_final(), time=None)],
+        known_times=known_start_times(before.games),
+    )
+    final = next(g for g in after.games if g.playoff_round == "State Championship")
+    assert final.status == GameStatus.FINAL
+    assert (final.date.hour, final.date.minute) == (11, 30)
+    assert final.id == game.id

@@ -28,6 +28,7 @@ from transform.normalize import (
     CENTRAL,
     _parse_playoff_label,
     build_dataset,
+    known_start_times,
     build_name_index_for_manifest,
     refresh_state_games,
 )
@@ -274,12 +275,23 @@ def main() -> int:
 
     state_games = collect_state_games(args.sport, args.season, raw_schedules)
 
+    # Start times WIAA has dropped from result lines come from the dataset
+    # we are about to replace (state day 2026-11-05: an 11:30 AM semifinal
+    # rebuilt at the 7:00 PM default the moment its score posted).
+    previous = read_dataset(args.sport, DATA_DIR)
+    known_times = (
+        known_start_times(previous.games)
+        if previous is not None and previous.meta.season == args.season
+        else None
+    )
+
     dataset = build_dataset(
         manifest=manifest,
         raw_team_schedules=raw_schedules,
         sport=args.sport,
         season=args.season,
         state_games=state_games,
+        known_times=known_times,
     )
 
     console.print(
