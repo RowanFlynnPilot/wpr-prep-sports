@@ -102,13 +102,15 @@ export default function Hero({
   const slateLine = tonight ? slateSummary(tonight) : "";
   const showTime = !isFinal && !underway && !pending;
 
-  // Recap is written from the winning side's perspective (or home if tied
-  // and both tracked, or whichever side is in our manifest).
-  const perspectiveSchoolId = homeWon
-    ? game.home.school_id
-    : awayWon
-    ? game.away.school_id
-    : game.home.school_id || game.away.school_id;
+  // Recap is written from the winning side's perspective when that side is
+  // tracked; otherwise from the tracked loser's (a state-semifinal exit to
+  // an untracked school read "fell to Heritage Christian 3-0" with no
+  // "season ended" because the empty winner id gave the recap no team
+  // context, 2026-11-05); or home if tied, or whichever side we track.
+  const winnerId = homeWon ? game.home.school_id : awayWon ? game.away.school_id : "";
+  const loserId = homeWon ? game.away.school_id : awayWon ? game.home.school_id : "";
+  const perspectiveSchoolId =
+    winnerId || loserId || game.home.school_id || game.away.school_id;
   const perspectiveTeamGames = isFinal && perspectiveSchoolId
     ? games.filter(
         (g) =>

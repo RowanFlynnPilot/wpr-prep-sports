@@ -254,8 +254,9 @@ export default function DashboardPage({
   const featured = heroTonight ? tonightGame : featuredPick;
   // On a playoff week the hero prefers a tracked team's win; when the only
   // result left to lead with ended a tracked team's season, its eyebrow
-  // reads "Season over". Game day keeps its own eyebrow.
-  const heroSeasonOver = !heroTonight && isTrackedElimination(featured);
+  // reads "Season over" — on a tournament day too, where the lead is that
+  // night's game (a state-semifinal exit read "Final" all evening).
+  const heroSeasonOver = isTrackedElimination(featured);
   const marqueeSold = !!sponsors?.slots?.[`marquee:${dataset.sport}`]?.name;
   // The strip steps aside only when the hero is showing its very game.
   const showMarquee = !heroIsMarquee || marqueeSold;
