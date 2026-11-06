@@ -2,6 +2,7 @@ import { useMemo } from "react";
 import { Link } from "react-router-dom";
 import TeamLogo from "./TeamLogo.jsx";
 import { schoolFor } from "../utils/schools.js";
+import { isUnderway } from "../utils/games.js";
 import { formatGameDate, formatGameDay } from "../utils/dates.js";
 
 // formatGameDay is the eyebrow's uppercase form; a sentence wants "Tuesday".
@@ -39,6 +40,10 @@ export default function GamePreview({ game, dataset, schoolIndex, pending = fals
 
   if (game.status !== "scheduled") return null;
 
+  // Start time passed, no live feed, no score yet (utils/games.js): the
+  // preview is for a game being played, not one still ahead.
+  const underway = !pending && isUnderway(game);
+
   return (
     <section className="game-preview">
       <div className="section-header">
@@ -46,7 +51,9 @@ export default function GamePreview({ game, dataset, schoolIndex, pending = fals
         <span className="section-header__hint">
           {pending
             ? `Played ${titleCaseDay(game.date)} · score not posted yet`
-            : `Headed into ${
+            : underway
+              ? "Underway now · score to come"
+              : `Headed into ${
                 game.conference_game
                   ? "this conference matchup"
                   : new Date(game.date).toDateString() === new Date().toDateString()

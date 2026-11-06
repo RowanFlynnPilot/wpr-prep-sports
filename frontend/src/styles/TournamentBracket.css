@@ -42,6 +42,15 @@
   border-radius: 999px;
   transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
 }
+/* Touch: the 29px chip stays its desktop size for a mouse, but a thumb
+   needs the 44px target (accessibility audit, state-tournament week). */
+@media (pointer: coarse) {
+  .bracket__filter-chip {
+    min-height: 44px;
+    padding-top: 0.55rem;
+    padding-bottom: 0.55rem;
+  }
+}
 @media (hover: hover) and (pointer: fine) {
   .bracket__filter-chip:hover {
   border-color: var(--accent);
@@ -206,6 +215,25 @@
   color: var(--muted-2);
   font-family: var(--font-display);
   font-size: var(--fs-body);
+}
+/* A round an alive team has not been scheduled into yet: "TBD", not the
+   "did not play" dash. Label-sized so it reads as a placeholder. */
+.bracket__journey-cell--tbd {
+  color: var(--muted);
+  font-weight: 600;
+  font-size: var(--fs-label);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+/* Neutral-site venue under the opponent ("at Uihlein Soccer Park"). */
+.bracket__journey-venue {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: var(--fs-caption);
+  color: var(--muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 /* Tokens, not literals: the emerald-700/red-700 these replaced were mixed
    for the white card and left behind by the dark retheme, where they sank

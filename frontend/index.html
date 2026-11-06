@@ -20,7 +20,9 @@
 
     <!-- Fonts are self-hosted (public/fonts/, @font-face in styles/global.css)
          — no Google Fonts round trip, no Cloudflare Fonts rewrite. Preload only
-         the two faces above the fold; Merriweather 700 and italic load on
+         the three faces above the fold: Oswald, Merriweather 400, and the
+         400 italic the hero's venue/mascot line uses (left to CSS discovery it
+         landed at 4.8 s, after everything else). Merriweather 700 loads on
          first use. -->
     <link
       rel="preload"
@@ -34,6 +36,13 @@
       as="font"
       type="font/woff2"
       href="/fonts/merriweather-latin-400.woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href="/fonts/merriweather-latin-400italic.woff2"
       crossorigin
     />
 
@@ -50,7 +59,17 @@
          utils/season.js writes — and parks the in-flight fetch on
          window.__wprMetaPrefetch = { sport, url, promise } for fetchDataset
          to adopt when its URL matches. Blocking on purpose: it must run
-         before the module script is even requested. -->
+         before the module script is even requested.
+
+         Second link in the chain: as soon as meta.json lands, read its
+         last_updated from a clone and start the three required files
+         fetchDataset() requests next — schools.json, games.json,
+         standings.json, each with the same ?v=<last_updated> cache key —
+         parked on window.__wprDataPrefetch[url]. Without this they can't
+         start until the bundles have parsed and run (about 1.2 s later on a
+         slow connection). fetchDataset adopts each only on an exact URL
+         match and fetches normally otherwise, so a sport switch, archive
+         season or VITE_DATA_BASE override simply ignores them. -->
     <script>
       (function () {
         try {
@@ -64,12 +83,33 @@
           var q = /[?&]season=([^&#]*)/.exec(location.search);
           var season = q ? decodeURIComponent(q[1]) : sessionStorage.getItem("wpr-season-view");
           var dir = /^\d{4}-\d{2}$/.test(season || "") ? "/archive/" + season : "";
-          var url = base + "/data" + dir + "/" + sport + "/meta.json";
-          window.__wprMetaPrefetch = {
-            sport: sport,
-            url: url,
-            promise: fetch(url, { cache: "no-store" }),
-          };
+          var dataBase = base + "/data";
+          var sportBase = dataBase + dir + "/" + sport;
+          var url = sportBase + "/meta.json";
+          var promise = fetch(url, { cache: "no-store" });
+          window.__wprMetaPrefetch = { sport: sport, url: url, promise: promise };
+          var store = (window.__wprDataPrefetch = {});
+          promise
+            .then(function (r) {
+              // Clone: fetchMeta reads the body of the original later.
+              return r.ok ? r.clone().json() : null;
+            })
+            .then(function (m) {
+              // No timestamp → fetchDataset keys on Date.now(), which can't
+              // match, so don't spend the requests.
+              if (!m || m.last_updated == null) return;
+              var v = "?v=" + encodeURIComponent(m.last_updated);
+              [dataBase + "/schools.json", sportBase + "/games.json", sportBase + "/standings.json"].forEach(
+                function (u) {
+                  var p = fetch(u + v);
+                  // Marks a never-adopted failure handled (no console noise);
+                  // fetchDataset still sees the rejection and refetches.
+                  p.catch(function () {});
+                  store[u + v] = p;
+                },
+              );
+            })
+            .catch(function () {});
         } catch (e) {}
       })();
     </script>

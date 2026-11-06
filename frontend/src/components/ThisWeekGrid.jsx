@@ -6,16 +6,25 @@ import { schoolFor } from "../utils/schools.js";
 import { groupByDay, splitPlayoffRounds } from "../utils/weeks.js";
 import { formatGameDay, formatGameDate, formatGameTime } from "../utils/dates.js";
 import { gameSummaryLine, playerLineForGame } from "../utils/recap.js";
-import { isForfeitScore, isScorePending, isStaleScheduled, isUnreportedFinal } from "../utils/games.js";
+import {
+  humanizeVenue,
+  isForfeitScore,
+  isScorePending,
+  isStaleScheduled,
+  isUnderway,
+  isUnreportedFinal,
+} from "../utils/games.js";
 import { useSportPrefix } from "../utils/links.js";
 import { SITE } from "../config/site.js";
-import { isTbdSide } from "../utils/postseason.js";
+import { isNeutralSite, isTbdSide, roundLabel } from "../utils/postseason.js";
 
 const OTHER_GROUP = "Other games";
 
 // Row chip for a playoff round: short enough to sit beside the kickoff
 // time on a 375px row. The full round name is in the group heading and
 // in the drill-in link's accessible name, so the chip is aria-hidden.
+// Keyed by the reader-facing name (utils/postseason.js roundLabel), so
+// football's Level 4 — a state semifinal — is chipped as one.
 const ROUND_CHIP = {
   Regional: "Regional",
   "Regional Semifinal": "Reg. Semi",
@@ -25,15 +34,18 @@ const ROUND_CHIP = {
   "Sectional Final": "Sect. Final",
   "State Quarterfinal": "State QF",
   "State Semifinal": "State Semi",
+  "State semifinal (Level 4)": "State Semi (L4)",
   "State Final": "State Final",
   "State Championship": "State Final",
 };
 
-function roundChip(round) {
+function roundChip(round, sport) {
   if (!round) return "Playoff";
-  const level = /^level\s*(\d+)$/i.exec(round);
+  const label = roundLabel(round, sport);
+  if (ROUND_CHIP[label]) return ROUND_CHIP[label];
+  const level = /^level\s*(\d+)$/i.exec(label);
   if (level) return `L${level[1]}`;
-  return ROUND_CHIP[round] ?? round;
+  return label;
 }
 
 function conferenceOf(school, sport) {
@@ -139,7 +151,7 @@ export default function ThisWeekGrid({
         const { rounds, regular } = splitPlayoffRounds(games, homeRegionIds);
         const roundGroups = rounds.map(({ round, games: list }) => ({
           key: `round:${round}`,
-          label: round,
+          label: roundLabel(round, sport) || round,
           round: true,
           games: list,
         }));
@@ -215,6 +227,7 @@ export default function ThisWeekGrid({
                         schoolIndex={schoolIndex}
                         allGames={allGames}
                         sportConfig={sportConfig}
+                        sport={sport}
                       />
                     ))}
                   </ul>
@@ -242,11 +255,16 @@ export default function ThisWeekGrid({
   );
 }
 
-function GameRow({ game, schoolIndex, allGames, sportConfig }) {
+function GameRow({ game, schoolIndex, allGames, sportConfig, sport = null }) {
   const sportPrefix = useSportPrefix();
   const homeSchool = schoolFor(game.home, schoolIndex);
   const awaySchool = schoolFor(game.away, schoolIndex);
   const isFinal = game.status === "final";
+  // State and sectional games are played at arenas: WIAA's "home" side is
+  // only listing order, so the row says "vs" and names the venue instead
+  // of "at" (utils/postseason.js isNeutralSite).
+  const neutral = isNeutralSite(game, schoolIndex);
+  const venue = neutral ? humanizeVenue(game.venue) : "";
   // The dataset's live status is "in_progress" (models/schema.py) — the
   // ticker shows these LIVE with scores; this grid must match or a
   // Friday-night reader sees a hidden score next to a stale kickoff time.
@@ -262,7 +280,9 @@ function GameRow({ game, schoolIndex, allGames, sportConfig }) {
   const notReported = stale || unreportedFinal;
   // Kickoff a few hours gone, no score yet: the row says "Score pending"
   // instead of a tip time that reads like tonight (critique run 18).
+  // Kickoff passed within the last three hours: "Underway", no clock.
   const pending = isScorePending(game);
+  const underway = isUnderway(game);
   // WIAA records a forfeit as a 1-0 final. Printed at score size that
   // reads as a data error, so the score slot says FORFEIT instead and the
   // winner keeps its bold. An unreported final is neither a forfeit nor
@@ -272,7 +292,7 @@ function GameRow({ game, schoolIndex, allGames, sportConfig }) {
   const homeWon = isFinal && !unreportedFinal && (game.home.score ?? -1) > (game.away.score ?? -1);
   const awayWon = isFinal && !unreportedFinal && (game.away.score ?? -1) > (game.home.score ?? -1);
   // Numerals sit beside the names, so the sentence skips the scoreline.
-  const summary = gameSummaryLine(game, { sportConfig, omitScore: true });
+  const summary = gameSummaryLine(game, { sportConfig, omitScore: true, allGames });
   const player = playerLineForGame(game, { contextGames: allGames, sportConfig });
   const playerSchool = player ? schoolIndex.get(player.schoolId) : null;
   const showScore = (isFinal || isLive) && !forfeit && !unreportedFinal;
@@ -283,24 +303,26 @@ function GameRow({ game, schoolIndex, allGames, sportConfig }) {
   // TeamB 0" would announce a fake 0-0 tie.
   // Playoff rows name the round in the label too ("Lomira at Edgar,
   // Level 3 playoff, 7:00 PM"), since the visible chip is aria-hidden.
-  const roundBit = game.playoff
-    ? `, ${game.playoff_round ? `${game.playoff_round} playoff` : "playoff"}`
-    : "";
+  const roundName = roundLabel(game.playoff_round, sport) || game.playoff_round;
+  const roundBit = game.playoff ? `, ${roundName ? `${roundName} playoff` : "playoff"}` : "";
+  const venueBit = venue ? ` at ${venue}` : "";
   const awayName = isTbdSide(game.away) ? "Opponent TBD" : game.away.name;
   const homeName = isTbdSide(game.home) ? "Opponent TBD" : game.home.name;
-  const matchup = `${awayName} at ${homeName}${roundBit}`;
+  const matchup = `${awayName} ${neutral ? "vs" : "at"} ${homeName}${venueBit}${roundBit}`;
   const scoreline = `${game.away.name} ${game.away.score}, ${game.home.name} ${game.home.score}${roundBit}`;
   const linkLabel = forfeit
     ? `${matchup}, forfeit, game details`
     : notReported
       ? `${matchup}, not reported, game details`
-      : pending
-        ? `${matchup}, played, score pending, game details`
-      : isFinal
-        ? `${scoreline}, final, game details`
-        : isLive
-          ? `${scoreline}, live, game details`
-          : `${matchup}, ${formatGameTime(game.date)}, game details`;
+      : underway
+        ? `${matchup}, underway, game details`
+        : pending
+          ? `${matchup}, played, score pending, game details`
+          : isFinal
+            ? `${scoreline}, final, game details`
+            : isLive
+              ? `${scoreline}, live, game details`
+              : `${matchup}, ${formatGameTime(game.date)}, game details`;
 
   return (
     <li className="game-row">
@@ -311,7 +333,7 @@ function GameRow({ game, schoolIndex, allGames, sportConfig }) {
         won={awayWon}
         showScore={showScore}
       />
-      <span className="game-row__at">at</span>
+      <span className="game-row__at">{neutral ? "vs" : "at"}</span>
       <Side
         team={game.home}
         school={homeSchool}
@@ -325,12 +347,22 @@ function GameRow({ game, schoolIndex, allGames, sportConfig }) {
       <span className="game-row__end">
       {game.playoff && (
         <span className="game-row__round" aria-hidden="true">
-          {roundChip(game.playoff_round)}
+          {roundChip(game.playoff_round, sport)}
+        </span>
+      )}
+      {/* Neutral-site venue, in the status cell (never its own grid row:
+          the phone layout's row heights are guarded). Named in the
+          drill-in's label, so decorative here. */}
+      {venue && (
+        <span className="game-row__venue" aria-hidden="true" title={venue}>
+          {venue}
         </span>
       )}
       <Link
         to={`${sportPrefix}/game/${game.id}`}
-        className={`game-row__status game-row__details${isLive ? " game-row__status--live" : ""}`}
+        className={`game-row__status game-row__details${
+          isLive ? " game-row__status--live" : underway ? " game-row__status--underway" : ""
+        }`}
         aria-label={linkLabel}
       >
         {forfeit
@@ -341,9 +373,11 @@ function GameRow({ game, schoolIndex, allGames, sportConfig }) {
               ? "Final"
               : isLive
                 ? "LIVE"
-                : pending
-                  ? "Score pending"
-                  : formatGameTime(game.date)}
+                : underway
+                  ? "Underway"
+                  : pending
+                    ? "Score pending"
+                    : formatGameTime(game.date)}
         <span aria-hidden="true"> ›</span>
       </Link>
       </span>

@@ -99,8 +99,15 @@ export default function DashboardPage({
   // has real content in all three phases —
   //   preseason  (new schedule, no games played): anchor = season opener,
   //   in-season:                                  anchor = actual today,
-  //   off-season (all games in the past):         anchor = just after the
-  //                                               final game.
+  //   off-season (all games in the past):         anchor = the end of the
+  //                                               final game's day.
+  // The upper clamp is the END of the last game's local calendar day, not
+  // a minute past its kickoff: clamped to kickoff + 60 s, the dashboard
+  // froze at "TODAY · 8:00 AM" all through a state-tournament day whose
+  // only listed game was that 8 AM match, and never flipped to Underway or
+  // Score pending (2026-11-05). The clock now runs all day on the final
+  // game day; off-season the anchor still lands on that day, so the
+  // "Season over" heading, the recap and the weeks math are unchanged.
   // The off-season Hero treatment below uses TODAY's real date for its
   // countdown, not this anchor.
   const lastGameTs = useMemo(
@@ -117,7 +124,9 @@ export default function DashboardPage({
   );
   const anchorNow = useMemo(() => {
     if (!lastGameTs) return new Date();
-    const clamped = Math.min(Math.max(Date.now(), firstGameTs), lastGameTs + 60_000);
+    const endOfLastDay = new Date(lastGameTs);
+    endOfLastDay.setHours(23, 59, 59, 999);
+    const clamped = Math.min(Math.max(Date.now(), firstGameTs), endOfLastDay.getTime());
     return new Date(clamped);
   }, [firstGameTs, lastGameTs]);
 
@@ -284,7 +293,9 @@ export default function DashboardPage({
   // down, under the sold Scoreboard sponsor (critique run 18). Until the
   // week produces a result, or game day begins at noon, last week's
   // home-region finals lead the tab, grouped the way This Week is, with
-  // the Scoreboard sponsor on their header.
+  // the Scoreboard sponsor on their header. Playoff finals stay whatever
+  // the region: the filter dropped tracked teams' sectional and state
+  // soccer games played outside the home region.
   const weekHasResults = (week?.games ?? []).some((g) => g.status === "final");
   const lastWeek = useMemo(() => {
     if (!showThisWeek || weekHasResults || heroTonight || offSeason) return null;
@@ -292,8 +303,8 @@ export default function DashboardPage({
     if (!prev) return null;
     const isLocal = (g) =>
       homeRegion.has(g.home?.school_id) || homeRegion.has(g.away?.school_id);
-    const local = prev.games.filter(isLocal);
-    return { ...prev, total: prev.games.length, games: local.length > 0 ? local : prev.games };
+    const kept = prev.games.filter((g) => isLocal(g) || g.playoff);
+    return { ...prev, total: prev.games.length, games: kept.length > 0 ? kept : prev.games };
   }, [showThisWeek, weekHasResults, heroTonight, offSeason, games, anchorNow, homeRegion]);
 
   // The ticker used to repeat the week grid's games — on a Saturday both
@@ -611,6 +622,7 @@ export default function DashboardPage({
         <SectionBoundary label="road-to-state">
           <RoadToState
             state={postseasonInfo}
+            schoolIndex={schoolIndex}
             homeRegion={homeRegion}
             sponsors={sponsors}
             sportConfig={sportConfig}

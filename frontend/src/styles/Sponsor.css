@@ -116,6 +116,13 @@ a.sponsor:focus-visible .sponsor__name {
   display: block;
   width: 100%;
   height: auto;
+  /* The standard banner creative (all three sold today are 1480×414–422).
+     Fixes the box before the lazy image loads so nothing shifts when it
+     lands; the 1–2 px of ratio slack is cropped, not stretched. Sponsor.jsx
+     sets an inline ratio instead for a creative whose sponsors.json entry
+     carries its own width/height. */
+  aspect-ratio: 1480 / 416;
+  object-fit: cover;
   border-radius: var(--radius);
   /* Hairline edge so light-background creatives (Wimmer's white strip)
      read as a card on the light page instead of floating text. No

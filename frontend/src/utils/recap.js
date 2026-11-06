@@ -15,10 +15,16 @@
  *                  say "improved to 5-0" instead of "won."
  *   perspectiveSchoolId? — which side the recap is written from. Defaults
  *                  to the home team when both sides are tracked.
+ *   allGames?    — the sport's full game list. A tied playoff game was a
+ *                  penalty-kick shootout; whichever side plays in a later
+ *                  round advanced, and the recap says so instead of "drew".
+ *                  Falls back to contextGames / teamGames, which can only
+ *                  see the perspective team's own advancement.
  */
 
 import { SPORTS } from "../config/sports.js";
 import { topStatLines } from "./games.js";
+import { resolveShootout } from "./bracket.js";
 
 const BLOWOUT_MARGIN = 21;
 const CLOSE_MARGIN = 7;
@@ -70,6 +76,7 @@ export function recapForGame(
     enrichWithSeasonTotals = false,
     contextGames = null,
     sportConfig = null,
+    allGames = null,
   } = {},
 ) {
   if (!game || game.status !== "final") return null;
@@ -113,8 +120,19 @@ export function recapForGame(
   const bands = marginBands(sportConfig);
   const forfeit =
     !tied && isForfeitFinal(sportConfig, Math.max(own, opp), Math.min(own, opp));
+  // A tied playoff game went to penalty kicks (soccer; WIAA posts the
+  // 90-minute score). Never "beat" or "fell to" — the match was a draw.
+  const shootout = tied && game.playoff
+    ? resolveShootout(game, isHome, allGames ?? contextGames ?? teamGames ?? [])
+    : null;
   let resultPhrase;
-  if (tied) {
+  if (shootout) {
+    resultPhrase = shootout.undecided
+      ? `played to a ${own}-${opp} draw with ${oppLabel}, with the penalty-kick result still to come`
+      : shootout.won
+        ? `advanced on penalty kicks after a ${own}-${opp} draw with ${oppLabel}`
+        : `lost a penalty-kick shootout to ${oppLabel} after a ${own}-${opp} draw`;
+  } else if (tied) {
     resultPhrase = `played to a ${own}-${opp} draw with ${oppLabel}`;
   } else if (forfeit) {
     resultPhrase = won
@@ -293,9 +311,13 @@ export function playerLineForGame(game, { contextGames = null, sportConfig = nul
  * reads the same on every refresh but neighboring games rotate.
  *
  * Returns a string ready to render, or null when the game isn't final
- * or the score is missing.
+ * or the score is missing. Pass `allGames` (the sport's game list) so a
+ * tied playoff game names the side that advanced on penalty kicks.
  */
-export function gameSummaryLine(game, { sportConfig = null, omitScore = false } = {}) {
+export function gameSummaryLine(
+  game,
+  { sportConfig = null, omitScore = false, allGames = null } = {},
+) {
   if (!game || game.status !== "final") return null;
   const homeScore = game.home?.score;
   const awayScore = game.away?.score;
@@ -312,6 +334,14 @@ export function gameSummaryLine(game, { sportConfig = null, omitScore = false } 
 
   // Tied — rare in our sports, but the schema allows it.
   if (!winner) {
+    // A tied playoff game was a penalty-kick shootout; the sport's game
+    // list (allGames) says who advanced. Without it, the draw stands.
+    const shootout = game.playoff ? resolveShootout(game, true, allGames ?? []) : null;
+    if (shootout && !shootout.undecided) {
+      const adv = shootout.won ? game.home : game.away;
+      const other = shootout.won ? game.away : game.home;
+      return `${adv.name} advanced past ${other.name} on penalty kicks after a ${homeScore}-${awayScore} draw.`;
+    }
     return `${game.home.name} and ${game.away.name} tied${tail(`${homeScore}-${awayScore}`)}.`;
   }
 

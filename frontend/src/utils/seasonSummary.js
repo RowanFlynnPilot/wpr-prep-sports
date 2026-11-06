@@ -15,8 +15,8 @@
  */
 
 import { isForfeitScore, isStaleScheduled } from "./games.js";
-import { teamPostseason, isTbdSide } from "./postseason.js";
-import { buildTeamJourneys } from "./bracket.js";
+import { teamPostseason, isTbdSide, isTitleRound } from "./postseason.js";
+import { buildTeamJourneys, resolveShootout } from "./bracket.js";
 import { localDate } from "./dates.js";
 
 const DAY_MS = 86_400_000;
@@ -24,11 +24,6 @@ const DAY_MS = 86_400_000;
 /** A game that still counts as ahead of the team: upcoming, live, or played with the score pending. */
 function stillToPlay(g, now) {
   return g.status !== "final" && !isStaleScheduled(g, now);
-}
-
-/** State rounds that end a season with a win. */
-function isTitleRound(round) {
-  return /^state\s+(championship|final)$/i.test(round ?? "");
 }
 
 /** "a 55-0" / "an 8-0" / "an 11-7": the article follows the spoken number. */
@@ -70,18 +65,26 @@ export function seasonState({
     const j = buildTeamJourneys(teamGames, schoolsById).find((x) => x.schoolId === schoolId);
     if (j) {
       const next = j.games.find((e) => e.game.status !== "final") ?? null;
+      const last = j.games[j.games.length - 1] ?? null;
+      // Same rule as postseasonState: a final win in a title round is a
+      // championship, not "alive" and not an elimination.
+      const champion = !!last && last.isFinal && last.won && isTitleRound(last.round);
       entry = {
-        alive: j.alive,
+        alive: j.alive && !champion,
+        champion,
         nextGame: next?.game ?? null,
         nextRound: next?.round ?? null,
         nextIsHome: next ? next.isHome : null,
         nextOpponent: next?.opponent ?? null,
-        lastEntry: j.games[j.games.length - 1] ?? null,
+        lastEntry: last,
       };
     }
   }
 
   if (entry) {
+    // Champions come first: the helper marks them alive: false, so the
+    // elimination check alone called a state title "Season over".
+    if (entry.champion) return { kind: "champion", lastEntry: entry.lastEntry };
     if (!entry.alive) return { kind: "eliminated", lastEntry: entry.lastEntry };
     if (entry.nextGame) {
       return {
@@ -93,7 +96,7 @@ export function seasonState({
         live: entry.nextGame.status === "in_progress",
       };
     }
-    if (isTitleRound(entry.lastEntry?.round)) {
+    if (isTitleRound(entry.lastEntry?.round) && entry.lastEntry?.won) {
       return { kind: "champion", lastEntry: entry.lastEntry };
     }
     // Won its last round with nothing scheduled: alive until the sport's
@@ -112,23 +115,53 @@ export function seasonState({
   return null;
 }
 
-/** Walk a list of finals chronologically and compute W-L plus the last game. */
-function arcFromFinals(finals, schoolId) {
+/**
+ * Walk a list of finals chronologically and compute W-L-T plus the last
+ * game. The record is the official one (a playoff game decided on penalty
+ * kicks is a tie in WIAA's books); `pkWins` / `pkLosses` count those
+ * shootouts separately, and `last.won` / `last.shootout` follow the
+ * bracket so the prose never says a team "fell" in a game it advanced
+ * from. `playoffs` is the sport's playoff list used to resolve shootouts.
+ */
+function arcFromFinals(finals, schoolId, playoffs = finals) {
   let wins = 0;
   let losses = 0;
   let ties = 0;
+  let pkWins = 0;
+  let pkLosses = 0;
   let last = null;
   for (const g of finals) {
     const isHome = g.home.school_id === schoolId;
     const own = isHome ? g.home.score : g.away.score;
     const opp = isHome ? g.away.score : g.home.score;
     if (own == null || opp == null) continue;
+    const shootout = own === opp ? resolveShootout(g, isHome, playoffs) : null;
     if (own > opp) wins++;
     else if (own < opp) losses++;
     else ties++;
-    last = { game: g, isHome, own, opp };
+    if (shootout && !shootout.undecided) {
+      if (shootout.won) pkWins++;
+      else pkLosses++;
+    }
+    last = { game: g, isHome, own, opp, won: shootout ? shootout.won : own > opp, shootout };
   }
-  return { wins, losses, ties, last };
+  return { wins, losses, ties, pkWins, pkLosses, last };
+}
+
+/**
+ * How a tied playoff game ended, for prose: "advanced on penalty kicks
+ * after a 4-4 draw with De Pere" / "lost a penalty-kick shootout to De
+ * Pere after a 4-4 draw" / "played De Pere to a 4-4 draw, with the
+ * shootout result still to come". Never "beat" or "fell to" for a tie.
+ */
+function shootoutPhrase(last, oppName) {
+  const draw = `${aScore(last.own)} ${last.own}-${last.opp} draw`;
+  if (last.shootout.undecided) {
+    return `played ${oppName} to ${draw}, with the shootout result still to come`;
+  }
+  return last.won
+    ? `advanced on penalty kicks after ${draw} with ${oppName}`
+    : `lost a penalty-kick shootout to ${oppName} after ${draw}`;
 }
 
 /** Split a list of games into regular-season and playoff buckets. */
@@ -243,7 +276,7 @@ function startsWithVowelSound(word) {
 }
 
 /** Sentence describing the most-recent regular-season game. */
-function lastGameClause({ last, oppName, seasonComplete, wins, losses, recordStated = false }) {
+function lastGameClause({ last, oppName, seasonComplete, wins, losses, ties = 0, recordStated = false }) {
   if (!last) return "";
   const { own, opp } = last;
   const tied = own === opp;
@@ -251,15 +284,23 @@ function lastGameClause({ last, oppName, seasonComplete, wins, losses, recordSta
   // WIAA's 1-0 / 2-0 forfeit codes aren't scores; the game page already
   // says "forfeit", and the summary said "a 2-0 win" under it.
   const forfeit = isForfeitScore(last.game);
+  // A tied playoff game was a penalty-kick shootout; say which way it went.
+  const pk = tied && last.shootout;
   const result = forfeit
     ? won
       ? `a forfeit win over ${oppName}`
       : `a forfeit loss to ${oppName}`
-    : tied
-      ? `${aScore(own)} ${own}-${opp} draw against ${oppName}`
-      : won
-        ? `${aScore(own)} ${own}-${opp} win over ${oppName}`
-        : `${aScore(opp)} ${opp}-${own} loss to ${oppName}`; // winner's score first
+    : pk
+      ? last.shootout.undecided
+        ? `${aScore(own)} ${own}-${opp} draw against ${oppName}, shootout result pending`
+        : last.won
+          ? `a penalty-kick win over ${oppName} after ${aScore(own)} ${own}-${opp} draw`
+          : `a penalty-kick shootout loss to ${oppName} after ${aScore(own)} ${own}-${opp} draw`
+      : tied
+        ? `${aScore(own)} ${own}-${opp} draw against ${oppName}`
+        : won
+          ? `${aScore(own)} ${own}-${opp} win over ${oppName}`
+          : `${aScore(opp)} ${opp}-${own} loss to ${oppName}`; // winner's score first
 
   // Mid-season — anchor the running record because the hero record is "now"
   // and the recap is naturally about trajectory. When the arc phrase has
@@ -267,7 +308,7 @@ function lastGameClause({ last, oppName, seasonComplete, wins, losses, recordSta
   // the last game off it with "after" instead of restating the record.
   if (!seasonComplete) {
     if (recordStated) return `after ${result}`;
-    if (tied) return `with ${result} (${wins}-${losses})`;
+    if (tied) return `with ${result} (${recordString(wins, losses, ties)})`;
     return `with ${result}, ${won ? "improving" : "falling"} to ${wins}-${losses}`;
   }
 
@@ -282,10 +323,14 @@ function lastGameClause({ last, oppName, seasonComplete, wins, losses, recordSta
  * - >=2 games, all wins → "and ran the table in the WIAA playoffs, ..."
  * - >=2 games, last lost → "before winning N playoff games and falling to X in the {round}"
  */
-function playoffClause({ playoffGames, schoolId, schoolsById }) {
+function playoffClause({ playoffGames, schoolId, schoolsById, playoffs = playoffGames }) {
   if (!playoffGames || playoffGames.length === 0) return null;
 
-  const { wins, losses, last } = arcFromFinals(playoffGames, schoolId);
+  const { wins, losses, ties, pkWins, pkLosses, last } = arcFromFinals(
+    playoffGames,
+    schoolId,
+    playoffs,
+  );
   if (!last) return null;
 
   const lastGame = last.game;
@@ -294,31 +339,47 @@ function playoffClause({ playoffGames, schoolId, schoolsById }) {
     schoolsById?.get(oppSide?.school_id)?.name ?? oppSide?.name ?? "their opponent";
 
   const lastRound = lastGame.playoff_round || "playoffs";
-  const lastWon = last.own > last.opp;
+  const lastWon = last.won;
+  const roundPhrase = roundDisplay(lastRound);
+  // Games the team came through, shootouts included; the record itself
+  // still counts a shootout as the tie WIAA records.
+  const advanced = wins + pkWins;
+  const unbeaten = losses === 0 && pkLosses === 0;
+  const pk = last.shootout;
 
-  // Champions: every playoff game a win AND last round is championship.
-  if (losses === 0 && /championship/i.test(lastRound)) {
-    return `and captured the WIAA state championship with ${aScore(last.own)} ${last.own}-${last.opp} win over ${oppName}`;
+  // Champions: never beaten in the playoffs AND won the title round.
+  if (unbeaten && lastWon && isTitleRound(lastRound)) {
+    return pk
+      ? `and captured the WIAA state championship on penalty kicks after ${aScore(last.own)} ${last.own}-${last.opp} draw with ${oppName}`
+      : `and captured the WIAA state championship with ${aScore(last.own)} ${last.own}-${last.opp} win over ${oppName}`;
   }
 
   // Unbeaten in playoffs but didn't reach championship (data gap / state run still in progress).
-  if (losses === 0 && wins > 0) {
-    const roundPhrase = roundDisplay(lastRound);
-    return `and ran through ${numberWord(wins)} WIAA playoff game${wins === 1 ? "" : "s"} unbeaten, last beating ${oppName} ${last.own}-${last.opp} in ${roundPhrase}`;
+  if (unbeaten && advanced > 0) {
+    const n = wins + ties;
+    const games = `${numberWord(n)} WIAA playoff game${n === 1 ? "" : "s"}`;
+    if (pk) {
+      return `and ran through ${games} unbeaten, last ${pk.undecided ? `playing ${oppName} to ${aScore(last.own)} ${last.own}-${last.opp} draw in ${roundPhrase}, with the shootout result still to come` : `advancing past ${oppName} on penalty kicks after ${aScore(last.own)} ${last.own}-${last.opp} draw in ${roundPhrase}`}`;
+    }
+    return `and ran through ${games} unbeaten, last beating ${oppName} ${last.own}-${last.opp} in ${roundPhrase}`;
   }
 
   // Played at least one playoff game and lost the last one.
   if (!lastWon) {
-    const roundPhrase = roundDisplay(lastRound);
-    if (wins === 0) {
-      return `before falling to ${oppName} ${last.opp}-${last.own} in ${roundPhrase}`;
-    }
-    return `before winning ${numberWord(wins)} WIAA playoff game${wins === 1 ? "" : "s"} and falling to ${oppName} ${last.opp}-${last.own} in ${roundPhrase}`;
+    const exit = pk
+      ? `${shootoutPhrase(last, oppName)} in ${roundPhrase}`
+      : `falling to ${oppName} ${last.opp}-${last.own} in ${roundPhrase}`;
+    if (pk?.undecided) return `and ${exit}`;
+    if (advanced === 0) return `before ${exit}`;
+    return `before winning ${numberWord(advanced)} WIAA playoff game${advanced === 1 ? "" : "s"} and ${exit}`;
   }
 
   // Last playoff game was a win but earlier ones weren't — uncommon, but
   // describe truthfully.
-  return `and went ${wins}-${losses} in the WIAA playoffs, last beating ${oppName} ${last.own}-${last.opp} in ${lastRound}`;
+  const lastResult = pk
+    ? `last advancing past ${oppName} on penalty kicks after ${aScore(last.own)} ${last.own}-${last.opp} draw in ${lastRound}`
+    : `last beating ${oppName} ${last.own}-${last.opp} in ${lastRound}`;
+  return `and went ${recordString(wins, losses, ties)} in the WIAA playoffs, ${lastResult}`;
 }
 
 /** Format a round label for prose. Tuned for both football and basketball round names. */
@@ -389,12 +450,25 @@ function standoutClause(standout, sportConfig, seasonComplete) {
  *   "Gilman is 12-0 and still alive after a 55-0 Level 3 win over Athens."
  *   "Athens is 7-2 heading into the Level 1 playoffs after a 28-7 win over Colby."
  */
-function aliveOpener({ finals, playoffFinals, schoolId, schoolName, nameOf, state }) {
-  const all = arcFromFinals(finals, schoolId);
+function aliveOpener({ finals, playoffFinals, schoolId, schoolName, nameOf, state, playoffs }) {
+  const all = arcFromFinals(finals, schoolId, playoffs);
   if (!all.last) return null;
   const rec = recordString(all.wins, all.losses, all.ties);
-  const lastPlayoff = arcFromFinals(playoffFinals, schoolId).last;
-  if (lastPlayoff && lastPlayoff.own > lastPlayoff.opp) {
+  const lastPlayoff = arcFromFinals(playoffFinals, schoolId, playoffs).last;
+  if (lastPlayoff?.shootout) {
+    // Decided on penalty kicks (or not yet): the score alone says "draw".
+    const g = lastPlayoff.game;
+    const opp = nameOf(lastPlayoff.isHome ? g.away : g.home);
+    const round = g.playoff_round && g.playoff_round !== "Playoff" ? g.playoff_round : "playoff";
+    const draw = `${aScore(lastPlayoff.own)} ${lastPlayoff.own}-${lastPlayoff.opp} ${round} draw with ${opp}`;
+    if (lastPlayoff.shootout.undecided) {
+      return `${schoolName} is ${rec} and still alive after ${draw}, with the penalty-kick result still to come.`;
+    }
+    if (lastPlayoff.won) {
+      return `${schoolName} is ${rec} and still alive, advancing on penalty kicks after ${draw}.`;
+    }
+  }
+  if (lastPlayoff && lastPlayoff.won) {
     const g = lastPlayoff.game;
     const opp = nameOf(lastPlayoff.isHome ? g.away : g.home);
     const round = g.playoff_round && g.playoff_round !== "Playoff" ? g.playoff_round : "playoff";
@@ -411,6 +485,7 @@ function aliveOpener({ finals, playoffFinals, schoolId, schoolName, nameOf, stat
       seasonComplete: false,
       wins: all.wins,
       losses: all.losses,
+      ties: all.ties,
       recordStated: true,
     });
     return `${schoolName} is ${rec} heading into ${roundDisplay(state.round)} ${tail}.`;
@@ -420,9 +495,14 @@ function aliveOpener({ finals, playoffFinals, schoolId, schoolName, nameOf, stat
 
 /**
  * Build the full season summary string for one team, or null.
+ *
+ * `allGames` (the sport's full list) lets a tied playoff game be read as
+ * the penalty-kick shootout it was — whichever side plays on advanced.
+ * Without it only the team's own advancement can be seen.
  */
 export function seasonSummary({
   teamGames,
+  allGames = null,
   schoolId,
   school,
   schoolsById,
@@ -433,6 +513,7 @@ export function seasonSummary({
 
   const finals = teamGames.filter((g) => g.status === "final");
   if (finals.length === 0) return null;
+  const playoffs = (allGames ?? teamGames).filter((g) => g.playoff);
 
   // The season is "complete" when no games remain to be played. We can't
   // require `finals.length === teamGames.length` because WIAA sometimes
@@ -441,7 +522,7 @@ export function seasonSummary({
   // mid-season tone months after the actual season ended. A game played
   // with its score still pending counts as still to play.
   const now = Date.now();
-  const state = seasonState({ teamGames, schoolId, schoolsById, sportConfig, now });
+  const state = seasonState({ teamGames, allGames, schoolId, schoolsById, sportConfig, now });
   const playoffAlive = state?.kind === "alive" || state?.kind === "alive-tba";
   const seasonComplete = !playoffAlive && !teamGames.some((g) => stillToPlay(g, now));
   const { regular: regularFinals, playoff: playoffFinals } = splitByPhase(finals);
@@ -454,9 +535,17 @@ export function seasonSummary({
   // 40-0 win over Shell Lake" was printing for a 12-0 Gilman three
   // playoff wins later.
   if (playoffAlive) {
-    const opener = aliveOpener({ finals, playoffFinals, schoolId, schoolName, nameOf, state });
+    const opener = aliveOpener({
+      finals,
+      playoffFinals,
+      schoolId,
+      schoolName,
+      nameOf,
+      state,
+      playoffs,
+    });
     if (opener) {
-      const all = arcFromFinals(finals, schoolId);
+      const all = arcFromFinals(finals, schoolId, playoffs);
       const played = all.wins + all.losses + all.ties;
       const standout = pickStandout(seasonStatsForSchool ?? [], sportConfig, false, played);
       const player = standoutClause(standout, sportConfig, false);
@@ -469,7 +558,7 @@ export function seasonSummary({
   // in Level 1. Mid-season the record is the running one, every final.
   // Fall back to all finals if no regular-season games are present.
   const arcSource = seasonComplete && regularFinals.length > 0 ? regularFinals : finals;
-  const { wins, losses, ties, last } = arcFromFinals(arcSource, schoolId);
+  const { wins, losses, ties, last } = arcFromFinals(arcSource, schoolId, playoffs);
   if (!last) return null;
 
   const oppName = nameOf(last.isHome ? last.game.away : last.game.home);
@@ -489,6 +578,7 @@ export function seasonSummary({
     seasonComplete,
     wins,
     losses,
+    ties,
     recordStated: statesRecord,
   });
 
@@ -507,6 +597,7 @@ export function seasonSummary({
       playoffGames: playoffFinals,
       schoolId,
       schoolsById,
+      playoffs,
     });
     opener = playoff
       ? `${schoolName} ${arcAdjusted} ${playoff}.`

@@ -62,13 +62,30 @@ school whose conference the hub does not model gets no conference block.
   `shareUrlFor`, so it carries the archive `?season=` when one is selected.
 - **Save image** appears only when the PNG for this card exists under the
   data base (`data/og/wrapped/<sport>/<schoolId>.png`); until then the
-  hint under the card says to screenshot it. The page probes the PNG with
-  an `Image` load, so no code change is needed when a card lands.
+  hint under the card says to screenshot it — and, while the team's
+  season is still going, that a PNG is made once it is over, so the page
+  never promises a button CI will not deliver yet. The page probes the
+  PNG with an `Image` load, so no code change is needed when a card lands.
 
 ## Rendering the PNGs
 
-Not in CI yet. Run it locally after a scrape, with the widget served
-somewhere Playwright can reach — the dev server is simplest:
+**In CI since 2026-11-05.** `.github/workflows/scrape.yml` runs the
+generator inside the "Generate OG share cards" step, right after
+`generate_og_cards.py`, against the same locally served `dist/` + `data/`
+tree and the same Playwright chromium — once for the story size and once
+with `--format og`. Defaults only: every in-season sport, teams whose
+season is over, existing PNGs skipped, so a card is rendered once and
+never churns while a team is still playing. Both calls are warn-only
+(`::warning::`, never a failed run) and the step keeps its
+`continue-on-error` and a 15-minute ceiling; a timeout defers the rest to
+the next scrape. The PNGs land in `data/og/wrapped/` and go out with the
+`data:` commit (`git add data/`), so Pages serves them on the next deploy
+and the hub's Save image button lights up — usually within a day of a
+team's last game.
+
+To re-render by hand (a late stat upload, a logo fix, or a preview of a
+team still playing), run it locally with the widget served somewhere
+Playwright can reach — the dev server is simplest:
 
 ```bash
 cd frontend && npm run dev            # serves http://localhost:5173/wpr-prep-sports
@@ -102,16 +119,12 @@ page itself is broken (route not mounted, wrong base path), not a bad
 school.
 
 Commit the PNGs with the data (`data:` commit) so Pages serves them and
-the hub's Save image button lights up.
+the hub's Save image button lights up. In CI this is the scrape
+workflow's commit step; locally, commit `data/og/wrapped/` yourself.
 
-## Follow-up: deploy.yml
-
-The step belongs next to the OG-card generation once it has run clean for
-a season: build the frontend, serve `dist/` locally in the job, run
-`generate_wrapped_cards.py --base-url http://localhost:<port>/wpr-prep-sports`,
-and commit `data/og/wrapped/` before the Pages upload. Keep it warn-only
-like the OG step — a card failure must never block a deploy. Not wired
-yet so the first season of output can be eyeballed by hand.
+Use `--refresh` sparingly from CI's point of view: the workflow skips
+existing files, so a hand-rendered card stays as rendered until someone
+refreshes it again.
 
 ## Gotchas
 

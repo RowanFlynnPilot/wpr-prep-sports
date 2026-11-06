@@ -54,6 +54,19 @@ export default function Sponsor({ slot, sponsors, variant = "inline", className 
   // renders like an empty one.
   if (variant === "banner") {
     if (!logoSrc) return null;
+    // Reserve the box before the image arrives: lazy with no intrinsic size
+    // the banner measured 2 px tall and then jumped to its full height on
+    // scroll (CLS 0.012–0.032 in the field). Sponsor.css fixes the box to
+    // the standard 1480×416 creative; a sponsors.json entry carrying the
+    // creative's pixel size as `width`/`height` gets its own ratio instead.
+    const dims =
+      Number.isFinite(data.width) && Number.isFinite(data.height) && data.height > 0
+        ? {
+            width: data.width,
+            height: data.height,
+            style: { aspectRatio: `${data.width} / ${data.height}` },
+          }
+        : {};
     const img = (
       <img
         src={logoSrc}
@@ -61,6 +74,7 @@ export default function Sponsor({ slot, sponsors, variant = "inline", className 
         className="sponsor-banner__img"
         loading="lazy"
         decoding="async"
+        {...dims}
       />
     );
     return (

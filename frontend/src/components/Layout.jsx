@@ -43,14 +43,15 @@ export default function Layout({
     seasonFinal ?? (archived ? formatSeasonLabel(selectedSeason()) : null);
   return (
     <div className="app">
-      {/* First tab stop. Without it a keyboard or switch user re-traverses
-          the masthead, sport switcher, and section tabs on every single
-          navigation before reaching the scores. */}
-      <a href="#main" className="skip-link">
-        Skip to scores
-      </a>
-
       <header className="masthead">
+        {/* First tab stop. Without it a keyboard or switch user re-traverses
+            the masthead, sport switcher, and section tabs on every single
+            navigation before reaching the scores. Lives inside the header
+            landmark (absolutely positioned, so it takes no flex slot) so
+            every element on the page sits in a landmark. */}
+        <a href="#main" className="skip-link">
+          Skip to scores
+        </a>
         <a
           href={SITE.orgHomeUrl}
           className="masthead__brand"

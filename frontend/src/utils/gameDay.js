@@ -14,9 +14,18 @@
  * Once every game on the slate is final the mode stays on until midnight
  * (the hero shows the result with the night's count), then the ordinary
  * result-first logic takes over for the weekend.
+ *
+ * Tournament days are game days too, at any hour and with any count: a
+ * state semifinal at 8:00 AM is the day's whole story, and the noon /
+ * three-game rule left the site in "Up next" all through volleyball's
+ * state Thursday (2026-11-05). From an hour before the first playoff
+ * kickoff dated today, the mode is on.
  */
 const SLATE_MIN = 3;
 const START_HOUR = 12;
+const PLAYOFF_LEAD_MS = 60 * 60 * 1000;
+
+const isStateRound = (g) => /^state/i.test(g?.playoff_round ?? "");
 
 const dayKey = (d) => {
   const x = d instanceof Date ? d : new Date(d);
@@ -25,7 +34,8 @@ const dayKey = (d) => {
 
 /**
  * @returns {{ isGameDay: boolean, slate: Array, scheduled: number, live: number,
- *             finals: number, firstKickoff: Date|null, today: string }}
+ *             finals: number, firstKickoff: Date|null, today: string,
+ *             playoffToday: number, stateToday: boolean }}
  */
 export function gameDayState(games, now = new Date()) {
   const today = dayKey(now);
@@ -39,17 +49,34 @@ export function gameDayState(games, now = new Date()) {
   const scheduled = slate.filter((g) => g.status === "scheduled").length;
   const live = slate.filter((g) => g.status === "in_progress").length;
   const finals = slate.filter((g) => g.status === "final").length;
-  const kickoffs = slate.map((g) => new Date(g.date).getTime()).filter(Number.isFinite).sort((a, b) => a - b);
+  const kickoffTimes = (list) =>
+    list
+      .map((g) => new Date(g.date).getTime())
+      .filter(Number.isFinite)
+      .sort((a, b) => a - b);
+  const kickoffs = kickoffTimes(slate);
   const firstKickoff = kickoffs.length ? new Date(kickoffs[0]) : null;
   const afternoon = now.getHours() >= START_HOUR;
+
+  // Playoff slate: on from an hour before its first kickoff, whatever the
+  // hour and however few games.
+  const playoffGames = slate.filter((g) => g.playoff);
+  const playoffToday = playoffGames.length;
+  const stateToday = playoffGames.some(isStateRound);
+  const playoffKickoffs = kickoffTimes(playoffGames);
+  const playoffUnderway =
+    playoffKickoffs.length > 0 && now.getTime() >= playoffKickoffs[0] - PLAYOFF_LEAD_MS;
+
   return {
-    isGameDay: afternoon && slate.length >= SLATE_MIN,
+    isGameDay: (afternoon && slate.length >= SLATE_MIN) || playoffUnderway,
     slate,
     scheduled,
     live,
     finals,
     firstKickoff,
     today,
+    playoffToday,
+    stateToday,
   };
 }
 
@@ -74,7 +101,12 @@ export function todayWord(date) {
   return h >= 17 ? "Tonight" : "Today";
 }
 
-/** One line for the slate: "37 games tonight · 12 final · 3 live". */
+/**
+ * One line for the slate: "37 games tonight · 12 final · 3 live". On a
+ * tournament day the games are named for what they are: "3 state games
+ * today · 1 final", "2 playoff games tonight"; a mixed day counts the
+ * playoff games after the total ("9 games tonight · 2 playoff · 1 final").
+ */
 export function slateSummary(state) {
   if (!state?.slate?.length) return "";
   const n = state.slate.length;
@@ -82,25 +114,43 @@ export function slateSummary(state) {
   // 4 p.m. game should not turn a Friday night into "today".
   const evening = state.slate.filter((g) => new Date(g.date).getHours() >= 17).length;
   const word = evening * 2 >= n ? "tonight" : "today";
-  const parts = [`${n} game${n === 1 ? "" : "s"} ${word}`];
+  const playoffs = state.playoffToday ?? 0;
+  const kind = playoffs === n ? (state.stateToday ? "state " : "playoff ") : "";
+  const parts = [`${n} ${kind}game${n === 1 ? "" : "s"} ${word}`];
+  if (playoffs > 0 && playoffs < n) parts.push(`${playoffs} playoff`);
   if (state.live > 0) parts.push(`${state.live} live`);
   if (state.finals > 0) parts.push(`${state.finals} final`);
   return parts.join(" · ");
 }
 
 /**
+ * The eyebrow's lead on a game day: "State tournament today", "Playoffs
+ * tonight", else "Tonight"/"Today" for the featured game's kickoff.
+ */
+export function slateLead(state, gameDate) {
+  const when = todayWord(gameDate ?? state?.firstKickoff ?? Date.now());
+  if (state?.stateToday) return `State tournament ${when.toLowerCase()}`;
+  if ((state?.playoffToday ?? 0) > 0) return `Playoffs ${when.toLowerCase()}`;
+  return when;
+}
+
+/**
  * Tonight's lead for the hero. The Game of the Week if it is on today's
- * slate; otherwise the best game on the slate for this audience: a live
- * local game first, then a local final (the result), then a local game
- * still to come; conference games and close margins break ties. The
- * marquee picker itself moves on to next week the moment tonight's game
- * kicks off, so this cannot lean on it after 7 p.m.
+ * slate; otherwise the best game on the slate for this audience: a
+ * tracked team's playoff game first (a state semifinal outranks a
+ * regular-season game across town), then a live local game, then a local
+ * final (the result), then a local game still to come; conference games
+ * and close margins break ties. The marquee picker itself moves on to
+ * next week the moment tonight's game kicks off, so this cannot lean on
+ * it after 7 p.m.
  */
 export function pickTonightGame(slate, homeRegionIds, marqueeGame = null) {
   if (!slate?.length) return null;
   if (marqueeGame && slate.some((g) => g.id === marqueeGame.id)) return marqueeGame;
   const local = (g) =>
     (homeRegionIds?.has(g.home?.school_id) ? 1 : 0) + (homeRegionIds?.has(g.away?.school_id) ? 1 : 0);
+  const trackedPlayoff = (g) =>
+    g.playoff && (g.home?.school_id || g.away?.school_id) ? 1 : 0;
   const statusWeight = { in_progress: 3, final: 2, scheduled: 1 };
   const margin = (g) =>
     g.status === "final" && g.home?.score != null && g.away?.score != null
@@ -108,6 +158,7 @@ export function pickTonightGame(slate, homeRegionIds, marqueeGame = null) {
       : 99;
   return [...slate].sort(
     (a, b) =>
+      trackedPlayoff(b) - trackedPlayoff(a) ||
       local(b) - local(a) ||
       (statusWeight[b.status] ?? 0) - (statusWeight[a.status] ?? 0) ||
       (b.conference_game ? 1 : 0) - (a.conference_game ? 1 : 0) ||

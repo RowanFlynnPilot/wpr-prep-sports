@@ -5,7 +5,13 @@ import TeamLink from "./TeamLink.jsx";
 import { primaryColor, schoolFor } from "../utils/schools.js";
 import { formatGameShortDay, formatGameDate } from "../utils/dates.js";
 import { gameSummaryLine, playerLineForGame } from "../utils/recap.js";
-import { isForfeitScore, isScorePending, isStaleScheduled, isUnreportedFinal } from "../utils/games.js";
+import {
+  isForfeitScore,
+  isScorePending,
+  isStaleScheduled,
+  isUnderway,
+  isUnreportedFinal,
+} from "../utils/games.js";
 import { useSportPrefix } from "../utils/links.js";
 
 /**
@@ -157,8 +163,10 @@ function GameCard({ game, schoolIndex, allGames, sportConfig }) {
   const unreportedFinal = isUnreportedFinal(game);
   const forfeit = isFinal && !unreportedFinal && isForfeitScore(game);
   const notReported = isStaleScheduled(game) || unreportedFinal;
-  // Played, no score yet: "Score pending", not a stale kickoff time.
+  // Played, no score yet: "Score pending", not a stale kickoff time. Start
+  // time passed within the last three hours: "Underway" (no live feed).
   const pending = isScorePending(game);
+  const underway = isUnderway(game);
   const showScore = (isFinal || isLive) && !forfeit && !unreportedFinal;
 
   const homeScore = game.home.score;
@@ -166,7 +174,7 @@ function GameCard({ game, schoolIndex, allGames, sportConfig }) {
   const homeWon = showScore && (homeScore ?? -1) > (awayScore ?? -1);
   const awayWon = showScore && (awayScore ?? -1) > (homeScore ?? -1);
   // Numerals sit on the card, so the sentence skips the scoreline.
-  const summary = gameSummaryLine(game, { sportConfig, omitScore: true });
+  const summary = gameSummaryLine(game, { sportConfig, omitScore: true, allGames });
   const player = playerLineForGame(game, { contextGames: allGames, sportConfig });
   const playerSchool = player ? schoolIndex.get(player.schoolId) : null;
 
@@ -190,16 +198,20 @@ function GameCard({ game, schoolIndex, allGames, sportConfig }) {
             LIVE
           </span>
         ) : (
-          <span className={`card__status card__status--${game.status}`}>
+          <span
+            className={`card__status card__status--${game.status}${underway ? " card__status--underway" : ""}`}
+          >
             {forfeit
               ? "Forfeit"
               : notReported
                 ? "Not reported"
                 : isFinal
                   ? "Final"
-                  : pending
-                    ? "Score pending"
-                    : "Upcoming"}
+                  : underway
+                    ? "Underway"
+                    : pending
+                      ? "Score pending"
+                      : "Upcoming"}
           </span>
         )}
       </header>

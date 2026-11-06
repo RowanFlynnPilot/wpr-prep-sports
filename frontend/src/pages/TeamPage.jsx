@@ -14,7 +14,9 @@ import {
   formatGameTime,
   formatGameShortDay,
 } from "../utils/dates.js";
-import { isForfeitScore } from "../utils/games.js";
+import { humanizeVenue, isForfeitScore } from "../utils/games.js";
+import { isNeutralSite, roundLabel } from "../utils/postseason.js";
+import { playoffResultLabel, resolveShootout } from "../utils/bracket.js";
 import { todaysGameFor, todayWord } from "../utils/gameDay.js";
 import { recapForGame } from "../utils/recap.js";
 import { seasonSummary, seasonState } from "../utils/seasonSummary.js";
@@ -94,6 +96,7 @@ export default function TeamPage({ dataset, schoolIndex, sponsors, sportConfig }
       school
         ? seasonSummary({
             teamGames,
+            allGames: dataset.games,
             schoolId,
             school,
             schoolsById: schoolIndex,
@@ -101,7 +104,7 @@ export default function TeamPage({ dataset, schoolIndex, sponsors, sportConfig }
             sportConfig,
           })
         : null,
-    [teamGames, schoolId, school, schoolIndex, seasonStatsForSchool, sportConfig],
+    [teamGames, dataset.games, schoolId, school, schoolIndex, seasonStatsForSchool, sportConfig],
   );
 
   // Try to find this school's logo from any of their home games (where the
@@ -163,12 +166,30 @@ export default function TeamPage({ dataset, schoolIndex, sponsors, sportConfig }
             const own = isHome ? todayGame.home.score : todayGame.away.score;
             const theirs = isHome ? todayGame.away.score : todayGame.home.score;
             const when = todayWord(todayGame.date);
+            // Neutral site (state, sectionals): "vs", never "at" the
+            // listed home side.
+            const at = isHome || isNeutralSite(todayGame, schoolIndex) ? "vs" : "at";
+            const pk =
+              todayGame.status === "final" && own === theirs
+                ? resolveShootout(todayGame, isHome, dataset.games)
+                : null;
+            const mark = pk
+              ? pk.undecided
+                ? "T"
+                : pk.won
+                  ? "W"
+                  : "L"
+              : own > theirs
+                ? "W"
+                : own < theirs
+                  ? "L"
+                  : "T";
             const label =
               todayGame.status === "final"
-                ? `${when} · ${own > theirs ? "W" : own < theirs ? "L" : "T"} ${own}-${theirs} ${isHome ? "vs" : "at"} ${opp.name}`
+                ? `${when} · ${mark} ${own}-${theirs}${pk ? " (PK)" : ""} ${at} ${opp.name}`
                 : todayGame.status === "in_progress"
-                  ? `Live · ${isHome ? "vs" : "at"} ${opp.name} · ${own ?? 0}-${theirs ?? 0}`
-                  : `${when} · ${isHome ? "vs" : "at"} ${opp.name} · ${formatGameTime(todayGame.date)}`;
+                  ? `Live · ${at} ${opp.name} · ${own ?? 0}-${theirs ?? 0}`
+                  : `${when} · ${at} ${opp.name} · ${formatGameTime(todayGame.date)}`;
             return (
               <Link to={`${sportPrefix}/game/${todayGame.id}`} className="team-hero__tonight">
                 {label} <span aria-hidden="true">›</span>
@@ -234,6 +255,7 @@ export default function TeamPage({ dataset, schoolIndex, sponsors, sportConfig }
           schoolId={schoolId}
           schoolIndex={schoolIndex}
           sportPrefix={sportPrefix}
+          sportId={sportConfig?.id}
         />
       )}
 
@@ -257,6 +279,7 @@ export default function TeamPage({ dataset, schoolIndex, sponsors, sportConfig }
         ) : (
           <SeasonSchedule
             teamGames={teamGames}
+            allGames={dataset.games}
             schoolId={schoolId}
             schoolIndex={schoolIndex}
             sportPrefix={sportPrefix}
@@ -332,10 +355,12 @@ function shortDayDate(iso) {
 /**
  * One line under the hero: "Still alive · Level 4 · Fri Nov 6 · vs
  * opponent TBD", "Season over · 9-2 · Lost Level 2 to Wrightstown 9-0",
- * or "Season over · 3-6". Over seasons get a "Share this season" link to
- * the wrapped card.
+ * "State champions · 14-0 · Beat X 3-1 in the State Final", or "Season
+ * over · 3-6". Over seasons get a "Share this season" link to the
+ * wrapped card. Rounds read through roundLabel ("State semifinal
+ * (Level 4)"); a neutral-site next game says "vs" and names the venue.
  */
-function SeasonStateBanner({ state, record, schoolId, schoolIndex, sportPrefix }) {
+function SeasonStateBanner({ state, record, schoolId, schoolIndex, sportPrefix, sportId }) {
   const overall = recordText(record.wins, record.losses, record.ties);
   const nameOf = (side) =>
     (side?.school_id ? schoolIndex.get(side.school_id)?.name : null) ?? side?.name ?? "opponent";
@@ -344,23 +369,36 @@ function SeasonStateBanner({ state, record, schoolId, schoolIndex, sportPrefix }
       <span className="season-state__linktext">{text}</span> <span aria-hidden="true">›</span>
     </Link>
   );
+  const round = (r) => roundLabel(r, sportId) || r || "playoff";
 
   let status;
   let detail = null;
   if (state.kind === "alive") {
     status = "Still alive";
-    const where = state.opponent
-      ? `${state.isHome ? "vs" : "at"} ${nameOf(state.opponent)}`
-      : `${state.isHome === false ? "at" : "vs"} opponent TBD`;
+    const neutral = isNeutralSite(state.game, schoolIndex);
+    const at = state.isHome || neutral ? "vs" : "at";
+    const where = state.opponent ? `${at} ${nameOf(state.opponent)}` : `${at} opponent TBD`;
     const when = state.live ? "Live now" : shortDayDate(state.game.date);
-    detail = gameLink(state.game, `${state.round} · ${when} · ${where}`);
+    detail = (
+      <>
+        {gameLink(state.game, `${round(state.round)} · ${when} · ${where}`)}
+        {neutral && state.game.venue && (
+          <span className="season-state__venue">{humanizeVenue(state.game.venue)}</span>
+        )}
+      </>
+    );
   } else if (state.kind === "alive-tba") {
     status = "Still alive";
     const last = state.lastEntry;
+    // A shootout nobody has been seen advancing from: the draw stands
+    // until the bracket says who moved on.
+    const text = last?.undecided
+      ? `${round(last.round)} · ${playoffResultLabel(last)} vs ${nameOf(last.opponent)}`
+      : `won ${round(last?.round)}${last?.shootout ? " on penalty kicks" : ""}`;
     detail = (
       <>
-        {last?.game ? gameLink(last.game, `won ${last.round}`) : <span>won {last?.round}</span>}
-        <span>next round TBA</span>
+        {last?.game ? gameLink(last.game, text) : <span>{text}</span>}
+        <span>{last?.undecided ? "shootout result pending" : "next round TBA"}</span>
       </>
     );
   } else {
@@ -372,12 +410,21 @@ function SeasonStateBanner({ state, record, schoolId, schoolIndex, sportPrefix }
       const forfeit = isForfeitScore(last.game);
       const high = Math.max(last.ownScore, last.oppScore);
       const low = Math.min(last.ownScore, last.oppScore);
-      outcome =
-        state.kind === "champion"
-          ? `Won ${last.round} over ${opp} ${forfeit ? "by forfeit" : `${high}-${low}`}`
-          : last.ownScore === last.oppScore && !forfeit
-            ? `Out in ${last.round} vs ${opp} ${high}-${low}`
-            : `Lost ${last.round} to ${opp} ${forfeit ? "by forfeit" : `${high}-${low}`}`;
+      const r = round(last.round);
+      const pk = last.shootout ? ` on penalty kicks after a ${high}-${low} draw` : "";
+      if (state.kind === "champion") {
+        outcome = forfeit
+          ? `Won the ${r} over ${opp} by forfeit`
+          : last.shootout
+            ? `Beat ${opp}${pk} in the ${r}`
+            : `Beat ${opp} ${high}-${low} in the ${r}`;
+      } else if (last.shootout) {
+        outcome = `Lost ${r} to ${opp}${pk}`;
+      } else if (last.ownScore === last.oppScore && !forfeit) {
+        outcome = `Out in ${r} vs ${opp} ${high}-${low}`;
+      } else {
+        outcome = `Lost ${r} to ${opp} ${forfeit ? "by forfeit" : `${high}-${low}`}`;
+      }
     }
     detail = (
       <>
@@ -449,9 +496,12 @@ function computeRecord(games, schoolId) {
   };
 }
 
-function SeasonSchedule({ teamGames, schoolId, schoolIndex, sportPrefix, sportConfig }) {
+function SeasonSchedule({ teamGames, allGames, schoolId, schoolIndex, sportPrefix, sportConfig }) {
   const regular = teamGames.filter((g) => !g.playoff);
   const playoffs = teamGames.filter((g) => g.playoff);
+  // The sport's whole bracket, so a tied playoff game can be read as the
+  // shootout it was (whichever side plays on advanced).
+  const playoffGames = (allGames ?? teamGames).filter((g) => g.playoff);
 
   // When no playoff games exist, render as a single list with no
   // sub-headers — the existing layout. Same when the team got 0
@@ -467,6 +517,8 @@ function SeasonSchedule({ teamGames, schoolId, schoolIndex, sportPrefix, sportCo
             schoolId={schoolId}
             schoolIndex={schoolIndex}
             allTeamGames={teamGames}
+            allGames={allGames}
+            playoffGames={playoffGames}
             sportPrefix={sportPrefix}
             sportConfig={sportConfig}
           />
@@ -490,6 +542,8 @@ function SeasonSchedule({ teamGames, schoolId, schoolIndex, sportPrefix, sportCo
             schoolId={schoolId}
             schoolIndex={schoolIndex}
             allTeamGames={teamGames}
+            allGames={allGames}
+            playoffGames={playoffGames}
             sportPrefix={sportPrefix}
             sportConfig={sportConfig}
           />
@@ -511,6 +565,8 @@ function SeasonSchedule({ teamGames, schoolId, schoolIndex, sportPrefix, sportCo
             schoolId={schoolId}
             schoolIndex={schoolIndex}
             allTeamGames={teamGames}
+            allGames={allGames}
+            playoffGames={playoffGames}
             sportPrefix={sportPrefix}
             sportConfig={sportConfig}
           />
@@ -520,23 +576,65 @@ function SeasonSchedule({ teamGames, schoolId, schoolIndex, sportPrefix, sportCo
   );
 }
 
-function ScheduleRow({ game, index, schoolId, schoolIndex, allTeamGames, sportPrefix, sportConfig }) {
+function ScheduleRow({
+  game,
+  index,
+  schoolId,
+  schoolIndex,
+  allTeamGames,
+  allGames,
+  playoffGames,
+  sportPrefix,
+  sportConfig,
+}) {
   const isHome = game.home.school_id === schoolId;
   const opponent = isHome ? game.away : game.home;
   const opponentSchool = schoolIndex.get(opponent.school_id);
   const own = isHome ? game.home.score : game.away.score;
   const opp = isHome ? game.away.score : game.home.score;
   const isFinal = game.status === "final";
-  const won = isFinal && own != null && opp != null && own > opp;
-  const lost = isFinal && own != null && opp != null && own < opp;
+  const scored = isFinal && own != null && opp != null;
+  // A tied playoff game was a penalty-kick shootout (utils/bracket.js):
+  // the side that plays on won it, and the row says "W 4-4 (PK)".
+  const shootout = scored && own === opp ? resolveShootout(game, isHome, playoffGames) : null;
+  const won = shootout ? shootout.won : scored && own > opp;
+  const lost = shootout ? !shootout.won && !shootout.undecided : scored && own < opp;
   const forfeit = isFinal && isForfeitScore(game);
+  // State and sectional games are at neutral arenas; WIAA's "home" is only
+  // listing order, so the row says "vs" and carries the venue.
+  const neutral = isNeutralSite(game, schoolIndex);
+  const venue = neutral && game.venue ? humanizeVenue(game.venue) : null;
   const recap = recapForGame(game, {
     schoolsById: schoolIndex,
     teamGames: allTeamGames,
     perspectiveSchoolId: schoolId,
     contextGames: allTeamGames,
+    allGames,
     sportConfig,
   });
+
+  // Visible text first, so the accessible name contains what sighted
+  // readers see ("W 57-0, win, game details"), then the meaning.
+  const outcomeMark = won ? "W" : lost ? "L" : "·";
+  const scoreText = forfeit ? "Forfeit" : `${own}-${opp}${shootout ? " (PK)" : ""}`;
+  const meaning = forfeit
+    ? won
+      ? "forfeit win"
+      : "forfeit loss"
+    : shootout
+      ? shootout.undecided
+        ? "draw, penalty-kick shootout result pending"
+        : won
+          ? "won on penalty kicks"
+          : "lost on penalty kicks"
+      : won
+        ? "win"
+        : lost
+          ? "loss"
+          : "tie";
+  const label = isFinal
+    ? `${outcomeMark === "·" ? "Tie" : outcomeMark} ${scoreText}, ${meaning}, game details`
+    : `${formatGameTime(game.date)}, game details`;
 
   return (
     <li className={"schedule-row" + (game.playoff ? " schedule-row--playoff" : "")}>
@@ -546,7 +644,9 @@ function ScheduleRow({ game, index, schoolId, schoolIndex, allTeamGames, sportPr
         <span className="schedule-row__datelabel">{formatGameDate(game.date)}</span>
       </div>
       <div className="schedule-row__matchup">
-        <span className="schedule-row__location">{isHome ? "vs" : "@"}</span>
+        <span className="schedule-row__location" title={venue ?? undefined}>
+          {isHome || neutral ? "vs" : "@"}
+        </span>
         <TeamLogo team={opponent} school={opponentSchool} size="sm" />
         <TeamLink team={opponent} className="schedule-row__opponent">
           {opponent.name}
@@ -556,9 +656,10 @@ function ScheduleRow({ game, index, schoolId, schoolIndex, allTeamGames, sportPr
             className="schedule-row__round"
             title={`${SITE.governingBody} tournament round`}
           >
-            {game.playoff_round}
+            {roundLabel(game.playoff_round, sportConfig?.id)}
           </span>
         )}
+        {venue && <span className="schedule-row__venue">{venue}</span>}
       </div>
       <Link
         to={`${sportPrefix}/game/${game.id}`}
@@ -566,18 +667,12 @@ function ScheduleRow({ game, index, schoolId, schoolIndex, allTeamGames, sportPr
           "schedule-row__result schedule-row__result--link " +
           (won ? "schedule-row__result--win" : lost ? "schedule-row__result--loss" : "")
         }
-        aria-label={`Game details${
-          isFinal ? (forfeit ? ", forfeit" : `, final ${own}-${opp}`) : ""
-        }`}
+        aria-label={label}
       >
         {isFinal ? (
           <>
-            <span className="schedule-row__outcome">
-              {won ? "W" : lost ? "L" : "·"}
-            </span>
-            <span className="schedule-row__score">
-              {forfeit ? "Forfeit" : `${own}-${opp}`}
-            </span>
+            <span className="schedule-row__outcome">{outcomeMark}</span>
+            <span className="schedule-row__score">{scoreText}</span>
           </>
         ) : (
           <span className="schedule-row__time">{formatGameTime(game.date)}</span>

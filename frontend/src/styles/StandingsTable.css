@@ -234,14 +234,26 @@
 .standings__table td.form { text-align: right; padding-right: 0.5rem; }
 
 /* Details toggle — the row's one keyboard-reachable control. 36px hit
-   area inside a 2.4rem column; the chevron turns when the row is open. */
+   area inside a 2.4rem column; the chevron turns when the row is open.
+   The box is pinned with min/max and box-sizing so no table-cell or
+   button reset can collapse it: the accessibility audit measured a 14x4px
+   button whose focus ring was a sliver. The column and row layout are
+   unchanged — 36px already fits the 2.4rem column. */
 .standings__table td.more { text-align: right; padding: 0.2rem 0.35rem 0.2rem 0; }
 .standings__toggle {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  box-sizing: border-box;
+  flex: 0 0 auto;
   width: 36px;
   height: 36px;
+  min-width: 24px;
+  min-height: 24px;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  vertical-align: middle;
   border: 1px solid transparent;
   border-radius: 50%;
   background: none;
@@ -251,7 +263,14 @@
   transition: color var(--t-fast) var(--ease), background var(--t-fast) var(--ease);
 }
 .standings__toggle .icon {
+  flex: 0 0 auto;
+  width: 1em;
+  height: 1em;
   transition: transform var(--t-fast) var(--ease);
+}
+.standings__toggle:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
 }
 .standings__toggle:focus-visible {
   color: var(--ink);
@@ -482,10 +501,13 @@ a.standings__details-link:focus-visible {
     clip-path: inset(50%);
     white-space: nowrap;
   }
+  /* Keyboard focus brings the whole 36px control back, never a sliver. */
   .standings__toggle:focus-visible {
     position: static;
     width: 36px;
     height: 36px;
+    min-width: 36px;
+    min-height: 36px;
     clip: auto;
     clip-path: none;
   }

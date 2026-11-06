@@ -305,7 +305,8 @@
 .schedule-row__matchup {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
+  flex-wrap: wrap;
+  gap: 0.15rem 0.6rem;
   min-width: 0;
 }
 .schedule-row__location {
@@ -423,6 +424,24 @@ a.schedule-row__result--link:focus-visible {
   min-height: 32px;
 }
 .team-hero__tonight:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* Neutral-site venue ("at Uihlein Soccer Park, Milwaukee") on its own line
+   under the matchup: state and sectional games are nobody's home game. */
+.schedule-row__venue {
+  flex-basis: 100%;
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: var(--fs-caption);
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+.season-state__venue {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: var(--fs-small);
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
 
 /* Playoff rows on phones: the round pill (nowrap, up to 139px) was starving the
    opponent's name to 0px inside the matchup cell and running past the row

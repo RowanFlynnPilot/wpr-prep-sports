@@ -3,8 +3,11 @@ import { Link } from "react-router-dom";
 import TeamLogo from "./TeamLogo.jsx";
 import {
   buildTeamJourneys,
+  playoffResultLabel,
   playoffRoundsInOrder,
 } from "../utils/bracket.js";
+import { isNeutralSite, isTitleRound, roundLabel } from "../utils/postseason.js";
+import { humanizeVenue } from "../utils/games.js";
 import { useSportPrefix } from "../utils/links.js";
 
 /**
@@ -93,6 +96,18 @@ export default function TournamentBracket({ games, schoolIndex, sportConfig }) {
 
   if (allJourneys.length === 0 || rounds.length === 0) return null;
 
+  // Champions are not "alive" (nothing left to play) and not out either;
+  // the count line names them so a title week never reads "none still
+  // alive" above a row wearing the trophy.
+  const champCount = journeys.filter((j) => journeyIsChampion(j)).length;
+  const aliveCount = journeys.filter((j) => j.alive && !journeyIsChampion(j)).length;
+  const tally = [
+    champCount > 0 ? `${champCount} state champion${champCount === 1 ? "" : "s"}` : null,
+    aliveCount > 0 ? `${aliveCount} still alive` : champCount > 0 ? null : "none still alive",
+  ]
+    .filter(Boolean)
+    .join(" · ");
+
   return (
     <div className="bracket">
       <div className="bracket__toolbar">
@@ -101,9 +116,7 @@ export default function TournamentBracket({ games, schoolIndex, sportConfig }) {
             ? `${allJourneys.length} tracked ${allJourneys.length === 1 ? "team" : "teams"} made the playoffs`
             : `${journeys.length} of ${allJourneys.length} playoff teams shown`}
           {" · "}
-          {journeys.filter((j) => j.alive).length === 0
-            ? "none still alive"
-            : `${journeys.filter((j) => j.alive).length} still alive`}
+          {tally}
         </span>
         {conferences.length > 1 && (
           <div
@@ -187,7 +200,7 @@ export default function TournamentBracket({ games, schoolIndex, sportConfig }) {
                   role="columnheader"
                   className="bracket__journey-cell bracket__journey-cell--round"
                 >
-                  {r}
+                  {roundLabel(r, sportId)}
                 </th>
               ))}
             </tr>
@@ -200,6 +213,7 @@ export default function TournamentBracket({ games, schoolIndex, sportConfig }) {
                 journey={j}
                 rounds={rounds}
                 lastRound={lastRound}
+                schoolIndex={schoolIndex}
               />
             ))}
           </tbody>
@@ -223,26 +237,26 @@ function FilterChip({ label, active, onClick }) {
   );
 }
 
-// Rounds that mean "won the state title" — only these get the
-// champion gold treatment. Football tops out at Level 4 (Camp Randall);
-// other sports use explicitly state-named rounds. Sectional Final
-// winners are "advancing to state" but not champions.
-// Football's Level 4 is a state semifinal for 11- and 8-player alike (the
-// 8-player final is a separate "State Championship" row a week later, now
-// ingested from WIAA's tournament pages). Only state-named finals are titles.
-const STATE_TITLE_ROUNDS = new Set(["State Final", "State Championship"]);
-function isTitleRound(round) {
-  return STATE_TITLE_ROUNDS.has(round);
+// Only a final win in a state title round (utils/postseason.js
+// isTitleRound) gets the champion gold treatment. Football's Level 4 is a
+// state semifinal for 11- and 8-player alike; Sectional Final winners are
+// "advancing to state", not champions. A scheduled title game is not a
+// title: the trophy waits for a final win.
+function journeyIsChampion(journey) {
+  const last = journey.games[journey.games.length - 1];
+  return !!last?.isFinal && !!last?.won && isTitleRound(last?.round ?? "");
 }
 
-function JourneyRow({ journey, rounds, lastRound }) {
+function JourneyRow({ journey, rounds, lastRound, schoolIndex }) {
   void lastRound;
   const sportPrefix = useSportPrefix();
   const byRound = new Map(journey.games.map((g) => [g.round, g]));
   const finalGame = journey.games[journey.games.length - 1];
   const stillAlive = journey.alive;
-  // A scheduled title game is not a title: the trophy waits for a final win.
-  const stateChamp = !!finalGame?.isFinal && !!finalGame?.won && isTitleRound(finalGame?.round ?? "");
+  const stateChamp = journeyIsChampion(journey);
+  // Rounds past an alive team's last game are still to come, not "did not
+  // play": the bracket fills them in as WIAA schedules them.
+  const lastRoundPos = rounds.indexOf(finalGame?.round);
 
   return (
     <tr
@@ -280,20 +294,40 @@ function JourneyRow({ journey, rounds, lastRound }) {
           <span className="bracket__journey-mascot">{journey.school.mascot}</span>
         )}
       </th>
-      {rounds.map((r) => {
+      {rounds.map((r, pos) => {
         const entry = byRound.get(r);
         if (!entry) {
+          // Later column than the team's last game while it is still in
+          // the bracket: the game exists, WIAA just hasn't posted it.
+          const future = stillAlive && !stateChamp && lastRoundPos >= 0 && pos > lastRoundPos;
           return (
             <td
               key={r}
               role="cell"
-              className="bracket__journey-cell bracket__journey-cell--empty"
+              className={
+                "bracket__journey-cell bracket__journey-cell--empty" +
+                (future ? " bracket__journey-cell--tbd" : "")
+              }
             >
-              <span aria-hidden="true">—</span>
-              <span className="sr-only">Did not play</span>
+              {future ? (
+                <>
+                  <span aria-hidden="true">TBD</span>
+                  <span className="sr-only">Not yet scheduled</span>
+                </>
+              ) : (
+                <>
+                  <span aria-hidden="true">—</span>
+                  <span className="sr-only">Did not play</span>
+                </>
+              )}
             </td>
           );
         }
+        // State and sectional games are at neutral arenas: WIAA's "home"
+        // is listing order, so the cell says "vs" and names the venue.
+        const neutral = isNeutralSite(entry.game, schoolIndex);
+        const venue = neutral && entry.game.venue ? humanizeVenue(entry.game.venue) : null;
+        const result = playoffResultLabel(entry);
         return (
           <td
             key={r}
@@ -301,25 +335,33 @@ function JourneyRow({ journey, rounds, lastRound }) {
             className={
               "bracket__journey-cell bracket__journey-cell--game" +
               (entry.won ? " bracket__journey-cell--won" : "") +
-              (entry.isFinal && !entry.won ? " bracket__journey-cell--lost" : "")
+              (entry.isFinal && !entry.won && !entry.undecided ? " bracket__journey-cell--lost" : "") +
+              (entry.shootout ? " bracket__journey-cell--shootout" : "")
             }
           >
             <Link
               to={`${sportPrefix}/game/${entry.game.id}`}
               className="bracket__journey-game"
+              title={venue ?? undefined}
             >
               <span className="bracket__journey-result">
-                {entry.isFinal
-                  ? `${entry.won ? "W" : "L"} ${entry.ownScore}-${entry.oppScore}`
-                  : "Upcoming"}
+                {result ?? "Upcoming"}
+                {entry.shootout && (
+                  <span className="sr-only">
+                    {entry.undecided
+                      ? ", penalty-kick shootout, result pending"
+                      : `, ${entry.won ? "won" : "lost"} on penalty kicks`}
+                  </span>
+                )}
               </span>
               <span className="bracket__journey-opponent">
                 {/* WIAA lists the next round's opponent as "TBD" until the
                     other game ends; "vs TBD" read like a team name. */}
                 {/^tbd$/i.test(entry.opponent.name ?? "")
                   ? "opponent TBD"
-                  : `${entry.isHome ? "vs" : "@"} ${entry.opponent.name}`}
+                  : `${entry.isHome || neutral ? "vs" : "@"} ${entry.opponent.name}`}
               </span>
+              {venue && <span className="bracket__journey-venue">{venue}</span>}
             </Link>
           </td>
         );

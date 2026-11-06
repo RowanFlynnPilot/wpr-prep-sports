@@ -6,6 +6,8 @@ import { fetchMiniDataset } from "../data/fetchDataset.js";
 import { configFor } from "../config/sports.js";
 import { SITE } from "../config/site.js";
 import { formatGameDayDate, formatGameShortDay, formatGameTime, localDate } from "../utils/dates.js";
+import { humanizeVenue, isUnderway } from "../utils/games.js";
+import { isNeutralSite, roundLabel } from "../utils/postseason.js";
 import { indexSchools } from "../utils/schools.js";
 import { useFavorites } from "../utils/favorites.js";
 import { isEmbedded, useIframeHeightReporter } from "../utils/iframe.js";
@@ -80,9 +82,12 @@ export default function MiniScoreboard() {
     };
   }, [sport]);
 
-  // Friday night: re-fetch every minute while anything is live. A failed
-  // refresh keeps the last good scores on screen.
-  const hasLive = (load.data?.games ?? []).some((g) => g.status === "in_progress");
+  // Friday night: re-fetch every minute while anything is live, or underway
+  // with no feed yet (the score lands as a final). A failed refresh keeps
+  // the last good scores on screen.
+  const hasLive = (load.data?.games ?? []).some(
+    (g) => g.status === "in_progress" || isUnderway(g),
+  );
   useEffect(() => {
     if (!hasLive) return;
     let cancelled = false;
@@ -113,6 +118,13 @@ export default function MiniScoreboard() {
       aria-busy={load.status === "loading"}
     >
       <header className="mini__head">
+        {/* The page's one h1, for the landmark/heading outline. Visually
+            hidden: a visible heading would add a row, and the published
+            iframe heights (e2e/mini.spec.js) are measured maxima. The
+            brand link below is what sighted readers see as the title. */}
+        <h1 className="sr-only">
+          {SITE.titleLead} {SITE.titleEm} scoreboard: {cfg.label}
+        </h1>
         <a
           className="mini__brand"
           href={destination}
@@ -154,7 +166,8 @@ export default function MiniScoreboard() {
         </div>
       )}
 
-      <div className="mini__body">
+      {/* The main landmark: same class, same box — only the element changed. */}
+      <main className="mini__body">
         {load.status === "loading" && <MiniSkeleton />}
         {load.status === "error" && (
           <p className="mini__empty">
@@ -164,7 +177,7 @@ export default function MiniScoreboard() {
         {load.status === "ready" && (
           <MiniGames data={load.data} sport={sport} destination={destination} />
         )}
-      </div>
+      </main>
 
       <footer className="mini__foot">
         <a
@@ -212,11 +225,17 @@ function MiniGames({ data, sport, destination }) {
     return <p className="mini__empty">{emptyCopy(cfg)}</p>;
   }
 
+  // "Live" is a claim the feed backs; a game that is merely past its start
+  // time with no feed is "Underway".
+  const nowCount = picked.liveCount + picked.underwayCount;
+  const nowWord = picked.liveCount > 0 ? "Live" : "Underway";
   const resultsLabel =
-    picked.liveCount === picked.results.length
-      ? "Live now"
-      : picked.liveCount > 0
-        ? "Live & latest"
+    nowCount > 0 && nowCount === picked.results.length
+      ? picked.liveCount > 0
+        ? "Live now"
+        : "Underway"
+      : nowCount > 0
+        ? `${nowWord} & latest`
         : picked.resultsDay
           ? `${formatGameDayDate(picked.resultsDay)} · Final`
           : "Latest scores";
@@ -258,6 +277,8 @@ function MiniGames({ data, sport, destination }) {
               <li key={g.id}>
                 <FixtureRow
                   game={g}
+                  sport={sport}
+                  schoolIndex={schoolIndex}
                   showDay={!picked.upcomingDay}
                   href={destination}
                   onClick={onGame}
@@ -273,23 +294,35 @@ function MiniGames({ data, sport, destination }) {
 
 function ResultCard({ game, schoolIndex, showDay, href, onClick }) {
   const live = game.status === "in_progress";
+  // A scheduled game only reaches the results column when selectGames
+  // judged it underway (started, no feed yet): live styling, no score.
+  const underway = game.status === "scheduled";
   const { home, away } = game;
-  const hasScore = home.score != null && away.score != null;
+  const hasScore = !underway && home.score != null && away.score != null;
   const homeWon = !live && hasScore && home.score > away.score;
   const awayWon = !live && hasScore && away.score > home.score;
   // The section label already says "Friday, Sep 11 · Final" when every card
   // shares it; a status column then only repeats it and costs name width.
-  const status = live ? "Live" : showDay ? formatGameShortDay(game.date) : null;
+  const status = live
+    ? "Live"
+    : underway
+      ? "Underway"
+      : showDay
+        ? formatGameShortDay(game.date)
+        : null;
   const label = hasScore
     ? `${away.name} ${away.score}, ${home.name} ${home.score}, ${
         live ? "in progress" : `final${showDay ? `, ${formatGameDayDate(game.date)}` : ""}`
       }`
-    : `${away.name} at ${home.name}, in progress`;
+    : `${away.name} at ${home.name}, ${underway ? "underway" : "in progress"}`;
 
   return (
     <a
       className={
-        "mini-game" + (live ? " mini-game--live" : "") + (status ? "" : " mini-game--plain")
+        "mini-game" +
+        (live || underway ? " mini-game--live" : "") +
+        (underway ? " mini-game--underway" : "") +
+        (status ? "" : " mini-game--plain")
       }
       href={href}
       target="_top"
@@ -300,7 +333,7 @@ function ResultCard({ game, schoolIndex, showDay, href, onClick }) {
       <TeamLine team={home} won={homeWon} schoolIndex={schoolIndex} />
       {status && (
         <span className="mini-game__status" aria-hidden="true">
-          {live && <span className="mini-game__dot" />}
+          {(live || underway) && <span className="mini-game__dot" />}
           {status}
         </span>
       )}
@@ -321,21 +354,36 @@ function TeamLine({ team, won, schoolIndex }) {
   );
 }
 
-function FixtureRow({ game, showDay, href, onClick }) {
+function FixtureRow({ game, sport, schoolIndex, showDay, href, onClick }) {
   const time = formatGameTime(game.date);
   const when = showDay ? `${formatGameShortDay(game.date)} ${time}` : time;
+  // Playoff games say which round; at a neutral site (a sectional or state
+  // arena, where WIAA's "home" is only listing order) the matchup reads
+  // "vs" and names the venue. Both ride in the matchup span after the
+  // names, so the row stays one line and they ellipsize before a name does.
+  const round = game.playoff ? roundLabel(game.playoff_round, sport) : "";
+  const neutral = game.playoff && isNeutralSite(game, schoolIndex);
+  const venue = neutral ? humanizeVenue(game.venue) : "";
+  const joiner = neutral ? "vs" : "at";
+  const detail = [round, venue].filter(Boolean).join(" · ");
+  const matchup = `${game.away.name} ${joiner} ${game.home.name}`;
   return (
     <a
       className="mini-next"
       href={href}
       target="_top"
-      aria-label={`${game.away.name} at ${game.home.name}, ${
+      aria-label={`${matchup}, ${detail ? `${detail}, ` : ""}${
         showDay ? formatGameDayDate(game.date) : ""
       } ${time}`.replace(/\s+/g, " ")}
       onClick={onClick}
     >
-      <span className="mini-next__matchup" aria-hidden="true" title={`${game.away.name} at ${game.home.name}`}>
-        {game.away.name} <span className="mini-next__at">at</span> {game.home.name}
+      <span
+        className="mini-next__matchup"
+        aria-hidden="true"
+        title={detail ? `${matchup} · ${detail}` : matchup}
+      >
+        {game.away.name} <span className="mini-next__at">{joiner}</span> {game.home.name}
+        {detail && <span className="mini-next__detail"> · {detail}</span>}
       </span>
       <span className="mini-next__when" aria-hidden="true">
         {when}

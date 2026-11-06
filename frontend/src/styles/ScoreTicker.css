@@ -195,6 +195,14 @@
   background: color-mix(in srgb, var(--accent) 15%, transparent);
   color: var(--accent-700);
 }
+/* Underway: the game is on but there is no live feed, so no red LIVE
+   pill and no pulse — an ink chip, the one step between "Upcoming" and
+   "Score pending". */
+.card__status--underway {
+  background: var(--ink);
+  color: var(--card);
+  font-weight: 700;
+}
 
 @keyframes pulse {
   0%, 100% { opacity: 1; }

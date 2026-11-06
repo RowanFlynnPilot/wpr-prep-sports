@@ -1,10 +1,10 @@
-# WordPress and Cloudflare: three fixes on the host side
+# WordPress and Cloudflare: four fixes on the host side
 
 Found by the 2026-10-09 technical audit of the live page at
-`wausaupilotandreview.com/high-school-sports/`. None of these are in this
-repo; each is a 10–15 minute change in WordPress or the Cloudflare
-dashboard, and together they are the biggest reader-facing wins left.
-Do them in this order.
+`wausaupilotandreview.com/high-school-sports/`, plus a cache rule from the
+2026-11-05 Lighthouse re-audit. None of these are in this repo; each is a
+10–15 minute change in WordPress or the Cloudflare dashboard, and together
+they are the biggest reader-facing wins left. Do them in this order.
 
 ## 1. Install `embed.js` once, site-wide (fixes the 1,400 px scroll trap)
 
@@ -102,19 +102,55 @@ since Aug 25), which is what the sponsor reports use.
 2. Either disable the gateway for the hostname
    `sports.wausaupilotandreview.com`, or add a rule so it runs only on
    `wausaupilotandreview.com` (the host pages).
-3. While there: **Caching → Cache Rules → Create rule** for
-   `sports.wausaupilotandreview.com/assets/*`: Edge TTL and Browser TTL
-   1 year. Those files are content-hashed, and today they are served
-   with a 10-minute cache like everything else.
+3. While there, do item 4 below — it is the same dashboard section.
 
 **Verify.** Load `https://sports.wausaupilotandreview.com/mini.html?sport=football`
 with the browser's Network panel open: no request to `/glmk/` or
 `googletagmanager.com`, and total transfer under 150 KB. In Plausible
 the realtime view should still show the visit.
 
-## After all three
+## 4. Cache rule: a year for `/assets/*` and `/fonts/*`
+
+**What's wrong.** Every hashed bundle under `/assets/*` and every font
+under `/fonts/*` ships `cache-control: max-age=600` — GitHub Pages' default
+for everything, which Cloudflare passes straight through. Those files are
+content-addressed (the bundle names change when the code does; the fonts
+have not changed since they were self-hosted) and could be cached
+forever, but a reader coming back eleven minutes later re-downloads all
+of them: about 428 KB a visit, and 1.3–1.9 s of Largest Contentful Paint
+on a slow connection, measured in the 2026-11-05 Lighthouse re-audit.
+Nothing in this repo can change the header — Pages sets it.
+
+**Steps (Cloudflare account owner).**
+
+1. Cloudflare dashboard → the `wausaupilotandreview.com` zone →
+   **Caching → Cache Rules → Create rule**.
+2. Match: hostname equals `sports.wausaupilotandreview.com` AND URI path
+   starts with `/assets/` OR `/fonts/` (two expressions, or one rule per
+   prefix if the editor prefers).
+3. Cache eligibility: eligible for cache. **Edge TTL:** override to
+   1 year. **Browser TTL:** override to 1 year.
+4. Leave the rest of the host alone: `index.html`, `mini.html` and
+   everything under `/data/` must keep the short default so a new deploy
+   and a fresh scrape show up within minutes. Only the two hashed
+   prefixes get the long life.
+
+**Verify.** `curl -sI https://sports.wausaupilotandreview.com/fonts/oswald-latin-wght.woff2`
+should show `cache-control: max-age=31536000` (and `cf-cache-status: HIT`
+on the second request); `curl -sI https://sports.wausaupilotandreview.com/`
+should still show `max-age=600`. On a repeat visit the Network panel
+should list every `/assets/` and `/fonts/` file as served from cache.
+
+**Related, on the repo side (not a host fix).** The school logos the
+scraper mirrors from WIAA are served at their original size — 260 KB for
+the 24 logos on one dashboard view, most displayed at 24–48 px. A
+follow-up for `scraper/scripts/mirror_logos.py` (its `--recompress`
+pass): resize to the largest size the widget renders and re-encode.
+
+## After all four
 
 Re-run the Playwright guard and reload `/high-school-sports/` on a phone.
 The page should scroll as one document, the sidebar should show the
 mini, and the widget's first load should be roughly 650 KB lighter on
-the dashboard and 210 KB lighter on the mini.
+the dashboard and 210 KB lighter on the mini; a second visit should be
+another ~430 KB lighter again.

@@ -16,6 +16,8 @@ import { schoolFor } from "../utils/schools.js";
 import { formatGameDay, formatGameDate, formatGameTime } from "../utils/dates.js";
 import { recapForGame } from "../utils/recap.js";
 import { humanizeVenue, isForfeitScore, isScorePending, isUnreportedFinal } from "../utils/games.js";
+import { isNeutralSite, roundLabel } from "../utils/postseason.js";
+import { resolveShootout } from "../utils/bracket.js";
 import { useSportPrefix } from "../utils/links.js";
 import { displayPlayerName, playerProfileHref } from "../utils/players.js";
 import { glossaryForLines, statTitle } from "../config/statGlossary.js";
@@ -110,8 +112,21 @@ export default function GamePage({ dataset, schoolIndex, sportConfig }) {
   // a day or two"; the per-team note says so (critique run 18).
   const boxScoreStale = Date.now() - new Date(game.date).getTime() > PENDING_WINDOW_MS;
   const showScore = (isFinal || game.status === "in_progress") && !forfeit && !unreported;
-  const homeWon = showScore && (homeScore ?? -1) > (awayScore ?? -1);
-  const awayWon = showScore && (awayScore ?? -1) > (homeScore ?? -1);
+  // A tied playoff final was a penalty-kick shootout (utils/bracket.js):
+  // the side that plays in a later round advanced, and the header says so.
+  // From the home side's perspective, so `won` means the home team advanced.
+  const shootout =
+    isFinal && !unreported && game.playoff && homeScore === awayScore
+      ? resolveShootout(game, true, dataset.games)
+      : null;
+  const pkDecided = !!shootout && !shootout.undecided;
+  const homeWon = showScore && ((homeScore ?? -1) > (awayScore ?? -1) || (pkDecided && shootout.won));
+  const awayWon = showScore && ((awayScore ?? -1) > (homeScore ?? -1) || (pkDecided && !shootout.won));
+  const advancer = pkDecided ? (shootout.won ? game.home : game.away) : null;
+  // State and sectional games are played at neutral arenas: "home" is only
+  // WIAA's listing order, so the page says "vs" and names the venue.
+  const neutral = isNeutralSite(game, schoolIndex);
+  const atWord = neutral ? "vs" : "at";
 
   const homeSchool = schoolFor(game.home, schoolIndex);
   const awaySchool = schoolFor(game.away, schoolIndex);
@@ -136,6 +151,7 @@ export default function GamePage({ dataset, schoolIndex, sportConfig }) {
     teamGames,
     perspectiveSchoolId,
     sportConfig,
+    allGames: dataset.games,
   });
 
   const breadcrumb = (
@@ -147,9 +163,17 @@ export default function GamePage({ dataset, schoolIndex, sportConfig }) {
       <span aria-hidden="true" className="breadcrumb__sep">·</span>
       <span className="breadcrumb__current">
         {game.away.name}{" "}
-        {showScore ? `${awayScore}-${homeScore}` : forfeit || unreported ? "at" : "vs"}{" "}
+        {showScore ? `${awayScore}-${homeScore}` : forfeit || unreported ? atWord : "vs"}{" "}
         {game.home.name}
-        {forfeit ? " · forfeit" : unreported ? " · not reported" : ""}
+        {forfeit
+          ? " · forfeit"
+          : unreported
+            ? " · not reported"
+            : pkDecided
+              ? ` · ${advancer.name} on penalty kicks`
+              : shootout
+                ? " · penalty kicks"
+                : ""}
       </span>
     </>
   );
@@ -159,7 +183,7 @@ export default function GamePage({ dataset, schoolIndex, sportConfig }) {
     sportConfig?.label,
     game.playoff
       ? game.playoff_round
-        ? `${SITE.governingBody} Tournament · ${game.playoff_round}`
+        ? `${SITE.governingBody} Tournament · ${roundLabel(game.playoff_round, sportConfig?.id)}`
         : `${SITE.governingBody} Tournament`
       : game.conference_game
         ? "Conference matchup"
@@ -167,6 +191,14 @@ export default function GamePage({ dataset, schoolIndex, sportConfig }) {
   ]
     .filter(Boolean)
     .join(" · ");
+
+  // "Final · Hudson advances on penalty kicks"; a shootout nobody has been
+  // seen advancing from yet says only that it went to kicks.
+  const finalLabel = pkDecided
+    ? `Final · ${advancer.name} advances on penalty kicks`
+    : shootout
+      ? "Final · Decided on penalty kicks"
+      : "Final";
 
   return (
     <Layout breadcrumb={breadcrumb} sponsors={dataset.sponsors}>
@@ -176,7 +208,7 @@ export default function GamePage({ dataset, schoolIndex, sportConfig }) {
           the outline then jumped h3 -> h2 at "Head-to-Head". Hidden
           visually because the scoreboard below already says it. */}
       <h1 className="sr-only">
-        {game.away.name} at {game.home.name} — {formatGameDate(game.date)}
+        {game.away.name} {atWord} {game.home.name} — {formatGameDate(game.date)}
       </h1>
       <section className="game-page__hero">
         <div className="game-page__meta">
@@ -187,7 +219,7 @@ export default function GamePage({ dataset, schoolIndex, sportConfig }) {
             </span>
           ) : (
             <span className="eyebrow eyebrow--accent">
-              {unreported ? "Not reported" : forfeit ? "Forfeit" : isFinal ? "Final" : pending ? "Score pending" : "Up Next"}
+              {unreported ? "Not reported" : forfeit ? "Forfeit" : isFinal ? finalLabel : pending ? "Score pending" : "Up Next"}
             </span>
           )}
           <span className="game-page__date">
@@ -208,12 +240,14 @@ export default function GamePage({ dataset, schoolIndex, sportConfig }) {
             route={`${sportPrefix}/game/${game.id}`}
             title={
               showScore
-                ? `${game.away.name} ${awayScore}, ${game.home.name} ${homeScore}`
+                ? `${game.away.name} ${awayScore}, ${game.home.name} ${homeScore}${
+                    pkDecided ? ` — ${advancer.name} advances on penalty kicks` : ""
+                  }`
                 : forfeit
-                  ? `${game.away.name} at ${game.home.name} — forfeit`
+                  ? `${game.away.name} ${atWord} ${game.home.name} — forfeit`
                   : unreported
-                    ? `${game.away.name} at ${game.home.name} — not reported`
-                    : `${game.away.name} at ${game.home.name}`
+                    ? `${game.away.name} ${atWord} ${game.home.name} — not reported`
+                    : `${game.away.name} ${atWord} ${game.home.name}`
             }
           />
         </div>

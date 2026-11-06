@@ -31,6 +31,84 @@ const ROUND_ORDER = [
 
 const ROUND_INDEX = new Map(ROUND_ORDER.map((r, i) => [r, i]));
 
+function roundIndexOf(round) {
+  return ROUND_INDEX.has(round) ? ROUND_INDEX.get(round) : 99;
+}
+
+/**
+ * Identity of one side of a game: the manifest id when the school is
+ * tracked, otherwise its listed name (De Pere, Onalaska and the rest of
+ * the bracket are only ever names).
+ */
+function sideKey(side) {
+  if (side?.school_id) return `id:${side.school_id}`;
+  const name = (side?.name ?? "").trim().toLowerCase();
+  return name && name !== "tbd" ? `name:${name}` : null;
+}
+
+/** Whether `side` plays in a later round of the same bracket. */
+function appearsInLaterRound(side, roundIndex, playoffs) {
+  const key = sideKey(side);
+  if (!key) return false;
+  return playoffs.some(
+    (g) =>
+      g.playoff &&
+      roundIndexOf(g.playoff_round) > roundIndex &&
+      (sideKey(g.home) === key || sideKey(g.away) === key),
+  );
+}
+
+/**
+ * WIAA records a soccer playoff game decided on penalty kicks as a tie
+ * (De Pere 4, Hudson 4 in the 2026 Sectional Final; Wausau East 1,
+ * Onalaska 1 in the Regional), so by the score alone both sides read as
+ * eliminated. A tie in a single-elimination bracket cannot stand: the
+ * side that shows up in a later round won the shootout.
+ *
+ * Returns null unless `game` is a tied playoff final. Otherwise, from the
+ * perspective of the home (`isHome`) or away side:
+ *   { shootout: true, won: true,  undecided: false }  advanced on PKs
+ *   { shootout: true, won: false, undecided: false }  lost the shootout
+ *   { shootout: true, won: false, undecided: true }   neither side has a
+ *       later game yet — nobody is eliminated until the bracket says so
+ *
+ * `playoffs` is the sport's playoff games (any list; non-playoff entries
+ * are ignored). With only one team's own games, that team's advancement
+ * is still detected; its opponent's is not, so the result reads undecided
+ * rather than lost.
+ */
+export function resolveShootout(game, isHome, playoffs) {
+  if (!game?.playoff || game.status !== "final") return null;
+  const h = game.home?.score;
+  const a = game.away?.score;
+  if (typeof h !== "number" || typeof a !== "number" || h !== a) return null;
+  const idx = roundIndexOf(game.playoff_round);
+  const own = isHome ? game.home : game.away;
+  const opp = isHome ? game.away : game.home;
+  const list = playoffs ?? [];
+  const ownLater = appearsInLaterRound(own, idx, list);
+  const oppLater = appearsInLaterRound(opp, idx, list);
+  if (ownLater && !oppLater) return { shootout: true, won: true, undecided: false };
+  if (oppLater && !ownLater) return { shootout: true, won: false, undecided: false };
+  return { shootout: true, won: false, undecided: true };
+}
+
+/**
+ * "W 4-4 (PK)", "L 4-4 (PK)", "4-4 (PK)" while the shootout result is
+ * unknown, or the plain "W 57-0" / "L 9-0" — the one spelling of a
+ * playoff result for the team page, the bracket and Road to State.
+ * Returns null for a game that is not final.
+ */
+export function playoffResultLabel(entry) {
+  if (!entry?.isFinal) return null;
+  const score = `${entry.ownScore}-${entry.oppScore}`;
+  if (entry.shootout) {
+    if (entry.undecided) return `${score} (PK)`;
+    return `${entry.won ? "W" : "L"} ${score} (PK)`;
+  }
+  return `${entry.won ? "W" : "L"} ${score}`;
+}
+
 /**
  * Group games by playoff_round in canonical order. Returns an array of
  * { round, games } in order. Games within a round are sorted by date
@@ -79,8 +157,11 @@ export function gameHasTrackedTeam(game) {
  * Compact "team journey" view of the playoffs: one entry per tracked
  * team that played a playoff game, with their games ordered by round.
  *
- * Each entry: { schoolId, school, games: [{game, round, won, ownScore, oppScore, opponent}] }
- * where games is sorted by canonical round order.
+ * Each entry: { schoolId, school, games: [{game, round, won, shootout,
+ * undecided, ownScore, oppScore, opponent}] } where games is sorted by
+ * canonical round order. A tied playoff final is a penalty-kick shootout
+ * (see resolveShootout): `won` follows the bracket, `shootout` is true,
+ * and `undecided` means neither side has a later game yet.
  *
  * Teams are returned sorted by how far they advanced — state champs at
  * the top (most rounds + last round won), eliminated Round 1 at the
@@ -101,13 +182,17 @@ export function buildTeamJourneys(games, schoolIndex) {
       const own = isHome ? g.home.score : g.away.score;
       const opp = isHome ? g.away.score : g.home.score;
       const isFinal = g.status === "final";
-      const won = isFinal && own != null && opp != null && own > opp;
+      const scored = isFinal && own != null && opp != null;
+      const shootout = scored && own === opp ? resolveShootout(g, isHome, playoffs) : null;
+      const won = shootout ? shootout.won : scored && own > opp;
       journeyBySchool.get(sid).push({
         game: g,
         round: g.playoff_round ?? "Playoff",
-        roundIndex: ROUND_INDEX.has(g.playoff_round) ? ROUND_INDEX.get(g.playoff_round) : 99,
+        roundIndex: roundIndexOf(g.playoff_round),
         isHome,
         won,
+        shootout: !!shootout,
+        undecided: !!shootout?.undecided,
         isFinal,
         ownScore: own,
         oppScore: opp,
@@ -121,9 +206,10 @@ export function buildTeamJourneys(games, schoolIndex) {
     const school = schoolIndex?.get?.(schoolId) ?? null;
     // Alive = the journey's last game is still to be played, or was won.
     // A team with a scheduled next round and a TBD opponent is alive even
-    // though nothing is final yet (Gilman the morning after Level 3).
+    // though nothing is final yet (Gilman the morning after Level 3). A
+    // shootout nobody has been seen advancing from keeps both sides alive.
     const last = entries[entries.length - 1];
-    const alive = !!last && (!last.isFinal || last.won);
+    const alive = !!last && (!last.isFinal || last.won || last.undecided);
     return { schoolId, school, games: entries, alive };
   });
 

@@ -8,20 +8,35 @@
  * it at every width.
  *
  * Order, for a homepage in the publisher's town:
- *   results  — live games, then finals from the last 6 days. A followed
- *              school's game first, then games with a home-region school,
- *              newest day first; within a day, the game nearest the
- *              publisher leads (the order of SITE.homeRegionCities, Wausau
- *              first — the same weight the dashboard orders conferences
- *              by), then both-sides-local, conference, closest margin.
- *              Forfeits and unreported finals are skipped: a scoreboard
- *              with four slots has no room for a non-result.
- *   upcoming — the next 10 days, same interest order, soonest day first.
+ *   results  — live games, then games underway (a scheduled game whose
+ *              start time has passed within the last three hours and no
+ *              live feed yet — utils/games.js `isUnderway`; shown with an
+ *              "Underway" chip and no score, never under "Up next" with a
+ *              start time that has gone by), then finals from the last 6
+ *              days. A followed school's game first, then games with a
+ *              home-region school, newest day first; within a day, the
+ *              game nearest the publisher leads (the order of
+ *              SITE.homeRegionCities, Wausau first — the same weight the
+ *              dashboard orders conferences by), then both-sides-local,
+ *              conference, closest margin. Forfeits, unreported finals and
+ *              score-pending games (started 3–36 h ago, no result) are
+ *              skipped: a scoreboard with four slots has no room for a
+ *              non-result.
+ *   upcoming — the next 10 days: a followed school's game first, then
+ *              games with a home-region school, soonest day first, then
+ *              kickoff time; nearness to the publisher only breaks ties
+ *              within one time slot (a 5:00 PM game two counties over
+ *              still lists before a 7:00 PM game in town).
  *
  * `cityRank` maps school id → index of its city in SITE.homeRegionCities;
  * a school absent from it is not home-region.
  */
-import { isForfeitScore, isStaleScheduled, isUnreportedFinal } from "../utils/games.js";
+import {
+  isForfeitScore,
+  isStaleScheduled,
+  isUnderway,
+  isUnreportedFinal,
+} from "../utils/games.js";
 
 export const MINI_RESULTS = 4;
 export const MINI_UPCOMING = 3;
@@ -30,9 +45,6 @@ const HOUR_MS = 3_600_000;
 const DAY_MS = 24 * HOUR_MS;
 const RESULT_WINDOW_MS = 6 * DAY_MS;
 const UPCOMING_WINDOW_MS = 10 * DAY_MS;
-// A 7:00 PM kickoff still reads "7:00 PM" at 8:30 while the live feed
-// catches up; after this it is almost certainly over and simply unscraped.
-const STARTED_GRACE_MS = 4 * HOUR_MS;
 
 const dayOf = (g) => String(g.date).slice(0, 10);
 const timeOf = (g) => new Date(g.date).getTime();
@@ -52,6 +64,7 @@ export function selectMiniGames(games, { now = Date.now(), cityRank, followedIds
     flag(b.conference_game) - flag(a.conference_game);
 
   const live = [];
+  const underway = [];
   const finals = [];
   const upcoming = [];
   for (const g of games ?? []) {
@@ -64,7 +77,10 @@ export function selectMiniGames(games, { now = Date.now(), cityRank, followedIds
       if (t <= now && now - t <= RESULT_WINDOW_MS) finals.push(g);
     } else if (g.status === "scheduled") {
       if (isStaleScheduled(g, now)) continue;
-      if (t >= now - STARTED_GRACE_MS && t - now <= UPCOMING_WINDOW_MS) upcoming.push(g);
+      if (isUnderway(g, now)) underway.push(g);
+      // Past kickoff but not underway = score pending: not a result, not
+      // upcoming; the four slots go to games with something to show.
+      else if (t >= now && t - now <= UPCOMING_WINDOW_MS) upcoming.push(g);
     }
   }
 
@@ -73,6 +89,7 @@ export function selectMiniGames(games, { now = Date.now(), cityRank, followedIds
     flag(localSides(b) > 0) - flag(localSides(a) > 0);
 
   live.sort((a, b) => byInterest(a, b) || byNearness(a, b) || timeOf(a) - timeOf(b));
+  underway.sort((a, b) => byInterest(a, b) || byNearness(a, b) || timeOf(a) - timeOf(b));
   finals.sort(
     (a, b) =>
       byInterest(a, b) ||
@@ -87,22 +104,28 @@ export function selectMiniGames(games, { now = Date.now(), cityRank, followedIds
   // of tonight's games.
   const firstDay = upcoming.map(dayOf).sort()[0];
   const pinned = (g) => flag(pinnedId != null && g.id === pinnedId && dayOf(g) === firstDay);
+  // Kickoff time before nearness: the slate reads in the order the games
+  // tip off, and a 7:00 PM game in town no longer leapfrogs a 5:00 PM one.
   upcoming.sort(
     (a, b) =>
       pinned(b) - pinned(a) ||
       byInterest(a, b) ||
       dayOf(a).localeCompare(dayOf(b)) ||
-      byNearness(a, b) ||
       timeOf(a) - timeOf(b) ||
+      byNearness(a, b) ||
       String(a.home?.name).localeCompare(String(b.home?.name)),
   );
 
-  const results = spread([...live, ...finals], MINI_RESULTS);
+  const results = spread([...live, ...underway, ...finals], MINI_RESULTS);
   const next = spread(upcoming, MINI_UPCOMING);
   return {
     results,
     upcoming: next,
     liveCount: results.filter((g) => g.status === "in_progress").length,
+    // Scheduled games in `results` are the underway ones (nothing else
+    // scheduled gets there); the card and the section label read them as
+    // "Underway" rather than "Live".
+    underwayCount: results.filter((g) => g.status === "scheduled").length,
     // One shared day lets the section label carry the date instead of every row.
     resultsDay: sharedDay(results),
     upcomingDay: sharedDay(next),

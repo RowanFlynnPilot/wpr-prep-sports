@@ -395,6 +395,17 @@
   color: var(--muted);
   font-style: italic;
 }
+/* 320 px phones: "Last Week" plus the inline Scoreboard sponsor (label 161
+   + logo 99 px) overran the 343 px content box and scrolled the page
+   sideways. Let the row wrap and drop the sponsor's "Presented by" text —
+   the link's aria-label still carries it. 375 px is untouched. */
+@media (max-width: 360px) {
+  .section-header {
+    flex-wrap: wrap;
+  }
+  .section-header .sponsor__label {
+    display: none;
+  }}
 
 .freshness {
   text-align: center;

@@ -79,7 +79,7 @@ rebase-retry. It skips itself if the checkout is not on `main` or
 `data/` has local edits, and a rebase conflict discards the refresh
 rather than the working tree. Log:
 `%LOCALAPPDATA%\wpr-prep-sports\bound-refresh.log`. A run takes about
-12 minutes for football (MaxPreps discovery dominates).
+12 minutes for football (MaxPreps discovery dominates). The OG-card step (15-minute ceiling) also renders Season Wrapped PNGs for finished teams into `data/og/wrapped/`.
 
 Registered 2026-09-24 as **"WPR Prep Sports Bound refresh"**, daily at
 6:15 AM, run-when-available, allowed on battery, 1-hour limit:

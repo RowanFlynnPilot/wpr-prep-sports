@@ -890,7 +890,7 @@ export const SPORTS = {
     season: "2025–26",
     activeMonths: [10, 11, 0, 1, 2], // Nov–Mar
     hasSeasonStats: true,
-    nextSeasonStart: "2026-11-17",
+    nextSeasonStart: "2026-11-24", // first boys game on the WIAA schedules
     stats: {
       categories: BOYS_BASKETBALL_STAT_CATEGORIES,
       standout: basketballStandout({
@@ -907,7 +907,7 @@ export const SPORTS = {
     season: "2025–26",
     activeMonths: [10, 11, 0, 1, 2], // Nov–Mar
     hasSeasonStats: true,
-    nextSeasonStart: "2026-11-10",
+    nextSeasonStart: "2026-11-17", // first girls game on the WIAA schedules
     stats: {
       categories: GIRLS_BASKETBALL_STAT_CATEGORIES,
       standout: basketballStandout({

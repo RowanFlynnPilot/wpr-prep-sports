@@ -286,6 +286,14 @@
   font-weight: 700;
   color: var(--accent-700);
 }
+/* Underway: past its start time with no live feed (utils/games.js
+   isUnderway). Same red chip and dot as a live game, one weight lighter —
+   the start is a fact, the "live" is an inference — and the empty score
+   column keeps its width so the two team names line up with the cards
+   around it. */
+.mini-game--underway .mini-game__status {
+  font-weight: 600;
+}
 .mini-game__dot {
   width: 7px;
   height: 7px;
@@ -319,6 +327,13 @@
 .mini-next__at {
   color: var(--muted-2);
   text-transform: lowercase;
+}
+/* Playoff round and neutral-site venue, inside the matchup span so the
+   row stays one line: the ellipsis takes the venue first, the round next,
+   the names last. */
+.mini-next__detail {
+  color: var(--muted);
+  font-weight: 500;
 }
 .mini-next__when {
   flex: 0 0 auto;

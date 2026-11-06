@@ -699,6 +699,12 @@ body:has(.wrapped-capture),
   color: var(--ink);
 }
 
+/* The main landmark around the stage and hint; a plain block, no box of
+   its own, so wrapping them changed nothing visually. */
+.wrapped-page__main {
+  display: block;
+}
+
 .wrapped-page__bar {
   display: flex;
   align-items: center;

@@ -60,6 +60,20 @@ export function isStaleScheduled(game, now = Date.now()) {
  * (critique run 18). Surfaces say "Score pending" and use the past tense.
  */
 export const PENDING_AFTER_MS = 3 * 60 * 60 * 1000;
+
+/**
+ * Between the listed start time and the "Score pending" line, a scheduled
+ * game with no live feed is being played right now. Left as "8:00 AM", a
+ * state-tournament match that tipped two hours ago still read "Up next"
+ * on the hero, the week grid and the mini (state day, 2026-11-05).
+ * Surfaces say "Underway" and drop the start time.
+ */
+export function isUnderway(game, now = Date.now()) {
+  if (!game || game.status !== "scheduled") return false;
+  const age = now - new Date(game.date).getTime();
+  return age >= 0 && age <= PENDING_AFTER_MS;
+}
+
 export function isScorePending(game, now = Date.now()) {
   if (!game || game.status !== "scheduled") return false;
   const age = now - new Date(game.date).getTime();

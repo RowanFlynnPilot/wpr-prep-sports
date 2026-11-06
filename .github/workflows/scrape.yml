@@ -178,8 +178,12 @@ jobs:
         # Hard ceiling: card generation is a nice-to-have and must never
         # delay the data commit into losing Friday-night push races.
         # continue-on-error keeps a timeout warn-only, matching the
-        # script-failure handling inside the step.
-        timeout-minutes: 12
+        # script-failure handling inside the step. 15 rather than 12 since
+        # the Season Wrapped pass joined the step: its first run after a
+        # bracket round renders a card per eliminated team, and a timeout
+        # here only defers the rest to the next scrape (existing PNGs are
+        # skipped, so each run picks up where the last stopped).
+        timeout-minutes: 15
         continue-on-error: true
         run: |
           npx --yes http-server ../_serve -p 8080 --silent &
@@ -193,8 +197,22 @@ jobs:
           if ! python scripts/generate_og_cards.py --base-url "$CARD_BASE"; then
             echo "::warning::OG card generation failed — continuing without card update"
           fi
+          # Season Wrapped cards (data/og/wrapped/<sport>/<school>.png and
+          # <school>-og.png) for teams whose season is over — the default
+          # target set; teams still playing are left alone so a card is
+          # rendered once, not re-rendered every round. Same server, same
+          # chromium, same warn-only contract. docs/wrapped-cards.md.
+          if ! python scripts/generate_wrapped_cards.py --base-url "$CARD_BASE"; then
+            echo "::warning::Season Wrapped card generation (story) failed — continuing without wrapped-card update"
+          fi
+          if ! python scripts/generate_wrapped_cards.py --base-url "$CARD_BASE" --format og; then
+            echo "::warning::Season Wrapped card generation (og) failed — continuing without wrapped-card update"
+          fi
           kill $SERVER_PID || true
           rm -rf ../_serve
+
+      # `git add data/` below picks up data/og/wrapped/ along with the
+      # per-game cards in data/og/ — nothing extra to stage.
 
       - name: Commit updated data
         id: commit

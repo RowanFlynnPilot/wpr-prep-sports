@@ -2,11 +2,12 @@ import { Link } from "react-router-dom";
 import TeamLogo from "./TeamLogo.jsx";
 import TeamLink from "./TeamLink.jsx";
 import { schoolFor } from "../utils/schools.js";
-import { humanizeVenue } from "../utils/games.js";
+import { humanizeVenue, isScorePending, isUnderway } from "../utils/games.js";
+import { isTitleRound } from "../utils/postseason.js";
 import { useSportPrefix } from "../utils/links.js";
 import { formatGameDay, formatGameDate, formatGameTime } from "../utils/dates.js";
 import { recapForGame } from "../utils/recap.js";
-import { slateSummary, todayWord } from "../utils/gameDay.js";
+import { slateLead, slateSummary } from "../utils/gameDay.js";
 
 /**
  * Featured-game hero. Shows the most "important" recent or upcoming game
@@ -63,14 +64,43 @@ export default function Hero({
   const awaySchool = schoolFor(game.away, schoolIndex);
 
   const isFinal = game.status === "final";
-  // On game day the lead is tonight's Game of the Week, and the eyebrow
-  // says so: "Tonight · Game of the Week", then "Live · …", then "Final · …".
-  const state = isFinal ? (seasonOver ? "Season over" : "Final") : game.status === "in_progress" ? "Live" : tonight ? todayWord(game.date) : "Up Next";
-  const eyebrow = tonight && gotwLabel ? `${state} · ${gotwLabel}` : state;
-  const slateLine = tonight ? slateSummary(tonight) : "";
-
   const homeWon = isFinal && (game.home.score ?? 0) > (game.away.score ?? 0);
   const awayWon = isFinal && (game.away.score ?? 0) > (game.home.score ?? 0);
+  // A tracked team's final win in a title round: the lead reads "State
+  // champions", never "Final" or "Season over" (the run ended with a
+  // trophy, not an exit).
+  const champion =
+    isFinal &&
+    isTitleRound(game.playoff_round) &&
+    !!((homeWon && game.home.school_id) || (awayWon && game.away.school_id));
+  // Same clock the week grid and ticker use for these two words, so the
+  // three surfaces flip together. A scheduled game whose start has passed
+  // is "Underway" (no live feed, no clock time); past three hours it is
+  // "Score pending".
+  const underway = !isFinal && isUnderway(game);
+  const pending = !isFinal && !underway && isScorePending(game);
+  // On game day the lead is tonight's Game of the Week, and the eyebrow
+  // says so: "Tonight · Game of the Week", then "Live · …", then "Final · …".
+  // A tournament day names itself: "State tournament today · …",
+  // "Playoffs tonight · …".
+  const state = champion
+    ? "State champions"
+    : isFinal
+      ? seasonOver
+        ? "Season over"
+        : "Final"
+      : game.status === "in_progress"
+        ? "Live"
+        : underway
+          ? "Underway"
+          : pending
+            ? "Score pending"
+            : tonight
+              ? slateLead(tonight, game.date)
+              : "Up Next";
+  const eyebrow = tonight && gotwLabel ? `${state} · ${gotwLabel}` : state;
+  const slateLine = tonight ? slateSummary(tonight) : "";
+  const showTime = !isFinal && !underway && !pending;
 
   // Recap is written from the winning side's perspective (or home if tied
   // and both tracked, or whichever side is in our manifest).
@@ -96,6 +126,7 @@ export default function Hero({
     seasonStatsForSchool: seasonStatsForPerspective,
     enrichWithSeasonTotals: true,
     contextGames: perspectiveTeamGames,
+    allGames: games,
     sportConfig,
   });
 
@@ -128,12 +159,14 @@ export default function Hero({
             without it the two team names (h3) sat directly under the page
             h1 — a level skip that leaves screen-reader users navigating a
             broken outline. Styling is unchanged; .eyebrow carries it. */}
-        <h2 className={`eyebrow ${seasonOver && isFinal ? "hero__eyebrow--over" : "eyebrow--accent"}`}>
+        <h2
+          className={`eyebrow ${seasonOver && isFinal && !champion ? "hero__eyebrow--over" : "eyebrow--accent"}`}
+        >
           {eyebrow}
         </h2>
         <span className="hero__date">
           {formatGameDay(game.date)} · {formatGameDate(game.date)}
-          {!isFinal && <> · {formatGameTime(game.date)}</>}
+          {showTime && <> · {formatGameTime(game.date)}</>}
         </span>
         {game.venue && (
           <span className="hero__venue">{humanizeVenue(game.venue)}</span>
@@ -208,6 +241,7 @@ function OffSeasonHero({
         schoolsById: schoolIndex,
         teamGames: games,
         contextGames: games,
+        allGames: games,
         perspectiveSchoolId:
           lastGame.home.school_id || lastGame.away.school_id,
         sportConfig,

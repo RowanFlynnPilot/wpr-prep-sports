@@ -230,6 +230,28 @@
   font-weight: 700;
   animation: pulse 1.5s ease-in-out infinite;
 }
+/* Underway (start time passed, no live feed): ink and bold, no pulse —
+   red stays the live feed's. */
+.game-row__status--underway {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+/* Neutral-site venue ("Resch Center") beside the round chip. Lives in the
+   status cell so it adds no grid row: one line, ellipsis, capped on
+   desktop so a long arena name cannot squeeze the team columns. */
+.game-row__venue {
+  flex: 0 1 auto;
+  min-width: 0;
+  max-width: 12rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: var(--fs-caption);
+  color: var(--muted);
+}
 
 a.game-row__details {
   /* Ink, not press-red: red is reserved for winners, LIVE, and the
@@ -358,6 +380,12 @@ a.game-row__details::after {
   .game-row__end {
     justify-content: flex-start;
   }
+  /* The status cell is full-width here; the venue takes what the chip and
+     the drill-in leave, then ellipsizes. */
+  .game-row__venue {
+    flex: 1 1 auto;
+    max-width: none;
+  }
   /* Two teams share one phone-width row, leaving each name ~108px — not
      enough for "Wisconsin Rapids Lincoln", "Eau Claire Memorial" or
      "Wittenberg-Birnamwood", which truncated to "Wisconsin Rapids Lin…".
@@ -371,7 +399,8 @@ a.game-row__details::after {
   .game-side__name {
     white-space: normal;
     overflow: visible;
-    overflow-wrap: anywhere;
+    overflow-wrap: break-word;
+    hyphens: auto;
     line-height: 1.2;
   }
   .game-row__status {

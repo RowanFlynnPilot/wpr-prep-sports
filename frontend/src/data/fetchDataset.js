@@ -64,6 +64,30 @@ async function fetchMeta(sportId, sportBase) {
   return fetchJson(`${sportBase}/meta.json`, { noStore: true });
 }
 
+/**
+ * The inline script chains a second step onto the meta prefetch: once
+ * meta.json lands it starts schools.json, games.json and standings.json with
+ * the same ?v= key and parks each on window.__wprDataPrefetch[url]. Adopt
+ * one only for the exact URL this call would fetch (so a sport switch, an
+ * archive season or a VITE_DATA_BASE override never picks up the wrong
+ * file); anything else, or an early response that failed, goes through
+ * fetchJson with its retries. Each entry is used at most once.
+ */
+async function fetchJsonPrefetched(url) {
+  const store = typeof window !== "undefined" ? window.__wprDataPrefetch : null;
+  const early = store?.[url];
+  if (early) {
+    delete store[url];
+    try {
+      const res = await early;
+      if (res && res.ok) return await res.json();
+    } catch {
+      // fall through to the ordinary fetch
+    }
+  }
+  return fetchJson(url);
+}
+
 export async function fetchDataset(sportId = DEFAULT_SPORT) {
   const sportBase = sportBaseFor(sportId);
 
@@ -73,9 +97,12 @@ export async function fetchDataset(sportId = DEFAULT_SPORT) {
   const meta = await fetchMeta(sportId, sportBase);
   const v = encodeURIComponent(meta.last_updated ?? Date.now());
   const [schools, games, standings, sponsors, seasonStats, spirit, potwOverrides, powerRankingsRaw, spotlightsRaw, regionalTop10Overrides, allAreaRaw] = await Promise.all([
-    fetchJson(`${DATA_BASE}/schools.json?v=${v}`),
-    fetchJson(`${sportBase}/games.json?v=${v}`),
-    fetchJson(`${sportBase}/standings.json?v=${v}`),
+    // The three required files index.html may already have in flight
+    // (see fetchJsonPrefetched); the URLs here must match the inline
+    // script's byte for byte or the prefetch is wasted.
+    fetchJsonPrefetched(`${DATA_BASE}/schools.json?v=${v}`),
+    fetchJsonPrefetched(`${sportBase}/games.json?v=${v}`),
+    fetchJsonPrefetched(`${sportBase}/standings.json?v=${v}`),
     // Sponsors, season_stats, spirit photos, the editor's PotW
     // override, power rankings, senior spotlights, and the editor's
     // Central Wisconsin Ten overrides are all optional — the widget

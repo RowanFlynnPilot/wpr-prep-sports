@@ -18,8 +18,9 @@ Pipeline (modelled on generate_og_cards.py):
      skipped unless --refresh, so re-running is cheap and idempotent.
 
 URLs use the widget's HashRouter, so they work from the Vite dev server
-or a static dist/ build behind any prefix. NOT wired into CI — see
-docs/wrapped-cards.md for how to run it and the deploy.yml follow-up.
+or a static dist/ build behind any prefix. Runs in CI from scrape.yml's
+OG-card step (story + og formats, finished teams only); docs/wrapped-cards.md
+has the manual/refresh run.
 
 Usage:
   python scripts/generate_wrapped_cards.py --base-url http://localhost:5173/wpr-prep-sports
@@ -208,12 +209,18 @@ def season_over(
         rnd = last.get("playoff_round") or "playoffs"
         if own < opp:
             return True, f"eliminated: lost {rnd}"
+        bracket_open = any(g.get("playoff") and g.get("status") != "final" for g in all_games)
+        if own == opp:
+            # WIAA records a shootout as a draw. `last` is our latest playoff
+            # game, so no later game exists: while the bracket is open the
+            # result is pending; once it has closed, we lost the shootout.
+            if bracket_open:
+                return False, f"shootout result pending: {rnd}"
+            return True, f"eliminated: lost {rnd} on penalty kicks"
         if own > opp:
-            bracket_open = any(g.get("playoff") and g.get("status") != "final" for g in all_games)
             if bracket_open:
                 return False, f"alive: won {rnd}"
             return True, f"playoffs complete: won {rnd}"
-        return False, "playoff game tied"
 
     sport_playoffs_begun = any(g.get("playoff") for g in all_games)
     if sport_playoffs_begun:

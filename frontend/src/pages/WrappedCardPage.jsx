@@ -7,7 +7,7 @@ import { configForDataset, formatSeasonLabel, isKnownSport, recordLabels } from 
 import { formatGameDate } from "../utils/dates.js";
 import { isForfeitScore } from "../utils/games.js";
 import { buildTeamJourneys } from "../utils/bracket.js";
-import { isTbdSide } from "../utils/postseason.js";
+import { isTbdSide, isTitleRound } from "../utils/postseason.js";
 import { teamGamesFor } from "../utils/teamSummary.js";
 import { formatStatsLine, teamSeasonLeaders } from "../utils/seasonStats.js";
 import { displayPlayerName } from "../utils/players.js";
@@ -248,18 +248,26 @@ function playoffLine(teamGames, schoolId, schoolIndex) {
   if (last.ownScore == null || last.oppScore == null) return null;
   const opp = opponentName(last.opponent, schoolIndex);
   if (last.won) {
-    const title = /state\s+(final|championship)/i.test(last.round);
+    const title = isTitleRound(last.round);
+    // WIAA records a shootout as a draw; the bracket says who advanced.
+    const how = last.shootout
+      ? `${opp} on penalty kicks after a ${last.ownScore}-${last.oppScore} draw`
+      : `${opp} ${last.ownScore}-${last.oppScore}`;
     return {
       headline: title
-        ? `State champions — beat ${opp} ${last.ownScore}-${last.oppScore}`
-        : `Won ${roundForProse(last.round)} over ${opp} ${last.ownScore}-${last.oppScore}`,
+        ? `State champions — beat ${how}`
+        : `Won ${roundForProse(last.round)} over ${how}`,
       detail: title ? `${wins} playoff wins` : "Awaiting the next round",
       alive: true,
+      // A title ends the season too — the PNG generator renders champions.
+      champion: title,
     };
   }
-  if (last.ownScore === last.oppScore) return null;
+  if (last.undecided) return null;
   return {
-    headline: `Lost ${roundForProse(last.round)} to ${opp} ${last.oppScore}-${last.ownScore}`,
+    headline: last.shootout
+      ? `Lost ${roundForProse(last.round)} to ${opp} on penalty kicks after a ${last.ownScore}-${last.oppScore} draw`
+      : `Lost ${roundForProse(last.round)} to ${opp} ${last.oppScore}-${last.ownScore}`,
     detail: wins > 0 ? `${wins} playoff win${wins === 1 ? "" : "s"}` : null,
     alive: false,
   };
@@ -337,6 +345,12 @@ function buildWrapped({ dataset, school, schoolId, schoolIndex, sportConfig }) {
   const seasonComplete = !teamGames.some(
     (g) => g.status !== "final" && new Date(g.date).getTime() > Date.now(),
   );
+  const playoff = playoffLine(teamGames, schoolId, schoolIndex);
+  // The generator (scraper/scripts/generate_wrapped_cards.py, run by the
+  // scrape workflow) renders a PNG only once a season is over: nothing left
+  // on the schedule and no playoff run still going, unless it ended with a
+  // title. The hub's hint under the card follows the same rule.
+  const seasonOver = seasonComplete && (!playoff?.alive || !!playoff.champion);
 
   return {
     eyebrow: seasonEyebrow(teamGames, dataset.meta?.season),
@@ -347,12 +361,13 @@ function buildWrapped({ dataset, school, schoolId, schoolIndex, sportConfig }) {
       ? recordString(record.postWins, record.postLosses, record.postTies)
       : null,
     conference: conferenceLine(dataset.standings, schoolId),
-    playoff: playoffLine(teamGames, schoolId, schoolIndex),
+    playoff,
     leaders,
     biggestWin: biggestWin ? gameLine(biggestWin, schoolIndex) : null,
     closest: closest ? gameLine(closest, schoolIndex) : null,
     gamesPlayed: record.wins + record.losses + record.ties,
     seasonComplete,
+    seasonOver,
     schoolName: school.name,
   };
 }
@@ -553,6 +568,8 @@ function HubFrame({ wrapped, school, sport, schoolId, sportConfig, format, route
 
   const otherFormat = format === "og" ? "" : "?format=og";
 
+  // The page is its own shell (no Layout), so it supplies the main landmark:
+  // the toolbar is navigation, everything from the card down is the content.
   return (
     <div className="wrapped-page">
       <nav className="wrapped-page__bar" aria-label="Season Wrapped">
@@ -582,37 +599,44 @@ function HubFrame({ wrapped, school, sport, schoolId, sportConfig, format, route
         </span>
       </nav>
 
-      {shareState === "manual" && (
-        <p className="wrapped-page__manual">
-          <label className="sr-only" htmlFor="wrapped-share-url">Link to this card</label>
-          <input
-            id="wrapped-share-url"
-            className="wrapped-page__url"
-            type="text"
-            readOnly
-            value={url}
-            onFocus={(e) => e.target.select()}
-            autoFocus
-          />
+      <main className="wrapped-page__main">
+        {shareState === "manual" && (
+          <p className="wrapped-page__manual">
+            <label className="sr-only" htmlFor="wrapped-share-url">Link to this card</label>
+            <input
+              id="wrapped-share-url"
+              className="wrapped-page__url"
+              type="text"
+              readOnly
+              value={url}
+              onFocus={(e) => e.target.select()}
+              autoFocus
+            />
+          </p>
+        )}
+
+        <div
+          className="wrapped-page__stage"
+          style={{
+            width: Math.round(size.width * scale),
+            height: Math.round(size.height * scale),
+            "--wrapped-scale": scale,
+          }}
+        >
+          {children}
+        </div>
+
+        {/* The PNG is rendered by the scrape workflow only once the season
+            is over (docs/wrapped-cards.md), so promise the button only then;
+            mid-season the card is screenshot-only. */}
+        <p className="wrapped-page__hint">
+          {pngReady
+            ? "Save image downloads this card as a PNG — share it anywhere a link won't paste."
+            : wrapped.seasonOver
+              ? "On a phone, screenshot the card to share it as an image. A Save image button appears here once this card has been rendered as a PNG, usually within a day of the season ending."
+              : "On a phone, screenshot the card to share it as an image. A downloadable PNG is made once the season is over."}
         </p>
-      )}
-
-      <div
-        className="wrapped-page__stage"
-        style={{
-          width: Math.round(size.width * scale),
-          height: Math.round(size.height * scale),
-          "--wrapped-scale": scale,
-        }}
-      >
-        {children}
-      </div>
-
-      <p className="wrapped-page__hint">
-        {pngReady
-          ? "Save image downloads this card as a PNG — share it anywhere a link won't paste."
-          : "On a phone, screenshot the card to share it as an image. A Save image button appears here once this card has been rendered as a PNG."}
-      </p>
+      </main>
     </div>
   );
 }
