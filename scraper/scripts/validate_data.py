@@ -56,6 +56,7 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(REPO_ROOT / "scraper"))
 
 from output.writer import load_full_games_raw  # noqa: E402
+from transform.normalize import season_window  # noqa: E402
 from transform.stats import _school_name_slug, _slug_matches_school_name  # noqa: E402
 
 DATA_DIR = REPO_ROOT / "data"
@@ -101,6 +102,25 @@ def validate_sport(sport_dir: Path) -> list[str]:
         if missing:
             errors.append(f"{sport}: game {g.get('id', '<no id>')} missing {missing}")
             break  # one structural example is enough
+
+    # Every game must sit inside its season's window (Aug 1 – Jul 1). The
+    # live cron once fetched WIAA's state pages for a stale season label and
+    # merged the 2025 state finals into the 2026-27 files — an extra win on a
+    # school's record and a phantom champion — with every other gate green
+    # (2026-11-05).
+    meta = _read_json(sport_dir / "meta.json") or {}
+    window = season_window(str(meta.get("season") or ""))
+    if window:
+        lo, hi = window
+        strays = [
+            g for g in slim if not (lo.isoformat() <= str(g.get("date", ""))[:10] < hi.isoformat())
+        ]
+        if strays:
+            sample = ", ".join(str(g.get("id")) for g in strays[:3])
+            errors.append(
+                f"{sport}: {len(strays)} game(s) dated outside season {meta.get('season')} "
+                f"({lo} – {hi}): {sample}"
+            )
 
     # Merge boxscores back in; this exercises the same reader the
     # refresh/rankings pipelines use.
