@@ -23,6 +23,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import re
 import sys
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -71,6 +72,17 @@ def parse_args() -> argparse.Namespace:
         "--all",
         action="store_true",
         help="Regenerate every game, not just the recent-window subset.",
+    )
+    p.add_argument(
+        "--keep-days",
+        type=int,
+        default=KEEP_DAYS,
+        help="Delete cards for games older than this many days (default %(default)s; 0 = never).",
+    )
+    p.add_argument(
+        "--prune-only",
+        action="store_true",
+        help="Only delete old cards; render nothing (no browser).",
     )
     p.add_argument(
         "--limit",
@@ -148,12 +160,51 @@ def select_target_games(
     return [g for g in games if in_window(g, now, window_back, window_forward)]
 
 
+# Cards are only useful while a game is being shared. Left to accumulate,
+# a season's worth (2,292 PNGs, 592 MB) pushed the Pages artifact past the
+# deploy action's 10-minute sync cap and every deploy failed (2026-11-07).
+KEEP_DAYS = 30
+_ID_DATE = re.compile(r"(\d{4}-\d{2}-\d{2})")
+
+
+def prune_old_cards(now: datetime, keep_days: int, sports: list[str]) -> int:
+    """Delete PNG + cache sidecars for games dated more than keep_days ago."""
+    if keep_days <= 0:
+        return 0
+    cutoff = (now - timedelta(days=keep_days)).date()
+    removed = 0
+    for sport in sports:
+        sport_dir = OG_DIR / sport
+        if not sport_dir.is_dir():
+            continue
+        for f in sport_dir.iterdir():
+            if f.suffix not in (".png", ".cache"):
+                continue
+            m = _ID_DATE.search(f.name)
+            if not m:
+                continue
+            try:
+                when = datetime.strptime(m.group(1), "%Y-%m-%d").date()
+            except ValueError:
+                continue
+            if when < cutoff:
+                f.unlink()
+                removed += 1
+    return removed
+
+
 def main() -> int:
     args = parse_args()
     sports = args.sport or SPORTS
     now = datetime.now(tz=timezone.utc)
 
     OG_DIR.mkdir(parents=True, exist_ok=True)
+
+    pruned = prune_old_cards(now, args.keep_days, sports)
+    if pruned:
+        print(f"pruned {pruned} card file(s) for games older than {args.keep_days} days")
+    if args.prune_only:
+        return 0
 
     with sync_playwright() as pw:
         browser = pw.chromium.launch()
