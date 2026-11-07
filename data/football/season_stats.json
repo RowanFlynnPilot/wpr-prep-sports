@@ -25998,5 +25998,894 @@
       "TFL": "61",
       "SACKS": "18.0"
     }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "football",
+    "category": "Passing",
+    "player_name": "Eric Reincke",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "4",
+    "stats": {
+      "C/ATT": "1/7",
+      "PCT": "14.3%",
+      "YDS": "40",
+      "YPC": "40.0",
+      "TDS": "1",
+      "INT": "0",
+      "RTG": "109.4",
+      "TD LG": "40",
+      "LONG": "40"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "football",
+    "category": "Passing",
+    "player_name": "Jake Williams",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "12",
+    "stats": {
+      "C/ATT": "31/73",
+      "PCT": "42.5%",
+      "YDS": "401",
+      "YPC": "12.9",
+      "TDS": "3",
+      "INT": "7",
+      "RTG": "83.0",
+      "TD LG": "25",
+      "LONG": "48"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "football",
+    "category": "Passing",
+    "player_name": "Sam Westrick",
+    "player_year": "SO",
+    "position": null,
+    "jersey": "20",
+    "stats": {
+      "C/ATT": "0/7",
+      "PCT": "0.0%",
+      "YDS": "0",
+      "YPC": "0.0",
+      "TDS": "0",
+      "INT": "1",
+      "RTG": "-28.6",
+      "TD LG": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "football",
+    "category": "Passing",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "C/ATT": "32/87",
+      "PCT": "36.8%",
+      "YDS": "441",
+      "YPC": "13.8",
+      "TDS": "4",
+      "INT": "8",
+      "RTG": "76.1",
+      "TD LG": "40",
+      "LONG": "48"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Chase Napiwocki",
+    "player_year": "SO",
+    "position": null,
+    "jersey": "1",
+    "stats": {
+      "CAR": "13",
+      "YDS": "19",
+      "YPC": "1.5",
+      "TDS": "0",
+      "TD LG": "0",
+      "LONG": "9"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Eric Reincke",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "4",
+    "stats": {
+      "CAR": "117",
+      "YDS": "608",
+      "YPC": "5.2",
+      "TDS": "11",
+      "TD LG": "45",
+      "LONG": "45"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Clayton Benaszeski",
+    "player_year": "FR",
+    "position": null,
+    "jersey": "6",
+    "stats": {
+      "CAR": "9",
+      "YDS": "50",
+      "YPC": "5.6",
+      "TDS": "0",
+      "TD LG": "0",
+      "LONG": "30"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Jake Williams",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "12",
+    "stats": {
+      "CAR": "48",
+      "YDS": "171",
+      "YPC": "3.6",
+      "TDS": "5",
+      "TD LG": "42",
+      "LONG": "42"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Sam Westrick",
+    "player_year": "SO",
+    "position": null,
+    "jersey": "20",
+    "stats": {
+      "CAR": "3",
+      "YDS": "5",
+      "YPC": "1.7",
+      "TDS": "0",
+      "TD LG": "0",
+      "LONG": "19"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Bryce Flaker",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "22",
+    "stats": {
+      "CAR": "147",
+      "YDS": "978",
+      "YPC": "6.7",
+      "TDS": "9",
+      "TD LG": "48",
+      "LONG": "48"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Henry Gerritsen",
+    "player_year": "JR",
+    "position": null,
+    "jersey": "24",
+    "stats": {
+      "CAR": "18",
+      "YDS": "24",
+      "YPC": "1.3",
+      "TDS": "0",
+      "TD LG": "0",
+      "LONG": "7"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Chase Williams",
+    "player_year": "FR",
+    "position": null,
+    "jersey": "28",
+    "stats": {
+      "CAR": "7",
+      "YDS": "12",
+      "YPC": "1.7",
+      "TDS": "0",
+      "TD LG": "0",
+      "LONG": "9"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Owen Mattson",
+    "player_year": "FR",
+    "position": null,
+    "jersey": "31",
+    "stats": {
+      "CAR": "8",
+      "YDS": "27",
+      "YPC": "3.4",
+      "TDS": "0",
+      "TD LG": "0",
+      "LONG": "8"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Corbin Kezeske",
+    "player_year": "FR",
+    "position": null,
+    "jersey": "32",
+    "stats": {
+      "CAR": "14",
+      "YDS": "28",
+      "YPC": "2.0",
+      "TDS": "0",
+      "TD LG": "0",
+      "LONG": "9"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Adam Angell",
+    "player_year": "FR",
+    "position": null,
+    "jersey": "40",
+    "stats": {
+      "CAR": "1",
+      "YDS": "3",
+      "YPC": "3.0",
+      "TDS": "0",
+      "TD LG": "0",
+      "LONG": "3"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "football",
+    "category": "Rushing",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "CAR": "385",
+      "YDS": "1925",
+      "YPC": "5.0",
+      "TDS": "25",
+      "TD LG": "48",
+      "LONG": "48"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Chase Napiwocki",
+    "player_year": "SO",
+    "position": null,
+    "jersey": "1",
+    "stats": {
+      "REC": "5",
+      "YDS": "45",
+      "YPC": "9.0",
+      "TDS": "0",
+      "TD LG": "0",
+      "LONG": "24"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Eric Reincke",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "4",
+    "stats": {
+      "REC": "5",
+      "YDS": "81",
+      "YPC": "16.2",
+      "TDS": "1",
+      "TD LG": "17",
+      "LONG": "48"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Max Nelson",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "5",
+    "stats": {
+      "REC": "4",
+      "YDS": "50",
+      "YPC": "12.5",
+      "TDS": "0",
+      "TD LG": "0",
+      "LONG": "25"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Clayton Benaszeski",
+    "player_year": "FR",
+    "position": null,
+    "jersey": "6",
+    "stats": {
+      "REC": "1",
+      "YDS": "43",
+      "YPC": "43.0",
+      "TDS": "0",
+      "TD LG": "0",
+      "LONG": "43"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Jake Williams",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "12",
+    "stats": {
+      "REC": "1",
+      "YDS": "40",
+      "YPC": "40.0",
+      "TDS": "1",
+      "TD LG": "40",
+      "LONG": "40"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Sam Westrick",
+    "player_year": "SO",
+    "position": null,
+    "jersey": "20",
+    "stats": {
+      "REC": "1",
+      "YDS": "25",
+      "YPC": "25.0",
+      "TDS": "1",
+      "TD LG": "25",
+      "LONG": "25"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Bryce Flaker",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "22",
+    "stats": {
+      "REC": "11",
+      "YDS": "58",
+      "YPC": "5.3",
+      "TDS": "0",
+      "TD LG": "0",
+      "LONG": "13"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Chase Williams",
+    "player_year": "FR",
+    "position": null,
+    "jersey": "28",
+    "stats": {
+      "REC": "3",
+      "YDS": "84",
+      "YPC": "28.0",
+      "TDS": "0",
+      "TD LG": "0",
+      "LONG": "45"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Dominic Sackmann",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "67",
+    "stats": {
+      "REC": "1",
+      "YDS": "15",
+      "YPC": "15.0",
+      "TDS": "1",
+      "TD LG": "15",
+      "LONG": "15"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "REC": "32",
+      "YDS": "441",
+      "YPC": "13.8",
+      "TDS": "4",
+      "TD LG": "40",
+      "LONG": "48"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Chase Napiwocki",
+    "player_year": "SO",
+    "position": null,
+    "jersey": "1",
+    "stats": {
+      "TOT": "44",
+      "SOLO": "24",
+      "TFL": "1",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Jaxon Golla",
+    "player_year": "JR",
+    "position": null,
+    "jersey": "3",
+    "stats": {
+      "TOT": "1",
+      "SOLO": "0",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Eric Reincke",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "4",
+    "stats": {
+      "TOT": "33",
+      "SOLO": "17",
+      "TFL": "2",
+      "SACKS": "1.0"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Max Nelson",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "5",
+    "stats": {
+      "TOT": "94",
+      "SOLO": "54",
+      "TFL": "14",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Clayton Benaszeski",
+    "player_year": "FR",
+    "position": null,
+    "jersey": "6",
+    "stats": {
+      "TOT": "2",
+      "SOLO": "1",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Baron Skelton",
+    "player_year": "FR",
+    "position": null,
+    "jersey": "7",
+    "stats": {
+      "TOT": "1",
+      "SOLO": "1",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Jake Williams",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "12",
+    "stats": {
+      "TOT": "13",
+      "SOLO": "6",
+      "TFL": "2",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Sam Westrick",
+    "player_year": "SO",
+    "position": null,
+    "jersey": "20",
+    "stats": {
+      "TOT": "23",
+      "SOLO": "16",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Bryce Flaker",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "22",
+    "stats": {
+      "TOT": "39",
+      "SOLO": "22",
+      "TFL": "4",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Henry Gerritsen",
+    "player_year": "JR",
+    "position": null,
+    "jersey": "24",
+    "stats": {
+      "TOT": "23",
+      "SOLO": "6",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Chase Williams",
+    "player_year": "FR",
+    "position": null,
+    "jersey": "28",
+    "stats": {
+      "TOT": "7",
+      "SOLO": "1",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Owen Mattson",
+    "player_year": "FR",
+    "position": null,
+    "jersey": "31",
+    "stats": {
+      "TOT": "2",
+      "SOLO": "0",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Corbin Kezeske",
+    "player_year": "FR",
+    "position": null,
+    "jersey": "32",
+    "stats": {
+      "TOT": "2",
+      "SOLO": "1",
+      "TFL": "1",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Braxton Larsen",
+    "player_year": "FR",
+    "position": null,
+    "jersey": "33",
+    "stats": {
+      "TOT": "1",
+      "SOLO": "0",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Adam Angell",
+    "player_year": "FR",
+    "position": null,
+    "jersey": "40",
+    "stats": {
+      "TOT": "2",
+      "SOLO": "1",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Weston Flugaur",
+    "player_year": "FR",
+    "position": null,
+    "jersey": "44",
+    "stats": {
+      "TOT": "1",
+      "SOLO": "0",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Owen Hanson",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "52",
+    "stats": {
+      "TOT": "39",
+      "SOLO": "14",
+      "TFL": "8",
+      "SACKS": "2.0"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Cashton Colemer",
+    "player_year": "FR",
+    "position": null,
+    "jersey": "53",
+    "stats": {
+      "TOT": "10",
+      "SOLO": "4",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Holden Grover",
+    "player_year": "SO",
+    "position": null,
+    "jersey": "54",
+    "stats": {
+      "TOT": "1",
+      "SOLO": "0",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Sean Berna",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "56",
+    "stats": {
+      "TOT": "88",
+      "SOLO": "44",
+      "TFL": "19",
+      "SACKS": "6.0"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Porter Boris",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "60",
+    "stats": {
+      "TOT": "33",
+      "SOLO": "7",
+      "TFL": "4",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Chase Baron",
+    "player_year": "FR",
+    "position": null,
+    "jersey": "64",
+    "stats": {
+      "TOT": "2",
+      "SOLO": "0",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Avin Bembenek",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "65",
+    "stats": {
+      "TOT": "35",
+      "SOLO": "14",
+      "TFL": "6",
+      "SACKS": "4.0"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Dom Sackmann",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "67",
+    "stats": {
+      "TOT": "8",
+      "SOLO": "3",
+      "TFL": "2",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Dominic Sackmann",
+    "player_year": "SR",
+    "position": null,
+    "jersey": "67",
+    "stats": {
+      "TOT": "11",
+      "SOLO": "4",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Wyatt Jeidy",
+    "player_year": "JR",
+    "position": null,
+    "jersey": "72",
+    "stats": {
+      "TOT": "2",
+      "SOLO": "2",
+      "TFL": "1",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Marcus Krueger",
+    "player_year": "SO",
+    "position": null,
+    "jersey": "75",
+    "stats": {
+      "TOT": "31",
+      "SOLO": "9",
+      "TFL": "3",
+      "SACKS": "3.0"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Eli Krystowiak",
+    "player_year": "FR",
+    "position": null,
+    "jersey": "81",
+    "stats": {
+      "TOT": "8",
+      "SOLO": "3",
+      "TFL": "0",
+      "SACKS": "0.0"
+    }
+  },
+  {
+    "school_id": "pacelli",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Team",
+    "player_year": null,
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "TOT": "556",
+      "SOLO": "254",
+      "TFL": "67",
+      "SACKS": "16.0"
+    }
   }
 ]
