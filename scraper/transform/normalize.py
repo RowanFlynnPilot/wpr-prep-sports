@@ -196,6 +196,18 @@ def build_dataset(
             ),
         )
 
+    # WIAA's per-team schedule pages occasionally carry a row from the
+    # previous season (New Richmond's 2026-27 volleyball page listed a
+    # 2025-08-26 match); the data gate rejects any game outside the season's
+    # window, so drop such rows here rather than fail every scrape.
+    window = season_window(season)
+    if window:
+        lo, hi = window
+        stray = [gid for gid, g in games.items() if not (lo <= g.date.date() < hi)]
+        for gid in stray:
+            print(f"  dropping out-of-season row {gid}")
+            del games[gid]
+
     games_list = sorted(games.values(), key=lambda g: g.date)
     standings = _build_standings(
         games_list,

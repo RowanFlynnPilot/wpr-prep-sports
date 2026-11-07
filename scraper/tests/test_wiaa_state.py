@@ -625,3 +625,18 @@ def test_state_rows_outside_the_season_window_are_dropped(manifest):
     assert refresh_state_games(ds, manifest, [last_year], sport="football", season="2026-27") == 0
     this_year = dataclasses.replace(last_year, date=date(2026, 11, 19))
     assert refresh_state_games(ds, manifest, [this_year], sport="football", season="2026-27") == 1
+
+
+def test_build_dataset_drops_schedule_rows_outside_the_season_window(manifest):
+    """A previous-season row on a school's WIAA schedule page never reaches the
+    file (it failed every scrape's data gate on 2026-11-06)."""
+    import copy
+
+    schedules = copy.deepcopy(_edgar_schedule())
+    stray = copy.deepcopy(schedules[0]["games"][0])
+    stray["date"] = "2024-08-30"
+    schedules[0]["games"].append(stray)
+    ds = build_dataset(
+        manifest=manifest, raw_team_schedules=schedules, sport="football", season="2025-26"
+    )
+    assert all(g.date.year >= 2025 for g in ds.games)

@@ -72,8 +72,19 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      # Pages deploys occasionally sit in GitHub's queue past the action's
+      # 10-minute default (Nov 6-7, 2026: two timeouts, every other deploy
+      # fine). Wait longer, then try once more before alerting.
       - id: deployment
         uses: actions/deploy-pages@v4
+        continue-on-error: true
+        with:
+          timeout: 1200000
+      - id: deployment_retry
+        if: steps.deployment.outcome == 'failure'
+        uses: actions/deploy-pages@v4
+        with:
+          timeout: 1200000
 
   # A failed deploy means committed data never reaches readers — the
   # scrape workflows show green, so without this alert nobody notices.
