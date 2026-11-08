@@ -9006,6 +9006,20 @@
   {
     "school_id": "wausau-west",
     "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Eva Knock",
+    "player_year": "FR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "DIG": "1",
+      "SP": "2"
+    }
+  },
+  {
+    "school_id": "wausau-west",
+    "sport": "volleyball",
     "category": "Volleyball Offense",
     "player_name": "Annika Vannoord",
     "player_year": "SO",
@@ -9073,20 +9087,6 @@
     "stats": {
       "GP": "1",
       "AST": "3",
-      "SP": "2"
-    }
-  },
-  {
-    "school_id": "wausau-west",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Eva Knock",
-    "player_year": "FR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "1",
-      "DIG": "1",
       "SP": "2"
     }
   },
@@ -10239,24 +10239,6 @@
     "school_id": "chippewa-falls",
     "sport": "volleyball",
     "category": "Volleyball Offense",
-    "player_name": "Hannah Cull",
-    "player_year": "FR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "3",
-      "KLS": "6",
-      "ATT": "14",
-      "E": "4",
-      "SP": "3",
-      "AST": "1",
-      "EFF": ".143"
-    }
-  },
-  {
-    "school_id": "chippewa-falls",
-    "sport": "volleyball",
-    "category": "Volleyball Offense",
     "player_name": "Avrie Knorn",
     "player_year": "FR",
     "position": null,
@@ -10365,20 +10347,6 @@
     "school_id": "chippewa-falls",
     "sport": "volleyball",
     "category": "Volleyball Serving",
-    "player_name": "Ilah Sinz",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "4",
-      "ACE": "9",
-      "SP": "13"
-    }
-  },
-  {
-    "school_id": "chippewa-falls",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
     "player_name": "Jaydyn Krueger",
     "player_year": "SO",
     "position": null,
@@ -10421,14 +10389,28 @@
     "school_id": "chippewa-falls",
     "sport": "volleyball",
     "category": "Volleyball Serving",
-    "player_name": "Makenna Wood",
-    "player_year": "JR",
+    "player_name": "Mya Johnson",
+    "player_year": "SR",
     "position": null,
     "jersey": null,
     "stats": {
       "GP": "2",
-      "ACE": "3",
+      "ACE": "4",
       "SP": "4"
+    }
+  },
+  {
+    "school_id": "chippewa-falls",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Barrett Boisvert",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "ACE": "5",
+      "SP": "11"
     }
   },
   {
@@ -10450,6 +10432,21 @@
     "school_id": "chippewa-falls",
     "sport": "volleyball",
     "category": "Volleyball Defense",
+    "player_name": "Emma Hoepner",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "5",
+      "BLK": "10",
+      "SP": "15",
+      "DIG": "5"
+    }
+  },
+  {
+    "school_id": "chippewa-falls",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
     "player_name": "Barrett Boisvert",
     "player_year": "SR",
     "position": null,
@@ -10459,6 +10456,21 @@
       "BLK": "12",
       "SP": "15",
       "DIG": "51"
+    }
+  },
+  {
+    "school_id": "chippewa-falls",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Jade Raedel",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "4",
+      "BLK": "6",
+      "SP": "13",
+      "DIG": "6"
     }
   },
   {
@@ -10507,20 +10519,6 @@
     "school_id": "chippewa-falls",
     "sport": "volleyball",
     "category": "Volleyball Defense",
-    "player_name": "Hannah Cull",
-    "player_year": "FR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "1",
-      "DIG": "2",
-      "SP": "1"
-    }
-  },
-  {
-    "school_id": "chippewa-falls",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
     "player_name": "Avrie Knorn",
     "player_year": "FR",
     "position": null,
@@ -10530,50 +10528,6 @@
       "DIG": "36",
       "SP": "15",
       "BLK": "2"
-    }
-  },
-  {
-    "school_id": "chippewa-falls",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Mya Johnson",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "3",
-      "DIG": "5",
-      "SP": "9"
-    }
-  },
-  {
-    "school_id": "chippewa-falls",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Emma Hoepner",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "5",
-      "DIG": "5",
-      "SP": "15",
-      "BLK": "10"
-    }
-  },
-  {
-    "school_id": "chippewa-falls",
-    "sport": "volleyball",
-    "category": "Volleyball Defense",
-    "player_name": "Jade Raedel",
-    "player_year": "SO",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "4",
-      "DIG": "6",
-      "SP": "13",
-      "BLK": "6"
     }
   },
   {
@@ -10608,42 +10562,46 @@
     "school_id": "chippewa-falls",
     "sport": "volleyball",
     "category": "Volleyball Offense",
-    "player_name": "Mya Johnson",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "AST": "15",
-      "SP": "4"
-    }
-  },
-  {
-    "school_id": "chippewa-falls",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Mya Johnson",
-    "player_year": "SR",
-    "position": null,
-    "jersey": null,
-    "stats": {
-      "GP": "2",
-      "ACE": "4",
-      "SP": "4"
-    }
-  },
-  {
-    "school_id": "chippewa-falls",
-    "sport": "volleyball",
-    "category": "Volleyball Serving",
-    "player_name": "Barrett Boisvert",
-    "player_year": "SR",
+    "player_name": "Hannah Cull",
+    "player_year": "FR",
     "position": null,
     "jersey": null,
     "stats": {
       "GP": "3",
-      "ACE": "5",
-      "SP": "11"
+      "KLS": "6",
+      "ATT": "14",
+      "E": "4",
+      "SP": "3",
+      "AST": "1",
+      "EFF": ".143"
+    }
+  },
+  {
+    "school_id": "chippewa-falls",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Ilah Sinz",
+    "player_year": "SO",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "4",
+      "ACE": "9",
+      "SP": "13"
+    }
+  },
+  {
+    "school_id": "chippewa-falls",
+    "sport": "volleyball",
+    "category": "Volleyball Serving",
+    "player_name": "Makenna Wood",
+    "player_year": "JR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "ACE": "3",
+      "SP": "4"
     }
   },
   {
@@ -10659,6 +10617,48 @@
       "BLK": "2",
       "SP": "10",
       "DIG": "5"
+    }
+  },
+  {
+    "school_id": "chippewa-falls",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Mya Johnson",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "3",
+      "DIG": "5",
+      "SP": "9"
+    }
+  },
+  {
+    "school_id": "chippewa-falls",
+    "sport": "volleyball",
+    "category": "Volleyball Offense",
+    "player_name": "Mya Johnson",
+    "player_year": "SR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "2",
+      "AST": "15",
+      "SP": "4"
+    }
+  },
+  {
+    "school_id": "chippewa-falls",
+    "sport": "volleyball",
+    "category": "Volleyball Defense",
+    "player_name": "Hannah Cull",
+    "player_year": "FR",
+    "position": null,
+    "jersey": null,
+    "stats": {
+      "GP": "1",
+      "DIG": "2",
+      "SP": "1"
     }
   },
   {
