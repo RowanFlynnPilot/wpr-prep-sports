@@ -1,7 +1,7 @@
 {
   "sport": "football",
   "season": "2026-27",
-  "generated_at": "2026-11-08T18:45:01.181053-06:00",
+  "generated_at": "2026-11-09T01:52:57.130751-06:00",
   "method": "WPR Power Index v1: 40% W%, 35% SOS, 25% margin (capped per sport)",
   "rankings": [
     {
@@ -80,7 +80,7 @@
       "sos": 0.5177,
       "avg_margin_capped": 13.45,
       "score": 69.35,
-      "movement": 2
+      "movement": 0
     },
     {
       "rank": 7,
@@ -93,7 +93,7 @@
       "sos": 0.5102,
       "avg_margin_capped": 13.0,
       "score": 68.89,
-      "movement": 2
+      "movement": 0
     },
     {
       "rank": 8,
@@ -106,7 +106,7 @@
       "sos": 0.4468,
       "avg_margin_capped": 16.25,
       "score": 68.72,
-      "movement": -2
+      "movement": 0
     },
     {
       "rank": 9,
@@ -119,7 +119,7 @@
       "sos": 0.5649,
       "avg_margin_capped": 10.31,
       "score": 67.64,
-      "movement": -2
+      "movement": 0
     },
     {
       "rank": 10,
@@ -353,7 +353,7 @@
       "sos": 0.4806,
       "avg_margin_capped": -4.11,
       "score": 49.71,
-      "movement": 1
+      "movement": 0
     },
     {
       "rank": 28,
@@ -366,7 +366,7 @@
       "sos": 0.4088,
       "avg_margin_capped": 1.64,
       "score": 49.36,
-      "movement": -1
+      "movement": 0
     },
     {
       "rank": 29,
@@ -392,7 +392,7 @@
       "sos": 0.3929,
       "avg_margin_capped": -2.2,
       "score": 45.27,
-      "movement": 1
+      "movement": 0
     },
     {
       "rank": 31,
@@ -405,7 +405,7 @@
       "sos": 0.4102,
       "avg_margin_capped": -3.6,
       "score": 45.25,
-      "movement": 1
+      "movement": 0
     },
     {
       "rank": 32,
@@ -418,7 +418,7 @@
       "sos": 0.4319,
       "avg_margin_capped": -5.4,
       "score": 45.21,
-      "movement": -2
+      "movement": 0
     },
     {
       "rank": 33,
