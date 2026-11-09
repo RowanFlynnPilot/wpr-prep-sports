@@ -62,6 +62,42 @@
     "division": null,
     "rows": [
       {
+        "school_id": "athens",
+        "name": "Athens",
+        "conference_wins": 0,
+        "conference_losses": 0,
+        "conference_ties": 0,
+        "overall_wins": 0,
+        "overall_losses": 0,
+        "overall_ties": 0,
+        "points_for": 0,
+        "points_against": 0
+      },
+      {
+        "school_id": "marathon",
+        "name": "Marathon",
+        "conference_wins": 0,
+        "conference_losses": 0,
+        "conference_ties": 0,
+        "overall_wins": 0,
+        "overall_losses": 0,
+        "overall_ties": 0,
+        "points_for": 0,
+        "points_against": 0
+      },
+      {
+        "school_id": "stratford",
+        "name": "Stratford",
+        "conference_wins": 0,
+        "conference_losses": 0,
+        "conference_ties": 0,
+        "overall_wins": 0,
+        "overall_losses": 0,
+        "overall_ties": 0,
+        "points_for": 0,
+        "points_against": 0
+      },
+      {
         "school_id": "spencer",
         "name": "Spencer",
         "conference_wins": 0,
@@ -74,8 +110,32 @@
         "points_against": 0
       },
       {
+        "school_id": "prentice",
+        "name": "Prentice",
+        "conference_wins": 0,
+        "conference_losses": 0,
+        "conference_ties": 0,
+        "overall_wins": 0,
+        "overall_losses": 0,
+        "overall_ties": 0,
+        "points_for": 0,
+        "points_against": 0
+      },
+      {
         "school_id": "chequamegon",
         "name": "Chequamegon",
+        "conference_wins": 0,
+        "conference_losses": 0,
+        "conference_ties": 0,
+        "overall_wins": 0,
+        "overall_losses": 0,
+        "overall_ties": 0,
+        "points_for": 0,
+        "points_against": 0
+      },
+      {
+        "school_id": "rib-lake",
+        "name": "Rib Lake",
         "conference_wins": 0,
         "conference_losses": 0,
         "conference_ties": 0,
