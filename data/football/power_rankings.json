@@ -1,20 +1,20 @@
 {
   "sport": "football",
   "season": "2026-27",
-  "generated_at": "2026-11-14T15:36:42.944316-06:00",
+  "generated_at": "2026-11-15T03:10:37.897368-06:00",
   "method": "WPR Power Index v1: 40% W%, 35% SOS, 25% margin (capped per sport)",
   "rankings": [
     {
       "rank": 1,
       "school_id": "gilman",
       "school_name": "Gilman",
-      "wins": 13,
+      "wins": 14,
       "losses": 0,
       "ties": 0,
       "win_pct": 1.0,
       "sos": 0.5519,
-      "avg_margin_capped": 25.92,
-      "score": 83.39,
+      "avg_margin_capped": 26.07,
+      "score": 83.46,
       "movement": 0
     },
     {
