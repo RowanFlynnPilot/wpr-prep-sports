@@ -25016,14 +25016,14 @@
     "school_id": "new-richmond",
     "sport": "football",
     "category": "Defense",
-    "player_name": "5/53, Mason Gunter",
+    "player_name": "34/61, Tanner Gess",
     "player_year": "SR",
     "position": null,
     "jersey": null,
     "stats": {
-      "TOT": "67",
-      "SOLO": "33",
-      "TFL": "13",
+      "TOT": "61",
+      "SOLO": "25",
+      "TFL": "8",
       "SACKS": "3.0",
       "SCK SOLO": "3",
       "SCK AST": "0"
@@ -25033,14 +25033,14 @@
     "school_id": "new-richmond",
     "sport": "football",
     "category": "Defense",
-    "player_name": "34/61, Tanner Gess",
+    "player_name": "5/53, Mason Gunter",
     "player_year": "SR",
     "position": null,
     "jersey": null,
     "stats": {
-      "TOT": "61",
-      "SOLO": "25",
-      "TFL": "8",
+      "TOT": "67",
+      "SOLO": "33",
+      "TFL": "13",
       "SACKS": "3.0",
       "SCK SOLO": "3",
       "SCK AST": "0"
@@ -30329,13 +30329,13 @@
     "position": null,
     "jersey": "9",
     "stats": {
-      "C/ATT": "42/76",
-      "PCT": "55.3%",
-      "YDS": "649",
-      "YPC": "15.5",
+      "C/ATT": "46/85",
+      "PCT": "54.1%",
+      "YDS": "731",
+      "YPC": "15.9",
       "TDS": "9",
       "INT": "4",
-      "RTG": "155.5",
+      "RTG": "151.9",
       "TD LG": "46",
       "LONG": "0"
     }
@@ -30389,13 +30389,13 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "C/ATT": "49/86",
-      "PCT": "57.0%",
-      "YDS": "753",
-      "YPC": "15.4",
+      "C/ATT": "53/95",
+      "PCT": "55.8%",
+      "YDS": "835",
+      "YPC": "15.8",
       "TDS": "10",
       "INT": "4",
-      "RTG": "159.6",
+      "RTG": "155.9",
       "TD LG": "56",
       "LONG": "0"
     }
@@ -30426,10 +30426,10 @@
     "position": null,
     "jersey": "5",
     "stats": {
-      "CAR": "223",
-      "YDS": "2555",
-      "YPC": "11.5",
-      "TDS": "47",
+      "CAR": "258",
+      "YDS": "2752",
+      "YPC": "10.7",
+      "TDS": "49",
       "TD LG": "92",
       "LONG": "0"
     }
@@ -30477,10 +30477,10 @@
     "position": null,
     "jersey": "9",
     "stats": {
-      "CAR": "104",
-      "YDS": "659",
-      "YPC": "6.3",
-      "TDS": "7",
+      "CAR": "115",
+      "YDS": "734",
+      "YPC": "6.4",
+      "TDS": "8",
       "TD LG": "0",
       "LONG": "0"
     }
@@ -30596,10 +30596,10 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "CAR": "387",
-      "YDS": "3557",
-      "YPC": "9.2",
-      "TDS": "57",
+      "CAR": "433",
+      "YDS": "3829",
+      "YPC": "8.8",
+      "TDS": "60",
       "TD LG": "92",
       "LONG": "0"
     }
@@ -30630,9 +30630,9 @@
     "position": null,
     "jersey": "3",
     "stats": {
-      "REC": "11",
-      "YDS": "169",
-      "YPC": "15.4",
+      "REC": "12",
+      "YDS": "201",
+      "YPC": "16.8",
       "TDS": "3",
       "TD LG": "0",
       "LONG": "0"
@@ -30698,9 +30698,9 @@
     "position": null,
     "jersey": "11",
     "stats": {
-      "REC": "22",
-      "YDS": "323",
-      "YPC": "14.7",
+      "REC": "23",
+      "YDS": "334",
+      "YPC": "14.5",
       "TDS": "5",
       "TD LG": "0",
       "LONG": "0"
@@ -30744,6 +30744,40 @@
     "school_id": "amherst",
     "sport": "football",
     "category": "Receiving",
+    "player_name": "Landon Austin",
+    "player_year": "JR",
+    "position": null,
+    "jersey": "18",
+    "stats": {
+      "REC": "1",
+      "YDS": "18",
+      "YPC": "18.0",
+      "TDS": "0",
+      "TD LG": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "amherst",
+    "sport": "football",
+    "category": "Receiving",
+    "player_name": "Mason Nerdahl",
+    "player_year": "FR",
+    "position": null,
+    "jersey": "61",
+    "stats": {
+      "REC": "1",
+      "YDS": "21",
+      "YPC": "21.0",
+      "TDS": "0",
+      "TD LG": "0",
+      "LONG": "0"
+    }
+  },
+  {
+    "school_id": "amherst",
+    "sport": "football",
+    "category": "Receiving",
     "player_name": "Braun Groshek",
     "player_year": "FR",
     "position": null,
@@ -30766,9 +30800,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "REC": "49",
-      "YDS": "753",
-      "YPC": "15.4",
+      "REC": "53",
+      "YDS": "835",
+      "YPC": "15.8",
       "TDS": "10",
       "TD LG": "0",
       "LONG": "0"
@@ -30783,7 +30817,7 @@
     "position": null,
     "jersey": "2",
     "stats": {
-      "TOT": "50",
+      "TOT": "53",
       "SOLO": "28",
       "TFL": "2",
       "SACKS": "0.0",
@@ -30834,8 +30868,8 @@
     "position": null,
     "jersey": "5",
     "stats": {
-      "TOT": "72",
-      "SOLO": "52",
+      "TOT": "79",
+      "SOLO": "57",
       "TFL": "17",
       "SACKS": "3.0",
       "SCK SOLO": "3",
@@ -30885,8 +30919,8 @@
     "position": null,
     "jersey": "8",
     "stats": {
-      "TOT": "36",
-      "SOLO": "27",
+      "TOT": "40",
+      "SOLO": "30",
       "TFL": "4",
       "SACKS": "2.0",
       "SCK SOLO": "2",
@@ -30922,6 +30956,23 @@
       "TOT": "24",
       "SOLO": "18",
       "TFL": "1",
+      "SACKS": "0.0",
+      "SCK SOLO": "0",
+      "SCK AST": "0"
+    }
+  },
+  {
+    "school_id": "amherst",
+    "sport": "football",
+    "category": "Defense",
+    "player_name": "Jacob Spencer",
+    "player_year": "JR",
+    "position": null,
+    "jersey": "12",
+    "stats": {
+      "TOT": "6",
+      "SOLO": "3",
+      "TFL": "0",
       "SACKS": "0.0",
       "SCK SOLO": "0",
       "SCK AST": "0"
@@ -30970,9 +31021,9 @@
     "position": null,
     "jersey": "18",
     "stats": {
-      "TOT": "41",
-      "SOLO": "22",
-      "TFL": "0",
+      "TOT": "46",
+      "SOLO": "26",
+      "TFL": "1",
       "SACKS": "0.0",
       "SCK SOLO": "0",
       "SCK AST": "0"
@@ -31038,9 +31089,9 @@
     "position": null,
     "jersey": "51",
     "stats": {
-      "TOT": "22",
-      "SOLO": "15",
-      "TFL": "1",
+      "TOT": "25",
+      "SOLO": "16",
+      "TFL": "2",
       "SACKS": "0.0",
       "SCK SOLO": "0",
       "SCK AST": "0"
@@ -31089,8 +31140,8 @@
     "position": null,
     "jersey": "59",
     "stats": {
-      "TOT": "8",
-      "SOLO": "4",
+      "TOT": "9",
+      "SOLO": "5",
       "TFL": "2",
       "SACKS": "0.0",
       "SCK SOLO": "0",
@@ -31106,8 +31157,8 @@
     "position": null,
     "jersey": "60",
     "stats": {
-      "TOT": "93",
-      "SOLO": "64",
+      "TOT": "105",
+      "SOLO": "70",
       "TFL": "13",
       "SACKS": "2.0",
       "SCK SOLO": "2",
@@ -31123,8 +31174,8 @@
     "position": null,
     "jersey": "61",
     "stats": {
-      "TOT": "29",
-      "SOLO": "20",
+      "TOT": "31",
+      "SOLO": "21",
       "TFL": "6",
       "SACKS": "0.0",
       "SCK SOLO": "0",
@@ -31140,8 +31191,8 @@
     "position": null,
     "jersey": "65",
     "stats": {
-      "TOT": "4",
-      "SOLO": "3",
+      "TOT": "7",
+      "SOLO": "4",
       "TFL": "1",
       "SACKS": "0.0",
       "SCK SOLO": "0",
@@ -31174,8 +31225,8 @@
     "position": null,
     "jersey": "69",
     "stats": {
-      "TOT": "14",
-      "SOLO": "10",
+      "TOT": "17",
+      "SOLO": "13",
       "TFL": "4",
       "SACKS": "0.0",
       "SCK SOLO": "0",
@@ -31208,9 +31259,9 @@
     "position": null,
     "jersey": null,
     "stats": {
-      "TOT": "575",
-      "SOLO": "399",
-      "TFL": "61",
+      "TOT": "624",
+      "SOLO": "427",
+      "TFL": "63",
       "SACKS": "11.0",
       "SCK SOLO": "11",
       "SCK AST": "0"
