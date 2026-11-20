@@ -36,10 +36,10 @@
         "conference_losses": 0,
         "conference_ties": 0,
         "overall_wins": 0,
-        "overall_losses": 0,
+        "overall_losses": 1,
         "overall_ties": 0,
-        "points_for": 0,
-        "points_against": 0
+        "points_for": 22,
+        "points_against": 50
       },
       {
         "school_id": "marshfield",
@@ -48,10 +48,10 @@
         "conference_losses": 0,
         "conference_ties": 0,
         "overall_wins": 0,
-        "overall_losses": 0,
+        "overall_losses": 1,
         "overall_ties": 0,
-        "points_for": 0,
-        "points_against": 0
+        "points_for": 48,
+        "points_against": 70
       },
       {
         "school_id": "spash",
@@ -72,10 +72,10 @@
         "conference_losses": 0,
         "conference_ties": 0,
         "overall_wins": 0,
-        "overall_losses": 1,
+        "overall_losses": 2,
         "overall_ties": 0,
-        "points_for": 23,
-        "points_against": 54
+        "points_for": 50,
+        "points_against": 96
       }
     ]
   },
@@ -116,10 +116,10 @@
         "conference_losses": 0,
         "conference_ties": 0,
         "overall_wins": 0,
-        "overall_losses": 1,
+        "overall_losses": 2,
         "overall_ties": 0,
-        "points_for": 51,
-        "points_against": 63
+        "points_for": 86,
+        "points_against": 132
       },
       {
         "school_id": "edgar",
@@ -188,10 +188,10 @@
         "conference_losses": 0,
         "conference_ties": 0,
         "overall_wins": 0,
-        "overall_losses": 0,
+        "overall_losses": 1,
         "overall_ties": 0,
-        "points_for": 0,
-        "points_against": 0
+        "points_for": 36,
+        "points_against": 70
       },
       {
         "school_id": "assumption",
@@ -200,10 +200,10 @@
         "conference_losses": 0,
         "conference_ties": 0,
         "overall_wins": 0,
-        "overall_losses": 0,
+        "overall_losses": 1,
         "overall_ties": 0,
-        "points_for": 0,
-        "points_against": 0
+        "points_for": 27,
+        "points_against": 33
       },
       {
         "school_id": "chequamegon",
@@ -238,6 +238,18 @@
     "division": null,
     "rows": [
       {
+        "school_id": "northland-pines",
+        "name": "Northland Pines",
+        "conference_wins": 1,
+        "conference_losses": 0,
+        "conference_ties": 0,
+        "overall_wins": 1,
+        "overall_losses": 0,
+        "overall_ties": 0,
+        "points_for": 70,
+        "points_against": 50
+      },
+      {
         "school_id": "mosinee",
         "name": "Mosinee",
         "conference_wins": 0,
@@ -256,10 +268,10 @@
         "conference_losses": 0,
         "conference_ties": 0,
         "overall_wins": 0,
-        "overall_losses": 0,
+        "overall_losses": 1,
         "overall_ties": 0,
-        "points_for": 0,
-        "points_against": 0
+        "points_for": 35,
+        "points_against": 52
       },
       {
         "school_id": "rhinelander",
@@ -320,18 +332,6 @@
         "overall_ties": 0,
         "points_for": 0,
         "points_against": 0
-      },
-      {
-        "school_id": "northland-pines",
-        "name": "Northland Pines",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "conference_ties": 0,
-        "overall_wins": 0,
-        "overall_losses": 0,
-        "overall_ties": 0,
-        "points_for": 0,
-        "points_against": 0
       }
     ]
   },
@@ -347,11 +347,35 @@
         "conference_wins": 1,
         "conference_losses": 0,
         "conference_ties": 0,
+        "overall_wins": 2,
+        "overall_losses": 0,
+        "overall_ties": 0,
+        "points_for": 146,
+        "points_against": 105
+      },
+      {
+        "school_id": "colby",
+        "name": "Colby",
+        "conference_wins": 0,
+        "conference_losses": 0,
+        "conference_ties": 0,
         "overall_wins": 1,
         "overall_losses": 0,
         "overall_ties": 0,
-        "points_for": 76,
-        "points_against": 69
+        "points_for": 49,
+        "points_against": 43
+      },
+      {
+        "school_id": "loyal",
+        "name": "Loyal",
+        "conference_wins": 0,
+        "conference_losses": 0,
+        "conference_ties": 0,
+        "overall_wins": 1,
+        "overall_losses": 0,
+        "overall_ties": 0,
+        "points_for": 47,
+        "points_against": 37
       },
       {
         "school_id": "gilman",
@@ -366,32 +390,32 @@
         "points_against": 37
       },
       {
-        "school_id": "colby",
-        "name": "Colby",
+        "school_id": "greenwood",
+        "name": "Greenwood",
         "conference_wins": 0,
         "conference_losses": 0,
         "conference_ties": 0,
-        "overall_wins": 0,
+        "overall_wins": 1,
         "overall_losses": 0,
         "overall_ties": 0,
-        "points_for": 0,
-        "points_against": 0
+        "points_for": 38,
+        "points_against": 37
+      },
+      {
+        "school_id": "columbus-catholic",
+        "name": "Columbus Catholic",
+        "conference_wins": 0,
+        "conference_losses": 0,
+        "conference_ties": 0,
+        "overall_wins": 1,
+        "overall_losses": 0,
+        "overall_ties": 0,
+        "points_for": 50,
+        "points_against": 22
       },
       {
         "school_id": "abbotsford",
         "name": "Abbotsford",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "conference_ties": 0,
-        "overall_wins": 0,
-        "overall_losses": 0,
-        "overall_ties": 0,
-        "points_for": 0,
-        "points_against": 0
-      },
-      {
-        "school_id": "loyal",
-        "name": "Loyal",
         "conference_wins": 0,
         "conference_losses": 0,
         "conference_ties": 0,
@@ -412,30 +436,6 @@
         "overall_ties": 0,
         "points_for": 22,
         "points_against": 41
-      },
-      {
-        "school_id": "greenwood",
-        "name": "Greenwood",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "conference_ties": 0,
-        "overall_wins": 0,
-        "overall_losses": 0,
-        "overall_ties": 0,
-        "points_for": 0,
-        "points_against": 0
-      },
-      {
-        "school_id": "columbus-catholic",
-        "name": "Columbus Catholic",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "conference_ties": 0,
-        "overall_wins": 0,
-        "overall_losses": 0,
-        "overall_ties": 0,
-        "points_for": 0,
-        "points_against": 0
       }
     ]
   }
