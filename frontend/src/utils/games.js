@@ -137,6 +137,24 @@ export function isTrackedElimination(game) {
 }
 
 /** Most recent final between two TRACKED schools (both have school_id). */
+/**
+ * Margin past which a result is a rout, by sport. A blowout still leads
+ * when it is the only local result, but a competitive local game beats it.
+ * Volleyball has none: 3-0 is an ordinary sweep, not a story about margin.
+ */
+const BLOWOUT_MARGIN = {
+  football: 28,
+  boys_basketball: 25,
+  girls_basketball: 25,
+  boys_hockey: 5,
+  girls_hockey: 5,
+  boys_soccer: 4,
+  girls_soccer: 4,
+};
+function blowoutMargin(sport) {
+  return BLOWOUT_MARGIN[sport] ?? Number.POSITIVE_INFINITY;
+}
+
 function isRivalryFinal(g) {
   return (
     g.status === "final" &&
@@ -165,9 +183,10 @@ function isRivalryFinal(g) {
  * Tri-County at Hurley (5:00 PM) into Wausau West at Menomonie (7:00 PM) —
  * same night either way.
  *
- * Deliberately never reaches past that day. Skipping tomorrow's game to
- * feature one on Saturday would make the eyebrow a lie, and a wrong label
- * costs more than a less local matchup.
+ * When the first day has no local game at all, it looks ahead (within the
+ * seven days) to the first day that does, and the hero's eyebrow reads
+ * "Next local game" so the label stays true: a non-local Monday game
+ * two hours west used to lead over Tuesday's 18-game local opener.
  *
  * `excludeId` is the game already showing as Game of the Week directly
  * above. Both cards prefer the best local game on the same slate, so
@@ -248,15 +267,28 @@ export function pickFeaturedGame(
     if (recentLocal.length > 0) {
       const days = recentLocal.map(({ g }) => g.date.slice(0, 10)).sort();
       const latestDay = days[days.length - 1];
-      // Stakes first (conference game, both sides local), then the
-      // closest margin — the tightest local rivalry result leads.
+      // Stakes first (conference game, both sides local), then a
+      // competitive game over a rout, then a home-region WIN over a home-
+      // region loss, then the closest margin. Regular-season version of the
+      // postseason's winner-first rule: the hero had led boys hockey with
+      // "The Raiders fell to Altoona Co-op 7-1" and girls basketball with
+      // a 52-19 loss (critique run 21).
       const stakes = (g) => (g.conference_game ? 2 : 0) + (localSides(g) === 2 ? 1 : 0);
+      const localWin = (g) => {
+        const winner =
+          g.home.score > g.away.score ? g.home : g.away.score > g.home.score ? g.away : null;
+        return winner && preferIds.has(winner.school_id) ? 1 : 0;
+      };
+      const margin = (g) => Math.abs(g.home.score - g.away.score);
+      const blowout = (g) => (margin(g) > blowoutMargin(g.sport) ? 1 : 0);
       const lead = recentLocal
         .filter(({ g }) => g.date.slice(0, 10) === latestDay)
         .sort(
           (a, b) =>
             stakes(b.g) - stakes(a.g) ||
-            Math.abs(a.g.home.score - a.g.away.score) - Math.abs(b.g.home.score - b.g.away.score),
+            blowout(a.g) - blowout(b.g) ||
+            localWin(b.g) - localWin(a.g) ||
+            margin(a.g) - margin(b.g),
         )[0];
       if (lead) return lead.g;
     }
@@ -270,13 +302,29 @@ export function pickFeaturedGame(
   if (upcoming.length > 0) {
     if (preferIds && preferIds.size > 0) {
       // Same slice the schedule groups on, so "day" means the same thing here
-      // as it does in the list below the hero.
-      const firstDay = upcoming[0].g.date.slice(0, 10);
-      const locals = upcoming.filter(
-        ({ g }) =>
-          g.date.slice(0, 10) === firstDay &&
-          (preferIds.has(g.home.school_id) || preferIds.has(g.away.school_id)),
-      );
+      // as it does in the list below the hero. The first day WITH a local
+      // game, not just the first day: a Monday game two hours west
+      // (Chetek-Weyerhaeuser at Bruce) led boys basketball over Tuesday's
+      // 18-game opener (critique run 21). The hero's eyebrow then says
+      // "Next local game" instead of "Up Next" (components/Hero.jsx).
+      const isLocal = ({ g }) =>
+        preferIds.has(g.home.school_id) || preferIds.has(g.away.school_id);
+      const firstLocal = upcoming.find(isLocal);
+      const firstDay = firstLocal ? firstLocal.g.date.slice(0, 10) : null;
+      // Within the day, the bigger local game first: both sides local,
+      // then a conference game, then the earlier start. Time order alone
+      // put Rosholt at Port Edwards ahead of Antigo at Wausau East once
+      // Game of the Week took a different game.
+      const bothLocal = (g) =>
+        preferIds.has(g.home.school_id) && preferIds.has(g.away.school_id) ? 1 : 0;
+      const locals = upcoming
+        .filter((item) => item.g.date.slice(0, 10) === firstDay && isLocal(item))
+        .sort(
+          (a, b) =>
+            bothLocal(b.g) - bothLocal(a.g) ||
+            (b.g.conference_game ? 1 : 0) - (a.g.conference_game ? 1 : 0) ||
+            a.ts - b.ts,
+        );
       // Prefer a local game the marquee isn't already showing; if that game
       // is the only local one, showing it here too still beats dropping to
       // a matchup from the other end of the state.

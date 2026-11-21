@@ -49,22 +49,69 @@ function inPostseason(games, now) {
   });
 }
 
+// "Of the Week": the strip features a game in the next seven days. At 14,
+// boys basketball's opening-week strip promoted a game nine days out over
+// a 19-game opening slate (critique run 21). A sport with nothing that
+// qualifies inside the week (girls hockey's five tracked teams) still
+// reaches FALLBACK_DAYS, so the strip and its sponsor slot don't go dark.
+const HORIZON_DAYS = 7;
+const FALLBACK_DAYS = 14;
+
+/**
+ * Season record so far for every school with a final before `now`, as a
+ * smoothed win rate: (wins + ties/2 + 1) / (games + 2). Unplayed is .500,
+ * 2-0 is .750, 0-2 is .250, 10-0 is .917, so one or two early games nudge
+ * the pick without deciding it, and a real record weighs more each week.
+ */
+function winRates(games, now) {
+  const tally = new Map();
+  for (const g of games) {
+    if (g.status !== "final" || g.home.score == null || g.away.score == null) continue;
+    if (new Date(g.date).getTime() > now) continue;
+    for (const [side, own, opp] of [
+      [g.home, g.home.score, g.away.score],
+      [g.away, g.away.score, g.home.score],
+    ]) {
+      if (!side.school_id) continue;
+      const t = tally.get(side.school_id) ?? { w: 0, l: 0, t: 0 };
+      if (own > opp) t.w += 1;
+      else if (own < opp) t.l += 1;
+      else t.t += 1;
+      tally.set(side.school_id, t);
+    }
+  }
+  const rates = new Map();
+  for (const [id, t] of tally) {
+    rates.set(id, (t.w + t.t / 2 + 1) / (t.w + t.l + t.t + 2));
+  }
+  return rates;
+}
+
 /**
  * Score an upcoming game's "stakes". Higher = more pitchable.
  *
  * Both teams in our manifest is the floor: a featured game has to involve
- * teams we cover. We layer on conference matchup, top-of-standings vs
- * top-of-standings, and proximity (next 14 days).
+ * teams we cover. We layer on conference matchup, the two teams' records,
+ * the home region and proximity (next seven days).
  *
  * Postseason exception: a playoff game with ONE tracked side qualifies
  * (the other side untracked or TBD), a little below a both-tracked game.
  */
-function scoreUpcoming(game, schoolsById, now, homeRegionIds, slateDay = null, postseason = false) {
+function scoreUpcoming(
+  game,
+  schoolsById,
+  now,
+  homeRegionIds,
+  slateDay = null,
+  postseason = false,
+  rates = null,
+  horizonDays = HORIZON_DAYS,
+) {
   if (game.status !== "scheduled") return -Infinity;
   const ts = new Date(game.date).getTime();
   if (ts < now) return -Infinity;
   const daysOut = (ts - now) / 86_400_000;
-  if (daysOut > 14) return -Infinity;
+  if (daysOut > horizonDays) return -Infinity;
 
   const homeTracked = !!game.home.school_id && schoolsById.has(game.home.school_id);
   const awayTracked = !!game.away.school_id && schoolsById.has(game.away.school_id);
@@ -76,6 +123,15 @@ function scoreUpcoming(game, schoolsById, now, homeRegionIds, slateDay = null, p
   // A named opponent is a better pitch than "opponent TBD".
   if (isTbdSide(game.home) || isTbdSide(game.away)) score -= 1;
   if (game.conference_game) score += 4;
+  // Records: two winning teams make the game, two winless ones don't.
+  // Range -8..+8, zero for two unplayed or .500 teams. Without it the
+  // girls basketball strip picked Auburndale (0-1) at Edgar (0-2) over
+  // Wausau West (2-0) at Lakeland (1-0) on the same slate, while Spotlight
+  // called the second "two top-3 teams collide" (critique run 21).
+  if (rates) {
+    const rate = (side) => rates.get(side.school_id) ?? 0.5;
+    score += 8 * (rate(game.home) + rate(game.away) - 1);
+  }
   // The playoff bonus belongs to the main slate's night. Uncapped, a
   // Saturday 8-player Level 1 game (28.7) outscored four tied Friday
   // locals (25.0) the week the playoffs began (critique run 18).
@@ -164,9 +220,13 @@ export function pickMarqueeGame({
   if (!offSeason) {
     const slateDay = mainSlateDay(games, now);
     const postseason = inPostseason(games, now);
-    const best = bestBy(games, (g) =>
-      scoreUpcoming(g, schoolsById, now, homeRegionIds, slateDay, postseason),
-    );
+    const rates = winRates(games, now);
+    const pick = (horizon) =>
+      bestBy(games, (g) =>
+        scoreUpcoming(g, schoolsById, now, homeRegionIds, slateDay, postseason, rates, horizon),
+      );
+    let best = pick(HORIZON_DAYS);
+    if (!best || best.score === -Infinity) best = pick(FALLBACK_DAYS);
     if (!best || best.score === -Infinity) return null;
     const g = best.item;
     return {

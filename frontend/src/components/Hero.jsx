@@ -81,6 +81,33 @@ export default function Hero({
   // "Score pending".
   const underway = !isFinal && isUnderway(game);
   const pending = !isFinal && !underway && isScorePending(game);
+  // A preview that isn't simply the next game says which kind it is.
+  // "Season opener" when neither tracked side has a result yet; "Next
+  // local game" when pickFeaturedGame looked past an earlier day's games
+  // (non-local ones) to reach it, so "Up Next" never mislabels a Tuesday
+  // game while Monday's sit above it in the schedule (critique run 21).
+  const upcomingLabel = (() => {
+    if (game.status !== "scheduled") return "Up Next";
+    const hasResult = (id) =>
+      !!id &&
+      games.some(
+        (g) =>
+          g.status === "final" &&
+          g.home.score != null &&
+          (g.home.school_id === id || g.away.school_id === id),
+      );
+    const trackedIds = [game.home.school_id, game.away.school_id].filter(Boolean);
+    if (trackedIds.length > 0 && !trackedIds.some(hasResult)) return "Season opener";
+    const day = game.date.slice(0, 10);
+    const nowTs = Date.now();
+    const earlierDay = games.some(
+      (g) =>
+        g.status === "scheduled" &&
+        g.date.slice(0, 10) < day &&
+        new Date(g.date).getTime() >= nowTs,
+    );
+    return earlierDay ? "Next local game" : "Up Next";
+  })();
   // On game day the lead is tonight's Game of the Week, and the eyebrow
   // says so: "Tonight · Game of the Week", then "Live · …", then "Final · …".
   // A tournament day names itself: "State tournament today · …",
@@ -99,7 +126,7 @@ export default function Hero({
             ? "Score pending"
             : tonight
               ? slateLead(tonight, game.date)
-              : "Up Next";
+              : upcomingLabel;
   const eyebrow = tonight && gotwLabel ? `${state} · ${gotwLabel}` : state;
   const slateLine = tonight ? slateSummary(tonight) : "";
   const showTime = !isFinal && !underway && !pending;
