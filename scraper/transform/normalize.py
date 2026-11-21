@@ -208,6 +208,9 @@ def build_dataset(
             print(f"  dropping out-of-season row {gid}")
             del games[gid]
 
+    for gid in collapse_same_day_duplicates(games):
+        print(f"  merged same-day duplicate listing {gid}")
+
     games_list = sorted(games.values(), key=lambda g: g.date)
     standings = _build_standings(
         games_list,
@@ -300,6 +303,88 @@ def _resolve_school_id(wiaa_name: str, name_to_id: dict[str, str]) -> str:
 # scores is one game listed twice — soccer and hockey teams don't play
 # the same opponent two full games in an afternoon.
 SAME_DAY_REMATCH_SPORTS = {Sport.VOLLEYBALL, Sport.BOYS_BASKETBALL, Sport.GIRLS_BASKETBALL}
+
+
+_SUFFIX = re.compile(r"-\d+$")
+
+
+def collapse_same_day_duplicates(games: dict[str, Game]) -> list[str]:
+    """Merge one physical game that WIAA lists twice on the same day under
+    different times or with home and away flipped. Returns the dropped ids.
+
+    WIAA keeps one entry per school that typed the game in, and both show
+    on each team's page: Stratford's 2026-27 girls page lists Loyal on
+    Nov 20 at 7:00 PM and again at 7:15 PM "(C)" (event ids 415257 and
+    415366), and doubleheader rows carry the girls' and the boys' start
+    (5:45 / 7:15). The id suffix scheme in build_dataset kept both, so 67
+    girls and 80 boys basketball games showed twice on schedules, in "This
+    Week" counts and in calendar feeds (critique run 21, 2026-11-21).
+    Hockey also lists a few games from each side (Storm at Hayward and
+    Hayward at Storm), which the id never matched.
+
+    Volleyball is left alone: quads and tournaments really do pair two
+    schools twice in a day. Elsewhere the same two teams on the same
+    calendar day is one game. The survivor is a scored row when there is
+    one (and a group whose scores disagree is left untouched, since that
+    can't be settled here), else the conference-flagged row, else a row
+    with a typed venue over WIAA's "@<home>" default, else the unsuffixed
+    id.
+    """
+    groups: dict[tuple, list[Game]] = {}
+    for g in games.values():
+        if g.sport is Sport.VOLLEYBALL:
+            continue
+        sides = frozenset((t.school_id or t.name or "").strip().lower() for t in (g.home, g.away))
+        groups.setdefault((g.date.date(), sides), []).append(g)
+
+    def team_scores(g: Game) -> dict[str, int | None]:
+        return {
+            (g.home.school_id or g.home.name).lower(): g.home.score,
+            (g.away.school_id or g.away.name).lower(): g.away.score,
+        }
+
+    def scored(g: Game) -> bool:
+        return g.home.score is not None and g.away.score is not None
+
+    def typed_venue(g: Game) -> bool:
+        # WIAA fills "@<home school>" by default; a rink or arena someone
+        # typed in (the Mosinee-USM showcase "@Eagle River Hockey Arena")
+        # is the listing that knows where the game actually is.
+        venue = (g.venue or "").lstrip("@").strip().lower()
+        sides = {(g.home.name or "").strip().lower(), (g.away.name or "").strip().lower()}
+        return bool(venue) and venue not in sides
+
+    dropped: list[str] = []
+    for rows in groups.values():
+        if len(rows) < 2:
+            continue
+        finals = [g for g in rows if scored(g)]
+        if len({tuple(sorted(team_scores(g).items())) for g in finals}) > 1:
+            continue
+        ranked = sorted(
+            rows,
+            key=lambda g: (
+                not scored(g),
+                -len(g.stat_leaders),  # a repair over published data keeps the box score
+                not g.conference_game,
+                not typed_venue(g),
+                bool(_SUFFIX.search(g.id)) and g.id.rsplit("-", 1)[0] in games,
+                g.id,
+            ),
+        )
+        keep, rest = ranked[0], ranked[1:]
+        update: dict = {}
+        if any(g.playoff for g in rest) and not keep.playoff:
+            first = next(g for g in rest if g.playoff)
+            update.update(playoff=True, playoff_round=first.playoff_round)
+        if any(g.conference_game for g in rest) and not keep.conference_game:
+            update["conference_game"] = True
+        if update:
+            games[keep.id] = keep.model_copy(update=update)
+        for g in rest:
+            dropped.append(g.id)
+            del games[g.id]
+    return dropped
 
 
 def is_double_listing(a: Game, b: Game) -> bool:

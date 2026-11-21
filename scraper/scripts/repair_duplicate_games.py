@@ -15,6 +15,9 @@ re-scraped (off-season sports, archives). For each merged pair the
 survivor keeps the base id, adopts the playoff flag/round from
 whichever copy carried it, and keeps whichever copy's stat lines exist.
 Standings are rebuilt only when a merged pair was conference-flagged.
+Since 2026-11-21 it also applies collapse_same_day_duplicates (one game
+listed under two times, or with home and away flipped) and rebuilds
+standings after any such merge.
 
 Usage (from scraper/):
   python scripts/repair_duplicate_games.py           # report + write
@@ -33,7 +36,11 @@ sys.path.insert(0, str(REPO_ROOT / "scraper"))
 
 from config.loader import load_manifest  # noqa: E402
 from output.writer import read_dataset, write_dataset  # noqa: E402
-from transform.normalize import _build_standings, is_double_listing  # noqa: E402
+from transform.normalize import (  # noqa: E402
+    _build_standings,
+    collapse_same_day_duplicates,
+    is_double_listing,
+)
 
 DATA_DIR = REPO_ROOT / "data"
 
@@ -76,6 +83,17 @@ def repair_sport(sport: str, out_dir: Path, *, manifest, dry_run: bool) -> int:
         merged += 1
         conference_merge = conference_merge or base.conference_game
         print(f"  merged {dup.id} into {base_id} (playoff={survivor.playoff})")
+
+    # Same-day listings under different times or flipped home/away
+    # (collapse_same_day_duplicates, 2026-11-21): the -N suffix rule above
+    # only sees identical datetimes. Always rebuilds standings, since the
+    # phantom may have been counted in a conference table.
+    games = {g.id: g for g in dataset.games}
+    for gid in collapse_same_day_duplicates(games):
+        print(f"  merged same-day duplicate {gid}")
+        merged += 1
+        conference_merge = True
+    dataset.games = sorted(games.values(), key=lambda g: g.date)
 
     if merged == 0:
         return 0

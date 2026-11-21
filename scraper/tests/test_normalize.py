@@ -15,6 +15,7 @@ from transform.normalize import (
     _parse_datetime,
     _parse_result,
     _slugify,
+    collapse_same_day_duplicates,
     is_double_listing,
 )
 
@@ -192,3 +193,97 @@ def test_double_listing_different_times_is_kept():
     a = _listing(Sport.GIRLS_SOCCER, hour=10)
     b = _listing(Sport.GIRLS_SOCCER, hour=19)
     assert not is_double_listing(a, b)
+
+
+# --- Same-day duplicate listings (critique run 21, 2026-11-21) -----------
+
+
+def _row(
+    gid: str,
+    hour: int,
+    *,
+    sport: Sport = Sport.GIRLS_BASKETBALL,
+    home: tuple[str, str] = ("stratford", "Stratford"),
+    away: tuple[str, str] = ("loyal", "Loyal"),
+    scores: tuple[int | None, int | None] = (None, None),
+    conference: bool = False,
+    venue: str | None = None,
+    minute: int = 0,
+) -> Game:
+    hs, as_ = scores
+    return Game(
+        id=gid,
+        sport=sport,
+        season="2026-27",
+        date=datetime(2026, 11, 20, hour, minute, tzinfo=_CENTRAL),
+        home=TeamScore(school_id=home[0], name=home[1], score=hs),
+        away=TeamScore(school_id=away[0], name=away[1], score=as_),
+        status=GameStatus.FINAL if hs is not None else GameStatus.SCHEDULED,
+        conference_game=conference,
+        venue=venue if venue is not None else f"@{home[1]}",
+    )
+
+
+def test_same_day_double_listing_keeps_the_conference_row():
+    """Stratford's page lists Loyal at 7:00 PM and again at 7:15 PM (C)."""
+    base = "girls_basketball-2026-11-20-loyal-at-stratford"
+    games = {
+        base: _row(base, 19),
+        f"{base}-2": _row(f"{base}-2", 19, minute=15, conference=True),
+    }
+    assert collapse_same_day_duplicates(games) == [base]
+    assert list(games) == [f"{base}-2"]
+
+
+def test_same_day_double_listing_keeps_the_scored_row_and_drops_the_twin():
+    base = "girls_basketball-2026-11-19-tri-county-at-nekoosa"
+    games = {
+        base: _row(base, 19, home=("nekoosa", "Nekoosa"), away=("tri-county", "Tri-County")),
+        f"{base}-2": _row(
+            f"{base}-2",
+            18,
+            home=("nekoosa", "Nekoosa"),
+            away=("tri-county", "Tri-County"),
+            scores=(55, 9),
+        ),
+    }
+    collapse_same_day_duplicates(games)
+    assert list(games) == [f"{base}-2"]
+    assert games[f"{base}-2"].home.score == 55
+
+
+def test_same_day_double_listing_merges_flipped_home_and_away_keeping_the_typed_venue():
+    a = "boys_hockey-2027-01-22-mosinee-at-usm"
+    b = "boys_hockey-2027-01-22-usm-at-mosinee"
+    games = {
+        a: _row(a, 19, sport=Sport.BOYS_HOCKEY, home=("", "USM"), away=("mosinee", "Mosinee")),
+        b: _row(
+            b,
+            19,
+            sport=Sport.BOYS_HOCKEY,
+            home=("mosinee", "Mosinee"),
+            away=("", "USM"),
+            venue="@Eagle River Hockey Arena",
+        ),
+    }
+    assert collapse_same_day_duplicates(games) == [a]
+    assert games[b].venue == "@Eagle River Hockey Arena"
+
+
+def test_same_day_rows_with_disagreeing_scores_are_left_alone():
+    base = "girls_basketball-2026-11-20-loyal-at-stratford"
+    games = {
+        base: _row(base, 19, scores=(50, 40)),
+        f"{base}-2": _row(f"{base}-2", 19, minute=15, scores=(44, 52)),
+    }
+    assert collapse_same_day_duplicates(games) == []
+    assert len(games) == 2
+
+
+def test_volleyball_same_day_rematches_are_never_merged():
+    base = "volleyball-2026-11-20-loyal-at-stratford"
+    games = {
+        base: _row(base, 17, sport=Sport.VOLLEYBALL),
+        f"{base}-2": _row(f"{base}-2", 19, sport=Sport.VOLLEYBALL),
+    }
+    assert collapse_same_day_duplicates(games) == []
