@@ -6,6 +6,18 @@
     "division": null,
     "rows": [
       {
+        "school_id": "northland-pines",
+        "name": "Northland Pines",
+        "conference_wins": 1,
+        "conference_losses": 0,
+        "conference_ties": 0,
+        "overall_wins": 1,
+        "overall_losses": 0,
+        "overall_ties": 0,
+        "points_for": 2,
+        "points_against": 1
+      },
+      {
         "school_id": "central-wisconsin-storm",
         "name": "Central Wisconsin Storm",
         "conference_wins": 0,
@@ -32,18 +44,6 @@
       {
         "school_id": "medford",
         "name": "Medford",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "conference_ties": 0,
-        "overall_wins": 0,
-        "overall_losses": 0,
-        "overall_ties": 0,
-        "points_for": 0,
-        "points_against": 0
-      },
-      {
-        "school_id": "northland-pines",
-        "name": "Northland Pines",
         "conference_wins": 0,
         "conference_losses": 0,
         "conference_ties": 0,
