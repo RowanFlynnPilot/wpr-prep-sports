@@ -3,7 +3,7 @@
  * no hash routing: the mini is one screen, and a WordPress editor edits the
  * iframe src by hand.
  *
- *   ?sport=volleyball          one sport (default: football)
+ *   ?sport=volleyball          one sport (default: the first sport in season)
  *   ?sports=in-season          reader switcher over whatever is in season this
  *                              month — football/volleyball/boys soccer in the
  *                              fall, basketball and hockey in winter — so a
@@ -14,8 +14,8 @@
  * `sport` picks the opening tab when it's in the switcher's list; a sport
  * that isn't (football in January) yields to the list's first entry.
  */
-import { DEFAULT_SPORT, SPORT_IDS, isKnownSport } from "../config/sports.js";
-import { sportInSeason } from "../utils/inSeason.js";
+import { SPORT_IDS, isKnownSport } from "../config/sports.js";
+import { landingSport, sportInSeason } from "../utils/inSeason.js";
 import { SITE } from "../config/site.js";
 
 /** Sports whose season is running (active month and opener passed), in registry order. */
@@ -42,7 +42,9 @@ export function readMiniParams(search = "", now = new Date()) {
   if (sports.length > 0) {
     sport = sports.includes(requested) ? requested : sports[0];
   } else {
-    sport = isKnownSport(requested) ? requested : DEFAULT_SPORT;
+    // No (or an unknown) ?sport= follows the hub's landing rule: the
+    // first sport in season, football between seasons.
+    sport = isKnownSport(requested) ? requested : landingSport(now);
   }
 
   // `link` is the obituaries mini's name for the same thing.

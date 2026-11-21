@@ -6,6 +6,7 @@ import { resolve } from "node:path";
 // site.js is deliberately pure data (no import.meta.env) precisely so plain
 // Node can read it — the weekly digest does the same.
 import { SITE, SITE_TITLE } from "./src/config/site.js";
+import { landingTable } from "./src/utils/inSeason.js";
 
 // GitHub Pages serves the site under /wpr-prep-sports/.
 // Override at build time with VITE_BASE if needed (e.g. for a custom
@@ -30,6 +31,21 @@ const dataPrefix = `${base.replace(/\/$/, "")}/data/`;
  * cards exist as PNGs (scripts/generate_og_cards.py) for the publisher to
  * attach to article shares.
  */
+/**
+ * index.html's inline prefetch has to guess the sport the root route will
+ * land on before any module loads. It runs utils/inSeason.js's rule over
+ * this table, generated from config/sports.js at build time so the season
+ * dates live in one place.
+ */
+function landingTableTag() {
+  return {
+    name: "wpr-landing-table",
+    transformIndexHtml(html) {
+      return html.replace("/*__WPR_LANDING__*/ null", JSON.stringify(landingTable()));
+    },
+  };
+}
+
 function socialTags() {
   const origin = SITE.widgetOrigin.replace(/\/+$/, "");
   const imageUrl = `${origin}/${SITE.shareImage}`;
@@ -91,7 +107,7 @@ function serveRepoData() {
 }
 
 export default defineConfig({
-  plugins: [react(), socialTags(), serveRepoData()],
+  plugins: [react(), socialTags(), landingTableTag(), serveRepoData()],
   base,
   // Prevent react-router-dom (and other libs) from pulling in a second
   // copy of React — fixes the "Invalid hook call" warning chain.

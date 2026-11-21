@@ -73,7 +73,29 @@
     <script>
       (function () {
         try {
-          var sport = (location.hash.match(/^#\/([a-z_]+)/) || [])[1] || "football";
+          // The site root lands on the first sport in season (App.jsx →
+          // utils/inSeason.js landingSport); vite.config.js injects the
+          // config table below so this guess matches the app's route.
+          var L = /*__WPR_LANDING__*/ null;
+          var landing = (function () {
+            if (!L) return "football";
+            var now = new Date();
+            var day = function (iso) {
+              var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso || "");
+              return m ? new Date(+m[1], +m[2] - 1, +m[3]) : null;
+            };
+            for (var i = 0; i < L.sports.length; i++) {
+              var t = L.sports[i];
+              if (t.months.indexOf(now.getMonth()) < 0) continue;
+              var s = day(t.start);
+              if (s && now < s) continue;
+              var e = day(t.end);
+              if (e && now >= e && now - e < L.holdDays * 864e5) continue;
+              return t.id;
+            }
+            return L.fallback;
+          })();
+          var sport = (location.hash.match(/^#\/([a-z_]+)/) || [])[1] || landing;
           // Legacy #/team/… and #/game/… redirect to the default sport;
           // #/card/… and #/sponsor don't load a sport dataset first.
           if (sport === "team" || sport === "game") sport = "football";

@@ -21,6 +21,7 @@ import { conferenceFor } from "../utils/schoolSearch.js";
 import { isEmbedded } from "../utils/iframe.js";
 import { isDataBehind } from "../utils/freshness.js";
 import { gameDayState, pickTonightGame } from "../utils/gameDay.js";
+import { nextOpener, seasonOver } from "../utils/inSeason.js";
 import Sponsor from "../components/Sponsor.jsx";
 import TopPerformers from "../components/TopPerformers.jsx";
 import Marquee from "../components/Marquee.jsx";
@@ -34,7 +35,7 @@ import { isTrackedElimination, pickFeaturedGame, tickerGames } from "../utils/ga
 import { postseasonState } from "../utils/postseason.js";
 import { homeRegionSchoolIds } from "../utils/schools.js";
 import { pickFeaturedWeek, previousWeekResults } from "../utils/weeks.js";
-import { formatWeekRange, localDate } from "../utils/dates.js";
+import { formatWeekRange } from "../utils/dates.js";
 import { pickMarqueeGame } from "../utils/marquee.js";
 import { SPORT_IDS } from "../config/sports.js";
 import { trackEvent } from "../utils/analytics.js";
@@ -165,17 +166,27 @@ export default function DashboardPage({
   // 4-month summer gap reliably triggers it. Archive view opts out:
   // when reliving a finished season, show it in full swing (featured
   // game hero), not a countdown to a season that already happened.
+  // A finished state tournament ends the season at once: with nothing
+  // left on the schedule, the two weeks after the final used to read as a
+  // live season frozen on its last day ("1 state game today" a week
+  // later, "This Week" over the semifinals; football, 2026-11-21).
   const offSeason = useMemo(() => {
     if (!lastGameTs || dataset.archiveSeason) return false;
-    const daysSinceLast = (Date.now() - lastGameTs) / 86_400_000;
-    return daysSinceLast > 14;
-  }, [lastGameTs, dataset.archiveSeason]);
+    const now = Date.now();
+    const daysSinceLast = (now - lastGameTs) / 86_400_000;
+    if (daysSinceLast > 14) return true;
+    return now > lastGameTs && seasonOver(sportConfig, new Date(now));
+  }, [lastGameTs, dataset.archiveSeason, sportConfig]);
 
-  const nextSeasonStart = useMemo(() => {
-    if (!offSeason || !sportConfig?.nextSeasonStart) return null;
-    const d = localDate(sportConfig.nextSeasonStart);
-    return d && !Number.isNaN(d.getTime()) ? d : null;
-  }, [offSeason, sportConfig]);
+  // The configured opener is this season's until someone edits the config;
+  // once it has passed, nextOpener rolls it a year ahead and marks it an
+  // estimate (the hero then names the month, not a weekday).
+  const nextSeason = useMemo(
+    () => (offSeason ? nextOpener(sportConfig) : null),
+    [offSeason, sportConfig],
+  );
+  const nextSeasonStart = nextSeason?.date ?? null;
+  const nextSeasonEstimated = nextSeason?.estimated ?? false;
 
   // Off-season with last season still in the dataset (every off-season:
   // the scraper rolls a sport over only once WIAA posts the new
@@ -241,7 +252,10 @@ export default function DashboardPage({
   // with tonight's Game of the Week and the night's count instead of the
   // last result, and the marquee strip steps aside unless its sponsor
   // slot is sold (a paid strip stays, even if it repeats the hero).
-  const gameDay = useMemo(() => gameDayState(games, anchorNow), [games, anchorNow]);
+  // Real today, not anchorNow: off-season the anchor parks on the final
+  // game's day, and game-day mode then announced "1 state game today" for
+  // a final played a week earlier.
+  const gameDay = useMemo(() => gameDayState(games, new Date()), [games]);
   const tonightGame = useMemo(
     () =>
       gameDay.isGameDay && !offSeason && !dataset.archiveSeason
@@ -598,6 +612,7 @@ export default function DashboardPage({
             offSeason={offSeason}
             sportConfig={sportConfig}
             nextSeasonStart={nextSeasonStart}
+            nextSeasonEstimated={nextSeasonEstimated}
             daysToNext={daysToNext}
             tonight={heroTonight ? gameDay : null}
             gotwLabel={heroIsMarquee ? marquee.eyebrow : null}
@@ -710,6 +725,7 @@ export default function DashboardPage({
                 seasonLabel={finishedSeason}
                 nextSeasonLabel={nextSeasonLabel}
                 nextSeasonStart={nextSeasonStart}
+                nextSeasonEstimated={nextSeasonEstimated}
                 standings={[...meaningfulStandings].sort(
                   (a, b) => confNames.indexOf(a.conference) - confNames.indexOf(b.conference),
                 )}

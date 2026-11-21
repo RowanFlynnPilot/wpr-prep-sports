@@ -4,8 +4,9 @@ import Sponsor from "../components/Sponsor.jsx";
 import Icon from "../components/Icon.jsx";
 import { fetchMiniDataset } from "../data/fetchDataset.js";
 import { configFor } from "../config/sports.js";
+import { nextOpener } from "../utils/inSeason.js";
 import { SITE } from "../config/site.js";
-import { formatGameDayDate, formatGameShortDay, formatGameTime, localDate } from "../utils/dates.js";
+import { formatGameDayDate, formatGameShortDay, formatGameTime } from "../utils/dates.js";
 import { humanizeVenue, isUnderway } from "../utils/games.js";
 import { isNeutralSite, roundLabel } from "../utils/postseason.js";
 import { indexSchools } from "../utils/schools.js";
@@ -394,10 +395,14 @@ function FixtureRow({ game, sport, schoolIndex, showDay, href, onClick }) {
 
 /** Between seasons, or a quiet stretch with nothing inside the windows. */
 function emptyCopy(cfg) {
-  const opener = cfg.nextSeasonStart ? localDate(cfg.nextSeasonStart, 12) : null;
-  if (opener && opener.getTime() > Date.now()) {
+  const next = nextOpener(cfg);
+  if (next?.estimated) {
+    const month = next.date.toLocaleDateString("en-US", { month: "long", year: "numeric" });
+    return `${cfg.label} is between seasons. The next season opens in ${month}.`;
+  }
+  if (next) {
     return `${cfg.label} is between seasons. The next season opens ${formatGameDayDate(
-      opener.toISOString(),
+      new Date(next.date.getTime() + 12 * 3_600_000).toISOString(),
     )}.`;
   }
   return `No ${cfg.label.toLowerCase()} games on the schedule this week.`;

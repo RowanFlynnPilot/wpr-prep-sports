@@ -77,7 +77,13 @@ export default function SportSwitcher() {
       <ul
         id={listId}
         className={
-          "sport-switcher__list" + (collapsed ? " sport-switcher__list--collapsed" : "")
+          "sport-switcher__list" +
+          (collapsed ? " sport-switcher__list--collapsed" : "") +
+          // Winter puts four sports in season (both basketballs, both
+          // hockeys): with the More tab that is five cells, four to a
+          // phone row, and "Girls Hockey" beside its icon is wider than a
+          // quarter of 375px. Dense strips stack the icon on phones.
+          (collapsed && shown.length + 1 >= 5 ? " sport-switcher__list--dense" : "")
         }
         style={collapsed ? { "--switcher-cols": shown.length + 1 } : undefined}
       >

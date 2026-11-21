@@ -26,6 +26,7 @@ export default function Hero({
   offSeason = false,
   sportConfig = null,
   nextSeasonStart = null,
+  nextSeasonEstimated = false,
   daysToNext = null,
   // Game day (utils/gameDay.js): the slate's state when the hero is
   // leading with tonight's Game of the Week, else null.
@@ -42,6 +43,7 @@ export default function Hero({
       <OffSeasonHero
         sportConfig={sportConfig}
         nextSeasonStart={nextSeasonStart}
+        nextSeasonEstimated={nextSeasonEstimated}
         daysToNext={daysToNext}
         lastGame={game}
         schoolIndex={schoolIndex}
@@ -214,18 +216,25 @@ const NEXT_START_FMT = new Intl.DateTimeFormat("en-US", {
   year: "numeric",
 });
 
+const NEXT_MONTH_FMT = new Intl.DateTimeFormat("en-US", { month: "long", year: "numeric" });
+
 function OffSeasonHero({
   sportConfig,
   nextSeasonStart,
+  nextSeasonEstimated = false,
   daysToNext,
   lastGame,
   schoolIndex,
   games,
 }) {
   const sportLabel = sportConfig?.label ?? "The season";
+  // An estimated opener (rolled a year ahead of a stale config date) gets
+  // a month-level countdown; "39 weeks" would claim a precision we lack.
   const countdownLabel = daysToNext == null
     ? null
-    : daysToNext === 0
+    : nextSeasonEstimated
+      ? `${Math.max(1, Math.round(daysToNext / 30.4))} months`
+      : daysToNext === 0
       ? "Today"
       : daysToNext === 1
         ? "1 day"
@@ -234,7 +243,9 @@ function OffSeasonHero({
           : `${Math.round(daysToNext / 7)} weeks`;
 
   const headline = nextSeasonStart
-    ? `${sportLabel} returns ${NEXT_START_FMT.format(nextSeasonStart)}`
+    ? nextSeasonEstimated
+      ? `${sportLabel} returns in ${NEXT_MONTH_FMT.format(nextSeasonStart)}`
+      : `${sportLabel} returns ${NEXT_START_FMT.format(nextSeasonStart)}`
     : `${sportLabel} season has wrapped`;
 
   // Last-game recap for the small retro card.

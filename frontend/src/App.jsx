@@ -39,6 +39,7 @@ import { SchoolsContext } from "./utils/schoolsContext.js";
 import { useAnalytics } from "./utils/analytics.js";
 import { notifyHostNavigated, useIframeHeightReporter } from "./utils/iframe.js";
 import { DEFAULT_SPORT, configFor, configForDataset, isKnownSport } from "./config/sports.js";
+import { landingSport } from "./utils/inSeason.js";
 import { SITE } from "./config/site.js";
 
 import "./styles/App.css";
@@ -78,8 +79,9 @@ export default function App() {
 
   return (
     <Routes>
-      {/* Default landing → DEFAULT_SPORT's dashboard. */}
-      <Route path="/" element={<Navigate to={`/${DEFAULT_SPORT}`} replace />} />
+      {/* Default landing → the first sport in season (football in the
+          fall, basketball in winter); DEFAULT_SPORT between seasons. */}
+      <Route path="/" element={<Navigate to={`/${landingSport()}`} replace />} />
 
       {/* Legacy URLs (pre-phase-1, no sport prefix) → DEFAULT_SPORT prefix. */}
       <Route
@@ -130,7 +132,7 @@ export default function App() {
       <Route path="/:sport/*" element={<SportShell />} />
 
       {/* Fallback for unknown URLs. */}
-      <Route path="*" element={<Navigate to={`/${DEFAULT_SPORT}`} replace />} />
+      <Route path="*" element={<Navigate to={`/${landingSport()}`} replace />} />
     </Routes>
   );
 }

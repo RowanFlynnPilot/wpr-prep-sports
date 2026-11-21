@@ -28,6 +28,7 @@ import "../styles/OffSeasonRecap.css";
 const STATE_QUALIFYING_ROUNDS = new Set(["Sectional Final", "Level 4"]);
 const STATE_FINAL_ROUNDS = new Set(["State Final", "State Championship"]);
 
+const OPENER_MONTH_FMT = new Intl.DateTimeFormat("en-US", { month: "long", year: "numeric" });
 const OPENER_FMT = new Intl.DateTimeFormat("en-US", {
   weekday: "short",
   month: "short",
@@ -82,6 +83,7 @@ export default function OffSeasonRecap({
   seasonLabel,
   nextSeasonLabel,
   nextSeasonStart,
+  nextSeasonEstimated = false,
   standings = [],
   games = [],
   schoolIndex,
@@ -270,8 +272,9 @@ export default function OffSeasonRecap({
         {nextSeasonStart && (
           <>
             {" · "}
-            {openerPassed ? "season opened " : "first games "}
-            {OPENER_FMT.format(nextSeasonStart)}
+            {nextSeasonEstimated
+              ? `first games expected in ${OPENER_MONTH_FMT.format(nextSeasonStart)}`
+              : `${openerPassed ? "season opened" : "first games"} ${OPENER_FMT.format(nextSeasonStart)}`}
           </>
         )}
       </p>

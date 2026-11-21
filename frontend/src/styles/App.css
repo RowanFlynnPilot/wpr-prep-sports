@@ -615,6 +615,20 @@
     gap: 0.3rem;
     letter-spacing: 0.04em;
   }
+  /* Five cells (four winter sports + More): stack the icon over the label
+     so "Girls Hockey" gets the whole ~93px column (it overflowed the
+     screen by a pixel beside its icon, 2026-11-21). */
+  .sport-switcher__list--dense .sport-switcher__tab {
+    flex-direction: column;
+    gap: 0.15rem;
+    padding: 0.5rem 0.25rem;
+    line-height: 1.1;
+  }
+  .sport-switcher__list--dense .sport-switcher__label--short {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
   .sport-switcher__tab {
     padding: 0.6rem 0.5rem;
     font-size: var(--fs-label);
