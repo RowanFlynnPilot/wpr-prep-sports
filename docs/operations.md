@@ -218,6 +218,19 @@ a code change), `VITE_DATA_BASE` (defaults to same-origin `data/`).
   or parsing) — treat as a real failure, don't ack it. August 2026
   precedent: boys soccer sat at 1/21 schools with WIAA verified empty;
   acked until Sept 1.
+- **Sentinel: game-night runs did not fire** — count last night's
+  Scrape Live runs in the Actions tab. A handful of `schedule` runs and no
+  `workflow_dispatch` runs means the self-chain is dead. Look for a Scrape
+  Live run sitting in **Queued** for hours and cancel it: on 2026-11-17
+  GitHub stranded a dispatched run in "queued" and every later run
+  deferred to it, so the chain stayed dead for four nights. The chain now
+  ignores queued runs older than 20 minutes (and warns about them), so a
+  stuck run should no longer stop it; the sentinel names any live run
+  queued for over an hour. Genuine load-shedding (no stuck run) clears on
+  its own; dispatch Scrape Live once during the window to reseed.
+- **Install step failed (pip / Playwright)** — both now retry; a failure
+  that survives the retries is a PyPI or Ubuntu mirror outage. Close the
+  issue once the next run is green.
 - **Digest failed** — newsletter team needs `data/digest/latest.html`;
   re-run via dispatch (optionally `week_ending=YYYY-MM-DD`).
 

@@ -1,0 +1,28 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Wausau Pilot & Review//Central Wisconsin Prep Sports//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Bowler Boys Soccer
+X-WR-CALDESC:Bowler boys soccer schedule and results from Central Wisconsin
+  Prep Sports (Wausau Pilot & Review). https://sports.wausaupilotandreview.
+ com/#/boys_soccer/team/bowler
+X-WR-TIMEZONE:America/Chicago
+REFRESH-INTERVAL;VALUE=DURATION:PT4H
+X-PUBLISHED-TTL:PT4H
+BEGIN:VEVENT
+UID:boys_soccer-2026-10-12-bowler-at-newman-catholic@sports.wausaupilotandr
+ eview.com
+DTSTAMP:20260801T000000Z
+DTSTART:20261013T000000Z
+DTEND:20261013T020000Z
+SUMMARY:L 2-5 · Bowler at Newman Catholic · Boys Soccer
+LOCATION:Newman Catholic High School\, Wausau
+DESCRIPTION:Scores\, stats and recap: https://sports.wausaupilotandreview.c
+ om/#/boys_soccer/game/boys_soccer-2026-10-12-bowler-at-newman-catholic\nCe
+ ntral Wisconsin Prep Sports · Wausau Pilot & Review
+URL:https://sports.wausaupilotandreview.com/#/boys_soccer/game/boys_soccer-
+ 2026-10-12-bowler-at-newman-catholic
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,163 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Wausau Pilot & Review//Central Wisconsin Prep Sports//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Flambeau Football
+X-WR-CALDESC:Flambeau football schedule and results from Central Wisconsin 
+ Prep Sports (Wausau Pilot & Review). https://sports.wausaupilotandreview.c
+ om/#/football/team/flambeau
+X-WR-TIMEZONE:America/Chicago
+REFRESH-INTERVAL;VALUE=DURATION:PT4H
+X-PUBLISHED-TTL:PT4H
+BEGIN:VEVENT
+UID:football-2026-08-21-clear-lake-at-flambeau@sports.wausaupilotandreview.
+ com
+DTSTAMP:20260801T000000Z
+DTSTART:20260822T000000Z
+DTEND:20260822T023000Z
+SUMMARY:L 16-35 · Flambeau vs Clear Lake · Football
+LOCATION:Flambeau High School\, Tony
+DESCRIPTION:Scores\, stats and recap: https://sports.wausaupilotandreview.c
+ om/#/football/game/football-2026-08-21-clear-lake-at-flambeau\nCentral Wis
+ consin Prep Sports · Wausau Pilot & Review
+URL:https://sports.wausaupilotandreview.com/#/football/game/football-2026-0
+ 8-21-clear-lake-at-flambeau
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:football-2026-08-27-mellen-co-op-at-flambeau@sports.wausaupilotandrevie
+ w.com
+DTSTAMP:20260801T000000Z
+DTSTART:20260828T000000Z
+DTEND:20260828T023000Z
+SUMMARY:W 48-6 · Flambeau vs Mellen Co-op · Football
+LOCATION:Flambeau High School\, Tony
+DESCRIPTION:Scores\, stats and recap: https://sports.wausaupilotandreview.c
+ om/#/football/game/football-2026-08-27-mellen-co-op-at-flambeau\nCentral W
+ isconsin Prep Sports · Wausau Pilot & Review
+URL:https://sports.wausaupilotandreview.com/#/football/game/football-2026-0
+ 8-27-mellen-co-op-at-flambeau
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:football-2026-09-04-flambeau-at-northwood-solon-springs@sports.wausaupi
+ lotandreview.com
+DTSTAMP:20260801T000000Z
+DTSTART:20260905T000000Z
+DTEND:20260905T023000Z
+SUMMARY:L 6-20 · Flambeau at Northwood/Solon Springs · Football
+LOCATION:Northwood High School
+DESCRIPTION:Scores\, stats and recap: https://sports.wausaupilotandreview.c
+ om/#/football/game/football-2026-09-04-flambeau-at-northwood-solon-springs
+ \nCentral Wisconsin Prep Sports · Wausau Pilot & Review
+URL:https://sports.wausaupilotandreview.com/#/football/game/football-2026-0
+ 9-04-flambeau-at-northwood-solon-springs
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:football-2026-09-11-shell-lake-at-flambeau@sports.wausaupilotandreview.
+ com
+DTSTAMP:20260801T000000Z
+DTSTART:20260911T213000Z
+DTEND:20260912T000000Z
+SUMMARY:L 6-40 · Flambeau vs Shell Lake · Football
+LOCATION:Flambeau High School\, Tony
+DESCRIPTION:Scores\, stats and recap: https://sports.wausaupilotandreview.c
+ om/#/football/game/football-2026-09-11-shell-lake-at-flambeau\nCentral Wis
+ consin Prep Sports · Wausau Pilot & Review
+URL:https://sports.wausaupilotandreview.com/#/football/game/football-2026-0
+ 9-11-shell-lake-at-flambeau
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:football-2026-09-17-flambeau-at-south-shore@sports.wausaupilotandreview
+ .com
+DTSTAMP:20260801T000000Z
+DTSTART:20260918T000000Z
+DTEND:20260918T023000Z
+SUMMARY:W (forfeit) · Flambeau at South Shore · Football
+LOCATION:South Shore High School\, Port Wing
+DESCRIPTION:Scores\, stats and recap: https://sports.wausaupilotandreview.c
+ om/#/football/game/football-2026-09-17-flambeau-at-south-shore\nCentral Wi
+ sconsin Prep Sports · Wausau Pilot & Review
+URL:https://sports.wausaupilotandreview.com/#/football/game/football-2026-0
+ 9-17-flambeau-at-south-shore
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:football-2026-09-18-flambeau-at-port-edwards@sports.wausaupilotandrevie
+ w.com
+DTSTAMP:20260801T000000Z
+DTSTART:20260919T000000Z
+DTEND:20260919T023000Z
+SUMMARY:W 42-8 · Flambeau at Port Edwards · Football
+LOCATION:Port Edwards High School\, Port Edwards
+DESCRIPTION:Scores\, stats and recap: https://sports.wausaupilotandreview.c
+ om/#/football/game/football-2026-09-18-flambeau-at-port-edwards\nCentral W
+ isconsin Prep Sports · Wausau Pilot & Review
+URL:https://sports.wausaupilotandreview.com/#/football/game/football-2026-0
+ 9-18-flambeau-at-port-edwards
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:football-2026-09-25-washburn-at-flambeau@sports.wausaupilotandreview.co
+ m
+DTSTAMP:20260801T000000Z
+DTSTART:20260926T000000Z
+DTEND:20260926T023000Z
+SUMMARY:W 72-6 · Flambeau vs Washburn · Football
+LOCATION:Flambeau High School\, Tony
+DESCRIPTION:Scores\, stats and recap: https://sports.wausaupilotandreview.c
+ om/#/football/game/football-2026-09-25-washburn-at-flambeau\nCentral Wisco
+ nsin Prep Sports · Wausau Pilot & Review
+URL:https://sports.wausaupilotandreview.com/#/football/game/football-2026-0
+ 9-25-washburn-at-flambeau
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:football-2026-10-01-flambeau-at-bruce@sports.wausaupilotandreview.com
+DTSTAMP:20260801T000000Z
+DTSTART:20261002T000000Z
+DTEND:20261002T023000Z
+SUMMARY:W 46-18 · Flambeau at Bruce · Football
+LOCATION:Bruce High School\, Bruce
+DESCRIPTION:Scores\, stats and recap: https://sports.wausaupilotandreview.c
+ om/#/football/game/football-2026-10-01-flambeau-at-bruce\nCentral Wisconsi
+ n Prep Sports · Wausau Pilot & Review
+URL:https://sports.wausaupilotandreview.com/#/football/game/football-2026-1
+ 0-01-flambeau-at-bruce
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:football-2026-10-09-winter-birchwood-at-flambeau@sports.wausaupilotandr
+ eview.com
+DTSTAMP:20260801T000000Z
+DTSTART:20261010T000000Z
+DTEND:20261010T023000Z
+SUMMARY:W 77-0 · Flambeau vs Winter/Birchwood · Football
+LOCATION:Flambeau High School\, Tony
+DESCRIPTION:Scores\, stats and recap: https://sports.wausaupilotandreview.c
+ om/#/football/game/football-2026-10-09-winter-birchwood-at-flambeau\nCentr
+ al Wisconsin Prep Sports · Wausau Pilot & Review
+URL:https://sports.wausaupilotandreview.com/#/football/game/football-2026-1
+ 0-09-winter-birchwood-at-flambeau
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:football-2026-10-17-lena-saint-thomas-aquinas-at-flambeau@sports.wausau
+ pilotandreview.com
+DTSTAMP:20260801T000000Z
+DTSTART:20261017T180000Z
+DTEND:20261017T203000Z
+SUMMARY:L 18-31 · Flambeau vs Lena/Saint Thomas Aquinas · Level 1 · Foot
+ ball
+LOCATION:Flambeau High School\, Tony
+DESCRIPTION:Scores\, stats and recap: https://sports.wausaupilotandreview.c
+ om/#/football/game/football-2026-10-17-lena-saint-thomas-aquinas-at-flambe
+ au\nCentral Wisconsin Prep Sports · Wausau Pilot & Review
+URL:https://sports.wausaupilotandreview.com/#/football/game/football-2026-1
+ 0-17-lena-saint-thomas-aquinas-at-flambeau
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR

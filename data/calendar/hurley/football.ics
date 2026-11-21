@@ -1,0 +1,187 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Wausau Pilot & Review//Central Wisconsin Prep Sports//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Hurley Football
+X-WR-CALDESC:Hurley football schedule and results from Central Wisconsin Pr
+ ep Sports (Wausau Pilot & Review). https://sports.wausaupilotandreview.com
+ /#/football/team/hurley
+X-WR-TIMEZONE:America/Chicago
+REFRESH-INTERVAL;VALUE=DURATION:PT4H
+X-PUBLISHED-TTL:PT4H
+BEGIN:VEVENT
+UID:football-2026-08-20-tri-county-at-hurley@sports.wausaupilotandreview.co
+ m
+DTSTAMP:20260801T000000Z
+DTSTART:20260820T220000Z
+DTEND:20260821T003000Z
+SUMMARY:W 36-0 · Hurley vs Tri-County · Football
+LOCATION:Hurley High School\, Hurley
+DESCRIPTION:Scores\, stats and recap: https://sports.wausaupilotandreview.c
+ om/#/football/game/football-2026-08-20-tri-county-at-hurley\nCentral Wisco
+ nsin Prep Sports · Wausau Pilot & Review
+URL:https://sports.wausaupilotandreview.com/#/football/game/football-2026-0
+ 8-20-tri-county-at-hurley
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:football-2026-08-27-hurley-at-wabeno-laona@sports.wausaupilotandreview.
+ com
+DTSTAMP:20260801T000000Z
+DTSTART:20260828T000000Z
+DTEND:20260828T023000Z
+SUMMARY:W 20-14 · Hurley at Wabeno/Laona · Football
+LOCATION:Wabeno/Laona
+DESCRIPTION:Scores\, stats and recap: https://sports.wausaupilotandreview.c
+ om/#/football/game/football-2026-08-27-hurley-at-wabeno-laona\nCentral Wis
+ consin Prep Sports · Wausau Pilot & Review
+URL:https://sports.wausaupilotandreview.com/#/football/game/football-2026-0
+ 8-27-hurley-at-wabeno-laona
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:football-2026-09-03-hurley-at-phillips@sports.wausaupilotandreview.com
+DTSTAMP:20260801T000000Z
+DTSTART:20260904T000000Z
+DTEND:20260904T023000Z
+SUMMARY:W 22-6 · Hurley at Phillips · Football
+LOCATION:Phillips High School\, Phillips
+DESCRIPTION:Scores\, stats and recap: https://sports.wausaupilotandreview.c
+ om/#/football/game/football-2026-09-03-hurley-at-phillips\nCentral Wiscons
+ in Prep Sports · Wausau Pilot & Review
+URL:https://sports.wausaupilotandreview.com/#/football/game/football-2026-0
+ 9-03-hurley-at-phillips
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:football-2026-09-11-hurley-at-suring@sports.wausaupilotandreview.com
+DTSTAMP:20260801T000000Z
+DTSTART:20260911T230000Z
+DTEND:20260912T013000Z
+SUMMARY:L 12-44 · Hurley at Suring · Football
+LOCATION:Suring High School
+DESCRIPTION:Scores\, stats and recap: https://sports.wausaupilotandreview.c
+ om/#/football/game/football-2026-09-11-hurley-at-suring\nCentral Wisconsin
+  Prep Sports · Wausau Pilot & Review
+URL:https://sports.wausaupilotandreview.com/#/football/game/football-2026-0
+ 9-11-hurley-at-suring
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:football-2026-09-11-prentice-at-hurley@sports.wausaupilotandreview.com
+DTSTAMP:20260801T000000Z
+DTSTART:20260912T000000Z
+DTEND:20260912T023000Z
+SUMMARY:W (forfeit) · Hurley vs Prentice · Football
+LOCATION:Hurley High School\, Hurley
+DESCRIPTION:Scores\, stats and recap: https://sports.wausaupilotandreview.c
+ om/#/football/game/football-2026-09-11-prentice-at-hurley\nCentral Wiscons
+ in Prep Sports · Wausau Pilot & Review
+URL:https://sports.wausaupilotandreview.com/#/football/game/football-2026-0
+ 9-11-prentice-at-hurley
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:football-2026-09-18-elcho-white-lake-at-hurley@sports.wausaupilotandrev
+ iew.com
+DTSTAMP:20260801T000000Z
+DTSTART:20260919T000000Z
+DTEND:20260919T023000Z
+SUMMARY:W (forfeit) · Hurley vs Elcho/White Lake · Football
+LOCATION:Hurley High School\, Hurley
+DESCRIPTION:Scores\, stats and recap: https://sports.wausaupilotandreview.c
+ om/#/football/game/football-2026-09-18-elcho-white-lake-at-hurley\nCentral
+  Wisconsin Prep Sports · Wausau Pilot & Review
+URL:https://sports.wausaupilotandreview.com/#/football/game/football-2026-0
+ 9-18-elcho-white-lake-at-hurley
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:football-2026-09-18-shell-lake-at-hurley@sports.wausaupilotandreview.co
+ m
+DTSTAMP:20260801T000000Z
+DTSTART:20260919T000000Z
+DTEND:20260919T023000Z
+SUMMARY:L 28-34 · Hurley vs Shell Lake · Football
+LOCATION:Hurley High School\, Hurley
+DESCRIPTION:Scores\, stats and recap: https://sports.wausaupilotandreview.c
+ om/#/football/game/football-2026-09-18-shell-lake-at-hurley\nCentral Wisco
+ nsin Prep Sports · Wausau Pilot & Review
+URL:https://sports.wausaupilotandreview.com/#/football/game/football-2026-0
+ 9-18-shell-lake-at-hurley
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:football-2026-09-25-chequamegon-at-hurley@sports.wausaupilotandreview.c
+ om
+DTSTAMP:20260801T000000Z
+DTSTART:20260926T000000Z
+DTEND:20260926T023000Z
+SUMMARY:W 58-8 · Hurley vs Chequamegon · Football
+LOCATION:Hurley High School\, Hurley
+DESCRIPTION:Scores\, stats and recap: https://sports.wausaupilotandreview.c
+ om/#/football/game/football-2026-09-25-chequamegon-at-hurley\nCentral Wisc
+ onsin Prep Sports · Wausau Pilot & Review
+URL:https://sports.wausaupilotandreview.com/#/football/game/football-2026-0
+ 9-25-chequamegon-at-hurley
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:football-2026-10-02-hurley-at-rib-lake@sports.wausaupilotandreview.com
+DTSTAMP:20260801T000000Z
+DTSTART:20261003T000000Z
+DTEND:20261003T023000Z
+SUMMARY:W 56-22 · Hurley at Rib Lake · Football
+LOCATION:Rib Lake High School\, Rib Lake
+DESCRIPTION:Scores\, stats and recap: https://sports.wausaupilotandreview.c
+ om/#/football/game/football-2026-10-02-hurley-at-rib-lake\nCentral Wiscons
+ in Prep Sports · Wausau Pilot & Review
+URL:https://sports.wausaupilotandreview.com/#/football/game/football-2026-1
+ 0-02-hurley-at-rib-lake
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:football-2026-10-09-three-lakes-phelps-at-hurley@sports.wausaupilotandr
+ eview.com
+DTSTAMP:20260801T000000Z
+DTSTART:20261010T000000Z
+DTEND:20261010T023000Z
+SUMMARY:W 26-22 · Hurley vs Three Lakes/Phelps · Football
+LOCATION:Hurley High School\, Hurley
+DESCRIPTION:Scores\, stats and recap: https://sports.wausaupilotandreview.c
+ om/#/football/game/football-2026-10-09-three-lakes-phelps-at-hurley\nCentr
+ al Wisconsin Prep Sports · Wausau Pilot & Review
+URL:https://sports.wausaupilotandreview.com/#/football/game/football-2026-1
+ 0-09-three-lakes-phelps-at-hurley
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:football-2026-10-17-bruce-at-hurley@sports.wausaupilotandreview.com
+DTSTAMP:20260801T000000Z
+DTSTART:20261017T180000Z
+DTEND:20261017T203000Z
+SUMMARY:W 62-16 · Hurley vs Bruce · Level 1 · Football
+LOCATION:Hurley High School\, Hurley
+DESCRIPTION:Scores\, stats and recap: https://sports.wausaupilotandreview.c
+ om/#/football/game/football-2026-10-17-bruce-at-hurley\nCentral Wisconsin 
+ Prep Sports · Wausau Pilot & Review
+URL:https://sports.wausaupilotandreview.com/#/football/game/football-2026-1
+ 0-17-bruce-at-hurley
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:football-2026-10-23-athens-at-hurley@sports.wausaupilotandreview.com
+DTSTAMP:20260801T000000Z
+DTSTART:20261024T000000Z
+DTEND:20261024T023000Z
+SUMMARY:L 42-48 · Hurley vs Athens · Level 2 · Football
+LOCATION:Hurley High School\, Hurley
+DESCRIPTION:Scores\, stats and recap: https://sports.wausaupilotandreview.c
+ om/#/football/game/football-2026-10-23-athens-at-hurley\nCentral Wisconsin
+  Prep Sports · Wausau Pilot & Review
+URL:https://sports.wausaupilotandreview.com/#/football/game/football-2026-1
+ 0-23-athens-at-hurley
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR

@@ -94,6 +94,10 @@ export const SITE = {
     // Cloudflare Worker deployed with VITE_PICKEM_API pointed at it.
     // Turning this back on needs no other change.
     pickem: false,
+    // Team calendars — "Add to calendar" on team pages subscribes a phone
+    // calendar to data/calendar/<school>/<sport>.ics (scraper
+    // scripts/build_calendars.py). Sponsor slot: "calendar".
+    calendars: true,
   },
 
   // Namespaces. CAUTION: changing these on an existing deployment

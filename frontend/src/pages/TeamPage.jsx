@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useId, useMemo, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import Layout from "../components/Layout.jsx";
 import NotFound from "../components/NotFound.jsx";
@@ -25,6 +25,7 @@ import { recordLabels } from "../config/sports.js";
 import { rotatedBannerSlot } from "../utils/sponsorRotation.js";
 import { SITE, SITE_TITLE } from "../config/site.js";
 import ShareButton from "../components/ShareButton.jsx";
+import CalendarButton, { CalendarPanel } from "../components/CalendarButton.jsx";
 import useDocumentTitle from "../utils/useDocumentTitle.js";
 
 export default function TeamPage({ dataset, schoolIndex, sponsors, sportConfig }) {
@@ -36,6 +37,10 @@ export default function TeamPage({ dataset, schoolIndex, sponsors, sportConfig }
   useDocumentTitle(
     school ? `${school.name} ${sportConfig?.label ?? ""}`.trim() : null,
   );
+  // "Add to calendar": the toggle sits in the hero's action row, the panel
+  // is its own full-width hero row (components/CalendarButton.jsx).
+  const [calOpen, setCalOpen] = useState(false);
+  const calPanelId = useId();
   // The unknown-school guard lives AFTER the hooks — the router keeps this
   // component instance mounted when only :schoolId changes, so returning
   // before the hooks on a bad id changes the hook count mid-lifecycle and
@@ -150,7 +155,11 @@ export default function TeamPage({ dataset, schoolIndex, sponsors, sportConfig }
   return (
     <Layout breadcrumb={breadcrumb} sponsors={sponsors}>
       <section
-        className={"team-hero" + (schoolColor ? " team-hero--colored" : "")}
+        className={
+          "team-hero" +
+          (schoolColor ? " team-hero--colored" : "") +
+          (calOpen ? " team-hero--cal-open" : "")
+        }
         style={heroStyle}
       >
         <TeamLogo team={heroTeam} school={school} size="xl" />
@@ -205,6 +214,16 @@ export default function TeamPage({ dataset, schoolIndex, sponsors, sportConfig }
                 " ",
               )}
             />
+            {/* Feeds hold the live season only, so an archived season
+                offers no subscription. */}
+            {!dataset.archiveSeason && (
+              <CalendarButton
+                open={calOpen}
+                onToggle={() => setCalOpen((v) => !v)}
+                panelId={calPanelId}
+                sportId={sportConfig?.id}
+              />
+            )}
           </span>
         </div>
         <div className="team-hero__record">
@@ -246,6 +265,16 @@ export default function TeamPage({ dataset, schoolIndex, sponsors, sportConfig }
             );
           })()}
         </div>
+        {calOpen && !dataset.archiveSeason && (
+          <CalendarPanel
+            panelId={calPanelId}
+            schoolId={schoolId}
+            schoolName={school.name}
+            sportId={sportConfig?.id}
+            sportLabel={sportConfig?.label ?? ""}
+            sponsors={sponsors}
+          />
+        )}
       </section>
 
       {seasonNow && (

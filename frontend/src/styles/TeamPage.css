@@ -383,6 +383,15 @@ a.schedule-row__result--link:focus-visible {
       "record record";
     row-gap: 1rem;
   }
+  /* Calendar panel open: its own row between the name block and the
+     record, full width rather than squeezed into the meta column. */
+  .team-hero--cal-open {
+    grid-template-areas:
+      "logo meta"
+      "cal cal"
+      "record record";
+  }
+  .team-hero--cal-open > .cal-panel { grid-area: cal; }
   .team-hero > :first-child { grid-area: logo; }
   .team-hero__meta { grid-area: meta; }
   .team-hero__record {

@@ -1,0 +1,158 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Wausau Pilot & Review//Central Wisconsin Prep Sports//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Marathon Football
+X-WR-CALDESC:Marathon football schedule and results from Central Wisconsin 
+ Prep Sports (Wausau Pilot & Review). https://sports.wausaupilotandreview.c
+ om/#/football/team/marathon
+X-WR-TIMEZONE:America/Chicago
+REFRESH-INTERVAL;VALUE=DURATION:PT4H
+X-PUBLISHED-TTL:PT4H
+BEGIN:VEVENT
+UID:football-2026-08-21-loyal-at-marathon@sports.wausaupilotandreview.com
+DTSTAMP:20260801T000000Z
+DTSTART:20260822T000000Z
+DTEND:20260822T023000Z
+SUMMARY:W 24-16 · Marathon vs Loyal · Football
+LOCATION:Marathon High School\, Marathon City
+DESCRIPTION:Scores\, stats and recap: https://sports.wausaupilotandreview.c
+ om/#/football/game/football-2026-08-21-loyal-at-marathon\nCentral Wisconsi
+ n Prep Sports · Wausau Pilot & Review
+URL:https://sports.wausaupilotandreview.com/#/football/game/football-2026-0
+ 8-21-loyal-at-marathon
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:football-2026-08-28-marathon-at-auburndale@sports.wausaupilotandreview.
+ com
+DTSTAMP:20260801T000000Z
+DTSTART:20260829T000000Z
+DTEND:20260829T023000Z
+SUMMARY:W 22-19 · Marathon at Auburndale · Football
+LOCATION:Auburndale High School\, Auburndale
+DESCRIPTION:Scores\, stats and recap: https://sports.wausaupilotandreview.c
+ om/#/football/game/football-2026-08-28-marathon-at-auburndale\nCentral Wis
+ consin Prep Sports · Wausau Pilot & Review
+URL:https://sports.wausaupilotandreview.com/#/football/game/football-2026-0
+ 8-28-marathon-at-auburndale
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:football-2026-09-03-marathon-at-crandon@sports.wausaupilotandreview.com
+DTSTAMP:20260801T000000Z
+DTSTART:20260904T000000Z
+DTEND:20260904T023000Z
+SUMMARY:W 16-0 · Marathon at Crandon · Football
+LOCATION:Crandon High School
+DESCRIPTION:Scores\, stats and recap: https://sports.wausaupilotandreview.c
+ om/#/football/game/football-2026-09-03-marathon-at-crandon\nCentral Wiscon
+ sin Prep Sports · Wausau Pilot & Review
+URL:https://sports.wausaupilotandreview.com/#/football/game/football-2026-0
+ 9-03-marathon-at-crandon
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:football-2026-09-11-amherst-at-marathon@sports.wausaupilotandreview.com
+DTSTAMP:20260801T000000Z
+DTSTART:20260912T000000Z
+DTEND:20260912T023000Z
+SUMMARY:L 18-50 · Marathon vs Amherst · Football
+LOCATION:Marathon High School\, Marathon City
+DESCRIPTION:Scores\, stats and recap: https://sports.wausaupilotandreview.c
+ om/#/football/game/football-2026-09-11-amherst-at-marathon\nCentral Wiscon
+ sin Prep Sports · Wausau Pilot & Review
+URL:https://sports.wausaupilotandreview.com/#/football/game/football-2026-0
+ 9-11-amherst-at-marathon
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:football-2026-09-18-colby-at-marathon@sports.wausaupilotandreview.com
+DTSTAMP:20260801T000000Z
+DTSTART:20260919T000000Z
+DTEND:20260919T023000Z
+SUMMARY:W 34-0 · Marathon vs Colby · Football
+LOCATION:Marathon High School\, Marathon City
+DESCRIPTION:Scores\, stats and recap: https://sports.wausaupilotandreview.c
+ om/#/football/game/football-2026-09-18-colby-at-marathon\nCentral Wisconsi
+ n Prep Sports · Wausau Pilot & Review
+URL:https://sports.wausaupilotandreview.com/#/football/game/football-2026-0
+ 9-18-colby-at-marathon
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:football-2026-09-25-marathon-at-weyauwega-fremont@sports.wausaupilotand
+ review.com
+DTSTAMP:20260801T000000Z
+DTSTART:20260926T000000Z
+DTEND:20260926T023000Z
+SUMMARY:L 6-24 · Marathon at Weyauwega-Fremont · Football
+LOCATION:Weyauwega-Fremont High School\, Weyauwega
+DESCRIPTION:Scores\, stats and recap: https://sports.wausaupilotandreview.c
+ om/#/football/game/football-2026-09-25-marathon-at-weyauwega-fremont\nCent
+ ral Wisconsin Prep Sports · Wausau Pilot & Review
+URL:https://sports.wausaupilotandreview.com/#/football/game/football-2026-0
+ 9-25-marathon-at-weyauwega-fremont
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:football-2026-10-02-stratford-at-marathon@sports.wausaupilotandreview.c
+ om
+DTSTAMP:20260801T000000Z
+DTSTART:20261003T000000Z
+DTEND:20261003T023000Z
+SUMMARY:L 7-10 · Marathon vs Stratford · Football
+LOCATION:Marathon High School\, Marathon City
+DESCRIPTION:Scores\, stats and recap: https://sports.wausaupilotandreview.c
+ om/#/football/game/football-2026-10-02-stratford-at-marathon\nCentral Wisc
+ onsin Prep Sports · Wausau Pilot & Review
+URL:https://sports.wausaupilotandreview.com/#/football/game/football-2026-1
+ 0-02-stratford-at-marathon
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:football-2026-10-09-marathon-at-wittenberg-birnamwood@sports.wausaupilo
+ tandreview.com
+DTSTAMP:20260801T000000Z
+DTSTART:20261010T000000Z
+DTEND:20261010T023000Z
+SUMMARY:W 34-14 · Marathon at Wittenberg-Birnamwood · Football
+LOCATION:Wittenberg-Birnamwood High School\, Wittenberg
+DESCRIPTION:Scores\, stats and recap: https://sports.wausaupilotandreview.c
+ om/#/football/game/football-2026-10-09-marathon-at-wittenberg-birnamwood\n
+ Central Wisconsin Prep Sports · Wausau Pilot & Review
+URL:https://sports.wausaupilotandreview.com/#/football/game/football-2026-1
+ 0-09-marathon-at-wittenberg-birnamwood
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:football-2026-10-16-marathon-at-spencer@sports.wausaupilotandreview.com
+DTSTAMP:20260801T000000Z
+DTSTART:20261017T000000Z
+DTEND:20261017T023000Z
+SUMMARY:W 35-7 · Marathon at Spencer · Football
+LOCATION:Spencer High School\, Spencer
+DESCRIPTION:Scores\, stats and recap: https://sports.wausaupilotandreview.c
+ om/#/football/game/football-2026-10-16-marathon-at-spencer\nCentral Wiscon
+ sin Prep Sports · Wausau Pilot & Review
+URL:https://sports.wausaupilotandreview.com/#/football/game/football-2026-1
+ 0-16-marathon-at-spencer
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:football-2026-10-23-marathon-at-cambridge@sports.wausaupilotandreview.c
+ om
+DTSTAMP:20260801T000000Z
+DTSTART:20261024T000000Z
+DTEND:20261024T023000Z
+SUMMARY:L 25-30 · Marathon at Cambridge · Level 1 · Football
+LOCATION:Cambridge
+DESCRIPTION:Scores\, stats and recap: https://sports.wausaupilotandreview.c
+ om/#/football/game/football-2026-10-23-marathon-at-cambridge\nCentral Wisc
+ onsin Prep Sports · Wausau Pilot & Review
+URL:https://sports.wausaupilotandreview.com/#/football/game/football-2026-1
+ 0-23-marathon-at-cambridge
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR

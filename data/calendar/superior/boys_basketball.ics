@@ -1,0 +1,121 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Wausau Pilot & Review//Central Wisconsin Prep Sports//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Superior Boys Basketball
+X-WR-CALDESC:Superior boys basketball schedule and results from Central Wis
+ consin Prep Sports (Wausau Pilot & Review). https://sports.wausaupilotandr
+ eview.com/#/boys_basketball/team/superior
+X-WR-TIMEZONE:America/Chicago
+REFRESH-INTERVAL;VALUE=DURATION:PT4H
+X-PUBLISHED-TTL:PT4H
+BEGIN:VEVENT
+UID:boys_basketball-2026-11-28-dc-everest-at-superior@sports.wausaupilotand
+ review.com
+DTSTAMP:20260801T000000Z
+DTSTART:20261128T203000Z
+DTEND:20261128T220000Z
+SUMMARY:Superior vs D.C. Everest · Boys Basketball
+LOCATION:Superior High School\, Superior
+DESCRIPTION:Scores\, stats and recap: https://sports.wausaupilotandreview.c
+ om/#/boys_basketball/game/boys_basketball-2026-11-28-dc-everest-at-superio
+ r\nTimes come from WIAA school schedules and can change\; this calendar up
+ dates when they do.\nCentral Wisconsin Prep Sports · Wausau Pilot & Revie
+ w
+URL:https://sports.wausaupilotandreview.com/#/boys_basketball/game/boys_bas
+ ketball-2026-11-28-dc-everest-at-superior
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:boys_basketball-2026-12-04-superior-at-chippewa-falls@sports.wausaupilo
+ tandreview.com
+DTSTAMP:20260801T000000Z
+DTSTART:20261205T011500Z
+DTEND:20261205T024500Z
+SUMMARY:Superior at Chippewa Falls · Boys Basketball
+LOCATION:Chippewa Falls Senior High School\, Chippewa Falls
+DESCRIPTION:Scores\, stats and recap: https://sports.wausaupilotandreview.c
+ om/#/boys_basketball/game/boys_basketball-2026-12-04-superior-at-chippewa-
+ falls\nTimes come from WIAA school schedules and can change\; this calenda
+ r updates when they do.\nCentral Wisconsin Prep Sports · Wausau Pilot & R
+ eview
+URL:https://sports.wausaupilotandreview.com/#/boys_basketball/game/boys_bas
+ ketball-2026-12-04-superior-at-chippewa-falls
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:boys_basketball-2027-01-30-superior-at-eau-claire-memorial@sports.wausa
+ upilotandreview.com
+DTSTAMP:20260801T000000Z
+DTSTART:20270130T210000Z
+DTEND:20270130T223000Z
+SUMMARY:Superior at Eau Claire Memorial · Boys Basketball
+LOCATION:Eau Claire Memorial High School\, Eau Claire
+DESCRIPTION:Scores\, stats and recap: https://sports.wausaupilotandreview.c
+ om/#/boys_basketball/game/boys_basketball-2027-01-30-superior-at-eau-clair
+ e-memorial\nTimes come from WIAA school schedules and can change\; this ca
+ lendar updates when they do.\nCentral Wisconsin Prep Sports · Wausau Pilo
+ t & Review
+URL:https://sports.wausaupilotandreview.com/#/boys_basketball/game/boys_bas
+ ketball-2027-01-30-superior-at-eau-claire-memorial
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:boys_basketball-2027-02-09-superior-at-river-falls@sports.wausaupilotan
+ dreview.com
+DTSTAMP:20260801T000000Z
+DTSTART:20270210T011500Z
+DTEND:20270210T024500Z
+SUMMARY:Superior at River Falls · Boys Basketball
+LOCATION:River Falls High School\, River Falls
+DESCRIPTION:Scores\, stats and recap: https://sports.wausaupilotandreview.c
+ om/#/boys_basketball/game/boys_basketball-2027-02-09-superior-at-river-fal
+ ls\nTimes come from WIAA school schedules and can change\; this calendar u
+ pdates when they do.\nCentral Wisconsin Prep Sports · Wausau Pilot & Revi
+ ew
+URL:https://sports.wausaupilotandreview.com/#/boys_basketball/game/boys_bas
+ ketball-2027-02-09-superior-at-river-falls
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:boys_basketball-2027-02-13-superior-at-wausau-west@sports.wausaupilotan
+ dreview.com
+DTSTAMP:20260801T000000Z
+DTSTART:20270213T213000Z
+DTEND:20270213T230000Z
+SUMMARY:Superior at Wausau West · Boys Basketball
+LOCATION:Wausau West High School\, Wausau
+DESCRIPTION:Scores\, stats and recap: https://sports.wausaupilotandreview.c
+ om/#/boys_basketball/game/boys_basketball-2027-02-13-superior-at-wausau-we
+ st\nTimes come from WIAA school schedules and can change\; this calendar u
+ pdates when they do.\nCentral Wisconsin Prep Sports · Wausau Pilot & Revi
+ ew
+URL:https://sports.wausaupilotandreview.com/#/boys_basketball/game/boys_bas
+ ketball-2027-02-13-superior-at-wausau-west
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:boys_basketball-2027-02-16-eau-claire-north-at-superior@sports.wausaupi
+ lotandreview.com
+DTSTAMP:20260801T000000Z
+DTSTART:20270217T011500Z
+DTEND:20270217T024500Z
+SUMMARY:Superior vs Eau Claire North · Boys Basketball
+LOCATION:Superior High School\, Superior
+DESCRIPTION:Scores\, stats and recap: https://sports.wausaupilotandreview.c
+ om/#/boys_basketball/game/boys_basketball-2027-02-16-eau-claire-north-at-s
+ uperior\nTimes come from WIAA school schedules and can change\; this calen
+ dar updates when they do.\nCentral Wisconsin Prep Sports · Wausau Pilot &
+  Review
+URL:https://sports.wausaupilotandreview.com/#/boys_basketball/game/boys_bas
+ ketball-2027-02-16-eau-claire-north-at-superior
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR

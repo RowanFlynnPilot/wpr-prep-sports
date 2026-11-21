@@ -1,0 +1,4 @@
+# iCalendar feeds must keep CRLF line endings byte-for-byte (RFC 5545).
+# Without this, a Windows checkout with core.autocrlf=true normalizes them
+# to LF on commit and every CI rebuild rewrites all 400+ files.
+*.ics -text

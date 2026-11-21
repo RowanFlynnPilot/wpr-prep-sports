@@ -212,6 +212,23 @@ needs individual-sport modeling), then baseball/softball/track (spring).
   window; a state game keeps its start time after WIAA drops it from the
   result line (`known_start_times`, `data/state_games.json` can pin one).
   Season Wrapped PNGs render in `scrape.yml`'s OG-card step.
+- **Season handoff** (2026-11-21, review run 21) — the site root (the
+  WordPress embed) and the mini without `?sport=` open the first sport in
+  season (`utils/inSeason.js` `landingSport`; index.html's prefetch runs
+  the same rule over a table `vite.config.js` injects). A sport whose
+  `seasonEnd` has passed with nothing left to play is off-season at once;
+  `seasonEnd` holds for 180 days, then lapses so next year needs no edit.
+  A passed `nextSeasonStart` is rolled a year ahead as an estimate
+  (`nextOpener`: "returns in August 2027 · 9 months"). Game-day mode reads
+  the real clock, never the off-season anchor. Winter's five-cell phone
+  sport strip stacks icons over labels (`sport-switcher__list--dense`).
+- **Team calendars** (2026-11-21) — "Add to calendar" on team pages
+  subscribes Apple / Google / Outlook calendar to one team or every sport
+  a school plays (`components/CalendarButton.jsx`, feeds from
+  `scraper/output/calendar.py`). Moved games move; finals land in the
+  event title ("W 73-47 · Wausau West vs Merrill"). Feature switch
+  `SITE.features.calendars`, sponsor slot `calendar` (panel + every
+  event's notes), media-kit row "Team calendars".
 - Per-school embeds (`#/<sport>/embed/<id>` + media-kit builder), Senior
   Spotlights, weekly digest, rivalry/head-to-head history, season archive
   selector, division filter chips (power rankings + bracket)
@@ -247,6 +264,9 @@ Canonical JSON written to `data/` (split per-sport layout since June 2026):
 - `data/<sport>/players/<school_id>.json` — per-school player lines, fetched on demand
 - `data/<sport>/mini.json` — games near today only (10 days back, 14 ahead), the mini scoreboard's feed; written with every games.json
 - `data/<sport>/standings.json`, `season_stats.json`, `power_rankings.json`
+- `data/calendar/<school_id>/<sport>.ics` + `all.ics` — team calendar
+  feeds for phone subscriptions, rebuilt every scrape by
+  `scraper/scripts/build_calendars.py` (unchanged files untouched)
 - `data/{sponsors,potw,spirit}.json` — cross-sport editorial/sponsor config
 - `data/archive/<season>/` — archived seasons (shipped to Pages since
   2026-07 — the season selector serves them directly; see deploy.yml)

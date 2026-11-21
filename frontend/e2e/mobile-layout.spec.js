@@ -1,4 +1,5 @@
 import { test, expect } from "@playwright/test";
+import { landingSport } from "../src/utils/inSeason.js";
 
 /**
  * Phone-width layout guard (375×812, light theme, the production look).
@@ -12,7 +13,11 @@ import { test, expect } from "@playwright/test";
  * because game and team ids change every week of the season.
  */
 
-const DASHBOARD = "/?theme=light#/football";
+// The sport in season today (the one the site root opens), not a fixed
+// football: pinned to football, the This Week check found no rows and
+// skipped itself all winter (critique run 21, 2026-11-21).
+const SPORT = landingSport();
+const DASHBOARD = `/?theme=light#/${SPORT}`;
 
 async function waitForDashboard(page) {
   await page.goto(DASHBOARD);
@@ -142,7 +147,7 @@ test.describe("phone layout guard", () => {
  */
 test.describe("standings at phone width", () => {
   test("rows advertise that they expand, and the table fits", async ({ page }) => {
-    await page.goto("/?theme=light#/football?tab=standings");
+    await page.goto(`/?theme=light#/${SPORT}?tab=standings`);
     await page.locator(".section-tabs").first().waitFor({ timeout: 30_000 });
     const tables = page.locator(".standings__table");
     test.skip((await tables.count()) === 0, "no standings tables in the current dataset");

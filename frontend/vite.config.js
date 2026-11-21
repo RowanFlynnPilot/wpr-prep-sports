@@ -89,8 +89,9 @@ function serveRepoData() {
         // Allow up to four directory levels: flat `<name>.json`, per-sport
         // `<sport>/<name>.json`, split-layout detail files
         // `<sport>/boxscores/<game_id>.json`, and archived seasons
-        // `archive/<season>/<sport>/boxscores/<game_id>.json`.
-        if (!/^([a-z0-9_-]+\/){0,4}[a-z0-9_-]+\.json$/i.test(filename)) return next();
+        // `archive/<season>/<sport>/boxscores/<game_id>.json`. Team
+        // calendar feeds are `calendar/<school>/<sport>.ics`.
+        if (!/^([a-z0-9_-]+\/){0,4}[a-z0-9_-]+\.(json|ics)$/i.test(filename)) return next();
         const fullPath = resolve(dataDir, filename);
         if (!existsSync(fullPath)) {
           res.statusCode = 404;
@@ -98,7 +99,10 @@ function serveRepoData() {
           return;
         }
         const body = await readFile(fullPath, "utf-8");
-        res.setHeader("content-type", "application/json; charset=utf-8");
+        res.setHeader(
+          "content-type",
+          filename.endsWith(".ics") ? "text/calendar; charset=utf-8" : "application/json; charset=utf-8",
+        );
         res.setHeader("cache-control", "no-store");
         res.end(body);
       });

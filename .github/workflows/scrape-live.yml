@@ -106,6 +106,14 @@ jobs:
           done
           echo "failed=${FAILED# }" >> "$GITHUB_OUTPUT"
 
+      # Team calendar feeds (data/calendar/<school>/<sport>.ics + all.ics)
+      # for phone calendar subscriptions. Rebuilt from every sport's
+      # games.json; unchanged files are left alone, so a run with no
+      # schedule or score change commits nothing here.
+      - name: Build team calendars
+        working-directory: scraper
+        run: python scripts/build_calendars.py
+
       # Data gate: structurally broken output must never commit. Fails
       # the run before the commit step (see scripts/validate_data.py
       # for what counts as broken vs. a known soft signal).

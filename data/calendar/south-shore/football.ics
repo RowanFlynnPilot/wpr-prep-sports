@@ -1,0 +1,118 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Wausau Pilot & Review//Central Wisconsin Prep Sports//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:South Shore Football
+X-WR-CALDESC:South Shore football schedule and results from Central Wiscons
+ in Prep Sports (Wausau Pilot & Review). https://sports.wausaupilotandrevie
+ w.com/#/football/team/south-shore
+X-WR-TIMEZONE:America/Chicago
+REFRESH-INTERVAL;VALUE=DURATION:PT4H
+X-PUBLISHED-TTL:PT4H
+BEGIN:VEVENT
+UID:football-2026-08-27-south-shore-at-winter-birchwood@sports.wausaupilota
+ ndreview.com
+DTSTAMP:20260801T000000Z
+DTSTART:20260828T000000Z
+DTEND:20260828T023000Z
+SUMMARY:L (forfeit) · South Shore at Winter/Birchwood · Football
+LOCATION:Winter/Birchwood
+DESCRIPTION:Scores\, stats and recap: https://sports.wausaupilotandreview.c
+ om/#/football/game/football-2026-08-27-south-shore-at-winter-birchwood\nCe
+ ntral Wisconsin Prep Sports · Wausau Pilot & Review
+URL:https://sports.wausaupilotandreview.com/#/football/game/football-2026-0
+ 8-27-south-shore-at-winter-birchwood
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:football-2026-09-04-south-shore-at-washburn@sports.wausaupilotandreview
+ .com
+DTSTAMP:20260801T000000Z
+DTSTART:20260905T000000Z
+DTEND:20260905T023000Z
+SUMMARY:L (forfeit) · South Shore at Washburn · Football
+LOCATION:Washburn High School\, Washburn
+DESCRIPTION:Scores\, stats and recap: https://sports.wausaupilotandreview.c
+ om/#/football/game/football-2026-09-04-south-shore-at-washburn\nCentral Wi
+ sconsin Prep Sports · Wausau Pilot & Review
+URL:https://sports.wausaupilotandreview.com/#/football/game/football-2026-0
+ 9-04-south-shore-at-washburn
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:football-2026-09-11-south-shore-at-bruce@sports.wausaupilotandreview.co
+ m
+DTSTAMP:20260801T000000Z
+DTSTART:20260912T000000Z
+DTEND:20260912T023000Z
+SUMMARY:L (forfeit) · South Shore at Bruce · Football
+LOCATION:Bruce High School\, Bruce
+DESCRIPTION:Scores\, stats and recap: https://sports.wausaupilotandreview.c
+ om/#/football/game/football-2026-09-11-south-shore-at-bruce\nCentral Wisco
+ nsin Prep Sports · Wausau Pilot & Review
+URL:https://sports.wausaupilotandreview.com/#/football/game/football-2026-0
+ 9-11-south-shore-at-bruce
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:football-2026-09-17-flambeau-at-south-shore@sports.wausaupilotandreview
+ .com
+DTSTAMP:20260801T000000Z
+DTSTART:20260918T000000Z
+DTEND:20260918T023000Z
+SUMMARY:L (forfeit) · South Shore vs Flambeau · Football
+LOCATION:South Shore High School\, Port Wing
+DESCRIPTION:Scores\, stats and recap: https://sports.wausaupilotandreview.c
+ om/#/football/game/football-2026-09-17-flambeau-at-south-shore\nCentral Wi
+ sconsin Prep Sports · Wausau Pilot & Review
+URL:https://sports.wausaupilotandreview.com/#/football/game/football-2026-0
+ 9-17-flambeau-at-south-shore
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:football-2026-09-25-south-shore-at-mellen-co-op@sports.wausaupilotandre
+ view.com
+DTSTAMP:20260801T000000Z
+DTSTART:20260926T000000Z
+DTEND:20260926T023000Z
+SUMMARY:L (forfeit) · South Shore at Mellen Co-op · Football
+LOCATION:Mellen Co-op
+DESCRIPTION:Scores\, stats and recap: https://sports.wausaupilotandreview.c
+ om/#/football/game/football-2026-09-25-south-shore-at-mellen-co-op\nCentra
+ l Wisconsin Prep Sports · Wausau Pilot & Review
+URL:https://sports.wausaupilotandreview.com/#/football/game/football-2026-0
+ 9-25-south-shore-at-mellen-co-op
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:football-2026-10-01-northwood-solon-springs-at-south-shore@sports.wausa
+ upilotandreview.com
+DTSTAMP:20260801T000000Z
+DTSTART:20261002T000000Z
+DTEND:20261002T023000Z
+SUMMARY:L (forfeit) · South Shore vs Northwood/Solon Springs · Football
+LOCATION:South Shore High School\, Port Wing
+DESCRIPTION:Scores\, stats and recap: https://sports.wausaupilotandreview.c
+ om/#/football/game/football-2026-10-01-northwood-solon-springs-at-south-sh
+ ore\nCentral Wisconsin Prep Sports · Wausau Pilot & Review
+URL:https://sports.wausaupilotandreview.com/#/football/game/football-2026-1
+ 0-01-northwood-solon-springs-at-south-shore
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:football-2026-10-09-shell-lake-at-south-shore@sports.wausaupilotandrevi
+ ew.com
+DTSTAMP:20260801T000000Z
+DTSTART:20261010T000000Z
+DTEND:20261010T023000Z
+SUMMARY:L (forfeit) · South Shore vs Shell Lake · Football
+LOCATION:South Shore High School\, Port Wing
+DESCRIPTION:Scores\, stats and recap: https://sports.wausaupilotandreview.c
+ om/#/football/game/football-2026-10-09-shell-lake-at-south-shore\nCentral 
+ Wisconsin Prep Sports · Wausau Pilot & Review
+URL:https://sports.wausaupilotandreview.com/#/football/game/football-2026-1
+ 0-09-shell-lake-at-south-shore
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR

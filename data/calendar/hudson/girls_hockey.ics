@@ -1,0 +1,118 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Wausau Pilot & Review//Central Wisconsin Prep Sports//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Hudson Girls Hockey
+X-WR-CALDESC:Hudson girls hockey schedule and results from Central Wisconsi
+ n Prep Sports (Wausau Pilot & Review). https://sports.wausaupilotandreview
+ .com/#/girls_hockey/team/hudson
+X-WR-TIMEZONE:America/Chicago
+REFRESH-INTERVAL;VALUE=DURATION:PT4H
+X-PUBLISHED-TTL:PT4H
+BEGIN:VEVENT
+UID:girls_hockey-2026-11-28-superior-northwestern-at-hudson@sports.wausaupi
+ lotandreview.com
+DTSTAMP:20260801T000000Z
+DTSTART:20261128T173000Z
+DTEND:20261128T200000Z
+SUMMARY:Hudson vs Superior/Northwestern · Girls Hockey
+LOCATION:Hudson High School\, Hudson
+DESCRIPTION:Scores\, stats and recap: https://sports.wausaupilotandreview.c
+ om/#/girls_hockey/game/girls_hockey-2026-11-28-superior-northwestern-at-hu
+ dson\nTimes come from WIAA school schedules and can change\; this calendar
+  updates when they do.\nCentral Wisconsin Prep Sports · Wausau Pilot & Re
+ view
+URL:https://sports.wausaupilotandreview.com/#/girls_hockey/game/girls_hocke
+ y-2026-11-28-superior-northwestern-at-hudson
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:girls_hockey-2026-12-11-hudson-at-stevens-point-area-senior-high-co-op@
+ sports.wausaupilotandreview.com
+DTSTAMP:20260801T000000Z
+DTSTART:20261212T010000Z
+DTEND:20261212T033000Z
+SUMMARY:Hudson at Stevens Point Area Senior High Co-op · Girls Hockey
+LOCATION:Stevens Point Area Senior High Co-op
+DESCRIPTION:Scores\, stats and recap: https://sports.wausaupilotandreview.c
+ om/#/girls_hockey/game/girls_hockey-2026-12-11-hudson-at-stevens-point-are
+ a-senior-high-co-op\nTimes come from WIAA school schedules and can change\
+ ; this calendar updates when they do.\nCentral Wisconsin Prep Sports · Wa
+ usau Pilot & Review
+URL:https://sports.wausaupilotandreview.com/#/girls_hockey/game/girls_hocke
+ y-2026-12-11-hudson-at-stevens-point-area-senior-high-co-op
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:girls_hockey-2026-12-12-hudson-at-central-wisconsin-storm@sports.wausau
+ pilotandreview.com
+DTSTAMP:20260801T000000Z
+DTSTART:20261212T200000Z
+DTEND:20261212T223000Z
+SUMMARY:Hudson at Central Wisconsin Storm · Girls Hockey
+LOCATION:Central Wisconsin Storm\, Wausau
+DESCRIPTION:Scores\, stats and recap: https://sports.wausaupilotandreview.c
+ om/#/girls_hockey/game/girls_hockey-2026-12-12-hudson-at-central-wisconsin
+ -storm\nTimes come from WIAA school schedules and can change\; this calend
+ ar updates when they do.\nCentral Wisconsin Prep Sports · Wausau Pilot & 
+ Review
+URL:https://sports.wausaupilotandreview.com/#/girls_hockey/game/girls_hocke
+ y-2026-12-12-hudson-at-central-wisconsin-storm
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:girls_hockey-2026-12-22-hudson-at-somerset-co-op@sports.wausaupilotandr
+ eview.com
+DTSTAMP:20260801T000000Z
+DTSTART:20261223T010000Z
+DTEND:20261223T033000Z
+SUMMARY:Hudson at Somerset Co-op · Girls Hockey
+LOCATION:Somerset Co-op
+DESCRIPTION:Scores\, stats and recap: https://sports.wausaupilotandreview.c
+ om/#/girls_hockey/game/girls_hockey-2026-12-22-hudson-at-somerset-co-op\nT
+ imes come from WIAA school schedules and can change\; this calendar update
+ s when they do.\nCentral Wisconsin Prep Sports · Wausau Pilot & Review
+URL:https://sports.wausaupilotandreview.com/#/girls_hockey/game/girls_hocke
+ y-2026-12-22-hudson-at-somerset-co-op
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:girls_hockey-2027-01-02-black-river-falls-at-hudson@sports.wausaupilota
+ ndreview.com
+DTSTAMP:20260801T000000Z
+DTSTART:20270103T010000Z
+DTEND:20270103T033000Z
+SUMMARY:Hudson vs Black River Falls · Girls Hockey
+LOCATION:Hudson High School\, Hudson
+DESCRIPTION:Scores\, stats and recap: https://sports.wausaupilotandreview.c
+ om/#/girls_hockey/game/girls_hockey-2027-01-02-black-river-falls-at-hudson
+ \nTimes come from WIAA school schedules and can change\; this calendar upd
+ ates when they do.\nCentral Wisconsin Prep Sports · Wausau Pilot & Review
+URL:https://sports.wausaupilotandreview.com/#/girls_hockey/game/girls_hocke
+ y-2027-01-02-black-river-falls-at-hudson
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:girls_hockey-2027-02-06-hayward-co-op-at-hudson@sports.wausaupilotandre
+ view.com
+DTSTAMP:20260801T000000Z
+DTSTART:20270206T193000Z
+DTEND:20270206T220000Z
+SUMMARY:Hudson vs Hayward Co-op · Girls Hockey
+LOCATION:Hudson High School\, Hudson
+DESCRIPTION:Scores\, stats and recap: https://sports.wausaupilotandreview.c
+ om/#/girls_hockey/game/girls_hockey-2027-02-06-hayward-co-op-at-hudson\nTi
+ mes come from WIAA school schedules and can change\; this calendar updates
+  when they do.\nCentral Wisconsin Prep Sports · Wausau Pilot & Review
+URL:https://sports.wausaupilotandreview.com/#/girls_hockey/game/girls_hocke
+ y-2027-02-06-hayward-co-op-at-hudson
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR

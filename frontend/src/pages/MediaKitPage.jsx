@@ -207,6 +207,16 @@ const INVENTORY = [
         countLabel: "per sport",
         preview: { label: "All-Area Team presented by", tone: "feature" },
       },
+      {
+        title: "Team calendars",
+        blurb: "Parents subscribe their phone's calendar to a team or a whole school. Every game, moved times and final scores land there all season, and every event links back to the hub. Your name rides in the subscribe panel and in every event's notes.",
+        fit: "Bank · credit union · insurance agent · pizza place",
+        rateKey: "calendar",
+        slots: ["calendar"],
+        feature: "calendars",
+        countLabel: "every team, every sport",
+        preview: { label: "Team calendars presented by", tone: "feature" },
+      },
     ],
   },
   {

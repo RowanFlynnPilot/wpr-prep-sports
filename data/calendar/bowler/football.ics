@@ -1,0 +1,100 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Wausau Pilot & Review//Central Wisconsin Prep Sports//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Bowler Football
+X-WR-CALDESC:Bowler football schedule and results from Central Wisconsin Pr
+ ep Sports (Wausau Pilot & Review). https://sports.wausaupilotandreview.com
+ /#/football/team/bowler
+X-WR-TIMEZONE:America/Chicago
+REFRESH-INTERVAL;VALUE=DURATION:PT4H
+X-PUBLISHED-TTL:PT4H
+BEGIN:VEVENT
+UID:football-2026-09-04-bowler-at-marion@sports.wausaupilotandreview.com
+DTSTAMP:20260801T000000Z
+DTSTART:20260905T000000Z
+DTEND:20260905T023000Z
+SUMMARY:L (forfeit) · Bowler at Marion · Football
+LOCATION:Marion High School\, Marion
+DESCRIPTION:Scores\, stats and recap: https://sports.wausaupilotandreview.c
+ om/#/football/game/football-2026-09-04-bowler-at-marion\nCentral Wisconsin
+  Prep Sports · Wausau Pilot & Review
+URL:https://sports.wausaupilotandreview.com/#/football/game/football-2026-0
+ 9-04-bowler-at-marion
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:football-2026-09-11-rosholt-at-bowler@sports.wausaupilotandreview.com
+DTSTAMP:20260801T000000Z
+DTSTART:20260912T000000Z
+DTEND:20260912T023000Z
+SUMMARY:L (forfeit) · Bowler vs Rosholt · Football
+LOCATION:Bowler High School\, Bowler
+DESCRIPTION:Scores\, stats and recap: https://sports.wausaupilotandreview.c
+ om/#/football/game/football-2026-09-11-rosholt-at-bowler\nCentral Wisconsi
+ n Prep Sports · Wausau Pilot & Review
+URL:https://sports.wausaupilotandreview.com/#/football/game/football-2026-0
+ 9-11-rosholt-at-bowler
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:football-2026-09-18-bowler-at-port-edwards@sports.wausaupilotandreview.
+ com
+DTSTAMP:20260801T000000Z
+DTSTART:20260918T210000Z
+DTEND:20260918T233000Z
+SUMMARY:L (forfeit) · Bowler at Port Edwards · Football
+LOCATION:Port Edwards High School\, Port Edwards
+DESCRIPTION:Scores\, stats and recap: https://sports.wausaupilotandreview.c
+ om/#/football/game/football-2026-09-18-bowler-at-port-edwards\nCentral Wis
+ consin Prep Sports · Wausau Pilot & Review
+URL:https://sports.wausaupilotandreview.com/#/football/game/football-2026-0
+ 9-18-bowler-at-port-edwards
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:football-2026-09-25-tri-county-at-bowler@sports.wausaupilotandreview.co
+ m
+DTSTAMP:20260801T000000Z
+DTSTART:20260926T000000Z
+DTEND:20260926T023000Z
+SUMMARY:L (forfeit) · Bowler vs Tri-County · Football
+LOCATION:Bowler High School\, Bowler
+DESCRIPTION:Scores\, stats and recap: https://sports.wausaupilotandreview.c
+ om/#/football/game/football-2026-09-25-tri-county-at-bowler\nCentral Wisco
+ nsin Prep Sports · Wausau Pilot & Review
+URL:https://sports.wausaupilotandreview.com/#/football/game/football-2026-0
+ 9-25-tri-county-at-bowler
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:football-2026-10-02-bowler-at-wild-rose@sports.wausaupilotandreview.com
+DTSTAMP:20260801T000000Z
+DTSTART:20261003T000000Z
+DTEND:20261003T023000Z
+SUMMARY:L (forfeit) · Bowler at Wild Rose · Football
+LOCATION:Wild Rose High School\, Wild Rose
+DESCRIPTION:Scores\, stats and recap: https://sports.wausaupilotandreview.c
+ om/#/football/game/football-2026-10-02-bowler-at-wild-rose\nCentral Wiscon
+ sin Prep Sports · Wausau Pilot & Review
+URL:https://sports.wausaupilotandreview.com/#/football/game/football-2026-1
+ 0-02-bowler-at-wild-rose
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:football-2026-10-09-almond-bancroft-at-bowler@sports.wausaupilotandrevi
+ ew.com
+DTSTAMP:20260801T000000Z
+DTSTART:20261010T000000Z
+DTEND:20261010T023000Z
+SUMMARY:L (forfeit) · Bowler vs Almond-Bancroft · Football
+LOCATION:Bowler High School\, Bowler
+DESCRIPTION:Scores\, stats and recap: https://sports.wausaupilotandreview.c
+ om/#/football/game/football-2026-10-09-almond-bancroft-at-bowler\nCentral 
+ Wisconsin Prep Sports · Wausau Pilot & Review
+URL:https://sports.wausaupilotandreview.com/#/football/game/football-2026-1
+ 0-09-almond-bancroft-at-bowler
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR

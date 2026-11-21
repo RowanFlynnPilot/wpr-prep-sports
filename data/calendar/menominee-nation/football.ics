@@ -1,0 +1,103 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Wausau Pilot & Review//Central Wisconsin Prep Sports//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Menominee Nation Football
+X-WR-CALDESC:Menominee Nation football schedule and results from Central Wi
+ sconsin Prep Sports (Wausau Pilot & Review). https://sports.wausaupilotand
+ review.com/#/football/team/menominee-nation
+X-WR-TIMEZONE:America/Chicago
+REFRESH-INTERVAL;VALUE=DURATION:PT4H
+X-PUBLISHED-TTL:PT4H
+BEGIN:VEVENT
+UID:football-2026-09-04-menominee-nation-at-tri-county@sports.wausaupilotan
+ dreview.com
+DTSTAMP:20260801T000000Z
+DTSTART:20260905T000000Z
+DTEND:20260905T023000Z
+SUMMARY:L (forfeit) · Menominee Nation at Tri-County · Football
+LOCATION:Tri-County High School\, Plainfield
+DESCRIPTION:Scores\, stats and recap: https://sports.wausaupilotandreview.c
+ om/#/football/game/football-2026-09-04-menominee-nation-at-tri-county\nCen
+ tral Wisconsin Prep Sports · Wausau Pilot & Review
+URL:https://sports.wausaupilotandreview.com/#/football/game/football-2026-0
+ 9-04-menominee-nation-at-tri-county
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:football-2026-09-11-marion-at-menominee-nation@sports.wausaupilotandrev
+ iew.com
+DTSTAMP:20260801T000000Z
+DTSTART:20260911T210000Z
+DTEND:20260911T233000Z
+SUMMARY:L (forfeit) · Menominee Nation vs Marion · Football
+LOCATION:Menominee Nation High School\, Keshena
+DESCRIPTION:Scores\, stats and recap: https://sports.wausaupilotandreview.c
+ om/#/football/game/football-2026-09-11-marion-at-menominee-nation\nCentral
+  Wisconsin Prep Sports · Wausau Pilot & Review
+URL:https://sports.wausaupilotandreview.com/#/football/game/football-2026-0
+ 9-11-marion-at-menominee-nation
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:football-2026-09-18-menominee-nation-at-wild-rose@sports.wausaupilotand
+ review.com
+DTSTAMP:20260801T000000Z
+DTSTART:20260919T000000Z
+DTEND:20260919T023000Z
+SUMMARY:L (forfeit) · Menominee Nation at Wild Rose · Football
+LOCATION:Wild Rose High School\, Wild Rose
+DESCRIPTION:Scores\, stats and recap: https://sports.wausaupilotandreview.c
+ om/#/football/game/football-2026-09-18-menominee-nation-at-wild-rose\nCent
+ ral Wisconsin Prep Sports · Wausau Pilot & Review
+URL:https://sports.wausaupilotandreview.com/#/football/game/football-2026-0
+ 9-18-menominee-nation-at-wild-rose
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:football-2026-09-25-rosholt-at-menominee-nation@sports.wausaupilotandre
+ view.com
+DTSTAMP:20260801T000000Z
+DTSTART:20260926T000000Z
+DTEND:20260926T023000Z
+SUMMARY:L (forfeit) · Menominee Nation vs Rosholt · Football
+LOCATION:Menominee Nation High School\, Keshena
+DESCRIPTION:Scores\, stats and recap: https://sports.wausaupilotandreview.c
+ om/#/football/game/football-2026-09-25-rosholt-at-menominee-nation\nCentra
+ l Wisconsin Prep Sports · Wausau Pilot & Review
+URL:https://sports.wausaupilotandreview.com/#/football/game/football-2026-0
+ 9-25-rosholt-at-menominee-nation
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:football-2026-10-02-almond-bancroft-at-menominee-nation@sports.wausaupi
+ lotandreview.com
+DTSTAMP:20260801T000000Z
+DTSTART:20261002T210000Z
+DTEND:20261002T233000Z
+SUMMARY:L (forfeit) · Menominee Nation vs Almond-Bancroft · Football
+LOCATION:Menominee Nation High School\, Keshena
+DESCRIPTION:Scores\, stats and recap: https://sports.wausaupilotandreview.c
+ om/#/football/game/football-2026-10-02-almond-bancroft-at-menominee-nation
+ \nCentral Wisconsin Prep Sports · Wausau Pilot & Review
+URL:https://sports.wausaupilotandreview.com/#/football/game/football-2026-1
+ 0-02-almond-bancroft-at-menominee-nation
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:football-2026-10-09-menominee-nation-at-port-edwards@sports.wausaupilot
+ andreview.com
+DTSTAMP:20260801T000000Z
+DTSTART:20261009T210000Z
+DTEND:20261009T233000Z
+SUMMARY:L (forfeit) · Menominee Nation at Port Edwards · Football
+LOCATION:Port Edwards High School\, Port Edwards
+DESCRIPTION:Scores\, stats and recap: https://sports.wausaupilotandreview.c
+ om/#/football/game/football-2026-10-09-menominee-nation-at-port-edwards\nC
+ entral Wisconsin Prep Sports · Wausau Pilot & Review
+URL:https://sports.wausaupilotandreview.com/#/football/game/football-2026-1
+ 0-09-menominee-nation-at-port-edwards
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR

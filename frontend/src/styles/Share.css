@@ -90,3 +90,133 @@
   align-items: flex-start;
   gap: 0.5rem 0.6rem;
 }
+/* Add to calendar — same pill as Follow and Share beside it. */
+.cal-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: var(--card);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  min-height: 44px;
+  padding: 0.32rem 0.9rem;
+  font-family: var(--font-display);
+  font-size: var(--fs-caption);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: background var(--t-fast) var(--ease), border-color var(--t-fast) var(--ease),
+    color var(--t-fast) var(--ease);
+}
+.cal-toggle[aria-expanded="true"] {
+  border-color: var(--accent);
+  color: var(--accent-700);
+}
+.cal-toggle:focus-visible {
+  border-color: var(--accent);
+  color: var(--accent-700);
+}
+@media (hover: hover) and (pointer: fine) {
+  .cal-toggle:hover {
+    border-color: var(--accent);
+    color: var(--accent-700);
+  }
+}
+.cal-toggle__icon {
+  display: inline-flex;
+  font-size: var(--fs-ui);
+  line-height: 1;
+}
+
+/* The panel is a full-width row of the team hero, under logo / meta /
+   record on desktop; on phones it sits between the school's name block
+   and the record (TeamPage.css .team-hero--cal-open). */
+.cal-panel {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 40rem;
+  padding: 0.9rem 1rem;
+  background: var(--card);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+}
+.cal-panel__lede,
+.cal-panel__note {
+  margin: 0;
+}
+.cal-panel__lede {
+  font-family: var(--font-body);
+  font-size: var(--fs-small);
+  line-height: 1.5;
+  text-wrap: pretty;
+}
+.cal-panel__scope {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+.cal-panel__choice {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 44px;
+  font-family: var(--font-body);
+  font-size: var(--fs-small);
+  cursor: pointer;
+}
+.cal-panel__choice input {
+  width: 1.1rem;
+  height: 1.1rem;
+  accent-color: var(--accent);
+}
+.cal-panel__apps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(7.5rem, 1fr));
+  gap: 0.5rem;
+}
+.cal-panel__app {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0.4rem 0.75rem;
+  background: var(--paper-2);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-display);
+  font-size: var(--fs-caption);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.cal-panel__app:focus-visible {
+  border-color: var(--accent);
+  color: var(--accent-700);
+}
+@media (hover: hover) and (pointer: fine) {
+  .cal-panel__app:hover {
+    border-color: var(--accent);
+    color: var(--accent-700);
+  }
+}
+.cal-panel__manual {
+  display: block;
+}
+.cal-panel__note {
+  font-family: var(--font-body);
+  font-size: var(--fs-caption);
+  color: var(--muted);
+  line-height: 1.45;
+}
