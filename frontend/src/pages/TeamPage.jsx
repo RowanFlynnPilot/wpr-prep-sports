@@ -14,7 +14,13 @@ import {
   formatGameTime,
   formatGameShortDay,
 } from "../utils/dates.js";
-import { humanizeVenue, isForfeitScore } from "../utils/games.js";
+import {
+  humanizeVenue,
+  isForfeitScore,
+  isScorePending,
+  isStaleScheduled,
+  isUnderway,
+} from "../utils/games.js";
 import { isNeutralSite, roundLabel } from "../utils/postseason.js";
 import { playoffResultLabel, resolveShootout } from "../utils/bracket.js";
 import { todaysGameFor, todayWord } from "../utils/gameDay.js";
@@ -661,9 +667,24 @@ function ScheduleRow({
         : lost
           ? "loss"
           : "tie";
+  // A game whose start has passed without a score is not "7:15 PM": the
+  // same words the dashboard uses (utils/games.js), so a parent checking
+  // "did we win?" on the team page isn't told the game is still to come
+  // (critique run 21: Marathon's Nov 19 game read "7:15 PM" two days on).
+  const pastLabel = !isFinal
+    ? game.status === "in_progress"
+      ? "Live"
+      : isStaleScheduled(game)
+        ? "Not reported"
+        : isScorePending(game)
+          ? "Score pending"
+          : isUnderway(game)
+            ? "Underway"
+            : null
+    : null;
   const label = isFinal
     ? `${outcomeMark === "·" ? "Tie" : outcomeMark} ${scoreText}, ${meaning}, game details`
-    : `${formatGameTime(game.date)}, game details`;
+    : `${pastLabel ?? formatGameTime(game.date)}, game details`;
 
   return (
     <li className={"schedule-row" + (game.playoff ? " schedule-row--playoff" : "")}>
@@ -704,7 +725,13 @@ function ScheduleRow({
             <span className="schedule-row__score">{scoreText}</span>
           </>
         ) : (
-          <span className="schedule-row__time">{formatGameTime(game.date)}</span>
+          <span
+            className={
+              "schedule-row__time" + (pastLabel ? " schedule-row__time--status" : "")
+            }
+          >
+            {pastLabel ?? formatGameTime(game.date)}
+          </span>
         )}
       </Link>
       {recap && <p className="schedule-row__recap">{recap}</p>}

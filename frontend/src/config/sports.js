@@ -130,7 +130,9 @@ function basketballCategories({ ppgKey, rpgKey, apgKey, dKey, dLabel }) {
       sortKey: apgKey,
       formatLine: (s) => joinLine([
         s[apgKey] != null && `${s[apgKey]} ${apgKey}`,
-        s["A/TO"] && `${s["A/TO"]} A/TO`,
+        // Sources print "INF" for a player with no turnovers; only a real
+        // ratio reads as one (Leaders showed "8 AST · INF A/TO").
+        Number.isFinite(Number(s["A/TO"])) && s["A/TO"] !== "" && `${s["A/TO"]} A/TO`,
       ]),
     },
     {
@@ -493,29 +495,29 @@ const BASKETBALL_GAME_LINE = {
         const dreb = pickNum(s, "DREB", "DReb", "DEF");
         const ast = pickNum(s, "AST", "Ast");
         const stl = pickNum(s, "STL", "Stl");
-        const ctxPieces = [];
+        // The parenthetical is the rebound split only; assists and steals
+        // are their own clause. Together they read "8 rebounds (2 OFF,
+        // 5 STL)", as if steals were a kind of rebound (critique run 21).
+        let split = "";
         if (Number.isFinite(oreb) && Number.isFinite(dreb)) {
-          ctxPieces.push(`${Math.round(oreb)} OFF / ${Math.round(dreb)} DEF`);
-        } else if (s.OFF) {
-          ctxPieces.push(`${s.OFF} OFF`);
+          split = ` (${Math.round(oreb)} offensive, ${Math.round(dreb)} defensive)`;
+        } else if (Number.isFinite(oreb)) {
+          split = ` (${Math.round(oreb)} offensive)`;
         }
-        // Side-stats only when notable.
-        if (Number.isFinite(ast) && ast >= 4) {
-          ctxPieces.push(`${Math.round(ast)} AST`);
-        }
-        if (Number.isFinite(stl) && stl >= 3) {
-          ctxPieces.push(`${Math.round(stl)} STL`);
-        }
-        const ctxClause = ctxPieces.length ? ` (${ctxPieces.join(", ")})` : "";
-        return `${player} grabbed ${Math.round(rbd)} rebounds${ctxClause}.`;
+        const side = [];
+        if (Number.isFinite(ast) && ast >= 4) side.push(`${Math.round(ast)} assists`);
+        if (Number.isFinite(stl) && stl >= 3) side.push(`${Math.round(stl)} steals`);
+        const sideClause = side.length ? ` and added ${side.join(" and ")}` : "";
+        return `${player} grabbed ${Math.round(rbd)} rebounds${split}${sideClause}.`;
       }
       case "Assists": {
         if (!Number.isFinite(ast) || ast < 6) return null;
         const to = pickNum(s, "TO");
         let ctxClause = "";
-        if (Number.isFinite(to) && to >= 0) {
-          const ratio = to > 0 ? (ast / to).toFixed(1) : "∞";
-          ctxClause = ` (${ratio} A/TO)`;
+        if (Number.isFinite(to) && to > 0) {
+          ctxClause = ` (${(ast / to).toFixed(1)} A/TO)`;
+        } else if (to === 0) {
+          ctxClause = " without a turnover";
         }
         return `${player} dished ${Math.round(ast)} assists${ctxClause}.`;
       }

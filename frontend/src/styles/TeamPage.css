@@ -374,6 +374,14 @@ a.schedule-row__result--link:focus-visible {
   font-size: var(--fs-ui);
   color: var(--muted);
 }
+/* "Score pending" / "Not reported" / "Underway": a status, not a clock,
+   so it reads as a small label rather than a tip-off time. */
+.schedule-row__time--status {
+  font-size: var(--fs-caption);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
 
 @media (max-width: 640px) {
   .team-hero {

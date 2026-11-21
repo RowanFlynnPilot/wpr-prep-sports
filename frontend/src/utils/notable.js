@@ -465,10 +465,13 @@ function detectSeasonStandouts(seasonStats, sport) {
         `${player} is up to ${yds.toLocaleString()} receiving yards.`,
       ]), 28));
     }
-    if (row.category === "Basketball" && Number.isFinite(ppg) && ppg >= 25) {
+    // An average needs games behind it: after one game, "averaging 34.0
+    // per game" is one night's total (critique run 21).
+    const enoughGames = !Number.isFinite(gp) || gp >= 3;
+    if (row.category === "Basketball" && enoughGames && Number.isFinite(ppg) && ppg >= 25) {
       out.push(mileItem(row, sport, pick(seed, [
         `${player} is averaging ${ppg.toFixed(1)} points per game — one of the top scorers around.`,
-        `${player} pours it in nightly, averaging ${ppg.toFixed(1)} per game.`,
+        `${player} keeps pouring it in, averaging ${ppg.toFixed(1)} per game.`,
         `${player} is at ${ppg.toFixed(1)} PPG and still climbing.`,
       ]), 28));
     }
