@@ -74,9 +74,16 @@ jobs:
 
       - name: Install deps
         working-directory: scraper
+        # PyPI reads occasionally break mid-download ("IncompleteRead",
+        # 2026-11-08), which failed a whole game-night run; retry twice.
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          for attempt in 1 2 3; do
+            if pip install -r requirements.txt; then exit 0; fi
+            echo "pip install failed (attempt $attempt) — retrying in 20s"
+            sleep 20
+          done
+          exit 1
 
       - name: Run live scrape (per-sport)
         id: scrape
@@ -188,7 +195,16 @@ jobs:
             echo "outside live window — chain ends here"
             exit 0
           fi
-          queued=$(gh run list --workflow=scrape-live.yml --status queued --json databaseId --jq 'length' || echo 0)
+          # Only a RECENT queued run counts as the next link. GitHub can
+          # strand a dispatched run in "queued" indefinitely (run
+          # 43996998241, queued 2026-11-17 01:37Z and never started); every
+          # later run then deferred to it and the chain stayed dead for four
+          # nights while basketball opened. A real successor is minutes old.
+          queued=$(gh run list --workflow=scrape-live.yml --status queued --json databaseId,createdAt             --jq '[.[] | select((.createdAt | fromdateiso8601) > (now - 1200))] | length' || echo 0)
+          stale=$(gh run list --workflow=scrape-live.yml --status queued --json databaseId,createdAt             --jq '[.[] | select((.createdAt | fromdateiso8601) <= (now - 1200)) | .databaseId] | join(" ")' || echo "")
+          if [ -n "$stale" ]; then
+            echo "::warning::ignoring live runs stuck in queued for 20+ min: $stale (cancel them in the Actions tab)"
+          fi
           running=$(gh run list --workflow=scrape-live.yml --status in_progress --json databaseId \
             --jq "[.[] | select(.databaseId != ${GITHUB_RUN_ID})] | length" || echo 0)
           if [ "${queued:-0}" -gt 0 ] || [ "${running:-0}" -gt 0 ]; then

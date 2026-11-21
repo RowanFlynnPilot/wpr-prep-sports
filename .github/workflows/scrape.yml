@@ -67,9 +67,16 @@ jobs:
 
       - name: Install deps
         working-directory: scraper
+        # PyPI reads occasionally break mid-download ("IncompleteRead",
+        # 2026-11-08), which failed a whole game-night run; retry twice.
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          for attempt in 1 2 3; do
+            if pip install -r requirements.txt; then exit 0; fi
+            echo "pip install failed (attempt $attempt) — retrying in 20s"
+            sleep 20
+          done
+          exit 1
 
       - name: Run scrapers
         id: scrape
@@ -153,7 +160,16 @@ jobs:
 
       - name: Install Playwright chromium
         working-directory: scraper
-        run: python -m playwright install --with-deps chromium
+        # The --with-deps apt step hung for 42 min and then exited 100 on
+        # 2026-11-11, failing the scrape after its data had been written.
+        # Bound each attempt and retry once.
+        run: |
+          for attempt in 1 2; do
+            if timeout 600 python -m playwright install --with-deps chromium; then exit 0; fi
+            echo "playwright install failed (attempt $attempt) — retrying in 30s"
+            sleep 30
+          done
+          exit 1
 
       - name: Stage dist + data under the Pages base path
         env:
