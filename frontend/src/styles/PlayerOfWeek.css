@@ -216,3 +216,12 @@
   .potw__cta {
     margin-left: 0;
   }}
+/* First week of a season: no pick yet, one quiet line saying when. */
+.potw__pending {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--fs-small);
+  line-height: 1.45;
+  color: var(--muted);
+  text-wrap: pretty;
+}

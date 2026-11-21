@@ -395,6 +395,17 @@
   color: var(--muted);
   font-style: italic;
 }
+/* This Week carrying the Scoreboard sponsor (a season's opening week):
+   heading and hint stay together, the sponsor sits at the right and drops
+   to its own line when the three don't fit. */
+.section-header--sponsored {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  row-gap: 0.35rem;
+}
+.section-header--sponsored > .sponsor {
+  margin-left: auto;
+}
 /* 320 px phones: "Last Week" plus the inline Scoreboard sponsor (label 161
    + logo 99 px) overran the 343 px content box and scrolled the page
    sideways. Let the row wrap and drop the sponsor's "Presented by" text —

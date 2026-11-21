@@ -34,7 +34,7 @@ import OffSeasonRecap from "../components/OffSeasonRecap.jsx";
 import { isTrackedElimination, pickFeaturedGame, tickerGames } from "../utils/games.js";
 import { postseasonState } from "../utils/postseason.js";
 import { homeRegionSchoolIds } from "../utils/schools.js";
-import { pickFeaturedWeek, previousWeekResults } from "../utils/weeks.js";
+import { pickFeaturedWeek, previousWeekResults, startOfSchoolWeek } from "../utils/weeks.js";
 import { formatWeekRange } from "../utils/dates.js";
 import { pickMarqueeGame } from "../utils/marquee.js";
 import { SPORT_IDS } from "../config/sports.js";
@@ -303,6 +303,20 @@ export default function DashboardPage({
   // misleading. The new month calendar covers the off-season gap.
   const showThisWeek = week?.isCurrent === true;
 
+  // Player of the Week is named only once a school week has ended (Monday),
+  // so through a sport's first week the strip, and the sold "Made possible
+  // by" line on it, rendered nothing (critique run 21). From a week before
+  // the opener until the first pick, PlayerOfWeek shows when that pick
+  // comes. Stat sports only: soccer has no player lines to pick from.
+  const potwFirstPick = useMemo(() => {
+    if (offSeason || dataset.archiveSeason || !sportConfig?.hasSeasonStats) return null;
+    if (!Number.isFinite(firstGameTs)) return null;
+    const nowTs = Date.now();
+    if (firstGameTs - nowTs > 7 * 86_400_000) return null;
+    const base = new Date(Math.max(nowTs, firstGameTs));
+    return new Date(startOfSchoolWeek(base).getTime() + 7 * 86_400_000);
+  }, [offSeason, dataset.archiveSeason, sportConfig, firstGameTs]);
+
   // Monday through Thursday the current week has no finals yet, so the
   // tab opened on 31 fixtures and last Friday's results sat four screens
   // down, under the sold Scoreboard sponsor (critique run 18). Until the
@@ -335,6 +349,13 @@ export default function DashboardPage({
     );
     return recent.filter((g) => !inWeek.has(g.id));
   }, [recent, week, showThisWeek, lastWeek, finishedSeason]);
+
+  // The sold "Scoreboard presented by" line rides the Last Week header, or
+  // else the Earlier Results header. A season's opening week has neither
+  // (every game is in This Week), so the sponsor appeared on no in-season
+  // dashboard on opening weekend (critique run 21); then it heads This Week.
+  const scoreboardSponsorOnWeek =
+    showThisWeek && !finishedSeason && !lastWeek && earlier.length === 0;
 
   // The rail shows a dozen cards, not the whole three-week window: 84
   // cards was 22 screens of sideways scroll with Superior–New Richmond
@@ -664,6 +685,7 @@ export default function DashboardPage({
           sponsors={sponsors}
           sportConfig={sportConfig}
           override={potwOverride}
+          firstPickDate={potwFirstPick}
         />
       </SectionBoundary>
 
@@ -737,11 +759,18 @@ export default function DashboardPage({
 
           {showThisWeek && !finishedSeason && (
             <section>
-              <div className="section-header">
+              <div
+                className={
+                  "section-header" + (scoreboardSponsorOnWeek ? " section-header--sponsored" : "")
+                }
+              >
                 <h2>{preseason ? "Opening Week" : "This Week"}</h2>
                 <span className="section-header__hint">
                   {week.games.length} {week.games.length === 1 ? "game" : "games"} · by day and conference
                 </span>
+                {scoreboardSponsorOnWeek && (
+                  <Sponsor slot="ticker" sponsors={sponsors} variant="inline" />
+                )}
               </div>
               <ThisWeekGrid
                 week={week}

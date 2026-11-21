@@ -21,7 +21,20 @@ import { formatWeekRange } from "../utils/dates.js";
  *
  * Renders nothing when no qualifying line exists.
  */
-export default function PlayerOfWeek({ games, schoolIndex, sponsors, sportConfig, override }) {
+const FIRST_PICK_FMT = new Intl.DateTimeFormat("en-US", {
+  weekday: "long",
+  month: "short",
+  day: "numeric",
+});
+
+export default function PlayerOfWeek({
+  games,
+  schoolIndex,
+  sponsors,
+  sportConfig,
+  override,
+  firstPickDate = null,
+}) {
   // Editorial radius: the auto-pick only crowns home-region athletes
   // (~60 miles of Wausau via SITE.homeRegionCities). The editor override
   // is exempt — an explicit pick is an editorial decision either way.
@@ -36,7 +49,27 @@ export default function PlayerOfWeek({ games, schoolIndex, sponsors, sportConfig
     [override, games, eligible],
   );
   const sportPrefix = useSportPrefix();
-  if (!pick) return null;
+  if (!pick) {
+    // A sport's first week: nobody is named until the school week ends, but
+    // the strip (and its sold "Made possible by" line) holds the slot and
+    // says when the first pick comes. DashboardPage decides the window.
+    if (!firstPickDate) return null;
+    return (
+      <section className="potw potw--pending" aria-label="Player of the Week">
+        <div className="potw__bar" aria-hidden="true" />
+        <header className="potw__masthead">
+          <span className="potw__eyebrow">
+            <span className="potw__eyebrow-label">Player of the Week</span>
+          </span>
+          <Sponsor slot="potw" sponsors={sponsors} variant="inline" className="potw__sponsor" />
+        </header>
+        <p className="potw__pending">
+          The first pick of the season is named {FIRST_PICK_FMT.format(firstPickDate)}, from
+          the week&rsquo;s box scores.
+        </p>
+      </section>
+    );
+  }
 
   const { line, game, schoolId } = pick;
   const school = schoolIndex.get(schoolId);
