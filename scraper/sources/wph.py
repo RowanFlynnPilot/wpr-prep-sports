@@ -67,6 +67,13 @@ DEFAULT_TOOL_ID = 5762186
 SUBSEASONS: dict[tuple[str, str], int] = {
     ("boys_hockey", "2025-26"): 951906,  # Regular Season
     ("girls_hockey", "2025-26"): 953552,
+    # 2026-27 added 2026-11-21 (critique run 21): without them the WPH step
+    # was skipped silently, so neither hockey had stats, leaders or Player
+    # of the Week. Read from any team page's season selector ("Regular
+    # Season" option for the new year). Add the Playoffs ids to
+    # SUBSEASONS_EXTRA once WPH creates them (usually February).
+    ("boys_hockey", "2026-27"): 967574,
+    ("girls_hockey", "2026-27"): 967575,
 }
 SUBSEASONS_EXTRA: dict[tuple[str, str], list[int]] = {
     ("boys_hockey", "2025-26"): [959128],  # Playoffs (Regional/Sectional/State games)
@@ -150,16 +157,48 @@ def _get(url: str) -> str:
 _TEAM_INSTANCE_RE = re.compile(r"/(?:schedule|stats|roster)/team_instance/(\d+)")
 
 
+_season_page_cache: dict[tuple[int, int], int] = {}
+
+
+def season_page_id(team_page_id: int, subseason: int) -> int:
+    """The team's page for THIS subseason.
+
+    WPH mints a new team page every season (Wausau West boys: 9184052 for
+    2025-26, 9645055 for 2026-27) and the old page ignores ?subseason=,
+    rendering last season's schedule and stats. Every team page's season
+    selector links each season's own page as /page/show/<id>-<slug>?
+    subseason=<n>, so follow that link; the manifest's page id then keeps
+    working across rollovers. Falls back to the given id.
+    """
+    key = (team_page_id, subseason)
+    if key in _season_page_cache:
+        return _season_page_cache[key]
+    resolved = team_page_id
+    try:
+        html = _get(f"{BASE_URL}/page/show/{team_page_id}?subseason={subseason}")
+        # Only the season selector's <option>s: nav links elsewhere on the
+        # page carry ?subseason= too and point at league pages.
+        m = re.search(rf'<option[^>]*value="/page/show/(\d+)[^"?]*\?subseason={subseason}"', html)
+        if m:
+            resolved = int(m.group(1))
+    except httpx.HTTPError:
+        pass
+    _season_page_cache[key] = resolved
+    return resolved
+
+
 def find_team_instance_id(team_page_id: int, subseason: int) -> int | None:
     """
-    Parse the team_instance_id out of a team page's subnav hrefs. Returns
-    None if the page can't be loaded or the link isn't present (e.g. the
-    school doesn't field that sport this season).
+    Parse the team_instance_id out of the subnav of the team's page for
+    this subseason (season_page_id). Returns None if the page can't be
+    loaded or the link isn't present (e.g. the school doesn't field that
+    sport this season).
     """
     override = TEAM_INSTANCE_OVERRIDES.get((team_page_id, subseason))
     if override is not None:
         return override
-    url = f"{BASE_URL}/page/show/{team_page_id}?subseason={subseason}"
+    page_id = season_page_id(team_page_id, subseason)
+    url = f"{BASE_URL}/page/show/{page_id}?subseason={subseason}"
     try:
         html = _get(url)
     except httpx.HTTPError:
@@ -450,7 +489,8 @@ def fetch_team_roster(team_page_id: int, *, subseason: int) -> list[WPHRosterRow
     position + grad year, which the per-game and per-team-stats pages
     don't expose. Returns one row per athlete; ignores empty rows.
     """
-    url = f"{BASE_URL}/roster/show/{team_page_id}?subseason={subseason}"
+    page_id = season_page_id(team_page_id, subseason)
+    url = f"{BASE_URL}/roster/show/{page_id}?subseason={subseason}"
     html = _get(url)
     soup = BeautifulSoup(html, "lxml")
 

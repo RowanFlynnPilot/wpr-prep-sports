@@ -284,3 +284,19 @@ def test_parse_ts_handles_zulu_and_naive():
     naive = cf._parse_ts("2026-07-02T02:51:48")
     assert naive is not None and naive.tzinfo is not None
     assert cf._parse_ts("garbage") is None
+
+
+def test_hockey_without_a_wph_subseason_for_its_season_is_flagged(tmp_path, monkeypatch):
+    """2026-27 hockey ran statless because SUBSEASONS had no 2026-27 key."""
+    data = tmp_path / "data"
+    (data / "boys_hockey").mkdir(parents=True)
+    (data / "boys_hockey" / "meta.json").write_text(json.dumps({"season": "2027-28"}))
+    src = tmp_path / "wph.py"
+    src.write_text('SUBSEASONS = {\n    ("boys_hockey", "2026-27"): 967574,\n}\n')
+    monkeypatch.setattr(cf, "DATA_DIR", data)
+    monkeypatch.setattr(cf, "WPH_SOURCE", src)
+    msg = cf.check_wph_season("boys_hockey")
+    assert msg and "2027-28" in msg
+    src.write_text('SUBSEASONS = {\n    ("boys_hockey", "2027-28"): 1,\n}\n')
+    assert cf.check_wph_season("boys_hockey") is None
+    assert cf.check_wph_season("football") is None

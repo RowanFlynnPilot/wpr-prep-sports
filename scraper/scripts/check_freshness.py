@@ -211,6 +211,32 @@ def check_stats_coverage(sport: str, min_finals: int) -> str | None:
     )
 
 
+WPH_SOURCE = Path(__file__).resolve().parents[1] / "sources" / "wph.py"
+HOCKEY_SPORTS = ("boys_hockey", "girls_hockey")
+
+
+def check_wph_season(sport: str) -> str | None:
+    """Hockey stats come from Wisconsin Prep Hockey, keyed by a per-season
+    subseason id in sources/wph.py SUBSEASONS. A missing key skips the WPH
+    step without an error: all of 2026-27 hockey ran with no stats, leaders
+    or Player of the Week until review run 21 (2026-11-21) noticed. Read as
+    text, since the sentinel installs no scraper dependencies."""
+    if sport not in HOCKEY_SPORTS:
+        return None
+    meta = _load_json(DATA_DIR / sport / "meta.json")
+    season = meta.get("season") if isinstance(meta, dict) else None
+    if not season or not WPH_SOURCE.exists():
+        return None
+    text = WPH_SOURCE.read_text(encoding="utf-8")
+    if f'("{sport}", "{season}")' in text:
+        return None
+    return (
+        f"{sport}: no Wisconsin Prep Hockey subseason id for {season} in "
+        f"sources/wph.py SUBSEASONS, so hockey stats are off. Read the new "
+        f"'Regular Season' id from any WPH team page's season selector."
+    )
+
+
 def _active_acks(today: date) -> tuple[dict[tuple[str, str], dict], list[str]]:
     """Unexpired acknowledgments keyed by (sport, check), plus log notes
     for entries that are expired or malformed. `until` is inclusive: an
@@ -321,6 +347,9 @@ def main() -> int:
         blackout = check_stats_coverage(sport, DEFAULT_MIN_FINALS_FOR_STATS)
         if blackout:
             statless.append((sport, blackout))
+        no_wph = check_wph_season(sport)
+        if no_wph:
+            statless.append((sport, no_wph))
 
     if not checked and not stale and not thin:
         print(f"No sports in season for month {month} - nothing to check.")

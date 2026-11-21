@@ -241,7 +241,12 @@ a code change), `VITE_DATA_BASE` (defaults to same-origin `data/`).
 **Seasonal ops** (see also `docs/season-rollover.md`):
 
 - November: add winter sports to the cron sport list (`scrape.yml`
-  default + dispatch default), refresh WPH `SUBSEASONS` ids.
+  default + dispatch default), add the new season's WPH `SUBSEASONS` ids
+  (the "Regular Season" option in any WPH team page's season selector;
+  boys and girls differ). Team page ids need no edit:
+  `wph.season_page_id` follows the selector to each season's own page.
+  The sentinel fails while an in-season hockey sport lacks its id
+  (2026-27 ran statless for a week before review run 21 caught it).
 - October: re-run `scripts/backfill_divisions.py` once fall brackets post.
 - After any rollover: `sentinel.yml`'s month map in
   `scraper/scripts/check_freshness.py` should list any newly-added sport.
