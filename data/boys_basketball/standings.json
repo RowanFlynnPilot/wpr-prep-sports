@@ -146,8 +146,8 @@
         "points_against": 0
       },
       {
-        "school_id": "spencer",
-        "name": "Spencer",
+        "school_id": "abbotsford",
+        "name": "Abbotsford",
         "conference_wins": 0,
         "conference_losses": 0,
         "conference_ties": 0,
@@ -220,6 +220,122 @@
       {
         "school_id": "rib-lake",
         "name": "Rib Lake",
+        "conference_wins": 0,
+        "conference_losses": 0,
+        "conference_ties": 0,
+        "overall_wins": 0,
+        "overall_losses": 0,
+        "overall_ties": 0,
+        "points_for": 0,
+        "points_against": 0
+      }
+    ]
+  },
+  {
+    "sport": "boys_basketball",
+    "season": "2026-27",
+    "conference": "Cloverbelt",
+    "division": null,
+    "rows": [
+      {
+        "school_id": "spencer",
+        "name": "Spencer",
+        "conference_wins": 0,
+        "conference_losses": 0,
+        "conference_ties": 0,
+        "overall_wins": 0,
+        "overall_losses": 0,
+        "overall_ties": 0,
+        "points_for": 0,
+        "points_against": 0
+      },
+      {
+        "school_id": "colby",
+        "name": "Colby",
+        "conference_wins": 0,
+        "conference_losses": 0,
+        "conference_ties": 0,
+        "overall_wins": 0,
+        "overall_losses": 0,
+        "overall_ties": 0,
+        "points_for": 0,
+        "points_against": 0
+      },
+      {
+        "school_id": "loyal",
+        "name": "Loyal",
+        "conference_wins": 0,
+        "conference_losses": 0,
+        "conference_ties": 0,
+        "overall_wins": 0,
+        "overall_losses": 0,
+        "overall_ties": 0,
+        "points_for": 0,
+        "points_against": 0
+      },
+      {
+        "school_id": "neillsville",
+        "name": "Neillsville",
+        "conference_wins": 0,
+        "conference_losses": 0,
+        "conference_ties": 0,
+        "overall_wins": 0,
+        "overall_losses": 0,
+        "overall_ties": 0,
+        "points_for": 0,
+        "points_against": 0
+      },
+      {
+        "school_id": "owen-withee",
+        "name": "Owen-Withee",
+        "conference_wins": 0,
+        "conference_losses": 0,
+        "conference_ties": 0,
+        "overall_wins": 0,
+        "overall_losses": 0,
+        "overall_ties": 0,
+        "points_for": 0,
+        "points_against": 0
+      },
+      {
+        "school_id": "gilman",
+        "name": "Gilman",
+        "conference_wins": 0,
+        "conference_losses": 0,
+        "conference_ties": 0,
+        "overall_wins": 0,
+        "overall_losses": 0,
+        "overall_ties": 0,
+        "points_for": 0,
+        "points_against": 0
+      },
+      {
+        "school_id": "greenwood",
+        "name": "Greenwood",
+        "conference_wins": 0,
+        "conference_losses": 0,
+        "conference_ties": 0,
+        "overall_wins": 0,
+        "overall_losses": 0,
+        "overall_ties": 0,
+        "points_for": 0,
+        "points_against": 0
+      },
+      {
+        "school_id": "columbus-catholic",
+        "name": "Columbus Catholic",
+        "conference_wins": 0,
+        "conference_losses": 0,
+        "conference_ties": 0,
+        "overall_wins": 0,
+        "overall_losses": 0,
+        "overall_ties": 0,
+        "points_for": 0,
+        "points_against": 0
+      },
+      {
+        "school_id": "thorp",
+        "name": "Thorp",
         "conference_wins": 0,
         "conference_losses": 0,
         "conference_ties": 0,
@@ -324,110 +440,6 @@
       {
         "school_id": "northland-pines",
         "name": "Northland Pines",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "conference_ties": 0,
-        "overall_wins": 0,
-        "overall_losses": 0,
-        "overall_ties": 0,
-        "points_for": 0,
-        "points_against": 0
-      }
-    ]
-  },
-  {
-    "sport": "boys_basketball",
-    "season": "2026-27",
-    "conference": "Cloverbelt",
-    "division": null,
-    "rows": [
-      {
-        "school_id": "colby",
-        "name": "Colby",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "conference_ties": 0,
-        "overall_wins": 0,
-        "overall_losses": 0,
-        "overall_ties": 0,
-        "points_for": 0,
-        "points_against": 0
-      },
-      {
-        "school_id": "abbotsford",
-        "name": "Abbotsford",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "conference_ties": 0,
-        "overall_wins": 0,
-        "overall_losses": 0,
-        "overall_ties": 0,
-        "points_for": 0,
-        "points_against": 0
-      },
-      {
-        "school_id": "loyal",
-        "name": "Loyal",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "conference_ties": 0,
-        "overall_wins": 0,
-        "overall_losses": 0,
-        "overall_ties": 0,
-        "points_for": 0,
-        "points_against": 0
-      },
-      {
-        "school_id": "neillsville",
-        "name": "Neillsville",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "conference_ties": 0,
-        "overall_wins": 0,
-        "overall_losses": 0,
-        "overall_ties": 0,
-        "points_for": 0,
-        "points_against": 0
-      },
-      {
-        "school_id": "owen-withee",
-        "name": "Owen-Withee",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "conference_ties": 0,
-        "overall_wins": 0,
-        "overall_losses": 0,
-        "overall_ties": 0,
-        "points_for": 0,
-        "points_against": 0
-      },
-      {
-        "school_id": "gilman",
-        "name": "Gilman",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "conference_ties": 0,
-        "overall_wins": 0,
-        "overall_losses": 0,
-        "overall_ties": 0,
-        "points_for": 0,
-        "points_against": 0
-      },
-      {
-        "school_id": "greenwood",
-        "name": "Greenwood",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "conference_ties": 0,
-        "overall_wins": 0,
-        "overall_losses": 0,
-        "overall_ties": 0,
-        "points_for": 0,
-        "points_against": 0
-      },
-      {
-        "school_id": "columbus-catholic",
-        "name": "Columbus Catholic",
         "conference_wins": 0,
         "conference_losses": 0,
         "conference_ties": 0,

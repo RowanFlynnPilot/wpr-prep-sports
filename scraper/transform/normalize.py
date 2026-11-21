@@ -210,6 +210,8 @@ def build_dataset(
 
     for gid in collapse_same_day_duplicates(games):
         print(f"  merged same-day duplicate listing {gid}")
+    for gid in clear_cross_table_conference_flags(games, manifest, sport_enum):
+        print(f"  cleared cross-table conference flag {gid}")
 
     games_list = sorted(games.values(), key=lambda g: g.date)
     standings = _build_standings(
@@ -303,6 +305,55 @@ def _resolve_school_id(wiaa_name: str, name_to_id: dict[str, str]) -> str:
 # scores is one game listed twice — soccer and hockey teams don't play
 # the same opponent two full games in an afternoon.
 SAME_DAY_REMATCH_SPORTS = {Sport.VOLLEYBALL, Sport.BOYS_BASKETBALL, Sport.GIRLS_BASKETBALL}
+
+
+# Sports whose conference alignment in config/schools.json was checked
+# against WIAA's ConferenceTeams lists for the current season (2026-11-21:
+# both basketballs and boys hockey; girls hockey has no WIAA list but its
+# one table has no tracked outsiders). Only these get cross-table flags
+# cleared: for the fall sports the same rule would rewrite finished final
+# standings (Spencer volleyball 5-2 -> 0-0), which says the fall alignment
+# needs its own WIAA check before next August, not a silent fix.
+ALIGNMENT_VERIFIED_SPORTS = {
+    Sport.BOYS_BASKETBALL,
+    Sport.GIRLS_BASKETBALL,
+    Sport.BOYS_HOCKEY,
+    Sport.GIRLS_HOCKEY,
+}
+
+
+def clear_cross_table_conference_flags(
+    games: dict[str, Game], manifest: Manifest, sport: Sport
+) -> list[str]:
+    """Clear WIAA's "(C)" on a game between two tracked schools that sit
+    in different conference tables for this sport. Returns the ids.
+
+    The flag can't be right for both sides, and every surface reads it:
+    standings, the hero's and Game of the Week's "stakes" bonus, recaps'
+    conference records. On opening weekend of 2026-27 one flagged
+    non-league game (Edgar at Lakeland) put a Marawood loss and a Great
+    Northern win in the tables and led the girls basketball hero with a
+    52-19 rout (critique run 21). A flag against an untracked opponent is
+    kept: real conferences have members the hub doesn't follow. When a
+    school changes conference, fix config/schools.json; the flags then
+    stop being cleared.
+    """
+    if sport not in ALIGNMENT_VERIFIED_SPORTS:
+        return []
+    by_school = manifest.by_id()
+    sport_key = sport.value
+    cleared: list[str] = []
+    for gid, g in list(games.items()):
+        if not g.conference_game:
+            continue
+        home = by_school.get(g.home.school_id or "")
+        away = by_school.get(g.away.school_id or "")
+        home_conf = home.conference_for(sport_key) if home else None
+        away_conf = away.conference_for(sport_key) if away else None
+        if home_conf and away_conf and home_conf != away_conf:
+            games[gid] = g.model_copy(update={"conference_game": False})
+            cleared.append(gid)
+    return cleared
 
 
 _SUFFIX = re.compile(r"-\d+$")

@@ -15,6 +15,7 @@ from transform.normalize import (
     _parse_datetime,
     _parse_result,
     _slugify,
+    clear_cross_table_conference_flags,
     collapse_same_day_duplicates,
     is_double_listing,
 )
@@ -287,3 +288,64 @@ def test_volleyball_same_day_rematches_are_never_merged():
         f"{base}-2": _row(f"{base}-2", 19, sport=Sport.VOLLEYBALL),
     }
     assert collapse_same_day_duplicates(games) == []
+
+
+def test_conference_flag_between_two_different_tables_moves_neither():
+    """Edgar (Marawood) at Lakeland (Great Northern), Nov 20 2026: WIAA
+    flagged a non-league game "(C)". It counts overall, not in either
+    conference table; a flagged game against an untracked school still
+    counts (real conferences have members we don't track)."""
+    from transform.normalize import _build_standings
+
+    manifest = load_manifest()
+
+    def bb(gid, home, away, hs, as_, conf=True):
+        return Game(
+            id=gid,
+            sport=Sport.GIRLS_BASKETBALL,
+            season="2026-27",
+            date=datetime(2026, 11, 20, 19, 0, tzinfo=_CENTRAL),
+            home=TeamScore(school_id=home[0], name=home[1], score=hs),
+            away=TeamScore(school_id=away[0], name=away[1], score=as_),
+            status=GameStatus.FINAL,
+            conference_game=conf,
+        )
+
+    games = [
+        bb("g1", ("lakeland", "Lakeland"), ("edgar", "Edgar"), 52, 19),
+        bb("g2", ("edgar", "Edgar"), ("", "Some Untracked School"), 60, 40),
+    ]
+    by_id = {g.id: g for g in games}
+    assert clear_cross_table_conference_flags(by_id, manifest, Sport.GIRLS_BASKETBALL) == ["g1"]
+    tables = {
+        s.conference: {r.school_id: r for r in s.rows}
+        for s in _build_standings(
+            list(by_id.values()),
+            manifest=manifest,
+            sport=Sport.GIRLS_BASKETBALL,
+            season="2026-27",
+        )
+    }
+    edgar = tables["Marawood"]["edgar"]
+    assert (edgar.overall_wins, edgar.overall_losses) == (1, 1)
+    assert (edgar.conference_wins, edgar.conference_losses) == (1, 0)
+    lakeland = tables["Great Northern"]["lakeland"]
+    assert (lakeland.conference_wins, lakeland.conference_losses) == (0, 0)
+    assert lakeland.overall_wins == 1
+
+
+def test_cross_table_flags_are_left_alone_in_sports_not_yet_verified():
+    manifest = load_manifest()
+    g = Game(
+        id="v1",
+        sport=Sport.VOLLEYBALL,
+        season="2026-27",
+        date=datetime(2026, 10, 1, 19, 0, tzinfo=_CENTRAL),
+        home=TeamScore(school_id="lakeland", name="Lakeland", score=3),
+        away=TeamScore(school_id="edgar", name="Edgar", score=1),
+        status=GameStatus.FINAL,
+        conference_game=True,
+    )
+    games = {"v1": g}
+    assert clear_cross_table_conference_flags(games, manifest, Sport.VOLLEYBALL) == []
+    assert games["v1"].conference_game is True
