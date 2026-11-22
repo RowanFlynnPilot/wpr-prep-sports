@@ -164,10 +164,10 @@
         "conference_losses": 0,
         "conference_ties": 0,
         "overall_wins": 0,
-        "overall_losses": 0,
+        "overall_losses": 1,
         "overall_ties": 0,
-        "points_for": 0,
-        "points_against": 0
+        "points_for": 48,
+        "points_against": 53
       },
       {
         "school_id": "abbotsford",
@@ -250,6 +250,18 @@
         "points_against": 105
       },
       {
+        "school_id": "loyal",
+        "name": "Loyal",
+        "conference_wins": 0,
+        "conference_losses": 0,
+        "conference_ties": 0,
+        "overall_wins": 2,
+        "overall_losses": 0,
+        "overall_ties": 0,
+        "points_for": 100,
+        "points_against": 85
+      },
+      {
         "school_id": "colby",
         "name": "Colby",
         "conference_wins": 0,
@@ -260,18 +272,6 @@
         "overall_ties": 0,
         "points_for": 49,
         "points_against": 43
-      },
-      {
-        "school_id": "loyal",
-        "name": "Loyal",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "conference_ties": 0,
-        "overall_wins": 1,
-        "overall_losses": 0,
-        "overall_ties": 0,
-        "points_for": 47,
-        "points_against": 37
       },
       {
         "school_id": "gilman",

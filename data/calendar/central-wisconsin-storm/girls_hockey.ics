@@ -11,6 +11,21 @@ X-WR-TIMEZONE:America/Chicago
 REFRESH-INTERVAL;VALUE=DURATION:PT4H
 X-PUBLISHED-TTL:PT4H
 BEGIN:VEVENT
+UID:girls_hockey-2026-11-21-central-wisconsin-storm-at-cedarburg-co-op@spor
+ ts.wausaupilotandreview.com
+DTSTAMP:20260801T000000Z
+DTSTART:20261121T200000Z
+DTEND:20261121T223000Z
+SUMMARY:L 1-4 · Central Wisconsin Storm at Cedarburg Co-op · Girls Hockey
+LOCATION:Ozaukee Ice Center\, Mequon\, WI
+DESCRIPTION:Scores\, stats and recap: https://sports.wausaupilotandreview.c
+ om/#/girls_hockey/game/girls_hockey-2026-11-21-central-wisconsin-storm-at-
+ cedarburg-co-op\nCentral Wisconsin Prep Sports · Wausau Pilot & Review
+URL:https://sports.wausaupilotandreview.com/#/girls_hockey/game/girls_hocke
+ y-2026-11-21-central-wisconsin-storm-at-cedarburg-co-op
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
 UID:girls_hockey-2026-11-27-university-school-of-milwaukee-co-op-at-central
  -wisconsin-storm@sports.wausaupilotandreview.com
 DTSTAMP:20260801T000000Z
