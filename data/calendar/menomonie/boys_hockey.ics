@@ -14,8 +14,8 @@ BEGIN:VEVENT
 UID:boys_hockey-2026-11-24-menomonie-at-barron-co-op@sports.wausaupilotandr
  eview.com
 DTSTAMP:20260801T000000Z
-DTSTART:20261125T000000Z
-DTEND:20261125T023000Z
+DTSTART:20261125T010000Z
+DTEND:20261125T033000Z
 SUMMARY:Menomonie at Barron Co-op · Boys Hockey
 LOCATION:Barron Co-op
 DESCRIPTION:Scores\, stats and recap: https://sports.wausaupilotandreview.c
@@ -304,24 +304,6 @@ STATUS:CONFIRMED
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
-UID:boys_hockey-2027-01-23-somerset-saint-croix-falls-at-menomonie@sports.w
- ausaupilotandreview.com
-DTSTAMP:20260801T000000Z
-DTSTART:20270123T190000Z
-DTEND:20270123T213000Z
-SUMMARY:Menomonie vs Somerset/Saint Croix Falls · Boys Hockey
-LOCATION:Menomonie High School\, Menomonie
-DESCRIPTION:Scores\, stats and recap: https://sports.wausaupilotandreview.c
- om/#/boys_hockey/game/boys_hockey-2027-01-23-somerset-saint-croix-falls-at
- -menomonie\nTimes come from WIAA school schedules and can change\; this ca
- lendar updates when they do.\nCentral Wisconsin Prep Sports · Wausau Pilo
- t & Review
-URL:https://sports.wausaupilotandreview.com/#/boys_hockey/game/boys_hockey-
- 2027-01-23-somerset-saint-croix-falls-at-menomonie
-STATUS:CONFIRMED
-TRANSP:TRANSPARENT
-END:VEVENT
-BEGIN:VEVENT
 UID:boys_hockey-2027-01-26-hudson-at-menomonie@sports.wausaupilotandreview.
  com
 DTSTAMP:20260801T000000Z
@@ -405,23 +387,6 @@ DESCRIPTION:Scores\, stats and recap: https://sports.wausaupilotandreview.c
  ates when they do.\nCentral Wisconsin Prep Sports · Wausau Pilot & Review
 URL:https://sports.wausaupilotandreview.com/#/boys_hockey/game/boys_hockey-
  2027-02-04-menomonie-at-eau-claire-north
-STATUS:CONFIRMED
-TRANSP:TRANSPARENT
-END:VEVENT
-BEGIN:VEVENT
-UID:boys_hockey-2027-02-06-viroqua-co-op-at-menomonie@sports.wausaupilotand
- review.com
-DTSTAMP:20260801T000000Z
-DTSTART:20270206T190000Z
-DTEND:20270206T213000Z
-SUMMARY:Menomonie vs Viroqua Co-op · Boys Hockey
-LOCATION:Menomonie High School\, Menomonie
-DESCRIPTION:Scores\, stats and recap: https://sports.wausaupilotandreview.c
- om/#/boys_hockey/game/boys_hockey-2027-02-06-viroqua-co-op-at-menomonie\nT
- imes come from WIAA school schedules and can change\; this calendar update
- s when they do.\nCentral Wisconsin Prep Sports · Wausau Pilot & Review
-URL:https://sports.wausaupilotandreview.com/#/boys_hockey/game/boys_hockey-
- 2027-02-06-viroqua-co-op-at-menomonie
 STATUS:CONFIRMED
 TRANSP:TRANSPARENT
 END:VEVENT
