@@ -11,6 +11,23 @@ X-WR-TIMEZONE:America/Chicago
 REFRESH-INTERVAL;VALUE=DURATION:PT4H
 X-PUBLISHED-TTL:PT4H
 BEGIN:VEVENT
+UID:boys_hockey-2026-11-28-tomahawk-at-amery-co-op@sports.wausaupilotandrev
+ iew.com
+DTSTAMP:20260801T000000Z
+DTSTART:20261129T010000Z
+DTEND:20261129T033000Z
+SUMMARY:Tomahawk at Amery Co-op · Boys Hockey
+LOCATION:Amery Co-op
+DESCRIPTION:Scores\, stats and recap: https://sports.wausaupilotandreview.c
+ om/#/boys_hockey/game/boys_hockey-2026-11-28-tomahawk-at-amery-co-op\nTime
+ s come from WIAA school schedules and can change\; this calendar updates w
+ hen they do.\nCentral Wisconsin Prep Sports · Wausau Pilot & Review
+URL:https://sports.wausaupilotandreview.com/#/boys_hockey/game/boys_hockey-
+ 2026-11-28-tomahawk-at-amery-co-op
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
 UID:boys_hockey-2026-12-01-lakeland-at-tomahawk@sports.wausaupilotandreview
  .com
 DTSTAMP:20260801T000000Z
