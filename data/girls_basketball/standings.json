@@ -250,16 +250,16 @@
         "points_against": 105
       },
       {
-        "school_id": "loyal",
-        "name": "Loyal",
-        "conference_wins": 0,
+        "school_id": "gilman",
+        "name": "Gilman",
+        "conference_wins": 1,
         "conference_losses": 0,
         "conference_ties": 0,
-        "overall_wins": 3,
+        "overall_wins": 2,
         "overall_losses": 0,
         "overall_ties": 0,
-        "points_for": 153,
-        "points_against": 131
+        "points_for": 85,
+        "points_against": 71
       },
       {
         "school_id": "colby",
@@ -272,18 +272,6 @@
         "overall_ties": 0,
         "points_for": 49,
         "points_against": 43
-      },
-      {
-        "school_id": "gilman",
-        "name": "Gilman",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "conference_ties": 0,
-        "overall_wins": 1,
-        "overall_losses": 0,
-        "overall_ties": 0,
-        "points_for": 46,
-        "points_against": 37
       },
       {
         "school_id": "greenwood",
@@ -316,10 +304,10 @@
         "conference_losses": 0,
         "conference_ties": 0,
         "overall_wins": 0,
-        "overall_losses": 1,
+        "overall_losses": 2,
         "overall_ties": 0,
-        "points_for": 38,
-        "points_against": 54
+        "points_for": 78,
+        "points_against": 96
       },
       {
         "school_id": "owen-withee",
@@ -328,10 +316,10 @@
         "conference_losses": 0,
         "conference_ties": 0,
         "overall_wins": 0,
-        "overall_losses": 2,
+        "overall_losses": 3,
         "overall_ties": 0,
-        "points_for": 63,
-        "points_against": 95
+        "points_for": 96,
+        "points_against": 161
       },
       {
         "school_id": "thorp",
@@ -344,6 +332,18 @@
         "overall_ties": 0,
         "points_for": 43,
         "points_against": 49
+      },
+      {
+        "school_id": "loyal",
+        "name": "Loyal",
+        "conference_wins": 0,
+        "conference_losses": 1,
+        "conference_ties": 0,
+        "overall_wins": 3,
+        "overall_losses": 1,
+        "overall_ties": 0,
+        "points_for": 187,
+        "points_against": 170
       }
     ]
   },
