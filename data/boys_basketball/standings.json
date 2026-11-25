@@ -48,10 +48,10 @@
         "conference_losses": 0,
         "conference_ties": 0,
         "overall_wins": 0,
-        "overall_losses": 0,
+        "overall_losses": 1,
         "overall_ties": 0,
-        "points_for": 0,
-        "points_against": 0
+        "points_for": 58,
+        "points_against": 78
       },
       {
         "school_id": "spash",
@@ -238,18 +238,6 @@
     "division": null,
     "rows": [
       {
-        "school_id": "spencer",
-        "name": "Spencer",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "conference_ties": 0,
-        "overall_wins": 0,
-        "overall_losses": 0,
-        "overall_ties": 0,
-        "points_for": 0,
-        "points_against": 0
-      },
-      {
         "school_id": "colby",
         "name": "Colby",
         "conference_wins": 0,
@@ -344,6 +332,18 @@
         "overall_ties": 0,
         "points_for": 0,
         "points_against": 0
+      },
+      {
+        "school_id": "spencer",
+        "name": "Spencer",
+        "conference_wins": 0,
+        "conference_losses": 1,
+        "conference_ties": 0,
+        "overall_wins": 0,
+        "overall_losses": 1,
+        "overall_ties": 0,
+        "points_for": 42,
+        "points_against": 82
       }
     ]
   },
