@@ -1,7 +1,7 @@
 {
   "sport": "girls_basketball",
   "season": "2026-27",
-  "generated_at": "2026-11-24T23:18:38.940084-06:00",
+  "generated_at": "2026-11-25T07:03:09.953224-06:00",
   "method": "WPR Power Index v1: 40% W%, 35% SOS, 25% margin (capped per sport)",
   "rankings": [
     {
@@ -97,6 +97,19 @@
     },
     {
       "rank": 8,
+      "school_id": "wittenberg-birnamwood",
+      "school_name": "Wittenberg-Birnamwood",
+      "wins": 1,
+      "losses": 2,
+      "ties": 0,
+      "win_pct": 0.3333,
+      "sos": 0.5,
+      "avg_margin_capped": 1.67,
+      "score": 44.17,
+      "movement": null
+    },
+    {
+      "rank": 9,
       "school_id": "chippewa-falls",
       "school_name": "Chippewa Falls",
       "wins": 1,
@@ -109,7 +122,7 @@
       "movement": null
     },
     {
-      "rank": 9,
+      "rank": 10,
       "school_id": "river-falls",
       "school_name": "River Falls",
       "wins": 1,
@@ -122,7 +135,7 @@
       "movement": null
     },
     {
-      "rank": 10,
+      "rank": 11,
       "school_id": "black-river-falls",
       "school_name": "Black River Falls",
       "wins": 1,
@@ -135,7 +148,7 @@
       "movement": null
     },
     {
-      "rank": 11,
+      "rank": 12,
       "school_id": "medford",
       "school_name": "Medford",
       "wins": 1,
@@ -148,7 +161,7 @@
       "movement": null
     },
     {
-      "rank": 12,
+      "rank": 13,
       "school_id": "wisconsin-rapids",
       "school_name": "Wisconsin Rapids Lincoln",
       "wins": 1,
@@ -161,7 +174,7 @@
       "movement": null
     },
     {
-      "rank": 13,
+      "rank": 14,
       "school_id": "stratford",
       "school_name": "Stratford",
       "wins": 0,
@@ -174,7 +187,7 @@
       "movement": null
     },
     {
-      "rank": 14,
+      "rank": 15,
       "school_id": "athens",
       "school_name": "Athens",
       "wins": 1,
@@ -187,7 +200,7 @@
       "movement": null
     },
     {
-      "rank": 15,
+      "rank": 16,
       "school_id": "rosholt",
       "school_name": "Rosholt",
       "wins": 0,
@@ -200,7 +213,7 @@
       "movement": null
     },
     {
-      "rank": 16,
+      "rank": 17,
       "school_id": "edgar",
       "school_name": "Edgar",
       "wins": 0,
@@ -213,7 +226,7 @@
       "movement": null
     },
     {
-      "rank": 17,
+      "rank": 18,
       "school_id": "owen-withee",
       "school_name": "Owen-Withee",
       "wins": 0,

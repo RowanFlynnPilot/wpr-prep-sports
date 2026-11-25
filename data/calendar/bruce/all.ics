@@ -689,23 +689,6 @@ STATUS:CONFIRMED
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
-UID:boys_basketball-2026-12-11-new-auburn-at-bruce@sports.wausaupilotandrev
- iew.com
-DTSTAMP:20260801T000000Z
-DTSTART:20261211T234500Z
-DTEND:20261212T011500Z
-SUMMARY:Bruce vs New Auburn · Boys Basketball
-LOCATION:Bruce High School\, Bruce
-DESCRIPTION:Scores\, stats and recap: https://sports.wausaupilotandreview.c
- om/#/boys_basketball/game/boys_basketball-2026-12-11-new-auburn-at-bruce\n
- Times come from WIAA school schedules and can change\; this calendar updat
- es when they do.\nCentral Wisconsin Prep Sports · Wausau Pilot & Review
-URL:https://sports.wausaupilotandreview.com/#/boys_basketball/game/boys_bas
- ketball-2026-12-11-new-auburn-at-bruce
-STATUS:CONFIRMED
-TRANSP:TRANSPARENT
-END:VEVENT
-BEGIN:VEVENT
 UID:girls_basketball-2026-12-11-new-auburn-at-bruce@sports.wausaupilotandre
  view.com
 DTSTAMP:20260801T000000Z
@@ -719,6 +702,23 @@ DESCRIPTION:Scores\, stats and recap: https://sports.wausaupilotandreview.c
  ates when they do.\nCentral Wisconsin Prep Sports · Wausau Pilot & Review
 URL:https://sports.wausaupilotandreview.com/#/girls_basketball/game/girls_b
  asketball-2026-12-11-new-auburn-at-bruce
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:boys_basketball-2026-12-11-new-auburn-at-bruce@sports.wausaupilotandrev
+ iew.com
+DTSTAMP:20260801T000000Z
+DTSTART:20261212T011500Z
+DTEND:20261212T024500Z
+SUMMARY:Bruce vs New Auburn · Boys Basketball
+LOCATION:Bruce High School\, Bruce
+DESCRIPTION:Scores\, stats and recap: https://sports.wausaupilotandreview.c
+ om/#/boys_basketball/game/boys_basketball-2026-12-11-new-auburn-at-bruce\n
+ Times come from WIAA school schedules and can change\; this calendar updat
+ es when they do.\nCentral Wisconsin Prep Sports · Wausau Pilot & Review
+URL:https://sports.wausaupilotandreview.com/#/boys_basketball/game/boys_bas
+ ketball-2026-12-11-new-auburn-at-bruce
 STATUS:CONFIRMED
 TRANSP:TRANSPARENT
 END:VEVENT

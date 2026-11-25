@@ -11,11 +11,11 @@
         "conference_wins": 0,
         "conference_losses": 0,
         "conference_ties": 0,
-        "overall_wins": 2,
+        "overall_wins": 3,
         "overall_losses": 0,
         "overall_ties": 0,
-        "points_for": 133,
-        "points_against": 87
+        "points_for": 181,
+        "points_against": 122
       },
       {
         "school_id": "spash",
@@ -86,6 +86,18 @@
     "division": null,
     "rows": [
       {
+        "school_id": "marathon",
+        "name": "Marathon",
+        "conference_wins": 1,
+        "conference_losses": 0,
+        "conference_ties": 0,
+        "overall_wins": 1,
+        "overall_losses": 0,
+        "overall_ties": 0,
+        "points_for": 61,
+        "points_against": 25
+      },
+      {
         "school_id": "auburndale",
         "name": "Auburndale",
         "conference_wins": 1,
@@ -146,30 +158,6 @@
         "points_against": 22
       },
       {
-        "school_id": "marathon",
-        "name": "Marathon",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "conference_ties": 0,
-        "overall_wins": 0,
-        "overall_losses": 0,
-        "overall_ties": 0,
-        "points_for": 0,
-        "points_against": 0
-      },
-      {
-        "school_id": "newman-catholic",
-        "name": "Newman Catholic",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "conference_ties": 0,
-        "overall_wins": 0,
-        "overall_losses": 1,
-        "overall_ties": 0,
-        "points_for": 40,
-        "points_against": 60
-      },
-      {
         "school_id": "abbotsford",
         "name": "Abbotsford",
         "conference_wins": 0,
@@ -216,6 +204,18 @@
         "overall_ties": 0,
         "points_for": 83,
         "points_against": 146
+      },
+      {
+        "school_id": "newman-catholic",
+        "name": "Newman Catholic",
+        "conference_wins": 0,
+        "conference_losses": 1,
+        "conference_ties": 0,
+        "overall_wins": 0,
+        "overall_losses": 2,
+        "overall_ties": 0,
+        "points_for": 65,
+        "points_against": 121
       },
       {
         "school_id": "stratford",
@@ -390,16 +390,28 @@
         "points_against": 77
       },
       {
+        "school_id": "medford",
+        "name": "Medford",
+        "conference_wins": 0,
+        "conference_losses": 0,
+        "conference_ties": 0,
+        "overall_wins": 1,
+        "overall_losses": 2,
+        "overall_ties": 0,
+        "points_for": 146,
+        "points_against": 187
+      },
+      {
         "school_id": "lakeland",
         "name": "Lakeland",
         "conference_wins": 0,
         "conference_losses": 0,
         "conference_ties": 0,
         "overall_wins": 1,
-        "overall_losses": 0,
+        "overall_losses": 1,
         "overall_ties": 0,
-        "points_for": 52,
-        "points_against": 19
+        "points_for": 87,
+        "points_against": 67
       },
       {
         "school_id": "antigo",
@@ -424,18 +436,6 @@
         "overall_ties": 0,
         "points_for": 35,
         "points_against": 52
-      },
-      {
-        "school_id": "medford",
-        "name": "Medford",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "conference_ties": 0,
-        "overall_wins": 0,
-        "overall_losses": 2,
-        "overall_ties": 0,
-        "points_for": 93,
-        "points_against": 146
       },
       {
         "school_id": "merrill",

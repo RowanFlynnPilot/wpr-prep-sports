@@ -92,10 +92,10 @@
         "conference_losses": 0,
         "conference_ties": 0,
         "overall_wins": 0,
-        "overall_losses": 0,
+        "overall_losses": 1,
         "overall_ties": 0,
-        "points_for": 0,
-        "points_against": 0
+        "points_for": 35,
+        "points_against": 63
       },
       {
         "school_id": "edgar",
@@ -128,10 +128,10 @@
         "conference_losses": 0,
         "conference_ties": 0,
         "overall_wins": 0,
-        "overall_losses": 0,
+        "overall_losses": 1,
         "overall_ties": 0,
-        "points_for": 0,
-        "points_against": 0
+        "points_for": 66,
+        "points_against": 68
       },
       {
         "school_id": "stratford",
@@ -200,10 +200,10 @@
         "conference_losses": 0,
         "conference_ties": 0,
         "overall_wins": 0,
-        "overall_losses": 0,
+        "overall_losses": 2,
         "overall_ties": 0,
-        "points_for": 0,
-        "points_against": 0
+        "points_for": 33,
+        "points_against": 168
       },
       {
         "school_id": "phillips",
@@ -238,6 +238,18 @@
     "division": null,
     "rows": [
       {
+        "school_id": "owen-withee",
+        "name": "Owen-Withee",
+        "conference_wins": 0,
+        "conference_losses": 0,
+        "conference_ties": 0,
+        "overall_wins": 1,
+        "overall_losses": 0,
+        "overall_ties": 0,
+        "points_for": 63,
+        "points_against": 35
+      },
+      {
         "school_id": "colby",
         "name": "Colby",
         "conference_wins": 0,
@@ -264,18 +276,6 @@
       {
         "school_id": "neillsville",
         "name": "Neillsville",
-        "conference_wins": 0,
-        "conference_losses": 0,
-        "conference_ties": 0,
-        "overall_wins": 0,
-        "overall_losses": 0,
-        "overall_ties": 0,
-        "points_for": 0,
-        "points_against": 0
-      },
-      {
-        "school_id": "owen-withee",
-        "name": "Owen-Withee",
         "conference_wins": 0,
         "conference_losses": 0,
         "conference_ties": 0,
@@ -441,13 +441,13 @@
         "school_id": "northland-pines",
         "name": "Northland Pines",
         "conference_wins": 0,
-        "conference_losses": 0,
+        "conference_losses": 1,
         "conference_ties": 0,
         "overall_wins": 0,
-        "overall_losses": 0,
+        "overall_losses": 1,
         "overall_ties": 0,
-        "points_for": 0,
-        "points_against": 0
+        "points_for": 62,
+        "points_against": 64
       }
     ]
   }
