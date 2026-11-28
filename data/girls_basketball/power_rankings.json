@@ -1,7 +1,7 @@
 {
   "sport": "girls_basketball",
   "season": "2026-27",
-  "generated_at": "2026-11-27T12:35:03.153300-06:00",
+  "generated_at": "2026-11-27T19:53:51.392841-06:00",
   "method": "WPR Power Index v1: 40% W%, 35% SOS, 25% margin (capped per sport)",
   "rankings": [
     {
@@ -12,9 +12,9 @@
       "losses": 0,
       "ties": 0,
       "win_pct": 1.0,
-      "sos": 0.6667,
+      "sos": 0.75,
       "avg_margin_capped": 19.0,
-      "score": 85.33,
+      "score": 88.25,
       "movement": null
     },
     {
@@ -60,17 +60,30 @@
       "rank": 5,
       "school_id": "pittsville",
       "school_name": "Pittsville",
-      "wins": 2,
+      "wins": 3,
       "losses": 1,
       "ties": 0,
-      "win_pct": 0.6667,
-      "sos": 0.6667,
-      "avg_margin_capped": 3.0,
-      "score": 64.0,
+      "win_pct": 0.75,
+      "sos": 0.4444,
+      "avg_margin_capped": 3.5,
+      "score": 59.81,
       "movement": null
     },
     {
       "rank": 6,
+      "school_id": "loyal",
+      "school_name": "Loyal",
+      "wins": 3,
+      "losses": 1,
+      "ties": 0,
+      "win_pct": 0.75,
+      "sos": 0.3333,
+      "avg_margin_capped": 4.25,
+      "score": 56.29,
+      "movement": null
+    },
+    {
+      "rank": 7,
       "school_id": "iola-scandinavia",
       "school_name": "Iola-Scandinavia",
       "wins": 1,
@@ -80,19 +93,6 @@
       "sos": 0.75,
       "avg_margin_capped": 4.67,
       "score": 54.42,
-      "movement": null
-    },
-    {
-      "rank": 7,
-      "school_id": "loyal",
-      "school_name": "Loyal",
-      "wins": 3,
-      "losses": 1,
-      "ties": 0,
-      "win_pct": 0.75,
-      "sos": 0.1111,
-      "avg_margin_capped": 4.25,
-      "score": 48.51,
       "movement": null
     },
     {
@@ -149,6 +149,19 @@
     },
     {
       "rank": 12,
+      "school_id": "stratford",
+      "school_name": "Stratford",
+      "wins": 1,
+      "losses": 2,
+      "ties": 0,
+      "win_pct": 0.3333,
+      "sos": 0.5,
+      "avg_margin_capped": -2.67,
+      "score": 42.0,
+      "movement": null
+    },
+    {
+      "rank": 13,
       "school_id": "medford",
       "school_name": "Medford",
       "wins": 1,
@@ -161,7 +174,7 @@
       "movement": null
     },
     {
-      "rank": 13,
+      "rank": 14,
       "school_id": "wisconsin-rapids",
       "school_name": "Wisconsin Rapids Lincoln",
       "wins": 1,
@@ -174,19 +187,6 @@
       "movement": null
     },
     {
-      "rank": 14,
-      "school_id": "stratford",
-      "school_name": "Stratford",
-      "wins": 0,
-      "losses": 3,
-      "ties": 0,
-      "win_pct": 0.0,
-      "sos": 0.75,
-      "avg_margin_capped": -5.33,
-      "score": 36.08,
-      "movement": null
-    },
-    {
       "rank": 15,
       "school_id": "athens",
       "school_name": "Athens",
@@ -194,13 +194,26 @@
       "losses": 2,
       "ties": 0,
       "win_pct": 0.3333,
-      "sos": 0.3333,
+      "sos": 0.375,
       "avg_margin_capped": -8.0,
-      "score": 33.5,
+      "score": 34.96,
       "movement": null
     },
     {
       "rank": 16,
+      "school_id": "assumption",
+      "school_name": "Assumption",
+      "wins": 0,
+      "losses": 3,
+      "ties": 0,
+      "win_pct": 0.0,
+      "sos": 0.5417,
+      "avg_margin_capped": -5.0,
+      "score": 28.96,
+      "movement": null
+    },
+    {
+      "rank": 17,
       "school_id": "rosholt",
       "school_name": "Rosholt",
       "wins": 0,
@@ -213,7 +226,7 @@
       "movement": null
     },
     {
-      "rank": 17,
+      "rank": 18,
       "school_id": "edgar",
       "school_name": "Edgar",
       "wins": 0,
@@ -226,7 +239,7 @@
       "movement": null
     },
     {
-      "rank": 18,
+      "rank": 19,
       "school_id": "owen-withee",
       "school_name": "Owen-Withee",
       "wins": 0,
